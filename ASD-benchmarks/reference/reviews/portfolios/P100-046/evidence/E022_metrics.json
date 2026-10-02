@@ -1,0 +1,65 @@
+{
+  "primary_error": 1.8683275509415442,
+  "worst_group": 2.3378705733788556,
+  "by_group": {
+    "block2": 2.3378705733788556,
+    "block3": 1.398784528504233
+  },
+  "bias_by_group": {
+    "block2": -0.12619222003177344,
+    "block3": 0.025268801709518507
+  },
+  "rmse_by_group": {
+    "block2": 3.075614487237446,
+    "block3": 2.0406313610628373
+  },
+  "exact_fraction": null,
+  "fold_states": {
+    "2": {
+      "case": 46,
+      "kind": "polytropic",
+      "training_groups": [
+        "block0",
+        "block1"
+      ],
+      "training_rows": 520,
+      "parameters": 2,
+      "equation": "See executable predict in run.py and parameter state; no target lookup.",
+      "coefficients": [
+        -0.2648284974902286,
+        0.2347288767367002
+      ],
+      "fit_objective": "equal-group weighted least squares; development selection by MAE",
+      "jacobian_condition": 3.4233842853147523,
+      "optimizer_success": true,
+      "boundary_contacts": [
+        false,
+        false
+      ]
+    },
+    "3": {
+      "case": 46,
+      "kind": "polytropic",
+      "training_groups": [
+        "block0",
+        "block1",
+        "block2"
+      ],
+      "training_rows": 786,
+      "parameters": 2,
+      "equation": "See executable predict in run.py and parameter state; no target lookup.",
+      "coefficients": [
+        -0.2577558694511718,
+        0.41501003968116534
+      ],
+      "fit_objective": "equal-group weighted least squares; development selection by MAE",
+      "jacobian_condition": 3.7487337769953473,
+      "optimizer_success": true,
+      "boundary_contacts": [
+        false,
+        false
+      ]
+    }
+  },
+  "development_seconds": 0.05286393198184669
+}

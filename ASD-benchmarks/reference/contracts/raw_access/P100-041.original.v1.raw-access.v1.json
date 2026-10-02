@@ -1,0 +1,66 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-041.original.v1.raw-access.v1",
+  "parent_task_id": "P100-041.original.v1",
+  "case_id": "P100-041",
+  "protocol_version": "P100-041.original.v1.raw-access.v1",
+  "cohort_id": "P100-041.original.v1.cohort-1",
+  "parent_task_sha256": "9a947629f07f5a5a2fd6b5bb7af539a2fa953f1ad4f967b157cf077113b7ce90",
+  "input_sha256": "e87afec1e37f308c936662708f077fe1eadc2647ab0ce30969fbfb2d06e03ef2",
+  "observations_sha256": "bddbf35425346c26e073836edc74b2d46374a99e1afbd1b5a5ddc19499c21973",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "41_energy_eia930_grid_2025",
+  "source_assets": [
+    {
+      "path": "raw/EIA930_BALANCE_2025_Jan_Jun.csv",
+      "bytes": 47565054,
+      "sha256": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "forecast": "MW",
+      "error48": "MW",
+      "error168": "MW",
+      "load48": "MW",
+      "load168": "MW",
+      "ramp": "MW",
+      "hour": "UTC hour",
+      "weekend": "indicator"
+    },
+    "observation_window": "Retrospective published-snapshot forecast correction. Input official forecast for target hour, preceding-hour forecast, and actual/forecast residuals 48 and168 hours before target. Nominal issuance t\u221224h is an analysis convention, not observed release timestamp. The observed load/residual histories refer to hours at least24h before nominal issuance. This timestamp statement does not establish their actual publication availability. Target-hour and preceding-hour forecast vintages and issuance times are unknown in the revised snapshot; no historical as-issued forecast availability is claimed. No target-hour demand, generation or interchange predictor.",
+    "calibration_and_history": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "input_anchor",
+      "prediction_time",
+      "target_time"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Revised demand/forecast snapshots lack as-issued publication timestamps; operational benefit is unmeasured."
+  ],
+  "current_outcomes_exposed": true
+}

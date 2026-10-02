@@ -1,0 +1,138 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-082.original.v1",
+  "case_id": "P100-082",
+  "case_number": 82,
+  "family": "original",
+  "protocol_version": "P100-082-prepared-primary-v1",
+  "cohort_id": "P100-082.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-082.original.v1",
+  "legacy_package": "82_ecology_soil_respiration/final_results",
+  "source_scenario": "scenarios/82_ecology_soil_respiration",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Author-derived forest-soil CO2 mass flux on reserved future dates",
+  "target_units": "g CO2 m^-2 h^-1",
+  "error_units": "g CO2 m^-2 h^-1",
+  "primary_units": "g CO2 m^-2 h^-1",
+  "metric_kind": "rmse",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_rmse"
+  },
+  "permitted_inputs": [
+    "site",
+    "context",
+    "t05",
+    "tsmoisture",
+    "doy"
+  ],
+  "input_units": {
+    "site": "categorical calibrated site",
+    "context": "categorical subsite/trenching context",
+    "t05": "degrees Celsius, native 5-cm soil temperature",
+    "tsmoisture": "native soil-water-content percent; may be missing",
+    "doy": "day of year"
+  },
+  "numeric_columns": [
+    "t05",
+    "tsmoisture",
+    "doy"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Known site/context, measurement date, native 5-cm soil temperature and soil moisture only; exclude author response-fit slopes, chamber conversions, confidence bounds and future flux.",
+  "calibration": "Context/site amplitudes are trained on earlier dates only. Lloyd\u2013Taylor E0 is near 200 K with a documented optimizer-scaling limitation; it is not an identified globally optimized physiological coefficient.",
+  "independent_unit": "complete reserved future temporal block at each calibrated site",
+  "evaluation_groups": [
+    "DumbravitaTrench|confirmation",
+    "Dumbravita|confirmation",
+    "Gamiz|confirmation",
+    "Kacergine|confirmation",
+    "Karstula75|confirmation",
+    "Karstula76|confirmation",
+    "Kelheim-Parsberg|confirmation",
+    "Kranzberg-Freising|confirmation",
+    "Llobera|confirmation",
+    "RincondelBatovi|confirmation",
+    "R\u00e4nsk\u00e4l\u00e4nkorpi|confirmation",
+    "Saint Mitre|confirmation",
+    "Secanella|confirmation",
+    "St Christol|confirmation",
+    "Wasserburg-Maitenbeth|confirmation"
+  ],
+  "assigned_rows": 6928,
+  "eligible_rows": 6928,
+  "baseline_models": [
+    "lloyd_taylor",
+    "temperature_moisture",
+    "q10",
+    "context_mean",
+    "flexible_fixed",
+    "flexible_nested"
+  ],
+  "reference_model": "lloyd_taylor",
+  "models": {
+    "lloyd_taylor": {
+      "equation": "Fhat=A_context*exp(E0_K*(1/(10+46.02)-1/(T_degC+46.02))); context/site fallback amplitudes frozen; E0 optimizer qualification applies.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "temperature_moisture": {
+      "equation": "Fhat=A_context*exp(b*x+c*z+d*z^2+interaction*x*z+missing*I_missing); x=(T-10)/10,z=(SWC-30)/30; missing SWC uses fixed30 percent plus flag.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "q10": {
+      "equation": "Fhat=A_context*exp(b*(T_degC-10)/10+missing*I_missing_moisture).",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "context_mean": {
+      "equation": "Fhat=A_context, with frozen development-only context/site/global fallback.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible_fixed": {
+      "equation": "yhat=max(0,intercept+sum_i w_i*exp(-gamma*||encoded_scaled_X-center_i||^2)); all imputation, category encoding, scales and kernel state frozen.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible_nested": {
+      "equation": "yhat=max(0,intercept+sum_i w_i*exp(-gamma*||encoded_scaled_X-center_i||^2)); all imputation, category encoding, scales and kernel state frozen.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every complete reserved group. Within-system and temporal dependence, few condition blocks or calibrated sites limit population-level claims; no row-bootstrap confidence interval is claimed."
+  },
+  "scope_limits": "Future dates at fifteen input-eligible calibrated sites, including a Uruguay site in the source. Not unseen-site transfer or causal treatment effects. Native negative flux measurements remain scored; missing 5-cm temperature limits coverage.",
+  "source_url": "https://zenodo.org/records/17519671",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "d0f030b8483dd35f2a713a251da4a9899bfe1e607154878cfd43fc5d92998ec4",
+  "observations_sha256": "cf325c7491808be0acda3622bd6ebe1caa2b738f9f9ca3b1e267bdaf74af203e",
+  "legacy_protocol_sha256": "b6fe20feae1579e217aab750025a8219b9939922243bc940794c25dca6816cfb",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

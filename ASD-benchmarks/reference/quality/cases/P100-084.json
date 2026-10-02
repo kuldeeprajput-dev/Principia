@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-084",
+  "title": "Experimental dataset on Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment",
+  "default_task": "P100-084.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "native AFM retraction force",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 3,
+    "independent_unit_description": "Complete approach/retraction curve is held together; one hashselectedcurveper surface type confirms. Curves are locations on three samples, not independentmanufacturingbatches.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Approach baseline, first5nNabovebaselinecrossing, known ramp extent, and initialfive retractionforce samples. Everycandidate receives the same frozen summaries.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "native AFM retraction force",
+    "prediction_time": "Predict late retraction after the entire approach and firstfive retraction samples are available. Targets begin at retractionindex16. Measured retraction deflection is excluded because it algebraically determines force.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Curves are locations on three samples, not independent manufacturing batches."
+  },
+  "task_ids": [
+    "P100-084.original.v1"
+  ],
+  "finding_ids": [
+    "P100-084-F01",
+    "P100-084-F02",
+    "P100-084-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-084/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-084.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate native AFM retraction force under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Predict late retraction after the entire approach and firstfive retraction samples are available. Targets begin at retractionindex16. Measured retraction deflection is excluded because it algebraically determines force.",
+    "calibration_requirement": "Approach baseline, first5nNabovebaselinecrossing, known ramp extent, and initialfive retractionforce samples. Everycandidate receives the same frozen summaries.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "native AFM retraction force in nN",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Curves are locations on three samples, not independent manufacturing batches."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "nN",
+    "reference_model": "reference",
+    "reference_primary_error": 1.3597509534280354,
+    "reference_physical_mae": 1.3597509534280354,
+    "physical_error_units": "nN",
+    "lowest_registered_error_model": "rough_asperity_exponent",
+    "lowest_registered_error": 1.2819360608565649,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-084.original.v1/evidence/metrics.csv",
+      "bytes": 1236,
+      "sha256": "a5eae5f1fcf503b8e3b677aed2f0df059a9b75b593d281bae61e486760dc0bf3"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Curves are locations on three samples, not independent manufacturing batches."
+}

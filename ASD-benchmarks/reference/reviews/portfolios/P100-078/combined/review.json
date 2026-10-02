@@ -1,0 +1,311 @@
+{
+  "schema_version": "principia.advisory-review/3.0",
+  "bindings": {
+    "claims_sha256": "c73a1df7b3b980e6dbc3267923a3aa9e985557f4474a4692867215b12706d635",
+    "evidence_sha256": {
+      "E001": "771db3cc2eb6ac67cfa3b6b0d2e3f4140c77d062067f27035354c85aa1ea363e",
+      "E002": "1cf78532d121b0ce5b8123305a2fa5b86cbd23c5654bcdec3f46938dc1abf45f",
+      "E003": "8d50ead33705e392bde8bc354a1df7af2ab92584885867010ea17e1ccf04d91f",
+      "E004": "13a5b41a987c05951d3e7a77021440573d07070acb5bc4145bc48bf81beac5e2",
+      "E005": "9d844988f41467c4b55d20b5ac09c0057448c5a3bdd8848931dabbc7e0e80262",
+      "E006": "941744965419eaee5546861840e5ab07d6bc10170af6d16f7fb838c8e8ac2d6a",
+      "E007": "47d136072f139a13b1c306b0ef65bee891a12bf1915b8089135dd25cf8c8fe1c",
+      "E008": "9196a140682ca8c5839820732ef3654e0561a8a5e582e6052e04ade3feb4123e",
+      "SCIENTIFIC": "fdaf604ebfe6dbac01998cebf4b6a8446da5bfab0c4420f22eb1a2f877a6f351",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-078",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "reviews": [
+    {
+      "finding_id": "P100-078-SCI-01",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-078-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-078-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Whole source laboratories; two development labs and one historically exposed GSK cohort; exact actual times and numeric equality targets only. Strong adverse evidence: Previously invalidated grouping exposed part of the GSK cohort; source strain/SITE alias inconsistencies make directory-level labs the only defensible existing group.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Capacitylimited kinetics is not identified by nearconstant 24 hendpoints. Calibrationsensitivity algebra demonstrates this boundary; it is not fresh biological evidence.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Source already investigates multicenter virulence; endpointselection/identifiability audit is valuable but not a new pathogen law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole source laboratories; two development labs and one historically exposed GSK cohort; exact actual times and numeric equality targets only.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Previously invalidated grouping exposed part of the GSK cohort; source strain/SITE alias inconsistencies make directory-level labs the only defensible existing group."
+        ],
+        "checks": [
+          "Do not turn interval-censored death times into scheduled 24 hresponses.",
+          "Exclude site/study/strain labels from numerical predictors under continuation task; retain them as provenance/group metadata.",
+          "Require time-resolved evidence for kinetics; separately evaluate baseline cohort uncertainty and humane endpoint selection."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-078-SCI-02",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-078-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-078-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Whole source laboratories; two development labs and one historically exposed GSK cohort; exact actual times and numeric equality targets only. Strong adverse evidence: Twenty untreated < 24 h humane endpoint assays have mean 9.2970/range 8.9120\u20139.3979 log units and are excluded from exact-time prediction. This nonrandom selection cannot be repaired by assigning 24 h.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Capacitylimited kinetics is not identified by nearconstant 24 hendpoints. Calibrationsensitivity algebra demonstrates this boundary; it is not fresh biological evidence.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Source already investigates multicenter virulence; endpointselection/identifiability audit is valuable but not a new pathogen law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          },
+          "significance": {
+            "status": "supported",
+            "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole source laboratories; two development labs and one historically exposed GSK cohort; exact actual times and numeric equality targets only.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Twenty untreated < 24 h humane endpoint assays have mean 9.2970/range 8.9120\u20139.3979 log units and are excluded from exact-time prediction. This nonrandom selection cannot be repaired by assigning 24 h."
+        ],
+        "checks": [
+          "Do not turn interval-censored death times into scheduled 24 hresponses.",
+          "Exclude site/study/strain labels from numerical predictors under continuation task; retain them as provenance/group metadata.",
+          "Require time-resolved evidence for kinetics; separately evaluate baseline cohort uncertainty and humane endpoint selection."
+        ]
+      }
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "novelty_is_not_certified": true
+}

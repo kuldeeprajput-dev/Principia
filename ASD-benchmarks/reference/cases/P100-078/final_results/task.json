@@ -1,0 +1,129 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-078.continuation.v1",
+  "case_id": "P100-078",
+  "case_number": 78,
+  "family": "continuation",
+  "protocol_version": "P100-078-continuation-20261001-documentation-v2",
+  "cohort_id": "P100-078.continuation.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-078.continuation.v1",
+  "legacy_package": "78_medicine_assay_reproducibility/research_history/continuation-20261001/candidate",
+  "source_scenario": "scenarios/78_medicine_assay_reproducibility",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Untreated bacterial burden in total lung",
+  "target_units": "log10 CFU / total lung",
+  "error_units": "log10 ratio (decades)",
+  "primary_units": "log10 CFU / total lung",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "time_h",
+    "initial_logCFU"
+  ],
+  "input_units": {
+    "time_h": "h",
+    "initial_logCFU": "log10 CFU per total lung"
+  },
+  "numeric_columns": [
+    "time_h",
+    "initial_logCFU"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Only numeric actual time within0-24h and the mean time-zero log burden for the linked strain-study are prediction inputs. Different time-zero animals supply declared cohort calibration. No later burden, laboratory parameter, animal outcome or study/strain identity is a numerical predictor. Numeric <24 strings and censored inequality burdens are not exact-time targets.",
+  "calibration": "DSM/site-reference strain aliases resolved from source RefToDict plus explicit single-strain-study Overview links (source labeling discrepancies retained) and kept together. All ExperimentResults sheets included. Explicit untreated CFU lung single-value observations only, equality operator, compatible log-CFU lung units, numeric actual times 0\u201324 h. Time-zero animals form an explicitly allowed cohort calibration, not the same later animals. Non-numeric early-death times and censoring cannot be interpreted as exact scheduled times; exclusions are counted, and this creates survivorship/measurement selection limits. Source already reports virulence/reproducibility criteria; no new clinical efficacy claim. Source laboratory directory supplies validation identity; the original SITE field is inconsistent in one workbook and is preserved as provided_site. Header templates and source censoring inconsistencies require caution.",
+  "independent_unit": "whole laboratory/site, all strains and studies",
+  "evaluation_groups": [
+    "GSK"
+  ],
+  "assigned_rows": 15,
+  "eligible_rows": 15,
+  "baseline_models": [
+    "reference",
+    "endpoint",
+    "clock",
+    "burden",
+    "burden_clock",
+    "quadratic",
+    "capacity",
+    "shrink"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Lhat=L0+2.007169617207792*t/24+0.9807704376646112*(t/24)*(7\u2212L0)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "endpoint": {
+      "equation": "Exact frozen JSON coefficients and portable run.py basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "clock": {
+      "equation": "Exact frozen JSON coefficients and portable run.py basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "burden": {
+      "equation": "Exact frozen JSON coefficients and portable run.py basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "burden_clock": {
+      "equation": "Exact frozen JSON coefficients and portable run.py basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "quadratic": {
+      "equation": "Exact frozen JSON coefficients and portable run.py basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "capacity": {
+      "equation": "Exact frozen JSON coefficients and portable run.py basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "shrink": {
+      "equation": "Exact frozen JSON coefficients and portable run.py basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "scope_limits": "Two development laboratories and one historically exposed diagnostic laboratory. All15scored GSK observations are at24h; no kinetic, survival or antibiotic-efficacy admission. The continuation removes site from numerical inputs; site remains the whole-group validation identity.",
+  "source_url": "https://zenodo.org/records/15124940",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All original diagnostic outcomes were already exposed. This is source-aware retrospective research. Documentation corrections do not create fresh confirmation or alter fit/selection.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "49a0cd8585dc52d24709e5da29f9d4f46bd21b7f12fce8bba4588ec0b4ab813a",
+  "observations_sha256": "36a733eeff762b77a3524ed8f7dfaac65942b121e4535ab17f98878723f3fb7c",
+  "legacy_protocol_sha256": "43531cb59f0dbcfd55ac2b3612c24e50f696f20b65f8dbe83ac349cf15b34ced",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

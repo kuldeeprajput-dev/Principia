@@ -1,0 +1,81 @@
+{
+  "version": "1.0",
+  "created_utc": "2026-10-02T03:54:36.807282+00:00",
+  "reviewer": "Local replay of archived independent audit procedure",
+  "implementation": "asd7_native_prefix.py",
+  "implementation_sha256": "f491a5b6f2777c7884b8af379bedf7bc6760df48ecb70da2adae836337ea85cb",
+  "tests": [
+    {
+      "scope": "One middle eligible forecast origin from every native recording/session with at least one eligible origin; all currently exposed partitions covered.",
+      "origins": 3,
+      "max_input_change": 0.0,
+      "targets_changed": 3,
+      "selected_origins": [
+        {
+          "sample_id": "speed0.5:block3020",
+          "group": "0.5",
+          "partition": "development",
+          "max_input_change": 0.0,
+          "target_change": 123.00000000000001
+        },
+        {
+          "sample_id": "speed0.75:block2770",
+          "group": "0.75",
+          "partition": "development",
+          "max_input_change": 0.0,
+          "target_change": 123.00000000000001
+        },
+        {
+          "sample_id": "speed1:block3100",
+          "group": "1",
+          "partition": "confirmation",
+          "max_input_change": 0.0,
+          "target_change": 123.00000000000011
+        }
+      ],
+      "passed": true,
+      "case_id": "P100-007",
+      "adapter": "native.py",
+      "adapter_sha256": "dc048238e29dc8a8c3348f6d658c1468a2b78ccd67af029b16a7fb53602d1408",
+      "source_manifest_sha256": "da4da77cba349ab20ca523c6249462796aa053e7f9562bbfe38a59dbfcd191af",
+      "task_sha256": "8ad71a06e02161990c6fc9fb768e52538422c536660c2c047d4e5bb1256c98a5",
+      "native_rows_original": 2958,
+      "native_rows_mutated": 2958,
+      "source_assets_without_eligible_origins": [],
+      "mutations": [
+        {
+          "asset": "07_neuroscience_physionet_gait_s1/raw/FP_Data/FP_S1_0.5.csv",
+          "first_mutated_zero_based_row": 30210,
+          "changed_rows": 25276,
+          "mutation": "Add123N to both force channels strictly after issuance; original prefix bytes unchanged."
+        },
+        {
+          "asset": "07_neuroscience_physionet_gait_s1/raw/FP_Data/FP_S1_0.75.csv",
+          "first_mutated_zero_based_row": 27710,
+          "changed_rows": 22824,
+          "mutation": "Add123N to both force channels strictly after issuance; original prefix bytes unchanged."
+        },
+        {
+          "asset": "07_neuroscience_physionet_gait_s1/raw/FP_Data/FP_S1_1.csv",
+          "first_mutated_zero_based_row": 31010,
+          "changed_rows": 26142,
+          "mutation": "Add123N to both force channels strictly after issuance; original prefix bytes unchanged."
+        }
+      ],
+      "original_assets_unchanged": true,
+      "fixture_source_hashes_recomputed": true,
+      "prediction_file_poisoning": false,
+      "implementation_sha256": "f491a5b6f2777c7884b8af379bedf7bc6760df48ecb70da2adae836337ea85cb"
+    }
+  ],
+  "failures": [],
+  "scope": "Native source future-mutation invariance, not prediction-file target poisoning. Adapters run unchanged against disposable source fixtures with recomputed fixture integrity manifests. No fits, selection, outcomes or original assets/packages are modified.",
+  "limitations": [
+    "Tests are finite adversarial probes, not a formal proof for every possible input.",
+    "Only already-released native products are tested; publisher full-session filtering, denoising and normalization can have used future data.",
+    "Finite additive/choice mutations preserve timing, dimensions, existing missingness and source quality flags; missingness/eligibility changes are outside this probe.",
+    "No physiological or causal mechanism is established by prefix invariance.",
+    "For cases7/9/80/99 one midpoint origin per eligible native recording/session is tested; full temporal coverage is not claimed."
+  ],
+  "portable_launcher_sha256": "d67be211c452cc817f96ba0e9f4cbe4d5832b23789aabb02371a631042c11fea"
+}

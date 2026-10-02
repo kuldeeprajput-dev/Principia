@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-073",
+  "title": "Dataset for publication \"Impact of algae species from the Baltic Sea region on ruminal fermentation parameters and Methane Mitigation using an in vitro gas production system\"",
+  "default_task": "P100-073.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Author-converted later fermentation gas volume at native 12/24/36/48 hours",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 3,
+    "independent_unit_description": "complete DG4 incubation run within each trial; every flask and horizon stay together",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Trial/algae kinetic and empirical parameters come from development DG1\u20133; current flask gas at 4/8 h is declared early calibration available to all comparators.",
+  "baseline_strength": {
+    "registered_controls": 8,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "unsupported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Author-converted later fermentation gas volume at native 12/24/36/48 hours",
+    "prediction_time": "Only native 4/8-hour gas volumes and known trial/algae/horizon; no later volume, end-of-incubation digestibility or GasDM target-derived normalization.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-073.original.v1",
+    "P100-073.round2.v1"
+  ],
+  "finding_ids": [
+    "P100-073-SCI-01",
+    "P100-073-SCI-02",
+    "P100-073-SCI-03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-073/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-073.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Author-converted later fermentation gas volume at native 12/24/36/48 hours under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Only native 4/8-hour gas volumes and known trial/algae/horizon; no later volume, end-of-incubation digestibility or GasDM target-derived normalization.",
+    "calibration_requirement": "Trial/algae kinetic and empirical parameters come from development DG1\u20133; current flask gas at 4/8 h is declared early calibration available to all comparators.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Author-converted later fermentation gas volume at native 12/24/36/48 hours in mL",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "rmse",
+    "primary_units": "mL",
+    "reference_model": "curvature_saturation",
+    "reference_primary_error": 7.501454066258877,
+    "reference_physical_mae": 6.127632622640128,
+    "physical_error_units": "mL",
+    "lowest_registered_error_model": "flexible_nested",
+    "lowest_registered_error": 7.242645604236535,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-073.original.v1/evidence/metrics.csv",
+      "bytes": 602,
+      "sha256": "68a56b6a7b0096d805b5c881d8f2897b750f525b59fac584f9e6835c11f5637c"
+    },
+    "models": 8
+  },
+  "case_specific_next_evidence": "Use fresh independent inoculum/run and diet conditions, with identical prefix calibration for flexible controls.\n\nAdd methane-specific and substrate-depletion measurements for any mitigation or kinetic-pool claim."
+}

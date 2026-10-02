@@ -1,0 +1,31 @@
+{
+  "title": "Retrospective US inflation adjustment: compact forecasting evidence and limits",
+  "summary": "A two-term partial-adjustment equation improves on persistence in development and confirmation, but does not beat the training-only constant in the reserved recent period. The portfolio supports an interpretable scoped forecasting relationship, not a new structural inflation law.",
+  "data": "Six US seasonally adjusted CPI/CES series from the preserved BLS bulk snapshot. Development uses1990\u20132022, with forward five-year validation blocks from2000; confirmation uses2023\u20132025September,33months in11quarters. Complete-calendar eligibility excludes later months after a missing2025October CPI observation. The source snapshot extends into2026 but those later dates are not silently imputed.",
+  "equations": "Let p1,p12 denote previous-month inflation and the trailing12-month mean, h,m previous housing and medical inflation. The selected equation is p_hat=p12+a(p1-p12)+b[(h+m)/2-p1], where a=0.6788581552753963, b=0.25333515480765123. Every term is in monthly log-change percentage points. This is a lagged adjustment representation; housing/medical averages are not an exact CPI decomposition.",
+  "performance": "Reference confirmation MAE0.108585percentagepoints versus persistence0.128994, annualmean0.116738, flexible0.113228 and constant0.105693. The constant is better, so universal predictive superiority is falsified. No post-confirmation reselection: attempt005/006 remain diagnostics despite some lower recent errors.",
+  "value": "Useful as a compact source-aware retrospective forecasting reference and a test of avoiding policy/causal overclaim. Revised seasonal factors and benchmarked employment make this unsuitable as a proven real-time trading or monetary-policy model.",
+  "lessons": "Calendar causality is necessary but does not remove revision/vintage leakage from historical economic statistics. Complete lag windows can truncate the eligible cohort long before the last source date. A mechanism-looking equation must beat constant and persistence controls; this case does not beat the constant in confirmation. Preserve asymmetry/robustness tradeoffs without choosing the test winner.",
+  "findings": [
+    {
+      "classification": "reproduction",
+      "admission": "partially_supported",
+      "claim": "Lagged partial adjustment provides an interpretable predictor better than persistence, with limited cross-period superiority.",
+      "equation": "p_hat=p12+a(p1-p12)+b[(h+m)/2-p1]",
+      "interpretation": "Partial persistence and sector-relative price adjustment are established forecasting motifs. The coefficient is phenomenological, not an identified causal relaxation constant.",
+      "falsification": "Confirmation constant MAE0.105693 beats reference0.108585; uncertainty is group descriptive, no independent-quarter confidence."
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Adding employment pressure, shock asymmetry, robust fitting or acceleration does not establish a new stable inflation mechanism.",
+      "equation": "See frozen attempts003\u2013006 and nested controls.",
+      "interpretation": "Employment improved a worst-quarter diagnostic while damaging mean transfer; asymmetry traded mean and worst-group performance.",
+      "falsification": "No causal intervention, revision-free vintages, or independent economic systems; no structural law or demonstrated financial value."
+    }
+  ],
+  "unresolved": [
+    "As-issued vintages and exact historical release timestamps unavailable in selected source assets.",
+    "One national economic system and only11reservedquarters."
+  ]
+}

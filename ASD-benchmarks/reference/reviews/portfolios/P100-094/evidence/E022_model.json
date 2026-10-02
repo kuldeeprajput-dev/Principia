@@ -1,0 +1,32 @@
+{
+  "case": 94,
+  "type": "linear",
+  "features": [
+    "one",
+    "S",
+    "T",
+    "surface"
+  ],
+  "offset": null,
+  "scale": null,
+  "alpha": 0,
+  "title": "Surface alteration plus mixing",
+  "hypothesis": "An exponential100dbar surface component tests whether near-surface processing adds to T/S mixing; no causal photobleaching attribution.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}, {\"attempt\": \"attempt-002\", \"group_MAE\": 0.08255974042557099, \"worst_group\": 0.10476368110522996}, {\"attempt\": \"attempt-003\", \"group_MAE\": 0.06690298751571931, \"worst_group\": 0.07937593872776462}, {\"attempt\": \"attempt-004\", \"group_MAE\": 0.08024904383542408, \"worst_group\": 0.10827806370530703}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: The temperature-salinity interaction degrades transfer while fixed salinity hinge helps. Test a distinct100dbar near-surface alteration term.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+  "training_groups": [
+    "station-02",
+    "station-06",
+    "station-08"
+  ],
+  "training_rows": 7386,
+  "training_ids_sha256": "325c3843c89a11da9410f6fa63447210b78791e6fdc77db616d72fd72f9d85d7",
+  "coef": [
+    0.6900464383471319,
+    -0.15399338196288465,
+    -0.14994330078968873,
+    -0.3516144133737042
+  ],
+  "rank": 4,
+  "condition_number": 12.475860069316557,
+  "complexity": 4
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "p100-round2-references-1",
+  "case_id": 100,
+  "task_id": "P100-100.round2.v1",
+  "default_reference": "current/cycle-001",
+  "default_meaning": "Original preregistered round2 candidate; no scientific admission or winner selection is implied. Every comparator remains separately executable.",
+  "models": {
+    "previous/baseline-lag2": {
+      "state_file": "states/previous_baseline-lag2.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 2.422715003285162,
+      "rows": 5965,
+      "groups": 6,
+      "metric_unit": "ms"
+    },
+    "previous/baseline-flex": {
+      "state_file": "states/previous_baseline-flex.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 2.4271644609135907,
+      "rows": 5965,
+      "groups": 6,
+      "metric_unit": "ms"
+    },
+    "previous/cycle-002": {
+      "state_file": "states/previous_cycle-002.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 2.477139107289909,
+      "rows": 5965,
+      "groups": 6,
+      "metric_unit": "ms"
+    },
+    "current/cycle-001": {
+      "state_file": "states/current_cycle-001.json",
+      "engine": "current",
+      "reference_primary_error": 2.691667041274864,
+      "rows": 5965,
+      "groups": 6,
+      "metric_unit": "ms"
+    },
+    "previous/baseline-old": {
+      "state_file": "states/previous_baseline-old.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 2.977313268849237,
+      "rows": 5965,
+      "groups": 6,
+      "metric_unit": "ms"
+    },
+    "previous/cycle-001": {
+      "state_file": "states/previous_cycle-001.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 3.000304797482187,
+      "rows": 5965,
+      "groups": 6,
+      "metric_unit": "ms"
+    },
+    "current/baseline-hgb": {
+      "state_file": "states/current_baseline-hgb.json",
+      "engine": "current",
+      "reference_primary_error": 3.0174312941305854,
+      "rows": 5965,
+      "groups": 6,
+      "metric_unit": "ms"
+    },
+    "previous/baseline-rolling": {
+      "state_file": "states/previous_baseline-rolling.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 10.107342397172555,
+      "rows": 5965,
+      "groups": 6,
+      "metric_unit": "ms"
+    },
+    "previous/baseline-last": {
+      "state_file": "states/previous_baseline-last.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 16.4958939695053,
+      "rows": 5965,
+      "groups": 6,
+      "metric_unit": "ms"
+    }
+  },
+  "additional_inputs_for_historical_comparators": [],
+  "current_outcome_exposure": "exposed"
+}

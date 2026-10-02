@@ -1,0 +1,158 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-095.original.v1",
+  "case_id": "P100-095",
+  "case_number": 95,
+  "family": "original",
+  "protocol_version": "P100-095-asd6-native-v1",
+  "cohort_id": "P100-095.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-095.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/95_atmosphere_mountain_weather",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Next half-hour author-derived turbulent kinetic energy",
+  "target_units": "m2/s2",
+  "error_units": "m2/s2",
+  "primary_units": "m2/s2",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "energy",
+    "wind",
+    "vertical",
+    "temperature",
+    "gradient",
+    "sin_direction",
+    "cos_direction"
+  ],
+  "input_units": {
+    "energy": "m2/s2",
+    "wind": "m/s",
+    "vertical": "m/s",
+    "temperature": "degC",
+    "gradient": "K/m",
+    "sin_direction": "unitless",
+    "cos_direction": "unitless"
+  },
+  "numeric_columns": [
+    "energy",
+    "wind",
+    "vertical",
+    "temperature",
+    "gradient",
+    "sin_direction",
+    "cos_direction"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict next30-min author-derived TKE from completed previous30-min TKE, mean velocity and two-height temperature gradient. No contemporaneous target variance/covariance inputs. Both intervals RawAnyS2/H2 flags0; predictor MetT0.",
+  "calibration": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "independent_unit": "Whole ISO weeks. Forward folds week4, weeks7\u20138, weeks9\u201310 with all earlier weeks training. March15 onward weeks11\u201313 confirmation. One mountain station during one winter.",
+  "evaluation_groups": [
+    "week-11",
+    "week-12",
+    "week-13"
+  ],
+  "assigned_rows": 266,
+  "eligible_rows": 266,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "flexible",
+    "persistence",
+    "shear_energy",
+    "attempt-001",
+    "attempt-002",
+    "attempt-003",
+    "attempt-004",
+    "attempt-005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "max(0, y_hat = E + 1 * (0.00012584076530486861*U3 + -0.060843831521455734*E32))",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "max(0, y_hat = 0 + 1 * (1.6023312613659575*one))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "max(0, offset + scale*(coef[0] + sum_j coef[j+1]*exp(-||standardized_inputs-center[j]||^2/(2*width^2))); frozen arrays in this state)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persistence": {
+      "equation": "y_hat = E",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "shear_energy": {
+      "equation": "max(0, y_hat = 0 + 1 * (0.020727592946204486*U2))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-001": {
+      "equation": "max(0, y_hat = 0 + 1 * (0.82259470523349987*E + 0.0030684220658492973*U2))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-002": {
+      "equation": "max(0, y_hat = E + 1 * (0.00012584076530486861*U3 + -0.060843831521455734*E32))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-003": {
+      "equation": "max(0, y_hat = 0 + 1 * (0.88578859153710199*E + 0.0029414376692816443*U2 + -0.54189539491855709*EG))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-004": {
+      "equation": "max(0, y_hat = 0 + 1 * (0.82156550706218057*E + 0.002679415545807052*U2 + 0.00045071206964501982*direction + 0.00048947780549781796*cross))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-005": {
+      "equation": "max(0, y_hat = 0 + 1 * (0.82261745944658549*E + 0.0030689648338759093*suppressed + 0.64023968340539827*unstable))",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference."
+  },
+  "scope_limits": "MeanTKE2 is author-derived from turbulent measurements; mean wind/thermal gradients are observational predictors, not mechanical interventions. Flag0 subset can select calmer/instrument-quality regimes; no universal turbulence closure.",
+  "source_url": "https://zenodo.org/records/18670232",
+  "source_license": "CC-BY-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"First January1 source row and input-height/flag metadata inspected. No March15+ TKE values/scores printed. All public source-aware; confirmation after final freeze will become exposed.\", \"current\": \"exposed\", \"confirmation_history\": \"Scores hidden until candidate selection, stopping and code/state freeze\", \"fresh_for_future_users\": false}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "2aadfbd33239a3c31d4f66d9f464297202129733508f6a59dbafd1b50728158d",
+  "observations_sha256": "73cc3d49538552e9ac05864dd54c6b6d0355012457fe566e7995e69aff007639",
+  "legacy_protocol_sha256": "897a23b0db3fd8a2ae7faa69834bc6c666de8479ea29df94f1a92a4ec87c7e23",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

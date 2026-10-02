@@ -1,0 +1,180 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-025.original.v1",
+  "case_id": "P100-025",
+  "case_number": 25,
+  "family": "original",
+  "protocol_version": "P100-025-asd7-native-v1",
+  "cohort_id": "P100-025.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-025.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/25_electrochemistry_operando_xas",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "raw measured FeK-edge \u03bc(E)",
+  "target_units": "dimensionless \u03bc(E)",
+  "error_units": "dimensionless \u03bc(E)",
+  "primary_units": "dimensionless \u03bc(E)",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "pre",
+    "jump",
+    "rL",
+    "rF",
+    "dL",
+    "d2L",
+    "f",
+    "discharge",
+    "rest",
+    "e"
+  ],
+  "input_units": {
+    "pre": "raw\u03bc(E),dimensionless",
+    "jump": "raw\u03bc(E),dimensionless",
+    "rL": "normalizedmeasuredLiFePO4reference",
+    "rF": "normalizedmeasuredFePO4reference",
+    "dL": "eV\u207b\u00b9",
+    "d2L": "eV\u207b\u00b2",
+    "f": "dimensionlessnominalprotocolprogress",
+    "discharge": "binarydischarge/rest2branch",
+    "rest": "binaryrestsegment",
+    "e": "eVrelative7112"
+  },
+  "numeric_columns": [
+    "pre",
+    "jump",
+    "rL",
+    "rF",
+    "dL",
+    "d2L",
+    "f",
+    "discharge",
+    "rest",
+    "e"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Retrospective spectral-shape reconstruction after pre/post-edge calibration bands and experimental segment durations are known. This is not an online state-of-charge forecast.",
+  "calibration": "Each spectrum contributes only7000\u20137050eV and7250\u20137300eV bandmeans. SuppliedmeasuredFePO4/LiFePO4references are normalized identically. Targetband7070\u20137200eV is withheld.",
+  "independent_unit": "Complete three-acquisitionblock linked to the source3\u00d7binnedrepresentation; oneLFPcycleonly. Fivecontiguouschronologicaldevelopmentfolds holdout wholeblocks, withfuturedevelopmentsegments allowed for thisretrospectivecompressiontask.",
+  "evaluation_groups": [
+    "triplet-08",
+    "triplet-10",
+    "triplet-21",
+    "triplet-22",
+    "triplet-28",
+    "triplet-29",
+    "triplet-32",
+    "triplet-39",
+    "triplet-44",
+    "triplet-46",
+    "triplet-48",
+    "triplet-49",
+    "triplet-63"
+  ],
+  "assigned_rows": 1014,
+  "eligible_rows": 1014,
+  "baseline_models": [
+    "reference",
+    "equal_mixture",
+    "flexible",
+    "lfp_reference",
+    "protocol_two_phase",
+    "continuous_edge_shift",
+    "partial_transformation",
+    "intermediate_spectral_component",
+    "branch_hysteresis"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "equal_mixture": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "lfp_reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "protocol_two_phase": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "continuous_edge_shift": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "partial_transformation": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "intermediate_spectral_component": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "branch_hysteresis": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Reportwholetripletblock errors; dependentblocksfromonecycle do not yieldindependent-cellconfidence."
+  },
+  "scope_limits": "Nominalprogress is normalizedreportedsegmenttime, not measuredstateofcharge or an identifiedphasefraction.; Author3\u00d7binned spectra are excluded as duplicateobservations; onlyunbinnedcolumns are targets.; Onecell/onecycle; cross-blockcalibration successdoesnotestablishnewbatterychemistry orindustrialcycletransfer.",
+  "source_url": "https://zenodo.org/records/14922524",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Onlyfarpreedgeinitialrows near6404eV were inspected forschema. Targetband7070\u20137200eV reservedvalues were unseen beforefreeze.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "746fb63be183268b71b3d539661f06660bfb7d220aa4b13dce70c8053a45e0de",
+  "observations_sha256": "7be04f9f092c207b055c169f222dcddaf37ae80b7696064ccdf4029c0ba0d419",
+  "legacy_protocol_sha256": "06fda47ac070af7c385d475b74b78acf10a04df03c3ca9ed72921e5bd1557794",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "pre",
+    "jump",
+    "rL",
+    "rF",
+    "dL",
+    "d2L"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

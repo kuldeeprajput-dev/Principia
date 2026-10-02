@@ -1,0 +1,38 @@
+{
+  "case_id": "P100-021",
+  "protocol_version": "1.0.0",
+  "created_utc": "2026-10-01T14:02:37.526529+00:00",
+  "target": "effective high-current differential resistance of recorded voltage/current channels",
+  "units": "ohm",
+  "inputs": [
+    "width_um",
+    "wafer_b",
+    "outer"
+  ],
+  "input_units": {
+    "width_um": "um",
+    "wafer_b": "dimensionless indicator",
+    "outer": "dimensionless indicator"
+  },
+  "group": "complete wafer die: all junction widths and paired traces",
+  "timing": "design prediction before electrical measurement; wafer and inner/outer region known",
+  "calibration": "No per-device response calibration. Current conversion V_gen/100 ohm is source-provided. Native response gain is not documented; endpoint is recorded-channel differential resistance, not intrinsic junction resistance.",
+  "scope": "19 dies on two wafers. Unknown acquisition gain/offset, nominal rather than measured area. Tail fits operationally define a response and may include defective junctions; all unambiguous devices retained.",
+  "baseline": [
+    "group-balanced constant",
+    "inverse nominal area",
+    "constrained quadratic in inverse width"
+  ],
+  "metric": "mean over independent groups of mean absolute target error; every eligible row in a group equally weighted",
+  "validation": "leave-one-development-group-out; all rows, sibling widths/runs and calibration linked; confirmation held separately",
+  "confirmation": "SPLITS.json hash allocation before target analysis; no confirmation summaries accessed",
+  "schema_exposure": "Source CSV headers and first data row per asset inspected; case21 die1A13 waveforms inspected and forced development. Development-only descriptive targets inspected. Public paper prior analyses already source-aware. This is internal withheld-group confirmation, not new experiment.",
+  "selection": "minimize development group-balanced MAE among attempts; if within1% choose fewer coefficients; baselines compete and remain eligible as reference. No confirmation selection.",
+  "stopping": "At least5 substantive attempts, then stop after two consecutive candidates do not improve development prediction by1%, worst-group error, or supported simplification/interpretation; max9 attempts before explicit unresolved hypothesis report.",
+  "uncertainty": "Individual group errors; empirical group range, no row bootstrap or population CI.",
+  "source_manifest_sha256": "69d51620bb42631d6cb6c35523ef6626ee77130ad6e7479af2074cb257bc4694",
+  "splits_sha256": "115e175516cfb1626addc2e85ccdeda7d71521fbe5d90b2f3df6f0f563df79be",
+  "native_parser_sha256": "f175e44415f218d9b6b772dd6108520525d81b4227cdedbeb2b9b86409eeb197",
+  "target_safety": "Native prepare can construct all records for deterministic integrity, but develop loads development.csv.gz only; confirm separately gated by FREEZE.json.",
+  "thresholds": "No industrial acceptance threshold invented; predictive errors are diagnostic."
+}

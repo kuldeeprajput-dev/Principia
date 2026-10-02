@@ -1,0 +1,54 @@
+{
+  "target": "Household sometimes/often lacked enough food during prior7days",
+  "target_units": "binary FD_SUFF in3,4",
+  "error_units": "squared probability (Brier)",
+  "metric_kind": "brier",
+  "permitted_inputs": [
+    "income_proxy",
+    "household_size",
+    "shock",
+    "age"
+  ],
+  "input_units": {
+    "income_proxy": "thousands USD/year, bracket proxy not observed amount",
+    "household_size": "persons, source topcoded7",
+    "shock": "household lost employment income past4weeks binary",
+    "age": "respondent years"
+  },
+  "timing_contract": "Contemporaneous survey association; income-loss and food sufficiency recall windows overlap. No causal income effect or individual longitudinal forecast.",
+  "calibration": "March2026 survey only; complete-region cross-validation; May2026 transfer without outcome calibration.",
+  "independent_unit": "Household/respondent nested in Census region and wave; no linked March/May SCRAMIDs in released files. Four geographic aggregates are not independent populations.",
+  "scope_limits": "Responding complete-case households; region-balanced HWEIGHT risk, not a national prevalence estimate. Bracket midpoints including175k open upper bracket are declared proxies; source topcodes preserved; missing/negative codes and nonpositive weights excluded, no imputation.",
+  "applicability": {
+    "probabilities": [
+      0,
+      1
+    ],
+    "weight": "HWEIGHT"
+  },
+  "case_id": "P100-014",
+  "source_url": "https://www.census.gov/programs-surveys/household-pulse-survey/data/datasets.html",
+  "source_license": "U.S. Census Bureau public-use data",
+  "numeric_columns": [
+    "income_proxy",
+    "household_size",
+    "shock",
+    "age"
+  ],
+  "exposure": {
+    "schema": "Schema and source codebook aggregate tabulations inspected; no reserved respondent target or confirmation metric inspected. Source-aware public survey.",
+    "current": "exposed",
+    "fresh_for_future_users": false,
+    "confirmation_freeze_sha256": "ed4d9ccb17eaba20371ec93679fcbaed064ff55676fe84f5510c48b616a70a74",
+    "original_validation": "Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed."
+  },
+  "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error",
+    "within_group_weight": "sample_weight"
+  },
+  "task_id": "P100-014.original.v1"
+}

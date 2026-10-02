@@ -1,0 +1,240 @@
+{
+  "case_id": "P100-002",
+  "role": "computational",
+  "reviewer_id": "/root/asd5_electronics",
+  "review_date": "2026-10-02",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "ce35deaefabba782e18b3dcdfe0a310f959057e4cd9b6f5c3576e40464c6a920"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "73b5eb47cdee6bcf6a9c4c9ca60f39ff825268f39c288006b65e33ce61a4c2d4"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "f6571b124604ec8ca8d2d0ace3ddef9aa69e5c0c4794d8206bf1ad9f78afc17d"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "a037b4652a030f06b92233c81af1693a15014cead0fbd55cc3ca5d1de82735d8"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "cc4fed5d6fe52b864dac7fca80ebade65911e6a3a946d76c351a2d76ff00d7ba"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "ef168de18dec31432d8faaaab8ef028b14dadec837447867d29d3f48fa9bdbc6"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "7be00214b1bf7c1584abdadb42ea7ef84afb94b7b034f184f4af9aa040bd3541"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "3156f8ecac3655615f1d07d850b41667541982b5fd6dc81fe14cee2f41d5ee87"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "6317d3b655354506bd28efe93145c2977702a8af770eb194004089933ea56cef"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "0e5fafa6dce2e543f43842c244f8dcb438fc57105c6e9f519ac8f0a152c32247"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "1ad9885934ab45279cda79163c68e618b920b6eebdd5b70b85a0926def1f0ee4"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "77fe20cc6c7658301f4fa001df2ead1ff7d567179247635d1466a939765656f1"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "72e943563b8845cff7231e9fefa00c5a79b8e488ec519fc6cf7026554ac2f302"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-002-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Hash-verified native reconstruction, disjoint groups and every frozen-model prediction/metric reproduce. Scientific admission remains supported."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational replay does not independently establish scientific mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty certification by computational audit."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Scientific review separately assesses usefulness."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Independent grouped-MAE calculation and independent selected-equation implementation agree; direct CLI and missing-manifest/checksum negatives pass."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed effect evaluated."
+        }
+      },
+      "checks": [
+        "Reconstructed native targets/identities and every permitted predictor from hash-verified source assets.",
+        "Verified linked groups do not cross development/confirmation; no held groups in fitted model training metadata.",
+        "Independently implemented selected formula and independently recomputed mean within-group absolute error for every saved model.",
+        "Executed standalone replay and disposable missing-manifest/checksum-mismatch failure tests."
+      ],
+      "limitations": [
+        "Case2 target-time delta_h excluded from current permitted input table; old audit metadata and frozen history preserved."
+      ]
+    },
+    {
+      "finding_id": "P100-002-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Hash-verified native reconstruction, disjoint groups and every frozen-model prediction/metric reproduce. Scientific admission remains supported."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational replay does not independently establish scientific mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty certification by computational audit."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Scientific review separately assesses usefulness."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Independent grouped-MAE calculation and independent selected-equation implementation agree; direct CLI and missing-manifest/checksum negatives pass."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed effect evaluated."
+        }
+      },
+      "checks": [
+        "Reconstructed native targets/identities and every permitted predictor from hash-verified source assets.",
+        "Verified linked groups do not cross development/confirmation; no held groups in fitted model training metadata.",
+        "Independently implemented selected formula and independently recomputed mean within-group absolute error for every saved model.",
+        "Executed standalone replay and disposable missing-manifest/checksum-mismatch failure tests."
+      ],
+      "limitations": [
+        "Case2 target-time delta_h excluded from current permitted input table; old audit metadata and frozen history preserved."
+      ]
+    },
+    {
+      "finding_id": "P100-002-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Hash-verified native reconstruction, disjoint groups and every frozen-model prediction/metric reproduce. Scientific admission remains unsupported."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational replay does not independently establish scientific mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty certification by computational audit."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Scientific review separately assesses usefulness."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Independent grouped-MAE calculation and independent selected-equation implementation agree; direct CLI and missing-manifest/checksum negatives pass."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed effect evaluated."
+        }
+      },
+      "checks": [
+        "Reconstructed native targets/identities and every permitted predictor from hash-verified source assets.",
+        "Verified linked groups do not cross development/confirmation; no held groups in fitted model training metadata.",
+        "Independently implemented selected formula and independently recomputed mean within-group absolute error for every saved model.",
+        "Executed standalone replay and disposable missing-manifest/checksum-mismatch failure tests."
+      ],
+      "limitations": [
+        "Case2 target-time delta_h excluded from current permitted input table; old audit metadata and frozen history preserved."
+      ]
+    }
+  ],
+  "receipt": {
+    "case_id": "P100-002",
+    "native_rows": 3751,
+    "confirmation_rows": 981,
+    "confirmation_groups": 2,
+    "native_reconstruction": true,
+    "group_disjoint": true,
+    "permitted_inputs_exact": true,
+    "models": {
+      "persist": {
+        "independent_primary": 0.0010292390366080251,
+        "replay_max_abs": 1.1102230246251565e-16
+      },
+      "rbf": {
+        "independent_primary": 0.0009076032415888356,
+        "replay_max_abs": 4.440892098500626e-16
+      },
+      "attempt_001": {
+        "independent_primary": 0.0009112714080099941,
+        "replay_max_abs": 4.440892098500626e-16
+      },
+      "attempt_002": {
+        "independent_primary": 0.000851235221968887,
+        "replay_max_abs": 4.440892098500626e-16
+      },
+      "attempt_003": {
+        "independent_primary": 0.0008651911708958387,
+        "replay_max_abs": 4.440892098500626e-16
+      },
+      "attempt_004": {
+        "independent_primary": 0.000842398062562197,
+        "replay_max_abs": 4.440892098500626e-16
+      },
+      "attempt_005": {
+        "independent_primary": 0.000846032435853112,
+        "replay_max_abs": 4.440892098500626e-16
+      },
+      "reference": {
+        "independent_primary": 0.0008651911708958387,
+        "replay_max_abs": 4.440892098500626e-16
+      }
+    },
+    "manual_reference_max_abs": 4.440892098500626e-16,
+    "portable_cli": true,
+    "negative_tests": {
+      "missing_manifest": true,
+      "checksum_mismatch": true
+    },
+    "causality_code_review": "Only preceding native windows/prefixes enter permitted inputs; case2 delta_h remains audit metadata and is absent from package inputs. Case3 known injection is disclosed."
+  },
+  "review_scope": "Independent computational implementation/metric/source-reconstruction review, not independent experimental replication or scientific novelty adjudication.",
+  "independent_native_prefix_stress": {
+    "case_id": "P100-002",
+    "method": "Disposable native-file fixture changes only observations at/after a development target window; current permitted inputs must remain identical.",
+    "sample_id": "hlsp_tars_tess_ffi_s0096-0000000201249388_tess_v01_lc:h100",
+    "source_asset": "02_astronomy_mast_tars_sector96/raw/hlsp_tars_tess_ffi_s0096-0000000201249388_tess_v01_lc.fits",
+    "max_input_change": 0.0,
+    "target_change": 0.25,
+    "passed": true,
+    "source_original_sha256": "d38efec24e12d19dfe1a84ad6d4eec6763d9f4da20a6e2a94ca03e9553a0877b"
+  }
+}

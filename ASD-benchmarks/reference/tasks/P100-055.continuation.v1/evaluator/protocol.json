@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.1.0",
+  "case_id": "P100-055",
+  "protocol_id": "P100-055-AGING30-v1-CONT-20261001",
+  "target": "Individual penetration normal force at mixing age30min",
+  "target_units": "N",
+  "primary_units": "N",
+  "metric_kind": "mae",
+  "metric_definition": "Equal complete reserved-group mean MAE in physical units; RMSE square root is taken within group, before averaging groups.",
+  "independent_unit": "whole mixture, all aged traces; age0 calibration available",
+  "evaluation_groups": [
+    "0.5_0.30",
+    "0.7_0.30"
+  ],
+  "input_sha256": "0358a1ffd9544b2e12fc6b09339bf31a204440301fe43594d41b142883d22e67",
+  "input_rows": 2400,
+  "assigned_rows": 2400,
+  "permitted_inputs": [
+    "ratio",
+    "water",
+    "sp_fraction",
+    "vma_fraction",
+    "penetration_index",
+    "initial_force",
+    "initial_shape_change"
+  ],
+  "input_units": {
+    "ratio": "dimensionless author aggregate/binder mass ratio",
+    "water": "dimensionless author water/binder ratio",
+    "sp_fraction": "SP/binder mass ratio, dimensionless",
+    "vma_fraction": "VMA/binder mass ratio, dimensionless",
+    "penetration_index": "native index; sampling interval unresolved",
+    "initial_force": "N, measured age0 replicate mean at matching index",
+    "initial_shape_change": "N, age0 mean difference over50native indices"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "scientific_candidate",
+    "baseline_affine",
+    "baseline_gain",
+    "baseline_identity",
+    "baseline_kernel",
+    "baseline_mean",
+    "cycle_001_finite_buildup",
+    "cycle_002_packing_additives",
+    "cycle_003_shape_memory",
+    "cycle_004_water_rebuild",
+    "cycle_005_clock_build",
+    "cycle_006_shape_water",
+    "cycle_007_parsimonious_gain"
+  ],
+  "reference_equations": {
+    "reference": "F30 = max(0, sum_j beta_j phi_j)",
+    "scientific_candidate": "F30 = max(0, sum_j beta_j phi_j)",
+    "baseline_affine": "F30 = max(0, sum_j beta_j phi_j)",
+    "baseline_gain": "F30 = max(0, sum_j beta_j phi_j)",
+    "baseline_identity": "F30 = F0",
+    "baseline_kernel": "F30 = max(0, intercept + K beta)",
+    "baseline_mean": "F30 = max(0, sum_j beta_j phi_j)",
+    "cycle_001_finite_buildup": "F30 = max(0, sum_j beta_j phi_j)",
+    "cycle_002_packing_additives": "F30 = max(0, sum_j beta_j phi_j)",
+    "cycle_003_shape_memory": "F30 = max(0, sum_j beta_j phi_j)",
+    "cycle_004_water_rebuild": "F30 = max(0, sum_j beta_j phi_j)",
+    "cycle_005_clock_build": "F30 = max(0, sum_j beta_j phi_j)",
+    "cycle_006_shape_water": "F30 = max(0, sum_j beta_j phi_j)",
+    "cycle_007_parsimonious_gain": "F30 = max(0, sum_j beta_j phi_j)"
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "scope_limit": "Nine mixtures, two initial and two aged traces per mixture. Aged prediction is calibrated with the completed initial-force map. No intrinsic stress/rate or causal additive law identified.",
+  "calibration_note": "Complete age0 traces are permitted per-mixture calibration for every model. No age30 force is an input. SP/VMA fractions use final author-entered masses; intermediate label inconsistencies are retained in the audit.",
+  "timing_contract": "Completed age0 mean force curve and known formulation precede every age30 target. Native index is supplied; no future age30 target, stress fit or mislabeled mixture supplies predictors.",
+  "exposure_notice": "Every original source outcome is exposed. Development used seven fixed mixtures; diagnostic used the other two after selection freeze. Scores are retrospective. Revised calibration task differs from the old both-age uncalibrated task; do not compare their MAEs directly.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Completed age0 mean force curve and known formulation precede every age30 target. Native index is supplied; no future age30 target, stress fit or mislabeled mixture supplies predictors."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check force units and calibration, unresolved probe geometry/index spacing, additive confounding and complete-recipe source anchors. Complete age0 traces are permitted per-mixture calibration for every model. No age30 force is an input. SP/VMA fractions use final author-entered masses; intermediate label inconsistencies are retained in the audit."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-071.round2.v1.raw-access.v1",
+  "parent_task_id": "P100-071.round2.v1",
+  "case_id": "P100-071",
+  "protocol_version": "P100-071.round2.v1.raw-access.v1",
+  "cohort_id": "P100-071.round2.v1.development-oof",
+  "parent_task_sha256": "888f4b197e42e5f241f187536021a4bb359d9914ee3935a2d6a4e7d4e1f97f20",
+  "input_sha256": "17041850c306c916f1aec2308426c23f0455b2c4fcf63a6d7bfe57e8b4709959",
+  "observations_sha256": "6ee21d16e4af5a2dcb4c378278463725177e7eaa0bf064d31da1ba2d586af60a",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "71_biotechnology_cho_cultivations",
+  "source_assets": [
+    {
+      "path": "raw/Dataset.zip",
+      "bytes": 227627771,
+      "sha256": "46a6b92b77883d56df3be015895d93c85b2b2547121af0b8bc0a92f3fbefd17b"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "perm": "pF/cm",
+      "permittivity_decline": "pF/cm",
+      "perm_decline_fraction": "dimensionless",
+      "perm_peak_past": "pF/cm",
+      "deltaeps": "pF/cm",
+      "fc": "kHz",
+      "conductivity": "mS/cm",
+      "cole_r2": "dimensionless",
+      "od": "dimensionless source optical-density transform",
+      "transmission": "source arbitrary units",
+      "reflection": "source arbitrary units",
+      "time_h": "h",
+      "fed_batch": "binary indicator",
+      "dperm24": "(pF/cm)/h",
+      "dod24": "1/h"
+    },
+    "observation_window": "Sensor median in [t\u22120.5h,t], fallback latest valid <=2h old; quality Ok and Cole R\u00b2>=0.9 where applicable. Lags and peaks use only the past. Do not use aligned duplicate tables as independent evidence. Expanded information budget: perm, permittivity_decline, perm_decline_fraction, perm_peak_past, deltaeps, fc, conductivity, cole_r2, od, transmission, reflection, time_h, fed_batch, dperm24, dod24",
+    "calibration_and_history": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Training-only imputation, scale and missingness transforms; causal native sensors with quality flags. Offline VCD and its SEM are responses, never online predictors.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

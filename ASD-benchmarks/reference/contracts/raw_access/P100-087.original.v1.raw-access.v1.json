@@ -1,0 +1,73 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-087.original.v1.raw-access.v1",
+  "parent_task_id": "P100-087.original.v1",
+  "case_id": "P100-087",
+  "protocol_version": "P100-087.original.v1.raw-access.v1",
+  "cohort_id": "P100-087.original.v1.cohort-1",
+  "parent_task_sha256": "1400e746a6f410340f91c4bcea02749a342329053558648dd84ba8ba6a6b37b4",
+  "input_sha256": "7c8e72246631fe1e3ef9a8045164b4fb1bc59d2845f8e5a13d427804f6165fc4",
+  "observations_sha256": "c436b13e160412aa559093144e4bee75d22ca83502717793d6b4d25f62d60369",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "87_economics_public_goods",
+  "source_assets": [
+    {
+      "path": "raw/ThresholdPGG_ExperimentalData.xlsx",
+      "bytes": 217396,
+      "sha256": "825b1cd3226aeca7a19d76d9594f655114b12059648f9ca03b3291c3cf9ab200"
+    },
+    {
+      "path": "context/source_record.json",
+      "bytes": 31002,
+      "sha256": "283f0dca9dd760c1ea8e6cedfd2310f1b8e68652ca4541db2b6344e86113cd73"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "round": "round",
+      "own_previous": "experimental tokens",
+      "peer_previous": "experimental tokens",
+      "own_lag2": "experimental tokens",
+      "peer_lag2": "experimental tokens",
+      "own_history_mean": "experimental tokens",
+      "peer_history_mean": "experimental tokens",
+      "endowment": "experimental tokens",
+      "peer_endowment": "experimental tokens",
+      "productivity": "dimensionless",
+      "peer_productivity": "dimensionless",
+      "threshold": "productivity-weighted tokens",
+      "previous_success": "indicator",
+      "required_contribution": "experimental tokens"
+    },
+    "observation_window": "One-step prediction before round3..20 using strictly prior own/peer contributions and publicly announced rules. Earlier confirmation responses are permitted causal online history, never fitted parameters. Surveys and session2 excluded.",
+    "calibration_and_history": "One-step prediction before round3..20 using strictly prior own/peer contributions and publicly announced rules. Earlier confirmation responses are permitted causal online history, never fitted parameters. Surveys and session2 excluded.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

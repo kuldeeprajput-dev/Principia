@@ -1,0 +1,48 @@
+[
+  {
+    "classification": "validated_extension",
+    "admission": "partially_supported",
+    "claim": "Piecewise resource and age/work associations yield a compact regional-transfer predictor of the reported inability-to-pay response.",
+    "equation": "p=logistic(a+bL(3-R)_+ +bH(R-3)_+ +cS+dA+eA\u00b2)",
+    "interpretation": "A saturation-shaped resource association is consistent with heterogeneous liquidity constraints, but proxies/topcodes and overlapping self-reports preclude identifying a physical/economic threshold.",
+    "falsification": "Very small margin over flexible comparator; source-aware cross-section and onlytenheldstates; endpoint is hypothetical response, not observed emergency outcome.",
+    "finding_id": "P100-015-F01",
+    "task_id": "P100-015.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+        "checked": "2026-10-02",
+        "known": "Official SHED public data/codebook; emergency expense resilience is a published descriptive endpoint. Resource equivalence and age/life-cycle associations are prior model families, not established causal mechanisms in this snapshot."
+      }
+    ],
+    "scope": "Positive-weight complete cases, state-balanced within-state survey-weighted predictive risk; not national prevalence or causal financial access. Income proxy upper bracket175k is a modeling convention. D1A0 reflects no paid work, not unemployment or a job-loss shock."
+  },
+  {
+    "classification": "informative_falsification",
+    "admission": "supported",
+    "claim": "Removing work status or freeing household equivalence scaling did not improve the development-selected threshold model.",
+    "equation": "Attempt005 removesS;006 replaces resource hinge with independent logI/logH coefficients.",
+    "interpretation": "Independent predictive contribution does not establish causal unemployment risk; S includes retirement and voluntary nonparticipation.",
+    "falsification": "Attempt005 is retrospectivelybetteronconfirmationmean; it was not promoted or retuned, showing model-selection uncertainty.",
+    "finding_id": "P100-015-F02",
+    "task_id": "P100-015.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+        "checked": "2026-10-02",
+        "known": "Official SHED public data/codebook; emergency expense resilience is a published descriptive endpoint. Resource equivalence and age/life-cycle associations are prior model families, not established causal mechanisms in this snapshot."
+      }
+    ],
+    "scope": "Positive-weight complete cases, state-balanced within-state survey-weighted predictive risk; not national prevalence or causal financial access. Income proxy upper bracket175k is a modeling convention. D1A0 reflects no paid work, not unemployment or a job-loss shock."
+  }
+]

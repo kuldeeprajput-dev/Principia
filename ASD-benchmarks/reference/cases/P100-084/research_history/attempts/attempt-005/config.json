@@ -1,0 +1,32 @@
+{
+  "name": "hysteretic_detachment",
+  "formula": "base+amp*maximum(x,0)**1.5-A*amp*0.5*(1+tanh((x-xoff)/width))*(1-minimum(maximum(x,0),1))",
+  "hypothesis": "Development evidence available before this fit: shifted_contact_pull_off: MAE 1.81803, worst group 6.39742; rough_asperity_exponent: MAE 1.64024, worst group 6.5072.\n\nTest persistent adhesive contact followed by a finite detachment threshold. This asymmetric hysteresis mechanism contrasts with a symmetric attractive well; the smooth switch approximates heterogeneous pull-off rather than claiming an exactDMTlaw.",
+  "inputs": [
+    "x",
+    "base",
+    "amp",
+    "progress"
+  ],
+  "initial": {
+    "A": 0.2,
+    "xoff": -0.1,
+    "width": 0.05
+  },
+  "bounds": {
+    "A": [
+      0,
+      2
+    ],
+    "xoff": [
+      -1,
+      0.5
+    ],
+    "width": [
+      0.005,
+      0.5
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:13:55.629010+00:00",
+  "parent": "attempt-004"
+}

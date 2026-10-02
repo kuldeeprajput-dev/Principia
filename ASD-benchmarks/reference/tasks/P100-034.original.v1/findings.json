@@ -1,0 +1,61 @@
+{
+  "case_id": "P100-034",
+  "findings": [
+    {
+      "finding_id": "P100-034-F01",
+      "classification": "validated_extension",
+      "admission": "supported",
+      "claim": "A finite recruitable response gives a compact alternative to normalizing the entire dose curve by one low-dose value. The earlier calibration can carry information about the later response ceiling. The effective ceiling is measured in current; it is not a counted vesicle pool.",
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-I(.75),0)*(Ca-.75)/(K+Ca-.75); exact unit depletion coefficient.",
+      "model_id": "reference",
+      "task_id": "P100-034.original.v1",
+      "evidence": {
+        "development_primary_error": 13.653319600314854,
+        "confirmation_primary_error": 17.13917086714984,
+        "confirmation_groups": 6,
+        "confirmation_rows": 18,
+        "unit": "nA",
+        "metrics": "evidence/metrics.csv",
+        "group_metrics": "evidence/by_group.csv",
+        "predictions": "evidence/predictions.csv.gz",
+        "state": "rules.json"
+      },
+      "falsification": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "known_prior_art": "Blaum et al., PNAS2025, already report genotype-related calcium sensitivity and short-term depression. Hill dose-response families, saturation and depletion are established. The candidate here is a calibrated predictive extension within these data, not a newly established molecular release mechanism.",
+      "scope": "Six reserved animals provide internal experimental-group evidence. Calcium is increased sequentially, so dose and recording time are confounded. Currents also depend on postsynaptic responsiveness and recording stability. The negative early-calibration coefficient is predictive, not a demonstrated causal depletion effect."
+    },
+    {
+      "finding_id": "P100-034-F02",
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Local Hill inversion is unstable; common Hill occupancy and two-pool mixtures transfer poorly. Genotype-specific capacity or recruitment rates can add complexity without improving transfer after calibration. Specific comparisons remain in the attempt history.",
+      "equation": null,
+      "evidence": {
+        "attempts": 10,
+        "best_attempt_development_error": 13.653319600314854,
+        "development_selected_error": 13.653319600314854,
+        "development_diagnostics": "research_history/DEVELOPMENT_DIAGNOSTICS.json"
+      },
+      "known_prior_art": "Blaum et al., PNAS2025, already report genotype-related calcium sensitivity and short-term depression. Hill dose-response families, saturation and depletion are established. The candidate here is a calibrated predictive extension within these data, not a newly established molecular release mechanism.",
+      "falsification": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "scope": "Six reserved animals provide internal experimental-group evidence. Calcium is increased sequentially, so dose and recording time are confounded. Currents also depend on postsynaptic responsiveness and recording stability. The negative early-calibration coefficient is predictive, not a demonstrated causal depletion effect.",
+      "underlying_proposal_disposition": "Several proposed mechanisms are unsupported; this negative finding and the tested models have distinct dispositions."
+    },
+    {
+      "finding_id": "P100-034-F03",
+      "classification": "validated_extension",
+      "admission": "partially_supported",
+      "claim": "Low-dose calibration enables a compact finite-response-reserve description; genotype-specific terms must justify improvement beyond those measurements.",
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-I(.75),0)*(Ca-.75)/(K+Ca-.75); exact unit depletion coefficient.",
+      "evidence": {
+        "attempts": "attempts004\u2013010",
+        "selected_model": "attempt_008_reserve_conserved"
+      },
+      "known_prior_art": "Blaum et al., PNAS2025, already report genotype-related calcium sensitivity and short-term depression. Hill dose-response families, saturation and depletion are established. The candidate here is a calibrated predictive extension within these data, not a newly established molecular release mechanism.",
+      "falsification": "Requires paired evidence against both earlier-calibration ablation and genotype-rate expansion; source dose order remains confounded with time.",
+      "scope": "Six reserved animals provide internal experimental-group evidence. Calcium is increased sequentially, so dose and recording time are confounded. Currents also depend on postsynaptic responsiveness and recording stability. The negative early-calibration coefficient is predictive, not a demonstrated causal depletion effect."
+    }
+  ],
+  "reference_disposition": "Frozen development-selected reference; candidate laws and negative findings require separate scientific review.",
+  "review_pending": "Independent computational and scientific-critical review by different agents"
+}

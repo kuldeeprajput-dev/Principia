@@ -1,0 +1,284 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-017",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "{\"schema\": \"Native schema inspected and source-public aggregate descriptions known; case10 status counts were inspected, not new endpoint NVD-score presence scores. No reserved individual target metric printed.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"ae5e44fe3e2c88acc9cf17c4027081bd4f1847a2d5d5b83aad9727b9fcb43811\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}"
+  },
+  "findings": [
+    {
+      "id": "P100-017-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "Reporting-regime and geometry covariates provide a compact predictor of author-supplied positive depth uncertainty in this source snapshot.",
+      "applicability": "One July2026 catalog snapshot. Positive uncertainty reports only; mixed network estimation conventions, no universal standard-error confidence interpretation. Counts/geometry are outputs of location processing and causality is not identified.",
+      "limitations": "Worstcluster doesnot uniformly improve; cross-network uncertainty conventions, fixed-depth reporting and no independent truth limit mechanism claims. Matched robust controls were added onlyafter firstconfirmation.",
+      "falsification": "Worstcluster doesnot uniformly improve; cross-network uncertainty conventions, fixed-depth reporting and no independent truth limit mechanism claims. Matched robust controls were added onlyafter firstconfirmation.",
+      "prior_art": "[{\"url\": \"https://earthquake.usgs.gov/data/comcat/index.php\", \"checked\": \"2026-10-02\", \"known\": \"Location quality and uncertainty definitions depend on contributing networks; not independent error truth.\"}, {\"url\": \"https://www.usgs.gov/faqs/what-does-it-mean-earthquake-occurred-a-depth-0-km-how-can-earthquake-have-a-negative-depth\", \"checked\": \"2026-10-02\", \"known\": \"Depth is often least-constrained, reference frames differ and fixed/negative depths occur.\"}, {\"url\": \"https://pubs.usgs.gov/of/1993/0309/of93-309_v1.1.pdf\", \"checked\": \"2026-10-02\", \"known\": \"Known importance of nearest-station distance relative to depth, phase counts and velocity model; inverse-information and geometry hypotheses are prior-inspired.\"}]",
+      "equation_or_program": {
+        "expression": "sigma_hat=exp(a+bR ln(RMS)+bN ln(Nphase)+cG G+cA A+cD ln(1+|depth|)+c10 I(depth=10)+cS I(depth<5)), with G=0.5ln[1+(dmin/(1+|depth|))\u00b2] and A=-ln(max(1-gap/360,0.02)). Numerical inputs use seconds,km andcounts as declared fixed reference units. Coefficients inthat order=[0.5059683260395523, 0.38408763491978104, -0.1245459549330374, 0.08698001732673424, 0.3868077313593952, 0.36476450158184914, -0.6216509362540282, 0.08021397958958204]. This is phenomenological regression with dimensionless normalized numerical ratios; bN is not automatically the independent-phase exponent-0.5. Exact executable state: rules.json models.reference; task_id P100-017.original.v1.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "km",
+        "depth_km": "km below network reference (may negative)",
+        "rms_s": "seconds phase residual standardError",
+        "phases": "used phase count",
+        "stations": "used station count",
+        "gap_deg": "largest azimuthal gap degrees",
+        "dmin_km": "minimum angular station distance*111.195km/degree"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-017.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-017-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "Naive inverse-square-root phase-count scaling is insufficient as a universal uncertainty law here.",
+      "applicability": "One July2026 catalog snapshot. Positive uncertainty reports only; mixed network estimation conventions, no universal standard-error confidence interpretation. Counts/geometry are outputs of location processing and causality is not identified.",
+      "limitations": "Reference predicts authorformal uncertainty only; it cannot demonstrate true physical accuracy or hazard forecasting.",
+      "falsification": "Reference predicts authorformal uncertainty only; it cannot demonstrate true physical accuracy or hazard forecasting.",
+      "prior_art": "[{\"url\": \"https://earthquake.usgs.gov/data/comcat/index.php\", \"checked\": \"2026-10-02\", \"known\": \"Location quality and uncertainty definitions depend on contributing networks; not independent error truth.\"}, {\"url\": \"https://www.usgs.gov/faqs/what-does-it-mean-earthquake-occurred-a-depth-0-km-how-can-earthquake-have-a-negative-depth\", \"checked\": \"2026-10-02\", \"known\": \"Depth is often least-constrained, reference frames differ and fixed/negative depths occur.\"}, {\"url\": \"https://pubs.usgs.gov/of/1993/0309/of93-309_v1.1.pdf\", \"checked\": \"2026-10-02\", \"known\": \"Known importance of nearest-station distance relative to depth, phase counts and velocity model; inverse-information and geometry hypotheses are prior-inspired.\"}]",
+      "equation_or_program": {
+        "expression": "sigma proportional RMS/sqrt(Nphase) is the domain family; estimated freeexponents/regimes in002\u2013006challenge it.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "km",
+        "depth_km": "km below network reference (may negative)",
+        "rms_s": "seconds phase residual standardError",
+        "phases": "used phase count",
+        "stations": "used station count",
+        "gap_deg": "largest azimuthal gap degrees",
+        "dmin_km": "minimum angular station distance*111.195km/degree"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-017.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 14081,
+      "sha256": "ae5e44fe3e2c88acc9cf17c4027081bd4f1847a2d5d5b83aad9727b9fcb43811",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 784,
+      "sha256": "489db5af12318285e82dd054accee8887dc515cc8bb8abf5b62973618da3ecdc",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 3235,
+      "sha256": "dcb6a91f9f3345965a5609a20d2a556cb0c5fb7dfc86d9c41bb4299f8bab726b",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 487130,
+      "sha256": "15b3107d70061596c6860865478f84f325b9de07708b10e76922eed76af8379e",
+      "id": "E004",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E005_SOURCE_AND_UNITS.md",
+      "bytes": 934,
+      "sha256": "59694445da7e8ab4c2d2488eb8f9bc80a1a431ac9682fa07d330d27222a4bd1e",
+      "id": "E005",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E006_SOURCE_MANIFEST.json",
+      "bytes": 843,
+      "sha256": "bd76b11d331e97a8e34666778be9c2db8ad6cd1eb3b9a1177ab8a95e11797514",
+      "id": "E006",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E007_SPLITS.json",
+      "bytes": 63675,
+      "sha256": "ffc0eaa4d5a4698c4c854040a935e48b382146a3d336a4d6e81814ec6f6c43b6",
+      "id": "E007",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 2915,
+      "sha256": "68deed08e4fc1ba40c143feb4dfb413aba806eb168bb00732f21ddf816c2285e",
+      "id": "E008",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E009_FINDINGS.md",
+      "bytes": 6986,
+      "sha256": "bc2061522c16633b09dde766335921eed508a27717c41ae15e319b469c5e8595",
+      "id": "E009",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E010_inputs.csv.gz",
+      "bytes": 7301,
+      "sha256": "e0f6fed696b0b65e00708ee9181f61c332cc1228852d34464f2c8b877eb90a60",
+      "id": "E010",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E011_observations.csv.gz",
+      "bytes": 10728,
+      "sha256": "879438a83dfa7af994794a9b51f95bb67c62348febbc946329596b0731308c1c",
+      "id": "E011",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E012_integrity_revision.json",
+      "bytes": 440,
+      "sha256": "fd58c498026796ecb01b7affe94a91b498948f7c454d67d17e6d24c6c08d8935",
+      "id": "E012",
+      "role": "package/evidence/integrity_revision.json"
+    },
+    {
+      "path": "evidence/E013_metrics.csv",
+      "bytes": 1409,
+      "sha256": "88ef7ab2125e53f3c424bc9c17eb6324e5c0d59af62b05a6863cac1c793bd516",
+      "id": "E013",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 30301,
+      "sha256": "e1cdceae603eb50c20c173f9d5ad89ef46cff01a0e810fa11b6563f071c1bf80",
+      "id": "E014",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_findings.json",
+      "bytes": 4723,
+      "sha256": "81dbc258df8b17dd928cd4b8ed9f1cee59ad886c517c788c8ead3f766e64518b",
+      "id": "E015",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E016_rules.json",
+      "bytes": 658512,
+      "sha256": "d9dc2690bd6a36eef4a706435570cc2e0e05685417aafc4abe3ddc4d6cc52f28",
+      "id": "E016",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E017_run.py",
+      "bytes": 6573,
+      "sha256": "fef20ed7288f4a3ab0ce28a5c9e5d5ddcb77d9a78a1c5b9d44079afd6aba5596",
+      "id": "E017",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E018_task_spec.json",
+      "bytes": 2546,
+      "sha256": "1d191fc67f4358f3500d54a2356a0c5b5999ded90691c762d7a415b51b97ce87",
+      "id": "E018",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 505806,
+      "sha256": "f0d6aecaac381f4266ff9e9d46955c1ed3baa1e31479bbf15d17a10c99d036d0",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 7140,
+      "sha256": "be5aec2e5db1f1584e42897517dd579d0a4e852c13a8ea1c18cfbb345b732253",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

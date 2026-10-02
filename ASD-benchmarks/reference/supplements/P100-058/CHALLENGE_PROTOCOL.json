@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-10-01T09:33:54.748499+00:00",
+  "protocol_id": "P100-058-commercial-PLA-calibrated-transfer-20261001",
+  "source": "https://zenodo.org/records/17288444",
+  "fresh_response_files_not_opened": true,
+  "metadata_only_inspection": "Landing record, publisher checksums, archive filenames. No DFS response/member bytes read before this protocol.",
+  "independence": "Distinct purchased commercial PLA3D850/recycled PLA versus Aldrich805734 PDLLA15k. Same source authors and instrument; material-level external evidence, not independent laboratory replication. Manufacture batch details not specified.",
+  "calibration": {
+    "PLA3D850": [
+      110,
+      120,
+      130,
+      140
+    ],
+    "PLA_recycled": [
+      130,
+      140,
+      150
+    ]
+  },
+  "reserved": {
+    "PLA3D850": [
+      150,
+      160,
+      170,
+      180
+    ],
+    "PLA_recycled": [
+      160,
+      170
+    ]
+  },
+  "linked_duplicate_policy": "Use DFS native text export once; never include RSD as an independent observation. DSS and technical sheets not fit.",
+  "target": "native storage modulus Gprime Pa",
+  "secondary": "native Gdoubleprime Pa; never fit or select on any loss response",
+  "eligibility": "finite imposed omega>0 and finite native Gprime. Primary logMAE on native Gprime>0, physical MAE includes negative signs. No source noise/compliance correction.",
+  "primary_metric": "within each material, equal-temperature positive-only absolute natural-log error; report materials separately, no pooled law score",
+  "inputs": [
+    "temperature_C",
+    "omega"
+  ],
+  "model_family": "Preregistered positive generalized-Maxwell with13 fixed loguniform clocks1e-6..1e6seconds atTref140C. Local material calibration of spectrum and shift permitted; this is calibrated transfer, not old-material coefficient transfer.",
+  "calibrated_baselines": [
+    "generalized Maxwell WLF: C1[6,8,12,16],C2[70,100,140],ridge[0,.001,.01]",
+    "same generalized Maxwell Arrhenius:EA[150000,250000,350000,450000],ridge[0,.001,.01]",
+    "group-tuned log-domain Gaussian kernel ridge width[.5,1,2],ridge[.001,.01,.1]",
+    "material median modulus predictor"
+  ],
+  "tuning": "leave-one-entire-calibration-temperature-out; all spectra/scales fit only calibration. Source-family choice WLF fixed from original development, not external targets. Compare every family, no post-test promotion.",
+  "falsifiers": [
+    "unfitted loss modulus with same coefficients",
+    "zero-shot old PDLLA equation without any calibration",
+    "negative storage readings and phase-window limitations",
+    "clock/spectral nonidentifiability"
+  ],
+  "reader": "same explicit tab-separated w/Gprime/Gdoubleprime columns as old verified TA source text; read only first2lines schema if different, record necessary parser correction before numericresponse opening",
+  "fresh_confirmation": "Only reserved temperatures are fresh for this run. Calibration outcomes deliberately exposed. Local package targets become exposed after completion. No manufacture replication or universal PLA physics claim."
+}

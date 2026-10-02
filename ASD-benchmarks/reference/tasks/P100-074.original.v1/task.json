@@ -1,0 +1,168 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-074.original.v1",
+  "case_id": "P100-074",
+  "case_number": 74,
+  "family": "original",
+  "protocol_version": "P100-074-asd5-native-v1",
+  "cohort_id": "P100-074.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-074.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/74_biochemistry_kinase_biosensors",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Src kinetic fluorescence in source instrument units",
+  "target_units": "source fluorescence units",
+  "error_units": "source fluorescence units",
+  "primary_units": "source fluorescence units",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "concentration_uM",
+    "time_min",
+    "calibration_F6",
+    "calibration_v6",
+    "calibration_curvature"
+  ],
+  "input_units": {
+    "concentration_uM": "uM",
+    "time_min": "min",
+    "calibration_F6": "source fluorescence units",
+    "calibration_v6": "source fluorescence units/min",
+    "calibration_curvature": "source fluorescence units/min^2"
+  },
+  "numeric_columns": [
+    "concentration_uM",
+    "time_min",
+    "calibration_F6",
+    "calibration_v6",
+    "calibration_curvature"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict all t>7.5 min from source dose and same-curve measurements at 3,4.5,6 min. Calibration fixed at6 min; no later response access.",
+  "calibration": "Predict all t>7.5 min from source dose and same-curve measurements at 3,4.5,6 min. Calibration fixed at6 min; no later response access.",
+  "independent_unit": "Complete dose curves; seven development and two hash-selected confirmation doses; leave-one-dose-out validation. No biological replicate identifiers.",
+  "evaluation_groups": [
+    "dose-1",
+    "dose-5"
+  ],
+  "assigned_rows": 86,
+  "eligible_rows": 86,
+  "baseline_models": [
+    "reference",
+    "baseline_persistence",
+    "baseline_linear",
+    "baseline_mm",
+    "baseline_flexible",
+    "attempt_001_saturation",
+    "attempt_002_accelerating",
+    "attempt_003_power",
+    "attempt_004_dose_saturation",
+    "attempt_005_curvature",
+    "attempt_006_slope_gate",
+    "attempt_007_slope_only",
+    "attempt_008_physical_saturation"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "F_hat=F6+d*(a*v6+b*6*c6)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_persistence": {
+      "equation": "F_hat(t)=F6",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_linear": {
+      "equation": "F_hat=F6+v6*(t-6)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_mm": {
+      "equation": "F_hat=V*S*t/(K+S)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "Frozen ridge polynomial: y_hat=phi(x)^T beta; exact dimensionless feature order/scales in run.features and coefficients in rules.json;85 nonnegative,87 clipped0..endowment",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_saturation": {
+      "equation": "F_hat=F6+v6*tau*(1-exp(-(t-6)/tau))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_accelerating": {
+      "equation": "F_hat=F6+v6*d+a*v6*(d-tau*(1-exp(-d/tau))),d=t-6",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_power": {
+      "equation": "F_hat=F6+a*v6*6*((1+d/6)^p-1)/p",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_dose_saturation": {
+      "equation": "F_hat=F6+v6*tau*(1-exp(-d/tau)),tau=exp(a+b*log(S));S is numerical concentration in uM",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_curvature": {
+      "equation": "F_hat=F6+v6*d+c6*tau*(d-tau*(1-exp(-d/tau)))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006_slope_gate": {
+      "equation": "F_hat=F6+d*(a*v6+b*6*c6)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007_slope_only": {
+      "equation": "F_hat=F6+a*d*v6",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_008_physical_saturation": {
+      "equation": "F_hat=F6+v6*tau*(1-exp(-d/tau)),tau=exp(a+b*log(S)),b>=0",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "No row bootstrap; enumerate group errors and leave-group development variability. Single heldout condition is bounded evidence."
+  },
+  "scope_limits": "One source assay, source units are not enzyme concentration or clinical activity.; Kinetic export lacks raw triplicate labels. Dose validation is not independent biological replication.; Akt1 response copying time is excluded; source fitted velocity tables are never targets.",
+  "source_url": "https://zenodo.org/records/18911385",
+  "source_license": "CC-BY-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"status\": \"exposed_after_local_confirmation\", \"original_audit\": \"First9 lines and schemas inspected; early values through6.75 min were visible across doses, outside target window. Later outcomes not printed before freeze.\", \"fresh_for_future_users\": false, \"new_independent_experiments\": false}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "635f57a8655eedf1d64009fb5aa1d9a6c819773fdff3b0f5104ed80a80b66c00",
+  "observations_sha256": "6b2e468c6c346310587e3d90eb1f579c31d00c87046afeaecbcd2e82afd6ed68",
+  "legacy_protocol_sha256": "b8e3b8373c0c14e23b591820611960c9376b15af0ad20c9de638d53bcc7a9442",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd5-diagnostics/1.0"
+}

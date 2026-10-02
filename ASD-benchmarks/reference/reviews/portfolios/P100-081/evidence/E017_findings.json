@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-081",
+  "findings": [
+    {
+      "finding_id": "P100-081-F01",
+      "classification": "unsupported",
+      "claim": "An uncalibrated two-phase carbon-density mixture improves transfer to unseen countries over simple controls.",
+      "equation": "rho=1/[(1-f)/rho_m+f/rho_o], f=1.724 C/100.",
+      "evidence": "Development MAE 0.260 g/cm\u00b3 selected this model, but reserved MAE 0.336 exceeds the constant control 0.173, linear 0.313 and flexible 0.315.",
+      "known_prior_art": "Organic/mineral volume mixing and carbon-based pedotransfer are established.",
+      "falsification": "Strong underprediction in Germany; worst-country MAE 0.608 g/cm\u00b3.",
+      "scope": "Four development countries and two held-out countries; no target calibration.",
+      "admission": "unsupported"
+    },
+    {
+      "finding_id": "P100-081-F02",
+      "classification": "informative_falsification",
+      "claim": "Development-selected carbon-only mixing does not provide reliable country transfer for this complete-case cohort.",
+      "equation": "Comparison of frozen mixture with country-balanced mean-density baseline.",
+      "evidence": "Both confirmation countries retained. Mixture reserved MAE 0.336 versus baseline 0.173 g/cm\u00b3; no post-confirmation reselection.",
+      "known_prior_art": "Bulk density reflects mineralogy, structure, compaction and measurement protocol as well as carbon.",
+      "falsification": "This does not imply no carbon-density relationship within a site.",
+      "scope": "Water-pH eligibility removes UK and Netherlands; remaining countries are not a representative random sample.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-081-F03",
+      "classification": "informative_falsification",
+      "claim": "The tested depth and acidity mechanisms do not repair the development transfer limitation.",
+      "equation": "Depth-dependent mineral packing, organic consolidation and pH-dependent packing alternatives in rules.json.",
+      "evidence": "All four mechanistic extensions have worse held-country development MAE than the two-phase mixture; their confirmation results remain available.",
+      "known_prior_art": "Compaction and soil aggregation are established processes; these simple proxies are insufficient here.",
+      "falsification": "No causal effect of depth or pH is estimated, and no missing texture is imputed.",
+      "scope": "Complete measured covariates only.",
+      "admission": "supported"
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted analysis; not independent experimental replication or human expert adjudication."
+}

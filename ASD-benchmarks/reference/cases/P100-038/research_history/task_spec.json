@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-038",
+  "target": "First reported RSRP-vector component at first recorded point 1.0\u20131.6 s after issuance",
+  "target_units": "dBm",
+  "error_units": "dB",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "last",
+    "mean5",
+    "mean20",
+    "slope",
+    "spread",
+    "elapsed"
+  ],
+  "input_units": {
+    "last": "dBm",
+    "mean5": "dBm",
+    "mean20": "dBm",
+    "slope": "dB/s",
+    "spread": "dB",
+    "elapsed": "s"
+  },
+  "numeric_columns": [
+    "last",
+    "mean5",
+    "mean20",
+    "slope",
+    "spread",
+    "elapsed"
+  ],
+  "source_url": "https://zenodo.org/records/16673883",
+  "source_license": "CC-BY-4.0",
+  "exposure": "Schema inspection: first two finite RSRP records of flight1 and source first telemetry rows; no flight5 RSRP values or scores printed. All public source-aware; confirmation after final freeze will become exposed.",
+  "uncertainty_policy": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "calibration": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "scope_limits": "Telemetry files1\u20132 do not overlap the radio clock windows and contain repeated headers; no invented offset or geometry pairing. Vector component ordering is taken literally, not identified as a specific antenna.",
+  "timing_contract": "At a recorded RSRP sample, use only component 1 in the native comma-separated RSRP vector over the preceding 20 seconds. Predict first subsequently recorded component-1 value at 1.0\u20131.6 s. First qualifying issuance per target; no actual future horizon feature in predictor. Unknown component antenna/beam semantics prevent propagation-law claims.",
+  "independent_unit": "Entire flight; forward folds 1->2,1\u20132->3,1\u20133->4; flight5 confirmation. Same installation/day only."
+}

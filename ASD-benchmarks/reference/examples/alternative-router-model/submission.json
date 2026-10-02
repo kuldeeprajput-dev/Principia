@@ -1,0 +1,72 @@
+{
+  "schema_version": "principia.submission/3.0",
+  "case_id": "P100-037",
+  "task_id": "P100-037.original.v1",
+  "protocol_version": "P100-037-prepared-primary-v1",
+  "cohort_id": "P100-037.original.v1.cohort-1",
+  "input_sha256": "9cdcd33d571ff37e52e789907b5dd86c0bcf883ecc6525adf2966fa005ce7f78",
+  "target_units": "W",
+  "evaluator_version": "3.0.0-rc.1",
+  "decision": "predict",
+  "abstention_reason": "",
+  "permitted_inputs": [
+    "router",
+    "throughput_Gbps",
+    "packet_bytes"
+  ],
+  "predictions_file": "predictions.csv",
+  "predictions_sha256": "7725f7756f755f4fbee137ffb726dc4ba2a2410ab73a96b25127af76d416d707",
+  "training": {
+    "training_group_ids": [],
+    "tuning_group_ids": [],
+    "evaluation_data_usage": "frozen_reference_with_disclosed_historical_exposure",
+    "inventory_assets": [],
+    "note": "Runnable reference example. Historical source protocols document training; empty lists are not a claim of verified training independence. Replace declarations for your own method."
+  },
+  "equations": [
+    {
+      "id": "E1",
+      "expression": "P=beta(router) dot [1,u,q,u^2,q^2,u*q,ln(packet_bytes/1500),ln(packet_bytes/1500)^2,u*ln(packet_bytes/1500)]",
+      "coefficients_asset": "submission_model.json",
+      "variables_and_units": {
+        "router": "categorical A/B",
+        "throughput_Gbps": "Gbit/s",
+        "packet_bytes": "bytes"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "equation_ids": [
+        "E1"
+      ],
+      "classification": "reproduction",
+      "statement": "Reproduce the frozen flexible numerical reference; no new discovery or fresh confirmation is claimed."
+    }
+  ],
+  "uncertainty": {
+    "interval_level": null,
+    "method": "Not supplied"
+  },
+  "reproducibility": {
+    "entrypoint": "predict.py",
+    "assets": [
+      {
+        "path": "predict.py",
+        "bytes": 468,
+        "sha256": "99af98f3ab1420493991f7516b843af9af98e043c7b460f34883bfd393505615"
+      },
+      {
+        "path": "run.py",
+        "bytes": 7639,
+        "sha256": "32fdc69e55d2622d1c664605b3e3a34dff3a29098632fb8e71e9e301fbcafcaf"
+      },
+      {
+        "path": "submission_model.json",
+        "bytes": 2255,
+        "sha256": "6e0d1442d2f10680f10eef8fe472cf9b9bd98a9aed201c9d4e810e20994500ae"
+      }
+    ]
+  }
+}

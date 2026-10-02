@@ -1,0 +1,19 @@
+{
+  "case": 47,
+  "type": "linear",
+  "features": [
+    "one",
+    "N",
+    "S",
+    "T",
+    "surface",
+    "Ns",
+    "float"
+  ],
+  "offset": "O",
+  "scale": null,
+  "alpha": 0,
+  "title": "Float-specific calibration drift",
+  "hypothesis": "A fixed development-fitted float offset tests hardware/water-mass confounding without using reserved oxygen calibration.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 29.77296729820867, \"worst_group\": 45.382285764999715}, {\"attempt\": \"attempt-002\", \"group_MAE\": 17.42558269500077, \"worst_group\": 25.556498462561166}, {\"attempt\": \"attempt-003\", \"group_MAE\": 9.411915533547356, \"worst_group\": 21.455535374294595}, {\"attempt\": \"attempt-004\", \"group_MAE\": 12.94423008562382, \"worst_group\": 23.614080659506477}, {\"attempt\": \"attempt-005\", \"group_MAE\": 9.177334071660654, \"worst_group\": 20.617920501070284}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Removing nitrate actually improves9.41 to9.18\u00b5mol/kg. This undermines direct stoichiometric interpretation; test whether float-specific calibration makes the competing nitrate/surface model transferable.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state."
+}

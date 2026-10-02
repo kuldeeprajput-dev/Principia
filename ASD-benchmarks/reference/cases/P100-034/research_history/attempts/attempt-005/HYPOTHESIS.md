@@ -1,0 +1,7 @@
+# Hypothesis
+
+Additive finite reserve beats the flexible model by about3.8percent and genotype reserve offset is small. Ablate the genotype term to test whether calibration already accounts for genotype-associated amplitude variation.
+
+Prior development: attempt_001_genotype_hill=38.45277; attempt_002_local_hill=710.6454; attempt_003_two_pool=41.33442; attempt_004_reserve=16.39608; incumbent 16.396078081201296.
+
+Whole-group validation; identical calibration budget; confirmation unopened.

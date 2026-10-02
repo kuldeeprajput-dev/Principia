@@ -1,0 +1,128 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-013.original.v1",
+  "case_id": "P100-013",
+  "case_number": 13,
+  "family": "original",
+  "protocol_version": "P100-013-asd5-native-v1",
+  "cohort_id": "P100-013.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-013.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/13_materials_nist_encapsulant_cure",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "conversion",
+  "target_units": "1",
+  "error_units": "1",
+  "primary_units": "1",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "temperature_K",
+    "heating_rate_K_min"
+  ],
+  "input_units": {
+    "temperature_K": "K",
+    "heating_rate_K_min": "K/min"
+  },
+  "numeric_columns": [
+    "temperature_K",
+    "heating_rate_K_min"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict author-observed DSC conversion from temperature and imposed constant heating rate; no target history.",
+  "calibration": "Predict author-observed DSC conversion from temperature and imposed constant heating rate; no target history.",
+  "independent_unit": "Complete heating-rate experiment; not independent material batches",
+  "evaluation_groups": [
+    "rate20"
+  ],
+  "assigned_rows": 501,
+  "eligible_rows": 501,
+  "baseline_models": [
+    "reference",
+    "baseline_domain",
+    "baseline_flexible",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "alpha=w(1-exp(-q1))+(1-w)(1-exp(-q2))",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_domain": {
+      "equation": "alpha=1-exp(-q), q=k_ref/beta integral_273.15^T exp[E/R(1/423.15-1/u)]du",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "alpha=logistic[(T-T0-c log(beta))/exp(s)]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "alpha=1-[1+(n-1)q]^[-1/(n-1)]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "alpha=1-exp(-q^m)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "alpha=w(1-exp(-q1))+(1-w)(1-exp(-q2))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "alpha=w(1-exp(-q))+(1-w)(1-exp(-exp(c)q))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "alpha=A_inf(1-exp(-q^m))",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Individual experimental group errors; no row bootstrap or population CI from dependent rows."
+  },
+  "scope_limits": "Source-fitted conversion excluded. Four development traces; one high-rate extrapolation confirmation. Audit exposed first four rows near zero of every trace.",
+  "source_url": "https://data.nist.gov/od/id/mds2-3702",
+  "source_license": "NIST public data license",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"status\": \"exposed\", \"confirmation_originally_withheld\": true, \"public_source_aware\": true}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "4874865eb390180f3d5b62a1850bc4b2f9af36051a3ef6ba2191b85cf3ef39c8",
+  "observations_sha256": "cd1fdb0d2630fc3e075bc8451449adfa2ee51bbf6162e754299b9f694d61ead6",
+  "legacy_protocol_sha256": "981e6f2c7f04b84bd055d1d09b99fd9ee07ee9f0d337ab35f4d9ffeb9dc72a3b",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd5-diagnostics/1.0"
+}

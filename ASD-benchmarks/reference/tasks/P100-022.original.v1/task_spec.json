@@ -1,0 +1,50 @@
+{
+  "case_id": "P100-022",
+  "title": "First-forming current across perovskite devices",
+  "target": "Initial positive forming-sweep current",
+  "target_units": "microampere",
+  "error_units": "microampere",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "voltage_V",
+    "bromine_rich"
+  ],
+  "input_units": {
+    "voltage_V": "V",
+    "bromine_rich": "indicator"
+  },
+  "numeric_columns": [
+    "voltage_V",
+    "bromine_rich"
+  ],
+  "timing_contract": "A fixed SHA-256 allocation reserved ten complete devices per composition. Development used five hash-assigned device folds. Exact duplicate native traces were linked and deduplicated. The task predicts the initial positive forming branch from voltage and composition alone; no current calibration or later sweep is a predictor.",
+  "calibration": "None. First100 voltage rows of each device, V>=0.05V; no measured current allowed as predictor.",
+  "independent_unit": "Complete device, both compositions; all duplicate device traces linked. No future current or state permitted.",
+  "scope_limits": [
+    "Complete device, both compositions; all duplicate device traces linked. No future current or state permitted.",
+    "A compact composition-conditioned forming-current equation improves the logistic control and is essentially tied with a larger spline on reserved devices. Its negative I-rich precursor coefficient prevents admission as a new physical conduction law.",
+    "No independent population confidence interval from dependent rows."
+  ],
+  "source_url": "https://zenodo.org/records/17278410",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "source_assets": "SOURCE_MANIFEST.json",
+  "exposure": {
+    "historical": "Internal confirmation reserved until FREEZE.json; schema-stage exposures documented in SOURCE_AND_UNITS.md.",
+    "current": "All confirmation outcomes exposed to future users."
+  },
+  "uncertainty_policy": "Report individual top-level groups and their range; no row-bootstrap population inference.",
+  "aggregation": "Equal group weight then equal eligible rows within group.",
+  "eligibility": "Nonfinite native values excluded with anchors; none excluded by fit residuals. All source bytes unchanged.",
+  "prior_analysis": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202502152",
+  "native_adapter": "native.py at scenario research root; shared benchmark integration supplies canonical adapter registration",
+  "reader_dependencies": [
+    "numpy",
+    "pandas",
+    "scipy",
+    "openpyxl",
+    "matplotlib"
+  ],
+  "claim_admission": "partially_supported",
+  "reference_selection": "Min primary error with simpler coefficient count within1percent; retain all controls even if superior.",
+  "physical_bounds": "Measured current includes offsets and circuit clipping; negative fitted precursor is not a positive physical conductance."
+}

@@ -1,0 +1,253 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-061.round2.v2",
+  "case_id": "P100-061",
+  "case_number": 61,
+  "family": "round2",
+  "protocol_version": "P100-061.round2.v1.contract-1-contract-correction-v2",
+  "cohort_id": "P100-061.round2.v2.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-061.round2.v2",
+  "legacy_package": "61_chemistry_membrane_permeation/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/61_chemistry_membrane_permeation",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Measured hydrogen permeation flux",
+  "target_units": "mol s^-1 m^-2",
+  "error_units": "mol s^-1 m^-2",
+  "primary_units": "mol m^-2 s^-1",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "temperature_K",
+    "feed_fraction",
+    "normal_flow_L_min",
+    "retentate_bar",
+    "permeate_bar",
+    "area_m2",
+    "calibration_j0",
+    "membrane",
+    "gas",
+    "membrane_index"
+  ],
+  "input_units": {
+    "temperature_K": "K",
+    "feed_fraction": "mol H2 per mol feed, fraction",
+    "normal_flow_L_min": "normal L min^-1; assumed 22.414 L mol^-1",
+    "retentate_bar": "bar, absolute",
+    "permeate_bar": "bar, absolute",
+    "area_m2": "m^2",
+    "calibration_j0": "mol H2 m^-2 s^-1; frozen pure-hydrogen calibration",
+    "membrane": "categorical calibrated membrane",
+    "gas": "categorical N2, Ar or He",
+    "membrane_index": "dimensionless index of declared calibrated membrane"
+  },
+  "numeric_columns": [
+    "temperature_K",
+    "feed_fraction",
+    "normal_flow_L_min",
+    "retentate_bar",
+    "permeate_bar",
+    "area_m2",
+    "calibration_j0",
+    "membrane_index",
+    "length_m",
+    "diameter_m"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict measured mixture hydrogen flux from membrane/gas identity, imposed temperature, feed fraction, absolute pressures, normal feed flow, geometry and the declared pure-hydrogen calibration_j0. Mixture-response targets from the outer held gas-temperature block cannot be used to fit that block.",
+  "calibration": "All models may use the 64 pure-hydrogen measurements at 350/450 \u00b0C through their explicitly frozen pressure/permeance calibration, including calibration at the temperature of a held mixture block. Mixture coefficients are fitted outside that held block. No 400 \u00b0C response enters this development-OOF task. The normal molar volume 22.414 L/mol is a declared convention; pressure units are absolute bar.",
+  "independent_unit": "Complete inert-gas by temperature block across four calibrated membranes: Ar/He/N2 at 350/450 \u00b0C, six outer groups and 120 mixture observations.",
+  "evaluation_groups": [
+    "Ar-T350",
+    "Ar-T450",
+    "He-T350",
+    "He-T450",
+    "N2-T350",
+    "N2-T450"
+  ],
+  "assigned_rows": 120,
+  "eligible_rows": 120,
+  "baseline_models": [
+    "current/cycle-006",
+    "current/cycle-005",
+    "current/cycle-004",
+    "current/cycle-002",
+    "previous/cycle-004",
+    "previous/cycle-006",
+    "previous/cycle-005",
+    "current/cycle-007",
+    "current/cycle-003",
+    "previous/baselines/kernel_nested",
+    "current/cycle-001",
+    "previous/baselines/membrane_residual_rbf_original_grid",
+    "current/cycle-008",
+    "current/baseline-hgb",
+    "previous/cycle-003",
+    "previous/cycle-002",
+    "previous/cycle-001",
+    "previous/baselines/old_coupled",
+    "previous/baselines/membrane_residual_rbf_nested",
+    "previous/baselines/old_rbf",
+    "previous/baselines/old_mean",
+    "previous/baselines/old_richardson",
+    "previous/baselines/old_sieverts"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "current/cycle-006": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-005": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-004": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-002": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-004": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-006": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-005": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-007": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-003": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/kernel_nested": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/membrane_residual_rbf_original_grid": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-008": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-003": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-002": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-001": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_coupled": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/membrane_residual_rbf_nested": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_rbf": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_mean": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_richardson": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_sieverts": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Repeatedly exposed original-development out-of-fold cohort, distinct from the original 60-observation 400 \u00b0C reserved mixture cohort. Four calibrated specimens, two geometry families and two development temperatures do not establish new-membrane or general geometry transfer. Pure-gas calibration is permitted at both development temperatures; source normal-flow convention and unobserved annular-gap geometry limit causal film interpretation.",
+  "source_url": "https://zenodo.org/records/10691625",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "74ec1b245991da2d308f1c5dd336fb2670da4090ab1d9af942352b0c217f747b",
+  "observations_sha256": "18b2fc55d0f84d9d1593fe2e07a58a1400f2387ebc77e18affff0361deb0aff0",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified",
+  "documentation_correction": {
+    "supersedes": "P100-061.round2.v1",
+    "numerical_state_changed": false,
+    "source_cohort_unchanged": true,
+    "reason": "Remove original-cohort/static-calibration wording inherited by distinct development-OOF continuation task. No new ASD fitting or re-selection.",
+    "historical_validation": "Same exposed development OOF predictions; no new confirmation"
+  }
+}

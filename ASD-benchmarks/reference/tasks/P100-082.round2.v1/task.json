@@ -1,0 +1,223 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-082.round2.v1",
+  "case_id": "P100-082",
+  "case_number": 82,
+  "family": "round2",
+  "protocol_version": "P100-082.round2.v1.contract-1",
+  "cohort_id": "P100-082.round2.v1.development-oof",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-082.round2.v1",
+  "legacy_package": "82_ecology_soil_respiration/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/82_ecology_soil_respiration",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Author-derived forest-soil CO2 mass flux on reserved future dates",
+  "target_units": "g CO2 m^-2 h^-1",
+  "error_units": "g CO2 m^-2 h^-1",
+  "primary_units": "g CO2 m^-2 h^-1",
+  "metric_kind": "rmse",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_rmse"
+  },
+  "permitted_inputs": [
+    "t05",
+    "tsmoisture",
+    "doy",
+    "moisture_change",
+    "site",
+    "context",
+    "past_temperature"
+  ],
+  "input_units": {
+    "t05": "degrees Celsius, native 5-cm soil temperature",
+    "tsmoisture": "native soil-water-content percent; may be missing",
+    "doy": "day of year",
+    "moisture_change": "percentage points of native soil water content; change from past mean",
+    "site": "categorical calibrated site",
+    "context": "categorical subsite/trenching context",
+    "past_temperature": "degree C; strictly earlier temperature summary"
+  },
+  "numeric_columns": [
+    "t05",
+    "tsmoisture",
+    "doy",
+    "moisture_change",
+    "past_temperature"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Known site/context, measurement date, native 5-cm soil temperature and soil moisture only; exclude author response-fit slopes, chamber conversions, confidence bounds and future flux. Expanded information budget: t05, tsmoisture, doy, moisture_change, site, context",
+  "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Context/site amplitudes are trained on earlier dates only. Lloyd\u2013Taylor E0 is near 200 K with a documented optimizer-scaling limitation; it is not an identified globally optimized physiological coefficient.",
+  "independent_unit": "complete reserved future temporal block at each calibrated site",
+  "evaluation_groups": [
+    "Dobroc|forward1",
+    "Dobroc|forward2",
+    "Dobroc|forward3",
+    "DumbravitaTrench|forward1",
+    "DumbravitaTrench|forward2",
+    "DumbravitaTrench|forward3",
+    "Dumbravita|forward1",
+    "Dumbravita|forward2",
+    "Dumbravita|forward3",
+    "Gamiz|forward1",
+    "Gamiz|forward2",
+    "Gamiz|forward3",
+    "Kacergine|forward1",
+    "Kacergine|forward2",
+    "Kacergine|forward3",
+    "Karstula75|forward1",
+    "Karstula75|forward2",
+    "Karstula75|forward3",
+    "Karstula76|forward1",
+    "Karstula76|forward2",
+    "Karstula76|forward3",
+    "Kelheim-Parsberg|forward1",
+    "Kelheim-Parsberg|forward2",
+    "Kelheim-Parsberg|forward3",
+    "Kranzberg-Freising|forward1",
+    "Kranzberg-Freising|forward2",
+    "Kranzberg-Freising|forward3",
+    "Llobera|forward1",
+    "Llobera|forward2",
+    "Llobera|forward3",
+    "RincondelBatovi|forward1",
+    "RincondelBatovi|forward2",
+    "RincondelBatovi|forward3",
+    "R\u00e4nsk\u00e4l\u00e4nkorpi|forward1",
+    "R\u00e4nsk\u00e4l\u00e4nkorpi|forward2",
+    "R\u00e4nsk\u00e4l\u00e4nkorpi|forward3",
+    "Saint Mitre|forward1",
+    "Saint Mitre|forward2",
+    "Saint Mitre|forward3",
+    "Secanella|forward1",
+    "Secanella|forward2",
+    "Secanella|forward3",
+    "St Christol|forward1",
+    "St Christol|forward2",
+    "St Christol|forward3",
+    "Wasserburg-Maitenbeth|forward1",
+    "Wasserburg-Maitenbeth|forward2",
+    "Wasserburg-Maitenbeth|forward3"
+  ],
+  "assigned_rows": 20128,
+  "eligible_rows": 20128,
+  "baseline_models": [
+    "current/cycle-001",
+    "current/cycle-003",
+    "current/cycle-002",
+    "previous/baselines/old_temperature_moisture",
+    "previous/baselines/old_lloyd_taylor",
+    "previous/cycle-002",
+    "previous/cycle-001",
+    "previous/baselines/lt_with_history_information_access",
+    "previous/baselines/lt_repaired",
+    "current/baseline-hgb",
+    "previous/baselines/old_q10",
+    "previous/baselines/kernel_nested",
+    "previous/baselines/kernel_with_history",
+    "previous/baselines/old_context_mean"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-003": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-002": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_temperature_moisture": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_lloyd_taylor": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-002": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-001": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/lt_with_history_information_access": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/lt_repaired": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_q10": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/kernel_nested": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/kernel_with_history": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_context_mean": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Future dates at fifteen input-eligible calibrated sites, including a Uruguay site in the source. Not unseen-site transfer or causal treatment effects. Native negative flux measurements remain scored; missing 5-cm temperature limits coverage. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+  "source_url": "https://zenodo.org/records/17519671",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "66aaa3959069268d621d6b92b3568fd923bb3e9383d26965ee46f69e5d5c6041",
+  "observations_sha256": "ab7375d167a138331f14b34fe41e13f814ec2ad13cad600d54e00c7a56314e30",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified"
+}

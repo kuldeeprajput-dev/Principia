@@ -1,0 +1,68 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-021.original.v1.raw-access.v1",
+  "parent_task_id": "P100-021.original.v1",
+  "case_id": "P100-021",
+  "protocol_version": "P100-021.original.v1.raw-access.v1",
+  "cohort_id": "P100-021.original.v1.cohort-1",
+  "parent_task_sha256": "6ccfa72fab4ca6316d19fb552d88b98bb02b15d16c586d127c884b35fe78547e",
+  "input_sha256": "47f61b8fb92002b8af6dc9dcc05b32fea327a9502553427eeea99e8a5149dd2b",
+  "observations_sha256": "d1ca32899826ec40a85a6518cd17f50774df3da4d3819fdb27be3dfe7d6faf43",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "21_semiconductor_heidelberg_josephson",
+  "source_assets": [
+    {
+      "path": "raw/Data.zip",
+      "sha256": "4bab60cb35e9f5b2dc8c37fd0076d0aa0e806960bd940088d17edd2264ac6c02",
+      "bytes": 61178566
+    },
+    {
+      "path": "PROVENANCE.json",
+      "sha256": "8f4f2db2bf98c9c6bf922e76723193948e5232abe2ad7be3c109c3bdccb41ef9",
+      "bytes": 5061
+    },
+    {
+      "path": "context/zenodo_record.json",
+      "sha256": "e92db5a6b802461b9533800f18bfde8af78b6a882adb0e37a42462781e650961",
+      "bytes": 5809
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "width_um": "um",
+      "wafer_b": "dimensionless indicator",
+      "outer": "dimensionless indicator"
+    },
+    "observation_window": "design prediction before electrical measurement; wafer and inner/outer region known",
+    "calibration_and_history": "No per-device response calibration. Current conversion V_gen/100 ohm is source-provided. Native response gain is not documented; endpoint is recorded-channel differential resistance, not intrinsic junction resistance.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Unknown electrical gain and nominal rather than measured junction area."
+  ],
+  "current_outcomes_exposed": true
+}

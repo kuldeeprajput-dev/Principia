@@ -1,0 +1,33 @@
+{
+  "name": "partial_transformation",
+  "formula": "pre+jump*(rL+clip(a+b*f,0,1)*(rF-rL))",
+  "hypothesis": "Development evidence available before this fit: protocol_two_phase: MAE 0.141528, worst group 0.178854; continuous_edge_shift: MAE 0.146753, worst group 0.178854.\n\nTest incompleteaccessible transformation or time/SOCmismatch: a bounded affine phasefraction may explain why nominalprogress fails. The two measuredendpoint spectra remain the onlycomponents.",
+  "inputs": [
+    "pre",
+    "jump",
+    "rL",
+    "rF",
+    "dL",
+    "d2L",
+    "f",
+    "discharge",
+    "rest",
+    "e"
+  ],
+  "initial": {
+    "a": 0.2,
+    "b": 0.6
+  },
+  "bounds": {
+    "a": [
+      0,
+      1
+    ],
+    "b": [
+      0,
+      2
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:28:59.464140+00:00",
+  "parent": "attempt-002"
+}

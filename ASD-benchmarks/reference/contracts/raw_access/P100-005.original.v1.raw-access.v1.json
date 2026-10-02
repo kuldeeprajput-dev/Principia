@@ -1,0 +1,83 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-005.original.v1.raw-access.v1",
+  "parent_task_id": "P100-005.original.v1",
+  "case_id": "P100-005",
+  "protocol_version": "P100-005.original.v1.raw-access.v1",
+  "cohort_id": "P100-005.original.v1.cohort-1",
+  "parent_task_sha256": "8c64471e7044f477ccf6ead4fba9819bc9b244b391624445b3ecc31182993daa",
+  "input_sha256": "24482ffda7a8fd731cf98e49226ad7162149fd97a8c9aa38c114e71389e18c5e",
+  "observations_sha256": "fb4d0a50e6a4f4dbee2daf7e81de86db83c63281838089eb5146e4fc732e2bcb",
+  "source_scope": "original_corpus",
+  "tier": "adequacy_falsification_diagnostic",
+  "source_folder": "05_mathematics_graph_certificates",
+  "source_assets": [
+    {
+      "path": "raw/LS_+^2 certificate packages.zip",
+      "sha256": "91fc721c34ab62598fc10e9f29516e315ab26039358a46fe0fc2f76bd8fdf9e3",
+      "bytes": 229842,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/Tables of graphs.zip",
+      "sha256": "b7350804a5fe7bf03d204f82f5ba81e0c48ed87fc4b024f3d4d822c7fed50121",
+      "bytes": 3941,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/LS_+ certificate packages.zip",
+      "sha256": "4783fe51465ec0d300fdc377bcb94229a898788663241cdbddb15d5e64495c87",
+      "bytes": 4247,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/List of 4-minimal graphs.zip",
+      "sha256": "25335c59ec2f501a779203a43ea0e8446ebaf69fd9a6b8a5faf6357ab8e265f4",
+      "bytes": 18480,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/Code.zip",
+      "sha256": "5d55f3b98004cbc8527114e6bea0595e7770836691f48fdb939fe1823477b32f",
+      "bytes": 8483,
+      "role": "native source; parser declares consumed members"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "graph6": "graph6 encoding of an undirected labeled graph"
+    },
+    "observation_window": "Full graph adjacency is permitted; certificate facet coefficients and published ranks are forbidden predictors.",
+    "calibration_and_history": "None for deterministic bounds; source-independent exhaustive bitset search supplies labels. Labels are computable mathematical invariants, not physical measurements.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Every eligible graph has independence number four; zero MAE does not discriminate discovery.",
+    "Eligible targets contain one unique value."
+  ],
+  "current_outcomes_exposed": true
+}

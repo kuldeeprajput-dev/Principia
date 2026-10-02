@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-057",
+  "protocol_id": "P100-057-prepared-primary-v1",
+  "target": "Native dynamic viscosity",
+  "target_units": "cP",
+  "primary_units": "cP",
+  "metric_kind": "mae",
+  "metric_definition": "Equal complete reserved-group mean MAE in physical units; RMSE square root is taken within group, before averaging groups.",
+  "independent_unit": "whole Test ID; synthesis lots not identified",
+  "evaluation_groups": [
+    "11e93e47-3c0f-4052-89c4-11204ccbcf46",
+    "1c874754-9d40-4d87-a7c6-35e4feac4de4",
+    "2e85d1f2-81b0-4ab6-9b5f-928b7b4d13de",
+    "4b982a75-d5f0-4e73-84b2-693244317a5f",
+    "7dc69ac9-97b2-4f41-9472-f4e83d5eeee4",
+    "87eb319f-7a26-4de7-95a4-e2608bb1c2ea",
+    "9e61c83e-1a19-42f1-a5ee-3b98ef84348f",
+    "c2a6d2f9-2e8b-41e0-9f6f-8c8491c5c27c",
+    "cdd9f5b2-93c5-42c1-b1e1-493d532ea49b",
+    "e7f6c0cd-2e56-453d-b0b3-312f64de8b4e"
+  ],
+  "input_sha256": "695fae480c9f82f87de2e425afcf1bbf4f64076e2592517bd9b4c1b0de7ae886",
+  "input_rows": 2500,
+  "assigned_rows": 2500,
+  "permitted_inputs": [
+    "formulation",
+    "T_C",
+    "shear_s"
+  ],
+  "input_units": {
+    "formulation": "source label; calibrated category",
+    "T_C": "degC",
+    "shear_s": "s^-1"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "challenger",
+    "baseline_mean",
+    "baseline_rbf",
+    "baseline_residual_rbf"
+  ],
+  "reference_equations": {
+    "reference": "\\widehat{\\eta}_f=a_f\\exp[9(1000/T_K-1000/333.15)]",
+    "challenger": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the yield branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_mean": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the mean branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_rbf": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+    "baseline_residual_rbf": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "scope_limit": "Repeated tests of ten already calibrated formulations in one rheometer dataset; no independent synthesis-lot or unseen-loading transfer.",
+  "calibration_note": "T_K is absolute temperature in kelvin; eta is cP. The factor1000 carries kelvin, so9 is dimensionless and represents an effective activation scale9000K. Formulation amplitudes a_f range52.1603\u2013218.5126cP at333.15K; all ten exact values are in rules.json. A shear-rate input is allowed for competitors, but the selected thermal reference does not use it.",
+  "timing_contract": "Parse native numeric rows only; no smoothing, imputation or log-based target exclusion. All temperatures/rates in each Test ID stay together.",
+  "exposure_notice": "All packaged targets are now exposed; future scoring is retrospective. One inspected file with first low-temperature responses was excluded from the reserved pool. Target-independent metadata hash chooses one complete test per formulation; no confirmation score was opened.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared conditions, sensor/system dependence or small numbers of reserved groups do not support precise population-level confidence. No row-bootstrap intervals."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Verify native anchors and prediction-time inputs. Parse native numeric rows only; no smoothing, imputation or log-based target exclusion. All temperatures/rates in each Test ID stay together."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

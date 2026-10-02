@@ -1,0 +1,224 @@
+{
+  "schema_version": "p100.agent-review/1.0",
+  "role": "computational",
+  "reviewer_id": "/root/asd5_materials",
+  "case_id": "P100-021",
+  "created_utc": "2026-10-01T14:25:58.966010+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "f175e44415f218d9b6b772dd6108520525d81b4227cdedbeb2b9b86409eeb197"
+    },
+    {
+      "path": "run.py",
+      "sha256": "f67eb1c0b1c7a727e302c84bd3caa307e7495096aa8f9cf53d8d3169a41fc81e"
+    },
+    {
+      "path": "develop.py",
+      "sha256": "9dc74f71848b7e3616f8dccbf3730119194535c204f274973b51684abe783354"
+    },
+    {
+      "path": "confirm.py",
+      "sha256": "7d64b62c962524a8acaca18685dc39bc1db4d50f34c469b5ad0d90696d83fcea"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "47f1b5d67a3b003051f766eda1dc87401bbc2b25f22a087fb27400579129b3d9"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "115e175516cfb1626addc2e85ccdeda7d71521fbe5d90b2f3df6f0f563df79be"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "19f4b77fd90db55ad7e55c292d4f31029a2c368659d93a7a7dcfd79777d702fb"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "7aac0a747fa26e28c4ae9ec3af5271665c1c45f0479c795eeea34aab024ce849"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "50789f8fb943ffd3ee6fce5a60631d378cf9aed4ecf0c672bbf020bad2318772"
+    },
+    {
+      "path": "SUMMARY.md",
+      "sha256": "ccea8c605552ba7ac89f7839da344d11a5a158d060834d418df6ac51cc9119fc"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "6bb8d1c80f0251f633e36ee681f6df0325416b08d839ab392054aa103f0cb020"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "87061aba726a62fe6c493fd3fafb542c606cc284bb22449fb61a1899159d08da"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "2895a2ef0b9e11f91d651067a1da62c2a6bcda3e069283f1d466d1286a6bc83d"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "c7a2b20d59a84d9669a564e965c2590a2e1ca3f4a70a0ec2bd8354db63a0b485"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "c8cfe9558cbead9e69ee6f22138afaf7d9f9d85b2c424ac3de48f77d8549e45f"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "47f61b8fb92002b8af6dc9dcc05b32fea327a9502553427eeea99e8a5149dd2b"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "d1ca32899826ec40a85a6518cd17f50774df3da4d3819fdb27be3dfe7d6faf43"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "3a0f95678c948818f29001e232983810ce8039960a88e4eabedb938011480ba7"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "f1777573f7f42af4d1bcf5ec191332f2f1badbc04b440e74d18ce095672017e6"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "d87b2225ed9d44c07d1fda0b5c1ac4e3ea659250f88dca9294b2d8b405c31642"
+    }
+  ],
+  "overall_limitations": [
+    "Computational review is not independent experimental replication.",
+    "Native source hash verification succeeded; confirmation is exposed for future users."
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-021-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "All frozen predictions and independent equal-die errors reproduce. Inverse-area confirmation MAE766.271ohm versus975.578constant; large failures and unresolved measurement gain prevent an intrinsic junction law."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement does not identify a microscopic mechanism; source constraints are explicit."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No independent exhaustive literature search or human novelty adjudication was performed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a bounded reproducible comparison or falsification under the declared information budget; broader value is not experimentally measured."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "27 recorded checks pass, including native preparation, independent group metrics and isolated standalone replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment, intervention or independent material/lot replication is supplied."
+        }
+      },
+      "checks": [
+        "native unique sample identities",
+        "linked groups disjoint",
+        "confirmation only",
+        "native targets",
+        "exact source group identity",
+        "native predictor width_um",
+        "native predictor wafer_b",
+        "native predictor outer",
+        "state replay reference",
+        "independent metric reference",
+        "state replay area",
+        "independent metric area",
+        "state replay constant",
+        "independent metric constant",
+        "state replay flexible",
+        "independent metric flexible",
+        "state replay attempt-001",
+        "independent metric attempt-001",
+        "state replay attempt-002",
+        "independent metric attempt-002",
+        "state replay attempt-003",
+        "independent metric attempt-003",
+        "state replay attempt-004",
+        "independent metric attempt-004",
+        "state replay attempt-005",
+        "independent metric attempt-005",
+        "isolated standalone replay"
+      ],
+      "limitations": [
+        "19 dies on two wafers. Unknown acquisition gain/offset, nominal rather than measured area. Tail fits operationally define a response and may include defective junctions; all unambiguous devices retained.",
+        "Model-based review is not independent experimental replication or definitive novelty adjudication. All delivered targets are exposed.",
+        "Standalone predict assumes the shared evaluator validates arbitrary-submission domains; only the registered cohort was computationally reproduced."
+      ]
+    },
+    {
+      "finding_id": "P100-021-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All frozen predictions and independent equal-die errors reproduce. Inverse-area confirmation MAE766.271ohm versus975.578constant; large failures and unresolved measurement gain prevent an intrinsic junction law."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement does not identify a microscopic mechanism; source constraints are explicit."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No independent exhaustive literature search or human novelty adjudication was performed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a bounded reproducible comparison or falsification under the declared information budget; broader value is not experimentally measured."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "27 recorded checks pass, including native preparation, independent group metrics and isolated standalone replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment, intervention or independent material/lot replication is supplied."
+        }
+      },
+      "checks": [
+        "native unique sample identities",
+        "linked groups disjoint",
+        "confirmation only",
+        "native targets",
+        "exact source group identity",
+        "native predictor width_um",
+        "native predictor wafer_b",
+        "native predictor outer",
+        "state replay reference",
+        "independent metric reference",
+        "state replay area",
+        "independent metric area",
+        "state replay constant",
+        "independent metric constant",
+        "state replay flexible",
+        "independent metric flexible",
+        "state replay attempt-001",
+        "independent metric attempt-001",
+        "state replay attempt-002",
+        "independent metric attempt-002",
+        "state replay attempt-003",
+        "independent metric attempt-003",
+        "state replay attempt-004",
+        "independent metric attempt-004",
+        "state replay attempt-005",
+        "independent metric attempt-005",
+        "isolated standalone replay"
+      ],
+      "limitations": [
+        "19 dies on two wafers. Unknown acquisition gain/offset, nominal rather than measured area. Tail fits operationally define a response and may include defective junctions; all unambiguous devices retained.",
+        "Model-based review is not independent experimental replication or definitive novelty adjudication. All delivered targets are exposed.",
+        "Standalone predict assumes the shared evaluator validates arbitrary-submission domains; only the registered cohort was computationally reproduced."
+      ]
+    }
+  ],
+  "check_receipt": "P100-021.computational_checks.json"
+}

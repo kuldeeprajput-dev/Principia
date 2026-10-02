@@ -1,0 +1,131 @@
+{
+  "schema_version": "p100-round2-references-1",
+  "case_id": 60,
+  "task_id": "P100-060.round2.v1",
+  "default_reference": "current/cycle-001",
+  "default_meaning": "Original preregistered round2 candidate; no scientific admission or winner selection is implied. Every comparator remains separately executable.",
+  "models": {
+    "current/cycle-004": {
+      "state_file": "states/current_cycle-004.json",
+      "engine": "transport",
+      "reference_primary_error": 0.1001006753405442,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "current/cycle-003": {
+      "state_file": "states/current_cycle-003.json",
+      "engine": "followups",
+      "reference_primary_error": 0.1196986762544364,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "current/cycle-002": {
+      "state_file": "states/current_cycle-002.json",
+      "engine": "adaptive",
+      "reference_primary_error": 0.1487487828017755,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "previous/cycle-001": {
+      "state_file": "states/previous_cycle-001.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 0.1557614710230609,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "previous/cycle-003": {
+      "state_file": "states/previous_cycle-003.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 0.1585398841265827,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "current/cycle-005": {
+      "state_file": "states/current_cycle-005.json",
+      "engine": "transport",
+      "reference_primary_error": 0.1594575175864035,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "current/cycle-006": {
+      "state_file": "states/current_cycle-006.json",
+      "engine": "falsifiers",
+      "reference_primary_error": 0.1733737789479411,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "current/cycle-001": {
+      "state_file": "states/current_cycle-001.json",
+      "engine": "current",
+      "reference_primary_error": 0.1807067685220963,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "previous/cycle-004": {
+      "state_file": "states/previous_cycle-004.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 0.1833879686549068,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "previous/baseline-global_edge": {
+      "state_file": "states/previous_baseline-global_edge.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 0.1952633168092631,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "previous/baseline-old": {
+      "state_file": "states/previous_baseline-old.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 0.1952633168092684,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "previous/baseline-constant": {
+      "state_file": "states/previous_baseline-constant.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 0.2018392765171364,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "previous/baseline-flex": {
+      "state_file": "states/previous_baseline-flex.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 0.2206881395597782,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "current/baseline-hgb": {
+      "state_file": "states/current_baseline-hgb.json",
+      "engine": "current",
+      "reference_primary_error": 0.4835872252450404,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    },
+    "previous/cycle-002": {
+      "state_file": "states/previous_cycle-002.json",
+      "engine": "previous_bio",
+      "reference_primary_error": 2.7834417635613304,
+      "rows": 300,
+      "groups": 30,
+      "metric_unit": "condition-normalized MAE"
+    }
+  },
+  "additional_inputs_for_historical_comparators": [],
+  "current_outcome_exposure": "exposed"
+}

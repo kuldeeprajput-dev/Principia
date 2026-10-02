@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-087",
+  "title": "Dataset and computer code for \"The dynamics of cooperation in asymmetric public goods games\"",
+  "default_task": "P100-087.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Next-round individual contribution",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 55,
+    "independent_unit_description": "Complete first-session interacting pair;20% hash heldout in each treatment; remaining groups in5 deterministic whole-pair folds. Both players remain together.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "One-step prediction before round3..20 using strictly prior own/peer contributions and publicly announced rules. Earlier confirmation responses are permitted causal online history, never fitted parameters. Surveys and session2 excluded.",
+  "baseline_strength": {
+    "registered_controls": 10,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Next-round individual contribution",
+    "prediction_time": "One-step prediction before round3..20 using strictly prior own/peer contributions and publicly announced rules. Earlier confirmation responses are permitted causal online history, never fitted parameters. Surveys and session2 excluded.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-087.original.v1"
+  ],
+  "finding_ids": [
+    "P100-087-F01",
+    "P100-087-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-087/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-087.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Next-round individual contribution under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "One-step prediction before round3..20 using strictly prior own/peer contributions and publicly announced rules. Earlier confirmation responses are permitted causal online history, never fitted parameters. Surveys and session2 excluded.",
+    "calibration_requirement": "One-step prediction before round3..20 using strictly prior own/peer contributions and publicly announced rules. Earlier confirmation responses are permitted causal online history, never fitted parameters. Surveys and session2 excluded.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Next-round individual contribution in experimental tokens",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "experimental tokens",
+    "reference_model": "reference",
+    "reference_primary_error": 0.3646464646464646,
+    "reference_physical_mae": 0.3646464646464646,
+    "physical_error_units": "experimental tokens",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.3646464646464646,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-087.original.v1/evidence/metrics.csv",
+      "bytes": 1004,
+      "sha256": "cee88f9eb4c21838b48bb37c2d253358ced0d6ab64c150b03bb0b349095eae64"
+    },
+    "models": 10
+  },
+  "case_specific_next_evidence": "Prespecify a change-event task with scientifically meaningful token thresholds and report precision, recall, calibration and per-treatment errors alongside MAE.\n\nTest whole-session/laboratory/treatment transfer on fresh pairs without repurposing exposed outcomes.\n\nSeparate descriptive forecasts from causal reciprocity or incentive-effect hypotheses requiring randomized contrasts."
+}

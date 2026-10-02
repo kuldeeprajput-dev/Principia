@@ -1,0 +1,28 @@
+{
+  "0": {
+    "kind": "relaxation",
+    "coef": [
+      0.16802849234640901
+    ],
+    "equation": "max(0,p+b0*r); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+    "training_groups": [
+      "22713"
+    ],
+    "training_rows": 1276,
+    "parameter_count": 1,
+    "rank": 1
+  },
+  "1": {
+    "kind": "relaxation",
+    "coef": [
+      0.05272271362761911
+    ],
+    "equation": "max(0,p+b0*r); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+    "training_groups": [
+      "16"
+    ],
+    "training_rows": 3186,
+    "parameter_count": 1,
+    "rank": 1
+  }
+}

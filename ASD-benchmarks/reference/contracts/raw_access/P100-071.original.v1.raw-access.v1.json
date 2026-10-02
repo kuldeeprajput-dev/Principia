@@ -1,0 +1,99 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-071.original.v1.raw-access.v1",
+  "parent_task_id": "P100-071.original.v1",
+  "case_id": "P100-071",
+  "protocol_version": "P100-071.original.v1.raw-access.v1",
+  "cohort_id": "P100-071.original.v1.cohort-1",
+  "parent_task_sha256": "598820c7c21609c2239da3a4f1669525dc7398a969b3551c59c85af6e3f3c7f4",
+  "input_sha256": "96591c6efa9cf7260fb4ca65d4e78e4eac4e6c3a9738f42325048234299a59af",
+  "observations_sha256": "0b6611248bc7c05f50a1d7124e41855671f733481c6636ff996a3d2be9b9c84a",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "71_biotechnology_cho_cultivations",
+  "source_assets": [
+    {
+      "path": "raw/Dataset.zip",
+      "bytes": 227627771,
+      "sha256": "46a6b92b77883d56df3be015895d93c85b2b2547121af0b8bc0a92f3fbefd17b"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "perm": "pF/cm",
+      "deltaeps_fc4": "(pF/cm)*MHz^4",
+      "transmission": "source arbitrary units",
+      "reflection": "source arbitrary units",
+      "conductivity": "mS/cm",
+      "deltaeps": "pF/cm",
+      "fc": "kHz",
+      "cole_alpha": "dimensionless",
+      "c300": "source units unspecified",
+      "c1118": "source units unspecified",
+      "c9995": "source units unspecified",
+      "cole_r2": "dimensionless",
+      "co2": "source percent",
+      "ph": "dimensionless pH",
+      "do": "percent saturation",
+      "temperature": "degrees Celsius",
+      "agitation": "rpm",
+      "aeration": "standard L/h",
+      "o2_inlet": "percent inlet oxygen fraction",
+      "volume": "L",
+      "perm_lag24": "pF/cm",
+      "transmission_lag24": "source arbitrary units",
+      "perm_peak_past": "pF/cm",
+      "fed_batch": "binary indicator",
+      "od": "dimensionless source optical-density transform",
+      "dperm24": "(pF/cm)/h",
+      "dod24": "1/h",
+      "spectral_span": "source capacitance units unspecified",
+      "spectral_midspan": "source capacitance units unspecified",
+      "fc_mhz": "MHz",
+      "permittivity_decline": "pF/cm",
+      "perm_decline_fraction": "dimensionless",
+      "od_sq": "dimensionless",
+      "perm_sq": "(pF/cm)^2",
+      "perm_fc": "(pF/cm)*MHz",
+      "perm_x_decline": "pF/cm",
+      "perm_x_conductivity": "(pF/cm)*(mS/cm)",
+      "perm_x_growth": "(pF/cm)^2/h",
+      "od_x_decline": "dimensionless",
+      "time_h": "h"
+    },
+    "observation_window": "Sensor median in [t\u22120.5h,t], fallback latest valid <=2h old; quality Ok and Cole R\u00b2>=0.9 where applicable. Lags and peaks use only the past. Do not use aligned duplicate tables as independent evidence.",
+    "calibration_and_history": "Training-only imputation, scale and missingness transforms; causal native sensors with quality flags. Offline VCD and its SEM are responses, never online predictors.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "time_h",
+      "source_workbook",
+      "source_offline_sheet",
+      "source_vcd_cell",
+      "causal_sensor_timestamps_json"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Only 3 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

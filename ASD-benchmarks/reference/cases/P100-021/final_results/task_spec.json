@@ -1,0 +1,43 @@
+{
+  "case_id": "P100-021",
+  "target": "effective high-current differential resistance of recorded voltage/current channels",
+  "target_units": "ohm",
+  "error_units": "ohm",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "width_um",
+    "wafer_b",
+    "outer"
+  ],
+  "input_units": {
+    "width_um": "um",
+    "wafer_b": "dimensionless indicator",
+    "outer": "dimensionless indicator"
+  },
+  "numeric_columns": [
+    "width_um",
+    "wafer_b",
+    "outer"
+  ],
+  "timing_contract": "design prediction before electrical measurement; wafer and inner/outer region known",
+  "calibration": "No per-device response calibration. Current conversion V_gen/100 ohm is source-provided. Native response gain is not documented; endpoint is recorded-channel differential resistance, not intrinsic junction resistance.",
+  "independent_unit": "complete wafer die: all junction widths and paired traces",
+  "scope_limits": "19 dies on two wafers. Unknown acquisition gain/offset, nominal rather than measured area. Tail fits operationally define a response and may include defective junctions; all unambiguous devices retained.",
+  "source_url": "https://zenodo.org/records/22113590",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "internal_confirmation": "held out until frozen model/stop selection",
+    "fresh_for_future_users": false
+  },
+  "uncertainty_policy": "Individual group errors; empirical group range, no row bootstrap or population CI.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "weights": "equal group then equal eligible row"
+  },
+  "selection": "area",
+  "training_scope": "See each state training_scope; complete development groups only.",
+  "outcome_cohort": "reserved groups recorded in SPLITS.json; no calibration anchors scored."
+}

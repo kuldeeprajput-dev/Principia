@@ -1,0 +1,57 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-078.original.v1.raw-access.v1",
+  "parent_task_id": "P100-078.original.v1",
+  "case_id": "P100-078",
+  "protocol_version": "P100-078.original.v1.raw-access.v1",
+  "cohort_id": "P100-078.original.v1.cohort-1",
+  "parent_task_sha256": "cc90eadc6633387cc43a6450f07f582ef9ea3fe6f1690ea46577dc7fef999994",
+  "input_sha256": "9c54a7b8626e1d2205f3948631944dabb3abfcd8d62585f0afd654d3f8263a80",
+  "observations_sha256": "b638e7bdee7a9927831a60396f174a11ea15c238660089c811662f83f6903433",
+  "source_scope": "original_corpus",
+  "tier": "adequacy_falsification_diagnostic",
+  "source_folder": "78_medicine_assay_reproducibility",
+  "source_assets": [
+    {
+      "path": "raw/standard_model_data_V1.0.zip",
+      "bytes": 7147342,
+      "sha256": "17fe9e015f8818627ebecbdc686a3ab0ffa20f3126ef1c1ce53d18ad57af70b4"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "time_h": "h; numeric actual time only",
+      "initial_logCFU": "log10 CFU / total lung; mean observed time-zero cohort",
+      "site": "source laboratory label"
+    },
+    "observation_window": "Initial cohort burden and time/site only. No post-baseline measured target is an input; study/strain IDs are anchors, not predictors.",
+    "calibration_and_history": "DSM/site-reference strain aliases resolved from source RefToDict plus explicit single-strain-study Overview links (source labeling discrepancies retained) and kept together. All ExperimentResults sheets included. Explicit untreated CFU lung single-value observations only, equality operator, compatible log-CFU lung units, numeric actual times 0\u201324 h. Time-zero animals form an explicitly allowed cohort calibration, not the same later animals. Non-numeric early-death times and censoring cannot be interpreted as exact scheduled times; exclusions are counted, and this creates survivorship/measurement selection limits. Source already reports virulence/reproducibility criteria; no new clinical efficacy claim. Source laboratory directory supplies validation identity; the original SITE field is inconsistent in one workbook and is preserved as provided_site. Header templates and source censoring inconsistencies require caution.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Reserved endpoints all at24h; kinetics and nonrandom humane-endpoint exclusions limit the task.",
+    "Only 1 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

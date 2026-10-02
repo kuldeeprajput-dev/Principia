@@ -1,0 +1,52 @@
+{
+  "target": "Author-reported origin depth uncertainty",
+  "target_units": "km",
+  "error_units": "absolute natural-log ratio",
+  "metric_kind": "log_mae",
+  "permitted_inputs": [
+    "depth_km",
+    "rms_s",
+    "phases",
+    "stations",
+    "gap_deg",
+    "dmin_km"
+  ],
+  "input_units": {
+    "depth_km": "km below network reference (may negative)",
+    "rms_s": "seconds phase residual standardError",
+    "phases": "used phase count",
+    "stations": "used station count",
+    "gap_deg": "largest azimuthal gap degrees",
+    "dmin_km": "minimum angular station distance*111.195km/degree"
+  },
+  "timing_contract": "Contemporaneous reported location-quality diagnostics, never pre-event earthquake forecast or independent true depth error.",
+  "calibration": "Complete spatiotemporal connected clusters held out; same snapshot networks/measurement procedures. No new waveform or independent hypocenter calibration.",
+  "independent_unit": "Transitive clusters within100km great-circle chord and7days; complete cluster hashfolds. Distant events may still share network/systematic velocity model errors.",
+  "scope_limits": "One July2026 catalog snapshot. Positive uncertainty reports only; mixed network estimation conventions, no universal standard-error confidence interpretation. Counts/geometry are outputs of location processing and causality is not identified.",
+  "applicability": {
+    "prediction_positive": true
+  },
+  "case_id": "P100-017",
+  "source_url": "https://earthquake.usgs.gov/fdsnws/event/1",
+  "source_license": "U.S. Government public domain",
+  "numeric_columns": [
+    "depth_km",
+    "rms_s",
+    "phases",
+    "stations",
+    "gap_deg",
+    "dmin_km"
+  ],
+  "exposure": {
+    "schema": "Native schema inspected and source-public aggregate descriptions known; case10 status counts were inspected, not new endpoint NVD-score presence scores. No reserved individual target metric printed.",
+    "current": "reserved_internal_only",
+    "fresh_for_future_users": false
+  },
+  "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  }
+}

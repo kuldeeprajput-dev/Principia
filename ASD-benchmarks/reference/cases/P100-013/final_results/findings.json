@@ -1,0 +1,889 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-013",
+  "findings": [
+    {
+      "finding_id": "P100-013-F01",
+      "statement": "Two-temperature-response kinetic mixture reduces conversion prediction error on a reserved faster heating ramp.",
+      "classification": "validated_extension",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-013.original.v1"
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preselected mixture reduces held-out20K/min conversion MAE to0.0589466 versus0.0752806 domain and0.0836005 flexible. This is one independent thermal history, not501 independent experiments.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Two Arrhenius-weighted channels are a bounded phenomenological representation. Parameter exchangeability, rate/energy compensation, Jacobian conditioning and only four training programs prevent chemical-species identification.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted primary-source context and established equation families do not establish global novelty. No independent expert/literature adjudication performed.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful compact transfer benchmark for one faster ramp; isothermal, multistep and batch transfer remain untested.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native parser, equations, frozen coefficients, predictions and grouping contracts are explicit and inspected. Full independent executable testing belongs to the separate computational review.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No intervention, deployed savings, reliability qualification or independent experiment demonstrates industrial impact.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        }
+      },
+      "computational_review": {
+        "finding_id": "P100-013-F01",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Exact states reproduce all saved predictions and complete-group errors; adverse comparators remain included.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Computational agreement alone does not establish the proposed physical mechanism.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "This computational review does not adjudicate literature priority.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The task is a usable numerical comparison within its measured-system contract. One held heating-rate program on one source material; fitted channels are not independently identified chemical species.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Native assets, deterministic parser, exact frozen state and independent arithmetic agree in this review.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent operational intervention or cost/reliability outcome is measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          }
+        },
+        "checks": [
+          "Independent native reconstruction agrees with frozen predictors, targets and complete-group identities",
+          "No group crosses development/confirmation; source hashes checked by deterministic parser",
+          "Every saved equation independently executed and every group-balanced MAE recomputed using NumPy/pandas",
+          "No fitting, network or history imports in prediction function",
+          "All confirmation samples come from the20 K/min trace; conversion constrained to0..1",
+          "Source native reader selects observed columns only; fitted columns not targets"
+        ],
+        "limitations": [
+          "One held heating-rate program on one source material; fitted channels are not independently identified chemical species."
+        ]
+      },
+      "disagreements": [
+        "mechanism",
+        "reproducibility"
+      ],
+      "scientific_review": "../../../reviews/portfolios/P100-013/combined/review.json",
+      "current_outcome_exposure": "exposed",
+      "equation_or_program": {
+        "expression": "Let the reference temperature be $T_r=423.15\\,\\mathrm{K}$ and $R=8.314462618\\,\\mathrm{J\\,mol^{-1}\\,K^{-1}}$. For each channel,\n\n$$\nq_j(T,\\beta)=\\frac{k_{j,r}}{\\beta}\\int_{273.15}^{T}\\exp\\!\\left[\\frac{E_j}{R}\\left(\\frac{1}{T_r}-\\frac{1}{u}\\right)\\right]du,\n\\qquad \\widehat\\alpha=w(1-e^{-q_1})+(1-w)(1-e^{-q_2}).\n$$\n\nThe energies are133.625and67.794kJ/mol, reference log-rates are-3.30765and-4.06157, and w=0.555544. Full precision is in rules.json. The integration limit is a fixed273.15K reference, not a fitted onset. This is a bounded phenomenological kinetic mixture; channels are not assigned to chemical species.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "source_claims": "../../../reviews/portfolios/P100-013/claims.json"
+    },
+    {
+      "finding_id": "P100-013-F02",
+      "statement": "The single-barrier/two-timescale simplification and single inaccessible-fraction explanation do not match the selected mixture under the frozen rate-transfer tests.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-013.original.v1"
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preselected mixture reduces held-out20K/min conversion MAE to0.0589466 versus0.0752806 domain and0.0836005 flexible. This is one independent thermal history, not501 independent experiments.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Two Arrhenius-weighted channels are a bounded phenomenological representation. Parameter exchangeability, rate/energy compensation, Jacobian conditioning and only four training programs prevent chemical-species identification.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted primary-source context and established equation families do not establish global novelty. No independent expert/literature adjudication performed.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful compact transfer benchmark for one faster ramp; isothermal, multistep and batch transfer remain untested.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native parser, equations, frozen coefficients, predictions and grouping contracts are explicit and inspected. Full independent executable testing belongs to the separate computational review.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No intervention, deployed savings, reliability qualification or independent experiment demonstrates industrial impact.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        }
+      },
+      "computational_review": {
+        "finding_id": "P100-013-F02",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Exact states reproduce all saved predictions and complete-group errors; adverse comparators remain included.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Computational agreement alone does not establish the proposed physical mechanism.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "This computational review does not adjudicate literature priority.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The task is a usable numerical comparison within its measured-system contract. One held heating-rate program on one source material; fitted channels are not independently identified chemical species.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Native assets, deterministic parser, exact frozen state and independent arithmetic agree in this review.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent operational intervention or cost/reliability outcome is measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          }
+        },
+        "checks": [
+          "Independent native reconstruction agrees with frozen predictors, targets and complete-group identities",
+          "No group crosses development/confirmation; source hashes checked by deterministic parser",
+          "Every saved equation independently executed and every group-balanced MAE recomputed using NumPy/pandas",
+          "No fitting, network or history imports in prediction function",
+          "All confirmation samples come from the20 K/min trace; conversion constrained to0..1",
+          "Source native reader selects observed columns only; fitted columns not targets"
+        ],
+        "limitations": [
+          "One held heating-rate program on one source material; fitted channels are not independently identified chemical species."
+        ]
+      },
+      "disagreements": [
+        "mechanism",
+        "reproducibility"
+      ],
+      "scientific_review": "../../../reviews/portfolios/P100-013/combined/review.json",
+      "current_outcome_exposure": "exposed",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "source_claims": "../../../reviews/portfolios/P100-013/claims.json"
+    },
+    {
+      "finding_id": "P100-013-F03",
+      "statement": "Chemical-species identification and industrial cure qualification are not established by these DSC fits.",
+      "classification": "abstention",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-013.original.v1"
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preselected mixture reduces held-out20K/min conversion MAE to0.0589466 versus0.0752806 domain and0.0836005 flexible. This is one independent thermal history, not501 independent experiments.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Two Arrhenius-weighted channels are a bounded phenomenological representation. Parameter exchangeability, rate/energy compensation, Jacobian conditioning and only four training programs prevent chemical-species identification.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted primary-source context and established equation families do not establish global novelty. No independent expert/literature adjudication performed.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful compact transfer benchmark for one faster ramp; isothermal, multistep and batch transfer remain untested.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native parser, equations, frozen coefficients, predictions and grouping contracts are explicit and inspected. Full independent executable testing belongs to the separate computational review.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No intervention, deployed savings, reliability qualification or independent experiment demonstrates industrial impact.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014"
+          ]
+        }
+      },
+      "computational_review": {
+        "finding_id": "P100-013-F03",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Exact states reproduce all saved predictions and complete-group errors; adverse comparators remain included.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Computational agreement alone does not establish the proposed physical mechanism.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "This computational review does not adjudicate literature priority.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The task is a usable numerical comparison within its measured-system contract. One held heating-rate program on one source material; fitted channels are not independently identified chemical species.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Native assets, deterministic parser, exact frozen state and independent arithmetic agree in this review.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent operational intervention or cost/reliability outcome is measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014"
+            ]
+          }
+        },
+        "checks": [
+          "Independent native reconstruction agrees with frozen predictors, targets and complete-group identities",
+          "No group crosses development/confirmation; source hashes checked by deterministic parser",
+          "Every saved equation independently executed and every group-balanced MAE recomputed using NumPy/pandas",
+          "No fitting, network or history imports in prediction function",
+          "All confirmation samples come from the20 K/min trace; conversion constrained to0..1",
+          "Source native reader selects observed columns only; fitted columns not targets"
+        ],
+        "limitations": [
+          "One held heating-rate program on one source material; fitted channels are not independently identified chemical species."
+        ]
+      },
+      "disagreements": [
+        "mechanism",
+        "reproducibility"
+      ],
+      "scientific_review": "../../../reviews/portfolios/P100-013/combined/review.json",
+      "current_outcome_exposure": "exposed",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "source_claims": "../../../reviews/portfolios/P100-013/claims.json"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

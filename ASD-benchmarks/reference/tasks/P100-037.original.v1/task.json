@@ -1,0 +1,105 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-037.original.v1",
+  "case_id": "P100-037",
+  "case_number": 37,
+  "family": "original",
+  "protocol_version": "P100-037-prepared-primary-v1",
+  "cohort_id": "P100-037.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-037.original.v1",
+  "legacy_package": "37_networks_router_power/final_results",
+  "source_scenario": "scenarios/37_networks_router_power",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Measured electrical router power",
+  "target_units": "W",
+  "error_units": "W",
+  "primary_units": "W",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "router",
+    "throughput_Gbps",
+    "packet_bytes"
+  ],
+  "input_units": {
+    "router": "categorical A/B",
+    "throughput_Gbps": "Gbit/s",
+    "packet_bytes": "bytes"
+  },
+  "numeric_columns": [
+    "throughput_Gbps",
+    "packet_bytes"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Current throughput and packet-size metadata only. Derived packet-rate proxies are not independent measurements; no measured temperature supports a thermal mechanism.",
+  "calibration": "Separate A/B model parameters from the original development runs; no target-run refit.",
+  "independent_unit": "complete native run",
+  "evaluation_groups": [
+    "TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+    "TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+    "TC3.2_traffic_load_variation_modelA_iteration3.csv"
+  ],
+  "assigned_rows": 27692,
+  "eligible_rows": 27691,
+  "baseline_models": [
+    "compact",
+    "flexible",
+    "throughput_only"
+  ],
+  "reference_model": "compact",
+  "models": {
+    "compact": {
+      "equation": "P=b0(router)+bu(router)*u+bs(router)*s+bus(router)*u*s; u=throughput_Gbps/200; q=throughput_Gbps*1e9/(8*packet_bytes*1e8); s=q/(0.03+q)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "flexible": {
+      "equation": "P=beta(router) dot [1,u,q,u^2,q^2,u*q,ln(packet_bytes/1500),ln(packet_bytes/1500)^2,u*ln(packet_bytes/1500)]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "throughput_only": {
+      "equation": "P=b0(router)+bu(router)*throughput_Gbps/200",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Only 5 groups, with system-level dependence; report individual effects without a population confidence interval."
+  },
+  "scope_limits": "Five reserved runs on two calibrated router models. No new-router or identified component-energy law is established.",
+  "source_url": "https://zenodo.org/records/17282065",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "9cdcd33d571ff37e52e789907b5dd86c0bcf883ecc6525adf2966fa005ce7f78",
+  "observations_sha256": "0a19b4420dd19ff31d8c497b20ef4208cf9bdceaa31838717cccd1b9097be0d1",
+  "legacy_protocol_sha256": "cbf368575230a3d69215e7356366069707ad0b26fbed8ff59261ff478505c3a6",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-015.original.v1",
+  "case_id": "P100-015",
+  "case_number": 15,
+  "family": "original",
+  "protocol_version": "P100-015-asd7-native-v1",
+  "cohort_id": "P100-015.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-015.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/15_economics_federal_reserve_shed_2025",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Unable to pay hypothetical400USD emergency expense by any listed means",
+  "target_units": "binary EF3_h",
+  "error_units": "squared probability (Brier)",
+  "primary_units": "squared probability (Brier)",
+  "metric_kind": "brier",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error",
+    "within_group_weight": "sample_weight"
+  },
+  "permitted_inputs": [
+    "income_proxy",
+    "household_size",
+    "shock",
+    "age"
+  ],
+  "input_units": {
+    "income_proxy": "thousands USD/year bracket proxy",
+    "household_size": "persons",
+    "shock": "no paid/profit work lastmonth (D1A0) binary, not jobloss",
+    "age": "years"
+  },
+  "numeric_columns": [
+    "income_proxy",
+    "household_size",
+    "shock",
+    "age"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Contemporaneous2025 household survey association. No future distress observation and no income intervention.",
+  "calibration": "Development states only; five whole-state hash folds. No held-state outcomes/calibration. EF3 other response checkboxes and EF1 savings coverage excluded to avoid near-endpoint restatement.",
+  "independent_unit": "Respondents nested in whole states; source respondents may share unreported household/environmental dependencies. States not independent populations.",
+  "evaluation_groups": [
+    "state:ak",
+    "state:al",
+    "state:ct",
+    "state:md",
+    "state:mt",
+    "state:ri",
+    "state:tx",
+    "state:va",
+    "state:vt",
+    "state:wv"
+  ],
+  "assigned_rows": 2215,
+  "eligible_rows": 2215,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "domain",
+    "flexible",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "p=logistic(a+bL*max(3-R,0)+bH*max(R-3,0)+c*S+d*A+e*A\u00b2)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "p=logistic(a)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "domain": {
+      "equation": "p=logistic(a+b*log_resource)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "p=logistic(a+sum b_j exp(-||standardized_x-center_j||\u00b2/8));32train-onlycenters",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "p=logistic(a+b*log(income_proxy/sqrt(hhsize))+c*no_paid_work)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "p=logistic(a+b*R+c*((age-45)/20)+d*((age-45)/20)^2)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "p=logistic(a+b*R+c*A+d*A\u00b2+e*no_paid_work)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "p=logistic(a+bL*max(3-R,0)+bH*max(R-3,0)+c*S+d*A+e*A\u00b2)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "p=logistic(a+bL*low_resource+bH*high_resource+d*A+e*A\u00b2)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "p=logistic(a+bI*log_income+bH*log_size+c*S+d*A+e*A\u00b2)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze."
+  },
+  "scope_limits": "Positive-weight complete cases, state-balanced within-state survey-weighted predictive risk; not national prevalence or causal financial access. Income proxy upper bracket175k is a modeling convention. D1A0 reflects no paid work, not unemployment or a job-loss shock.",
+  "source_url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+  "source_license": "Federal Reserve public-use data terms",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Schema and source codebook aggregate tabulations inspected; no reserved respondent target or confirmation metric inspected. Source-aware public survey.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"678020d8ec9290e5ff3d0b05d0fd4b82c47f0e213456a4ce9620225e697a800d\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "fd785f8fb5b82465474a3125c3408c9de8d13f587f765754422f726a131ffc1a",
+  "observations_sha256": "15e029460304b94ae70e5a203a5c0f89c970dda73913fa6477bd512556240a8a",
+  "legacy_protocol_sha256": "ef61c6ed741daaeb886a66032eed4ac4a20ff249146d07575c36d110d21a6878",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": "asd6-probability/1.1",
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

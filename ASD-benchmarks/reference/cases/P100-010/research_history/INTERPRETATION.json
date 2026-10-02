@@ -1,0 +1,31 @@
+{
+  "title": "NVD annotation coverage: a rare-event non-discovery benchmark",
+  "summary": "This snapshot does not support a transferable waiting-time or source-load law for NVD-authored CVSS coverage. The predeclared complexity rule selected a constant probability; no positive discrimination is established in the held sources.",
+  "data": "A frozen August23,2026 recent NVD feed contributes4425non-rejected CVEs:3037development records in71assigning sources and1388confirmation records in17sources. Entire sources stay linked. The reserved sources contain no positive NVD-authoredCVSSv3.1 annotations, so sensitivity/recall cannot be validated.",
+  "equations": "Selected p=logistic(a), a=[-5.4463586440393055]. Endpoint is exact NVD-authoredCVSSv3.1 presence, not CVSS severity. All age,source-batch andCNA-conditioned equations remain executable negative comparisons.",
+  "performance": "Confirmation Brier is about0.000018 for the prevalence reference, versus0.003068 flexible. This apparent low error is driven by zero positive outcomes; it is not evidence of industrial vulnerability prioritization. No positive-class recall or meaningful AUROC can be inferred.",
+  "value": "A useful counterexample for ASD: low error, rare labels and policy-driven administrative processes do not establish a new law. Future evaluation must report class support and accept abstention from hazard/discrimination claims.",
+  "findings": [
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Age, publication-batch and CNA-availability hypotheses do not establish a transferable annotation-coverage mechanism in this snapshot.",
+      "equation": "p_reference=logistic(a)",
+      "interpretation": "NIST April2026 changed duplicate scoring priorities. These metadata are contemporaneous policy/process proxies, not exploitation signals.",
+      "falsification": "All held sources lack the positive endpoint; rare-event calibration alone cannot validate detection, waiting-time hazard or operational triage."
+    },
+    {
+      "classification": "unsupported_hypothesis",
+      "admission": "unsupported",
+      "claim": "The proposed age/batch hazard equation identifies NVD enrichment dynamics.",
+      "equation": "Attempts001\u2013004 and006 test age,conditional link andbatchpressure.",
+      "interpretation": "A single recent snapshot cannot identify event waiting times, staffing or actual backlog process.",
+      "falsification": "Negligible age gains, unstable flexible transfer, binary-link equivalence005/007 and no heldpositiveclass; hypothesis notadmitted."
+    }
+  ],
+  "lessons": "Declare exact administrative endpoint instead of inferring status semantics. Keep a prevalence control and inspect class support; no positive held cases means discrimination is not assessed. Link-function coefficients are not physically identifiable from a two-level covariate.",
+  "unresolved": [
+    "No independent scientific adjudication or new experimental replication.",
+    "Source-aware final cohort is exposed for all future revisions."
+  ]
+}

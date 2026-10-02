@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-011",
+  "title": "MLPerf Inference v6.0 summary results",
+  "default_task": "P100-011.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Closed-division Server throughput for matched token-generating workloads",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 11,
+    "independent_unit_description": "Submitter+platform system; all model/scenario aliases linked",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Matched Offline throughput on every evaluation system; held-system Server/Interactive results forbidden.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Closed-division Server throughput for matched token-generating workloads",
+    "prediction_time": "Predict reported Server throughput using same-system Offline benchmark result, workload label and accelerator count. This is calibrated scenario transfer, not performance prediction before benchmarking.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-011.original.v1"
+  ],
+  "finding_ids": [
+    "P100-011-F01",
+    "P100-011-F02",
+    "P100-011-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-011/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-011.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Closed-division Server throughput for matched token-generating workloads under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Predict reported Server throughput using same-system Offline benchmark result, workload label and accelerator count. This is calibrated scenario transfer, not performance prediction before benchmarking.",
+    "calibration_requirement": "Matched Offline throughput on every evaluation system; held-system Server/Interactive results forbidden.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Closed-division Server throughput for matched token-generating workloads in tokens/s",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "tokens/s",
+    "reference_model": "reference",
+    "reference_primary_error": 77726.76260326096,
+    "reference_physical_mae": 77726.76260326096,
+    "physical_error_units": "tokens/s",
+    "lowest_registered_error_model": "attempt_001",
+    "lowest_registered_error": 67991.1980276172,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-011.original.v1/evidence/metrics.csv",
+      "bytes": 850,
+      "sha256": "8a5ed54534952d1a5f5bf464f9201c798bd902a605cb6facd10e1e4b25fed7bb"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+}

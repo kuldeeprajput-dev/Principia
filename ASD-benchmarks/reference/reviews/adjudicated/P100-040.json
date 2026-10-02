@@ -1,0 +1,370 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-040",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-040/computational.json",
+      "bytes": 12611,
+      "sha256": "b417f1431ab193c36064f8fd5f1992f59e14e1c6b52ba860cd40c8dcee1083bf"
+    },
+    {
+      "path": "reviews/portfolios/P100-040/scientific_critical.json",
+      "bytes": 12499,
+      "sha256": "88c0d60b30ba48a4ed0313f290b30de081d1e08e50fe863a3de0b9938a1a2d36"
+    },
+    {
+      "path": "reviews/portfolios/P100-040/combined/review.json",
+      "bytes": 24496,
+      "sha256": "f6e38fbc6bf2a4a458bcc114c7d1fefb41996f7b2108976983acf6f0f1c7bd9e"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-040-F01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "significance",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The selected two-distance-regime reference has mean daily MAE 9.453892 minutes versus matched robust domain 10.156146 and robust flexible 10.269022 on 92 held pickup days. Worst-day error also improves. A later candidate with lower confirmation error is correctly not promoted.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Actual trip distance is a post-trip measurement. The task is retrospective duration reconstruction, not pickup-time ETA. Airport, borough and time-of-day effects are descriptive route and demand associations; provider reporting quality and missing traffic information preclude a causal travel-time law.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful compact transportation-response model with fair robust controls and substantial chronological coverage, bounded by one city, one service class and retrospective inputs.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "partially_supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-040-F02",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "significance",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preserved negative or adequacy conclusion is supported within the stated task; it does not assert that the underlying phenomenon is absent. The selected two-distance-regime reference has mean daily MAE 9.453892 minutes versus matched robust domain 10.156146 and robust flexible 10.269022 on 92 held pickup days. Worst-day error also improves. A later candidate with lower confirmation error is correctly not promoted.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Actual trip distance is a post-trip measurement. The task is retrospective duration reconstruction, not pickup-time ETA. Airport, borough and time-of-day effects are descriptive route and demand associations; provider reporting quality and missing traffic information preclude a causal travel-time law.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful compact transportation-response model with fair robust controls and substantial chronological coverage, bounded by one city, one service class and retrospective inputs.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

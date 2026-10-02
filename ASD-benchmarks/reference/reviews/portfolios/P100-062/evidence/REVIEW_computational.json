@@ -1,0 +1,816 @@
+{
+  "case_id": "P100-062",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "3bb0052f6170ea59b990de50c8e8182f43217048cbffb4d6ccaa41adb08ae5d6"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "a127fa21779545f9e31d4f00592ca14513dd36e9e84ffbf5f4eac2e281b51002"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "a5144fdee5f540da6c051d380bc4af91a451d8c1056ff435fec7ba3a7207ac3a"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "75dd051320523dad307baef1561d106f134f2d04c8db535010941ddf01004cf6"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "a2bc27c3430860e96099427289c4061377a7da211b3c51e96ed647ce8870af32"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "19130b08a644e065bc51699ad739ab89891895b08f3652db9ad4a21ee8f499d5"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "d91dcbc43b3cf8b742d730f1b2bced6e283abd247028a1b146e9569fac77dd9a"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "7a5a65f3c2429029607c5a00ef90f364f8f4b72532f1e492a320b7473270930b"
+    },
+    {
+      "path": "native.py",
+      "sha256": "47bda61a260a69ed0eaa4809a7defe10bb94a198389bda6c2ac59c217805f59a"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "d6fbb14201a709f74d50d1e9c09354efb515162309b448b087cbdac830003ee5"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "077bfa0b64a22ed385ed9084ec1cc5aaa858410c44dd6d0380567045781c5a60"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "6f2096de433156dc13b7083c4d24a0278946997c467419c8af68374caa58c0c2"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "c1f817103f322ba6708be95ab339dadd9bba5c36c4298b50600906eb325b0b0b"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "08bc98425dcf0f5483710fb60b44514f5a40e8c92ff86270b8f0bea21d88ecb4"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "26ffdbd69f2b8d685ee62efe81d88a2dfb6d1b51dd966b48da1e29781a3b0a0f"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-062-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-062-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-062-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-062",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-062",
+      "native_rows": 1853,
+      "confirmation_rows": 370,
+      "models": 15,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 15,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 8.881784197001252e-16,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 370,
+        "primary_error": 0.6741346694049625,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "fixed_diffusion",
+        "rows": 370,
+        "primary_error": 26.181131659557796,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 370,
+        "primary_error": 4.2776699380166345,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "persistence",
+        "rows": 370,
+        "primary_error": 31.212706443665112,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "shared_boundary_response",
+        "rows": 370,
+        "primary_error": 8.251203017295714,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "fick_slab_corrected",
+        "rows": 370,
+        "primary_error": 5.920831494841131,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "surface_saturation",
+        "rows": 370,
+        "primary_error": 2.3624712984505196,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "trapping_two_timescales",
+        "rows": 370,
+        "primary_error": 8.34860599894396,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "occupancy_dependent_transport",
+        "rows": 370,
+        "primary_error": 2.3129508236672476,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "shared_fick_separate_amplitudes",
+        "rows": 370,
+        "primary_error": 0.8541278667283936,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "distributed_trapping",
+        "rows": 370,
+        "primary_error": 0.8878828677021713,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "finite_capacity_trapping",
+        "rows": 370,
+        "primary_error": 3.8572938328200297,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "activated_breakthrough",
+        "rows": 370,
+        "primary_error": 0.6741346694049625,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "semi_infinite_arrival",
+        "rows": 370,
+        "primary_error": 3.427185660851303,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "common_breakthrough_scale",
+        "rows": 370,
+        "primary_error": 1.263061991120359,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-008/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-008/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-008/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-009/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-009/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-009/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-010/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-010/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-010/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-011/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-011/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-011/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-012/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-012/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-012/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/fixed_diffusion/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/fixed_diffusion/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/fixed_diffusion/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-1",
+          "trace-1-block-1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-2",
+          "trace-1-block-2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "trace-0-block-3",
+          "trace-1-block-3"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "Eleven material hypotheses preserve the negative comparisons and one invalid technical trial. Current-condition-dependent breakthrough shape improves held time segments of two linked traces; these are not independent specimens or a uniquely identified diffusion coefficient."
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-022.original.v1.raw-access.v1",
+  "parent_task_id": "P100-022.original.v1",
+  "case_id": "P100-022",
+  "protocol_version": "P100-022.original.v1.raw-access.v1",
+  "cohort_id": "P100-022.original.v1.cohort-1",
+  "parent_task_sha256": "1a7fc8615e00834e164c3d023e06fafb41beae2f13ff138896bb35bdf2b0f687",
+  "input_sha256": "d7222aa34b39246e377c8fe22a58821a8e02653f1300700fdbd497ccdbbdeeb3",
+  "observations_sha256": "5c8fe116be696493f226d0111ad3c0d49053ab9bddfe951ea26c6511dfa495b3",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "22_electronics_perovskite_memristors",
+  "source_assets": [
+    {
+      "path": "PROVENANCE.json",
+      "bytes": 5119,
+      "sha256": "1afefacf1ceececd7967f5908b83327a6507efbab911779a964f02ffc7f62a64"
+    },
+    {
+      "path": "raw/dataset.zip",
+      "bytes": 6534354,
+      "sha256": "4bf7369123a570fd55138a0faec86829bce0bec643532d702591828036260939"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "voltage_V": "V",
+      "bromine_rich": "indicator"
+    },
+    "observation_window": "A fixed SHA-256 allocation reserved ten complete devices per composition. Development used five hash-assigned device folds. Exact duplicate native traces were linked and deduplicated. The task predicts the initial positive forming branch from voltage and composition alone; no current calibration or later sweep is a predictor.",
+    "calibration_and_history": "None. First100 voltage rows of each device, V>=0.05V; no measured current allowed as predictor.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

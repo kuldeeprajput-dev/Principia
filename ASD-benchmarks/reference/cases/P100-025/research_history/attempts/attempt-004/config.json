@@ -1,0 +1,28 @@
+{
+  "name": "intermediate_spectral_component",
+  "formula": "pre+jump*(rL+f*(rF-rL)+a*f*(1-f)*d2L)",
+  "hypothesis": "Development evidence available before this fit: continuous_edge_shift: MAE 0.146753, worst group 0.178854; partial_transformation: MAE 0.10592, worst group 0.13708.\n\nTest transient spectralbroadening/heterogeneity beyond a two-endpointmixture. The additionalcurvature component peaks at intermediateprogress and vanishes at endpoints; it cannot on its own identify a thirdchemicalspecies.",
+  "inputs": [
+    "pre",
+    "jump",
+    "rL",
+    "rF",
+    "dL",
+    "d2L",
+    "f",
+    "discharge",
+    "rest",
+    "e"
+  ],
+  "initial": {
+    "a": 0
+  },
+  "bounds": {
+    "a": [
+      -500,
+      500
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:29:02.218468+00:00",
+  "parent": "attempt-003"
+}

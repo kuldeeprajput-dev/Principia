@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-010",
+  "title": "NVD recent CVE JSON 2.0 snapshot",
+  "default_task": "P100-010.original.v1",
+  "default_tier": "adequacy_falsification_diagnostic",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "NVD-authored CVSSv3.1 assessment present in current snapshot",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 17,
+    "independent_unit_description": "CVE records nested in complete assigning sources; duplicated JSON/gzip representations linked. Source-day batches dependent.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Whole CNA/source group folds and held sources; no held-source target calibration.",
+  "baseline_strength": {
+    "registered_controls": 11,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "not_assessed": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "NVD-authored CVSSv3.1 assessment present in current snapshot",
+    "prediction_time": "All covariates are snapshot-available contemporaneous metadata. Source-day count and CNA assessment may be added after initial disclosure. This is current coverage diagnostics, not prediction of future NVD action or security exploitation.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Confirmation annotations contain no positive class; discrimination and recall cannot be assessed."
+  },
+  "task_ids": [
+    "P100-010.original.v1"
+  ],
+  "finding_ids": [
+    "P100-010-F01",
+    "P100-010-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-010/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-010.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate NVD-authored CVSSv3.1 assessment present in current snapshot under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "All covariates are snapshot-available contemporaneous metadata. Source-day count and CNA assessment may be added after initial disclosure. This is current coverage diagnostics, not prediction of future NVD action or security exploitation.",
+    "calibration_requirement": "Whole CNA/source group folds and held sources; no held-source target calibration.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "NVD-authored CVSSv3.1 assessment present in current snapshot in binary source=nvd@nist.gov in cvssMetricV31",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Confirmation annotations contain no positive class; discrimination and recall cannot be assessed."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "brier",
+    "primary_units": "squared probability (Brier)",
+    "reference_model": "reference",
+    "reference_primary_error": 1.8433835367076705e-05,
+    "reference_physical_mae": 0.004293464261767729,
+    "physical_error_units": "probability",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 1.8433835367076705e-05,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-010.original.v1/evidence/metrics.csv",
+      "bytes": 1398,
+      "sha256": "b2bfd3f2ca34e4fab845ade622d259f3ca44cfa824b16609625707219ca825ee"
+    },
+    "models": 11
+  },
+  "case_specific_next_evidence": "Confirmation annotations contain no positive class; discrimination and recall cannot be assessed."
+}

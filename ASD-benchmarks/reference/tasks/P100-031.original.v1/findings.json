@@ -1,0 +1,58 @@
+[
+  {
+    "classification": "validated_extension",
+    "admission": "partially_supported",
+    "claim": "A positive Staq startup floor plus shared pilot-time scaling improves reserved-family runtime prediction over matched frozen controls.",
+    "equation": "rules.json models.reference: t_hat,k=A_k+B_k*x^p, SDK order Staq,Tket,BQSKIT; fixed negligible floors for Tket/BQSKIT.",
+    "interpretation": "Effective overhead plus growing computational work explains the observed short/long-runtime curvature within these paired software experiments.",
+    "falsification": "The pilot is a measured per-circuit calibration with real computational cost. Only successful matched cases and five held families are tested; no asymptotic-complexity, cross-hardware, quantum-physics or deployed-benefit claim is established.",
+    "finding_id": "P100-031-F01",
+    "task_id": "P100-031.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.nature.com/articles/s43588-025-00792-y",
+        "checked": "2026-10-02",
+        "known": "Benchpress paper compares quantum software performance and reports compilation/task successes/failures; no new quantum physical law inferred from runtime."
+      },
+      {
+        "url": "https://github.com/Qiskit/benchpress",
+        "checked": "2026-10-02",
+        "known": "Primary benchmark implementation; exact archived results are frozen locally, not rerun against current software."
+      }
+    ],
+    "scope": "Only device-transpilation successful matched tasks forTket/BQSKIT/Staq; no service remote latency. Missing/failed/timeouts excluded from conditional-success runtime target and retained in source audit; cannot infer success probability or realized routing speedup. Author timing environment differs in frequency/run state despite same CPU model."
+  },
+  {
+    "classification": "informative_falsification",
+    "admission": "supported",
+    "claim": "Three independently estimated SDK startup floors are not identifiable from the available data.",
+    "equation": "Attempt010 estimates three floors plus three scales and one power; attempt011 fixes Tket/BQSKIT floors to exp(-60) and retains five parameters.",
+    "interpretation": "Full-model Jacobian rank6/7 and near-zero floors motivate an identifiability correction; reduced model rank5/5 preserves the gain.",
+    "falsification": "A positive Staq floor is an empirical identifiable fit parameter, not a uniquely identified source-code operation. Alternative pipeline decompositions require new measurements.",
+    "finding_id": "P100-031-F02",
+    "task_id": "P100-031.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.nature.com/articles/s43588-025-00792-y",
+        "checked": "2026-10-02",
+        "known": "Benchpress paper compares quantum software performance and reports compilation/task successes/failures; no new quantum physical law inferred from runtime."
+      },
+      {
+        "url": "https://github.com/Qiskit/benchpress",
+        "checked": "2026-10-02",
+        "known": "Primary benchmark implementation; exact archived results are frozen locally, not rerun against current software."
+      }
+    ],
+    "scope": "Only device-transpilation successful matched tasks forTket/BQSKIT/Staq; no service remote latency. Missing/failed/timeouts excluded from conditional-success runtime target and retained in source audit; cannot infer success probability or realized routing speedup. Author timing environment differs in frequency/run state despite same CPU model."
+  }
+]

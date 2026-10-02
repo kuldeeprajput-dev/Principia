@@ -1,0 +1,249 @@
+{
+  "case_id": "P100-034",
+  "role": "computational",
+  "reviewer_id": "asd5_materials",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "8ee13053346b879dba1065d8fffab2becde1e198e4926c5e02020ec29d1bf376"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "51099d2545fe1c3f3fac295735a843e3711b30b366c24a64bec897f2767c688d"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "e492718af1078c8de5eedff35c8452d1b98764b17f48a3ec3e83aa92af8edc5c"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "1b3cb92c861efb86ab6a504a9aa3f73a1338c98de12e8ef7cebdb0179bb7edd8"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "1d080733f95d41ce1868f4f02993af21bbf40b8327640f505935360543eb562a"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "c189829e40746f2af30d072d681e9f89449e721668a84856ecd3b135f6b2f145"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "9a5e54630b33a3a75996ff829073beba4d67e226d977a4a57917af7ce8cdff7e"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "b5610e2a777c9082123729f1932b0985c92e2aabc2a376a96848fbae80db586b"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "517a1af5a9d81145c98444cf1f7d238cd5c0016699aa9af865785c2465485808"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "d2cfe4ba0941e02aa7a45829919e7cbc25a233efee854a2b0ac96e62f0049940"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "5621a220eec1b797455998d2d3f997d9a261f239496d45d33e46494238799bda"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-034-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Ten-sweep author peak magnitudes and both lower-dose calibration blocks reproduce exactly. Six animals yield MAE17.1392nA versus flexible20.6789 and Hill35.0447; later lower-error candidates remain diagnostic."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational parity validates implementation, not causal mechanism; scientific-critical review is separate."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No computational result certifies novelty; disclosed source analyses remain prior art."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Performance and negative evidence are meaningful only under the stated input/calibration and grouped cohort."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Independent native reconstruction, every frozen equation, equal-group metric recomputation, target poison, row-order invariance and standalone replay all passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No prospective operational or experimental intervention was performed."
+        }
+      },
+      "checks": [
+        {
+          "name": "native_reconstruction",
+          "passed": true,
+          "rows": 74,
+          "confirmation_rows": 18,
+          "columns_checked": [
+            "group",
+            "calcium",
+            "mutant",
+            "low04",
+            "low075"
+          ]
+        },
+        {
+          "name": "complete_group_partition",
+          "passed": true,
+          "groups": 25
+        },
+        {
+          "name": "all_equations_metrics_target_poison_order",
+          "passed": true,
+          "models": 14,
+          "metric": "equal_group_MAE"
+        },
+        {
+          "name": "standalone_replay",
+          "passed": true
+        }
+      ],
+      "limitations": [
+        "Dose and elapsed time are confounded; an author-extracted peak is not independent re-extraction from ABF. F03 substantially overlaps F01 and should be treated as supporting interpretation, not another independent discovery.",
+        "All outcomes are exposed. This review is computational review by a separate agent, not experimental replication."
+      ]
+    },
+    {
+      "finding_id": "P100-034-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Ten-sweep author peak magnitudes and both lower-dose calibration blocks reproduce exactly. Six animals yield MAE17.1392nA versus flexible20.6789 and Hill35.0447; later lower-error candidates remain diagnostic."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational parity validates implementation, not causal mechanism; scientific-critical review is separate."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No computational result certifies novelty; disclosed source analyses remain prior art."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Performance and negative evidence are meaningful only under the stated input/calibration and grouped cohort."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Independent native reconstruction, every frozen equation, equal-group metric recomputation, target poison, row-order invariance and standalone replay all passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No prospective operational or experimental intervention was performed."
+        }
+      },
+      "checks": [
+        {
+          "name": "native_reconstruction",
+          "passed": true,
+          "rows": 74,
+          "confirmation_rows": 18,
+          "columns_checked": [
+            "group",
+            "calcium",
+            "mutant",
+            "low04",
+            "low075"
+          ]
+        },
+        {
+          "name": "complete_group_partition",
+          "passed": true,
+          "groups": 25
+        },
+        {
+          "name": "all_equations_metrics_target_poison_order",
+          "passed": true,
+          "models": 14,
+          "metric": "equal_group_MAE"
+        },
+        {
+          "name": "standalone_replay",
+          "passed": true
+        }
+      ],
+      "limitations": [
+        "Dose and elapsed time are confounded; an author-extracted peak is not independent re-extraction from ABF. F03 substantially overlaps F01 and should be treated as supporting interpretation, not another independent discovery.",
+        "All outcomes are exposed. This review is computational review by a separate agent, not experimental replication."
+      ]
+    },
+    {
+      "finding_id": "P100-034-F03",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Ten-sweep author peak magnitudes and both lower-dose calibration blocks reproduce exactly. Six animals yield MAE17.1392nA versus flexible20.6789 and Hill35.0447; later lower-error candidates remain diagnostic."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational parity validates implementation, not causal mechanism; scientific-critical review is separate."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No computational result certifies novelty; disclosed source analyses remain prior art."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Performance and negative evidence are meaningful only under the stated input/calibration and grouped cohort."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Independent native reconstruction, every frozen equation, equal-group metric recomputation, target poison, row-order invariance and standalone replay all passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No prospective operational or experimental intervention was performed."
+        }
+      },
+      "checks": [
+        {
+          "name": "native_reconstruction",
+          "passed": true,
+          "rows": 74,
+          "confirmation_rows": 18,
+          "columns_checked": [
+            "group",
+            "calcium",
+            "mutant",
+            "low04",
+            "low075"
+          ]
+        },
+        {
+          "name": "complete_group_partition",
+          "passed": true,
+          "groups": 25
+        },
+        {
+          "name": "all_equations_metrics_target_poison_order",
+          "passed": true,
+          "models": 14,
+          "metric": "equal_group_MAE"
+        },
+        {
+          "name": "standalone_replay",
+          "passed": true
+        }
+      ],
+      "limitations": [
+        "Dose and elapsed time are confounded; an author-extracted peak is not independent re-extraction from ABF. F03 substantially overlaps F01 and should be treated as supporting interpretation, not another independent discovery.",
+        "All outcomes are exposed. This review is computational review by a separate agent, not experimental replication."
+      ]
+    }
+  ],
+  "blocking_defects": [],
+  "recommendations": [
+    "Treat supporting implications of one fitted model as one discovery family; preserve failures and no post-confirmation promotion."
+  ]
+}

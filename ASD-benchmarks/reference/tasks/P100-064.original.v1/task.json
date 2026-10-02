@@ -1,0 +1,152 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-064.original.v1",
+  "case_id": "P100-064",
+  "case_number": 64,
+  "family": "original",
+  "protocol_version": "P100-064-asd5-native-v1",
+  "cohort_id": "P100-064.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-064.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/64_electronics_stretchable_lec",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "signed photodiode current after early calibration during operation",
+  "target_units": "nA",
+  "error_units": "nA",
+  "primary_units": "nA",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "time_s",
+    "current_uA",
+    "voltage_V",
+    "polymer_fraction",
+    "charge_uC",
+    "cal_photo_nA",
+    "cal_current_uA"
+  ],
+  "input_units": {
+    "time_s": "s",
+    "current_uA": "uA",
+    "voltage_V": "V",
+    "polymer_fraction": "mass fraction",
+    "charge_uC": "uC",
+    "cal_photo_nA": "nA",
+    "cal_current_uA": "uA"
+  },
+  "numeric_columns": [
+    "time_s",
+    "current_uA",
+    "voltage_V",
+    "polymer_fraction",
+    "charge_uC",
+    "cal_photo_nA",
+    "cal_current_uA"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "online simultaneous optical-response estimation after first20s: latest electrical observation at or before optical timestamp, maximum2s old; cumulative charge uses current history only",
+  "calibration": "Median optical current at aligned0..20s and median electrical current first20s per run. No later optical responses enter predictors.",
+  "independent_unit": "complete polymer-fraction/device number; all voltage runs and paired optical/electrical traces",
+  "evaluation_groups": [
+    "0wt%_no1",
+    "30wt%_no3",
+    "50wt%_no3",
+    "70wt%_no2"
+  ],
+  "assigned_rows": 11493,
+  "eligible_rows": 11493,
+  "baseline_models": [
+    "reference",
+    "current",
+    "flexible",
+    "persistence",
+    "attempt-001",
+    "attempt-002",
+    "attempt-003",
+    "attempt-004",
+    "attempt-005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Phat=C0",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "current": {
+      "equation": "Phat=C0+theta@[1,d]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "Phat=C0+theta@[1,d,S,t,L,Q,f,v,C0,d*f,d*v,d*L,f*L,d^2,L^2,C0*d,C0*L]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persistence": {
+      "equation": "Phat=C0",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-001": {
+      "equation": "Phat=C0+theta@[1,d,Q]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-002": {
+      "equation": "Phat=C0+theta@[1,d,L]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-003": {
+      "equation": "Phat=C0+theta@[1,d,d*f,L,L*f]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-004": {
+      "equation": "Phat=C0+theta@[1,S,L,S*f]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-005": {
+      "equation": "Phat=C0+theta@[1,C0*d,C0*L,d,L]",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Individual group errors; empirical group range, no row bootstrap or population CI."
+  },
+  "scope_limits": "17 named devices; source lacks complete strain timeline, device emissive area and causal interventions. Endpoint remains signed photocurrent, not calibrated luminance. Uneven lengths and malformed/restarted clocks explicitly handled. Fixed>=3 optical calibration points in first20s and <=2s electrical staleness restricts slower-cadence runs. One held-devicegroup has only4eligible rows. This task does not assess the entire native timing range.",
+  "source_url": "https://doi.org/10.6084/m9.figshare.29298161.v1",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"current\": \"exposed\", \"internal_confirmation\": \"held out until frozen model/stop selection\", \"fresh_for_future_users\": false}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "3115a8af44ed27eca122fd4d029801bd899ea20defe5681781acc7b9b0be0065",
+  "observations_sha256": "0e2e147458e84921f3a28b30406ad9fdf9a97c5ad6419f1797263f96cbf2d3a2",
+  "legacy_protocol_sha256": "5d9894c8213c350626f1d502619b75570d2051da8bd7d5eac981f79f12e555b5",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd5-diagnostics/1.0"
+}

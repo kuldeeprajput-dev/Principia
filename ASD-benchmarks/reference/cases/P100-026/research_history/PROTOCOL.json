@@ -1,0 +1,38 @@
+{
+  "case_id": "P100-026",
+  "title": "Catalytic induction trajectory transfer",
+  "created_utc": "2026-10-01T15:22:06.149631+00:00",
+  "target": "Dimethoxymethane selectivity",
+  "target_units": "percentage points",
+  "error_units": "percentage points",
+  "metric_kind": "mae",
+  "input_columns": [
+    "elapsed_min",
+    "anchor_selectivity_pct",
+    "prefix_slope_pct_min",
+    "ag_wt_pct"
+  ],
+  "input_units": {
+    "elapsed_min": "min",
+    "anchor_selectivity_pct": "percent",
+    "prefix_slope_pct_min": "percent/min",
+    "ag_wt_pct": "wt percent"
+  },
+  "scope": "Complete reactor run. Diagnostic forecast after 300 min with fixed prefix calibration; no future conversion/selectivity predictors.",
+  "source_paper": "https://pubs.rsc.org/en/content/articlepdf/2025/cy/d5cy00544b",
+  "selection": "Lowest whole-group OOF physical-unit MAE among substantive attempts; prefer fewer coefficients within1percent. Baselines retained even if superior. No test-based replacement.",
+  "stopping": "At least five materially distinct attempts. Continue distinct evidence-led hypotheses; stop after two consecutive substantive attempts after the current best with no >=1percent MAE gain, >=5percent worst-group gain, or supported structural simplification.",
+  "confirmation": "Separate process only after code/states/selection/stopping hashes frozen; all outcomes become exposed thereafter.",
+  "exposure": "Public source-aware corpus; source plots and published analyses known. Schema previews exposed first rows only. Case30 speeds>=13.9mm/s previewed; scored0.28\u201310mm/s unviewed. Case22 initial~0.006V row previewed; targetV>=0.05V unviewed. Case65 10Hz first rows previewed; scoref>=100Hz. Reserved response distributions and scores unopened.",
+  "uncertainty": "Per-group errors and ranges only; no dependent-row confidence interval. Very few top-level conditions constrain generalization.",
+  "calibration": "Last available DMM selectivity at t<=300min plus least-squares prefix slope on120<=t<=300; both recomputed independently per run. Score300<t<=1500.",
+  "source_hash": "1e1b4f115525e28e0ac4bb416e897ae6e01e56f9fc42da700e653cb82b4510c7",
+  "split_hash": "d64192c7ff16b4b52991db50e114009e4631b069a06fa62712886c66d1f96293",
+  "baselines": [
+    "mean/constant",
+    "established physical or matched calibration baseline",
+    "constrained flexible model under same information"
+  ],
+  "fit": "Development-only group-balanced least squares; forcase65 equivalent least squares in decibels. Frozen transformations; parameter bounds recorded per candidate.",
+  "exclusions": "Nonfinite native values excluded with anchors; none excluded by fit residuals. All source bytes unchanged."
+}

@@ -1,0 +1,271 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-053",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-053/computational.json",
+      "bytes": 9125,
+      "sha256": "ee102386d980d971efe83e3846dbc0b8493f5be316167980f3f098bbb6fa873a"
+    },
+    {
+      "path": "reviews/portfolios/P100-053/scientific_critical.json",
+      "bytes": 11904,
+      "sha256": "b143c528b10f22ef887b94f0af8ce43b2846dae1a9945194bc40df2a8ba31b72"
+    },
+    {
+      "path": "reviews/portfolios/P100-053/combined/review.json",
+      "bytes": 20641,
+      "sha256": "6ad3a4ed6afe17a73f0a83c75082c8c078ebea3d3fcbb63d98899ff22cc8a526"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-053-SCI-01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation. Strong adverse evidence: 27/2500 assigned operations lack the 700\u20131300 degree target window. Prediction includes the first sampled crossing 250 degrees and overshoot; this must not become arbitrary future access.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Torque history is consistent with retained thread engagement; geometry, wear, friction and station effects remain confounded.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "History compression is an operational approximation; no universal wear law or new constitutive mechanism is established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-053-SCI-02",
+      "disagreements": [],
+      "coverage_differences": [
+        "reliability",
+        "mechanism",
+        "novelty",
+        "significance",
+        "reproducibility",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation. Strong adverse evidence: Its development MAE.0244117 Nm exceeds equally informed flexible accuracy; disturbance-reset .0244366 Nm adds no gain. Simplicity can be useful but is distinct from a new friction mechanism.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Torque history is consistent with retained thread engagement; geometry, wear, friction and station effects remain confounded.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "History compression is an operational approximation; no universal wear law or new constitutive mechanism is established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "documentation_sufficiency"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-053-SCI-03",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation. Strong adverse evidence: Only 15/200 workpieces improve. Surface class, controller OK/NOK, clamping force and joint strength cannot be substituted for measured targets.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Torque history is consistent with retained thread engagement; geometry, wear, friction and station effects remain confounded.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "History compression is an operational approximation; no universal wear law or new constitutive mechanism is established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

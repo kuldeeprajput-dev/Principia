@@ -1,0 +1,27 @@
+{
+  "case": 38,
+  "type": "linear",
+  "features": [
+    "revertgate"
+  ],
+  "offset": "last",
+  "scale": null,
+  "alpha": 0,
+  "title": "Volatility-conditioned reversion",
+  "hypothesis": "If measurement scatter drives reversals, short-mean displacement should couple to past spread; remove long-mean and directional terms.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 1.2577260893238156, \"worst_group\": 1.7260980576240144}, {\"attempt\": \"attempt-002\", \"group_MAE\": 1.2286967795825008, \"worst_group\": 1.6533308691555735}, {\"attempt\": \"attempt-003\", \"group_MAE\": 1.2157744053119888, \"worst_group\": 1.6225962561123695}, {\"attempt\": \"attempt-004\", \"group_MAE\": 1.2106757105974493, \"worst_group\": 1.6268131523052112}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Asymmetric trend nearly matches flexible control, but gains remain small. Test a one-parameter volatility-driven reversal model.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+  "training_groups": [
+    "flight-1",
+    "flight-2",
+    "flight-3",
+    "flight-4"
+  ],
+  "training_rows": 3595,
+  "training_ids_sha256": "5242d8e23847b99ff8ec337f1a733230d240b4ecd06632f6332920b0a8e052db",
+  "coef": [
+    0.6778972850975561
+  ],
+  "rank": 1,
+  "condition_number": 1.0,
+  "complexity": 1
+}

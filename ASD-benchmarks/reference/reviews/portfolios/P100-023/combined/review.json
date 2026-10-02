@@ -1,0 +1,310 @@
+{
+  "schema_version": "principia.advisory-review/3.0",
+  "bindings": {
+    "claims_sha256": "b0946c164bfff1878d27406544f7bb5602016febf85cce5201505e5d62292d59",
+    "evidence_sha256": {
+      "E001": "f822fd8696afbd9ace6cf593d868581adc5787069db257b18a73f9c0b530c44a",
+      "E002": "eb952f8889f6bb3f926ddaa554f57104104555dba0af5de927a9ae41f39c1ebb",
+      "E003": "2d8a7a451531b82d2800329a56ecc6b04367a9174ba30012c7a0ad179eadce3b",
+      "E004": "4f825c10049bdf5658d382679be1c04692bd0b7a619b3a18c5b5b15fabfd8e62",
+      "E005": "e3e12cefaffcb5e883da2eee86461069dfac7c8c5bdd090d22e979e2849d68cb",
+      "E006": "a5e8809a8f9d1a92ffd2fd087a2baa173fd5d0d04f9a1556e347c343dcf0351c",
+      "E007": "009b608026506b7106cefc5030c2f148af772a6b81739b5c1037022ef12ff91b",
+      "E008": "268ad5e426c56bcfaea036b0fb49e9be58271f5c214e6c64fe616fd804a04189",
+      "SCIENTIFIC": "6464a9688ce21c5b3202194a4b4191d5645ce1e9d5a4e43cb8634157993711e6",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-023",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "reviews": [
+    {
+      "finding_id": "P100-023-SCI-01",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-023-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-023-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Whole participants with shared fluid panel; trial-median coefficient of friction at trial-average speed/load, not prospective control. Strong adverse evidence: Source full-data exponent 0.55 and fitted rheology are shared prior information, not independent verification of the same mechanism.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Known lubrication branches are plausible; the pressure term is an observational conditional association and does not transfer fluid-independently.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "The source already presents Stribeck collapse; refitting exponents repairs information fairness. No new universal friction law is supported. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole participants with shared fluid panel; trial-median coefficient of friction at trial-average speed/load, not prospective control.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Source full-data exponent 0.55 and fitted rheology are shared prior information, not independent verification of the same mechanism."
+        ],
+        "checks": [
+          "Separate person-only from person-and-fluid excluded validation.",
+          "Disclose author-H/rheology calibration and compare fixed-source versus train-only exponents.",
+          "Check pressure conclusions against force appearing insideH and distinguish pad photograph from loaded contact area."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-023-SCI-02",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-023-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-023-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Whole participants with shared fluid panel; trial-median coefficient of friction at trial-average speed/load, not prospective control. Strong adverse evidence: Negative pressure exponent appears 9/9 folds but Hersey itself contains inverse force. Photographic area is not instantaneous loaded area; fixed fluid order and shared calibration undermine causal pressure interpretation.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Known lubrication branches are plausible; the pressure term is an observational conditional association and does not transfer fluid-independently.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "The source already presents Stribeck collapse; refitting exponents repairs information fairness. No new universal friction law is supported. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole participants with shared fluid panel; trial-median coefficient of friction at trial-average speed/load, not prospective control.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "Negative pressure exponent appears 9/9 folds but Hersey itself contains inverse force. Photographic area is not instantaneous loaded area; fixed fluid order and shared calibration undermine causal pressure interpretation."
+        ],
+        "checks": [
+          "Separate person-only from person-and-fluid excluded validation.",
+          "Disclose author-H/rheology calibration and compare fixed-source versus train-only exponents.",
+          "Check pressure conclusions against force appearing insideH and distinguish pad photograph from loaded contact area."
+        ]
+      }
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "novelty_is_not_certified": true
+}

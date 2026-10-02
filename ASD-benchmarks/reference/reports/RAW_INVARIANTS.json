@@ -1,0 +1,47 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "name": "screw_future_torque_poisoning",
+      "status": "pass",
+      "detail": "Later torque values cannot change at-trigger prefix features."
+    },
+    {
+      "name": "settling_future_position_orientation_poisoning",
+      "status": "pass",
+      "detail": "Post-cutoff amplitude/orientation perturbations leave all upstream features unchanged."
+    },
+    {
+      "name": "cho_future_sensor_poisoning",
+      "status": "pass",
+      "detail": "Trailing valid sensor summary has no future response dependence."
+    },
+    {
+      "name": "cho_quality_flag_preserved",
+      "status": "pass",
+      "detail": "Invalid source status cannot enter the native summary even when its reading is finite."
+    },
+    {
+      "name": "native_hash_verified_before_parse",
+      "status": "pass",
+      "detail": "Pristine copied native input verifies."
+    },
+    {
+      "name": "truncated_native_rejected",
+      "status": "pass",
+      "detail": "Truncated source rejected by frozen byte count and SHA-256."
+    },
+    {
+      "name": "same_size_native_mutation_rejected",
+      "status": "pass",
+      "detail": "Equal-length source mutation rejected by SHA-256."
+    },
+    {
+      "name": "missing_native_rejected",
+      "status": "pass",
+      "detail": "Missing source rejected before scientific parsing."
+    }
+  ],
+  "no_fitting": true,
+  "scientific_scope": "Computational prefix/guard checks, not independent experimental replication."
+}

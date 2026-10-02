@@ -1,0 +1,67 @@
+{
+  "schema_version": "principia.review-packet/3.0",
+  "bindings": {
+    "claims_sha256": "4ee27d2fce0669f73bbbd3e81109c6306eb86bb0c11704db53acd4dd2affdd60",
+    "evidence_sha256": {
+      "E001": "437c83c4f6469c308f83658772e2b60f151ac78a04612be612e869fc30d90be6",
+      "E002": "fdb8692e4cfb00d3b2bf64b9d82ca3f0bf3847b09dad07866fb5375381dea95f",
+      "E003": "a377a798ffaf6707dc1aa8266661a6465497648f9383e49f09b988021e287460",
+      "E004": "8b86fe440b436bd34aa560fdb0127a7cd90e2dba4bb328c9cfcc7b7866eb1dea",
+      "SCIENTIFIC": "1224bab746b7ccbe833e017b2595507c9145e8ee19e51326a72fc0089a38539b",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-096",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "findings": [
+    {
+      "id": "P100-096-SCI-01",
+      "classification": "predictive_reference",
+      "source_classification": "numerical_control",
+      "statement": "The original leader-relaxation relation is a near-tie to persistence on author-smoothed speeds and cannot establish online behavior.",
+      "applicability": "Original RTS speed task separate from supplemental manually assisted position task; connected videos/riders recur within one session.",
+      "limitations": "Author RTS smoothing may use future observations; recurring riders and one session prevent unseen rider/safety claims.",
+      "falsification": [
+        "Treat author repository commitassets as explicit optional supplement, not original local-datas assets.",
+        "Keep videos 0010\u20130012 inone connected diagnostic block and exclude old development 0010 from fitting.",
+        "Check actual frame intervals, annotation age \u2264 5 frames, causal neighbor availability and negative direction-projected targets."
+      ],
+      "prior_art": "Relative-speed/spacing relations are established. The contribution is repaired measurement and scoped conditional evidence, not a new traffic law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "vhat(t+1)=v(t)+.09757907*(v_lead(t)-v(t)); sourceangle nearestleader convention.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ]
+      },
+      "variables_and_units": {
+        "target": "m/s",
+        "speed": "m/s at current native frame",
+        "past_acc": "m/s^2 from native speed 1 s earlier",
+        "gap": "m; positive-angle arc gap to nearest forward angular bicycle",
+        "relative_speed": "m/s; leader minus follower",
+        "radius": "m",
+        "lateral_gap": "m; radial separation to angular leader",
+        "count": "tracked bicycles in frame"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-096.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    }
+  ],
+  "reviews_required": [
+    "computational",
+    "scientific_critical"
+  ],
+  "automatic_scientific_admission": false,
+  "current_exposure": "exposed"
+}

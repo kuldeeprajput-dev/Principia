@@ -1,0 +1,271 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-100",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-100/computational.json",
+      "bytes": 9125,
+      "sha256": "fa0980f7f534923c079a9effe9a9cb5f69ed399f6ed022b705adc3e7aa37a8c7"
+    },
+    {
+      "path": "reviews/portfolios/P100-100/scientific_critical.json",
+      "bytes": 12117,
+      "sha256": "c83d46f4667547ed4a18408d7ac037e98880d44ac99d80fb450400e0b4ae17dc"
+    },
+    {
+      "path": "reviews/portfolios/P100-100/combined/review.json",
+      "bytes": 20854,
+      "sha256": "fa7d7e6a6e4052f2c5cb21cb78976b3541011863010a112085b4e9936d6c15a3"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-100-SCI-01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity. Strong adverse evidence: The compact model loses 2/3 runs against kernel; one lost probe has no RTT and remains missing. A 1.68 %mean gain does not identify scheduler/queue physics.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Observed short-history recurrence supports forecasting; its network origin and lost-packet reliability remain unidentified.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-100-SCI-02",
+      "disagreements": [],
+      "coverage_differences": [
+        "reliability",
+        "mechanism",
+        "novelty",
+        "significance",
+        "reproducibility",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity. Strong adverse evidence: Development lag-two MAE 2.422715 ms beats robust correction 2.4771391 ms; fitted corrections also lose all exposed runs. Observed recurrence does not identify a scheduler or queue mechanism.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Observed short-history recurrence supports forecasting; its network origin and lost-packet reliability remain unidentified.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "documentation_sufficiency"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-100-SCI-03",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity. Strong adverse evidence: Equal-variance independent noise and constant alternating means are not measured assumptions. Earlier fitted lag-two corrections also lose on all development and exposed runs.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Observed short-history recurrence supports forecasting; its network origin and lost-packet reliability remain unidentified.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

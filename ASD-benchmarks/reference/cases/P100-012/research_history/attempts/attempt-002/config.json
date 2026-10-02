@@ -1,0 +1,27 @@
+{
+  "name": "finite_angle_fresnel",
+  "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))",
+  "hypothesis": "Development evidence available before this fit: roughness_envelope: MAE 14609.1, worst group 15823.1.\n\nRoughness improves the asymptotic tail but remains worse than the smooth control. Test finite-angle Fresnel refraction: calibration near the critical region may invalidate q^-4 normalization even at larger target angles.",
+  "inputs": [
+    "q",
+    "q0",
+    "I0",
+    "outer"
+  ],
+  "initial": {
+    "qc": 0.05,
+    "sigma": 3
+  },
+  "bounds": {
+    "qc": [
+      0.005,
+      0.07
+    ],
+    "sigma": [
+      0,
+      30
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:08:57.347508+00:00",
+  "parent": "attempt-001"
+}

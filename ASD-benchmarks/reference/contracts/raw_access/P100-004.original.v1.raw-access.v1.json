@@ -1,0 +1,94 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-004.original.v1.raw-access.v1",
+  "parent_task_id": "P100-004.original.v1",
+  "case_id": "P100-004",
+  "protocol_version": "P100-004.original.v1.raw-access.v1",
+  "cohort_id": "P100-004.original.v1.cohort-1",
+  "parent_task_sha256": "94bf00b9f3d1fd71421047aea1cdf9459fe98b1d649111e73cc1ac7d11a26340",
+  "input_sha256": "9e3e81460b6e7c10f14872aa648f281e0ae3661ae754dad2bee4659b75c1e4cc",
+  "observations_sha256": "fa966849dd66dd6fd0c6043addeda6f4b11352273d49f886f052e4c53851c1a7",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "04_particle_physics_atlas_4lep_2015",
+  "source_assets": [
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodH.4lep.root",
+      "sha256": "43397857022591499a97a967cca3d45880f02531736b377ca036402d75abb23a",
+      "bytes": 6000089,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodE.4lep.root",
+      "sha256": "56aad4dcc08625525d3c86d4889160799c2af4974a0616289df78545f0888470",
+      "bytes": 13461218,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodD.4lep.root",
+      "sha256": "d76098a536fca22f0c926672efa461feceb41a44e87feb0c773b29a01113dc4a",
+      "bytes": 2358002,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodJ.4lep.root",
+      "sha256": "a74c8957f816a2b5ed24ed4505c69c55c5eba44f7fb3d8f65e8dc9d65366fd97",
+      "bytes": 35827539,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodG.4lep.root",
+      "sha256": "97bae2da9a5ccfac65aac15677efee3c397116a524849b706217b616d318b69c",
+      "bytes": 19424744,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/ODEO_FEB2025_v0_4lep_data15_periodF.4lep.root",
+      "sha256": "063ece4b1ac89f8ed3bf6abb6079507ee4468e15138fc4ff8c6c8691ed52a9cf",
+      "bytes": 9236190,
+      "role": "native source; parser declares consumed members"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "scalar_activity": "GeV",
+      "recoil": "GeV",
+      "lepton_recoil": "GeV",
+      "jet_activity": "GeV",
+      "jet_n": "count",
+      "max_lep_eta": "dimensionless pseudorapidity magnitude",
+      "muon_fraction": "dimensionless fraction"
+    },
+    "observation_window": "Diagnostic event reconstruction from lepton and jet kinematics; met_phi/met_mpx/met_mpy and truth fields forbidden. Inputs are measured same-event objects, not a pre-collision forecast.",
+    "calibration_and_history": "Training events only; no held-period target calibration.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

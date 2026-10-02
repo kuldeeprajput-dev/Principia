@@ -1,0 +1,72 @@
+{
+  "created_utc": "2026-10-02T01:55:55.497043+00:00",
+  "case_id": "P100-015",
+  "task": {
+    "target": "Unable to pay hypothetical400USD emergency expense by any listed means",
+    "target_units": "binary EF3_h",
+    "error_units": "squared probability (Brier)",
+    "metric_kind": "brier",
+    "permitted_inputs": [
+      "income_proxy",
+      "household_size",
+      "shock",
+      "age"
+    ],
+    "input_units": {
+      "income_proxy": "thousands USD/year bracket proxy",
+      "household_size": "persons",
+      "shock": "no paid/profit work lastmonth (D1A0) binary, not jobloss",
+      "age": "years"
+    },
+    "timing_contract": "Contemporaneous2025 household survey association. No future distress observation and no income intervention.",
+    "calibration": "Development states only; five whole-state hash folds. No held-state outcomes/calibration. EF3 other response checkboxes and EF1 savings coverage excluded to avoid near-endpoint restatement.",
+    "independent_unit": "Respondents nested in whole states; source respondents may share unreported household/environmental dependencies. States not independent populations.",
+    "scope_limits": "Positive-weight complete cases, state-balanced within-state survey-weighted predictive risk; not national prevalence or causal financial access. Income proxy upper bracket175k is a modeling convention. D1A0 reflects no paid work, not unemployment or a job-loss shock.",
+    "applicability": {
+      "probabilities": [
+        0,
+        1
+      ],
+      "weight": "weight"
+    },
+    "case_id": "P100-015",
+    "source_url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+    "source_license": "Federal Reserve public-use data terms",
+    "numeric_columns": [
+      "income_proxy",
+      "household_size",
+      "shock",
+      "age"
+    ],
+    "exposure": {
+      "schema": "Schema and source codebook aggregate tabulations inspected; no reserved respondent target or confirmation metric inspected. Source-aware public survey.",
+      "current": "reserved_internal_only",
+      "fresh_for_future_users": false
+    },
+    "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+    "aggregation": {
+      "hierarchy": [
+        "group"
+      ],
+      "primary": "mean_group_error",
+      "within_group_weight": "sample_weight"
+    }
+  },
+  "source_manifest_sha256": "c211b8e591b617ea0dc780f6204ceb8a09c69e64d41dfde561c3e3d920623f1f",
+  "native_sha256": "2e83c9d1196da6ae4586efba4f75fc6ec85b0d4c6e0385d2581ab38aaf9f4b12",
+  "split_manifest_sha256": "9a8d4ca997767960ab434c09dc433fa7576b693329b12659851c5539d57fe3df",
+  "baseline_families": [
+    "training constant",
+    "domain simple law",
+    "regularized32-center RBF same permitted inputs"
+  ],
+  "selection": "Minimize group-balanced primary error; prefer fewer coefficients within1percent of minimum; baseline may win.",
+  "stopping": "At least5distinct scientific hypotheses, adaptive to development evidence; stop after2consecutive substantive attempts without accuracy/robustness/interpretation gain.",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

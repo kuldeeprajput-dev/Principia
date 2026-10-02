@@ -1,0 +1,41 @@
+{
+  "case": 79,
+  "kind": "bateman",
+  "coef": [
+    9.999999999999453,
+    8.717730864891687,
+    8.480857186462684
+  ],
+  "training_groups": [
+    "204708",
+    "304716",
+    "404710",
+    "404724",
+    "604705"
+  ],
+  "training_rows": 25,
+  "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+  "equation": "yhat=max(0,baseline+A*(exp(-hours/tau_decay)-exp(-hours/tau_rise)))",
+  "optimizer": {
+    "success": true,
+    "cost": 5.594159126537464,
+    "bounds": [
+      [
+        0,
+        0.1,
+        0.01
+      ],
+      [
+        10,
+        1000,
+        48
+      ]
+    ],
+    "jacobian_rank": 3,
+    "jacobian_singular_values": [
+      15.99356433835719,
+      0.2718982231122291,
+      2.6618121880936243e-05
+    ]
+  }
+}

@@ -1,0 +1,781 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-058",
+  "findings": [
+    {
+      "finding_id": "P100-058-SCI-01",
+      "statement": "Positive Maxwell/WLF spectra predict within-batch storage and unfitted loss response, reproducing established constitutive families.",
+      "classification": "reproduction",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-058.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: Only 32/35 storage readings are positive; three negative native values remain in physical scores. Compliance and one-batch scope limit constitutive identification.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original two temperature reserve",
+          "measure": "storage log MAE",
+          "value": 0.404461,
+          "unit": "1",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original two temperature reserve",
+          "measure": "physical MAE",
+          "value": 116.619,
+          "unit": "Pa",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original two temperature reserve",
+          "measure": "unfitted loss log MAE",
+          "value": 0.256751,
+          "unit": "1",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Only 32/35 storage readings are positive; three negative native values remain in physical scores. Compliance and one-batch scope limit constitutive identification.",
+      "scientific_validators": [
+        "Preserve negative finite modulus in physical error and explicit positive-only log eligibility.",
+        "Keep loss response excluded from fitting/selection; replay with identical frozen storage coefficients.",
+        "Test spectrum conditioning, plateau/slow-tail ambiguity and positive dissipative response without manufacturing unique mode identities."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-058.json",
+      "source_classification": "reproduction"
+    },
+    {
+      "finding_id": "P100-058-SCI-02",
+      "statement": "A stronger nested Maxwell/WLF implementation improves retrospective storage and orthogonal loss response, without identifying individual modes.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "partially_supported",
+      "task_ids": [
+        "P100-058.continuation.v1"
+      ],
+      "task_version_history": "2026-10-01 continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: Conditioning 2.4e16 makes individual clocks, band masses, low-frequency viscosity and plateau nonunique. No loss fitting occurred; same-instrument loss is an orthogonal response, not independent laboratory replication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "continuation development temperatures",
+          "measure": "storage log MAE",
+          "value": 0.571979,
+          "unit": "1",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed 70/80 C temperatures",
+          "measure": "storage log MAE",
+          "value": 0.311133,
+          "unit": "1",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed 70/80 C temperatures",
+          "measure": "physical MAE",
+          "value": 54.2685,
+          "unit": "Pa",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed 70/80 C temperatures",
+          "measure": "unfitted loss log MAE",
+          "value": 0.152957,
+          "unit": "1",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Conditioning 2.4e16 makes individual clocks, band masses, low-frequency viscosity and plateau nonunique. No loss fitting occurred; same-instrument loss is an orthogonal response, not independent laboratory replication.",
+      "scientific_validators": [
+        "Preserve negative finite modulus in physical error and explicit positive-only log eligibility.",
+        "Keep loss response excluded from fitting/selection; replay with identical frozen storage coefficients.",
+        "Test spectrum conditioning, plateau/slow-tail ambiguity and positive dissipative response without manufacturing unique mode identities."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-058.json",
+      "source_classification": "retrospective_extension"
+    },
+    {
+      "finding_id": "P100-058-SCI-03",
+      "statement": "After lower-temperature calibration, WLF storage transfer beat Arrhenius on the preregistered PLA3D850 higher-temperature challenge.",
+      "classification": "validated_extension",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-058.supplemental-PLA3D850-storage.v1"
+      ],
+      "task_version_history": "2026-10-01 PLA3D850 storage challenge",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: Same authors/instrument; all held-temperature biases are negative and hotter errors grow. This is calibrated family transfer, not zero-shot PDLLA coefficient transfer.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "historically fresh PLA3D850150\u2013180 C/66 rows",
+          "measure": "WLF storage log MAE",
+          "value": 0.709324,
+          "unit": "1",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ]
+        },
+        {
+          "cohort": "same historically fresh cohort",
+          "measure": "Arrhenius storage log MAE",
+          "value": 1.199815,
+          "unit": "1",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Same authors/instrument; all held-temperature biases are negative and hotter errors grow. This is calibrated family transfer, not zero-shot PDLLA coefficient transfer.",
+      "scientific_validators": [
+        "Preserve negative finite modulus in physical error and explicit positive-only log eligibility.",
+        "Keep loss response excluded from fitting/selection; replay with identical frozen storage coefficients.",
+        "Test spectrum conditioning, plateau/slow-tail ambiguity and positive dissipative response without manufacturing unique mode identities."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-058.json",
+      "source_classification": "validated_extension"
+    },
+    {
+      "finding_id": "P100-058-SCI-04",
+      "statement": "After lower-temperature calibration, WLF storage transfer beat Arrhenius for recycled PLA, while its loss prediction fails.",
+      "classification": "validated_extension",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-058.supplemental-PLA_recycled-storage.v1"
+      ],
+      "task_version_history": "2026-10-01 PLA_recycled storage challenge",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: The associated unfitted loss log MAE 1.860375 contradicts a generally reliable complex-modulus transfer claim. Storage success must not erase this failure.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "historically fresh recycled PLA 160\u2013170 C/30 rows",
+          "measure": "WLF storage log MAE",
+          "value": 0.379836,
+          "unit": "1",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ]
+        },
+        {
+          "cohort": "same historically fresh cohort",
+          "measure": "Arrhenius storage log MAE",
+          "value": 0.808621,
+          "unit": "1",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "The associated unfitted loss log MAE 1.860375 contradicts a generally reliable complex-modulus transfer claim. Storage success must not erase this failure.",
+      "scientific_validators": [
+        "Preserve negative finite modulus in physical error and explicit positive-only log eligibility.",
+        "Keep loss response excluded from fitting/selection; replay with identical frozen storage coefficients.",
+        "Test spectrum conditioning, plateau/slow-tail ambiguity and positive dissipative response without manufacturing unique mode identities."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-058.json",
+      "source_classification": "validated_extension"
+    },
+    {
+      "finding_id": "P100-058-SCI-05",
+      "statement": "Unfitted PLA3D850 loss prediction is a useful orthogonal response check under frozen storage calibration.",
+      "classification": "validated_extension",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-058.supplemental-PLA3D850-loss.v1"
+      ],
+      "task_version_history": "2026-10-01 PLA3D850 loss challenge",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: Loss comes from the same instrument/experiments and does not establish independent replication or fully identified modes.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "historically fresh PLA3D850 loss",
+          "measure": "log MAE",
+          "value": 0.464169,
+          "unit": "1",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Loss comes from the same instrument/experiments and does not establish independent replication or fully identified modes.",
+      "scientific_validators": [
+        "Preserve negative finite modulus in physical error and explicit positive-only log eligibility.",
+        "Keep loss response excluded from fitting/selection; replay with identical frozen storage coefficients.",
+        "Test spectrum conditioning, plateau/slow-tail ambiguity and positive dissipative response without manufacturing unique mode identities."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-058.json",
+      "source_classification": "validated_extension"
+    },
+    {
+      "finding_id": "P100-058-SCI-06",
+      "statement": "Recycled-PLA loss response falsifies general storage-to-loss reliability of the calibrated family.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-058.supplemental-PLA_recycled-loss.v1"
+      ],
+      "task_version_history": "2026-10-01 PLA_recycled loss challenge",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: Material-specific dissipative behavior or metrology is unresolved; parameters must not be retuned against these exposed outcomes and relabeled fresh.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ]
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ]
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "historically fresh recycled PLA loss",
+          "measure": "log MAE",
+          "value": 1.860375,
+          "unit": "1",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Material-specific dissipative behavior or metrology is unresolved; parameters must not be retuned against these exposed outcomes and relabeled fresh.",
+      "scientific_validators": [
+        "Preserve negative finite modulus in physical error and explicit positive-only log eligibility.",
+        "Keep loss response excluded from fitting/selection; replay with identical frozen storage coefficients.",
+        "Test spectrum conditioning, plateau/slow-tail ambiguity and positive dissipative response without manufacturing unique mode identities."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-058.json",
+      "source_classification": "unsupported_or_falsified"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

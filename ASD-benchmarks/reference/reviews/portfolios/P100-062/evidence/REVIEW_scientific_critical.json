@@ -1,0 +1,200 @@
+{
+  "case_id": "P100-062",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_bio_behavior",
+  "reviewed_utc": "2026-10-02T03:31:23.216971+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "47bda61a260a69ed0eaa4809a7defe10bb94a198389bda6c2ac59c217805f59a"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "d6fbb14201a709f74d50d1e9c09354efb515162309b448b087cbdac830003ee5"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "6f2096de433156dc13b7083c4d24a0278946997c467419c8af68374caa58c0c2"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "c1f817103f322ba6708be95ab339dadd9bba5c36c4298b50600906eb325b0b0b"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "077bfa0b64a22ed385ed9084ec1cc5aaa858410c44dd6d0380567045781c5a60"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "fcfa060ca987ab57e724053fd915599c29a349e49843277d45b956860e1b417c"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "08bc98425dcf0f5483710fb60b44514f5a40e8c92ff86270b8f0bea21d88ecb4"
+    },
+    {
+      "path": "CONFIRMATION_RECEIPT.json",
+      "sha256": "e47e9819d67a5011168f9cad52bc04ae33f954299bcc0f58e35d47f5189fc86a"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "7931bf2d76f11a0ed706841a45a21a104355930ba60a6c906c72d275a34026e5"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "a5144fdee5f540da6c051d380bc4af91a451d8c1056ff435fec7ba3a7207ac3a"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "75dd051320523dad307baef1561d106f134f2d04c8db535010941ddf01004cf6"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "a127fa21779545f9e31d4f00592ca14513dd36e9e84ffbf5f4eac2e281b51002"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "3bb0052f6170ea59b990de50c8e8182f43217048cbffb4d6ccaa41adb08ae5d6"
+    },
+    {
+      "path": "package/MANIFEST.json",
+      "sha256": "b67680d98dc997943d4e68236d3b3ed80c8187f0c4dcf332e3b05d4801e89593"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "7a5a65f3c2429029607c5a00ef90f364f8f4b72532f1e492a320b7473270930b"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "ac9e24d837aa990ca25f1e62087b576f6de3aa87944ef15c8528a665996fdc58"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-062-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Reserved late tails of two measured traces support 0.674 microA MAE versus flexible 4.278, with both tail errors below 0.877. These are time extrapolations within measured traces, not new-specimen tests. Claim-specific conclusion: A condition-aware activated-breakthrough surrogate predicts the reserved late portions of these two traces more accurately than the matched controls."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The dimensionless activated-breakthrough exponent allows condition-dependent timescale. Entry boundary, trapping, amplitude and effective timing are confounded; the timescale is not unique lattice diffusivity."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful compact empirical tail forecast and a concrete failure of a shared gain/timescale restriction."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "Two linked traces at 293 K, uncertain effective boundary timing, no independent specimen IDs; technical dimension error was preserved and excluded before the accepted campaign.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-062-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Reserved late tails of two measured traces support 0.674 microA MAE versus flexible 4.278, with both tail errors below 0.877. These are time extrapolations within measured traces, not new-specimen tests. Claim-specific conclusion: A common linear gain and single transport-shaped timescale across cathodic current steps is insufficient for this prediction task."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "The dimensionless activated-breakthrough exponent allows condition-dependent timescale. Entry boundary, trapping, amplitude and effective timing are confounded; the timescale is not unique lattice diffusivity."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful compact empirical tail forecast and a concrete failure of a shared gain/timescale restriction."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "Two linked traces at 293 K, uncertain effective boundary timing, no independent specimen IDs; technical dimension error was preserved and excluded before the accepted campaign.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-062-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "Reserved late tails of two measured traces support 0.674 microA MAE versus flexible 4.278, with both tail errors below 0.877. These are time extrapolations within measured traces, not new-specimen tests. Claim-specific conclusion: The fitted timescale is a unique microscopic lattice diffusion coefficient applicable to new steel specimens."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "The dimensionless activated-breakthrough exponent allows condition-dependent timescale. Entry boundary, trapping, amplitude and effective timing are confounded; the timescale is not unique lattice diffusivity."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful compact empirical tail forecast and a concrete failure of a shared gain/timescale restriction."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "Two linked traces at 293 K, uncertain effective boundary timing, no independent specimen IDs; technical dimension error was preserved and excluded before the accepted campaign.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    }
+  ],
+  "review_scope": "Scientific interpretation, source semantics, information budget and evidence; independent from discovery and the computational reviewer for these cases.",
+  "literature": [
+    {
+      "url": "https://data.mendeley.com/datasets/tnsgf7v76z/1",
+      "use": "Primary-source context and distinction from the scoped task",
+      "access": "Primary source inspected by this reviewer on 2026-10-02."
+    }
+  ],
+  "blocking_defects": [],
+  "recommendations": [
+    "Keep the known specimen thickness separate from identification: geometry alone does not resolve boundary/trapping ambiguity."
+  ]
+}

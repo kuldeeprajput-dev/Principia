@@ -1,0 +1,30 @@
+{
+  "name": "flexible",
+  "formula": "pre+jump*(rL+(b0+b1*f+b2*f**2+b3*discharge+b4*rest)*(rF-rL)+b5*e/100)",
+  "hypothesis": "Six-coefficient constrainedspectral-mixturecontrol withbaselinecurvature.",
+  "inputs": [
+    "pre",
+    "jump",
+    "rL",
+    "rF",
+    "dL",
+    "d2L",
+    "f",
+    "discharge",
+    "rest",
+    "e"
+  ],
+  "initial": {},
+  "bounds": {},
+  "linear_terms": [
+    "jump*(rF-rL)",
+    "jump*f*(rF-rL)",
+    "jump*f**2*(rF-rL)",
+    "jump*discharge*(rF-rL)",
+    "jump*rest*(rF-rL)",
+    "jump*e/100"
+  ],
+  "base": "pre+jump*rL",
+  "recorded_utc": "2026-10-02T02:28:14.076997+00:00",
+  "parent": null
+}

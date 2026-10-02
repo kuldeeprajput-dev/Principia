@@ -1,0 +1,128 @@
+[
+  {
+    "fold": 0,
+    "state": {
+      "name": "finite_angle_fresnel",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))",
+      "hypothesis": "Development evidence available before this fit: roughness_envelope: MAE 14609.1, worst group 15823.1.\n\nRoughness improves the asymptotic tail but remains worse than the smooth control. Test finite-angle Fresnel refraction: calibration near the critical region may invalidate q^-4 normalization even at larger target angles.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:08:57.347508+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "qc": 0.06968329049993428,
+        "sigma": 2.8518457710421018e-05
+      },
+      "training_groups": [
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 2494,
+      "optimizer_success": true,
+      "nfev": 20,
+      "jacobian_condition": 886146494.6383989,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ]
+      }
+    }
+  },
+  {
+    "fold": 1,
+    "state": {
+      "name": "finite_angle_fresnel",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))",
+      "hypothesis": "Development evidence available before this fit: roughness_envelope: MAE 14609.1, worst group 15823.1.\n\nRoughness improves the asymptotic tail but remains worse than the smooth control. Test finite-angle Fresnel refraction: calibration near the critical region may invalidate q^-4 normalization even at larger target angles.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:08:57.347508+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "qc": 0.0693843757154114,
+        "sigma": 3.824470033830396e-12
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 2666,
+      "optimizer_success": true,
+      "nfev": 11,
+      "jacobian_condition": 8.603921571184567e+18,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ]
+      }
+    }
+  },
+  {
+    "fold": 2,
+    "state": {
+      "name": "finite_angle_fresnel",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))",
+      "hypothesis": "Development evidence available before this fit: roughness_envelope: MAE 14609.1, worst group 15823.1.\n\nRoughness improves the asymptotic tail but remains worse than the smooth control. Test finite-angle Fresnel refraction: calibration near the critical region may invalidate q^-4 normalization even at larger target angles.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:08:57.347508+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "qc": 0.0696311811044722,
+        "sigma": 2.236117416433156e-12
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06"
+      ],
+      "training_rows": 2924,
+      "optimizer_success": true,
+      "nfev": 11,
+      "jacobian_condition": 9.275491191726225e+18,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ]
+      }
+    }
+  }
+]

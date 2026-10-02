@@ -1,0 +1,135 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-083.original.v1",
+  "case_id": "P100-083",
+  "case_number": 83,
+  "family": "original",
+  "protocol_version": "P100-083-prepared-primary-v1",
+  "cohort_id": "P100-083.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-083.original.v1",
+  "legacy_package": "83_ecology_hive_microclimate/final_results",
+  "source_scenario": "scenarios/83_ecology_hive_microclimate",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "One-hour future internal sensor temperature",
+  "target_units": "degC",
+  "error_units": "degC",
+  "primary_units": "degC",
+  "metric_kind": "rmse",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_rmse"
+  },
+  "permitted_inputs": [
+    "stream",
+    "T_now",
+    "T_lag",
+    "T_external",
+    "RH_external",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "input_units": {
+    "stream": "calibrated sensor label",
+    "T_now": "degC",
+    "T_lag": "degC,causal lag1h",
+    "T_external": "degC,current",
+    "RH_external": "percent,current",
+    "hour_sin": "dimensionless source-clock phase",
+    "hour_cos": "dimensionless source-clock phase"
+  },
+  "numeric_columns": [
+    "T_now",
+    "T_lag",
+    "T_external",
+    "RH_external",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "One hourly origin: first native observation within first15min. Forecast nominal1hour, score nearest native target within5min, same calendar day, no interpolation. Causal lag<=origin\u22121hour within15min. Latest20percent native dates per stream reserved. Native response outliers retained.",
+  "calibration": "T and Te are current internal/external Celsius temperatures; T\u22121 is a causal one-hour lag, He is current external relative humidity percent, and v is external vapor-pressure deficit in kPa. Five offsets c_s are\u22120.384543,\u22120.316614,\u22120.340834,+0.138741,+0.323654degC in rules.json sensor order. Coefficients ba=\u22120.002878, br=0.050874, bm=0.083403 are dimensionless; bv=0.481876degC/kPa and bvr=0.084243/kPa. The reference30degC is an algebraic centering constant, not a prescribed biological setpoint.",
+  "independent_unit": "future native-date block per calibrated sensor stream",
+  "evaluation_groups": [
+    "DadosMeliponas:sensor1:future",
+    "DadosMeliponas:sensor2:future",
+    "DadosMeliponas:sensor3:future",
+    "dadosColmeia1Apis:sensor1:future",
+    "dadosColmeia2Apis:sensor3:future"
+  ],
+  "assigned_rows": 1282,
+  "eligible_rows": 1282,
+  "baseline_models": [
+    "reference",
+    "challenger",
+    "baseline_newton",
+    "baseline_persistence",
+    "baseline_rbf",
+    "baseline_residual_rbf"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "v=0.6108e^{17.27T_e/(T_e+237.3)}(1-H_e/100) \\widehat T_{+1}=T+c_s+b_a(T_e-T)+b_r(30-T)+b_m(T-T_{-1})+b_vv+b_{vr}v(30-T)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "challenger": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the radiative branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_newton": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the newton branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_persistence": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the persistence branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rbf": {
+      "equation": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_residual_rbf": {
+      "equation": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared conditions, sensor/system dependence or small numbers of reserved groups do not support precise population-level confidence. No row-bootstrap intervals."
+  },
+  "scope_limits": "Latest native dates at five calibrated sensor streams from one apiary; sensor/colony, species and season are confounded. No unseen-apiary or colony-health prediction.",
+  "source_url": "https://zenodo.org/records/20399470",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All packaged targets are now exposed; future scoring is retrospective. Timestamp/input dictionaries examined; no future confirmation targets or score viewed before protocol freezing.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "1f3be4e12fcf4ad2bacab06b6c5622552ecb69f38140703bc081a1b949113935",
+  "observations_sha256": "f9562ec86fc5f380f6f8098a2101644150403dde72ba6fd319bf881c9a5e4ffb",
+  "legacy_protocol_sha256": "9bcf72f982290f38e1796305121c7a8cdc4958a06647ccf98b4b30b4b087e45c",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

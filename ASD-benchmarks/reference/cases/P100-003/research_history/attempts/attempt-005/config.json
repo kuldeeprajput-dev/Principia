@@ -1,0 +1,38 @@
+{
+  "case": 3,
+  "kind": "volatility",
+  "hypothesis": "A changing local fluctuation scale could determine how much persistence is trustworthy. Gate local deviation by recent volatility and allow high-band coupling; challenge this regime explanation against simpler stationarity.",
+  "parent": "attempt-004",
+  "created_utc": "2026-10-02T02:07:50.978480+00:00",
+  "before_execution": true,
+  "confirmation_accessed": false,
+  "development_evidence_available": [
+    {
+      "attempt": "attempt-001",
+      "primary_error": 0.01109974396619213,
+      "worst_group": 0.013966570233176209
+    },
+    {
+      "attempt": "attempt-002",
+      "primary_error": 0.013043296259392097,
+      "worst_group": 0.019360062046576396
+    },
+    {
+      "attempt": "attempt-003",
+      "primary_error": 0.013617642725119113,
+      "worst_group": 0.01753991920456186
+    },
+    {
+      "attempt": "attempt-004",
+      "primary_error": 0.011394222736570965,
+      "worst_group": 0.014552263334857991
+    }
+  ],
+  "primary_metric": "mean_group_absolute_error",
+  "falsifying_tests": [
+    "Matched strong baselines under identical inputs",
+    "Per-group errors and worst-group behavior",
+    "Parameter boundary/identifiability audit or exact-arithmetic preconditions",
+    "Physical/mathematical applicability and negative cases retained"
+  ]
+}

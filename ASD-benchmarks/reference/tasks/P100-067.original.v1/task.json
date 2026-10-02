@@ -1,0 +1,115 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-067.original.v1",
+  "case_id": "P100-067",
+  "case_number": 67,
+  "family": "original",
+  "protocol_version": "P100-067-prepared-primary-v1",
+  "cohort_id": "P100-067.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-067.original.v1",
+  "legacy_package": "67_environment_microplastic_settling/final_results",
+  "source_scenario": "scenarios/67_environment_microplastic_settling",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Interface transit time",
+  "target_units": "s",
+  "error_units": "s",
+  "primary_units": "absolute log ratio",
+  "metric_kind": "log_transit",
+  "aggregation": {
+    "hierarchy": [
+      "group",
+      "particle"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "width_m",
+    "v_up_m_s",
+    "orientation_cos2",
+    "particle",
+    "family"
+  ],
+  "input_units": {
+    "width_m": "m",
+    "v_up_m_s": "m/s",
+    "orientation_cos2": "dimensionless mean cos(2 theta), range [-1,1]",
+    "particle": "categorical particle ID",
+    "family": "categorical fluid family"
+  },
+  "numeric_columns": [
+    "width_m",
+    "v_up_m_s",
+    "orientation_cos2"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": true,
+  "nonnegative_prediction": false,
+  "positive_target": true,
+  "timing_contract": "Use native upstream observations ending before interface entry; no interpolation across entry. orientation_cos2 is mean cos(2 theta), NOT mean cos\u00b2(theta).",
+  "calibration": "Source-defined interface width; upstream speed and orientation from the strict upstream observation prefix. No target transit is an input.",
+  "independent_unit": "complete fluid configuration; particles balanced within configuration",
+  "evaluation_groups": [
+    "1.1",
+    "2.1",
+    "3.1"
+  ],
+  "assigned_rows": 76,
+  "eligible_rows": 76,
+  "baseline_models": [
+    "orientation",
+    "ballistic",
+    "particle_family",
+    "mean_orientation_control"
+  ],
+  "reference_model": "orientation",
+  "models": {
+    "orientation": {
+      "equation": "T=(width_m/v_up_m_s)*exp(b0+bv*ln(v_up_m_s/0.01)+bD*I_disk*(1+orientation_cos2)/2+bR*I_rod*(1+orientation_cos2)/2)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "ballistic": {
+      "equation": "T=width_m/v_up_m_s",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "particle_family": {
+      "equation": "T=(width_m/v_up_m_s)*exp(b0+sum(b_particle*I_particle)+sum(b_family*I_family))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "mean_orientation_control": {
+      "equation": "Use the orientation equation with fixed development-family/particle mean cos(2 theta) in place of the observed orientation. No target-configuration orientation fitting.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Only 3 groups, with system-level dependence; report individual effects without a population confidence interval."
+  },
+  "scope_limits": "Three reserved configurations (1.1,2.1,3.1), one from each observed family. No universal sedimentation law, normal-stress inference or thickness-dependent claim is supported.",
+  "source_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "62b3e2eb4a0f39274041409d1b7c4e0e40fdc9c25375284b95ae62417d02a123",
+  "observations_sha256": "8aec5bf148c8cf295e083c6d69f6685ac6fb162f3f14e548a65453f08447d4f9",
+  "legacy_protocol_sha256": "19e8ba34ef62ac3b1a1564862216df3211c9280f367e2fb9755af41df587617f",
+  "source_license": "CC BY 4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

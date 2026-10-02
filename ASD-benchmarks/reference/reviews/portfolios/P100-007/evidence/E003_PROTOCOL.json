@@ -1,0 +1,28 @@
+{
+  "frozen_utc": "2026-10-02T02:35:01.655789+00:00",
+  "target": "Plate1 vertical force,100ms ahead,10ms mean",
+  "units": "N",
+  "inputs": [
+    "force",
+    "lag20",
+    "lag50",
+    "lag100",
+    "opposite",
+    "opposite50",
+    "cycle",
+    "cycle_previous",
+    "period",
+    "speed"
+  ],
+  "groups": "Whole runs by speed; no random row splitting",
+  "eligibility": "At least5s prior history and100ms future; all requested force samples finite. Fixed10ms block mean reduces source sampling without learned filtering. Signed values retained.",
+  "timing": "Causal10ms block means sampled100Hz from source1000Hz sequence. At block end t, predict the10ms block ending t+100ms. Every feature uses blocks ending at or before t.",
+  "baseline_families": [
+    "persistence",
+    "constant velocity100ms extrapolation",
+    "causal previous-cycle copy",
+    "training-only constrained RBF"
+  ],
+  "selection": "Equal run MAE, simplest coefficient count within1% of best, >=5 adaptive attempts and two final no-gain challenges",
+  "exposure": "Only headers, frame counts and constant timestamp diagnostics inspected; no reserved force responses viewed. Scientific source is public/source-aware."
+}

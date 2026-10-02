@@ -1,0 +1,398 @@
+{
+  "case_id": "P100-026",
+  "schema_version": "asd6.portable/1.0",
+  "input_columns": [
+    "elapsed_min",
+    "anchor_selectivity_pct",
+    "prefix_slope_pct_min",
+    "ag_wt_pct"
+  ],
+  "numeric_columns": [
+    "elapsed_min",
+    "anchor_selectivity_pct",
+    "prefix_slope_pct_min",
+    "ag_wt_pct"
+  ],
+  "input_units": {
+    "elapsed_min": "min",
+    "anchor_selectivity_pct": "percent",
+    "prefix_slope_pct_min": "percent/min",
+    "ag_wt_pct": "wt percent"
+  },
+  "target": "Dimethoxymethane selectivity",
+  "target_units": "percentage points",
+  "error_units": "percentage points",
+  "metric_kind": "mae",
+  "aggregation": "Equal top-level group weight; equal rows within group. Dependent spectral bins are not independent replication.",
+  "reference_attempt": "attempt-006",
+  "models": {
+    "reference": {
+      "kind": "cat_relaxdrift",
+      "parameters": [
+        243.6424985069681,
+        0.003560953442362707
+      ],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "optimizer_success": true,
+      "nfev": 5,
+      "jacobian_condition": 35594.92441619331,
+      "bounds": [
+        [
+          1,
+          -0.1
+        ],
+        [
+          20000,
+          0.1
+        ]
+      ],
+      "training_residual_rms": 0.08865636556670908,
+      "display_name": "Relaxation plus slow drift",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 2
+    },
+    "baseline_cat_hold": {
+      "kind": "cat_hold",
+      "parameters": [],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "display_name": "Last calibration value",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 0
+    },
+    "baseline_cat_linear": {
+      "kind": "cat_linear",
+      "parameters": [],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "display_name": "Prefix slope persistence",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 0
+    },
+    "baseline_constant": {
+      "kind": "constant",
+      "parameters": [
+        52.58613867707915
+      ],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "display_name": "Constant response",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 1
+    },
+    "baseline_flex26": {
+      "kind": "flex26",
+      "parameters": [
+        0.8987080512016126,
+        100.17158145124104,
+        1.3299471626771697,
+        1.8303790163036309,
+        5.495267981574654,
+        -2.8370899187700345,
+        -1.474238051332692
+      ],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "display_name": "Flexible calibrated trajectory",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 7
+    },
+    "attempt_001": {
+      "kind": "cat_relax",
+      "parameters": [
+        312.2215416431252
+      ],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "optimizer_success": true,
+      "nfev": 5,
+      "jacobian_condition": 1.0,
+      "bounds": [
+        [
+          1
+        ],
+        [
+          20000
+        ]
+      ],
+      "training_residual_rms": 0.1458728427848053,
+      "display_name": "Single relaxing prefix rate",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 1
+    },
+    "attempt_002": {
+      "kind": "cat_log",
+      "parameters": [
+        157.31288013497985
+      ],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "optimizer_success": true,
+      "nfev": 6,
+      "jacobian_condition": 1.0,
+      "bounds": [
+        [
+          1
+        ],
+        [
+          20000
+        ]
+      ],
+      "training_residual_rms": 0.13631111256758474,
+      "display_name": "Algebraic aging rate",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 1
+    },
+    "attempt_003": {
+      "kind": "cat_loading",
+      "parameters": [
+        304.2732060682522,
+        -0.44233704751571856
+      ],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "optimizer_success": true,
+      "nfev": 5,
+      "jacobian_condition": 104.3111147498005,
+      "bounds": [
+        [
+          1,
+          -2
+        ],
+        [
+          20000,
+          2
+        ]
+      ],
+      "training_residual_rms": 0.11322948923711071,
+      "display_name": "Loading-dependent relaxation",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 2
+    },
+    "attempt_004": {
+      "kind": "cat_twochannel",
+      "parameters": [
+        243.6287918053529,
+        72.81066814919657,
+        19999.999999999996
+      ],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "optimizer_success": true,
+      "nfev": 15,
+      "jacobian_condition": 60127.48982946077,
+      "bounds": [
+        [
+          1,
+          -100,
+          1
+        ],
+        [
+          20000,
+          100,
+          20000
+        ]
+      ],
+      "training_residual_rms": 0.08899169328767452,
+      "display_name": "Two-timescale induction",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 3
+    },
+    "attempt_005": {
+      "kind": "cat_shrink",
+      "parameters": [
+        456.5637592081204,
+        0.7655194416187553
+      ],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "optimizer_success": true,
+      "nfev": 9,
+      "jacobian_condition": 3861.013280756818,
+      "bounds": [
+        [
+          1,
+          0
+        ],
+        [
+          20000,
+          5
+        ]
+      ],
+      "training_residual_rms": 0.1369320398241736,
+      "display_name": "Shrunk prefix relaxation",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 2
+    },
+    "attempt_006": {
+      "kind": "cat_relaxdrift",
+      "parameters": [
+        243.6424985069681,
+        0.003560953442362707
+      ],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "optimizer_success": true,
+      "nfev": 5,
+      "jacobian_condition": 35594.92441619331,
+      "bounds": [
+        [
+          1,
+          -0.1
+        ],
+        [
+          20000,
+          0.1
+        ]
+      ],
+      "training_residual_rms": 0.08865636556670908,
+      "display_name": "Relaxation plus slow drift",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 2
+    },
+    "attempt_007": {
+      "kind": "cat_equilibrium",
+      "parameters": [
+        28.17713631561697,
+        18.93330497798518,
+        1789.4765725477566
+      ],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 498.3043606922551,
+      "bounds": [
+        [
+          -100,
+          -100,
+          1
+        ],
+        [
+          200,
+          100,
+          20000
+        ]
+      ],
+      "training_residual_rms": 0.30801625575693,
+      "display_name": "Loading-dependent equilibrium",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 3
+    },
+    "attempt_008": {
+      "kind": "cat_rational",
+      "parameters": [
+        444.3073481578468
+      ],
+      "training_groups": [
+        "FigureS12a_reaction_Ag1-Hbeta",
+        "FigureS12b_reaction_Ag5-Hbeta",
+        "FigureS12c_FigureS13a_reaction_Ag20-Hbeta",
+        "FigureS13c_reaction_Ag20-Hbeta_T240",
+        "FigureS13c_reaction_Ag20-Hbeta_T280",
+        "FigureS14b_reaction_Ag20-Hbeta-red"
+      ],
+      "training_rows": 629,
+      "optimizer_success": true,
+      "nfev": 5,
+      "jacobian_condition": 1.0,
+      "bounds": [
+        [
+          1
+        ],
+        [
+          20000
+        ]
+      ],
+      "training_residual_rms": 0.13716661098974786,
+      "display_name": "Rational rate decay",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 1
+    }
+  }
+}

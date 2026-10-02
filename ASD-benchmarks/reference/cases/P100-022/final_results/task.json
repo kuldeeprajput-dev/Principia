@@ -1,0 +1,154 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-022.original.v1",
+  "case_id": "P100-022",
+  "case_number": 22,
+  "family": "original",
+  "protocol_version": "P100-022-asd6-native-v1",
+  "cohort_id": "P100-022.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-022.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/22_electronics_perovskite_memristors",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Initial positive forming-sweep current",
+  "target_units": "microampere",
+  "error_units": "microampere",
+  "primary_units": "microampere",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "voltage_V",
+    "bromine_rich"
+  ],
+  "input_units": {
+    "voltage_V": "V",
+    "bromine_rich": "indicator"
+  },
+  "numeric_columns": [
+    "voltage_V",
+    "bromine_rich"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "A fixed SHA-256 allocation reserved ten complete devices per composition. Development used five hash-assigned device folds. Exact duplicate native traces were linked and deduplicated. The task predicts the initial positive forming branch from voltage and composition alone; no current calibration or later sweep is a predictor.",
+  "calibration": "None. First100 voltage rows of each device, V>=0.05V; no measured current allowed as predictor.",
+  "independent_unit": "Complete device, both compositions; all duplicate device traces linked. No future current or state permitted.",
+  "evaluation_groups": [
+    "Br-device-03",
+    "Br-device-10",
+    "Br-device-11",
+    "Br-device-13",
+    "Br-device-14",
+    "Br-device-17",
+    "Br-device-25",
+    "Br-device-34",
+    "Br-device-37",
+    "Br-device-43",
+    "I-device-03",
+    "I-device-06",
+    "I-device-09",
+    "I-device-12",
+    "I-device-15",
+    "I-device-16",
+    "I-device-20",
+    "I-device-22",
+    "I-device-31",
+    "I-device-34"
+  ],
+  "assigned_rows": 1900,
+  "eligible_rows": 1900,
+  "baseline_models": [
+    "reference",
+    "baseline_constant",
+    "baseline_flex22",
+    "baseline_mem_domain",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "mem_leak; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_constant": {
+      "equation": "constant; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flex22": {
+      "equation": "flex22; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_mem_domain": {
+      "equation": "mem_domain; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "mem_weibull; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "mem_sclc; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "mem_leak; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "mem_hazard; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "mem_shared; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report individual top-level groups and their range; no row-bootstrap population inference."
+  },
+  "scope_limits": "Complete device, both compositions; all duplicate device traces linked. No future current or state permitted.; A compact composition-conditioned forming-current equation improves the logistic control and is essentially tied with a larger spline on reserved devices. Its negative I-rich precursor coefficient prevents admission as a new physical conduction law.; No independent population confidence interval from dependent rows.",
+  "source_url": "https://zenodo.org/records/17278410",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"historical\": \"Internal confirmation reserved until FREEZE.json; schema-stage exposures documented in SOURCE_AND_UNITS.md.\", \"current\": \"All confirmation outcomes exposed to future users.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "d7222aa34b39246e377c8fe22a58821a8e02653f1300700fdbd497ccdbbdeeb3",
+  "observations_sha256": "5c8fe116be696493f226d0111ad3c0d49053ab9bddfe951ea26c6511dfa495b3",
+  "legacy_protocol_sha256": "55942013e21f5075ea161fa8721824e16b6e5af5adafc8b1f635cf10697b1e07",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

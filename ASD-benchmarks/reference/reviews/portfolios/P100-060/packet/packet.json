@@ -1,0 +1,150 @@
+{
+  "schema_version": "principia.review-packet/3.0",
+  "bindings": {
+    "claims_sha256": "a482c8fabcc049902c846ecc7f19f5d324de14f5bf1cb3350a3d4b4659c1557e",
+    "evidence_sha256": {
+      "E001": "9ec195560f27acd0e531d9d1a53500f4f20423fc0eee54863614d7711a3c139d",
+      "E002": "162f6ed0e172a2c5edc3246a90d6e5670b34019df2dc0aa58e01ef5a8408ba29",
+      "E003": "5e4e030f8d9b67d36bd383473d3ef1faf902157cc5266733bb719a7e37d92e80",
+      "E004": "2c2e2f81684f6da102cb7c26ecfa52d4e74e666b1a2a0493be668574fe623fa3",
+      "E005": "b0e08d79c433e920bdf0fe2ac6b26f2ec351a18a41cfb979bfcf2fea9ecb9c0c",
+      "E006": "b36963f1de8b5f3ddb79dc5aa68a05870df9ccf654259c64a8241468b71edd14",
+      "E007": "f77d2120f7e99d20593add4582980acf268680c4d13db37d27dae78aca4fc58f",
+      "E008": "4f83791c0677a31c93ce6196aa9af1e313548657c6b20cce22ced556d92cb4ab",
+      "E009": "e6b9fe81e7ad1396ae74db4fdbd9d0eb04744368c9552257ae98d885358933b7",
+      "E010": "0ee16bcb70f48d084b6e87f0d5a9a69644e4e5dad88c6f906e2b93bf50e94521",
+      "E011": "274f515a9a296eca2fb18952a356d843f69d82cf53b0b282206b644307306842",
+      "E012": "cb025e28dce005c6c4059d0c3a40d05c844e79b296d9bdb3c23351ccb078dd5f",
+      "E013": "d8fa1e183d257efbddd3fe10d898d631bb2a8186f7432555fbcbea25949bb19c",
+      "E014": "157f30b2c9fe7c5469e1ca74bdbc224c47d371a901ce34158e8b3dea97f7f5be",
+      "E015": "6a723c83c2f4deb1f6e109f607feac39ffc01b1ab539ec529b993f93e8e39291",
+      "E016": "426d388fda4130a6d988e089c666f722ca275bded7129a246126f747b018e56b",
+      "E017": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253",
+      "E018": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078",
+      "SCIENTIFIC": "8069f53d887c6313c7b5d54b2a10ddc5486f409390d7e6fddffb269eede462ff",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-060",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "findings": [
+    {
+      "id": "P100-060-SCI-01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "A two-edge peak-response approximation improves aggregate physical voltage error, but the original gain is concentrated in one contact condition.",
+      "applicability": "Whole pulse widths across six sensor/contact conditions; ten pulses within a file are repeated apparatus observations.",
+      "limitations": "Only contact 110 kHz improves against constant gain; five other conditions worsen. Six files at one width are not six independent sensor-transfer experiments.",
+      "falsification": [
+        "Report normalized file-weighted error together with physical volts and all sixconditions.",
+        "Recompute pre-trigger subtraction and post-trigger peak without leaking the full response into predictors.",
+        "Test claimed resonance against native spectra using the selected-cycle comparison, not the earlier cycle 002 summary."
+      ],
+      "prior_art": "Damped oscillators and constant-Q constraints are established; no new resonance physics is certified. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "Ahat=a_c max[1,sqrt(1+exp(-2w/12)-2exp(-w/12)cos(2pi f w))].",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ]
+      },
+      "variables_and_units": {
+        "target": "V",
+        "condition": "calibrated distance/sensor label",
+        "distance_mm": "mm",
+        "resonance_kHz": "kHz; confounded with sensor type",
+        "width_us": "us"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-060.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-060-SCI-02",
+      "classification": "predictive_reference",
+      "source_classification": "retrospective_extension",
+      "statement": "A condition-normalized score exposes contact-dominated physical-voltage improvements and supports frequency-specific effective damping.",
+      "applicability": "Whole pulse widths across six sensor/contact conditions; ten pulses within a file are repeated apparatus observations.",
+      "limitations": "Development normalized MAE.15576147 vs .19526332 global-edge control; exposed normalized comparisons remain weak outside the contact regime. These gains are not unseen-device transmission physics.",
+      "falsification": [
+        "Report normalized file-weighted error together with physical volts and all sixconditions.",
+        "Recompute pre-trigger subtraction and post-trigger peak without leaking the full response into predictors.",
+        "Test claimed resonance against native spectra using the selected-cycle comparison, not the earlier cycle 002 summary."
+      ],
+      "prior_art": "Damped oscillators and constant-Q constraints are established; no new resonance physics is certified. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E005",
+          "E006"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "scope": "See bound equations/source audit; no substitute units are invented"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006"
+      ],
+      "task_id": null,
+      "task_family": "continuation",
+      "task_version_history": "2026-09-30 first continuation"
+    },
+    {
+      "id": "P100-060-SCI-03",
+      "classification": "predictive_reference",
+      "source_classification": "retrospective_extension",
+      "statement": "The exact two-edge constant-Q ansatz improves normalized prediction, while native spectra falsify reading its fitted frequency as measured resonance.",
+      "applicability": "Whole pulse widths across six sensor/contact conditions; ten pulses within a file are repeated apparatus observations.",
+      "limitations": "Spectral peaks agree within 5% for only 7/15 nominal 110 kHz and 0/15 nominal 500 kHz files; 500 kHzcontact normalized error worsens. Thus a plausible named parameter is not physical identification.",
+      "falsification": [
+        "Report normalized file-weighted error together with physical volts and all sixconditions.",
+        "Recompute pre-trigger subtraction and post-trigger peak without leaking the full response into predictors.",
+        "Test claimed resonance against native spectra using the selected-cycle comparison, not the earlier cycle 002 summary."
+      ],
+      "prior_art": "Damped oscillators and constant-Q constraints are established; no new resonance physics is certified. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "h_f(t)=exp(-t/tau_f)sin(2pi*r*f*t)1[t>=0]; Ahat=g_c max_t|h_f(t)-h_f(t-w)|; tau_f=15.939439us*(110kHz/f), r=1.109909.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E007",
+          "E008",
+          "E009",
+          "E010"
+        ]
+      },
+      "variables_and_units": {
+        "target": "V",
+        "distance_mm": "mm",
+        "resonance_kHz": "kHz; confounded with sensor type",
+        "width_us": "us",
+        "condition": "calibrated distance/sensor label"
+      },
+      "evidence_ids": [
+        "E007",
+        "E008",
+        "E009",
+        "E010"
+      ],
+      "task_id": "P100-060.round2.v1",
+      "task_family": "round2",
+      "task_version_history": "2026-09-30 second continuation"
+    }
+  ],
+  "reviews_required": [
+    "computational",
+    "scientific_critical"
+  ],
+  "automatic_scientific_admission": false,
+  "current_exposure": "exposed"
+}

@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-089",
+  "title": "Dataset : Contextual influences on risk-taking in children and adults",
+  "default_task": "P100-089.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "risky_choice",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 12,
+    "independent_unit_description": "participant",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Causal previous choice and running mean within protocol, reset at protocol start; no future outcomes. Reward/probability are experimenter settings, not necessarily participant knowledge.",
+  "baseline_strength": {
+    "registered_controls": 10,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "unsupported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "risky_choice",
+    "prediction_time": "Before each choice using trial settings and only prior choices in that protocol; numeric Hidden and EV excluded.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-089.original.v1"
+  ],
+  "finding_ids": [
+    "P100-089-F01",
+    "P100-089-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-089/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-089.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate risky_choice under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Before each choice using trial settings and only prior choices in that protocol; numeric Hidden and EV excluded.",
+    "calibration_requirement": "Causal previous choice and running mean within protocol, reset at protocol start; no future outcomes. Reward/probability are experimenter settings, not necessarily participant knowledge.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "risky_choice in binary choice",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "brier",
+    "primary_units": "probability squared",
+    "reference_model": "reference",
+    "reference_primary_error": 0.14335861588395382,
+    "reference_physical_mae": 0.2777299018967963,
+    "physical_error_units": "probability",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.14335861588395382,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-089.original.v1/evidence/metrics.csv",
+      "bytes": 1013,
+      "sha256": "78e77b46961317f85d3190f8194ff1671d8af8b407c05a9636e89395d02fada1"
+    },
+    "models": 10
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

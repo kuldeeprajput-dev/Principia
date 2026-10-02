@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-10-02T02:24:29.847509+00:00",
+  "case_id": "P100-042",
+  "task": {
+    "target": "Used primary bank or credit union in-person branch during pastmonth",
+    "target_units": "binary BRANCH1 versus2",
+    "error_units": "squared probability (Brier)",
+    "metric_kind": "brier",
+    "permitted_inputs": [
+      "mobile",
+      "web",
+      "age_category",
+      "income_category",
+      "branch_present",
+      "branch_closed"
+    ],
+    "input_units": {
+      "mobile": "pastmonth app use binary",
+      "web": "pastmonth website use binary",
+      "age_category": "ordered seven source bins",
+      "income_category": "ordered nine source bins",
+      "branch_present": "ZIP branch present Q12024 binary author-derived",
+      "branch_closed": "ZIP net branch decrease2019Q4\u20132024Q1 binary author-derived"
+    },
+    "timing_contract": "Contemporaneous self-reported channels; ZIP branch access covariates from source linked records. Association, no causal digital substitution or closure effect.",
+    "calibration": "Three whole regions leave-one-region-out development; hash-reserved fourth region, no target calibration.",
+    "independent_unit": "Respondents nested in four Census regions. Only one held region: within-survey regional transfer, no population-level precision.",
+    "scope_limits": "Complete-case banked adult survey with positive WEIGHT_FINAL; WEIGHT_ALT is not used. Region-balanced survey-weighted risk is not national prevalence. DK/refused/skipped are exclusions, not non-use. Geographic author-derived indicators are not measured travel distance.",
+    "applicability": {
+      "probabilities": [
+        0,
+        1
+      ],
+      "weight": "WEIGHT_FINAL"
+    },
+    "case_id": "P100-042",
+    "source_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+    "source_license": "U.S. government public-domain data",
+    "numeric_columns": [
+      "mobile",
+      "web",
+      "age_category",
+      "income_category",
+      "branch_present",
+      "branch_closed"
+    ],
+    "exposure": {
+      "schema": "Schema and source codebook aggregate tabulations inspected; no reserved respondent target or confirmation metric inspected. Source-aware public survey.",
+      "current": "reserved_internal_only",
+      "fresh_for_future_users": false
+    },
+    "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+    "aggregation": {
+      "hierarchy": [
+        "group"
+      ],
+      "primary": "mean_group_error",
+      "within_group_weight": "sample_weight"
+    }
+  },
+  "source_manifest_sha256": "98cc2b17f3b88cfeb5d74ff80694f24e8effea3daf3fbd7896241ff238d937b3",
+  "native_sha256": "416c12e4d11e1ec28843a24fb0d2f07442b1be54adbddf42ba0f5f02eeb8dd49",
+  "split_manifest_sha256": "89c36e935667afcb16c03e72f04bc075c88e2ca7e6377b5880c5bd3b481f3788",
+  "baseline_families": [
+    "training constant",
+    "domain simple law",
+    "regularized32-center RBF same permitted inputs"
+  ],
+  "selection": "Minimize group-balanced primary error; prefer fewer coefficients within1percent of minimum; baseline may win.",
+  "stopping": "At least5distinct scientific hypotheses, adaptive to development evidence; stop after2consecutive substantive attempts without accuracy/robustness/interpretation gain.",
+  "folds": [
+    2,
+    3,
+    4
+  ]
+}

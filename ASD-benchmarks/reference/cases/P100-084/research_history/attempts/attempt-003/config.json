@@ -1,0 +1,37 @@
+{
+  "name": "shifted_contact_pull_off",
+  "formula": "base+amp*(maximum(x+shift,0)/(1+shift))**1.5-A*amp*exp(-((x-center)/width)**2)",
+  "hypothesis": "Development evidence available before this fit: conical_contact: MAE 2.01419, worst group 4.97149; localized_adhesion: MAE 1.56177, worst group 6.11862.\n\nSeparate effective contact registration from the pull-off well. A shifted spherical contact and localized detachment response compete with a symmetric contact-centered attraction; neither uses target deflection.",
+  "inputs": [
+    "x",
+    "base",
+    "amp",
+    "progress"
+  ],
+  "initial": {
+    "shift": 0,
+    "A": 0.2,
+    "center": 0,
+    "width": 0.15
+  },
+  "bounds": {
+    "shift": [
+      -0.3,
+      0.3
+    ],
+    "A": [
+      0,
+      2
+    ],
+    "center": [
+      -0.5,
+      0.5
+    ],
+    "width": [
+      0.01,
+      1
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:13:49.700211+00:00",
+  "parent": "attempt-002"
+}

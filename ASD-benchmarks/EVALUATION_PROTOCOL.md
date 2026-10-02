@@ -1,51 +1,33 @@
-# Principia-100 evaluation protocol · v0.1.1
+# Principia-100 evaluation protocol · v0.2.0
 
-Status: owner-accepted public protocol. It defines future evaluation; no discovery runs, system comparisons or scores accompany the corpus release.
+This release joins the native corpus with GPT-6 Astra reference results and executable evaluation. **All existing outcomes are exposed.** It supports open, retrospective comparisons and separately reviewed scientific claims.
 
-## Purpose and admissible claims
+## Evaluation identity
 
-Principia-100 is an open, source-aware research corpus for investigating quantitative relationships from heterogeneous local data. It is not a collection of 100 unknown ground-truth laws. Publication titles, author analyses, figures, annotations and sometimes fitted models occur in source assets. The first 20 original cases were used during Principia development; replacement case 05 has a separate revision and exposure record. Report source access and model training-data uncertainty. Do not label the corpus blind or unseen.
+Record release tag/commit, case ID, task ID, protocol version, cohort ID, evaluator manifest hash, runtime fingerprint, submission hash and information budget. Raw-access contracts also bind source selectors and feature lineage. A score from a different endpoint, cohort or calibration budget is not directly comparable.
 
-Three outcomes are distinct:
+## Registered tasks and new findings
 
-1. **Reproduction:** recover, independently check or falsify a previously published relationship. Cite that relationship and record what was already accessible.
-2. **Validated extension:** demonstrate a scoped quantitative relationship beyond the disclosed source result on appropriate held-out groups/conditions, with uncertainty and fair comparisons. This does not by itself establish novelty.
-3. **Novelty candidate:** a validated extension that additionally survives documented, dated literature review and independent scientific adjudication. The term is provisional until expert review.
+Follow the [external-agent guide](reference/docs/EXTERNAL_AGENT_GUIDE.md) for prepared-feature scoring, alternative raw feature extraction and new-task admission. The [registry](reference/registry.json) is authoritative for executable tasks. Acquisition-stage [task cards](task_cards/) provide context; their research opportunities do not override a registered contract.
 
-A justified abstention, failed fit, missing identifiability, source inconsistency or falsified relationship is a valid scientific outcome. Do not manufacture a positive rule for every case.
+An alternative predictor need not resemble the Astra reference. A different measured endpoint, observation window or input budget requires a distinct contract approved after native reconstruction, comparator replay and independent computational/scientific-critical review. A maintainer explicitly accepts or rejects it before separate registration. Existing tasks cannot be silently overwritten.
 
-## Inputs and exposure
+## Quantitative evidence
 
-`INPUT_ALLOWLIST.json` names each case's allowed files by exact relative path and SHA-256. Source archives remain intact; their full member inventories are exposed, including author code, labels and fitted outputs. This is intentionally source-aware. Evaluation must record which members were read and any external sources consulted. Never execute publisher code merely because it is present.
+Preserve native values, missingness, linked groups, timing and quality flags. Fit learned transformations on declared development units only. Declare all calibration and target-derived inputs. Use task-specific primary metrics and the same eligible cohort for matched comparisons. Report physical-unit errors, uncertainty, coverage, per-group/worst-group results, and event/interval diagnostics where defined. Whole-unit decisions retain assigned denominators when a method abstains.
 
-Only the neutral case brief and approved source assets are scenario inputs. Collection task cards, reviewer guidance, prior evaluation output, proposed equation families and other participants' submissions are outside the input allowlist. A future blinded or measurement-only track requires a separately frozen member-level input manifest and expert audit; this release does not claim one.
+Scoring groups may share a specimen, apparatus, session or environment. Do not turn repeated rows into independent replications or random row splits. Current scores cannot be called fresh confirmation. No unit conversion, constant target, leaked source fit or accounting identity becomes a new scientific law through prediction accuracy.
 
-## Preregister a case-specific evaluation
+## Scientific review and dispositions
 
-Before fitting, freeze the case/asset hashes, allowed external resources, software/model versions, random seeds, compute budget, variables/units, primary target, exclusions justified by source quality flags, baseline family, validation groups, uncertainty procedure and stopping criteria. Preserve the original data and place all derived transformations in a separate run directory. Report each transformation, fit scope and learned preprocessing parameter.
+Use the [finding/evidence schema](reference/schemas/claims.schema.json) and [review rubric](reference/docs/REVIEW_RUBRIC.md). Review numerical validity, explanation, prior-art differentiation and practical value separately. Resolve substantive disagreements explicitly while retaining complementary reviewer scopes and original judgments.
 
-Use the grouping design in the task card as a starting constraint, then verify actual identifiers. Hold out donors, animals, devices, cultivation pairs, laboratories, sites, graph instances or entire runs as applicable. Repeated pixels, cells, time samples, rounds or calls are not automatically independent. Linked modalities and alternate representations remain in the same partition. Fit normalization, feature selection, segmentation and calibration adjustments using development data only.
+Reproduction, validated extension, novelty candidate, falsification and justified abstention remain distinct. Independent computational review is not independent experimental replication. Novelty needs a documented priority assessment; industrial impact needs an operational decision and measured benefit. No aggregate discovery score or equation-match requirement is provided.
 
-For small group counts, use leave-one-group-out or nested grouped validation when justified and report its uncertainty honestly. Do not reserve a nominal locked test with insufficient independent units. Single-device, single-patient, single-event and single-field cases support bounded within-system validation only. Temporal evaluations need chronological partitions and dependence-aware guard intervals. Spatial evaluations need blocks large enough to address autocorrelation. Survey evaluations need design weights, appropriate variance estimation, missingness/imputation handling and proficiency plausible values where supplied. Exact mathematics requires independent certificate/proof checking and counterexample search rather than pseudo-statistical sample replication.
+## Inputs, labels and execution
 
-Freeze a locked test or prospective external validation before the final claim where feasible. Never tune on its results. If only retrospective source data are available, label that limitation. Validation partition counts and exclusions are outputs to report, not fabricated curator ground truth.
+The corpus [input allowlist](INPUT_ALLOWLIST.json) describes source-aware discovery inputs. Registered tasks impose narrower permitted quantities, calibration and time windows. An archive hash does not permit arbitrary target fields. Reference predictions and research histories are exposed evaluation resources; disclose their use and never claim they were unseen.
 
-## Required submission
+Measured labels live under each task's `data/observations.csv.gz`; reference predictions are comparators, not measured truth. Case 8 supplies a bounded adequacy assessment. Prediction-file scoring executes no submitted code. Trusted replay explicitly executes local code without a security sandbox; declared lineage does not prove information independence.
 
-Use `schemas/SUBMISSION.schema.json`. Each proposed rule must include:
-
-- An executable, unambiguous mathematical expression or program, all symbols, units and coordinate conventions, parameter estimates and uncertainty, and the supported domain/range.
-- Exact evidence anchors: source SHA-256, archive member, sample/group IDs, time intervals and table/sheet/column references. Derived artifacts include their code and lineage.
-- A mechanistic interpretation or a clearly labeled empirical relationship, assumptions, identifiability constraints and observable counterexamples.
-- Baselines evaluated on identical groups, targets, preprocessing access and budgets. Include constant/stratified predictors, relevant established physical/statistical models, and simple flexible alternatives as appropriate. A unit conversion, accounting identity, leaked source fit or renamed target is not an extension.
-- Held-out performance with group-aware uncertainty, effect size, calibration or residual diagnostics, sensitivity to plausible missingness/calibration choices, and robustness to conditions within the claimed scope.
-- Falsifying controls, negative results, failed configurations, censored/time-out runs and restrictions on extrapolation. Preserve unfavorable evidence.
-- Prior-art classification and citations, external-source access log, resource use and enough code/configuration to reproduce the analysis.
-
-An equation with dimensionless normalized variables must still define its normalization and restore a physical interpretation. Symbolic brevity alone is not evidence. Observational correlations do not establish causal mechanisms, clinical utility or industrial deployment readiness.
-
-## Adjudication and reporting
-
-Two domain-appropriate reviewers should independently assess source fidelity, leakage, mathematical validity, validation independence, uncertainty, practical relevance and novelty status; resolve disagreements explicitly. Reviewer equation families are examples, not expected answers. Require independent verification of executable outputs in a disposable environment with declared dependencies.
-
-Report per-case outcomes and evidence, stratified by discipline, modality, data origin and validation scope. Do not collapse heterogeneous cases into a universal discovery score or call the fraction of positive-looking statements a success rate. Any later scoring rubric, cost comparison, benchmark split or leaderboard requires a separately versioned preregistration. Corpus acceptance certifies usable, authentic inputs and documented limits; it is not scientific validation of a new principle.
+The earlier [source-corpus protocol](SOURCE_EVALUATION_PROTOCOL.md) remains available as historical context. Its general scientific safeguards still apply; its pre-baseline release status is superseded by this version.

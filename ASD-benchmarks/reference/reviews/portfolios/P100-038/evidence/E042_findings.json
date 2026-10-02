@@ -1,0 +1,45 @@
+[
+  {
+    "id": "P100-038-F01",
+    "classification": "falsified",
+    "disposition": "unsupported",
+    "claim": "Proposed: the volatility-conditioned mean-reversion correction improves held-flight RSRP-component prediction over matched persistence and flexible controls.",
+    "equation": "\\widehat r_{t+h}=r_t+c\\,(\\overline r_{5,t}-r_t)\\,\\frac{s_{5,t}}{1\\,\\mathrm{dB}+s_{5,t}}",
+    "model_id": "reference",
+    "task_id": "P100-038.original.v1",
+    "evidence": {
+      "prediction_file": "evidence/predictions.csv.gz",
+      "metrics_file": "evidence/metrics.csv",
+      "reference_group_MAE": 1.0408247989490542,
+      "best_baseline": "flexible",
+      "best_baseline_group_MAE": 0.9286044513443736,
+      "wins": 0,
+      "groups": 1
+    },
+    "prior_art": "Existing domain parameterizations; see PRIOR_ART.json. No certified novelty.",
+    "falsification": "Unsupported: confirmation MAE1.0408248dB exceeds persistence0.9448560dB and flexible0.9286045dB; no confirmation re-selection.",
+    "scope": "Telemetry files1–2 do not overlap the radio clock windows and contain repeated headers; no invented offset or geometry pairing. Vector component ordering is taken literally, not identified as a specific antenna.",
+    "admission": "unsupported",
+    "finding_id": "P100-038-F01",
+    "admission_rationale": "Unsupported as an improvement: the development-selected reference fails against the strongest confirmation comparator. It remains a reproducible negative reference; no replacement was selected after exposure."
+  },
+  {
+    "id": "P100-038-F02",
+    "classification": "falsified",
+    "disposition": "supported",
+    "claim": "Trend extrapolation is not a reliable improvement over persistence in this cohort.",
+    "equation": null,
+    "model_id": null,
+    "task_id": "P100-038.original.v1",
+    "evidence": {
+      "metrics_file": "evidence/metrics.csv",
+      "development_selection": "research_history/DEVELOPMENT_SELECTION.json"
+    },
+    "prior_art": "Mechanism claims need controls and information ablations.",
+    "falsification": "Comparison is bounded to the recorded model families and eligible cohort. It does not establish universal nonexistence of a physical process.",
+    "scope": "Telemetry files1–2 do not overlap the radio clock windows and contain repeated headers; no invented offset or geometry pairing. Vector component ordering is taken literally, not identified as a specific antenna.",
+    "admission": "supported",
+    "finding_id": "P100-038-F02",
+    "admission_rationale": "Retain negative scientific evidence; no independent positive law claimed."
+  }
+]

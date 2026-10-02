@@ -1,0 +1,1 @@
+Derived confirmation tables reconstructed from hash-verified native assets by native.py. No source-native bytes are changed. Source row/column or ZIP-member anchors are retained in observations. Predictor calibration is declared in task_spec.json. Native sources remain under local-datas.

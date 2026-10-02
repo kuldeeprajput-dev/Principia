@@ -1,0 +1,38 @@
+{
+  "intro": "# Exercise electrodermal dynamics: persistence survives physiological challenges\n\nThe coherent aerobic subset contains30participants with wrist electrodermal activity (EDA), temperature and accelerometry. Six people are reserved, including both linked S11 recording segments;24 people develop models in five whole-person folds. Source4Hz EDA is in microSiemens, temperature in Celsius, and accelerometer units are converted using the source1/64g convention.\n\n## Task and equation\n\nEvery five seconds after120seconds of observed history, the task predicts mean EDA over seconds25\u201330 ahead. The development-selected reference is\n\n$$\\widehat E_{[t+25,t+30]}=\\overline E_{[t-5,t]}.$$\n\nThe rule has no fitted parameters. Each sensor's own start timestamp and sampling rate determine alignment; recording breaks are never bridged. Device-clock dates are timing coordinates, not evidence of a particular measurement calendar year. Signed finite EDA is retained as released rather than silently clipped or excluded.\n\nFive hypotheses tested tonic relaxation, damped drift, preceding activity, thermal change and asymmetric rising/recovery dynamics. Every extension was fitted only on training people with whole-person validation and identical observed-history access. The apparent physiological coefficients failed to improve the strong persistence control.\n",
+  "interpretation": "Reserved participant-balanced MAE is0.4902uS for persistence, versus1.1230uS linear extrapolation and0.5420uS flexible prediction. This is useful bounded forecasting evidence and a negative result for the tested physiological extensions. It is not a new sweat-production law, a mental-stress classifier or a clinically validated wearable. Source exercise cadence changes and disconnections are preserved; the single protocol does not isolate temperature, autonomic activity and motion causally. Six held people warrant per-person error reporting, not narrow population confidence intervals.",
+  "summary": "Five substantive attempts completed; persistence remains selected with0.4902uS reserved-person MAE. More elaborate physiological-response candidates fail to establish incremental transfer.",
+  "lessons": "Do not treat manufacturer-derived physiological labels as independent sensor truth. Align by each native sensor clock/rate and keep split recording segments under one person. Distinguish physical EDA units from the psychological interpretation of EDA. A long-horizon forecasting task still needs persistence and modest trends as controls. Preserve source signed values and protocol deviations. Do not infer sweat-rate constants from predictive regressors.",
+  "findings": [
+    {
+      "finding_id": "P100-080-F01",
+      "classification": "reproduction",
+      "claim": "Causal EDA persistence transfers to held participants better than registered drift/flexible controls",
+      "equation": "Ehat[t+25,t+30]=mean E[t-5,t]",
+      "coefficients": [],
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv",
+        "evidence/by_group.csv"
+      ],
+      "scope": "Thirty source participants within aerobic protocol; six held people",
+      "admission": "supported",
+      "prior_art": "Established persistence baseline for slow physiological state",
+      "falsification": "No new exercise setting, stress diagnosis or clinical tolerance validated"
+    },
+    {
+      "finding_id": "P100-080-F02",
+      "classification": "supported_negative_finding",
+      "claim": "The tested relaxation,activity,thermal and asymmetric-response extensions do not establish transferable physiological gains",
+      "equation": null,
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv"
+      ],
+      "scope": "The five explicit candidate equations and source protocol",
+      "admission": "supported",
+      "prior_art": "Known EDA physiology may exist even when these predictors fail",
+      "falsification": "Independent perturbations/calibration might identify mechanisms"
+    }
+  ]
+}

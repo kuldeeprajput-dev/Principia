@@ -1,0 +1,66 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-077.original.v1.raw-access.v1",
+  "parent_task_id": "P100-077.original.v1",
+  "case_id": "P100-077",
+  "protocol_version": "P100-077.original.v1.raw-access.v1",
+  "cohort_id": "P100-077.original.v1.cohort-1",
+  "parent_task_sha256": "8e4cd2ec9f0e2e891ea8cdfb47d42ec8ce43e84fb113df96059c3a07608caa66",
+  "input_sha256": "3790526184b0364a27d89cd4cc766cda6c4478da4978087ab1857e0b58f589ee",
+  "observations_sha256": "12a9b964cf98d541179ef892da3fbd97709b1dcfcc12fa08e057a1d41580f63d",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "77_genetics_one_step_tagging",
+  "source_assets": [
+    {
+      "name": "FCS FILES NAR-20250731T144808Z-1-001.zip",
+      "path": "raw/FCS FILES NAR-20250731T144808Z-1-001.zip",
+      "sha256": "bf121054fdcc565c12eb9db23e2687ea2c9921dae1efba055bde049f55df9588",
+      "bytes": 80879991
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "green": "fraction",
+      "red": "fraction",
+      "dose": "source fold dose"
+    },
+    "observation_window": "Contemporaneous assay diagnostic: green and red marginal positive fractions measured from the same FCS well; joint fraction withheld as target. Marginals do not algebraically determine the joint without an independence/dependence assumption.",
+    "calibration_and_history": "One source BOB negative control defines each channel threshold at its 99.5th percentile, identically for all wells and models. Event gating uses finite scatter/fluorescence and positive FSC-A/SSC-A only; source FlowJo manual gates were not supplied and are not reproduced.",
+    "calibration_columns": [
+      "green",
+      "red",
+      "threshold_green",
+      "threshold_red"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "One technical replicate block, conditional fluorescence marginals; no editing mechanism.",
+    "Only 1 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

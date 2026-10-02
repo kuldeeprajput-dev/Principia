@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-068",
+  "findings": [
+    {
+      "finding_id": "P100-068-F01",
+      "classification": "validated_extension",
+      "claim": "The constrained delay-history control supplies a reproducible5ms native-voltage predictor across held acquisition traces.",
+      "equation": "Vhat=offset+b0+b1*y0+b2*y1+b3*y2+b4*y3+b5*y0\u00b2+b6*y0*y1.",
+      "evidence": "Reserved6traces:MAE0.109V versus persistence0.439V and32Hzharmonic0.213V.",
+      "known_prior_art": "Autoregressive waveform prediction is established and is not a physical-law discovery.",
+      "falsification": "No independent object, unknown excitation mapping and unresolved voltage-to-velocity calibration.",
+      "scope": "Rawvoltage,sameinstallation,causal15ms history,5ms horizon.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-068-F02",
+      "classification": "reproduction",
+      "claim": "Enforcing DC-offset invariance materially improves the harmonic predictor and removes much of its systematic bias.",
+      "equation": "Vhat=offset+(1+2cos(omega*h))*y0-(1+2cos(omega*h))*y1+y2, h=.005s.",
+      "evidence": "ReservedMAE0.133V versus effectiveharmonic0.197V; signedbias0.00288V versus0.121V.",
+      "known_prior_art": "A harmonic-plus-constant recurrence is a known signal-processing identity; empirical transfer is the tested result.",
+      "falsification": "Flexiblecontrol remains better; no claim that the object is an exact linear oscillator.",
+      "scope": "Initialwindowcentering can retain phase-dependent DC error.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-068-F03",
+      "classification": "informative_falsification",
+      "claim": "The tested cubic-restoring, quadratic-drag and common-drive closures do not establish a superior physical model from these raw voltage traces.",
+      "equation": "Mechanistic-inspired delay closures are fully specified in rules.json.",
+      "evidence": "All lose to the matched flexible control in development and confirmation.",
+      "known_prior_art": "The sourcepaper already reports SINDy nonlinearities on converted/filtered time series; that is a different information/processing contract.",
+      "falsification": "Our result does not refute the sourcepaper\u2019s fullmechanicalanalysis.",
+      "scope": "Unresolvedphysicalconversionpreventsforce-coefficientinterpretation.",
+      "admission": "supported"
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted analysis; not independent experimental replication or human expert adjudication."
+}

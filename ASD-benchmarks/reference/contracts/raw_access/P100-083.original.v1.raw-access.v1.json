@@ -1,0 +1,78 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-083.original.v1.raw-access.v1",
+  "parent_task_id": "P100-083.original.v1",
+  "case_id": "P100-083",
+  "protocol_version": "P100-083.original.v1.raw-access.v1",
+  "cohort_id": "P100-083.original.v1.cohort-1",
+  "parent_task_sha256": "83092d7de6c697ca00b9e6d0cbe593ef2232c666d07abc5a6d1ba4a4cdf4b286",
+  "input_sha256": "1f3be4e12fcf4ad2bacab06b6c5622552ecb69f38140703bc081a1b949113935",
+  "observations_sha256": "f9562ec86fc5f380f6f8098a2101644150403dde72ba6fd319bf881c9a5e4ffb",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "83_ecology_hive_microclimate",
+  "source_assets": [
+    {
+      "path": "raw/Dados Pluviom\u00e9tricos (jan25-mai25).csv",
+      "bytes": 4140,
+      "sha256": "6cf88c3910c1b5dccf61d72aab8f7209acacad16963d09c02ff2702a244ac6b1"
+    },
+    {
+      "path": "raw/Dados Pluviom\u00e9tricos Set25-Mar26.csv",
+      "bytes": 6310,
+      "sha256": "df999fe4e4b4a08b708892b386f0200d8f939cef6cf25794f5818b587aa8d537"
+    },
+    {
+      "path": "raw/DadosMeliponas.csv",
+      "bytes": 3378627,
+      "sha256": "94afdf7c2baae419e5639737eb81caceb8221e24726196b30e992d1222c0d843"
+    },
+    {
+      "path": "raw/dadosColmeia1Apis.csv",
+      "bytes": 268775,
+      "sha256": "d23e556d970eac22a47b5c70dadce83e626cdf7b0a3d878a2280bf81ee7a5382"
+    },
+    {
+      "path": "raw/dadosColmeia2Apis.csv",
+      "bytes": 609522,
+      "sha256": "5dc04fa9222ead3708257d40075d364c4fb5beb218f0aa841be26153df4e4a45"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "stream": "calibrated sensor label",
+      "T_now": "degC",
+      "T_lag": "degC,causal lag1h",
+      "T_external": "degC,current",
+      "RH_external": "percent,current",
+      "hour_sin": "dimensionless source-clock phase",
+      "hour_cos": "dimensionless source-clock phase"
+    },
+    "observation_window": "One hourly origin: first native observation within first15min. Forecast nominal1hour, score nearest native target within5min, same calendar day, no interpolation. Causal lag<=origin\u22121hour within15min. Latest20percent native dates per stream reserved. Native response outliers retained.",
+    "calibration_and_history": "T and Te are current internal/external Celsius temperatures; T\u22121 is a causal one-hour lag, He is current external relative humidity percent, and v is external vapor-pressure deficit in kPa. Five offsets c_s are\u22120.384543,\u22120.316614,\u22120.340834,+0.138741,+0.323654degC in rules.json sensor order. Coefficients ba=\u22120.002878, br=0.050874, bm=0.083403 are dimensionless; bv=0.481876degC/kPa and bvr=0.084243/kPa. The reference30degC is an algebraic centering constant, not a prescribed biological setpoint.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

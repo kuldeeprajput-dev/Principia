@@ -1,0 +1,48 @@
+{
+  "case_id": "P100-045",
+  "findings": [
+    {
+      "finding_id": "P100-045-F01",
+      "classification": "validated_extension",
+      "claim": "An intensity-dependent count-space response improves the reserved-detector forecast under the fixed-bin and pretrigger-calibration contract.",
+      "equation": "H_hat=max(0,B_H+1000*a*sign(z)*abs(z)^b); z=(L-B_L)/1000",
+      "admission": "supported",
+      "evidence": [
+        "evidence/metrics.csv",
+        "evidence/by_group.csv",
+        "evidence/scientific_checks.json"
+      ],
+      "scope": "SingleGRB250206827, observed detector counts not deconvolved photon flux. NaI channel4 spans slightly different energy ranges by detector. No universal burst hardness law or independent event replication. Detectors share one incident burst and differ in response and orientation. No independent-event replication, dead-time correction claim or universal hardness\u2013intensity law follows.",
+      "known_prior_art": "The source studies and domain constructions are disclosed in PRIOR_ART.json. This campaign does not certify broad novelty.",
+      "falsification": "Detectors share one incident burst and differ in response and orientation. No independent-event replication, dead-time correction claim or universal hardness\u2013intensity law follows."
+    },
+    {
+      "finding_id": "P100-045-F02",
+      "classification": "informative_falsification",
+      "claim": "The proposed saturation scale is not identified within the parameter range; reaching its upper bound is evidence against interpreting this fit as measured detector saturation.",
+      "equation": null,
+      "admission": "supported",
+      "evidence": [
+        "evidence/scientific_checks.json",
+        "evidence/metrics.csv"
+      ],
+      "scope": "SingleGRB250206827, observed detector counts not deconvolved photon flux. NaI channel4 spans slightly different energy ranges by detector. No universal burst hardness law or independent event replication. Detectors share one incident burst and differ in response and orientation. No independent-event replication, dead-time correction claim or universal hardness\u2013intensity law follows.",
+      "known_prior_art": "Negative evidence concerns these declared hypotheses and source conditions only.",
+      "falsification": "A new condition, measurement or richer model can be proposed through a separately frozen task; current outcomes are exposed."
+    },
+    {
+      "finding_id": "P100-045-F03",
+      "classification": "unsupported",
+      "claim": "These results establish a universal new physical or mathematical law, or a demonstrated deployed industrial impact.",
+      "equation": null,
+      "admission": "unsupported",
+      "evidence": [
+        "evidence/metrics.csv"
+      ],
+      "scope": "SingleGRB250206827, observed detector counts not deconvolved photon flux. NaI channel4 spans slightly different energy ranges by detector. No universal burst hardness law or independent event replication. Detectors share one incident burst and differ in response and orientation. No independent-event replication, dead-time correction claim or universal hardness\u2013intensity law follows.",
+      "known_prior_art": "Novelty needs independent literature adjudication and impact needs intervention/deployment evidence.",
+      "falsification": "Detectors share one incident burst and differ in response and orientation. No independent-event replication, dead-time correction claim or universal hardness\u2013intensity law follows."
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted computation and advisory review; not independent experiments or human expert adjudication."
+}

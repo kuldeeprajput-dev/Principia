@@ -1,0 +1,145 @@
+{
+  "case_id": "P100-040",
+  "role": "scientific_critical",
+  "reviewer_id": "asd5_materials",
+  "reviewed_utc": "2026-10-02T03:08:58.778526+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "2415a09dfb74579e5c8e8da2574d8b38991b8665baa887bd48204e662489368c"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "c204a34933a6bfd5799c87e8f0417682d8f137154ea2dad097c5a90f20c33502"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "52c8de162f2fadface6ab9f99a4ad6374edc31956c8de6338f767ca33c54a36e"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "3bc467895437e91a198ca4434e0df4b9e338ef4353ed3e6fec1329a65e53676c"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "d32f45064bd50756753ef844f0cb9ae82d2055b0843cd2e8eb3aaaeee871f5d3"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "cb1739cfe6f9447f8a1ffac5893b0155c4b92777630ca3e0fced8eea5b9e1f82"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "750b2fe536aacc14bfbdfbfb9d1d59e8f9f5293b43aa15a50a1b847aa49e0d49"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "8dfb749c0544cadbe50d27f20ff6092d62a26b77465375deca0dd94663362620"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "d8dd7d28fa982c9bbf6c0fefa2e6b198790c195e419dd9065d9515faa39eead0"
+    },
+    {
+      "path": "package/evidence/integrity_revision.json",
+      "sha256": "f971a705406d83dc18080a68b4e1b9961a8428ab8f9f1cc41046586918f20fc0"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-040-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The selected two-distance-regime reference has mean daily MAE 9.453892 minutes versus matched robust domain 10.156146 and robust flexible 10.269022 on 92 held pickup days. Worst-day error also improves. A later candidate with lower confirmation error is correctly not promoted."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Actual trip distance is a post-trip measurement. The task is retrospective duration reconstruction, not pickup-time ETA. Airport, borough and time-of-day effects are descriptive route and demand associations; provider reporting quality and missing traffic information preclude a causal travel-time law."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful compact transportation-response model with fair robust controls and substantial chronological coverage, bounded by one city, one service class and retrospective inputs."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native adapter, frozen equations, coefficients and compact evidence were inspected. Separate computational review performs numerical replay; scientific review is not experimental replication."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact."
+        }
+      },
+      "checks": [
+        "Case-specific endpoint semantics and prior-art review",
+        "Predictor timing and calibration budget review",
+        "Grouped-validation and exposure limits reviewed",
+        "Named-control comparisons and negative evidence reviewed",
+        "No inference of novelty from fit quality"
+      ],
+      "limitations": [
+        "Green-taxi2025 declared routine records, duration0–24h and distance0–1000km; known officialzones and source-month-consistent timestamps. Provider-reported records may contain errors; no congestion intervention, routing policy or achieved operational benefit.",
+        "Agent review is advisory, not independent experimental replication."
+      ],
+      "recommendations": [
+        "For an operational ETA task, replace realized distance with an available planned route, freeze that information budget and validate new dates; do not interpret a negative airport offset as a universal road-speed effect."
+      ]
+    },
+    {
+      "finding_id": "P100-040-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preserved negative or adequacy conclusion is supported within the stated task; it does not assert that the underlying phenomenon is absent. The selected two-distance-regime reference has mean daily MAE 9.453892 minutes versus matched robust domain 10.156146 and robust flexible 10.269022 on 92 held pickup days. Worst-day error also improves. A later candidate with lower confirmation error is correctly not promoted."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Actual trip distance is a post-trip measurement. The task is retrospective duration reconstruction, not pickup-time ETA. Airport, borough and time-of-day effects are descriptive route and demand associations; provider reporting quality and missing traffic information preclude a causal travel-time law."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful compact transportation-response model with fair robust controls and substantial chronological coverage, bounded by one city, one service class and retrospective inputs."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native adapter, frozen equations, coefficients and compact evidence were inspected. Separate computational review performs numerical replay; scientific review is not experimental replication."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact."
+        }
+      },
+      "checks": [
+        "Case-specific endpoint semantics and prior-art review",
+        "Predictor timing and calibration budget review",
+        "Grouped-validation and exposure limits reviewed",
+        "Named-control comparisons and negative evidence reviewed",
+        "No inference of novelty from fit quality"
+      ],
+      "limitations": [
+        "Green-taxi2025 declared routine records, duration0–24h and distance0–1000km; known officialzones and source-month-consistent timestamps. Provider-reported records may contain errors; no congestion intervention, routing policy or achieved operational benefit.",
+        "Agent review is advisory, not independent experimental replication."
+      ],
+      "recommendations": [
+        "For an operational ETA task, replace realized distance with an available planned route, freeze that information budget and validate new dates; do not interpret a negative airport offset as a universal road-speed effect."
+      ]
+    }
+  ],
+  "primary_sources_checked": [
+    "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page"
+  ],
+  "literature_access_limits": [
+    "Bounded primary-source and methods review; exhaustive novelty search and human expert adjudication are not claimed."
+  ],
+  "blocking_defects": []
+}

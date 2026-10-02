@@ -1,0 +1,36 @@
+[
+  {
+    "finding_id": "P100-051-F01",
+    "classification": "validated extension",
+    "claim": "A three-anchor calibration-ratio-dependent power response improves reserved-device current reconstruction over a training-only normalized template within the measured FET array.",
+    "equation": "p=clip(1.963555864-0.012894033*ln(r),0.1,8); Ihat=Il+(Ih-Il)*u^(p if V>=0 else12)",
+    "admission": "supported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "rules.json"
+    ],
+    "known_prior_art": "Primary paper reports FET electrical uniformity, reduced contact resistance, thermally activated channel transport, memory retention/endurance and separate device simulations. This portfolio tests reserved-device sparse-calibration reconstruction; it does not claim to discover those source results.",
+    "falsification": "All comparison models, unfavorable development folds and confirmation groups are retained; secondary model winners do not replace preselected reference.",
+    "scope": "36 fabricated FET curves from source Fig2e, not independent lots; no memory-retention extrapolation, no device-geometry control or interventions.",
+    "limits": "Model-based review is not independent experimental replication or definitive novelty adjudication. All delivered targets are exposed."
+  },
+  {
+    "finding_id": "P100-051-F02",
+    "classification": "negative finding",
+    "claim": "Off-regime exponent and contact-saturation mechanisms are not identified: the exponent reaches its bound and contact saturation fails to improve transfer.",
+    "equation": null,
+    "admission": "supported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "rules.json"
+    ],
+    "known_prior_art": "Primary paper reports FET electrical uniformity, reduced contact resistance, thermally activated channel transport, memory retention/endurance and separate device simulations. This portfolio tests reserved-device sparse-calibration reconstruction; it does not claim to discover those source results.",
+    "falsification": "All comparison models, unfavorable development folds and confirmation groups are retained; secondary model winners do not replace preselected reference.",
+    "scope": "36 fabricated FET curves from source Fig2e, not independent lots; no memory-retention extrapolation, no device-geometry control or interventions.",
+    "limits": "Model-based review is not independent experimental replication or definitive novelty adjudication. All delivered targets are exposed."
+  }
+]

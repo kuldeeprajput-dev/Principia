@@ -1,0 +1,145 @@
+{
+  "case_id": "P100-039",
+  "role": "scientific_critical",
+  "reviewer_id": "asd5_materials",
+  "reviewed_utc": "2026-10-02T03:08:58.776026+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "43cd1dca60ccb46440565fd9715fffcb788faad4236fd687b24c0c0cf348b4a8"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "8242ee67b837b070e0ac0e415de34617fb933fdc32507b496f8543ef6f218d03"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "8492d03251b8ca32f7ee18e4379815cdf0cc8bf361e79f7c2558921313a21850"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "3bc467895437e91a198ca4434e0df4b9e338ef4353ed3e6fec1329a65e53676c"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "3239fd3c02c8b7ce086840e2bc6395c70a735f649efd19276b705347006200cf"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "99873232eecc90d39609cdf6fe2608a04aa41dc4906545cfd5c1eb5edd82af9d"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "9e7cd8e7b01793f362db83090101876d43d6c196bcd6765707b53e72fda969b7"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "e044b4f0c51c0081117ba431632d8ac3650bec54f1b529c0c317ecfdc80da3f9"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "302851b70e6761d9ed619bdc0fe4c6099bfe90537e7a0374f650dee2e8c497c9"
+    },
+    {
+      "path": "package/evidence/integrity_revision.json",
+      "sha256": "5e707f4b42305425df8a8e69168a9de49f863f6903fb6cb51f3ad828cd165890"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-039-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The standard education/experience-proxy baseline reaches Brier0.18202 versus country prevalence0.21941 and flexible0.18365. Its small flexible margin and source-aware cross-section support a descriptive reproduction."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Upper within-country earnings rank is not a log-wage endpoint. Coarse age-derived experience, suppressed wages and plausible values conditioned on background preclude individual skill returns and causal education coefficients."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Strong data-semantics example: excluding plausible-value leakage is more valuable than manufacturing a skill-wage discovery."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native adapter, frozen equations, coefficients and compact evidence were inspected. Separate computational review performs numerical replay; scientific review is not experimental replication."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact."
+        }
+      },
+      "checks": [
+        "Case-specific endpoint semantics and prior-art review",
+        "Predictor timing and calibration budget review",
+        "Grouped-validation and exposure limits reviewed",
+        "Named-control comparisons and negative evidence reviewed",
+        "No inference of novelty from fit quality"
+      ],
+      "limitations": [
+        "Only valid reported earnings deciles, ages25–65 and complete education. Final weights within equal country×respondent blocks; not a pooled national population estimand. Potential experience age-schooling-6 is proxy, not measured tenure. No skill-wage causal claim; income reporting/topcoding and nonresponse remain.",
+        "Agent review is advisory, not independent experimental replication."
+      ],
+      "recommendations": [
+        "Use independently measured skills, earnings and design-aware uncertainty for causal or cross-economy extensions."
+      ]
+    },
+    {
+      "finding_id": "P100-039-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preserved negative or adequacy conclusion is supported within the stated task; it does not assert that the underlying phenomenon is absent. The standard education/experience-proxy baseline reaches Brier0.18202 versus country prevalence0.21941 and flexible0.18365. Its small flexible margin and source-aware cross-section support a descriptive reproduction."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Upper within-country earnings rank is not a log-wage endpoint. Coarse age-derived experience, suppressed wages and plausible values conditioned on background preclude individual skill returns and causal education coefficients."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Strong data-semantics example: excluding plausible-value leakage is more valuable than manufacturing a skill-wage discovery."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native adapter, frozen equations, coefficients and compact evidence were inspected. Separate computational review performs numerical replay; scientific review is not experimental replication."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact."
+        }
+      },
+      "checks": [
+        "Case-specific endpoint semantics and prior-art review",
+        "Predictor timing and calibration budget review",
+        "Grouped-validation and exposure limits reviewed",
+        "Named-control comparisons and negative evidence reviewed",
+        "No inference of novelty from fit quality"
+      ],
+      "limitations": [
+        "Only valid reported earnings deciles, ages25–65 and complete education. Final weights within equal country×respondent blocks; not a pooled national population estimand. Potential experience age-schooling-6 is proxy, not measured tenure. No skill-wage causal claim; income reporting/topcoding and nonresponse remain.",
+        "Agent review is advisory, not independent experimental replication."
+      ],
+      "recommendations": [
+        "Use independently measured skills, earnings and design-aware uncertainty for causal or cross-economy extensions."
+      ]
+    }
+  ],
+  "primary_sources_checked": [
+    "https://www.oecd.org/en/publications/survey-of-adult-skills-2023-technical-report_80d9f692-en.html"
+  ],
+  "literature_access_limits": [
+    "Bounded primary-source and methods review; exhaustive novelty search and human expert adjudication are not claimed."
+  ],
+  "blocking_defects": []
+}

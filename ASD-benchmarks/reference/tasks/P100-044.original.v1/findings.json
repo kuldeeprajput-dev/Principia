@@ -1,0 +1,47 @@
+[
+  {
+    "finding_id": "P100-044-F01",
+    "classification": "reproduction",
+    "claim": "A capped size-degree exponential retained as development-selected reference attains980.825s held-instance MAE, versus1182.146s for the nested flexible model. None of five proposed extensions was selected.",
+    "equation": "t_hat=clip(exp(b0+b1*ln(n/25)+b2*ln(d/4)+b3*I_flow+b4*I_linear),0,7200)",
+    "admission": "partially_supported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/scientific_checks.json"
+    ],
+    "scope": "One solver/hardware experiment,16 structural instances,three formulations,one run each. Consumption censored by a7200s resource cap; not latent solve time or general computational complexity. No deployed impact evidence.",
+    "known_prior_art": "QOBLIB computational submissions; classical Moore bounds and empirical complexity/resource models. No new complexity theorem.",
+    "falsification": "Four held instances provide limited generalization. Degree-free005 wins retrospectively (556.276s), contradicting any universal degree-effect claim; no final re-selection."
+  },
+  {
+    "finding_id": "P100-044-F02",
+    "classification": "metrology_correction",
+    "claim": "Independent shortest-path checks verify degree feasibility in all47released graphs, but2 reported MIP objectives overstate actual graph diameter (12vs3 and5vs4 for topology40_6). 27graphs match a classical counting lower bound.",
+    "equation": "D_graph=max_{u,v} shortest_path(u,v); D_graph <= D_MIP for feasible but unfinished solves",
+    "admission": "supported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/scientific_checks.json"
+    ],
+    "scope": "One solver/hardware experiment,16 structural instances,three formulations,one run each. Consumption censored by a7200s resource cap; not latent solve time or general computational complexity. No deployed impact evidence.",
+    "known_prior_art": "QOBLIB computational submissions; classical Moore bounds and empirical complexity/resource models. No new complexity theorem.",
+    "falsification": "This post-freeze certificate audit did not affect runtime fitting. Source constraints allow a slack diameter auxiliary variable; mismatch is not proof of source corruption. One failed run has no graph. Known Moore certificates are reproduction, not new bounds."
+  },
+  {
+    "finding_id": "P100-044-F03",
+    "classification": "falsified",
+    "claim": "Occupancy-only, combinatorial-count and smooth-threshold explanations do not outperform the established resource predictor in development; low retrospective error alone cannot identify an algorithmic complexity law.",
+    "equation": "t_hat=clip(exp(b0+b1*ln(n/(1+d^2))+b2*I_flow+b3*I_linear),0,7200)",
+    "admission": "supported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/scientific_checks.json"
+    ],
+    "scope": "One solver/hardware experiment,16 structural instances,three formulations,one run each. Consumption censored by a7200s resource cap; not latent solve time or general computational complexity. No deployed impact evidence.",
+    "known_prior_art": "QOBLIB computational submissions; classical Moore bounds and empirical complexity/resource models. No new complexity theorem.",
+    "falsification": "Runtime is capped, hardware-specific and unreplicated. Source CPU Runtime is Gurobi Work Measure and cannot be relabeled seconds."
+  }
+]

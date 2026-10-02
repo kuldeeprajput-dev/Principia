@@ -1,0 +1,71 @@
+{
+  "0": {
+    "kind": "mechanical_only",
+    "coef": [
+      -0.10346499395462716
+    ],
+    "K": 200.0,
+    "equation": "y_hat=max(0,c+b1*ln(E/30))",
+    "training_groups": [
+      "B",
+      "D"
+    ],
+    "training_rows": 10,
+    "rank": 1,
+    "parameter_count": 1,
+    "profile_training_mse": [
+      {
+        "K": 200.0,
+        "weighted_sse": 2.9334254121707715
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  },
+  "1": {
+    "kind": "mechanical_only",
+    "coef": [
+      -0.12574191056198059
+    ],
+    "K": 200.0,
+    "equation": "y_hat=max(0,c+b1*ln(E/30))",
+    "training_groups": [
+      "A",
+      "D"
+    ],
+    "training_rows": 10,
+    "rank": 1,
+    "parameter_count": 1,
+    "profile_training_mse": [
+      {
+        "K": 200.0,
+        "weighted_sse": 1.5272304977418714
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  },
+  "2": {
+    "kind": "mechanical_only",
+    "coef": [
+      -0.32673774330410504
+    ],
+    "K": 200.0,
+    "equation": "y_hat=max(0,c+b1*ln(E/30))",
+    "training_groups": [
+      "A",
+      "B"
+    ],
+    "training_rows": 10,
+    "rank": 1,
+    "parameter_count": 1,
+    "profile_training_mse": [
+      {
+        "K": 200.0,
+        "weighted_sse": 3.023533706759428
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  }
+}

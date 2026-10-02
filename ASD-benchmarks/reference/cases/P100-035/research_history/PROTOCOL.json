@@ -1,0 +1,27 @@
+{
+  "frozen_utc": "2026-10-02T02:42:41.646271+00:00",
+  "target": "Source positive-context label probability",
+  "metric": "Animal-balanced Brier;logloss/calibration and equal-cost threshold0.5 events complementary",
+  "inputs": [
+    "log_duration",
+    "log_centroid",
+    "log_peak",
+    "high_share",
+    "entropy",
+    "flatness",
+    "envelope_cv",
+    "log_modulation",
+    "log_rms",
+    "species_code"
+  ],
+  "eligibility": "All finite nonempty WAV with nonzero RMS and sourcePositive/Negative label; no signal quality selection on outcomes",
+  "groups": "168 unique animals; species-stratified hash split",
+  "timing": "After the complete author-extracted call. Predictors only waveform summaries and known species. File context words, animal ID, call label and source reference are never predictors.",
+  "baseline_families": [
+    "animal-balanced constant prevalence",
+    "species-specific prevalence with weak regularization",
+    "constrained matched flexible RBF"
+  ],
+  "selection": "Smallest coefficient count within1% best animal Brier; >=5 substantive adaptive hypotheses and two last no-gain challenges",
+  "exposure": "Source label metadata, IDs and group counts inspected for linkage. Acoustic predictors and confirmation numerical quality scores unviewed prefit."
+}

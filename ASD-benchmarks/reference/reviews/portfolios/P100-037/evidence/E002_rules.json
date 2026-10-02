@@ -1,0 +1,399 @@
+{
+  "schema": "principia.clean-reference-results/v2",
+  "case_id": "P100-037",
+  "title": "Router power",
+  "scientific_status": "Reference evidence and known-baseline reproduction; zero admitted new laws.",
+  "ground_truth_new_law_eligible": false,
+  "original_selection": "compact (original A006)",
+  "selection_unchanged": true,
+  "metric_kind": "mae",
+  "metric_units": "W",
+  "input_columns": [
+    "router",
+    "throughput_Gbps",
+    "packet_bytes"
+  ],
+  "numeric_columns": [
+    "throughput_Gbps",
+    "packet_bytes"
+  ],
+  "allows_missing_predictors": false,
+  "models": {
+    "compact": {
+      "schema": "linear-in-declared-physical-features-v1",
+      "spec": {
+        "kind": "mixture",
+        "k": 0.03
+      },
+      "terms": [
+        "routerA: 1",
+        "routerA: u = throughput_Gbps / 200",
+        "routerA: q/(0.03+q)",
+        "routerA: u*q/(0.03+q)",
+        "routerB: 1",
+        "routerB: u = throughput_Gbps / 200",
+        "routerB: q/(0.03+q)",
+        "routerB: u*q/(0.03+q)"
+      ],
+      "coefficients_W": [
+        704.2433411865737,
+        -18.07021026362394,
+        10.082909622626483,
+        39.18712786928474,
+        69.88023368673333,
+        6.494469639918696,
+        0.550109769345284,
+        6.448613511501504
+      ],
+      "hyperparameter_search": [
+        {
+          "kind": "mixture",
+          "k": 0.03
+        },
+        {
+          "kind": "mixture",
+          "k": 0.1
+        },
+        {
+          "kind": "mixture",
+          "k": 0.3
+        },
+        {
+          "kind": "mixture",
+          "k": 1.0
+        },
+        {
+          "kind": "mixture",
+          "k": 3.0
+        },
+        {
+          "kind": "mixture",
+          "k": 10.0
+        }
+      ],
+      "development_selection_losses": [
+        4.04636362505051,
+        4.110536381456416,
+        4.2220491504698545,
+        4.33035559238542,
+        4.359299719875205,
+        4.356149513395722
+      ],
+      "free_coefficient_count": 8,
+      "rank": 8,
+      "training_groups": [
+        "TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+        "TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+        "TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+        "TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+        "TC3.2_traffic_load_variation_modelA_iteration1.csv",
+        "TC3.2_traffic_load_variation_modelA_iteration2.csv"
+      ],
+      "valid_input_range": {
+        "u": [
+          0.0,
+          1.0
+        ],
+        "packet_bytes": [
+          62.0,
+          1500.0
+        ]
+      },
+      "prediction": "sum(coefficients_W[j]*terms[j]); router-specific coefficients, shared selected shape parameters",
+      "clock": "Each run begins a new state; EMA uses only current and earlier traffic inputs."
+    },
+    "flexible": {
+      "schema": "linear-in-declared-physical-features-v1",
+      "spec": {
+        "kind": "flex"
+      },
+      "terms": [
+        "routerA: 1",
+        "routerA: u = throughput_Gbps / 200",
+        "routerA: q = throughput_Gbps*1e9/(8*packet_bytes*1e8)",
+        "routerA: u^2",
+        "routerA: q^2",
+        "routerA: u*q",
+        "routerA: ln(L/1500)",
+        "routerA: ln(L/1500)^2",
+        "routerA: u*ln(L/1500)",
+        "routerB: 1",
+        "routerB: u = throughput_Gbps / 200",
+        "routerB: q = throughput_Gbps*1e9/(8*packet_bytes*1e8)",
+        "routerB: u^2",
+        "routerB: q^2",
+        "routerB: u*q",
+        "routerB: ln(L/1500)",
+        "routerB: ln(L/1500)^2",
+        "routerB: u*ln(L/1500)"
+      ],
+      "coefficients_W": [
+        696.3026286137793,
+        58.86933238540751,
+        -5.366797218937639,
+        -34.92915237871574,
+        -4.660523722069348,
+        22.32672234762236,
+        -10.590829814762847,
+        -2.6880441545803397,
+        0.394919977116895,
+        68.79106449951414,
+        15.521229340001012,
+        2.44104532130344,
+        -2.9812829081995202,
+        -1.2317496969679802,
+        5.373421405462038,
+        -1.189940249600327,
+        -0.25085125824678073,
+        3.1777191749999223
+      ],
+      "hyperparameter_search": [
+        {
+          "kind": "flex"
+        }
+      ],
+      "development_selection_losses": [
+        null
+      ],
+      "free_coefficient_count": 18,
+      "rank": 18,
+      "training_groups": [
+        "TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+        "TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+        "TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+        "TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+        "TC3.2_traffic_load_variation_modelA_iteration1.csv",
+        "TC3.2_traffic_load_variation_modelA_iteration2.csv"
+      ],
+      "valid_input_range": {
+        "u": [
+          0.0,
+          1.0
+        ],
+        "packet_bytes": [
+          62.0,
+          1500.0
+        ]
+      },
+      "prediction": "sum(coefficients_W[j]*terms[j]); router-specific coefficients, shared selected shape parameters",
+      "clock": "Each run begins a new state; EMA uses only current and earlier traffic inputs."
+    },
+    "throughput_only": {
+      "schema": "linear-in-declared-physical-features-v1",
+      "spec": {
+        "kind": "linear"
+      },
+      "terms": [
+        "routerA: 1",
+        "routerA: u = throughput_Gbps / 200",
+        "routerB: 1",
+        "routerB: u = throughput_Gbps / 200"
+      ],
+      "coefficients_W": [
+        706.6878271213935,
+        24.540165826623912,
+        69.91496706393663,
+        12.931849847478954
+      ],
+      "hyperparameter_search": [
+        {
+          "kind": "linear"
+        }
+      ],
+      "development_selection_losses": [
+        null
+      ],
+      "free_coefficient_count": 4,
+      "rank": 4,
+      "training_groups": [
+        "TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+        "TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+        "TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+        "TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+        "TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+        "TC3.2_traffic_load_variation_modelA_iteration1.csv",
+        "TC3.2_traffic_load_variation_modelA_iteration2.csv"
+      ],
+      "valid_input_range": {
+        "u": [
+          0.0,
+          1.0
+        ],
+        "packet_bytes": [
+          62.0,
+          1500.0
+        ]
+      },
+      "prediction": "sum(coefficients_W[j]*terms[j]); router-specific coefficients, shared selected shape parameters",
+      "clock": "Each run begins a new state; EMA uses only current and earlier traffic inputs."
+    }
+  },
+  "historical_model_origins": {
+    "compact": {
+      "historical_path": "attempt-006/MODEL.json",
+      "sha256": "e4e8f18fe9c1cb463d793f61f1794d57930ded1002aa99e2195497a7f17035a2"
+    },
+    "flexible": {
+      "historical_path": "baseline-flex/MODEL.json",
+      "sha256": "6e0d1442d2f10680f10eef8fe472cf9b9bd98a9aed201c9d4e810e20994500ae"
+    },
+    "throughput_only": {
+      "historical_path": "baseline-linear/MODEL.json",
+      "sha256": "5947d54a0d697df68d949f5be3308e4fbff35dc95be6227ca993a61414005e77"
+    }
+  },
+  "findings": [
+    {
+      "id": "P100-037-F1",
+      "title": "Compact workload prediction remains weaker than the flexible baseline",
+      "evidence": "The frozen load-dependent saturation equation has 4.0059 W mean run MAE, compared with 3.7315 W for the flexible workload model. It wins only one of five reserved runs.",
+      "classification": "confirmed_comparison",
+      "new_physical_law": false
+    },
+    {
+      "id": "P100-037-F2",
+      "title": "Separate component energy costs are not identified",
+      "evidence": "Router A has a negative standalone throughput coefficient even though the total fitted response is increasing on the checked fixed-packet-size grid. The fitted terms cannot be interpreted as independent positive energy costs.",
+      "classification": "identifiability_limit",
+      "new_physical_law": false
+    }
+  ],
+  "source": {
+    "landing_url": "https://zenodo.org/records/17282065",
+    "publisher": "Zenodo; originating researchers: Lentisco, Carlos M. (Universidad Polit\u00e9cnica de Madrid); De la Osa Mostazo, David (Telef\u00f3nica Innovaci\u00f3n Digital (Spain)); Karamchandani Batra, Amit (Universidad Polit\u00e9cnica de Madrid); Gonz\u00e1lez S\u00e1nchez, Daniel (Universidad Polit\u00e9cnica de Madrid); de la Cal Garc\u00eda, Luis (Universidad Polit\u00e9cnica de Madrid); Bellido Triana, Luis (Universidad Polit\u00e9cnica de Madrid); Mozo Velasco, Bonifacio Alberto (Universidad Polit\u00e9cnica de Madrid); Pastor Perales, Antonio (Telef\u00f3nica Innovaci\u00f3n Digital (Spain)); R. Lopez, Diego (Telef\u00f3nica Innovaci\u00f3n Digital (Spain))",
+    "identifiers": [
+      "10.5281/zenodo.17282065"
+    ],
+    "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "assets": [
+      {
+        "path": "context/zenodo_record.json",
+        "bytes": 17034,
+        "sha256": "84895b72d1bc2bc31718e123b87e21f0617f0a0f4d3dda5c729dd71f28f9bb37",
+        "download_url": null,
+        "terms": "CC0-1.0 (repository metadata; excludes email addresses)"
+      },
+      {
+        "path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+        "bytes": 352633,
+        "sha256": "c28ef54ff14446dc3e07e2ad9c1e31e8a495ab7d275bd8a9073729b9de5363d9",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration1.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+        "bytes": 343560,
+        "sha256": "b5d47aaabf76f21784a68f45262f568f619b69ce1805c456f83c993ca8a1a89c",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration2.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+        "bytes": 352528,
+        "sha256": "ecb98a077f4b203c47cc90064a7abbc6620f1011db12a2e17b953b36edae5310",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelA_iteration3.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+        "bytes": 391900,
+        "sha256": "c149f0fef4f6c0434e38eb45e9582c1e9f24a8a7415e91457bd353488cd7ef52",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration1.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+        "bytes": 391824,
+        "sha256": "b1d1dddca4f6b7618f1d2f8cfc01beabdb83b594dd0bf8fd2c6cd171e0cca283",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration2.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+        "bytes": 391805,
+        "sha256": "b6e0cace871984a211160e079824b6269a12afbd4f38bdf4142d424275543680",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_multiple_traffic_flows_modelB_iteration3.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+        "bytes": 334338,
+        "sha256": "20579db698833a940acb58899adf07f6871359fd9231232fde35204583a598c8",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+        "bytes": 340741,
+        "sha256": "d99ee716a7af802caef5175f82d459a7a921edb1e670176cbbbb0287fa7f60f9",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+        "bytes": 335456,
+        "sha256": "347e0803dd1df7f8cb216b13b5948ed82dcb96c53cb7505e34409eab39ad13c1",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+        "bytes": 373044,
+        "sha256": "de7ea1b23944365abdcc6aa7f5f98d137e9c9fb89170ceb9dca3e2a3b5da7f0d",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+        "bytes": 373019,
+        "sha256": "139a34137988f7889566436f18e7b7b0ab67115df8edd37fa3bd39ab1485548e",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+        "bytes": 412600,
+        "sha256": "74d5373610b6143c7d10c2273f8229ed57c7d7905ea0e8579a7a38f8b7892c73",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_traffic_load_variation_modelA_iteration1.csv",
+        "bytes": 66725,
+        "sha256": "93c4c088682987e0f3773eab78e7998c859d582b31a2d73375ecf22605fd0043",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration1.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_traffic_load_variation_modelA_iteration2.csv",
+        "bytes": 67222,
+        "sha256": "26815c57c06ff7018bf5b6084d4f7dfdcd74349d7f38335a0f76a75d3defee93",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration2.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      },
+      {
+        "path": "raw/TC3.2_traffic_load_variation_modelA_iteration3.csv",
+        "bytes": 67242,
+        "sha256": "8a83967bcb24679de3d683e2b1181b4e130cb8b58ed8ef2352e6627be515251d",
+        "download_url": "https://zenodo.org/api/records/17282065/files/TC3.2_traffic_load_variation_modelA_iteration3.csv/content",
+        "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+      }
+    ]
+  },
+  "confirmation_is_exposed": true,
+  "applicability": "Five complete reserved runs on two known router systems. The packet-rate quantity is a derived proxy, especially for mixed packet sizes. No measured temperature or independent component-energy response identifies a thermal or processing-cost mechanism. One native clock inconsistency affects historical memory models; the three packaged static models score all runs. One missing target remains missing.",
+  "packaging_change": "Only navigation, code representation and packaging changed. No source measurement, fitted parameter, sample selection or admission decision changed.",
+  "assigned_rows": 27692,
+  "packaged_rows": 27692
+}

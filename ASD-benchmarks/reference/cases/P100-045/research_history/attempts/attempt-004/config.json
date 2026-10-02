@@ -1,0 +1,33 @@
+{
+  "case": 45,
+  "kind": "hysteresis",
+  "hypothesis": "Identical low-energy intensity may have different high-channel responses on rising and falling phases. Add a signed causal low-channel increment to test hysteresis without using high-channel history.",
+  "parent": "attempt-003",
+  "created_utc": "2026-10-02T02:05:25.105304+00:00",
+  "before_execution": true,
+  "confirmation_accessed": false,
+  "development_evidence_available": [
+    {
+      "attempt": "attempt-001",
+      "primary_error": 16.024913695475227,
+      "worst_group": 24.642820909707737
+    },
+    {
+      "attempt": "attempt-002",
+      "primary_error": 14.26491795930303,
+      "worst_group": 24.382205914799876
+    },
+    {
+      "attempt": "attempt-003",
+      "primary_error": 14.350349587225006,
+      "worst_group": 25.114469699390224
+    }
+  ],
+  "primary_metric": "mean_group_absolute_error",
+  "falsifying_tests": [
+    "Matched strong baselines under identical inputs",
+    "Per-group errors and worst-group behavior",
+    "Parameter boundary/identifiability audit or exact-arithmetic preconditions",
+    "Physical/mathematical applicability and negative cases retained"
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-098.original.v1",
+  "case_id": "P100-098",
+  "case_number": 98,
+  "family": "original",
+  "protocol_version": "P100-098-asd7-native-v1",
+  "cohort_id": "P100-098.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-098.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/98_mathematics_krw_polytopes",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Number of facets of the five-point KRW polytope",
+  "target_units": "facets",
+  "error_units": "facets",
+  "primary_units": "facets",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "metric_json"
+  ],
+  "input_units": {
+    "metric_json": "JSON array of 10 positive rational distances; arbitrary common scale"
+  },
+  "numeric_columns": [],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Ten exact pairwise distances permitted; source facets/incidence/f-vector forbidden predictors.",
+  "calibration": "None for exact geometric algorithms; training-only coefficients for coarse degeneracy heuristics.",
+  "independent_unit": "Source facet-incidence combinatorial type modulo coordinate permutation; all metric representatives of that type stay together",
+  "evaluation_groups": [
+    "06088942f2a91ab825f9",
+    "1a586bd5a602f95a463c",
+    "3a0fdd75337f8cdb7d7a",
+    "3d6d9cf208bd1ea0f329",
+    "52aca7e2d6d878a53a61",
+    "59ea1c11c59db07d0390",
+    "66f77984eedda71d2549",
+    "8ee3c0a9bde9ab9902af",
+    "9568caa46d40b0a2aa52",
+    "a50a1702754b111bc60b",
+    "c958028ee466b87fc4d1",
+    "d8d41e0bbb27156639c7",
+    "dcb5c187dde7cd471aa0",
+    "ea26b181dfde66020b89",
+    "ed59fb647dc1840cfd43"
+  ],
+  "assigned_rows": 15,
+  "eligible_rows": 15,
+  "baseline_models": [
+    "generic",
+    "qhull",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "reference"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "generic": {
+      "equation": "f_hat=70 (generic five-point upper case)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "qhull": {
+      "equation": "Construct conv{+/- (e_i-e_j)/d_ij} in four dimensions; count distinct normalized facet equations (rounded to 9 decimals)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "f_hat=b0+b1*t; t=number of exact four-cycle distance ties",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "f_hat=b0+b1*r; r=rank of equality normals",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "f_hat=b0+b1*t+b2*r+b3*t^2",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "f=number of distinct exact feasible potentials phi with phi_0=0 and abs(phi_i-phi_j)<=d_ij; enumerate all signed spanning trees",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "Same potential construction restricted to star trees only; tested simplification",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "reference": {
+      "equation": "Construct conv{+/- (e_i-e_j)/d_ij} in four dimensions; count distinct normalized facet equations (rounded to 9 decimals)",
+      "state": "rules.json",
+      "role": "reference"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics."
+  },
+  "scope_limits": "Five-point finite source catalog; published theory already characterizes generic types and arrangement. Exact computational reproduction is not a new theorem or independent experimental truth. Exact metric duplicate representations are deduplicated; generic/strict representatives with same coordinate-relabeled facet incidence remain in one group. Incidence-derived family labels are not predictors. Native POINTS and supplied metric vectors can differ by uniform scale; verify exact proportional distance multiset, which preserves facets.",
+  "source_url": "https://zenodo.org/records/19496811",
+  "source_license": "cc-by-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "1f656a5d8c5941439f06af8341c53b721453092aeaf7fc780bf9f69947de7bc6",
+  "observations_sha256": "a66b398800636da2ffc4121aa76cbf4b113ebe6d8b9081a015279a242351d500",
+  "legacy_protocol_sha256": "3fabe5e614e3f7edab3156444465fb7f31029079686280b44228d1646c56b36d",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

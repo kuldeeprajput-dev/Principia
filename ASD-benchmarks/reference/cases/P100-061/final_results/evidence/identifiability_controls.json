@@ -1,0 +1,124 @@
+{
+  "profile_rho": [
+    {
+      "rho": 0,
+      "weighted_squared_cost": 0.0024325198402135855,
+      "parameters": [
+        -1.4071069272968666,
+        -1.3077388938320333,
+        -0.7079969681454027,
+        -0.751743586761569,
+        -0.015683976001730795,
+        0.05687283377687987
+      ],
+      "in_sample_MAE": 0.021489126615233493,
+      "selection_use": false
+    },
+    {
+      "rho": 0.25,
+      "weighted_squared_cost": 0.0018740956221836786,
+      "parameters": [
+        -1.3052137767054333,
+        -1.1969417268066855,
+        -0.6031344797212476,
+        -0.6475048273599605,
+        -0.01776170462453492,
+        0.06377570014565144
+      ],
+      "in_sample_MAE": 0.018901952758069305,
+      "selection_use": false
+    },
+    {
+      "rho": 0.5,
+      "weighted_squared_cost": 0.0012869107900400148,
+      "parameters": [
+        -1.1635389428679035,
+        -1.049380500048408,
+        -0.45995735033508106,
+        -0.5038628339796577,
+        -0.021208125552720038,
+        0.07573288184946526
+      ],
+      "in_sample_MAE": 0.015733480754927028,
+      "selection_use": false
+    },
+    {
+      "rho": 0.75,
+      "weighted_squared_cost": 0.0007552480055765362,
+      "parameters": [
+        -0.9554576106196965,
+        -0.8438907327136123,
+        -0.2551742078105529,
+        -0.29577984268146285,
+        -0.02731068770555211,
+        0.09825412929628294
+      ],
+      "in_sample_MAE": 0.012063244784378372,
+      "selection_use": false
+    },
+    {
+      "rho": 1,
+      "weighted_squared_cost": 0.0004268519903572488,
+      "parameters": [
+        -0.6139746940176893,
+        -0.5374491320504043,
+        0.06283234153679704,
+        0.035646399510466734,
+        -0.03983219147374532,
+        0.15026028537126393
+      ],
+      "in_sample_MAE": 0.008844291772311993,
+      "selection_use": false
+    }
+  ],
+  "profile_uses_development_only": true,
+  "profile_not_used_for_selection": true,
+  "root_unique_reason": "For0<=rho<=1 andx<1, xbar(J) decreases monotonically. Membrane-surfacepressuredecreases withJ. RHS is nonincreasing andlhsJstrictlyincreasing; positive rootuniqueinsidefeedbound.",
+  "matchedflow_probe": {
+    "flows_normal_L_min": [
+      1,
+      3,
+      5,
+      7,
+      10
+    ],
+    "matched_operating_rows": 72,
+    "monotonicity_violations": 0,
+    "scope": "Modelstructuralcheck; only3/5/7observed atx0.8, no empiricalvalidationat1/10"
+  },
+  "feed_conservation_passed": true,
+  "membrane_upper_bound_passed": true,
+  "parameter_sensitivity": [
+    {
+      "parameter_index": 0,
+      "logparameter_shift": 0.1,
+      "mean_absolute_prediction_change": 0.00150424620791594
+    },
+    {
+      "parameter_index": 1,
+      "logparameter_shift": 0.1,
+      "mean_absolute_prediction_change": 0.0007178184702342494
+    },
+    {
+      "parameter_index": 2,
+      "logparameter_shift": 0.1,
+      "mean_absolute_prediction_change": 0.002329125385850251
+    },
+    {
+      "parameter_index": 3,
+      "logparameter_shift": 0.1,
+      "mean_absolute_prediction_change": 0.002517462115104909
+    },
+    {
+      "parameter_index": 4,
+      "logparameter_shift": 0.1,
+      "mean_absolute_prediction_change": 0.0023955384302111536
+    },
+    {
+      "parameter_index": 5,
+      "logparameter_shift": 0.1,
+      "mean_absolute_prediction_change": 0.002298328492556469
+    }
+  ],
+  "limitations": "FilmKanddepletionrhochangetogetherinprofile; effectiveparametersnotindependentlymeasured. In-sampleprofiledoesnotjustify selectingrho orclaimingcausalmechanismidentification."
+}

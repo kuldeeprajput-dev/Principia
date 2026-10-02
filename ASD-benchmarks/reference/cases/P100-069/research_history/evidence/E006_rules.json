@@ -1,0 +1,349 @@
+{
+  "schema_version": "1.0",
+  "case_id": "P100-069",
+  "source": {
+    "landing_url": "https://doi.org/10.18419/DARUS-5015",
+    "upstream_case": "69_robotics_gearbox_thermal",
+    "version_evidence": "SOURCE_ASSETS.json"
+  },
+  "target": "Lubricant temperature",
+  "target_units": "degree C",
+  "metric_units": "degree C",
+  "metric_kind": "mae",
+  "primary_metric": "mae",
+  "assigned_rows": 16568,
+  "input_columns": [
+    "time_s",
+    "housing_C",
+    "environment_C",
+    "speed",
+    "friction",
+    "initial_C"
+  ],
+  "numeric_columns": [
+    "time_s",
+    "housing_C",
+    "environment_C",
+    "speed",
+    "friction",
+    "initial_C"
+  ],
+  "input_units": {
+    "time_s": "s",
+    "housing_C": "degree C",
+    "environment_C": "degree C",
+    "speed": "rad/s",
+    "friction": "N m; source friction torque",
+    "initial_C": "degree C; explicitly permitted initial lubricant measurement"
+  },
+  "missingness": "Original missing targets retained; no target-based exclusions; same cohort as original; new covariates from measured empty-flow or strict past native-clock weather only.",
+  "models": {
+    "reference": {
+      "case": 69,
+      "kind": "double_speed",
+      "knobs": {
+        "tau": 200,
+        "slow": 6400
+      },
+      "beta": [
+        8.615866545712363,
+        28.276797606189383,
+        0.41693011158631427
+      ],
+      "terms": [
+        "fast speed heat",
+        "slow speed heat",
+        "slow conservative fraction"
+      ],
+      "fitted_parameters": 5,
+      "design_condition": 19.635288642812455,
+      "design_rank": 3
+    },
+    "compact_candidate": {
+      "case": 69,
+      "kind": "double_speed",
+      "knobs": {
+        "tau": 200,
+        "slow": 6400
+      },
+      "beta": [
+        8.615866545712363,
+        28.276797606189383,
+        0.41693011158631427
+      ],
+      "terms": [
+        "fast speed heat",
+        "slow speed heat",
+        "slow conservative fraction"
+      ],
+      "fitted_parameters": 5,
+      "design_condition": 19.635288642812455,
+      "design_rank": 3
+    },
+    "housing": {
+      "case": 69,
+      "kind": "housing",
+      "knobs": {},
+      "beta": [],
+      "terms": [],
+      "fitted_parameters": 0,
+      "design_condition": 1.0,
+      "design_rank": 0
+    },
+    "single_speed": {
+      "case": 69,
+      "kind": "single_speed",
+      "knobs": {
+        "tau": 200
+      },
+      "beta": [
+        9.768554037004668
+      ],
+      "terms": [
+        "filtered |omega|"
+      ],
+      "fitted_parameters": 2,
+      "design_condition": 1.0,
+      "design_rank": 1
+    },
+    "single_power": {
+      "case": 69,
+      "kind": "single_power",
+      "knobs": {
+        "tau": 800
+      },
+      "beta": [
+        4.720732922155011
+      ],
+      "terms": [
+        "filtered |omega torque|"
+      ],
+      "fitted_parameters": 2,
+      "design_condition": 1.0,
+      "design_rank": 1
+    },
+    "double_speed": {
+      "case": 69,
+      "kind": "double_speed",
+      "knobs": {
+        "tau": 200,
+        "slow": 6400
+      },
+      "beta": [
+        8.615866545712363,
+        28.276797606189383,
+        0.41693011158631427
+      ],
+      "terms": [
+        "fast speed heat",
+        "slow speed heat",
+        "slow conservative fraction"
+      ],
+      "fitted_parameters": 5,
+      "design_condition": 19.635288642812455,
+      "design_rank": 3
+    },
+    "innovation_power": {
+      "case": 69,
+      "kind": "innovation_power",
+      "knobs": {
+        "tau": 800
+      },
+      "beta": [
+        4.7207329220384056,
+        5.859431404951105e-11
+      ],
+      "terms": [
+        "causal heat forcing",
+        "current housing innovation"
+      ],
+      "fitted_parameters": 3,
+      "design_condition": 13.755832269422331,
+      "design_rank": 2
+    },
+    "innovation_speed": {
+      "case": 69,
+      "kind": "innovation_speed",
+      "knobs": {
+        "tau": 200
+      },
+      "beta": [
+        9.768554037001232,
+        1.6235355312999376e-12
+      ],
+      "terms": [
+        "causal heat forcing",
+        "current housing innovation"
+      ],
+      "fitted_parameters": 3,
+      "design_condition": 9.315289553808647,
+      "design_rank": 2
+    },
+    "variable_tau": {
+      "case": 69,
+      "kind": "variable_tau",
+      "knobs": {
+        "tau": 400,
+        "k": 0.25
+      },
+      "beta": [
+        11.296671204222372
+      ],
+      "terms": [
+        "filtered |omega|"
+      ],
+      "fitted_parameters": 3,
+      "design_condition": 1.0,
+      "design_rank": 1
+    },
+    "temperature_power": {
+      "case": 69,
+      "kind": "temperature_power",
+      "knobs": {
+        "tau": 1600
+      },
+      "beta": [
+        8.044228195548989,
+        -2.062329107302391
+      ],
+      "terms": [
+        "power heat gain",
+        "temperature-power interaction"
+      ],
+      "fitted_parameters": 3,
+      "design_condition": 1.6586794593327372,
+      "design_rank": 2
+    },
+    "ridge_history": {
+      "case": 69,
+      "kind": "ridge_history",
+      "knobs": {
+        "tau": 200,
+        "ridge": 0.0001
+      },
+      "beta": [
+        0.05051348286416392,
+        -0.12400143410417644,
+        -0.18550700792206537,
+        1.6386616970054402,
+        0.024268409936170028,
+        -0.16821285446702242,
+        0.13181410033830293,
+        2.0673781906353126,
+        0.044366350064005806,
+        -0.11848095284983858,
+        0.8584379337997613,
+        3.598937341982184,
+        0.09216532513702347,
+        -0.04506472964764829,
+        0.7733951489848376,
+        3.832640535909602,
+        0.15333962138590984,
+        0.046182489909086445,
+        -0.21201917968435938,
+        2.8583311452416647,
+        0.1780681216108273,
+        0.07979986028816191,
+        -2.236398975370928,
+        -0.018880342903291613,
+        0.14705359147051633,
+        0.009367421773026763,
+        -6.168203918341216,
+        -6.46347081319446,
+        0.08019242012824163,
+        -0.058775511857646616
+      ],
+      "terms": [
+        "causal history 0",
+        "causal history 1",
+        "causal history 2",
+        "causal history 3",
+        "causal history 4",
+        "causal history 5",
+        "causal history 6",
+        "causal history 7",
+        "causal history 8",
+        "causal history 9",
+        "causal history 10",
+        "causal history 11",
+        "causal history 12",
+        "causal history 13",
+        "causal history 14",
+        "causal history 15",
+        "causal history 16",
+        "causal history 17",
+        "causal history 18",
+        "causal history 19",
+        "causal history 20",
+        "causal history 21",
+        "causal history 22",
+        "causal history 23",
+        "causal history 24",
+        "causal history 25",
+        "causal history 26",
+        "causal history 27",
+        "causal history 28",
+        "causal history 29"
+      ],
+      "fitted_parameters": 32,
+      "design_condition": 9984296.55253169,
+      "design_rank": 30
+    },
+    "legacy_reference": {
+      "kind": "legacy",
+      "state": {
+        "case": 69,
+        "kind": "a3",
+        "knobs": {
+          "tau": 200.0
+        },
+        "beta": [
+          0.9999999999999999,
+          9.76855403700466
+        ],
+        "active_columns": [
+          0,
+          2
+        ],
+        "terms": [
+          "causal housing-minus-environment convolution; complementary weights sum to one",
+          "causal absolute-speed convection surrogate"
+        ],
+        "fitted_parameters": 3,
+        "design_rank": 2,
+        "design_condition": 3.669663930164712,
+        "positive_coefficients": false
+      },
+      "case": 69
+    }
+  },
+  "equations": {
+    "reference": "Two parallel stable states H_tau and S_tau use previous-sample exponential recurrence. yhat = H_fast + gamma_fast S_fast + gamma_slow S_slow + c(H_slow-H_fast), with H_tau(0)=TL0, S_tau(0)=0 and c in[0,1].",
+    "compact_candidate": "Two parallel stable states H_tau and S_tau use previous-sample exponential recurrence. yhat = H_fast + gamma_fast S_fast + gamma_slow S_slow + c(H_slow-H_fast), with H_tau(0)=TL0, S_tau(0)=0 and c in[0,1].",
+    "housing": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "single_speed": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "single_power": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "double_speed": "Two parallel stable states H_tau and S_tau use previous-sample exponential recurrence. yhat = H_fast + gamma_fast S_fast + gamma_slow S_slow + c(H_slow-H_fast), with H_tau(0)=TL0, S_tau(0)=0 and c in[0,1].",
+    "innovation_power": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "innovation_speed": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "variable_tau": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "temperature_power": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "ridge_history": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "legacy_reference": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state."
+  },
+  "classification": "retrospective_candidate",
+  "fresh_confirmation": false,
+  "selection": {
+    "default": "double_speed",
+    "compact_reported": "double_speed",
+    "criterion": "least complexity within1% of best grouped development MAE",
+    "freeze_sha256": "95ff4c33eac2a56db36f59f5c094105ac9f67b085a3f761a88a51a7523ecee8f"
+  },
+  "limitations": [
+    "Five identification runs and eight source validation runs in one gearbox. Initial calibration and measured housing/friction signals are required; no unseen gearbox or sensorless temperature claim.",
+    "ALL original confirmation exposed; no fresh confirmation; diagnostics opened only after candidate/stopping freeze",
+    "All model families established; no demonstrated new physical law or deployed intervention benefit.",
+    "Different information contract:52 independent no-turbine calibration;59 strict past weather inputs. Legacy reference is lower-information comparator in these cases."
+  ],
+  "reproduction": "run.py is input-only. Source targets are exposed; scientific review separate from numerical score."
+}

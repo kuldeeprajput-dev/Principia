@@ -1,0 +1,112 @@
+{
+  "case_id": "P100-030",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_electronics",
+  "review_date": "2026-10-02",
+  "checked_files": [
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "5fef4463b48a3117605e6e29e5d13dc01030ba7d8780637d7360e1d5d7ebfec1"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "ceeb1cecbca85e787fcc2dd7538e493128bccb07241ff5e7ac5479af0d25d429"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "4978a17472fb519e98d914d03f2fc20f3cea8864aa673dc0166d7a33b708e820"
+    },
+    {
+      "path": "package/equations.json",
+      "sha256": "b3f898fdf14c72b7cd12124bd3421d95e2c5399ee52272e30daf367b603d080d"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "c52a2996f721765906a39eebfada86f79bf960cb003836be2532299f58675183"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-030-F01",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "Concentration-shifted model MAE 0.0177607111 exceeds two-point calibrated log-speed interpolation 0.0131409156 on two held formulations. Development gain does not validate the proposed superiority."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Load sharing is physically motivated, but these data do not isolate a transferable concentration mechanism across surface treatment and supplier."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is unsupported."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "No predictive extension admitted; retaining the negative prevents overstating a favorable development fit."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task."
+        }
+      },
+      "checks": [
+        "Checked unsupported positive claim versus supported negative distinction, exact score/calibration speed separation, duplicate formulation linkage, and calibration-matched simple baseline."
+      ],
+      "limitations": [
+        "Both 0.2 and 500 mm/s friction endpoints of every held curve are available; task is calibrated curve reconstruction, not untested-lubricant prediction.",
+        "Only two held formulations and no independent repeat uncertainty; fixed load, temperature and sliding conditions.",
+        "Known friction reduction and functionalization effects are source prior art."
+      ]
+    },
+    {
+      "finding_id": "P100-030-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The reserved supplier/functionalization transfer is an actual counterexample to guaranteed concentration-only curve-shape transfer under the declared two-point calibration."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "This is a failure of the tested reduced description, not proof that concentration is physically irrelevant."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is informative_falsification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful design lesson: stronger material descriptors and independent repeat curves are needed beyond concentration and endpoint calibration."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task."
+        }
+      },
+      "checks": [
+        "Checked unsupported positive claim versus supported negative distinction, exact score/calibration speed separation, duplicate formulation linkage, and calibration-matched simple baseline."
+      ],
+      "limitations": [
+        "Both 0.2 and 500 mm/s friction endpoints of every held curve are available; task is calibrated curve reconstruction, not untested-lubricant prediction.",
+        "Only two held formulations and no independent repeat uncertainty; fixed load, temperature and sliding conditions.",
+        "Known friction reduction and functionalization effects are source prior art."
+      ]
+    }
+  ],
+  "review_scope": "Independent critical interpretation of the released evidence and primary-source context; not independent experimental replication, human adjudication, or a fresh confirmation campaign.",
+  "source_review": {
+    "primary_url": "https://www.sciencedirect.com/science/article/pii/S0301679X26007504",
+    "web_access": "current direct fetch unavailable; retained local source audit and cited source context inspected; novelty not adjudicated"
+  },
+  "metadata_corrections": "Positive proposal is explicitly unsupported; informative negative remains supported."
+}

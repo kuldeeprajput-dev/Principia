@@ -1,0 +1,37 @@
+{
+  "name": "shared_fick_separate_amplitudes",
+  "formula": "offset+(a0+a1*high)*(slab(t/tau+lag)-slab(lag+0*t))",
+  "hypothesis": "Development evidence available before this fit: trapping_two_timescales: MAE 7.04349, worst group 15.7037; occupancy_dependent_transport: MAE 4.78902, worst group 11.5347.\n\nCondition-dependent first-order response improves development prediction. Test whether that apparent timescale change is instead an amplitude/boundary confound: a shared full-slab transport scale with separate condition amplitudes may suffice.",
+  "inputs": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "initial": {
+    "a0": 20,
+    "a1": 40,
+    "tau": 2000,
+    "lag": 0.1
+  },
+  "bounds": {
+    "a0": [
+      -500,
+      500
+    ],
+    "a1": [
+      -1000,
+      1000
+    ],
+    "tau": [
+      10,
+      1000000.0
+    ],
+    "lag": [
+      0.001,
+      4
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:00:43.780589+00:00",
+  "parent": "attempt-006"
+}

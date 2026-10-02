@@ -1,0 +1,584 @@
+{
+  "case_id": "P100-080",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "117521678842af2d5ec0a38d7b283ceec4a574de42869ba2050bc998f51125f0"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "09c62f24009a044a46856eed51e74987b1556dacbb40076679896c0440675525"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "4ea9fba98e6f7e1acd10ac206a4947e9fab72edb9e514c4894afd853c5301dc3"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "7cf5ff4bd465808a6f9a5e79d10c063f39bfc80bd271c4dec66ecd696b2e3510"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "446124db4e7dd1e2705ba8b5887d08a28212190f6bba59952a8a50d6779fc183"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "ac029085b6c01fe793df299ee424cee21e50397cd1f4b94926b6ca70b6238352"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "5d49df90b0a14ea1580d74ff353077e938eebf75806fda8b294d677ab26edc33"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "bc59228c4778dacad01be23ba2130a1e0c2dad13cf7525b0ca60d3a3a53de597"
+    },
+    {
+      "path": "native.py",
+      "sha256": "80e1da31adc181974024f8279bf4351ed84cc08363d704537062e1297c9879ff"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "c3c77d7e4a90ed6ae43026326c3e22fddd9acaebbe322d4e4e8cc6e2e31ce840"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "e5e7bb7df87ed1cfa572ee967257f5a3b4704c4300308d24d33ff8014034b733"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "bd680e57d952fd7f53450ba25e674fd666551c4d7f91b40761b0a00d7f867fb1"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "4e7fea642f9832fdf90111a2dedf1c314f3ef05a7a8025c48dbfc02523931c4e"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "72e0569d4c7a9ddbb256351b7904238dd4608a98abf66a7f11c13678fb32fb82"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "80ad1cc6d74d3bcb86a8924838224f64db392969227c6d10d3db42ee285c51c5"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-080-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Causal EDA persistence beats the flexible control on six held people; all five physiological extensions fail. Conductance is a wearable measurement, not a directly observed stress mechanism or clinical endpoint."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Causal EDA persistence beats the flexible control on six held people; all five physiological extensions fail. Conductance is a wearable measurement, not a directly observed stress mechanism or clinical endpoint."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Causal EDA persistence beats the flexible control on six held people; all five physiological extensions fail. Conductance is a wearable measurement, not a directly observed stress mechanism or clinical endpoint."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Causal EDA persistence beats the flexible control on six held people; all five physiological extensions fail. Conductance is a wearable measurement, not a directly observed stress mechanism or clinical endpoint.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-080-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Causal EDA persistence beats the flexible control on six held people; all five physiological extensions fail. Conductance is a wearable measurement, not a directly observed stress mechanism or clinical endpoint."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Causal EDA persistence beats the flexible control on six held people; all five physiological extensions fail. Conductance is a wearable measurement, not a directly observed stress mechanism or clinical endpoint."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Causal EDA persistence beats the flexible control on six held people; all five physiological extensions fail. Conductance is a wearable measurement, not a directly observed stress mechanism or clinical endpoint."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Causal EDA persistence beats the flexible control on six held people; all five physiological extensions fail. Conductance is a wearable measurement, not a directly observed stress mechanism or clinical endpoint.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-080",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-080",
+      "native_rows": 12248,
+      "confirmation_rows": 2562,
+      "models": 9,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 9,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 1.1102230246251565e-16,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 2562,
+        "primary_error": 0.4901972503968892,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_persistence",
+        "rows": 2562,
+        "primary_error": 0.4901972503968892,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_velocity",
+        "rows": 2562,
+        "primary_error": 1.123017608413332,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_flexible",
+        "rows": 2562,
+        "primary_error": 0.5420115816912124,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001_relaxation",
+        "rows": 2562,
+        "primary_error": 0.5002879978567005,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002_damped_drift",
+        "rows": 2562,
+        "primary_error": 0.5246933083738994,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003_activity",
+        "rows": 2562,
+        "primary_error": 0.535558747516415,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004_thermal",
+        "rows": 2562,
+        "primary_error": 0.5246941501194132,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005_asymmetry",
+        "rows": 2562,
+        "primary_error": 0.5206392761337423,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S10",
+          "S15",
+          "f04",
+          "f11",
+          "f13"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S08",
+          "S13",
+          "S14",
+          "f02",
+          "f12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S05",
+          "S07",
+          "S16",
+          "f03",
+          "f09"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S02",
+          "S03",
+          "S04",
+          "f08",
+          "f10"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "S09",
+          "S17",
+          "f01",
+          "f07"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S10",
+          "S15",
+          "f04",
+          "f11",
+          "f13"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S08",
+          "S13",
+          "S14",
+          "f02",
+          "f12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S05",
+          "S07",
+          "S16",
+          "f03",
+          "f09"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S02",
+          "S03",
+          "S04",
+          "f08",
+          "f10"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "S09",
+          "S17",
+          "f01",
+          "f07"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S10",
+          "S15",
+          "f04",
+          "f11",
+          "f13"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S08",
+          "S13",
+          "S14",
+          "f02",
+          "f12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S05",
+          "S07",
+          "S16",
+          "f03",
+          "f09"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S02",
+          "S03",
+          "S04",
+          "f08",
+          "f10"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "S09",
+          "S17",
+          "f01",
+          "f07"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S10",
+          "S15",
+          "f04",
+          "f11",
+          "f13"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S08",
+          "S13",
+          "S14",
+          "f02",
+          "f12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S05",
+          "S07",
+          "S16",
+          "f03",
+          "f09"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S02",
+          "S03",
+          "S04",
+          "f08",
+          "f10"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "S09",
+          "S17",
+          "f01",
+          "f07"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S10",
+          "S15",
+          "f04",
+          "f11",
+          "f13"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S08",
+          "S13",
+          "S14",
+          "f02",
+          "f12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S05",
+          "S07",
+          "S16",
+          "f03",
+          "f09"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "S02",
+          "S03",
+          "S04",
+          "f08",
+          "f10"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "S09",
+          "S17",
+          "f01",
+          "f07"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "Causal EDA persistence beats the flexible control on six held people; all five physiological extensions fail. Conductance is a wearable measurement, not a directly observed stress mechanism or clinical endpoint."
+}

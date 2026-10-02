@@ -1,0 +1,158 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-085.original.v1",
+  "case_id": "P100-085",
+  "case_number": 85,
+  "family": "original",
+  "protocol_version": "P100-085-asd5-native-v1",
+  "cohort_id": "P100-085.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-085.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/85_biotechnology_yarrowia_cofeeding",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Glycolic acid concentration",
+  "target_units": "g/L",
+  "error_units": "g/L",
+  "primary_units": "g/L",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "elapsed_h",
+    "eg_consumed_g_L",
+    "eg_initial_g_L",
+    "pH",
+    "acetate_cofeed",
+    "glucose_cofeed"
+  ],
+  "input_units": {
+    "elapsed_h": "h",
+    "eg_consumed_g_L": "g/L",
+    "eg_initial_g_L": "g/L",
+    "pH": "dimensionless",
+    "acetate_cofeed": "indicator",
+    "glucose_cofeed": "indicator"
+  },
+  "numeric_columns": [
+    "elapsed_h",
+    "eg_consumed_g_L",
+    "eg_initial_g_L",
+    "pH",
+    "acetate_cofeed",
+    "glucose_cofeed"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+  "calibration": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+  "independent_unit": "Complete flask conditions; three development conditions and one metadata-hash confirmation condition; leave-one-condition-out folds keep all replicates together.",
+  "evaluation_groups": [
+    "Flask_EG_OD0.5"
+  ],
+  "assigned_rows": 4,
+  "eligible_rows": 4,
+  "baseline_models": [
+    "reference",
+    "baseline_zero",
+    "baseline_unit_yield",
+    "baseline_stoichiometric",
+    "baseline_global_yield",
+    "baseline_flexible",
+    "attempt_001_ph_yield",
+    "attempt_002_loss_flux",
+    "attempt_003_composition",
+    "attempt_004_saturation",
+    "attempt_005_acid"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "P_hat=max(0,E0-E)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_zero": {
+      "equation": "P_hat=0",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_unit_yield": {
+      "equation": "P_hat=max(0,E0-E)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_stoichiometric": {
+      "equation": "P_hat=max(0,(76.05/62.07)*(E0-E))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_global_yield": {
+      "equation": "P_hat=max(0,q*(E0-E))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "Frozen ridge polynomial: y_hat=phi(x)^T beta; exact dimensionless feature order/scales in run.features and coefficients in rules.json;85 nonnegative,87 clipped0..endowment",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_ph_yield": {
+      "equation": "P_hat=max(0,(E0-E)*(a+b*(pH-7)))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_loss_flux": {
+      "equation": "P_hat=max(0,a*(E0-E)+b*t/100)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_composition": {
+      "equation": "P_hat=max(0,(E0-E)*(a+b*glucose+c*acetate))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_saturation": {
+      "equation": "P_hat=max(0,A*(1-exp(-q*max(E0-E,0)/A)))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_acid": {
+      "equation": "P_hat=max(0,q*(E0-E)/(1+10^(3.83-pH)))",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "No row bootstrap; enumerate group errors and leave-group development variability. Single heldout condition is bounded evidence."
+  },
+  "scope_limits": "Only one held-out condition and two replicate curves; no precise population confidence.; Bioreactor filenames imply opposing feed regimes but members are byte-identical: both excluded.; Measured EG depletion can be negative from measurement error; preserve sign, do not impute.; Native early rows for most conditions were seen at schema audit: confirmation is outcome-exposed retrospective transfer, not fresh experimental confirmation.",
+  "source_url": "https://zenodo.org/records/17396158",
+  "source_license": "CC-BY-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"status\": \"exposed_after_local_confirmation\", \"original_audit\": \"Native CSV previews exposed several GA observations in all four flask conditions before task freezing; explicitly retrospective; no confirmation metrics used in model selection.\", \"fresh_for_future_users\": false, \"new_independent_experiments\": false} All four scored glycolic-acid targets in the reserved condition were already visible during the schema preview before fitting; this evaluation is explicitly retrospective.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "10b6b630820993716e54aab65f2a83c13ed104106608106766d7385805d6eafe",
+  "observations_sha256": "37374f36daa5f72e391820d022d28338ae5e4d077ed12bb5e10460fc2b7466d2",
+  "legacy_protocol_sha256": "c1f39af257ec911cd93de5e10f90e1eebb8d4f7bbbcce4130bbdcee81ae437f2",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd5-diagnostics/1.0"
+}

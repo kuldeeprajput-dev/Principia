@@ -1,0 +1,359 @@
+{
+  "case_id": "P100-009",
+  "input_columns": [
+    "radius",
+    "lag05",
+    "lag1",
+    "mean5",
+    "speed",
+    "speed1"
+  ],
+  "numeric_columns": [
+    "radius",
+    "lag05",
+    "lag1",
+    "mean5",
+    "speed",
+    "speed1"
+  ],
+  "input_units": {
+    "radius": "px",
+    "lag05": "px",
+    "lag1": "px",
+    "mean5": "px",
+    "speed": "cm/s",
+    "speed1": "cm/s"
+  },
+  "target": "Mean pupil radius over final0.25s of horizon1s",
+  "target_units": "px",
+  "metric_kind": "mae",
+  "reference_selected_model": "baseline_persistence",
+  "models": {
+    "reference": {
+      "kind": "persistence",
+      "coef": [],
+      "equation": "max(0,p); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "training_groups": [
+        "16",
+        "22713"
+      ],
+      "training_rows": 4462,
+      "parameter_count": 0,
+      "rank": 0
+    },
+    "baseline_persistence": {
+      "kind": "persistence",
+      "coef": [],
+      "equation": "max(0,p); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "training_groups": [
+        "16",
+        "22713"
+      ],
+      "training_rows": 4462,
+      "parameter_count": 0,
+      "rank": 0
+    },
+    "baseline_velocity": {
+      "kind": "velocity",
+      "coef": [],
+      "equation": "max(0,p+v); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "training_groups": [
+        "16",
+        "22713"
+      ],
+      "training_rows": 4462,
+      "parameter_count": 0,
+      "rank": 0
+    },
+    "baseline_flexible": {
+      "kind": "flexible",
+      "mean": [
+        26.73688832810399,
+        26.75078988308681,
+        26.759490884132674,
+        26.79104443362431,
+        0.034402978855232795,
+        0.02842971850601711
+      ],
+      "scale": [
+        6.7048489199710515,
+        6.7160298976938,
+        6.73145078685655,
+        6.690267629779553,
+        0.5515113602824787,
+        0.5218999922178217
+      ],
+      "centers": [
+        [
+          0.1463018307503108,
+          0.11664184478722851,
+          0.095615215240679,
+          -0.05726581696668666,
+          -3.9229704250030064,
+          -0.07812342099739235
+        ],
+        [
+          -0.37153534074183836,
+          -0.3960844313692318,
+          -0.410452511890518,
+          -0.38073968265187447,
+          -0.06237945640432851,
+          -0.05447349862030962
+        ],
+        [
+          -0.24124456008040443,
+          -0.20241718750442458,
+          -0.15853504956411021,
+          -0.05966793194451915,
+          -0.06237945640432851,
+          -0.05447349862030962
+        ],
+        [
+          1.3882716498161152,
+          1.495242020938817,
+          1.3316310851398552,
+          1.3053976328088237,
+          5.615773456835717,
+          13.02071176322497
+        ],
+        [
+          -0.37602164615438916,
+          -0.3108190277419137,
+          -0.17561210129830507,
+          -0.17086484810396915,
+          -0.8523928642989872,
+          -0.017208766248238416
+        ],
+        [
+          -0.8848146168414487,
+          -0.9102326785629693,
+          -0.8727191314542795,
+          -0.855253103915833,
+          -0.03331680658341236,
+          0.28248421882742974
+        ],
+        [
+          -1.086686925895533,
+          -1.1031055543142818,
+          -1.151542383592541,
+          -0.9284620031432342,
+          0.30616786345804586,
+          -0.030170730470263415
+        ],
+        [
+          -0.03259904347528044,
+          -0.18021806059893042,
+          -0.417679780059067,
+          -0.6001528294045243,
+          -0.03352717041573328,
+          -0.3137687841251791
+        ],
+        [
+          -0.5212210401482212,
+          -0.538536894293575,
+          -0.4740064192941521,
+          -0.5514647003360438,
+          -0.06237945640432851,
+          -0.09581543426712928
+        ],
+        [
+          0.783660959594801,
+          0.9049438745054098,
+          0.8499310619693378,
+          0.96784080107579,
+          -0.06237945640432851,
+          -0.05447349862030962
+        ],
+        [
+          -0.8309739803644544,
+          -1.0647704063292494,
+          -0.9792229183347884,
+          -0.8876628242691933,
+          -0.006710884612530484,
+          -0.058957845545927555
+        ],
+        [
+          0.7515354532280445,
+          0.6647424423238821,
+          0.809956766899782,
+          0.9339301565869399,
+          -0.06237945640432851,
+          -0.05447349862030962
+        ],
+        [
+          -1.0456623872942183,
+          -0.9394746567839769,
+          -0.9028760777690866,
+          -0.9418941050274163,
+          -0.0333756567766538,
+          -0.02296461524988793
+        ],
+        [
+          -1.1616476007741203,
+          -1.1134628637753206,
+          -1.2134458295500778,
+          -1.2360163351882447,
+          0.08964047125474812,
+          -0.00338289406494028
+        ],
+        [
+          0.965637220044022,
+          1.116899452679474,
+          1.1123618597179081,
+          1.4558905720034148,
+          -0.06237945640432851,
+          -0.05447349862030962
+        ],
+        [
+          2.101873610194663,
+          2.2132584790930436,
+          2.26673411111614,
+          2.533088163642255,
+          -0.06237945640432851,
+          -0.05447349862030962
+        ],
+        [
+          1.1022935430926788,
+          0.8691191382155034,
+          0.9145887433193719,
+          1.1075822338395525,
+          -0.06237945640432851,
+          -0.05447349862030962
+        ],
+        [
+          0.5682084290591982,
+          0.6736673579232876,
+          0.8629134045232846,
+          0.5004554005391878,
+          -0.06237945640432851,
+          -0.05447349862030962
+        ],
+        [
+          0.5712723807721352,
+          0.6386883593812073,
+          0.6479805400024645,
+          0.7161780601692068,
+          -0.06237945640432851,
+          -0.05447349862030962
+        ],
+        [
+          0.6143272907503171,
+          0.4660834100795279,
+          0.3596712198497603,
+          0.5642745216307705,
+          -0.09491804423331539,
+          -0.05447349862030962
+        ]
+      ],
+      "coef": [
+        0.29901295179129894,
+        0.9453339048160002,
+        -0.12380141953305546,
+        0.5114869058980785,
+        -0.06896876139046289,
+        0.865514320013273,
+        0.06779666057290942,
+        0.09426186942618572,
+        -1.7057414892298786,
+        -0.12936311655656102,
+        -0.021997464949562458,
+        -0.08461705124296504,
+        0.5663807912231585,
+        0.09360445383858332,
+        -0.1111476388852655,
+        0.4602964776835843,
+        -1.57345367844368,
+        -0.41008183821796684,
+        -0.12316394860178903,
+        0.30359105072847165,
+        -0.2425359693859176
+      ],
+      "equation": "max(0,p+b0+sum_j b_j exp(-mean((z-center_j)^2)/2)); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "training_groups": [
+        "16",
+        "22713"
+      ],
+      "training_rows": 4462,
+      "parameter_count": 21,
+      "rank": 21
+    },
+    "attempt_001_relaxation": {
+      "kind": "relaxation",
+      "coef": [
+        0.14025724451764782
+      ],
+      "equation": "max(0,p+b0*r); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "training_groups": [
+        "16",
+        "22713"
+      ],
+      "training_rows": 4462,
+      "parameter_count": 1,
+      "rank": 1
+    },
+    "attempt_002_inertia": {
+      "kind": "inertia",
+      "coef": [
+        0.1941185640382664,
+        0.08274017646100337
+      ],
+      "equation": "max(0,p+b0*r+b1*v); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "training_groups": [
+        "16",
+        "22713"
+      ],
+      "training_rows": 4462,
+      "parameter_count": 2,
+      "rank": 2
+    },
+    "attempt_003_arousal": {
+      "kind": "arousal",
+      "coef": [
+        0.19604297660635986,
+        0.08236840341781625,
+        0.32103097739432845,
+        0.4513379980953617
+      ],
+      "equation": "max(0,p+b0*r+b1*v+b2*u+b3*du); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "training_groups": [
+        "16",
+        "22713"
+      ],
+      "training_rows": 4462,
+      "parameter_count": 4,
+      "rank": 4
+    },
+    "attempt_004_asymmetry": {
+      "kind": "asymmetry",
+      "coef": [
+        0.19155969942182574,
+        0.03431794030366944,
+        0.14690699520673295
+      ],
+      "equation": "max(0,p+b0*r+b1*max(v,0)+b2*min(v,0)); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "training_groups": [
+        "16",
+        "22713"
+      ],
+      "training_rows": 4462,
+      "parameter_count": 3,
+      "rank": 3
+    },
+    "attempt_005_curvature": {
+      "kind": "curvature",
+      "coef": [
+        0.1013210875698881,
+        -0.05506367934765827,
+        0.23510211552144378
+      ],
+      "equation": "max(0,p+b0*r+b1*v+b2*a); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "training_groups": [
+        "16",
+        "22713"
+      ],
+      "training_rows": 4462,
+      "parameter_count": 3,
+      "rank": 3
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "case_id": "P100-049",
+  "findings": [
+    {
+      "finding_id": "P100-049-F01",
+      "classification": "validated_extension",
+      "claim": "A parameter-free finite-pulse diffusion shape provides useful calibrated late-relaxation forecasts within this half-cell campaign.",
+      "equation": "g(t)=sqrt(t+T)-sqrt(t); Uhat(t)=U_b+(U_b-U_a)[g(t)-g(b)]/[g(b)-g(a)].",
+      "variables": "T: preceding pulse duration(s); a,b: actual calibration times\u226460,120s; U_a,U_b: measured voltages(V).",
+      "evidence": "Reserved96whole blocks/384targets: MAE0.686mV versus persistence3.444mV, fixedRC2.180mV and flexible0.782mV.",
+      "known_prior_art": "Finite-duration diffusion relaxation is established; novelty is not claimed for its equation.",
+      "falsification": "Flexible control has lower RMSE and worst-block error. Diagnostic fractional-tail and storage-gain models have lower confirmation MAE but were not development-selected.",
+      "scope": "One Li-graphite half-cell, same GITT protocol, explicit two-point calibration.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-049-F02",
+      "classification": "informative_falsification",
+      "claim": "The extra fitted RC channel is not supported as a useful transferable contribution in the60\u2013120s calibrated task.",
+      "equation": "Weighted diffusion-plus-exponential relaxation reduces to the diffusion-only prediction.",
+      "evidence": "Attempt4 grouped development error equals attempt1 to numericalprecision; its extra parameters provide no matched gain.",
+      "known_prior_art": "RC and diffusion components both occur in electrochemical relaxation.",
+      "falsification": "This does not rule out faster charge-transfer dynamics before the permitted calibration window.",
+      "scope": "Predictive identifiability under this window and this cell, not absence of electrochemical RC physics.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-049-F03",
+      "classification": "unsupported",
+      "claim": "This calibrated diffusion forecast identifies a unique microscopic diffusivity or provides a uniform industrial error guarantee.",
+      "equation": null,
+      "evidence": "Unknown geometry/thermodynamic factors cancel from the normalized forecast; no unique D is estimated. Worst held-out block MAE14.49mV.",
+      "known_prior_art": "Forecast shape and material transport coefficients are distinct inferential targets.",
+      "falsification": "Single-cell evidence and large tail error contradict an unqualified guarantee.",
+      "scope": "No independent cells or tolerance specification.",
+      "admission": "unsupported"
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted analysis; not independent experimental replication or human expert adjudication."
+}

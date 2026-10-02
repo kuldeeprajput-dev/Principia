@@ -1,0 +1,59 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-034.original.v1.raw-access.v1",
+  "parent_task_id": "P100-034.original.v1",
+  "case_id": "P100-034",
+  "protocol_version": "P100-034.original.v1.raw-access.v1",
+  "cohort_id": "P100-034.original.v1.cohort-1",
+  "parent_task_sha256": "6bd70479084f150a28011b7eac98c9fbaf58598aadc4fb8f3de434924203a5c3",
+  "input_sha256": "d2cfe4ba0941e02aa7a45829919e7cbc25a233efee854a2b0ac96e62f0049940",
+  "observations_sha256": "5621a220eec1b797455998d2d3f997d9a261f239496d45d33e46494238799bda",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "34_neuroscience_unc13_calcium",
+  "source_assets": [
+    {
+      "name": "raw/Figure 5.zip",
+      "path": "raw/Figure 5.zip",
+      "bytes": 96099760,
+      "sha256": "d720964f33d3cee40157dbae98685fc72121d67b01ab3288f971fa613e807994"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "calcium": "mM",
+      "mutant": "binary",
+      "low04": "nA",
+      "low075": "nA"
+    },
+    "observation_window": "After two lower-dose blocks, forecast mean first-pulse current at the three later calcium doses; all animal data linked.",
+    "calibration_and_history": "First-pulse mean across ten sweeps at0.4 and0.75mM per animal. Later1.5/3/6mM targets are excluded from calibration.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

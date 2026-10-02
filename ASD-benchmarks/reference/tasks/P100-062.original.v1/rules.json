@@ -1,0 +1,719 @@
+{
+  "case_id": "P100-062",
+  "input_columns": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "numeric_columns": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "input_units": {
+    "t": "s since third baseline observation",
+    "offset": "\u03bcA; mean first3 observations",
+    "drive": "mA/cm\u00b2; imposed cathodic-current step",
+    "high": "binary known high-current condition"
+  },
+  "target": "measured anodic permeation current",
+  "target_units": "\u03bcA",
+  "error_units": "\u03bcA",
+  "metric_kind": "mae",
+  "models": {
+    "reference": {
+      "name": "activated_breakthrough",
+      "formula": "offset+(a0+a1*high)*exp(-(tau*exp(k*high)/t)**beta)",
+      "hypothesis": "Development evidence available before this fit: distributed_trapping: MAE 2.52537, worst group 6.36307; finite_capacity_trapping: MAE 5.11432, worst group 10.9732.\n\nTest delayed diffusion-front breakthrough with an inverse-time activation form. Unlike stretched saturation, this suppresses very early response and represents arrival-time dispersion; it must improve forward groups without inventing a measured boundary concentration.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:01:23.110116+00:00",
+      "parent": "attempt-009",
+      "parameters": {
+        "a0": 15.667295748411933,
+        "a1": 36.58884020278047,
+        "tau": 2087.488666149034,
+        "k": -0.5703104402666527,
+        "beta": 1.5986771105283697
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": true,
+      "nfev": 10,
+      "jacobian_condition": 11024.350829464094,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ],
+        "beta": [
+          0.3,
+          3
+        ]
+      }
+    },
+    "fixed_diffusion": {
+      "name": "fixed_diffusion",
+      "formula": "offset+20*drive*(1-exp(-t/2000))",
+      "hypothesis": "Fixed effective first-mode diffusion response; deliberately simple domain comparator.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:58:16.637533+00:00",
+      "parent": null,
+      "parameters": {},
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483
+    },
+    "flexible": {
+      "name": "flexible",
+      "formula": "offset+b0*t/1000+b1*(t/1000)**2+b2*(t/1000)**3+b3*high*t/1000+b4*high*(t/1000)**2",
+      "hypothesis": "Five-coefficient polynomial extrapolation with known current-condition contrast.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:58:18.205244+00:00",
+      "parent": null,
+      "parameters": {
+        "b0": 3.3556559919430393,
+        "b1": -0.21126296262251293,
+        "b2": 0.0022113733514435912,
+        "b3": 16.57549661334625,
+        "b4": -1.8805105425059014
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "fit_method": "weighted linear least squares",
+      "condition": 65.57275559319557
+    },
+    "persistence": {
+      "name": "persistence",
+      "formula": "offset",
+      "hypothesis": "Initial calibrated current baseline.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:58:15.055096+00:00",
+      "parent": null,
+      "parameters": {},
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483
+    },
+    "shared_boundary_response": {
+      "name": "shared_boundary_response",
+      "formula": "offset+gain*drive*(1-exp(-t/tau))",
+      "hypothesis": "Attempt1: a common linear permeation gain and relaxation time describe both applied-current increments. Failure would challenge proportional boundary-concentration response under a shared effective transport mode.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:58:19.805623+00:00",
+      "parent": null,
+      "parameters": {
+        "gain": 13.195981510860713,
+        "tau": 3296.0549821599316
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": true,
+      "nfev": 9,
+      "jacobian_condition": 1947.326542050237,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ]
+      }
+    },
+    "fick_slab_corrected": {
+      "name": "fick_slab_corrected",
+      "formula": "offset+gain*drive*(slab(t/tau+lag)-slab(lag+0*t))",
+      "hypothesis": "Development evidence available before this fit: shared_boundary_response: MAE 7.31915, worst group 15.7251; fick_slab: MAE 5.99224, worst group 9.37037.\n\nTechnical correction of dimensional lag error in the first slab implementation. Original result is invalid and excluded from selection; this corrected first full-slab scientific test uses dimensionless t/tau plus a dimensionless initial lag. It counts as one substantive slab hypothesis, not an extra discovery.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:42.981026+00:00",
+      "parent": "attempt-002",
+      "parameters": {
+        "gain": 10.253304157817963,
+        "tau": 1345.5101965379602,
+        "lag": 0.22091361226248155
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": true,
+      "nfev": 11,
+      "jacobian_condition": 4241.6782491492395,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "lag": [
+          0.001,
+          4
+        ]
+      }
+    },
+    "surface_saturation": {
+      "name": "surface_saturation",
+      "formula": "offset+gain*drive/(1+k*drive)*(1-exp(-t/tau))",
+      "hypothesis": "Development evidence available before this fit: fick_slab: MAE 5.99224, worst group 9.37037; fick_slab_corrected: MAE 10.3538, worst group 21.6434.\n\nTest nonproportional boundary supply: the high cathodic step may saturate adsorption/entry so that permeation amplitude is sublinear in imposed charging current. This competes with a shared diffusion coefficient explanation.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:45.739622+00:00",
+      "parent": "attempt-003",
+      "parameters": {
+        "gain": 33.833972947169464,
+        "k": 0.39343637316473934,
+        "tau": 2557.5851071334805
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 28308.059883305064,
+      "bounds": {
+        "gain": [
+          -1000,
+          1000
+        ],
+        "k": [
+          0,
+          10
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ]
+      }
+    },
+    "trapping_two_timescales": {
+      "name": "trapping_two_timescales",
+      "formula": "offset+gain*drive*((1-w)*(1-exp(-t/tau))+w*(1-exp(-t/(tau+slow))))",
+      "hypothesis": "Development evidence available before this fit: fick_slab_corrected: MAE 10.3538, worst group 21.6434; surface_saturation: MAE 5.06106, worst group 11.946.\n\nTest a distinct reversible-storage mechanism: a fast mobile response plus slow trap-filling response. Both gains stay shared across traces; boundaries and identifiability diagnose whether the extra timescale is actually resolved.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:47.948125+00:00",
+      "parent": "attempt-004",
+      "parameters": {
+        "gain": 360.6499384354292,
+        "w": 0.9864683185189907,
+        "tau": 1368.36629398963,
+        "slow": 313277.4344520479
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": false,
+      "nfev": 350,
+      "jacobian_condition": 44182554416.88355,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "w": [
+          0,
+          1
+        ],
+        "tau": [
+          10,
+          100000.0
+        ],
+        "slow": [
+          1,
+          1000000.0
+        ]
+      }
+    },
+    "occupancy_dependent_transport": {
+      "name": "occupancy_dependent_transport",
+      "formula": "offset+(a0+a1*high)*(1-exp(-t/(tau*exp(k*high))))",
+      "hypothesis": "Development evidence available before this fit: surface_saturation: MAE 5.06106, worst group 11.946; trapping_two_timescales: MAE 7.04349, worst group 15.7037.\n\nTest whether trap occupancy/current condition requires a different effective timescale, while allowing separate measured-condition amplitudes. Improved forward prediction would support an effective condition-dependent surrogate, not a unique lattice diffusivity.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:56.458513+00:00",
+      "parent": "attempt-005",
+      "parameters": {
+        "a0": 15.90924022369076,
+        "a1": 39.585012986450735,
+        "tau": 3894.375290686566,
+        "k": -0.4829059662134949
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": true,
+      "nfev": 9,
+      "jacobian_condition": 33820.9858175332,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ]
+      }
+    },
+    "shared_fick_separate_amplitudes": {
+      "name": "shared_fick_separate_amplitudes",
+      "formula": "offset+(a0+a1*high)*(slab(t/tau+lag)-slab(lag+0*t))",
+      "hypothesis": "Development evidence available before this fit: trapping_two_timescales: MAE 7.04349, worst group 15.7037; occupancy_dependent_transport: MAE 4.78902, worst group 11.5347.\n\nCondition-dependent first-order response improves development prediction. Test whether that apparent timescale change is instead an amplitude/boundary confound: a shared full-slab transport scale with separate condition amplitudes may suffice.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:00:43.780589+00:00",
+      "parent": "attempt-006",
+      "parameters": {
+        "a0": 13.032908580156592,
+        "a1": 35.6622057994757,
+        "tau": 1172.202158289983,
+        "lag": 0.11815425302274422
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": true,
+      "nfev": 10,
+      "jacobian_condition": 3313.3528604104645,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "lag": [
+          0.001,
+          4
+        ]
+      }
+    },
+    "distributed_trapping": {
+      "name": "distributed_trapping",
+      "formula": "offset+(a0+a1*high)*(1-exp(-(t/(tau*exp(k*high)))**beta))",
+      "hypothesis": "Development evidence available before this fit: occupancy_dependent_transport: MAE 4.78902, worst group 11.5347; shared_fick_separate_amplitudes: MAE 3.34284, worst group 10.8982.\n\nTest a distribution of trapping times through a shared stretched-exponential exponent. This challenges whether the simpler condition-dependent first-order surrogate misses a reproducible early/late curvature pattern.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:00:46.075363+00:00",
+      "parent": "attempt-007",
+      "parameters": {
+        "a0": 14.172039013045367,
+        "a1": 32.307920353877066,
+        "tau": 3182.907351423967,
+        "k": -0.5949278774817601,
+        "beta": 1.8097041806174805
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": true,
+      "nfev": 9,
+      "jacobian_condition": 13559.734198171873,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ],
+        "beta": [
+          0.3,
+          3
+        ]
+      }
+    },
+    "finite_capacity_trapping": {
+      "name": "finite_capacity_trapping",
+      "formula": "offset+(a0+a1*high)*t/(tau*exp(k*high)+t)",
+      "hypothesis": "Development evidence available before this fit: shared_fick_separate_amplitudes: MAE 3.34284, worst group 10.8982; distributed_trapping: MAE 2.52537, worst group 6.36307.\n\nThe stretched response improves forward error. A competing finite-capacity trapping model gives algebraic rather than exponential saturation; it challenges whether the tail shape requires a distributed-timescale interpretation.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:01:19.842592+00:00",
+      "parent": "attempt-008",
+      "parameters": {
+        "a0": 21.984276631246697,
+        "a1": 59.55459814020375,
+        "tau": 4806.3657230058825,
+        "k": -0.3781953940773446
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": true,
+      "nfev": 16,
+      "jacobian_condition": 68948.74975944306,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ]
+      }
+    },
+    "activated_breakthrough": {
+      "name": "activated_breakthrough",
+      "formula": "offset+(a0+a1*high)*exp(-(tau*exp(k*high)/t)**beta)",
+      "hypothesis": "Development evidence available before this fit: distributed_trapping: MAE 2.52537, worst group 6.36307; finite_capacity_trapping: MAE 5.11432, worst group 10.9732.\n\nTest delayed diffusion-front breakthrough with an inverse-time activation form. Unlike stretched saturation, this suppresses very early response and represents arrival-time dispersion; it must improve forward groups without inventing a measured boundary concentration.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:01:23.110116+00:00",
+      "parent": "attempt-009",
+      "parameters": {
+        "a0": 15.667295748411933,
+        "a1": 36.58884020278047,
+        "tau": 2087.488666149034,
+        "k": -0.5703104402666527,
+        "beta": 1.5986771105283697
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": true,
+      "nfev": 10,
+      "jacobian_condition": 11024.350829464094,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ],
+        "beta": [
+          0.3,
+          3
+        ]
+      }
+    },
+    "semi_infinite_arrival": {
+      "name": "semi_infinite_arrival",
+      "formula": "offset+(a0+a1*high)*erfc(sqrt(tau*exp(k*high)/t))",
+      "hypothesis": "Development evidence available before this fit: finite_capacity_trapping: MAE 5.11432, worst group 10.9732; activated_breakthrough: MAE 1.51247, worst group 3.73404.\n\nActivated breakthrough improves development MAE to1.512\u03bcA. Test the established semi-infinite diffusion arrival solution, which imposes an erfc tail rather than an unconstrained inverse-Weibull exponent. This supplies a stronger physical-shape falsifier.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:01:58.611212+00:00",
+      "parent": "attempt-010",
+      "parameters": {
+        "a0": 24.622400819533258,
+        "a1": 62.29042547771083,
+        "tau": 1344.4755839762295,
+        "k": -0.4824870203906611
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 13174.037259742747,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ]
+      }
+    },
+    "common_breakthrough_scale": {
+      "name": "common_breakthrough_scale",
+      "formula": "offset+(a0+a1*high)*exp(-(tau/t)**beta)",
+      "hypothesis": "Development evidence available before this fit: activated_breakthrough: MAE 1.51247, worst group 3.73404; semi_infinite_arrival: MAE 3.42019, worst group 5.52057.\n\nChallenge the need for condition-dependent transport: keep separate amplitudes but require the same breakthrough time scale under both charging conditions. This controlled mechanism restriction tests whether a common effective diffusivity-shaped response is defensible.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:02:00.747398+00:00",
+      "parent": "attempt-011",
+      "parameters": {
+        "a0": 14.127139395764814,
+        "a1": 40.48044270916711,
+        "tau": 1232.8384080733254,
+        "beta": 1.4449559017958662
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-0-block-3",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2",
+        "trace-1-block-3"
+      ],
+      "training_rows": 1483,
+      "optimizer_success": true,
+      "nfev": 13,
+      "jacobian_condition": 1067.9354837001083,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "beta": [
+          0.3,
+          3
+        ]
+      }
+    }
+  },
+  "selected_from": "attempts/attempt-010",
+  "selection": "Development only; reference remains fixed even if another model is better on confirmation."
+}

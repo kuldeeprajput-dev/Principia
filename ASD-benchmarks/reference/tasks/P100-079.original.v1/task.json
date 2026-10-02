@@ -1,0 +1,142 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-079.original.v1",
+  "case_id": "P100-079",
+  "case_number": 79,
+  "family": "original",
+  "protocol_version": "P100-079-asd6-native-v1",
+  "cohort_id": "P100-079.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-079.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/79_veterinary_calf_breath",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "post_treatment_DMS_emission",
+  "target_units": "ug animal^-1 h^-1",
+  "error_units": "ug animal^-1 h^-1",
+  "primary_units": "ug animal^-1 h^-1",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "hours",
+    "baseline",
+    "baseline_change",
+    "age"
+  ],
+  "input_units": {
+    "hours": "h",
+    "baseline": "ug animal^-1 h^-1",
+    "baseline_change": "ug animal^-1 h^-1",
+    "age": "days"
+  },
+  "numeric_columns": [
+    "hours",
+    "baseline",
+    "baseline_change",
+    "age"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Prediction at treatment administration from pre-dose breath samples and scheduled post-dose time.",
+  "calibration": "Mean DMS emission at-48/-24h, difference and age at first post-dose row; five post-dose points are forecast. Other VOCs and disease labels excluded.",
+  "independent_unit": "calf",
+  "evaluation_groups": [
+    "404703",
+    "504711"
+  ],
+  "assigned_rows": 10,
+  "eligible_rows": 10,
+  "baseline_models": [
+    "reference",
+    "baseline_persistence",
+    "baseline_decay",
+    "baseline_flexible",
+    "attempt_001_bateman",
+    "attempt_002_relative_decay",
+    "attempt_003_two_decay",
+    "attempt_004_baseline_drift",
+    "attempt_005_lognormal"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "yhat=baseline",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_persistence": {
+      "equation": "yhat=baseline",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_decay": {
+      "equation": "yhat=max(0,baseline+A*exp(-hours/tau))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_bateman": {
+      "equation": "yhat=max(0,baseline+A*(exp(-hours/tau_decay)-exp(-hours/tau_rise)))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_relative_decay": {
+      "equation": "yhat=max(0,baseline*(1+A*exp(-hours/tau)))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_two_decay": {
+      "equation": "yhat=max(0,baseline+Afast*exp(-hours/tfast)+Aslow*exp(-hours/tslow))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_baseline_drift": {
+      "equation": "yhat=max(0,baseline+A*exp(-hours/tau)+b*baseline_change*exp(-hours/24))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_lognormal": {
+      "equation": "yhat=max(0,baseline+A*exp(-.5*(log(hours/tpeak)/sigma)^2))",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "Seven retained complete calves, while paper describes ten antibiotic-trial calves. Two reserved calves permit bounded internal transfer only. No untreated controls, dose-response or molecule-specific mechanism identification.",
+  "source_url": "https://zenodo.org/records/17940806",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "b5b45a121259f3d66fb048282ffbfb62d5ad63472d6499ed0556bf80b5c02dd0",
+  "observations_sha256": "6a2cba2fd10b61cf7c7aa1cab247c9bbc3250a7c3976ddc31206d5da4bf1d0e7",
+  "legacy_protocol_sha256": "27d725b67a652d1875fd4775b3fd2efcecadcccffb40163d0eea5fd57ae5d9dc",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

@@ -1,0 +1,174 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-092.round2.v2",
+  "case_id": "P100-092",
+  "case_number": 92,
+  "family": "round2",
+  "protocol_version": "P100-092.round2.v1.contract-1-contract-correction-v2",
+  "cohort_id": "P100-092.round2.v2.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-092.round2.v2",
+  "legacy_package": "92_communications_ble_antennas/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/92_communications_ble_antennas",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Channel-resolved burst-mean RSSI",
+  "target_units": "dBm",
+  "error_units": "dB",
+  "primary_units": "dB",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "r0",
+    "channel_contrast",
+    "position_contrast",
+    "spatial_contrast",
+    "global_power_reference",
+    "local_channel_power_dB",
+    "furniture",
+    "day",
+    "lwa",
+    "port",
+    "channel"
+  ],
+  "input_units": {
+    "r0": "dBm",
+    "channel_contrast": "dB",
+    "position_contrast": "dB",
+    "spatial_contrast": "dB",
+    "global_power_reference": "dBm; power-domain spatial calibration mean",
+    "local_channel_power_dB": "dBm; power-domain channel calibration mean",
+    "furniture": "binary indicator",
+    "day": "elapsed days",
+    "lwa": "binary indicator for ports P1-P4",
+    "port": "categorical P1\u2013P8",
+    "channel": "channel number 37/38/39"
+  },
+  "numeric_columns": [
+    "r0",
+    "channel_contrast",
+    "position_contrast",
+    "spatial_contrast",
+    "global_power_reference",
+    "local_channel_power_dB",
+    "furniture",
+    "day",
+    "lwa",
+    "channel"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Only the initial calibration map and known date/furniture/antenna/channel metadata are allowed. Whole dates remain grouped; repeated packets/cells are not independent experiments. Expanded information budget: r0, channel_contrast, position_contrast, spatial_contrast, global_power_reference, local_channel_power_dB, furniture, day, lwa, port, channel",
+  "calibration": "The complete initial3120-cell measured RSSI map is permitted. Same-position channel, same-channel spatial, global-power and local-channel-power contrasts are calculated from that map, never from target-date RSSI. Fitted corrections and flexible transformations are learned only inside each preceding-date training fold; no target-date RSSI recalibration is permitted.",
+  "independent_unit": "Complete measurement date with all available furniture states, antenna ports and channels;3forward-development validation dates. Rows and dates share one calibrated installation and cannot support independent-row population inference.",
+  "evaluation_groups": [
+    "05122023",
+    "13122023",
+    "20122023"
+  ],
+  "assigned_rows": 18720,
+  "eligible_rows": 18720,
+  "baseline_models": [
+    "current/baseline-hgb",
+    "previous/results-v2/flexible",
+    "previous/results-v2/unconstrained1",
+    "previous/results-v2/cycle1",
+    "previous/results-v2/linear",
+    "current/cycle-001",
+    "previous/results-v2/unconstrained2",
+    "previous/results-v2/cycle2",
+    "previous/results-v2/simple",
+    "previous/results/simple"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/flexible": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/unconstrained1": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/cycle1": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/linear": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/unconstrained2": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/cycle2": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/simple": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results/simple": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Repeatedly exposed development OOF cohort comprising complete dates2023-12-05,2023-12-13 and2023-12-20 (source group labels05122023,13122023,20122023),18720 observations. This task does not score the original reserved days51,86,94. All positions are covered by the original3120-cell calibration map in one installation. No unseen-position prediction, reduced calibration-cost result, localization result or independent antenna-efficiency identification is established.",
+  "source_url": "https://zenodo.org/records/14548531",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "153c8867089c9f5b1996a91a7e94d8f289fdebc9cdbbc45ceb1bd82f755f3a47",
+  "observations_sha256": "39d5f20764ddff5c459d98fed55d4e100fd262c3cfc6dc9f972898f72c7a059c",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified",
+  "documentation_correction": {
+    "supersedes": "P100-092.round2.v1",
+    "numerical_state_changed": false,
+    "source_cohort_unchanged": true,
+    "reason": "Remove inherited original-reference coefficients or original-reserved-cohort wording from distinct development OOF task. The proposed v2 is documentary, not a new fit, endpoint, cohort, or improved result.",
+    "historical_validation": "Same exposed development OOF predictions; no new confirmation"
+  }
+}

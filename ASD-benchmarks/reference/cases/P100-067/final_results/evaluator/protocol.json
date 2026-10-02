@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-067",
+  "protocol_id": "P100-067-prepared-primary-v1",
+  "target": "Interface transit time",
+  "target_units": "s",
+  "primary_units": "absolute log ratio",
+  "metric_kind": "log_transit",
+  "metric_definition": "Mean absolute log transit ratio: mean_i |ln(T_hat_i)-ln(T_i)| within configuration \u00d7 particle cells, then equal particles within a configuration, then equal configurations. Physical MAE in seconds uses the same weighting.",
+  "independent_unit": "complete fluid configuration; particles balanced within configuration",
+  "evaluation_groups": [
+    "1.1",
+    "2.1",
+    "3.1"
+  ],
+  "input_sha256": "62b3e2eb4a0f39274041409d1b7c4e0e40fdc9c25375284b95ae62417d02a123",
+  "input_rows": 76,
+  "assigned_rows": 76,
+  "permitted_inputs": [
+    "width_m",
+    "v_up_m_s",
+    "orientation_cos2",
+    "particle",
+    "family"
+  ],
+  "input_units": {
+    "width_m": "m",
+    "v_up_m_s": "m/s",
+    "orientation_cos2": "dimensionless mean cos(2 theta), range [-1,1]",
+    "particle": "categorical particle ID",
+    "family": "categorical fluid family"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "orientation",
+    "ballistic",
+    "particle_family",
+    "mean_orientation_control"
+  ],
+  "reference_equations": {
+    "orientation": "T=(width_m/v_up_m_s)*exp(b0+bv*ln(v_up_m_s/0.01)+bD*I_disk*(1+orientation_cos2)/2+bR*I_rod*(1+orientation_cos2)/2)",
+    "ballistic": "T=width_m/v_up_m_s",
+    "particle_family": "T=(width_m/v_up_m_s)*exp(b0+sum(b_particle*I_particle)+sum(b_family*I_family))",
+    "mean_orientation_control": "Use the orientation equation with fixed development-family/particle mean cos(2 theta) in place of the observed orientation. No target-configuration orientation fitting."
+  },
+  "positive_target": true,
+  "positive_prediction": true,
+  "nonnegative_prediction": false,
+  "scope_limit": "Three reserved configurations (1.1,2.1,3.1), one from each observed family. No universal sedimentation law, normal-stress inference or thickness-dependent claim is supported.",
+  "calibration_note": "Source-defined interface width; upstream speed and orientation from the strict upstream observation prefix. No target transit is an input.",
+  "timing_contract": "Use native upstream observations ending before interface entry; no interpolation across entry. orientation_cos2 is mean cos(2 theta), NOT mean cos\u00b2(theta).",
+  "exposure_notice": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Only 3 groups, with system-level dependence; report individual effects without a population confidence interval."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Audit raw sample anchors and timestamp/phase cutoffs. Identify every predictor and all calibration; exclude future responses and identifier memorization. Use native upstream observations ending before interface entry; no interpolation across entry. orientation_cos2 is mean cos(2 theta), NOT mean cos\u00b2(theta)."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

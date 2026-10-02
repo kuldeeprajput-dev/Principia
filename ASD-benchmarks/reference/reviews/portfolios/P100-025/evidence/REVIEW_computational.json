@@ -1,0 +1,1055 @@
+{
+  "case_id": "P100-025",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "8e5f1e0bec91cd52d6508635c14d4d91f700725f3c8dd03e77c1cea65c01cd67"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "746652e256c4970226f9f5f01854accb84ef8cdc9fa957cf572580b71a3e38cd"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "9b921dddeaf316081a93b65a73b33ff7982b3796a533f00127b645db8316de4f"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "746fb63be183268b71b3d539661f06660bfb7d220aa4b13dce70c8053a45e0de"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "7be04f9f092c207b055c169f222dcddaf37ae80b7696064ccdf4029c0ba0d419"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "6380d3b237d2470fe1b8a402a54da0119c6c6e85440a7460000bcd764fe875e6"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "9ecf1a82419167ffe6b82ebe0070b8cda7ce5750fded6741a5938babe4a88e69"
+    },
+    {
+      "path": "native.py",
+      "sha256": "89a6ef19eb78a57a82bc92c9c82a00c5d2f2beb46d59be52a62934ebfd22c97b"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "8e2ff716672a24f8b1cd42743039e047a81de43b645d59a6596651ad994bc2a7"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "e6cbf3414685e65dc09eebc885dc990acab49c081b46826467ffac0e5404e84c"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "bb159cda41ba3ec1ef1e0c18509550768dbeb1cb585b0995acffbc603091bdd3"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "06fda47ac070af7c385d475b74b78acf10a04df03c3ca9ed72921e5bd1557794"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "4c45859d5c130f3f59901f327c6cbc93c095c5b19b7402222cf2762d4f385e07"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "445fc68daab7982460c5cb10cb5163e9129f5e726428dd8cfa4c939274320a64"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-025-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-025-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-025-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-025",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-025",
+      "native_rows": 5044,
+      "confirmation_rows": 1014,
+      "models": 9,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 9,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 2.7755575615628914e-17,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 1014,
+        "primary_error": 0.06130178714352316,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "equal_mixture",
+        "rows": 1014,
+        "primary_error": 0.14323835313000322,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 1014,
+        "primary_error": 0.06130178714352316,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "lfp_reference",
+        "rows": 1014,
+        "primary_error": 0.18515147377691427,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "protocol_two_phase",
+        "rows": 1014,
+        "primary_error": 0.13618659183785417,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "continuous_edge_shift",
+        "rows": 1014,
+        "primary_error": 0.14195859460469487,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "partial_transformation",
+        "rows": 1014,
+        "primary_error": 0.11243284931997051,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "intermediate_spectral_component",
+        "rows": 1014,
+        "primary_error": 0.13214691372930537,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "branch_hysteresis",
+        "rows": 1014,
+        "primary_error": 0.11976359285355151,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-00",
+          "triplet-01",
+          "triplet-02",
+          "triplet-03",
+          "triplet-04",
+          "triplet-05",
+          "triplet-06",
+          "triplet-07",
+          "triplet-09",
+          "triplet-11",
+          "triplet-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-13",
+          "triplet-14",
+          "triplet-15",
+          "triplet-16",
+          "triplet-17",
+          "triplet-18",
+          "triplet-19",
+          "triplet-20",
+          "triplet-23",
+          "triplet-24",
+          "triplet-25"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 42,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "triplet-26",
+          "triplet-27",
+          "triplet-30",
+          "triplet-31",
+          "triplet-33",
+          "triplet-34",
+          "triplet-35",
+          "triplet-36",
+          "triplet-37",
+          "triplet-38"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 44,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "triplet-40",
+          "triplet-41",
+          "triplet-42",
+          "triplet-43",
+          "triplet-45",
+          "triplet-47",
+          "triplet-50",
+          "triplet-51"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 40,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "triplet-52",
+          "triplet-53",
+          "triplet-54",
+          "triplet-55",
+          "triplet-56",
+          "triplet-57",
+          "triplet-58",
+          "triplet-59",
+          "triplet-60",
+          "triplet-61",
+          "triplet-62",
+          "triplet-64"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-00",
+          "triplet-01",
+          "triplet-02",
+          "triplet-03",
+          "triplet-04",
+          "triplet-05",
+          "triplet-06",
+          "triplet-07",
+          "triplet-09",
+          "triplet-11",
+          "triplet-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-13",
+          "triplet-14",
+          "triplet-15",
+          "triplet-16",
+          "triplet-17",
+          "triplet-18",
+          "triplet-19",
+          "triplet-20",
+          "triplet-23",
+          "triplet-24",
+          "triplet-25"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 42,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "triplet-26",
+          "triplet-27",
+          "triplet-30",
+          "triplet-31",
+          "triplet-33",
+          "triplet-34",
+          "triplet-35",
+          "triplet-36",
+          "triplet-37",
+          "triplet-38"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 44,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "triplet-40",
+          "triplet-41",
+          "triplet-42",
+          "triplet-43",
+          "triplet-45",
+          "triplet-47",
+          "triplet-50",
+          "triplet-51"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 40,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "triplet-52",
+          "triplet-53",
+          "triplet-54",
+          "triplet-55",
+          "triplet-56",
+          "triplet-57",
+          "triplet-58",
+          "triplet-59",
+          "triplet-60",
+          "triplet-61",
+          "triplet-62",
+          "triplet-64"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-00",
+          "triplet-01",
+          "triplet-02",
+          "triplet-03",
+          "triplet-04",
+          "triplet-05",
+          "triplet-06",
+          "triplet-07",
+          "triplet-09",
+          "triplet-11",
+          "triplet-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-13",
+          "triplet-14",
+          "triplet-15",
+          "triplet-16",
+          "triplet-17",
+          "triplet-18",
+          "triplet-19",
+          "triplet-20",
+          "triplet-23",
+          "triplet-24",
+          "triplet-25"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 42,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "triplet-26",
+          "triplet-27",
+          "triplet-30",
+          "triplet-31",
+          "triplet-33",
+          "triplet-34",
+          "triplet-35",
+          "triplet-36",
+          "triplet-37",
+          "triplet-38"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 44,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "triplet-40",
+          "triplet-41",
+          "triplet-42",
+          "triplet-43",
+          "triplet-45",
+          "triplet-47",
+          "triplet-50",
+          "triplet-51"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 40,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "triplet-52",
+          "triplet-53",
+          "triplet-54",
+          "triplet-55",
+          "triplet-56",
+          "triplet-57",
+          "triplet-58",
+          "triplet-59",
+          "triplet-60",
+          "triplet-61",
+          "triplet-62",
+          "triplet-64"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-00",
+          "triplet-01",
+          "triplet-02",
+          "triplet-03",
+          "triplet-04",
+          "triplet-05",
+          "triplet-06",
+          "triplet-07",
+          "triplet-09",
+          "triplet-11",
+          "triplet-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-13",
+          "triplet-14",
+          "triplet-15",
+          "triplet-16",
+          "triplet-17",
+          "triplet-18",
+          "triplet-19",
+          "triplet-20",
+          "triplet-23",
+          "triplet-24",
+          "triplet-25"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 42,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "triplet-26",
+          "triplet-27",
+          "triplet-30",
+          "triplet-31",
+          "triplet-33",
+          "triplet-34",
+          "triplet-35",
+          "triplet-36",
+          "triplet-37",
+          "triplet-38"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 44,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "triplet-40",
+          "triplet-41",
+          "triplet-42",
+          "triplet-43",
+          "triplet-45",
+          "triplet-47",
+          "triplet-50",
+          "triplet-51"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 40,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "triplet-52",
+          "triplet-53",
+          "triplet-54",
+          "triplet-55",
+          "triplet-56",
+          "triplet-57",
+          "triplet-58",
+          "triplet-59",
+          "triplet-60",
+          "triplet-61",
+          "triplet-62",
+          "triplet-64"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-00",
+          "triplet-01",
+          "triplet-02",
+          "triplet-03",
+          "triplet-04",
+          "triplet-05",
+          "triplet-06",
+          "triplet-07",
+          "triplet-09",
+          "triplet-11",
+          "triplet-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-13",
+          "triplet-14",
+          "triplet-15",
+          "triplet-16",
+          "triplet-17",
+          "triplet-18",
+          "triplet-19",
+          "triplet-20",
+          "triplet-23",
+          "triplet-24",
+          "triplet-25"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 42,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "triplet-26",
+          "triplet-27",
+          "triplet-30",
+          "triplet-31",
+          "triplet-33",
+          "triplet-34",
+          "triplet-35",
+          "triplet-36",
+          "triplet-37",
+          "triplet-38"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 44,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "triplet-40",
+          "triplet-41",
+          "triplet-42",
+          "triplet-43",
+          "triplet-45",
+          "triplet-47",
+          "triplet-50",
+          "triplet-51"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 40,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "triplet-52",
+          "triplet-53",
+          "triplet-54",
+          "triplet-55",
+          "triplet-56",
+          "triplet-57",
+          "triplet-58",
+          "triplet-59",
+          "triplet-60",
+          "triplet-61",
+          "triplet-62",
+          "triplet-64"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/equal_mixture/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-00",
+          "triplet-01",
+          "triplet-02",
+          "triplet-03",
+          "triplet-04",
+          "triplet-05",
+          "triplet-06",
+          "triplet-07",
+          "triplet-09",
+          "triplet-11",
+          "triplet-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/equal_mixture/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-13",
+          "triplet-14",
+          "triplet-15",
+          "triplet-16",
+          "triplet-17",
+          "triplet-18",
+          "triplet-19",
+          "triplet-20",
+          "triplet-23",
+          "triplet-24",
+          "triplet-25"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/equal_mixture/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 42,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "triplet-26",
+          "triplet-27",
+          "triplet-30",
+          "triplet-31",
+          "triplet-33",
+          "triplet-34",
+          "triplet-35",
+          "triplet-36",
+          "triplet-37",
+          "triplet-38"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/equal_mixture/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 44,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "triplet-40",
+          "triplet-41",
+          "triplet-42",
+          "triplet-43",
+          "triplet-45",
+          "triplet-47",
+          "triplet-50",
+          "triplet-51"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/equal_mixture/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 40,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "triplet-52",
+          "triplet-53",
+          "triplet-54",
+          "triplet-55",
+          "triplet-56",
+          "triplet-57",
+          "triplet-58",
+          "triplet-59",
+          "triplet-60",
+          "triplet-61",
+          "triplet-62",
+          "triplet-64"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-00",
+          "triplet-01",
+          "triplet-02",
+          "triplet-03",
+          "triplet-04",
+          "triplet-05",
+          "triplet-06",
+          "triplet-07",
+          "triplet-09",
+          "triplet-11",
+          "triplet-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-13",
+          "triplet-14",
+          "triplet-15",
+          "triplet-16",
+          "triplet-17",
+          "triplet-18",
+          "triplet-19",
+          "triplet-20",
+          "triplet-23",
+          "triplet-24",
+          "triplet-25"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 42,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "triplet-26",
+          "triplet-27",
+          "triplet-30",
+          "triplet-31",
+          "triplet-33",
+          "triplet-34",
+          "triplet-35",
+          "triplet-36",
+          "triplet-37",
+          "triplet-38"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 44,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "triplet-40",
+          "triplet-41",
+          "triplet-42",
+          "triplet-43",
+          "triplet-45",
+          "triplet-47",
+          "triplet-50",
+          "triplet-51"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 40,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "triplet-52",
+          "triplet-53",
+          "triplet-54",
+          "triplet-55",
+          "triplet-56",
+          "triplet-57",
+          "triplet-58",
+          "triplet-59",
+          "triplet-60",
+          "triplet-61",
+          "triplet-62",
+          "triplet-64"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/lfp_reference/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-00",
+          "triplet-01",
+          "triplet-02",
+          "triplet-03",
+          "triplet-04",
+          "triplet-05",
+          "triplet-06",
+          "triplet-07",
+          "triplet-09",
+          "triplet-11",
+          "triplet-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/lfp_reference/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 41,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "triplet-13",
+          "triplet-14",
+          "triplet-15",
+          "triplet-16",
+          "triplet-17",
+          "triplet-18",
+          "triplet-19",
+          "triplet-20",
+          "triplet-23",
+          "triplet-24",
+          "triplet-25"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/lfp_reference/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 42,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "triplet-26",
+          "triplet-27",
+          "triplet-30",
+          "triplet-31",
+          "triplet-33",
+          "triplet-34",
+          "triplet-35",
+          "triplet-36",
+          "triplet-37",
+          "triplet-38"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/lfp_reference/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 44,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "triplet-40",
+          "triplet-41",
+          "triplet-42",
+          "triplet-43",
+          "triplet-45",
+          "triplet-47",
+          "triplet-50",
+          "triplet-51"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/lfp_reference/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 40,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "triplet-52",
+          "triplet-53",
+          "triplet-54",
+          "triplet-55",
+          "triplet-56",
+          "triplet-57",
+          "triplet-58",
+          "triplet-59",
+          "triplet-60",
+          "triplet-61",
+          "triplet-62",
+          "triplet-64"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "The flexible reference reconstructs raw FeK-edge spectral response using declared pre/post-edge calibration. Its unconstrained effective mixture is not an identified phase fraction, online state of charge or a new redox mechanism."
+}

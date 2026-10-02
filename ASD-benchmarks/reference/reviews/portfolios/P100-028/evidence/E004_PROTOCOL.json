@@ -1,0 +1,43 @@
+{
+  "title": "Calibrated microwave conversion-amplitude response to pump strength",
+  "target": "magnitude of native complex USB off-diagonal response",
+  "target_units": "fsu; instrument full-scale units",
+  "input_columns": [
+    "lo",
+    "hi",
+    "noise",
+    "r",
+    "g",
+    "glo",
+    "ghi",
+    "sep"
+  ],
+  "input_units": {
+    "lo": "fsu;lowpumpamplituderesponse",
+    "hi": "fsu;secondcalibrationresponse",
+    "noise": "fsu;zero-pumpresponse",
+    "r": "dimensionless normalizedpumpincrement",
+    "g": "fsu;pumpamplitudecontrol",
+    "glo": "fsu;lowpumpcontrol",
+    "ghi": "fsu;highcalibrationpumpcontrol",
+    "sep": "integer frequency-bin separation;100kHzbins"
+  },
+  "fold_design": "forward",
+  "timing_contract": "Predict conversion response above the two calibration pump strengths; each directedmodepair is calibrated at0,.13,.1402040816pumpunits. Whole strongerpumpmatrices are reserved, not selected edges.",
+  "calibration": "Native response magnitudes atthreefixedlow/zeropumpconditionsperdirectedmodepair. No highpumpoutcome or targetstandarddeviation is a predictor.",
+  "independent_unit": "Completepumpstrengthmatrix; all156offdiagonaldirectedpairslinked. Oneinstrument/day; strengthlevels are not independent devices.",
+  "scope_limits": [
+    "Magnitude in native fsu is not a calibrated dimensionless scattering coefficient; no passivity, quantumfidelity or reciprocity claim is inferred.",
+    "Only the purefrequencyconversion13mode experiment is targeted.31modeparametricgain andnumericalinverseproblemproducts remain context,notduplicateindependentobservations.",
+    "Finaltenhigherstrengthsettings test within-sweepextrapolation; no hardwaretransfer."
+  ],
+  "exposure": "Schema audit accidentally printed sourceUSBstandarddeviation arrays; measuredcomplexUSBtargets remained unprinted. Uncertainty arrays are excluded from predictors andselection.",
+  "uncertainty_policy": "Report entirepumpmatrix errors and extrema; no independent-deviceconfidenceinterval.",
+  "case_id": "P100-028",
+  "source_url": "https://zenodo.org/records/18938314",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "freeze_utc": "2026-10-02T02:23:53.562345+00:00",
+  "selection_rule": "Lowest mean group development MAE among all controls and attempts; within 0.5% choose fewer parameters. Selection and continuation use development only.",
+  "continuation_rule": "At least five substantive attempts; stop after two consecutive attempts without supported predictive, worst-group, or interpretive gain.",
+  "metric_kind": "mae"
+}

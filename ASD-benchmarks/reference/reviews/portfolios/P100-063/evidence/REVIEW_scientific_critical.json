@@ -1,0 +1,112 @@
+{
+  "case_id": "P100-063",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_electronics",
+  "review_date": "2026-10-02",
+  "checked_files": [
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "f2b0551debf17edbf429a5c39c3dc8c88821f6d53f8f5d770382efba2393843c"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "c84db282cb9b0e1d8ed9d57a11f060fa6afbcaf25dc1421bb521be04902aecfb"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "fcb016889b7e3d2740e46b23adc522102cfd52621b03c53d5c88693c31a420fa"
+    },
+    {
+      "path": "package/equations.json",
+      "sha256": "87cd4c497a0daf8ef803c38962439b71b187645abd9c20003b402e8da6a52754"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "6ba4a73a8c8da60ad2fb06a8812dab87f4a29a1638e7a299240f698432b7342d"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-063-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Held-temperature MAE 0.00297729416 nV^2/Hz is effectively tied with symmetric Lorentzian 0.00297917168 and improves flexible 0.00338082649. This supports reproduction of the thermal family, not a meaningful extra-term gain."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Thermal peak/dip reversal and Lorentzian/Kittel response are established source physics. Termination temperature differs from film temperature; local field dependence cannot independently identify magnetization and gyromagnetic ratio."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is reproduction."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A compact cross-temperature processed-signal reference with useful input-semantic safeguards."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task."
+        }
+      },
+      "checks": [
+        "Checked temperature semantics, source processing and excluded fit_result arrays, local magnetic-field scope, symmetric comparator parity, and prior Lorentzian analyses."
+      ],
+      "limitations": [
+        "One 74 nm YIG film near 293 K; only two held termination temperatures within development range.",
+        "Publisher background subtraction used author-global information; this is not independently blind raw-detector confirmation.",
+        "Frequency bins and magnetic traces are dependent; no independent-row population confidence claim."
+      ]
+    },
+    {
+      "finding_id": "P100-063-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Additional temperature linewidth/amplitude structures do not provide consistent development transfer evidence; some retrospective confirmation differences are tiny and cannot drive promotion."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The failed additions do not establish temperature-independent film physics; they test empirical terms in a termination-heating experiment."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is informative_falsification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful limit on added complexity and on confusing termination and film heating."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task."
+        }
+      },
+      "checks": [
+        "Checked temperature semantics, source processing and excluded fit_result arrays, local magnetic-field scope, symmetric comparator parity, and prior Lorentzian analyses."
+      ],
+      "limitations": [
+        "One 74 nm YIG film near 293 K; only two held termination temperatures within development range.",
+        "Publisher background subtraction used author-global information; this is not independently blind raw-detector confirmation.",
+        "Frequency bins and magnetic traces are dependent; no independent-row population confidence claim."
+      ]
+    }
+  ],
+  "review_scope": "Independent critical interpretation of the released evidence and primary-source context; not independent experimental replication, human adjudication, or a fresh confirmation campaign.",
+  "source_review": {
+    "primary_url": "https://arxiv.org/html/2404.17327v1",
+    "web_access": "primary article inspected"
+  },
+  "metadata_corrections": "none requested"
+}

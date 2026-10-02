@@ -1,0 +1,271 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-071",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-071/computational.json",
+      "bytes": 9125,
+      "sha256": "4318dd7392788d4cddaae40dea5c9757b108363c9eeaeb570af20c3560c00fd9"
+    },
+    {
+      "path": "reviews/portfolios/P100-071/scientific_critical.json",
+      "bytes": 11978,
+      "sha256": "fa2039749256553a154c58fc9de7b352890dfad69a46f3bb2430735ad317a4c8"
+    },
+    {
+      "path": "reviews/portfolios/P100-071/combined/review.json",
+      "bytes": 20715,
+      "sha256": "0b803989af6a7b0de16e95f895a203ad238dcfca9f2add4a6e5a97f2d933d20c"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-071-SCI-01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete paired experiments; causal valid 30 mininline summaries or \u2264 2 hlast-valid fallback; offline counts/SEM excluded from predictors. Strong adverse evidence: Only 1.65 %gain over spectral availability; negative spectral coefficient is not a straightforward positive cell-number contribution.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Sensor phase/history associations are plausible; cell size, viability, membrane properties and availability confounding prevent mechanism identification.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known dielectric polarization and opticalresponse families; no new cellular law admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete paired experiments; causal valid 30 mininline summaries or \u2264 2 hlast-valid fallback; offline counts/SEM excluded from predictors.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-071-SCI-02",
+      "disagreements": [],
+      "coverage_differences": [
+        "reliability",
+        "mechanism",
+        "novelty",
+        "significance",
+        "reproducibility",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete paired experiments; causal valid 30 mininline summaries or \u2264 2 hlast-valid fallback; offline counts/SEM excluded from predictors. Strong adverse evidence: The apparent advantage over flexible wins only one of three exposed pairs; the strongest development spectral control remains better. Source sensor-quality and availability controls remain essential.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Sensor phase/history associations are plausible; cell size, viability, membrane properties and availability confounding prevent mechanism identification.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known dielectric polarization and opticalresponse families; no new cellular law admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete paired experiments; causal valid 30 mininline summaries or \u2264 2 hlast-valid fallback; offline counts/SEM excluded from predictors.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "documentation_sufficiency"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "partially_supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-071-SCI-03",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete paired experiments; causal valid 30 mininline summaries or \u2264 2 hlast-valid fallback; offline counts/SEM excluded from predictors. Strong adverse evidence: Only 2/9 pairs improve. Earlier decline correction improves oldreference by 22.70% on exposedpairs but its gain over flexible control wins only 1/3 pairs.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Sensor phase/history associations are plausible; cell size, viability, membrane properties and availability confounding prevent mechanism identification.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known dielectric polarization and opticalresponse families; no new cellular law admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Complete paired experiments; causal valid 30 mininline summaries or \u2264 2 hlast-valid fallback; offline counts/SEM excluded from predictors.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

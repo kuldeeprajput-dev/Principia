@@ -1,0 +1,36 @@
+{
+  "case": 51,
+  "kind": "two_power",
+  "label": "attempt-003",
+  "parent": "attempt-002",
+  "created_utc": "2026-10-01T14:07:25.053829+00:00",
+  "hypothesis": "The softplus threshold model improves worst-device error but worsens mean error relative to one power exponent. Separate positive-gate and negative-gate exponents to test whether accumulation and near-off regimes share curvature. Current errors in uA may weakly identify the near-off exponent; retain that limitation and compare high/low gate residuals.",
+  "preceding_development_evidence": [
+    {
+      "label": "linear",
+      "primary_error": 0.1661012722479649,
+      "worst_group_error": 0.21079129461755053
+    },
+    {
+      "label": "loglinear",
+      "primary_error": 0.16824411328977715,
+      "worst_group_error": 0.2203366758313779
+    },
+    {
+      "label": "shape",
+      "primary_error": 0.01806741580789332,
+      "worst_group_error": 0.038632094633561154
+    },
+    {
+      "label": "attempt-001",
+      "primary_error": 0.019209528728376765,
+      "worst_group_error": 0.03754840164302275
+    },
+    {
+      "label": "attempt-002",
+      "primary_error": 0.02044242629297179,
+      "worst_group_error": 0.03613990572606284
+    }
+  ],
+  "falsifier": "Reject superiority if grouped development MAE does not improve or worst-group behavior deteriorates without justified interpretation; no confirmation access."
+}

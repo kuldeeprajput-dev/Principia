@@ -1,0 +1,42 @@
+{
+  "case_id": "P100-095",
+  "target": "Next half-hour author-derived turbulent kinetic energy",
+  "target_units": "m2/s2",
+  "error_units": "m2/s2",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "energy",
+    "wind",
+    "vertical",
+    "temperature",
+    "gradient",
+    "sin_direction",
+    "cos_direction"
+  ],
+  "input_units": {
+    "energy": "m2/s2",
+    "wind": "m/s",
+    "vertical": "m/s",
+    "temperature": "degC",
+    "gradient": "K/m",
+    "sin_direction": "unitless",
+    "cos_direction": "unitless"
+  },
+  "numeric_columns": [
+    "energy",
+    "wind",
+    "vertical",
+    "temperature",
+    "gradient",
+    "sin_direction",
+    "cos_direction"
+  ],
+  "source_url": "https://zenodo.org/records/18670232",
+  "source_license": "CC-BY-4.0",
+  "exposure": "First January1 source row and input-height/flag metadata inspected. No March15+ TKE values/scores printed. All public source-aware; confirmation after final freeze will become exposed.",
+  "uncertainty_policy": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "calibration": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "scope_limits": "MeanTKE2 is author-derived from turbulent measurements; mean wind/thermal gradients are observational predictors, not mechanical interventions. Flag0 subset can select calmer/instrument-quality regimes; no universal turbulence closure.",
+  "timing_contract": "Predict next30-min author-derived TKE from completed previous30-min TKE, mean velocity and two-height temperature gradient. No contemporaneous target variance/covariance inputs. Both intervals RawAnyS2/H2 flags0; predictor MetT0.",
+  "independent_unit": "Whole ISO weeks. Forward folds week4, weeks7\u20138, weeks9\u201310 with all earlier weeks training. March15 onward weeks11\u201313 confirmation. One mountain station during one winter."
+}

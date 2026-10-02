@@ -1,0 +1,139 @@
+{
+  "reviewer": "asd5_materials",
+  "path_base": "local-truths-gpt6",
+  "corrections": [
+    {
+      "task_id": "P100-057.round2.v1",
+      "proposed_task_id": "P100-057.round2.v2",
+      "correction_kind": "documentation_only",
+      "replace_fields": {
+        "timing_contract": "Before each temperature block after the first, predict viscosity from current imposed temperature/shear settings and measured viscosity at the corresponding ordinal shear point in the completed previous and first blocks of the same Test ID. Blocks are ordered by native Result Start Time. Previous shear rate is supplied explicitly because matched ordinal points can differ in actual rate. No current-block or future target response enters predictors.",
+        "calibration": "Permitted within-Test-ID causal history comprises eta_previous, eta_first, T_previous, previous_shear_s and first_shear_s. Model coefficients are fitted only on the applicable outer training Test IDs. Historical static-reference formulation amplitudes and activation coefficients belong to separate comparator states, not a blanket calibration rule for the history task. Signed and extreme native outcomes remain in physical-unit scoring.",
+        "independent_unit": "Whole Test ID across all temperature/shear blocks; 40 original-development Test IDs contribute 9,000 out-of-fold rows. Synthesis lots are not identified.",
+        "scope_limits": "Retrospective, repeatedly exposed development out-of-fold cohort on already represented formulations. The original ten reserved Test IDs are not this task cohort. Causal within-test history is explicitly allowed, so comparison to the static task is not an algorithm-only improvement. Thermal order, aging and formulation effects remain confounded; no equilibrium constitutive or independent-lot law is established."
+      },
+      "evidence_references": [
+        {
+          "path": "principia-100/tasks/P100-057.round2.v1/task.json",
+          "sha256": "f710ac954d92e57c222228d560f2e454991b064d721706b8b4ca164554852bb3"
+        },
+        {
+          "path": "principia-100/tasks/P100-057.round2.v1/rules.json",
+          "sha256": "916b6cd8573d5b33df595fe93d40bca40b15f374253cb5369d6e3f2316659a0a"
+        },
+        {
+          "path": "principia-100/tasks/P100-057.round2.v1/evidence/metrics.csv",
+          "sha256": "1a4f38b97acdf0af6a3522e4a0fcc989943d279cde8e58b29e3f7a57268074ca"
+        },
+        {
+          "path": "57_materials_syntactic_foam/research_history/continuation-20260930b/PROTOCOL.json",
+          "sha256": "2f1fe1b6ab6b77384a54938afe0af4ba1423e99bff4e91057480720ca9432279"
+        },
+        {
+          "path": "principia-100/evaluation/preparation/ports/round2_bio.py",
+          "sha256": "f25cca8ff1c5c981ab44f7667f566681e4cf126eb2bd7a4f5d3b49255e1c8856"
+        }
+      ],
+      "preserve": [
+        "all native assets",
+        "all source and historical protocols",
+        "fitted coefficients",
+        "predictions",
+        "metrics",
+        "group allocations",
+        "v1 task package"
+      ],
+      "rationale": "Remove original-cohort/static-calibration wording inherited by distinct development-OOF continuation task. No new ASD fitting or re-selection."
+    },
+    {
+      "task_id": "P100-060.round2.v1",
+      "proposed_task_id": "P100-060.round2.v2",
+      "correction_kind": "documentation_only",
+      "replace_fields": {
+        "timing_contract": "Predict post-trigger peak absolute receiver voltage from imposed pulse width, distance, nominal sensor frequency and condition identity. Each response uses the whole t \u2265 0 trace after subtracting its t < 0 mean. No response-selected waveform window, target-based denoising or validation-response calibration is permitted.",
+        "calibration": "Condition-specific gains, damping/response parameters and any flexible transformations are learned inside each outer training partition. Scoring divides physical absolute errors by the frozen training-only condition scale stored in evaluation/preparation/metadata/60_normalization.json; that scale is evaluator metadata, not an additional prediction input. The 12 \u00b5s damping and six gains in the original task describe one historical comparator rather than every round2 model.",
+        "independent_unit": "Complete pulse-width block held across all six distance/sensor conditions; 30 files and 300 pulse outcomes span five original development widths. Pulses within a file and six conditions at a width are dependent.",
+        "scope_limits": "Repeatedly exposed development out-of-fold cohort at pulse widths 2.5, 7.5, 10, 12.5 and 15 \u00b5s, distinct from the original reserved 5 \u00b5s cohort. Six calibrated distance/sensor conditions come from one setup. Normalized-error comparison limits contact-amplitude dominance but does not establish unseen-sensor or propagation transfer. Fitted effective frequencies fail direct identification as measured resonance."
+      },
+      "evidence_references": [
+        {
+          "path": "principia-100/tasks/P100-060.round2.v1/task.json",
+          "sha256": "9e7d167f5439e67e28b56b6f9e6e47a3ad67ce5576ce23b2316edaf9cd0b735b"
+        },
+        {
+          "path": "principia-100/tasks/P100-060.round2.v1/rules.json",
+          "sha256": "6f35f094765caa13cc1dca3442b68b4a0428bc40c6e0dd6af7966b4d149d3c09"
+        },
+        {
+          "path": "principia-100/tasks/P100-060.round2.v1/evidence/metrics.csv",
+          "sha256": "31414d07d0b066e49201d50c20aca62c9b88fbdeae143512ffc8d43d44c6a491"
+        },
+        {
+          "path": "60_acoustics_ultrasonic_transmission/research_history/continuation-20260930b/PROTOCOL.json",
+          "sha256": "4f83791c0677a31c93ce6196aa9af1e313548657c6b20cce22ced556d92cb4ab"
+        },
+        {
+          "path": "principia-100/evaluation/preparation/extensions.py",
+          "sha256": "b46229f17e4603ebf2189b18a563ef9944895b80628106628e7a7be398a0d5ee"
+        },
+        {
+          "path": "principia-100/evaluation/preparation/metadata/60_normalization.json",
+          "sha256": "01417bae07ee81e62a09bc14d5b392efca2d11d985976ecaeb8c8a0db619c4a4"
+        }
+      ],
+      "preserve": [
+        "all native assets",
+        "all source and historical protocols",
+        "fitted coefficients",
+        "predictions",
+        "metrics",
+        "group allocations",
+        "v1 task package"
+      ],
+      "rationale": "Remove original-cohort/static-calibration wording inherited by distinct development-OOF continuation task. No new ASD fitting or re-selection."
+    },
+    {
+      "task_id": "P100-061.round2.v1",
+      "proposed_task_id": "P100-061.round2.v2",
+      "correction_kind": "documentation_only",
+      "replace_fields": {
+        "timing_contract": "Predict measured mixture hydrogen flux from membrane/gas identity, imposed temperature, feed fraction, absolute pressures, normal feed flow, geometry and the declared pure-hydrogen calibration_j0. Mixture-response targets from the outer held gas-temperature block cannot be used to fit that block.",
+        "calibration": "All models may use the 64 pure-hydrogen measurements at 350/450 \u00b0C through their explicitly frozen pressure/permeance calibration, including calibration at the temperature of a held mixture block. Mixture coefficients are fitted outside that held block. No 400 \u00b0C response enters this development-OOF task. The normal molar volume 22.414 L/mol is a declared convention; pressure units are absolute bar.",
+        "independent_unit": "Complete inert-gas by temperature block across four calibrated membranes: Ar/He/N2 at 350/450 \u00b0C, six outer groups and 120 mixture observations.",
+        "scope_limits": "Repeatedly exposed original-development out-of-fold cohort, distinct from the original 60-observation 400 \u00b0C reserved mixture cohort. Four calibrated specimens, two geometry families and two development temperatures do not establish new-membrane or general geometry transfer. Pure-gas calibration is permitted at both development temperatures; source normal-flow convention and unobserved annular-gap geometry limit causal film interpretation."
+      },
+      "evidence_references": [
+        {
+          "path": "principia-100/tasks/P100-061.round2.v1/task.json",
+          "sha256": "b736d1027111c0cc2ee851b10f57be25f11cdc99ce3af3faed5048618403736a"
+        },
+        {
+          "path": "principia-100/tasks/P100-061.round2.v1/rules.json",
+          "sha256": "a5643287220034e95f34570724a6e2bf7e57ff83b3b74258ec8b09573415666c"
+        },
+        {
+          "path": "principia-100/tasks/P100-061.round2.v1/evidence/metrics.csv",
+          "sha256": "987c1f64a84c49e25e54a4fd2fe9fd6aa0dfd43a2073c6d65a4c1d2689e0e04c"
+        },
+        {
+          "path": "61_chemistry_membrane_permeation/research_history/continuation-20260930b/PROTOCOL.json",
+          "sha256": "7585c6c4f15b93949ad574ac32bf9a18158cdcdd3a341daadec9760b61534a05"
+        },
+        {
+          "path": "principia-100/evaluation/preparation/extensions.py",
+          "sha256": "b46229f17e4603ebf2189b18a563ef9944895b80628106628e7a7be398a0d5ee"
+        }
+      ],
+      "preserve": [
+        "all native assets",
+        "all source and historical protocols",
+        "fitted coefficients",
+        "predictions",
+        "metrics",
+        "group allocations",
+        "v1 task package"
+      ],
+      "rationale": "Remove original-cohort/static-calibration wording inherited by distinct development-OOF continuation task. No new ASD fitting or re-selection."
+    }
+  ]
+}

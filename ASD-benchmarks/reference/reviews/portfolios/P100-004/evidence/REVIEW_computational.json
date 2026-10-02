@@ -1,0 +1,210 @@
+{
+  "case_id": "P100-004",
+  "role": "computational",
+  "reviewer_id": "asd5_materials",
+  "status": "passed",
+  "checks": [
+    "Exact raw-reconstructed confirmation identities",
+    "Native targets reproduce saved observations",
+    "Scoring groups reproduce native groups",
+    "No group crosses partitions",
+    "Unique native identities",
+    "Target excluded from input table",
+    "Reconstructed input scalar_activity",
+    "Reconstructed input recoil",
+    "Reconstructed input lepton_recoil",
+    "Reconstructed input jet_activity",
+    "Reconstructed input jet_n",
+    "Reconstructed input max_lep_eta",
+    "Reconstructed input muon_fraction",
+    "Replay constant",
+    "Independent group MAE constant",
+    "Target poisoning ignored constant",
+    "Replay rbf",
+    "Independent group MAE rbf",
+    "Target poisoning ignored rbf",
+    "Replay recoil_identity",
+    "Independent group MAE recoil_identity",
+    "Target poisoning ignored recoil_identity",
+    "Replay attempt_001",
+    "Independent group MAE attempt_001",
+    "Target poisoning ignored attempt_001",
+    "Replay attempt_002",
+    "Independent group MAE attempt_002",
+    "Target poisoning ignored attempt_002",
+    "Replay attempt_003",
+    "Independent group MAE attempt_003",
+    "Target poisoning ignored attempt_003",
+    "Replay attempt_004",
+    "Independent group MAE attempt_004",
+    "Target poisoning ignored attempt_004",
+    "Replay attempt_005",
+    "Independent group MAE attempt_005",
+    "Target poisoning ignored attempt_005",
+    "Replay reference",
+    "Independent group MAE reference",
+    "Target poisoning ignored reference",
+    "Clearly rejects missing source",
+    "Clearly rejects hash source",
+    "Portable standalone replay",
+    "Standalone rejects truncated manifest asset"
+  ],
+  "rows": 87854,
+  "models": 9,
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "7fbae2d88cc764c425f40ef945d97818df1af701bff2e06664961bf23eb3b10f"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "6ff6c79cbf177e5172b2d9eacc64e2359936fd1db23e051f20ec97b5b451c299"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "ef168de18dec31432d8faaaab8ef028b14dadec837447867d29d3f48fa9bdbc6"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "970d8756cc9124d1cb9a82964487f8515ec12fdb99f74355bbbeae52fcedd5e8"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "5313de934ae2e3983581f34324a017982cb49b52981611efc7dfc38699d1c105"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "fbdd681bf20e465257a9c078b3398899864f340834f162e7c4fee1bd29d5ffa1"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "0edafb4a3882d8f6c02a9360ea69b3bae1e53631bf5f98d8483fb5702123c2f0"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "44414483e770be288b1d312afca32ce1ac7fa335ff50291f0a8b569792551843"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "9e3e81460b6e7c10f14872aa648f281e0ae3661ae754dad2bee4659b75c1e4cc"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "fa966849dd66dd6fd0c6043addeda6f4b11352273d49f886f052e4c53851c1a7"
+    }
+  ],
+  "limitations": [
+    "Computational reproducibility is not independent experimental replication or certification of novelty."
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-004-F01",
+      "disposition": "supported",
+      "checks": [
+        "Native reconstruction, exact identities, all frozen model predictions, independent group MAE and target-poisoning tests passed."
+      ],
+      "limitations": [
+        "Computational reproducibility is not independent experimental replication or certification of novelty."
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All87,854 native events in two held run periods reconstruct exactly. Quadrature MAE20.9421GeV versus flexible21.8207 is reproduced; shared reconstruction components limit physical interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Separate scientific-critical review addresses interpretation; numerical replay does not identify causality."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No computational test certifies novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The declared cohort and calibration define the scope of utility."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Exact native identities, targets, inputs, all frozen predictions, group MAE, target poisoning and standalone integrity tests passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention or deployment benefit measured."
+        }
+      }
+    },
+    {
+      "finding_id": "P100-004-F02",
+      "disposition": "supported",
+      "checks": [
+        "Native reconstruction, exact identities, all frozen model predictions, independent group MAE and target-poisoning tests passed."
+      ],
+      "limitations": [
+        "Computational reproducibility is not independent experimental replication or certification of novelty."
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All87,854 native events in two held run periods reconstruct exactly. Quadrature MAE20.9421GeV versus flexible21.8207 is reproduced; shared reconstruction components limit physical interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Separate scientific-critical review addresses interpretation; numerical replay does not identify causality."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No computational test certifies novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The declared cohort and calibration define the scope of utility."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Exact native identities, targets, inputs, all frozen predictions, group MAE, target poisoning and standalone integrity tests passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention or deployment benefit measured."
+        }
+      }
+    },
+    {
+      "finding_id": "P100-004-F03",
+      "disposition": "unsupported",
+      "checks": [
+        "Native reconstruction, exact identities, all frozen model predictions, independent group MAE and target-poisoning tests passed."
+      ],
+      "limitations": [
+        "Computational reproducibility is not independent experimental replication or certification of novelty."
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All87,854 native events in two held run periods reconstruct exactly. Quadrature MAE20.9421GeV versus flexible21.8207 is reproduced; shared reconstruction components limit physical interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Separate scientific-critical review addresses interpretation; numerical replay does not identify causality."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No computational test certifies novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The declared cohort and calibration define the scope of utility."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Exact native identities, targets, inputs, all frozen predictions, group MAE, target poisoning and standalone integrity tests passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention or deployment benefit measured."
+        }
+      }
+    }
+  ],
+  "blocking_defects": []
+}

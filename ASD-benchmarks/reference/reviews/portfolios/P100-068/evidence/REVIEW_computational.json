@@ -1,0 +1,839 @@
+{
+  "case_id": "P100-068",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "8106fb3bb7841ff7d3baa8dafd50128030db8e5964e9490bce6a507cfb015f1c"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "006507540bf4bc857d8e01404fa042e4a1465686304846f5f2319fb9966280c6"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "e3763c15ad062c06cadd26e666da6e90b1522e19add1a8d30c27cbbf17c90025"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "8feeca9b6f807e1429006635751776a6d52c9362d27475f95fca954beb34e534"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "9d8861927a4572ba9adcf99be6ab3e13bf59ca607a2d9f90828d9cb6f6c4cc0f"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "3ecc963272de5ef78a63571523a6990adda208c63cb57d34ebb4df3b895d4bdf"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "a42031978b1b715f9cf36c9311700d2100a3ddf7c823f9cd7549ee86d643887b"
+    },
+    {
+      "path": "native.py",
+      "sha256": "5724148f23f25966c6b91665272a2968efa7dbee07b7cce2a3de78800437c797"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "65c22f17cf0f491a8271d4dca0a02042213f758e650c24a35c1e3716be874e1f"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "be74cdde4e848c9890a1d72435ec66b799da14ea8cbe0735310af782a2ed7a7e"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "65dd5f6df6f1c1e7657366ca0f1efae1055e4077be11323733388857334dcb95"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "f6b52d0d19882baf9d3db3db03335e02a4bb4d71af6844332fb26a4ce6a7a429"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "46cbd0eac4b095aa2eb267a5d764829c0e629e9244b57d353f8fe236a007bfe5"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "a8a64321c91041a830573690a53d331a70518af758f5820000d792b3640c7316"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-068-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-068-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-068-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-068",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-068",
+      "native_rows": 2859,
+      "confirmation_rows": 534,
+      "models": 9,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 9,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 2.7755575615628914e-17,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 534,
+        "primary_error": 0.10912634066322242,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "driven_harmonic",
+        "rows": 534,
+        "primary_error": 0.21346945444483947,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 534,
+        "primary_error": 0.10912634066322242,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "persistence",
+        "rows": 534,
+        "primary_error": 0.4388045058052434,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "effective_harmonic",
+        "rows": 534,
+        "primary_error": 0.19719132639586204,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "dc_invariant_harmonic",
+        "rows": 534,
+        "primary_error": 0.13328560905034303,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "duffing_delay_closure",
+        "rows": 534,
+        "primary_error": 0.18508934126589413,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "quadratic_drag_closure",
+        "rows": 534,
+        "primary_error": 0.18606134217254214,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "parametric_drive_closure",
+        "rows": 534,
+        "primary_error": 0.19156829207770976,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1147n",
+          "data1152n",
+          "data1157n",
+          "data1162n",
+          "data1167n",
+          "data1172n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 22,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "data1148n",
+          "data1158n",
+          "data1163n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1149n",
+          "data1154n",
+          "data1159n",
+          "data1164n",
+          "data1169n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1145n",
+          "data1150n",
+          "data1155n",
+          "data1160n",
+          "data1165n",
+          "data1170n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1146n",
+          "data1151n",
+          "data1156n",
+          "data1161n",
+          "data1166n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1147n",
+          "data1152n",
+          "data1157n",
+          "data1162n",
+          "data1167n",
+          "data1172n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 22,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "data1148n",
+          "data1158n",
+          "data1163n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1149n",
+          "data1154n",
+          "data1159n",
+          "data1164n",
+          "data1169n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1145n",
+          "data1150n",
+          "data1155n",
+          "data1160n",
+          "data1165n",
+          "data1170n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1146n",
+          "data1151n",
+          "data1156n",
+          "data1161n",
+          "data1166n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1147n",
+          "data1152n",
+          "data1157n",
+          "data1162n",
+          "data1167n",
+          "data1172n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 22,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "data1148n",
+          "data1158n",
+          "data1163n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1149n",
+          "data1154n",
+          "data1159n",
+          "data1164n",
+          "data1169n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1145n",
+          "data1150n",
+          "data1155n",
+          "data1160n",
+          "data1165n",
+          "data1170n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1146n",
+          "data1151n",
+          "data1156n",
+          "data1161n",
+          "data1166n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1147n",
+          "data1152n",
+          "data1157n",
+          "data1162n",
+          "data1167n",
+          "data1172n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 22,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "data1148n",
+          "data1158n",
+          "data1163n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1149n",
+          "data1154n",
+          "data1159n",
+          "data1164n",
+          "data1169n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1145n",
+          "data1150n",
+          "data1155n",
+          "data1160n",
+          "data1165n",
+          "data1170n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1146n",
+          "data1151n",
+          "data1156n",
+          "data1161n",
+          "data1166n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1147n",
+          "data1152n",
+          "data1157n",
+          "data1162n",
+          "data1167n",
+          "data1172n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 22,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "data1148n",
+          "data1158n",
+          "data1163n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1149n",
+          "data1154n",
+          "data1159n",
+          "data1164n",
+          "data1169n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1145n",
+          "data1150n",
+          "data1155n",
+          "data1160n",
+          "data1165n",
+          "data1170n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1146n",
+          "data1151n",
+          "data1156n",
+          "data1161n",
+          "data1166n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/driven_harmonic/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1147n",
+          "data1152n",
+          "data1157n",
+          "data1162n",
+          "data1167n",
+          "data1172n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/driven_harmonic/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 22,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "data1148n",
+          "data1158n",
+          "data1163n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/driven_harmonic/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1149n",
+          "data1154n",
+          "data1159n",
+          "data1164n",
+          "data1169n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/driven_harmonic/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1145n",
+          "data1150n",
+          "data1155n",
+          "data1160n",
+          "data1165n",
+          "data1170n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/driven_harmonic/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1146n",
+          "data1151n",
+          "data1156n",
+          "data1161n",
+          "data1166n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1147n",
+          "data1152n",
+          "data1157n",
+          "data1162n",
+          "data1167n",
+          "data1172n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 22,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "data1148n",
+          "data1158n",
+          "data1163n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1149n",
+          "data1154n",
+          "data1159n",
+          "data1164n",
+          "data1169n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1145n",
+          "data1150n",
+          "data1155n",
+          "data1160n",
+          "data1165n",
+          "data1170n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1146n",
+          "data1151n",
+          "data1156n",
+          "data1161n",
+          "data1166n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1147n",
+          "data1152n",
+          "data1157n",
+          "data1162n",
+          "data1167n",
+          "data1172n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 22,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "data1148n",
+          "data1158n",
+          "data1163n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1149n",
+          "data1154n",
+          "data1159n",
+          "data1164n",
+          "data1169n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "data1145n",
+          "data1150n",
+          "data1155n",
+          "data1160n",
+          "data1165n",
+          "data1170n"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 20,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "data1146n",
+          "data1151n",
+          "data1156n",
+          "data1161n",
+          "data1166n"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "The selected flexible voltage-delay predictor beats the driven harmonic extension. LDV velocity conversion is unresolved, so predictions remain inV; raw/denoised representations are linked and do not independently validate a Duffing or drag mechanism."
+}

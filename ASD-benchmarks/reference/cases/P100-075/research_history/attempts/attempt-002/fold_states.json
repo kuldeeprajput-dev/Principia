@@ -1,0 +1,77 @@
+{
+  "0": {
+    "kind": "synergy",
+    "coef": [
+      -0.06036538613647232,
+      -1.7208749322177608,
+      0.4988304465906159
+    ],
+    "K": 200.0,
+    "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s), x=ln(E/30)",
+    "training_groups": [
+      "B",
+      "D"
+    ],
+    "training_rows": 10,
+    "rank": 3,
+    "parameter_count": 3,
+    "profile_training_mse": [
+      {
+        "K": 200.0,
+        "weighted_sse": 1.532200675560916
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  },
+  "1": {
+    "kind": "synergy",
+    "coef": [
+      -0.10377531630196027,
+      -0.49483513307032606,
+      0.12429125668072438
+    ],
+    "K": 200.0,
+    "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s), x=ln(E/30)",
+    "training_groups": [
+      "A",
+      "D"
+    ],
+    "training_rows": 10,
+    "rank": 3,
+    "parameter_count": 3,
+    "profile_training_mse": [
+      {
+        "K": 200.0,
+        "weighted_sse": 1.4071885832106836
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  },
+  "2": {
+    "kind": "synergy",
+    "coef": [
+      -0.3793148812530527,
+      -1.7913749627777475,
+      0.7141511704652231
+    ],
+    "K": 200.0,
+    "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s), x=ln(E/30)",
+    "training_groups": [
+      "A",
+      "B"
+    ],
+    "training_rows": 10,
+    "rank": 3,
+    "parameter_count": 3,
+    "profile_training_mse": [
+      {
+        "K": 200.0,
+        "weighted_sse": 1.4955921586028924
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  }
+}

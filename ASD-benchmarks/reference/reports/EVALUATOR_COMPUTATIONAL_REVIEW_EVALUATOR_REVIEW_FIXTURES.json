@@ -1,0 +1,79 @@
+{
+  "checks": [
+    {
+      "check": "falsification_without_fabricated_equation",
+      "status": "pass",
+      "detail": "tested"
+    },
+    {
+      "check": "two_separate_review_roles",
+      "status": "pass",
+      "detail": "tested"
+    },
+    {
+      "check": "same_reviewer_id_rejected",
+      "status": "pass",
+      "detail": "Reviews require distinct reviewer identities"
+    },
+    {
+      "check": "tampered_claim_binding_rejected",
+      "status": "pass",
+      "detail": "Review does not bind to exact evidence packet"
+    },
+    {
+      "check": "unsupported_assessment_without_anchor_rejected",
+      "status": "pass",
+      "detail": "Assessed dimension requires evidence"
+    },
+    {
+      "check": "unknown_dimension_status_rejected",
+      "status": "pass",
+      "detail": "Review needs status and reason: novelty"
+    },
+    {
+      "check": "unknown_review_schema_rejected",
+      "status": "pass",
+      "detail": "Unsupported review schema"
+    },
+    {
+      "check": "unknown_review_disposition_rejected",
+      "status": "pass",
+      "detail": "Unknown review disposition"
+    },
+    {
+      "check": "unknown_packet_schema_rejected",
+      "status": "pass",
+      "detail": "Unsupported review packet schema"
+    },
+    {
+      "check": "valid_proposal_remains_unregistered",
+      "status": "pass",
+      "detail": "tested"
+    },
+    {
+      "check": "existing_task_overwrite_rejected",
+      "status": "pass",
+      "detail": "Proposal cannot overwrite a registered task"
+    },
+    {
+      "check": "false_freshness_rejected",
+      "status": "pass",
+      "detail": "task-proposal.schema.json at exposure.fresh_confirmation: False was expected"
+    },
+    {
+      "check": "unbound_native_anchor_rejected",
+      "status": "pass",
+      "detail": "Measurement anchor lacks bound native evidence and locator"
+    },
+    {
+      "check": "proposal_string_predictor_list_rejected",
+      "status": "pass",
+      "detail": "task-proposal.schema.json at permitted_inputs: 'x' is not of type 'array'"
+    },
+    {
+      "check": "proposal_nonstring_identity_rejected",
+      "status": "pass",
+      "detail": "task-proposal.schema.json at proposed_task_id: 123 is not of type 'string'"
+    }
+  ]
+}

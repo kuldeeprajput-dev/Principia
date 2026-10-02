@@ -1,0 +1,26 @@
+{
+  "case_id": "P100-048",
+  "frozen_before_first_fit_utc": "2026-10-01T15:25:22.252138+00:00",
+  "target": "Daylight downwelling longwave irradiance",
+  "unit": "W/m2",
+  "inputs": [
+    "temperature",
+    "humidity",
+    "solar",
+    "diffuse",
+    "zenith",
+    "site_dra"
+  ],
+  "timing": "Contemporaneous daytime downwelling longwave from independently measured temperature/RH and solar/diffuse channels. Zenith<75deg, globalSW>20W/m2, required QC=0. Cloud proxy is clipped diffuse/global ratio; not net-radiation closure.",
+  "groups": "Whole site-day blocks; forward folds Jan21\u201331,July8\u201315,July16\u201324 trained on preceding dates. July25\u201331 both sites reserved. Two sites only and correlated days.",
+  "eligibility": "Deterministic native.py finite, timing and quality rules; no outcome-performance filtering.",
+  "primary_metric": "Arithmetic mean of within-group MAE in target units; original observations retained.",
+  "baselines": "Strong simple/persistence/domain baseline and constrained radial-basis flexible control under identical permitted inputs.",
+  "selection": "Minimum whole-group development MAE; within1% choose lower coefficient complexity, then lexicographic model identity. Baselines may win.",
+  "stopping": "At least5 distinct substantive attempts. Continue if distinct justified hypothesis remains and recent attempts improve development prediction, robustness or supported interpretation. Stop after2 consecutive substantive attempts without incumbent MAE/robustness/interpretation gain.",
+  "uncertainty": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "exposure": "First row of dra26190.dat (July9) inspected; this belongs to development. No reserved July25\u201331 target values printed. All public source-aware; confirmation after final freeze will become exposed.",
+  "source_manifest_sha256": "c37ea9e7b79a83cdc855aa77223ed33d05b3570c120aa4e1d685adca72e554b5",
+  "native_sha256": "2c84e7bd050f4c241da9ce3602e651ebfd3a935587a7dfd06386c399b7259d2f",
+  "final_prefit_contract_utc": "2026-10-01T15:29:06.076859+00:00"
+}

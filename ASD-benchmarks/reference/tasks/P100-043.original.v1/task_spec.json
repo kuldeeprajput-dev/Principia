@@ -1,0 +1,45 @@
+{
+  "target": "hot-run validation log-perplexity at20\u2013100B tokens",
+  "target_units": "nats per token",
+  "error_units": "nats per token",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "tokens_B",
+    "anchor_tokens_B",
+    "early_tokens_B",
+    "anchor_loss",
+    "early_loss",
+    "params_B",
+    "width",
+    "depth"
+  ],
+  "input_units": {
+    "tokens_B": "billions of training tokens",
+    "anchor_tokens_B": "billions of training tokens",
+    "early_tokens_B": "billions of training tokens",
+    "anchor_loss": "nats per token",
+    "early_loss": "nats per token",
+    "params_B": "billions of parameters",
+    "width": "embedding dimensions",
+    "depth": "layers"
+  },
+  "numeric_columns": [
+    "tokens_B",
+    "anchor_tokens_B",
+    "early_tokens_B",
+    "anchor_loss",
+    "early_loss",
+    "params_B",
+    "width",
+    "depth"
+  ],
+  "timing_contract": "Only checkpoints at or before10B/20B tokens may calibrate the20\u2013100B forecast",
+  "calibration": "Two same-architecture early validation checkpoints, exact native anchors in observations",
+  "independent_unit": "complete architecture",
+  "scope_limits": "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+  "source_url": "https://github.com/mcleish7/gemstone-scaling-laws",
+  "source_license": "MIT",
+  "exposure": "Public source-aware corpus; selection and stopping frozen before first internal confirmation. All current scores are now exposed; future evaluation is retrospective.",
+  "uncertainty_policy": "Report every independent group; do not infer new seeds/hardware/data populations or bootstrap dependent checkpoint/formulation rows.",
+  "nonnegative_prediction": true
+}

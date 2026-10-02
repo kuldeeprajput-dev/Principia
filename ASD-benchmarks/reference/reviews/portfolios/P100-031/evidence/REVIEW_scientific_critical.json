@@ -1,0 +1,146 @@
+{
+  "case_id": "P100-031",
+  "role": "scientific_critical",
+  "reviewer_id": "asd5_materials",
+  "reviewed_utc": "2026-10-02T03:08:58.773446+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "fa0d22187d12b5e71d863d4bd41a5617860d79f6e481eefb2e5bb7a02a7ecbfd"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "b80db176acd7a9f63ccdb50c8767c5a5e5ad6eaf95a944263f2973a1a686d490"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "249a9cc0a1b3242506de94ff1d643ec032103fff7727c0961a852c2fd669b8df"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "4cf6212e4b49994b4c7c9058af16802266c20d30626cbe1d2226e7b5e954e28e"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "5cfc428dbb72734738af9af59e71804133413d28172c3d6a12d764178e69fc34"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "faeb590d51d106f37747bceb0cb67ed55ded0a0fe79f43f9060b02ff2c263abe"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "68a891d361210de2198221309100b8583eb948e223e8eff8d9677cc4833ba3a2"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "2c658b19060f8850b6040a3532934992b803386eec0a3c3e32c6f4f39eed9777"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "b98ea2a260bc42e778965eea21e8e473a49e5ed7cc8485d975cf5b3b275b3198"
+    },
+    {
+      "path": "package/evidence/integrity_revision.json",
+      "sha256": "02798bf2e48200ff75415ea07cbe16dc4b6cc56efd05981be05a51a6cb1f221b"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-031-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The frozen startup-floor reference improves family-mean log-MAE to 0.234136 versus proportional scaling 0.424402 and flexible 1.033337 on five held circuit families. However, absolute runtime MAE is 5.1900 s versus 2.1163 s for proportional scaling. The admitted gain is relative-error prediction; it is not uniform superiority or time saved. The reduced five-parameter model has full local Jacobian rank after removing two unidentifiable startup floors."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "A startup floor plus growing computational work is a plausible effective timing decomposition, not a uniquely identified code operation or asymptotic complexity law. The Qiskit pilot is paid per-circuit calibration, and conditioning on successful matched compilations excludes failure-cost and routing-benefit claims."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful example of development-driven identifiability correction, fair calibrated runtime comparison, and metric-dependent benefits. Its strongest contribution is the compact, identifiable reference within this software and hardware setup."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native adapter, frozen equations, coefficients and compact evidence were inspected. Separate computational review performs numerical replay; scientific review is not experimental replication."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact."
+        }
+      },
+      "checks": [
+        "Case-specific endpoint semantics and prior-art review",
+        "Predictor timing and calibration budget review",
+        "Grouped-validation and exposure limits reviewed",
+        "Named-control comparisons and negative evidence reviewed",
+        "No inference of novelty from fit quality"
+      ],
+      "limitations": [
+        "Only device-transpilation successful matched tasks forTket/BQSKIT/Staq; no service remote latency. Missing/failed/timeouts excluded from conditional-success runtime target and retained in source audit; cannot infer success probability or realized routing speedup. Author timing environment differs in frequency/run state despite same CPU model.",
+        "Agent review is advisory, not independent experimental replication."
+      ],
+      "recommendations": [
+        "Confirm on new circuit families and hardware with explicit pilot costs and failure outcomes; declare whether relative error, absolute scheduling error or realized compute savings is the decision target before evaluation."
+      ]
+    },
+    {
+      "finding_id": "P100-031-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preserved negative or adequacy conclusion is supported within the stated task; it does not assert that the underlying phenomenon is absent. The frozen startup-floor reference improves family-mean log-MAE to 0.234136 versus proportional scaling 0.424402 and flexible 1.033337 on five held circuit families. However, absolute runtime MAE is 5.1900 s versus 2.1163 s for proportional scaling. The admitted gain is relative-error prediction; it is not uniform superiority or time saved. The reduced five-parameter model has full local Jacobian rank after removing two unidentifiable startup floors."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "A startup floor plus growing computational work is a plausible effective timing decomposition, not a uniquely identified code operation or asymptotic complexity law. The Qiskit pilot is paid per-circuit calibration, and conditioning on successful matched compilations excludes failure-cost and routing-benefit claims."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful example of development-driven identifiability correction, fair calibrated runtime comparison, and metric-dependent benefits. Its strongest contribution is the compact, identifiable reference within this software and hardware setup."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native adapter, frozen equations, coefficients and compact evidence were inspected. Separate computational review performs numerical replay; scientific review is not experimental replication."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact."
+        }
+      },
+      "checks": [
+        "Case-specific endpoint semantics and prior-art review",
+        "Predictor timing and calibration budget review",
+        "Grouped-validation and exposure limits reviewed",
+        "Named-control comparisons and negative evidence reviewed",
+        "No inference of novelty from fit quality"
+      ],
+      "limitations": [
+        "Only device-transpilation successful matched tasks forTket/BQSKIT/Staq; no service remote latency. Missing/failed/timeouts excluded from conditional-success runtime target and retained in source audit; cannot infer success probability or realized routing speedup. Author timing environment differs in frequency/run state despite same CPU model.",
+        "Agent review is advisory, not independent experimental replication."
+      ],
+      "recommendations": [
+        "Confirm on new circuit families and hardware with explicit pilot costs and failure outcomes; declare whether relative error, absolute scheduling error or realized compute savings is the decision target before evaluation."
+      ]
+    }
+  ],
+  "primary_sources_checked": [
+    "https://www.nature.com/articles/s43588-025-00792-y",
+    "https://github.com/Qiskit/benchpress"
+  ],
+  "literature_access_limits": [
+    "Bounded primary-source and methods review; exhaustive novelty search and human expert adjudication are not claimed."
+  ],
+  "blocking_defects": []
+}

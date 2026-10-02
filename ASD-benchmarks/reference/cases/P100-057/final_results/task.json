@@ -1,0 +1,122 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-057.original.v1",
+  "case_id": "P100-057",
+  "case_number": 57,
+  "family": "original",
+  "protocol_version": "P100-057-prepared-primary-v1",
+  "cohort_id": "P100-057.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-057.original.v1",
+  "legacy_package": "57_materials_syntactic_foam/final_results",
+  "source_scenario": "scenarios/57_materials_syntactic_foam",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Native dynamic viscosity",
+  "target_units": "cP",
+  "error_units": "cP",
+  "primary_units": "cP",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "formulation",
+    "T_C",
+    "shear_s"
+  ],
+  "input_units": {
+    "formulation": "source label; calibrated category",
+    "T_C": "degC",
+    "shear_s": "s^-1"
+  },
+  "numeric_columns": [
+    "T_C",
+    "shear_s"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Parse native numeric rows only; no smoothing, imputation or log-based target exclusion. All temperatures/rates in each Test ID stay together.",
+  "calibration": "T_K is absolute temperature in kelvin; eta is cP. The factor1000 carries kelvin, so9 is dimensionless and represents an effective activation scale9000K. Formulation amplitudes a_f range52.1603\u2013218.5126cP at333.15K; all ten exact values are in rules.json. A shear-rate input is allowed for competitors, but the selected thermal reference does not use it.",
+  "independent_unit": "whole Test ID; synthesis lots not identified",
+  "evaluation_groups": [
+    "11e93e47-3c0f-4052-89c4-11204ccbcf46",
+    "1c874754-9d40-4d87-a7c6-35e4feac4de4",
+    "2e85d1f2-81b0-4ab6-9b5f-928b7b4d13de",
+    "4b982a75-d5f0-4e73-84b2-693244317a5f",
+    "7dc69ac9-97b2-4f41-9472-f4e83d5eeee4",
+    "87eb319f-7a26-4de7-95a4-e2608bb1c2ea",
+    "9e61c83e-1a19-42f1-a5ee-3b98ef84348f",
+    "c2a6d2f9-2e8b-41e0-9f6f-8c8491c5c27c",
+    "cdd9f5b2-93c5-42c1-b1e1-493d532ea49b",
+    "e7f6c0cd-2e56-453d-b0b3-312f64de8b4e"
+  ],
+  "assigned_rows": 2500,
+  "eligible_rows": 2500,
+  "baseline_models": [
+    "reference",
+    "challenger",
+    "baseline_mean",
+    "baseline_rbf",
+    "baseline_residual_rbf"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "\\widehat{\\eta}_f=a_f\\exp[9(1000/T_K-1000/333.15)]",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "challenger": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the yield branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_mean": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the mean branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rbf": {
+      "equation": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_residual_rbf": {
+      "equation": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared conditions, sensor/system dependence or small numbers of reserved groups do not support precise population-level confidence. No row-bootstrap intervals."
+  },
+  "scope_limits": "Repeated tests of ten already calibrated formulations in one rheometer dataset; no independent synthesis-lot or unseen-loading transfer.",
+  "source_url": "https://zenodo.org/records/19699588",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All packaged targets are now exposed; future scoring is retrospective. One inspected file with first low-temperature responses was excluded from the reserved pool. Target-independent metadata hash chooses one complete test per formulation; no confirmation score was opened.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "695fae480c9f82f87de2e425afcf1bbf4f64076e2592517bd9b4c1b0de7ae886",
+  "observations_sha256": "6b6da184038ef297e4768c6f711ddc0c9c828e44319eb66cde4291e3bd65d9c9",
+  "legacy_protocol_sha256": "8085c544e477a36bf1ad534d79c223d8ca8a8c02a553d05a1d18cdb294f8b21d",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

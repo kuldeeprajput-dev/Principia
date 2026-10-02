@@ -1,0 +1,59 @@
+{
+  "case_id": "P100-016",
+  "target": "Next-month seasonally adjusted all-items CPI log change",
+  "target_units": "percentage points per month (100 natural log index ratio)",
+  "error_units": "percentage points",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "inflation1",
+    "inflation3",
+    "inflation12",
+    "housing1",
+    "medical1",
+    "jobs1",
+    "mfg1",
+    "info1"
+  ],
+  "numeric_columns": [
+    "inflation1",
+    "inflation3",
+    "inflation12",
+    "housing1",
+    "medical1",
+    "jobs1",
+    "mfg1",
+    "info1"
+  ],
+  "input_units": {
+    "inflation1": "percentage points per month (100 log ratio)",
+    "inflation3": "percentage points per month (100 log ratio)",
+    "inflation12": "percentage points per month (100 log ratio)",
+    "housing1": "percentage points per month (100 log ratio)",
+    "medical1": "percentage points per month (100 log ratio)",
+    "jobs1": "percentage points per month (100 log ratio)",
+    "mfg1": "percentage points per month (100 log ratio)",
+    "info1": "percentage points per month (100 log ratio)"
+  },
+  "source_url": "https://download.bls.gov/pub/time.series/",
+  "source_license": "U.S. Government public data",
+  "timing_contract": "Only calendar months through t-1 enter predictors for month t. This is a retrospectively revised and seasonally adjusted bulk snapshot, not an as-issued forecast archive. Calendar lags do not establish historical release availability; the nominal origin is after prior-month releases. No month-t prices/employment or CPI accounting decomposition enters inputs.",
+  "calibration": "All regression coefficients, centering/scales and flexible centers fit only preceding development blocks. No held-quarter target fitting.",
+  "independent_unit": "Whole calendar quarter; forward chronological development folds and2023-onward confirmation. One national economic system, overlapping lag windows and persistent macro shocks; quarters are not independent economies.",
+  "scope_limits": "1990\u20132026 US selected national seasonally adjusted series. Revised historical values and seasonal factors can incorporate later information. No causal Phillips-curve, policy intervention, operational financial-return or structural-inflation law claim.",
+  "exposure": {
+    "schema": "Native series IDs, date ranges, dictionary units and filenames inspected; no reserved numerical targets or metrics printed before freeze. Source public/source-aware.",
+    "current": "reserved_internal_only",
+    "fresh_for_future_users": false
+  },
+  "uncertainty_policy": "Quarter-group errors/ranges; no row bootstrap or independent-quarter population confidence. Confirmation will become exposed.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "applicability": {
+    "target_may_be_negative": true,
+    "known_series_only": true
+  }
+}

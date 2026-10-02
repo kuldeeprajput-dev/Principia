@@ -1,0 +1,160 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-068.original.v1",
+  "case_id": "P100-068",
+  "case_number": 68,
+  "family": "original",
+  "protocol_version": "P100-068-asd7-native-v1",
+  "cohort_id": "P100-068.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-068.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/68_physics_acoustic_levitation",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "raw LDV voltage5ms ahead",
+  "target_units": "V",
+  "error_units": "V",
+  "primary_units": "V",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "y0",
+    "y1",
+    "y2",
+    "y3",
+    "offset",
+    "t"
+  ],
+  "input_units": {
+    "y0": "V; currentrawminusinitialoffset",
+    "y1": "V;5mslagminusoffset",
+    "y2": "V;10mslagminusoffset",
+    "y3": "V;15mslagminusoffset",
+    "offset": "V; first20samplemean",
+    "t": "s; storedtimestamp"
+  },
+  "numeric_columns": [
+    "y0",
+    "y1",
+    "y2",
+    "y3",
+    "offset",
+    "t"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict raw voltage5ms ahead using up to15ms of causal delay samples and a fixed initial20sampleoffset. Issue every5ms after50ms; no future filtering.",
+  "calibration": "Initial20 raw samples only; no GHKSS/noise-reducedseries or future spectral estimate is used.",
+  "independent_unit": "Complete acquisitiontrace, with raw/denoised pair linked; sixmetadata-hashselectedtracesconfirm. Alltraces shareone levitator/object setup.",
+  "evaluation_groups": [
+    "data1142n",
+    "data1143n",
+    "data1144n",
+    "data1153n",
+    "data1168n",
+    "data1171n"
+  ],
+  "assigned_rows": 534,
+  "eligible_rows": 534,
+  "baseline_models": [
+    "reference",
+    "driven_harmonic",
+    "flexible",
+    "persistence",
+    "effective_harmonic",
+    "dc_invariant_harmonic",
+    "duffing_delay_closure",
+    "quadratic_drag_closure",
+    "parametric_drive_closure"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "driven_harmonic": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persistence": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "effective_harmonic": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "dc_invariant_harmonic": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "duffing_delay_closure": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "quadratic_drag_closure": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "parametric_drive_closure": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Complete-trace errors; no claim of independentobjectpopulationconfidence."
+  },
+  "scope_limits": "Primarysource conversion lists125/4 while suppliedMATLABcode uses500/4; nativevoltage is retained to avoid asserting an unsupportedvelocityscale.; Stored1/2kHz sample grids differs from article4kHz acquisition; the adapter preserves storedtiming.; The filename-to-excitation-amplitude mapping is not supplied. Cross-traceprediction is not proof of independentobject or arbitraryexcitationtransfer.; Polynomial coefficients in voltage-delay space are not mechanical force coefficients.",
+  "source_url": "https://zenodo.org/records/16033764",
+  "source_license": "cc-by-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Firstthree rawsamples of1142n were seen during schema audit, beforethe50mseligible issuance window. No reserved target values were inspected.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "8feeca9b6f807e1429006635751776a6d52c9362d27475f95fca954beb34e534",
+  "observations_sha256": "9d8861927a4572ba9adcf99be6ab3e13bf59ca607a2d9f90828d9cb6f6c4cc0f",
+  "legacy_protocol_sha256": "f6b52d0d19882baf9d3db3db03335e02a4bb4d71af6844332fb26a4ce6a7a429",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "y0",
+    "y1",
+    "y2",
+    "y3",
+    "offset"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

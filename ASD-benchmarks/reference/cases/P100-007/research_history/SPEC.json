@@ -1,0 +1,38 @@
+{
+  "case": 7,
+  "title": "Single-participant vertical-force anticipation",
+  "kind": "mae",
+  "target": "Plate1 vertical force,100ms ahead,10ms mean",
+  "unit": "N",
+  "inputs": [
+    "force",
+    "lag20",
+    "lag50",
+    "lag100",
+    "opposite",
+    "opposite50",
+    "cycle",
+    "cycle_previous",
+    "period",
+    "speed"
+  ],
+  "input_units": {
+    "force": "N",
+    "lag20": "N",
+    "lag50": "N",
+    "lag100": "N",
+    "opposite": "N",
+    "opposite50": "N",
+    "cycle": "N",
+    "cycle_previous": "N",
+    "period": "s",
+    "speed": "m/s"
+  },
+  "source_url": "https://physionet.org/content/multimodal-gait-dataset/1.0.0/",
+  "license": "CC BY4.0",
+  "paper": "https://doi.org/10.1186/s42490-026-00118-7",
+  "independent_unit": "Entire speed run within one participant; only two development runs and one faster reserved run",
+  "scope": "One participant, three treadmill speeds; no independent-person generalization. Force-platform channels are signed and the source timing columns are unusable.",
+  "timing": "Causal10ms block means sampled100Hz from source1000Hz sequence. At block end t, predict the10ms block ending t+100ms. Every feature uses blocks ending at or before t.",
+  "calibration": "No target calibration from held run; preceding five seconds of its force waveform supply causal period and history. Known treadmill speed is permitted."
+}

@@ -1,0 +1,455 @@
+{
+  "schema_version": "principia.advisory-review/3.0",
+  "bindings": {
+    "claims_sha256": "9720a255aaaeef490d44645cfa4b558fe95a703c9e1c60ba98b19f4b407a8455",
+    "evidence_sha256": {
+      "E001": "3fd3fa9c5114b208742e72d305a9ed5ad26ca7564315e7bde1656d72fc0f55d1",
+      "E002": "bd4a4cf1c98c7b1a2200bfe1fe90384f48d7081e3702feacae701af9fa224e2e",
+      "E003": "2f947b1e5423836d91f2d3aa17e4abcd83b48884a8115a3fa11633026dfe90cd",
+      "E004": "6ed0a192aea7874c459fbf704d15e54adb4e9b6f3ad5a58d2432ecdbd97304ea",
+      "E005": "6de5d6de44c86f79f67a4dc269f384f307610f9ed8ef4622cf4eb21dafc953f4",
+      "E006": "b33f5e900955dc3151efb41b5019592f254c7add7abbe653b775bd77de8ba75f",
+      "E007": "b94162888c8663c029a7f0fbd50d68c087c52b66cab892371c47a2daedcf4e40",
+      "E008": "b937a2aa72048f277b758ab6b28529c7ae1af41091fb52b5498f4e923d7144ee",
+      "E009": "7404b41b408b3db57b5b277b45e71a872813223b5825218e2bb928ae1586f77e",
+      "E010": "ecb05fa0b7aebc57013979146a69bbff321ee95adb154b889f4c83482b5c6485",
+      "E011": "1975f153f184fd11aefd09f7db9ea1bd95c764fcc90c7e6e8eb2d50c7c77b5c8",
+      "E012": "fab217731bedb87c5a155c7e6edaf44b5e82ad9ae1a296cd469aa37354b8aab8",
+      "E013": "43dfc1fa509edf955e1daf56962a3c5a2bab60467b842594e28ec6a7d260373b",
+      "E014": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253",
+      "E015": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078",
+      "SCIENTIFIC": "e8204b8c2573603e7d41ef6db0611e1bc60c122021a5b224b4e6ac7319c4b6f1",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-027",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "reviews": [
+    {
+      "finding_id": "P100-027-SCI-01",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-027-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-027-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Whole boiling runs; radial positions within one run are dependent; target is local void fraction conditional on supplied exit quality. Strong adverse evidence: Run 32 profile error 0.187872 exceeds drift-flux 0.051245; normalized source position does not identify tube radius or an area-conserving closure.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Spatial phase redistribution is physically plausible. Unverified coordinate geometry and supplied XOUT formation prevent a conserved radial closure or universal slip inference.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Homogeneous mixture, drift flux and radial redistribution are known; the admissible extension is local predictive calibration. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole boiling runs; radial positions within one run are dependent; target is local void fraction conditional on supplied exit quality.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Run 32 profile error 0.187872 exceeds drift-flux 0.051245; normalized source position does not identify tube radius or an area-conserving closure."
+        ],
+        "checks": [
+          "Preserve complete runs and evaluate Run 32 separately.",
+          "Check 0 \u2264 alpha \u2264 1 and pure/dilute asymptotes where a proposed closure claims them.",
+          "Do not score an area conservation identity without verified radial geometry/weights."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-027-SCI-02",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-027-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "not_assessed",
+            "rationale": "This exact historical claim does not map one-to-one to a registered numerical task. The portfolio-level replay review does not establish claim-specific implementation parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "not_assessed",
+            "rationale": "This exact historical claim does not map one-to-one to a registered numerical task. The portfolio-level replay review does not establish claim-specific implementation parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "not_assessed",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-027-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Whole boiling runs; radial positions within one run are dependent; target is local void fraction conditional on supplied exit quality. Strong adverse evidence: C 0=.87924253 lies below one and compensates with odds/spatial terms; source coordinate geometry remains unresolved. The later positive-slip revision loses; the joint model remains an empirical calibrated reference.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Spatial phase redistribution is physically plausible. Unverified coordinate geometry and supplied XOUT formation prevent a conserved radial closure or universal slip inference.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Homogeneous mixture, drift flux and radial redistribution are known; the admissible extension is local predictive calibration. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole boiling runs; radial positions within one run are dependent; target is local void fraction conditional on supplied exit quality.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E005",
+              "E006",
+              "E007"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "C 0=.87924253 lies below one and compensates with odds/spatial terms; source coordinate geometry remains unresolved. The later positive-slip revision loses; the joint model remains an empirical calibrated reference."
+        ],
+        "checks": [
+          "Preserve complete runs and evaluate Run 32 separately.",
+          "Check 0 \u2264 alpha \u2264 1 and pure/dilute asymptotes where a proposed closure claims them.",
+          "Do not score an area conservation identity without verified radial geometry/weights."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-027-SCI-03",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-027-SCI-03",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-027-SCI-03",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Whole boiling runs; radial positions within one run are dependent; target is local void fraction conditional on supplied exit quality. Strong adverse evidence: Earlier joint C 0=0.879 can compensate with spatial/intercept terms. Enforcing positive slip alone loses; parameters are not uniquely identified.",
+            "evidence_ids": [
+              "E008",
+              "E009",
+              "E010",
+              "E011"
+            ]
+          },
+          "mechanism": {
+            "status": "unsupported",
+            "rationale": "Spatial phase redistribution is physically plausible. Unverified coordinate geometry and supplied XOUT formation prevent a conserved radial closure or universal slip inference.",
+            "evidence_ids": [
+              "E008",
+              "E009",
+              "E010",
+              "E011"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Homogeneous mixture, drift flux and radial redistribution are known; the admissible extension is local predictive calibration. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E008",
+              "E009",
+              "E010",
+              "E011"
+            ]
+          },
+          "significance": {
+            "status": "supported",
+            "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole boiling runs; radial positions within one run are dependent; target is local void fraction conditional on supplied exit quality.",
+            "evidence_ids": [
+              "E008",
+              "E009",
+              "E010",
+              "E011"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E008",
+              "E009",
+              "E010",
+              "E011"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E008",
+              "E009",
+              "E010",
+              "E011"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Earlier joint C 0=0.879 can compensate with spatial/intercept terms. Enforcing positive slip alone loses; parameters are not uniquely identified."
+        ],
+        "checks": [
+          "Preserve complete runs and evaluate Run 32 separately.",
+          "Check 0 \u2264 alpha \u2264 1 and pure/dilute asymptotes where a proposed closure claims them.",
+          "Do not score an area conservation identity without verified radial geometry/weights."
+        ]
+      }
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "novelty_is_not_certified": true
+}

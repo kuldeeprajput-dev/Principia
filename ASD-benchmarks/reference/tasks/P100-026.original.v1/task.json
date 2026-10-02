@@ -1,0 +1,166 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-026.original.v1",
+  "case_id": "P100-026",
+  "case_number": 26,
+  "family": "original",
+  "protocol_version": "P100-026-asd6-native-v1",
+  "cohort_id": "P100-026.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-026.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/26_chemistry_ag_zeolite_catalysis",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Dimethoxymethane selectivity",
+  "target_units": "percentage points",
+  "error_units": "percentage points",
+  "primary_units": "percentage points",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "elapsed_min",
+    "anchor_selectivity_pct",
+    "prefix_slope_pct_min",
+    "ag_wt_pct"
+  ],
+  "input_units": {
+    "elapsed_min": "min",
+    "anchor_selectivity_pct": "percent",
+    "prefix_slope_pct_min": "percent/min",
+    "ag_wt_pct": "wt percent"
+  },
+  "numeric_columns": [
+    "elapsed_min",
+    "anchor_selectivity_pct",
+    "prefix_slope_pct_min",
+    "ag_wt_pct"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Six complete reactor runs were developed with leave-run-out validation; the 220\u00b0C-labelled and calcined-catalyst runs were reserved. All models receive the same fixed 300-minute calibration prefix. The long-term figure duplicated in the source is counted once. No instantaneous conversion or other selectivity enters the predictor.",
+  "calibration": "Last available DMM selectivity at t<=300min plus least-squares prefix slope on120<=t<=300; both recomputed independently per run. Score300<t<=1500.",
+  "independent_unit": "Complete reactor run. Diagnostic forecast after 300 min with fixed prefix calibration; no future conversion/selectivity predictors.",
+  "evaluation_groups": [
+    "FigureS13b_reaction_Ag20-Hbeta_T220",
+    "FigureS14a_reaction_Ag20-Hbeta-calc"
+  ],
+  "assigned_rows": 233,
+  "eligible_rows": 233,
+  "baseline_models": [
+    "reference",
+    "baseline_cat_hold",
+    "baseline_cat_linear",
+    "baseline_constant",
+    "baseline_flex26",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007",
+    "attempt_008"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "cat_relaxdrift; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_cat_hold": {
+      "equation": "cat_hold; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_cat_linear": {
+      "equation": "cat_linear; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_constant": {
+      "equation": "constant; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flex26": {
+      "equation": "flex26; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "cat_relax; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "cat_log; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "cat_loading; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "cat_twochannel; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "cat_shrink; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "cat_relaxdrift; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "cat_equilibrium; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_008": {
+      "equation": "cat_rational; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report individual top-level groups and their range; no row-bootstrap population inference."
+  },
+  "scope_limits": "Complete reactor run. Diagnostic forecast after 300 min with fixed prefix calibration; no future conversion/selectivity predictors.; A two-parameter, causal prefix-conditioned forecast improves persistence and straight-line continuation on two reserved reactor runs. It loses to the flexible control and several other frozen candidates, so evidence supports useful short-horizon calibration rather than a superior or universal kinetic law.; No independent population confidence interval from dependent rows.",
+  "source_url": "https://zenodo.org/records/15691695",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"historical\": \"Internal confirmation reserved until FREEZE.json; schema-stage exposures documented in SOURCE_AND_UNITS.md.\", \"current\": \"All confirmation outcomes exposed to future users.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "01fc8df778887e6ad28e6acad63d603bf323ba960fbadfab1ce7ba01123ca81d",
+  "observations_sha256": "d6486c77894cc59ed8438dda7061ed2ee853ece2fc96ecfae9e864b4d457790a",
+  "legacy_protocol_sha256": "d4e568bf996e5f2c25e2b8ae0df2630097552dbce6b875cc0d6cfc95e1c02b75",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

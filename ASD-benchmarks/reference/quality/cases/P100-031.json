@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-031",
+  "title": "Quantum circuit compilation benchmark experiments",
+  "default_task": "P100-031.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Author-benchmarked mean compilation wall time after matched Qiskit pilot",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 5,
+    "independent_unit_description": "Circuit family after stripping numeric size suffixes; compiler observations on each family stay linked. One local CPU family; no independent hardware transfer.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Whole circuit families held across allSDKs; exact same inputfilename matched. No held family candidate-runtime measurements enter fitting. Qiskit pilot is declared per-instance calibration.",
+  "baseline_strength": {
+    "registered_controls": 17,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Author-benchmarked mean compilation wall time after matched Qiskit pilot",
+    "prediction_time": "Must execute the complete Qiskit pilot first; its runtime and resulting circuit statistics are known only afterward. Candidate SDK timing is withheld. Pilot cost is not free. This is runtime diagnostics, not pre-compilation prediction or quantum-device performance.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Measured Qiskit pilot has cost; relative-log improvement reverses in absolute seconds."
+  },
+  "task_ids": [
+    "P100-031.original.v1"
+  ],
+  "finding_ids": [
+    "P100-031-F01",
+    "P100-031-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-031/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-031.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Author-benchmarked mean compilation wall time after matched Qiskit pilot under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Must execute the complete Qiskit pilot first; its runtime and resulting circuit statistics are known only afterward. Candidate SDK timing is withheld. Pilot cost is not free. This is runtime diagnostics, not pre-compilation prediction or quantum-device performance.",
+    "calibration_requirement": "Whole circuit families held across allSDKs; exact same inputfilename matched. No held family candidate-runtime measurements enter fitting. Qiskit pilot is declared per-instance calibration.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Author-benchmarked mean compilation wall time after matched Qiskit pilot in seconds",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Measured Qiskit pilot has cost; relative-log improvement reverses in absolute seconds."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "log_mae",
+    "primary_units": "absolute natural-log time ratio",
+    "reference_model": "reference",
+    "reference_primary_error": 0.23413627204675996,
+    "reference_physical_mae": 5.190011689131504,
+    "physical_error_units": "absolute natural-log time ratio",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.23413627204675996,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-031.original.v1/evidence/metrics.csv",
+      "bytes": 1944,
+      "sha256": "2c658b19060f8850b6040a3532934992b803386eec0a3c3e32c6f4f39eed9777"
+    },
+    "models": 17
+  },
+  "case_specific_next_evidence": "Measured Qiskit pilot has cost; relative-log improvement reverses in absolute seconds."
+}

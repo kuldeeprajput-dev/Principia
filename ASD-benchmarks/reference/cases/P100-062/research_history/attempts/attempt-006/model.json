@@ -1,0 +1,51 @@
+{
+  "name": "occupancy_dependent_transport",
+  "formula": "offset+(a0+a1*high)*(1-exp(-t/(tau*exp(k*high))))",
+  "hypothesis": "Development evidence available before this fit: surface_saturation: MAE 5.06106, worst group 11.946; trapping_two_timescales: MAE 7.04349, worst group 15.7037.\n\nTest whether trap occupancy/current condition requires a different effective timescale, while allowing separate measured-condition amplitudes. Improved forward prediction would support an effective condition-dependent surrogate, not a unique lattice diffusivity.",
+  "inputs": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "recorded_utc": "2026-10-02T01:59:56.458513+00:00",
+  "parent": "attempt-005",
+  "parameters": {
+    "a0": 15.90924022369076,
+    "a1": 39.585012986450735,
+    "tau": 3894.375290686566,
+    "k": -0.4829059662134949
+  },
+  "training_groups": [
+    "trace-0-block-0",
+    "trace-0-block-1",
+    "trace-0-block-2",
+    "trace-0-block-3",
+    "trace-1-block-0",
+    "trace-1-block-1",
+    "trace-1-block-2",
+    "trace-1-block-3"
+  ],
+  "training_rows": 1483,
+  "optimizer_success": true,
+  "nfev": 9,
+  "jacobian_condition": 33820.9858175332,
+  "bounds": {
+    "a0": [
+      -500,
+      500
+    ],
+    "a1": [
+      -1000,
+      1000
+    ],
+    "tau": [
+      10,
+      1000000.0
+    ],
+    "k": [
+      -4,
+      4
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "case_id": "P100-043",
+  "role": "computational",
+  "reviewer_id": "/root/asd5_electronics",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "76598fa89ee9b623318208978812b890efe014c53985c11df9913152cf5357a2"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "ba6b168a8fba12c4f1ac23bfa228fd093eb6cd707b2387a1290c1d0bffcfade5"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "0ef86ccd18465d15298f277297da8a2c04c6391c92b4e4e671b62f8e4a1b6f76"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "57a218ac1c118d7159e1bf21a4596952508f7b19fa8fdf26580aa482f42e16fd"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "6b03fc4f3a516e4bdbe17edaeb524dcd946715524cb027a40eaf1508149c4f0c"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "ced3a5704b6372b53c80001b49ad58ed2e5440e07a11c4f6faf0b1e099d756ee"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "7a5f67c0fbaac65ccfcd4786ab28fc8cee02993b43c64f9234888142691e4fe1"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "b992efa83de8e9eeb5ea5910c0bb430ab6eb41af885b7c9fda4fcc9e8ab61da6"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "9aa0dd1fceb69592f914f80aeeba1d49fc154dbbe0177cdf2f302bbe689bc8cb"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "308891c8cae04dbcc9105bfb4242c3dbe795eb016b60228acee73a8d11d5a033"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "765c057c46cef5859f960b1544ff6731ddd399ec338b281122b25079beab0832"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "3fae8269fd03307db290c4c82d35dff7b8f00c60d6700b69a7ebfcd182455076"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "da0c6c049ae3b6399edef2735279e27ce47878ef4c1bc6fbe8d6ad92b236cc60"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "4dbdc9d8078265f5d6a1be9ec4e7b5d5e36b0c2e419564ad43a0a7ac56acce25"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "62e7ca9f284cec9bca1587c9298de9320e8381f8c4bd4fbb58f0315bcf98ce0b"
+    },
+    {
+      "path": "develop.py",
+      "sha256": "c50db2be5348a97b69167dcd9b9a1ea175bf7620577002d259a1e657f1fd376c"
+    },
+    {
+      "path": "attempts/attempt-002/model.json",
+      "sha256": "535868fe576d12d692c14fcb76ad7410df8035e3bbc8d34001a2d620c8e01eb0"
+    },
+    {
+      "path": "package/evidence/scientific_checks.json",
+      "sha256": "c12cddbb09fa3e1e6aebe4c036408a3adeca2eb219096fd7bdddae080ca06b3c"
+    }
+  ],
+  "checks": {
+    "native_rows": 962,
+    "confirmation_rows": 221,
+    "models_replayed": 12,
+    "max_prediction_difference": 0,
+    "max_primary_metric_difference": 8.673617379884035e-17,
+    "group_split_disjoint": true,
+    "undeclared_target_column_ignored": true,
+    "anchor_availability_checked": true,
+    "all_architectures": 22,
+    "confirmation_architectures": 5,
+    "two_rate_weighted_jacobian_condition": 1564.3671858347325,
+    "two_rate_slow_exponent_at_upper_bound": true
+  },
+  "overall_limitations": [
+    "Computational review is not independent experimental replication.",
+    "Public-source-aware outcomes are exposed; no scientific novelty certification."
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-043-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native reconstruction, declared calibration/grouping and independent MAE reproduction agree; scope remains the fixed source experiment."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Executed all12 frozen predictors; independently recomputed equal-group physical-unit MAE. Maximum metric discrepancy8.67e-17."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        }
+      },
+      "checks": [
+        "Source hashes verified by native reader",
+        "Exact held observation identities and targets reconstructed",
+        "All model predictions and primary metrics independently recomputed",
+        "Declared-input-only replay invariant to an extra target column",
+        "Both calibration checkpoints precede every predicted checkpoint"
+      ],
+      "limitations": [
+        "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+        "Evidence supports a scoped numerical/reference claim, not universal physical/complexity law."
+      ]
+    },
+    {
+      "finding_id": "P100-043-F02",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Independent finite-difference weighted Jacobian condition1564.367 and slow-rate upper-bound contact reproduce weak-identification evidence. These diagnostics support caution, not a formal proof of structural nonidentifiability."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Executed all12 frozen predictors; independently recomputed equal-group physical-unit MAE. Maximum metric discrepancy8.67e-17."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        }
+      },
+      "checks": [
+        "Source hashes verified by native reader",
+        "Exact held observation identities and targets reconstructed",
+        "All model predictions and primary metrics independently recomputed",
+        "Declared-input-only replay invariant to an extra target column",
+        "Both calibration checkpoints precede every predicted checkpoint"
+      ],
+      "limitations": [
+        "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+        "Evidence supports a scoped numerical/reference claim, not universal physical/complexity law.",
+        "Boundary-constrained fit and Jacobian condition alone do not prove that all possible two-rate mechanisms are unidentifiable."
+      ]
+    },
+    {
+      "finding_id": "P100-043-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native reconstruction, declared calibration/grouping and independent MAE reproduction agree; scope remains the fixed source experiment."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Executed all12 frozen predictors; independently recomputed equal-group physical-unit MAE. Maximum metric discrepancy8.67e-17."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        }
+      },
+      "checks": [
+        "Source hashes verified by native reader",
+        "Exact held observation identities and targets reconstructed",
+        "All model predictions and primary metrics independently recomputed",
+        "Declared-input-only replay invariant to an extra target column",
+        "Both calibration checkpoints precede every predicted checkpoint"
+      ],
+      "limitations": [
+        "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+        "Evidence supports a scoped numerical/reference claim, not universal physical/complexity law."
+      ]
+    }
+  ]
+}

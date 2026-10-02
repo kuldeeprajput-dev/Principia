@@ -1,0 +1,291 @@
+{
+  "case_id": "P100-065",
+  "schema_version": "asd6.portable/1.0",
+  "input_columns": [
+    "frequency_Hz",
+    "injection_dB"
+  ],
+  "numeric_columns": [
+    "frequency_Hz",
+    "injection_dB"
+  ],
+  "input_units": {
+    "frequency_Hz": "Hz",
+    "injection_dB": "dB"
+  },
+  "target": "Log frequency-noise spectral density",
+  "target_units": "dB re 1 Hz^2/Hz",
+  "error_units": "dB re 1 Hz^2/Hz",
+  "metric_kind": "mae",
+  "aggregation": "Equal top-level group weight; equal rows within group. Dependent spectral bins are not independent replication.",
+  "reference_attempt": "attempt-004",
+  "models": {
+    "reference": {
+      "kind": "laser_sharedfloor",
+      "parameters": [
+        -2.9442799964946778,
+        -0.8767756880837426,
+        2.01791065238978,
+        -1.035894762490316
+      ],
+      "training_groups": [
+        "ratio-15",
+        "ratio-30"
+      ],
+      "training_rows": 802,
+      "optimizer_success": true,
+      "nfev": 7,
+      "jacobian_condition": 5.0702303724233015,
+      "bounds": [
+        [
+          -12,
+          -12,
+          0.1,
+          -12
+        ],
+        [
+          6,
+          10,
+          6,
+          6
+        ]
+      ],
+      "training_residual_rms": 0.285978756715202,
+      "display_name": "Shared white floor plus feedback",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 4
+    },
+    "baseline_constant": {
+      "kind": "constant",
+      "parameters": [
+        4.394775049278102
+      ],
+      "training_groups": [
+        "ratio-15",
+        "ratio-30"
+      ],
+      "training_rows": 802,
+      "display_name": "Constant response",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 1
+    },
+    "baseline_flex65": {
+      "kind": "flex65",
+      "parameters": [
+        -2.203328140009325,
+        -8.120402279530323,
+        4.077364434263985,
+        -0.27102127120432296,
+        -3.2608399755590636,
+        -1.6113407600961211,
+        -0.9529182623777043
+      ],
+      "training_groups": [
+        "ratio-15",
+        "ratio-30"
+      ],
+      "training_rows": 802,
+      "display_name": "Cubic spectral surface",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 7
+    },
+    "baseline_laser_domain": {
+      "kind": "laser_domain",
+      "parameters": [
+        -2.7043334339961924,
+        -0.8374813958077005
+      ],
+      "training_groups": [
+        "ratio-15",
+        "ratio-30"
+      ],
+      "training_rows": 802,
+      "optimizer_success": true,
+      "nfev": 6,
+      "jacobian_condition": 1.1773533748614007,
+      "bounds": [
+        [
+          -12,
+          -12
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "training_residual_rms": 0.3218127329845507,
+      "display_name": "Inverse-feedback floor plus f^-2 noise",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 2
+    },
+    "attempt_001": {
+      "kind": "laser_colored",
+      "parameters": [
+        -2.7215620946458583,
+        -0.7062912884575303,
+        1.8886674994493196
+      ],
+      "training_groups": [
+        "ratio-15",
+        "ratio-30"
+      ],
+      "training_rows": 802,
+      "optimizer_success": true,
+      "nfev": 9,
+      "jacobian_condition": 4.190100669419162,
+      "bounds": [
+        [
+          -12,
+          -12,
+          0.1
+        ],
+        [
+          6,
+          10,
+          6
+        ]
+      ],
+      "training_residual_rms": 0.32048632311756936,
+      "display_name": "Free colored-noise exponent",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 3
+    },
+    "attempt_002": {
+      "kind": "laser_feedback",
+      "parameters": [
+        -1.8749893079811457,
+        -0.87677565321129,
+        2.017910627471603,
+        0.6548425094408398
+      ],
+      "training_groups": [
+        "ratio-15",
+        "ratio-30"
+      ],
+      "training_rows": 802,
+      "optimizer_success": true,
+      "nfev": 9,
+      "jacobian_condition": 10.122592024479067,
+      "bounds": [
+        [
+          -12,
+          -12,
+          0.1,
+          0
+        ],
+        [
+          6,
+          10,
+          6,
+          4
+        ]
+      ],
+      "training_residual_rms": 0.2859787567152329,
+      "display_name": "Free feedback exponent",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 4
+    },
+    "attempt_003": {
+      "kind": "laser_rolloff",
+      "parameters": [
+        -2.777823780840579,
+        -0.6590591771300618,
+        1.8543867571684882,
+        91.6491147359763
+      ],
+      "training_groups": [
+        "ratio-15",
+        "ratio-30"
+      ],
+      "training_rows": 802,
+      "optimizer_success": true,
+      "nfev": 10,
+      "jacobian_condition": 1106.6693042131155,
+      "bounds": [
+        [
+          -12,
+          -12,
+          0.1,
+          0.01
+        ],
+        [
+          6,
+          10,
+          6,
+          100000.0
+        ]
+      ],
+      "training_residual_rms": 0.31767112456342395,
+      "display_name": "Finite-bandwidth feedback floor",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 4
+    },
+    "attempt_004": {
+      "kind": "laser_sharedfloor",
+      "parameters": [
+        -2.9442799964946778,
+        -0.8767756880837426,
+        2.01791065238978,
+        -1.035894762490316
+      ],
+      "training_groups": [
+        "ratio-15",
+        "ratio-30"
+      ],
+      "training_rows": 802,
+      "optimizer_success": true,
+      "nfev": 7,
+      "jacobian_condition": 5.0702303724233015,
+      "bounds": [
+        [
+          -12,
+          -12,
+          0.1,
+          -12
+        ],
+        [
+          6,
+          10,
+          6,
+          6
+        ]
+      ],
+      "training_residual_rms": 0.285978756715202,
+      "display_name": "Shared white floor plus feedback",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 4
+    },
+    "attempt_005": {
+      "kind": "laser_twoflicker",
+      "parameters": [
+        -2.808337720843493,
+        -0.9331843730746637,
+        -0.619973833908612
+      ],
+      "training_groups": [
+        "ratio-15",
+        "ratio-30"
+      ],
+      "training_rows": 802,
+      "optimizer_success": true,
+      "nfev": 11,
+      "jacobian_condition": 3.0077283373934627,
+      "bounds": [
+        [
+          -12,
+          -12,
+          -12
+        ],
+        [
+          6,
+          10,
+          10
+        ]
+      ],
+      "training_residual_rms": 0.30636691734791205,
+      "display_name": "Two fixed colored-noise components",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 3
+    }
+  }
+}

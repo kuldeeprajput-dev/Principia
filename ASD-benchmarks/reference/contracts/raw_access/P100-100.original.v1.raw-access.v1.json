@@ -1,0 +1,61 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-100.original.v1.raw-access.v1",
+  "parent_task_id": "P100-100.original.v1",
+  "case_id": "P100-100",
+  "protocol_version": "P100-100.original.v1.raw-access.v1",
+  "cohort_id": "P100-100.original.v1.cohort-1",
+  "parent_task_sha256": "690aab32555b851652b973910e587e4566e768d3128ddafb4c196cad0a3b706f",
+  "input_sha256": "0d7d828a907f376b39f205e6a2f2dd611561487472e16533be6c18e886d287a2",
+  "observations_sha256": "861c464b118e9ccfc58abc47120783c2bac6aa37c00f03854edd0c5d1021c6f4",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "100_communications_6g_mobkpi",
+  "source_assets": [
+    {
+      "path": "raw/6G-MOBKPI_dataset.zip",
+      "bytes": 491220,
+      "sha256": "36b060bcc62aee4e0673955228a36a3161ef32ff8ea91a0d86a4ee780a56a3eb"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "route": "calibrated route label",
+      "payload_B": "B",
+      "last_rtt": "ms,previous completion",
+      "mean5_rtt": "ms,previous5 completions",
+      "mean3_rtt": "ms,previous3 completions",
+      "trend_rtt": "ms,previous RTT difference",
+      "RSRP": "dBm,asof previouscompletion",
+      "RSRQ": "dB,asof previouscompletion"
+    },
+    "observation_window": "Predict next probe RTT using only five previous completed RTTs and radio asof previous completion, <=0.5s old. No current response-completion timestamp, ICMPseq, cumulative average/loss, future gap, throughput or same-probe radio in inputs. Successful response conditional target; missing lost responses retained when inputs eligible.",
+    "calibration_and_history": "r_n and r_(n\u22121) are completed previous RTTs in milliseconds; rbar5 averages the last five completed probes. c_q in ms is\u22120.002897 for indoor random,\u22120.069945 for indoor rectangle and\u22120.049676 for outdoor rectangle. The55ms breakpoint was selected using nested development groups. Payload and causal radio measurements are available to comparators, but the selected equation uses history and the calibrated route offset only. It predicts a conditional successful next response, not a missing lost-packet RTT.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Only 3 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

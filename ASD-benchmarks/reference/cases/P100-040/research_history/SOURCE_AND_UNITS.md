@@ -1,0 +1,5 @@
+# TLC completed-trip duration
+
+Native monthly Parquets read with pyarrow. Duration is dropoff-minus-pickup minutes. Recorded trip_distance miles converts exactly1.609344km/mile. This distance is available only after completion; never label this model a pickup ETA. Both endpoints mapped using official source taxi_zone_lookup. Fare/payment/cost variables forbidden. Whole calendar days partition chronologically; rows spanning a source-month inconsistency are excluded. Routine-duration eligibility0<duration<=1440min and0<distance<=1000km is fixed before fitting, not an outcome quantile trim. Native values are preserved and exact row anchors recorded.
+
+TLC explicitly states provider-supplied trip records are not created by TLC and accuracy is not guaranteed. Large valid-tail residuals must remain in scores. Maximal route distance and mean travel speed cannot identify traffic physics without actual trajectory, signal timing or weather. Post-trip calibration is a diagnostic information budget.

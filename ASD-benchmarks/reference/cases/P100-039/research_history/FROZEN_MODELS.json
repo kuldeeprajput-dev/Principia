@@ -1,0 +1,651 @@
+{
+  "reference": {
+    "case": 39,
+    "type": "linear",
+    "features": [
+      "one",
+      "japan",
+      "school",
+      "experience",
+      "exp_sq"
+    ],
+    "link": "logit",
+    "equation": "p=logistic(a+bJ*Japan+bS*(education-12)+bX*experience+bXX*experience\u00b2)",
+    "training_groups": [
+      "Japan:respondentblock2",
+      "Japan:respondentblock3",
+      "Japan:respondentblock4",
+      "Japan:respondentblock5",
+      "Japan:respondentblock6",
+      "Japan:respondentblock7",
+      "Japan:respondentblock8",
+      "Japan:respondentblock9",
+      "USA:respondentblock2",
+      "USA:respondentblock3",
+      "USA:respondentblock4",
+      "USA:respondentblock5",
+      "USA:respondentblock6",
+      "USA:respondentblock7",
+      "USA:respondentblock8",
+      "USA:respondentblock9"
+    ],
+    "training_rows": 4236,
+    "training_ids_sha256": "04f8bd1440f9be4fab45dd0655a8d57f86b463d794d8d5e285384b69384f7195",
+    "coef": [
+      -3.1358399163295814,
+      0.11186246189215215,
+      0.370679096774003,
+      1.2373931631741675,
+      -0.19547907390628247
+    ],
+    "complexity": 5,
+    "rank": 5,
+    "condition_number": 26.2568403335571
+  },
+  "constant": {
+    "case": 39,
+    "type": "linear",
+    "features": [
+      "one",
+      "japan"
+    ],
+    "link": "logit",
+    "equation": "p=logistic(a+b*Japan)",
+    "training_groups": [
+      "Japan:respondentblock2",
+      "Japan:respondentblock3",
+      "Japan:respondentblock4",
+      "Japan:respondentblock5",
+      "Japan:respondentblock6",
+      "Japan:respondentblock7",
+      "Japan:respondentblock8",
+      "Japan:respondentblock9",
+      "USA:respondentblock2",
+      "USA:respondentblock3",
+      "USA:respondentblock4",
+      "USA:respondentblock5",
+      "USA:respondentblock6",
+      "USA:respondentblock7",
+      "USA:respondentblock8",
+      "USA:respondentblock9"
+    ],
+    "training_rows": 4236,
+    "training_ids_sha256": "04f8bd1440f9be4fab45dd0655a8d57f86b463d794d8d5e285384b69384f7195",
+    "coef": [
+      -0.5772932108245773,
+      -0.15964675724326974
+    ],
+    "complexity": 2,
+    "rank": 2,
+    "condition_number": 3.0755278323635853
+  },
+  "domain": {
+    "case": 39,
+    "type": "linear",
+    "features": [
+      "one",
+      "japan",
+      "school",
+      "experience",
+      "exp_sq"
+    ],
+    "link": "logit",
+    "equation": "p=logistic(a+bJ*Japan+bS*(education-12)+bX*experience+bXX*experience\u00b2)",
+    "training_groups": [
+      "Japan:respondentblock2",
+      "Japan:respondentblock3",
+      "Japan:respondentblock4",
+      "Japan:respondentblock5",
+      "Japan:respondentblock6",
+      "Japan:respondentblock7",
+      "Japan:respondentblock8",
+      "Japan:respondentblock9",
+      "USA:respondentblock2",
+      "USA:respondentblock3",
+      "USA:respondentblock4",
+      "USA:respondentblock5",
+      "USA:respondentblock6",
+      "USA:respondentblock7",
+      "USA:respondentblock8",
+      "USA:respondentblock9"
+    ],
+    "training_rows": 4236,
+    "training_ids_sha256": "04f8bd1440f9be4fab45dd0655a8d57f86b463d794d8d5e285384b69384f7195",
+    "coef": [
+      -3.1358399163295814,
+      0.11186246189215215,
+      0.370679096774003,
+      1.2373931631741675,
+      -0.19547907390628247
+    ],
+    "complexity": 5,
+    "rank": 5,
+    "condition_number": 26.2568403335571
+  },
+  "flexible": {
+    "case": 39,
+    "type": "linear",
+    "features": [],
+    "link": "logit",
+    "alpha": 0.002,
+    "equation": "32-center matched-input smooth comparator",
+    "training_groups": [
+      "Japan:respondentblock2",
+      "Japan:respondentblock3",
+      "Japan:respondentblock4",
+      "Japan:respondentblock5",
+      "Japan:respondentblock6",
+      "Japan:respondentblock7",
+      "Japan:respondentblock8",
+      "Japan:respondentblock9",
+      "USA:respondentblock2",
+      "USA:respondentblock3",
+      "USA:respondentblock4",
+      "USA:respondentblock5",
+      "USA:respondentblock6",
+      "USA:respondentblock7",
+      "USA:respondentblock8",
+      "USA:respondentblock9"
+    ],
+    "training_rows": 4236,
+    "training_ids_sha256": "04f8bd1440f9be4fab45dd0655a8d57f86b463d794d8d5e285384b69384f7195",
+    "rbf": {
+      "columns": [
+        "education",
+        "age",
+        "japan"
+      ],
+      "mean": [
+        13.947956733524004,
+        43.78527154111302,
+        0.49999999999999795
+      ],
+      "std": [
+        2.743527258672329,
+        11.24356966958078,
+        0.5
+      ],
+      "centers": [
+        [
+          0.01896947307940415,
+          -0.1587815608011956,
+          -0.9999999999999959
+        ],
+        [
+          -5.083950483609853,
+          1.6644828118528274,
+          -0.9999999999999959
+        ],
+        [
+          2.570429451424033,
+          1.6644828118528274,
+          1.000000000000004
+        ],
+        [
+          -1.8035019400239023,
+          1.6644828118528274,
+          1.000000000000004
+        ],
+        [
+          -2.896984787885886,
+          -1.4928774432309686,
+          -0.9999999999999959
+        ],
+        [
+          2.570429451424033,
+          -1.4928774432309686,
+          -0.9999999999999959
+        ],
+        [
+          -0.7100190921619184,
+          -1.4928774432309686,
+          1.000000000000004
+        ],
+        [
+          1.4769466035620493,
+          -0.6034801882777866,
+          1.000000000000004
+        ],
+        [
+          1.4769466035620493,
+          1.6644828118528274,
+          -0.9999999999999959
+        ],
+        [
+          -5.083950483609853,
+          -0.6034801882777866,
+          -0.9999999999999959
+        ],
+        [
+          -2.896984787885886,
+          0.7306156941519864,
+          -0.9999999999999959
+        ],
+        [
+          0.01896947307940415,
+          0.7306156941519864,
+          1.000000000000004
+        ],
+        [
+          -0.7100190921619184,
+          1.6644828118528274,
+          -0.9999999999999959
+        ],
+        [
+          2.570429451424033,
+          0.2859170666753954,
+          -0.9999999999999959
+        ],
+        [
+          -1.8035019400239023,
+          -0.1587815608011956,
+          1.000000000000004
+        ],
+        [
+          -0.7100190921619184,
+          -1.4928774432309686,
+          -0.9999999999999959
+        ],
+        [
+          0.7479580383207267,
+          -1.4928774432309686,
+          -0.9999999999999959
+        ],
+        [
+          -1.8035019400239023,
+          -0.6034801882777866,
+          -0.9999999999999959
+        ],
+        [
+          2.570429451424033,
+          0.2859170666753954,
+          1.000000000000004
+        ],
+        [
+          1.4769466035620493,
+          1.1753143216285773,
+          1.000000000000004
+        ],
+        [
+          1.4769466035620493,
+          -0.1587815608011956,
+          -0.9999999999999959
+        ],
+        [
+          -1.8035019400239023,
+          1.1753143216285773,
+          -0.9999999999999959
+        ],
+        [
+          2.570429451424033,
+          -1.0481788157543774,
+          1.000000000000004
+        ],
+        [
+          0.7479580383207267,
+          -1.4928774432309686,
+          1.000000000000004
+        ],
+        [
+          0.7479580383207267,
+          0.7306156941519864,
+          -0.9999999999999959
+        ],
+        [
+          0.01896947307940415,
+          -0.6034801882777866,
+          1.000000000000004
+        ],
+        [
+          -0.7100190921619184,
+          1.6644828118528274,
+          1.000000000000004
+        ],
+        [
+          -1.8035019400239023,
+          -1.4928774432309686,
+          1.000000000000004
+        ],
+        [
+          2.570429451424033,
+          1.6644828118528274,
+          -0.9999999999999959
+        ],
+        [
+          -0.34552480954125714,
+          0.7306156941519864,
+          -0.9999999999999959
+        ],
+        [
+          -2.896984787885886,
+          1.6644828118528274,
+          -0.9999999999999959
+        ],
+        [
+          -5.083950483609853,
+          0.7306156941519864,
+          -0.9999999999999959
+        ]
+      ],
+      "width": 2.0
+    },
+    "coef": [
+      -0.3085833050939037,
+      0.05486964805040074,
+      1.0762464256044157,
+      0.38200749579117627,
+      -0.3304708393056464,
+      -0.948051162654407,
+      0.18727854489480428,
+      -0.3489392473724878,
+      0.1028255407203079,
+      0.026236970155723845,
+      -0.8675158657704963,
+      -0.12629752728382898,
+      0.15494735464698797,
+      -0.31682627679345254,
+      0.6943989360741972,
+      0.23795458183627288,
+      -0.5083202408738298,
+      -0.2841284541659288,
+      -0.21001152584230265,
+      0.6886190599955591,
+      0.23959852303281082,
+      0.29878733346112424,
+      -0.2187469597090829,
+      -0.09045215271653845,
+      -0.4563640923113146,
+      0.16105399080146077,
+      0.05394866430845476,
+      -0.24551159927217753,
+      -0.25549460739194646,
+      0.36909593584952166,
+      0.019033254969921618,
+      -0.6253637259577858,
+      0.4756261413348598
+    ],
+    "complexity": 33,
+    "rank": 33,
+    "condition_number": 21945.849713493797
+  },
+  "attempt_001": {
+    "features": [
+      "one",
+      "japan",
+      "school",
+      "experience",
+      "exp_sq",
+      "jp_school",
+      "jp_exp",
+      "jp_exp_sq"
+    ],
+    "link": "logit",
+    "equation": "p_upper=logistic(country-specific schooling and coarse experience quadratic)",
+    "case": 39,
+    "type": "linear",
+    "training_groups": [
+      "Japan:respondentblock2",
+      "Japan:respondentblock3",
+      "Japan:respondentblock4",
+      "Japan:respondentblock5",
+      "Japan:respondentblock6",
+      "Japan:respondentblock7",
+      "Japan:respondentblock8",
+      "Japan:respondentblock9",
+      "USA:respondentblock2",
+      "USA:respondentblock3",
+      "USA:respondentblock4",
+      "USA:respondentblock5",
+      "USA:respondentblock6",
+      "USA:respondentblock7",
+      "USA:respondentblock8",
+      "USA:respondentblock9"
+    ],
+    "training_rows": 4236,
+    "training_ids_sha256": "04f8bd1440f9be4fab45dd0655a8d57f86b463d794d8d5e285384b69384f7195",
+    "coef": [
+      -2.789219784029171,
+      -0.8280236333770173,
+      0.4119032942206685,
+      0.7207197159216301,
+      -0.09009897367365413,
+      -0.08088837974356831,
+      1.13921498833266,
+      -0.2244019824270432
+    ],
+    "complexity": 8,
+    "rank": 8,
+    "condition_number": 70.32606061693768
+  },
+  "attempt_002": {
+    "features": [
+      "one",
+      "japan",
+      "school",
+      "degree",
+      "experience",
+      "exp_sq"
+    ],
+    "link": "logit",
+    "equation": "p_upper=logistic(a+bJ*Japan+bS*(edu-12)+bD*max(edu-12,0)+bX*X+bXX*X\u00b2)",
+    "case": 39,
+    "type": "linear",
+    "training_groups": [
+      "Japan:respondentblock2",
+      "Japan:respondentblock3",
+      "Japan:respondentblock4",
+      "Japan:respondentblock5",
+      "Japan:respondentblock6",
+      "Japan:respondentblock7",
+      "Japan:respondentblock8",
+      "Japan:respondentblock9",
+      "USA:respondentblock2",
+      "USA:respondentblock3",
+      "USA:respondentblock4",
+      "USA:respondentblock5",
+      "USA:respondentblock6",
+      "USA:respondentblock7",
+      "USA:respondentblock8",
+      "USA:respondentblock9"
+    ],
+    "training_rows": 4236,
+    "training_ids_sha256": "04f8bd1440f9be4fab45dd0655a8d57f86b463d794d8d5e285384b69384f7195",
+    "coef": [
+      -3.1778579765053134,
+      0.107588162649703,
+      0.044677639022966086,
+      0.33874611624580897,
+      1.2282078767154878,
+      -0.19260506504061395
+    ],
+    "complexity": 6,
+    "rank": 6,
+    "condition_number": 28.125317357507956
+  },
+  "attempt_003": {
+    "features": [
+      "one",
+      "japan",
+      "school",
+      "degree",
+      "experience",
+      "exp_sq",
+      "school_exp"
+    ],
+    "link": "logit",
+    "equation": "p_upper=logistic(credential002+bSX*school*experience)",
+    "case": 39,
+    "type": "linear",
+    "training_groups": [
+      "Japan:respondentblock2",
+      "Japan:respondentblock3",
+      "Japan:respondentblock4",
+      "Japan:respondentblock5",
+      "Japan:respondentblock6",
+      "Japan:respondentblock7",
+      "Japan:respondentblock8",
+      "Japan:respondentblock9",
+      "USA:respondentblock2",
+      "USA:respondentblock3",
+      "USA:respondentblock4",
+      "USA:respondentblock5",
+      "USA:respondentblock6",
+      "USA:respondentblock7",
+      "USA:respondentblock8",
+      "USA:respondentblock9"
+    ],
+    "training_rows": 4236,
+    "training_ids_sha256": "04f8bd1440f9be4fab45dd0655a8d57f86b463d794d8d5e285384b69384f7195",
+    "coef": [
+      -3.989397224965284,
+      0.09303560266641345,
+      0.26941631420254647,
+      0.276980856355339,
+      1.7176812983338243,
+      -0.2539188476029204,
+      -0.06678578090500345
+    ],
+    "complexity": 7,
+    "rank": 7,
+    "condition_number": 37.16254775247378
+  },
+  "attempt_004": {
+    "features": [
+      "one",
+      "japan",
+      "school",
+      "degree",
+      "experience",
+      "exp_sq",
+      "school_exp",
+      "older"
+    ],
+    "link": "logit",
+    "equation": "p_upper=logistic(complementarity003+bOld*max(age_midpoint-50,0)/10)",
+    "case": 39,
+    "type": "linear",
+    "training_groups": [
+      "Japan:respondentblock2",
+      "Japan:respondentblock3",
+      "Japan:respondentblock4",
+      "Japan:respondentblock5",
+      "Japan:respondentblock6",
+      "Japan:respondentblock7",
+      "Japan:respondentblock8",
+      "Japan:respondentblock9",
+      "USA:respondentblock2",
+      "USA:respondentblock3",
+      "USA:respondentblock4",
+      "USA:respondentblock5",
+      "USA:respondentblock6",
+      "USA:respondentblock7",
+      "USA:respondentblock8",
+      "USA:respondentblock9"
+    ],
+    "training_rows": 4236,
+    "training_ids_sha256": "04f8bd1440f9be4fab45dd0655a8d57f86b463d794d8d5e285384b69384f7195",
+    "coef": [
+      -4.445470845080676,
+      0.09888873039165981,
+      0.3339755457139538,
+      0.25881858605905267,
+      2.239251800063736,
+      -0.3838039874191166,
+      -0.09393506759276617,
+      0.6015902203985992
+    ],
+    "complexity": 8,
+    "rank": 8,
+    "condition_number": 89.41420225409418
+  },
+  "attempt_005": {
+    "features": [
+      "one",
+      "japan",
+      "school",
+      "degree",
+      "age",
+      "older"
+    ],
+    "link": "logit",
+    "equation": "p_upper=logistic(a+bJ*Japan+bS*school+bD*degree+bA*agebinmidpoint+bO*olderhinge)",
+    "case": 39,
+    "type": "linear",
+    "training_groups": [
+      "Japan:respondentblock2",
+      "Japan:respondentblock3",
+      "Japan:respondentblock4",
+      "Japan:respondentblock5",
+      "Japan:respondentblock6",
+      "Japan:respondentblock7",
+      "Japan:respondentblock8",
+      "Japan:respondentblock9",
+      "USA:respondentblock2",
+      "USA:respondentblock3",
+      "USA:respondentblock4",
+      "USA:respondentblock5",
+      "USA:respondentblock6",
+      "USA:respondentblock7",
+      "USA:respondentblock8",
+      "USA:respondentblock9"
+    ],
+    "training_rows": 4236,
+    "training_ids_sha256": "04f8bd1440f9be4fab45dd0655a8d57f86b463d794d8d5e285384b69384f7195",
+    "coef": [
+      -3.9531346994019705,
+      0.08977980502199286,
+      0.02436426939205447,
+      0.33152122646139365,
+      0.05971506092175979,
+      -0.9682335766291617
+    ],
+    "complexity": 6,
+    "rank": 6,
+    "condition_number": 19.491125901526924
+  },
+  "attempt_006": {
+    "features": [
+      "one",
+      "japan",
+      "school",
+      "experience",
+      "exp_sq",
+      "older"
+    ],
+    "link": "logit",
+    "equation": "p_upper=logistic(a+bJ*Japan+bS*school+bX*X+bXX*X\u00b2+bO*older)",
+    "case": 39,
+    "type": "linear",
+    "training_groups": [
+      "Japan:respondentblock2",
+      "Japan:respondentblock3",
+      "Japan:respondentblock4",
+      "Japan:respondentblock5",
+      "Japan:respondentblock6",
+      "Japan:respondentblock7",
+      "Japan:respondentblock8",
+      "Japan:respondentblock9",
+      "USA:respondentblock2",
+      "USA:respondentblock3",
+      "USA:respondentblock4",
+      "USA:respondentblock5",
+      "USA:respondentblock6",
+      "USA:respondentblock7",
+      "USA:respondentblock8",
+      "USA:respondentblock9"
+    ],
+    "training_rows": 4236,
+    "training_ids_sha256": "04f8bd1440f9be4fab45dd0655a8d57f86b463d794d8d5e285384b69384f7195",
+    "coef": [
+      -3.039870172668757,
+      0.10318930621429452,
+      0.3857032279208438,
+      0.9862290375754231,
+      -0.11256346179405757,
+      -0.48640839456952223
+    ],
+    "complexity": 6,
+    "rank": 6,
+    "condition_number": 43.20207293928539
+  }
+}

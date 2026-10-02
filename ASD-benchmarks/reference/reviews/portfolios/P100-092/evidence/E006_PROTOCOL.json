@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "case_id": 92,
+  "created_utc": "2026-09-30T09:23:21.856729+00:00",
+  "study": "Evidence-driven continuation; original cohorts already exposed",
+  "fresh_confirmation": false,
+  "exposure": "All prior development and confirmation targets were exposed before this new protocol. Fits/tuning use ORIGINAL DEVELOPMENT ONLY; no new winner is chosen using original confirmation. No independent confirmation is asserted.",
+  "data_file": "data/development.csv.gz",
+  "data_sha256": "532866ca2cc4a0f5515070570fc6d34cb00f38bc944ccfcbfad540efd03e8166",
+  "data_rows": 24960,
+  "source_manifest_sha256": "9493c55596429ce65d76675a6e5277a057ad414aa5f4674eb76b50557cab0a52",
+  "engine_sha256": "6e605a7fca3e428fb4e77585684caa5daa6a859cdca6b233911e1687595a0324",
+  "inputs": [
+    "r0",
+    "channel_contrast",
+    "position_contrast",
+    "spatial_contrast",
+    "global_power_reference",
+    "furniture",
+    "port",
+    "channel",
+    "day",
+    "lwa"
+  ],
+  "target": "target",
+  "metric_kind": "mae",
+  "metric_units": "dB",
+  "grouping": "same original independent grouping and folds; case92 chronological forward dates; case67 balanced particle within complete configuration",
+  "units_reference": "../../final_results/evaluator/protocol.json and preserved records/SOURCE_AUDIT.md",
+  "hypotheses": [
+    {
+      "id": "cycle-001",
+      "title": "Exact positive-power redistribution",
+      "equation": "RSSI=10log10((1-lambda)*10^(r0/10)+lambda*10^(calibrated_global_port_channel_power/10))+b0+bf*furniture; 0<=lambda<=1",
+      "shapes": [
+        0,
+        0.02,
+        0.05,
+        0.1,
+        0.3,
+        0.6
+      ]
+    },
+    {
+      "id": "cycle-002",
+      "title": "Finite orthogonal contrast response",
+      "equation": "RSSI=r0+b0+bf*furniture+bc_f*tanh(channel_contrast/k)+bs_f*tanh(position_contrast/k), bc_f,bs_f<=0",
+      "shapes": [
+        5,
+        10,
+        20
+      ]
+    }
+  ],
+  "comparators": [
+    "simple/domain comparator",
+    "training-only imputed/scaled robust linear with identical expanded inputs",
+    "fold-refitted fixed HistGradientBoosting using identical expanded inputs",
+    "nested exact RBF when <=500 rows"
+  ],
+  "fitting": "Group-balanced robust constrained least squares (8 deterministic IRLS iterations). Huber scales fixed before fit:37=5W,53=.025Nm,67=.3 log ratio,71=2million/mL,92=3dB. Model shape selected entirely within outer training partitions using inner whole-group or forward validation. Learned imputation/scales/categorical dictionaries only training data. No identifier predictors.",
+  "selection": "Select simplest candidate within 2% of minimum new-candidate development error; report strong-comparator gaps and every group. Selection does not admit a law.",
+  "stopping": "Two material hypotheses required; stop after two cycles without >=2% development gain against the strongest equal-information comparator or stronger identified mechanism. A distinct supported follow-up can use a separately frozen amendment before fitting.",
+  "fresh_source_candidate": null,
+  "bounds": "No microscopic mechanism or industrial intervention benefit inferred solely from regression; calibration and missingness remain declared. Baseline error improvements are retrospective unless independent fresh data admitted.",
+  "prefit_amendment": "All five commands failed at sklearn import before load(), START, or any model fit. Lazy import now permits portable JSON replay without sklearn; flexible baseline explicitly disables internal random-row early stopping. No input values, model results or selections changed.",
+  "technical_amendment": "NumPy2.5 removed row_stack alias. The first IRLS call failed before coefficients were estimated; replace it with equivalent vstack. All scientific hypotheses, grids, inputs, splits, metrics and comparisons unchanged. Initial partial results preserved at results/. Corrected run writes results-v2/."
+}

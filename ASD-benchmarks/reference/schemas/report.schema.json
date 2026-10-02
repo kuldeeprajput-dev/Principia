@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "evaluator_version",
+    "identity",
+    "bindings",
+    "coverage",
+    "scores",
+    "scientific_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "principia.report/3.0"
+    },
+    "evaluator_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "identity": {
+      "type": "object"
+    },
+    "bindings": {
+      "type": "object"
+    },
+    "coverage": {
+      "type": "object"
+    },
+    "scores": {
+      "type": "object"
+    },
+    "scientific_status": {
+      "type": "object",
+      "properties": {
+        "fresh_confirmation": {
+          "const": false
+        },
+        "automatic_admission": {
+          "const": false
+        }
+      }
+    }
+  }
+}

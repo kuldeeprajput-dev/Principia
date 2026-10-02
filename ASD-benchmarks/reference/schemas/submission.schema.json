@@ -1,0 +1,277 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "task_id",
+    "protocol_version",
+    "cohort_id",
+    "input_sha256",
+    "target_units",
+    "evaluator_version",
+    "decision",
+    "permitted_inputs",
+    "predictions_file",
+    "training",
+    "equations",
+    "findings",
+    "uncertainty",
+    "reproducibility"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "principia.submission/3.0"
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "protocol_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cohort_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_sha256": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_units": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evaluator_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision": {
+      "enum": [
+        "predict",
+        "abstain"
+      ]
+    },
+    "permitted_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "predictions_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "training": {
+      "type": "object",
+      "required": [
+        "training_group_ids",
+        "tuning_group_ids",
+        "evaluation_data_usage"
+      ],
+      "properties": {
+        "training_group_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "tuning_group_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "evaluation_data_usage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inventory_assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "path",
+              "sha256"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "equations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "expression"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "expression": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statement"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "equation_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "uncertainty": {
+      "type": "object",
+      "required": [
+        "interval_level"
+      ],
+      "properties": {
+        "interval_level": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 1
+        }
+      }
+    },
+    "reproducibility": {
+      "type": "object",
+      "required": [
+        "assets",
+        "entrypoint"
+      ],
+      "properties": {
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "path",
+              "sha256"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "entrypoint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "submission_kind": {
+      "enum": [
+        "scientific_submission",
+        "historical_prediction_import"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "submission_kind": {
+            "const": "historical_prediction_import"
+          }
+        },
+        "required": [
+          "submission_kind"
+        ]
+      },
+      "then": {
+        "required": [
+          "compatibility_import",
+          "input_budget_status"
+        ],
+        "properties": {
+          "input_budget_status": {
+            "const": "unknown_historical"
+          },
+          "permitted_inputs": {
+            "maxItems": 0
+          },
+          "equations": {
+            "maxItems": 0
+          },
+          "findings": {
+            "maxItems": 0
+          },
+          "reproducibility": {
+            "properties": {
+              "entrypoint": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

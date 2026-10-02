@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.1.0",
+  "case_id": "P100-066",
+  "protocol_id": "P100-066-retrospective-continuation-20261001",
+  "target": "Excess hydrogen uptake",
+  "target_units": "wt.%",
+  "primary_units": "wt.%",
+  "metric_kind": "mae",
+  "metric_definition": "Equal complete reserved-group mean MAE in physical units; RMSE square root is taken within group, before averaging groups.",
+  "independent_unit": "whole material composition across temperatures and both branches",
+  "evaluation_groups": [
+    "EG5"
+  ],
+  "input_sha256": "20cef648e3b818c76bb18a0f49868e520b85fcacec532d089711e371a2900d5b",
+  "input_rows": 58,
+  "assigned_rows": 58,
+  "permitted_inputs": [
+    "eg_pct",
+    "temperature_K",
+    "pressure_bar",
+    "branch"
+  ],
+  "input_units": {
+    "eg_pct": "wt.% expanded graphite in material label",
+    "temperature_K": "K",
+    "pressure_bar": "bar",
+    "branch": "0 adsorption, 1 desorption"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "ideal",
+    "eos",
+    "sips",
+    "thermal_capacity",
+    "dilution",
+    "branch",
+    "dual",
+    "constant",
+    "kernel"
+  ],
+  "reference_equations": {
+    "reference": "qex=A*(b(T)*f)^s/(1+(b(T)*f)^s)-100*V*rho; b=exp(lb+Q*(1/T-1/160)); all optional composition/branch/site factors are explicit in model.",
+    "ideal": "qex=A*(b(T)*f)^s/(1+(b(T)*f)^s)-100*V*rho; b=exp(lb+Q*(1/T-1/160)); all optional composition/branch/site factors are explicit in model.",
+    "eos": "qex=A*(b(T)*f)^s/(1+(b(T)*f)^s)-100*V*rho; b=exp(lb+Q*(1/T-1/160)); all optional composition/branch/site factors are explicit in model.",
+    "sips": "qex=A*(b(T)*f)^s/(1+(b(T)*f)^s)-100*V*rho; b=exp(lb+Q*(1/T-1/160)); all optional composition/branch/site factors are explicit in model.",
+    "thermal_capacity": "qex=A*(b(T)*f)^s/(1+(b(T)*f)^s)-100*V*rho; b=exp(lb+Q*(1/T-1/160)); all optional composition/branch/site factors are explicit in model.",
+    "dilution": "qex=A*(b(T)*f)^s/(1+(b(T)*f)^s)-100*V*rho; b=exp(lb+Q*(1/T-1/160)); all optional composition/branch/site factors are explicit in model.",
+    "branch": "qex=A*(b(T)*f)^s/(1+(b(T)*f)^s)-100*V*rho; b=exp(lb+Q*(1/T-1/160)); all optional composition/branch/site factors are explicit in model.",
+    "dual": "qex=A*(b(T)*f)^s/(1+(b(T)*f)^s)-100*V*rho; b=exp(lb+Q*(1/T-1/160)); all optional composition/branch/site factors are explicit in model.",
+    "constant": "See rules.json full state and run.py executable equations",
+    "kernel": "group-tuned Gaussian kernel ridge with frozen training scales, centers and coefficients."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "scope_limit": "Four MOF/graphite compositions and one source campaign. A branch contrast has different sampled pressures and cannot by itself establish irreversible hysteresis.",
+  "calibration_note": "Excess uptake is the native experimental response. Total uptake, cyclic reuse files and descriptor curves remain upstream; they are not independent excess-uptake confirmation. Excess adsorption can decline with pressure through gas-volume displacement; a monotone absolute-Langmuir law alone is an intentionally falsifiable baseline.",
+  "timing_contract": "Composition, pressure, temperature, branch only; no measured uptake-derived quantity as an input.",
+  "exposure_notice": "Original confirmation is exposed. New candidates chosen only development and frozen before this retrospective diagnostic.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Verify native anchors and permitted information: Composition, pressure, temperature, branch only; no measured uptake-derived quantity as an input."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check units, physical signs/limits, measurement preprocessing, identifiability and source-specific confounding. Excess uptake is the native experimental response. Total uptake, cyclic reuse files and descriptor curves remain upstream; they are not independent excess-uptake confirmation. Excess adsorption can decline with pressure through gas-volume displacement; a monotone absolute-Langmuir law alone is an intentionally falsifiable baseline."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ],
+  "fresh_confirmation": false
+}

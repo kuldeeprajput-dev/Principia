@@ -1,0 +1,246 @@
+{
+  "schema_version": "principia.review/3.0",
+  "role": "scientific_critical",
+  "reviewer_id": "scientific-critical-review-agent",
+  "bindings": {
+    "claims_sha256": "e2c8d9e3043285ff71499e544b8c88fa497d3af56a799fb06b7bdd648af788e3",
+    "evidence_sha256": {
+      "E001": "805b6735adc27a038275211ac913e68474552f69f1c9e148ab3a3392fa8daa54",
+      "E002": "66873831aef64fda9a41fcaf4f50f23617088ff5d09815af0e1c15637542f508",
+      "E003": "8e1e1bef5cc19451a4322da668466c6ce681f4dc863c832442381c481fee3433",
+      "E004": "261db3b4f18b54fdf148aba9f92f5b1361326afa1fd926de6082d7c884f57142",
+      "E005": "d63f686f3e6c3c1b05973be6a8b9d9b5f5a4d65b5dfd542cfc3aca5dd56b5aa8",
+      "E006": "9dd611f3bbc6df1fae61d704709f69281b1aa501ebb214be4c1e1df0f652ef62",
+      "E007": "7e4e2a046c5b2cf0d02a8ecb9e4ae4b7404e72d5c23381796ebb2de1bc404c0a",
+      "E008": "084b172819c9bd3d47897e0c6069a3f1f7f39a8ec6a3c3dbb85a88fcf7920123",
+      "E009": "5b0500420a7b4fd87bcc24402cf31135d0716d2a49479a9370a975674b4c2a7e",
+      "E010": "5bafae7c5731691b67cbc683b69192a29bcfe5fc1ede68e79edbf1cf45bfcd9b",
+      "E011": "8610a0d0edfce88010805a0bb300468169d0f3cdadc89df0060f1549780b4161",
+      "E012": "27515ce3cabe6765dc6c0fd411629f8abdd1b6cb03f70b6736151684d9b43459",
+      "E013": "4f7bfc8cc11c066cf541091db18cc9ab9871eb178f02afa3510de23ac6d51e2c",
+      "E014": "05f10e8b1cb7cfe02315f4355dba7de841f6471db2690e444b2b7898ac987019",
+      "E015": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253",
+      "E016": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078",
+      "SCIENTIFIC": "ce7ae67554c8a1065d5211a16a8a46d22329dbd397da9308061c86f2f96e3af9",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-072",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "adapter_provenance": {
+    "source_sha256": "ce7ae67554c8a1065d5211a16a8a46d22329dbd397da9308061c86f2f96e3af9",
+    "method": "Finding statements, dimensions and dispositions transferred unchanged from independent scientific review"
+  },
+  "findings": [
+    {
+      "finding_id": "P100-072-SCI-01",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Keep qPCRpercentage and HPLCresidual-sugar tasksdistinct; whole strain groups retain cultures, replicates and futuretimes; 22/72 h prefixes arecalibration. Strong adverse evidence: One of 2 strains slightly worsens; schemaaudit exposed later percentages before construction. Negativeearly-rate coefficient doesnot identify nitrogen or selection reversal.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Different effective sugar clocks can summarize assay kinetics; no observedbiomass, transporter or nutrientintervention identifies their cause.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Differentialglucose/fructose uptake and consumptionmodels are established. Exactformpriority remains unadjudicated. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Keep qPCRpercentage and HPLCresidual-sugar tasksdistinct; whole strain groups retain cultures, replicates and futuretimes; 22/72 h prefixes arecalibration.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "disposition": "supported",
+      "limitations": [
+        "One of 2 strains slightly worsens; schemaaudit exposed later percentages before construction. Negativeearly-rate coefficient doesnot identify nitrogen or selection reversal."
+      ],
+      "checks": [
+        "Never merge percentage-points and g/L task identities.",
+        "Score only laterassays; test prefix units and rising/noisy-prefix clipping without deleting native targets.",
+        "Keep whole strains and linkedculture/replicate representations together and disclose qPCR audit exposure."
+      ]
+    },
+    {
+      "finding_id": "P100-072-SCI-02",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Keep qPCRpercentage and HPLCresidual-sugar tasksdistinct; whole strain groups retain cultures, replicates and futuretimes; 22/72 h prefixes arecalibration. Strong adverse evidence: Separate-pool development MAE 14.656974 g/L vs 17.782176 flexible; fitted Monod-like K=200 g/L hits upper search bound. An upper-bound parameter is not an identified uptake constant; the later two-clock model simplifies it.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Different effective sugar clocks can summarize assay kinetics; no observedbiomass, transporter or nutrientintervention identifies their cause.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Differentialglucose/fructose uptake and consumptionmodels are established. Exactformpriority remains unadjudicated. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Keep qPCRpercentage and HPLCresidual-sugar tasksdistinct; whole strain groups retain cultures, replicates and futuretimes; 22/72 h prefixes arecalibration.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        }
+      },
+      "disposition": "partially_supported",
+      "limitations": [
+        "Separate-pool development MAE 14.656974 g/L vs 17.782176 flexible; fitted Monod-like K=200 g/L hits upper search bound. An upper-bound parameter is not an identified uptake constant; the later two-clock model simplifies it."
+      ],
+      "checks": [
+        "Never merge percentage-points and g/L task identities.",
+        "Score only laterassays; test prefix units and rising/noisy-prefix clipping without deleting native targets.",
+        "Keep whole strains and linkedculture/replicate representations together and disclose qPCR audit exposure."
+      ]
+    },
+    {
+      "finding_id": "P100-072-SCI-03",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Keep qPCRpercentage and HPLCresidual-sugar tasksdistinct; whole strain groups retain cultures, replicates and futuretimes; 22/72 h prefixes arecalibration. Strong adverse evidence: Fiveof 6 strains improve; Ec 1118 worsens. Smaller 3 parameter error 13.370341 waswithin 1 %simplicity margin. Prefix agreement is imposed and is not validation.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Different effective sugar clocks can summarize assay kinetics; no observedbiomass, transporter or nutrientintervention identifies their cause.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Differentialglucose/fructose uptake and consumptionmodels are established. Exactformpriority remains unadjudicated. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Keep qPCRpercentage and HPLCresidual-sugar tasksdistinct; whole strain groups retain cultures, replicates and futuretimes; 22/72 h prefixes arecalibration.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      },
+      "disposition": "partially_supported",
+      "limitations": [
+        "Fiveof 6 strains improve; Ec 1118 worsens. Smaller 3 parameter error 13.370341 waswithin 1 %simplicity margin. Prefix agreement is imposed and is not validation."
+      ],
+      "checks": [
+        "Never merge percentage-points and g/L task identities.",
+        "Score only laterassays; test prefix units and rising/noisy-prefix clipping without deleting native targets.",
+        "Keep whole strains and linkedculture/replicate representations together and disclose qPCR audit exposure."
+      ]
+    }
+  ]
+}

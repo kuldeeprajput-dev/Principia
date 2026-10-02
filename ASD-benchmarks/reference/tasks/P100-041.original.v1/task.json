@@ -1,0 +1,241 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-041.original.v1",
+  "case_id": "P100-041",
+  "case_number": 41,
+  "family": "original",
+  "protocol_version": "P100-041-asd6-native-v1",
+  "cohort_id": "P100-041.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-041.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/41_energy_eia930_grid_2025",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Unimputed hourly balancing-authority demand",
+  "target_units": "MW",
+  "error_units": "MW",
+  "primary_units": "MW",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "forecast",
+    "error48",
+    "error168",
+    "load48",
+    "load168",
+    "ramp",
+    "hour",
+    "weekend"
+  ],
+  "input_units": {
+    "forecast": "MW",
+    "error48": "MW",
+    "error168": "MW",
+    "load48": "MW",
+    "load168": "MW",
+    "ramp": "MW",
+    "hour": "UTC hour",
+    "weekend": "indicator"
+  },
+  "numeric_columns": [
+    "forecast",
+    "error48",
+    "error168",
+    "load48",
+    "load168",
+    "ramp",
+    "hour",
+    "weekend"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Retrospective published-snapshot forecast correction. Input official forecast for target hour, preceding-hour forecast, and actual/forecast residuals 48 and168 hours before target. Nominal issuance t\u221224h is an analysis convention, not observed release timestamp. The observed load/residual histories refer to hours at least24h before nominal issuance. This timestamp statement does not establish their actual publication availability. Target-hour and preceding-hour forecast vintages and issuance times are unknown in the revised snapshot; no historical as-issued forecast availability is claimed. No target-hour demand, generation or interchange predictor.",
+  "calibration": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "independent_unit": "Authority-month groups; rolling train Jan\u2013Feb->March, Jan\u2013March->April, Jan\u2013April->May. June confirmation. Same authorities across time, correlated national weather; no independence claim across all authorities.",
+  "evaluation_groups": [
+    "AECI:2025-06",
+    "AVA:2025-06",
+    "AZPS:2025-06",
+    "BANC:2025-06",
+    "BPAT:2025-06",
+    "CHPD:2025-06",
+    "CISO:2025-06",
+    "CPLE:2025-06",
+    "CPLW:2025-06",
+    "DOPD:2025-06",
+    "DUK:2025-06",
+    "EPE:2025-06",
+    "ERCO:2025-06",
+    "FMPP:2025-06",
+    "FPC:2025-06",
+    "FPL:2025-06",
+    "GCPD:2025-06",
+    "GVL:2025-06",
+    "HST:2025-06",
+    "IID:2025-06",
+    "IPCO:2025-06",
+    "ISNE:2025-06",
+    "JEA:2025-06",
+    "LDWP:2025-06",
+    "LGEE:2025-06",
+    "MISO:2025-06",
+    "NEVP:2025-06",
+    "NWMT:2025-06",
+    "NYIS:2025-06",
+    "PACE:2025-06",
+    "PACW:2025-06",
+    "PGE:2025-06",
+    "PJM:2025-06",
+    "PNM:2025-06",
+    "PSCO:2025-06",
+    "PSEI:2025-06",
+    "SC:2025-06",
+    "SCEG:2025-06",
+    "SCL:2025-06",
+    "SEC:2025-06",
+    "SOCO:2025-06",
+    "SPA:2025-06",
+    "SRP:2025-06",
+    "SWPP:2025-06",
+    "TAL:2025-06",
+    "TEC:2025-06",
+    "TEPC:2025-06",
+    "TIDC:2025-06",
+    "TPWR:2025-06",
+    "TVA:2025-06",
+    "WACM:2025-06",
+    "WALC:2025-06",
+    "WAUW:2025-06"
+  ],
+  "assigned_rows": 37889,
+  "eligible_rows": 37889,
+  "baseline_models": [
+    "reference",
+    "flexible",
+    "official",
+    "residual48",
+    "weekly",
+    "attempt-001",
+    "attempt-002",
+    "attempt-003",
+    "attempt-004",
+    "attempt-005",
+    "attempt-006",
+    "attempt-007",
+    "attempt-008",
+    "attempt-009",
+    "attempt-010"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "y_hat = F + 1 * (0.49744905046291765*e48 + 0.35254402896483122*e168)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "flexible": {
+      "equation": "offset + scale*(coef[0] + sum_j coef[j+1]*exp(-||standardized_inputs-center[j]||^2/(2*width^2))); frozen arrays in this state",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "official": {
+      "equation": "y_hat = F",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "residual48": {
+      "equation": "y_hat = F + 1 * (1*e48)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "weekly": {
+      "equation": "y_hat = week168",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-001": {
+      "equation": "y_hat = F + 1 * (0.5302967616423947*e48)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-002": {
+      "equation": "y_hat = F + 1 * (0.38495139118925176*e48 + 0.31477945555312914*e168)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-003": {
+      "equation": "y_hat = F + F * (0.021666256730994163*r48 + 0.016628882782585033*r168)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-004": {
+      "equation": "y_hat = F + 1 * (0.42442553081090251*e48 + 0.31002239205598942*e168 + -128.59804536657165*rampup + -893.61471386985727*rampdown + -0.12771713093534434*eweek)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-005": {
+      "equation": "y_hat = F + 1 * (0.38495139118925176*e48 + 0.31477945555312914*e168); correction clipped to \u00b10.15*forecast",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-006": {
+      "equation": "y_hat = F + 1 * (0.49670341537697349*e48 + 0.35240986674228186*e168 + -0.0010032299606876343*esin + 0.0079253281475772305*ecos)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-007": {
+      "equation": "y_hat = F + 1 * (0.33111763846321429*e48 + 0.2995283096908482*e168 + 0.073192582250641916*eagree)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-008": {
+      "equation": "y_hat = F + 1 * (0.49744905046291765*e48 + 0.35254402896483122*e168)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-009": {
+      "equation": "y_hat = F + 1 * (0.74465244851587342*e48)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-010": {
+      "equation": "y_hat = F + 1 * (0.70333636111543796*e168)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference."
+  },
+  "scope_limits": "Unimputed native Demand/Forecast only. Revised final public snapshot is not an as-issued operational backtest. Negative/nonfinite demand/forecasts excluded by validity rule before fitting. Primary MW MAE is not normalized by authority load.",
+  "source_url": "https://www.eia.gov/electricity/gridmonitor/about",
+  "source_license": "US government public domain",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Schema-stage first row of original table inspected. First row belongs to January development. No June targets/scores inspected. All public source-aware; confirmation after final freeze will become exposed.\", \"current\": \"exposed\", \"confirmation_history\": \"Scores hidden until candidate selection, stopping and code/state freeze\", \"fresh_for_future_users\": false}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "e87afec1e37f308c936662708f077fe1eadc2647ab0ce30969fbfb2d06e03ef2",
+  "observations_sha256": "bddbf35425346c26e073836edc74b2d46374a99e1afbd1b5a5ddc19499c21973",
+  "legacy_protocol_sha256": "06a6aaf756155d9fd022e61f7655a6ecf1224c507b3c067da48a482212cbbc6c",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

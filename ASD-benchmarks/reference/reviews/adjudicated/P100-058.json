@@ -1,0 +1,612 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-058",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-058/computational.json",
+      "bytes": 17447,
+      "sha256": "74c24827537dfa99937f2a9d80f7b61a5cf645441328d0508ae61b035632e062"
+    },
+    {
+      "path": "reviews/portfolios/P100-058/scientific_critical.json",
+      "bytes": 26389,
+      "sha256": "77c84f94f97498a60f62bbbe4bb44e6cbcc44292c280c1d14e641aa6bf229e72"
+    },
+    {
+      "path": "reviews/portfolios/P100-058/combined/review.json",
+      "bytes": 44367,
+      "sha256": "bf6347c6c7bad2eef10d9f10ded7f20be16576941d6132f5e1af4acf9f9483cc"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-058-SCI-01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: Only 32/35 storage readings are positive; three negative native values remain in physical scores. Compliance and one-batch scope limit constitutive identification.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-058-SCI-02",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: Conditioning 2.4e16 makes individual clocks, band masses, low-frequency viscosity and plateau nonunique. No loss fitting occurred; same-instrument loss is an orthogonal response, not independent laboratory replication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "partially_supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-058-SCI-03",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: Same authors/instrument; all held-temperature biases are negative and hotter errors grow. This is calibrated family transfer, not zero-shot PDLLA coefficient transfer.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-058-SCI-04",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: The associated unfitted loss log MAE 1.860375 contradicts a generally reliable complex-modulus transfer claim. Storage success must not erase this failure.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E017",
+            "E018",
+            "E019"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-058-SCI-05",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: Loss comes from the same instrument/experiments and does not establish independent replication or fully identified modes.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E020",
+            "E021",
+            "E022"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-058-SCI-06",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets. Strong adverse evidence: Material-specific dissipative behavior or metrology is unresolved; parameters must not be retuned against these exposed outcomes and relabeled fresh.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Positive relaxation and thermal shifting are established physics. Storage-to-loss predictions are falsifiable, but sparse finite-band spectra do not identify unique molecular modes.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Maxwell/WLF and fractional alternatives have retained prior art; calibrated material transfer is a test of known physical family, not a new polymer law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole temperature sweeps; storage fitted, loss never fitted; natural-log errors on positive targets plus physical errors on all finite signed targets.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E023",
+            "E024",
+            "E025"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

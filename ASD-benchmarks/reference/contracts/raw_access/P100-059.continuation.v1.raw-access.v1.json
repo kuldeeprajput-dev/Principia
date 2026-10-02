@@ -1,0 +1,95 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-059.continuation.v1.raw-access.v1",
+  "parent_task_id": "P100-059.continuation.v1",
+  "case_id": "P100-059",
+  "protocol_version": "P100-059.continuation.v1.raw-access.v1",
+  "cohort_id": "P100-059.continuation.v1.cohort-1",
+  "parent_task_sha256": "8fb3156100f141acb112d43c26f9277be6a2848a02f36cab40f76792bb506e54",
+  "input_sha256": "c901cdf11d9a885403c7d94948264d9074ef4b602072c22d76a71020072b384d",
+  "observations_sha256": "a3d7ce34ae0c88e3a956426d9faad369311ff9db612e58e448c2cede79579efe",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "59_energy_portugal_pv",
+  "source_assets": [
+    {
+      "path": "raw/Figures.zip",
+      "bytes": 25247596,
+      "sha256": "554295aebd920654d63a8605617e4d8d4b77bcd4713a7610f0883b18a2044510"
+    },
+    {
+      "path": "raw/PV Plants Datasets.xlsx",
+      "bytes": 8693799,
+      "sha256": "5a62b75851aececf6539da047f16edde27c05328378a39bcf3b24f18c0809eb4"
+    },
+    {
+      "path": "raw/PV Plants Metadata.xlsx",
+      "bytes": 10227,
+      "sha256": "54f7538eb220d106d7d945bc65a467a9530d54c18db8da8358aa6fd3db97ea76"
+    },
+    {
+      "path": "raw/data_processing_and_visualization.py",
+      "bytes": 2208,
+      "sha256": "72c1f578ff30ad1973e43a33a0af0ffcb76fe4c52af9d78af311f8623d009679"
+    },
+    {
+      "path": "raw/plotting_functions.py",
+      "bytes": 3988,
+      "sha256": "8891c66482152aa709ef86947ea59d75cf0223869813dbb898a3903295bef64c"
+    },
+    {
+      "path": "raw/requirements.txt",
+      "bytes": 1151,
+      "sha256": "003a320d141897a630dc14462add79e87ac45151f732a39b3b018e3acbb1ed0d"
+    },
+    {
+      "path": "raw/weather_files.zip",
+      "bytes": 2977466,
+      "sha256": "a0e2ba74f564a901b9546a2276d25e0855cc0aacabac4e32ce62ad7cfb30d68f"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "irradiance": "kW/m^2; supplied weather shortwave radiation",
+      "temp_C": "degree C; supplied 2 m temperature",
+      "wind": "m/s; supplied 10 m wind converted from km/h",
+      "hour": "source-clock hour; no timezone assumed",
+      "doy": "calendar day of year",
+      "limit": "connection kW / installed kWp",
+      "latitude": "degree north",
+      "Gpast1": "kW/m2; exact previous native-clock hour supplied radiation",
+      "Gpast2": "kW/m2; exact two-hour-past radiation"
+    },
+    "observation_window": "Same native-clock current weather plus exact previous1/2hour weather; energy response is not predictor. Physical reporting/timezone semantics unresolved.",
+    "calibration_and_history": "Strict past weather history added without shifting energy or provider/timezone assumptions. No plant-specific response calibration.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Weather provider, physical reporting and timezone are unresolved; auxiliary provenance needs qualification.",
+    "Only 1 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

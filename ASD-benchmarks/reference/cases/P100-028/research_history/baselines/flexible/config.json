@@ -1,0 +1,28 @@
+{
+  "name": "flexible",
+  "formula": "b0*lo+b1*hi+b2*(hi-lo)*r+b3*(hi-lo)*r**2+b4*noise+b5*sep*(hi-lo)*r",
+  "hypothesis": "Six-coefficient constrainedcalibratedcontrolwithseparation.",
+  "inputs": [
+    "lo",
+    "hi",
+    "noise",
+    "r",
+    "g",
+    "glo",
+    "ghi",
+    "sep"
+  ],
+  "initial": {},
+  "bounds": {},
+  "linear_terms": [
+    "lo",
+    "hi",
+    "(hi-lo)*r",
+    "(hi-lo)*r**2",
+    "noise",
+    "sep*(hi-lo)*r"
+  ],
+  "base": "0",
+  "recorded_utc": "2026-10-02T02:23:59.806744+00:00",
+  "parent": null
+}

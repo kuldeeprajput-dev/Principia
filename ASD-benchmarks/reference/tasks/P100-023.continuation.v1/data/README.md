@@ -1,0 +1,1 @@
+Analysis products from source-native files; exact sample anchors and original target signs preserved. All outcomes are exposed. Predictor inputs exclude targets and source IDs are not numerical predictors.

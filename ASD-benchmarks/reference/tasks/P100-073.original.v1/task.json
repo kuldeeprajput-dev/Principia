@@ -1,0 +1,138 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-073.original.v1",
+  "case_id": "P100-073",
+  "case_number": 73,
+  "family": "original",
+  "protocol_version": "P100-073-prepared-primary-v1",
+  "cohort_id": "P100-073.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-073.original.v1",
+  "legacy_package": "73_agriculture_rumen_fermentation/final_results",
+  "source_scenario": "scenarios/73_agriculture_rumen_fermentation",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Author-converted later fermentation gas volume at native 12/24/36/48 hours",
+  "target_units": "mL",
+  "error_units": "mL",
+  "primary_units": "mL",
+  "metric_kind": "rmse",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_rmse"
+  },
+  "permitted_inputs": [
+    "trial",
+    "algae",
+    "hour",
+    "g4",
+    "g8"
+  ],
+  "input_units": {
+    "trial": "categorical protocol 1, 2 or 3",
+    "algae": "categorical source substrate/treatment label",
+    "hour": "h",
+    "g4": "mL, native volume at 4 h",
+    "g8": "mL, native volume at 8 h"
+  },
+  "numeric_columns": [
+    "hour",
+    "g4",
+    "g8"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Only native 4/8-hour gas volumes and known trial/algae/horizon; no later volume, end-of-incubation digestibility or GasDM target-derived normalization.",
+  "calibration": "Trial/algae kinetic and empirical parameters come from development DG1\u20133; current flask gas at 4/8 h is declared early calibration available to all comparators.",
+  "independent_unit": "complete DG4 incubation run within each trial; every flask and horizon stay together",
+  "evaluation_groups": [
+    "T1-R4",
+    "T2-R4",
+    "T3-R4"
+  ],
+  "assigned_rows": 216,
+  "eligible_rows": 216,
+  "baseline_models": [
+    "curvature_saturation",
+    "first_order",
+    "dual_pool",
+    "empirical_ratio",
+    "persistence",
+    "linear_prefix",
+    "flexible_fixed",
+    "flexible_nested"
+  ],
+  "reference_model": "curvature_saturation",
+  "models": {
+    "curvature_saturation": {
+      "equation": "Ghat(t)=G8*[1-exp(-(t/tau_eff)^beta)]/[1-exp(-(8/tau_eff)^beta)]; tau_eff=tau_trial*exp(gamma_trial*(G4/G8-0.5)); trial-specific coefficients.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "first_order": {
+      "equation": "Ghat(t)=G8*(1-exp(-t/tau_trial))/(1-exp(-8/tau_trial)).",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "dual_pool": {
+      "equation": "Ghat(t)=G8*[w*(1-exp(-t/tau_fast))+(1-w)*(1-exp(-t/tau_slow))]/[w*(1-exp(-8/tau_fast))+(1-w)*(1-exp(-8/tau_slow))].",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "empirical_ratio": {
+      "equation": "Ghat(t)=G8*development mean later/8-hour ratio for trial, algae and horizon; frozen fallback for unseen cells.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persistence": {
+      "equation": "Ghat(t)=G8",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "linear_prefix": {
+      "equation": "Ghat(t)=G8+max(0,G8-G4)*(t-8)/4.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible_fixed": {
+      "equation": "yhat=max(0,intercept+sum_i w_i*exp(-gamma*||encoded_scaled_X-center_i||^2)); all imputation, category encoding, scales and kernel state frozen.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible_nested": {
+      "equation": "yhat=max(0,intercept+sum_i w_i*exp(-gamma*||encoded_scaled_X-center_i||^2)); all imputation, category encoding, scales and kernel state frozen.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every complete reserved group. Within-system and temporal dependence, few condition blocks or calibrated sites limit population-level claims; no row-bootstrap confidence interval is claimed."
+  },
+  "scope_limits": "Three reserved incubation runs in three protocols with known algae labels and an 8-hour prefix. No methane-specific prediction, unseen-treatment or in-vivo livestock transfer.",
+  "source_url": "https://zenodo.org/records/18335590",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "36286692b27b589698aae99793955d1a5155fd8a8b88fc1dea917464091670bb",
+  "observations_sha256": "aa29e758823a5ff44554044f8bda99759368ee7e31d0e54309dbf1ff3ce56a0e",
+  "legacy_protocol_sha256": "8ad11eca4d3a3489ef40733fc5b4983f52746738faaa6e7d1159bd587ab17a7a",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

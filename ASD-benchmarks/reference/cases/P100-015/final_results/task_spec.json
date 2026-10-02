@@ -1,0 +1,54 @@
+{
+  "target": "Unable to pay hypothetical400USD emergency expense by any listed means",
+  "target_units": "binary EF3_h",
+  "error_units": "squared probability (Brier)",
+  "metric_kind": "brier",
+  "permitted_inputs": [
+    "income_proxy",
+    "household_size",
+    "shock",
+    "age"
+  ],
+  "input_units": {
+    "income_proxy": "thousands USD/year bracket proxy",
+    "household_size": "persons",
+    "shock": "no paid/profit work lastmonth (D1A0) binary, not jobloss",
+    "age": "years"
+  },
+  "timing_contract": "Contemporaneous2025 household survey association. No future distress observation and no income intervention.",
+  "calibration": "Development states only; five whole-state hash folds. No held-state outcomes/calibration. EF3 other response checkboxes and EF1 savings coverage excluded to avoid near-endpoint restatement.",
+  "independent_unit": "Respondents nested in whole states; source respondents may share unreported household/environmental dependencies. States not independent populations.",
+  "scope_limits": "Positive-weight complete cases, state-balanced within-state survey-weighted predictive risk; not national prevalence or causal financial access. Income proxy upper bracket175k is a modeling convention. D1A0 reflects no paid work, not unemployment or a job-loss shock.",
+  "applicability": {
+    "probabilities": [
+      0,
+      1
+    ],
+    "weight": "weight"
+  },
+  "case_id": "P100-015",
+  "source_url": "https://www.federalreserve.gov/consumerscommunities/shed_data.htm",
+  "source_license": "Federal Reserve public-use data terms",
+  "numeric_columns": [
+    "income_proxy",
+    "household_size",
+    "shock",
+    "age"
+  ],
+  "exposure": {
+    "schema": "Schema and source codebook aggregate tabulations inspected; no reserved respondent target or confirmation metric inspected. Source-aware public survey.",
+    "current": "exposed",
+    "fresh_for_future_users": false,
+    "confirmation_freeze_sha256": "678020d8ec9290e5ff3d0b05d0fd4b82c47f0e213456a4ce9620225e697a800d",
+    "original_validation": "Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed."
+  },
+  "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error",
+    "within_group_weight": "sample_weight"
+  },
+  "task_id": "P100-015.original.v1"
+}

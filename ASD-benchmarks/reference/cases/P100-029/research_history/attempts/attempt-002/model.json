@@ -1,0 +1,36 @@
+{
+  "case": 29,
+  "kind": "quenching",
+  "coef": [
+    0.001000000000139066,
+    0.00417708337899305
+  ],
+  "training_groups": [
+    "6g66_05_uM_DPH_binding",
+    "6g66_05_uM_NR_binding",
+    "9a5f_05uM_DPH_binding",
+    "9a5f_05uM_NR_binding"
+  ],
+  "training_rows": 96,
+  "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+  "equation": "Fhat=F0+(F5-F0)*H(x)/H(z)*exp(-q*(x-z)); H(x)=x/(K+x). Effective fluorescence loss, not binding occupancy.",
+  "optimizer": {
+    "success": true,
+    "cost": 6.529874736610289,
+    "bounds": [
+      [
+        0.001,
+        0
+      ],
+      [
+        1000,
+        1
+      ]
+    ],
+    "jacobian_rank": 2,
+    "jacobian_singular_values": [
+      114.2530305585016,
+      0.4254280626197623
+    ]
+  }
+}

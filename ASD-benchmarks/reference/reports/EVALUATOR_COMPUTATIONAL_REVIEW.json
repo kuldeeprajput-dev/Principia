@@ -1,0 +1,3075 @@
+{
+  "schema_version": "principia.computational-review/1.0",
+  "review_date": "2026-10-01",
+  "created_at": "2026-10-01T12:55:29.469729+00:00",
+  "status": "pass",
+  "reviewer_id": "computational-review-agent",
+  "independent_from_scientific_review": true,
+  "scientific_reviews_consulted_for_judgments": false,
+  "cases": 25,
+  "tasks": 54,
+  "historical_model_scores": 533,
+  "independent_maximum_metric_difference": 9.094947017729282e-13,
+  "selected_reference_subprocess_replays": 54,
+  "numerical_and_submission_fixtures": 39,
+  "proposal_and_review_fixtures": 15,
+  "legacy_csv_import_fixtures": 35,
+  "endpoint_diagnostic_fixtures": 8,
+  "evidence": {
+    "numerical_and_submission_fixtures": {
+      "path": "reports/EVALUATOR_COMPUTATIONAL_REVIEW_EVALUATOR_COMPUTATIONAL_FIXTURES.json",
+      "sha256": "95634edf0b0ceb097b2cb513aa6327d6573507df293fb7004756405e562d8d8f"
+    },
+    "proposal_and_review_fixtures": {
+      "path": "reports/EVALUATOR_COMPUTATIONAL_REVIEW_EVALUATOR_REVIEW_FIXTURES.json",
+      "sha256": "ad4017d24aa2db1ed7488c2a2293eefe67896be44c7fad51bf6d56aeb4679adf"
+    },
+    "isolated_reference_replay": {
+      "path": "reports/EVALUATOR_COMPUTATIONAL_REVIEW_EVALUATOR_EXAMPLES_REPLAY.json",
+      "sha256": "9d61362773dee3e33671ac05a98e3fe33e7e37fb8198f5d0339140356cd9d685"
+    },
+    "independent_metric_parity": {
+      "path": "reports/EVALUATOR_COMPUTATIONAL_REVIEW_INDEPENDENT_METRIC_PARITY.json",
+      "sha256": "2b4be6ad7da5acc93deece8507af44f540904f3067e6eba8426d9ebf0a28c83d"
+    },
+    "legacy_csv_import": {
+      "path": "reports/EVALUATOR_COMPUTATIONAL_REVIEW_LEGACY_IMPORT_QA.json",
+      "sha256": "862f2f4a635a94875ffb9903aac6ba67d2e7cde282e0069dbc6e67d5e99b6315"
+    },
+    "endpoint_diagnostics": {
+      "path": "reports/EVALUATOR_COMPUTATIONAL_REVIEW_SCIENTIFIC_ENDPOINT_QA.json",
+      "sha256": "c206a4ba3f3a550853df3cb0efcd3b3590b30e098d9d7c12c802b5e6cef07259"
+    }
+  },
+  "engine_hashes": {
+    "evaluation/benchmark.py": "ebc85cacfee8372ead17a6be41d8431989c3b4a7126eda1a109b89f8c9de1564",
+    "evaluation/common.py": "f1234882c903a7cf68a7ab601103db582cecc96f06b0a02eb102d9902d954a8a",
+    "evaluation/import_legacy.py": "d9b67ab1931bc150f022cf8d18b01a59e001578d2bf63f961577b7c7d28c5a5a",
+    "evaluation/metrics.py": "bd4df4d21ec3a9b68c32ba04ffcbb01e44899d612428983bb25d53fd6b26bd40",
+    "evaluation/scientific.py": "16023df03a01b147f344321f7395f8e80133947d641f2dfb3c349c9ed80d725c",
+    "evaluation/submissions.py": "d30114e7b254a55e0ff0cb2436b1f9207c65c000fc21db69d20f737996dcc5de",
+    "evaluation/workflow.py": "da9c97398e056daf9b25db93c6ddd37ce09506f082c056dbe92b397ddb171ac1"
+  },
+  "corrections_checked": [
+    "Unknown submission schemas now reject instead of silently entering a legacy adapter.",
+    "Unknown packet/review schemas and dispositions now reject.",
+    "Task proposal identities and predictor lists are type-checked.",
+    "OOF reference examples copy sealed runtime dependencies and keep selected submission state separate from the sealed default.",
+    "F1 is zero for a nonempty all-wrong event classification and undefined only when 2TP+FP+FN is zero."
+  ],
+  "reusable_test_suites": "evaluation/tests/README.md",
+  "schema_hashes": {
+    "schemas/claims.schema.json": "7193875f5b844876389e94b1e788da1a2c2888307f961f36d1042271b8ce1d65",
+    "schemas/report.schema.json": "2fbb6a8dd45bd14931441b26b1bdc4edadc849c52e09109a5d2d945cb3401a36",
+    "schemas/review.schema.json": "7c14d253973c1b2609357c338b59e4cdeafccceba8b100cb12c0eb9154df437a",
+    "schemas/submission.schema.json": "637cdc71c0c1fec424b68c231de3acc64f38b6c51a08e9d8611011cf94633e46",
+    "schemas/task-proposal.schema.json": "7e9aad41389d1aa1f2a5cf66506c12781b323b101213a82e3c99b86e5377a587",
+    "schemas/task.schema.json": "3c8d5db6a5002275947080ce3ae213a5952e889cfdf1861195de60274240e5f2"
+  },
+  "raw_reconstruction_review": "See reports/RAW_* for the separately executed native-data and causal-prefix audit; this review does not substitute saved tables for native reconstruction.",
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "per_case": [
+    {
+      "case_id": "P100-023",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-023.original.v1",
+        "P100-023.continuation.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-023.original.v1",
+          "protocol_version": "P100-023-batch4-frozen-v1",
+          "cohort_id": "P100-023.original.v1.cohort-1",
+          "input_sha256": "84645884936ba1837903db44aed960b61d6de62f56b8bf6364bdbb5b2faad407",
+          "observations_sha256": "05750f0f0024903b13e7a4d10cd47db96fd80d9c50762f2a224ce7353320b908",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "1",
+          "target_units": "1",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-023.continuation.v1",
+          "protocol_version": "P100-023-retrospective-continuation-20261001",
+          "cohort_id": "P100-023.continuation.v1.cohort-1",
+          "input_sha256": "e65156011eafded284d749b85608a597bfc774d99f0627da10e5667818bac451",
+          "observations_sha256": "05750f0f0024903b13e7a4d10cd47db96fd80d9c50762f2a224ce7353320b908",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "1",
+          "target_units": "1",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-023.original.v1",
+          "status": "pass",
+          "rows": 30,
+          "elapsed_seconds": 0.98,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-023.continuation.v1",
+          "status": "pass",
+          "rows": 30,
+          "elapsed_seconds": 0.98,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 23,
+      "maximum_metric_difference": 0.0,
+      "learned_training_scope": {},
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-024",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-024.original.v1",
+        "P100-024.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-024.original.v1",
+          "protocol_version": "P100-024-prepared-primary-v1",
+          "cohort_id": "P100-024.original.v1.cohort-1",
+          "input_sha256": "4ba76152347b06f7a58d3b69da819695bdd403da1c0c85d0e6652e7b5b8b64e8",
+          "observations_sha256": "6ac73f58d04864b52e54496daef5dd416d715f3982b957b4e5a1d36149114d30",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "GPa",
+          "target_units": "GPa",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-024.round2.v1",
+          "protocol_version": "P100-024.round2.v1.contract-1",
+          "cohort_id": "P100-024.round2.v1.development-oof",
+          "input_sha256": "4411c5f28c934ea63c9bb75c3bb1ed85c0863167eefbbfd5c749c83ba10bcfb1",
+          "observations_sha256": "35628286bf747f9ce104ce53fbc6c3e3c2299138f545734da40af41d0716f524",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "GPa",
+          "target_units": "GPa",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-024.original.v1",
+          "status": "pass",
+          "rows": 3086,
+          "elapsed_seconds": 1.12,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-024.round2.v1",
+          "status": "pass",
+          "rows": 11904,
+          "elapsed_seconds": 2.55,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 14,
+      "maximum_metric_difference": 4.440892098500626e-16,
+      "learned_training_scope": {
+        "P100-024.round2.v1": {
+          "asset": "tasks/P100-024.round2.v1/reference_training_scope.json",
+          "sha256": "5b0364bfb02ff05a3d92da20fbeb12e04978ee09047279976618615f43e6ffa9",
+          "scope_status_counts": {
+            "training_inventory_unavailable_in_serialized_state": 102,
+            "source_recorded": 34
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-027",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-027.original.v1",
+        "P100-027.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-027.original.v1",
+          "protocol_version": "P100-027-prepared-primary-v1",
+          "cohort_id": "P100-027.original.v1.cohort-1",
+          "input_sha256": "c0b18be039b8da915fcd9bbf0c059558f2dbb0f4273634c53c9eced0e73c02ae",
+          "observations_sha256": "c7fbfd6e8f4c13039dd7f5bc1cfd960e42c06c81281fc18c3b1633047476b19f",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "dimensionless",
+          "target_units": "dimensionless",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-027.round2.v1",
+          "protocol_version": "P100-027.round2.v1.contract-1",
+          "cohort_id": "P100-027.round2.v1.development-oof",
+          "input_sha256": "df699b17ad7c91a3f5b0beef00b6926f13b6db3d2a689c90fcd7c52d019641d3",
+          "observations_sha256": "2cc35039e3ed58fc9532974a506d1998406605ea5714af96562b26b392eda052",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "void fraction",
+          "target_units": "dimensionless",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-027.original.v1",
+          "status": "pass",
+          "rows": 36,
+          "elapsed_seconds": 0.97,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-027.round2.v1",
+          "status": "pass",
+          "rows": 108,
+          "elapsed_seconds": 1.62,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 19,
+      "maximum_metric_difference": 8.326672684688674e-17,
+      "learned_training_scope": {
+        "P100-027.round2.v1": {
+          "asset": "tasks/P100-027.round2.v1/reference_training_scope.json",
+          "sha256": "ee1f414dfe74b957d196f6d15f42a80997504bb9654c75db6d2b508c786dafba",
+          "scope_status_counts": {
+            "source_recorded": 27,
+            "training_inventory_unavailable_in_serialized_state": 90
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-037",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-037.original.v1",
+        "P100-037.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-037.original.v1",
+          "protocol_version": "P100-037-prepared-primary-v1",
+          "cohort_id": "P100-037.original.v1.cohort-1",
+          "input_sha256": "9cdcd33d571ff37e52e789907b5dd86c0bcf883ecc6525adf2966fa005ce7f78",
+          "observations_sha256": "0a19b4420dd19ff31d8c497b20ef4208cf9bdceaa31838717cccd1b9097be0d1",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "W",
+          "target_units": "W",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-037.round2.v1",
+          "protocol_version": "P100-037.round2.v1.contract-1",
+          "cohort_id": "P100-037.round2.v1.development-oof",
+          "input_sha256": "bdb677ac9bed5329ea642041e3effdae3f34854668e35f74ea1dd1decbecbde2",
+          "observations_sha256": "c00b5437979fdd49b16f48a661f6477e12234d929b5a6dc9fe9cae7d4c611e5c",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "W",
+          "target_units": "W",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-037.original.v1",
+          "status": "pass",
+          "rows": 27692,
+          "elapsed_seconds": 2.42,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 1.4210854715202004e-14,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-037.round2.v1",
+          "status": "pass",
+          "rows": 55330,
+          "elapsed_seconds": 6.66,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 12,
+      "maximum_metric_difference": 4.440892098500626e-16,
+      "learned_training_scope": {
+        "P100-037.round2.v1": {
+          "asset": "tasks/P100-037.round2.v1/reference_training_scope.json",
+          "sha256": "44f2b01b2146840adc1e86a465b2a6111e8c3783c2736cf01b20b71eb0e48e5f",
+          "scope_status_counts": {
+            "source_recorded": 90
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-052",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-052.original.v1",
+        "P100-052.continuation.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-052.original.v1",
+          "protocol_version": "P100-052-batch4-frozen-v1",
+          "cohort_id": "P100-052.original.v1.cohort-1",
+          "input_sha256": "62bafb5b73639a856812f26a1466b2e8af8e6fdf82f67d5f5cc5d37fd51ffa0d",
+          "observations_sha256": "55fc94c22a99217ff559eeaa91acbd2fa33b73e5eb802aaa6bc9ec5f8cab43a6",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "m/s",
+          "target_units": "m/s",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-052.continuation.v1",
+          "protocol_version": "P100-052-continuation-20261001-background-calibrated",
+          "cohort_id": "P100-052.continuation.v1.cohort-1",
+          "input_sha256": "15d45f38b77dd3065e796859ac1c3fed27a64fedf7195873ccbac96e97e2e54b",
+          "observations_sha256": "6cb349440a69ba47457e9fcb78ff77c9690e4cfe42163651dcac0ef3efdaff87",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "m/s",
+          "target_units": "m/s",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-052.original.v1",
+          "status": "pass",
+          "rows": 2205,
+          "elapsed_seconds": 1.09,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-052.continuation.v1",
+          "status": "pass",
+          "rows": 2205,
+          "elapsed_seconds": 1.13,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 25,
+      "maximum_metric_difference": 0.0,
+      "learned_training_scope": {},
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-053",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-053.original.v1",
+        "P100-053.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-053.original.v1",
+          "protocol_version": "P100-053-prepared-primary-v1",
+          "cohort_id": "P100-053.original.v1.cohort-1",
+          "input_sha256": "851b36c6b20b62817b685b41e0b41711399ff8383bd84f491720ae4aea8e04f0",
+          "observations_sha256": "0f1609dc82bb5c01d152a5079f445ed592152804b3193b99665f5f7ea171a38d",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "Nm",
+          "target_units": "Nm",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-053.round2.v1",
+          "protocol_version": "P100-053.round2.v1.contract-1",
+          "cohort_id": "P100-053.round2.v1.development-oof",
+          "input_sha256": "2e80a135d0ff4f95e60a01b3d32fe1e9a96d7ef2bc0f106d4937e86b3fca6365",
+          "observations_sha256": "9901ed95446a2702d3e9275edc2b62ee03f4531be22f351c6e0a59c7d1e0cc4f",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "Nm",
+          "target_units": "Nm",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-053.original.v1",
+          "status": "pass",
+          "rows": 2473,
+          "elapsed_seconds": 1.3,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 2.220446049250313e-16,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-053.round2.v1",
+          "status": "pass",
+          "rows": 9895,
+          "elapsed_seconds": 2.67,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 13,
+      "maximum_metric_difference": 6.245004513516506e-17,
+      "learned_training_scope": {
+        "P100-053.round2.v1": {
+          "asset": "tasks/P100-053.round2.v1/reference_training_scope.json",
+          "sha256": "faa7be9909be269ab91695aebeed42901c7dbc27a9010a456b39e2c171b58299",
+          "scope_status_counts": {
+            "source_recorded": 45
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-055",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-055.original.v1",
+        "P100-055.continuation.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-055.original.v1",
+          "protocol_version": "P100-055-batch4-frozen-v1",
+          "cohort_id": "P100-055.original.v1.cohort-1",
+          "input_sha256": "6a3ad1fefe615b8f721ed602d8a77e34ccef998c88a56f65c309c689fde933c9",
+          "observations_sha256": "3f48d97e3e312a1c9ce5b9c944d4014605969f08f6912a7a85013820394e5cd1",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "N",
+          "target_units": "N",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-055.continuation.v1",
+          "protocol_version": "P100-055-AGING30-v1-CONT-20261001",
+          "cohort_id": "P100-055.continuation.v1.cohort-1",
+          "input_sha256": "0358a1ffd9544b2e12fc6b09339bf31a204440301fe43594d41b142883d22e67",
+          "observations_sha256": "0aa259a234f075bf432863dbdcde89c9446f73b95c17da2abdbdb3be3dc71406",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "N",
+          "target_units": "N",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-055.original.v1",
+          "status": "pass",
+          "rows": 4800,
+          "elapsed_seconds": 1.23,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-055.continuation.v1",
+          "status": "pass",
+          "rows": 2400,
+          "elapsed_seconds": 1.16,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 28,
+      "maximum_metric_difference": 0.0,
+      "learned_training_scope": {},
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-057",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-057.original.v1",
+        "P100-057.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-057.original.v1",
+          "protocol_version": "P100-057-prepared-primary-v1",
+          "cohort_id": "P100-057.original.v1.cohort-1",
+          "input_sha256": "695fae480c9f82f87de2e425afcf1bbf4f64076e2592517bd9b4c1b0de7ae886",
+          "observations_sha256": "6b6da184038ef297e4768c6f711ddc0c9c828e44319eb66cde4291e3bd65d9c9",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "cP",
+          "target_units": "cP",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-057.round2.v1",
+          "protocol_version": "P100-057.round2.v1.contract-1",
+          "cohort_id": "P100-057.round2.v1.development-oof",
+          "input_sha256": "8789890d43ca7dcc4edfb445b02014b68cb28c99a0055d845d0a53930697a998",
+          "observations_sha256": "ecc56757ed3758fe4b8989a33028028c4270382650d938cd35ffa6694d8cc231",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "cP",
+          "target_units": "cP",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-057.original.v1",
+          "status": "pass",
+          "rows": 2500,
+          "elapsed_seconds": 1.11,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-057.round2.v1",
+          "status": "pass",
+          "rows": 9000,
+          "elapsed_seconds": 2.32,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 14,
+      "maximum_metric_difference": 9.094947017729282e-13,
+      "learned_training_scope": {
+        "P100-057.round2.v1": {
+          "asset": "tasks/P100-057.round2.v1/reference_training_scope.json",
+          "sha256": "b6d94e5443fae3d4e04ad3d9de02a5b18b76718c23f90eb6883e7debe42fa422",
+          "scope_status_counts": {
+            "source_recorded": 36
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-058",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-058.original.v1",
+        "P100-058.continuation.v1",
+        "P100-058.supplemental-PLA3D850-loss.v1",
+        "P100-058.supplemental-PLA3D850-storage.v1",
+        "P100-058.supplemental-PLA_recycled-loss.v1",
+        "P100-058.supplemental-PLA_recycled-storage.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-058.original.v1",
+          "protocol_version": "P100-058-batch4-frozen-v2-explicit-log-eligibility",
+          "cohort_id": "P100-058.original.v1.cohort-1",
+          "input_sha256": "cbc9efc25e2c223dcb49cc0b69dd3024d82b443debeebbb4848ad73db568c04b",
+          "observations_sha256": "add73f652649f1e757941cef9d16d7aa4bc025ce3c213f7ac636bd56eb867d3c",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "dimensionless natural-log ratio",
+          "target_units": "Pa",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-058.continuation.v1",
+          "protocol_version": "P100-058-retrospective-continuation-20261001",
+          "cohort_id": "P100-058.continuation.v1.cohort-1",
+          "input_sha256": "c22307f8616754773079305570f6608ca3678c61ac4bb4f3f0a8731ab44e9061",
+          "observations_sha256": "8a7e49c5f8eeb6ac1298c4d9801ba394f1b72e1877882b747df4b75a374f5de9",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "dimensionless natural-log ratio",
+          "target_units": "Pa",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA3D850-loss.v1",
+          "protocol_version": "P100-058-PLA3D850-loss-fresh-challenge-20261001-exposed-after-delivery",
+          "cohort_id": "P100-058.supplemental-PLA3D850-loss.v1.cohort-1",
+          "input_sha256": "e5d956b062cd113e0fed257a4d56ef962460c25193aa45048085b3ee818d78bf",
+          "observations_sha256": "06e4f6f2a556c443b4fd77d76ce049e677251f262b35f7cc9d42b12f7ae5bf33",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "dimensionless natural-log ratio",
+          "target_units": "Pa",
+          "source_scope": "supplemental",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA3D850-storage.v1",
+          "protocol_version": "P100-058-PLA3D850-storage-fresh-challenge-20261001-exposed-after-delivery",
+          "cohort_id": "P100-058.supplemental-PLA3D850-storage.v1.cohort-1",
+          "input_sha256": "e5d956b062cd113e0fed257a4d56ef962460c25193aa45048085b3ee818d78bf",
+          "observations_sha256": "eadf1c9c110ebdcbd07c798b7925244978d5d276869f65b40ca5d1c825e21028",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "dimensionless natural-log ratio",
+          "target_units": "Pa",
+          "source_scope": "supplemental",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA_recycled-loss.v1",
+          "protocol_version": "P100-058-PLA_recycled-loss-fresh-challenge-20261001-exposed-after-delivery",
+          "cohort_id": "P100-058.supplemental-PLA_recycled-loss.v1.cohort-1",
+          "input_sha256": "f4b050f5ca8832f08be28ee17176acfbd3eb8a0f682cc773181dd888e0f9f70d",
+          "observations_sha256": "48235904d4e353ff62dc33d9b49434a67a9810c175ac78f4f65360acec765427",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "dimensionless natural-log ratio",
+          "target_units": "Pa",
+          "source_scope": "supplemental",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA_recycled-storage.v1",
+          "protocol_version": "P100-058-PLA_recycled-storage-fresh-challenge-20261001-exposed-after-delivery",
+          "cohort_id": "P100-058.supplemental-PLA_recycled-storage.v1.cohort-1",
+          "input_sha256": "f4b050f5ca8832f08be28ee17176acfbd3eb8a0f682cc773181dd888e0f9f70d",
+          "observations_sha256": "b8e9cd3359cb668cf9234a8846bbfb574f78ef44da0ca66105c04e3b53573cad",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "dimensionless natural-log ratio",
+          "target_units": "Pa",
+          "source_scope": "supplemental",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-058.original.v1",
+          "status": "pass",
+          "rows": 35,
+          "elapsed_seconds": 0.99,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-058.continuation.v1",
+          "status": "pass",
+          "rows": 35,
+          "elapsed_seconds": 0.99,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA3D850-loss.v1",
+          "status": "pass",
+          "rows": 66,
+          "elapsed_seconds": 0.98,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA3D850-storage.v1",
+          "status": "pass",
+          "rows": 66,
+          "elapsed_seconds": 0.99,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA_recycled-loss.v1",
+          "status": "pass",
+          "rows": 30,
+          "elapsed_seconds": 0.99,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA_recycled-storage.v1",
+          "status": "pass",
+          "rows": 30,
+          "elapsed_seconds": 0.98,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 42,
+      "maximum_metric_difference": 1.7763568394002505e-15,
+      "learned_training_scope": {},
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-059",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-059.original.v1",
+        "P100-059.continuation.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-059.original.v1",
+          "protocol_version": "P100-059-batch4-frozen-v1",
+          "cohort_id": "P100-059.original.v1.cohort-1",
+          "input_sha256": "2be1b41eb939de07be5cdf2f09f98b97c7be6abc6ade99ca9b1d587d239f185f",
+          "observations_sha256": "3eb6ffd1318b4a6601de3701d1f0bb5b98586a0b4e3339ab5b326d2fff4bf56c",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "kWh/kWp",
+          "target_units": "kWh/kWp",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-059.continuation.v1",
+          "protocol_version": "P100-059-continuation-20261001-causal-weather-history",
+          "cohort_id": "P100-059.continuation.v1.cohort-1",
+          "input_sha256": "c901cdf11d9a885403c7d94948264d9074ef4b602072c22d76a71020072b384d",
+          "observations_sha256": "a3d7ce34ae0c88e3a956426d9faad369311ff9db612e58e448c2cede79579efe",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "kWh/kWp",
+          "target_units": "kWh/kWp",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-059.original.v1",
+          "status": "pass",
+          "rows": 16966,
+          "elapsed_seconds": 2.03,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-059.continuation.v1",
+          "status": "pass",
+          "rows": 16966,
+          "elapsed_seconds": 2.22,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 24,
+      "maximum_metric_difference": 0.0,
+      "learned_training_scope": {},
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-060",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-060.original.v1",
+        "P100-060.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-060.original.v1",
+          "protocol_version": "P100-060-prepared-primary-v1",
+          "cohort_id": "P100-060.original.v1.cohort-1",
+          "input_sha256": "a21f6fffff18c9227487c74d31ef0e1dfe5e50e8b606480b3dda51ed0ebaa72a",
+          "observations_sha256": "2f0856cf7721225e4e43ab62f61f1d025b6f60410879df859a561e90c66513f7",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "V",
+          "target_units": "V",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-060.round2.v1",
+          "protocol_version": "P100-060.round2.v1.contract-1",
+          "cohort_id": "P100-060.round2.v1.development-oof",
+          "input_sha256": "c881878a8b7f2aee7f3a1f5a028dde04784c60cfabebddb78abd6a2f8ab6ffc2",
+          "observations_sha256": "62fdfb7352c5961fac0739fe9b76606b2eafed931c316d443d59d38121435d56",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "condition-normalized MAE",
+          "target_units": "V",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-060.original.v1",
+          "status": "pass",
+          "rows": 60,
+          "elapsed_seconds": 1.0,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-060.round2.v1",
+          "status": "pass",
+          "rows": 300,
+          "elapsed_seconds": 1.6,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 21,
+      "maximum_metric_difference": 8.326672684688674e-17,
+      "learned_training_scope": {
+        "P100-060.round2.v1": {
+          "asset": "tasks/P100-060.round2.v1/reference_training_scope.json",
+          "sha256": "47f333d619156482d57c142124dc9b9c85f75e4085951e9fa84bbec10e47c3c9",
+          "scope_status_counts": {
+            "source_recorded": 75
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-061",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-061.original.v1",
+        "P100-061.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-061.original.v1",
+          "protocol_version": "P100-061-prepared-primary-v1",
+          "cohort_id": "P100-061.original.v1.cohort-1",
+          "input_sha256": "2538f8c2dc968a15b353c1dcc913c7dca48fdf8a9c8ad9546ab198e1694e191e",
+          "observations_sha256": "405cf858df8c88b9347046cfe35ec5fad10d86a2b588355df744327390600a52",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "mol s^-1 m^-2",
+          "target_units": "mol s^-1 m^-2",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-061.round2.v1",
+          "protocol_version": "P100-061.round2.v1.contract-1",
+          "cohort_id": "P100-061.round2.v1.development-oof",
+          "input_sha256": "74ec1b245991da2d308f1c5dd336fb2670da4090ab1d9af942352b0c217f747b",
+          "observations_sha256": "18b2fc55d0f84d9d1593fe2e07a58a1400f2387ebc77e18affff0361deb0aff0",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "mol m^-2 s^-1",
+          "target_units": "mol s^-1 m^-2",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-061.original.v1",
+          "status": "pass",
+          "rows": 60,
+          "elapsed_seconds": 0.98,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-061.round2.v1",
+          "status": "pass",
+          "rows": 120,
+          "elapsed_seconds": 2.3,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 29,
+      "maximum_metric_difference": 9.627715291671279e-17,
+      "learned_training_scope": {
+        "P100-061.round2.v1": {
+          "asset": "tasks/P100-061.round2.v1/reference_training_scope.json",
+          "sha256": "87a353f81458ca86899311fce14ba7023d487a0ff69575bf18766d5cb00d5dfb",
+          "scope_status_counts": {
+            "source_recorded": 54,
+            "training_inventory_unavailable_in_serialized_state": 84
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-066",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-066.original.v1",
+        "P100-066.continuation.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-066.original.v1",
+          "protocol_version": "P100-066-batch4-frozen-v1",
+          "cohort_id": "P100-066.original.v1.cohort-1",
+          "input_sha256": "efc21bb3ec0df491514510fb115faba2082626f037cb07acc883eeb2dcd50591",
+          "observations_sha256": "9857491111377ecc6d0b4ad0dd5d8427c2d06ff6d23ae266c738bc844c23f7d3",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "wt.%",
+          "target_units": "wt.%",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-066.continuation.v1",
+          "protocol_version": "P100-066-retrospective-continuation-20261001",
+          "cohort_id": "P100-066.continuation.v1.cohort-1",
+          "input_sha256": "20cef648e3b818c76bb18a0f49868e520b85fcacec532d089711e371a2900d5b",
+          "observations_sha256": "9857491111377ecc6d0b4ad0dd5d8427c2d06ff6d23ae266c738bc844c23f7d3",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "wt.%",
+          "target_units": "wt.%",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-066.original.v1",
+          "status": "pass",
+          "rows": 58,
+          "elapsed_seconds": 0.98,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-066.continuation.v1",
+          "status": "pass",
+          "rows": 58,
+          "elapsed_seconds": 1.2,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 24,
+      "maximum_metric_difference": 0.0,
+      "learned_training_scope": {},
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-067",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-067.original.v1",
+        "P100-067.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-067.original.v1",
+          "protocol_version": "P100-067-prepared-primary-v1",
+          "cohort_id": "P100-067.original.v1.cohort-1",
+          "input_sha256": "62b3e2eb4a0f39274041409d1b7c4e0e40fdc9c25375284b95ae62417d02a123",
+          "observations_sha256": "8aec5bf148c8cf295e083c6d69f6685ac6fb162f3f14e548a65453f08447d4f9",
+          "aggregation": {
+            "hierarchy": [
+              "group",
+              "particle"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "absolute log ratio",
+          "target_units": "s",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-067.round2.v1",
+          "protocol_version": "P100-067.round2.v1.contract-1",
+          "cohort_id": "P100-067.round2.v1.development-oof",
+          "input_sha256": "e6a46ca1330054c82e496b9e97dfe5cfe06c6cd0edfdd3a56c8aca9f0e2e34d6",
+          "observations_sha256": "40cf6dd57488d01b4421c794a4be5d3ea9cd19edb54b1f9fdea80084b66d113f",
+          "aggregation": {
+            "hierarchy": [
+              "group",
+              "particle"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "absolute log ratio",
+          "target_units": "s",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-067.original.v1",
+          "status": "pass",
+          "rows": 76,
+          "elapsed_seconds": 0.97,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 3.1086244689504383e-15,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-067.round2.v1",
+          "status": "pass",
+          "rows": 148,
+          "elapsed_seconds": 1.61,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 15,
+      "maximum_metric_difference": 5.551115123125783e-17,
+      "learned_training_scope": {
+        "P100-067.round2.v1": {
+          "asset": "tasks/P100-067.round2.v1/reference_training_scope.json",
+          "sha256": "372f91be872467c139bf63a13ff88b6a82c166728ee0a776c71c339dd1b49103",
+          "scope_status_counts": {
+            "source_recorded": 66
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-069",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-069.original.v1",
+        "P100-069.continuation.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-069.original.v1",
+          "protocol_version": "P100-069-batch4-frozen-v1",
+          "cohort_id": "P100-069.original.v1.cohort-1",
+          "input_sha256": "54813f0405ee9bc798c363c6a614abe4b451258bc43c1e3b1f24dab51fc1e6eb",
+          "observations_sha256": "f29152fd11f7f7c32e95e6beea49d727234d3638c33932319de5a32951fe973f",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "degree C",
+          "target_units": "degree C",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-069.continuation.v1",
+          "protocol_version": "P100-069-continuation-20261001",
+          "cohort_id": "P100-069.continuation.v1.cohort-1",
+          "input_sha256": "e1987b48f75655c4dc7cb27133f07bed0867cee4aa9f47fc692c824e15f5099a",
+          "observations_sha256": "ae0a1f85bcdb5f119568d0867576f39ebad182a0a983675de564266763e1b81d",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "degree C",
+          "target_units": "degree C",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-069.original.v1",
+          "status": "pass",
+          "rows": 16568,
+          "elapsed_seconds": 3.35,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-069.continuation.v1",
+          "status": "pass",
+          "rows": 16568,
+          "elapsed_seconds": 5.85,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 27,
+      "maximum_metric_difference": 0.0,
+      "learned_training_scope": {},
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-071",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-071.original.v1",
+        "P100-071.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-071.original.v1",
+          "protocol_version": "P100-071-prepared-primary-v1",
+          "cohort_id": "P100-071.original.v1.cohort-1",
+          "input_sha256": "96591c6efa9cf7260fb4ca65d4e78e4eac4e6c3a9738f42325048234299a59af",
+          "observations_sha256": "0b6611248bc7c05f50a1d7124e41855671f733481c6636ff996a3d2be9b9c84a",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_rmse"
+          },
+          "primary_units": "million cells/mL",
+          "target_units": "million cells/mL",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-071.round2.v1",
+          "protocol_version": "P100-071.round2.v1.contract-1",
+          "cohort_id": "P100-071.round2.v1.development-oof",
+          "input_sha256": "17041850c306c916f1aec2308426c23f0455b2c4fcf63a6d7bfe57e8b4709959",
+          "observations_sha256": "6ee21d16e4af5a2dcb4c378278463725177e7eaa0bf064d31da1ba2d586af60a",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_rmse"
+          },
+          "primary_units": "million cells/mL",
+          "target_units": "million cells/mL",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-071.original.v1",
+          "status": "pass",
+          "rows": 92,
+          "elapsed_seconds": 1.05,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 3.552713678800501e-15,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-071.round2.v1",
+          "status": "pass",
+          "rows": 286,
+          "elapsed_seconds": 1.67,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 19,
+      "maximum_metric_difference": 4.440892098500626e-16,
+      "learned_training_scope": {
+        "P100-071.round2.v1": {
+          "asset": "tasks/P100-071.round2.v1/reference_training_scope.json",
+          "sha256": "f1dbf1ddb7496a59621de690c218d80f4acae18bda5a74bb2ccd9e0e13e45fd7",
+          "scope_status_counts": {
+            "source_recorded": 135
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-072",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-072.original.v1",
+        "P100-072.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-072.original.v1",
+          "protocol_version": "P100-072-prepared-primary-v1",
+          "cohort_id": "P100-072.original.v1.cohort-1",
+          "input_sha256": "ea72ed5588b17a2f806187f01541b7a375776f0136c95521dff86e2fc69517f7",
+          "observations_sha256": "43a96fb8dcc9e7771aae01f01ffc626b1feca3f68a3ec1a21fad9df2646a1cb5",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "percentage points",
+          "target_units": "percentage points",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-072.round2.v1",
+          "protocol_version": "P100-072.round2.v1.contract-1",
+          "cohort_id": "P100-072.round2.v1.development-oof",
+          "input_sha256": "54019470d411137ed10ee3bdce44c054440b71734149aea9fdf5e6ccc45830f8",
+          "observations_sha256": "4a3ef22998487eb77abdcc4d6e46ea585b0fd190d2cb4affa47ce7197d831cbb",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "g/L",
+          "target_units": "g/L",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-072.original.v1",
+          "status": "pass",
+          "rows": 18,
+          "elapsed_seconds": 0.97,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-072.round2.v1",
+          "status": "pass",
+          "rows": 153,
+          "elapsed_seconds": 1.61,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 19,
+      "maximum_metric_difference": 3.552713678800501e-15,
+      "learned_training_scope": {
+        "P100-072.round2.v1": {
+          "asset": "tasks/P100-072.round2.v1/reference_training_scope.json",
+          "sha256": "f9e6035f11b6f3283383712d15f938e4d3956224a78aa546ef4371eaba1f77e9",
+          "scope_status_counts": {
+            "source_recorded": 78
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-073",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-073.original.v1",
+        "P100-073.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-073.original.v1",
+          "protocol_version": "P100-073-prepared-primary-v1",
+          "cohort_id": "P100-073.original.v1.cohort-1",
+          "input_sha256": "36286692b27b589698aae99793955d1a5155fd8a8b88fc1dea917464091670bb",
+          "observations_sha256": "aa29e758823a5ff44554044f8bda99759368ee7e31d0e54309dbf1ff3ce56a0e",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_rmse"
+          },
+          "primary_units": "mL",
+          "target_units": "mL",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-073.round2.v1",
+          "protocol_version": "P100-073.round2.v1.contract-1",
+          "cohort_id": "P100-073.round2.v1.development-oof",
+          "input_sha256": "0445e3106a4867a8229a888aa27ca318f310f57440647ac0dc67fa912c620a21",
+          "observations_sha256": "158c166b072f1c261922ede30bf3d827f1281409bfbbdc1354e6f8f4874a0c59",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_rmse"
+          },
+          "primary_units": "mL",
+          "target_units": "mL",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-073.original.v1",
+          "status": "pass",
+          "rows": 216,
+          "elapsed_seconds": 0.99,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-073.round2.v1",
+          "status": "pass",
+          "rows": 568,
+          "elapsed_seconds": 1.62,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 19,
+      "maximum_metric_difference": 2.842170943040401e-14,
+      "learned_training_scope": {
+        "P100-073.round2.v1": {
+          "asset": "tasks/P100-073.round2.v1/reference_training_scope.json",
+          "sha256": "eaeec26f0439da8bb492c529c472e35e1b594b56b3788280e2d9e780ff2a8ca5",
+          "scope_status_counts": {
+            "training_inventory_unavailable_in_serialized_state": 27,
+            "source_recorded": 6
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-078",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-078.original.v1",
+        "P100-078.continuation.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-078.original.v1",
+          "protocol_version": "P100-078-batch4-frozen-v1",
+          "cohort_id": "P100-078.original.v1.cohort-1",
+          "input_sha256": "9c54a7b8626e1d2205f3948631944dabb3abfcd8d62585f0afd654d3f8263a80",
+          "observations_sha256": "b638e7bdee7a9927831a60396f174a11ea15c238660089c811662f83f6903433",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "log10 CFU / total lung",
+          "target_units": "log10 CFU / total lung",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-078.continuation.v1",
+          "protocol_version": "P100-078-continuation-20261001-documentation-v2",
+          "cohort_id": "P100-078.continuation.v1.cohort-1",
+          "input_sha256": "49a0cd8585dc52d24709e5da29f9d4f46bd21b7f12fce8bba4588ec0b4ab813a",
+          "observations_sha256": "36a733eeff762b77a3524ed8f7dfaac65942b121e4535ab17f98878723f3fb7c",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "log10 CFU / total lung",
+          "target_units": "log10 CFU / total lung",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-078.original.v1",
+          "status": "pass",
+          "rows": 15,
+          "elapsed_seconds": 0.97,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-078.continuation.v1",
+          "status": "pass",
+          "rows": 15,
+          "elapsed_seconds": 0.98,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 22,
+      "maximum_metric_difference": 0.0,
+      "learned_training_scope": {},
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-082",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-082.original.v1",
+        "P100-082.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-082.original.v1",
+          "protocol_version": "P100-082-prepared-primary-v1",
+          "cohort_id": "P100-082.original.v1.cohort-1",
+          "input_sha256": "d0f030b8483dd35f2a713a251da4a9899bfe1e607154878cfd43fc5d92998ec4",
+          "observations_sha256": "cf325c7491808be0acda3622bd6ebe1caa2b738f9f9ca3b1e267bdaf74af203e",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_rmse"
+          },
+          "primary_units": "g CO2 m^-2 h^-1",
+          "target_units": "g CO2 m^-2 h^-1",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-082.round2.v1",
+          "protocol_version": "P100-082.round2.v1.contract-1",
+          "cohort_id": "P100-082.round2.v1.development-oof",
+          "input_sha256": "66aaa3959069268d621d6b92b3568fd923bb3e9383d26965ee46f69e5d5c6041",
+          "observations_sha256": "ab7375d167a138331f14b34fe41e13f814ec2ad13cad600d54e00c7a56314e30",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_rmse"
+          },
+          "primary_units": "g CO2 m^-2 h^-1",
+          "target_units": "g CO2 m^-2 h^-1",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-082.original.v1",
+          "status": "pass",
+          "rows": 6928,
+          "elapsed_seconds": 1.41,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-082.round2.v1",
+          "status": "pass",
+          "rows": 20128,
+          "elapsed_seconds": 3.18,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 20,
+      "maximum_metric_difference": 8.326672684688674e-17,
+      "learned_training_scope": {
+        "P100-082.round2.v1": {
+          "asset": "tasks/P100-082.round2.v1/reference_training_scope.json",
+          "sha256": "a9159f94b9e1d817bd4a24219d4014edc5b0fd5cd45e101d81171f621cb18848",
+          "scope_status_counts": {
+            "source_recorded": 12,
+            "training_inventory_unavailable_in_serialized_state": 30
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-083",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-083.original.v1",
+        "P100-083.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-083.original.v1",
+          "protocol_version": "P100-083-prepared-primary-v1",
+          "cohort_id": "P100-083.original.v1.cohort-1",
+          "input_sha256": "1f3be4e12fcf4ad2bacab06b6c5622552ecb69f38140703bc081a1b949113935",
+          "observations_sha256": "f9562ec86fc5f380f6f8098a2101644150403dde72ba6fd319bf881c9a5e4ffb",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_rmse"
+          },
+          "primary_units": "degC",
+          "target_units": "degC",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-083.round2.v1",
+          "protocol_version": "P100-083.round2.v1.contract-1",
+          "cohort_id": "P100-083.round2.v1.development-oof",
+          "input_sha256": "3305d59f2b09f218ebecb99e25ddb39eae5d9da2d71528f79fe0549f184431f2",
+          "observations_sha256": "2f2f6e67ed4f820779e27dc0c3909f3fbf80fc083722335fdd68a510aa61b0ef",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_rmse"
+          },
+          "primary_units": "degC",
+          "target_units": "degree C",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-083.original.v1",
+          "status": "pass",
+          "rows": 1282,
+          "elapsed_seconds": 1.08,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-083.round2.v1",
+          "status": "pass",
+          "rows": 4111,
+          "elapsed_seconds": 2.05,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 17,
+      "maximum_metric_difference": 8.326672684688674e-17,
+      "learned_training_scope": {
+        "P100-083.round2.v1": {
+          "asset": "tasks/P100-083.round2.v1/reference_training_scope.json",
+          "sha256": "fdad573b6d7578d464c3e036ed365c32cee900b42471bb1f13bf828ed41beeec",
+          "scope_status_counts": {
+            "source_recorded": 33
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-086",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-086.original.v1",
+        "P100-086.continuation.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-086.original.v1",
+          "protocol_version": "P100-086-batch4-frozen-v1",
+          "cohort_id": "P100-086.original.v1.cohort-1",
+          "input_sha256": "5fdb117494ac6ce01653ccb699b31f05deb2f13cdab09611885197cb941e6b34",
+          "observations_sha256": "9bf4cc4eeb542bf598bc0fc505694c65c465b296441afe8cc4acdc0122fbb4d1",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "source potency unit (undocumented)",
+          "target_units": "source potency unit (undocumented)",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-086.continuation.v1",
+          "protocol_version": "P100-086-continuation-20261001-documentation-v2",
+          "cohort_id": "P100-086.continuation.v1.cohort-1",
+          "input_sha256": "2a3bf4d99dc8f01f268d30b1a9e26605582899aa378ea4227d8afc5b2a6edaaa",
+          "observations_sha256": "7667a6e9fd3cbbfba76fcfb86545a6e865ea4989dd9f4ac91ba884b5437a2663",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "source potency unit (undocumented)",
+          "target_units": "source potency unit (undocumented)",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-086.original.v1",
+          "status": "pass",
+          "rows": 9132,
+          "elapsed_seconds": 1.52,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-086.continuation.v1",
+          "status": "pass",
+          "rows": 9132,
+          "elapsed_seconds": 2.17,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 24,
+      "maximum_metric_difference": 0.0,
+      "learned_training_scope": {},
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-092",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-092.original.v1",
+        "P100-092.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-092.original.v1",
+          "protocol_version": "P100-092-prepared-primary-v1",
+          "cohort_id": "P100-092.original.v1.cohort-1",
+          "input_sha256": "c0d3b3114abd405158839dee7418f258e29b92c546d887ffcaea199ed842767c",
+          "observations_sha256": "b371937b092ce320e03ac8eea57f350c06cba6d81e0762aa3f392d87b211dbb4",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "dB",
+          "target_units": "dBm",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-092.round2.v1",
+          "protocol_version": "P100-092.round2.v1.contract-1",
+          "cohort_id": "P100-092.round2.v1.development-oof",
+          "input_sha256": "153c8867089c9f5b1996a91a7e94d8f289fdebc9cdbbc45ceb1bd82f755f3a47",
+          "observations_sha256": "39d5f20764ddff5c459d98fed55d4e100fd262c3cfc6dc9f972898f72c7a059c",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "dB",
+          "target_units": "dBm",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-092.original.v1",
+          "status": "pass",
+          "rows": 15600,
+          "elapsed_seconds": 2.06,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-092.round2.v1",
+          "status": "pass",
+          "rows": 18720,
+          "elapsed_seconds": 3.62,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 13,
+      "maximum_metric_difference": 0.0,
+      "learned_training_scope": {
+        "P100-092.round2.v1": {
+          "asset": "tasks/P100-092.round2.v1/reference_training_scope.json",
+          "sha256": "250043ff49890f66632e2f173ebfec34b986dfe45b59142dec15421f7fa5c063",
+          "scope_status_counts": {
+            "source_recorded": 30
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-096",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-096.original.v1",
+        "P100-096.continuation.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-096.original.v1",
+          "protocol_version": "P100-096-batch4-frozen-v1",
+          "cohort_id": "P100-096.original.v1.cohort-1",
+          "input_sha256": "2055a7bc96fd6fe4444db2161e7c81b64a94806aa5c1cd3e4e62bcf9c7e09b69",
+          "observations_sha256": "8ef4335aa851bc7f2262b272e82db98f093e726958e12bebb7e889051ae1390e",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "m/s",
+          "target_units": "m/s",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-096.continuation.v1",
+          "protocol_version": "P100-096-forward-arc-actual-clock-v2-documentation-v2",
+          "cohort_id": "P100-096.continuation.v1.cohort-1",
+          "input_sha256": "29f2dbb53d846780f7beabe6dee31dfbb0c6dc999b6bdc6a0cd66d8bbce50ea5",
+          "observations_sha256": "10dd15e0368fa627ca2f720af386323937f9da6fd54ecd8f642f624f4b432e1d",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "m/s",
+          "target_units": "m/s",
+          "source_scope": "supplemental",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-096.original.v1",
+          "status": "pass",
+          "rows": 4437,
+          "elapsed_seconds": 1.34,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-096.continuation.v1",
+          "status": "pass",
+          "rows": 5833,
+          "elapsed_seconds": 1.63,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 34,
+      "maximum_metric_difference": 0.0,
+      "learned_training_scope": {},
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    },
+    {
+      "case_id": "P100-100",
+      "reviewer_id": "computational-review-agent",
+      "reviewer_role": "computational",
+      "disposition": "supported_with_stated_scope",
+      "tasks": [
+        "P100-100.original.v1",
+        "P100-100.round2.v1"
+      ],
+      "task_bindings": [
+        {
+          "task_id": "P100-100.original.v1",
+          "protocol_version": "P100-100-prepared-primary-v1",
+          "cohort_id": "P100-100.original.v1.cohort-1",
+          "input_sha256": "0d7d828a907f376b39f205e6a2f2dd611561487472e16533be6c18e886d287a2",
+          "observations_sha256": "861c464b118e9ccfc58abc47120783c2bac6aa37c00f03854edd0c5d1021c6f4",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "ms",
+          "target_units": "ms",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        },
+        {
+          "task_id": "P100-100.round2.v1",
+          "protocol_version": "P100-100.round2.v1.contract-1",
+          "cohort_id": "P100-100.round2.v1.development-oof",
+          "input_sha256": "fec180c7d132f4dc279a7a7fd431b9cb8cbc5b8d04a5e4e0b69d21d48883deed",
+          "observations_sha256": "5f9c97213835bfd79a9cc7bf5be75f8acc4a9a14714662c4b513cb0c47a652d3",
+          "aggregation": {
+            "hierarchy": [
+              "group"
+            ],
+            "primary": "mean_group_error"
+          },
+          "primary_units": "ms",
+          "target_units": "ms",
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "selected_reference_replay": [
+        {
+          "task_id": "P100-100.original.v1",
+          "status": "pass",
+          "rows": 2943,
+          "elapsed_seconds": 1.19,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        },
+        {
+          "task_id": "P100-100.round2.v1",
+          "status": "pass",
+          "rows": 5965,
+          "elapsed_seconds": 2.21,
+          "replay": {
+            "status": "passed",
+            "maximum_absolute_difference": 0.0,
+            "security_sandbox": false,
+            "execution_mode": "explicitly_trusted_local",
+            "environment_secrets_inherited": false
+          }
+        }
+      ],
+      "metric_checks": 16,
+      "maximum_metric_difference": 1.7763568394002505e-15,
+      "learned_training_scope": {
+        "P100-100.round2.v1": {
+          "asset": "tasks/P100-100.round2.v1/reference_training_scope.json",
+          "sha256": "c3d0f2bb7c23854c569a127067c2d493e3c66241a1cfda015da8bf8fe06ed1cd",
+          "scope_status_counts": {
+            "source_recorded": 54
+          }
+        }
+      },
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No novelty inference is made from computational parity."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention or industrial benefit is demonstrated by replay."
+        }
+      },
+      "limitations": [
+        "All existing outcomes are exposed for future users.",
+        "Prediction-file scoring does not establish training independence.",
+        "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+        "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+        "Alternative discoveries can be scored; references are not unique scientific ground truth."
+      ]
+    }
+  ]
+}

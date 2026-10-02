@@ -1,0 +1,164 @@
+{
+  "case_id": "P100-045",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_electronics",
+  "review_date": "2026-10-02",
+  "checked_files": [
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "657bd8195845d5b62061e70c34afb388202a96f92066fffdd16f817b115cbd5d"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "a2c927dcd686a5dcb2287cb97da104acc735911032163fc88ba7a0e3a97adab6"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "2838438429da2de3a6b124accac05574831f085254ef5c24aba25a829369b23c"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "62216a10067319f32af554b0fedc1b2f25c6aeb76f62cd1807925d977fa893e0"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "234dbd6b317128da5b231f056b0cf25286d7af16ff369149d0bac902d52e24f8"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "f108bdffbe6296ec84090902ef1b684ccd24dbaf01c06fd3f8e98800e7940c9a"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "a8438a39e8774053e6170cc8718bdb1430648967668b6d7d9ad5e2f32e08ec6c"
+    },
+    {
+      "path": "package/EQUATIONS.md",
+      "sha256": "6d68fbee01a2b2b639398f8b61ffeb8fd31f727fb6565448bc2613455afb1ae5"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-045-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Same-bin count reconstruction22.088 counts/s improves background ratio23.7119 and flexible34.0513 across two reserved detectors. Claim-specific scope: An intensity-dependent count-space response improves the contemporaneous count-space reconstruction across reserved detectors under the fixed-bin and pretrigger-calibration contract."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Superlinear excess relation is detector count-space hardening, not a deconvolved photon spectrum; saturation scale at a bound is unidentifiable."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a transparent bounded research/evaluation case. One burst shared across all detectors, differing energy responses/orientations; same-bin low channels and pretrigger calibration permitted. No future-burst forecast."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured."
+        }
+      },
+      "checks": [
+        "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+        "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+        "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+      ],
+      "limitations": [
+        "One burst shared across all detectors, differing energy responses/orientations; same-bin low channels and pretrigger calibration permitted. No future-burst forecast.",
+        "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+      ]
+    },
+    {
+      "finding_id": "P100-045-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Same-bin count reconstruction22.088 counts/s improves background ratio23.7119 and flexible34.0513 across two reserved detectors. Claim-specific scope: The proposed saturation scale is not identified within the parameter range; reaching its upper bound is evidence against interpreting this fit as measured detector saturation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Superlinear excess relation is detector count-space hardening, not a deconvolved photon spectrum; saturation scale at a bound is unidentifiable."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a transparent bounded research/evaluation case. One burst shared across all detectors, differing energy responses/orientations; same-bin low channels and pretrigger calibration permitted. No future-burst forecast."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured."
+        }
+      },
+      "checks": [
+        "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+        "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+        "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+      ],
+      "limitations": [
+        "One burst shared across all detectors, differing energy responses/orientations; same-bin low channels and pretrigger calibration permitted. No future-burst forecast.",
+        "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+      ]
+    },
+    {
+      "finding_id": "P100-045-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "Same-bin count reconstruction22.088 counts/s improves background ratio23.7119 and flexible34.0513 across two reserved detectors. Claim-specific scope: These results establish a universal new physical or mathematical law, or a demonstrated deployed industrial impact."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Superlinear excess relation is detector count-space hardening, not a deconvolved photon spectrum; saturation scale at a bound is unidentifiable."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a transparent bounded research/evaluation case. One burst shared across all detectors, differing energy responses/orientations; same-bin low channels and pretrigger calibration permitted. No future-burst forecast."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured."
+        }
+      },
+      "checks": [
+        "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+        "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+        "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+      ],
+      "limitations": [
+        "One burst shared across all detectors, differing energy responses/orientations; same-bin low channels and pretrigger calibration permitted. No future-burst forecast.",
+        "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+      ]
+    }
+  ],
+  "review_scope": "Independent critical assessment of source semantics, evidence and claims; not independent experiments, clinical advice, human expert adjudication or a fresh confirmation campaign.",
+  "source_review": {
+    "primary_url": "https://fermi.gsfc.nasa.gov/ssc/data/analysis/GBM_caveats.html",
+    "web_access": "Official caveat fetch returned503; retained native FITS semantics and source caveat record inspected."
+  }
+}

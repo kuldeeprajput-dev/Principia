@@ -1,0 +1,869 @@
+{
+  "schema": "principia.maintenance-audit/1",
+  "reviewer_id": "asd5_materials",
+  "path_base": "principia-100",
+  "created_utc": "2026-10-01T16:11:37.078529+00:00",
+  "no_new_fits": true,
+  "entries": [
+    {
+      "case_id": "P100-054",
+      "reviewer_id": "asd5_materials",
+      "checked_files": [
+        {
+          "path": "cases/P100-054/final_results/FINDINGS.md",
+          "sha256": "3d9b76a432d5444b30ba4dcd9050479b5d2b425f159a81612e4b58961bbe0a97"
+        },
+        {
+          "path": "cases/P100-054/final_results/findings.json",
+          "sha256": "2ff22c6b15e971a1c02fa62944a58ab00045fe9a2b0913e3eac4ea67776cdad7"
+        },
+        {
+          "path": "tasks/P100-054.original.v1/task.json",
+          "sha256": "2d2c071ceaf5a97285b8025acac105ea0ff30bffcf774ea4eb3f8fd72f90bd0a"
+        },
+        {
+          "path": "tasks/P100-054.original.v1/evidence/metrics.csv",
+          "sha256": "fff64fafc40b45e90816770f613663d77a1ca9cda2a9275ef88408dd15856f66"
+        }
+      ],
+      "strongest_admitted_conclusion": "A two-parameter bridge-width correction improves second-bridge force reconstruction within one wafer; notch-only correction fails. It is not intrinsic toughness or prospective safe-load control.",
+      "task_specific_comparisons": [
+        {
+          "task_id": "P100-054.original.v1",
+          "protocol_version": "P100-054-asd5-native-v1",
+          "cohort_id": "P100-054.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "mN",
+          "reference_model": "reference",
+          "reference_error": 0.0173157735041834,
+          "strongest_named_control": "baseline_flexible",
+          "control_error": 0.019076826132691904,
+          "lowest_recorded_model_diagnostic": "attempt_004",
+          "lowest_recorded_error": 0.01596120460115448,
+          "groups": 22,
+          "assigned_rows": 23,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "{\"status\": \"exposed\", \"confirmation_originally_withheld\": true, \"public_source_aware\": true}",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": "Twenty-two reserved specimen IDs/23 records, but only one wafer/campaign. Some SEM geometry is post-test; repeated labels stay linked. Author toughness outputs are excluded.",
+      "claim_quality_issues": [
+        "Post-test geometry must remain prominent in every task description. Stronger bounded-regime confirmation result is diagnostic, not a replacement reference."
+      ],
+      "recommended_improvements": [
+        "Use pre-test geometry plus new-wafer specimens to test prospective transfer. Repeat geometric metrology to quantify errors-in-variables before intrinsic toughness claims."
+      ],
+      "blocking_defects": [],
+      "required_documentation_correction": false,
+      "correction_reference": null,
+      "computational_scope": "Root performs collection-wide raw reconstruction, replay and metric acceptance; this review inspected task contracts, reader findings, finding index and saved exact-task metrics."
+    },
+    {
+      "case_id": "P100-055",
+      "reviewer_id": "asd5_materials",
+      "checked_files": [
+        {
+          "path": "cases/P100-055/final_results/FINDINGS.md",
+          "sha256": "1667c0fa42e66680cf06ce0fc731e44725b4284303d696908e5a50739b6e6533"
+        },
+        {
+          "path": "cases/P100-055/final_results/findings.json",
+          "sha256": "eacb6c75eaa4a0642fd25babf4dfa1cf5d7a5a4aab5854d6001431e008ed82fb"
+        },
+        {
+          "path": "tasks/P100-055.continuation.v1/task.json",
+          "sha256": "70b8e10b8fd08a23c25ea6f7e6a36e694df9f51948730d055e938c25657f9061"
+        },
+        {
+          "path": "tasks/P100-055.continuation.v1/evidence/metrics.csv",
+          "sha256": "e5fc38273ef6208b505ee1a06fef53566080675c355af17aec45c4387db82ac8"
+        },
+        {
+          "path": "tasks/P100-055.original.v1/task.json",
+          "sha256": "c28c7b7a7c93af664bd761f69b80e8e1fcd7010dbb0c9749c2b994f1fc7ceec6"
+        },
+        {
+          "path": "tasks/P100-055.original.v1/evidence/metrics.csv",
+          "sha256": "81801cca41f118450e51963be4fca4cdc7948df4867d8c32ec44929b097a634e"
+        }
+      ],
+      "strongest_admitted_conclusion": "Physical-law abstention is justified for the uncalibrated force task. Complete early-age curves enable a separate calibrated aging task, but the selected proportional gain is not best on the exposed two-mixture confirmation.",
+      "task_specific_comparisons": [
+        {
+          "task_id": "P100-055.continuation.v1",
+          "protocol_version": "P100-055-AGING30-v1-CONT-20261001",
+          "cohort_id": "P100-055.continuation.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "N",
+          "reference_model": "reference",
+          "reference_error": 0.1363226262122021,
+          "strongest_named_control": "baseline_kernel",
+          "control_error": 0.08281894835270699,
+          "lowest_recorded_model_diagnostic": "cycle_004_water_rebuild",
+          "lowest_recorded_error": 0.07286008615014317,
+          "groups": 2,
+          "assigned_rows": 2400,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "Every original source outcome is exposed. Development used seven fixed mixtures; diagnostic used the other two after selection freeze. Scores are retrospective. Revised calibration task differs from the old both-age uncalibrated task; do not compare their MAEs directly.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        },
+        {
+          "task_id": "P100-055.original.v1",
+          "protocol_version": "P100-055-batch4-frozen-v1",
+          "cohort_id": "P100-055.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "N",
+          "reference_model": "reference",
+          "reference_error": 0.15009735278590197,
+          "strongest_named_control": "baseline_rbf",
+          "control_error": 0.15009735278590197,
+          "lowest_recorded_model_diagnostic": "reference",
+          "lowest_recorded_error": 0.15009735278590197,
+          "groups": 2,
+          "assigned_rows": 4800,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "All packaged targets are exposed for future agents; future scoring is retrospective. Public source-aware corpus. Illustrative header/first-row values were inspected during the semantics audit; these do not constitute blind source acquisition. All delivered targets become exposed after confirmation.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": "Unknown penetration-index cadence and incomplete probe geometry preclude material stress/time constants. Age0 and age30 represent distinct specimens; input histories change the task. Water, aggregate and additives covary.",
+      "claim_quality_issues": [
+        "The continuation reference0.136323N loses to kernel0.082819N and several later diagnostics; development-selection success must never be presented as confirmed superiority."
+      ],
+      "recommended_improvements": [
+        "Obtain penetration kinematics/geometry and independent batch replication. Fix mixture labels/masses using author context; pre-register prospective paired-age sampling before mechanistic aging inference."
+      ],
+      "blocking_defects": [],
+      "required_documentation_correction": false,
+      "correction_reference": null,
+      "computational_scope": "Root performs collection-wide raw reconstruction, replay and metric acceptance; this review inspected task contracts, reader findings, finding index and saved exact-task metrics."
+    },
+    {
+      "case_id": "P100-056",
+      "reviewer_id": "asd5_materials",
+      "checked_files": [
+        {
+          "path": "cases/P100-056/final_results/FINDINGS.md",
+          "sha256": "06f8dd678087376786ea7918ba8942dfd7a8405eaf8b96dd031f18448ed4f30a"
+        },
+        {
+          "path": "cases/P100-056/final_results/findings.json",
+          "sha256": "a33def460d9bfc2e89a4d1cce5e0325cfae293e95e4a813e5f5c3f73f86670ba"
+        },
+        {
+          "path": "tasks/P100-056.original.v1/task.json",
+          "sha256": "6141adc19b4f1b03bbcbfd7bdfd7a31637cf1d355c426439ca01c36d83fe0a2c"
+        },
+        {
+          "path": "tasks/P100-056.original.v1/evidence/metrics.csv",
+          "sha256": "76d9c57a4b5ad94ef11df264e48ec3ba48809560ed06b5c33854bf5eac72e92c"
+        }
+      ],
+      "strongest_admitted_conclusion": "Early-calibrated saturation prevents gross elastic extrapolation. The concrete-specific cap does not beat a simpler common cap on two held beams.",
+      "task_specific_comparisons": [
+        {
+          "task_id": "P100-056.original.v1",
+          "protocol_version": "P100-056-asd5-native-v1",
+          "cohort_id": "P100-056.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "kN",
+          "reference_model": "reference",
+          "reference_error": 5.281085957110801,
+          "strongest_named_control": "attempt_002",
+          "control_error": 4.753967855996455,
+          "lowest_recorded_model_diagnostic": "attempt_002",
+          "lowest_recorded_error": 4.753967855996455,
+          "groups": 2,
+          "assigned_rows": 45,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "{\"status\": \"exposed\", \"confirmation_originally_withheld\": true, \"public_source_aware\": true}",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": "Four training beams and two C-beam confirmation curves. Every predictor sees only<=10mm calibration, but task is conditional on later imposed displacement. Post-damage drops retained; no virgin-material strength or safety certification.",
+      "claim_quality_issues": [
+        "A cap estimates response, not characteristic design resistance. Material-specific superiority is already unsupported and must remain so."
+      ],
+      "recommended_improvements": [
+        "Measure additional independent beams and connector-slip evolution; test damage-phase predictions separately under a prespecified task, retaining abrupt drops."
+      ],
+      "blocking_defects": [],
+      "required_documentation_correction": false,
+      "correction_reference": null,
+      "computational_scope": "Root performs collection-wide raw reconstruction, replay and metric acceptance; this review inspected task contracts, reader findings, finding index and saved exact-task metrics."
+    },
+    {
+      "case_id": "P100-057",
+      "reviewer_id": "asd5_materials",
+      "checked_files": [
+        {
+          "path": "cases/P100-057/final_results/FINDINGS.md",
+          "sha256": "e9e3ff537150c607dbc4d92563cacc85a5ccb06f78afed6f89ffd32ac3759ed6"
+        },
+        {
+          "path": "cases/P100-057/final_results/findings.json",
+          "sha256": "a8549d05a964b7ca602dc4a3200f17b42a2dc449ff96d30cda9a58773e577a11"
+        },
+        {
+          "path": "tasks/P100-057.original.v1/task.json",
+          "sha256": "75fa060a9f2bb90f037e7307ff7f350473310757300e2fd04fe3502214505164"
+        },
+        {
+          "path": "tasks/P100-057.original.v1/evidence/metrics.csv",
+          "sha256": "cf41ea7ff06bba532482077ea6ad10f4be556cdedb4b3813a28a94ad1f7ad42c"
+        },
+        {
+          "path": "tasks/P100-057.round2.v1/task.json",
+          "sha256": "f710ac954d92e57c222228d560f2e454991b064d721706b8b4ca164554852bb3"
+        },
+        {
+          "path": "tasks/P100-057.round2.v1/evidence/metrics.csv",
+          "sha256": "1a4f38b97acdf0af6a3522e4a0fcc989943d279cde8e58b29e3f7a57268074ca"
+        }
+      ],
+      "strongest_admitted_conclusion": "Known Arrhenius response is a compact repeat-test baseline. Causal earlier-temperature history defines a separate task; shear transport adds negligible useful evidence and does not identify equilibrium rheology.",
+      "task_specific_comparisons": [
+        {
+          "task_id": "P100-057.original.v1",
+          "protocol_version": "P100-057-prepared-primary-v1",
+          "cohort_id": "P100-057.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "cP",
+          "reference_model": "reference",
+          "reference_error": 3291.165870558062,
+          "strongest_named_control": "baseline_rbf",
+          "control_error": 4575.906905799509,
+          "lowest_recorded_model_diagnostic": "challenger",
+          "lowest_recorded_error": 3288.6121219287584,
+          "groups": 10,
+          "assigned_rows": 2500,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "All packaged targets are now exposed; future scoring is retrospective. One inspected file with first low-temperature responses was excluded from the reserved pool. Target-independent metadata hash chooses one complete test per formulation; no confirmation score was opened.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        },
+        {
+          "task_id": "P100-057.round2.v1",
+          "protocol_version": "P100-057.round2.v1.contract-1",
+          "cohort_id": "P100-057.round2.v1.development-oof",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "cP",
+          "reference_model": "current/cycle-001",
+          "reference_error": 3628.028132364348,
+          "strongest_named_control": "previous/baseline-old",
+          "control_error": 3637.39715841308,
+          "lowest_recorded_model_diagnostic": "previous/cycle-002",
+          "lowest_recorded_error": 3604.802274490527,
+          "groups": 40,
+          "assigned_rows": 9000,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": "Known formulations in one rheometer campaign; synthesis lots absent. Signed/extreme readings remain. Sequential heating confounds temperature and aging. History task contains40 development-OOF Test IDs, distinct from10 original reserved tests.",
+      "claim_quality_issues": [
+        "Round2 calibration prose incorrectly inherited original static Arrhenius amplitudes; exact documentation-onlyv2 corrections supplied. Extra histories explain changed information budget; static/history error differences are not an algorithm comparison."
+      ],
+      "recommended_improvements": [
+        "Apply versioned task-card correction without touching v1 states. Seek instrument-status/torque-range evidence for negative/extreme readings and new synthesis batches; do not silently discard unfavorable values."
+      ],
+      "blocking_defects": [],
+      "required_documentation_correction": true,
+      "correction_reference": "CONTRACT_CORRECTIONS_materials.json",
+      "computational_scope": "Root performs collection-wide raw reconstruction, replay and metric acceptance; this review inspected task contracts, reader findings, finding index and saved exact-task metrics."
+    },
+    {
+      "case_id": "P100-058",
+      "reviewer_id": "asd5_materials",
+      "checked_files": [
+        {
+          "path": "cases/P100-058/final_results/FINDINGS.md",
+          "sha256": "7ddfce421363b849b86a56be3da39487f1f2edece5895a808e61dd0eaa7694de"
+        },
+        {
+          "path": "cases/P100-058/final_results/findings.json",
+          "sha256": "5920699efec06a7f12ad4eaa18becbe48be2d25eeab4a604db3ed963e13ff4b6"
+        },
+        {
+          "path": "tasks/P100-058.continuation.v1/task.json",
+          "sha256": "0996ebb0f2fead5732ad4d5ec265c87e1acf423651c54b8d8e672bedf75d07fe"
+        },
+        {
+          "path": "tasks/P100-058.continuation.v1/evidence/metrics.csv",
+          "sha256": "0f286c4bffc14c908d1af8e5e4a680d348f2dcdc1c02600e43b265b8ee4efc30"
+        },
+        {
+          "path": "tasks/P100-058.original.v1/task.json",
+          "sha256": "9fcfc773169d91fc4805416079481e1b099aee25af701a6372fd318c037d5f10"
+        },
+        {
+          "path": "tasks/P100-058.original.v1/evidence/metrics.csv",
+          "sha256": "a3b90769179e20e9b11da86f21e3c234fda11d6c7f92f26832d2974e4cca6858"
+        },
+        {
+          "path": "tasks/P100-058.supplemental-PLA3D850-loss.v1/task.json",
+          "sha256": "6126b39e2201a8097405feaa4b745ee82cbbcb4e98c13e2a57f752b20b6f2821"
+        },
+        {
+          "path": "tasks/P100-058.supplemental-PLA3D850-loss.v1/evidence/metrics.csv",
+          "sha256": "c111d9f524a7de6d4ee2c026ba87dc088461cde8678f78abe5d58d083a92a0d2"
+        },
+        {
+          "path": "tasks/P100-058.supplemental-PLA3D850-storage.v1/task.json",
+          "sha256": "72a3bc2ba6811b3f9e1d605162eabf14ba9f6e9fcd02f4969d391bcf8f65b711"
+        },
+        {
+          "path": "tasks/P100-058.supplemental-PLA3D850-storage.v1/evidence/metrics.csv",
+          "sha256": "20fe2f2b7877eece6792b6f4545d4ec9e0c5a641add7b1517f6f5631925474e5"
+        },
+        {
+          "path": "tasks/P100-058.supplemental-PLA_recycled-loss.v1/task.json",
+          "sha256": "582b6021b013847d381e1bca289bf57bdae2464a41911ece348234615dd1737c"
+        },
+        {
+          "path": "tasks/P100-058.supplemental-PLA_recycled-loss.v1/evidence/metrics.csv",
+          "sha256": "407c13df0fd2be48f0db17432d486273b39b6cbbbdb4fea4e87815b909fc03da"
+        },
+        {
+          "path": "tasks/P100-058.supplemental-PLA_recycled-storage.v1/task.json",
+          "sha256": "12da03f77afdc1e5aac24747320625ba32ca9eb1709159caf9b0fe2cc7406cdc"
+        },
+        {
+          "path": "tasks/P100-058.supplemental-PLA_recycled-storage.v1/evidence/metrics.csv",
+          "sha256": "dcc74f361e1f724feebba888d242a6904aea7dfc0f4ff45a41c55ce4452ad57b"
+        }
+      ],
+      "strongest_admitted_conclusion": "Maxwell/WLF storage transfer and unfitted loss response provide meaningful orthogonal checks. Recycled-PLA loss failure is a stronger limitation than storage fit alone; individual relaxation modes remain unidentified.",
+      "task_specific_comparisons": [
+        {
+          "task_id": "P100-058.continuation.v1",
+          "protocol_version": "P100-058-retrospective-continuation-20261001",
+          "cohort_id": "P100-058.continuation.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "log_mae",
+          "primary_units": "dimensionless natural-log ratio",
+          "reference_model": "reference",
+          "reference_error": 0.31113310997594823,
+          "strongest_named_control": "arrhenius",
+          "control_error": 0.511483396444872,
+          "lowest_recorded_model_diagnostic": "plateau",
+          "lowest_recorded_error": 0.3111331098207029,
+          "groups": 2,
+          "assigned_rows": 35,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "Original confirmation is exposed. New candidates chosen only development and frozen before this retrospective diagnostic.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        },
+        {
+          "task_id": "P100-058.original.v1",
+          "protocol_version": "P100-058-batch4-frozen-v2-explicit-log-eligibility",
+          "cohort_id": "P100-058.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "log_mae",
+          "primary_units": "dimensionless natural-log ratio",
+          "reference_model": "reference",
+          "reference_error": 0.4044614753810101,
+          "strongest_named_control": "baseline_rbf",
+          "control_error": 1.2934494574135473,
+          "lowest_recorded_model_diagnostic": "attempt_005",
+          "lowest_recorded_error": 0.40445550936558683,
+          "groups": 2,
+          "assigned_rows": 35,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "All packaged targets are exposed for future agents; future scoring is retrospective. Public source-aware corpus. Illustrative header/first-row values were inspected during the semantics audit; these do not constitute blind source acquisition. All delivered targets become exposed after confirmation.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA3D850-loss.v1",
+          "protocol_version": "P100-058-PLA3D850-loss-fresh-challenge-20261001-exposed-after-delivery",
+          "cohort_id": "P100-058.supplemental-PLA3D850-loss.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "log_mae",
+          "primary_units": "dimensionless natural-log ratio",
+          "reference_model": "reference",
+          "reference_error": 0.4641685560572353,
+          "strongest_named_control": "arrhenius",
+          "control_error": 0.7891783679525991,
+          "lowest_recorded_model_diagnostic": "reference",
+          "lowest_recorded_error": 0.4641685560572353,
+          "groups": 4,
+          "assigned_rows": 66,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "Reserved outcomes were unopened at first frozen evaluation. They are now packaged/exposed; future evaluator scores are retrospective.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA3D850-storage.v1",
+          "protocol_version": "P100-058-PLA3D850-storage-fresh-challenge-20261001-exposed-after-delivery",
+          "cohort_id": "P100-058.supplemental-PLA3D850-storage.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "log_mae",
+          "primary_units": "dimensionless natural-log ratio",
+          "reference_model": "reference",
+          "reference_error": 0.7093242317784256,
+          "strongest_named_control": "arrhenius",
+          "control_error": 1.1998153278998092,
+          "lowest_recorded_model_diagnostic": "reference",
+          "lowest_recorded_error": 0.7093242317784256,
+          "groups": 4,
+          "assigned_rows": 66,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "Reserved outcomes were unopened at first frozen evaluation. They are now packaged/exposed; future evaluator scores are retrospective.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA_recycled-loss.v1",
+          "protocol_version": "P100-058-PLA_recycled-loss-fresh-challenge-20261001-exposed-after-delivery",
+          "cohort_id": "P100-058.supplemental-PLA_recycled-loss.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "log_mae",
+          "primary_units": "dimensionless natural-log ratio",
+          "reference_model": "reference",
+          "reference_error": 1.8603750468957,
+          "strongest_named_control": "arrhenius",
+          "control_error": 2.0471509894467825,
+          "lowest_recorded_model_diagnostic": "reference",
+          "lowest_recorded_error": 1.8603750468957,
+          "groups": 2,
+          "assigned_rows": 30,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "Reserved outcomes were unopened at first frozen evaluation. They are now packaged/exposed; future evaluator scores are retrospective.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        },
+        {
+          "task_id": "P100-058.supplemental-PLA_recycled-storage.v1",
+          "protocol_version": "P100-058-PLA_recycled-storage-fresh-challenge-20261001-exposed-after-delivery",
+          "cohort_id": "P100-058.supplemental-PLA_recycled-storage.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "log_mae",
+          "primary_units": "dimensionless natural-log ratio",
+          "reference_model": "reference",
+          "reference_error": 0.3798362315770968,
+          "strongest_named_control": "arrhenius",
+          "control_error": 0.8086206625333199,
+          "lowest_recorded_model_diagnostic": "reference",
+          "lowest_recorded_error": 0.3798362315770968,
+          "groups": 2,
+          "assigned_rows": 30,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "Reserved outcomes were unopened at first frozen evaluation. They are now packaged/exposed; future evaluator scores are retrospective.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": "Core is one PDLLA batch; supplements are separately calibrated materials from same authors/instrument. OriginalT70/T80 and all PLA outcomes now exposed. Three negative original storage readings are excluded only from logarithmic, not physical error.",
+      "claim_quality_issues": [
+        "Keep six task IDs separate: original/continuation and four supplemental material-response tasks. Historical original metrics.csv labels35 scored rows although log eligibility is32; corrected current task scope explicitly states32. Do not overwrite historical receipts or represent35 as positive log targets."
+      ],
+      "recommended_improvements": [
+        "Report primary-log and physical denominators side by side. Obtain independent complex-modulus/creep data and compliance calibration to distinguish elastic plateau/slow modes; do not retune recycled-loss response and claim fresh confirmation."
+      ],
+      "blocking_defects": [],
+      "required_documentation_correction": false,
+      "correction_reference": null,
+      "computational_scope": "Root performs collection-wide raw reconstruction, replay and metric acceptance; this review inspected task contracts, reader findings, finding index and saved exact-task metrics."
+    },
+    {
+      "case_id": "P100-059",
+      "reviewer_id": "asd5_materials",
+      "checked_files": [
+        {
+          "path": "cases/P100-059/final_results/FINDINGS.md",
+          "sha256": "49c3d279c6fe377462e381eece3ed1eed42e259ea7ac10fe87c4b73e85294428"
+        },
+        {
+          "path": "cases/P100-059/final_results/findings.json",
+          "sha256": "8072fe2dab24fe2fe479c567b2d95158be431ae480516c91f9b01a4b339775b0"
+        },
+        {
+          "path": "tasks/P100-059.continuation.v1/task.json",
+          "sha256": "8fb3156100f141acb112d43c26f9277be6a2848a02f36cab40f76792bb506e54"
+        },
+        {
+          "path": "tasks/P100-059.continuation.v1/evidence/metrics.csv",
+          "sha256": "2e0f4f74833c612126415af05c14e7446c99c8ab2210415825e4c39a39eb0d07"
+        },
+        {
+          "path": "tasks/P100-059.original.v1/task.json",
+          "sha256": "7242d1fa046147ffdc2a874744e630f22e13355c46a0df0aa0e16c93f74d6ee1"
+        },
+        {
+          "path": "tasks/P100-059.original.v1/evidence/metrics.csv",
+          "sha256": "b73c05f1c00f0740a5876c3721e52e27fee362242a3e2fe5b209c5ab3a522ade"
+        }
+      ],
+      "strongest_admitted_conclusion": "A conditional radiation/calendar surrogate transfers to one city. The continuation calendar control remains stronger than a compact equal-lag model; thermal derating is not identified.",
+      "task_specific_comparisons": [
+        {
+          "task_id": "P100-059.continuation.v1",
+          "protocol_version": "P100-059-continuation-20261001-causal-weather-history",
+          "cohort_id": "P100-059.continuation.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "kWh/kWp",
+          "reference_model": "reference",
+          "reference_error": 0.10073207436375245,
+          "strongest_named_control": "ridge_calendar",
+          "control_error": 0.10073207436375245,
+          "lowest_recorded_model_diagnostic": "reference",
+          "lowest_recorded_error": 0.10073207436375245,
+          "groups": 1,
+          "assigned_rows": 16966,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "ALL original confirmation exposed; no fresh confirmation; diagnostics opened only after candidate/stopping freeze; all future evaluations are retrospective",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        },
+        {
+          "task_id": "P100-059.original.v1",
+          "protocol_version": "P100-059-batch4-frozen-v1",
+          "cohort_id": "P100-059.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "kWh/kWp",
+          "reference_model": "reference",
+          "reference_error": 0.10969556081805203,
+          "strongest_named_control": "baseline_rbf",
+          "control_error": 0.12991606504219438,
+          "lowest_recorded_model_diagnostic": "attempt_005",
+          "lowest_recorded_error": 0.10951466856329044,
+          "groups": 1,
+          "assigned_rows": 16966,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "All packaged targets are exposed for future agents; future scoring is retrospective. Public source-aware corpus. Illustrative header/first-row values were inspected during the semantics audit; these do not constitute blind source acquisition. All delivered targets become exposed after confirmation.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": "One held city, plants sharing weather; weather provider, timezone and averaging provenance unresolved. Current weather is a contemporaneous diagnostic input, not a forecast. Native energy normalized by independent installed capacity.",
+      "claim_quality_issues": [
+        "Positive or boundary-hitting thermal coefficients contradict a causal thermal-derating reading. Native-clock history cannot justify an inferred timestamp shift."
+      ],
+      "recommended_improvements": [
+        "Resolve weather/timestamp provenance with authoritative records and test other cities/plant orientations. Pre-register a genuine forecast-information task separately."
+      ],
+      "blocking_defects": [],
+      "required_documentation_correction": false,
+      "correction_reference": null,
+      "computational_scope": "Root performs collection-wide raw reconstruction, replay and metric acceptance; this review inspected task contracts, reader findings, finding index and saved exact-task metrics."
+    },
+    {
+      "case_id": "P100-060",
+      "reviewer_id": "asd5_materials",
+      "checked_files": [
+        {
+          "path": "cases/P100-060/final_results/FINDINGS.md",
+          "sha256": "1fc4695a193b619f465f320ec33e32155bb96a4054400a4022f583b795ca1740"
+        },
+        {
+          "path": "cases/P100-060/final_results/findings.json",
+          "sha256": "4ee372099dc84a860915e8fe020a71f4d64b508b6236f6858659f036d21d9a8d"
+        },
+        {
+          "path": "tasks/P100-060.original.v1/task.json",
+          "sha256": "b635e472d76f6ccae7e05c9c9a856e45eea53bbc84bbdb8601e95420497d3c17"
+        },
+        {
+          "path": "tasks/P100-060.original.v1/evidence/metrics.csv",
+          "sha256": "5e4e030f8d9b67d36bd383473d3ef1faf902157cc5266733bb719a7e37d92e80"
+        },
+        {
+          "path": "tasks/P100-060.round2.v1/task.json",
+          "sha256": "9e7d167f5439e67e28b56b6f9e6e47a3ad67ce5576ce23b2316edaf9cd0b735b"
+        },
+        {
+          "path": "tasks/P100-060.round2.v1/evidence/metrics.csv",
+          "sha256": "31414d07d0b066e49201d50c20aca62c9b88fbdeae143512ffc8d43d44c6a491"
+        }
+      ],
+      "strongest_admitted_conclusion": "Pulse-edge models predict conditional peak voltage, but aggregate physical gains are contact-dominated. Normalized OOF comparisons and spectral mismatch prevent fitted resonance from being treated as measured physics.",
+      "task_specific_comparisons": [
+        {
+          "task_id": "P100-060.original.v1",
+          "protocol_version": "P100-060-prepared-primary-v1",
+          "cohort_id": "P100-060.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "V",
+          "reference_model": "reference",
+          "reference_error": 0.3562019370944087,
+          "strongest_named_control": "baseline_residual_rbf",
+          "control_error": 0.6220426806891765,
+          "lowest_recorded_model_diagnostic": "reference",
+          "lowest_recorded_error": 0.3562019370944087,
+          "groups": 6,
+          "assigned_rows": 60,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "All packaged targets are now exposed; future scoring is retrospective. Only numerical schema/sample metadata were inspected before fitting. The reserved pulse width is allocated by metadata hash. No final performance inspected.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        },
+        {
+          "task_id": "P100-060.round2.v1",
+          "protocol_version": "P100-060.round2.v1.contract-1",
+          "cohort_id": "P100-060.round2.v1.development-oof",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "normalized_mae",
+          "primary_units": "condition-normalized MAE",
+          "reference_model": "current/cycle-001",
+          "reference_error": 0.1807067685220963,
+          "strongest_named_control": "previous/baseline-global_edge",
+          "control_error": 0.1952633168092631,
+          "lowest_recorded_model_diagnostic": "current/cycle-004",
+          "lowest_recorded_error": 0.1001006753405442,
+          "groups": 30,
+          "assigned_rows": 300,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": "One setup, two sensor classes confounded with nominal frequency. Original one held5us width has six correlated condition files. Round2 covers five development widths/30files/300pulses with training-only condition normalizers.",
+      "claim_quality_issues": [
+        "Round2 scope/calibration inherited original5us cohort and one comparator coefficients; documentation-onlyv2 replacements supplied. Default round2 current/cycle001 is an anchor, not the best discovered candidate."
+      ],
+      "recommended_improvements": [
+        "Apply versioned contract correction. Hold independent sensor/width regimes and validate time-domain response and measured spectral peaks before damping/resonance interpretation. Report normalized and physical errors together."
+      ],
+      "blocking_defects": [],
+      "required_documentation_correction": true,
+      "correction_reference": "CONTRACT_CORRECTIONS_materials.json",
+      "computational_scope": "Root performs collection-wide raw reconstruction, replay and metric acceptance; this review inspected task contracts, reader findings, finding index and saved exact-task metrics."
+    },
+    {
+      "case_id": "P100-061",
+      "reviewer_id": "asd5_materials",
+      "checked_files": [
+        {
+          "path": "cases/P100-061/final_results/FINDINGS.md",
+          "sha256": "285ed098c09b83a50fa23ffbe53728cb6138e7a6da1fa40c45b4857ab5607c57"
+        },
+        {
+          "path": "cases/P100-061/final_results/findings.json",
+          "sha256": "36bd7fd7f025a2f35f096fa930083a92e3d8d7eab93aaa2c2768dd7af43a7bd7"
+        },
+        {
+          "path": "tasks/P100-061.original.v1/task.json",
+          "sha256": "e21651ef895316ea2198aeed7a2c6eac2babd3de4aca0f7bc1f7fb8861e57bdf"
+        },
+        {
+          "path": "tasks/P100-061.original.v1/evidence/metrics.csv",
+          "sha256": "f797cfc83249d162113f958196496b2af493ae9c596350f06b303e45e587dd54"
+        },
+        {
+          "path": "tasks/P100-061.round2.v1/task.json",
+          "sha256": "b736d1027111c0cc2ee851b10f57be25f11cdc99ce3af3faed5048618403736a"
+        },
+        {
+          "path": "tasks/P100-061.round2.v1/evidence/metrics.csv",
+          "sha256": "987c1f64a84c49e25e54a4fd2fe9fd6aa0dfd43a2073c6d65a4c1d2689e0e04c"
+        }
+      ],
+      "strongest_admitted_conclusion": "Physically bounded depletion/film models reproduce known transport constraints; the original compact model loses sharply to nested kernel. Later two-family film closure improves development OOF only, with no fresh independent confirmation.",
+      "task_specific_comparisons": [
+        {
+          "task_id": "P100-061.original.v1",
+          "protocol_version": "P100-061-prepared-primary-v1",
+          "cohort_id": "P100-061.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "mol s^-1 m^-2",
+          "reference_model": "attempt-004",
+          "reference_error": 0.012896335839823511,
+          "strongest_named_control": "rbf_nested",
+          "control_error": 0.001687824822805174,
+          "lowest_recorded_model_diagnostic": "rbf_nested",
+          "lowest_recorded_error": 0.001687824822805174,
+          "groups": 3,
+          "assigned_rows": 60,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        },
+        {
+          "task_id": "P100-061.round2.v1",
+          "protocol_version": "P100-061.round2.v1.contract-1",
+          "cohort_id": "P100-061.round2.v1.development-oof",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "mol m^-2 s^-1",
+          "reference_model": "current/cycle-001",
+          "reference_error": 0.0049059982361026,
+          "strongest_named_control": "previous/baselines/kernel_nested",
+          "control_error": 0.0046582048214273,
+          "lowest_recorded_model_diagnostic": "current/cycle-006",
+          "lowest_recorded_error": 0.0033399396509096,
+          "groups": 6,
+          "assigned_rows": 120,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": "Four calibrated specimens, two geometry families.64 pure-H2 measurements allowed at350/450C for all mixture candidates. Normal molar volume assumed22.414L/mol. Original400C holdout differs from round2 six gas-temperature OOF groups at350/450C.",
+      "claim_quality_issues": [
+        "Round2 independent_unit/scope incorrectly said reserved400C/60rows; exact documentation-onlyv2 corrections supplied. Full coefficient burden includes12pure-gas calibration parameters even when mixture parameters shrink to2."
+      ],
+      "recommended_improvements": [
+        "Apply versioned contract correction. Match the published layered-model implementation before superiority claims. Vary geometry and gas/flow factorially with new calibrated specimens, and resolve normal-flow convention."
+      ],
+      "blocking_defects": [],
+      "required_documentation_correction": true,
+      "correction_reference": "CONTRACT_CORRECTIONS_materials.json",
+      "computational_scope": "Root performs collection-wide raw reconstruction, replay and metric acceptance; this review inspected task contracts, reader findings, finding index and saved exact-task metrics."
+    },
+    {
+      "case_id": "P100-064",
+      "reviewer_id": "asd5_materials",
+      "checked_files": [
+        {
+          "path": "cases/P100-064/final_results/FINDINGS.md",
+          "sha256": "8ab8fa71cda0788755e278a5a3b2dbf2552bce3588bebe1c72983b8058e7c5d5"
+        },
+        {
+          "path": "cases/P100-064/final_results/findings.json",
+          "sha256": "54caf01f974910fe1395f031078183d81620671cd3515a31e293756bd8d1a061"
+        },
+        {
+          "path": "tasks/P100-064.original.v1/task.json",
+          "sha256": "b22e258b613c482212e3955f3579919f6bc258c476af88cb50873b1873897109"
+        },
+        {
+          "path": "tasks/P100-064.original.v1/evidence/metrics.csv",
+          "sha256": "1964e85d8179af6e17bb009696032f8084c201640640936ce0be78c494d69a54"
+        }
+      ],
+      "strongest_admitted_conclusion": "No robust optical transfer improvement is admitted beyond early optical persistence. Lack of area/strain/optical geometry linkage prevents luminance or material-degradation law claims.",
+      "task_specific_comparisons": [
+        {
+          "task_id": "P100-064.original.v1",
+          "protocol_version": "P100-064-asd5-native-v1",
+          "cohort_id": "P100-064.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "primary_units": "nA",
+          "reference_model": "reference",
+          "reference_error": 15.978752079457692,
+          "strongest_named_control": "persistence",
+          "control_error": 15.978752079457692,
+          "lowest_recorded_model_diagnostic": "attempt-005",
+          "lowest_recorded_error": 11.337403535062816,
+          "groups": 4,
+          "assigned_rows": 11493,
+          "cohort_exposure": {
+            "current": "exposed",
+            "future_scoring": "retrospective",
+            "historical_record": "{\"current\": \"exposed\", \"internal_confirmation\": \"held out until frozen model/stop selection\", \"fresh_for_future_users\": false}",
+            "fresh_confirmation_for_future_agents": false
+          },
+          "selection_note": "Development-selected reference; no confirmation reselection",
+          "interpretation": "Comparison restricted to this exact task/cohort/information budget. Lowest recorded alternative does not automatically become an admitted reference."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": "Four held devices; two groups have only37 and4eligible overlaps, while another9136rows. Fixed<=2s electrical alignment and>=3early optical points define a fast-sampling restricted cohort. Signed photodiode current is retained.",
+      "claim_quality_issues": [
+        "Post-hoc calibrated-yield MAE11.3374 beats reference15.9788 after failing development; do not promote. Sparse groups and cadence eligibility are central limitations, already disclosed."
+      ],
+      "recommended_improvements": [
+        "Collect synchronized strain/optical-area records and independent device repeats. Pre-register relaxed-cadence alignment as a different task if justified by timing uncertainty, not by desirable scores."
+      ],
+      "blocking_defects": [],
+      "required_documentation_correction": false,
+      "correction_reference": null,
+      "computational_scope": "Root performs collection-wide raw reconstruction, replay and metric acceptance; this review inspected task contracts, reader findings, finding index and saved exact-task metrics."
+    }
+  ]
+}

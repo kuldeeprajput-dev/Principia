@@ -1,0 +1,36 @@
+{
+  "case": 29,
+  "kind": "hill",
+  "coef": [
+    0.001000000000333834,
+    0.10000000000004323
+  ],
+  "training_groups": [
+    "6g66_05_uM_DPH_binding",
+    "6g66_05_uM_NR_binding",
+    "9a5f_05uM_DPH_binding",
+    "9a5f_05uM_NR_binding"
+  ],
+  "training_rows": 96,
+  "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+  "equation": "Fhat=F0+(F5-F0)*H(dose)/H(dose_cal); H(x)=x^n/(K^n+x^n)",
+  "optimizer": {
+    "success": true,
+    "cost": 6.936892457134535,
+    "bounds": [
+      [
+        0.001,
+        0.1
+      ],
+      [
+        1000,
+        4
+      ]
+    ],
+    "jacobian_rank": 2,
+    "jacobian_singular_values": [
+      24.60537496876101,
+      0.05687746782817586
+    ]
+  }
+}

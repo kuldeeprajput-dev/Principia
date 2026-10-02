@@ -1,0 +1,196 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-069",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-069/computational.json",
+      "bytes": 6325,
+      "sha256": "b91d35a63de32e0a4e45e11386ab68b2f41a1bf6adf893d4c3adc6eebc46d653"
+    },
+    {
+      "path": "reviews/portfolios/P100-069/scientific_critical.json",
+      "bytes": 8491,
+      "sha256": "80a67b78486724cd42bddb5e891b3784d5d260859caa6be7cc36500defe55f53"
+    },
+    {
+      "path": "reviews/portfolios/P100-069/combined/review.json",
+      "bytes": 14269,
+      "sha256": "9d4bd42e44889086c83a8ebc31e6ede3a80b28e4d38ffbcdd76cc7253130dd59"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-069-SCI-01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete runs from one gearbox; external causal forcing plus first lubricanttemperature initialization; startup excluded from score. Strong adverse evidence: Worst original run 2.728 C; no new gearbox/sensorless claim. Source already describes an observer.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Stable memory modes are interpretable observer states, not independently identified heat capacities or heat-transfer paths. Five constant-speed runs underexcite competing mechanisms.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source two-state observer has unmatched reported 1.3 KMAE; absent exact code/coefficients prohibit superiority claims. No new thermodynamic law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete runs from one gearbox; external causal forcing plus first lubricanttemperature initialization; startup excluded from score.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-069-SCI-02",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete runs from one gearbox; external causal forcing plus first lubricanttemperature initialization; startup excluded from score. Strong adverse evidence: Only 5/8 runs improve; cooldown bias+1.616079 C. Slowtau 6400 s hitsgrid limit and varies 1600/6400 acrossfolds. Diagnostic-better temperature-power .732699 was worse in development and isnot promoted.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Stable memory modes are interpretable observer states, not independently identified heat capacities or heat-transfer paths. Five constant-speed runs underexcite competing mechanisms.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source two-state observer has unmatched reported 1.3 KMAE; absent exact code/coefficients prohibit superiority claims. No new thermodynamic law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete runs from one gearbox; external causal forcing plus first lubricanttemperature initialization; startup excluded from score.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "partially_supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

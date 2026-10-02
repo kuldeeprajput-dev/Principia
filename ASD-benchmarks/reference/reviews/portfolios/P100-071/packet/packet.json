@@ -1,0 +1,192 @@
+{
+  "schema_version": "principia.review-packet/3.0",
+  "bindings": {
+    "claims_sha256": "12dd64f838e8a2857f8531ce0fe3026eee12c737966d064057fd8d3ffa89029d",
+    "evidence_sha256": {
+      "E001": "9da6551eb2a7c3b82261ef575052cd48e706ab9aaabc334baa7e8ad14d42ffc9",
+      "E002": "efd77b2945a8bb96f0a6b94a3069877892529933350cea6a1e228c1cc1d3967f",
+      "E003": "5cec3bb968026a3ea9a38a9e10aeddd07c5986434cb82036d67db2fd113857d0",
+      "E004": "677275353ca2b356fea1a6029247d79c699fc7f73626489c56d2935e19f5e781",
+      "E005": "b470d2fda802182e8e6c105e40eedb8b54e05efab7ef632d75e65bc2758413f2",
+      "E006": "5d12a9723f4431db50d558ccf983a894282e6820ea5ec290cce646f440e17078",
+      "E007": "722f28f53fc17e90213147e9ddfdd5efeb3601cb1314d6847823b056d224d1b4",
+      "E008": "66b2bbe57c4c381b575bb6c46dbe428fbdd77f50ceff656d8dec09a139d4e282",
+      "E009": "dc1e621fdfd226d4fc517a237d1354eecd4789a4e458847a98137edfc627549b",
+      "E010": "525c1f67ded7d3a052952e10c9f3f5033636a5700de3c6d14a1d16cdb5d5c0f8",
+      "E011": "ac1fab3d01b2e05029d56f6aa1318a32d9f4b4683a2ab10ba08a902ef40cc86f",
+      "E012": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253",
+      "E013": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078",
+      "SCIENTIFIC": "8de7acbeeb5739dfc9efc7514cc580de828b2472370ba6eaee76341a56f49bee",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-071",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "findings": [
+    {
+      "id": "P100-071-SCI-01",
+      "classification": "predictive_reference",
+      "source_classification": "numerical_control",
+      "statement": "Frequency-adjusted dielectric information modestly improves simple permittivity, but availability and flexible controls undermine a cell-size interpretation.",
+      "applicability": "Complete paired experiments; causal valid 30 mininline summaries or \u2264 2 hlast-valid fallback; offline counts/SEM excluded from predictors.",
+      "limitations": "Only 1.65 %gain over spectral availability; negative spectral coefficient is not a straightforward positive cell-number contribution.",
+      "falsification": [
+        "Check paired reactors and aligned/native duplicates cannot cross partitions.",
+        "Retain source flags/ColeR\u00b2\u2265.9; perturb future/offline targetvalues to test input invariance.",
+        "Compare spectral magnitude against availability-only control and report batch/fed-batch pairs separately."
+      ],
+      "prior_art": "Known dielectric polarization and opticalresponse families; no new cellular law admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "S=Deltaepsilon*(f_c/1MHz)^4; VCD=max(0,4.26734+3.81514 zP-0.484008 zS-0.854704 z_mP+0.489791 z_mS), in millioncells/mL.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ]
+      },
+      "variables_and_units": {
+        "target": "million cells/mL",
+        "perm": "pF/cm",
+        "deltaeps_fc4": "(pF/cm)*MHz^4",
+        "transmission": "source arbitrary units",
+        "reflection": "source arbitrary units",
+        "conductivity": "mS/cm",
+        "deltaeps": "pF/cm",
+        "fc": "kHz",
+        "cole_alpha": "dimensionless",
+        "c300": "source units unspecified",
+        "c1118": "source units unspecified",
+        "c9995": "source units unspecified",
+        "cole_r2": "dimensionless",
+        "co2": "source percent",
+        "ph": "dimensionless pH",
+        "do": "percent saturation",
+        "temperature": "degrees Celsius",
+        "agitation": "rpm",
+        "aeration": "standard L/h",
+        "o2_inlet": "percent inlet oxygen fraction",
+        "volume": "L",
+        "perm_lag24": "pF/cm",
+        "transmission_lag24": "source arbitrary units",
+        "perm_peak_past": "pF/cm",
+        "fed_batch": "binary indicator",
+        "od": "dimensionless source optical-density transform",
+        "dperm24": "(pF/cm)/h",
+        "dod24": "1/h",
+        "spectral_span": "source capacitance units unspecified",
+        "spectral_midspan": "source capacitance units unspecified",
+        "fc_mhz": "MHz",
+        "permittivity_decline": "pF/cm",
+        "perm_decline_fraction": "dimensionless",
+        "od_sq": "dimensionless",
+        "perm_sq": "(pF/cm)^2",
+        "perm_fc": "(pF/cm)*MHz",
+        "perm_x_decline": "pF/cm",
+        "perm_x_conductivity": "(pF/cm)*(mS/cm)",
+        "perm_x_growth": "(pF/cm)^2/h",
+        "od_x_decline": "dimensionless",
+        "time_h": "h"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-071.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-071-SCI-02",
+      "classification": "predictive_reference",
+      "source_classification": "retrospective_extension",
+      "statement": "A causal decline gate improves the original exposed spectral rule, but the negative spectral comparator and pair heterogeneity block a biological interpretation.",
+      "applicability": "Complete paired experiments; causal valid 30 mininline summaries or \u2264 2 hlast-valid fallback; offline counts/SEM excluded from predictors.",
+      "limitations": "The apparent advantage over flexible wins only one of three exposed pairs; the strongest development spectral control remains better. Source sensor-quality and availability controls remain essential.",
+      "falsification": [
+        "Check paired reactors and aligned/native duplicates cannot cross partitions.",
+        "Retain source flags/ColeR\u00b2\u2265.9; perturb future/offline targetvalues to test input invariance.",
+        "Compare spectral magnitude against availability-only control and report batch/fed-batch pairs separately."
+      ],
+      "prior_art": "Known dielectric polarization and opticalresponse families; no new cellular law admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E005",
+          "E006"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "scope": "See bound equations/source audit; no substitute units are invented"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006"
+      ],
+      "task_id": null,
+      "task_family": "continuation",
+      "task_version_history": "2026-09-30 first continuation"
+    },
+    {
+      "id": "P100-071-SCI-03",
+      "classification": "falsified",
+      "source_classification": "unsupported_or_falsified",
+      "statement": "The proposed optical/electrical moment closure loses to a stronger linear spectral control.",
+      "applicability": "Complete paired experiments; causal valid 30 mininline summaries or \u2264 2 hlast-valid fallback; offline counts/SEM excluded from predictors.",
+      "limitations": "Only 2/9 pairs improve. Earlier decline correction improves oldreference by 22.70% on exposedpairs but its gain over flexible control wins only 1/3 pairs.",
+      "falsification": [
+        "Check paired reactors and aligned/native duplicates cannot cross partitions.",
+        "Retain source flags/ColeR\u00b2\u2265.9; perturb future/offline targetvalues to test input invariance.",
+        "Compare spectral magnitude against availability-only control and report batch/fed-batch pairs separately."
+      ],
+      "prior_art": "Known dielectric polarization and opticalresponse families; no new cellular law admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E007",
+          "E008",
+          "E009",
+          "E010"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "target": "million cells/mL",
+        "perm": "pF/cm",
+        "permittivity_decline": "pF/cm",
+        "perm_decline_fraction": "dimensionless",
+        "perm_peak_past": "pF/cm",
+        "deltaeps": "pF/cm",
+        "fc": "kHz",
+        "conductivity": "mS/cm",
+        "cole_r2": "dimensionless",
+        "od": "dimensionless source optical-density transform",
+        "transmission": "source arbitrary units",
+        "reflection": "source arbitrary units",
+        "time_h": "h",
+        "fed_batch": "binary indicator",
+        "dperm24": "(pF/cm)/h",
+        "dod24": "1/h"
+      },
+      "evidence_ids": [
+        "E007",
+        "E008",
+        "E009",
+        "E010"
+      ],
+      "task_id": "P100-071.round2.v1",
+      "task_family": "round2",
+      "task_version_history": "2026-09-30 second continuation"
+    }
+  ],
+  "reviews_required": [
+    "computational",
+    "scientific_critical"
+  ],
+  "automatic_scientific_admission": false,
+  "current_exposure": "exposed"
+}

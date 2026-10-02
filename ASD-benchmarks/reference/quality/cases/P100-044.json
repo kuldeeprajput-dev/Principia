@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-044",
+  "title": "QOBLIB degree-constrained graph topology solver trajectories",
+  "default_task": "P100-044.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "capped elapsed solver resource consumption min(Total Runtime,7200s)",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 4,
+    "independent_unit_description": "complete topology instance containing all three formulations",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No evaluated-instance calibration",
+  "baseline_strength": {
+    "registered_controls": 10,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 3
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "capped elapsed solver resource consumption min(Total Runtime,7200s)",
+    "prediction_time": "All inputs are instance parameters and formulation choice known before solving; no runtime/gap/objective/work measure as input",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-044.original.v1"
+  ],
+  "finding_ids": [
+    "P100-044-F01",
+    "P100-044-F02",
+    "P100-044-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-044/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-044.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate capped elapsed solver resource consumption min(Total Runtime,7200s) under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "All inputs are instance parameters and formulation choice known before solving; no runtime/gap/objective/work measure as input",
+    "calibration_requirement": "No evaluated-instance calibration",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "capped elapsed solver resource consumption min(Total Runtime,7200s) in seconds",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "seconds",
+    "reference_model": "reference",
+    "reference_primary_error": 980.8249955686208,
+    "reference_physical_mae": 980.8249955686208,
+    "physical_error_units": "seconds",
+    "lowest_registered_error_model": "attempt_005",
+    "lowest_registered_error": 556.2756405065817,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-044.original.v1/evidence/metrics.csv",
+      "bytes": 723,
+      "sha256": "85fca33cb612cd011372336ca429fdbe37aa9e5939d000a131c6723be528ca64"
+    },
+    "models": 10
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

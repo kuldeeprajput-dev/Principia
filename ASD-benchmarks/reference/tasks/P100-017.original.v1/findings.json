@@ -1,0 +1,68 @@
+[
+  {
+    "classification": "validated_extension",
+    "admission": "partially_supported",
+    "claim": "Reporting-regime and geometry covariates provide a compact predictor of author-supplied positive depth uncertainty in this source snapshot.",
+    "equation": "Robust log-uncertainty equation above.",
+    "interpretation": "Near-station leverage and angular coverage have known localization roles, but exact-depth indicators also encode catalog processing practices. Improvement cannot isolate equation structure from fitting loss without the disclosed later controls.",
+    "falsification": "Worstcluster doesnot uniformly improve; cross-network uncertainty conventions, fixed-depth reporting and no independent truth limit mechanism claims. Matched robust controls were added onlyafter firstconfirmation.",
+    "finding_id": "P100-017-F01",
+    "task_id": "P100-017.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://earthquake.usgs.gov/data/comcat/index.php",
+        "checked": "2026-10-02",
+        "known": "Location quality and uncertainty definitions depend on contributing networks; not independent error truth."
+      },
+      {
+        "url": "https://www.usgs.gov/faqs/what-does-it-mean-earthquake-occurred-a-depth-0-km-how-can-earthquake-have-a-negative-depth",
+        "checked": "2026-10-02",
+        "known": "Depth is often least-constrained, reference frames differ and fixed/negative depths occur."
+      },
+      {
+        "url": "https://pubs.usgs.gov/of/1993/0309/of93-309_v1.1.pdf",
+        "checked": "2026-10-02",
+        "known": "Known importance of nearest-station distance relative to depth, phase counts and velocity model; inverse-information and geometry hypotheses are prior-inspired."
+      }
+    ],
+    "scope": "One July2026 catalog snapshot. Positive uncertainty reports only; mixed network estimation conventions, no universal standard-error confidence interpretation. Counts/geometry are outputs of location processing and causality is not identified."
+  },
+  {
+    "classification": "informative_falsification",
+    "admission": "supported",
+    "claim": "Naive inverse-square-root phase-count scaling is insufficient as a universal uncertainty law here.",
+    "equation": "sigma proportional RMS/sqrt(Nphase) is the domain family; estimated freeexponents/regimes in002\u2013006challenge it.",
+    "interpretation": "Correlated arrivals, networkgeometry and differing source procedures violate independent identical measurements.",
+    "falsification": "Reference predicts authorformal uncertainty only; it cannot demonstrate true physical accuracy or hazard forecasting.",
+    "finding_id": "P100-017-F02",
+    "task_id": "P100-017.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://earthquake.usgs.gov/data/comcat/index.php",
+        "checked": "2026-10-02",
+        "known": "Location quality and uncertainty definitions depend on contributing networks; not independent error truth."
+      },
+      {
+        "url": "https://www.usgs.gov/faqs/what-does-it-mean-earthquake-occurred-a-depth-0-km-how-can-earthquake-have-a-negative-depth",
+        "checked": "2026-10-02",
+        "known": "Depth is often least-constrained, reference frames differ and fixed/negative depths occur."
+      },
+      {
+        "url": "https://pubs.usgs.gov/of/1993/0309/of93-309_v1.1.pdf",
+        "checked": "2026-10-02",
+        "known": "Known importance of nearest-station distance relative to depth, phase counts and velocity model; inverse-information and geometry hypotheses are prior-inspired."
+      }
+    ],
+    "scope": "One July2026 catalog snapshot. Positive uncertainty reports only; mixed network estimation conventions, no universal standard-error confidence interpretation. Counts/geometry are outputs of location processing and causality is not identified."
+  }
+]

@@ -1,0 +1,206 @@
+{
+  "role": "computational",
+  "reviewer_id": "/root/asd5_bio_behavior",
+  "case_id": "P100-091",
+  "created_utc": "2026-10-01T14:21:10.362441+00:00",
+  "checked_files": [
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "f5fb5ee3692ffa6195009af5e28f1afb2b3190c6c91ec9dbdcd70e9744929818"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "a9e91ac38574f2e4d6a121e61c542fc4751b710f5f40c3f11c8b562463bfcfac"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "050554acb9042e799488b6d3322a0110f291d5e9420dbdb25017a3ce783a8492"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "86d74d4b7b8a9be980bc98d8205d9d21f24f252690f9b4951095fe1d833c2a31"
+    },
+    {
+      "path": "native.py",
+      "sha256": "ed8c8c22073e08b1b0a5de16bc0f25ab7c456db4744797e9744a4bcab91155c3"
+    },
+    {
+      "path": "develop.py",
+      "sha256": "ee5072d90749a43991dd49ea51210712d08fe71a4b02c5c7cb190c745382d989"
+    },
+    {
+      "path": "confirm.py",
+      "sha256": "f6a27a9ed916938f02d426b9a69e1b76fa2f16e195166b5e1ad2081824c11d45"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "3a99ceabdac2c2bc86dbee7e4bd33773e1841f9f06570cf0f1aff11dedd0d626"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "cae16e2c76920d7835f92ab60b89456e94a5109e12de128be657ae04af77a50d"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "c5a1a0141ca96f8cb186b98ac0133792f534eec11a82c08a80f38757dbc66a8e"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "f096a38176d0964f11c5919d95881d7f515f73bfd38eb4beec8b15ed9a105572"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "2f3c1fa8e550dc862218fcf82ae81f7423800cb13500cc563410edd083608d35"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "e49716eafa126c16d1c6185cddcec4d094ba33a4d40c4ff3de2e6d046b3ecb9b"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "dde8b9c8a5017dbf599a62aebc63993cd8569b979f4f3a28bdcfd97286f77e88"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "e96d6e43c5c795bab11ea3a7494274b644789ed4ad6ecc2132d51996057bbe3f"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "a901b11702b5e5d248005c9e22aba24ab0ec191b6bc599d84c6ccf999a41a688"
+    }
+  ],
+  "overall_limitations": [
+    "Independent computational review, not independent experimental replication.",
+    "No discovery or state changes performed.",
+    "Authoritative source semantics relied on preserved protocol/source audit; reproduction does not independently validate clock synchronization."
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-091-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native reconstruction exactly matches60 confirmation trials;11 frozen predictors and group-MAE values independently replayed. All freeze hashes match."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "The audited code uses contemporaneous achieved throughput and empirical offered-rate cells. This does not isolate packet loss, radio-only latency or physical service capacity."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Computational review does not conduct independent literature novelty adjudication; source queue/load analyses already disclosed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The matched-control and ablation failures are useful benchmark evidence; practical value is bounded to these offered-load settings."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Verified native-to-prepared identities, targets and predictors; all11 model predictions reproduce in an isolated package without research-history imports."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention, energy saving, service-level improvement or independent network test is provided."
+        }
+      },
+      "checks": [
+        "Independent group-MAE recomputation acrossQ4/Q5.",
+        "Source hashes verified and excluded clock-wrap records retained as ineligible.",
+        "Whole-location partitions disjoint; fitted states use five development locations.",
+        "Only declared same-run offered/achieved rates enter prediction.",
+        "Reference loses to RBF overall; throughput-correction ablation worsens confirmation."
+      ],
+      "limitations": [
+        "Two heldout locations in one installation do not support population confidence.",
+        "Same-run achieved throughput is a declared diagnostic input, not prospective offered-load information.",
+        "Standalone CLI manifest was supplied in the disposable copy because root sealing is pending; numerical replay itself passed."
+      ]
+    },
+    {
+      "finding_id": "P100-091-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native reconstruction exactly matches60 confirmation trials;11 frozen predictors and group-MAE values independently replayed. All freeze hashes match."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "The audited code uses contemporaneous achieved throughput and empirical offered-rate cells. This does not isolate packet loss, radio-only latency or physical service capacity."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Computational review does not conduct independent literature novelty adjudication; source queue/load analyses already disclosed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The matched-control and ablation failures are useful benchmark evidence; practical value is bounded to these offered-load settings."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Verified native-to-prepared identities, targets and predictors; all11 model predictions reproduce in an isolated package without research-history imports."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention, energy saving, service-level improvement or independent network test is provided."
+        }
+      },
+      "checks": [
+        "Independent group-MAE recomputation acrossQ4/Q5.",
+        "Source hashes verified and excluded clock-wrap records retained as ineligible.",
+        "Whole-location partitions disjoint; fitted states use five development locations.",
+        "Only declared same-run offered/achieved rates enter prediction.",
+        "Reference loses to RBF overall; throughput-correction ablation worsens confirmation."
+      ],
+      "limitations": [
+        "Two heldout locations in one installation do not support population confidence.",
+        "Same-run achieved throughput is a declared diagnostic input, not prospective offered-load information.",
+        "Standalone CLI manifest was supplied in the disposable copy because root sealing is pending; numerical replay itself passed."
+      ]
+    },
+    {
+      "finding_id": "P100-091-F03",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native reconstruction exactly matches60 confirmation trials;11 frozen predictors and group-MAE values independently replayed. All freeze hashes match."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The audited code uses contemporaneous achieved throughput and empirical offered-rate cells. This does not isolate packet loss, radio-only latency or physical service capacity."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Computational review does not conduct independent literature novelty adjudication; source queue/load analyses already disclosed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The matched-control and ablation failures are useful benchmark evidence; practical value is bounded to these offered-load settings."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Verified native-to-prepared identities, targets and predictors; all11 model predictions reproduce in an isolated package without research-history imports."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment intervention, energy saving, service-level improvement or independent network test is provided."
+        }
+      },
+      "checks": [
+        "Independent group-MAE recomputation acrossQ4/Q5.",
+        "Source hashes verified and excluded clock-wrap records retained as ineligible.",
+        "Whole-location partitions disjoint; fitted states use five development locations.",
+        "Only declared same-run offered/achieved rates enter prediction.",
+        "Reference loses to RBF overall; throughput-correction ablation worsens confirmation."
+      ],
+      "limitations": [
+        "Two heldout locations in one installation do not support population confidence.",
+        "Same-run achieved throughput is a declared diagnostic input, not prospective offered-load information.",
+        "Standalone CLI manifest was supplied in the disposable copy because root sealing is pending; numerical replay itself passed."
+      ]
+    }
+  ],
+  "verification_receipt": "P100-091.computational_checks.json"
+}

@@ -1,0 +1,55 @@
+{
+  "case": 34,
+  "kind": "reserve_conserved",
+  "coef": [
+    148.32641678977362,
+    -1.4876839434816904,
+    0.7983075329888836
+  ],
+  "training_groups": [
+    "control_cell10",
+    "control_cell11",
+    "control_cell12",
+    "control_cell2",
+    "control_cell3",
+    "control_cell5",
+    "control_cell6",
+    "control_cell8",
+    "control_cell9",
+    "mutant_block1",
+    "mutant_block10",
+    "mutant_block11",
+    "mutant_block12",
+    "mutant_block3",
+    "mutant_block4",
+    "mutant_block5",
+    "mutant_block6",
+    "mutant_block8",
+    "mutant_block9"
+  ],
+  "training_rows": 56,
+  "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+  "equation": "Ihat=I(.75)+max(A+B*I(.4)-I(.75),0)*(Ca-.75)/(K+Ca-.75); exact unit depletion coefficient.",
+  "optimizer": {
+    "success": true,
+    "cost": 0.5509089794652973,
+    "bounds": [
+      [
+        0,
+        -5,
+        0.01
+      ],
+      [
+        500,
+        5,
+        100
+      ]
+    ],
+    "jacobian_rank": 3,
+    "jacobian_singular_values": [
+      1.877408502525673,
+      0.5393936159235456,
+      0.018824854300838707
+    ]
+  }
+}

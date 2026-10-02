@@ -1,0 +1,83 @@
+{
+  "created_utc": "2026-10-02T02:16:03.318903+00:00",
+  "case_id": "P100-040",
+  "task": {
+    "target": "Recorded completed-trip duration conditional on recorded trip distance",
+    "target_units": "minutes",
+    "error_units": "minutes",
+    "metric_kind": "mae",
+    "permitted_inputs": [
+      "distance_km",
+      "hour",
+      "weekend",
+      "peak",
+      "airport",
+      "manhattan"
+    ],
+    "input_units": {
+      "distance_km": "recorded post-trip miles*1.609344",
+      "hour": "pickup local clock hour including fraction",
+      "weekend": "Saturday/Sunday binary",
+      "peak": "fixed7\u201310 or16\u201319localclock binary",
+      "airport": "either endpoint in official JFK/LGA/Newark zones",
+      "manhattan": "either endpoint boroughManhattan"
+    },
+    "timing_contract": "Trip distance is recorded after the journey. Task is retrospective travel-time diagnostics with completed distance, not pickup-time ETA. Pickup time and endpoint categories are known; no fare/payment/duration-derived predictors.",
+    "calibration": "Forward training on earlier whole days. Jan\u2013Sepdevelopment,Oct\u2013Decconfirmation. Same city/provider system; no future-day targets enter coefficients. Fixed clock windows, no held tuning.",
+    "independent_unit": "Whole pickup calendar days; serial weather/traffic/vendor dependence persists. Forward month blocks, not random trips.",
+    "scope_limits": "Green-taxi2025 declared routine records, duration0\u201324h and distance0\u20131000km; known officialzones and source-month-consistent timestamps. Provider-reported records may contain errors; no congestion intervention, routing policy or achieved operational benefit.",
+    "applicability": {
+      "predictions_nonnegative": true
+    },
+    "case_id": "P100-040",
+    "source_url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+    "source_license": "NYC Open Data terms; attribution retained",
+    "numeric_columns": [
+      "distance_km",
+      "hour",
+      "weekend",
+      "peak",
+      "airport",
+      "manhattan"
+    ],
+    "exposure": {
+      "schema": "Only schema and source-publication aggregate descriptions inspected; reserved target values and scores not inspected.",
+      "current": "reserved_internal_only",
+      "fresh_for_future_users": false
+    },
+    "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+    "aggregation": {
+      "hierarchy": [
+        "group"
+      ],
+      "primary": "mean_group_error"
+    }
+  },
+  "source_manifest_sha256": "c204a34933a6bfd5799c87e8f0417682d8f137154ea2dad097c5a90f20c33502",
+  "native_sha256": "2415a09dfb74579e5c8e8da2574d8b38991b8665baa887bd48204e662489368c",
+  "split_manifest_sha256": "2330aaed272beb34a8f196b9a17d93841fe09aa9db4fee4f30ede0b09faac27d",
+  "baseline_families": [
+    "training constant",
+    "domain simple law",
+    "regularized32-center RBF same permitted inputs"
+  ],
+  "selection": "Minimize group-balanced primary error; prefer fewer coefficients within1percent of minimum; baseline may win.",
+  "stopping": "At least5distinct scientific hypotheses, adaptive to development evidence; stop after2consecutive substantive attempts without accuracy/robustness/interpretation gain.",
+  "folds": [
+    {
+      "train_before": 4,
+      "validation_from": 4,
+      "validation_through": 5
+    },
+    {
+      "train_before": 6,
+      "validation_from": 6,
+      "validation_through": 7
+    },
+    {
+      "train_before": 8,
+      "validation_from": 8,
+      "validation_through": 9
+    }
+  ]
+}

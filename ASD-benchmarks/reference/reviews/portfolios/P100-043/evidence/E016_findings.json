@@ -1,0 +1,47 @@
+[
+  {
+    "finding_id": "P100-043-F01",
+    "classification": "validated_extension",
+    "claim": "Two early checkpoints plus a size-dependent anchored exponent forecast later loss with0.00527665nats/token MAE, versus0.00799142 for shared exponent and0.01084989 for the nested flexible control. Improvement over shared exponent occurs in4/5 held architectures.",
+    "equation": "Lhat=L0+(L0-L1)*R(exp(b0+b1*ln(N/0.5B)))",
+    "admission": "supported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/scientific_checks.json"
+    ],
+    "scope": "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+    "known_prior_art": "Gemstones architecture-dependent scaling; standard power-law learning curves. No broad novelty claim.",
+    "falsification": "Smallest held architecture384x13 favors the shared exponent; only2/5 groups beat the flexible control. Transfer across corpora, seeds and learning-rate schedules untested."
+  },
+  {
+    "finding_id": "P100-043-F02",
+    "classification": "falsified",
+    "claim": "The attempted two-rate explanation is not identified: it offers negligible development gain, a boundary slow rate and an ill-conditioned Jacobian.",
+    "equation": "Lhat=L0+(L0-L1)*[w*R(beta_slow)+(1-w)*R(beta_fast)]",
+    "admission": "supported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/scientific_checks.json"
+    ],
+    "scope": "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+    "known_prior_art": "Gemstones architecture-dependent scaling; standard power-law learning curves. No broad novelty claim.",
+    "falsification": "This rejects evidence from these two-anchor trajectories, not the physical existence of multiple optimization timescales."
+  },
+  {
+    "finding_id": "P100-043-F03",
+    "classification": "falsified",
+    "claim": "Geometry-only exponent and symmetric balance-penalty alternatives do not reliably improve the size-dependent forecast; a bounded-size alternative wins retrospectively but was not development selected.",
+    "equation": "Lhat=L0+(L0-L1)*R(exp(b0+b1*ln(N/0.5B)+b2*abs(ln((width/depth)/32))))",
+    "admission": "supported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/scientific_checks.json"
+    ],
+    "scope": "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+    "known_prior_art": "Gemstones architecture-dependent scaling; standard power-law learning curves. No broad novelty claim.",
+    "falsification": "Attempt006 final MAE is slightly lower than selected003; it is preserved as an exposed diagnostic, not promoted."
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "source": "Zenodo 19699588, NYU Anton Paar RheoCompass exports",
+  "measurement_dates": "Native metadata 2024\u20132025; release 2026-04-22",
+  "native_format": "UTF-16 tab-separated exports with .csv suffix; 50 independent Test IDs, 10 formulations, five tests per formulation",
+  "units": {
+    "viscosity": "cP",
+    "temperature": "degC",
+    "shear_rate": "s^-1"
+  },
+  "processing": "Parse native numeric rows only; no smoothing, imputation or log-based target exclusion. All temperatures/rates in each Test ID stay together.",
+  "flags": {
+    "Dy_auto": 12500
+  },
+  "limitations": [
+    "Nominal loading percent basis is unspecified; use formulation labels rather than a mass/volume constitutive inference.",
+    "Heating order, aging and temperature are confounded.",
+    "Native result-count metadata may say14 while table contains10 blocks.",
+    "Tests are repeated within formulations, not demonstrated independent synthesis lots."
+  ],
+  "audit_exposure": "One inspected file with first low-temperature responses was excluded from the reserved pool. Target-independent metadata hash chooses one complete test per formulation; no confirmation score was opened."
+}

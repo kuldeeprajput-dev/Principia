@@ -1,0 +1,39 @@
+{
+  "target": "capped elapsed solver resource consumption min(Total Runtime,7200s)",
+  "target_units": "seconds",
+  "error_units": "seconds",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "nodes",
+    "max_degree",
+    "is_flow",
+    "is_linear",
+    "is_quadratic",
+    "moore2_occupancy"
+  ],
+  "input_units": {
+    "nodes": "node count",
+    "max_degree": "degree bound",
+    "is_flow": "indicator",
+    "is_linear": "indicator",
+    "is_quadratic": "indicator",
+    "moore2_occupancy": "dimensionless n/(1+d^2)"
+  },
+  "numeric_columns": [
+    "nodes",
+    "max_degree",
+    "is_flow",
+    "is_linear",
+    "is_quadratic",
+    "moore2_occupancy"
+  ],
+  "timing_contract": "All inputs are instance parameters and formulation choice known before solving; no runtime/gap/objective/work measure as input",
+  "calibration": "No evaluated-instance calibration",
+  "independent_unit": "complete topology instance containing all three formulations",
+  "scope_limits": "One solver/hardware experiment,16 structural instances,three formulations,one run each. Consumption censored by a7200s resource cap; not latent solve time or general computational complexity. No deployed impact evidence.",
+  "source_url": "https://github.com/ZIB-AOPT/QOBLIB/tree/2b400f43c197bb0eb9bc9802efa2b28b818ab63c/10-topology",
+  "source_license": "CC BY 4.0 data; source model/code license recorded in source provenance",
+  "exposure": "Public source-aware corpus; selection and stopping frozen before first internal confirmation. All current scores are now exposed; future evaluation is retrospective.",
+  "uncertainty_policy": "Report every independent group; do not infer new seeds/hardware/data populations or bootstrap dependent checkpoint/formulation rows.",
+  "nonnegative_prediction": true
+}

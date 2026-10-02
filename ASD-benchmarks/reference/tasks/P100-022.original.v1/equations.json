@@ -1,0 +1,176 @@
+{
+  "case_id": "P100-022",
+  "reference_equation_markdown": "For composition $c\\in\\{\\mathrm I,\\mathrm{Br}\\}$, define $q_c(V)=[1+\\exp(-(V-v_c)/w_c)]^{-1}$. The selected predictor is\n\\[\n\\widehat I(V,c)=[1-q_c(V)]g_c V+C_c q_c(V).\n\\]\n$I$ is in microamperes, $V,v_c,w_c$ in volts, $g_c$ in microamperes per volt and $C_c$ in microamperes. The fitted turn-on describes an ensemble of different first-forming devices. It must not be confused with an individual device's deterministic switching threshold. The negative I-rich $g_c$ rules out interpreting both fitted precursor coefficients as physical Ohmic conductances.",
+  "reference_parameters": [
+    {
+      "name": "C_I",
+      "unit": "microampere",
+      "value": 1141.5888656431364
+    },
+    {
+      "name": "v_I",
+      "unit": "V",
+      "value": 0.7000804330016582
+    },
+    {
+      "name": "w_I",
+      "unit": "V",
+      "value": 0.05687285813693191
+    },
+    {
+      "name": "g_I",
+      "unit": "microampere/V",
+      "value": -17.00194293652025
+    },
+    {
+      "name": "C_Br",
+      "unit": "microampere",
+      "value": 1150.7323327607342
+    },
+    {
+      "name": "v_Br",
+      "unit": "V",
+      "value": 0.5050439095463434
+    },
+    {
+      "name": "w_Br",
+      "unit": "V",
+      "value": 0.05187497322462848
+    },
+    {
+      "name": "g_Br",
+      "unit": "microampere/V",
+      "value": 578.7875064230075
+    }
+  ],
+  "all_models": {
+    "reference": {
+      "name": "Ohmic precursor plus turn-on",
+      "kind": "mem_leak",
+      "coefficients": [
+        1141.5888656431364,
+        0.7000804330016582,
+        0.05687285813693191,
+        -17.00194293652025,
+        1150.7323327607342,
+        0.5050439095463434,
+        0.05187497322462848,
+        578.7875064230075
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_constant": {
+      "name": "Constant response",
+      "kind": "constant",
+      "coefficients": [
+        517.1167161048882
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_flex22": {
+      "name": "Composition-specific cubic spline",
+      "kind": "flex22",
+      "coefficients": [
+        -4.4484338037821995,
+        235.04315808152128,
+        -2367.397496737179,
+        6092.149922852976,
+        -11506.285062053166,
+        37176.96546150124,
+        -90069.81288627017,
+        106103.82450503191,
+        1.7852101936753613,
+        205.64658137631685,
+        4079.676644787166,
+        -10520.448095833473,
+        35600.53125489966,
+        -71004.53205559516,
+        75565.22231309177,
+        -44235.16963191866
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_mem_domain": {
+      "name": "Logistic forming distribution",
+      "kind": "mem_domain",
+      "coefficients": [
+        1138.565577578278,
+        0.7011805701069268,
+        0.05557675099078435,
+        1179.449286024865,
+        0.46109595935550307,
+        0.0852882047229646
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_001": {
+      "name": "Weibull activation hazard",
+      "kind": "mem_weibull",
+      "coefficients": [
+        1113.321990772878,
+        0.7324261617942743,
+        8.79280143595916,
+        1159.9607300359182,
+        0.5042496237647255,
+        3.8815538604066107
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_002": {
+      "name": "Quadratic precursor plus turn-on",
+      "kind": "mem_sclc",
+      "coefficients": [
+        1144.3004179604434,
+        0.6982637878261313,
+        0.05799647378527495,
+        -62.52780006350822,
+        1144.0891278261067,
+        0.5442633847661108,
+        0.04484864780706872,
+        2055.9546700050264
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_003": {
+      "name": "Ohmic precursor plus turn-on",
+      "kind": "mem_leak",
+      "coefficients": [
+        1141.5888656431364,
+        0.7000804330016582,
+        0.05687285813693191,
+        -17.00194293652025,
+        1150.7323327607342,
+        0.5050439095463434,
+        0.05187497322462848,
+        578.7875064230075
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_004": {
+      "name": "Finite-onset activation hazard",
+      "kind": "mem_hazard",
+      "coefficients": [
+        1131.3530088062337,
+        0.3334282697491724,
+        3.5849193005554354,
+        0.39999999990324275,
+        1156.1968861246137,
+        0.805874734138041,
+        6.388339992996856,
+        -0.29999999999999993
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_005": {
+      "name": "Shared ceiling and width",
+      "kind": "mem_shared",
+      "coefficients": [
+        1166.5387805957034,
+        0.7063595505799062,
+        -0.24539905938658646,
+        0.06966099053943477
+      ],
+      "execution": "run.py:predict"
+    }
+  }
+}

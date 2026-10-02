@@ -1,0 +1,155 @@
+{
+  "development_only": true,
+  "best_raw_error_model": "baseline_persistence",
+  "paired_group_comparisons": {
+    "baseline_persistence": {
+      "wins": 0,
+      "ties": 5,
+      "groups": 5,
+      "mean_mae_difference": 0.0,
+      "differences": {
+        "204708": 0.0,
+        "304716": 0.0,
+        "404710": 0.0,
+        "404724": 0.0,
+        "604705": 0.0
+      }
+    },
+    "baseline_decay": {
+      "wins": 2,
+      "ties": 0,
+      "groups": 5,
+      "mean_mae_difference": -0.00020041018505799618,
+      "differences": {
+        "204708": 0.0006688239878251817,
+        "304716": -0.006061877027726099,
+        "404710": -0.004678620212914202,
+        "404724": 0.0034378444841015807,
+        "604705": 0.005631777843423558
+      }
+    },
+    "baseline_flexible": {
+      "wins": 3,
+      "ties": 0,
+      "groups": 5,
+      "mean_mae_difference": -0.00885602559045736,
+      "differences": {
+        "204708": -0.008522254139422956,
+        "304716": -0.0227131900339372,
+        "404710": -0.025882541216003262,
+        "404724": 0.005734563181023118,
+        "604705": 0.007103294256053501
+      }
+    }
+  },
+  "identifiability": {
+    "baseline_persistence": {
+      "parameters": 0,
+      "meaning": "Fixed calibration/persistence control"
+    },
+    "baseline_decay": {
+      "rank": 2,
+      "parameters": 2,
+      "near_bound_indices": [],
+      "singular_values": [
+        57.00995316645541,
+        0.0230839475411675
+      ],
+      "condition_number": 2469.6795495997762
+    },
+    "baseline_flexible": {
+      "feature_rank": 8,
+      "parameters": 8,
+      "ridge_penalty": 1,
+      "warning": "Regularized coefficients are not uniquely identified mechanisms when design columns are dependent."
+    },
+    "attempt_001_bateman": {
+      "rank": 3,
+      "parameters": 3,
+      "near_bound_indices": [
+        0
+      ],
+      "singular_values": [
+        15.99356433835719,
+        0.2718982231122291,
+        2.6618121880936243e-05
+      ],
+      "condition_number": 600852.4722329
+    },
+    "attempt_002_relative_decay": {
+      "rank": 2,
+      "parameters": 2,
+      "near_bound_indices": [],
+      "singular_values": [
+        0.9943900415246854,
+        0.03244998417942141
+      ],
+      "condition_number": 30.643775849828952
+    },
+    "attempt_003_two_decay": {
+      "rank": 3,
+      "parameters": 4,
+      "near_bound_indices": [
+        0
+      ],
+      "singular_values": [
+        77.03451347549186,
+        5.905574090886721,
+        0.002817185824998776,
+        1.0999905424532627e-16
+      ],
+      "condition_number": null
+    },
+    "attempt_004_baseline_drift": {
+      "rank": 3,
+      "parameters": 3,
+      "near_bound_indices": [],
+      "singular_values": [
+        56.95017365359178,
+        0.7805338132729532,
+        0.023459424577755083
+      ],
+      "condition_number": 2427.603177769058
+    },
+    "attempt_005_lognormal": {
+      "rank": 3,
+      "parameters": 3,
+      "near_bound_indices": [
+        0
+      ],
+      "singular_values": [
+        62.39810307868727,
+        3.2174339244500345,
+        0.0007427818594976101
+      ],
+      "condition_number": 84005.95986672456
+    }
+  },
+  "source_limits": "Seven retained complete calves, while paper describes ten antibiotic-trial calves. Two reserved calves permit bounded internal transfer only. No untreated controls, dose-response or molecule-specific mechanism identification.",
+  "local_input_sensitivity": {
+    "hours": {
+      "step": 0.3365947117825829,
+      "median_prediction_change": 0.0,
+      "min_change": 0.0,
+      "max_change": 0.0
+    },
+    "baseline": {
+      "step": 0.0001196328700849385,
+      "median_prediction_change": 0.00011963287008493872,
+      "min_change": 0.00011963287008493612,
+      "max_change": 0.00011963287008493959
+    },
+    "baseline_change": {
+      "step": 0.0001554836778356088,
+      "median_prediction_change": 0.0,
+      "min_change": 0.0,
+      "max_change": 0.0
+    },
+    "age": {
+      "step": 0.05003998401278722,
+      "median_prediction_change": 0.0,
+      "min_change": 0.0,
+      "max_change": 0.0
+    }
+  }
+}

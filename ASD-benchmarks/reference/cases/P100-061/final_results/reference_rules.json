@@ -1,0 +1,40 @@
+{
+  "schema": "principia.reference-rule-index/v1",
+  "case_id": "61_chemistry_membrane_permeation",
+  "findings": [
+    {
+      "id": "P100-061-R1",
+      "name": "Non-ideal calibrated hydrogen pressure response",
+      "classification": "reproduction",
+      "status": "supported within four calibrated specimens",
+      "evidence": "evidence/pure_confirmation.csv.gz",
+      "limitations": "Known Richardsonrelationship; no new diffusionmechanism"
+    },
+    {
+      "id": "P100-061-R2",
+      "name": "Compact bounded mixture-transport prediction",
+      "classification": "reproduction",
+      "status": "supported scoped prediction; not best numericalmodel",
+      "model_id": "attempt-004",
+      "evidence": "evidence/metrics.csv",
+      "limitations": "Effectivefilmanddepletion notcausallyidentified"
+    },
+    {
+      "id": "P100-061-R3",
+      "name": "Flexible calibration correction gives lower reserved error",
+      "classification": "validated predictive comparison",
+      "status": "supported comparison; no physicalprinciple",
+      "model_id": "rbf_nested",
+      "evidence": "evidence/metrics.csv",
+      "limitations": "Existing membranes and within the sampled calibrated operating range"
+    },
+    {
+      "id": "P100-061-N1",
+      "name": "Single transport mechanism or universal geometry identification",
+      "classification": "unsupported",
+      "status": "not admitted",
+      "evidence": "evidence/identifiability_controls.json",
+      "limitations": "Conditionaldepletionprofiles, flowreferenceuncertainty andlackofreplicates"
+    }
+  ]
+}

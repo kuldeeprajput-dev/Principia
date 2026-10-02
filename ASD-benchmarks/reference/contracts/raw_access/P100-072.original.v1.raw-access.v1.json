@@ -1,0 +1,56 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-072.original.v1.raw-access.v1",
+  "parent_task_id": "P100-072.original.v1",
+  "case_id": "P100-072",
+  "protocol_version": "P100-072.original.v1.raw-access.v1",
+  "cohort_id": "P100-072.original.v1.cohort-1",
+  "parent_task_sha256": "7674d69a6afcb86777bee36ecdfce7cc5055572303084510a6de171968a2377c",
+  "input_sha256": "ea72ed5588b17a2f806187f01541b7a375776f0136c95521dff86e2fc69517f7",
+  "observations_sha256": "43a96fb8dcc9e7771aae01f01ffc626b1feca3f68a3ec1a21fad9df2646a1cb5",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "72_biotechnology_yeast_competition",
+  "source_assets": [
+    {
+      "path": "raw/dataset competencias.xlsx",
+      "bytes": 269041,
+      "sha256": "3c1bf733f9bf117bd945ab3f7eb5a1913f88cb85d5eeec4c70211dd00a90918a"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "p22_pct": "percentage points; own replicate at22h",
+      "p72_pct": "percentage points; own replicate at72h",
+      "time_h": "h since inoculation"
+    },
+    "observation_window": "Author cached spreadsheet percentage from same-row qPCR ratio is the target. No same-time Cp/ratio is a predictor. Use only own replicate22/72-hour percentages to forecast96h and later. Biological replicate pairing from Sample Name.",
+    "calibration_and_history": "p22 and p72 are own-replicate fractions (source percentages/100). Delta=t\u221272h, and s is early log-odds change per hour. Fractions are clipped to0.0001\u20130.9999 only for log-odds calculation; original targets are unchanged. The output is100 times logistic(log-odds), in percentage points.75h is a development-selected shape scale. This early/late conditional equation does not estimate an independently measured fitness coefficient.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

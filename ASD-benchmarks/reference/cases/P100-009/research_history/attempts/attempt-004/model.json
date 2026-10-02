@@ -1,0 +1,16 @@
+{
+  "kind": "asymmetry",
+  "coef": [
+    0.19155969942182574,
+    0.03431794030366944,
+    0.14690699520673295
+  ],
+  "equation": "max(0,p+b0*r+b1*max(v,0)+b2*min(v,0)); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+  "training_groups": [
+    "16",
+    "22713"
+  ],
+  "training_rows": 4462,
+  "parameter_count": 3,
+  "rank": 3
+}

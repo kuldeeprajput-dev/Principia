@@ -1,0 +1,76 @@
+{
+  "case_id": "P100-006",
+  "title": "NIST Rydberg atom RF sensing: ionization-current versus optical readout",
+  "default_task": "P100-006.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Ion-readout amplitude",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Entire contiguous probe-Rabi blocks; one vapor cell. No independent atomic-cell replication.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "None. Inputdetuning/Rabi only. Fixed43D5/2 neighborhood abs(detuning)<=60MHz.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Ion-readout amplitude",
+    "prediction_time": "Eight contiguous 30-condition Rabi blocks were used for leave-block-out development; blocks 06 and 09 were reserved. Frequencies and nearby Rabi coordinates are dependent. The task covers only the fixed \u00b160 MHz spectral neighborhood on one cesium cell.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-006.original.v1"
+  ],
+  "finding_ids": [
+    "P100-006-F01",
+    "P100-006-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-006/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-006.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Ion-readout amplitude under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Eight contiguous 30-condition Rabi blocks were used for leave-block-out development; blocks 06 and 09 were reserved. Frequencies and nearby Rabi coordinates are dependent. The task covers only the fixed \u00b160 MHz spectral neighborhood on one cesium cell.",
+    "calibration_requirement": "None. Inputdetuning/Rabi only. Fixed43D5/2 neighborhood abs(detuning)<=60MHz.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Ion-readout amplitude in arbitrary units",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "arbitrary units",
+    "reference_model": "reference",
+    "reference_primary_error": 0.049285928923830824,
+    "reference_physical_mae": 0.049285928923830824,
+    "physical_error_units": "arbitrary units",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.049285928923830824,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-006.original.v1/evidence/metrics.csv",
+      "bytes": 837,
+      "sha256": "d785accc03c88492aae9f96c1e3f6b02ce4e64e5c022214eb18bddb61f78876e"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

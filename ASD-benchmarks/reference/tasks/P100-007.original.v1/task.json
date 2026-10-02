@@ -1,0 +1,187 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-007.original.v1",
+  "case_id": "P100-007",
+  "case_number": 7,
+  "family": "original",
+  "protocol_version": "P100-007-asd7-native-v1",
+  "cohort_id": "P100-007.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-007.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/07_neuroscience_physionet_gait_s1",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Plate1 vertical force,100ms ahead,10ms mean",
+  "target_units": "N",
+  "error_units": "N",
+  "primary_units": "N",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "force",
+    "lag20",
+    "lag50",
+    "lag100",
+    "opposite",
+    "opposite50",
+    "cycle",
+    "cycle_previous",
+    "period",
+    "speed"
+  ],
+  "input_units": {
+    "force": "N",
+    "lag20": "N",
+    "lag50": "N",
+    "lag100": "N",
+    "opposite": "N",
+    "opposite50": "N",
+    "cycle": "N",
+    "cycle_previous": "N",
+    "period": "s",
+    "speed": "m/s"
+  },
+  "numeric_columns": [
+    "force",
+    "lag20",
+    "lag50",
+    "lag100",
+    "opposite",
+    "opposite50",
+    "cycle",
+    "cycle_previous",
+    "period",
+    "speed"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Causal10ms block means sampled100Hz from source1000Hz sequence. At block end t, predict the10ms block ending t+100ms. Every feature uses blocks ending at or before t.",
+  "calibration": "No target calibration from held run; preceding five seconds of its force waveform supply causal period and history. Known treadmill speed is permitted.",
+  "independent_unit": "Entire speed run within one participant; only two development runs and one faster reserved run",
+  "evaluation_groups": [
+    "1"
+  ],
+  "assigned_rows": 1041,
+  "eligible_rows": 1041,
+  "baseline_models": [
+    "reference",
+    "baseline_persistence",
+    "baseline_velocity",
+    "baseline_periodic",
+    "baseline_flexible",
+    "attempt_001_damped",
+    "attempt_002_phase",
+    "attempt_003_bilateral",
+    "attempt_004_stance",
+    "attempt_005_phase_bilateral"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "C; F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_persistence": {
+      "equation": "F; F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_velocity": {
+      "equation": "F+v; F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_periodic": {
+      "equation": "C; F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "F+b0+sum_j b_j exp(-mean((z-center_j)^2)/2); F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_damped": {
+      "equation": "F+b0*v+b1*a; F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_phase": {
+      "equation": "F+b0*(C-F)+b1*v; F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_bilateral": {
+      "equation": "F+b0*v+b1*a+b2*vO; F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_stance": {
+      "equation": "F+b0*v+b1*a+b2*v*tanh(F/100N)+b3*a*tanh(F/100N); F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_phase_bilateral": {
+      "equation": "F+b0*(C-F)+b1*v+b2*vO; F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "One participant, three treadmill speeds; no independent-person generalization. Force-platform channels are signed and the source timing columns are unusable.",
+  "source_url": "https://physionet.org/content/multimodal-gait-dataset/1.0.0/",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "c1c58e61cb7de174c5d7afd3190c9b9e33601ade54561b1e2e12bcdf6aed89a6",
+  "observations_sha256": "4127ced29e3b9b64da6dd5df387a827ad61798020a4dba5c895747fc98016450",
+  "legacy_protocol_sha256": "80a5255c950481f994dedba72d4715f8dc900a32315f63c702a619e188ce57a9",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "force",
+    "lag20",
+    "lag50",
+    "lag100",
+    "opposite",
+    "opposite50",
+    "cycle",
+    "cycle_previous",
+    "period"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0",
+  "native_prefix_audit": {
+    "status": "passed_finite_native_counterfactual_probes",
+    "receipt": "reviews/validation/ASD7_NATIVE_PREFIX.json",
+    "receipt_sha256": "0beef68cea2994c1e53c625868a6c9fdf5d8008d40a00fc8bf8bb402b6f8d5df",
+    "tested_origins": 3,
+    "scope": [
+      "One middle eligible forecast origin from every native recording/session with at least one eligible origin; all currently exposed partitions covered."
+    ],
+    "limits": "Released-product prefix invariance at tested origins; not a proof of publisher upstream processing causality or every possible mutation."
+  }
+}

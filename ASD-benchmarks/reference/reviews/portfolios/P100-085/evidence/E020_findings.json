@@ -1,0 +1,55 @@
+{
+  "case_id": "P100-085",
+  "findings": [
+    {
+      "classification": "reproduction",
+      "admission": "partially_supported",
+      "claim": "Unit mass recovery is a compact measured-data screening control across these flask conditions, but it is not universally stoichiometric or an industrial replacement for GA assay.",
+      "equation": "P_hat=max(0,E0-E)",
+      "evidence": {
+        "development_mae": 1.7484166667,
+        "confirmation_mae": 0.9450000000000004,
+        "confirmation_rows": 4,
+        "confirmation_independent_conditions": 1
+      },
+      "falsification": "A development-worse flexible model is more accurate on the single exposed heldout condition; no optimality claim.",
+      "scope": "Contemporaneous HPLC diagnostic; condition transfer is retrospective.",
+      "finding_id": "P100-085-F01",
+      "known_prior_art": "The authors already report acetate-enhanced EG assimilation and GA production with isotope evidence. Mass-ratio stoichiometry is a comparator, not a discovery. We test predictive recovery heterogeneity without asserting causal pH effects.",
+      "source_url": "https://zenodo.org/records/17396158"
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "pH-only recovery, product-loss time trend, medium coefficients, saturation and acid-dissociation gates do not improve whole-condition development transfer.",
+      "equation": null,
+      "evidence": {
+        "attempts": 5,
+        "best_new_attempt_dev_mae": 2.992533,
+        "unit_mass_baseline_dev_mae": 1.748417
+      },
+      "falsification": "pH and feed identity are confounded; the time term has the wrong sign for loss; saturation plateau reaches its upper bound.",
+      "scope": "Failure of these tested low-dimensional mechanisms, not disproof of biological pH effects.",
+      "finding_id": "P100-085-F02",
+      "known_prior_art": "The authors already report acetate-enhanced EG assimilation and GA production with isotope evidence. Mass-ratio stoichiometry is a comparator, not a discovery. We test predictive recovery heterogeneity without asserting causal pH effects.",
+      "source_url": "https://zenodo.org/records/17396158",
+      "underlying_proposal_disposition": "unsupported: the tested extensions did not improve the prespecified development comparison"
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "The two bioreactor files cannot support a feed-regime contrast because their native payloads are identical despite opposing names.",
+      "equation": null,
+      "evidence": {
+        "native_duplicate_receipt": "SOURCE_DEFECTS.json"
+      },
+      "falsification": "No correction is inferable from filenames; both are excluded from this task.",
+      "scope": "Data-identifiability finding, not a new biochemical law.",
+      "finding_id": "P100-085-F03",
+      "known_prior_art": "The authors already report acetate-enhanced EG assimilation and GA production with isotope evidence. Mass-ratio stoichiometry is a comparator, not a discovery. We test predictive recovery heterogeneity without asserting causal pH effects.",
+      "source_url": "https://zenodo.org/records/17396158"
+    }
+  ],
+  "reference_disposition": "reference baseline or exposed comparison, not automatically admitted new law",
+  "review_pending": "independent root computational and scientific-critical reviews"
+}

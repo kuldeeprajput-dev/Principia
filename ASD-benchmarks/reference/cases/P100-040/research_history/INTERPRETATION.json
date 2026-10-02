@@ -1,0 +1,30 @@
+{
+  "title": "Taxi duration: a scoped piecewise travel-time reference",
+  "summary": "A compact distance-regime model with clock and route context improves reserved-quarter duration error over matched simple, flexible and robust controls. It is a diagnostic of completed trips, since recorded distance is known only after travel.",
+  "data": "The native 2025 NYC green-taxi Parquets supply pickup/dropoff timestamps, recorded distance and zones. Source-month consistency, positive duration up to 1,440 minutes, distance up to 1,000 km and known zones define eligibility before fitting. Development uses 425,327 trips in 273 complete days from January through September; confirmation uses 139,747 trips in 92 days from October through December. Forward development blocks preserve time ordering; daily aggregation prevents busy days from dominating.",
+  "equations": "Let d be recorded kilometres, h pickup hour, A an airport endpoint indicator and M a Manhattan endpoint indicator. The selected equation is duration_hat=clip[a+bS*min(d,3)+bL*max(d-3,0)+cA*A+cM*M+u*d*sin(2*pi*h/24)+v*d*cos(2*pi*h/24),0,10000] minutes. Coefficients in that order are [0.3962172060772582, 4.206218762142937, 1.4586951712642668, -8.496199167224495, -0.5458579682975798, -0.2701114288660162, -0.40350729807752167]. The 3 km knot was a preregistered regime hypothesis, not an estimated physical transition.",
+  "performance": "Confirmation mean daily MAE is 9.453892 minutes versus 12.821982 for overhead-plus-distance, 12.708702 for the flexible control, 10.156146 for a matched robust distance control and 10.269022 for matched robust flexible fitting. Worst-day reference MAE is 16.741070 minutes. Attempt006 performs slightly better on confirmation but remains unselected under the frozen development parsimony rule.",
+  "value": "The different short/long-distance slopes are consistent with a mixture of local stopping, route composition and faster longer-distance travel. They do not identify causal road speeds. A negative airport offset creates unphysical extrapolations for very short hypothetical airport trips; nonnegative clipping is explicit. Provider-record errors and large tails remain. No operational ETA or routing benefit has been measured.",
+  "lessons": "Use matched robust-estimation controls before attributing gains to equation structure. Separate post-trip distance conditioning from pickup-time forecasting. Keep large errors and unsuccessful route-slope ablations visible. A lower physical-unit error does not turn observational route composition into a universal speed law.",
+  "findings": [
+    {
+      "classification": "validated_extension",
+      "admission": "partially_supported",
+      "claim": "A short/long-distance and cyclic-clock equation improves completed-trip duration prediction in a reserved quarter against the frozen matched controls.",
+      "equation": "See rules.json models.reference: T_hat=clip[a+bS min(d,3)+bL max(d-3,0)+cA A+cM M+u d sin(2pi h/24)+v d cos(2pi h/24),0,10000].",
+      "interpretation": "A parsimonious phenomenological account of route mixtures and time-dependent congestion within this provider release.",
+      "falsification": "Recorded distance is post-trip; only one city/year is tested. Negative airport offset, high residual errors and provider quality limitations exclude a universal speed or operational dispatch claim."
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Simple distance proportionality and an operational pickup-time interpretation are inadequate for this task.",
+      "equation": "Domain T=a+b*d and matched robust variant are retained; input availability excludes pickup-time use of actual trip distance.",
+      "interpretation": "Better fitting needs route/time structure, but that structure remains observational and calibrated to the source cohort.",
+      "falsification": "The causal and information-budget limits persist even where the numerical gain is strong; no prospective intervention was performed."
+    }
+  ],
+  "unresolved": [
+    "Source-aware exposed outcomes; no independent experimental replication or definitive novelty adjudication."
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-046",
+  "title": "MMS1 magnetic field and plasma moments on 2025-06-01",
+  "default_task": "P100-046.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Electron perpendicular temperature",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Contiguous20-minute blocks in one MMS1 passage, not independent spacecraft or experiments",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Causal60-second-old electron state, same information for every model. Magnetic matching backward only.",
+  "baseline_strength": {
+    "registered_controls": 10,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Electron perpendicular temperature",
+    "prediction_time": "Diagnostic closure using current electron density and magnetic-field magnitude plus electron temperature/density/field measured at least60s earlier; current temperature and tensor-derived equivalents forbidden.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "One spacecraft passage; blocks share plasma conditions."
+  },
+  "task_ids": [
+    "P100-046.original.v1"
+  ],
+  "finding_ids": [
+    "P100-046-F01",
+    "P100-046-F02",
+    "P100-046-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-046/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-046.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Electron perpendicular temperature under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Diagnostic closure using current electron density and magnetic-field magnitude plus electron temperature/density/field measured at least60s earlier; current temperature and tensor-derived equivalents forbidden.",
+    "calibration_requirement": "Causal60-second-old electron state, same information for every model. Magnetic matching backward only.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Electron perpendicular temperature in eV",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "One spacecraft passage; blocks share plasma conditions."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "eV",
+    "reference_model": "reference",
+    "reference_primary_error": 1.174158565572811,
+    "reference_physical_mae": 1.174158565572811,
+    "physical_error_units": "eV",
+    "lowest_registered_error_model": "attempt_001",
+    "lowest_registered_error": 1.159811964873141,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-046.original.v1/evidence/metrics.csv",
+      "bytes": 894,
+      "sha256": "08f4c0ce40ff838e7959298ad1303919f3139ae8feb12e276075ff42ed46fee7"
+    },
+    "models": 10
+  },
+  "case_specific_next_evidence": "One spacecraft passage; blocks share plasma conditions."
+}

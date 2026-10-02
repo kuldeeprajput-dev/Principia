@@ -1,0 +1,51 @@
+{
+  "name": "semi_infinite_arrival",
+  "formula": "offset+(a0+a1*high)*erfc(sqrt(tau*exp(k*high)/t))",
+  "hypothesis": "Development evidence available before this fit: finite_capacity_trapping: MAE 5.11432, worst group 10.9732; activated_breakthrough: MAE 1.51247, worst group 3.73404.\n\nActivated breakthrough improves development MAE to1.512\u03bcA. Test the established semi-infinite diffusion arrival solution, which imposes an erfc tail rather than an unconstrained inverse-Weibull exponent. This supplies a stronger physical-shape falsifier.",
+  "inputs": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "recorded_utc": "2026-10-02T02:01:58.611212+00:00",
+  "parent": "attempt-010",
+  "parameters": {
+    "a0": 24.622400819533258,
+    "a1": 62.29042547771083,
+    "tau": 1344.4755839762295,
+    "k": -0.4824870203906611
+  },
+  "training_groups": [
+    "trace-0-block-0",
+    "trace-0-block-1",
+    "trace-0-block-2",
+    "trace-0-block-3",
+    "trace-1-block-0",
+    "trace-1-block-1",
+    "trace-1-block-2",
+    "trace-1-block-3"
+  ],
+  "training_rows": 1483,
+  "optimizer_success": true,
+  "nfev": 8,
+  "jacobian_condition": 13174.037259742747,
+  "bounds": {
+    "a0": [
+      -500,
+      500
+    ],
+    "a1": [
+      -1000,
+      1000
+    ],
+    "tau": [
+      10,
+      1000000.0
+    ],
+    "k": [
+      -4,
+      4
+    ]
+  }
+}

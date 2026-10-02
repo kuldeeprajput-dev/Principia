@@ -1,0 +1,33 @@
+{
+  "name": "branch_hysteresis",
+  "formula": "pre+jump*(rL+where(discharge>0,1-(1-f)**pd,f**pc)*(rF-rL))",
+  "hypothesis": "Development evidence available before this fit: partial_transformation: MAE 0.10592, worst group 0.13708; intermediate_spectral_component: MAE 0.138931, worst group 0.178854.\n\nTest charge/discharge asymmetry in progress-to-spectralfraction rather than a new spectralcomponent. Separate branch exponents capture nonuniform galvanostatic/CV timing or hysteresis, but must transfer across wholeacquisitionblocks.",
+  "inputs": [
+    "pre",
+    "jump",
+    "rL",
+    "rF",
+    "dL",
+    "d2L",
+    "f",
+    "discharge",
+    "rest",
+    "e"
+  ],
+  "initial": {
+    "pc": 1,
+    "pd": 1
+  },
+  "bounds": {
+    "pc": [
+      0.1,
+      8
+    ],
+    "pd": [
+      0.1,
+      8
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:29:04.420740+00:00",
+  "parent": "attempt-004"
+}

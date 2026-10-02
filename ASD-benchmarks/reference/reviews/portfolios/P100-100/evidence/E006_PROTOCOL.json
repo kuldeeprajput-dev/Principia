@@ -1,0 +1,101 @@
+{
+  "schema": "principia.continuation.v1",
+  "case_id": "P100-100",
+  "created_at": "2026-09-30T09:17:10.016404+00:00",
+  "exposure": "All original cohorts are exposed. New results are retrospective development diagnostics; no fresh confirmation admitted.",
+  "cohort": "Original development groups only; original reserved groups excluded from selection and all continuation scores.",
+  "target": "Next successful probe RTT; conditional on observed successful response",
+  "units": "ms",
+  "primary_metric": "mae",
+  "original_metric_preserved": "mean whole-group physical-unit error remains reported, including the new normalized acoustic track",
+  "inputs": [
+    "route",
+    "payload_B",
+    "last_rtt",
+    "mean5_rtt",
+    "mean3_rtt",
+    "trend_rtt",
+    "RSRP",
+    "RSRQ",
+    "last2_rtt",
+    "last3_rtt",
+    "median5_rtt",
+    "std5_rtt"
+  ],
+  "input_units": {
+    "route": "calibrated source route",
+    "payload_B": "B",
+    "last_rtt": "ms,previous completion",
+    "mean5_rtt": "ms,past5",
+    "mean3_rtt": "ms,past3",
+    "trend_rtt": "ms,past difference",
+    "RSRP": "dBm,asofpreviouscompletion",
+    "RSRQ": "dB,asofpreviouscompletion",
+    "last2_rtt": "ms,second previous completion",
+    "last3_rtt": "ms,third previous completion",
+    "median5_rtt": "ms,past5",
+    "std5_rtt": "ms,past5 population SD"
+  },
+  "grouping": "Whole TestID / width-file / strain / stream-dateblock / sourcePING-run. 83 forward folds; others leave original whole-group folds out. All associated observations stay together.",
+  "folds": [
+    {
+      "fold": 0,
+      "groups": [
+        "2024-11-22_17-26-13_ping"
+      ],
+      "rows": 761
+    },
+    {
+      "fold": 1,
+      "groups": [
+        "2024-11-22_17-23-35_ping"
+      ],
+      "rows": 913
+    },
+    {
+      "fold": 2,
+      "groups": [
+        "2024-11-22_11-08-47_ping"
+      ],
+      "rows": 983
+    },
+    {
+      "fold": 3,
+      "groups": [
+        "2024-11-22_11-06-27_ping"
+      ],
+      "rows": 627
+    },
+    {
+      "fold": 4,
+      "groups": [
+        "2024-11-20_19-16-32_ping"
+      ],
+      "rows": 1373
+    },
+    {
+      "fold": 5,
+      "groups": [
+        "2024-11-20_19-11-32_ping"
+      ],
+      "rows": 1308
+    }
+  ],
+  "fitting": "All coefficients/scales/imputation/tuning use applicable training partitions only. Nested fold validation for tuned alternatives and flexible baselines. Same allowable inputs for all comparators.",
+  "baselines": "Persistence/constant, established mechanistic prediction, original selected equations refit, train-only Gaussian residual kernel (80centers; widths0.5/1/2,ridges0.01/1). Strong causal-history linear comparator when applicable.",
+  "selection": "Primary development criterion plus per-group noninferiority and complexity; <=1percent indistinguishable favors simplicity. No admission as fresh validated extension. Additional cycles chosen from actual prior residual/control evidence.",
+  "uncertainty": "Paired whole-group errors; disclose number of distinct systems and serial/repeated dependence; no observation-level CI.",
+  "decision_threshold": {
+    "deadline_ms": 50,
+    "status": "illustrative fixed threshold; no service/industrial cost claimed"
+  },
+  "limits": [
+    "Deadline50ms is an illustrative preregistered engineering threshold, not an asserted service requirement or deployment cost.",
+    "Forecast conditional successful probe latency; no fabricated RTT for lost packets.",
+    "Only previous completed probes and causal radio features; no target timestamp/loss flag/cumulative counter input.",
+    "One installation and calibrated routes, no intervention or scheduler mechanism identified."
+  ],
+  "source_landing_url": "https://zenodo.org/records/14635635",
+  "fresh_source_status": "Authoritative current landing pages checked30Sept2026: retained records remain same releases; no genuinely new experimental cohort was established. No fresh confirmation claimed.",
+  "minimum_material_cycles": 2
+}

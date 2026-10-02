@@ -1,0 +1,196 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-086",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-086/computational.json",
+      "bytes": 6325,
+      "sha256": "2ab263569f397cf014d6e4daa4d458e7219e562120d72797699cb8c0416b5f2b"
+    },
+    {
+      "path": "reviews/portfolios/P100-086/scientific_critical.json",
+      "bytes": 8465,
+      "sha256": "37b4da0ca49c51f72100dc548fbf53a3a91230d04040d503682fbb52fd25624e"
+    },
+    {
+      "path": "reviews/portfolios/P100-086/combined/review.json",
+      "bytes": 14266,
+      "sha256": "bd7917f8c94479506535b2fa3aed3ad2fb9a3d9efeef5e7d627a12267a274c56"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-086-SCI-01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole chronological batches; current assay plus strictly earlier history; later batches never inform training. Strong adverse evidence: Saturation was not selected in development and cannot be promoted for its exposedscore. Current assay availability is essential; native hx physical units are unresolved.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Multiscale history predicts a source-defined assay; sensor abbreviations, smoothing and biochemical phases are not identified. The ensemble is a numerical control.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source already models multiscale trends/phases. No new biochemical law or published-system superiority established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole chronological batches; current assay plus strictly earlier history; later batches never inform training.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-086-SCI-02",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole chronological batches; current assay plus strictly earlier history; later batches never inform training. Strong adverse evidence: New 1/3/6/12 hslopes and memory are a different input budget .92.646 %of 39217 hourlytriples have second-difference \u2264 1 native unit; interpolation/assay receipt timing remain unknown. No comparison to author MASTER under matched contract exists.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Multiscale history predicts a source-defined assay; sensor abbreviations, smoothing and biochemical phases are not identified. The ensemble is a numerical control.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source already models multiscale trends/phases. No new biochemical law or published-system superiority established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole chronological batches; current assay plus strictly earlier history; later batches never inform training.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

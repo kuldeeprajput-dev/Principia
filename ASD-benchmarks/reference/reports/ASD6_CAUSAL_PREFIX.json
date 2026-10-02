@@ -1,0 +1,82 @@
+{
+  "schema": "principia.causal_prefix_stress/1.0",
+  "cases": [
+    {
+      "case_id": "P100-038",
+      "status": "passed",
+      "adapter_sha256": "82de7e6139b347ad87491a19babfe4beabd09b0b9c9224d0715280689ee895d8",
+      "original_manifest_sha256": "c11303e692d45bec285c65b484122f203b7e9350193530415dc565b5f36e7b6e",
+      "mutated_native_asset": "38_communications_rural_drone5g/raw/25Mar31_162831.1_5G-radio_parameters_fligth5.csv",
+      "mutation_start": "2025-03-31T16:30:57.317000",
+      "mutated_source_rows": 289,
+      "prepared_rows": 4081,
+      "earlier_prediction_rows": 3821,
+      "predictors_checked": [
+        "last",
+        "mean5",
+        "mean20",
+        "slope",
+        "spread",
+        "elapsed"
+      ],
+      "maximum_earlier_predictor_difference": 0.0,
+      "changed_targets": 262,
+      "later_causal_history_rows_changed": 260,
+      "source_bytes_unchanged": true,
+      "scope": "Computational prefix-invariance test under finite response perturbations; this does not establish original instrument/processing causality or actual historical reporting availability."
+    },
+    {
+      "case_id": "P100-041",
+      "status": "passed",
+      "adapter_sha256": "acb87e0a5bc7c04f88f164c07cc10ed2b41d722ffdf4ac284883eae8e064e8f6",
+      "original_manifest_sha256": "47c53879827e1bf1db1ae4cca6e996a1c82433a6a69ebe0575997e737ea96b3f",
+      "mutated_native_asset": "41_energy_eia930_grid_2025/raw/EIA930_BALANCE_2025_Jan_Jun.csv",
+      "mutation_start": "2025-06-20T00:00:00",
+      "mutated_source_rows": 14337,
+      "prepared_rows": 219363,
+      "earlier_prediction_rows": 206683,
+      "predictors_checked": [
+        "forecast",
+        "error48",
+        "error168",
+        "load48",
+        "load168",
+        "ramp",
+        "hour",
+        "weekend"
+      ],
+      "maximum_earlier_predictor_difference": 0.0,
+      "changed_targets": 13952,
+      "later_causal_history_rows_changed": 11408,
+      "source_bytes_unchanged": true,
+      "scope": "Computational prefix-invariance test under finite response perturbations; this does not establish original instrument/processing causality or actual historical reporting availability."
+    },
+    {
+      "case_id": "P100-095",
+      "status": "passed",
+      "adapter_sha256": "0ccfdfb44b98b395bb05ebac901d29ac9550266c6b6951e4f82d29fc85f55558",
+      "original_manifest_sha256": "cb86657a846fb7483e48c44534fd4dae8fc11b585b0b93ab074d210cf7d8fd03",
+      "mutated_native_asset": "95_atmosphere_mountain_weather/raw/202101-03_ImHinterenEis_FRecDR_calc_TKE.csv",
+      "mutation_start": "2021-03-20T00:00:00",
+      "mutated_source_rows": 576,
+      "prepared_rows": 1041,
+      "earlier_prediction_rows": 795,
+      "predictors_checked": [
+        "energy",
+        "wind",
+        "vertical",
+        "temperature",
+        "gradient",
+        "sin_direction",
+        "cos_direction"
+      ],
+      "maximum_earlier_predictor_difference": 0.0,
+      "changed_targets": 246,
+      "later_causal_history_rows_changed": 246,
+      "source_bytes_unchanged": true,
+      "scope": "Computational prefix-invariance test under finite response perturbations; this does not establish original instrument/processing causality or actual historical reporting availability."
+    }
+  ],
+  "script_sha256": "52ccdfa412a725d18fb1a31c6d798cd34575649726ea522e1816732b36ea89c8",
+  "mutations": "Only disposable copies are perturbed; custom hash manifests are confined to the temporary directory, never admitted as benchmark source assets. Original native hashes are rechecked afterward."
+}

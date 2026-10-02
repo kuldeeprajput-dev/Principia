@@ -1,0 +1,167 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-052",
+  "claim_origin": "Curator index of existing retained findings; review judgments remain separate. No new discovery claim added.",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "exposed"
+  },
+  "findings": [
+    {
+      "id": "P100-052-SCI-01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "The original Gaussian/shear field reconstructs one reserved control, with insufficient evidence for an actuation law.",
+      "applicability": "Whole actuation controls in one wind tunnel; correlated interpolated lidar cells; new task additionally permits no-turbine background calibration.",
+      "limitations": "One reserved control and source-interpolated cells do not establish wind-farm or energy transfer; the later coordinate/background repair changes information access.",
+      "falsification": [
+        "Keep WT 2 local 2 D/4 D distinct from global 7 D/9 D in empty-field mapping.",
+        "Declare empty-flow calibration identically for every competitor and do not compare gains to lower-information original task as algorithm-only effects.",
+        "Aggregate by complete actuation control; retain rotor-disk versus whole-plane contrast distinction."
+      ],
+      "prior_art": "Source publication already analyzes induction and wake recovery; claimed contribution is matched calibration and bounded shape comparison. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "target": "m/s",
+        "turbine": "1 or 2 (within installation)",
+        "x_D": "downstream distance/0.58 m rotor diameter",
+        "y_D": "lateral coordinate/rotor diameter",
+        "z_D": "vertical coordinate/rotor diameter",
+        "St": "actuation Strouhal number, 0 labels greedy baseline"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-052.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-052-SCI-02",
+      "classification": "predictive_reference",
+      "source_classification": "retrospective_extension",
+      "statement": "A calibrated quartic wake profile provides a small matched improvement, while actuation-specific coefficients fail development transfer.",
+      "applicability": "Whole actuation controls in one wind tunnel; correlated interpolated lidar cells; new task additionally permits no-turbine background calibration.",
+      "limitations": "Replacing empty-flow by 7 m/s hurts badly. Diagnostic-better actuation MAE.232071 was worse in development and is not promoted. Power summary/rotor-derived identities cannot independently confirm a control benefit.",
+      "falsification": [
+        "Keep WT 2 local 2 D/4 D distinct from global 7 D/9 D in empty-field mapping.",
+        "Declare empty-flow calibration identically for every competitor and do not compare gains to lower-information original task as algorithm-only effects.",
+        "Aggregate by complete actuation control; retain rotor-disk versus whole-plane contrast distinction."
+      ],
+      "prior_art": "Source publication already analyzes induction and wake recovery; claimed contribution is matched calibration and bounded shape comparison. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "uhat=u_empty-(A+B*I2)/(1+k*x)^2 * exp[-.5*((y/sigma_y)^4+(z/sigma_z)^4)]; sigma_y=.35+k*x,sigma_z=ell*sigma_y; A=2.968978m/s,B=.044251m/s,k=.03,ell=1.4.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007",
+          "E008"
+        ]
+      },
+      "variables_and_units": {
+        "target": "m/s",
+        "turbine": "1 or 2 (within installation)",
+        "x_D": "downstream distance/0.58 m rotor diameter",
+        "y_D": "lateral coordinate/rotor diameter",
+        "z_D": "vertical coordinate/rotor diameter",
+        "St": "actuation Strouhal number, 0 labels greedy baseline",
+        "background_u": "m/s; independent no-turbine uu at matched grid; linear x interpolation only at 4D"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007",
+        "E008"
+      ],
+      "task_id": "P100-052.continuation.v1",
+      "task_family": "continuation",
+      "task_version_history": "2026-10-01 continuation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "id": "E001",
+      "role": "original scientific description",
+      "path": "evidence/E001_FINDINGS.md",
+      "bytes": 5266,
+      "sha256": "622a6f9aeaa07eaa8eb265cbe982e66870f21dfb3467199ea2ad5962d8ae6702"
+    },
+    {
+      "id": "E002",
+      "role": "original frozen model state",
+      "path": "evidence/E002_rules.json",
+      "bytes": 19978,
+      "sha256": "63f9f36ef08eeabf6535f7c9ad29cf5a1e7ab90980d2f7e2795d3169550da991"
+    },
+    {
+      "id": "E003",
+      "role": "original numerical comparison",
+      "path": "evidence/E003_metrics.csv",
+      "bytes": 1609,
+      "sha256": "36091fc7c605604d98f88393d5c23ba20acee37d6f83fb4910b2dc66507289d7"
+    },
+    {
+      "id": "E004",
+      "role": "original grouped errors",
+      "path": "evidence/E004_by_group.csv",
+      "bytes": 2072,
+      "sha256": "84580ee9b3c9b565cde2362d8b8d2ae4399e4531bcd7c627f4771df11fc4d96b"
+    },
+    {
+      "id": "E005",
+      "role": "latest scientific account",
+      "path": "evidence/E005_FINDINGS.md",
+      "bytes": 6347,
+      "sha256": "e96ec00f3f2f5a1f307308f3fa0e55e68a988ddd4f88f21491dc866ee33b7c6e"
+    },
+    {
+      "id": "E006",
+      "role": "latest frozen model state",
+      "path": "evidence/E006_rules.json",
+      "bytes": 14254,
+      "sha256": "927a97243a94a437b44ddc61a041a3304ff30e940dd89c0ac50ba3e3bffa5096"
+    },
+    {
+      "id": "E007",
+      "role": "latest numerical comparison",
+      "path": "evidence/E007_metrics.csv",
+      "bytes": 841,
+      "sha256": "06bc113e9b8e162359964b45e8133de4e0aab3d75ace0decc7573404840c02d0"
+    },
+    {
+      "id": "E008",
+      "role": "latest grouped errors",
+      "path": "evidence/E008_by_group.csv",
+      "bytes": 1242,
+      "sha256": "c826a9a4f82e7f8242a05d4c1e188a1cb67bb2a94c1d348c13c702aed4b5e978"
+    },
+    {
+      "id": "SCIENTIFIC",
+      "role": "Independent scientific review before schema adaptation",
+      "path": "evidence/SCIENTIFIC.json",
+      "bytes": 16581,
+      "sha256": "897c275d0a380a69497c95f34877b88426a53af00aa03b0a9f2d144b5397d255"
+    },
+    {
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational portfolio review",
+      "path": "evidence/COMPUTATIONAL.json",
+      "bytes": 125684,
+      "sha256": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    }
+  ]
+}

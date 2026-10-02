@@ -1,0 +1,508 @@
+{
+  "case_id": "P100-094",
+  "input_columns": [
+    "pressure",
+    "temperature",
+    "salinity"
+  ],
+  "numeric_columns": [
+    "pressure",
+    "temperature",
+    "salinity"
+  ],
+  "input_units": {
+    "pressure": "dbar",
+    "temperature": "degC",
+    "salinity": "psu"
+  },
+  "target": "Calibrated CDOM fluorescence channel",
+  "target_units": "ppb",
+  "metric_kind": "mae",
+  "metric_units": "ppb",
+  "source": {
+    "landing_url": "https://zenodo.org/records/17530624"
+  },
+  "selected_from": "attempt-003",
+  "models": {
+    "reference": {
+      "case": 94,
+      "type": "linear",
+      "features": [
+        "one",
+        "S",
+        "halocline",
+        "T"
+      ],
+      "offset": null,
+      "scale": null,
+      "alpha": 0,
+      "title": "Halocline mixing break",
+      "hypothesis": "A salinity hinge at33psu tests a fixed physically interpretable freshwater/halocline compartment break.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}, {\"attempt\": \"attempt-002\", \"group_MAE\": 0.08255974042557099, \"worst_group\": 0.10476368110522996}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Depth-only underperforms salinity/temperature, but thermal extension worsens one cast. Test a fixed halocline break for multiple mixing regimes.",
+      "equation": "y_hat = 0 + 1 * (1.0347666552712096*one + 0.020736971657983164*S + -0.34651000152496098*halocline + -0.019562377632340158*T)",
+      "training_groups": [
+        "station-02",
+        "station-06",
+        "station-08"
+      ],
+      "training_rows": 7386,
+      "training_ids_sha256": "325c3843c89a11da9410f6fa63447210b78791e6fdc77db616d72fd72f9d85d7",
+      "coef": [
+        1.0347666552712096,
+        0.020736971657983164,
+        -0.346510001524961,
+        -0.019562377632340158
+      ],
+      "rank": 4,
+      "condition_number": 30.97897085957951,
+      "complexity": 4
+    },
+    "constant": {
+      "case": 94,
+      "type": "linear",
+      "features": [
+        "one"
+      ],
+      "offset": null,
+      "scale": null,
+      "alpha": 0,
+      "title": "Matched-information baseline",
+      "hypothesis": "Baseline constant; not counted as an ASD attempt.",
+      "equation": "y_hat = 0 + 1 * (0.51058952580596462*one)",
+      "training_groups": [
+        "station-02",
+        "station-06",
+        "station-08"
+      ],
+      "training_rows": 7386,
+      "training_ids_sha256": "325c3843c89a11da9410f6fa63447210b78791e6fdc77db616d72fd72f9d85d7",
+      "coef": [
+        0.5105895258059646
+      ],
+      "rank": 1,
+      "condition_number": 1.0,
+      "complexity": 1
+    },
+    "flexible": {
+      "case": 94,
+      "type": "linear",
+      "features": [],
+      "offset": null,
+      "scale": null,
+      "alpha": 0.01,
+      "title": "Matched-information baseline",
+      "hypothesis": "Baseline flexible; not counted as an ASD attempt.",
+      "equation": "offset + scale*(coef[0] + sum_j coef[j+1]*exp(-||standardized_inputs-center[j]||^2/(2*width^2))); frozen arrays in this state",
+      "training_groups": [
+        "station-02",
+        "station-06",
+        "station-08"
+      ],
+      "training_rows": 7386,
+      "training_ids_sha256": "325c3843c89a11da9410f6fa63447210b78791e6fdc77db616d72fd72f9d85d7",
+      "rbf": {
+        "columns": [
+          "S",
+          "T",
+          "logP"
+        ],
+        "mean": [
+          0.4356749119956668,
+          0.3114525047386948,
+          1.1675703546654252
+        ],
+        "std": [
+          0.8573152573467122,
+          1.0589714893548987,
+          0.4621790568567137
+        ],
+        "centers": [
+          [
+            -4.337115057888133,
+            -1.679792631454442,
+            -2.2887655228269135
+          ],
+          [
+            0.5312224226754353,
+            0.7059184338538652,
+            1.3440345171999277
+          ],
+          [
+            -0.647107242337704,
+            -1.7687468676609186,
+            -1.3203603412891216
+          ],
+          [
+            0.20427151681205566,
+            -0.038483099071458755,
+            -0.5593193028717278
+          ],
+          [
+            -2.492052828510017,
+            -1.9042557094404238,
+            -1.823086712756807
+          ],
+          [
+            0.4888809389692566,
+            0.9568222614553602,
+            0.16195808729163108
+          ],
+          [
+            -1.4288500076235835,
+            -1.9276746590998781,
+            -2.057313842000684
+          ],
+          [
+            -0.07485567467244543,
+            -1.0635343029157303,
+            -0.7354125551674409
+          ],
+          [
+            -3.4036194818536734,
+            -1.8058583483712638,
+            -2.0783204496842744
+          ],
+          [
+            -1.3458000450924685,
+            -1.873754416133957,
+            -1.3654382966697374
+          ],
+          [
+            0.4817657034153307,
+            0.5637049734218548,
+            0.6970950112146246
+          ],
+          [
+            0.3604567693811147,
+            0.5081793992292771,
+            -0.2754206213410118
+          ],
+          [
+            -1.9301825061611453,
+            -1.9508103150134524,
+            -1.5668546561627903
+          ],
+          [
+            -0.32038962288592804,
+            -1.524358796214675,
+            -0.9353993688659815
+          ],
+          [
+            -2.871376533778548,
+            -1.9256916028787148,
+            -2.2125723120601526
+          ],
+          [
+            0.05951729841161199,
+            -0.5625765289503815,
+            -0.5558351417393398
+          ],
+          [
+            -1.9684414776642465,
+            -1.9121879343250776,
+            -2.103088741692581
+          ],
+          [
+            -0.9571448833597684,
+            -1.9540209774667647,
+            -1.6867717161402485
+          ],
+          [
+            -3.896553669573485,
+            -1.8315436479977625,
+            -2.046886527382136
+          ],
+          [
+            0.4905139438504909,
+            0.22904062828835897,
+            1.3505352639899972
+          ],
+          [
+            -4.7678784169154085,
+            -1.8439141415678777,
+            -2.363722167785956
+          ],
+          [
+            0.5232906846808922,
+            0.9939337421657058,
+            0.6357524742458537
+          ],
+          [
+            -3.2083587553409085,
+            -1.9280523840943855,
+            -2.412437102038407
+          ],
+          [
+            0.44385666152963926,
+            0.5712594733120014,
+            0.13303335388266171
+          ],
+          [
+            0.5217743230054639,
+            0.8377444569369241,
+            0.9852802740359664
+          ],
+          [
+            -1.5839854713404216,
+            -1.8528851101874269,
+            -1.6692284016863956
+          ],
+          [
+            -1.0013526583587768,
+            -1.8441030040651312,
+            -1.2234275095419327
+          ],
+          [
+            0.4927301647607304,
+            0.45746981871666786,
+            1.0550141600070335
+          ],
+          [
+            -0.4925549946498792,
+            -1.4635450720989944,
+            -1.2305487346066442
+          ],
+          [
+            0.2606101852144907,
+            0.18012524149965947,
+            -0.29384795994176877
+          ],
+          [
+            -0.14612467341754337,
+            -1.2416316378259373,
+            -1.017854759658197
+          ],
+          [
+            0.4358082803292902,
+            0.8170640134876477,
+            -0.13912844709676356
+          ]
+        ],
+        "width": 2.0
+      },
+      "coef": [
+        0.031792983581433676,
+        0.18101758708913168,
+        0.06691456243289871,
+        0.034686754509738155,
+        -0.026561592049515814,
+        0.1563056646283195,
+        0.01450974069784875,
+        -0.02925515089089951,
+        -0.011518835654522247,
+        0.046548344913536384,
+        0.169549450448854,
+        0.03281519811494202,
+        -0.010944097628071123,
+        0.2122583841680061,
+        0.019269209024816533,
+        -0.05846204616980822,
+        -0.017262509312639163,
+        -0.004361087962091143,
+        0.018090183571141383,
+        0.1533846071350144,
+        0.06161345558311333,
+        0.49989927798084155,
+        0.03663531160907724,
+        -0.19599781571594502,
+        0.007868139969349977,
+        0.05038878397821398,
+        0.12414326189246894,
+        0.12888249094939913,
+        0.048305811768757714,
+        0.010158455481322467,
+        -0.011696926362893082,
+        -0.026538081909920713,
+        -0.00142838947264207
+      ],
+      "rank": 33,
+      "condition_number": 69207740.19345799,
+      "complexity": 33
+    },
+    "salinity_mixing": {
+      "case": 94,
+      "type": "linear",
+      "features": [
+        "one",
+        "S"
+      ],
+      "offset": null,
+      "scale": null,
+      "alpha": 0,
+      "title": "Matched-information baseline",
+      "hypothesis": "Baseline salinity_mixing; not counted as an ASD attempt.",
+      "equation": "y_hat = 0 + 1 * (0.60476905259138203*one + -0.21628261806154112*S)",
+      "training_groups": [
+        "station-02",
+        "station-06",
+        "station-08"
+      ],
+      "training_rows": 7386,
+      "training_ids_sha256": "325c3843c89a11da9410f6fa63447210b78791e6fdc77db616d72fd72f9d85d7",
+      "coef": [
+        0.604769052591382,
+        -0.21628261806154112
+      ],
+      "rank": 2,
+      "condition_number": 1.6299036666693936,
+      "complexity": 2
+    },
+    "attempt-001": {
+      "case": 94,
+      "type": "linear",
+      "features": [
+        "one",
+        "S",
+        "T"
+      ],
+      "offset": null,
+      "scale": null,
+      "alpha": 0,
+      "title": "Thermal water-mass mixing",
+      "hypothesis": "Add temperature to conservative salinity mixing; temperature distinguishes endmembers of similar salinity.\n\nDevelopment feedback available before this hypothesis: No earlier attempt; fixed baselines available.\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.",
+      "equation": "y_hat = 0 + 1 * (0.59132437657045922*one + -0.10573396671011576*S + -0.11127572488078011*T)",
+      "training_groups": [
+        "station-02",
+        "station-06",
+        "station-08"
+      ],
+      "training_rows": 7386,
+      "training_ids_sha256": "325c3843c89a11da9410f6fa63447210b78791e6fdc77db616d72fd72f9d85d7",
+      "coef": [
+        0.5913243765704592,
+        -0.10573396671011576,
+        -0.11127572488078011
+      ],
+      "rank": 3,
+      "condition_number": 3.5668997262039106,
+      "complexity": 3
+    },
+    "attempt-002": {
+      "case": 94,
+      "type": "linear",
+      "features": [
+        "one",
+        "P",
+        "logP"
+      ],
+      "offset": null,
+      "scale": null,
+      "alpha": 0,
+      "title": "Depth-only competing explanation",
+      "hypothesis": "CDOM stratification may be predominantly vertical rather than a salinity-mixture law; test pressure/log-pressure without salinity.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Adding temperature improves the salinity baseline mean error, but worsens the worst cast. A depth-only competitor can expose spatial confounding.",
+      "equation": "y_hat = 0 + 1 * (1.1838700109598956*one + 2.3542469003679822*P + -1.0885747823778793*logP)",
+      "training_groups": [
+        "station-02",
+        "station-06",
+        "station-08"
+      ],
+      "training_rows": 7386,
+      "training_ids_sha256": "325c3843c89a11da9410f6fa63447210b78791e6fdc77db616d72fd72f9d85d7",
+      "coef": [
+        1.1838700109598956,
+        2.3542469003679822,
+        -1.0885747823778793
+      ],
+      "rank": 3,
+      "condition_number": 27.981339243153993,
+      "complexity": 3
+    },
+    "attempt-003": {
+      "case": 94,
+      "type": "linear",
+      "features": [
+        "one",
+        "S",
+        "halocline",
+        "T"
+      ],
+      "offset": null,
+      "scale": null,
+      "alpha": 0,
+      "title": "Halocline mixing break",
+      "hypothesis": "A salinity hinge at33psu tests a fixed physically interpretable freshwater/halocline compartment break.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}, {\"attempt\": \"attempt-002\", \"group_MAE\": 0.08255974042557099, \"worst_group\": 0.10476368110522996}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Depth-only underperforms salinity/temperature, but thermal extension worsens one cast. Test a fixed halocline break for multiple mixing regimes.",
+      "equation": "y_hat = 0 + 1 * (1.0347666552712096*one + 0.020736971657983164*S + -0.34651000152496098*halocline + -0.019562377632340158*T)",
+      "training_groups": [
+        "station-02",
+        "station-06",
+        "station-08"
+      ],
+      "training_rows": 7386,
+      "training_ids_sha256": "325c3843c89a11da9410f6fa63447210b78791e6fdc77db616d72fd72f9d85d7",
+      "coef": [
+        1.0347666552712096,
+        0.020736971657983164,
+        -0.346510001524961,
+        -0.019562377632340158
+      ],
+      "rank": 4,
+      "condition_number": 30.97897085957951,
+      "complexity": 4
+    },
+    "attempt-004": {
+      "case": 94,
+      "type": "linear",
+      "features": [
+        "one",
+        "S",
+        "T",
+        "TS"
+      ],
+      "offset": null,
+      "scale": null,
+      "alpha": 0,
+      "title": "Temperature-dependent mixing slope",
+      "hypothesis": "A temperature\u2013salinity interaction challenges constant endmember mixing without reading another optical response.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}, {\"attempt\": \"attempt-002\", \"group_MAE\": 0.08255974042557099, \"worst_group\": 0.10476368110522996}, {\"attempt\": \"attempt-003\", \"group_MAE\": 0.06690298751571931, \"worst_group\": 0.07937593872776462}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Fixed salinity hinge beats simple mixing and flexible mean error, with similar worst-cast error. Test continuously temperature-dependent mixing as an independent alternative.",
+      "equation": "y_hat = 0 + 1 * (0.51260694634283188*one + -0.0021553314438982397*S + -0.1677942997264304*T + 0.059127661662224794*TS)",
+      "training_groups": [
+        "station-02",
+        "station-06",
+        "station-08"
+      ],
+      "training_rows": 7386,
+      "training_ids_sha256": "325c3843c89a11da9410f6fa63447210b78791e6fdc77db616d72fd72f9d85d7",
+      "coef": [
+        0.5126069463428319,
+        -0.0021553314438982397,
+        -0.1677942997264304,
+        0.059127661662224794
+      ],
+      "rank": 4,
+      "condition_number": 21.6576627440542,
+      "complexity": 4
+    },
+    "attempt-005": {
+      "case": 94,
+      "type": "linear",
+      "features": [
+        "one",
+        "S",
+        "T",
+        "surface"
+      ],
+      "offset": null,
+      "scale": null,
+      "alpha": 0,
+      "title": "Surface alteration plus mixing",
+      "hypothesis": "An exponential100dbar surface component tests whether near-surface processing adds to T/S mixing; no causal photobleaching attribution.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}, {\"attempt\": \"attempt-002\", \"group_MAE\": 0.08255974042557099, \"worst_group\": 0.10476368110522996}, {\"attempt\": \"attempt-003\", \"group_MAE\": 0.06690298751571931, \"worst_group\": 0.07937593872776462}, {\"attempt\": \"attempt-004\", \"group_MAE\": 0.08024904383542408, \"worst_group\": 0.10827806370530703}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: The temperature-salinity interaction degrades transfer while fixed salinity hinge helps. Test a distinct100dbar near-surface alteration term.",
+      "equation": "y_hat = 0 + 1 * (0.69004643834713186*one + -0.15399338196288465*S + -0.14994330078968873*T + -0.35161441337370419*surface)",
+      "training_groups": [
+        "station-02",
+        "station-06",
+        "station-08"
+      ],
+      "training_rows": 7386,
+      "training_ids_sha256": "325c3843c89a11da9410f6fa63447210b78791e6fdc77db616d72fd72f9d85d7",
+      "coef": [
+        0.6900464383471319,
+        -0.15399338196288465,
+        -0.14994330078968873,
+        -0.3516144133737042
+      ],
+      "rank": 4,
+      "condition_number": 12.475860069316557,
+      "complexity": 4
+    }
+  },
+  "exposure": "All confirmation outcomes now public-source-aware/exposed; no future fresh-test claim.",
+  "selection": "Frozen minimum development group-MAE,1% simplicity tie rule; no confirmation promotion."
+}

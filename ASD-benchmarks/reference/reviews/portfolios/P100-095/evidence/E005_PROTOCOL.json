@@ -1,0 +1,27 @@
+{
+  "case_id": "P100-095",
+  "frozen_before_first_fit_utc": "2026-10-01T15:25:22.258210+00:00",
+  "target": "Next half-hour author-derived turbulent kinetic energy",
+  "unit": "m2/s2",
+  "inputs": [
+    "energy",
+    "wind",
+    "vertical",
+    "temperature",
+    "gradient",
+    "sin_direction",
+    "cos_direction"
+  ],
+  "timing": "Predict next30-min author-derived TKE from completed previous30-min TKE, mean velocity and two-height temperature gradient. No contemporaneous target variance/covariance inputs. Both intervals RawAnyS2/H2 flags0; predictor MetT0.",
+  "groups": "Whole ISO weeks. Forward folds week4, weeks7\u20138, weeks9\u201310 with all earlier weeks training. March15 onward weeks11\u201313 confirmation. One mountain station during one winter.",
+  "eligibility": "Deterministic native.py finite, timing and quality rules; no outcome-performance filtering.",
+  "primary_metric": "Arithmetic mean of within-group MAE in target units; original observations retained.",
+  "baselines": "Strong simple/persistence/domain baseline and constrained radial-basis flexible control under identical permitted inputs.",
+  "selection": "Minimum whole-group development MAE; within1% choose lower coefficient complexity, then lexicographic model identity. Baselines may win.",
+  "stopping": "At least5 distinct substantive attempts. Continue if distinct justified hypothesis remains and recent attempts improve development prediction, robustness or supported interpretation. Stop after2 consecutive substantive attempts without incumbent MAE/robustness/interpretation gain.",
+  "uncertainty": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "exposure": "First January1 source row and input-height/flag metadata inspected. No March15+ TKE values/scores printed. All public source-aware; confirmation after final freeze will become exposed.",
+  "source_manifest_sha256": "cb86657a846fb7483e48c44534fd4dae8fc11b585b0b93ab074d210cf7d8fd03",
+  "native_sha256": "0ccfdfb44b98b395bb05ebac901d29ac9550266c6b6951e4f82d29fc85f55558",
+  "final_prefit_contract_utc": "2026-10-01T15:29:06.080596+00:00"
+}

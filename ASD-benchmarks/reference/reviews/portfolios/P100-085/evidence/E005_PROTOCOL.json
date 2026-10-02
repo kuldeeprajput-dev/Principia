@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-085",
+  "task_id": "P100-085.original.v1",
+  "created_utc": "2026-10-01T14:01:55.796270+00:00",
+  "target": "Glycolic acid concentration",
+  "units": "g/L",
+  "inputs": {
+    "elapsed_h": "h",
+    "eg_consumed_g_L": "g/L",
+    "eg_initial_g_L": "g/L",
+    "pH": "dimensionless",
+    "acetate_cofeed": "indicator",
+    "glucose_cofeed": "indicator"
+  },
+  "timing": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+  "grouping": "Complete flask conditions; three development conditions and one metadata-hash confirmation condition; leave-one-condition-out folds keep all replicates together.",
+  "primary_metric": "MAE averaged within group, then equally across groups",
+  "secondary": [
+    "RMSE",
+    "bias",
+    "worst group MAE",
+    "per-group error",
+    "matched baseline differences"
+  ],
+  "calibration": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+  "source_sha256": "00a61012fc7b3fc450717903f69f103fb47adaaab07a2c657aa6961e58fe8dec",
+  "split_sha256": "c6d214e70e88ac37a9cb3a452ae873340851d3a635634dede1cb65a88da07e46",
+  "selection": "Smallest development group-balanced OOF MAE among baseline/candidate families; within1% choose lower parameter count. Confirmation never selects reference.",
+  "continuation": "At least5 material hypotheses, continue justified distinct hypotheses until2 consecutive after minimum5 show no improvement of >1% in prediction or explicit robustness/interpretation. No retuning after confirmation.",
+  "uncertainty": "No row bootstrap; enumerate group errors and leave-group development variability. Single heldout condition is bounded evidence.",
+  "exposure_audit": "Native CSV previews exposed several GA observations in all four flask conditions before task freezing; explicitly retrospective; no confirmation metrics used in model selection.",
+  "baselines": [
+    "zero product",
+    "unit mass recovery",
+    "oxidation mass ratio76.05/62.07",
+    "learned global recovery",
+    "regularized quadratic flexible control"
+  ]
+}

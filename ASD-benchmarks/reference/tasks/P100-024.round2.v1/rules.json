@@ -1,0 +1,75 @@
+{
+  "schema_version": "p100-round2-references-1",
+  "case_id": 24,
+  "task_id": "P100-024.round2.v1",
+  "default_reference": "current/cycle-001",
+  "default_meaning": "Original preregistered round2 candidate; no scientific admission or winner selection is implied. Every comparator remains separately executable.",
+  "models": {
+    "previous/cycle-002": {
+      "state_file": "states/previous_cycle-002.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 1.6315446408168248,
+      "rows": 11904,
+      "groups": 17,
+      "metric_unit": "GPa"
+    },
+    "previous/cycle-001": {
+      "state_file": "states/previous_cycle-001.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 1.634727716773739,
+      "rows": 11904,
+      "groups": 17,
+      "metric_unit": "GPa"
+    },
+    "previous/baselines/old_log": {
+      "state_file": "states/previous_baselines_old_log.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 1.6365407793790734,
+      "rows": 11904,
+      "groups": 17,
+      "metric_unit": "GPa"
+    },
+    "current/cycle-001": {
+      "state_file": "states/current_cycle-001.json",
+      "engine": "current",
+      "reference_primary_error": 1.649002748835049,
+      "rows": 11904,
+      "groups": 17,
+      "metric_unit": "GPa"
+    },
+    "previous/baselines/kernel_nested": {
+      "state_file": "states/previous_baselines_kernel_nested.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 1.708875204527872,
+      "rows": 11904,
+      "groups": 17,
+      "metric_unit": "GPa"
+    },
+    "previous/baselines/old_nested_flex": {
+      "state_file": "states/previous_baselines_old_nested_flex.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 1.719451965409255,
+      "rows": 11904,
+      "groups": 17,
+      "metric_unit": "GPa"
+    },
+    "previous/baselines/old_persistence": {
+      "state_file": "states/previous_baselines_old_persistence.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 2.259112387059361,
+      "rows": 11904,
+      "groups": 17,
+      "metric_unit": "GPa"
+    },
+    "current/baseline-hgb": {
+      "state_file": "states/current_baseline-hgb.json",
+      "engine": "current",
+      "reference_primary_error": 3.111773104348144,
+      "rows": 11904,
+      "groups": 17,
+      "metric_unit": "GPa"
+    }
+  },
+  "additional_inputs_for_historical_comparators": [],
+  "current_outcome_exposure": "exposed"
+}

@@ -1,0 +1,17 @@
+{
+  "case": 41,
+  "type": "linear",
+  "features": [],
+  "offset": "F",
+  "scale": "F",
+  "alpha": 0.01,
+  "rbf_columns": [
+    "r48",
+    "r168",
+    "ramp",
+    "weekend"
+  ],
+  "title": "Matched-information baseline",
+  "hypothesis": "Baseline flexible; not counted as an ASD attempt.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state."
+}

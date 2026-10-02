@@ -1,0 +1,167 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "check": "void_fraction_domain",
+      "status": "pass",
+      "result": {
+        "deterministic_checks": [
+          {
+            "test": "endpoint_domain",
+            "source": "Declared target measurement semantics",
+            "interpretation": "Void fraction is a fraction",
+            "lower": 0.0,
+            "upper": 1.0,
+            "tested_rows": 5,
+            "violations": 2,
+            "status": "violated"
+          }
+        ],
+        "causal_and_linked_group_audit": "reports/RAW_INVARIANTS.json; properties of native preparation, not verification of submitter training behavior",
+        "mechanistic_tests": "See the finding-specific scientific_validators in reviews/scientific/P100-027.json",
+        "mechanism_admission": "not_assessed_by_endpoint_checks",
+        "training_independence": "not_established_by_prediction_files"
+      }
+    },
+    {
+      "check": "percentage_target_upper_limit",
+      "status": "pass",
+      "result": {
+        "deterministic_checks": [
+          {
+            "test": "endpoint_domain",
+            "source": "Declared target measurement semantics",
+            "interpretation": "Yeast percentage",
+            "lower": 0.0,
+            "upper": 100.0,
+            "tested_rows": 4,
+            "violations": 1,
+            "status": "violated"
+          }
+        ],
+        "causal_and_linked_group_audit": "reports/RAW_INVARIANTS.json; properties of native preparation, not verification of submitter training behavior",
+        "mechanistic_tests": "See the finding-specific scientific_validators in reviews/scientific/P100-072.json",
+        "mechanism_admission": "not_assessed_by_endpoint_checks",
+        "training_independence": "not_established_by_prediction_files"
+      }
+    },
+    {
+      "check": "residual_sugar_not_percentage",
+      "status": "pass",
+      "result": {
+        "deterministic_checks": [
+          {
+            "test": "endpoint_domain",
+            "source": "Declared target measurement semantics",
+            "interpretation": "Residual sugar concentration",
+            "lower": 0.0,
+            "upper": null,
+            "tested_rows": 4,
+            "violations": 0,
+            "status": "no_violation_in_scored_rows"
+          }
+        ],
+        "causal_and_linked_group_audit": "reports/RAW_INVARIANTS.json; properties of native preparation, not verification of submitter training behavior",
+        "mechanistic_tests": "See the finding-specific scientific_validators in reviews/scientific/P100-072.json",
+        "mechanism_admission": "not_assessed_by_endpoint_checks",
+        "training_independence": "not_established_by_prediction_files"
+      }
+    },
+    {
+      "check": "signed_temperature_above_absolute_zero",
+      "status": "pass",
+      "result": {
+        "deterministic_checks": [
+          {
+            "test": "endpoint_domain",
+            "source": "Declared target measurement semantics",
+            "interpretation": "Temperature above absolute zero in degrees Celsius",
+            "lower": -273.15,
+            "upper": null,
+            "tested_rows": 4,
+            "violations": 0,
+            "status": "no_violation_in_scored_rows"
+          }
+        ],
+        "causal_and_linked_group_audit": "reports/RAW_INVARIANTS.json; properties of native preparation, not verification of submitter training behavior",
+        "mechanistic_tests": "See the finding-specific scientific_validators in reviews/scientific/P100-069.json",
+        "mechanism_admission": "not_assessed_by_endpoint_checks",
+        "training_independence": "not_established_by_prediction_files"
+      }
+    },
+    {
+      "check": "no_observations_is_not_tested",
+      "status": "pass",
+      "result": {
+        "deterministic_checks": [
+          {
+            "test": "endpoint_domain",
+            "source": "Declared target measurement semantics",
+            "interpretation": "Void fraction is a fraction",
+            "lower": 0.0,
+            "upper": 1.0,
+            "tested_rows": 0,
+            "violations": 0,
+            "status": "not_tested_no_scored_rows"
+          }
+        ],
+        "causal_and_linked_group_audit": "reports/RAW_INVARIANTS.json; properties of native preparation, not verification of submitter training behavior",
+        "mechanistic_tests": "See the finding-specific scientific_validators in reviews/scientific/P100-027.json",
+        "mechanism_admission": "not_assessed_by_endpoint_checks",
+        "training_independence": "not_established_by_prediction_files"
+      }
+    },
+    {
+      "check": "rheology_nonpositive_targets_disclosed",
+      "status": "pass",
+      "result": {
+        "deterministic_checks": [
+          {
+            "test": "log_eligibility",
+            "positive_target_rows": 1,
+            "nonpositive_target_rows": 2,
+            "interpretation": "Nonpositive finite observations remain in physical-unit errors; this is not outcome deletion."
+          }
+        ],
+        "causal_and_linked_group_audit": "reports/RAW_INVARIANTS.json; properties of native preparation, not verification of submitter training behavior",
+        "mechanistic_tests": "See the finding-specific scientific_validators in reviews/scientific/P100-058.json",
+        "mechanism_admission": "not_assessed_by_endpoint_checks",
+        "training_independence": "not_established_by_prediction_files"
+      }
+    },
+    {
+      "check": "pv_energy_semantics",
+      "status": "pass",
+      "result": {
+        "deterministic_checks": [
+          {
+            "test": "endpoint_domain",
+            "source": "Declared target measurement semantics",
+            "interpretation": "Normalized hourly generated energy",
+            "lower": 0.0,
+            "upper": null,
+            "tested_rows": 2,
+            "violations": 0,
+            "status": "no_violation_in_scored_rows"
+          }
+        ],
+        "causal_and_linked_group_audit": "reports/RAW_INVARIANTS.json; properties of native preparation, not verification of submitter training behavior",
+        "mechanistic_tests": "See the finding-specific scientific_validators in reviews/scientific/P100-059.json",
+        "mechanism_admission": "not_assessed_by_endpoint_checks",
+        "training_independence": "not_established_by_prediction_files"
+      }
+    },
+    {
+      "check": "radio_signed_values_allowed",
+      "status": "pass",
+      "result": {
+        "deterministic_checks": [],
+        "causal_and_linked_group_audit": "reports/RAW_INVARIANTS.json; properties of native preparation, not verification of submitter training behavior",
+        "mechanistic_tests": "See the finding-specific scientific_validators in reviews/scientific/P100-092.json",
+        "mechanism_admission": "not_assessed_by_endpoint_checks",
+        "training_independence": "not_established_by_prediction_files"
+      }
+    }
+  ],
+  "source_sha256": "9c3e1d5322c7c70369bf9523ec19ae7e55be43c2f358bef94cbc3d353f4f3feb"
+}

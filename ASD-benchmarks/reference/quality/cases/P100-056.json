@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-056",
+  "title": "Experimental data of timber-concrete composite T-beams using adhesively bonded perfobond connections with large spacing",
+  "default_task": "P100-056.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "applied force",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Whole beam; six beams in two concrete classes",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Given current imposed displacement, concrete class, and beam-specific initial force-displacement calibration prefix through\u226410mm; no later force or failure capacity allowed.",
+  "baseline_strength": {
+    "registered_controls": 8,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 3
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "applied force",
+    "prediction_time": "Given current imposed displacement, concrete class, and beam-specific initial force-displacement calibration prefix through\u226410mm; no later force or failure capacity allowed.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Two held beams; simpler common cap can outperform the selected material-conditioned equation."
+  },
+  "task_ids": [
+    "P100-056.original.v1"
+  ],
+  "finding_ids": [
+    "P100-056-F01",
+    "P100-056-F02",
+    "P100-056-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-056/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-056.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate applied force under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Given current imposed displacement, concrete class, and beam-specific initial force-displacement calibration prefix through\u226410mm; no later force or failure capacity allowed.",
+    "calibration_requirement": "Given current imposed displacement, concrete class, and beam-specific initial force-displacement calibration prefix through\u226410mm; no later force or failure capacity allowed.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "applied force in kN",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Two held beams; simpler common cap can outperform the selected material-conditioned equation."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "kN",
+    "reference_model": "reference",
+    "reference_primary_error": 5.281085957110801,
+    "reference_physical_mae": 5.281085957110801,
+    "physical_error_units": "kN",
+    "lowest_registered_error_model": "attempt_002",
+    "lowest_registered_error": 4.753967855996455,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-056.original.v1/evidence/metrics.csv",
+      "bytes": 573,
+      "sha256": "76d9c57a4b5ad94ef11df264e48ec3ba48809560ed06b5c33854bf5eac72e92c"
+    },
+    "models": 8
+  },
+  "case_specific_next_evidence": "Measure additional independent beams and connector-slip evolution; test damage-phase predictions separately under a prespecified task, retaining abrupt drops."
+}

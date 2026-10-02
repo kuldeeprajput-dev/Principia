@@ -1,0 +1,122 @@
+{
+  "case_id": "P100-051",
+  "role": "scientific_critical",
+  "reviewer_id": "root-independent-scientific-review",
+  "checked_files": [
+    {
+      "path": "package/findings.json",
+      "sha256": "3856e6dde5a3c6deabe9ac6510d0c7c057b4b5f64874378fd65150fb03aa8025"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "ecbdcf2bd780d44d746179a727eab9e88c9b0b3140bd7234554ddd8bc2230739"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "f4dae76d4e2cea3d30e7f0587cc55603851aab5531c2fffebdf7e562b478e8f7"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "d5506293659a8d9410e6f94494d28133912490985aea149807958a0595fc97c8"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "8b3493d08317a2eaf712fdb3759a6cf949455dee119c17d8376782816e270926"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "0107d8a311014601457d210e8c3b7ebd8a689553c1bb9db77116fe221b58d209"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "99b1a390bdc189fee91df8b772a51189719b4ec89bcaf630b98a5696469ff5c7"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "25af83e5d7422b1ac7242ee5bd7ec7db1b2340258822820a2e7f13f871408280"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-051-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Nine whole-device tests support a modest7.7% physical-unit MAE improvement over the training-only shape template, with7/9 device wins. Three same-device anchors are explicitly supplied."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Calibration ratio plausibly encodes turn-on shape, but an exponent near2 at low drain bias is not proof of a MOS saturation square law. The negative-side exponent hits its bound and is weakly identified."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted source-paper review is disclosed. These known model families and local extensions do not establish literature priority or a new fundamental law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A compact sparse-characterization recipe that may reduce curve sampling under the same array conditions, with no measured production-cost benefit."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact states, native anchors and held-group results are present; independent computational replay is a separate review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, intervention, measurement-cost experiment or external replication is included."
+        }
+      },
+      "checks": [
+        "Read source/units and prior-art audit",
+        "Inspected all group results and baseline comparisons",
+        "Checked explicit calibration, target meaning and interpretation limits"
+      ],
+      "limitations": [
+        "One measured array with supplied same-device endpoint/interior calibration; no independent lot or environment transfer; two devices prefer the template."
+      ]
+    },
+    {
+      "finding_id": "P100-051-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Nine whole-device tests support a modest7.7% physical-unit MAE improvement over the training-only shape template, with7/9 device wins. Three same-device anchors are explicitly supplied."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Calibration ratio plausibly encodes turn-on shape, but an exponent near2 at low drain bias is not proof of a MOS saturation square law. The negative-side exponent hits its bound and is weakly identified."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted source-paper review is disclosed. These known model families and local extensions do not establish literature priority or a new fundamental law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A compact sparse-characterization recipe that may reduce curve sampling under the same array conditions, with no measured production-cost benefit."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact states, native anchors and held-group results are present; independent computational replay is a separate review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, intervention, measurement-cost experiment or external replication is included."
+        }
+      },
+      "checks": [
+        "Read source/units and prior-art audit",
+        "Inspected all group results and baseline comparisons",
+        "Checked explicit calibration, target meaning and interpretation limits"
+      ],
+      "limitations": [
+        "One measured array with supplied same-device endpoint/interior calibration; no independent lot or environment transfer; two devices prefer the template."
+      ]
+    }
+  ],
+  "limitations": [
+    "One measured array with supplied same-device endpoint/interior calibration; no independent lot or environment transfer; two devices prefer the template."
+  ],
+  "novelty_certified": false,
+  "independent_experimental_replication": false
+}

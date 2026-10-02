@@ -1,0 +1,36 @@
+{
+  "name": "two_phase_volume",
+  "formula": "1/((1-1.724*C/100)/mineral+(1.724*C/100)/organic)",
+  "hypothesis": "Attempt1: a two-phase organic/mineral volume mixture predicts decreasing bulk density through different effective component bulk densities. The1.724 conversion is an explicit approximate organic-matter convention, not a measured composition.",
+  "inputs": [
+    "C",
+    "depth",
+    "pH"
+  ],
+  "recorded_utc": "2026-10-02T01:49:38.790873+00:00",
+  "parent": null,
+  "parameters": {
+    "mineral": 1.5992327948246097,
+    "organic": 0.1423709170556547
+  },
+  "training_groups": [
+    "Finland",
+    "Italy",
+    "Portugal",
+    "Spain"
+  ],
+  "training_rows": 304,
+  "optimizer_success": true,
+  "nfev": 7,
+  "jacobian_condition": 5.776601999358168,
+  "bounds": {
+    "mineral": [
+      0.5,
+      2.5
+    ],
+    "organic": [
+      0.05,
+      1
+    ]
+  }
+}

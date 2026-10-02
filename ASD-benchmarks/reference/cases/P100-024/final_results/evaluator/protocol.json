@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-024",
+  "protocol_id": "P100-024-prepared-primary-v1",
+  "target": "Future measured composite stiffness conditional on continued recorded survival",
+  "target_units": "GPa",
+  "primary_units": "GPa",
+  "metric_kind": "mae",
+  "metric_definition": "Equal-specimen mean MAE: average absolute errors within group, then average groups equally.",
+  "independent_unit": "complete specimen",
+  "evaluation_groups": [
+    "EQA01-06",
+    "EQA01-09",
+    "EQA02-03",
+    "EQA02-09",
+    "EQA03-08",
+    "EQA03-09"
+  ],
+  "input_sha256": "4ba76152347b06f7a58d3b69da819695bdd403da1c0c85d0e6652e7b5b8b64e8",
+  "input_rows": 3086,
+  "assigned_rows": 3086,
+  "permitted_inputs": [
+    "cycle",
+    "E0_GPa",
+    "strain_percent",
+    "frequency_Hz",
+    "cure"
+  ],
+  "input_units": {
+    "cycle": "cycle count",
+    "E0_GPa": "GPa",
+    "strain_percent": "percent; numerical 1 means 1 percent strain",
+    "frequency_Hz": "Hz; supplied source header",
+    "cure": "categorical laminate/cure label"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "attempt_001_log",
+    "baseline_persistence",
+    "baseline_log",
+    "baseline_flex",
+    "baseline_nested_flex",
+    "competitor_two_mechanism"
+  ],
+  "reference_equations": {
+    "attempt_001_log": "Ehat=E0*exp(-beta*eps_pct^2*log1p(max(N-20,0)/1000)); eps_pct=strain/(1 percent).",
+    "baseline_persistence": "Ehat=E0",
+    "baseline_log": "Ehat=E0*exp(-beta*eps_pct^2*log1p(max(N-20,0)/1000)); eps_pct=strain/(1 percent).",
+    "baseline_flex": "Gaussian-kernel ridge with frozen training-only scales/centers/coefficients; clip output to [0,1], multiply E0 for stiffness.",
+    "baseline_nested_flex": "Gaussian-kernel ridge with frozen training-only scales/centers/coefficients; clip output to [0,1], multiply E0 for stiffness.",
+    "competitor_two_mechanism": "Ehat=E0*exp(-beta0*eps_pct^2*log1p(max(N-20,0)/1000)-beta1*eps_pct^6*max(N-20,0)/100000)."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "scope_limit": "Six specimens from three cure profiles in one glass-fiber campaign, with declared cycles-10-to-20 initial calibration. Not a remaining-life, runout or new-material prediction.",
+  "calibration_note": "E0 is the median native stiffness at cycles 10\u201320 for the same specimen; later stiffness and terminal cycle are unavailable to predictors.",
+  "timing_contract": "Use cycle count, prescribed strain, supplied cure/header-frequency metadata and early E0 calibration only; no failure-cycle normalization or future measured stiffness. Exact header-frequency acquisition timing is undocumented; the selected log equation does not use frequency, while comparators condition on its availability.",
+  "exposure_notice": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every complete reserved group. Within-system and temporal dependence, few condition blocks or calibrated sites limit population-level claims; no row-bootstrap confidence interval is claimed."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Audit native sample anchors and the declared prediction-time cutoff. Disclose every input/calibration and exclude future outcomes. Use cycle count, prescribed strain, supplied cure/header-frequency metadata and early E0 calibration only; no failure-cycle normalization or future measured stiffness. Exact header-frequency acquisition timing is undocumented; the selected log equation does not use frequency, while comparators condition on its availability."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

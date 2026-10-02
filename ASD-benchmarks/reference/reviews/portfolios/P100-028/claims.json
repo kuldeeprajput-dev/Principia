@@ -1,0 +1,381 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-028",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Schema audit accidentally printed sourceUSBstandarddeviation arrays; measuredcomplexUSBtargets remained unprinted. Uncertainty arrays are excluded from predictors andselection."
+  },
+  "findings": [
+    {
+      "id": "P100-028-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "A small calibrated response model extrapolates off-diagonal USB magnitudes to the reserved higher pump settings better than holding the last calibration value.",
+      "applicability": "Explicitthreeconditioncalibrationperdirectedmodepair.",
+      "limitations": "Singleinstrument/day andnativefsu response; no universal transfer or quantumfidelity claim.",
+      "falsification": "Singleinstrument/day andnativefsu response; no universal transfer or quantumfidelity claim.",
+      "prior_art": "Calibrated low-orderresponse modeling is established; this is a small numericalforecast gain,notnewcoupled-modephysics.",
+      "equation_or_program": {
+        "expression": "Six-term calibrated equation in rules.json; low/high calibration amplitudes, normalizedpumpincrement,separation and zeropumpresponse.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "fsu; instrument full-scale units",
+        "lo": "fsu;lowpumpamplituderesponse",
+        "hi": "fsu;secondcalibrationresponse",
+        "noise": "fsu;zero-pumpresponse",
+        "r": "dimensionless normalizedpumpincrement",
+        "g": "fsu;pumpamplitudecontrol",
+        "glo": "fsu;lowpumpcontrol",
+        "ghi": "fsu;highcalibrationpumpcontrol",
+        "sep": "integer frequency-bin separation;100kHzbins"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-028.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-028-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "The tested shared saturation, coherent-rotation and pump-loss mechanisms do not yield a superior transferable amplitude predictor.",
+      "applicability": "Magnitudeonlyresponse losesphaseinformation andmustnotidentifyauniquemechanism.",
+      "limitations": "Failure of these reductions doesnot falsify coherentmicrowavephysics.",
+      "falsification": "Failure of these reductions doesnot falsify coherentmicrowavephysics.",
+      "prior_art": "The sourcepaper already derives and tests inverseparametricdesign; these restrictedamplitudeonlysurrogates do not reproduce its fullcomplexmodel.",
+      "equation_or_program": {
+        "expression": "Five mechanisticcandidatefamilies are recorded in rules.json.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "fsu; instrument full-scale units",
+        "lo": "fsu;lowpumpamplituderesponse",
+        "hi": "fsu;secondcalibrationresponse",
+        "noise": "fsu;zero-pumpresponse",
+        "r": "dimensionless normalizedpumpincrement",
+        "g": "fsu;pumpamplitudecontrol",
+        "glo": "fsu;lowpumpcontrol",
+        "ghi": "fsu;highcalibrationpumpcontrol",
+        "sep": "integer frequency-bin separation;100kHzbins"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-028.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-028-F03",
+      "classification": "unsupported",
+      "source_classification": "unsupported",
+      "statement": "These native-amplitude results establish passivity, reciprocity or an improved quantum-operation fidelity.",
+      "applicability": "No quantumperformanceadmission.",
+      "limitations": "Requiredmeasurementcontract isabsentfromthisreducedtask.",
+      "falsification": "Requiredmeasurementcontract isabsentfromthisreducedtask.",
+      "prior_art": "Fullscatteringnormalizationandcomplexphaseare required for suchclaims.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "fsu; instrument full-scale units",
+        "lo": "fsu;lowpumpamplituderesponse",
+        "hi": "fsu;secondcalibrationresponse",
+        "noise": "fsu;zero-pumpresponse",
+        "r": "dimensionless normalizedpumpincrement",
+        "g": "fsu;pumpamplitudecontrol",
+        "glo": "fsu;lowpumpcontrol",
+        "ghi": "fsu;highcalibrationpumpcontrol",
+        "sep": "integer frequency-bin separation;100kHzbins"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-028.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_CONFIRMATION_RECEIPT.json",
+      "bytes": 3971,
+      "sha256": "af5be85243cfcd92a27e8a372b312e54a2a7f46ce7026d9ff100489d3c508648",
+      "id": "E001",
+      "role": "CONFIRMATION_RECEIPT.json"
+    },
+    {
+      "path": "evidence/E002_FREEZE.json",
+      "bytes": 2597,
+      "sha256": "c9192bad5f2ae07aabddbd4e08c275de1d428b48a677d6b2d4cd1a6e3268400b",
+      "id": "E002",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E003_PRIOR_ART.json",
+      "bytes": 774,
+      "sha256": "7abc986d0b457e91819373b7cd470d58885b725157eabb97e9a8414ea43c0d9a",
+      "id": "E003",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E004_PROTOCOL.json",
+      "bytes": 2581,
+      "sha256": "b419463ce0793f03b441f837f06d3c353ffb38af15d612857773b8f67bd85a85",
+      "id": "E004",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E005_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 12941,
+      "sha256": "3b20475c46177096d7d0392b44fb1a6b432f03008a28108694996371a6a5675a",
+      "id": "E005",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E006_SOURCE_AND_UNITS.md",
+      "bytes": 639,
+      "sha256": "bf1300dd57de4f9dc17ca2ac0fa4c21e5e3b9943b61bc070d1040084e8317853",
+      "id": "E006",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E007_SOURCE_MANIFEST.json",
+      "bytes": 3607,
+      "sha256": "41cafa81ac427c55d9f07147c9a111879cf49a2f7e2e28f5f5d4a61b029ed11d",
+      "id": "E007",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E008_SPLITS.json",
+      "bytes": 552,
+      "sha256": "c930a223f2f6bef2fb6b144dc586660701068d68684a87f0e0cca90acafbeeb8",
+      "id": "E008",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E009_native.py",
+      "bytes": 1763,
+      "sha256": "0e643067d6468f4a4bc11a3068b7dbf69a0bda1bf20f79737b4de2a381d6c369",
+      "id": "E009",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E010_FINDINGS.md",
+      "bytes": 5978,
+      "sha256": "c5eb7d02a1d8ad4228afc10346bc4e16e249a59b5a524c14d800e3e0ff805d04",
+      "id": "E010",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E011_MANIFEST.json",
+      "bytes": 2042,
+      "sha256": "d4aba4e4592e0dd7c9f3fae14c7bddbb52a8532d021c330ec0ecd3b0200fc599",
+      "id": "E011",
+      "role": "package/MANIFEST.json"
+    },
+    {
+      "path": "evidence/E012_inputs.csv.gz",
+      "bytes": 17832,
+      "sha256": "81d1eafb08e5d2102d1585dd126b43b08d48ff4a60755dcaa9f79bf8a3feb27e",
+      "id": "E012",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E013_observations.csv.gz",
+      "bytes": 39758,
+      "sha256": "c07ff4280f56b5a34e43005d37804a02a13ce68a54cff606cbab5507b485cbbe",
+      "id": "E013",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E014_by_group.csv",
+      "bytes": 8283,
+      "sha256": "3e13ba40acb48bef456a2f98cf20cd7ea490bcc5fa6d07bdab2b80c513128ed6",
+      "id": "E014",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E015_metrics.csv",
+      "bytes": 1696,
+      "sha256": "4360d4f5e538a36b45f42005b7c7ce140b14d63eca20d7c0a98e88667f673cf1",
+      "id": "E015",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E016_predictions.csv.gz",
+      "bytes": 124465,
+      "sha256": "226bcba19c6fa78efd129a99ae8a6f6743b831279314fb010af0fe2e4062e893",
+      "id": "E016",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E017_findings.json",
+      "bytes": 2576,
+      "sha256": "59455444fa8d19eb3ae5aaddeff2d7cb4b25ef25df9976517c02e1c4bf8313b0",
+      "id": "E017",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E018_rules.json",
+      "bytes": 13607,
+      "sha256": "c6799c6139d44a40d23f04ff43ba6463ecc41a5c1f2be378beed4416d737225b",
+      "id": "E018",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E019_run.py",
+      "bytes": 3216,
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300",
+      "id": "E019",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E020_task_spec.json",
+      "bytes": 2377,
+      "sha256": "9357ef147156ea8ffcfceb9081cf0a1b1eaf48820c84336193d00a2a2a1ee279",
+      "id": "E020",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 24724,
+      "sha256": "a1366f07b3e7587c926eda868178edd277cfa6bf08e40b2d6dae52ca6329d522",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 10332,
+      "sha256": "4d84d95a9660ee780c1fb087d4050c636997f3407a2bee4427d324d3f188af1b",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

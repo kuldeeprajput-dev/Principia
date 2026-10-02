@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "case_id": 67,
+  "created_utc": "2026-09-30T09:22:52.722893+00:00",
+  "study": "Evidence-driven continuation; original cohorts already exposed",
+  "fresh_confirmation": false,
+  "exposure": "All prior development and confirmation targets were exposed before this new protocol. Fits/tuning use ORIGINAL DEVELOPMENT ONLY; no new winner is chosen using original confirmation. No independent confirmation is asserted.",
+  "data_file": "data/development.csv.gz",
+  "data_sha256": "88be3f1d3c1715f77df911b0a71567029c8659e4fd7d3ae4d96cdd0de3663c54",
+  "data_rows": 148,
+  "source_manifest_sha256": "ae8ee326ad03ba777e653166297a71b41cac42487aa3407bb92cc14be2b790dc",
+  "engine_sha256": "6e605a7fca3e428fb4e77585684caa5daa6a859cdca6b233911e1687595a0324",
+  "inputs": [
+    "width_m",
+    "longest_m",
+    "v_up_m_s",
+    "v_near_m_s",
+    "v_far_m_s",
+    "orientation_cos2",
+    "orientation_dispersion",
+    "delta_density_kg_m3",
+    "particle",
+    "family"
+  ],
+  "target": "target",
+  "metric_kind": "log_transit",
+  "metric_units": "absolute log ratio",
+  "grouping": "same original independent grouping and folds; case92 chronological forward dates; case67 balanced particle within complete configuration",
+  "units_reference": "../../final_results/evaluator/protocol.json and preserved records/SOURCE_AUDIT.md",
+  "hypotheses": [
+    {
+      "id": "cycle-001",
+      "title": "Interface energy/size dimensionless response",
+      "equation": "T=(h/vup)*exp(bR*log1p(Ri)+bL*log1p(h/longest)); Ri=9.81m/s2*(delta_density/(1000kg/m3))*h/vup2; bR,bL>=0",
+      "shapes": [
+        1.0
+      ]
+    },
+    {
+      "id": "cycle-002",
+      "title": "Conservative observed slowdown and orientation variability",
+      "equation": "T=(h/vup)*exp(bS*max(0,-log(vnear/vfar))+bD*orientation_dispersion); bS,bD>=0",
+      "shapes": [
+        1.0
+      ]
+    }
+  ],
+  "comparators": [
+    "simple/domain comparator",
+    "training-only imputed/scaled robust linear with identical expanded inputs",
+    "fold-refitted fixed HistGradientBoosting using identical expanded inputs",
+    "nested exact RBF when <=500 rows"
+  ],
+  "fitting": "Group-balanced robust constrained least squares (8 deterministic IRLS iterations). Huber scales fixed before fit:37=5W,53=.025Nm,67=.3 log ratio,71=2million/mL,92=3dB. Model shape selected entirely within outer training partitions using inner whole-group or forward validation. Learned imputation/scales/categorical dictionaries only training data. No identifier predictors.",
+  "selection": "Select simplest candidate within 2% of minimum new-candidate development error; report strong-comparator gaps and every group. Selection does not admit a law.",
+  "stopping": "Two material hypotheses required; stop after two cycles without >=2% development gain against the strongest equal-information comparator or stronger identified mechanism. A distinct supported follow-up can use a separately frozen amendment before fitting.",
+  "fresh_source_candidate": null,
+  "bounds": "No microscopic mechanism or industrial intervention benefit inferred solely from regression; calibration and missingness remain declared. Baseline error improvements are retrospective unless independent fresh data admitted.",
+  "prefit_amendment": "All five commands failed at sklearn import before load(), START, or any model fit. Lazy import now permits portable JSON replay without sklearn; flexible baseline explicitly disables internal random-row early stopping. No input values, model results or selections changed.",
+  "technical_amendment": "NumPy2.5 removed row_stack alias. The first IRLS call failed before coefficients were estimated; replace it with equivalent vstack. All scientific hypotheses, grids, inputs, splits, metrics and comparisons unchanged. Initial partial results preserved at results/. Corrected run writes results-v2/."
+}

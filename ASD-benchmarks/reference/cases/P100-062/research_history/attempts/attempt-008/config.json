@@ -1,0 +1,42 @@
+{
+  "name": "distributed_trapping",
+  "formula": "offset+(a0+a1*high)*(1-exp(-(t/(tau*exp(k*high)))**beta))",
+  "hypothesis": "Development evidence available before this fit: occupancy_dependent_transport: MAE 4.78902, worst group 11.5347; shared_fick_separate_amplitudes: MAE 3.34284, worst group 10.8982.\n\nTest a distribution of trapping times through a shared stretched-exponential exponent. This challenges whether the simpler condition-dependent first-order surrogate misses a reproducible early/late curvature pattern.",
+  "inputs": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "initial": {
+    "a0": 20,
+    "a1": 40,
+    "tau": 2000,
+    "k": 0,
+    "beta": 1
+  },
+  "bounds": {
+    "a0": [
+      -500,
+      500
+    ],
+    "a1": [
+      -1000,
+      1000
+    ],
+    "tau": [
+      10,
+      1000000.0
+    ],
+    "k": [
+      -4,
+      4
+    ],
+    "beta": [
+      0.3,
+      3
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:00:46.075363+00:00",
+  "parent": "attempt-007"
+}

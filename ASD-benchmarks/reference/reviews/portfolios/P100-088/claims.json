@@ -1,0 +1,320 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-088",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication."
+  },
+  "findings": [
+    {
+      "id": "P100-088-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_scoped_extension",
+      "statement": "A compact historical-propensity and persistence model is competitive with the full matched flexible predictor on held participants",
+      "applicability": "Same seven repeated-lottery experiment designs; participant-held sequential history access",
+      "limitations": "Advantage over flexible is small and its group-resampling interval must be checked; causal interpretation not identified",
+      "falsification": "Advantage over flexible is small and its group-resampling interval must be checked; causal interpretation not identified",
+      "prior_art": "Source feedback/attitudinal effects and standard history/persistence accounts are known; no novel cognitive law",
+      "equation_or_program": {
+        "expression": "P(risky)=sigmoid(beta dot [1,Delta,p-.5,v,s,f,fH(p),fc,logit(h),lagcenter])",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "binary choice",
+        "ev_difference": "expected points difference / abs(risky magnitude)",
+        "probability": "dimensionless",
+        "valence": "dimensionless",
+        "safe_risk": "dimensionless",
+        "feedback_known": "dimensionless",
+        "feedback_observed": "dimensionless",
+        "complete": "dimensionless",
+        "trial_progress": "dimensionless",
+        "lag_choice": "dimensionless",
+        "history_mean": "dimensionless",
+        "visible_pe": "previous visible reward prediction error / abs(risky magnitude)",
+        "visible_regret": "previous visible counterfactual minus chosen reward / abs(risky magnitude)",
+        "has_history": "dimensionless"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-088.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-088-F02",
+      "classification": "falsified",
+      "source_classification": "supported_negative_finding",
+      "statement": "Prospective feedback or visible-outcome learning alone does not reproduce the predictive benefit of prior-choice history",
+      "applicability": "Only tested families and input budget",
+      "limitations": "A richer properly causal learning model or new participants/design may change the ranking",
+      "falsification": "A richer properly causal learning model or new participants/design may change the ranking",
+      "prior_art": "Competing source-study accounts; numerical sufficiency rather than causal adjudication",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "binary choice",
+        "ev_difference": "expected points difference / abs(risky magnitude)",
+        "probability": "dimensionless",
+        "valence": "dimensionless",
+        "safe_risk": "dimensionless",
+        "feedback_known": "dimensionless",
+        "feedback_observed": "dimensionless",
+        "complete": "dimensionless",
+        "trial_progress": "dimensionless",
+        "lag_choice": "dimensionless",
+        "history_mean": "dimensionless",
+        "visible_pe": "previous visible reward prediction error / abs(risky magnitude)",
+        "visible_regret": "previous visible counterfactual minus chosen reward / abs(risky magnitude)",
+        "has_history": "dimensionless"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-088.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 8609,
+      "sha256": "fc3f679184f4e4672695df67828fab0ec5656bf73333d83551f47ae8aa1588b0",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 790,
+      "sha256": "41365082909fb7454c835794b14423c407a7c69581c5d8e7432c71b8415d9d59",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 2012,
+      "sha256": "748d474c7ec234cb52796d7bbc8864979ec88ab6f472221f6b43b6d08df51c02",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 54308,
+      "sha256": "ea93dd17b58e256cd705d020423d023513e5d7e0fe999d0426faa9377a847c76",
+      "id": "E004",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E005_SOURCE_AND_UNITS.md",
+      "bytes": 1290,
+      "sha256": "4f1fcb478bd99765a711565482872796a090600eda5f346d898f78fe51317e78",
+      "id": "E005",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E006_SOURCE_MANIFEST.json",
+      "bytes": 295,
+      "sha256": "17559f38f4326b53c0715bea554b040ace79c84b934046d3d4fa2ee6aefe6047",
+      "id": "E006",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E007_SPLITS.json",
+      "bytes": 29015,
+      "sha256": "23c6bb41baec27430ee931ab0f91db7902b05dd331a3b1d52b54980a0ff5efff",
+      "id": "E007",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 2700,
+      "sha256": "b8b1a0da4cd6760f315297bbfeade29629397aec0f317b8f07583141946ed4fa",
+      "id": "E008",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E009_native_current.py",
+      "bytes": 2780,
+      "sha256": "eeee0aabc32a989e6b7c0df81e63ad7d2b43fe1c31000afebfb45a327c36b2cf",
+      "id": "E009",
+      "role": "native_current.py"
+    },
+    {
+      "path": "evidence/E010_EQUATIONS.md",
+      "bytes": 2813,
+      "sha256": "5cfb8359ead6a3ef58b0e6deef15ff7b639a3e5f826e3af4a81c037c40dbc1e8",
+      "id": "E010",
+      "role": "package/EQUATIONS.md"
+    },
+    {
+      "path": "evidence/E011_FINDINGS.md",
+      "bytes": 5361,
+      "sha256": "dd1e2cc9949297053895a4647a5b036e0fd7659380051bf167ee0edd14cec815",
+      "id": "E011",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E012_INFORMATION_BUDGET_CORRECTION.json",
+      "bytes": 1544,
+      "sha256": "4ce817811afe3794b1a62af69d5e2d8aaf7ecb2269badee566535d415ff66926",
+      "id": "E012",
+      "role": "package/INFORMATION_BUDGET_CORRECTION.json"
+    },
+    {
+      "path": "evidence/E013_inputs.csv.gz",
+      "bytes": 188721,
+      "sha256": "f93eb449abbe53f2994fcd791098c1044d419200debe4a6bdd67486cb4649db2",
+      "id": "E013",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E014_observations.csv.gz",
+      "bytes": 163512,
+      "sha256": "849b3eeb82bfb36cba792bfe360ed1d8436f29f44bf9d9dfc2f5c9649fa54679",
+      "id": "E014",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E015_metrics.csv",
+      "bytes": 941,
+      "sha256": "6a206b5fe6735d5a859c0273210297e64270ab8e91142f1bdb4601e1b68a9999",
+      "id": "E015",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E016_predictions.csv.gz",
+      "bytes": 1253834,
+      "sha256": "d27ab596cfb667bd006d8808279d885b67d89fe4666b1f3b3eb783e191485678",
+      "id": "E016",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E017_findings.json",
+      "bytes": 1841,
+      "sha256": "841de8683d89ae476cdf6b10cf26523faccf53b21f82f0fec034f2d6ce9f689b",
+      "id": "E017",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E018_rules.json",
+      "bytes": 99800,
+      "sha256": "90a7579ec27ab92a289217b12d74b97507a586e7c4c27abb3c96efbfc8540541",
+      "id": "E018",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E019_run.py",
+      "bytes": 2864,
+      "sha256": "cc568b63afe3d736dfdf1e47bfb657549618a67f9d1770f513cb4551e4a9e637",
+      "id": "E019",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E020_task_spec.json",
+      "bytes": 3372,
+      "sha256": "bddb30aaa9bf1f503ff2ff413b62f1d54cb2af5965e071e807a348dd61d61215",
+      "id": "E020",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 67614,
+      "sha256": "293ef42c1023bbceb452e2306b1f958e65a862188b29736bc01afb1953bf8e66",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 9892,
+      "sha256": "eb1fa8bdd3bb9b36b67e48c482cb60d703987552e512ceecb90c249cacf0f72f",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

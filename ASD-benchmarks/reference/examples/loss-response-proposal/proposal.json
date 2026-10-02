@@ -1,0 +1,43 @@
+{
+  "schema_version": "principia.task-proposal/3.0",
+  "case_id": "P100-058",
+  "proposed_task_id": "P100-058.core-loss-proposed.v1",
+  "target": "PDLLA loss modulus, measured as an orthogonal response to storage-fit prediction",
+  "target_units": "Pa",
+  "permitted_inputs": [
+    "temperature_C",
+    "omega"
+  ],
+  "input_availability": "Imposed temperature and angular frequency. Parameters fitted on declared storage-only development sweeps, never on the loss target.",
+  "independent_groups": [
+    "whole temperature sweep; one original material batch"
+  ],
+  "baseline_families": [
+    "Frozen positive Maxwell model fitted to storage response",
+    "Frozen fractional viscoelastic model fitted to storage response"
+  ],
+  "exclusions": [
+    "Report missing or malformed native loss measurements; retain finite signed measurements for physical error; log diagnostics only on positive values"
+  ],
+  "measurement_anchors": [
+    {
+      "evidence_id": "RHEOLOGY",
+      "locator": "ZIP member PDLLA15k_DSC_GPC_rheo/rheology/DFS_gap0.879_T40_smax0.1 and corresponding whole temperature sweep members; loss modulus column in native rheometer tables"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "id": "RHEOLOGY",
+      "role": "Original author-native polymer rheology archive",
+      "path": "native/PDLLA15k_DSC_GPC_rheo.zip",
+      "bytes": 1124027,
+      "sha256": "a556a226ac4759039ec860a9a113a4036017755ecef3caac78a7e22854837c4b"
+    }
+  ],
+  "exposure": {
+    "fresh_confirmation": false,
+    "current_outcomes_exposed": true
+  },
+  "scientific_test": "Evaluate loss response without fitting its coefficients; test orthogonal complex-modulus consistency. This example proposes contract review only; it does not claim a new finding or automatically enable scores.",
+  "source_derived_targets_disclosure": "Instrument-reported loss modulus in source-native rheometer output; calibrated instrument measurement, not fitted model prediction."
+}

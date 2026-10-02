@@ -1,0 +1,243 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-100",
+  "claim_origin": "Curator index of existing retained findings; review judgments remain separate. No new discovery claim added.",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "exposed"
+  },
+  "findings": [
+    {
+      "id": "P100-100-SCI-01",
+      "classification": "predictive_reference",
+      "source_classification": "numerical_control",
+      "statement": "The original compact history model slightly improves a residual kernel on average, but misses a simpler lag-two control.",
+      "applicability": "Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+      "limitations": "The compact model loses 2/3 runs against kernel; one lost probe has no RTT and remains missing. A 1.68 %mean gain does not identify scheduler/queue physics.",
+      "falsification": [
+        "Include lag-two persistence with identical information access.",
+        "Keep missing lost-probe RTTs unscored but assigned, and never use lost flags or current response timestamps as predictors.",
+        "Treat 50 msdecision thresholds as illustrative unless a service requirement is independently documented."
+      ],
+      "prior_art": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "target": "ms",
+        "route": "calibrated route label",
+        "payload_B": "B",
+        "last_rtt": "ms,previous completion",
+        "mean5_rtt": "ms,previous5 completions",
+        "mean3_rtt": "ms,previous3 completions",
+        "trend_rtt": "ms,previous RTT difference",
+        "RSRP": "dBm,asof previouscompletion",
+        "RSRQ": "dB,asof previouscompletion"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-100.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-100-SCI-02",
+      "classification": "metrology_correction",
+      "source_classification": "measurement_audit",
+      "statement": "Adding lag-two persistence overturns a weak earlier improvement claim and creates the mandatory simple history control.",
+      "applicability": "Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+      "limitations": "Development lag-two MAE 2.422715 ms beats robust correction 2.4771391 ms; fitted corrections also lose all exposed runs. Observed recurrence does not identify a scheduler or queue mechanism.",
+      "falsification": [
+        "Include lag-two persistence with identical information access.",
+        "Keep missing lost-probe RTTs unscored but assigned, and never use lost flags or current response timestamps as predictors.",
+        "Treat 50 msdecision thresholds as illustrative unless a service requirement is independently documented."
+      ],
+      "prior_art": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E005",
+          "E006"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "scope": "See bound equations/source audit; no substitute units are invented"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006"
+      ],
+      "task_id": null,
+      "task_family": "continuation",
+      "task_version_history": "2026-09-30 first continuation"
+    },
+    {
+      "id": "P100-100-SCI-03",
+      "classification": "falsified",
+      "source_classification": "unsupported_or_falsified",
+      "statement": "The strongest simple recurrence is lag-two persistence; a theoretically motivated parity filter fails its empirical improvement test.",
+      "applicability": "Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+      "limitations": "Equal-variance independent noise and constant alternating means are not measured assumptions. Earlier fitted lag-two corrections also lose on all development and exposed runs.",
+      "falsification": [
+        "Include lag-two persistence with identical information access.",
+        "Keep missing lost-probe RTTs unscored but assigned, and never use lost flags or current response timestamps as predictors.",
+        "Treat 50 msdecision thresholds as illustrative unless a service requirement is independently documented."
+      ],
+      "prior_art": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "rhat_n=r_(n-2) is the retained simple control; tested parity BLUE=max(0,(3*last2+10*mean5-3*last-3*last3)/7).",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E007",
+          "E008",
+          "E009",
+          "E010"
+        ]
+      },
+      "variables_and_units": {
+        "target": "ms",
+        "payload_B": "B",
+        "last_rtt": "ms,previous completion",
+        "mean5_rtt": "ms,previous5 completions",
+        "mean3_rtt": "ms,previous3 completions",
+        "trend_rtt": "ms,previous RTT difference",
+        "RSRP": "dBm,asof previouscompletion",
+        "RSRQ": "dB,asof previouscompletion",
+        "last2_rtt": "ms; second previous completed RTT",
+        "last3_rtt": "ms; third previous completed RTT",
+        "median5_rtt": "ms; median of preceding 5 completed RTTs",
+        "std5_rtt": "ms; SD of preceding 5 completed RTTs",
+        "route": "calibrated route label"
+      },
+      "evidence_ids": [
+        "E007",
+        "E008",
+        "E009",
+        "E010"
+      ],
+      "task_id": "P100-100.round2.v1",
+      "task_family": "round2",
+      "task_version_history": "2026-09-30 second continuation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "id": "E001",
+      "role": "original scientific description",
+      "path": "evidence/E001_FINDINGS.md",
+      "bytes": 4297,
+      "sha256": "f9b825c8dd59c86cc06cea33506ea028240d91be9a998891c3cc25e2ed375e0b"
+    },
+    {
+      "id": "E002",
+      "role": "original frozen model state",
+      "path": "evidence/E002_rules.json",
+      "bytes": 59608,
+      "sha256": "5e29c82d8997c0782ff1ce37cceb293fc2f98881fdcd719ff4ce509638a2e802"
+    },
+    {
+      "id": "E003",
+      "role": "original numerical comparison",
+      "path": "evidence/E003_metrics.csv",
+      "bytes": 568,
+      "sha256": "38a5c55cf5552450034a9e29c394aa9a47fc92ba2bbc9a61a44b6e946b83528b"
+    },
+    {
+      "id": "E004",
+      "role": "original grouped errors",
+      "path": "evidence/E004_by_group.csv",
+      "bytes": 2057,
+      "sha256": "262f1eb0850409f4cb6c7eddcb6a4def9631d76a9970efb6da18c8de4c4bb513"
+    },
+    {
+      "id": "E005",
+      "role": "first continuation scientific account",
+      "path": "evidence/E005_FINDINGS.md",
+      "bytes": 5915,
+      "sha256": "40681583bc8823f93dca5918bfe0f208a3f823b238c4be32dfcb4418dcd2a4b1"
+    },
+    {
+      "id": "E006",
+      "role": "first continuation task contract",
+      "path": "evidence/E006_PROTOCOL.json",
+      "bytes": 3958,
+      "sha256": "0369c50e86ac18809dcfd409a0758419a2c13af28134e565656a2df530bdd6dc"
+    },
+    {
+      "id": "E007",
+      "role": "latest scientific account",
+      "path": "evidence/E007_FINDINGS.md",
+      "bytes": 2737,
+      "sha256": "afee5f13549906b0bd417fdad1e09522a50c5bd7f4203cbc3969c3cb6da9f6bc"
+    },
+    {
+      "id": "E008",
+      "role": "latest task protocol",
+      "path": "evidence/E008_PROTOCOL.json",
+      "bytes": 7188,
+      "sha256": "69ce648616ff84114f8a901627e9be94653765048a82218e7581cec0a4057ae4"
+    },
+    {
+      "id": "E009",
+      "role": "latest development comparison",
+      "path": "evidence/E009_COMPARISON.csv",
+      "bytes": 1993,
+      "sha256": "6b991bf37aeea603c8728f55940a863836f6bf22a01c0702e7c0101619e5a6f8"
+    },
+    {
+      "id": "E010",
+      "role": "latest development grouped errors",
+      "path": "evidence/E010_BY_GROUP.csv",
+      "bytes": 3544,
+      "sha256": "15702a11296a158a25cf94a3a0fcb71012ab51346605bfa97010a05a64e23ef9"
+    },
+    {
+      "id": "E011",
+      "role": "retained competing frozen model/fold states",
+      "path": "evidence/E011_states.json",
+      "bytes": 474050,
+      "sha256": "c089d22300b0b661e4e5829ad96f05511b67ed540bd62efde7c27b91af688275"
+    },
+    {
+      "id": "E012",
+      "role": "retained cross-case scientific context and selected-model clarification",
+      "path": "evidence/E012_ASD_REASSESSMENT_15_ROUND2.md",
+      "bytes": 30458,
+      "sha256": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253"
+    },
+    {
+      "id": "E013",
+      "role": "retained cross-case scientific context and selected-model clarification",
+      "path": "evidence/E013_ASD_CONTINUATION_15_ROUND2.md",
+      "bytes": 18283,
+      "sha256": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078"
+    },
+    {
+      "id": "SCIENTIFIC",
+      "role": "Independent scientific review before schema adaptation",
+      "path": "evidence/SCIENTIFIC.json",
+      "bytes": 20467,
+      "sha256": "deb54563ef25923168aec3841a9fa2933fb46f1e990c7edd96deded49fe02976"
+    },
+    {
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational portfolio review",
+      "path": "evidence/COMPUTATIONAL.json",
+      "bytes": 125684,
+      "sha256": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    }
+  ]
+}

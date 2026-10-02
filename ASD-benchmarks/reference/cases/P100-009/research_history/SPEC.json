@@ -1,0 +1,30 @@
+{
+  "case": 9,
+  "title": "Within-installation pupil-state forecasting",
+  "kind": "mae",
+  "target": "Mean pupil radius over final0.25s of horizon1s",
+  "unit": "px",
+  "inputs": [
+    "radius",
+    "lag05",
+    "lag1",
+    "mean5",
+    "speed",
+    "speed1"
+  ],
+  "input_units": {
+    "radius": "px",
+    "lag05": "px",
+    "lag1": "px",
+    "mean5": "px",
+    "speed": "cm/s",
+    "speed1": "cm/s"
+  },
+  "source_url": "https://dandiarchive.org/dandiset/001176",
+  "license": "CC BY4.0",
+  "paper": "https://doi.org/10.1016/j.celrep.2024.114808",
+  "independent_unit": "Animal, all sessions linked; two development animals and one reserved animal",
+  "scope": "Only three retained animals. Optical pixel calibration differs by animal/session; source ACh-M1/V1 recordings confound region and animal. No retinal physiology or real-time instrument claim.",
+  "timing": "Predict1s-ahead author-released pupil radius from prior pupil and treadmill samples. Source prior filtering may be noncausal; causal-prefix guarantee applies to released traces only, not original camera pixels.",
+  "calibration": "No held-target calibration; observed past5s from each session supplies history. Pixel units are retained without invented millimeter scaling."
+}

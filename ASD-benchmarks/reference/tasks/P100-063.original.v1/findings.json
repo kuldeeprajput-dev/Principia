@@ -1,0 +1,48 @@
+[
+  {
+    "finding_id": "P100-063-F01",
+    "title": "Thermal Lorentzian plus dispersion",
+    "classification": "reproduction",
+    "claim": "The measured thermal peak/dip response is reproducible with a compact Lorentzian family across two reserved termination temperatures. The extra dispersive term is effectively tied with the symmetric control; no new magnon law is established.",
+    "admission": "supported",
+    "equation": "equations.json",
+    "model_id": "reference",
+    "task_id": "P100-063.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "equations.json",
+      "rules.json"
+    ],
+    "performance": {
+      "development_MAE": 0.009705739641020112,
+      "confirmation_MAE": 0.0029772941628629,
+      "unit": "nV^2/Hz"
+    },
+    "prior_art": "https://arxiv.org/html/2404.17327v1",
+    "scope": "Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.",
+    "limitations": [
+      "Public source-aware confirmation is now exposed.",
+      "Predictive success does not prove a causal mechanism, exhaustive novelty, or realized industrial impact.",
+      "Alternative valid equations are admissible under the same task."
+    ]
+  },
+  {
+    "finding_id": "P100-063-F02",
+    "title": "Mechanistic or transfer falsification",
+    "classification": "informative_falsification",
+    "claim": "Extra temperature-dependent linewidth and nonlinear-amplitude terms lack transfer evidence.",
+    "admission": "supported",
+    "underlying_proposal_disposition": "unsupported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "equations.json",
+      "rules.json"
+    ],
+    "rationale": "Their development errors exceed the simpler thermal family; source termination heating must not be silently interpreted as film heating.",
+    "scope": "The tested equations and current data only; no claim of universal impossibility."
+  }
+]

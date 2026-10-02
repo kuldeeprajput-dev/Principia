@@ -1,0 +1,380 @@
+{
+  "case_id": "P100-084",
+  "input_columns": [
+    "x",
+    "base",
+    "amp",
+    "progress"
+  ],
+  "numeric_columns": [
+    "x",
+    "base",
+    "amp",
+    "progress"
+  ],
+  "input_units": {
+    "x": "dimensionless normalized piezo position relative to fixed5nNapproach crossing",
+    "base": "nN; mean first10approachpoints",
+    "amp": "nN; initialretractionlevel minusbase",
+    "progress": "dimensionless fraction ofretractionramp"
+  },
+  "target": "native AFM retraction force",
+  "target_units": "nN",
+  "error_units": "nN",
+  "metric_kind": "mae",
+  "models": {
+    "reference": {
+      "name": "localized_adhesion",
+      "formula": "base+amp*maximum(x,0)**1.5-A*amp*exp(-abs(x)/ell)",
+      "hypothesis": "Development evidence available before this fit: conical_contact: MAE 2.01419, worst group 4.97149.\n\nThe conical shape is only slightly better than Hertz and loses to flexible interpolation. Test a localized attractive-force well around contact loss, with no inferred modulus: adhesion may explain the missing negative retraction force.",
+      "inputs": [
+        "x",
+        "base",
+        "amp",
+        "progress"
+      ],
+      "recorded_utc": "2026-10-02T02:13:47.363093+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "A": 0.28997713274937187,
+        "ell": 0.5366572658137825
+      },
+      "training_groups": [
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt",
+        "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+      ],
+      "training_rows": 1120,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 4.638709842056556,
+      "bounds": {
+        "A": [
+          0,
+          2
+        ],
+        "ell": [
+          0.01,
+          2
+        ]
+      }
+    },
+    "flexible": {
+      "name": "flexible",
+      "formula": "base+amp*(b0+b1*x+b2*x**2+b3*x**3+b4*x**4)",
+      "hypothesis": "Five-coefficient shapecontrolwithsamecalibration.",
+      "inputs": [
+        "x",
+        "base",
+        "amp",
+        "progress"
+      ],
+      "recorded_utc": "2026-10-02T02:13:05.233336+00:00",
+      "parent": null,
+      "parameters": {
+        "b0": -0.14312993355031806,
+        "b1": -0.13844708511940867,
+        "b2": -0.036993080284848275,
+        "b3": -0.0014587107425643678,
+        "b4": 0.0003024607663145163
+      },
+      "training_groups": [
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt",
+        "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+      ],
+      "training_rows": 1120,
+      "fit_method": "weighted linear least squares",
+      "condition": 163.37861757086907
+    },
+    "hertz_shape": {
+      "name": "hertz_shape",
+      "formula": "base+amp*maximum(x,0)**1.5",
+      "hypothesis": "SphericalHertz-like shape in piezocoordinate; effective baseline,not trueindentation law.",
+      "inputs": [
+        "x",
+        "base",
+        "amp",
+        "progress"
+      ],
+      "recorded_utc": "2026-10-02T02:13:03.611463+00:00",
+      "parent": null,
+      "parameters": {},
+      "training_groups": [
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt",
+        "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+      ],
+      "training_rows": 1120
+    },
+    "initial_level": {
+      "name": "initial_level",
+      "formula": "base+amp",
+      "hypothesis": "Calibrated initial-level control.",
+      "inputs": [
+        "x",
+        "base",
+        "amp",
+        "progress"
+      ],
+      "recorded_utc": "2026-10-02T02:13:01.977415+00:00",
+      "parent": null,
+      "parameters": {},
+      "training_groups": [
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt",
+        "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+      ],
+      "training_rows": 1120
+    },
+    "conical_contact": {
+      "name": "conical_contact",
+      "formula": "base+amp*maximum(x,0)**2",
+      "hypothesis": "Attempt1: a conical/Sneddon-inspired response competes with sphericalHertz scaling; effective tip/rough-asperity geometry could alter the force exponent.",
+      "inputs": [
+        "x",
+        "base",
+        "amp",
+        "progress"
+      ],
+      "recorded_utc": "2026-10-02T02:13:06.931644+00:00",
+      "parent": null,
+      "parameters": {},
+      "training_groups": [
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt",
+        "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+      ],
+      "training_rows": 1120
+    },
+    "localized_adhesion": {
+      "name": "localized_adhesion",
+      "formula": "base+amp*maximum(x,0)**1.5-A*amp*exp(-abs(x)/ell)",
+      "hypothesis": "Development evidence available before this fit: conical_contact: MAE 2.01419, worst group 4.97149.\n\nThe conical shape is only slightly better than Hertz and loses to flexible interpolation. Test a localized attractive-force well around contact loss, with no inferred modulus: adhesion may explain the missing negative retraction force.",
+      "inputs": [
+        "x",
+        "base",
+        "amp",
+        "progress"
+      ],
+      "recorded_utc": "2026-10-02T02:13:47.363093+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "A": 0.28997713274937187,
+        "ell": 0.5366572658137825
+      },
+      "training_groups": [
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt",
+        "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+      ],
+      "training_rows": 1120,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 4.638709842056556,
+      "bounds": {
+        "A": [
+          0,
+          2
+        ],
+        "ell": [
+          0.01,
+          2
+        ]
+      }
+    },
+    "shifted_contact_pull_off": {
+      "name": "shifted_contact_pull_off",
+      "formula": "base+amp*(maximum(x+shift,0)/(1+shift))**1.5-A*amp*exp(-((x-center)/width)**2)",
+      "hypothesis": "Development evidence available before this fit: conical_contact: MAE 2.01419, worst group 4.97149; localized_adhesion: MAE 1.56177, worst group 6.11862.\n\nSeparate effective contact registration from the pull-off well. A shifted spherical contact and localized detachment response compete with a symmetric contact-centered attraction; neither uses target deflection.",
+      "inputs": [
+        "x",
+        "base",
+        "amp",
+        "progress"
+      ],
+      "recorded_utc": "2026-10-02T02:13:49.700211+00:00",
+      "parent": "attempt-002",
+      "parameters": {
+        "shift": -0.29999999999999993,
+        "A": 0.23257462943461957,
+        "center": 0.499999999999998,
+        "width": 0.9686522547336612
+      },
+      "training_groups": [
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt",
+        "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+      ],
+      "training_rows": 1120,
+      "optimizer_success": true,
+      "nfev": 15,
+      "jacobian_condition": 39.70888147235185,
+      "bounds": {
+        "shift": [
+          -0.3,
+          0.3
+        ],
+        "A": [
+          0,
+          2
+        ],
+        "center": [
+          -0.5,
+          0.5
+        ],
+        "width": [
+          0.01,
+          1
+        ]
+      }
+    },
+    "rough_asperity_exponent": {
+      "name": "rough_asperity_exponent",
+      "formula": "base+amp*maximum(x,0)**p-A*amp*exp(-abs(x)/ell)",
+      "hypothesis": "Development evidence available before this fit: localized_adhesion: MAE 1.56177, worst group 6.11862; shifted_contact_pull_off: MAE 1.81803, worst group 6.39742.\n\nTest whether rough-asperity geometry changes the repulsive exponent after adhesion is included. A stable non-Hertz exponent would be an effective response descriptor, not a universal tip-contact law.",
+      "inputs": [
+        "x",
+        "base",
+        "amp",
+        "progress"
+      ],
+      "recorded_utc": "2026-10-02T02:13:53.128979+00:00",
+      "parent": "attempt-003",
+      "parameters": {
+        "p": 3.999999999999998,
+        "A": 0.2650051784169665,
+        "ell": 0.4091302750825757
+      },
+      "training_groups": [
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt",
+        "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+      ],
+      "training_rows": 1120,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 52.31389416917773,
+      "bounds": {
+        "p": [
+          0.5,
+          4
+        ],
+        "A": [
+          0,
+          2
+        ],
+        "ell": [
+          0.01,
+          2
+        ]
+      }
+    },
+    "hysteretic_detachment": {
+      "name": "hysteretic_detachment",
+      "formula": "base+amp*maximum(x,0)**1.5-A*amp*0.5*(1+tanh((x-xoff)/width))*(1-minimum(maximum(x,0),1))",
+      "hypothesis": "Development evidence available before this fit: shifted_contact_pull_off: MAE 1.81803, worst group 6.39742; rough_asperity_exponent: MAE 1.64024, worst group 6.5072.\n\nTest persistent adhesive contact followed by a finite detachment threshold. This asymmetric hysteresis mechanism contrasts with a symmetric attractive well; the smooth switch approximates heterogeneous pull-off rather than claiming an exactDMTlaw.",
+      "inputs": [
+        "x",
+        "base",
+        "amp",
+        "progress"
+      ],
+      "recorded_utc": "2026-10-02T02:13:55.629010+00:00",
+      "parent": "attempt-004",
+      "parameters": {
+        "A": 1.7107473247655693,
+        "xoff": 0.4999999999999832,
+        "width": 0.49999999999999467
+      },
+      "training_groups": [
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt",
+        "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt",
+        "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt",
+        "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt",
+        "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+      ],
+      "training_rows": 1120,
+      "optimizer_success": true,
+      "nfev": 17,
+      "jacobian_condition": 63.76180566675839,
+      "bounds": {
+        "A": [
+          0,
+          2
+        ],
+        "xoff": [
+          -1,
+          0.5
+        ],
+        "width": [
+          0.005,
+          0.5
+        ]
+      }
+    }
+  },
+  "selected_from": "attempts/attempt-002",
+  "selection": "Development only; reference remains fixed even if another model is better on confirmation."
+}

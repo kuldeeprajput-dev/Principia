@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-017",
+  "title": "USGS ComCat July 2026 global M2.5+ earthquakes",
+  "default_task": "P100-017.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Author-reported origin depth uncertainty",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 130,
+    "independent_unit_description": "Transitive clusters within100km great-circle chord and7days; complete cluster hashfolds. Distant events may still share network/systematic velocity model errors.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Complete spatiotemporal connected clusters held out; same snapshot networks/measurement procedures. No new waveform or independent hypocenter calibration.",
+  "baseline_strength": {
+    "registered_controls": 12,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Author-reported origin depth uncertainty",
+    "prediction_time": "Contemporaneous reported location-quality diagnostics, never pre-event earthquake forecast or independent true depth error.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Target is author-reported depth uncertainty, not true depth error."
+  },
+  "task_ids": [
+    "P100-017.original.v1"
+  ],
+  "finding_ids": [
+    "P100-017-F01",
+    "P100-017-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-017/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-017.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Author-reported origin depth uncertainty under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Contemporaneous reported location-quality diagnostics, never pre-event earthquake forecast or independent true depth error.",
+    "calibration_requirement": "Complete spatiotemporal connected clusters held out; same snapshot networks/measurement procedures. No new waveform or independent hypocenter calibration.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Author-reported origin depth uncertainty in km",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Target is author-reported depth uncertainty, not true depth error."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "log_mae",
+    "primary_units": "absolute natural-log ratio",
+    "reference_model": "reference",
+    "reference_primary_error": 0.2997433172286997,
+    "reference_physical_mae": 1.2559460539620069,
+    "physical_error_units": "absolute natural-log ratio",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.2997433172286997,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-017.original.v1/evidence/metrics.csv",
+      "bytes": 1409,
+      "sha256": "88ef7ab2125e53f3c424bc9c17eb6324e5c0d59af62b05a6863cac1c793bd516"
+    },
+    "models": 12
+  },
+  "case_specific_next_evidence": "Target is author-reported depth uncertainty, not true depth error."
+}

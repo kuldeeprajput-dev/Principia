@@ -1,0 +1,38 @@
+{
+  "case": 11,
+  "kind": "precision",
+  "hypothesis": "Weight precision may alter latency-constrained efficiency even after Offline calibration. Test a declared4-bit indicator within workload; software/hardware confounding prevents causal precision claims.",
+  "parent": "attempt-004",
+  "created_utc": "2026-10-02T02:09:35.945600+00:00",
+  "before_execution": true,
+  "confirmation_accessed": false,
+  "development_evidence_available": [
+    {
+      "attempt": "attempt-001",
+      "primary_error": 7642.969038505824,
+      "worst_group": 146735.98281590856
+    },
+    {
+      "attempt": "attempt-002",
+      "primary_error": 7088.35846481856,
+      "worst_group": 109908.83601861144
+    },
+    {
+      "attempt": "attempt-003",
+      "primary_error": 8137.275023516578,
+      "worst_group": 161724.28555851115
+    },
+    {
+      "attempt": "attempt-004",
+      "primary_error": 7762.510152537884,
+      "worst_group": 152247.15848241752
+    }
+  ],
+  "primary_metric": "mean_group_absolute_error",
+  "falsifying_tests": [
+    "Matched strong baselines under identical inputs",
+    "Per-group errors and worst-group behavior",
+    "Parameter boundary/identifiability audit or exact-arithmetic preconditions",
+    "Physical/mathematical applicability and negative cases retained"
+  ]
+}

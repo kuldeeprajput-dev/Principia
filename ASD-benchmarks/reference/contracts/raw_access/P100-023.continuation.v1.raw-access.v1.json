@@ -1,0 +1,104 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-023.continuation.v1.raw-access.v1",
+  "parent_task_id": "P100-023.continuation.v1",
+  "case_id": "P100-023",
+  "protocol_version": "P100-023.continuation.v1.raw-access.v1",
+  "cohort_id": "P100-023.continuation.v1.cohort-1",
+  "parent_task_sha256": "507fd9ad7f32a945d94d55da3456c9bac95460bf42f1bf9850200826367199fe",
+  "input_sha256": "e65156011eafded284d749b85608a597bfc774d99f0627da10e5667818bac451",
+  "observations_sha256": "05750f0f0024903b13e7a4d10cd47db96fd80d9c50762f2a224ce7353320b908",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "23_tribology_inm_finger_liquid",
+  "source_assets": [
+    {
+      "path": "raw/HeightHerseyID04sample01.dat",
+      "bytes": 66595,
+      "sha256": "7c2cdb60402f05653ca9d7c4b0d059761ebcd516cea6986dac298a1e7fac1bcb"
+    },
+    {
+      "path": "raw/HeightHerseyID04sample12.dat",
+      "bytes": 55773,
+      "sha256": "35a2be20b59d092a74f024300d3360837cc31867a74e714218c70a0be8f412bd"
+    },
+    {
+      "path": "raw/HeightHerseyID08sample02.dat",
+      "bytes": 30817,
+      "sha256": "6faa69c437c70bcda0045de93f879656659d59fe3edad45be693b024da430893"
+    },
+    {
+      "path": "raw/HeightHerseyID10sample11.dat",
+      "bytes": 51243,
+      "sha256": "4609ab679f09245bdfcebf58f9d65ea7849db4a4a4d9829c0c85ddc43f0e882d"
+    },
+    {
+      "path": "raw/friction data.dat",
+      "bytes": 24252,
+      "sha256": "2ef9eee3e0f3c3ac04dcd7c550ded2e12f3584288e6a31f9bd6388932b173b06"
+    },
+    {
+      "path": "raw/participant_hydration_size.dat",
+      "bytes": 269,
+      "sha256": "993754af15b720cb991ece2dc499fdc00c688034bf0cb59be655c0520c8a7eb6"
+    },
+    {
+      "path": "raw/power law fit parameter.dat",
+      "bytes": 730,
+      "sha256": "f8299edd76a5f2c0ff95959cdbf4629971e759108943117f92ab4c173dc29aaf"
+    },
+    {
+      "path": "raw/raw_data_position_force.dat",
+      "bytes": 12439336,
+      "sha256": "a8bc041b1d684652f08ce65f2c7213b000fa98970ff2eebcdb1b3236c0547d28"
+    },
+    {
+      "path": "raw/readme.txt",
+      "bytes": 1241,
+      "sha256": "9c2186fb1902962ea7342943e7a5992c72d6f25b705b8314723689e404b5ec85"
+    },
+    {
+      "path": "raw/viscosity vs shear rate.dat",
+      "bytes": 2767,
+      "sha256": "ed3f2e9c6800b7c620b1cd707f04ae46f6ef27ff4a42086a32ec0dab833b9abb"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "H": "dimensionless; author Hersey calibration",
+      "viscosity": "Pa s at 500 s^-1; author rheology fit",
+      "speed": "m/s",
+      "load": "N",
+      "hydration": "corneometer instrument units",
+      "area": "cm^2"
+    },
+    "observation_window": "Conditional prediction at supplied trial-average speed/load. These trial summaries are not prospective controller inputs; no temporal forecasting claim.",
+    "calibration_and_history": "165 participant\u2013fluid observations (check actual count); primary response is author-derived median CoF, not instantaneous raw telemetry. Source already reports the Stribeck collapse and hydrodynamic exponent. Area/hydration are separate measurements; author-fit Hersey coefficients cannot validate their own physics. Raw force/position files remain untouched.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

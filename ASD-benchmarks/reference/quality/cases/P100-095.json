@@ -1,0 +1,76 @@
+{
+  "case_id": "P100-095",
+  "title": "Observational data and model output to \"SNOWstorm (v1.0) - a deep-learning based model for near-surface winds and drifting snow in mountain environments\"",
+  "default_task": "P100-095.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Next half-hour author-derived turbulent kinetic energy",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 3,
+    "independent_unit_description": "Whole ISO weeks. Forward folds week4, weeks7\u20138, weeks9\u201310 with all earlier weeks training. March15 onward weeks11\u201313 confirmation. One mountain station during one winter.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "baseline_strength": {
+    "registered_controls": 10,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Next half-hour author-derived turbulent kinetic energy",
+    "prediction_time": "Predict next30-min author-derived TKE from completed previous30-min TKE, mean velocity and two-height temperature gradient. No contemporaneous target variance/covariance inputs. Both intervals RawAnyS2/H2 flags0; predictor MetT0.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "One station and winter; date blocks are not independent climates."
+  },
+  "task_ids": [
+    "P100-095.original.v1"
+  ],
+  "finding_ids": [
+    "P100-095-F01",
+    "P100-095-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-095/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-095.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Next half-hour author-derived turbulent kinetic energy under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Predict next30-min author-derived TKE from completed previous30-min TKE, mean velocity and two-height temperature gradient. No contemporaneous target variance/covariance inputs. Both intervals RawAnyS2/H2 flags0; predictor MetT0.",
+    "calibration_requirement": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Next half-hour author-derived turbulent kinetic energy in m2/s2",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "One station and winter; date blocks are not independent climates."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "m2/s2",
+    "reference_model": "reference",
+    "reference_primary_error": 0.247284118226631,
+    "reference_physical_mae": 0.247284118226631,
+    "physical_error_units": "m2/s2",
+    "lowest_registered_error_model": "attempt-004",
+    "lowest_registered_error": 0.246237697882609,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-095.original.v1/evidence/metrics.csv",
+      "bytes": 1419,
+      "sha256": "382485baed9146a49bbb394dfa244493fae2045e88572546ff83489bdd62813a"
+    },
+    "models": 10
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-072.original.v1",
+  "case_id": "P100-072",
+  "case_number": 72,
+  "family": "original",
+  "protocol_version": "P100-072-prepared-primary-v1",
+  "cohort_id": "P100-072.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-072.original.v1",
+  "legacy_package": "72_biotechnology_yeast_competition/final_results",
+  "source_scenario": "scenarios/72_biotechnology_yeast_competition",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Later author qPCR S.kudriavzevii percentage",
+  "target_units": "percentage points",
+  "error_units": "percentage points",
+  "primary_units": "percentage points",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "p22_pct",
+    "p72_pct",
+    "time_h"
+  ],
+  "input_units": {
+    "p22_pct": "percentage points; own replicate at22h",
+    "p72_pct": "percentage points; own replicate at72h",
+    "time_h": "h since inoculation"
+  },
+  "numeric_columns": [
+    "p22_pct",
+    "p72_pct",
+    "time_h"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Author cached spreadsheet percentage from same-row qPCR ratio is the target. No same-time Cp/ratio is a predictor. Use only own replicate22/72-hour percentages to forecast96h and later. Biological replicate pairing from Sample Name.",
+  "calibration": "p22 and p72 are own-replicate fractions (source percentages/100). Delta=t\u221272h, and s is early log-odds change per hour. Fractions are clipped to0.0001\u20130.9999 only for log-odds calculation; original targets are unchanged. The output is100 times logistic(log-odds), in percentage points.75h is a development-selected shape scale. This early/late conditional equation does not estimate an independently measured fitness coefficient.",
+  "independent_unit": "whole co-cultured strain including every replicate/time",
+  "evaluation_groups": [
+    "D245",
+    "T73"
+  ],
+  "assigned_rows": 18,
+  "eligible_rows": 18,
+  "baseline_models": [
+    "reference",
+    "challenger",
+    "baseline_constant_selection",
+    "baseline_persistence",
+    "baseline_rbf",
+    "baseline_residual_rbf"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "s=\\dfrac{\\operatorname{logit}(p_{72})-\\operatorname{logit}(p_{22})}{50} \\operatorname{logit}(\\widehat p)=\\operatorname{logit}(p_{72})-0.077454s\\Delta-0.101446\\dfrac{\\Delta^2}{75(\\Delta+75)}",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "challenger": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the combined branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_constant_selection": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the constant_selection branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_persistence": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the persistence branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rbf": {
+      "equation": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_residual_rbf": {
+      "equation": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared conditions, sensor/system dependence or small numbers of reserved groups do not support precise population-level confidence. No row-bootstrap intervals."
+  },
+  "scope_limits": "Two reserved yeast strain labels, eighteen later author-derived qPCR percentages, same experiment campaign with audit-exposed targets; no blind validation or nutrient mechanism identification.",
+  "source_url": "https://zenodo.org/records/18757697",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All packaged targets are now exposed; future scoring is retrospective. Schema audit printed first13 spreadsheet rows before model construction, including several later percentages across all strains. Allocation is still metadata-only and no fit/selection uses reserved targets, but confirmation is audit-exposed retrospective evidence, not a fully blind independent confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "ea72ed5588b17a2f806187f01541b7a375776f0136c95521dff86e2fc69517f7",
+  "observations_sha256": "43a96fb8dcc9e7771aae01f01ffc626b1feca3f68a3ec1a21fad9df2646a1cb5",
+  "legacy_protocol_sha256": "6cc3a6066b619894acbc03da9f35e81ad7308318da15c186bf9ac1d811609dbe",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

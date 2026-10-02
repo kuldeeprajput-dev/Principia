@@ -1,0 +1,28 @@
+{
+  "case": 2,
+  "kind": "oscillator",
+  "hypothesis": "A rotating brightness pattern has both velocity and curvature. Test a second-order local oscillator approximation against simple slope and mean reversion; transferred coefficients must survive held-star validation.",
+  "parent": "attempt-002",
+  "created_utc": "2026-10-02T01:59:20.421113+00:00",
+  "before_execution": true,
+  "confirmation_accessed": false,
+  "development_evidence_available": [
+    {
+      "attempt": "attempt-001",
+      "primary_error": 0.0031162857385686597,
+      "worst_group": 0.01005777642563791
+    },
+    {
+      "attempt": "attempt-002",
+      "primary_error": 0.003267639059269438,
+      "worst_group": 0.011302748948971137
+    }
+  ],
+  "primary_metric": "mean_group_absolute_error",
+  "falsifying_tests": [
+    "Matched strong baselines under identical inputs",
+    "Per-group errors and worst-group behavior",
+    "Parameter boundary/identifiability audit or exact-arithmetic preconditions",
+    "Physical/mathematical applicability and negative cases retained"
+  ]
+}

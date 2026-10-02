@@ -1,0 +1,131 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-027.original.v1",
+  "case_id": "P100-027",
+  "case_number": 27,
+  "family": "original",
+  "protocol_version": "P100-027-prepared-primary-v1",
+  "cohort_id": "P100-027.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-027.original.v1",
+  "legacy_package": "27_fluid_dynamics_kth_boiling/final_results",
+  "source_scenario": "scenarios/27_fluid_dynamics_kth_boiling",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Measured local vapor void fraction",
+  "target_units": "dimensionless",
+  "error_units": "dimensionless",
+  "primary_units": "dimensionless",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "pressure_Pa",
+    "massflux_kg_m2_s",
+    "quality",
+    "radial_fraction",
+    "rho_liquid",
+    "rho_vapor"
+  ],
+  "input_units": {
+    "pressure_Pa": "Pa, absolute",
+    "massflux_kg_m2_s": "kg m^-2 s^-1",
+    "quality": "kg vapor per kg mixture",
+    "radial_fraction": "dimensionless native coordinate / maximum sampled coordinate",
+    "rho_liquid": "kg m^-3",
+    "rho_vapor": "kg m^-3"
+  },
+  "numeric_columns": [
+    "pressure_Pa",
+    "massflux_kg_m2_s",
+    "quality",
+    "radial_fraction",
+    "rho_liquid",
+    "rho_vapor"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Boundary pressure, mass flux, supplied thermodynamic quality, density properties and measurement coordinate only; no measured target-derived velocity, dynamic pressure, phase label or fitted per-run offset.",
+  "calibration": "Saturation densities are fixed IAPWS-derived inputs from absolute pressure, not learned from void-fraction targets. Global profile coefficients use development runs only.",
+  "independent_unit": "complete experimental run",
+  "evaluation_groups": [
+    "ID_20230630_Run_31",
+    "ID_20230630_Run_32",
+    "ID_20230809_Run_09"
+  ],
+  "assigned_rows": 36,
+  "eligible_rows": 36,
+  "baseline_models": [
+    "attempt_002_radial",
+    "baseline_mean",
+    "baseline_homogeneous",
+    "baseline_flex",
+    "baseline_nested_flex",
+    "competitor_drift"
+  ],
+  "reference_model": "attempt_002_radial",
+  "models": {
+    "attempt_002_radial": {
+      "equation": "alpha_hat=logistic(logit(alpha_hom)+beta0+beta1*r_normalized^2).",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_mean": {
+      "equation": "alpha_hat=equal-run development mean.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_homogeneous": {
+      "equation": "alpha=(x/rho_v)/(x/rho_v+(1-x)/rho_l)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flex": {
+      "equation": "Gaussian-kernel ridge with frozen training-only scales/centers/coefficients; clip output to [0,1], multiply E0 for stiffness.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_nested_flex": {
+      "equation": "Gaussian-kernel ridge with frozen training-only scales/centers/coefficients; clip output to [0,1], multiply E0 for stiffness.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "competitor_drift": {
+      "equation": "alpha_hat=clip(jg/(C0*(jg+jl)+Vd),0,1); jg=G*x/rho_v; jl=G*(1-x)/rho_l.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every complete reserved group. Within-system and temporal dependence, few condition blocks or calibrated sites limit population-level claims; no row-bootstrap confidence interval is claimed."
+  },
+  "scope_limits": "Three complete radial profiles at one KTH facility. Conditional on supplied boundary quality and normalized observed measurement coordinates; no universal closure, flow-regime discovery or physical wall-coordinate claim.",
+  "source_url": "https://zenodo.org/records/14627088",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "c0b18be039b8da915fcd9bbf0c059558f2dbb0f4273634c53c9eced0e73c02ae",
+  "observations_sha256": "c7fbfd6e8f4c13039dd7f5bc1cfd960e42c06c81281fc18c3b1633047476b19f",
+  "legacy_protocol_sha256": "d6001b6a5f80ed9f4155f4a9288f6dac9c233a1e3abef94452acee91fd609dfe",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

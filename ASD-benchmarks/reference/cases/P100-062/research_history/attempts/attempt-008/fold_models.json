@@ -1,0 +1,167 @@
+[
+  {
+    "fold": 1,
+    "state": {
+      "name": "distributed_trapping",
+      "formula": "offset+(a0+a1*high)*(1-exp(-(t/(tau*exp(k*high)))**beta))",
+      "hypothesis": "Development evidence available before this fit: occupancy_dependent_transport: MAE 4.78902, worst group 11.5347; shared_fick_separate_amplitudes: MAE 3.34284, worst group 10.8982.\n\nTest a distribution of trapping times through a shared stretched-exponential exponent. This challenges whether the simpler condition-dependent first-order surrogate misses a reproducible early/late curvature pattern.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:00:46.075363+00:00",
+      "parent": "attempt-007",
+      "parameters": {
+        "a0": 9.242442303356091,
+        "a1": 20.096802128807695,
+        "tau": 2143.90832050698,
+        "k": -0.6028262119470276,
+        "beta": 2.787899558250469
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-1-block-0"
+      ],
+      "training_rows": 372,
+      "optimizer_success": true,
+      "nfev": 33,
+      "jacobian_condition": 20625.022512238527,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ],
+        "beta": [
+          0.3,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "fold": 2,
+    "state": {
+      "name": "distributed_trapping",
+      "formula": "offset+(a0+a1*high)*(1-exp(-(t/(tau*exp(k*high)))**beta))",
+      "hypothesis": "Development evidence available before this fit: occupancy_dependent_transport: MAE 4.78902, worst group 11.5347; shared_fick_separate_amplitudes: MAE 3.34284, worst group 10.8982.\n\nTest a distribution of trapping times through a shared stretched-exponential exponent. This challenges whether the simpler condition-dependent first-order surrogate misses a reproducible early/late curvature pattern.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:00:46.075363+00:00",
+      "parent": "attempt-007",
+      "parameters": {
+        "a0": 12.888372412626858,
+        "a1": 28.605890399704162,
+        "tau": 2828.5950551862456,
+        "k": -0.610075268765054,
+        "beta": 2.1589038364665485
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-1-block-0",
+        "trace-1-block-1"
+      ],
+      "training_rows": 742,
+      "optimizer_success": true,
+      "nfev": 13,
+      "jacobian_condition": 15554.221420813541,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ],
+        "beta": [
+          0.3,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "fold": 3,
+    "state": {
+      "name": "distributed_trapping",
+      "formula": "offset+(a0+a1*high)*(1-exp(-(t/(tau*exp(k*high)))**beta))",
+      "hypothesis": "Development evidence available before this fit: occupancy_dependent_transport: MAE 4.78902, worst group 11.5347; shared_fick_separate_amplitudes: MAE 3.34284, worst group 10.8982.\n\nTest a distribution of trapping times through a shared stretched-exponential exponent. This challenges whether the simpler condition-dependent first-order surrogate misses a reproducible early/late curvature pattern.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:00:46.075363+00:00",
+      "parent": "attempt-007",
+      "parameters": {
+        "a0": 13.85332406879366,
+        "a1": 31.276439713502423,
+        "tau": 3083.7744120571538,
+        "k": -0.6025612895681446,
+        "beta": 1.9181745624198998
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2"
+      ],
+      "training_rows": 1113,
+      "optimizer_success": true,
+      "nfev": 9,
+      "jacobian_condition": 14177.836495347425,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ],
+        "beta": [
+          0.3,
+          3
+        ]
+      }
+    }
+  }
+]

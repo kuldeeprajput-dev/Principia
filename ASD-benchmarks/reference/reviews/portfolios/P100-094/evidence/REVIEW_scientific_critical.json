@@ -1,0 +1,132 @@
+{
+  "case_id": "P100-094",
+  "role": "scientific_critical",
+  "reviewer_id": "asd5_materials",
+  "checked_files": [
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "7df00c0110bc0f4cb65d91dbe4ac51714aca2f188327ea56adbc1b1a9ecf5c0f"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "368255a6723d7ad7eaaf84a5bf7e0cab24d767f8db0be67c5d88d4cdb3727323"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "48134019ddd93c4e3d57046c5e99f22aed7bf44eea4af506c008b90c221b4325"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "037340f85431dfce1595e377ecc77852ab3b878b8d4c75cfe860e4aad8d5636d"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "3994a6230d44176f6123c7b49b4702c1cf99db721b199ff0f3318fd6ebe4b7d0"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "3ecdf9e2464258f0465df07551285fe6507a8780183aa02276b6330cc83d258b"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "87007e73994eeecf8c979ddc251ed1cb231c978405591d1ab4ba393050081303"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-094-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The four-coefficient salinity hinge and temperature relation achieves0.0410217ppb versus0.0458915 flexible and0.0822193 salinity-only, improving both held casts. Three development and two confirmation casts limit certainty."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "A continuous water-mass mixing approximation is compatible with the profile. The33psu hinge is prespecified, not a discovered phase boundary. Calibrated fluorescence is not chemical DOC and may include temperature/sensor response."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Prior physical/statistical families are disclosed. This bounded literature check does not certify new laws or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful reproducible prediction or informative failure within a precisely scoped cohort; no automatic discovery score."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected executable equation, coefficients, source/task definitions and saved group results; independent numerical execution belongs to the separate computational reviewer."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention, deployment-cost study or external experimental replication."
+        }
+      },
+      "checks": [
+        "Matched input-budget comparator review",
+        "Equation dimensional and variable-semantics review",
+        "Independent-unit and outcome-exposure review",
+        "Positive proposal separated from negative evidence",
+        "Primary-source context checked through public source pages; no new numerical assets acquired"
+      ],
+      "limitations": [
+        "One expedition/instrument, spatially dependent casts, no separate CDOM quality flag, and one planned cast fully excluded by prefit T/S flags. Thousands of depth rows do not establish broad replication.",
+        "Scientific-critical agent review is advisory; it is not human expert adjudication or independent experimental replication."
+      ],
+      "recommendations": [
+        "Separate sensor-temperature response from water-mass chemistry with independently calibrated optical and chemical samples before biological/industrial interpretation."
+      ]
+    },
+    {
+      "finding_id": "P100-094-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The four-coefficient salinity hinge and temperature relation achieves0.0410217ppb versus0.0458915 flexible and0.0822193 salinity-only, improving both held casts. Three development and two confirmation casts limit certainty."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "A continuous water-mass mixing approximation is compatible with the profile. The33psu hinge is prespecified, not a discovered phase boundary. Calibrated fluorescence is not chemical DOC and may include temperature/sensor response."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Prior physical/statistical families are disclosed. This bounded literature check does not certify new laws or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful reproducible prediction or informative failure within a precisely scoped cohort; no automatic discovery score."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected executable equation, coefficients, source/task definitions and saved group results; independent numerical execution belongs to the separate computational reviewer."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention, deployment-cost study or external experimental replication."
+        }
+      },
+      "checks": [
+        "Matched input-budget comparator review",
+        "Equation dimensional and variable-semantics review",
+        "Independent-unit and outcome-exposure review",
+        "Positive proposal separated from negative evidence",
+        "Primary-source context checked through public source pages; no new numerical assets acquired"
+      ],
+      "limitations": [
+        "One expedition/instrument, spatially dependent casts, no separate CDOM quality flag, and one planned cast fully excluded by prefit T/S flags. Thousands of depth rows do not establish broad replication.",
+        "Scientific-critical agent review is advisory; it is not human expert adjudication or independent experimental replication."
+      ],
+      "recommendations": [
+        "Separate sensor-temperature response from water-mass chemistry with independently calibrated optical and chemical samples before biological/industrial interpretation."
+      ]
+    }
+  ],
+  "primary_sources_checked": [
+    "https://zenodo.org/records/17530624"
+  ],
+  "literature_access_limits": [
+    "AMS article request returned403 and PMC contextual article showed browser check; neither inaccessible text was treated as independently verified."
+  ],
+  "blocking_defects": []
+}

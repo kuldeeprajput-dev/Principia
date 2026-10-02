@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-076",
+  "title": "Dataset accompanying the paper \"Environmental stiffness regulates neuronal maturation via Piezo1-mediated TTR activity\"",
+  "default_task": "P100-076.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "evoked_spike_count",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 8,
+    "independent_unit_description": "complete culture dish within recording date",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Per-cell spike counts at applied current<=10pA; later currents>10pA forecast. Source manual FI eligibility preserved.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "unsupported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "evoked_spike_count",
+    "prediction_time": "Predict higher-current evoked spike counts after the lower-current prefix for that cell. No future rheobase or peak-response calibration.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-076.original.v1"
+  ],
+  "finding_ids": [
+    "P100-076-F01",
+    "P100-076-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-076/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-076.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate evoked_spike_count under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Predict higher-current evoked spike counts after the lower-current prefix for that cell. No future rheobase or peak-response calibration.",
+    "calibration_requirement": "Per-cell spike counts at applied current<=10pA; later currents>10pA forecast. Source manual FI eligibility preserved.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "evoked_spike_count in spikes per stimulus",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "spikes per stimulus",
+    "reference_model": "reference",
+    "reference_primary_error": 0.4419642857142857,
+    "reference_physical_mae": 0.4419642857142857,
+    "physical_error_units": "spikes per stimulus",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.4419642857142857,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-076.original.v1/evidence/metrics.csv",
+      "bytes": 890,
+      "sha256": "62281d35db0282683d41dba63c8ec56fdc24b31d53c934a2d7ca2ca77bbb96f8"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

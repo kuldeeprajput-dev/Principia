@@ -1,0 +1,21 @@
+{
+  "target": "Measured missing transverse momentum magnitude",
+  "target_units": "GeV",
+  "metric_kind": "mae",
+  "independent_unit": "Run period, with unique runNumber+eventNumber observations",
+  "timing_contract": "Diagnostic event reconstruction from lepton and jet kinematics; met_phi/met_mpx/met_mpy and truth fields forbidden. Inputs are measured same-event objects, not a pre-collision forecast.",
+  "calibration": "Training events only; no held-period target calibration.",
+  "scope_limits": "2015 four-lepton educational skim, no MC or control background supplied. Object recoil and MET share reconstruction components; predictive agreement is not independent discovery of momentum conservation or new physics.",
+  "split": "PeriodsH,J confirmation; leave-one-period-out D,E,F,G development",
+  "question": "How much of observed MET magnitude is explained by recoil geometry versus scalar activity?",
+  "case_id": "P100-004",
+  "error_units": "GeV",
+  "source_url": "https://opendata.cern.ch/record/93918",
+  "source_license": "CC0 1.0",
+  "exposure": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+  "uncertainty_policy": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics.",
+  "selection": "Lowest development mean-group MAE, simpler model on relative1% tie. Exact mathematical algorithm baselines do not claim novel accuracy. Retain every attempt and compare named strong controls.",
+  "stopping": "At least5distinct scientific attempts; continue while a justified distinct mechanism yields prediction/robustness/interpretation gain; stop after2consecutive substantive no-gain attempts after minimum5.",
+  "created_utc": "2026-10-02T01:37:42.429980+00:00",
+  "before_first_fit": true
+}

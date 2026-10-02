@@ -1,0 +1,394 @@
+{
+  "case_id": "P100-076",
+  "input_columns": [
+    "current",
+    "soft",
+    "kd",
+    "cal_mean",
+    "cal_last"
+  ],
+  "numeric_columns": [
+    "current",
+    "soft",
+    "kd",
+    "cal_mean",
+    "cal_last"
+  ],
+  "input_units": {
+    "current": "pA",
+    "soft": "binary",
+    "kd": "binary",
+    "cal_mean": "spikes per stimulus",
+    "cal_last": "spikes per stimulus"
+  },
+  "target": "evoked_spike_count",
+  "target_units": "spikes per stimulus",
+  "metric_kind": "mae",
+  "reference_selected_model": "baseline_persistence",
+  "models": {
+    "reference": {
+      "case": 76,
+      "kind": "persistence",
+      "coef": [],
+      "training_groups": [
+        "20250416:D2S2",
+        "20250416:D2S3",
+        "20250416:D2S5",
+        "20250416:D2S6",
+        "20250417:D3S1",
+        "20250417:D3S3",
+        "20250417:D3S4",
+        "20250417:D3S5",
+        "20250417:D3S7"
+      ],
+      "training_rows": 280,
+      "training_ids_sha256": "cf63e782a3c9c681d15bf73d86c493eda4f48b1df43a090c3a9abdc2d1c7d5c9",
+      "equation": "Nhat=N_last_prefix"
+    },
+    "baseline_persistence": {
+      "case": 76,
+      "kind": "persistence",
+      "coef": [],
+      "training_groups": [
+        "20250416:D2S2",
+        "20250416:D2S3",
+        "20250416:D2S5",
+        "20250416:D2S6",
+        "20250417:D3S1",
+        "20250417:D3S3",
+        "20250417:D3S4",
+        "20250417:D3S5",
+        "20250417:D3S7"
+      ],
+      "training_rows": 280,
+      "training_ids_sha256": "cf63e782a3c9c681d15bf73d86c493eda4f48b1df43a090c3a9abdc2d1c7d5c9",
+      "equation": "Nhat=N_last_prefix"
+    },
+    "baseline_rheobase": {
+      "case": 76,
+      "kind": "rheobase",
+      "coef": [
+        0.014000814762555673,
+        -15.741275783776592
+      ],
+      "training_groups": [
+        "20250416:D2S2",
+        "20250416:D2S3",
+        "20250416:D2S5",
+        "20250416:D2S6",
+        "20250417:D3S1",
+        "20250417:D3S3",
+        "20250417:D3S4",
+        "20250417:D3S5",
+        "20250417:D3S7"
+      ],
+      "training_rows": 280,
+      "training_ids_sha256": "cf63e782a3c9c681d15bf73d86c493eda4f48b1df43a090c3a9abdc2d1c7d5c9",
+      "equation": "Nhat=max(0,g*(I-I0))",
+      "optimizer": {
+        "success": true,
+        "cost": 82.55164754835812,
+        "bounds": [
+          [
+            0,
+            -50
+          ],
+          [
+            10,
+            100
+          ]
+        ],
+        "jacobian_rank": 2,
+        "jacobian_singular_values": [
+          765.5974687298908,
+          0.05133171063084188
+        ]
+      }
+    },
+    "baseline_flexible": {
+      "case": 76,
+      "kind": "flexible",
+      "coef": [
+        0.4350910543810362,
+        0.22468049947149463,
+        -0.2371622817458393,
+        -0.931294645933534,
+        0.11328588074413443,
+        0.09469493238096234,
+        1.3756740748123293,
+        1.4228327605914899,
+        -1.2671754469560395,
+        0.9921361690497584,
+        -1.7264516219127721,
+        5.952817014297746
+      ],
+      "training_groups": [
+        "20250416:D2S2",
+        "20250416:D2S3",
+        "20250416:D2S5",
+        "20250416:D2S6",
+        "20250417:D3S1",
+        "20250417:D3S3",
+        "20250417:D3S4",
+        "20250417:D3S5",
+        "20250417:D3S7"
+      ],
+      "training_rows": 280,
+      "training_ids_sha256": "cf63e782a3c9c681d15bf73d86c493eda4f48b1df43a090c3a9abdc2d1c7d5c9",
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "feature_rms": [
+        0.999999999999999,
+        0.8625543461139136,
+        0.9101075101327313,
+        0.745355992499931,
+        0.5773502691896265,
+        0.4714045207910316,
+        0.642910050732864,
+        0.49799598391954925,
+        0.4066120181860508,
+        0.2357022603955158,
+        0.2033060090930254,
+        0.03928371006591931
+      ],
+      "ridge_alpha": 1,
+      "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+    },
+    "attempt_001_condition_threshold": {
+      "case": 76,
+      "kind": "condition_threshold",
+      "coef": [
+        0.014000814819683656,
+        7.972387198200777,
+        -18.13953571764641,
+        -88.71365885859699,
+        71.70784607446868
+      ],
+      "training_groups": [
+        "20250416:D2S2",
+        "20250416:D2S3",
+        "20250416:D2S5",
+        "20250416:D2S6",
+        "20250417:D3S1",
+        "20250417:D3S3",
+        "20250417:D3S4",
+        "20250417:D3S5",
+        "20250417:D3S7"
+      ],
+      "training_rows": 280,
+      "training_ids_sha256": "cf63e782a3c9c681d15bf73d86c493eda4f48b1df43a090c3a9abdc2d1c7d5c9",
+      "equation": "Nhat=max(0,g*(I-I0-bs*soft-bk*kd-bsk*soft*kd))",
+      "optimizer": {
+        "success": true,
+        "cost": 70.67177425401115,
+        "bounds": [
+          [
+            0,
+            -50,
+            -100,
+            -100,
+            -100
+          ],
+          [
+            10,
+            100,
+            100,
+            100,
+            100
+          ]
+        ],
+        "jacobian_rank": 5,
+        "jacobian_singular_values": [
+          841.0401764193202,
+          0.12184950047443532,
+          0.09860290424478703,
+          0.06266062593118182,
+          0.02049235431887334
+        ]
+      }
+    },
+    "attempt_002_saturation": {
+      "case": 76,
+      "kind": "saturation",
+      "coef": [
+        1.1045909466983355,
+        23.786184525534903
+      ],
+      "training_groups": [
+        "20250416:D2S2",
+        "20250416:D2S3",
+        "20250416:D2S5",
+        "20250416:D2S6",
+        "20250417:D3S1",
+        "20250417:D3S3",
+        "20250417:D3S4",
+        "20250417:D3S5",
+        "20250417:D3S7"
+      ],
+      "training_rows": 280,
+      "training_ids_sha256": "cf63e782a3c9c681d15bf73d86c493eda4f48b1df43a090c3a9abdc2d1c7d5c9",
+      "equation": "Nhat=N_last+A*(1-exp(-(I-10)/K))",
+      "optimizer": {
+        "success": true,
+        "cost": 83.06761110834626,
+        "bounds": [
+          [
+            0,
+            0.1
+          ],
+          [
+            200,
+            1000
+          ]
+        ],
+        "jacobian_rank": 2,
+        "jacobian_singular_values": [
+          9.05703039848498,
+          0.062434589995826746
+        ]
+      }
+    },
+    "attempt_003_recruitment": {
+      "case": 76,
+      "kind": "recruitment",
+      "coef": [
+        0.022998164783099156,
+        1.7738190652831049e-07,
+        0.034916350894704754
+      ],
+      "training_groups": [
+        "20250416:D2S2",
+        "20250416:D2S3",
+        "20250416:D2S5",
+        "20250416:D2S6",
+        "20250417:D3S1",
+        "20250417:D3S3",
+        "20250417:D3S4",
+        "20250417:D3S5",
+        "20250417:D3S7"
+      ],
+      "training_rows": 280,
+      "training_ids_sha256": "cf63e782a3c9c681d15bf73d86c493eda4f48b1df43a090c3a9abdc2d1c7d5c9",
+      "equation": "Nhat=max(0,(a+b*N_last+c*N_prefix_mean)*(I-10))",
+      "optimizer": {
+        "success": true,
+        "cost": 84.90618438845596,
+        "bounds": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          450.12056173478084,
+          104.17822561327841,
+          1.4045338486919025e-08
+        ]
+      }
+    },
+    "attempt_004_block": {
+      "case": 76,
+      "kind": "block",
+      "coef": [
+        0.04170141341588317,
+        10.726489674871912,
+        64.61511694577761
+      ],
+      "training_groups": [
+        "20250416:D2S2",
+        "20250416:D2S3",
+        "20250416:D2S5",
+        "20250416:D2S6",
+        "20250417:D3S1",
+        "20250417:D3S3",
+        "20250417:D3S4",
+        "20250417:D3S5",
+        "20250417:D3S7"
+      ],
+      "training_rows": 280,
+      "training_ids_sha256": "cf63e782a3c9c681d15bf73d86c493eda4f48b1df43a090c3a9abdc2d1c7d5c9",
+      "equation": "Nhat=N_last+g*(I-10)*exp(-max(I-Iblock,0)/K)",
+      "optimizer": {
+        "success": true,
+        "cost": 83.11031417493254,
+        "bounds": [
+          [
+            0,
+            10,
+            0.1
+          ],
+          [
+            10,
+            100,
+            1000
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          239.75636208372498,
+          0.03040412676499408,
+          1.3020816852741468e-08
+        ]
+      }
+    },
+    "attempt_005_condition_gain": {
+      "case": 76,
+      "kind": "condition_gain",
+      "coef": [
+        0.0561491663537073,
+        0.03360288758469672,
+        0.19907781213799147,
+        -0.13932454625790244,
+        0.5641215346397126
+      ],
+      "training_groups": [
+        "20250416:D2S2",
+        "20250416:D2S3",
+        "20250416:D2S5",
+        "20250416:D2S6",
+        "20250417:D3S1",
+        "20250417:D3S3",
+        "20250417:D3S4",
+        "20250417:D3S5",
+        "20250417:D3S7"
+      ],
+      "training_rows": 280,
+      "training_ids_sha256": "cf63e782a3c9c681d15bf73d86c493eda4f48b1df43a090c3a9abdc2d1c7d5c9",
+      "equation": "Nhat=N_last+max(0,a+bs*soft+bk*kd+bsk*soft*kd)*(I-10)^n",
+      "optimizer": {
+        "success": true,
+        "cost": 67.2324879905015,
+        "bounds": [
+          [
+            0,
+            -5,
+            -5,
+            -5,
+            0.1
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            2
+          ]
+        ],
+        "jacobian_rank": 5,
+        "jacobian_singular_values": [
+          121.23351138656224,
+          48.64821353567305,
+          41.08692212843719,
+          20.097832394553368,
+          3.8843511003067173
+        ]
+      }
+    }
+  }
+}

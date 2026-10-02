@@ -1,0 +1,167 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-078.original.v1",
+  "case_id": "P100-078",
+  "case_number": 78,
+  "family": "original",
+  "protocol_version": "P100-078-batch4-frozen-v1",
+  "cohort_id": "P100-078.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-078.original.v1",
+  "legacy_package": "78_medicine_assay_reproducibility/final_results",
+  "source_scenario": "scenarios/78_medicine_assay_reproducibility",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Untreated bacterial burden in total lung",
+  "target_units": "log10 CFU / total lung",
+  "error_units": "log10 ratio (decades)",
+  "primary_units": "log10 CFU / total lung",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "time_h",
+    "initial_logCFU",
+    "site"
+  ],
+  "input_units": {
+    "time_h": "h; numeric actual time only",
+    "initial_logCFU": "log10 CFU / total lung; mean observed time-zero cohort",
+    "site": "source laboratory label"
+  },
+  "numeric_columns": [
+    "time_h",
+    "initial_logCFU"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Initial cohort burden and time/site only. No post-baseline measured target is an input; study/strain IDs are anchors, not predictors.",
+  "calibration": "DSM/site-reference strain aliases resolved from source RefToDict plus explicit single-strain-study Overview links (source labeling discrepancies retained) and kept together. All ExperimentResults sheets included. Explicit untreated CFU lung single-value observations only, equality operator, compatible log-CFU lung units, numeric actual times 0\u201324 h. Time-zero animals form an explicitly allowed cohort calibration, not the same later animals. Non-numeric early-death times and censoring cannot be interpreted as exact scheduled times; exclusions are counted, and this creates survivorship/measurement selection limits. Source already reports virulence/reproducibility criteria; no new clinical efficacy claim. Source laboratory directory supplies validation identity; the original SITE field is inconsistent in one workbook and is preserved as provided_site. Header templates and source censoring inconsistencies require caution.",
+  "independent_unit": "whole laboratory/site, all strains and studies",
+  "evaluation_groups": [
+    "GSK"
+  ],
+  "assigned_rows": 15,
+  "eligible_rows": 15,
+  "baseline_models": [
+    "reference",
+    "mechanistic_reference",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007",
+    "baseline_mean",
+    "baseline_domain",
+    "baseline_rbf",
+    "attempt_008",
+    "attempt_009"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "mechanistic_reference": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_mean": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_domain": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rbf": {
+      "equation": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_008": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_009": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "scope_limits": "Three laboratories with recurring bacterial strains; two development sites and one exposed reserved site. This is retrospective laboratory transfer, not new-strain generalization or independent confirmation. Unresolved source strain labels remain anchors, not split identities.",
+  "source_url": "https://zenodo.org/records/15124940",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All packaged targets are exposed for future agents; future scoring is retrospective. Primary source label/DSM identities remained inconsistent. Earlier development used some later GSK targets. No independent confirmation claim is made after this metadata repair.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "9c54a7b8626e1d2205f3948631944dabb3abfcd8d62585f0afd654d3f8263a80",
+  "observations_sha256": "b638e7bdee7a9927831a60396f174a11ea15c238660089c811662f83f6903433",
+  "legacy_protocol_sha256": "d9a6cedfdbe496a0b22aa064d2af1f543181eb48dd5671cddb4a8ff893c17c82",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

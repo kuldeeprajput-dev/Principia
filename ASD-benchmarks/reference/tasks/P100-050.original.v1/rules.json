@@ -1,0 +1,299 @@
+{
+  "case_id": "P100-050",
+  "input_columns": [
+    "h0",
+    "h",
+    "v",
+    "a",
+    "median"
+  ],
+  "numeric_columns": [
+    "h0",
+    "h",
+    "v",
+    "a",
+    "median"
+  ],
+  "input_units": {
+    "h0": "m",
+    "h": "m; mean of last20 native samples",
+    "v": "m/s; causal100ms difference",
+    "a": "m/s\u00b2; causal100ms second difference",
+    "median": "m; median of last20 native samples"
+  },
+  "target": "analog laser flow-depth signal 200 ms ahead",
+  "target_units": "m",
+  "error_units": "m",
+  "metric_kind": "mae",
+  "models": {
+    "reference": {
+      "name": "oscillatory_memory",
+      "formula": "h+v*sin(omega*0.2)/omega+a*(1-cos(omega*0.2))/omega**2",
+      "hypothesis": "Development evidence available before this fit: damped_velocity: MAE 0.013819, worst group 0.0160151.\n\nDamped drift did not beat native persistence. Test a competing local oscillatory-wave explanation: displacement, velocity and curvature propagate as a harmonic mode, rather than monotone relaxation.",
+      "inputs": [
+        "h0",
+        "h",
+        "v",
+        "a",
+        "median"
+      ],
+      "recorded_utc": "2026-10-02T01:55:58.105143+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "omega": 24.355282051809183
+      },
+      "training_groups": [
+        "33 laser (m) - 05/04/2024",
+        "33 laser (m) - 06/04/2024",
+        "33 laser (m) - 08/04/2024",
+        "33 laser (m) - 10/04/2024"
+      ],
+      "training_rows": 1072,
+      "optimizer_success": true,
+      "nfev": 12,
+      "jacobian_condition": 1.0,
+      "bounds": {
+        "omega": [
+          1,
+          100
+        ]
+      }
+    },
+    "constant_velocity": {
+      "name": "constant_velocity",
+      "formula": "h+0.2*v",
+      "hypothesis": "Constant local velocity extrapolation is the kinematic domain control.",
+      "inputs": [
+        "h0",
+        "h",
+        "v",
+        "a",
+        "median"
+      ],
+      "recorded_utc": "2026-10-02T01:55:05.800931+00:00",
+      "parent": null,
+      "parameters": {},
+      "training_groups": [
+        "33 laser (m) - 05/04/2024",
+        "33 laser (m) - 06/04/2024",
+        "33 laser (m) - 08/04/2024",
+        "33 laser (m) - 10/04/2024"
+      ],
+      "training_rows": 1072
+    },
+    "flexible": {
+      "name": "flexible",
+      "formula": "b0+b1*h0+b2*h+b3*v+b4*a+b5*median",
+      "hypothesis": "Constrained linear-history control with identical causal measurements.",
+      "inputs": [
+        "h0",
+        "h",
+        "v",
+        "a",
+        "median"
+      ],
+      "recorded_utc": "2026-10-02T01:55:07.363362+00:00",
+      "parent": null,
+      "parameters": {
+        "b0": 0.005703507266292634,
+        "b1": 0.6853046352575094,
+        "b2": 1.307391991720323,
+        "b3": -0.041932873221763596,
+        "b4": 0.0013639128740356578,
+        "b5": -1.1107696227746446
+      },
+      "training_groups": [
+        "33 laser (m) - 05/04/2024",
+        "33 laser (m) - 06/04/2024",
+        "33 laser (m) - 08/04/2024",
+        "33 laser (m) - 10/04/2024"
+      ],
+      "training_rows": 1072,
+      "fit_method": "weighted linear least squares",
+      "condition": 99.08243953355678
+    },
+    "persistence": {
+      "name": "persistence",
+      "formula": "h0",
+      "hypothesis": "Native last-value baseline.",
+      "inputs": [
+        "h0",
+        "h",
+        "v",
+        "a",
+        "median"
+      ],
+      "recorded_utc": "2026-10-02T01:55:04.245482+00:00",
+      "parent": null,
+      "parameters": {},
+      "training_groups": [
+        "33 laser (m) - 05/04/2024",
+        "33 laser (m) - 06/04/2024",
+        "33 laser (m) - 08/04/2024",
+        "33 laser (m) - 10/04/2024"
+      ],
+      "training_rows": 1072
+    },
+    "damped_velocity": {
+      "name": "damped_velocity",
+      "formula": "h+v*tau*(1-exp(-0.2/tau))",
+      "hypothesis": "Attempt1: front-height increments decorrelate through a dissipative velocity memory; exponential damping may prevent constant-velocity overshoot.",
+      "inputs": [
+        "h0",
+        "h",
+        "v",
+        "a",
+        "median"
+      ],
+      "recorded_utc": "2026-10-02T01:55:08.961025+00:00",
+      "parent": null,
+      "parameters": {
+        "tau": 0.0020000000000000005
+      },
+      "training_groups": [
+        "33 laser (m) - 05/04/2024",
+        "33 laser (m) - 06/04/2024",
+        "33 laser (m) - 08/04/2024",
+        "33 laser (m) - 10/04/2024"
+      ],
+      "training_rows": 1072,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 1.0,
+      "bounds": {
+        "tau": [
+          0.002,
+          2
+        ]
+      }
+    },
+    "oscillatory_memory": {
+      "name": "oscillatory_memory",
+      "formula": "h+v*sin(omega*0.2)/omega+a*(1-cos(omega*0.2))/omega**2",
+      "hypothesis": "Development evidence available before this fit: damped_velocity: MAE 0.013819, worst group 0.0160151.\n\nDamped drift did not beat native persistence. Test a competing local oscillatory-wave explanation: displacement, velocity and curvature propagate as a harmonic mode, rather than monotone relaxation.",
+      "inputs": [
+        "h0",
+        "h",
+        "v",
+        "a",
+        "median"
+      ],
+      "recorded_utc": "2026-10-02T01:55:58.105143+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "omega": 24.355282051809183
+      },
+      "training_groups": [
+        "33 laser (m) - 05/04/2024",
+        "33 laser (m) - 06/04/2024",
+        "33 laser (m) - 08/04/2024",
+        "33 laser (m) - 10/04/2024"
+      ],
+      "training_rows": 1072,
+      "optimizer_success": true,
+      "nfev": 12,
+      "jacobian_condition": 1.0,
+      "bounds": {
+        "omega": [
+          1,
+          100
+        ]
+      }
+    },
+    "depth_dependent_memory": {
+      "name": "depth_dependent_memory",
+      "formula": "h+v*0.2/(1+k*sqrt(maximum(h,0)))",
+      "hypothesis": "Development evidence available before this fit: damped_velocity: MAE 0.013819, worst group 0.0160151; oscillatory_memory: MAE 0.0132228, worst group 0.0153772.\n\nA flow-depth-dependent decorrelation scale tests the expectation that advective/wave speed changes with square-root depth. This remains an effective local forecast, not direct measurement of wave speed.",
+      "inputs": [
+        "h0",
+        "h",
+        "v",
+        "a",
+        "median"
+      ],
+      "recorded_utc": "2026-10-02T01:56:00.074604+00:00",
+      "parent": "attempt-002",
+      "parameters": {
+        "k": 9999.999987230125
+      },
+      "training_groups": [
+        "33 laser (m) - 05/04/2024",
+        "33 laser (m) - 06/04/2024",
+        "33 laser (m) - 08/04/2024",
+        "33 laser (m) - 10/04/2024"
+      ],
+      "training_rows": 1072,
+      "optimizer_success": true,
+      "nfev": 14,
+      "jacobian_condition": 1.0,
+      "bounds": {
+        "k": [
+          0,
+          10000
+        ]
+      }
+    },
+    "front_recession_asymmetry": {
+      "name": "front_recession_asymmetry",
+      "formula": "h+v*where(v>0,tau_up*(1-exp(-0.2/tau_up)),tau_down*(1-exp(-0.2/tau_down)))",
+      "hypothesis": "Development evidence available before this fit: oscillatory_memory: MAE 0.0132228, worst group 0.0153772; depth_dependent_memory: MAE 0.0138252, worst group 0.0159915.\n\nTest separate rising-front and recession memories: arrival may retain its slope longer than turbulent drawdown. A useful asymmetry must transfer as a complete-run prediction gain.",
+      "inputs": [
+        "h0",
+        "h",
+        "v",
+        "a",
+        "median"
+      ],
+      "recorded_utc": "2026-10-02T01:56:02.082665+00:00",
+      "parent": "attempt-003",
+      "parameters": {
+        "tau_up": 0.0020000000000000005,
+        "tau_down": 0.0020000000000113954
+      },
+      "training_groups": [
+        "33 laser (m) - 05/04/2024",
+        "33 laser (m) - 06/04/2024",
+        "33 laser (m) - 08/04/2024",
+        "33 laser (m) - 10/04/2024"
+      ],
+      "training_rows": 1072,
+      "optimizer_success": true,
+      "nfev": 10,
+      "jacobian_condition": 1.4711312046490732,
+      "bounds": {
+        "tau_up": [
+          0.002,
+          1
+        ],
+        "tau_down": [
+          0.002,
+          1
+        ]
+      }
+    },
+    "robust_surface_level": {
+      "name": "robust_surface_level",
+      "formula": "median",
+      "hypothesis": "Development evidence available before this fit: depth_dependent_memory: MAE 0.0138252, worst group 0.0159915; front_recession_asymmetry: MAE 0.0138483, worst group 0.0160151.\n\nTest a competing observation mechanism: short-lived laser/surface spikes, rather than deterministic flow acceleration, may explain persistence errors. A causal20ms median with no fitted parameter estimates persistent local surface level.",
+      "inputs": [
+        "h0",
+        "h",
+        "v",
+        "a",
+        "median"
+      ],
+      "recorded_utc": "2026-10-02T01:56:04.054227+00:00",
+      "parent": "attempt-004",
+      "parameters": {},
+      "training_groups": [
+        "33 laser (m) - 05/04/2024",
+        "33 laser (m) - 06/04/2024",
+        "33 laser (m) - 08/04/2024",
+        "33 laser (m) - 10/04/2024"
+      ],
+      "training_rows": 1072
+    }
+  },
+  "selected_from": "attempts/attempt-002",
+  "selection": "Development only; reference remains fixed even if another model is better on confirmation."
+}

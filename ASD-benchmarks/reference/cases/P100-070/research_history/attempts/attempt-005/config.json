@@ -1,0 +1,20 @@
+{
+  "name": "bounded_extrema",
+  "formula": "clip((4*(hx+hy)-(ox+oy))/6,lo,hi)",
+  "hypothesis": "Development evidence available before this fit: domain_boundary_adaptive: MAE 3.0771e-06, worst group 8.43658e-06; finite_footprint_smoothing: MAE 3.13526e-06, worst group 8.83425e-06.\n\nTest whether limiting curvature overshoot to the measured neighboring range helps retain stable extrema near heterogeneous source concentrations. This tests interpolation reliability, not a magnetic maximum principle in a horizontal plane.",
+  "inputs": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "lo",
+    "hi"
+  ],
+  "initial": {},
+  "bounds": {},
+  "recorded_utc": "2026-10-02T02:46:45.680195+00:00",
+  "parent": "attempt-004"
+}

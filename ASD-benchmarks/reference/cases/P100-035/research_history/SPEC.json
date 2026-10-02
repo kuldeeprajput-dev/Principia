@@ -1,0 +1,38 @@
+{
+  "case": 35,
+  "title": "Animal-group transfer of vocal context labels",
+  "kind": "brier",
+  "target": "Source positive-context label probability",
+  "unit": "probability",
+  "inputs": [
+    "log_duration",
+    "log_centroid",
+    "log_peak",
+    "high_share",
+    "entropy",
+    "flatness",
+    "envelope_cv",
+    "log_modulation",
+    "log_rms",
+    "species_code"
+  ],
+  "input_units": {
+    "log_duration": "dimensionless",
+    "log_centroid": "dimensionless",
+    "log_peak": "dimensionless",
+    "high_share": "dimensionless",
+    "entropy": "dimensionless",
+    "flatness": "dimensionless",
+    "envelope_cv": "dimensionless",
+    "log_modulation": "dimensionless",
+    "log_rms": "dimensionless",
+    "species_code": "dimensionless"
+  },
+  "source_url": "https://zenodo.org/records/14636641",
+  "license": "CC BY4.0",
+  "paper": "https://doi.org/10.1016/j.isci.2025.111834",
+  "independent_unit": "Animal within species; all calls and typo-linked names grouped",
+  "scope": "Seven ungulate species, source behavioral contexts and recording studies. Labels are experimental context-based valence annotations, not independently verified subjective emotion; held animals do not remove study/recording confounding.",
+  "timing": "After the complete author-extracted call. Predictors only waveform summaries and known species. File context words, animal ID, call label and source reference are never predictors.",
+  "calibration": "No held-animal labeled calibration. Fixed waveform summaries; any coefficients, centers or species normalization fitted only on training animals."
+}

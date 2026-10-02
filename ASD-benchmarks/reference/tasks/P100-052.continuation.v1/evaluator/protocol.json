@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.1.0",
+  "case_id": "P100-052",
+  "protocol_id": "P100-052-continuation-20261001-background-calibrated",
+  "target": "Interpolated time-average streamwise wake velocity",
+  "target_units": "m/s",
+  "primary_units": "m/s",
+  "metric_kind": "mae",
+  "metric_definition": "Equal complete reserved-group mean MAE in physical units; RMSE square root is taken within group, before averaging groups.",
+  "independent_unit": "whole control setting across turbines and downstream sections",
+  "evaluation_groups": [
+    "A2_St025"
+  ],
+  "input_sha256": "15d45f38b77dd3065e796859ac1c3fed27a64fedf7195873ccbac96e97e2e54b",
+  "input_rows": 2205,
+  "assigned_rows": 2205,
+  "permitted_inputs": [
+    "turbine",
+    "x_D",
+    "y_D",
+    "z_D",
+    "St",
+    "background_u"
+  ],
+  "input_units": {
+    "turbine": "1 or 2 (within installation)",
+    "x_D": "downstream distance/0.58 m rotor diameter",
+    "y_D": "lateral coordinate/rotor diameter",
+    "z_D": "vertical coordinate/rotor diameter",
+    "St": "actuation Strouhal number, 0 labels greedy baseline",
+    "background_u": "m/s; independent no-turbine uu at matched grid; linear x interpolation only at 4D"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "compact_candidate",
+    "background_gaussian",
+    "elliptical",
+    "act_amplitude",
+    "act_width",
+    "act_quadratic",
+    "anisotropic_act",
+    "supergaussian",
+    "ridge_spatial",
+    "legacy_reference"
+  ],
+  "reference_equations": {
+    "reference": "u_hat = u_empty \u2212 (A+B I_turbine2) exp(\u22120.5[(y/sigma_y)^4+(z/sigma_z)^4])/(1+kx)^2; sigma_y=.35+kx, sigma_z=ell*sigma_y. Independent no-turbine background is declared calibration.",
+    "compact_candidate": "u_hat = u_empty \u2212 (A+B I_turbine2) exp(\u22120.5[(y/sigma_y)^4+(z/sigma_z)^4])/(1+kx)^2; sigma_y=.35+kx, sigma_z=ell*sigma_y. Independent no-turbine background is declared calibration.",
+    "background_gaussian": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "elliptical": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "act_amplitude": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "act_width": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "act_quadratic": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "anisotropic_act": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "supergaussian": "u_hat = u_empty \u2212 (A+B I_turbine2) exp(\u22120.5[(y/sigma_y)^4+(z/sigma_z)^4])/(1+kx)^2; sigma_y=.35+kx, sigma_z=ell*sigma_y. Independent no-turbine background is declared calibration.",
+    "ridge_spatial": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "legacy_reference": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "scope_limit": "Only four controls and one wind-tunnel system; three development controls and one reserved. Spatial errors describe field interpolation/transfer, not independent grid replicates.",
+  "calibration_note": "Independent no-turbine grids; x4D interpolates empty2D/5D, WT2 local+5D matches empty7D/9D. All new baselines have identical calibration.",
+  "timing_contract": "Fixed independent no-turbine background measurement and geometry/settings; no wake response input.",
+  "exposure_notice": "ALL original confirmation exposed; no fresh confirmation; diagnostics opened only after candidate/stopping freeze; all future evaluations are retrospective",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Verify native anchors and permitted information: Geometry and actuation settings only; no reserved velocity or rotor-equivalent speed is a predictor."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check units, physical signs/limits, measurement preprocessing, identifiability and source-specific confounding. Source-native lidar-derived uu grids; grid cells are correlated interpolated products. Raw vlos retained upstream. Rotor-equivalent wind and virtual turbine power are excluded as targets and predictors. No cubic-power identity is counted as a rule. ABL Type II only."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ],
+  "fresh_confirmation": false
+}

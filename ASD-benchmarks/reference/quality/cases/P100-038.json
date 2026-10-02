@@ -1,0 +1,76 @@
+{
+  "case_id": "P100-038",
+  "title": "Drone telemetry and rural 5G radio measurements",
+  "default_task": "P100-038.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "First reported RSRP-vector component at first recorded point 1.0\u20131.6 s after issuance",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 1,
+    "independent_unit_description": "Entire flight; forward folds 1->2,1\u20132->3,1\u20133->4; flight5 confirmation. Same installation/day only.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "unsupported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "First reported RSRP-vector component at first recorded point 1.0\u20131.6 s after issuance",
+    "prediction_time": "At a recorded RSRP sample, use only component 1 in the native comma-separated RSRP vector over the preceding 20 seconds. Predict first subsequently recorded component-1 value at 1.0\u20131.6 s. First qualifying issuance per target; no actual future horizon feature in predictor. Unknown component antenna/beam semantics prevent propagation-law claims.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "One held flight in one installation; transfer across networks is untested."
+  },
+  "task_ids": [
+    "P100-038.original.v1"
+  ],
+  "finding_ids": [
+    "P100-038-F01",
+    "P100-038-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-038/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-038.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate First reported RSRP-vector component at first recorded point 1.0\u20131.6 s after issuance under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "At a recorded RSRP sample, use only component 1 in the native comma-separated RSRP vector over the preceding 20 seconds. Predict first subsequently recorded component-1 value at 1.0\u20131.6 s. First qualifying issuance per target; no actual future horizon feature in predictor. Unknown component antenna/beam semantics prevent propagation-law claims.",
+    "calibration_requirement": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "First reported RSRP-vector component at first recorded point 1.0\u20131.6 s after issuance in dBm",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "One held flight in one installation; transfer across networks is untested."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "dB",
+    "reference_model": "reference",
+    "reference_primary_error": 1.0408247989490542,
+    "reference_physical_mae": 1.0408247989490542,
+    "physical_error_units": "dB",
+    "lowest_registered_error_model": "flexible",
+    "lowest_registered_error": 0.9286044513443737,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-038.original.v1/evidence/metrics.csv",
+      "bytes": 1242,
+      "sha256": "1d65327b5d90d77c652f6521c67ddd35bdb905b8091ad2f3174b2b48a2e537e5"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

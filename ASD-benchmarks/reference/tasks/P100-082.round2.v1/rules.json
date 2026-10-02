@@ -1,0 +1,125 @@
+{
+  "schema_version": "p100-round2-references-1",
+  "case_id": 82,
+  "task_id": "P100-082.round2.v1",
+  "default_reference": "current/cycle-001",
+  "default_meaning": "Original preregistered round2 candidate; no scientific admission or winner selection is implied. Every comparator remains separately executable.",
+  "models": {
+    "current/cycle-001": {
+      "state_file": "states/current_cycle-001.json",
+      "engine": "current",
+      "reference_primary_error": 0.2370480188561221,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "current/cycle-003": {
+      "state_file": "states/current_cycle-003.json",
+      "engine": "adaptive",
+      "reference_primary_error": 0.2401942881843655,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "current/cycle-002": {
+      "state_file": "states/current_cycle-002.json",
+      "engine": "adaptive",
+      "reference_primary_error": 0.2406253482638721,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "previous/baselines/old_temperature_moisture": {
+      "state_file": "states/previous_baselines_old_temperature_moisture.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 0.2408951757869842,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "previous/baselines/old_lloyd_taylor": {
+      "state_file": "states/previous_baselines_old_lloyd_taylor.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 0.2428462546231244,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "previous/cycle-002": {
+      "state_file": "states/previous_cycle-002.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 0.242913284071503,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "previous/cycle-001": {
+      "state_file": "states/previous_cycle-001.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 0.2429446665932841,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "previous/baselines/lt_with_history_information_access": {
+      "state_file": "states/previous_baselines_lt_with_history_information_access.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 0.2429454344735118,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "previous/baselines/lt_repaired": {
+      "state_file": "states/previous_baselines_lt_repaired.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 0.2429454344735118,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "current/baseline-hgb": {
+      "state_file": "states/current_baseline-hgb.json",
+      "engine": "current",
+      "reference_primary_error": 0.2429725567668698,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "previous/baselines/old_q10": {
+      "state_file": "states/previous_baselines_old_q10.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 0.2481515728368891,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "previous/baselines/kernel_nested": {
+      "state_file": "states/previous_baselines_kernel_nested.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 0.2481925051088952,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "previous/baselines/kernel_with_history": {
+      "state_file": "states/previous_baselines_kernel_with_history.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 0.252617442823969,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    },
+    "previous/baselines/old_context_mean": {
+      "state_file": "states/previous_baselines_old_context_mean.json",
+      "engine": "previous_mech",
+      "reference_primary_error": 0.281816430219129,
+      "rows": 20128,
+      "groups": 48,
+      "metric_unit": "g CO2 m^-2 h^-1"
+    }
+  },
+  "additional_inputs_for_historical_comparators": [
+    "past_temperature"
+  ],
+  "current_outcome_exposure": "exposed"
+}

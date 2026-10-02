@@ -1,0 +1,17 @@
+{
+  "kind": "arousal",
+  "coef": [
+    0.19604297660635986,
+    0.08236840341781625,
+    0.32103097739432845,
+    0.4513379980953617
+  ],
+  "equation": "max(0,p+b0*r+b1*v+b2*u+b3*du); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+  "training_groups": [
+    "16",
+    "22713"
+  ],
+  "training_rows": 4462,
+  "parameter_count": 4,
+  "rank": 4
+}

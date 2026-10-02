@@ -1,0 +1,166 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-009.original.v1",
+  "case_id": "P100-009",
+  "case_number": 9,
+  "family": "original",
+  "protocol_version": "P100-009-asd7-native-v1",
+  "cohort_id": "P100-009.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-009.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/09_neuroscience_dandi_001176",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Mean pupil radius over final0.25s of horizon1s",
+  "target_units": "px",
+  "error_units": "px",
+  "primary_units": "px",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "radius",
+    "lag05",
+    "lag1",
+    "mean5",
+    "speed",
+    "speed1"
+  ],
+  "input_units": {
+    "radius": "px",
+    "lag05": "px",
+    "lag1": "px",
+    "mean5": "px",
+    "speed": "cm/s",
+    "speed1": "cm/s"
+  },
+  "numeric_columns": [
+    "radius",
+    "lag05",
+    "lag1",
+    "mean5",
+    "speed",
+    "speed1"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict1s-ahead author-released pupil radius from prior pupil and treadmill samples. Source prior filtering may be noncausal; causal-prefix guarantee applies to released traces only, not original camera pixels.",
+  "calibration": "No held-target calibration; observed past5s from each session supplies history. Pixel units are retained without invented millimeter scaling.",
+  "independent_unit": "Animal, all sessions linked; two development animals and one reserved animal",
+  "evaluation_groups": [
+    "18"
+  ],
+  "assigned_rows": 3461,
+  "eligible_rows": 3461,
+  "baseline_models": [
+    "reference",
+    "baseline_persistence",
+    "baseline_velocity",
+    "baseline_flexible",
+    "attempt_001_relaxation",
+    "attempt_002_inertia",
+    "attempt_003_arousal",
+    "attempt_004_asymmetry",
+    "attempt_005_curvature"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "max(0,p); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_persistence": {
+      "equation": "max(0,p); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_velocity": {
+      "equation": "max(0,p+v); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "max(0,p+b0+sum_j b_j exp(-mean((z-center_j)^2)/2)); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_relaxation": {
+      "equation": "max(0,p+b0*r); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_inertia": {
+      "equation": "max(0,p+b0*r+b1*v); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_arousal": {
+      "equation": "max(0,p+b0*r+b1*v+b2*u+b3*du); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_asymmetry": {
+      "equation": "max(0,p+b0*r+b1*max(v,0)+b2*min(v,0)); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_curvature": {
+      "equation": "max(0,p+b0*r+b1*v+b2*a); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "Only three retained animals. Optical pixel calibration differs by animal/session; source ACh-M1/V1 recordings confound region and animal. No retinal physiology or real-time instrument claim.",
+  "source_url": "https://dandiarchive.org/dandiset/001176",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "f77a51007e24680aebd743c37d8417f46485373e6400071ae489215a7849a2f4",
+  "observations_sha256": "a271bcd5b2cc7645257f328b7393e1e8cf5a594e4d169abdb134b40d31dcf165",
+  "legacy_protocol_sha256": "330e245e3c712d887eec60dc9930cfb04fa6e8a4fcfeb82088ff348b86e40dcf",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "radius",
+    "lag05",
+    "lag1",
+    "mean5",
+    "speed",
+    "speed1"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0",
+  "native_prefix_audit": {
+    "status": "passed_finite_native_counterfactual_probes",
+    "receipt": "reviews/validation/ASD7_NATIVE_PREFIX.json",
+    "receipt_sha256": "0beef68cea2994c1e53c625868a6c9fdf5d8008d40a00fc8bf8bb402b6f8d5df",
+    "tested_origins": 6,
+    "scope": [
+      "One middle eligible forecast origin from every native recording/session with at least one eligible origin; all currently exposed partitions covered."
+    ],
+    "limits": "Released-product prefix invariance at tested origins; not a proof of publisher upstream processing causality or every possible mutation."
+  }
+}

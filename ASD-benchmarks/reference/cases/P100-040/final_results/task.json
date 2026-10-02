@@ -1,0 +1,270 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-040.original.v1",
+  "case_id": "P100-040",
+  "case_number": 40,
+  "family": "original",
+  "protocol_version": "P100-040-asd7-native-v1",
+  "cohort_id": "P100-040.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-040.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/40_transport_nyc_green_taxi_2025",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Recorded completed-trip duration conditional on recorded trip distance",
+  "target_units": "minutes",
+  "error_units": "minutes",
+  "primary_units": "minutes",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "distance_km",
+    "hour",
+    "weekend",
+    "peak",
+    "airport",
+    "manhattan"
+  ],
+  "input_units": {
+    "distance_km": "recorded post-trip miles*1.609344",
+    "hour": "pickup local clock hour including fraction",
+    "weekend": "Saturday/Sunday binary",
+    "peak": "fixed7\u201310 or16\u201319localclock binary",
+    "airport": "either endpoint in official JFK/LGA/Newark zones",
+    "manhattan": "either endpoint boroughManhattan"
+  },
+  "numeric_columns": [
+    "distance_km",
+    "hour",
+    "weekend",
+    "peak",
+    "airport",
+    "manhattan"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Trip distance is recorded after the journey. Task is retrospective travel-time diagnostics with completed distance, not pickup-time ETA. Pickup time and endpoint categories are known; no fare/payment/duration-derived predictors.",
+  "calibration": "Forward training on earlier whole days. Jan\u2013Sepdevelopment,Oct\u2013Decconfirmation. Same city/provider system; no future-day targets enter coefficients. Fixed clock windows, no held tuning.",
+  "independent_unit": "Whole pickup calendar days; serial weather/traffic/vendor dependence persists. Forward month blocks, not random trips.",
+  "evaluation_groups": [
+    "2025-10-01",
+    "2025-10-02",
+    "2025-10-03",
+    "2025-10-04",
+    "2025-10-05",
+    "2025-10-06",
+    "2025-10-07",
+    "2025-10-08",
+    "2025-10-09",
+    "2025-10-10",
+    "2025-10-11",
+    "2025-10-12",
+    "2025-10-13",
+    "2025-10-14",
+    "2025-10-15",
+    "2025-10-16",
+    "2025-10-17",
+    "2025-10-18",
+    "2025-10-19",
+    "2025-10-20",
+    "2025-10-21",
+    "2025-10-22",
+    "2025-10-23",
+    "2025-10-24",
+    "2025-10-25",
+    "2025-10-26",
+    "2025-10-27",
+    "2025-10-28",
+    "2025-10-29",
+    "2025-10-30",
+    "2025-10-31",
+    "2025-11-01",
+    "2025-11-02",
+    "2025-11-03",
+    "2025-11-04",
+    "2025-11-05",
+    "2025-11-06",
+    "2025-11-07",
+    "2025-11-08",
+    "2025-11-09",
+    "2025-11-10",
+    "2025-11-11",
+    "2025-11-12",
+    "2025-11-13",
+    "2025-11-14",
+    "2025-11-15",
+    "2025-11-16",
+    "2025-11-17",
+    "2025-11-18",
+    "2025-11-19",
+    "2025-11-20",
+    "2025-11-21",
+    "2025-11-22",
+    "2025-11-23",
+    "2025-11-24",
+    "2025-11-25",
+    "2025-11-26",
+    "2025-11-27",
+    "2025-11-28",
+    "2025-11-29",
+    "2025-11-30",
+    "2025-12-01",
+    "2025-12-02",
+    "2025-12-03",
+    "2025-12-04",
+    "2025-12-05",
+    "2025-12-06",
+    "2025-12-07",
+    "2025-12-08",
+    "2025-12-09",
+    "2025-12-10",
+    "2025-12-11",
+    "2025-12-12",
+    "2025-12-13",
+    "2025-12-14",
+    "2025-12-15",
+    "2025-12-16",
+    "2025-12-17",
+    "2025-12-18",
+    "2025-12-19",
+    "2025-12-20",
+    "2025-12-21",
+    "2025-12-22",
+    "2025-12-23",
+    "2025-12-24",
+    "2025-12-25",
+    "2025-12-26",
+    "2025-12-27",
+    "2025-12-28",
+    "2025-12-29",
+    "2025-12-30",
+    "2025-12-31"
+  ],
+  "assigned_rows": 139747,
+  "eligible_rows": 139747,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "domain",
+    "flexible",
+    "robust_domain",
+    "robust_flexible",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007",
+    "attempt_008"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "duration=piecewise distance+routeoverhead+km*(cSin*sin(clock)+cCos*cos(clock))",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "duration=a",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "domain": {
+      "equation": "duration=a+distance_km/v",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "32-center matched-input smooth duration predictor",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "robust_domain": {
+      "equation": "duration=a+b*km; robust matched loss",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "robust_flexible": {
+      "equation": "32center same-input smooth predictor withrobust loss",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "duration=a+b*km+c*peak+d*km*peak+e*weekend+f*km*weekend",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "duration=a+b*km+cA*airport+dA*km*airport+cM*Manhattan+dM*km*Manhattan",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "duration=robust route-specific overhead plusdistance inverse-speed",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "duration=a+bS*min(km,3)+bL*max(km-3,0)+cA*airport+cM*Manhattan",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "duration=piecewise distance+routeoverhead+km*(cSin*sin(clock)+cCos*cos(clock))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "duration=robust005+weekend-specific inverse-speed slope",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "duration=robust piecewise distance +daily/weekend inverse-speed, nozoneoverheads",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_008": {
+      "equation": "duration=piecewise clock model withairport inverse-speed slope instead offixednegativeairportoffset",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze."
+  },
+  "scope_limits": "Green-taxi2025 declared routine records, duration0\u201324h and distance0\u20131000km; known officialzones and source-month-consistent timestamps. Provider-reported records may contain errors; no congestion intervention, routing policy or achieved operational benefit.",
+  "source_url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+  "source_license": "NYC Open Data terms; attribution retained",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Only schema and source-publication aggregate descriptions inspected; reserved target values and scores not inspected.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"1d399a1924ce549b1f9620ef5d6a6bde4bb10616fcb46b7ff7e99eedd03a6049\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "38e466498de1394f32bbbffd39de802e2e300e457b8f5f20f331af3cf5d3d7de",
+  "observations_sha256": "1d94adf61ff872249d1e25fc0e26024f3b8061d8129268bf334af534f5671f0c",
+  "legacy_protocol_sha256": "e6bf5477cb9682251cdf3426dc943f264cf850742f35349e2ebcb35b77e1cd96",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

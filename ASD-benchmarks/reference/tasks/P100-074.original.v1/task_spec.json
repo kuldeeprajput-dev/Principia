@@ -1,0 +1,46 @@
+{
+  "target": "Src kinetic fluorescence in source instrument units",
+  "target_units": "source fluorescence units",
+  "error_units": "source fluorescence units",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "concentration_uM",
+    "time_min",
+    "calibration_F6",
+    "calibration_v6",
+    "calibration_curvature"
+  ],
+  "input_units": {
+    "concentration_uM": "uM",
+    "time_min": "min",
+    "calibration_F6": "source fluorescence units",
+    "calibration_v6": "source fluorescence units/min",
+    "calibration_curvature": "source fluorescence units/min^2"
+  },
+  "numeric_columns": [
+    "concentration_uM",
+    "time_min",
+    "calibration_F6",
+    "calibration_v6",
+    "calibration_curvature"
+  ],
+  "timing_contract": "Predict all t>7.5 min from source dose and same-curve measurements at 3,4.5,6 min. Calibration fixed at6 min; no later response access.",
+  "calibration": "Predict all t>7.5 min from source dose and same-curve measurements at 3,4.5,6 min. Calibration fixed at6 min; no later response access.",
+  "independent_unit": "Complete dose curves; seven development and two hash-selected confirmation doses; leave-one-dose-out validation. No biological replicate identifiers.",
+  "scope_limits": [
+    "One source assay, source units are not enzyme concentration or clinical activity.",
+    "Kinetic export lacks raw triplicate labels. Dose validation is not independent biological replication.",
+    "Akt1 response copying time is excluded; source fitted velocity tables are never targets."
+  ],
+  "source_url": "https://zenodo.org/records/18911385",
+  "source_license": "CC-BY-4.0",
+  "exposure": {
+    "status": "exposed_after_local_confirmation",
+    "original_audit": "First9 lines and schemas inspected; early values through6.75 min were visible across doses, outside target window. Later outcomes not printed before freeze.",
+    "fresh_for_future_users": false,
+    "new_independent_experiments": false
+  },
+  "uncertainty_policy": "No row bootstrap; enumerate group errors and leave-group development variability. Single heldout condition is bounded evidence.",
+  "applicability": "Only stated experimental conditions and declared information budget; no universal or intervention claim",
+  "physical_bounds": "source instrument response; no calibrated fluorophore ceiling"
+}

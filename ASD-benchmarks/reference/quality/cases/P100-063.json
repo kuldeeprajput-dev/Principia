@@ -1,0 +1,76 @@
+{
+  "case_id": "P100-063",
+  "title": "Magnon shot noise measurements",
+  "default_task": "P100-063.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Noise power spectral density",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No held-condition calibration. Publisher background subtraction retained, not refitted.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Noise power spectral density",
+    "prediction_time": "All 77, 293 and 389 K traces were used for whole-temperature leave-out development; all 195 and 352 K traces were reserved. Field traces and frequency bins are nested within temperature. Source background subtraction is retained and disclosed; it is not fitted by this campaign.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "One YIG film; frequencies and temperatures are dependent."
+  },
+  "task_ids": [
+    "P100-063.original.v1"
+  ],
+  "finding_ids": [
+    "P100-063-F01",
+    "P100-063-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-063/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-063.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Noise power spectral density under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "All 77, 293 and 389 K traces were used for whole-temperature leave-out development; all 195 and 352 K traces were reserved. Field traces and frequency bins are nested within temperature. Source background subtraction is retained and disclosed; it is not fitted by this campaign.",
+    "calibration_requirement": "No held-condition calibration. Publisher background subtraction retained, not refitted.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Noise power spectral density in nV^2/Hz",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "One YIG film; frequencies and temperatures are dependent."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "nV^2/Hz",
+    "reference_model": "reference",
+    "reference_primary_error": 0.002977294162862902,
+    "reference_physical_mae": 0.002977294162862902,
+    "physical_error_units": "nV^2/Hz",
+    "lowest_registered_error_model": "attempt_004",
+    "lowest_registered_error": 0.0029663017144677646,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-063.original.v1/evidence/metrics.csv",
+      "bytes": 801,
+      "sha256": "6ba4a73a8c8da60ad2fb06a8812dab87f4a29a1638e7a299240f698432b7342d"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

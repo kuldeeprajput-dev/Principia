@@ -1,0 +1,32 @@
+{
+  "title": "Soil bulk density from organic carbon and sampled depth",
+  "target": "measured soil bulk density",
+  "target_units": "g/cm³",
+  "input_columns": [
+    "C",
+    "depth",
+    "pH"
+  ],
+  "input_units": {
+    "C": "mass % organic carbon",
+    "depth": "cm midpoint of sampled interval",
+    "pH": "pH unit in water"
+  },
+  "fold_design": "leave_group",
+  "timing_contract": "Same soil-sampling occasion; Corg, sampling depth and pH are measured covariates available before BD inference. This is a laboratory-measurement substitution task, not a future forecast.",
+  "calibration": "No held-out country BD calibration; country identifiers are grouping metadata, never predictors.",
+  "independent_unit": "Entire country/site portfolio, with all transects, fields and depths linked. Eight countries are convenience samples, not a random population sample.",
+  "scope_limits": [
+    "Texture is unavailable in six countries and excluded rather than imputed. C stocks are excluded because they use bulk density algebraically.",
+    "Observational associations do not identify an agroforestry treatment effect. Protocol adaptations and country effects may limit transfer."
+  ],
+  "exposure": "Two Finland rows were seen during schema inspection, so Finland is development-only. Reserved countries were allocated by metadata-only hash before target inspection. All outputs are exposed after this campaign.",
+  "uncertainty_policy": "Country-balanced errors and explicit individual-country results; two confirmation countries are insufficient for precise population confidence.",
+  "case_id": "P100-081",
+  "source_url": "https://zenodo.org/records/21204617",
+  "source_license": "cc-by-4.0",
+  "freeze_utc": "2026-10-02T01:49:31.149862+00:00",
+  "selection_rule": "Lowest mean group development MAE among all controls and attempts; within 0.5% choose fewer parameters. Selection and continuation use development only.",
+  "continuation_rule": "At least five substantive attempts; stop after two consecutive attempts without supported predictive, worst-group, or interpretive gain.",
+  "metric_kind": "mae"
+}

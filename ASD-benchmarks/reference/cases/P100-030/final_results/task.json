@@ -1,0 +1,142 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-030.original.v1",
+  "case_id": "P100-030",
+  "case_number": 30,
+  "family": "original",
+  "protocol_version": "P100-030-asd6-native-v1",
+  "cohort_id": "P100-030.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-030.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/30_nanomaterials_hbn_lubricants",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Coefficient of friction",
+  "target_units": "dimensionless",
+  "error_units": "dimensionless",
+  "primary_units": "dimensionless",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "speed_mm_s",
+    "boundary_cof",
+    "highspeed_cof",
+    "concentration_wt_pct"
+  ],
+  "input_units": {
+    "speed_mm_s": "mm/s",
+    "boundary_cof": "dimensionless",
+    "highspeed_cof": "dimensionless",
+    "concentration_wt_pct": "wt percent"
+  },
+  "numeric_columns": [
+    "speed_mm_s",
+    "boundary_cof",
+    "highspeed_cof",
+    "concentration_wt_pct"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Six formulations were developed with leave-formulation-out validation; N+S functionalization and NG supplier curves were reserved. Duplicate curves cannot cross partitions. Both endpoint calibrations are provided for every curve. Scoring covers only 0.28\u201310 mm/s and tests calibrated shape transfer, not unmeasured-lubricant performance.",
+  "calibration": "Two exact endpoint friction measurements at0.2 and500mm/s on the same curve; endpoint rows excluded from scored set.",
+  "independent_unit": "Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.",
+  "evaluation_groups": [
+    "NG",
+    "NS"
+  ],
+  "assigned_rows": 24,
+  "eligible_rows": 24,
+  "baseline_models": [
+    "reference",
+    "baseline_constant",
+    "baseline_flex30",
+    "baseline_trib_linearlog",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "trib_concentration; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_constant": {
+      "equation": "constant; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flex30": {
+      "equation": "flex30; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_trib_linearlog": {
+      "equation": "trib_linearlog; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "trib_domain; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "trib_rational; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "trib_concentration; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "trib_drag; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "trib_sqrt; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report individual top-level groups and their range; no row-bootstrap population inference."
+  },
+  "scope_limits": "Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.; The concentration-dependent load-sharing extension does not survive reserved-formulation comparison with simple calibrated log-speed interpolation. Its development gain is preserved as a failed transfer hypothesis, not benchmark ground truth.; No independent population confidence interval from dependent rows.",
+  "source_url": "https://zenodo.org/records/17864405",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"historical\": \"Internal confirmation reserved until FREEZE.json; schema-stage exposures documented in SOURCE_AND_UNITS.md.\", \"current\": \"All confirmation outcomes exposed to future users.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "56f6bcf32cad71768e8b0d8c30021815fb06cbfd3a23e9e21f107e310bf318fd",
+  "observations_sha256": "6e5d24c303584e223368998aa80b159e4dcfc87f55b3e9ee6ced41889645bbc8",
+  "legacy_protocol_sha256": "90c393dddf605280e4ca7c8c98b6fad79d072e44dd29868205a03423facab6f9",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

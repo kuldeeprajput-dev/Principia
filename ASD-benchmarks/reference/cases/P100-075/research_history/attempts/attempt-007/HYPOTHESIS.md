@@ -1,0 +1,7 @@
+# Hypothesis
+
+Baseline-expression modulation overfits two-donor training folds and degrades MAE to 1.430. The final falsifier combines bounded occupancy with shear coupling, testing whether the rejected log-stiffness interaction failed because of an unbounded mechanical coordinate. Stop if it cannot exceed the compact shear-only model; no confirmation information has been consulted.
+
+Prior development: attempt_001_saturation=0.9473969; attempt_002_synergy=1.090535; attempt_003_mechanical_only=0.9789567; attempt_004_threshold=1.033434; attempt_005_shear_only=0.8840575; attempt_006_calibration_scaling=1.430119; incumbent 0.8840575403221771.
+
+Whole-group validation; identical calibration budget; confirmation unopened.

@@ -1,0 +1,167 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-019.original.v1",
+  "case_id": "P100-019",
+  "case_number": 19,
+  "family": "original",
+  "protocol_version": "P100-019-asd7-native-v1",
+  "cohort_id": "P100-019.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-019.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/19_transport_nhtsa_safety_2025_2026",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Next-month unique received vehicle complaints per known make/model",
+  "target_units": "complaints/month",
+  "error_units": "complaints/month",
+  "primary_units": "complaints/month",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "lag1",
+    "lag3",
+    "lag6",
+    "month"
+  ],
+  "input_units": {
+    "lag1": "prior calendar month unique ODINO count",
+    "lag3": "mean prior3monthly counts",
+    "lag6": "mean prior6monthly counts",
+    "month": "target calendar month1\u201312"
+  },
+  "numeric_columns": [
+    "lag1",
+    "lag3",
+    "lag6",
+    "month"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Only prior-month LDATE received counts predict next month. Retrospective snapshot may revise product labels and records; historical DATEA/report publication lag means calendar causality is not verified as-issued availability. No incident-date future information used.",
+  "calibration": "Cohort selected before targetperiod using>=6receivedJan\u2013Jun2025complaints. Development targetsJul2025\u2013Apr2026, rolling forward blocks; May\u2013Jul2026confirmation. No target-month counts enter predictors.",
+  "independent_unit": "Whole target months; same known vehicle cohorts repeat, lag windows overlap. Three held months are not independent fleets or defect experiments.",
+  "evaluation_groups": [
+    "2026-05",
+    "2026-06",
+    "2026-07"
+  ],
+  "assigned_rows": 1302,
+  "eligible_rows": 1302,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "flexible",
+    "persistence",
+    "trailing3",
+    "trailing6",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "nextcount=lag3+a*(lag1-lag3)+b*(lag3-lag6)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "count_hat=a",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "32-center same-input smooth workload prediction",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persistence": {
+      "equation": "count_hat=l1",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "trailing3": {
+      "equation": "count_hat=l3",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "trailing6": {
+      "equation": "count_hat=l6",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "nextcount=lag3+a*(lag1-lag3)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "nextcount=lag3+a*(lag1-lag3)+b*(lag3-lag6)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "nextcount=lag3+aU*max(lag1-lag3,0)+aD*min(lag1-lag3,0)+b*(lag3-lag6)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "count_hat=max(0,a+b1*sqrt(lag1)+b3*sqrt(lag3)+b6*sqrt(lag6))\u00b2",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "count_hat=max(0,a+b1*sqrt(lag1)+b3*sqrt(lag3))\u00b2",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "count_hat=max(0,a+b1sqrt(lag1)+b3sqrt(lag3)+b6sqrt(lag6))\u00b2;robustfit",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze."
+  },
+  "scope_limits": "Administrative complaint workload among known productVmake/model labels, not vehicle failures or safety risk. No fleet-at-risk denominator, reporting propensity or causal recall effect; dedupODINO/vehicle across components, snapshot relabeling remains.",
+  "source_url": "https://www.nhtsa.gov/nhtsa-datasets-and-apis",
+  "source_license": "U.S. Government public data",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Only schema and source-publication aggregate descriptions inspected; reserved target values and scores not inspected.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"d632d563f71b01133b442bd4662abe63842451185b766f94ce649ba43ee40e3b\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "e91687d9899d754166e6e5c37590991db82a9cddbf89ea73f973dc2f3ef8cc10",
+  "observations_sha256": "afe60f832ad0cbe17bbf76a0d973d35026e1925245a15348c637c0dfcb9a38b1",
+  "legacy_protocol_sha256": "c655cad6c89cdca15914e50ad5ae6de699a630cf081769478fe178df23b950c0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "lag1",
+    "lag3",
+    "lag6"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "learned_rc",
+  "formula": "u120+(u120-u60)*(exp(-t/tau)-exp(-t120/tau))/(exp(-t120/tau)-exp(-t60/tau))",
+  "hypothesis": "Attempt2: finite-pulse diffusion reduced chronological MAE to0.391mV versus fixedRC1.398mV. A competing lumped charge-transfer RC mechanism could explain that improvement through a fitted timescale rather than distributed diffusion.",
+  "inputs": [
+    "t",
+    "t60",
+    "t120",
+    "u60",
+    "u120",
+    "u10",
+    "pulse_s",
+    "current"
+  ],
+  "initial": {
+    "tau": 400
+  },
+  "bounds": {
+    "tau": [
+      10,
+      10000
+    ]
+  },
+  "recorded_utc": "2026-10-02T01:43:59.669632+00:00",
+  "parent": "attempt-001"
+}

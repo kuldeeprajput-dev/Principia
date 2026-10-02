@@ -1,0 +1,447 @@
+{
+  "schema_version": "principia.advisory-review/3.0",
+  "bindings": {
+    "claims_sha256": "f29fd98956f656d72dbda66e89aca8a04a39735e98b753c58627a398e030ec1c",
+    "evidence_sha256": {
+      "E001": "f9b825c8dd59c86cc06cea33506ea028240d91be9a998891c3cc25e2ed375e0b",
+      "E002": "5e29c82d8997c0782ff1ce37cceb293fc2f98881fdcd719ff4ce509638a2e802",
+      "E003": "38a5c55cf5552450034a9e29c394aa9a47fc92ba2bbc9a61a44b6e946b83528b",
+      "E004": "262f1eb0850409f4cb6c7eddcb6a4def9631d76a9970efb6da18c8de4c4bb513",
+      "E005": "40681583bc8823f93dca5918bfe0f208a3f823b238c4be32dfcb4418dcd2a4b1",
+      "E006": "0369c50e86ac18809dcfd409a0758419a2c13af28134e565656a2df530bdd6dc",
+      "E007": "afee5f13549906b0bd417fdad1e09522a50c5bd7f4203cbc3969c3cb6da9f6bc",
+      "E008": "69ce648616ff84114f8a901627e9be94653765048a82218e7581cec0a4057ae4",
+      "E009": "6b991bf37aeea603c8728f55940a863836f6bf22a01c0702e7c0101619e5a6f8",
+      "E010": "15702a11296a158a25cf94a3a0fcb71012ab51346605bfa97010a05a64e23ef9",
+      "E011": "c089d22300b0b661e4e5829ad96f05511b67ed540bd62efde7c27b91af688275",
+      "E012": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253",
+      "E013": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078",
+      "SCIENTIFIC": "deb54563ef25923168aec3841a9fa2933fb46f1e990c7edd96deded49fe02976",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-100",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "reviews": [
+    {
+      "finding_id": "P100-100-SCI-01",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-100-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-100-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity. Strong adverse evidence: The compact model loses 2/3 runs against kernel; one lost probe has no RTT and remains missing. A 1.68 %mean gain does not identify scheduler/queue physics.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Observed short-history recurrence supports forecasting; its network origin and lost-packet reliability remain unidentified.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "The compact model loses 2/3 runs against kernel; one lost probe has no RTT and remains missing. A 1.68 %mean gain does not identify scheduler/queue physics."
+        ],
+        "checks": [
+          "Include lag-two persistence with identical information access.",
+          "Keep missing lost-probe RTTs unscored but assigned, and never use lost flags or current response timestamps as predictors.",
+          "Treat 50 msdecision thresholds as illustrative unless a service requirement is independently documented."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-100-SCI-02",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-100-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "not_assessed",
+            "rationale": "This exact historical claim does not map one-to-one to a registered numerical task. The portfolio-level replay review does not establish claim-specific implementation parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "not_assessed",
+            "rationale": "This exact historical claim does not map one-to-one to a registered numerical task. The portfolio-level replay review does not establish claim-specific implementation parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "not_assessed",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-100-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity. Strong adverse evidence: Development lag-two MAE 2.422715 ms beats robust correction 2.4771391 ms; fitted corrections also lose all exposed runs. Observed recurrence does not identify a scheduler or queue mechanism.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Observed short-history recurrence supports forecasting; its network origin and lost-packet reliability remain unidentified.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "significance": {
+            "status": "supported",
+            "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Development lag-two MAE 2.422715 ms beats robust correction 2.4771391 ms; fitted corrections also lose all exposed runs. Observed recurrence does not identify a scheduler or queue mechanism."
+        ],
+        "checks": [
+          "Include lag-two persistence with identical information access.",
+          "Keep missing lost-probe RTTs unscored but assigned, and never use lost flags or current response timestamps as predictors.",
+          "Treat 50 msdecision thresholds as illustrative unless a service requirement is independently documented."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-100-SCI-03",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-100-SCI-03",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-100-SCI-03",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity. Strong adverse evidence: Equal-variance independent noise and constant alternating means are not measured assumptions. Earlier fitted lag-two corrections also lose on all development and exposed runs.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "unsupported",
+            "rationale": "Observed short-history recurrence supports forecasting; its network origin and lost-packet reliability remain unidentified.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "supported",
+            "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Equal-variance independent noise and constant alternating means are not measured assumptions. Earlier fitted lag-two corrections also lose on all development and exposed runs."
+        ],
+        "checks": [
+          "Include lag-two persistence with identical information access.",
+          "Keep missing lost-probe RTTs unscored but assigned, and never use lost flags or current response timestamps as predictors.",
+          "Treat 50 msdecision thresholds as illustrative unless a service requirement is independently documented."
+        ]
+      }
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "novelty_is_not_certified": true
+}

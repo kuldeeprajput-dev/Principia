@@ -1,0 +1,51 @@
+{
+  "case_id": "P100-036",
+  "target": "Author QY_max",
+  "target_units": "dimensionless quantum yield",
+  "error_units": "dimensionless quantum yield",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "npq",
+    "rfd",
+    "ngrdi",
+    "area",
+    "tiny",
+    "salt",
+    "drought",
+    "high_stress"
+  ],
+  "input_units": {
+    "npq": "dimensionless author NPQ_Lss",
+    "rfd": "dimensionless author Rfd_Lss",
+    "ngrdi": "dimensionless RGB index",
+    "area": "source AREA_MM scale; only relative/log descriptor used",
+    "tiny": "cultivar indicator",
+    "salt": "salt-treatment indicator",
+    "drought": "drought-treatment indicator",
+    "high_stress": "source second stress-level indicator; no invented dose units"
+  },
+  "numeric_columns": [
+    "npq",
+    "rfd",
+    "ngrdi",
+    "area",
+    "tiny",
+    "salt",
+    "drought",
+    "high_stress"
+  ],
+  "timing_contract": "Contemporaneous imaging diagnostic: source NPQ_Lss, Rfd_Lss, NGRDI, morphology and known cultivar/treatment predict separately reported maximum quantum yield. No QY_max-derived feature or future plant measurement is supplied.",
+  "calibration": "No per-plant target calibration. Learned feature normalization or flexible centers are fitted on development training plants only.",
+  "independent_unit": "Plant; repeated sampling remains linked",
+  "scope_limits": "Two dwarf cultivars under this controlled stress protocol. Source-extracted contemporaneous fluorescence/RGB traits; no independently measured hydration or new photosynthetic law.",
+  "source_url": "https://zenodo.org/records/20638584",
+  "source_license": "CC BY 4.0",
+  "prior_art_url": "https://github.com/giorgiadelc/tom-phenotyping",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": 0,
+    "target_max": 1
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

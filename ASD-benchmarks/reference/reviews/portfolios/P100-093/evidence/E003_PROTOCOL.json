@@ -1,0 +1,23 @@
+{
+  "frozen_utc": "2026-10-02T02:52:05.800709+00:00",
+  "target": "Induced AF488 fluorescence quantile",
+  "units": "native AF488 channel units",
+  "inputs": [
+    "control",
+    "control_median",
+    "control_width",
+    "quantile",
+    "wt",
+    "mutant"
+  ],
+  "groups": "Whole paired wells and quantiles linked; matched technical blocks",
+  "eligibility": "All finite events with positive FSC-A and SSC-A; at least100 valid events per well. Native negative fluorescence retained. Linear quantiles0.1...0.9 fixed before fitting.",
+  "timing": "After paired uninduced control well is measured, before observing induced well target. Quantiles0.1\u20130.9 and cell-line identity are known; no induced fluorescence enters predictors.",
+  "baseline_families": [
+    "copy paired control quantile",
+    "cell-line additive shift",
+    "training-only constrained RBF"
+  ],
+  "selection": "Equal block MAE with equal line/quantile observations; smallest coefficient count within1%best; >=5 adaptive hypotheses then two no-gain challenges",
+  "exposure": "Only sample list and FCS headers inspected. No held fluorescence targets printed before freeze."
+}

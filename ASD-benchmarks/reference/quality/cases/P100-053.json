@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-053",
+  "title": "Industrial screw driving dataset collection: Time series data for process monitoring and anomaly detection",
+  "default_task": "P100-053.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Angle-mean thread-forming torque, 700\u20131300 degrees",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 50,
+    "independent_unit_description": "workpiece (both locations and every reuse cycle)",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Early and completed Finding-phase features; prior completed same-hole cycles are permitted. No current late-window target calibration.",
+  "baseline_strength": {
+    "registered_controls": 4,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Angle-mean thread-forming torque, 700\u20131300 degrees",
+    "prediction_time": "Current measurements stop at the frozen first-forward-crossing prefix (first sampled angle at/above 250 degrees); prior responses only from completed same-hole operations. Both holes and every reuse of a workpiece stay together.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-053.original.v1",
+    "P100-053.round2.v1"
+  ],
+  "finding_ids": [
+    "P100-053-SCI-01",
+    "P100-053-SCI-02",
+    "P100-053-SCI-03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-053/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-053.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Angle-mean thread-forming torque, 700\u20131300 degrees under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Current measurements stop at the frozen first-forward-crossing prefix (first sampled angle at/above 250 degrees); prior responses only from completed same-hole operations. Both holes and every reuse of a workpiece stay together.",
+    "calibration_requirement": "Early and completed Finding-phase features; prior completed same-hole cycles are permitted. No current late-window target calibration.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Angle-mean thread-forming torque, 700\u20131300 degrees in Nm",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "Nm",
+    "reference_model": "memory",
+    "reference_primary_error": 0.023163591787631513,
+    "reference_physical_mae": 0.023163591787631513,
+    "physical_error_units": "Nm",
+    "lowest_registered_error_model": "flexible",
+    "lowest_registered_error": 0.022295590554058328,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-053.original.v1/evidence/metrics.csv",
+      "bytes": 354,
+      "sha256": "50858e2bc7f4b119b8d2e2cb0201346b93f6dbb819d8cba992b8c1396798b9b7"
+    },
+    "models": 4
+  },
+  "case_specific_next_evidence": "Correct endpoint wording in shared diagnostic labels; use independent clamp-force or joint-strength measurements for a separate operational qualification task."
+}

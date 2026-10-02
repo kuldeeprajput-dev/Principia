@@ -1,0 +1,176 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-034.original.v1",
+  "case_id": "P100-034",
+  "case_number": 34,
+  "family": "original",
+  "protocol_version": "P100-034-asd6-native-v1",
+  "cohort_id": "P100-034.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-034.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/34_neuroscience_unc13_calcium",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "first_pulse_ePSC_magnitude",
+  "target_units": "nA",
+  "error_units": "nA",
+  "primary_units": "nA",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "calcium",
+    "mutant",
+    "low04",
+    "low075"
+  ],
+  "input_units": {
+    "calcium": "mM",
+    "mutant": "binary",
+    "low04": "nA",
+    "low075": "nA"
+  },
+  "numeric_columns": [
+    "calcium",
+    "mutant",
+    "low04",
+    "low075"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "After two lower-dose blocks, forecast mean first-pulse current at the three later calcium doses; all animal data linked.",
+  "calibration": "First-pulse mean across ten sweeps at0.4 and0.75mM per animal. Later1.5/3/6mM targets are excluded from calibration.",
+  "independent_unit": "animal",
+  "evaluation_groups": [
+    "control_cell1",
+    "control_cell4",
+    "control_cell7",
+    "mutant_block13",
+    "mutant_block2",
+    "mutant_block7"
+  ],
+  "assigned_rows": 18,
+  "eligible_rows": 18,
+  "baseline_models": [
+    "reference",
+    "baseline_persistence",
+    "baseline_hill4",
+    "baseline_flexible",
+    "attempt_001_genotype_hill",
+    "attempt_002_local_hill",
+    "attempt_003_two_pool",
+    "attempt_004_reserve",
+    "attempt_005_reserve_pooled",
+    "attempt_006_reserve_low04",
+    "attempt_007_reserve_rational",
+    "attempt_008_reserve_conserved",
+    "attempt_009_reserve_genotype_rate",
+    "attempt_010_reserve_no04"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-I(.75),0)*(Ca-.75)/(K+Ca-.75); exact unit depletion coefficient.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_persistence": {
+      "equation": "Ihat=I(.75)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_hill4": {
+      "equation": "Ihat=I(.75)*H(C)/H(.75); H(C)=C^4/(K^4+C^4)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_genotype_hill": {
+      "equation": "Ihat=I(.75)*H(C)/H(.75); H=C^n/(K_g^n+C^n); log K_g=b0+b1*mutant",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_local_hill": {
+      "equation": "n shared; invert K from ratio I(.4)/I(.75), then Hill extrapolation; clipped ill-conditioned inversions recorded",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_two_pool": {
+      "equation": "H=w*H4(C;K1)+(1-w)*H4(C;K2), scale fixed at.75mM",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_reserve": {
+      "equation": "Ihat=I(.75)+max(A0+Ag*mutant-lambda*I(.75),0)*(1-exp(-(Ca-.75)/K)); effective recruitable response reserve, not identified vesicle count.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_reserve_pooled": {
+      "equation": "Ihat=I(.75)+max(A-lambda*I(.75),0)*(1-exp(-(Ca-.75)/K)); common reserve across both genotypes.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006_reserve_low04": {
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-lambda*I(.75),0)*(1-exp(-(Ca-.75)/K)); test information from second calibration anchor.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007_reserve_rational": {
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-lambda*I(.75),0)*(Ca-.75)/(K+Ca-.75); rational rather than exponential reserve recruitment.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_008_reserve_conserved": {
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-I(.75),0)*(Ca-.75)/(K+Ca-.75); exact unit depletion coefficient.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_009_reserve_genotype_rate": {
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-I(.75),0)*(Ca-.75)/(K*exp(bg*mutant)+Ca-.75)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_010_reserve_no04": {
+      "equation": "Ihat=I(.75)+max(A-I(.75),0)*(Ca-.75)/(K+Ca-.75); earlier calibration ablation.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "One muscle6 cell per animal, control and mutant. Dose sequence is confounded with time; sweeps are technical repetitions. Author peak measurements, not newly extracted raw-ABF amplitudes.",
+  "source_url": "https://zenodo.org/records/15629377",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "d2cfe4ba0941e02aa7a45829919e7cbc25a233efee854a2b0ac96e62f0049940",
+  "observations_sha256": "5621a220eec1b797455998d2d3f997d9a261f239496d45d33e46494238799bda",
+  "legacy_protocol_sha256": "253273d80c2a68d1107ef03f233333b247459cd3ee1e850a8190355ad9f620bd",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

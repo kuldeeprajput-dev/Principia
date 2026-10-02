@@ -1,0 +1,130 @@
+{
+  "case_id": "P100-038",
+  "role": "scientific_critical",
+  "reviewer_id": "asd5_materials",
+  "checked_files": [
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "d8a203cf895e4602ccabf07c88eeedd0aeb76d300ab88eb60d56b4f70ec3ca20"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "368255a6723d7ad7eaaf84a5bf7e0cab24d767f8db0be67c5d88d4cdb3727323"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "b7a5cf37dfceb71ecffe48d6a5463bb1d287f8dd17995d8ad94f7ca35b26c802"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "e3ddb2c97a267ae044a79f23b8931d0a473dbb9271562692389e73749f666c92"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "d16fd283e920a4bc8c760fefd90829619b56f0685646a6330372677e36716769"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "1d65327b5d90d77c652f6521c67ddd35bdb905b8091ad2f3174b2b48a2e537e5"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "fe371604f97020ee5d42773a2d66cb820692a56c34f51dfdf0f8805170c43da9"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-038-F01",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "The proposed correction has MAE1.040825dB on the one reserved flight, worse than persistence0.944856 and flexible0.928604. Unsupported positive improvement and supported negative comparison are correctly separated."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "A volatility-gated temporal correction is a signal model. Unidentified RSRP vector components and unpaired telemetry cannot identify propagation, altitude or antenna mechanisms."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Prior physical/statistical families are disclosed. This bounded literature check does not certify new laws or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful reproducible prediction or informative failure within a precisely scoped cohort; no automatic discovery score."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected executable equation, coefficients, source/task definitions and saved group results; independent numerical execution belongs to the separate computational reviewer."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention, deployment-cost study or external experimental replication."
+        }
+      },
+      "checks": [
+        "Matched input-budget comparator review",
+        "Equation dimensional and variable-semantics review",
+        "Independent-unit and outcome-exposure review",
+        "Positive proposal separated from negative evidence",
+        "Primary-source context checked through public source pages; no new numerical assets acquired"
+      ],
+      "limitations": [
+        "One network and one collection day; five flights are linked environments. Only one confirmation flight, unknown vector-component mapping, future horizon absent from inputs.",
+        "Scientific-critical agent review is advisory; it is not human expert adjudication or independent experimental replication."
+      ],
+      "recommendations": [
+        "Obtain source-clock/component mapping before any geometry-based task; validate any future model on another flight day and network."
+      ]
+    },
+    {
+      "finding_id": "P100-038-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The proposed correction has MAE1.040825dB on the one reserved flight, worse than persistence0.944856 and flexible0.928604. Unsupported positive improvement and supported negative comparison are correctly separated."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "A volatility-gated temporal correction is a signal model. Unidentified RSRP vector components and unpaired telemetry cannot identify propagation, altitude or antenna mechanisms."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Prior physical/statistical families are disclosed. This bounded literature check does not certify new laws or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful reproducible prediction or informative failure within a precisely scoped cohort; no automatic discovery score."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected executable equation, coefficients, source/task definitions and saved group results; independent numerical execution belongs to the separate computational reviewer."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention, deployment-cost study or external experimental replication."
+        }
+      },
+      "checks": [
+        "Matched input-budget comparator review",
+        "Equation dimensional and variable-semantics review",
+        "Independent-unit and outcome-exposure review",
+        "Positive proposal separated from negative evidence",
+        "Primary-source context checked through public source pages; no new numerical assets acquired"
+      ],
+      "limitations": [
+        "One network and one collection day; five flights are linked environments. Only one confirmation flight, unknown vector-component mapping, future horizon absent from inputs.",
+        "Scientific-critical agent review is advisory; it is not human expert adjudication or independent experimental replication."
+      ],
+      "recommendations": [
+        "Obtain source-clock/component mapping before any geometry-based task; validate any future model on another flight day and network."
+      ]
+    }
+  ],
+  "primary_sources_checked": [
+    "https://zenodo.org/records/16673883"
+  ],
+  "literature_access_limits": [],
+  "blocking_defects": []
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Causal short-horizon flow-depth prediction at the USGS flume",
+  "target": "analog laser flow-depth signal 200 ms ahead",
+  "target_units": "m",
+  "input_columns": [
+    "h0",
+    "h",
+    "v",
+    "a",
+    "median"
+  ],
+  "input_units": {
+    "h0": "m",
+    "h": "m; mean of last20 native samples",
+    "v": "m/s; causal100ms difference",
+    "a": "m/s²; causal100ms second difference",
+    "median": "m; median of last20 native samples"
+  },
+  "fold_design": "leave_group",
+  "timing_contract": "Predict analog-laser depth200ms ahead, issuing every50ms after400ms of history. All features end at the issuance time; the target remains one native1kHz sample.",
+  "calibration": "Causal recent laser history is permitted at every issuance. No peak alignment, future smoothing or held-run fitted offset.",
+  "independent_unit": "Complete gate-release run/date; firstfour columns develop, final11April2024 column confirms. Five controlled events are not a field-hazard population.",
+  "scope_limits": [
+    "This is a within-station nowcast, not advance warning upstream or a forecast before sensor detection.",
+    "The archived swath-processing example trims around a future peak; that operation is excluded. Cross-instrument alignment is not inferred.",
+    "Four debris flows and one water-only flood are described by the source, but filecolumns do not provide a reliable event-type map; no material-specific claim is made."
+  ],
+  "exposure": "Only first9ms near-zero rows were seen in schema audit. Target horizon starts600ms; reserved future values were not inspected before freeze. All final outcomes become exposed.",
+  "uncertainty_policy": "Report individual complete-run error; one confirmation run supports no population confidence interval.",
+  "case_id": "P100-050",
+  "source_url": "https://doi.org/10.5066/P1HXHGZN",
+  "source_license": "CC0 / U.S. government public-domain data",
+  "freeze_utc": "2026-10-02T01:55:01.807658+00:00",
+  "selection_rule": "Lowest mean group development MAE among all controls and attempts; within 0.5% choose fewer parameters. Selection and continuation use development only.",
+  "continuation_rule": "At least five substantive attempts; stop after two consecutive attempts without supported predictive, worst-group, or interpretive gain.",
+  "metric_kind": "mae"
+}

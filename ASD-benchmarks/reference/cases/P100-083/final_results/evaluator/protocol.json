@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-083",
+  "protocol_id": "P100-083-prepared-primary-v1",
+  "target": "One-hour future internal sensor temperature",
+  "target_units": "degC",
+  "primary_units": "degC",
+  "metric_kind": "rmse",
+  "metric_definition": "Equal complete reserved-group mean RMSE in physical units; RMSE square root is taken within group, before averaging groups.",
+  "independent_unit": "future native-date block per calibrated sensor stream",
+  "evaluation_groups": [
+    "DadosMeliponas:sensor1:future",
+    "DadosMeliponas:sensor2:future",
+    "DadosMeliponas:sensor3:future",
+    "dadosColmeia1Apis:sensor1:future",
+    "dadosColmeia2Apis:sensor3:future"
+  ],
+  "input_sha256": "1f3be4e12fcf4ad2bacab06b6c5622552ecb69f38140703bc081a1b949113935",
+  "input_rows": 1282,
+  "assigned_rows": 1282,
+  "permitted_inputs": [
+    "stream",
+    "T_now",
+    "T_lag",
+    "T_external",
+    "RH_external",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "input_units": {
+    "stream": "calibrated sensor label",
+    "T_now": "degC",
+    "T_lag": "degC,causal lag1h",
+    "T_external": "degC,current",
+    "RH_external": "percent,current",
+    "hour_sin": "dimensionless source-clock phase",
+    "hour_cos": "dimensionless source-clock phase"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "challenger",
+    "baseline_newton",
+    "baseline_persistence",
+    "baseline_rbf",
+    "baseline_residual_rbf"
+  ],
+  "reference_equations": {
+    "reference": "v=0.6108e^{17.27T_e/(T_e+237.3)}(1-H_e/100) \\widehat T_{+1}=T+c_s+b_a(T_e-T)+b_r(30-T)+b_m(T-T_{-1})+b_vv+b_{vr}v(30-T)",
+    "challenger": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the radiative branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_newton": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the newton branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_persistence": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the persistence branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_rbf": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+    "baseline_residual_rbf": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "scope_limit": "Latest native dates at five calibrated sensor streams from one apiary; sensor/colony, species and season are confounded. No unseen-apiary or colony-health prediction.",
+  "calibration_note": "T and Te are current internal/external Celsius temperatures; T\u22121 is a causal one-hour lag, He is current external relative humidity percent, and v is external vapor-pressure deficit in kPa. Five offsets c_s are\u22120.384543,\u22120.316614,\u22120.340834,+0.138741,+0.323654degC in rules.json sensor order. Coefficients ba=\u22120.002878, br=0.050874, bm=0.083403 are dimensionless; bv=0.481876degC/kPa and bvr=0.084243/kPa. The reference30degC is an algebraic centering constant, not a prescribed biological setpoint.",
+  "timing_contract": "One hourly origin: first native observation within first15min. Forecast nominal1hour, score nearest native target within5min, same calendar day, no interpolation. Causal lag<=origin\u22121hour within15min. Latest20percent native dates per stream reserved. Native response outliers retained.",
+  "exposure_notice": "All packaged targets are now exposed; future scoring is retrospective. Timestamp/input dictionaries examined; no future confirmation targets or score viewed before protocol freezing.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared conditions, sensor/system dependence or small numbers of reserved groups do not support precise population-level confidence. No row-bootstrap intervals."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Verify native anchors and prediction-time inputs. One hourly origin: first native observation within first15min. Forecast nominal1hour, score nearest native target within5min, same calendar day, no interpolation. Causal lag<=origin\u22121hour within15min. Latest20percent native dates per stream reserved. Native response outliers retained."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

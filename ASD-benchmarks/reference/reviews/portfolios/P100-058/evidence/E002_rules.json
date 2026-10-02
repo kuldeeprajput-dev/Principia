@@ -1,0 +1,911 @@
+{
+  "schema_version": "1.0",
+  "case_id": "P100-058",
+  "source": {
+    "landing_url": "https://zenodo.org/records/17294879",
+    "upstream_case": "58_polymer_pdlla_rheology",
+    "version_evidence": "SOURCE_ASSETS.json"
+  },
+  "target": "Storage modulus G prime",
+  "target_units": "Pa",
+  "input_units": {
+    "temperature_C": "degree C",
+    "omega": "rad/s"
+  },
+  "input_columns": [
+    "temperature_C",
+    "omega"
+  ],
+  "numeric_columns": [
+    "temperature_C",
+    "omega"
+  ],
+  "missingness": "Native DFS text exports only; paired TAD exports are linked duplicates, not independent samples. Target storage modulus and secondary loss modulus are separate native instrument outputs, though both share systematic calibration. No compliance correction was applied by the authors. A single purchased polymer batch.",
+  "primary_metric": "log_mae",
+  "assigned_rows": 35,
+  "models": {
+    "reference": {
+      "case": 58,
+      "kind": "a5",
+      "knobs": {
+        "shift": "wlf",
+        "C1": 8.0,
+        "C2": 70.0
+      },
+      "beta": [
+        66753841.00593697,
+        18513229.823555607,
+        681872.015163657,
+        58544.32662632934,
+        354.20671360265544,
+        0.6691362482385665,
+        0.0,
+        1.2933762039728034
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "terms": [
+        "Maxwell storage tau=1e-05s",
+        "Maxwell storage tau=0.000177828s",
+        "Maxwell storage tau=0.00316228s",
+        "Maxwell storage tau=0.0562341s",
+        "Maxwell storage tau=1s",
+        "Maxwell storage tau=17.7828s",
+        "Maxwell storage tau=316.228s",
+        "Maxwell storage tau=5623.41s"
+      ],
+      "fitted_parameters": 11,
+      "design_rank": 8,
+      "design_condition": 104.98136481457416,
+      "positive_coefficients": true
+    },
+    "mechanistic_reference": {
+      "case": 58,
+      "kind": "a5",
+      "knobs": {
+        "shift": "wlf",
+        "C1": 8.0,
+        "C2": 70.0
+      },
+      "beta": [
+        66753841.00593697,
+        18513229.823555607,
+        681872.015163657,
+        58544.32662632934,
+        354.20671360265544,
+        0.6691362482385665,
+        0.0,
+        1.2933762039728034
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "terms": [
+        "Maxwell storage tau=1e-05s",
+        "Maxwell storage tau=0.000177828s",
+        "Maxwell storage tau=0.00316228s",
+        "Maxwell storage tau=0.0562341s",
+        "Maxwell storage tau=1s",
+        "Maxwell storage tau=17.7828s",
+        "Maxwell storage tau=316.228s",
+        "Maxwell storage tau=5623.41s"
+      ],
+      "fitted_parameters": 11,
+      "design_rank": 8,
+      "design_condition": 104.98136481457416,
+      "positive_coefficients": true
+    },
+    "attempt_001": {
+      "case": 58,
+      "kind": "a1",
+      "knobs": {
+        "shift": "wlf",
+        "C1": 16.0,
+        "C2": 100.0
+      },
+      "beta": [
+        14389908.770522516,
+        1076.6706605548493,
+        1.926737687760123
+      ],
+      "active_columns": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        "Maxwell storage tau=0.0001s",
+        "Maxwell storage tau=1s",
+        "Maxwell storage tau=10000s"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 3,
+      "design_condition": 1.078267422854647,
+      "positive_coefficients": true
+    },
+    "attempt_002": {
+      "case": 58,
+      "kind": "a2",
+      "knobs": {
+        "shift": "wlf",
+        "C1": 8.0,
+        "C2": 70.0
+      },
+      "beta": [
+        31883669.67983481,
+        1104621.1497884414,
+        74688.20366724966,
+        401.3452924917466,
+        0.26134450880175064,
+        0.0,
+        1.3276636965963453
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "terms": [
+        "Maxwell storage tau=0.0001s",
+        "Maxwell storage tau=0.00215443s",
+        "Maxwell storage tau=0.0464159s",
+        "Maxwell storage tau=1s",
+        "Maxwell storage tau=21.5443s",
+        "Maxwell storage tau=464.159s",
+        "Maxwell storage tau=10000s"
+      ],
+      "fitted_parameters": 10,
+      "design_rank": 7,
+      "design_condition": 240.1542695709605,
+      "positive_coefficients": true
+    },
+    "attempt_003": {
+      "case": 58,
+      "kind": "a3",
+      "knobs": {
+        "shift": "wlf",
+        "C1": 8.0,
+        "C2": 70.0
+      },
+      "beta": [
+        31883670.10706551,
+        1104621.0435696351,
+        74688.22106187962,
+        401.3440847673852,
+        0.26150575165982265,
+        0.0,
+        0.0,
+        1.327580667391774
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "terms": [
+        "Maxwell storage tau=0.0001s",
+        "Maxwell storage tau=0.00215443s",
+        "Maxwell storage tau=0.0464159s",
+        "Maxwell storage tau=1s",
+        "Maxwell storage tau=21.5443s",
+        "Maxwell storage tau=464.159s",
+        "Maxwell storage tau=10000s",
+        "elastic plateau"
+      ],
+      "fitted_parameters": 11,
+      "design_rank": 8,
+      "design_condition": 11927257.838700024,
+      "positive_coefficients": true
+    },
+    "attempt_004": {
+      "case": 58,
+      "kind": "a4",
+      "knobs": {
+        "shift": "arrhenius",
+        "activation": 250000.0
+      },
+      "beta": [
+        382796577.7074476,
+        32545832.591905054,
+        646343.8756176742,
+        65751.88354685958,
+        666.6561972401005,
+        2.109536177665982,
+        0.0,
+        0.0,
+        1.4658795336492378
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "terms": [
+        "Maxwell storage tau=1e-05s",
+        "Maxwell storage tau=0.000177828s",
+        "Maxwell storage tau=0.00316228s",
+        "Maxwell storage tau=0.0562341s",
+        "Maxwell storage tau=1s",
+        "Maxwell storage tau=17.7828s",
+        "Maxwell storage tau=316.228s",
+        "Maxwell storage tau=5623.41s",
+        "Maxwell storage tau=100000s"
+      ],
+      "fitted_parameters": 11,
+      "design_rank": 9,
+      "design_condition": 121429.92043694148,
+      "positive_coefficients": true
+    },
+    "attempt_005": {
+      "case": 58,
+      "kind": "a5",
+      "knobs": {
+        "shift": "wlf",
+        "C1": 8.0,
+        "C2": 70.0
+      },
+      "beta": [
+        66753837.33599048,
+        18513231.242525317,
+        681871.7317812191,
+        58544.377640868624,
+        354.2028116879267,
+        0.6696429830891949,
+        0.0,
+        0.0,
+        0.0,
+        1.2931455105857685
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "terms": [
+        "Maxwell storage tau=1e-05s",
+        "Maxwell storage tau=0.000177828s",
+        "Maxwell storage tau=0.00316228s",
+        "Maxwell storage tau=0.0562341s",
+        "Maxwell storage tau=1s",
+        "Maxwell storage tau=17.7828s",
+        "Maxwell storage tau=316.228s",
+        "Maxwell storage tau=5623.41s",
+        "Maxwell storage tau=100000s",
+        "elastic plateau"
+      ],
+      "fitted_parameters": 13,
+      "design_rank": 9,
+      "design_condition": 26281854733200.836,
+      "positive_coefficients": true
+    },
+    "attempt_006": {
+      "case": 58,
+      "kind": "a5",
+      "knobs": {
+        "shift": "wlf",
+        "C1": 8.0,
+        "C2": 70.0
+      },
+      "beta": [
+        66753837.347598925,
+        18513231.238036968,
+        681871.7326775877,
+        58544.37747950429,
+        354.2028240300467,
+        0.6696413803536537,
+        0.0,
+        0.0,
+        1.2931462401944043
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "terms": [
+        "Maxwell storage tau=1e-05s",
+        "Maxwell storage tau=0.000177828s",
+        "Maxwell storage tau=0.00316228s",
+        "Maxwell storage tau=0.0562341s",
+        "Maxwell storage tau=1s",
+        "Maxwell storage tau=17.7828s",
+        "Maxwell storage tau=316.228s",
+        "Maxwell storage tau=5623.41s",
+        "Maxwell storage tau=100000s"
+      ],
+      "fitted_parameters": 12,
+      "design_rank": 9,
+      "design_condition": 1683340.1138085607,
+      "positive_coefficients": true
+    },
+    "attempt_007": {
+      "case": 58,
+      "kind": "a5",
+      "knobs": {
+        "shift": "wlf",
+        "C1": 8.0,
+        "C2": 70.0
+      },
+      "beta": [
+        66753837.33599048,
+        18513231.242525317,
+        681871.7317812191,
+        58544.377640868624,
+        354.2028116879267,
+        0.6696429830891949,
+        0.0,
+        0.0,
+        1.2931455105857685
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "terms": [
+        "Maxwell storage tau=1e-05s",
+        "Maxwell storage tau=0.000177828s",
+        "Maxwell storage tau=0.00316228s",
+        "Maxwell storage tau=0.0562341s",
+        "Maxwell storage tau=1s",
+        "Maxwell storage tau=17.7828s",
+        "Maxwell storage tau=316.228s",
+        "Maxwell storage tau=5623.41s",
+        "elastic plateau"
+      ],
+      "fitted_parameters": 12,
+      "design_rank": 9,
+      "design_condition": 1678007.2129107348,
+      "positive_coefficients": true
+    },
+    "baseline_mean": {
+      "case": 58,
+      "kind": "mean",
+      "knobs": {},
+      "beta": [
+        2836248.410449018
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "1"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "baseline_domain": {
+      "case": 58,
+      "kind": "domain",
+      "knobs": {
+        "shift": "wlf",
+        "C1": 12.0,
+        "C2": 70.0
+      },
+      "beta": [
+        270.0498394122931
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "saturating frequency: shifted w/(1+shifted w)"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": true
+    },
+    "baseline_rbf": {
+      "case": 58,
+      "kind": "rbf",
+      "features": [
+        "temperature_C",
+        "omega"
+      ],
+      "columns": [
+        "temperature_C",
+        "omega"
+      ],
+      "center": [
+        54.45783132530121,
+        15.033403192771079
+      ],
+      "scale": [
+        10.768988502600381,
+        25.47095444403615
+      ],
+      "centers": [
+        [
+          -0.41395079252102246,
+          0.8732494440323908
+        ],
+        [
+          1.9075300033738998,
+          1.4432634194372063
+        ],
+        [
+          0.9789376850159309,
+          -0.30766586348341385
+        ],
+        [
+          -1.3425431108789914,
+          -0.38686941293942406
+        ],
+        [
+          -0.878246951700007,
+          -0.5887538775085956
+        ],
+        [
+          0.5146415258369464,
+          -0.5796851164416509
+        ],
+        [
+          1.9075300033738998,
+          3.3358230447906627
+        ],
+        [
+          0.05034536665796197,
+          -0.5144174405226887
+        ],
+        [
+          1.9075300033738998,
+          -0.30766586348341385
+        ],
+        [
+          0.5146415258369464,
+          -0.5698825783958705
+        ],
+        [
+          0.9789376850159309,
+          -0.5509570999235526
+        ],
+        [
+          -0.878246951700007,
+          -0.5862914648755
+        ],
+        [
+          -0.878246951700007,
+          0.8732494440323908
+        ],
+        [
+          1.9075300033738998,
+          -0.5698825783958705
+        ],
+        [
+          -0.878246951700007,
+          -0.5619621841898641
+        ],
+        [
+          -0.41395079252102246,
+          3.3358230447906627
+        ],
+        [
+          0.05034536665796197,
+          -0.5887538775085956
+        ],
+        [
+          0.5146415258369464,
+          1.4432634194372063
+        ],
+        [
+          -0.41395079252102246,
+          -0.5619621841898641
+        ],
+        [
+          -1.3425431108789914,
+          0.8732494440323908
+        ],
+        [
+          -1.3425431108789914,
+          -0.5796851164416509
+        ],
+        [
+          0.5146415258369464,
+          3.3358230447906627
+        ],
+        [
+          -0.878246951700007,
+          3.3358230447906627
+        ],
+        [
+          -1.3425431108789914,
+          3.3358230447906627
+        ],
+        [
+          -0.41395079252102246,
+          -0.04469417097315051
+        ],
+        [
+          1.9075300033738998,
+          -0.04469417097315051
+        ],
+        [
+          0.9789376850159309,
+          1.4432634194372063
+        ],
+        [
+          0.5146415258369464,
+          -0.5873919340417256
+        ],
+        [
+          0.5146415258369464,
+          -0.5847622720811907
+        ],
+        [
+          -1.3425431108789914,
+          -0.5144174405226887
+        ],
+        [
+          -1.3425431108789914,
+          -0.5862914648755
+        ],
+        [
+          -0.878246951700007,
+          -0.5796851164416509
+        ],
+        [
+          0.5146415258369464,
+          -0.5509570999235526
+        ],
+        [
+          0.05034536665796197,
+          -0.38686941293942406
+        ],
+        [
+          0.9789376850159309,
+          -0.5144174405226887
+        ],
+        [
+          1.9075300033738998,
+          0.46302139298083167
+        ],
+        [
+          0.9789376850159309,
+          3.3358230447906627
+        ],
+        [
+          0.5146415258369464,
+          0.46302139298083167
+        ],
+        [
+          -0.41395079252102246,
+          -0.5862914648755
+        ],
+        [
+          0.05034536665796197,
+          3.3358230447906627
+        ],
+        [
+          0.5146415258369464,
+          -0.04469417097315051
+        ],
+        [
+          -0.878246951700007,
+          -0.38686941293942406
+        ],
+        [
+          0.5146415258369464,
+          -0.4438708104799056
+        ],
+        [
+          0.05034536665796197,
+          0.8732494440323908
+        ],
+        [
+          -0.41395079252102246,
+          -0.5144174405226887
+        ],
+        [
+          0.05034536665796197,
+          -0.5862914648755
+        ],
+        [
+          -0.878246951700007,
+          -0.5144174405226887
+        ],
+        [
+          0.5146415258369464,
+          -0.30766586348341385
+        ],
+        [
+          0.05034536665796197,
+          -0.04469417097315051
+        ],
+        [
+          1.9075300033738998,
+          -0.5509570999235526
+        ],
+        [
+          1.9075300033738998,
+          -0.5796851164416509
+        ],
+        [
+          0.9789376850159309,
+          -0.5796851164416509
+        ],
+        [
+          -1.3425431108789914,
+          -0.5887538775085956
+        ],
+        [
+          1.9075300033738998,
+          -0.4438708104799056
+        ],
+        [
+          -0.41395079252102246,
+          -0.38686941293942406
+        ],
+        [
+          0.9789376850159309,
+          -0.04469417097315051
+        ],
+        [
+          0.05034536665796197,
+          -0.5796851164416509
+        ],
+        [
+          0.9789376850159309,
+          -0.5698825783958705
+        ],
+        [
+          0.9789376850159309,
+          -0.4438708104799056
+        ],
+        [
+          -0.878246951700007,
+          -0.04469417097315051
+        ],
+        [
+          0.05034536665796197,
+          -0.5619621841898641
+        ],
+        [
+          0.5146415258369464,
+          -0.5144174405226887
+        ],
+        [
+          -1.3425431108789914,
+          -0.5619621841898641
+        ],
+        [
+          -1.3425431108789914,
+          -0.04469417097315051
+        ]
+      ],
+      "width": 2.0,
+      "beta": [
+        1.0375905770428246,
+        0.4038199082199191,
+        0.7780732801428314,
+        1.8385510352955863,
+        -0.485004213045955,
+        -1.2442148604171934,
+        -2.4394495384576738,
+        -1.0546042041896406,
+        -0.2998300537712463,
+        -1.1740495313804533,
+        -0.8214248497387883,
+        -0.4727886389778293,
+        1.116613966139381,
+        -1.8413289388982936,
+        -0.35347260168035904,
+        0.43001599135609625,
+        -1.5405417612102403,
+        0.27160871330811187,
+        -1.2070805202549209,
+        1.8678847510981154,
+        1.1566844848320899,
+        -1.1460648344785014,
+        1.427875514866235,
+        2.4478581236893104,
+        1.0691384305510605,
+        0.9215676402443,
+        0.7645789939863925,
+        -1.2996814850573832,
+        -1.2807259431959226,
+        1.4059070290902755,
+        1.130469538237915,
+        -0.4401413736369314,
+        -1.0398266272453647,
+        -0.2859737575509128,
+        -0.56171050818849,
+        2.109405679328397,
+        -1.6918924256608094,
+        2.7744901723724102,
+        -1.349403635049454,
+        -0.44219335607813604,
+        1.78418394620179,
+        0.42549183673485513,
+        -0.31350848235267403,
+        1.5262422445612205,
+        -0.9366968874337206,
+        -1.5240375366439312,
+        -0.12774681842339655,
+        0.5187532130043855,
+        1.2866786055637338,
+        -1.7214755253159355,
+        -1.9038497096378186,
+        -1.0298307380336142,
+        1.12065299603435,
+        -1.0665491798654292,
+        -0.2663989836842226,
+        2.0989405253503506,
+        -1.4798919531696688,
+        -0.9583150792407628,
+        -0.07855920915068387,
+        1.4801989347618132,
+        -1.3624348438736043,
+        -0.785484069300675,
+        1.2261280238042604,
+        2.6027546981770135
+      ],
+      "intercept": 9.381370958946878,
+      "log": true,
+      "fitted_parameters": 65
+    },
+    "attempt_008": {
+      "case": 58,
+      "kind": "a5",
+      "knobs": {
+        "shift": "wlf",
+        "C1": 8.0,
+        "C2": 70.0
+      },
+      "beta": [
+        66753841.00593697,
+        18513229.823555607,
+        681872.015163657,
+        58544.32662632934,
+        354.20671360265544,
+        0.6691362482385665,
+        0.0,
+        1.2933762039728034
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "terms": [
+        "Maxwell storage tau=1e-05s",
+        "Maxwell storage tau=0.000177828s",
+        "Maxwell storage tau=0.00316228s",
+        "Maxwell storage tau=0.0562341s",
+        "Maxwell storage tau=1s",
+        "Maxwell storage tau=17.7828s",
+        "Maxwell storage tau=316.228s",
+        "Maxwell storage tau=5623.41s"
+      ],
+      "fitted_parameters": 11,
+      "design_rank": 8,
+      "design_condition": 104.98136481457416,
+      "positive_coefficients": true
+    },
+    "attempt_009": {
+      "case": 58,
+      "kind": "a5",
+      "knobs": {
+        "shift": "wlf",
+        "C1": 8.0,
+        "C2": 70.0
+      },
+      "beta": [
+        66753837.347598925,
+        18513231.238036968,
+        681871.7326775877,
+        58544.37747950429,
+        354.2028240300467,
+        0.6696413803536537,
+        0.0,
+        1.2931462401944043
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "terms": [
+        "Maxwell storage tau=1e-05s",
+        "Maxwell storage tau=0.000177828s",
+        "Maxwell storage tau=0.00316228s",
+        "Maxwell storage tau=0.0562341s",
+        "Maxwell storage tau=1s",
+        "Maxwell storage tau=17.7828s",
+        "Maxwell storage tau=316.228s",
+        "Maxwell storage tau=100000s"
+      ],
+      "fitted_parameters": 11,
+      "design_rank": 8,
+      "design_condition": 104.62966419460513,
+      "positive_coefficients": true
+    }
+  },
+  "selection": {
+    "mechanistic_attempt": "attempt-008",
+    "default_origin": "mechanistic_reference",
+    "rule": "Default = strongest frozen development predictor among scientific hypotheses and all controls; separately select simplest mechanistic hypothesis within 1% of its best grouped development primary error. No confirmation selection.",
+    "used_confirmation": false
+  },
+  "equations": {
+    "reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "mechanistic_reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_001": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_002": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_003": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_004": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_005": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_006": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_007": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_mean": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_domain": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_rbf": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+    "attempt_008": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_009": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis."
+  },
+  "scope": "Temperature transfer within one material; no batch-to-batch or general polymer law claim. Positive modulus spans orders of magnitude.",
+  "timing": "Temperature and imposed frequency only. Loss modulus is withheld as an orthogonal mechanistic check; never a primary predictor.",
+  "fresh_confirmation_after_delivery": false,
+  "admission": "Numerical reference collection; no independently established new physical law or measured deployed industrial benefit."
+}

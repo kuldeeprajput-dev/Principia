@@ -1,0 +1,203 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-070.original.v1",
+  "case_id": "P100-070",
+  "case_number": 70,
+  "family": "original",
+  "protocol_version": "P100-070-asd7-native-v1",
+  "cohort_id": "P100-070.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-070.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/70_geophysics_earthquake_microscopy",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "native Bz map ordinate at a withheld pixel",
+  "target_units": "source-native Bz unit (SI conversion unresolved)",
+  "error_units": "source-native Bz unit (SI conversion unresolved)",
+  "primary_units": "source-native Bz unit (SI conversion unresolved)",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "lo",
+    "hi"
+  ],
+  "input_units": {
+    "hx": "source-native Bz unit",
+    "hy": "source-native Bz unit",
+    "ox": "source-native Bz unit",
+    "oy": "source-native Bz unit",
+    "dg": "source-native Bz unit",
+    "gx": "dimensionless local contrast",
+    "gy": "dimensionless local contrast",
+    "lo": "source-native Bz unit",
+    "hi": "source-native Bz unit"
+  },
+  "numeric_columns": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "lo",
+    "hi"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Retrospective reconstruction at one microscopy acquisition; all neighboring measurements are available. No prediction of an earthquake or temperature history.",
+  "calibration": "Twelve same-map neighbors: cardinal offsets4/8pixels and diagonal4pixels. Centers are20pixel lattice points, none can be a calibration point for another scored center.",
+  "independent_unit": "Two specimens: CSH/119DOA development and CSL/129DOA confirmation. Spatial blocks balance errors but are not independent specimens; development folds are entire200row strips.",
+  "evaluation_groups": [
+    "CSL-r00-c00",
+    "CSL-r00-c01",
+    "CSL-r00-c02",
+    "CSL-r00-c03",
+    "CSL-r00-c04",
+    "CSL-r00-c05",
+    "CSL-r01-c00",
+    "CSL-r01-c01",
+    "CSL-r01-c02",
+    "CSL-r01-c03",
+    "CSL-r01-c04",
+    "CSL-r01-c05",
+    "CSL-r02-c00",
+    "CSL-r02-c01",
+    "CSL-r02-c02",
+    "CSL-r02-c03",
+    "CSL-r02-c04",
+    "CSL-r02-c05",
+    "CSL-r03-c00",
+    "CSL-r03-c01",
+    "CSL-r03-c02",
+    "CSL-r03-c03",
+    "CSL-r03-c04",
+    "CSL-r03-c05",
+    "CSL-r04-c00",
+    "CSL-r04-c01",
+    "CSL-r04-c02",
+    "CSL-r04-c03",
+    "CSL-r04-c04",
+    "CSL-r04-c05",
+    "CSL-r05-c00",
+    "CSL-r05-c01",
+    "CSL-r05-c02",
+    "CSL-r05-c03",
+    "CSL-r05-c04",
+    "CSL-r05-c05"
+  ],
+  "assigned_rows": 5605,
+  "eligible_rows": 5605,
+  "baseline_models": [
+    "reference",
+    "flexible",
+    "local_mean",
+    "zero_field",
+    "fault_axis_anisotropy",
+    "dipole_curvature",
+    "domain_boundary_adaptive",
+    "finite_footprint_smoothing",
+    "bounded_extrema"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "flexible": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "local_mean": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "zero_field": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "fault_axis_anisotropy": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "dipole_curvature": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "domain_boundary_adaptive": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "finite_footprint_smoothing": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "bounded_extrema": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report spatial blocks and one specimen result; no confidence interval claiming specimen population generalization."
+  },
+  "scope_limits": "Native README identifies Bz maps but does not establish numerical SI conversion; scores deliberately remain source-native units.; Temperature profiles, MCMC inversion outputs and maximum-temperature samples are author-derived and excluded as independent targets.; A two-dimensional smooth stencil is not a consequence of the three-dimensional magnetostatic Laplace equation without information about vertical derivatives.",
+  "source_url": "https://zenodo.org/records/14776881",
+  "source_license": "cc-by-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Only variable dimensions and README were inspected before assigning whole CSL to confirmation. No confirmation Bz values were viewed.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "bba0c08b5a9a3f32e12f714992d28ba8005053b1a8a78d5d6c509db66e4a961d",
+  "observations_sha256": "42c52d3f2e472df06aebf3de52e11779bba7af5ea668b08c15ec04de7251a461",
+  "legacy_protocol_sha256": "914623e89ba486c00c2d77da65c3191ff9db22d52f836047b879e90f4634399d",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "lo",
+    "hi"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

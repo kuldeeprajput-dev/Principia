@@ -1,0 +1,5 @@
+# PIAAC public earnings deciles
+
+Exact AGE_R and all absolute/PPP hourly earnings are suppressed in both USA/Japan files (.n). This invalidates the initially considered PPP-level prediction before fitting. The admitted endpoint is EARNHRDCLC2>=8 among valid deciles1–10: upper three country-specific deciles excluding bonuses. It is not an absolute-wage comparison across countries. Age is encoded by published AGEG5LFS fixed bin midpoints, ages25–65 only. YRSQUALC2 source education and a coarse potential-experience proxy are retained. No continuous-age effect can be identified from bin midpoints.
+
+PVs remain in native source but are not predictors: OECD warns they are background-conditioned population-inference quantities, not individual point scores. No numerical score averaging and no10replicated respondent records. Final SPFWT0 within equal country×hashblocks yields country-balanced risk, not national prevalence. Published missing codes, zero weights and skipped earnings excluded, no scientific imputation. Any proposed absolute PPP return or independent skill-wage claim is rejected before fitting.

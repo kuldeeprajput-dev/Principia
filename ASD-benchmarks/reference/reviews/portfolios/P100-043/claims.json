@@ -1,0 +1,368 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-043",
+  "claim_origin": "New ASD6 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Public source-aware corpus; selection and stopping frozen before first internal confirmation. All current scores are now exposed; future evaluation is retrospective."
+  },
+  "findings": [
+    {
+      "id": "P100-043-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "Two early checkpoints plus a size-dependent anchored exponent forecast later loss with0.00527665nats/token MAE, versus0.00799142 for shared exponent and0.01084989 for the nested flexible control. Improvement over shared exponent occurs in4/5 held architectures.",
+      "applicability": "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+      "limitations": "Smallest held architecture384x13 favors the shared exponent; only2/5 groups beat the flexible control. Transfer across corpora, seeds and learning-rate schedules untested.",
+      "falsification": "Smallest held architecture384x13 favors the shared exponent; only2/5 groups beat the flexible control. Transfer across corpora, seeds and learning-rate schedules untested.",
+      "prior_art": "Gemstones architecture-dependent scaling; standard power-law learning curves. No broad novelty claim.",
+      "equation_or_program": {
+        "expression": "Lhat=L0+(L0-L1)*R(exp(b0+b1*ln(N/0.5B)))",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019"
+        ]
+      },
+      "variables_and_units": {
+        "target": "nats per token",
+        "tokens_B": "billions of training tokens",
+        "anchor_tokens_B": "billions of training tokens",
+        "early_tokens_B": "billions of training tokens",
+        "anchor_loss": "nats per token",
+        "early_loss": "nats per token",
+        "params_B": "billions of parameters",
+        "width": "embedding dimensions",
+        "depth": "layers"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019"
+      ],
+      "task_id": "P100-043.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-043-F02",
+      "classification": "falsified",
+      "source_classification": "falsified",
+      "statement": "The attempted two-rate explanation is not identified: it offers negligible development gain, a boundary slow rate and an ill-conditioned Jacobian.",
+      "applicability": "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+      "limitations": "This rejects evidence from these two-anchor trajectories, not the physical existence of multiple optimization timescales.",
+      "falsification": "This rejects evidence from these two-anchor trajectories, not the physical existence of multiple optimization timescales.",
+      "prior_art": "Gemstones architecture-dependent scaling; standard power-law learning curves. No broad novelty claim.",
+      "equation_or_program": {
+        "expression": "Lhat=L0+(L0-L1)*[w*R(beta_slow)+(1-w)*R(beta_fast)]",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019"
+        ]
+      },
+      "variables_and_units": {
+        "target": "nats per token",
+        "tokens_B": "billions of training tokens",
+        "anchor_tokens_B": "billions of training tokens",
+        "early_tokens_B": "billions of training tokens",
+        "anchor_loss": "nats per token",
+        "early_loss": "nats per token",
+        "params_B": "billions of parameters",
+        "width": "embedding dimensions",
+        "depth": "layers"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019"
+      ],
+      "task_id": "P100-043.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-043-F03",
+      "classification": "falsified",
+      "source_classification": "falsified",
+      "statement": "Geometry-only exponent and symmetric balance-penalty alternatives do not reliably improve the size-dependent forecast; a bounded-size alternative wins retrospectively but was not development selected.",
+      "applicability": "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+      "limitations": "Attempt006 final MAE is slightly lower than selected003; it is preserved as an exposed diagnostic, not promoted.",
+      "falsification": "Attempt006 final MAE is slightly lower than selected003; it is preserved as an exposed diagnostic, not promoted.",
+      "prior_art": "Gemstones architecture-dependent scaling; standard power-law learning curves. No broad novelty claim.",
+      "equation_or_program": {
+        "expression": "Lhat=L0+(L0-L1)*R(exp(b0+b1*ln(N/0.5B)+b2*abs(ln((width/depth)/32))))",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019"
+        ]
+      },
+      "variables_and_units": {
+        "target": "nats per token",
+        "tokens_B": "billions of training tokens",
+        "anchor_tokens_B": "billions of training tokens",
+        "early_tokens_B": "billions of training tokens",
+        "anchor_loss": "nats per token",
+        "early_loss": "nats per token",
+        "params_B": "billions of parameters",
+        "width": "embedding dimensions",
+        "depth": "layers"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019"
+      ],
+      "task_id": "P100-043.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 8674,
+      "sha256": "6b03fc4f3a516e4bdbe17edaeb524dcd946715524cb027a40eaf1508149c4f0c",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PROTOCOL.json",
+      "bytes": 2316,
+      "sha256": "57a218ac1c118d7159e1bf21a4596952508f7b19fa8fdf26580aa482f42e16fd",
+      "id": "E002",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E003_SOURCE_AND_UNITS.md",
+      "bytes": 1780,
+      "sha256": "ced3a5704b6372b53c80001b49ad58ed2e5440e07a11c4f6faf0b1e099d756ee",
+      "id": "E003",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E004_SOURCE_MANIFEST.json",
+      "bytes": 1073,
+      "sha256": "ba6b168a8fba12c4f1ac23bfa228fd093eb6cd707b2387a1290c1d0bffcfade5",
+      "id": "E004",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E005_SPLITS.json",
+      "bytes": 3754,
+      "sha256": "0ef86ccd18465d15298f277297da8a2c04c6391c92b4e4e671b62f8e4a1b6f76",
+      "id": "E005",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E006_model.json",
+      "bytes": 624,
+      "sha256": "535868fe576d12d692c14fcb76ad7410df8035e3bbc8d34001a2d620c8e01eb0",
+      "id": "E006",
+      "role": "attempts/attempt-002/model.json"
+    },
+    {
+      "path": "evidence/E007_develop.py",
+      "bytes": 4613,
+      "sha256": "c50db2be5348a97b69167dcd9b9a1ea175bf7620577002d259a1e657f1fd376c",
+      "id": "E007",
+      "role": "develop.py"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 2012,
+      "sha256": "76598fa89ee9b623318208978812b890efe014c53985c11df9913152cf5357a2",
+      "id": "E008",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E009_FINDINGS.md",
+      "bytes": 5915,
+      "sha256": "261efaf9eb2e018af6749262a8a6be318260ff591b8dd98db17efae9931ab494",
+      "id": "E009",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E010_inputs.csv.gz",
+      "bytes": 2578,
+      "sha256": "da0c6c049ae3b6399edef2735279e27ce47878ef4c1bc6fbe8d6ad92b236cc60",
+      "id": "E010",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E011_observations.csv.gz",
+      "bytes": 4060,
+      "sha256": "4dbdc9d8078265f5d6a1be9ec4e7b5d5e36b0c2e419564ad43a0a7ac56acce25",
+      "id": "E011",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E012_by_group.csv",
+      "bytes": 3789,
+      "sha256": "3fae8269fd03307db290c4c82d35dff7b8f00c60d6700b69a7ebfcd182455076",
+      "id": "E012",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E013_metrics.csv",
+      "bytes": 1017,
+      "sha256": "765c057c46cef5859f960b1544ff6731ddd399ec338b281122b25079beab0832",
+      "id": "E013",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 22154,
+      "sha256": "62e7ca9f284cec9bca1587c9298de9320e8381f8c4bd4fbb58f0315bcf98ce0b",
+      "id": "E014",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_scientific_checks.json",
+      "bytes": 3063,
+      "sha256": "c12cddbb09fa3e1e6aebe4c036408a3adeca2eb219096fd7bdddae080ca06b3c",
+      "id": "E015",
+      "role": "package/evidence/scientific_checks.json"
+    },
+    {
+      "path": "evidence/E016_findings.json",
+      "bytes": 3323,
+      "sha256": "308891c8cae04dbcc9105bfb4242c3dbe795eb016b60228acee73a8d11d5a033",
+      "id": "E016",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E017_rules.json",
+      "bytes": 17943,
+      "sha256": "b992efa83de8e9eeb5ea5910c0bb430ab6eb41af885b7c9fda4fcc9e8ab61da6",
+      "id": "E017",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E018_run.py",
+      "bytes": 2950,
+      "sha256": "7a5f67c0fbaac65ccfcd4786ab28fc8cee02993b43c64f9234888142691e4fe1",
+      "id": "E018",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E019_task_spec.json",
+      "bytes": 1887,
+      "sha256": "9aa0dd1fceb69592f914f80aeeba1d49fc154dbbe0177cdf2f302bbe689bc8cb",
+      "id": "E019",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 9515,
+      "sha256": "49f0f4134fcb86a2c89d2c4d1b09cf771f78d8e20b35f3a9125ed3df939fec62",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 8255,
+      "sha256": "9112961808470f3a2e4e5e833b065b7cc3b6426cb53d3e59dc3ed1dda31091d4",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

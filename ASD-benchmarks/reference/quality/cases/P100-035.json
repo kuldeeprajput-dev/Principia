@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-035",
+  "title": "Ungulate vocalizations and production context",
+  "default_task": "P100-035.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Source positive-context label probability",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 34,
+    "independent_unit_description": "Animal within species; all calls and typo-linked names grouped",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No held-animal labeled calibration. Fixed waveform summaries; any coefficients, centers or species normalization fitted only on training animals.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Source positive-context label probability",
+    "prediction_time": "After the complete author-extracted call. Predictors only waveform summaries and known species. File context words, animal ID, call label and source reference are never predictors.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Labels describe recording context; recording conditions and species can confound acoustic interpretation."
+  },
+  "task_ids": [
+    "P100-035.original.v1"
+  ],
+  "finding_ids": [
+    "P100-035-F01",
+    "P100-035-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-035/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-035.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Source positive-context label probability under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "After the complete author-extracted call. Predictors only waveform summaries and known species. File context words, animal ID, call label and source reference are never predictors.",
+    "calibration_requirement": "No held-animal labeled calibration. Fixed waveform summaries; any coefficients, centers or species normalization fitted only on training animals.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Source positive-context label probability in probability",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Labels describe recording context; recording conditions and species can confound acoustic interpretation."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "brier",
+    "primary_units": "probability squared",
+    "reference_model": "reference",
+    "reference_primary_error": 0.19021458654730924,
+    "reference_physical_mae": 0.36976230488449113,
+    "physical_error_units": "probability",
+    "lowest_registered_error_model": "attempt_005_spectrotemporal",
+    "lowest_registered_error": 0.18919984328017278,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-035.original.v1/evidence/metrics.csv",
+      "bytes": 900,
+      "sha256": "fc1ec73b985d3832e9df568380983d1cedad9ffc73b10fc2c68f9a753ed39cca"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Labels describe recording context; recording conditions and species can confound acoustic interpretation."
+}

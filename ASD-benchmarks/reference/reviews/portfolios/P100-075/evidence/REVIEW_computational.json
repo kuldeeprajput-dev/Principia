@@ -1,0 +1,463 @@
+{
+  "case_id": "P100-075",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "ee5e29aac57a5260836caeedb625fe14e0ee9e926503c0c0ce4011074a080b5a"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "50e302409e92a2e974cfe08a51d657619404bcc6e37f689954dc1cfb1bd29732"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "396571e6149f055757d3f4d49c8463d8412c4d22cfd999fe857fd098bc787035"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "c03693e7272b516a517295d4f93961bc2e89db1de2b7ca976d7a234097aa3b13"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "6b86c2d03fed5656d1a50aa02c350dbd9490c0a00053127030c7363a52e0be16"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "24b93683a92c8761362b9e670f20590de161f8f610ad6b2cb8285077a3a9ebab"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "ae785bc15aff0244cf517b28109b4653977411df2ff6ed1f9638517acf42deb1"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "a2bf3e77809f2dd3c23c4772ba2ab022c332d43f5e4338bc079196406a8305d1"
+    },
+    {
+      "path": "native.py",
+      "sha256": "325c0ea26df8448548425b1d7c9b29eb0d69a6546c05b639b17fe908a89247ec"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "6c851cf9625dec95d56738ff4e64f164fd293c5fd0093fe5f777e39da76d6f3f"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "f1ee980bcedcc3faa4f3cc8b646bdeba25835f4cb54837e45d901532b2dcf6b3"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "3cf22d8d2772fe64455e03a6a1d70bdc83a4baa5bd1e6ebc83ecb3cf2d608710"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "cce763ab374ac9a944afcfe8d98b2fcc6357e44c6904f1f7ba8d51c3fa9013c1"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "3b1ba14505247723c2fb5be237e1bd7fbdd7cf66d04ac0cc86e1e6ff5b40b62e"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "60a39375325c3fc12a41c98d2452573d9bf0fa2d88269dba123949f2d7528d5c"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-075-F01",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Four donors and six conditions per donor support a donor-held comparison; the selected VCAM1shear response loses the calibrated-copy baseline on donorC. Stiffness and shear units are explicitly distinct; no donor-general mechanical regulation law is admitted."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Four donors and six conditions per donor support a donor-held comparison; the selected VCAM1shear response loses the calibrated-copy baseline on donorC. Stiffness and shear units are explicitly distinct; no donor-general mechanical regulation law is admitted."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Four donors and six conditions per donor support a donor-held comparison; the selected VCAM1shear response loses the calibrated-copy baseline on donorC. Stiffness and shear units are explicitly distinct; no donor-general mechanical regulation law is admitted."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Four donors and six conditions per donor support a donor-held comparison; the selected VCAM1shear response loses the calibrated-copy baseline on donorC. Stiffness and shear units are explicitly distinct; no donor-general mechanical regulation law is admitted.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-075-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Four donors and six conditions per donor support a donor-held comparison; the selected VCAM1shear response loses the calibrated-copy baseline on donorC. Stiffness and shear units are explicitly distinct; no donor-general mechanical regulation law is admitted."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Four donors and six conditions per donor support a donor-held comparison; the selected VCAM1shear response loses the calibrated-copy baseline on donorC. Stiffness and shear units are explicitly distinct; no donor-general mechanical regulation law is admitted."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Four donors and six conditions per donor support a donor-held comparison; the selected VCAM1shear response loses the calibrated-copy baseline on donorC. Stiffness and shear units are explicitly distinct; no donor-general mechanical regulation law is admitted."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Four donors and six conditions per donor support a donor-held comparison; the selected VCAM1shear response loses the calibrated-copy baseline on donorC. Stiffness and shear units are explicitly distinct; no donor-general mechanical regulation law is admitted.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-075",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-075",
+      "native_rows": 20,
+      "confirmation_rows": 5,
+      "models": 11,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 11,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 1.1102230246251565e-16,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 5,
+        "primary_error": 0.7634840390913586,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_copy",
+        "rows": 5,
+        "primary_error": 0.4962759737336961,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_log_additive",
+        "rows": 5,
+        "primary_error": 0.824681017902996,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_quadratic",
+        "rows": 5,
+        "primary_error": 0.8723578899404856,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001_saturation",
+        "rows": 5,
+        "primary_error": 0.8474442303527142,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002_synergy",
+        "rows": 5,
+        "primary_error": 0.9592612990281814,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003_mechanical_only",
+        "rows": 5,
+        "primary_error": 0.8013392660903162,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004_threshold",
+        "rows": 5,
+        "primary_error": 0.8936643273673275,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005_shear_only",
+        "rows": 5,
+        "primary_error": 0.7634840390913586,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_006_calibration_scaling",
+        "rows": 5,
+        "primary_error": 1.135930074958441,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_007_saturating_synergy",
+        "rows": 5,
+        "primary_error": 0.9823066231761277,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "B"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "D"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "B"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "D"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "B"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "D"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "B"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "D"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "B"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "D"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "B"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "D"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "B"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "D"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "Four donors and six conditions per donor support a donor-held comparison; the selected VCAM1shear response loses the calibrated-copy baseline on donorC. Stiffness and shear units are explicitly distinct; no donor-general mechanical regulation law is admitted."
+}

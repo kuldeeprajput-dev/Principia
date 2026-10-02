@@ -1,0 +1,190 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-069.original.v1",
+  "case_id": "P100-069",
+  "case_number": 69,
+  "family": "original",
+  "protocol_version": "P100-069-batch4-frozen-v1",
+  "cohort_id": "P100-069.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-069.original.v1",
+  "legacy_package": "69_robotics_gearbox_thermal/final_results",
+  "source_scenario": "scenarios/69_robotics_gearbox_thermal",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Lubricant temperature",
+  "target_units": "degree C",
+  "error_units": "degree C",
+  "primary_units": "degree C",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "time_s",
+    "housing_C",
+    "environment_C",
+    "speed",
+    "friction",
+    "initial_C"
+  ],
+  "input_units": {
+    "time_s": "s",
+    "housing_C": "degree C",
+    "environment_C": "degree C",
+    "speed": "rad/s",
+    "friction": "N m; source friction torque",
+    "initial_C": "degree C; explicitly permitted initial lubricant measurement"
+  },
+  "numeric_columns": [
+    "time_s",
+    "housing_C",
+    "environment_C",
+    "speed",
+    "friction",
+    "initial_C"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Causal housing/environment/friction history through current sample plus first lubricant temperature. Exclude t=0 from scoring because it is calibration, not a forecast.",
+  "calibration": "Original identification and validation folder assignment preserved. First native sample of each 5 s bin used for compact, deterministic low-frequency thermal analysis; no interpolation. Startup TL is permitted calibration. Neither later lubricant temperatures nor their finite differences enter prediction. Source already presents a lubricant-temperature observer.",
+  "independent_unit": "whole thermal experiment/run",
+  "evaluation_groups": [
+    "validation/cool-down/cool-down.csv",
+    "validation/heat-up/theta_dot=0p3142.csv",
+    "validation/heat-up/theta_dot=0p6283.csv",
+    "validation/heat-up/theta_dot=0p9425.csv",
+    "validation/heat-up/theta_dot=1p2566.csv",
+    "validation/heat-up/theta_dot=1p5708.csv",
+    "validation/long-term/theta_dot_1=0p6283_theta_dot_2=0p9425.csv",
+    "validation/long-term/theta_dot_1=1p2566_theta_dot_2=0p3142.csv"
+  ],
+  "assigned_rows": 16568,
+  "eligible_rows": 16560,
+  "baseline_models": [
+    "reference",
+    "mechanistic_reference",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007",
+    "baseline_mean",
+    "baseline_domain",
+    "baseline_rbf",
+    "baseline_persistence",
+    "attempt_008",
+    "attempt_009"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "mechanistic_reference": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_mean": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_domain": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rbf": {
+      "equation": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_persistence": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_008": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_009": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "scope_limits": "Five identification runs and eight source validation runs in one gearbox. Initial calibration and measured housing/friction signals are required; no unseen gearbox or sensorless temperature claim.",
+  "source_url": "https://doi.org/10.18419/DARUS-5015",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All packaged targets are exposed for future agents; future scoring is retrospective. Public source-aware corpus. Illustrative header/first-row values were inspected during the semantics audit; these do not constitute blind source acquisition. All delivered targets become exposed after confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "54813f0405ee9bc798c363c6a614abe4b451258bc43c1e3b1f24dab51fc1e6eb",
+  "observations_sha256": "f29152fd11f7f7c32e95e6beea49d727234d3638c33932319de5a32951fe973f",
+  "legacy_protocol_sha256": "23c0705b110364a8619b4849d7ef9a314de1b4c6bdb5809f414a97d1f60398de",
+  "source_license": "CC BY 4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

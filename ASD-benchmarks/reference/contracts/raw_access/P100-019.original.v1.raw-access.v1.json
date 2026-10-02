@@ -1,0 +1,90 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-019.original.v1.raw-access.v1",
+  "parent_task_id": "P100-019.original.v1",
+  "case_id": "P100-019",
+  "protocol_version": "P100-019.original.v1.raw-access.v1",
+  "cohort_id": "P100-019.original.v1.cohort-1",
+  "parent_task_sha256": "48c2c60d597beabbeef8f05eb79366b209ccb1f9e81d20eb8d0f3d00aba955a3",
+  "input_sha256": "e91687d9899d754166e6e5c37590991db82a9cddbf89ea73f973dc2f3ef8cc10",
+  "observations_sha256": "afe60f832ad0cbe17bbf76a0d973d35026e1925245a15348c637c0dfcb9a38b1",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "19_transport_nhtsa_safety_2025_2026",
+  "source_assets": [
+    {
+      "path": "context/CMPL.txt",
+      "bytes": 9982,
+      "sha256": "84585b4ded99b0c45abc4a5dc86f85332ba0a6969d2d7d9b1247f10fc53e8f45"
+    },
+    {
+      "path": "context/RCL.txt",
+      "bytes": 3053,
+      "sha256": "3438cc7e4131efa401dfe6437dbe035607e092c129155dfb411d459d58802203"
+    },
+    {
+      "path": "context/TSBS.txt",
+      "bytes": 5807,
+      "sha256": "cae527673072d467b741f129086b468ee236e614270901a693bb5f15c096bbab"
+    },
+    {
+      "path": "raw/COMPLAINTS_RECEIVED_2025-2026.zip",
+      "bytes": 37400118,
+      "sha256": "e7a1f8f6ae2122a8a370f1e7231813b5f119d480e91a67da194656e856eced15"
+    },
+    {
+      "path": "raw/MFR_COMMS_RECEIVED_2025-2026.zip",
+      "bytes": 4980658,
+      "sha256": "73ad193326c5af8978278b4667c64b608f1c590566639c3df6bbed346380a216"
+    },
+    {
+      "path": "raw/RCL_FROM_2025_2026.zip",
+      "bytes": 92005,
+      "sha256": "46cd58c85495ba3164eda0884b91e02c255507759cc15c0c68fef166ea43f09f"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "lag1": "prior calendar month unique ODINO count",
+      "lag3": "mean prior3monthly counts",
+      "lag6": "mean prior6monthly counts",
+      "month": "target calendar month1\u201312"
+    },
+    "observation_window": "Only prior-month LDATE received counts predict next month. Retrospective snapshot may revise product labels and records; historical DATEA/report publication lag means calendar causality is not verified as-issued availability. No incident-date future information used.",
+    "calibration_and_history": "Cohort selected before targetperiod using>=6receivedJan\u2013Jun2025complaints. Development targetsJul2025\u2013Apr2026, rolling forward blocks; May\u2013Jul2026confirmation. No target-month counts enter predictors.",
+    "calibration_columns": [
+      "lag1",
+      "lag3",
+      "lag6"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "input_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Complaint counts lack exposure denominators and do not identify defect prevalence.",
+    "Only 3 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-046.original.v1.raw-access.v1",
+  "parent_task_id": "P100-046.original.v1",
+  "case_id": "P100-046",
+  "protocol_version": "P100-046.original.v1.raw-access.v1",
+  "cohort_id": "P100-046.original.v1.cohort-1",
+  "parent_task_sha256": "81b1233c692801e819c246caf926dd6723656df737fb45041135f8182ccb3eaa",
+  "input_sha256": "447ed0fbf22ccf72784454ba2fe9c64387aaf1d8cda74dd7664f892e82feb12f",
+  "observations_sha256": "7f4a60d388a97f3e37496f545a7117f14545b028ce662ae78d30c1068cad4fd3",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "46_space_physics_mms1_plasma",
+  "source_assets": [
+    {
+      "path": "raw/fgm/srvy/l2/2025/06/mms1_fgm_srvy_l2_20250601_v5.512.0.cdf",
+      "sha256": "225bff7e10bc8b593f9f7980a68c84dc55c25c6ba9af0676ce61bad7c9ccded0",
+      "bytes": 90703826,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/fpi/fast/l2/dis-moms/2025/06/mms1_fpi_fast_l2_dis-moms_20250601100000_v3.4.1.cdf",
+      "sha256": "6fd51a4938ee19f0b33b479aa92840ed02336739309407f01bf7f7b9b5ed26a4",
+      "bytes": 1952843,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/fpi/fast/l2/des-moms/2025/06/mms1_fpi_fast_l2_des-moms_20250601100000_v3.4.1.cdf",
+      "sha256": "2df52d88dd172e16ddb318a05dff33d92ea386849a6c8428574365f48d1cab2c",
+      "bytes": 3272964,
+      "role": "native source; parser declares consumed members"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "temperature_lag": "eV",
+      "density_ratio": "dimensionless n(t)/n(t-60s)",
+      "field_ratio": "dimensionless B(t)/B(t-60s)",
+      "density_lag": "cm^-3",
+      "field_lag": "nT",
+      "anisotropy_lag": "dimensionless T_parallel/T_perpendicular",
+      "elapsed_lag_s": "s"
+    },
+    "observation_window": "Diagnostic closure using current electron density and magnetic-field magnitude plus electron temperature/density/field measured at least60s earlier; current temperature and tensor-derived equivalents forbidden.",
+    "calibration_and_history": "Causal60-second-old electron state, same information for every model. Magnetic matching backward only.",
+    "calibration_columns": [
+      "temperature_lag",
+      "density_lag",
+      "field_lag",
+      "anisotropy_lag",
+      "elapsed_lag_s"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor",
+      "field_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "One spacecraft passage; blocks share plasma conditions.",
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

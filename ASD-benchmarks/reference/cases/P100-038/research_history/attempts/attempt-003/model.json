@@ -1,0 +1,29 @@
+{
+  "case": 38,
+  "type": "linear",
+  "features": [
+    "trendgate",
+    "m5"
+  ],
+  "offset": "last",
+  "scale": null,
+  "alpha": 0,
+  "title": "Noise-gated extrapolation",
+  "hypothesis": "Signal scatter should attenuate trend response; divide the slope by1+past spread in dB, a declared empirical scale.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 1.2577260893238156, \"worst_group\": 1.7260980576240144}, {\"attempt\": \"attempt-002\", \"group_MAE\": 1.2286967795825008, \"worst_group\": 1.6533308691555735}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Two-scale reversion improves persistence while slope-only fails. Test whether scatter suppresses noise-driven trend.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+  "training_groups": [
+    "flight-1",
+    "flight-2",
+    "flight-3",
+    "flight-4"
+  ],
+  "training_rows": 3595,
+  "training_ids_sha256": "5242d8e23847b99ff8ec337f1a733230d240b4ecd06632f6332920b0a8e052db",
+  "coef": [
+    2.8073095663624326,
+    0.6650351900192304
+  ],
+  "rank": 2,
+  "condition_number": 2.1682066952660595,
+  "complexity": 2
+}

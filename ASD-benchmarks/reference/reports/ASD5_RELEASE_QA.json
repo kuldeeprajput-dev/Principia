@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "corpus_version": "3.1.0-rc.1",
+  "evaluation_version": "3.0.0-rc.1",
+  "local_static_checks": 103,
+  "public_static_checks": 102,
+  "public_tasks": 63,
+  "public_model_comparisons": 614,
+  "local_tasks": 64,
+  "local_model_comparisons": 633,
+  "public_metric_parity_receipt": "ASD5_PUBLIC_METRIC_PARITY.json",
+  "portable_native_preparation": {
+    "task_id": "P100-091.original.v1",
+    "status": "pass",
+    "receipt": "ASD5_PUBLIC_NATIVE_RECONSTRUCTION.json"
+  },
+  "portable_trusted_replay": {
+    "task_id": "P100-051.original.v1",
+    "status": "pass",
+    "receipt": "ASD5_PUBLIC_TRUSTED_REPLAY.json"
+  },
+  "all_new_native_and_replay_receipt": "ASD5_NATIVE_AND_REPLAY.json",
+  "privacy_scan": "Explicit allowlist text scan passed; no user-specific filesystem paths. Not a universal sensitive-content detector.",
+  "corrected_packaging_failure": {
+    "initial": "Executable manifest included a Finder .DS_Store file excluded from public export; public preparation correctly rejected its absence.",
+    "correction": "Finder metadata excluded from executable/preparation manifests; scientific code and numerical artifacts unchanged. Corrected public integrity and native preparation pass."
+  },
+  "scope": "Portable tests executed on an allowlist-built local copy with the complete same executable/task payload. Final allowlist sealing also includes these read-only QA receipts.",
+  "publication_performed": false
+}

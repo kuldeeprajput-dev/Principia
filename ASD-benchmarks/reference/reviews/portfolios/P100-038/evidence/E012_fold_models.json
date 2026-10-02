@@ -1,0 +1,83 @@
+{
+  "2-2": {
+    "case": 38,
+    "type": "linear",
+    "features": [
+      "m5",
+      "m20"
+    ],
+    "offset": "last",
+    "scale": null,
+    "alpha": 0,
+    "title": "Two-timescale mean reversion",
+    "hypothesis": "Short and longer trailing signal means compete with trend. Mean reversion can reject noise-driven extrapolation without claiming propagation physics.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 1.2577260893238156, \"worst_group\": 1.7260980576240144}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "flight-1"
+    ],
+    "training_rows": 841,
+    "training_ids_sha256": "ff2c929877434c6fec4a42800a59f93808bee77105297edbc88dd1504672d4ef",
+    "coef": [
+      0.20758155393001637,
+      -0.06637638807135915
+    ],
+    "rank": 2,
+    "condition_number": 2.5074774420238737,
+    "complexity": 2
+  },
+  "3-3": {
+    "case": 38,
+    "type": "linear",
+    "features": [
+      "m5",
+      "m20"
+    ],
+    "offset": "last",
+    "scale": null,
+    "alpha": 0,
+    "title": "Two-timescale mean reversion",
+    "hypothesis": "Short and longer trailing signal means compete with trend. Mean reversion can reject noise-driven extrapolation without claiming propagation physics.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 1.2577260893238156, \"worst_group\": 1.7260980576240144}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "flight-1",
+      "flight-2"
+    ],
+    "training_rows": 2421,
+    "training_ids_sha256": "d9015d02541208083526ed685de999b1242d6bedf5cb13cb4e8de38482d0ffb9",
+    "coef": [
+      0.36787691964899416,
+      -0.028688444091151035
+    ],
+    "rank": 2,
+    "condition_number": 2.539845564810809,
+    "complexity": 2
+  },
+  "4-4": {
+    "case": 38,
+    "type": "linear",
+    "features": [
+      "m5",
+      "m20"
+    ],
+    "offset": "last",
+    "scale": null,
+    "alpha": 0,
+    "title": "Two-timescale mean reversion",
+    "hypothesis": "Short and longer trailing signal means compete with trend. Mean reversion can reject noise-driven extrapolation without claiming propagation physics.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 1.2577260893238156, \"worst_group\": 1.7260980576240144}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "flight-1",
+      "flight-2",
+      "flight-3"
+    ],
+    "training_rows": 2828,
+    "training_ids_sha256": "1a12e9920a7b1808ab9ee80d7a87164d14f2c70f7c9aa76aac818e0c528dd911",
+    "coef": [
+      0.5236350553027207,
+      -0.021229133632928974
+    ],
+    "rank": 2,
+    "condition_number": 2.60357571140886,
+    "complexity": 2
+  }
+}

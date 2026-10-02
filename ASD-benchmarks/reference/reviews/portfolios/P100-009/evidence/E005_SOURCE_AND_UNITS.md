@@ -1,0 +1,5 @@
+# Pupil source semantics
+
+Seven NWB files contain three animals,16/18 (ACh-M1) and22713 (ACh-V1). The target field is named pupil_raw_radius but author methods describe DeepLabCut ellipses, a1Hz low-pass filter and NaN replacement for blinks/failed tracking. The word raw in NWB therefore does not establish untouched camera telemetry. Filter causality is unspecified. Radius units are pixels with conversion1; treadmill velocity is cm/s. Source timestamps include NaN padding, which is excluded without interpolating missing observations.
+
+All sessions of an animal remain linked. Animal-level transfer here is only across three optical preparations; region and animal are confounded. The held animal has no fitted calibration and its prior observed pupil prefix is an allowed online state. Prefix causality is relative to the author-processed trace, not real-time camera operation. A five-second complete source prefix and one-second future endpoint must be valid, and gaps larger0.1s exclude an observation.

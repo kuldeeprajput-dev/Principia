@@ -1,0 +1,46 @@
+{
+  "case_id": "P100-051",
+  "target": "measured drain current between three disclosed gate-voltage calibration anchors",
+  "target_units": "uA",
+  "error_units": "uA",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "gate_V",
+    "cal_minus20_uA",
+    "cal_zero_uA",
+    "cal_plus20_uA"
+  ],
+  "input_units": {
+    "gate_V": "V",
+    "cal_minus20_uA": "uA",
+    "cal_zero_uA": "uA",
+    "cal_plus20_uA": "uA"
+  },
+  "numeric_columns": [
+    "gate_V",
+    "cal_minus20_uA",
+    "cal_zero_uA",
+    "cal_plus20_uA"
+  ],
+  "timing_contract": "offline sparse-characterization task: three responses at -20,0,20 V are obtained before reconstructing other gate points; not an uncalibrated or causal sweep forecast",
+  "calibration": "Exactly three same-device current measurements at Vg=-20,0,20 V; all models see the same anchors; those points excluded from scores.",
+  "independent_unit": "complete source FET column/device",
+  "scope_limits": "36 fabricated FET curves from source Fig2e, not independent lots; no memory-retention extrapolation, no device-geometry control or interventions.",
+  "source_url": "https://zenodo.org/records/19003428",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "internal_confirmation": "held out until frozen model/stop selection",
+    "fresh_for_future_users": false
+  },
+  "uncertainty_policy": "Individual group errors; empirical group range, no row bootstrap or population CI.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "weights": "equal group then equal eligible row"
+  },
+  "selection": "attempt-005",
+  "training_scope": "See each state training_scope; complete development groups only.",
+  "outcome_cohort": "reserved groups recorded in SPLITS.json; no calibration anchors scored."
+}

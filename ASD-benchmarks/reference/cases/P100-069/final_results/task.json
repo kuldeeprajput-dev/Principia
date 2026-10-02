@@ -1,0 +1,172 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-069.continuation.v1",
+  "case_id": "P100-069",
+  "case_number": 69,
+  "family": "continuation",
+  "protocol_version": "P100-069-continuation-20261001",
+  "cohort_id": "P100-069.continuation.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-069.continuation.v1",
+  "legacy_package": "69_robotics_gearbox_thermal/research_history/continuation-20261001/candidate",
+  "source_scenario": "scenarios/69_robotics_gearbox_thermal",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Lubricant temperature",
+  "target_units": "degree C",
+  "error_units": "degree C",
+  "primary_units": "degree C",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "time_s",
+    "housing_C",
+    "environment_C",
+    "speed",
+    "friction",
+    "initial_C"
+  ],
+  "input_units": {
+    "time_s": "s",
+    "housing_C": "degree C",
+    "environment_C": "degree C",
+    "speed": "rad/s",
+    "friction": "N m; source friction torque",
+    "initial_C": "degree C; explicitly permitted initial lubricant measurement"
+  },
+  "numeric_columns": [
+    "time_s",
+    "housing_C",
+    "environment_C",
+    "speed",
+    "friction",
+    "initial_C"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Current/past housing, ambient, speed/friction only; first lubricant calibration, no later TL.",
+  "calibration": "Original TL(0) calibration, no later lubricant measurement.",
+  "independent_unit": "whole thermal experiment/run",
+  "evaluation_groups": [
+    "validation/cool-down/cool-down.csv",
+    "validation/heat-up/theta_dot=0p3142.csv",
+    "validation/heat-up/theta_dot=0p6283.csv",
+    "validation/heat-up/theta_dot=0p9425.csv",
+    "validation/heat-up/theta_dot=1p2566.csv",
+    "validation/heat-up/theta_dot=1p5708.csv",
+    "validation/long-term/theta_dot_1=0p6283_theta_dot_2=0p9425.csv",
+    "validation/long-term/theta_dot_1=1p2566_theta_dot_2=0p3142.csv"
+  ],
+  "assigned_rows": 16568,
+  "eligible_rows": 16560,
+  "baseline_models": [
+    "reference",
+    "compact_candidate",
+    "housing",
+    "single_speed",
+    "single_power",
+    "double_speed",
+    "innovation_power",
+    "innovation_speed",
+    "variable_tau",
+    "temperature_power",
+    "ridge_history",
+    "legacy_reference"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Two parallel stable states H_tau and S_tau use previous-sample exponential recurrence. yhat = H_fast + gamma_fast S_fast + gamma_slow S_slow + c(H_slow-H_fast), with H_tau(0)=TL0, S_tau(0)=0 and c in[0,1].",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "compact_candidate": {
+      "equation": "Two parallel stable states H_tau and S_tau use previous-sample exponential recurrence. yhat = H_fast + gamma_fast S_fast + gamma_slow S_slow + c(H_slow-H_fast), with H_tau(0)=TL0, S_tau(0)=0 and c in[0,1].",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "housing": {
+      "equation": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "single_speed": {
+      "equation": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "single_power": {
+      "equation": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "double_speed": {
+      "equation": "Two parallel stable states H_tau and S_tau use previous-sample exponential recurrence. yhat = H_fast + gamma_fast S_fast + gamma_slow S_slow + c(H_slow-H_fast), with H_tau(0)=TL0, S_tau(0)=0 and c in[0,1].",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "innovation_power": {
+      "equation": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "innovation_speed": {
+      "equation": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "variable_tau": {
+      "equation": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "temperature_power": {
+      "equation": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "ridge_history": {
+      "equation": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "legacy_reference": {
+      "equation": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "scope_limits": "Five identification runs and eight source validation runs in one gearbox. Initial calibration and measured housing/friction signals are required; no unseen gearbox or sensorless temperature claim.",
+  "source_url": "https://doi.org/10.18419/DARUS-5015",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "ALL original confirmation exposed; no fresh confirmation; diagnostics opened only after candidate/stopping freeze; all future evaluations are retrospective",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "e1987b48f75655c4dc7cb27133f07bed0867cee4aa9f47fc692c824e15f5099a",
+  "observations_sha256": "ae0a1f85bcdb5f119568d0867576f39ebad182a0a983675de564266763e1b81d",
+  "legacy_protocol_sha256": "410980dd98a267b6aa2210a0c1f0333c7670625371b9a88037a62fa3ce19a4fb",
+  "source_license": "CC BY 4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

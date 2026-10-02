@@ -1,0 +1,147 @@
+{
+  "reviewer": "/root/asd5_electronics",
+  "path_base": "local-truths-gpt6",
+  "date": "2026-10-02",
+  "corrections": [
+    {
+      "task_id": "P100-083.round2.v1",
+      "proposed_task_id": "P100-083.round2.v2",
+      "correction_kind": "documentation_only",
+      "replace_fields": {
+        "timing_contract": "At each eligible hourly origin, predict internal temperature nominally one hour ahead using current and causal earlier internal/external temperatures, external humidity, source-clock phase and calibrated stream identity. Origin/lag/target matching retains the native rules: origin in first15minutes, causal one-hour lags within15minutes, target within5minutes and same calendar day; no response interpolation. This task scores three forward development blocks per stream, not the latest20percent original reserved dates.",
+        "calibration": "Five sensor-stream identities are calibrated using only the preceding training blocks for each outer fold. All coefficients and transformations are frozen per fold in the referenced states. The current weather-increment candidate uses internal/external temperature changes plus stream and clock terms. Numerical offsets and coefficients of the original static-gradient reference belong only to their historical comparator state; they are not a universal calibration rule for this task.",
+        "independent_unit": "Complete forward native-date block within each calibrated sensor stream;15 validation groups across5streams and3forward folds,4111 scored observations. Streams share one apiary and are not independent sites.",
+        "scope_limits": "Repeatedly exposed original-development OOF cohort. The latest20percent original reserved dates are excluded from this cohort. Sensor placement, colony/species and season remain confounded; no unseen-apiary, colony-health, physiological setpoint or identified heat-conductance claim."
+      },
+      "previous_fields": {
+        "timing_contract": "One hourly origin: first native observation within first15min. Forecast nominal1hour, score nearest native target within5min, same calendar day, no interpolation. Causal lag<=origin\u22121hour within15min. Latest20percent native dates per stream reserved. Native response outliers retained. Expanded information budget: T_now, T_lag, T_external, T_external_lag, RH_external, hour_sin, hour_cos, stream",
+        "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. T and Te are current internal/external Celsius temperatures; T\u22121 is a causal one-hour lag, He is current external relative humidity percent, and v is external vapor-pressure deficit in kPa. Five offsets c_s are\u22120.384543,\u22120.316614,\u22120.340834,+0.138741,+0.323654degC in rules.json sensor order. Coefficients ba=\u22120.002878, br=0.050874, bm=0.083403 are dimensionless; bv=0.481876degC/kPa and bvr=0.084243/kPa. The reference30degC is an algebraic centering constant, not a prescribed biological setpoint.",
+        "independent_unit": "future native-date block per calibrated sensor stream",
+        "scope_limits": "Latest native dates at five calibrated sensor streams from one apiary; sensor/colony, species and season are confounded. No unseen-apiary or colony-health prediction. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort."
+      },
+      "evidence_references": [
+        {
+          "path": "principia-100/tasks/P100-083.round2.v1/task.json",
+          "sha256": "1794e1912ef5e300420c1f6929401a6d3448fe55dce70273532dab94ddaf086e"
+        },
+        {
+          "path": "principia-100/tasks/P100-083.round2.v1/rules.json",
+          "sha256": "af4663123d166005d7e722911fe33cbe773e835095bd59283771d8486930ed61"
+        },
+        {
+          "path": "principia-100/tasks/P100-083.round2.v1/evidence/metrics.csv",
+          "sha256": "8fd1a9ca9f9b9c7aa6d7a465f012f1c4920bf8df5e04bc10eeb571b6439d50a4"
+        },
+        {
+          "path": "principia-100/tasks/P100-083.round2.v1/legacy_protocol.json",
+          "sha256": "4d5f094e0510fbbe3f9688c567e8cef94a598b46d1554b1ed0861604e163e820"
+        },
+        {
+          "path": "principia-100/tasks/P100-083.round2.v1/reference_training_scope.json",
+          "sha256": "fdad573b6d7578d464c3e036ed365c32cee900b42471bb1f13bf828ed41beeec"
+        }
+      ],
+      "preserve": [
+        "all native assets",
+        "all source and historical protocols",
+        "all fitted coefficients",
+        "all predictions and metrics",
+        "all group allocations",
+        "v1 task package"
+      ],
+      "rationale": "Remove inherited original-reference coefficients or original-reserved-cohort wording from distinct development OOF task. The proposed v2 is documentary, not a new fit, endpoint, cohort, or improved result."
+    },
+    {
+      "task_id": "P100-092.round2.v1",
+      "proposed_task_id": "P100-092.round2.v2",
+      "correction_kind": "documentation_only",
+      "replace_fields": {
+        "scope_limits": "Repeatedly exposed development OOF cohort comprising complete dates2023-12-05,2023-12-13 and2023-12-20 (source group labels05122023,13122023,20122023),18720 observations. This task does not score the original reserved days51,86,94. All positions are covered by the original3120-cell calibration map in one installation. No unseen-position prediction, reduced calibration-cost result, localization result or independent antenna-efficiency identification is established.",
+        "independent_unit": "Complete measurement date with all available furniture states, antenna ports and channels;3forward-development validation dates. Rows and dates share one calibrated installation and cannot support independent-row population inference.",
+        "calibration": "The complete initial3120-cell measured RSSI map is permitted. Same-position channel, same-channel spatial, global-power and local-channel-power contrasts are calculated from that map, never from target-date RSSI. Fitted corrections and flexible transformations are learned only inside each preceding-date training fold; no target-date RSSI recalibration is permitted."
+      },
+      "previous_fields": {
+        "scope_limits": "Temporal transfer on days 51,86,94 at calibrated positions in one installation. Not unseen-position prediction or independent antenna-efficiency identification. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+        "independent_unit": "complete measurement date (all available furniture states)",
+        "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Initial 3120-cell measured RSSI map is a declared input, with same-position channel and same-channel spatial contrasts. No target-date RSSI recalibration."
+      },
+      "evidence_references": [
+        {
+          "path": "principia-100/tasks/P100-092.round2.v1/task.json",
+          "sha256": "8a8f7fb0ae3004f3714601f9867f42982eaf3c50fa2957b1ad84e30340fb1ec8"
+        },
+        {
+          "path": "principia-100/tasks/P100-092.round2.v1/rules.json",
+          "sha256": "89f607a3450016c43591f3c54f0a397fe18d118dc24ba82606f6700283b13993"
+        },
+        {
+          "path": "principia-100/tasks/P100-092.round2.v1/evidence/metrics.csv",
+          "sha256": "d26ea110352aef4a6e40cab238c98f13840eceefda19d8f1c640894add8783ab"
+        },
+        {
+          "path": "principia-100/tasks/P100-092.round2.v1/legacy_protocol.json",
+          "sha256": "6fdcef4c52359b760e9117d587cd03a1cce20d032ad69475336326bb9d034121"
+        },
+        {
+          "path": "principia-100/tasks/P100-092.round2.v1/reference_training_scope.json",
+          "sha256": "250043ff49890f66632e2f173ebfec34b986dfe45b59142dec15421f7fa5c063"
+        }
+      ],
+      "preserve": [
+        "all native assets",
+        "all source and historical protocols",
+        "all fitted coefficients",
+        "all predictions and metrics",
+        "all group allocations",
+        "v1 task package"
+      ],
+      "rationale": "Remove inherited original-reference coefficients or original-reserved-cohort wording from distinct development OOF task. The proposed v2 is documentary, not a new fit, endpoint, cohort, or improved result."
+    },
+    {
+      "task_id": "P100-100.round2.v1",
+      "proposed_task_id": "P100-100.round2.v2",
+      "correction_kind": "documentation_only",
+      "replace_fields": {
+        "calibration": "The previous five completed RTTs and causal radio observations constitute permitted online history; no response from the currently predicted probe is a calibration input. The preregistered parity-filter reference has no fitted coefficients and uses rhat=max(0,(3*last2+10*mean5-3*last-3*last3)/7). Other model coefficients, route offsets and transformations are fitted in their applicable outer training runs. The original55ms-breakpoint coefficients describe a separate historical comparator, not the current reference or a universal task calibration.",
+        "independent_unit": "Whole PING run;6 original-development runs from3calibrated routes contribute5965 assigned and5938 measured-RTT observations. Sequential probes are dependent and all runs share one platform.",
+        "scope_limits": "Repeatedly exposed development OOF cohort of6complete PING runs, distinct from the original3reserved runs. Task predicts conditional successful-response RTT using declared causal history;27assigned responses have no observed RTT and remain missing. No new-network, packet-loss reliability, scheduler identification or queue-mechanism claim is established."
+      },
+      "previous_fields": {
+        "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. r_n and r_(n\u22121) are completed previous RTTs in milliseconds; rbar5 averages the last five completed probes. c_q in ms is\u22120.002897 for indoor random,\u22120.069945 for indoor rectangle and\u22120.049676 for outdoor rectangle. The55ms breakpoint was selected using nested development groups. Payload and causal radio measurements are available to comparators, but the selected equation uses history and the calibrated route offset only. It predicts a conditional successful next response, not a missing lost-packet RTT.",
+        "independent_unit": "whole PING run; sequential packets correlated",
+        "scope_limits": "Three complete PING runs, one per calibrated route, one platform; online previous-probe calibration. No new-network or packet-loss reliability prediction. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort."
+      },
+      "evidence_references": [
+        {
+          "path": "principia-100/tasks/P100-100.round2.v1/task.json",
+          "sha256": "9bed086a7f9d35f5a15c0a188bdeec683a578ac4ed31f67a918917a5a67983e5"
+        },
+        {
+          "path": "principia-100/tasks/P100-100.round2.v1/rules.json",
+          "sha256": "420bd715ce78960fabe7253684138a1c8f87059b618dfeefdc26e6bfdccfa0b1"
+        },
+        {
+          "path": "principia-100/tasks/P100-100.round2.v1/evidence/metrics.csv",
+          "sha256": "986382a670e25d26813aabb21cdcd740beffb53eb58f2da4d9f2bedee7af2a57"
+        },
+        {
+          "path": "principia-100/tasks/P100-100.round2.v1/legacy_protocol.json",
+          "sha256": "69ce648616ff84114f8a901627e9be94653765048a82218e7581cec0a4057ae4"
+        },
+        {
+          "path": "principia-100/tasks/P100-100.round2.v1/reference_training_scope.json",
+          "sha256": "c3d0f2bb7c23854c569a127067c2d493e3c66241a1cfda015da8bf8fe06ed1cd"
+        }
+      ],
+      "preserve": [
+        "all native assets",
+        "all source and historical protocols",
+        "all fitted coefficients",
+        "all predictions and metrics",
+        "all group allocations",
+        "v1 task package"
+      ],
+      "rationale": "Remove inherited original-reference coefficients or original-reserved-cohort wording from distinct development OOF task. The proposed v2 is documentary, not a new fit, endpoint, cohort, or improved result."
+    }
+  ]
+}

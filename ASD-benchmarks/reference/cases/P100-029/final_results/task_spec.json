@@ -1,0 +1,54 @@
+{
+  "case_id": "P100-029",
+  "target": "spectral_mean_fluorescence",
+  "target_units": "source fluorescence a.u.",
+  "error_units": "source fluorescence a.u.",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "dose",
+    "dose_cal",
+    "F0",
+    "F1",
+    "F2",
+    "F5",
+    "dose1",
+    "dose2",
+    "dye_NR"
+  ],
+  "input_units": {
+    "dose": "uM barrel",
+    "dose_cal": "uM barrel",
+    "dose1": "uM barrel",
+    "dose2": "uM barrel",
+    "F0": "fluorescence a.u.",
+    "F1": "fluorescence a.u.",
+    "F2": "fluorescence a.u.",
+    "F5": "fluorescence a.u.",
+    "dye_NR": "binary"
+  },
+  "numeric_columns": [
+    "dose",
+    "dose_cal",
+    "F0",
+    "F1",
+    "F2",
+    "F5",
+    "dose1",
+    "dose2",
+    "dye_NR"
+  ],
+  "timing_contract": "Predict remaining higher-dose assay values after declared lower-dose measurements; sequential assay not real-time kinetics.",
+  "calibration": "Spectrum-wide mean fluorescence at native concentrations 0,1,2,5 nominal uM, per replicate; target concentrations 7.5 to30. No maximal-response normalization.",
+  "independent_unit": "peptide-dye condition",
+  "scope_limits": "Six peptide\u2013dye conditions; four contiguous replicate curves per condition are linked. Shared peptide/dye factors make this condition transfer, not fully independent molecular systems. Low-dose calibration is required; no spectral peak chosen using outcomes.",
+  "source_url": "https://zenodo.org/records/13335904",
+  "source_license": "CC BY4.0",
+  "prior_art_url": "https://pubs.acs.org/doi/10.1021/jacs.4c16633",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": 0,
+    "target_max": null
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

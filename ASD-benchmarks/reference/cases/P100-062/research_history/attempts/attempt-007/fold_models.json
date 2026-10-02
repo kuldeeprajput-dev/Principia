@@ -1,0 +1,152 @@
+[
+  {
+    "fold": 1,
+    "state": {
+      "name": "shared_fick_separate_amplitudes",
+      "formula": "offset+(a0+a1*high)*(slab(t/tau+lag)-slab(lag+0*t))",
+      "hypothesis": "Development evidence available before this fit: trapping_two_timescales: MAE 7.04349, worst group 15.7037; occupancy_dependent_transport: MAE 4.78902, worst group 11.5347.\n\nCondition-dependent first-order response improves development prediction. Test whether that apparent timescale change is instead an amplitude/boundary confound: a shared full-slab transport scale with separate condition amplitudes may suffice.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:00:43.780589+00:00",
+      "parent": "attempt-006",
+      "parameters": {
+        "a0": 13.996329073923444,
+        "a1": 97.38550004555835,
+        "tau": 2249.6699054726387,
+        "lag": 0.24567625961275485
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-1-block-0"
+      ],
+      "training_rows": 372,
+      "optimizer_success": true,
+      "nfev": 11,
+      "jacobian_condition": 103764.79212494893,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "lag": [
+          0.001,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "fold": 2,
+    "state": {
+      "name": "shared_fick_separate_amplitudes",
+      "formula": "offset+(a0+a1*high)*(slab(t/tau+lag)-slab(lag+0*t))",
+      "hypothesis": "Development evidence available before this fit: trapping_two_timescales: MAE 7.04349, worst group 15.7037; occupancy_dependent_transport: MAE 4.78902, worst group 11.5347.\n\nCondition-dependent first-order response improves development prediction. Test whether that apparent timescale change is instead an amplitude/boundary confound: a shared full-slab transport scale with separate condition amplitudes may suffice.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:00:43.780589+00:00",
+      "parent": "attempt-006",
+      "parameters": {
+        "a0": 11.783568791452762,
+        "a1": 42.84240701321861,
+        "tau": 1397.8472799629735,
+        "lag": 0.20003095175523444
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-1-block-0",
+        "trace-1-block-1"
+      ],
+      "training_rows": 742,
+      "optimizer_success": true,
+      "nfev": 11,
+      "jacobian_condition": 10705.859359007238,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "lag": [
+          0.001,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "fold": 3,
+    "state": {
+      "name": "shared_fick_separate_amplitudes",
+      "formula": "offset+(a0+a1*high)*(slab(t/tau+lag)-slab(lag+0*t))",
+      "hypothesis": "Development evidence available before this fit: trapping_two_timescales: MAE 7.04349, worst group 15.7037; occupancy_dependent_transport: MAE 4.78902, worst group 11.5347.\n\nCondition-dependent first-order response improves development prediction. Test whether that apparent timescale change is instead an amplitude/boundary confound: a shared full-slab transport scale with separate condition amplitudes may suffice.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:00:43.780589+00:00",
+      "parent": "attempt-006",
+      "parameters": {
+        "a0": 12.504626193000622,
+        "a1": 37.15589647296399,
+        "tau": 1219.689878237019,
+        "lag": 0.1427384809781562
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2"
+      ],
+      "training_rows": 1113,
+      "optimizer_success": true,
+      "nfev": 11,
+      "jacobian_condition": 4689.698770784049,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "lag": [
+          0.001,
+          4
+        ]
+      }
+    }
+  }
+]

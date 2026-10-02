@@ -1,0 +1,68 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-061.round2.v2.raw-access.v1",
+  "parent_task_id": "P100-061.round2.v2",
+  "case_id": "P100-061",
+  "protocol_version": "P100-061.round2.v2.raw-access.v1",
+  "cohort_id": "P100-061.round2.v2.cohort-1",
+  "parent_task_sha256": "9778a683f1699de148244261358853a8dfe9efbb269cd0d44458725cc93d9395",
+  "input_sha256": "74ec1b245991da2d308f1c5dd336fb2670da4090ab1d9af942352b0c217f747b",
+  "observations_sha256": "18b2fc55d0f84d9d1593fe2e07a58a1400f2387ebc77e18affff0361deb0aff0",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "61_chemistry_membrane_permeation",
+  "source_assets": [
+    {
+      "path": "raw/DataPalladiumBasedMembranes.xlsx",
+      "bytes": 21629,
+      "sha256": "042e32db5d70257c5d322a472ac85991fa1668036ea58f606f915a2932ff1af8"
+    },
+    {
+      "path": "raw/DataPorousMembranes.xlsx",
+      "bytes": 50313,
+      "sha256": "64e3a835815493c739fec72acb2593e1ca67ee34bb04d0e1021dab1e5e095a58"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "temperature_K": "K",
+      "feed_fraction": "mol H2 per mol feed, fraction",
+      "normal_flow_L_min": "normal L min^-1; assumed 22.414 L mol^-1",
+      "retentate_bar": "bar, absolute",
+      "permeate_bar": "bar, absolute",
+      "area_m2": "m^2",
+      "calibration_j0": "mol H2 m^-2 s^-1; frozen pure-hydrogen calibration",
+      "membrane": "categorical calibrated membrane",
+      "gas": "categorical N2, Ar or He",
+      "membrane_index": "dimensionless index of declared calibrated membrane"
+    },
+    "observation_window": "Predict measured mixture hydrogen flux from membrane/gas identity, imposed temperature, feed fraction, absolute pressures, normal feed flow, geometry and the declared pure-hydrogen calibration_j0. Mixture-response targets from the outer held gas-temperature block cannot be used to fit that block.",
+    "calibration_and_history": "All models may use the 64 pure-hydrogen measurements at 350/450 \u00b0C through their explicitly frozen pressure/permeance calibration, including calibration at the temperature of a held mixture block. Mixture coefficients are fitted outside that held block. No 400 \u00b0C response enters this development-OOF task. The normal molar volume 22.414 L/mol is a declared convention; pressure units are absolute bar.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Historical training membership is missing for 84 model/fold records; replay cannot recover it."
+  ],
+  "current_outcomes_exposed": true
+}

@@ -1,0 +1,193 @@
+{
+  "schema_version": "principia.review-packet/3.0",
+  "bindings": {
+    "claims_sha256": "8d092a2a0b855dda37a56741077c77f0f2276aa4c3f0a080d3ae0a5702cf44ba",
+    "evidence_sha256": {
+      "E001": "2763ab2a96a2b48d63a7e3187212940654bb560dacd5ed4fe227d0abc7b80393",
+      "E002": "4874865eb390180f3d5b62a1850bc4b2f9af36051a3ef6ba2191b85cf3ef39c8",
+      "E003": "cd1fdb0d2630fc3e075bc8451449adfa2ee51bbf6162e754299b9f694d61ead6",
+      "E004": "1fcf404be703a7d65f6ae16f78224b52eaaec4cfd8e412a20d6ab81724259b6e",
+      "E005": "1ea85fc176601a7ad6e4f143e0c658946fbc025f8ad0d49aa649de76e981c7ae",
+      "E006": "485c68d6c070659eabdc81fe2fd3907dad7cf38182546b0f3dfb955ba2088b46",
+      "E007": "76348477d0623a83b70143c4bc2288c19ed5f489c7b2fea9bb15811a3d4d7f1e",
+      "E008": "1526e4ac6c3c9cbcbd4634edc526ce070a3deca9ad975d3aee23a8a2d18acaf1",
+      "E009": "ec833a054d39d87d3108aaa8b7b01d851e4542cbf23a827c17e69c9fe400a66d",
+      "E010": "90435239d1de5599f0318ad4a691a7598388a12005c8f4bd3c6b7dd12134347f",
+      "E011": "53ad1570910327046946a2d68183156c9bf36568965650f000c09589b48fb8c3",
+      "E012": "e1608d9f85a9a1b344e9f47e94f5a15192c8240dd79e05aeb1b4d30f1f186412",
+      "E013": "981e6f2c7f04b84bd055d1d09b99fd9ee07ee9f0d337ab35f4d9ffeb9dc72a3b",
+      "E014": "475d2483524ddb38d4d6e8e5e47a03cbe8986ee13262436ab1fd280d4995785e",
+      "COMPUTATIONAL": "a1880f3122a2ccf7fd5966ead5b51cd290f7436bc3245b8251f133a28ccd1a21",
+      "SCIENTIFIC_CRITICAL": "567ad8e3f376932b94ae0dea198837bfdb40324d4a719d130d1ac6fbf0124aa4"
+    },
+    "case_id": "P100-013",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "findings": [
+    {
+      "id": "P100-013-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "Two-temperature-response kinetic mixture reduces conversion prediction error on a reserved faster heating ramp.",
+      "applicability": "One reserved ramp and one formulation; no universal reaction law.",
+      "limitations": "A shared activation barrier gives development MAE0.03477 rather than0.02734, supporting the predictive usefulness of distinct temperature responses. The full-fit Jacobian condition is771, and only four heating histories constrain five parameters, so individual energies are not unique chemical constants. A single inaccessible-fraction alternative fails to improve transfer. The confirmation error is0.05895conversion units, or5.895percentage points; this is error, not percentage accuracy.",
+      "falsification": "A shared activation barrier gives development MAE0.03477 rather than0.02734, supporting the predictive usefulness of distinct temperature responses. The full-fit Jacobian condition is771, and only four heating histories constrain five parameters, so individual energies are not unique chemical constants. A single inaccessible-fraction alternative fails to improve transfer. The confirmation error is0.05895conversion units, or5.895percentage points; this is error, not percentage accuracy.",
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "equation_or_program": {
+        "expression": "Let the reference temperature be $T_r=423.15\\,\\mathrm{K}$ and $R=8.314462618\\,\\mathrm{J\\,mol^{-1}\\,K^{-1}}$. For each channel,\n\n$$\nq_j(T,\\beta)=\\frac{k_{j,r}}{\\beta}\\int_{273.15}^{T}\\exp\\!\\left[\\frac{E_j}{R}\\left(\\frac{1}{T_r}-\\frac{1}{u}\\right)\\right]du,\n\\qquad \\widehat\\alpha=w(1-e^{-q_1})+(1-w)(1-e^{-q_2}).\n$$\n\nThe energies are133.625and67.794kJ/mol, reference log-rates are-3.30765and-4.06157, and w=0.555544. Full precision is in rules.json. The integration limit is a fixed273.15K reference, not a fitted onset. This is a bounded phenomenological kinetic mixture; channels are not assigned to chemical species.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "variables_and_units": {
+        "target": "1",
+        "temperature_K": "K",
+        "heating_rate_K_min": "K/min"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014"
+      ],
+      "task_id": "P100-013.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-013-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "The single-barrier/two-timescale simplification and single inaccessible-fraction explanation do not match the selected mixture under the frozen rate-transfer tests.",
+      "applicability": "Negative model comparison; does not prove two specific chemical reactions.",
+      "limitations": "A shared activation barrier gives development MAE0.03477 rather than0.02734, supporting the predictive usefulness of distinct temperature responses. The full-fit Jacobian condition is771, and only four heating histories constrain five parameters, so individual energies are not unique chemical constants. A single inaccessible-fraction alternative fails to improve transfer. The confirmation error is0.05895conversion units, or5.895percentage points; this is error, not percentage accuracy.",
+      "falsification": "A shared activation barrier gives development MAE0.03477 rather than0.02734, supporting the predictive usefulness of distinct temperature responses. The full-fit Jacobian condition is771, and only four heating histories constrain five parameters, so individual energies are not unique chemical constants. A single inaccessible-fraction alternative fails to improve transfer. The confirmation error is0.05895conversion units, or5.895percentage points; this is error, not percentage accuracy.",
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "variables_and_units": {
+        "target": "1",
+        "temperature_K": "K",
+        "heating_rate_K_min": "K/min"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014"
+      ],
+      "task_id": "P100-013.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-013-F03",
+      "classification": "abstention",
+      "source_classification": "abstention",
+      "statement": "Chemical-species identification and industrial cure qualification are not established by these DSC fits.",
+      "applicability": "Independent component-specific and process-reliability evidence is absent.",
+      "limitations": "A shared activation barrier gives development MAE0.03477 rather than0.02734, supporting the predictive usefulness of distinct temperature responses. The full-fit Jacobian condition is771, and only four heating histories constrain five parameters, so individual energies are not unique chemical constants. A single inaccessible-fraction alternative fails to improve transfer. The confirmation error is0.05895conversion units, or5.895percentage points; this is error, not percentage accuracy.",
+      "falsification": "A shared activation barrier gives development MAE0.03477 rather than0.02734, supporting the predictive usefulness of distinct temperature responses. The full-fit Jacobian condition is771, and only four heating histories constrain five parameters, so individual energies are not unique chemical constants. A single inaccessible-fraction alternative fails to improve transfer. The confirmation error is0.05895conversion units, or5.895percentage points; this is error, not percentage accuracy.",
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "variables_and_units": {
+        "target": "1",
+        "temperature_K": "K",
+        "heating_rate_K_min": "K/min"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014"
+      ],
+      "task_id": "P100-013.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    }
+  ],
+  "reviews_required": [
+    "computational",
+    "scientific_critical"
+  ],
+  "automatic_scientific_admission": false,
+  "current_exposure": "exposed"
+}

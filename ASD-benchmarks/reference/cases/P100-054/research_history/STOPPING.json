@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-10-01T14:14:33.695273+00:00",
+  "decision": "stop_development",
+  "selected_path": "attempts/attempt-001/model.json",
+  "selected_development_error": 0.015433858458101038,
+  "minimum_attempts": 5,
+  "actual_attempts": 7,
+  "stopping_reason": "Attempt005 improves worst-group robustness but not mean;006(square-root stress scaling) and007(notch-only ablation) fail to improve the established mean/worst Pareto envelope. Keep001 as primary mean-error choice and retain005 as a robustness alternative.",
+  "comparison": [
+    {
+      "name": "baseline-domain",
+      "primary_error": 0.023017772811101435,
+      "worst_group_error": 0.08220497517900172,
+      "parameters": 1,
+      "model_path": "baselines/baseline-domain/model.json"
+    },
+    {
+      "name": "baseline-flexible",
+      "primary_error": 0.01858271791757647,
+      "worst_group_error": 0.06179827182734596,
+      "parameters": 6,
+      "model_path": "baselines/baseline-flexible/model.json"
+    },
+    {
+      "name": "attempt-001",
+      "primary_error": 0.015433858458101038,
+      "worst_group_error": 0.06081204146223686,
+      "parameters": 2,
+      "model_path": "attempts/attempt-001/model.json"
+    },
+    {
+      "name": "attempt-002",
+      "primary_error": 0.015568318645639716,
+      "worst_group_error": 0.06171301064429152,
+      "parameters": 2,
+      "model_path": "attempts/attempt-002/model.json"
+    },
+    {
+      "name": "attempt-003",
+      "primary_error": 0.017359233189508837,
+      "worst_group_error": 0.062407504345018905,
+      "parameters": 3,
+      "model_path": "attempts/attempt-003/model.json"
+    },
+    {
+      "name": "attempt-004",
+      "primary_error": 0.0172704574268935,
+      "worst_group_error": 0.0626174234850017,
+      "parameters": 4,
+      "model_path": "attempts/attempt-004/model.json"
+    },
+    {
+      "name": "attempt-005",
+      "primary_error": 0.015966781848230676,
+      "worst_group_error": 0.05288361873000265,
+      "parameters": 2,
+      "model_path": "attempts/attempt-005/model.json"
+    },
+    {
+      "name": "attempt-006",
+      "primary_error": 0.015699265393857548,
+      "worst_group_error": 0.061287762834109374,
+      "parameters": 2,
+      "model_path": "attempts/attempt-006/model.json"
+    },
+    {
+      "name": "attempt-007",
+      "primary_error": 0.025961029813325747,
+      "worst_group_error": 0.08671732747252,
+      "parameters": 2,
+      "model_path": "attempts/attempt-007/model.json"
+    }
+  ],
+  "confirmation_opened": false,
+  "future_outcome_policy": "No candidate revision or selection after confirmation; all outcomes now become exposed for later campaigns."
+}

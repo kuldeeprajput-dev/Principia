@@ -1,0 +1,31 @@
+{
+  "title": "Reported earthquake depth uncertainty: geometry and source-estimator regimes",
+  "summary": "A compact robust geometry/reporting-regime equation predicts supplied depth uncertainty better than the original controls on held event clusters. The result concerns the catalog estimator, not independent true earthquake-depth accuracy or a new seismic law.",
+  "data": "2607July2026 catalog events each have exactlyoneQuakeMLorigin. Positive,finite uncertainty/RMS/count eligibility yields2274development and271confirmation events, in516/130complete spatiotemporal clusters. Source coordinates/times define100km/7dayconnected components before error analysis.",
+  "equations": "sigma_hat=exp(a+bR ln(RMS)+bN ln(Nphase)+cG G+cA A+cD ln(1+|depth|)+c10 I(depth=10)+cS I(depth<5)), with G=0.5ln[1+(dmin/(1+|depth|))\u00b2] and A=-ln(max(1-gap/360,0.02)). Numerical inputs use seconds,km andcounts as declared fixed reference units. Coefficients inthat order=[0.5059683260395523, 0.38408763491978104, -0.1245459549330374, 0.08698001732673424, 0.3868077313593952, 0.36476450158184914, -0.6216509362540282, 0.08021397958958204]. This is phenomenological regression with dimensionless normalized numerical ratios; bN is not automatically the independent-phase exponent-0.5.",
+  "performance": "Original confirmation log-ratioMAE0.299743 versusconstant0.710753,informationbaseline0.695467 andflexible0.434112. Worstreferencecluster1.755308 exceedsdomain1.566295. After-exposure matched robust controls yield0.681310domain and0.415761flexible; these diagnostics keep reference unchanged and are not fresh confirmation.",
+  "value": "Useful as a source-quality diagnostic and a benchmark for distinguishing physical inverse-information arguments from reporting/model conventions. No supplied confidence interval is validated against independently located events, waveforms or velocity structures.",
+  "findings": [
+    {
+      "classification": "validated_extension",
+      "admission": "partially_supported",
+      "claim": "Reporting-regime and geometry covariates provide a compact predictor of author-supplied positive depth uncertainty in this source snapshot.",
+      "equation": "Robust log-uncertainty equation above.",
+      "interpretation": "Near-station leverage and angular coverage have known localization roles, but exact-depth indicators also encode catalog processing practices. Improvement cannot isolate equation structure from fitting loss without the disclosed later controls.",
+      "falsification": "Worstcluster doesnot uniformly improve; cross-network uncertainty conventions, fixed-depth reporting and no independent truth limit mechanism claims. Matched robust controls were added onlyafter firstconfirmation."
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Naive inverse-square-root phase-count scaling is insufficient as a universal uncertainty law here.",
+      "equation": "sigma proportional RMS/sqrt(Nphase) is the domain family; estimated freeexponents/regimes in002\u2013006challenge it.",
+      "interpretation": "Correlated arrivals, networkgeometry and differing source procedures violate independent identical measurements.",
+      "falsification": "Reference predicts authorformal uncertainty only; it cannot demonstrate true physical accuracy or hazard forecasting."
+    }
+  ],
+  "lessons": "Check preferred-origin multiplicity and source units. Formal uncertainty is not independent error truth. Hold aftershock clusters together; source-estimator indicators can dominate a mechanically plausible scaling law. Match fittingloss forcontrols before freezing in future campaigns; late controls must be explicitlydiagnostic.",
+  "unresolved": [
+    "No independent scientific adjudication or new experimental replication.",
+    "Source-aware final cohort is exposed for all future revisions."
+  ]
+}

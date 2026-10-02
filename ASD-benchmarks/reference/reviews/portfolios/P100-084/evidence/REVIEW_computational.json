@@ -1,0 +1,1079 @@
+{
+  "case_id": "P100-084",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "4d853854d01539479e0e1fbeaa66c4f657c57ab90e6e3903647d7021fc798c06"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "fc4c4923dc0d8b174ae600e03eb38d41cd123ca68b2e1c1e45681af1c85066f9"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "65d44872938aa86796d9a9bf0135f73afcb969e2c47db65ce1d349c52371f604"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "3e469fc0420d282e327e6f64aaa95c3b8e04b5a6c43cbfee3179f1c75e63f04b"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "d4ff7c61907f8f768596af9c2d146a99fc4702ae6797a9c8da993bfdec5261c8"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "f812fe2c9fd6107a3de09e76e5c1622aa58ec92388613d055300f03ec1de673d"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "a5eae5f1fcf503b8e3b677aed2f0df059a9b75b593d281bae61e486760dc0bf3"
+    },
+    {
+      "path": "native.py",
+      "sha256": "f0ac3da499ea5e9a452ceb99fdcb463820801bf7df35e4aea9502842ac607182"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "f18d093e108b953fdaa318a5495134f4b6dacf5c5a68876435027635ea8b834e"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "d6b807c6c4c106f26dc46b49a76e9552242fc362d8068e1859135d1d4d375759"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "117ed2f7f0a725d10393ce1a5cb4c71d42969bdd89f548a1cd4a14928372118f"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "31794dfe896da1586e0a03302e6a632e55b94b174a407ba0db3f6da13ee1296a"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "92a63ea83f01bf3512c607ffc48e2f3ca445f2213ccd4f0e044c2964fe07d992"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "5dfc1115e95d143b6c8a3988c026fc3f8aae686d4fb5b669957bea89e02af107"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-084-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-084-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-084-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-084",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-084",
+      "native_rows": 1456,
+      "confirmation_rows": 336,
+      "models": 9,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 9,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 4.440892098500626e-16,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 336,
+        "primary_error": 1.3597509534280352,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 336,
+        "primary_error": 1.5224069363880366,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "hertz_shape",
+        "rows": 336,
+        "primary_error": 2.212289987455177,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "initial_level",
+        "rows": 336,
+        "primary_error": 38.00929743184523,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "conical_contact",
+        "rows": 336,
+        "primary_error": 2.12941065912678,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "localized_adhesion",
+        "rows": 336,
+        "primary_error": 1.3597509534280352,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "shifted_contact_pull_off",
+        "rows": 336,
+        "primary_error": 1.3935520816059004,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "rough_asperity_exponent",
+        "rows": 336,
+        "primary_error": 1.2819360608565649,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "hysteretic_detachment",
+        "rows": 336,
+        "primary_error": 1.3856005276359795,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "5",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "6",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "8",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "9",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "10",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "12",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "5",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "6",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "8",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "9",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "10",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "12",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "5",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "6",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "8",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "9",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "10",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "12",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "5",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "6",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "8",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "9",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "10",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "12",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "5",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "6",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "8",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "9",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "10",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "12",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "5",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "6",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "8",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "9",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "10",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "12",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hertz_shape/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hertz_shape/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hertz_shape/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hertz_shape/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hertz_shape/fold_models.json",
+        "fold": "5",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hertz_shape/fold_models.json",
+        "fold": "6",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hertz_shape/fold_models.json",
+        "fold": "8",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hertz_shape/fold_models.json",
+        "fold": "9",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hertz_shape/fold_models.json",
+        "fold": "10",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hertz_shape/fold_models.json",
+        "fold": "12",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/initial_level/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/initial_level/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/initial_level/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/initial_level/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/initial_level/fold_models.json",
+        "fold": "5",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/initial_level/fold_models.json",
+        "fold": "6",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/initial_level/fold_models.json",
+        "fold": "8",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/initial_level/fold_models.json",
+        "fold": "9",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/initial_level/fold_models.json",
+        "fold": "10",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/initial_level/fold_models.json",
+        "fold": "12",
+        "training_groups_count": 9,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "Retraction force prediction uses entire approach plus early-retraction calibration, excluding target deflection that would algebraically determine force. A localized adhesion descriptor improves the tested controls across curve locations; three material samples are not manufacturing-batch replication."
+}

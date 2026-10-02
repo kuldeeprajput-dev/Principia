@@ -1,0 +1,65 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-089.original.v1.raw-access.v1",
+  "parent_task_id": "P100-089.original.v1",
+  "case_id": "P100-089",
+  "protocol_version": "P100-089.original.v1.raw-access.v1",
+  "cohort_id": "P100-089.original.v1.cohort-1",
+  "parent_task_sha256": "7cf0e1ea52b1a24d6d2361de72756e64665c20bb6a21f4877894b11b977c58c2",
+  "input_sha256": "3d5dfa7fba860f2b8dac8602628666fed284e1996a36965d442fabd83646bcaa",
+  "observations_sha256": "425397ac552366e65759c9a4ae7dad11ec23a0925e28d7eff6d2dd41c5c24d9e",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "89_psychology_age_risk",
+  "source_assets": [
+    {
+      "name": "raw/raw data.csv",
+      "path": "raw/raw data.csv",
+      "bytes": 2674600,
+      "sha256": "85b66b0a146872e817b183b6979c03201a8a0e89bc1e02937b383833a09bd1d9"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "reward": "points",
+      "probability": "probability",
+      "child": "binary",
+      "age_child": "years; adult sentinel0",
+      "multi": "binary",
+      "description": "binary",
+      "trial_progress": "trial index/40",
+      "lag_choice": "binary or first-trial prior0.5",
+      "history_mean": "proportion or first-trial prior0.5",
+      "has_history": "binary"
+    },
+    "observation_window": "Before each choice using trial settings and only prior choices in that protocol; numeric Hidden and EV excluded.",
+    "calibration_and_history": "Causal previous choice and running mean within protocol, reset at protocol start; no future outcomes. Reward/probability are experimenter settings, not necessarily participant knowledge.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

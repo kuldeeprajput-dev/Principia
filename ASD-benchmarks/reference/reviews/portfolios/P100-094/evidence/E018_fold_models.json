@@ -1,0 +1,95 @@
+{
+  "station-02": {
+    "case": 94,
+    "type": "linear",
+    "features": [
+      "one",
+      "S",
+      "T",
+      "TS"
+    ],
+    "offset": null,
+    "scale": null,
+    "alpha": 0,
+    "title": "Temperature-dependent mixing slope",
+    "hypothesis": "A temperature\u2013salinity interaction challenges constant endmember mixing without reading another optical response.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}, {\"attempt\": \"attempt-002\", \"group_MAE\": 0.08255974042557099, \"worst_group\": 0.10476368110522996}, {\"attempt\": \"attempt-003\", \"group_MAE\": 0.06690298751571931, \"worst_group\": 0.07937593872776462}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Fixed salinity hinge beats simple mixing and flexible mean error, with similar worst-cast error. Test continuously temperature-dependent mixing as an independent alternative.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "station-06",
+      "station-08"
+    ],
+    "training_rows": 4943,
+    "training_ids_sha256": "12082438fe59c82844402be03ce6a9271db99a6a9c5de22a41b0a91bf4079b6d",
+    "coef": [
+      0.7323315518043904,
+      -0.32347660009086254,
+      0.01709361269494382,
+      -0.11227385104601717
+    ],
+    "rank": 4,
+    "condition_number": 22.450129436319635,
+    "complexity": 4
+  },
+  "station-06": {
+    "case": 94,
+    "type": "linear",
+    "features": [
+      "one",
+      "S",
+      "T",
+      "TS"
+    ],
+    "offset": null,
+    "scale": null,
+    "alpha": 0,
+    "title": "Temperature-dependent mixing slope",
+    "hypothesis": "A temperature\u2013salinity interaction challenges constant endmember mixing without reading another optical response.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}, {\"attempt\": \"attempt-002\", \"group_MAE\": 0.08255974042557099, \"worst_group\": 0.10476368110522996}, {\"attempt\": \"attempt-003\", \"group_MAE\": 0.06690298751571931, \"worst_group\": 0.07937593872776462}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Fixed salinity hinge beats simple mixing and flexible mean error, with similar worst-cast error. Test continuously temperature-dependent mixing as an independent alternative.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "station-02",
+      "station-08"
+    ],
+    "training_rows": 4917,
+    "training_ids_sha256": "5fcfa566b24d911fe6b6dd7b5dd27493682a90777b627c2be85e95971b15295b",
+    "coef": [
+      0.467618801446543,
+      0.03447961204210308,
+      -0.17145068119744553,
+      0.07275674787360199
+    ],
+    "rank": 4,
+    "condition_number": 20.900224767994818,
+    "complexity": 4
+  },
+  "station-08": {
+    "case": 94,
+    "type": "linear",
+    "features": [
+      "one",
+      "S",
+      "T",
+      "TS"
+    ],
+    "offset": null,
+    "scale": null,
+    "alpha": 0,
+    "title": "Temperature-dependent mixing slope",
+    "hypothesis": "A temperature\u2013salinity interaction challenges constant endmember mixing without reading another optical response.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}, {\"attempt\": \"attempt-002\", \"group_MAE\": 0.08255974042557099, \"worst_group\": 0.10476368110522996}, {\"attempt\": \"attempt-003\", \"group_MAE\": 0.06690298751571931, \"worst_group\": 0.07937593872776462}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Fixed salinity hinge beats simple mixing and flexible mean error, with similar worst-cast error. Test continuously temperature-dependent mixing as an independent alternative.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "station-02",
+      "station-06"
+    ],
+    "training_rows": 4912,
+    "training_ids_sha256": "17e0cf29cd9b64c6a58eb882895f9924d6546828a73fc04e1f8e5f5895ea9064",
+    "coef": [
+      0.28246249893282466,
+      0.3754652597111134,
+      -0.4108225299338441,
+      0.26027031128893074
+    ],
+    "rank": 4,
+    "condition_number": 22.900632419745982,
+    "complexity": 4
+  }
+}

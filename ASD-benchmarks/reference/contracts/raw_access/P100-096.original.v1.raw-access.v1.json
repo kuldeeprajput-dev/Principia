@@ -1,0 +1,61 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-096.original.v1.raw-access.v1",
+  "parent_task_id": "P100-096.original.v1",
+  "case_id": "P100-096",
+  "protocol_version": "P100-096.original.v1.raw-access.v1",
+  "cohort_id": "P100-096.original.v1.cohort-1",
+  "parent_task_sha256": "3f2d3c27da5530e9a13b01825eb1736bbbb3cc609c47b59e8d3d90090975024b",
+  "input_sha256": "2055a7bc96fd6fe4444db2161e7c81b64a94806aa5c1cd3e4e62bcf9c7e09b69",
+  "observations_sha256": "8ef4335aa851bc7f2262b272e82db98f093e726958e12bebb7e889051ae1390e",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "96_transport_bikez",
+  "source_assets": [
+    {
+      "path": "raw/TRAJECTORIES.zip",
+      "bytes": 27564329,
+      "sha256": "851997645445c0e91ac1e4d08833bb80c13c9fee514d03cad84a9f792e33e5f0"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "speed": "m/s at current native frame",
+      "past_acc": "m/s^2 from native speed 1 s earlier",
+      "gap": "m; positive-angle arc gap to nearest forward angular bicycle",
+      "relative_speed": "m/s; leader minus follower",
+      "radius": "m",
+      "lateral_gap": "m; radial separation to angular leader",
+      "count": "tracked bicycles in frame"
+    },
+    "observation_window": "Only current and past extracted speeds and current geometry/neighbor state. Future target speed is inaccessible to candidate replay.",
+    "calibration_and_history": "Source computer-vision/Kalman trajectories, 25 Hz; select every 25th frame and exact +/-25-frame pairs. Parts of the same original video remain together. Track IDs may be ambiguous; all 28 riders recur across videos. Source preprocessing may use future smoothing, so predictions are retrospective trajectory dynamics and not certified online safety. Angular-neighbor interaction is a testable approximation; lateral separation and direction reversal are falsifiers.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Publisher trajectories may have future-dependent smoothing; supplemental rights unresolved.",
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

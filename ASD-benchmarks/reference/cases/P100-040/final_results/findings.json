@@ -1,0 +1,697 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-040",
+  "findings": [
+    {
+      "finding_id": "P100-040-F01",
+      "statement": "A short/long-distance and cyclic-clock equation improves completed-trip duration prediction in a reserved quarter against the frozen matched controls.",
+      "classification": "validated_extension",
+      "advisory_disposition": "partially_supported",
+      "task_ids": [
+        "P100-040.original.v1"
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The selected two-distance-regime reference has mean daily MAE 9.453892 minutes versus matched robust domain 10.156146 and robust flexible 10.269022 on 92 held pickup days. Worst-day error also improves. A later candidate with lower confirmation error is correctly not promoted.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Actual trip distance is a post-trip measurement. The task is retrospective duration reconstruction, not pickup-time ETA. Airport, borough and time-of-day effects are descriptive route and demand associations; provider reporting quality and missing traffic information preclude a causal travel-time law.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful compact transportation-response model with fair robust controls and substantial chronological coverage, bounded by one city, one service class and retrospective inputs.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native adapter, frozen equations, coefficients and compact evidence were inspected. Separate computational review performs numerical replay; scientific review is not experimental replication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        }
+      },
+      "computational_review": {
+        "finding_id": "P100-040-F01",
+        "disposition": "partially_supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Whole-day held-quarter trip duration error improves matched robust controls, conditional on completed-trip distance. This information is retrospective and cannot support an operational pickup-time ETA or route optimization claim.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Computational agreement cannot identify a physical or causal mechanism. Whole-day held-quarter trip duration error improves matched robust controls, conditional on completed-trip distance. This information is retrospective and cannot support an operational pickup-time ETA or route optimization claim.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Reusable scoped comparison and preserved falsification evidence. Whole-day held-quarter trip duration error improves matched robust controls, conditional on completed-trip distance. This information is retrospective and cannot support an operational pickup-time ETA or route optimization claim.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          "Native reconstruction and held-group separation",
+          "All frozen predictor and metric replay",
+          "Undeclared target poisoning and row-order invariance",
+          "Development-fold training/validation membership disjointness"
+        ],
+        "limitations": [
+          "Whole-day held-quarter trip duration error improves matched robust controls, conditional on completed-trip distance. This information is retrospective and cannot support an operational pickup-time ETA or route optimization claim.",
+          "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+        ]
+      },
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "reproducibility"
+      ],
+      "scientific_review": "../../../reviews/portfolios/P100-040/combined/review.json",
+      "current_outcome_exposure": "exposed",
+      "equation_or_program": {
+        "expression": "See rules.json models.reference: T_hat=clip[a+bS min(d,3)+bL max(d-3,0)+cA A+cM M+u d sin(2pi h/24)+v d cos(2pi h/24),0,10000].",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "source_claims": "../../../reviews/portfolios/P100-040/claims.json"
+    },
+    {
+      "finding_id": "P100-040-F02",
+      "statement": "Simple distance proportionality and an operational pickup-time interpretation are inadequate for this task.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-040.original.v1"
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preserved negative or adequacy conclusion is supported within the stated task; it does not assert that the underlying phenomenon is absent. The selected two-distance-regime reference has mean daily MAE 9.453892 minutes versus matched robust domain 10.156146 and robust flexible 10.269022 on 92 held pickup days. Worst-day error also improves. A later candidate with lower confirmation error is correctly not promoted.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Actual trip distance is a post-trip measurement. The task is retrospective duration reconstruction, not pickup-time ETA. Airport, borough and time-of-day effects are descriptive route and demand associations; provider reporting quality and missing traffic information preclude a causal travel-time law.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful compact transportation-response model with fair robust controls and substantial chronological coverage, bounded by one city, one service class and retrospective inputs.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native adapter, frozen equations, coefficients and compact evidence were inspected. Separate computational review performs numerical replay; scientific review is not experimental replication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        }
+      },
+      "computational_review": {
+        "finding_id": "P100-040-F02",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Whole-day held-quarter trip duration error improves matched robust controls, conditional on completed-trip distance. This information is retrospective and cannot support an operational pickup-time ETA or route optimization claim.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Computational agreement cannot identify a physical or causal mechanism. Whole-day held-quarter trip duration error improves matched robust controls, conditional on completed-trip distance. This information is retrospective and cannot support an operational pickup-time ETA or route optimization claim.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Reusable scoped comparison and preserved falsification evidence. Whole-day held-quarter trip duration error improves matched robust controls, conditional on completed-trip distance. This information is retrospective and cannot support an operational pickup-time ETA or route optimization claim.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          "Native reconstruction and held-group separation",
+          "All frozen predictor and metric replay",
+          "Undeclared target poisoning and row-order invariance",
+          "Development-fold training/validation membership disjointness"
+        ],
+        "limitations": [
+          "Whole-day held-quarter trip duration error improves matched robust controls, conditional on completed-trip distance. This information is retrospective and cannot support an operational pickup-time ETA or route optimization claim.",
+          "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+        ]
+      },
+      "disagreements": [
+        "reproducibility"
+      ],
+      "scientific_review": "../../../reviews/portfolios/P100-040/combined/review.json",
+      "current_outcome_exposure": "exposed",
+      "equation_or_program": {
+        "expression": "Domain T=a+b*d and matched robust variant are retained; input availability excludes pickup-time use of actual trip distance.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "source_claims": "../../../reviews/portfolios/P100-040/claims.json"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

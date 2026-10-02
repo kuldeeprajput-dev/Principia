@@ -1,0 +1,80 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-049.original.v1.raw-access.v1",
+  "parent_task_id": "P100-049.original.v1",
+  "case_id": "P100-049",
+  "protocol_version": "P100-049.original.v1.raw-access.v1",
+  "cohort_id": "P100-049.original.v1.cohort-1",
+  "parent_task_sha256": "0461a9ab76269177fcea3a74ca4c550743bd1314084fb0cb4aa5577ce6c435b6",
+  "input_sha256": "daacf091467b8070ea307ca997addb31edc7da6ec59b138439a177da084fea97",
+  "observations_sha256": "768b0beea00d4c8b05fcaf7365b883ccd4d377246ee01f6a4e7e3985ff338de3",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "49_battery_dlr_native_exports",
+  "source_assets": [
+    {
+      "path": "raw/DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt",
+      "bytes": 62380666,
+      "sha256": "9e9c27472a4b28e1ec78ca16acde4a8d8734b730035ed8f64b3c98d912c10017"
+    },
+    {
+      "path": "raw/DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt",
+      "bytes": 9257892,
+      "sha256": "f4d41fc0daa3f80f5c7cd46d31b4fe0c69074aa5f2ef0f07d2d247a7ce4526b9"
+    },
+    {
+      "path": "raw/metadata.json",
+      "bytes": 13841,
+      "sha256": "ebaa6644d4a79599776f56ea21e0f47cb56cb7f96660877e1da7e6bd26513228"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "t": "s",
+      "t60": "s",
+      "t120": "s",
+      "u60": "V",
+      "u120": "V",
+      "u10": "V",
+      "pulse_s": "s",
+      "current": "A"
+    },
+    "observation_window": "Issue predictions at120s of each current-free block; only actual samples at or before10/60/120s and completed preceding current pulse are predictors. Targets are nearest native samples to300/600/1200/1800s, tolerance15s.",
+    "calibration_and_history": "Three causal voltage samples per block; no fit to later outcomes. Calibration access is identical for every model.",
+    "calibration_columns": [
+      "t60",
+      "t120",
+      "u60",
+      "u120",
+      "u10"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Ninety-six held rest blocks come from one half-cell; diffusivity is not identified."
+  ],
+  "current_outcomes_exposed": true
+}

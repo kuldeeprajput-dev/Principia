@@ -29,6 +29,8 @@ jobs:
           python-version: "3.12"
       - name: Verify regular files and frozen LFS pointer metadata
         run: python ASD-benchmarks/tools/verify_git_release.py ASD-benchmarks --allow-lfs-pointers
+      - name: Verify all source-result-task links and baseline attribution
+        run: python ASD-benchmarks/tools/validate_reference_structure.py ASD-benchmarks
       - name: Exercise corruption and replay safeguards
         working-directory: ASD-benchmarks
         run: |

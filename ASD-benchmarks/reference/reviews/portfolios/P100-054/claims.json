@@ -1,0 +1,294 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-054",
+  "claim_origin": "New ASD5 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "{\"status\": \"exposed\", \"confirmation_originally_withheld\": true, \"public_source_aware\": true}"
+  },
+  "findings": [
+    {
+      "id": "P100-054-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "A compact bridge-width correction improves held-out specimen load reconstruction over constant apparent-toughness and quadratic controls.",
+      "applicability": "One wafer and post-test geometry; no intrinsic-toughness or prospective safety claim.",
+      "limitations": "The notch-only alternative worsens development MAE to0.02596mN and confirmation to0.02860mN, so relative notch depth alone does not replace bridge width in this task. A bounded regime model happens to score0.015961mN after opening confirmation, but its development error was worse and one boundary parameter was at its bound; it remains a diagnostic alternative rather than replacing the preselected reference. This disagreement is useful evidence for future independent experiments.",
+      "falsification": "The notch-only alternative worsens development MAE to0.02596mN and confirmation to0.02860mN, so relative notch depth alone does not replace bridge width in this task. A bounded regime model happens to score0.015961mN after opening confirmation, but its development error was worse and one boundary parameter was at its bound; it remains a diagnostic alternative rather than replacing the preselected reference. This disagreement is useful evidence for future independent experiments.",
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "equation_or_program": {
+        "expression": "With $x=a/W$ and $r=1-b/B$, the source-declared cantilever geometry factor is\n\n$$\nf(x)=1.46+24.36x-47.21x^2+75.18x^3,\n\\qquad \\widehat P=\\frac{BW^{3/2}}{L f(x)}(K_0+c r).\n$$\n\nHere K0=0.636134MPa sqrt(m) and c=5.430604MPa sqrt(m); geometry in micrometres yields force in mN. Full precision is in rules.json. These coefficients describe apparent geometric response at bridge failure; neither is claimed to be intrinsic silicon toughness.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "variables_and_units": {
+        "target": "mN",
+        "width_um": "um",
+        "thickness_um": "um",
+        "length_um": "um",
+        "notch_depth_um": "um",
+        "notch_width_um": "um"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014"
+      ],
+      "task_id": "P100-054.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-054-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "Notch-depth-only effective toughness does not explain the bridge-width-associated predictive information.",
+      "applicability": "This is conditional predictive evidence, not an identified causal effect.",
+      "limitations": "The notch-only alternative worsens development MAE to0.02596mN and confirmation to0.02860mN, so relative notch depth alone does not replace bridge width in this task. A bounded regime model happens to score0.015961mN after opening confirmation, but its development error was worse and one boundary parameter was at its bound; it remains a diagnostic alternative rather than replacing the preselected reference. This disagreement is useful evidence for future independent experiments.",
+      "falsification": "The notch-only alternative worsens development MAE to0.02596mN and confirmation to0.02860mN, so relative notch depth alone does not replace bridge width in this task. A bounded regime model happens to score0.015961mN after opening confirmation, but its development error was worse and one boundary parameter was at its bound; it remains a diagnostic alternative rather than replacing the preselected reference. This disagreement is useful evidence for future independent experiments.",
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "variables_and_units": {
+        "target": "mN",
+        "width_um": "um",
+        "thickness_um": "um",
+        "length_um": "um",
+        "notch_depth_um": "um",
+        "notch_width_um": "um"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014"
+      ],
+      "task_id": "P100-054.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-054-F03",
+      "classification": "abstention",
+      "source_classification": "abstention",
+      "statement": "An optimal crack-arrest design boundary and universal fracture law are not established.",
+      "applicability": "Arrest labels are excluded; source paper already establishes qualitative stability conditions, and retrospective regime results disagree with development ranking.",
+      "limitations": "The notch-only alternative worsens development MAE to0.02596mN and confirmation to0.02860mN, so relative notch depth alone does not replace bridge width in this task. A bounded regime model happens to score0.015961mN after opening confirmation, but its development error was worse and one boundary parameter was at its bound; it remains a diagnostic alternative rather than replacing the preselected reference. This disagreement is useful evidence for future independent experiments.",
+      "falsification": "The notch-only alternative worsens development MAE to0.02596mN and confirmation to0.02860mN, so relative notch depth alone does not replace bridge width in this task. A bounded regime model happens to score0.015961mN after opening confirmation, but its development error was worse and one boundary parameter was at its bound; it remains a diagnostic alternative rather than replacing the preselected reference. This disagreement is useful evidence for future independent experiments.",
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "variables_and_units": {
+        "target": "mN",
+        "width_um": "um",
+        "thickness_um": "um",
+        "length_um": "um",
+        "notch_depth_um": "um",
+        "notch_width_um": "um"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014"
+      ],
+      "task_id": "P100-054.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FINDINGS.md",
+      "bytes": 4017,
+      "sha256": "677780949acefa2b4d3396a6083237950ba7a3c88ce8bfbb812d96bb143dd560",
+      "id": "E001",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E002_inputs.csv.gz",
+      "bytes": 480,
+      "sha256": "3a912581f972797a070f9ccc57b79b537c98e1b0eb4ca7de0964f24d9d26b7e1",
+      "id": "E002",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E003_observations.csv.gz",
+      "bytes": 685,
+      "sha256": "4b269d4a71d531737ea4e3e0185ef1ec7462153a945e5245d1c5318783f6def5",
+      "id": "E003",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E004_by_group.csv",
+      "bytes": 8709,
+      "sha256": "c4808c46a535034ce2a996674e396b9555cf82ada4c8ec54234e9047cf69409e",
+      "id": "E004",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E005_metrics.csv",
+      "bytes": 749,
+      "sha256": "fff64fafc40b45e90816770f613663d77a1ca9cda2a9275ef88408dd15856f66",
+      "id": "E005",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E006_predictions.csv.gz",
+      "bytes": 2251,
+      "sha256": "beb9a7aa632b8657a3cd459a752221e49f1d53a30eb68c1a0bf57add2e9db75e",
+      "id": "E006",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E007_findings.json",
+      "bytes": 4342,
+      "sha256": "92184941a362693f29407ccbf2ae0e212cc25a4aea1ccbb84444bd3e287185a1",
+      "id": "E007",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 1810,
+      "sha256": "03c4addd598a835fd6d59f7c754efb64bc8980bcbe05e66abe38815a84b2b8ce",
+      "id": "E008",
+      "role": "package/preparation/native.py"
+    },
+    {
+      "path": "evidence/E009_rules.json",
+      "bytes": 33384,
+      "sha256": "563aea2a72d4cbe08679d293d1fdf150a94209e7249663e2adbe0e93c32031da",
+      "id": "E009",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E010_run.py",
+      "bytes": 6300,
+      "sha256": "90435239d1de5599f0318ad4a691a7598388a12005c8f4bd3c6b7dd12134347f",
+      "id": "E010",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E011_FREEZE.json",
+      "bytes": 15146,
+      "sha256": "fda3c3cffd04c4e645e2c9dbd84a0a3b302bc2391897c3727dc882c8766daa4e",
+      "id": "E011",
+      "role": "research_history/FREEZE.json"
+    },
+    {
+      "path": "evidence/E012_PRIOR_ART.json",
+      "bytes": 890,
+      "sha256": "f0dc1fefa62bfc3cb998c5c91127023ffcab8b1e89c3cca66e671dc90d7c8798",
+      "id": "E012",
+      "role": "research_history/PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E013_PROTOCOL.json",
+      "bytes": 2664,
+      "sha256": "826374c34f9ad95d9f5f3755e22f92c33c8b443647153a6ae09db9e2bfc77c04",
+      "id": "E013",
+      "role": "research_history/PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E014_SOURCE_AND_UNITS.md",
+      "bytes": 1017,
+      "sha256": "5730b9add69d7b833426f5f9a1441411e99508ab5975604a9a7f8ee078464026",
+      "id": "E014",
+      "role": "research_history/SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 10203,
+      "sha256": "af856b1a3694f622336a1c219625fa0959c56f0a666431296d4f84ab4e38baad",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 11555,
+      "sha256": "ea799db12d49ed12449563480aa494db5cafad1e7d52d7757280314b49ab83ee",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

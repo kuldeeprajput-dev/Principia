@@ -1,0 +1,92 @@
+{
+  "schema": "principia.continuation.v1",
+  "case_id": "P100-083",
+  "created_at": "2026-09-30T09:17:07.309886+00:00",
+  "exposure": "All original cohorts are exposed. New results are retrospective development diagnostics; no fresh confirmation admitted.",
+  "cohort": "Original development groups only; original reserved groups excluded from selection and all continuation scores.",
+  "target": "One-hour future internal sensor temperature",
+  "units": "degC",
+  "primary_metric": "rmse",
+  "original_metric_preserved": "mean whole-group physical-unit error remains reported, including the new normalized acoustic track",
+  "inputs": [
+    "stream",
+    "T_now",
+    "T_lag",
+    "T_external",
+    "T_external_lag",
+    "RH_external",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "input_units": {
+    "stream": "calibrated source sensor category",
+    "T_now": "degC",
+    "T_lag": "degC,causal previous1h",
+    "T_external": "degC,current",
+    "T_external_lag": "degC,causal previous1h",
+    "RH_external": "percent,current",
+    "hour_sin": "dimensionless source-clock phase",
+    "hour_cos": "dimensionless source-clock phase"
+  },
+  "grouping": "Whole TestID / width-file / strain / stream-dateblock / sourcePING-run. 83 forward folds; others leave original whole-group folds out. All associated observations stay together.",
+  "folds": [
+    {
+      "fold": 0,
+      "groups": [
+        "DadosMeliponas:sensor1:block0",
+        "DadosMeliponas:sensor2:block0",
+        "DadosMeliponas:sensor3:block0",
+        "dadosColmeia1Apis:sensor1:block0",
+        "dadosColmeia2Apis:sensor3:block0"
+      ],
+      "rows": 1420
+    },
+    {
+      "fold": 1,
+      "groups": [
+        "DadosMeliponas:sensor1:block1",
+        "DadosMeliponas:sensor2:block1",
+        "DadosMeliponas:sensor3:block1",
+        "dadosColmeia1Apis:sensor1:block1",
+        "dadosColmeia2Apis:sensor3:block1"
+      ],
+      "rows": 1330
+    },
+    {
+      "fold": 2,
+      "groups": [
+        "DadosMeliponas:sensor1:block2",
+        "DadosMeliponas:sensor2:block2",
+        "DadosMeliponas:sensor3:block2",
+        "dadosColmeia1Apis:sensor1:block2",
+        "dadosColmeia2Apis:sensor3:block2"
+      ],
+      "rows": 1525
+    },
+    {
+      "fold": 3,
+      "groups": [
+        "DadosMeliponas:sensor1:block3",
+        "DadosMeliponas:sensor2:block3",
+        "DadosMeliponas:sensor3:block3",
+        "dadosColmeia1Apis:sensor1:block3",
+        "dadosColmeia2Apis:sensor3:block3"
+      ],
+      "rows": 1256
+    }
+  ],
+  "fitting": "All coefficients/scales/imputation/tuning use applicable training partitions only. Nested fold validation for tuned alternatives and flexible baselines. Same allowable inputs for all comparators.",
+  "baselines": "Persistence/constant, established mechanistic prediction, original selected equations refit, train-only Gaussian residual kernel (80centers; widths0.5/1/2,ridges0.01/1). Strong causal-history linear comparator when applicable.",
+  "selection": "Primary development criterion plus per-group noninferiority and complexity; <=1percent indistinguishable favors simplicity. No admission as fresh validated extension. Additional cycles chosen from actual prior residual/control evidence.",
+  "uncertainty": "Paired whole-group errors; disclose number of distinct systems and serial/repeated dependence; no observation-level CI.",
+  "decision_threshold": null,
+  "limits": [
+    "Positive coefficients are constrained hypotheses, not proof of heat conductance, brood setpoint or metabolic mechanism.",
+    "All five streams are calibrated; one apiary, colony independence and sensor placement uncertain.",
+    "External lag from the same causal native row as internal lag; no future weather or daily rainfall.",
+    "Native targets including extreme fluctuations retained; group/date serial dependence disclosed."
+  ],
+  "source_landing_url": "https://zenodo.org/records/20399470",
+  "fresh_source_status": "Authoritative current landing pages checked30Sept2026: retained records remain same releases; no genuinely new experimental cohort was established. No fresh confirmation claimed.",
+  "minimum_material_cycles": 2
+}

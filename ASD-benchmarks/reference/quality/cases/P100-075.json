@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-075",
+  "title": "Substrate Stiffness and Shear Stress Orchestrate Endothelial Inflammation and Remodelling via Mechanosensitive Pathways",
+  "default_task": "P100-075.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "VCAM1 log2(1+CPM)",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 1,
+    "independent_unit_description": "Donor; four donors, three development and one confirmation",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "One LSS/30kPa VCAM1 measurement per donor. Calibration rows excluded from target cohort; every comparator receives identical value.",
+  "baseline_strength": {
+    "registered_controls": 11,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "unsupported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "VCAM1 log2(1+CPM)",
+    "prediction_time": "Before target-condition expression assay: known stiffness/shear design and same-donor LSS30kPa calibration expression. Contemporaneous designed-culture response diagnostic; no real-time sensor or uncalibrated donor claim.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Only one held donor; control copying outperforms the proposed extension."
+  },
+  "task_ids": [
+    "P100-075.original.v1"
+  ],
+  "finding_ids": [
+    "P100-075-F01",
+    "P100-075-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-075/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-075.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate VCAM1 log2(1+CPM) under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Before target-condition expression assay: known stiffness/shear design and same-donor LSS30kPa calibration expression. Contemporaneous designed-culture response diagnostic; no real-time sensor or uncalibrated donor claim.",
+    "calibration_requirement": "One LSS/30kPa VCAM1 measurement per donor. Calibration rows excluded from target cohort; every comparator receives identical value.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "VCAM1 log2(1+CPM) in log2(1+CPM)",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Only one held donor; control copying outperforms the proposed extension."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "log2(1+CPM)",
+    "reference_model": "reference",
+    "reference_primary_error": 0.7634840390913585,
+    "reference_physical_mae": 0.7634840390913585,
+    "physical_error_units": "log2(1+CPM)",
+    "lowest_registered_error_model": "baseline_copy",
+    "lowest_registered_error": 0.49627597373369603,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-075.original.v1/evidence/metrics.csv",
+      "bytes": 953,
+      "sha256": "a2bf3e77809f2dd3c23c4772ba2ab022c332d43f5e4338bc079196406a8305d1"
+    },
+    "models": 11
+  },
+  "case_specific_next_evidence": "Only one held donor; control copying outperforms the proposed extension."
+}

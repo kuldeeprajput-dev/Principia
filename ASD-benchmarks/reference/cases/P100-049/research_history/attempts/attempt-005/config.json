@@ -1,0 +1,31 @@
+{
+  "name": "boundary_storage",
+  "formula": "u120+(u120-u60)*clip(a+b*u120,0,3)*((sqrt(t+pulse_s)-sqrt(t))-(sqrt(t120+pulse_s)-sqrt(t120)))/((sqrt(t120+pulse_s)-sqrt(t120))-(sqrt(t60+pulse_s)-sqrt(t60)))",
+  "hypothesis": "Attempt5: the two-channel mixture collapses to diffusion and provides no benefit. Test whether voltage-dependent chemical storage breaks shape invariance: a bounded affine gain in causal120s voltage represents local variation of chemical capacitance. Failure on forward blocks falsifies its useful transfer, not the existence of graphite staging.",
+  "inputs": [
+    "t",
+    "t60",
+    "t120",
+    "u60",
+    "u120",
+    "u10",
+    "pulse_s",
+    "current"
+  ],
+  "initial": {
+    "a": 1,
+    "b": 0
+  },
+  "bounds": {
+    "a": [
+      0,
+      2
+    ],
+    "b": [
+      -3,
+      3
+    ]
+  },
+  "recorded_utc": "2026-10-02T01:45:29.303228+00:00",
+  "parent": "attempt-004"
+}

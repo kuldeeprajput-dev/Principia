@@ -1,0 +1,36 @@
+[
+  {
+    "finding_id": "P100-093-F01",
+    "classification": "reproduction",
+    "claim": "Line-specific paired-control scaling transfers induced native AF488 quantiles to a held technical block",
+    "equation": "Yhat_line(q)=a_line*C_line(q)",
+    "coefficients": [
+      8.581667014750263,
+      2.8155460826606205,
+      1.0296661869445227
+    ],
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv",
+      "evidence/by_group.csv"
+    ],
+    "scope": "One plate; paired uninduced calibration; native AF488 channel",
+    "admission": "partially_supported",
+    "prior_art": "Source already reports WT response and mutant attenuation; this compact calibration is not a new transporter law",
+    "falsification": "Only one held technical block, no biological replication, absent manual gates and inconsistent dye caption"
+  },
+  {
+    "finding_id": "P100-093-F02",
+    "classification": "supported_negative_finding",
+    "claim": "The available quantile transfer does not identify a unique recruitment,distribution-width or saturation mechanism beyond simple scaling",
+    "equation": null,
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv"
+    ],
+    "scope": "Five model families and two development technical blocks",
+    "admission": "supported",
+    "prior_art": "Distribution heterogeneity and source WT bimodality already described",
+    "falsification": "New doses,timecourses and independent biological replicates could distinguish mechanisms"
+  }
+]

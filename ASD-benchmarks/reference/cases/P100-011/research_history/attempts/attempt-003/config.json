@@ -1,0 +1,28 @@
+{
+  "case": 11,
+  "kind": "capacity",
+  "hypothesis": "Instead of a direct utilization factor, test a reciprocal capacity law: Server capacity is limited by calibrated Offline capacity plus a workload-specific per-accelerator service constraint.",
+  "parent": "attempt-002",
+  "created_utc": "2026-10-02T02:04:05.306212+00:00",
+  "before_execution": true,
+  "confirmation_accessed": false,
+  "development_evidence_available": [
+    {
+      "attempt": "attempt-001",
+      "primary_error": 7642.969038505824,
+      "worst_group": 146735.98281590856
+    },
+    {
+      "attempt": "attempt-002",
+      "primary_error": 7088.35846481856,
+      "worst_group": 109908.83601861144
+    }
+  ],
+  "primary_metric": "mean_group_absolute_error",
+  "falsifying_tests": [
+    "Matched strong baselines under identical inputs",
+    "Per-group errors and worst-group behavior",
+    "Parameter boundary/identifiability audit or exact-arithmetic preconditions",
+    "Physical/mathematical applicability and negative cases retained"
+  ]
+}

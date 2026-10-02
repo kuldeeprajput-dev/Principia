@@ -1,0 +1,46 @@
+{
+  "target": "NVD-authored CVSSv3.1 assessment present in current snapshot",
+  "target_units": "binary source=nvd@nist.gov in cvssMetricV31",
+  "error_units": "squared probability (Brier)",
+  "metric_kind": "brier",
+  "permitted_inputs": [
+    "age_days",
+    "cna_score",
+    "batch_size"
+  ],
+  "input_units": {
+    "age_days": "days since publication at snapshot",
+    "cna_score": "non-NVD CVSSv3.1 assessment present binary",
+    "batch_size": "records from same assigning source and publication day"
+  },
+  "timing_contract": "All covariates are snapshot-available contemporaneous metadata. Source-day count and CNA assessment may be added after initial disclosure. This is current coverage diagnostics, not prediction of future NVD action or security exploitation.",
+  "calibration": "Whole CNA/source group folds and held sources; no held-source target calibration.",
+  "independent_unit": "CVE records nested in complete assigning sources; duplicated JSON/gzip representations linked. Source-day batches dependent.",
+  "scope_limits": "August23,2026 recent-feed snapshot only. Source status code is excluded; CVSS score formula and severity are not predicted. NIST policy deprioritizes duplicate scoring, so absence is not unsafe analysis failure.",
+  "applicability": {
+    "probabilities": [
+      0,
+      1
+    ]
+  },
+  "case_id": "P100-010",
+  "source_url": "https://nvd.nist.gov/vuln/data-feeds",
+  "source_license": "U.S. Government work; see NVD data-use policy",
+  "numeric_columns": [
+    "age_days",
+    "cna_score",
+    "batch_size"
+  ],
+  "exposure": {
+    "schema": "Native schema inspected and source-public aggregate descriptions known; case10 status counts were inspected, not new endpoint NVD-score presence scores. No reserved individual target metric printed.",
+    "current": "reserved_internal_only",
+    "fresh_for_future_users": false
+  },
+  "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  }
+}

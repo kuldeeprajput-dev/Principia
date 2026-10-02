@@ -1,0 +1,77 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-020.original.v1.raw-access.v1",
+  "parent_task_id": "P100-020.original.v1",
+  "case_id": "P100-020",
+  "protocol_version": "P100-020.original.v1.raw-access.v1",
+  "cohort_id": "P100-020.original.v1.cohort-1",
+  "parent_task_sha256": "bd9cf82305ec3e86d9224c3f24624b6dd3c3a327b68ff3197a9197fd3889a278",
+  "input_sha256": "43358a5c58d7334c9f06522698b355575c7c8fd26a20478082b7311187b49e09",
+  "observations_sha256": "dc14bda775d03d56a49d7dddeace8674da8d8fe1c1a85edf7262b808d71654a4",
+  "source_scope": "original_corpus",
+  "tier": "adequacy_falsification_diagnostic",
+  "source_folder": "20_ocean_noaa_coral_ssta_20260816",
+  "source_assets": [
+    {
+      "path": "raw/ct5km_ssta_v3.1-clim19912020-v1_20260816.nc",
+      "bytes": 10707615,
+      "sha256": "a72401223bebfb8d8df5ffadfc46db3ebc17ccb40160f802daaf26c411ef8267"
+    },
+    {
+      "path": "raw/ct5km_ssta_v3.1-clim19912020-v1_20260816.png",
+      "bytes": 4310259,
+      "sha256": "f3c8bdd4030749dc6376e4d28e07f0cf9809e932a04026505a96c77be9fff412"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "hx": "degree C",
+      "hy": "degree C",
+      "ox": "degree C",
+      "oy": "degree C",
+      "dg": "degree C",
+      "gx": "degree C",
+      "gy": "degree C",
+      "clat": "dimensionless cosine latitude"
+    },
+    "observation_window": "Retrospective reconstruction of one daily map, using twelve fixed neighboring pixels from the same date. Not a future forecast.",
+    "calibration_and_history": "Cardinal neighbors at4 and8 pixels plus four diagonal neighbors at4pixels. Target centers lie on a40pixel lattice and can never be calibration pixels for any scored center.",
+    "calibration_columns": [
+      "hx",
+      "hy",
+      "ox",
+      "oy",
+      "dg",
+      "gx",
+      "gy"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "One-date same-map interpolation; no future climate or bleaching response."
+  ],
+  "current_outcomes_exposed": true
+}

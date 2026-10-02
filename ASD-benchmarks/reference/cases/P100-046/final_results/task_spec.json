@@ -1,0 +1,56 @@
+{
+  "target": "Electron perpendicular temperature",
+  "target_units": "eV",
+  "metric_kind": "mae",
+  "independent_unit": "Contiguous20-minute blocks in one MMS1 passage, not independent spacecraft or experiments",
+  "timing_contract": "Diagnostic closure using current electron density and magnetic-field magnitude plus electron temperature/density/field measured at least60s earlier; current temperature and tensor-derived equivalents forbidden.",
+  "calibration": "Causal60-second-old electron state, same information for every model. Magnetic matching backward only.",
+  "scope_limits": "One2-hour MMS1 interval. All ion moments have qualityflag66 (saturation plus highMach); ion targets excluded before any fit. Electron flags0 and FGMflags0 retained. Moment errors and unmeasured heat flux/geometry limit CGL interpretation.",
+  "split": "Lasttwo20-minute blocks confirmation; chronological earlierblocks development",
+  "question": "Can double-adiabatic or polytropic electron-temperature closures explain local evolution beyond lag persistence?",
+  "case_id": "P100-046",
+  "error_units": "eV",
+  "source_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+  "source_license": "CC0 per NASA SPDF data-use policy",
+  "exposure": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+  "uncertainty_policy": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics.",
+  "selection": "Lowest development mean-group MAE, simpler model on relative1% tie. Exact mathematical algorithm baselines do not claim novel accuracy. Retain every attempt and compare named strong controls.",
+  "stopping": "At least5distinct scientific attempts; continue while a justified distinct mechanism yields prediction/robustness/interpretation gain; stop after2consecutive substantive no-gain attempts after minimum5.",
+  "created_utc": "2026-10-02T01:37:43.113181+00:00",
+  "before_first_fit": true,
+  "permitted_inputs": [
+    "temperature_lag",
+    "density_ratio",
+    "field_ratio",
+    "density_lag",
+    "field_lag",
+    "anisotropy_lag",
+    "elapsed_lag_s"
+  ],
+  "input_units": {
+    "temperature_lag": "eV",
+    "density_ratio": "dimensionless n(t)/n(t-60s)",
+    "field_ratio": "dimensionless B(t)/B(t-60s)",
+    "density_lag": "cm^-3",
+    "field_lag": "nT",
+    "anisotropy_lag": "dimensionless T_parallel/T_perpendicular",
+    "elapsed_lag_s": "s"
+  },
+  "numeric_columns": [
+    "temperature_lag",
+    "density_ratio",
+    "field_ratio",
+    "density_lag",
+    "field_lag",
+    "anisotropy_lag",
+    "elapsed_lag_s"
+  ],
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "nonnegative_prediction": true,
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0"
+}

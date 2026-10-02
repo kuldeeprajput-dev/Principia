@@ -1,0 +1,36 @@
+{
+  "case_id": "P100-075",
+  "target": "VCAM1 log2(1+CPM)",
+  "target_units": "log2(1+CPM)",
+  "error_units": "log2(1+CPM)",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "stiffness_kpa",
+    "hss",
+    "calibration"
+  ],
+  "input_units": {
+    "stiffness_kpa": "kPa",
+    "hss": "indicator HSS (10 versus 4 dyn/cm2)",
+    "calibration": "log2(1+CPM)"
+  },
+  "numeric_columns": [
+    "stiffness_kpa",
+    "hss",
+    "calibration"
+  ],
+  "timing_contract": "Before target-condition expression assay: known stiffness/shear design and same-donor LSS30kPa calibration expression. Contemporaneous designed-culture response diagnostic; no real-time sensor or uncalibrated donor claim.",
+  "calibration": "One LSS/30kPa VCAM1 measurement per donor. Calibration rows excluded from target cohort; every comparator receives identical value.",
+  "independent_unit": "Donor; four donors, three development and one confirmation",
+  "scope_limits": "Condition response in four cultured endothelial donors; one held donor cannot establish population generalization. One measured LSS/30kPa VCAM1 calibration per donor is required.",
+  "source_url": "https://zenodo.org/records/17925228",
+  "source_license": "CC BY 4.0",
+  "prior_art_url": "https://doi.org/10.1016/j.biomaterials.2025.123932",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": 0,
+    "target_max": null
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

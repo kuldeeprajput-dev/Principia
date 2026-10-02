@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "case_id",
+    "protocol_version",
+    "cohort_id",
+    "evaluator_version",
+    "package",
+    "target",
+    "target_units",
+    "permitted_inputs",
+    "input_units",
+    "aggregation",
+    "exposure",
+    "data"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "principia.task/3.0"
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "protocol_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cohort_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_sha256": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_units": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evaluator_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "permitted_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "input_units": {
+      "type": "object"
+    },
+    "aggregation": {
+      "type": "object",
+      "required": [
+        "hierarchy"
+      ],
+      "properties": {
+        "hierarchy": {
+          "enum": [
+            [
+              "group"
+            ],
+            [
+              "group",
+              "particle"
+            ]
+          ]
+        }
+      }
+    },
+    "exposure": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "const": "exposed"
+        },
+        "fresh_confirmation_for_future_agents": {
+          "const": false
+        }
+      }
+    },
+    "metric_kind": {
+      "enum": [
+        "mae",
+        "rmse",
+        "normalized_mae",
+        "log_mae",
+        "log_transit",
+        "brier"
+      ]
+    },
+    "assigned_rows": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "baseline_models": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  }
+}

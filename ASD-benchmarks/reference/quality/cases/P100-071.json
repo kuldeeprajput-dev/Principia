@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-071",
+  "title": "Dataset Based on Chinese Hamster Ovary (CHO) Cultivations including Turbidity, Permittivity, O2 and CO2 Measurements",
+  "default_task": "P100-071.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Viable-cell density",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 3,
+    "independent_unit_description": "experiment pair (both reactors)",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Training-only imputation, scale and missingness transforms; causal native sensors with quality flags. Offline VCD and its SEM are responses, never online predictors.",
+  "baseline_strength": {
+    "registered_controls": 4,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Viable-cell density",
+    "prediction_time": "Sensor median in [t\u22120.5h,t], fallback latest valid <=2h old; quality Ok and Cole R\u00b2>=0.9 where applicable. Lags and peaks use only the past. Do not use aligned duplicate tables as independent evidence.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-071.original.v1",
+    "P100-071.round2.v1"
+  ],
+  "finding_ids": [
+    "P100-071-SCI-01",
+    "P100-071-SCI-02",
+    "P100-071-SCI-03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-071/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-071.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Viable-cell density under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Sensor median in [t\u22120.5h,t], fallback latest valid <=2h old; quality Ok and Cole R\u00b2>=0.9 where applicable. Lags and peaks use only the past. Do not use aligned duplicate tables as independent evidence.",
+    "calibration_requirement": "Training-only imputation, scale and missingness transforms; causal native sensors with quality flags. Offline VCD and its SEM are responses, never online predictors.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Viable-cell density in million cells/mL",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "rmse",
+    "primary_units": "million cells/mL",
+    "reference_model": "spectral",
+    "reference_primary_error": 1.6310722761722094,
+    "reference_physical_mae": 1.28370482374486,
+    "physical_error_units": "million cells/mL",
+    "lowest_registered_error_model": "flexible",
+    "lowest_registered_error": 1.33834989853385,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-071.original.v1/evidence/metrics.csv",
+      "bytes": 399,
+      "sha256": "5cec3bb968026a3ea9a38a9e10aeddd07c5986434cb82036d67db2fd113857d0"
+    },
+    "models": 4
+  },
+  "case_specific_next_evidence": "Add independent cell-size/viability measurements and matched sensor-availability ablations.\n\nConfirm on fresh paired fed-batch runs, prespecifying coverage and sensor-quality failure handling."
+}

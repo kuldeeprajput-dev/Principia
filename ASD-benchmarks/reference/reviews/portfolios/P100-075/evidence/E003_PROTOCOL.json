@@ -1,0 +1,23 @@
+{
+  "frozen_utc": "2026-10-02T01:47:59.894049+00:00",
+  "target": "VCAM1 log2(1+CPM)",
+  "selection": "Whole-donor cross-validation primary mean donor MAE. Select smallest coefficient count within 1% of minimum development error, then error. >=5 substantive attempts; continue until two no-gain attempts and no supported next hypothesis.",
+  "calibration": "One LSS30kPa assay value per donor, given equally to all models. This is a calibrated condition-response diagnostic, not unmeasured-donor prediction.",
+  "inputs": [
+    "stiffness_kpa",
+    "hss",
+    "calibration"
+  ],
+  "target_transformation": "Per-sample library-depth CPM and log2(1+CPM); deterministic, no across-sample learned preprocessing",
+  "gene_selection": "Entrez7412 VCAM1 selected from source publication before count inspection",
+  "exposure": "Only identifiers, shape and covariates inspected prefit; no VCAM1 count values or confirmation outcomes displayed",
+  "baselines": [
+    "calibration copy",
+    "anchored additive log-stiffness plus shear",
+    "ridge quadratic stiffness/shear response"
+  ],
+  "groups": "Whole donors; calibration and all condition rows linked. One reserved donor, three leave-one-donor-out folds.",
+  "identifiability": "Effective condition response only; three stiffness levels do not identify a unique mechanotransduction pathway.",
+  "source_hashes": "SOURCE_MANIFEST.json",
+  "split": "SPLITS.json"
+}

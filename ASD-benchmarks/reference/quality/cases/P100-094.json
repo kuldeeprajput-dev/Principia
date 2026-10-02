@@ -1,0 +1,76 @@
+{
+  "case_id": "P100-094",
+  "title": "Conductivity Temperature Depth (CTD) Data from Canada-Sweden Arctic Ocean 2025 Expedition on IB Oden, 9 August - 19 September 2025",
+  "default_task": "P100-094.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Calibrated CDOM fluorescence channel",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Entire station casts02,06,08 development (cast04 has no eligible good-QC observations) leave-one-cast-out; casts10 and12 confirmation. Same expedition/instrument, spatial transfer not independent sensor calibration.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Calibrated CDOM fluorescence channel",
+    "prediction_time": "Contemporaneous calibrated CDOM fluorescence diagnostic using pressure,T1,S1; no other optical or oxygen response input. Good T/S flags0, pump on,5\u2013500dbar. CDOM has no independent QC column.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Two casts from one expedition; fluorescence is not chemically assayed DOC."
+  },
+  "task_ids": [
+    "P100-094.original.v1"
+  ],
+  "finding_ids": [
+    "P100-094-F01",
+    "P100-094-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-094/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-094.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Calibrated CDOM fluorescence channel under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Contemporaneous calibrated CDOM fluorescence diagnostic using pressure,T1,S1; no other optical or oxygen response input. Good T/S flags0, pump on,5\u2013500dbar. CDOM has no independent QC column.",
+    "calibration_requirement": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Calibrated CDOM fluorescence channel in ppb",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Two casts from one expedition; fluorescence is not chemically assayed DOC."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "ppb",
+    "reference_model": "reference",
+    "reference_primary_error": 0.04102167912395668,
+    "reference_physical_mae": 0.04102167912395668,
+    "physical_error_units": "ppb",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.04102167912395668,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-094.original.v1/evidence/metrics.csv",
+      "bytes": 1337,
+      "sha256": "3ecdf9e2464258f0465df07551285fe6507a8780183aa02276b6330cc83d258b"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

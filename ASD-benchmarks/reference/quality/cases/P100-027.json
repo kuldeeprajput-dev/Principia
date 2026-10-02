@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-027",
+  "title": "KTH boiling two-phase water flow",
+  "default_task": "P100-027.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Measured local vapor void fraction",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 3,
+    "independent_unit_description": "complete experimental run",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Saturation densities are fixed IAPWS-derived inputs from absolute pressure, not learned from void-fraction targets. Global profile coefficients use development runs only.",
+  "baseline_strength": {
+    "registered_controls": 6,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Measured local vapor void fraction",
+    "prediction_time": "Boundary pressure, mass flux, supplied thermodynamic quality, density properties and measurement coordinate only; no measured target-derived velocity, dynamic pressure, phase label or fitted per-run offset.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-027.original.v1",
+    "P100-027.round2.v1"
+  ],
+  "finding_ids": [
+    "P100-027-SCI-01",
+    "P100-027-SCI-02",
+    "P100-027-SCI-03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-027/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-027.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Measured local vapor void fraction under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Boundary pressure, mass flux, supplied thermodynamic quality, density properties and measurement coordinate only; no measured target-derived velocity, dynamic pressure, phase label or fitted per-run offset.",
+    "calibration_requirement": "Saturation densities are fixed IAPWS-derived inputs from absolute pressure, not learned from void-fraction targets. Global profile coefficients use development runs only.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Measured local vapor void fraction in dimensionless",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "dimensionless",
+    "reference_model": "attempt_002_radial",
+    "reference_primary_error": 0.10670132914961065,
+    "reference_physical_mae": 0.10670132914961065,
+    "physical_error_units": "dimensionless",
+    "lowest_registered_error_model": "attempt_002_radial",
+    "lowest_registered_error": 0.10670132914961065,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-027.original.v1/evidence/metrics.csv",
+      "bytes": 703,
+      "sha256": "2f947b1e5423836d91f2d3aa17e4abcd83b48884a8115a3fa11633026dfe90cd"
+    },
+    "models": 6
+  },
+  "case_specific_next_evidence": "Validate across another facility or geometry; use boundary-condition uncertainty and independently measured wall coordinates."
+}

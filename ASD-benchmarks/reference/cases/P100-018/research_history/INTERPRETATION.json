@@ -1,0 +1,31 @@
+{
+  "title": "Tornado geometry and reported loss: a bounded negative industrial result",
+  "summary": "Path geometry and contextual variables improve broad loss-estimate prediction over simple controls, but errors remain very large and stronger flexible controls beat the selected compact equation. No reliable industrial damage law is demonstrated.",
+  "data": "2025NOAA tornado segments with explicit damage estimates,positivepathlength/maximumwidth and validtiming:1072development/224confirmation segments in363/94complete episodegroups. Reportedzero damage remainszero; missing damage is excluded, never imputed. SourceEFdamage-derivedratings and narratives are forbiddenpredictors.",
+  "equations": "y=ln(1+damageUSD), predicted y=clip(a+bL ln(1+length_km)+bW ln(1+width_m)+bLat latitude+bSin sin(2pi month/12)+bCos cos(2pi month/12),0,50). Robust train-only residual fitting; coefficients=[3.099796961781409, 1.0765641714752674, 1.5023316079008489, -0.1478989662476028, 0.8455297618332634, -0.00746860537787219]. The length/maximumwidth proxy is not actual exposed assets, swept damage area or kinetic energy.",
+  "performance": "Selected005 confirmation MAE4.275538logunits versusconstant5.439115,areabaseline5.028090 andflexible4.243949. Worstselectedepisode12.868983 is farworse thanconstant7.487723. Postfreeze robustflexible diagnostic improves to4.059430; it was fitted ondevelopment onlyafter firstconfirmation and was not promoted. Huge log errors defeat precise financial-loss use.",
+  "value": "Provides a realistic benchmark for scientific abstention: incomplete exposure and wind information cannot be replaced by a visually plausible damage-scaling formula. The practical result is a reproducible demonstration of limitedpredictability, not a pricing/insurance tool.",
+  "findings": [
+    {
+      "classification": "reproduction",
+      "admission": "partially_supported",
+      "claim": "Recorded pathgeometry carries descriptive information about broad reported property losses.",
+      "equation": "The selected robust log-loss equation above.",
+      "interpretation": "Dimensions and regional/seasonal composition correlate with losses but also with reporting and asset exposure; maximumwidth timeslength is onlya bounding proxy.",
+      "falsification": "Flexiblecontrols outperform, verylarge logerrors and worseextremeepisodes remain. No wind/asset exposure or independent insuredloss truth."
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "The available geometry doesnot demonstrate an accurate transferable industrialdamage law.",
+      "equation": "Duration andcontext ablations005/006, plus matched robust controls, challenge the proposed law.",
+      "interpretation": "Negative duration slope conditional on geometry and strongfitlossdependence prevent a simple energy/exposuretime interpretation.",
+      "falsification": "Reportedmonetary losses are broad estimates, not direct mechanicalresponse; heldworsterror andstrongerflexiblecontrol reject deploymentclaim."
+    }
+  ],
+  "lessons": "Never useEFdamage-derivedrating to predict damage as independent evidence. Unknown damage isnotzero, maximumwidth isnotaveragewidth, and logerror must be translated into a cautionaboutpractical scale. Negativeindustrial results are useful when missingexposureprevents strongerclaims.",
+  "unresolved": [
+    "No independent scientific adjudication or new experimental replication.",
+    "Source-aware final cohort is exposed for all future revisions."
+  ]
+}

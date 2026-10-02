@@ -1,0 +1,32 @@
+[
+  {
+    "finding_id": "P100-007-F01",
+    "classification": "reproduction",
+    "claim": "Causal previous-cycle force provides the strongest registered development-selected forecast and transfers to the faster held run",
+    "equation": "Fhat(t+0.1s)=F(t+0.1s-T_t); T_t=peak historical autocorrelation lag in0.6\u20132s",
+    "coefficients": [],
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv",
+      "evidence/by_group.csv"
+    ],
+    "scope": "One participant and three treadmill speeds",
+    "admission": "supported",
+    "prior_art": "Established periodic time-series/biomechanical phase prediction",
+    "falsification": "Other people, irregular gait and perturbations are untested"
+  },
+  {
+    "finding_id": "P100-007-F02",
+    "classification": "supported_negative_finding",
+    "claim": "The tested local-damping, stiffness and bilateral extensions fail to improve development over a phase-copy control",
+    "equation": null,
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv"
+    ],
+    "scope": "Five declared model families and the two development runs",
+    "admission": "supported",
+    "prior_art": "Failure does not falsify real biomechanics",
+    "falsification": "Different interventions or more independent runs could identify mechanisms"
+  }
+]

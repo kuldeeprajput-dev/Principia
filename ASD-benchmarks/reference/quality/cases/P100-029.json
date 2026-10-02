@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-029",
+  "title": "Confinement and catalysis in designed peptide barrels",
+  "default_task": "P100-029.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "spectral_mean_fluorescence",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "peptide-dye condition",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Spectrum-wide mean fluorescence at native concentrations 0,1,2,5 nominal uM, per replicate; target concentrations 7.5 to30. No maximal-response normalization.",
+  "baseline_strength": {
+    "registered_controls": 10,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "unsupported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "spectral_mean_fluorescence",
+    "prediction_time": "Predict remaining higher-dose assay values after declared lower-dose measurements; sequential assay not real-time kinetics.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-029.original.v1"
+  ],
+  "finding_ids": [
+    "P100-029-F01",
+    "P100-029-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-029/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-029.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate spectral_mean_fluorescence under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Predict remaining higher-dose assay values after declared lower-dose measurements; sequential assay not real-time kinetics.",
+    "calibration_requirement": "Spectrum-wide mean fluorescence at native concentrations 0,1,2,5 nominal uM, per replicate; target concentrations 7.5 to30. No maximal-response normalization.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "spectral_mean_fluorescence in source fluorescence a.u.",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "source fluorescence a.u.",
+    "reference_model": "reference",
+    "reference_primary_error": 38661.13118872549,
+    "reference_physical_mae": 38661.13118872549,
+    "physical_error_units": "source fluorescence a.u.",
+    "lowest_registered_error_model": "attempt_003_local",
+    "lowest_registered_error": 17755.980936833163,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-029.original.v1/evidence/metrics.csv",
+      "bytes": 973,
+      "sha256": "28b883e7a6896f5f6958dfc292275091d636e569ed555d9dec5c79077ed9e133"
+    },
+    "models": 10
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

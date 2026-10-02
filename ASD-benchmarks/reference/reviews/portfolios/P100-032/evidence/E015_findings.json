@@ -1,0 +1,47 @@
+{
+  "case_id": "P100-032",
+  "findings": [
+    {
+      "finding_id": "P100-032-F01",
+      "classification": "validated_extension",
+      "admission": "supported",
+      "claim": "The selected autoregressive control gives a usable signal-prediction reference for this instrument/protocol. Its gain is a bounded signal-model result, not a new respiratory law.",
+      "equation": "P_hat(t+0.20 s) = beta_0 + sum_{j=1}^{13} beta_j * phi_j(t). Here phi=(p0,p05,p10,p20,p30,p40,p50,di0,de0,di20,de20,p0*FEM,p0*BH). The p terms are gauge pressures at lags0,0.05,0.10,0.20,0.30,0.40 and0.50s; di and de are inspiratory/expiratory differential pressures, with0 and0.20s lags. Every pressure is in cmH2O; FEM and BH are declared trial indicators. The intercept is 0.04519408cmH2O, and the current gauge-pressure coefficient is 1.739696. All coefficients are already transformed back from training feature-RMS scaling: apply this dot product directly to the physical-unit inputs, with no additional scaling.",
+      "model_id": "reference",
+      "task_id": "P100-032.original.v1",
+      "evidence": {
+        "development_primary_error": 0.3095264724130346,
+        "confirmation_primary_error": 0.37185335559996946,
+        "confirmation_groups": 5,
+        "confirmation_rows": 3768,
+        "unit": "cmH2O",
+        "metrics": "evidence/metrics.csv",
+        "group_metrics": "evidence/by_group.csv",
+        "predictions": "evidence/predictions.csv.gz",
+        "state": "rules.json"
+      },
+      "falsification": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "known_prior_art": "The source study describes respiratory monitoring under rapid occlusion and model-based work-of-breathing analysis. Persistence, pressure-slope extrapolation and autoregressive forecasting are established controls; predictive success does not identify resistance, compliance, muscle pressure or clinical utility.",
+      "scope": "Five reserved participants are a small internal cohort, and all are from a healthy study. Trial duration affects within-person weighting; complete trials stay linked. The target is one recorded pressure signal, not an independently measured physiological parameter."
+    },
+    {
+      "finding_id": "P100-032-F02",
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Damped slopes, occlusion-period acceleration, differential-pressure drive, regime interactions and bounded inertia were tested. None displaced the flexible control on participant-held-out development data.",
+      "equation": null,
+      "evidence": {
+        "attempts": 5,
+        "best_attempt_development_error": 0.31912585342725563,
+        "development_selected_error": 0.3095264724130346,
+        "development_diagnostics": "research_history/DEVELOPMENT_DIAGNOSTICS.json"
+      },
+      "known_prior_art": "The source study describes respiratory monitoring under rapid occlusion and model-based work-of-breathing analysis. Persistence, pressure-slope extrapolation and autoregressive forecasting are established controls; predictive success does not identify resistance, compliance, muscle pressure or clinical utility.",
+      "falsification": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "scope": "Five reserved participants are a small internal cohort, and all are from a healthy study. Trial duration affects within-person weighting; complete trials stay linked. The target is one recorded pressure signal, not an independently measured physiological parameter.",
+      "underlying_proposal_disposition": "Several proposed mechanisms are unsupported; this negative finding and the tested models have distinct dispositions."
+    }
+  ],
+  "reference_disposition": "Frozen development-selected reference; candidate laws and negative findings require separate scientific review.",
+  "review_pending": "Independent computational and scientific-critical review by different agents"
+}

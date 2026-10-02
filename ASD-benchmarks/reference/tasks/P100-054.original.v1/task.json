@@ -1,0 +1,170 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-054.original.v1",
+  "case_id": "P100-054",
+  "case_number": 54,
+  "family": "original",
+  "protocol_version": "P100-054-asd5-native-v1",
+  "cohort_id": "P100-054.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-054.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/54_materials_microfracture",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "second bridge failure load Pb2",
+  "target_units": "mN",
+  "error_units": "mN",
+  "primary_units": "mN",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "width_um",
+    "thickness_um",
+    "length_um",
+    "notch_depth_um",
+    "notch_width_um"
+  ],
+  "input_units": {
+    "width_um": "um",
+    "thickness_um": "um",
+    "length_um": "um",
+    "notch_depth_um": "um",
+    "notch_width_um": "um"
+  },
+  "numeric_columns": [
+    "width_um",
+    "thickness_um",
+    "length_um",
+    "notch_depth_um",
+    "notch_width_um"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict measured second-bridge failure load conditional on reported SEM geometry; geometry may be measured post-test, so this is retrospective geometry-conditioned response, not pre-test control.",
+  "calibration": "Predict measured second-bridge failure load conditional on reported SEM geometry; geometry may be measured post-test, so this is retrospective geometry-conditioned response, not pre-test control.",
+  "independent_unit": "Cantilever specimen; one source wafer and manufacturing campaign",
+  "evaluation_groups": [
+    "C16",
+    "C25",
+    "C27",
+    "C44",
+    "C45",
+    "D16",
+    "D19",
+    "D28",
+    "D45",
+    "E17",
+    "E20",
+    "E21",
+    "E25",
+    "E26",
+    "E27",
+    "E37",
+    "E38",
+    "E41",
+    "E43",
+    "E6",
+    "E8",
+    "E9"
+  ],
+  "assigned_rows": 23,
+  "eligible_rows": 23,
+  "baseline_models": [
+    "reference",
+    "baseline_domain",
+    "baseline_flexible",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "P=s(K+c r), r=1-b/B",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_domain": {
+      "equation": "P=s K, s=B W^(3/2)/(L f(a/W)); f(x)=1.46+24.36x-47.21x\u00b2+75.18x\u00b3",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "P=s dot(theta,[1,a/W,r,(a/W)^2,r\u00b2,(a/W)r])",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "P=s(K+c r), r=1-b/B",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "P=s K(1+r)^c",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "P=s(K+c r+d r/(a/W))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "P=s(K+c logistic[(r-h a/W-v)/0.02])",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "P=s(K+c r/(1-a/W))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "P=s(K+c sqrt(r))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "P=s(K+c a/W)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Individual experimental group errors; no row bootstrap or population CI from dependent rows."
+  },
+  "scope_limits": "Complete specimen identities linked; three C/D/E manufacturing families for development folds. Header specimens C1,C11,C35,C36 forced development; hash allocation ignores all remaining target values. No toughness/author-fitted correction factors or outcome labels as inputs.",
+  "source_url": "https://zenodo.org/records/15581944",
+  "source_license": "cc-by-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"status\": \"exposed\", \"confirmation_originally_withheld\": true, \"public_source_aware\": true}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "3a912581f972797a070f9ccc57b79b537c98e1b0eb4ca7de0964f24d9d26b7e1",
+  "observations_sha256": "4b269d4a71d531737ea4e3e0185ef1ec7462153a945e5245d1c5318783f6def5",
+  "legacy_protocol_sha256": "826374c34f9ad95d9f5f3755e22f92c33c8b443647153a6ae09db9e2bfc77c04",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd5-diagnostics/1.0"
+}

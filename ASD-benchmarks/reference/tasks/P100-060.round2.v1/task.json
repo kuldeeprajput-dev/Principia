@@ -1,0 +1,203 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-060.round2.v1",
+  "case_id": "P100-060",
+  "case_number": 60,
+  "family": "round2",
+  "protocol_version": "P100-060.round2.v1.contract-1",
+  "cohort_id": "P100-060.round2.v1.development-oof",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-060.round2.v1",
+  "legacy_package": "60_acoustics_ultrasonic_transmission/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/60_acoustics_ultrasonic_transmission",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Post-trigger peak voltage with training-condition-normalized error",
+  "target_units": "V",
+  "error_units": "V",
+  "primary_units": "condition-normalized MAE",
+  "metric_kind": "normalized_mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "distance_mm",
+    "resonance_kHz",
+    "width_us",
+    "condition"
+  ],
+  "input_units": {
+    "distance_mm": "mm",
+    "resonance_kHz": "kHz; confounded with sensor type",
+    "width_us": "us",
+    "condition": "calibrated distance/sensor label"
+  },
+  "numeric_columns": [
+    "distance_mm",
+    "resonance_kHz",
+    "width_us"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Target is maximum absolute receiver voltage across all t>=0 samples, subtracting each trace mean over t<0. No response-selected time window or denoising. Ten actual waveform columns kept per file. Expanded information budget: distance_mm, resonance_kHz, width_us, condition",
+  "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. w is pulse width in microseconds; f is nominal resonance in cycles per microsecond (kHz/1000). The effective damping time12us was selected on development widths. Six calibrated gains in V are12.271204,0.941597,0.00302123,0.000609934,0.00227582,0.000462384 for(d0,f110),(d0,f500),(d20,f110),(d20,f500),(d50,f110),(d50,f500). The maximum accounts for an initial pulse edge before the second edge; it is a phenomenological peak approximation. Sensor type is confounded with nominal resonance.",
+  "independent_unit": "whole width block across sensor/distance; six correlated files",
+  "evaluation_groups": [
+    "ts3_d00_f110_w025.mat",
+    "ts3_d00_f110_w075.mat",
+    "ts3_d00_f110_w100.mat",
+    "ts3_d00_f110_w125.mat",
+    "ts3_d00_f110_w150.mat",
+    "ts3_d00_f500_w025.mat",
+    "ts3_d00_f500_w075.mat",
+    "ts3_d00_f500_w100.mat",
+    "ts3_d00_f500_w125.mat",
+    "ts3_d00_f500_w150.mat",
+    "ts3_d20_f110_w025.mat",
+    "ts3_d20_f110_w075.mat",
+    "ts3_d20_f110_w100.mat",
+    "ts3_d20_f110_w125.mat",
+    "ts3_d20_f110_w150.mat",
+    "ts3_d20_f500_w025.mat",
+    "ts3_d20_f500_w075.mat",
+    "ts3_d20_f500_w100.mat",
+    "ts3_d20_f500_w125.mat",
+    "ts3_d20_f500_w150.mat",
+    "ts3_d50_f110_w025.mat",
+    "ts3_d50_f110_w075.mat",
+    "ts3_d50_f110_w100.mat",
+    "ts3_d50_f110_w125.mat",
+    "ts3_d50_f110_w150.mat",
+    "ts3_d50_f500_w025.mat",
+    "ts3_d50_f500_w075.mat",
+    "ts3_d50_f500_w100.mat",
+    "ts3_d50_f500_w125.mat",
+    "ts3_d50_f500_w150.mat"
+  ],
+  "assigned_rows": 300,
+  "eligible_rows": 300,
+  "baseline_models": [
+    "current/cycle-004",
+    "current/cycle-003",
+    "current/cycle-002",
+    "previous/cycle-001",
+    "previous/cycle-003",
+    "current/cycle-005",
+    "current/cycle-006",
+    "current/cycle-001",
+    "previous/cycle-004",
+    "previous/baseline-global_edge",
+    "previous/baseline-old",
+    "previous/baseline-constant",
+    "previous/baseline-flex",
+    "current/baseline-hgb",
+    "previous/cycle-002"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "current/cycle-004": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-003": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-002": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-001": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-003": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-005": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-006": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-004": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-global_edge": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-old": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-constant": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-flex": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-002": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Six condition files at one reserved5us width, not six independent reserved width experiments. Gain is concentrated in zero-distance110kHz contact; air and500kHz sensor counterexamples remain. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+  "source_url": "https://zenodo.org/records/17266427",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "c881878a8b7f2aee7f3a1f5a028dde04784c60cfabebddb78abd6a2f8ab6ffc2",
+  "observations_sha256": "62fdfb7352c5961fac0739fe9b76606b2eafed931c316d443d59d38121435d56",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified"
+}

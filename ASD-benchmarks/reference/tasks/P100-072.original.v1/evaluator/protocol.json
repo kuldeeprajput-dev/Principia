@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-072",
+  "protocol_id": "P100-072-prepared-primary-v1",
+  "target": "Later author qPCR S.kudriavzevii percentage",
+  "target_units": "percentage points",
+  "primary_units": "percentage points",
+  "metric_kind": "mae",
+  "metric_definition": "Equal complete reserved-group mean MAE in physical units; RMSE square root is taken within group, before averaging groups.",
+  "independent_unit": "whole co-cultured strain including every replicate/time",
+  "evaluation_groups": [
+    "D245",
+    "T73"
+  ],
+  "input_sha256": "ea72ed5588b17a2f806187f01541b7a375776f0136c95521dff86e2fc69517f7",
+  "input_rows": 18,
+  "assigned_rows": 18,
+  "permitted_inputs": [
+    "p22_pct",
+    "p72_pct",
+    "time_h"
+  ],
+  "input_units": {
+    "p22_pct": "percentage points; own replicate at22h",
+    "p72_pct": "percentage points; own replicate at72h",
+    "time_h": "h since inoculation"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "challenger",
+    "baseline_constant_selection",
+    "baseline_persistence",
+    "baseline_rbf",
+    "baseline_residual_rbf"
+  ],
+  "reference_equations": {
+    "reference": "s=\\dfrac{\\operatorname{logit}(p_{72})-\\operatorname{logit}(p_{22})}{50} \\operatorname{logit}(\\widehat p)=\\operatorname{logit}(p_{72})-0.077454s\\Delta-0.101446\\dfrac{\\Delta^2}{75(\\Delta+75)}",
+    "challenger": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the combined branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_constant_selection": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the constant_selection branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_persistence": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the persistence branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_rbf": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+    "baseline_residual_rbf": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "scope_limit": "Two reserved yeast strain labels, eighteen later author-derived qPCR percentages, same experiment campaign with audit-exposed targets; no blind validation or nutrient mechanism identification.",
+  "calibration_note": "p22 and p72 are own-replicate fractions (source percentages/100). Delta=t\u221272h, and s is early log-odds change per hour. Fractions are clipped to0.0001\u20130.9999 only for log-odds calculation; original targets are unchanged. The output is100 times logistic(log-odds), in percentage points.75h is a development-selected shape scale. This early/late conditional equation does not estimate an independently measured fitness coefficient.",
+  "timing_contract": "Author cached spreadsheet percentage from same-row qPCR ratio is the target. No same-time Cp/ratio is a predictor. Use only own replicate22/72-hour percentages to forecast96h and later. Biological replicate pairing from Sample Name.",
+  "exposure_notice": "All packaged targets are now exposed; future scoring is retrospective. Schema audit printed first13 spreadsheet rows before model construction, including several later percentages across all strains. Allocation is still metadata-only and no fit/selection uses reserved targets, but confirmation is audit-exposed retrospective evidence, not a fully blind independent confirmation.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared conditions, sensor/system dependence or small numbers of reserved groups do not support precise population-level confidence. No row-bootstrap intervals."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Verify native anchors and prediction-time inputs. Author cached spreadsheet percentage from same-row qPCR ratio is the target. No same-time Cp/ratio is a predictor. Use only own replicate22/72-hour percentages to forecast96h and later. Biological replicate pairing from Sample Name."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

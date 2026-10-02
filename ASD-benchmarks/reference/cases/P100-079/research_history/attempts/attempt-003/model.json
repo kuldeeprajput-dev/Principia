@@ -1,0 +1,45 @@
+{
+  "case": 79,
+  "kind": "two_decay",
+  "coef": [
+    2.623335185358347e-34,
+    28.744621682285363,
+    0.03732552111759224,
+    40.679889471457784
+  ],
+  "training_groups": [
+    "204708",
+    "304716",
+    "404710",
+    "404724",
+    "604705"
+  ],
+  "training_rows": 25,
+  "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+  "equation": "yhat=max(0,baseline+Afast*exp(-hours/tfast)+Aslow*exp(-hours/tslow))",
+  "optimizer": {
+    "success": true,
+    "cost": 6.917770497926613,
+    "bounds": [
+      [
+        0,
+        0.01,
+        0,
+        1
+      ],
+      [
+        10,
+        48,
+        10,
+        1000
+      ]
+    ],
+    "jacobian_rank": 3,
+    "jacobian_singular_values": [
+      77.03451347549186,
+      5.905574090886721,
+      0.002817185824998776,
+      1.0999905424532627e-16
+    ]
+  }
+}

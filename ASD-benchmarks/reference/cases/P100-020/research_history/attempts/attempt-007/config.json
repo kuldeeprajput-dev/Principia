@@ -1,0 +1,19 @@
+{
+  "name": "range_preserving",
+  "formula": "clip((4*(hx+hy)-(ox+oy))/6,minimum(hx,hy),maximum(hx,hy))",
+  "hypothesis": "Development evidence available before this fit: limited_curvature: MAE 0.0392258, worst group 0.0932574; latitude_curvature: MAE 0.0371352, worst group 0.0874195.\n\nTest a falsifying monotonicity constraint: rejecting curvature overshoot may improve reliability if unresolved fronts dominate. The bound comes only from allowed neighboring calibration values.",
+  "inputs": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "clat"
+  ],
+  "initial": {},
+  "bounds": {},
+  "recorded_utc": "2026-10-02T02:41:29.941954+00:00",
+  "parent": "attempt-006"
+}

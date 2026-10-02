@@ -1,0 +1,63 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-100.round2.v2.raw-access.v1",
+  "parent_task_id": "P100-100.round2.v2",
+  "case_id": "P100-100",
+  "protocol_version": "P100-100.round2.v2.raw-access.v1",
+  "cohort_id": "P100-100.round2.v2.cohort-1",
+  "parent_task_sha256": "164faf1ac8f9fc0d1c5ebf51a849df4c3756283cb26f5aaef0568f878bd7ced7",
+  "input_sha256": "fec180c7d132f4dc279a7a7fd431b9cb8cbc5b8d04a5e4e0b69d21d48883deed",
+  "observations_sha256": "5f9c97213835bfd79a9cc7bf5be75f8acc4a9a14714662c4b513cb0c47a652d3",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "100_communications_6g_mobkpi",
+  "source_assets": [
+    {
+      "path": "raw/6G-MOBKPI_dataset.zip",
+      "bytes": 491220,
+      "sha256": "36b060bcc62aee4e0673955228a36a3161ef32ff8ea91a0d86a4ee780a56a3eb"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "payload_B": "B",
+      "last_rtt": "ms,previous completion",
+      "mean5_rtt": "ms,previous5 completions",
+      "mean3_rtt": "ms,previous3 completions",
+      "trend_rtt": "ms,previous RTT difference",
+      "RSRP": "dBm,asof previouscompletion",
+      "RSRQ": "dB,asof previouscompletion",
+      "last2_rtt": "ms; second previous completed RTT",
+      "last3_rtt": "ms; third previous completed RTT",
+      "median5_rtt": "ms; median of preceding 5 completed RTTs",
+      "std5_rtt": "ms; SD of preceding 5 completed RTTs",
+      "route": "calibrated route label"
+    },
+    "observation_window": "Predict next probe RTT using only five previous completed RTTs and radio asof previous completion, <=0.5s old. No current response-completion timestamp, ICMPseq, cumulative average/loss, future gap, throughput or same-probe radio in inputs. Successful response conditional target; missing lost responses retained when inputs eligible. Expanded information budget: payload_B, last_rtt, mean5_rtt, mean3_rtt, trend_rtt, RSRP, RSRQ, last2_rtt, last3_rtt, median5_rtt, std5_rtt, route",
+    "calibration_and_history": "The previous five completed RTTs and causal radio observations constitute permitted online history; no response from the currently predicted probe is a calibration input. The preregistered parity-filter reference has no fitted coefficients and uses rhat=max(0,(3*last2+10*mean5-3*last-3*last3)/7). Other model coefficients, route offsets and transformations are fitted in their applicable outer training runs. The original55ms-breakpoint coefficients describe a separate historical comparator, not the current reference or a universal task calibration.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

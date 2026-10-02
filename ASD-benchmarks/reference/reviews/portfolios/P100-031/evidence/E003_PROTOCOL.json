@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-10-02T02:11:54.678262+00:00",
+  "case_id": "P100-031",
+  "task": {
+    "target": "Author-benchmarked mean compilation wall time after matched Qiskit pilot",
+    "target_units": "seconds",
+    "error_units": "absolute natural-log time ratio",
+    "metric_kind": "log_mae",
+    "permitted_inputs": [
+      "pilot_seconds",
+      "qubits",
+      "pilot_gates",
+      "pilot_depth",
+      "load_seconds",
+      "is_tket",
+      "is_bqskit"
+    ],
+    "input_units": {
+      "pilot_seconds": "seconds Qiskit calibration cost",
+      "qubits": "input qubit count",
+      "pilot_gates": "Qiskit output two-qubit gate count",
+      "pilot_depth": "Qiskit output two-qubit depth",
+      "load_seconds": "Qiskit QASM loading seconds",
+      "is_tket": "SDK indicator",
+      "is_bqskit": "SDK indicator,elseStaq"
+    },
+    "timing_contract": "Must execute the complete Qiskit pilot first; its runtime and resulting circuit statistics are known only afterward. Candidate SDK timing is withheld. Pilot cost is not free. This is runtime diagnostics, not pre-compilation prediction or quantum-device performance.",
+    "calibration": "Whole circuit families held across allSDKs; exact same inputfilename matched. No held family candidate-runtime measurements enter fitting. Qiskit pilot is declared per-instance calibration.",
+    "independent_unit": "Circuit family after stripping numeric size suffixes; compiler observations on each family stay linked. One local CPU family; no independent hardware transfer.",
+    "scope_limits": "Only device-transpilation successful matched tasks forTket/BQSKIT/Staq; no service remote latency. Missing/failed/timeouts excluded from conditional-success runtime target and retained in source audit; cannot infer success probability or realized routing speedup. Author timing environment differs in frequency/run state despite same CPU model.",
+    "applicability": {
+      "prediction_positive": true,
+      "source_origin": "computational_experiment"
+    },
+    "case_id": "P100-031",
+    "source_url": "https://zenodo.org/records/14977295",
+    "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "numeric_columns": [
+      "pilot_seconds",
+      "qubits",
+      "pilot_gates",
+      "pilot_depth",
+      "load_seconds",
+      "is_tket",
+      "is_bqskit"
+    ],
+    "exposure": {
+      "schema": "Only schema and source-publication aggregate descriptions inspected; reserved target values and scores not inspected.",
+      "current": "reserved_internal_only",
+      "fresh_for_future_users": false
+    },
+    "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+    "aggregation": {
+      "hierarchy": [
+        "group"
+      ],
+      "primary": "mean_group_error"
+    }
+  },
+  "source_manifest_sha256": "b80db176acd7a9f63ccdb50c8767c5a5e5ad6eaf95a944263f2973a1a686d490",
+  "native_sha256": "fa0d22187d12b5e71d863d4bd41a5617860d79f6e481eefb2e5bb7a02a7ecbfd",
+  "split_manifest_sha256": "9f6294d1b14ed0f91f8e8aae4dde184c670adb839bb9ee56b919e4e980ccaabf",
+  "baseline_families": [
+    "training constant",
+    "domain simple law",
+    "regularized32-center RBF same permitted inputs"
+  ],
+  "selection": "Minimize group-balanced primary error; prefer fewer coefficients within1percent of minimum; baseline may win.",
+  "stopping": "At least5distinct scientific hypotheses, adaptive to development evidence; stop after2consecutive substantive attempts without accuracy/robustness/interpretation gain.",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

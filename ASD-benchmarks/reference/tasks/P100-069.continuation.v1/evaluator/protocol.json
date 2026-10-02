@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.1.0",
+  "case_id": "P100-069",
+  "protocol_id": "P100-069-continuation-20261001",
+  "target": "Lubricant temperature",
+  "target_units": "degree C",
+  "primary_units": "degree C",
+  "metric_kind": "mae",
+  "metric_definition": "Equal complete reserved-group mean MAE in physical units; RMSE square root is taken within group, before averaging groups.",
+  "independent_unit": "whole thermal experiment/run",
+  "evaluation_groups": [
+    "validation/cool-down/cool-down.csv",
+    "validation/heat-up/theta_dot=0p3142.csv",
+    "validation/heat-up/theta_dot=0p6283.csv",
+    "validation/heat-up/theta_dot=0p9425.csv",
+    "validation/heat-up/theta_dot=1p2566.csv",
+    "validation/heat-up/theta_dot=1p5708.csv",
+    "validation/long-term/theta_dot_1=0p6283_theta_dot_2=0p9425.csv",
+    "validation/long-term/theta_dot_1=1p2566_theta_dot_2=0p3142.csv"
+  ],
+  "input_sha256": "e1987b48f75655c4dc7cb27133f07bed0867cee4aa9f47fc692c824e15f5099a",
+  "input_rows": 16568,
+  "assigned_rows": 16568,
+  "permitted_inputs": [
+    "time_s",
+    "housing_C",
+    "environment_C",
+    "speed",
+    "friction",
+    "initial_C"
+  ],
+  "input_units": {
+    "time_s": "s",
+    "housing_C": "degree C",
+    "environment_C": "degree C",
+    "speed": "rad/s",
+    "friction": "N m; source friction torque",
+    "initial_C": "degree C; explicitly permitted initial lubricant measurement"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "compact_candidate",
+    "housing",
+    "single_speed",
+    "single_power",
+    "double_speed",
+    "innovation_power",
+    "innovation_speed",
+    "variable_tau",
+    "temperature_power",
+    "ridge_history",
+    "legacy_reference"
+  ],
+  "reference_equations": {
+    "reference": "Two parallel stable states H_tau and S_tau use previous-sample exponential recurrence. yhat = H_fast + gamma_fast S_fast + gamma_slow S_slow + c(H_slow-H_fast), with H_tau(0)=TL0, S_tau(0)=0 and c in[0,1].",
+    "compact_candidate": "Two parallel stable states H_tau and S_tau use previous-sample exponential recurrence. yhat = H_fast + gamma_fast S_fast + gamma_slow S_slow + c(H_slow-H_fast), with H_tau(0)=TL0, S_tau(0)=0 and c in[0,1].",
+    "housing": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "single_speed": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "single_power": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "double_speed": "Two parallel stable states H_tau and S_tau use previous-sample exponential recurrence. yhat = H_fast + gamma_fast S_fast + gamma_slow S_slow + c(H_slow-H_fast), with H_tau(0)=TL0, S_tau(0)=0 and c in[0,1].",
+    "innovation_power": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "innovation_speed": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "variable_tau": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "temperature_power": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "ridge_history": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "legacy_reference": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "scope_limit": "Five identification runs and eight source validation runs in one gearbox. Initial calibration and measured housing/friction signals are required; no unseen gearbox or sensorless temperature claim.",
+  "calibration_note": "Original TL(0) calibration, no later lubricant measurement.",
+  "timing_contract": "Current/past housing, ambient, speed/friction only; first lubricant calibration, no later TL.",
+  "exposure_notice": "ALL original confirmation exposed; no fresh confirmation; diagnostics opened only after candidate/stopping freeze; all future evaluations are retrospective",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Verify native anchors and permitted information: Causal housing/environment/friction history through current sample plus first lubricant temperature. Exclude t=0 from scoring because it is calibration, not a forecast."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check units, physical signs/limits, measurement preprocessing, identifiability and source-specific confounding. Original identification and validation folder assignment preserved. First native sample of each 5 s bin used for compact, deterministic low-frequency thermal analysis; no interpolation. Startup TL is permitted calibration. Neither later lubricant temperatures nor their finite differences enter prediction. Source already presents a lubricant-temperature observer."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ],
+  "fresh_confirmation": false
+}

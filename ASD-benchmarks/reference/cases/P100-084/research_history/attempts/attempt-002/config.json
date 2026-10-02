@@ -1,0 +1,27 @@
+{
+  "name": "localized_adhesion",
+  "formula": "base+amp*maximum(x,0)**1.5-A*amp*exp(-abs(x)/ell)",
+  "hypothesis": "Development evidence available before this fit: conical_contact: MAE 2.01419, worst group 4.97149.\n\nThe conical shape is only slightly better than Hertz and loses to flexible interpolation. Test a localized attractive-force well around contact loss, with no inferred modulus: adhesion may explain the missing negative retraction force.",
+  "inputs": [
+    "x",
+    "base",
+    "amp",
+    "progress"
+  ],
+  "initial": {
+    "A": 0.2,
+    "ell": 0.2
+  },
+  "bounds": {
+    "A": [
+      0,
+      2
+    ],
+    "ell": [
+      0.01,
+      2
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:13:47.363093+00:00",
+  "parent": "attempt-001"
+}

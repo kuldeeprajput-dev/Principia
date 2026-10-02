@@ -1,0 +1,3 @@
+# Attempt004: a bounded high-load regime
+
+Attempt003 improves mean-location MAE to1.509ms and worst group1.921ms. The finite-setting offsets remain six unrelated coefficients. Test a mechanistic regime model: shared serialization slope in achieved traffic plus a hinge in offered load above200Mbps, the source-described transition region. This removes the unidentifiable reciprocal capacity pole and replaces setting-specific offsets with one high-load term. The breakpoint is source-specified before fit, not selected on held-out locations. Compare development transfer, sign and leave-setting interpolation limits.

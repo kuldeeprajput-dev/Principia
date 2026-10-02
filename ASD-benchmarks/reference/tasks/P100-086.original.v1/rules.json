@@ -1,0 +1,811 @@
+{
+  "schema_version": "1.0",
+  "case_id": "P100-086",
+  "source": {
+    "landing_url": "https://zenodo.org/records/14619074",
+    "upstream_case": "86_biotechnology_industrial_fermentation",
+    "version_evidence": "SOURCE_ASSETS.json"
+  },
+  "target": "Chemical potency six hours ahead",
+  "target_units": "source potency unit (undocumented)",
+  "input_units": {
+    "time_h": "h since cultivation, source hh",
+    "current": "source potency unit; last available potency measurement",
+    "slope6": "source potency unit/h from strictly past 6 h"
+  },
+  "input_columns": [
+    "time_h",
+    "current",
+    "slope6"
+  ],
+  "numeric_columns": [
+    "time_h",
+    "current",
+    "slope6"
+  ],
+  "missingness": "Native hx is the source-loader target. Other undocumented abbreviations are excluded. Source units are not asserted to be mg/L or activity U/mL. 406 independent production batches; rows with exact 6 h lag/horizon only. No target smoothing or imputation. This is a six-hour prediction conditional on an available current potency assay, not an inline soft sensor.",
+  "primary_metric": "mae",
+  "assigned_rows": 9132,
+  "models": {
+    "reference": {
+      "case": 86,
+      "kind": "domain",
+      "knobs": {},
+      "beta": [
+        0.9806590655898471
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "6h * past6h slope"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "mechanistic_reference": {
+      "case": 86,
+      "kind": "a2",
+      "knobs": {},
+      "beta": [
+        132.8469846959219,
+        0.5820086380170955,
+        282.0217384127221,
+        -275.8494632548618
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "terms": [
+        "constant 6h increment",
+        "6h * past6h slope",
+        "current potency/10000 source-unit",
+        "current potency^2/10000^2 saturation"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 4,
+      "design_condition": 42.27354978796185,
+      "positive_coefficients": false
+    },
+    "attempt_001": {
+      "case": 86,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        183.61827440581087,
+        0.6798531355605764,
+        -70.39323662189784
+      ],
+      "active_columns": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        "constant 6h increment",
+        "6h * past6h slope",
+        "current potency/10000 source-unit"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 3,
+      "design_condition": 16.195151232845102,
+      "positive_coefficients": false
+    },
+    "attempt_002": {
+      "case": 86,
+      "kind": "a2",
+      "knobs": {},
+      "beta": [
+        132.8469846959219,
+        0.5820086380170955,
+        282.0217384127221,
+        -275.8494632548618
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "terms": [
+        "constant 6h increment",
+        "6h * past6h slope",
+        "current potency/10000 source-unit",
+        "current potency^2/10000^2 saturation"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 4,
+      "design_condition": 42.27354978796185,
+      "positive_coefficients": false
+    },
+    "attempt_003": {
+      "case": 86,
+      "kind": "a3",
+      "knobs": {},
+      "beta": [
+        199.8028793047949,
+        0.6915968461614502,
+        145.85093389316546,
+        -220.60195899024404,
+        -0.29350110478021146
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "terms": [
+        "constant 6h increment",
+        "6h * past6h slope",
+        "current potency/10000 source-unit",
+        "current potency^2/10000^2 saturation",
+        "history slope * age decay exp(-hours/100)"
+      ],
+      "fitted_parameters": 5,
+      "design_rank": 5,
+      "design_condition": 106.38484133046047,
+      "positive_coefficients": false
+    },
+    "attempt_004": {
+      "case": 86,
+      "kind": "a4",
+      "knobs": {},
+      "beta": [
+        197.14620959856606,
+        -0.01667776029704999,
+        140.2815108811662,
+        -215.47236540302168,
+        -0.2918140442326344,
+        0.7159000963465728
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "terms": [
+        "constant 6h increment",
+        "6h * past6h slope",
+        "current potency/10000 source-unit",
+        "current potency^2/10000^2 saturation",
+        "history slope * age decay exp(-hours/100)",
+        "positive-slope asymmetric growth"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 6,
+      "design_condition": 426.7088400315079,
+      "positive_coefficients": false
+    },
+    "attempt_005": {
+      "case": 86,
+      "kind": "a5",
+      "knobs": {},
+      "beta": [
+        177.79658168977568,
+        -0.0661932187889192,
+        156.83302171157996,
+        -312.9594046398643,
+        -0.23207740170457117,
+        0.7572066240024181,
+        69.36631644034036
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "terms": [
+        "constant 6h increment",
+        "6h * past6h slope",
+        "current potency/10000 source-unit",
+        "current potency^2/10000^2 saturation",
+        "history slope * age decay exp(-hours/100)",
+        "positive-slope asymmetric growth",
+        "clock-dependent inhibition surrogate"
+      ],
+      "fitted_parameters": 7,
+      "design_rank": 7,
+      "design_condition": 458.387253258186,
+      "positive_coefficients": false
+    },
+    "attempt_006": {
+      "case": 86,
+      "kind": "a2",
+      "knobs": {},
+      "beta": [
+        183.61827440581087,
+        0.6798531355605764,
+        -70.39323662189784
+      ],
+      "active_columns": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        "constant 6h increment",
+        "6h * past6h slope",
+        "current potency/10000 source-unit"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 3,
+      "design_condition": 16.195151232845102,
+      "positive_coefficients": false
+    },
+    "attempt_007": {
+      "case": 86,
+      "kind": "a2",
+      "knobs": {},
+      "beta": [
+        181.04146307123395,
+        0.6500523849659025,
+        -61.049119860503914
+      ],
+      "active_columns": [
+        0,
+        1,
+        3
+      ],
+      "terms": [
+        "constant 6h increment",
+        "6h * past6h slope",
+        "current potency^2/10000^2 saturation"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 3,
+      "design_condition": 15.4830857036962,
+      "positive_coefficients": false
+    },
+    "baseline_mean": {
+      "case": 86,
+      "kind": "mean",
+      "knobs": {},
+      "beta": [
+        7063.747527955794
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "1"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "baseline_domain": {
+      "case": 86,
+      "kind": "domain",
+      "knobs": {},
+      "beta": [
+        0.9806590655898471
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "6h * past6h slope"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "baseline_rbf": {
+      "case": 86,
+      "kind": "rbf",
+      "features": [
+        "time_h",
+        "current",
+        "slope6"
+      ],
+      "columns": [
+        "time_h",
+        "current",
+        "slope6"
+      ],
+      "center": [
+        96.74322940373236,
+        6619.9616238051885,
+        74.06600383098171
+      ],
+      "scale": [
+        33.422632787833386,
+        2559.568426416255,
+        13.25623589397666
+      ],
+      "centers": [
+        [
+          -0.08207699917437253,
+          0.007047428780822886,
+          0.8373917697654168
+        ],
+        [
+          -0.32143576096863147,
+          -0.3437929670969003,
+          -0.01755177710394439
+        ],
+        [
+          -1.7276684865099028,
+          -1.6490911437421936,
+          -0.8599226247546382
+        ],
+        [
+          -1.1891112724728201,
+          -1.2408191908555335,
+          -0.3570146560079552
+        ],
+        [
+          1.2044763454697693,
+          1.3283639308503774,
+          -2.0417563513093415
+        ],
+        [
+          -0.17183653484721964,
+          -0.14610338990967545,
+          0.38477459789340246
+        ],
+        [
+          -1.3985501890427967,
+          -1.399439681642121,
+          -0.7090502341306323
+        ],
+        [
+          0.30688098874129827,
+          0.4633743579402669,
+          0.6990920783600784
+        ],
+        [
+          -1.7575883317341852,
+          -1.7639542577600673,
+          0.23390220726939764
+        ],
+        [
+          -0.5308746775386081,
+          -0.5625798509404694,
+          0.9505460627334203
+        ],
+        [
+          0.695838976656969,
+          0.6704405158636447,
+          0.749382875234747
+        ],
+        [
+          -0.770233439332867,
+          -0.7008844167987255,
+          1.0134095588267553
+        ],
+        [
+          -1.6379089508370557,
+          -1.640105253870047,
+          -0.004979077885276966
+        ],
+        [
+          0.8454382027783809,
+          0.7235744733685116,
+          0.18361141039472903
+        ],
+        [
+          0.8454382027783809,
+          1.0247971295174254,
+          -0.49531434741329256
+        ],
+        [
+          -0.5607945227628904,
+          -0.6344669699176421,
+          0.560792386954741
+        ],
+        [
+          -0.8300731297814317,
+          -0.8540352354892239,
+          -0.8599226247546382
+        ],
+        [
+          0.3966405244141453,
+          0.4973644631088214,
+          0.7871009728907482
+        ],
+        [
+          0.2769611435170159,
+          0.22231809484833456,
+          0.03273901977072423
+        ],
+        [
+          -0.9198326654542788,
+          -0.8958391579379058,
+          0.7242374767974132
+        ],
+        [
+          -0.4111952966414786,
+          -0.34496503968891945,
+          0.44763809398673743
+        ],
+        [
+          0.5761595957598395,
+          0.49892722656484684,
+          0.04531171898939165
+        ],
+        [
+          1.264316035918334,
+          1.2502257580491027,
+          0.23390220726939764
+        ],
+        [
+          0.6060794409841219,
+          0.4926761727407449,
+          -0.7719137302239678
+        ],
+        [
+          -0.32143576096863147,
+          -0.18986076667838925,
+          1.1014184533574252
+        ],
+        [
+          -0.9198326654542788,
+          -0.9708518038271294,
+          -0.47016894897595873
+        ],
+        [
+          1.5036747977125928,
+          1.3353963664024922,
+          -0.6461867380372973
+        ],
+        [
+          -0.14191668962293727,
+          -0.07734179784455375,
+          -0.21871496460261672
+        ],
+        [
+          0.5462397505355572,
+          0.3926593115551133,
+          0.7242374767974132
+        ],
+        [
+          0.2769611435170159,
+          0.3309301550421063,
+          0.9128279650774191
+        ],
+        [
+          0.45648021486271007,
+          0.26216856297698465,
+          0.1333206135200604
+        ],
+        [
+          1.4737549524883105,
+          1.5651225944382396,
+          0.2213295080507302
+        ],
+        [
+          1.683193869058287,
+          1.5838757559105454,
+          -1.1239493083466465
+        ],
+        [
+          1.1446366550212046,
+          1.2642906291533322,
+          0.03273901977072423
+        ],
+        [
+          0.7257588218812514,
+          0.7415462531128046,
+          0.9631187619520868
+        ],
+        [
+          0.2470412982927335,
+          0.3887524029150496,
+          0.7871009728907482
+        ],
+        [
+          0.935197738451228,
+          1.1377067892152672,
+          0.34705650023740126
+        ],
+        [
+          0.0675222269470393,
+          0.23130398472048116,
+          0.5985104846107422
+        ],
+        [
+          -1.338710498594232,
+          -1.2869207128082853,
+          0.43506539476807
+        ],
+        [
+          1.264316035918334,
+          1.428380792036009,
+          -1.3251124958453189
+        ],
+        [
+          0.3368008339655806,
+          0.37781305872287113,
+          0.372201898674735
+        ],
+        [
+          0.3966405244141453,
+          0.5407311490135288,
+          0.9128279650774191
+        ],
+        [
+          1.832793095179699,
+          1.488937875956997,
+          -2.6578186130240278
+        ],
+        [
+          1.2343961906940517,
+          1.2424119407689753,
+          -1.0485131130346441
+        ],
+        [
+          -0.5907143679871728,
+          -0.6715826019982475,
+          0.4853561916427386
+        ],
+        [
+          -0.6206342132114552,
+          -0.5629705418044757,
+          0.812246371328082
+        ],
+        [
+          0.7556786671055338,
+          0.7270906911445688,
+          0.15846601195739524
+        ],
+        [
+          1.59343433338544,
+          1.6108334255269852,
+          -1.9537474567786728
+        ],
+        [
+          -1.428470034267079,
+          -1.4170207705224078,
+          -1.0610858122533104
+        ],
+        [
+          1.59343433338544,
+          1.3514146918267533,
+          0.020166320552056808
+        ],
+        [
+          0.7556786671055338,
+          0.9810397527487115,
+          0.03273901977072423
+        ],
+        [
+          1.5635144881611576,
+          1.312345605426116,
+          -0.2941511599146191
+        ],
+        [
+          -0.8899128202299964,
+          -1.082198700068946,
+          -0.4324508513199576
+        ],
+        [
+          1.5335946429368752,
+          1.5104258734773472,
+          0.27162030492539885
+        ],
+        [
+          -0.9497525106785611,
+          -0.9470196611227407,
+          0.18361141039472903
+        ],
+        [
+          1.1147168097969222,
+          1.087307667758445,
+          1.403163234605436
+        ],
+        [
+          0.48640006008699244,
+          0.3403067357782593,
+          0.04531171898939165
+        ],
+        [
+          -1.338710498594232,
+          -1.3349756890810693,
+          0.04531171898939165
+        ],
+        [
+          0.45648021486271007,
+          0.539949767285516,
+          0.9882641603894216
+        ],
+        [
+          1.0847969645726399,
+          1.1529437329115158,
+          -0.3947327536639564
+        ],
+        [
+          1.5335946429368752,
+          1.4506501712843722,
+          -2.330928433338685
+        ],
+        [
+          -0.9796723559028435,
+          -0.9622566048189892,
+          0.6990920783600784
+        ],
+        [
+          1.4737549524883105,
+          1.4150973026597922,
+          -0.8724953239733045
+        ],
+        [
+          0.3966405244141453,
+          0.5813629988701916,
+          0.372201898674735
+        ]
+      ],
+      "width": 2.0,
+      "beta": [
+        461.01499188245333,
+        3490.587278895442,
+        -3213.4172577523677,
+        2761.988571883722,
+        -3285.976833912719,
+        2147.052162591633,
+        -76.4551779435096,
+        1286.739660889962,
+        -4972.199428819098,
+        -2724.044468773668,
+        -2119.1088472189576,
+        -2875.0986407297332,
+        -1408.178093638441,
+        -3607.6451500366616,
+        1822.7660487135129,
+        250.65737511569606,
+        -366.78028815314684,
+        46.19327706011356,
+        -839.0812403270422,
+        -1138.4794710890728,
+        3315.765460712172,
+        -2513.070328775437,
+        463.2392941889719,
+        -6067.469510242991,
+        -463.4625576253213,
+        3312.2968646370014,
+        -1418.1750393158793,
+        3622.528588399018,
+        -4492.72921513403,
+        -837.2857596403215,
+        -4225.966689243653,
+        4351.864118683488,
+        1106.8610595326118,
+        2471.814489445198,
+        -1000.2703117338807,
+        938.1722790382487,
+        2918.192632268979,
+        2397.7404468384634,
+        -801.8862638394038,
+        889.8625173053459,
+        -15.824147124433594,
+        702.4438368914512,
+        5631.158276304895,
+        -1702.3451171106465,
+        781.1047396947514,
+        -71.65686273824774,
+        -1849.7549577108023,
+        1783.971743310536,
+        -4588.4663060215835,
+        -1380.7081384949192,
+        3162.2303667370606,
+        -2077.40451616593,
+        1359.2291882509958,
+        2622.803600095357,
+        3789.030128028774,
+        3143.251907821683,
+        -3460.744482936003,
+        1862.4291635587692,
+        -308.8642233987375,
+        805.187316268762,
+        178.95142259354898,
+        -1370.3980680822704,
+        113.75586371849137,
+        2306.829893851697
+      ],
+      "intercept": 7063.747528662031,
+      "log": false,
+      "fitted_parameters": 65
+    },
+    "baseline_persistence": {
+      "case": 86,
+      "kind": "persistence",
+      "beta": [
+        0.0
+      ],
+      "fitted_parameters": 0
+    },
+    "attempt_008": {
+      "case": 86,
+      "kind": "a2",
+      "knobs": {},
+      "beta": [
+        183.61827440581087,
+        0.6798531355605764,
+        -70.39323662189784
+      ],
+      "active_columns": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        "constant 6h increment",
+        "6h * past6h slope",
+        "current potency/10000 source-unit"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 3,
+      "design_condition": 16.195151232845102,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "attempt_009": {
+      "case": 86,
+      "kind": "a2",
+      "knobs": {},
+      "beta": [
+        181.04146307123395,
+        0.6500523849659025,
+        -61.049119860503914
+      ],
+      "active_columns": [
+        0,
+        1,
+        3
+      ],
+      "terms": [
+        "constant 6h increment",
+        "6h * past6h slope",
+        "current potency^2/10000^2 saturation"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 3,
+      "design_condition": 15.4830857036962,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    }
+  },
+  "selection": {
+    "mechanistic_attempt": "attempt-002",
+    "default_origin": "domain",
+    "rule": "Default = strongest frozen development predictor among scientific hypotheses and all controls; separately select simplest mechanistic hypothesis within 1% of its best grouped development primary error. No confirmation selection.",
+    "used_confirmation": false
+  },
+  "equations": {
+    "reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "mechanistic_reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_001": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_002": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_003": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_004": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_005": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_006": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_007": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_mean": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_domain": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_rbf": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+    "baseline_persistence": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_008": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_009": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis."
+  },
+  "scope": "One industrial facility and one year; historical operational forecasting, no mechanistic law from unmapped sensors. Earlier batches only train later validation blocks.",
+  "timing": "Strictly causal potency history and cultivation clock. Matching plus/minus 6 h uses source clock; future values only become targets.",
+  "fresh_confirmation_after_delivery": false,
+  "admission": "Numerical reference collection; no independently established new physical law or measured deployed industrial benefit."
+}

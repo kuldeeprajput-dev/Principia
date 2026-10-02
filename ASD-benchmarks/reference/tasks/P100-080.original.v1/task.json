@@ -1,0 +1,178 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-080.original.v1",
+  "case_id": "P100-080",
+  "case_number": 80,
+  "family": "original",
+  "protocol_version": "P100-080-asd7-native-v1",
+  "cohort_id": "P100-080.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-080.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/80_physiology_wearable_stress_exercise",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "EDA mean over t+25s to t+30s",
+  "target_units": "uS",
+  "error_units": "uS",
+  "primary_units": "uS",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "level",
+    "lag10",
+    "lag30",
+    "mean120",
+    "activity",
+    "temperature",
+    "temperature30",
+    "elapsed"
+  ],
+  "input_units": {
+    "level": "uS",
+    "lag10": "uS",
+    "lag30": "uS",
+    "mean120": "uS",
+    "activity": "g",
+    "temperature": "degree C",
+    "temperature30": "degree C",
+    "elapsed": "min"
+  },
+  "numeric_columns": [
+    "level",
+    "lag10",
+    "lag30",
+    "mean120",
+    "activity",
+    "temperature",
+    "temperature30",
+    "elapsed"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "After120s observed history, every5s predict a future5s EDA mean ending30s later. All EDA,temperature and accelerometer summaries are causal and aligned by native starts/sample rates.",
+  "calibration": "No held-person outcome calibration. Past120s EDA is permitted state, identical for every model; response coefficients and flexible transforms fit training people only.",
+  "independent_unit": "Participant; all aerobic segments of a person linked",
+  "evaluation_groups": [
+    "S01",
+    "S06",
+    "S11",
+    "S18",
+    "f05",
+    "f06"
+  ],
+  "assigned_rows": 2562,
+  "eligible_rows": 2562,
+  "baseline_models": [
+    "reference",
+    "baseline_persistence",
+    "baseline_velocity",
+    "baseline_flexible",
+    "attempt_001_relaxation",
+    "attempt_002_damped_drift",
+    "attempt_003_activity",
+    "attempt_004_thermal",
+    "attempt_005_asymmetry"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "e; e=current5s EDA mean(uS), v=3*(e-e_t-10s),r=prior120s mean-e,A=prior10s acceleration magnitude SD(g),dT=T-T_t-30s(degreeC). v/r coefficients dimensionless,A coefficientuS/g,dT coefficientuS/degreeC,interaction coefficient1/g.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_persistence": {
+      "equation": "e; e=current5s EDA mean(uS), v=3*(e-e_t-10s),r=prior120s mean-e,A=prior10s acceleration magnitude SD(g),dT=T-T_t-30s(degreeC). v/r coefficients dimensionless,A coefficientuS/g,dT coefficientuS/degreeC,interaction coefficient1/g.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_velocity": {
+      "equation": "e+v; e=current5s EDA mean(uS), v=3*(e-e_t-10s),r=prior120s mean-e,A=prior10s acceleration magnitude SD(g),dT=T-T_t-30s(degreeC). v/r coefficients dimensionless,A coefficientuS/g,dT coefficientuS/degreeC,interaction coefficient1/g.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "e+b0+sum_j b_j exp(-mean((z-center_j)^2)/2); e=current5s EDA mean(uS), v=3*(e-e_t-10s),r=prior120s mean-e,A=prior10s acceleration magnitude SD(g),dT=T-T_t-30s(degreeC). v/r coefficients dimensionless,A coefficientuS/g,dT coefficientuS/degreeC,interaction coefficient1/g.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_relaxation": {
+      "equation": "e+b0*r; e=current5s EDA mean(uS), v=3*(e-e_t-10s),r=prior120s mean-e,A=prior10s acceleration magnitude SD(g),dT=T-T_t-30s(degreeC). v/r coefficients dimensionless,A coefficientuS/g,dT coefficientuS/degreeC,interaction coefficient1/g.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_damped_drift": {
+      "equation": "e+b0*v+b1*r; e=current5s EDA mean(uS), v=3*(e-e_t-10s),r=prior120s mean-e,A=prior10s acceleration magnitude SD(g),dT=T-T_t-30s(degreeC). v/r coefficients dimensionless,A coefficientuS/g,dT coefficientuS/degreeC,interaction coefficient1/g.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_activity": {
+      "equation": "e+b0*v+b1*r+b2*A; e=current5s EDA mean(uS), v=3*(e-e_t-10s),r=prior120s mean-e,A=prior10s acceleration magnitude SD(g),dT=T-T_t-30s(degreeC). v/r coefficients dimensionless,A coefficientuS/g,dT coefficientuS/degreeC,interaction coefficient1/g.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_thermal": {
+      "equation": "e+b0*v+b1*r+b2*dT; e=current5s EDA mean(uS), v=3*(e-e_t-10s),r=prior120s mean-e,A=prior10s acceleration magnitude SD(g),dT=T-T_t-30s(degreeC). v/r coefficients dimensionless,A coefficientuS/g,dT coefficientuS/degreeC,interaction coefficient1/g.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_asymmetry": {
+      "equation": "e+b0*max(v,0)+b1*min(v,0)+b2*r; e=current5s EDA mean(uS), v=3*(e-e_t-10s),r=prior120s mean-e,A=prior10s acceleration magnitude SD(g),dT=T-T_t-30s(degreeC). v/r coefficients dimensionless,A coefficientuS/g,dT coefficientuS/degreeC,interaction coefficient1/g.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "One aerobic study with two protocol versions; no mental-stress or clinical diagnosis. Source device clocks are not necessarily calendar measurement dates, and manufacturer EDA calibration remains author-provided.",
+  "source_url": "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+  "source_license": "ODC Attribution1.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "446124db4e7dd1e2705ba8b5887d08a28212190f6bba59952a8a50d6779fc183",
+  "observations_sha256": "ac029085b6c01fe793df299ee424cee21e50397cd1f4b94926b6ca70b6238352",
+  "legacy_protocol_sha256": "4e7fea642f9832fdf90111a2dedf1c314f3ef05a7a8025c48dbfc02523931c4e",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "level",
+    "lag10",
+    "lag30",
+    "mean120",
+    "activity",
+    "temperature",
+    "temperature30"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0",
+  "native_prefix_audit": {
+    "status": "passed_finite_native_counterfactual_probes",
+    "receipt": "reviews/validation/ASD7_NATIVE_PREFIX.json",
+    "receipt_sha256": "0beef68cea2994c1e53c625868a6c9fdf5d8008d40a00fc8bf8bb402b6f8d5df",
+    "tested_origins": 31,
+    "scope": [
+      "One middle eligible forecast origin from every native recording/session with at least one eligible origin; all currently exposed partitions covered."
+    ],
+    "limits": "Released-product prefix invariance at tested origins; not a proof of publisher upstream processing causality or every possible mutation."
+  }
+}

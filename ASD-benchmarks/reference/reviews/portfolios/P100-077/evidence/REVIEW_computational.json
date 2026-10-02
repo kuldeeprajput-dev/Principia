@@ -1,0 +1,339 @@
+{
+  "case_id": "P100-077",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "ef5041e7e786938a3923cf062f428068ad7706d662ec958ac24568bd01ac5e1d"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "7c3648fad7ac3293a9260ce4081683671dfed470c3d5dba53b89a9f8faee4834"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "d9f534ec71852c598a0695f99476ba6eb290a57a778c33e92d8fc7782c712afe"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "54f0b85a1cd38317ee44647ceb8de56c3b37b445fc41d917661cfa7ba1820748"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "3790526184b0364a27d89cd4cc766cda6c4478da4978087ab1857e0b58f589ee"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "12a9b964cf98d541179ef892da3fbd97709b1dcfcc12fa08e057a1d41580f63d"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "0ad28b3de3fa5da6e2862a87058bbaa8fc5d789dd15315fed322aa8932272385"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "6d61e92b297f2e74d7a300dc4cd30d904ce0a6c35484f18f8ff17e47ffb5ba2f"
+    },
+    {
+      "path": "native.py",
+      "sha256": "be53ea2af64f0383eff6c89ef0da56840743984cd72d438d9d8e5c39653e843f"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "0ef2910702f36a9fbb813a4648c2733b7587d369a3208b94909e7c45af52f63e"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "faff56be922d4a3728fb34f63918ad4281f5a62ff2d6de6b044cd33ed25da1f1"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "0f70da9e154fbcfa2e82a167071c5d4b9fddaf6673b53113643563e3b1caf2a7"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "e1a470f4bd3c99ce3858e947e8062908b89a08a634a951e30b36df632fd93882"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "6a593019691c7576bb049133885cf089e88cc55d203f5355a29bf41e7b7b1016"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "5202d5154bb6964f22114eebe7ced696db569db388d94e4778ab0b439b11a71f"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-077-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Joint FACS green/red response is predicted conditional on measured same-sample marginals. An odds-ratio association beats independence but loses flexible prediction; this does not independently establish editing efficiency mechanisms."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Joint FACS green/red response is predicted conditional on measured same-sample marginals. An odds-ratio association beats independence but loses flexible prediction; this does not independently establish editing efficiency mechanisms."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Joint FACS green/red response is predicted conditional on measured same-sample marginals. An odds-ratio association beats independence but loses flexible prediction; this does not independently establish editing efficiency mechanisms."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Joint FACS green/red response is predicted conditional on measured same-sample marginals. An odds-ratio association beats independence but loses flexible prediction; this does not independently establish editing efficiency mechanisms.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-077-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Joint FACS green/red response is predicted conditional on measured same-sample marginals. An odds-ratio association beats independence but loses flexible prediction; this does not independently establish editing efficiency mechanisms."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Joint FACS green/red response is predicted conditional on measured same-sample marginals. An odds-ratio association beats independence but loses flexible prediction; this does not independently establish editing efficiency mechanisms."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Joint FACS green/red response is predicted conditional on measured same-sample marginals. An odds-ratio association beats independence but loses flexible prediction; this does not independently establish editing efficiency mechanisms."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Joint FACS green/red response is predicted conditional on measured same-sample marginals. An odds-ratio association beats independence but loses flexible prediction; this does not independently establish editing efficiency mechanisms.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-077",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-077",
+      "native_rows": 9,
+      "confirmation_rows": 3,
+      "models": 9,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 9,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 5.551115123125783e-17,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 3,
+        "primary_error": 0.09624171838053952,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_independence",
+        "rows": 3,
+        "primary_error": 0.29297322336871423,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_constant",
+        "rows": 3,
+        "primary_error": 0.27256173760137714,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_flexible",
+        "rows": 3,
+        "primary_error": 0.03221893871602523,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001_competence",
+        "rows": 3,
+        "primary_error": 0.04082552117814834,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002_odds_ratio",
+        "rows": 3,
+        "primary_error": 0.09624171838053952,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003_common_fraction",
+        "rows": 3,
+        "primary_error": 0.16216046919719357,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004_dose_competence",
+        "rows": 3,
+        "primary_error": 0.04040792525394298,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005_competition",
+        "rows": 3,
+        "primary_error": 0.2929732233687146,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "C"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "C"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "C"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "C"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "A"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "C"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "Joint FACS green/red response is predicted conditional on measured same-sample marginals. An odds-ratio association beats independence but loses flexible prediction; this does not independently establish editing efficiency mechanisms."
+}

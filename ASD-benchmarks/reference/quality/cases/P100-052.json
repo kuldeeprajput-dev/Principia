@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-052",
+  "title": "Data Supplement for 'Dynamic induction control for mitigation of wake-induced power losses: a wind tunnel study under different inflow conditions'",
+  "default_task": "P100-052.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Interpolated time-average streamwise wake velocity",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 1,
+    "independent_unit_description": "whole control setting across turbines and downstream sections",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Source-native lidar-derived uu grids; grid cells are correlated interpolated products. Raw vlos retained upstream. Rotor-equivalent wind and virtual turbine power are excluded as targets and predictors. No cubic-power identity is counted as a rule. ABL Type II only.",
+  "baseline_strength": {
+    "registered_controls": 14,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Interpolated time-average streamwise wake velocity",
+    "prediction_time": "Geometry and actuation settings only; no reserved velocity or rotor-equivalent speed is a predictor.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-052.original.v1",
+    "P100-052.continuation.v1"
+  ],
+  "finding_ids": [
+    "P100-052-SCI-01",
+    "P100-052-SCI-02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-052/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-052.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Interpolated time-average streamwise wake velocity under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Geometry and actuation settings only; no reserved velocity or rotor-equivalent speed is a predictor.",
+    "calibration_requirement": "Source-native lidar-derived uu grids; grid cells are correlated interpolated products. Raw vlos retained upstream. Rotor-equivalent wind and virtual turbine power are excluded as targets and predictors. No cubic-power identity is counted as a rule. ABL Type II only.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Interpolated time-average streamwise wake velocity in m/s",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "m/s",
+    "reference_model": "reference",
+    "reference_primary_error": 0.3262597484720866,
+    "reference_physical_mae": 0.3262597484720866,
+    "physical_error_units": "m/s",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.3262597484720866,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-052.original.v1/evidence/metrics.csv",
+      "bytes": 1609,
+      "sha256": "36091fc7c605604d98f88393d5c23ba20acee37d6f83fb4910b2dc66507289d7"
+    },
+    "models": 14
+  },
+  "case_specific_next_evidence": "Acquire multiple control repeats/tunnel conditions; distinguish raw line-of-sight measurements from interpolated uu products and score turbine-power effects independently."
+}

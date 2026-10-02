@@ -1,0 +1,30 @@
+{
+  "case": 94,
+  "type": "linear",
+  "features": [
+    "one",
+    "S",
+    "T"
+  ],
+  "offset": null,
+  "scale": null,
+  "alpha": 0,
+  "title": "Thermal water-mass mixing",
+  "hypothesis": "Add temperature to conservative salinity mixing; temperature distinguishes endmembers of similar salinity.\n\nDevelopment feedback available before this hypothesis: No earlier attempt; fixed baselines available.\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+  "training_groups": [
+    "station-02",
+    "station-06",
+    "station-08"
+  ],
+  "training_rows": 7386,
+  "training_ids_sha256": "325c3843c89a11da9410f6fa63447210b78791e6fdc77db616d72fd72f9d85d7",
+  "coef": [
+    0.5913243765704592,
+    -0.10573396671011576,
+    -0.11127572488078011
+  ],
+  "rank": 3,
+  "condition_number": 3.5668997262039106,
+  "complexity": 3
+}

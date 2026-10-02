@@ -1,0 +1,48 @@
+[
+  {
+    "classification": "informative_falsification",
+    "admission": "supported",
+    "claim": "The proposed contextual digital-substitution predictor fails to improve reserved-region branch-use risk over the frozen controls.",
+    "equation": "See rules.json models.reference: p=logistic(a+bM*M+bW*W+bA*A+bI*I+bP*P+bC*C).",
+    "interpretation": "Development associations depend on region and information distribution. Predictive improvement in three regions does not establish a portable mechanism.",
+    "falsification": "The positive transfer claim is unsupported: reference Brier exceeds prevalence, channel-count and flexible controls in region1.",
+    "finding_id": "P100-042-F01",
+    "task_id": "P100-042.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+        "checked": "2026-10-02",
+        "known": "Official survey/codebook/technical report; banking channel and access outcomes previously described by CFPB. Digital complementarity versus substitution is an associational challenge, not evidence of causal closures or welfare effects."
+      }
+    ],
+    "scope": "Complete-case banked adult survey with positive WEIGHT_FINAL; WEIGHT_ALT is not used. Region-balanced survey-weighted risk is not national prevalence. DK/refused/skipped are exclusions, not non-use. Geographic author-derived indicators are not measured travel distance."
+  },
+  {
+    "classification": "informative_falsification",
+    "admission": "supported",
+    "claim": "The source dictionary alone is insufficient to decode local branch-access indicators in this release.",
+    "equation": "Actual native indicators: Yes=1, No=2; decode to binary using CASEID-matched labeled CSV evidence.",
+    "interpretation": "This is a source-semantics correction, not a new banking law. ENCODING_EVIDENCE.json records the exact concordance.",
+    "falsification": "The dictionary describes 0/1 while actual coded observations use 1/2; the invalid cohort and all preliminary failures remain preserved.",
+    "finding_id": "P100-042-F02",
+    "task_id": "P100-042.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+        "checked": "2026-10-02",
+        "known": "Official survey/codebook/technical report; banking channel and access outcomes previously described by CFPB. Digital complementarity versus substitution is an associational challenge, not evidence of causal closures or welfare effects."
+      }
+    ],
+    "scope": "Complete-case banked adult survey with positive WEIGHT_FINAL; WEIGHT_ALT is not used. Region-balanced survey-weighted risk is not national prevalence. DK/refused/skipped are exclusions, not non-use. Geographic author-derived indicators are not measured travel distance."
+  }
+]

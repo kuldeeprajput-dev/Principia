@@ -1,0 +1,210 @@
+{
+  "checks": [
+    {
+      "check": "hierarchical_group_particle_mae",
+      "status": "pass",
+      "detail": "53.75"
+    },
+    {
+      "check": "hierarchical_weights_sum",
+      "status": "pass",
+      "detail": "1.0"
+    },
+    {
+      "check": "group_mae_differs_from_row_average",
+      "status": "pass",
+      "detail": "53.333333333333336"
+    },
+    {
+      "check": "mean_group_rmse_not_pooled_rmse",
+      "status": "pass",
+      "detail": "54.08248290463863"
+    },
+    {
+      "check": "total_event_failure_f1_is_zero",
+      "status": "pass",
+      "detail": "0.0"
+    },
+    {
+      "check": "no_event_f1_is_undefined",
+      "status": "pass",
+      "detail": "True"
+    },
+    {
+      "check": "event_confusion_mass",
+      "status": "pass",
+      "detail": "1.0"
+    },
+    {
+      "check": "frozen_condition_normalization",
+      "status": "pass",
+      "detail": "2.0"
+    },
+    {
+      "check": "invalid_condition_normalization",
+      "status": "pass",
+      "error": "Invalid training-fold scale"
+    },
+    {
+      "check": "log_eligibility_primary",
+      "status": "pass",
+      "detail": "0.6931471805599453"
+    },
+    {
+      "check": "nonpositive_targets_keep_physical_error",
+      "status": "pass",
+      "detail": "1.5"
+    },
+    {
+      "check": "negative_log_prediction_rejected",
+      "status": "pass",
+      "error": "Log task requires positive predictions"
+    },
+    {
+      "check": "signed_physical_values_allowed",
+      "status": "pass",
+      "detail": "0.0"
+    },
+    {
+      "check": "nonfinite_error_overflow_rejected",
+      "status": "pass",
+      "error": "Nonfinite error arithmetic"
+    },
+    {
+      "check": "interval_constant_width_all_ties_retained",
+      "status": "pass",
+      "detail": "True"
+    },
+    {
+      "check": "proper_interval_score_exact",
+      "status": "pass",
+      "detail": "1.0"
+    },
+    {
+      "check": "zero_rows_abstention_defined",
+      "status": "pass",
+      "detail": "True"
+    },
+    {
+      "check": "duplicate_json",
+      "status": "pass",
+      "error": "Duplicate JSON key: x"
+    },
+    {
+      "check": "nan_json",
+      "status": "pass",
+      "error": "Nonfinite JSON value: NaN"
+    },
+    {
+      "check": "overflow_json",
+      "status": "pass",
+      "error": "Nonfinite JSON value: 1e999"
+    },
+    {
+      "check": "path_escape_rejected",
+      "status": "pass",
+      "error": "Unsafe relative path: ../x"
+    },
+    {
+      "check": "valid_prediction_only_submission",
+      "status": "pass",
+      "detail": "{'compatibility_import': False, 'training_overlap_groups': [], 'training_auditability': 'prediction_only', 'training_independence_verified_by_scoring': False}"
+    },
+    {
+      "check": "wrong_units_rejected",
+      "status": "pass",
+      "error": "Submission/task mismatch: target_units"
+    },
+    {
+      "check": "wrong_task_identity_rejected",
+      "status": "pass",
+      "error": "Submission/task mismatch: task_id"
+    },
+    {
+      "check": "wrong_protocol_rejected",
+      "status": "pass",
+      "error": "Submission/task mismatch: protocol_version"
+    },
+    {
+      "check": "wrong_input_hash_rejected",
+      "status": "pass",
+      "error": "Submission/task mismatch: input_sha256"
+    },
+    {
+      "check": "forbidden_input_rejected",
+      "status": "pass",
+      "error": "Forbidden or duplicate declared predictor"
+    },
+    {
+      "check": "false_independence_declaration_rejected",
+      "status": "pass",
+      "error": "Training groups contradict separation claim"
+    },
+    {
+      "check": "unknown_schema_version_rejected",
+      "status": "pass",
+      "error": "Unsupported submission schema version"
+    },
+    {
+      "check": "duplicate_ids_rejected",
+      "status": "pass",
+      "error": "Duplicate or empty prediction ID"
+    },
+    {
+      "check": "missing_ids_rejected",
+      "status": "pass",
+      "error": "Prediction inventory mismatch; use explicit abstentions for every unpredicted ID"
+    },
+    {
+      "check": "infinite_prediction_rejected",
+      "status": "pass",
+      "error": "Nonfinite submitted values"
+    },
+    {
+      "check": "abstention_reason_required",
+      "status": "pass",
+      "error": "Every abstention needs a reason"
+    },
+    {
+      "check": "whole_task_abstention_valid",
+      "status": "pass",
+      "detail": "{'compatibility_import': False, 'training_overlap_groups': [], 'training_auditability': 'prediction_only', 'training_independence_verified_by_scoring': False}"
+    },
+    {
+      "check": "partial_abstention_valid",
+      "status": "pass",
+      "detail": "{'compatibility_import': False, 'training_overlap_groups': [], 'training_auditability': 'prediction_only', 'training_independence_verified_by_scoring': False}"
+    },
+    {
+      "check": "prediction_nonempty_on_abstention_rejected",
+      "status": "pass",
+      "error": "Abstained numeric fields must be blank"
+    },
+    {
+      "check": "point_outside_interval_rejected",
+      "status": "pass",
+      "error": "Intervals must contain point predictions"
+    },
+    {
+      "check": "input_asset_hash_rejected",
+      "status": "pass",
+      "error": "Asset integrity mismatch: predictions.csv"
+    },
+    {
+      "check": "inconsistent_finding_equation_rejected",
+      "status": "pass",
+      "error": "Unknown equation referenced by finding"
+    }
+  ],
+  "engine_hashes": {
+    "evaluation/import_legacy.py": "d9b67ab1931bc150f022cf8d18b01a59e001578d2bf63f961577b7c7d28c5a5a",
+    "evaluation/metrics.py": "bd4df4d21ec3a9b68c32ba04ffcbb01e44899d612428983bb25d53fd6b26bd40",
+    "evaluation/batch5_checks.py": "222dadb63ad2641daf1a74018be4b83433ddde81fc19c28aeb0752922063070a",
+    "evaluation/benchmark.py": "ff65d3d55bfddbe1c3cbefbaf9ce8fda90457bbba3f5c6499e3408f1a148c803",
+    "evaluation/scientific.py": "9c3e1d5322c7c70369bf9523ec19ae7e55be43c2f358bef94cbc3d353f4f3feb",
+    "evaluation/common.py": "f1234882c903a7cf68a7ab601103db582cecc96f06b0a02eb102d9902d954a8a",
+    "evaluation/generate_catalog.py": "1b7410ad7bbfcda4836814d3be85d48d466461c23c5219814d3d5f764b5fddd6",
+    "evaluation/workflow.py": "da9c97398e056daf9b25db93c6ddd37ce09506f082c056dbe92b397ddb171ac1",
+    "evaluation/submissions.py": "d30114e7b254a55e0ff0cb2436b1f9207c65c000fc21db69d20f737996dcc5de"
+  }
+}

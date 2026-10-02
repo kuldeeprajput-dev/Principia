@@ -1,0 +1,31 @@
+{
+  "case": 51,
+  "kind": "softplus",
+  "label": "attempt-002",
+  "parent": "attempt-001",
+  "created_utc": "2026-10-01T14:06:35.634844+00:00",
+  "hypothesis": "A shared power exponent p=2.084 reaches0.01921uA grouped MAE near the flexible shape baseline0.01807. Test a smooth threshold-turn-on equation based on softplus gate overdrive, independently parameterizing threshold and broadening rather than a fixed zero-gate power origin.",
+  "preceding_development_evidence": [
+    {
+      "label": "linear",
+      "primary_error": 0.1661012722479649,
+      "worst_group_error": 0.21079129461755053
+    },
+    {
+      "label": "loglinear",
+      "primary_error": 0.16824411328977715,
+      "worst_group_error": 0.2203366758313779
+    },
+    {
+      "label": "shape",
+      "primary_error": 0.01806741580789332,
+      "worst_group_error": 0.038632094633561154
+    },
+    {
+      "label": "attempt-001",
+      "primary_error": 0.019209528728376765,
+      "worst_group_error": 0.03754840164302275
+    }
+  ],
+  "falsifier": "Reject superiority if grouped development MAE does not improve or worst-group behavior deteriorates without justified interpretation; no confirmation access."
+}

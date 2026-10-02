@@ -1,0 +1,287 @@
+{
+  "case_id": "P100-085",
+  "input_columns": [
+    "elapsed_h",
+    "eg_consumed_g_L",
+    "eg_initial_g_L",
+    "pH",
+    "acetate_cofeed",
+    "glucose_cofeed"
+  ],
+  "numeric_columns": [
+    "elapsed_h",
+    "eg_consumed_g_L",
+    "eg_initial_g_L",
+    "pH",
+    "acetate_cofeed",
+    "glucose_cofeed"
+  ],
+  "input_units": {
+    "elapsed_h": "h",
+    "eg_consumed_g_L": "g/L",
+    "eg_initial_g_L": "g/L",
+    "pH": "dimensionless",
+    "acetate_cofeed": "indicator",
+    "glucose_cofeed": "indicator"
+  },
+  "source": {
+    "landing_url": "https://zenodo.org/records/17396158",
+    "publication": "https://doi.org/10.1016/j.biortech.2025.133540"
+  },
+  "target": "Glycolic acid concentration",
+  "units": "g/L",
+  "metric_units": "g/L",
+  "metric_kind": "mae",
+  "assigned_rows": 4,
+  "selected_development_model": "baseline_unit_yield",
+  "models": {
+    "reference": {
+      "case": 85,
+      "kind": "unit_yield",
+      "coef": [],
+      "training_groups": [
+        "Flask_EG_OD0.1",
+        "Growth_Flask_Ace+EG",
+        "Growth_Flask_Glu+EG"
+      ],
+      "training_rows": 35,
+      "training_ids_sha256": "c4123ff3dffb3a8f513b829e61c53b3f936ce8bc1d926619fcaf2ac675202005",
+      "equation": "P_hat=max(0,E0-E)",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "baseline_zero": {
+      "case": 85,
+      "kind": "zero",
+      "coef": [],
+      "training_groups": [
+        "Flask_EG_OD0.1",
+        "Growth_Flask_Ace+EG",
+        "Growth_Flask_Glu+EG"
+      ],
+      "training_rows": 35,
+      "training_ids_sha256": "c4123ff3dffb3a8f513b829e61c53b3f936ce8bc1d926619fcaf2ac675202005",
+      "equation": "P_hat=0",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "baseline_unit_yield": {
+      "case": 85,
+      "kind": "unit_yield",
+      "coef": [],
+      "training_groups": [
+        "Flask_EG_OD0.1",
+        "Growth_Flask_Ace+EG",
+        "Growth_Flask_Glu+EG"
+      ],
+      "training_rows": 35,
+      "training_ids_sha256": "c4123ff3dffb3a8f513b829e61c53b3f936ce8bc1d926619fcaf2ac675202005",
+      "equation": "P_hat=max(0,E0-E)",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "baseline_stoichiometric": {
+      "case": 85,
+      "kind": "stoichiometric",
+      "coef": [],
+      "training_groups": [
+        "Flask_EG_OD0.1",
+        "Growth_Flask_Ace+EG",
+        "Growth_Flask_Glu+EG"
+      ],
+      "training_rows": 35,
+      "training_ids_sha256": "c4123ff3dffb3a8f513b829e61c53b3f936ce8bc1d926619fcaf2ac675202005",
+      "equation": "P_hat=max(0,(76.05/62.07)*(E0-E))",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "baseline_global_yield": {
+      "case": 85,
+      "kind": "global_yield",
+      "coef": [
+        0.9138476448897042
+      ],
+      "training_groups": [
+        "Flask_EG_OD0.1",
+        "Growth_Flask_Ace+EG",
+        "Growth_Flask_Glu+EG"
+      ],
+      "training_rows": 35,
+      "training_ids_sha256": "c4123ff3dffb3a8f513b829e61c53b3f936ce8bc1d926619fcaf2ac675202005",
+      "fit_method": "group-weighted ridge least squares; fixed penalty",
+      "ridge_alpha": 1e-07,
+      "feature_rms": [
+        9.893642669804574
+      ],
+      "equation": "P_hat=max(0,q*(E0-E))",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "baseline_flexible": {
+      "case": 85,
+      "kind": "flexible",
+      "coef": [
+        0.4492831278415719,
+        3.504310314213443,
+        2.30876631528472,
+        0.0605128769392777,
+        -0.7179740350968299,
+        3.425914367928245,
+        2.752894759373534,
+        1.7491737019996714,
+        5.32363018174839
+      ],
+      "training_groups": [
+        "Flask_EG_OD0.1",
+        "Growth_Flask_Ace+EG",
+        "Growth_Flask_Glu+EG"
+      ],
+      "training_rows": 35,
+      "training_ids_sha256": "c4123ff3dffb3a8f513b829e61c53b3f936ce8bc1d926619fcaf2ac675202005",
+      "fit_method": "group-weighted ridge least squares; fixed penalty",
+      "ridge_alpha": 1.0,
+      "feature_rms": [
+        1.0,
+        0.4946821334902287,
+        0.7028469882477187,
+        0.8861813924459598,
+        0.5773502691896257,
+        0.5773502691896258,
+        0.3921493438613172,
+        0.5036810606590626,
+        0.41435722485723464
+      ],
+      "equation": "Frozen ridge polynomial: y_hat=phi(x)^T beta; exact dimensionless feature order/scales in run.features and coefficients in rules.json;85 nonnegative,87 clipped0..endowment",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_001_ph_yield": {
+      "case": 85,
+      "kind": "ph_yield",
+      "coef": [
+        0.9182136736002711,
+        0.04058188950824476
+      ],
+      "training_groups": [
+        "Flask_EG_OD0.1",
+        "Growth_Flask_Ace+EG",
+        "Growth_Flask_Glu+EG"
+      ],
+      "training_rows": 35,
+      "training_ids_sha256": "c4123ff3dffb3a8f513b829e61c53b3f936ce8bc1d926619fcaf2ac675202005",
+      "fit_method": "group-weighted ridge least squares; fixed penalty",
+      "ridge_alpha": 1e-07,
+      "feature_rms": [
+        9.893642669804574,
+        17.986753681142996
+      ],
+      "equation": "P_hat=max(0,(E0-E)*(a+b*(pH-7)))",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_002_loss_flux": {
+      "case": 85,
+      "kind": "loss_flux",
+      "coef": [
+        0.8437401580697482,
+        0.5926853150104038
+      ],
+      "training_groups": [
+        "Flask_EG_OD0.1",
+        "Growth_Flask_Ace+EG",
+        "Growth_Flask_Glu+EG"
+      ],
+      "training_rows": 35,
+      "training_ids_sha256": "c4123ff3dffb3a8f513b829e61c53b3f936ce8bc1d926619fcaf2ac675202005",
+      "fit_method": "group-weighted ridge least squares; fixed penalty",
+      "ridge_alpha": 1e-07,
+      "feature_rms": [
+        9.893642669804574,
+        1.4056939764954375
+      ],
+      "equation": "P_hat=max(0,a*(E0-E)+b*t/100)",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_003_composition": {
+      "case": 85,
+      "kind": "composition",
+      "coef": [
+        1.5855155505097271,
+        -0.936278278777185,
+        -0.6169132778850016
+      ],
+      "training_groups": [
+        "Flask_EG_OD0.1",
+        "Growth_Flask_Ace+EG",
+        "Growth_Flask_Glu+EG"
+      ],
+      "training_rows": 35,
+      "training_ids_sha256": "c4123ff3dffb3a8f513b829e61c53b3f936ce8bc1d926619fcaf2ac675202005",
+      "fit_method": "group-weighted ridge least squares; fixed penalty",
+      "ridge_alpha": 1e-07,
+      "feature_rms": [
+        9.893642669804574,
+        4.225460855864653,
+        8.914845296844286
+      ],
+      "equation": "P_hat=max(0,(E0-E)*(a+b*glucose+c*acetate))",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_004_saturation": {
+      "case": 85,
+      "kind": "saturation",
+      "coef": [
+        499.99999999999994,
+        0.9260306705608673
+      ],
+      "training_groups": [
+        "Flask_EG_OD0.1",
+        "Growth_Flask_Ace+EG",
+        "Growth_Flask_Glu+EG"
+      ],
+      "training_rows": 35,
+      "training_ids_sha256": "c4123ff3dffb3a8f513b829e61c53b3f936ce8bc1d926619fcaf2ac675202005",
+      "optimizer": {
+        "success": true,
+        "cost": 70.77508272607255,
+        "optimality": 1.5477372531908632e-06,
+        "bounds": [
+          [
+            0.01,
+            0.001
+          ],
+          [
+            500,
+            5
+          ]
+        ]
+      },
+      "equation": "P_hat=max(0,A*(1-exp(-q*max(E0-E,0)/A)))",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_005_acid": {
+      "case": 85,
+      "kind": "acid",
+      "coef": [
+        0.9831919737693826
+      ],
+      "training_groups": [
+        "Flask_EG_OD0.1",
+        "Growth_Flask_Ace+EG",
+        "Growth_Flask_Glu+EG"
+      ],
+      "training_rows": 35,
+      "training_ids_sha256": "c4123ff3dffb3a8f513b829e61c53b3f936ce8bc1d926619fcaf2ac675202005",
+      "fit_method": "group-weighted ridge least squares; fixed penalty",
+      "ridge_alpha": 1e-07,
+      "feature_rms": [
+        9.094473168109507
+      ],
+      "equation": "P_hat=max(0,q*(E0-E)/(1+10^(3.83-pH)))",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    }
+  },
+  "missingness_policy": "No imputation; explicit native eligibility; all packaged predictors finite",
+  "classification": "Reproduction/validated scoped comparison; novelty not established",
+  "fresh_confirmation_for_future_users": false,
+  "training_scope": "Coefficients fit development only; group/fold states in research history",
+  "limits": [
+    "Only one held-out condition and two replicate curves; no precise population confidence.",
+    "Bioreactor filenames imply opposing feed regimes but members are byte-identical: both excluded.",
+    "Measured EG depletion can be negative from measurement error; preserve sign, do not impute.",
+    "Native early rows for most conditions were seen at schema audit: confirmation is outcome-exposed retrospective transfer, not fresh experimental confirmation."
+  ]
+}

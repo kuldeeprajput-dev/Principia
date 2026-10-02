@@ -1,0 +1,84 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-091.original.v1.raw-access.v1",
+  "parent_task_id": "P100-091.original.v1",
+  "case_id": "P100-091",
+  "protocol_version": "P100-091.original.v1.raw-access.v1",
+  "cohort_id": "P100-091.original.v1.cohort-1",
+  "parent_task_sha256": "d2b3ca0e7a17e2feb135d3082dc70c3449cf1c8deafdb7b8852dfddade8aafc2",
+  "input_sha256": "2f3c1fa8e550dc862218fcf82ae81f7423800cb13500cc563410edd083608d35",
+  "observations_sha256": "e49716eafa126c16d1c6185cddcec4d094ba33a4d40c4ff3de2e6d046b3ecb9b",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "91_communications_private_5g",
+  "source_assets": [
+    {
+      "path": "raw/LICENSE.md",
+      "bytes": 1784,
+      "sha256": "33110a4aeac0a4b758b41ff6a6680bc9bb53ba20b5e7b396913f94cc9a49cee4"
+    },
+    {
+      "path": "raw/README.md",
+      "bytes": 6820,
+      "sha256": "7abc0571f8468840e9b36f6f55fd79260f79c841008345c1cc74de553bdd266e"
+    },
+    {
+      "path": "raw/code.zip",
+      "bytes": 66470,
+      "sha256": "ce6bb0aa6132c1212cac776b19d99d185ffc391858bb945b26489646487f1fc7"
+    },
+    {
+      "path": "raw/data.zip",
+      "bytes": 27703,
+      "sha256": "89f952e2a0f299f728fe99a8ae0711c2d3a3e899f6df7ec4cd43bb63fcbd9330"
+    },
+    {
+      "path": "raw/raw_latency_logs.zip",
+      "bytes": 320863,
+      "sha256": "5f615d1262992d97ac36415baf481b3cce65fa7b28f9790fb375e1d95cdcb44e"
+    },
+    {
+      "path": "raw/raw_throughput_logs.zip",
+      "bytes": 48535,
+      "sha256": "07f477d2fda65361e8dbb0b6edd953fa7f102ab132b7c99c5b0bbdc689d8e8da"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "offered_Mbps": "Mbit/s, configured target",
+      "achieved_Mbps": "Mbit/s, same-run server report"
+    },
+    "observation_window": "Conditional reconstruction after a60-second run. Same-run achieved throughput is permitted; all latency-derived fields, NetPwr, loss, jitter, current location targets and future TCP calibration are forbidden. Not a prospective offered-load forecast.",
+    "calibration_and_history": "No held-out location latency calibration. Six global offered-rate offsets and shared slope are fitted on development locations only.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_archive",
+      "source_member",
+      "source_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

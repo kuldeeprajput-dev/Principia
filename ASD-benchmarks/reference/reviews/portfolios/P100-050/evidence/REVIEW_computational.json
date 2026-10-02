@@ -1,0 +1,599 @@
+{
+  "case_id": "P100-050",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "14fa9d4ddbecd00cefffab992358f1b0086f6740eb60287ca2be32dc23a9c6ce"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "7fbe7d21b5085d9061cd84248e9c017e49e6c9b2bf18e2b19f791f75fdffbf3f"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "6329822be2c94f4723177c3bb6d0080e05ac7ff9362c8c880455848790d720b8"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "a218bf206722b471a514690bace740ab7ef5e3ea0a225620291e3837fce26043"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "71b460aaa947d8b3dab478f8c741eb3b5d79c11acb951992495f5348ea542fe8"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "5a77c03b78090e7f4d31e37b276531bbb5ad031a43e024ea8fedd840e2168326"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "659f43458a0e5877e6a51820db2e21b914ad6816ec74432698b60f1c04be6eb2"
+    },
+    {
+      "path": "native.py",
+      "sha256": "821af70769e5ae1c499f0c63342f0ae28e71cf80d1654b8e9c2771924d44aefc"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "7c879abd0b8bceb8172c8c2e6574524c4ab1fd64fa707ff19dc6d2883cefe768"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "299c8c1013a69359fa00e5852b4dd29b09c06df2c2510d0a37818409d6c25640"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "35840926d5c748f84de3287e6a47d58898c8d5d9d5a8d61cae5312b0bc07dd13"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "50a2573ec032f1fffe0293ae081857816c5cb65e3ee02d1ec68df26e67434675"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "46b9a16f30e9ee8b8812cc5a5e05bdb2d56f01e2e31885e6310aadf099cbba70"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "974c27550ca7ce61d0dac1ddeb2cfc9200397d268821c5bde49367c76e3f9cb1"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-050-F01",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-050-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-050-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-050",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-050",
+      "native_rows": 1340,
+      "confirmation_rows": 268,
+      "models": 9,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 9,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 3.469446951953614e-18,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 268,
+        "primary_error": 0.012228414255934827,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "constant_velocity",
+        "rows": 268,
+        "primary_error": 0.023193272832276117,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 268,
+        "primary_error": 0.013688318913654119,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "persistence",
+        "rows": 268,
+        "primary_error": 0.011667232313432835,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "damped_velocity",
+        "rows": 268,
+        "primary_error": 0.012081349395623135,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "oscillatory_memory",
+        "rows": 268,
+        "primary_error": 0.012228414255934827,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "depth_dependent_memory",
+        "rows": 268,
+        "primary_error": 0.012079277813553965,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "front_recession_asymmetry",
+        "rows": 268,
+        "primary_error": 0.01208134939562314,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "robust_surface_level",
+        "rows": 268,
+        "primary_error": 0.012169251755597014,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 05/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 06/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 08/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 10/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 05/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 06/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 08/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 10/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 05/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 06/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 08/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 10/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 05/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 06/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 08/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 10/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 05/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 06/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 08/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 10/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant_velocity/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 05/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant_velocity/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 06/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant_velocity/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 08/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant_velocity/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 10/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 05/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 06/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 08/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 10/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 05/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 06/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 08/04/2024"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "33 laser (m) - 10/04/2024"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "Oscillatory height nowcasting loses persistence on the held release.200ms causal response is scored inmm; the adverse result precludes calling this a validated transferable debris-flow law."
+}

@@ -1,0 +1,5 @@
+# Benchpress computational timing semantics
+
+Device-transpilation JSON benchmark stats.mean is measured software wall time in seconds, not quantum hardware runtime. Qiskit is a paid-in-time per-instance pilot; its output gate count/depth and load/runtime are known only after compilation. Tket/BQSKIT/Staq successes match exact filename; service/construct tasks omitted by declared task. Same CPU brand verified; frequency and process state differences remain. No claim of hardware-independent complexity exponent.
+
+Every family strips numeric size suffixes, keeping all compiler observations linked. Schema inspection printed the first Qiskit examples mod5_4,tof_3,rc_adder_6,adder,qpt,partial_tof4; corresponding families forced into development when recognized, with no candidate target scores examined. Absence of a successful benchmark is not a zero time or a fabricated timeout; conditional-success target does not evaluate failures. Original archive retains failure status/dumps and all other tasks. Existing paper already compares SDKs; compact calibrated runtime models are scoped extensions of descriptive computational evidence.

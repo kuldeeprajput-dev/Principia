@@ -1,0 +1,447 @@
+{
+  "schema_version": "principia.advisory-review/3.0",
+  "bindings": {
+    "claims_sha256": "c8f54f0382168c096aa5cca625e86f46c6e007b8883aca733e624887ef0b5ba6",
+    "evidence_sha256": {
+      "E001": "dfc338b6a9dcb8feabd3396a0356829a0eaae490cdf49b5a948ddb701d46ba03",
+      "E002": "a9b7fecc022a3656db3695ca69a0274c941556f2a166356551f07d939d900426",
+      "E003": "50858e2bc7f4b119b8d2e2cb0201346b93f6dbb819d8cba992b8c1396798b9b7",
+      "E004": "ecd299a64043cf8c23ac7b9c9ece8af5b89853b5bfbe859166883086dad650c8",
+      "E005": "abefbf1f2e9b6b6f7c68270c56306024d7887a741fca4a8900d121cc5b545576",
+      "E006": "6db4092319793b858375cc476f94266234fb2eba84dd00688a535efe1a97b930",
+      "E007": "4153ff8f4de3048cebc97a092d38f921192611117f52ee9f04596fbe1712bddb",
+      "E008": "bd645251e7e7412823ecbc9914779e813d8fea5987b9301a01fe0c9636b8b13e",
+      "E009": "293b9b1041dc125fea66e350abe9f09b24cc224dd8d47de4437a904b874d95c6",
+      "E010": "158345b4497b221207a4ca3348d611b5ed91ac490712aca13b9c78c5612b658a",
+      "E011": "aa36a4f31b6e9e26cc2a814627949981e22b64a9bbcee4747aa5a1cf342f0d21",
+      "E012": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253",
+      "E013": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078",
+      "SCIENTIFIC": "5e33549fd7359752fe71c99f37d98ac8617f4a28b871501d72ee608cc27bace9",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-053",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "reviews": [
+    {
+      "finding_id": "P100-053-SCI-01",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-053-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-053-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation. Strong adverse evidence: 27/2500 assigned operations lack the 700\u20131300 degree target window. Prediction includes the first sampled crossing 250 degrees and overshoot; this must not become arbitrary future access.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Torque history is consistent with retained thread engagement; geometry, wear, friction and station effects remain confounded.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "History compression is an operational approximation; no universal wear law or new constitutive mechanism is established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "27/2500 assigned operations lack the 700\u20131300 degree target window. Prediction includes the first sampled crossing 250 degrees and overshoot; this must not become arbitrary future access."
+        ],
+        "checks": [
+          "Audit native phase/angle trigger and completed-history timestamps.",
+          "Keep both holes and all reuse cycles linked; stratify uncertainty by whole workpieces/surface groups.",
+          "Report target-window eligibility and early-prefix corruption sensitivity separately from score."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-053-SCI-02",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-053-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "not_assessed",
+            "rationale": "This exact historical claim does not map one-to-one to a registered numerical task. The portfolio-level replay review does not establish claim-specific implementation parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "not_assessed",
+            "rationale": "This exact historical claim does not map one-to-one to a registered numerical task. The portfolio-level replay review does not establish claim-specific implementation parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "not_assessed",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-053-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation. Strong adverse evidence: Its development MAE.0244117 Nm exceeds equally informed flexible accuracy; disturbance-reset .0244366 Nm adds no gain. Simplicity can be useful but is distinct from a new friction mechanism.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Torque history is consistent with retained thread engagement; geometry, wear, friction and station effects remain confounded.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "History compression is an operational approximation; no universal wear law or new constitutive mechanism is established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Its development MAE.0244117 Nm exceeds equally informed flexible accuracy; disturbance-reset .0244366 Nm adds no gain. Simplicity can be useful but is distinct from a new friction mechanism."
+        ],
+        "checks": [
+          "Audit native phase/angle trigger and completed-history timestamps.",
+          "Keep both holes and all reuse cycles linked; stratify uncertainty by whole workpieces/surface groups.",
+          "Report target-window eligibility and early-prefix corruption sensitivity separately from score."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-053-SCI-03",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-053-SCI-03",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-053-SCI-03",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation. Strong adverse evidence: Only 15/200 workpieces improve. Surface class, controller OK/NOK, clamping force and joint strength cannot be substituted for measured targets.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "unsupported",
+            "rationale": "Torque history is consistent with retained thread engagement; geometry, wear, friction and station effects remain confounded.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "History compression is an operational approximation; no universal wear law or new constitutive mechanism is established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "supported",
+            "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Only 15/200 workpieces improve. Surface class, controller OK/NOK, clamping force and joint strength cannot be substituted for measured targets."
+        ],
+        "checks": [
+          "Audit native phase/angle trigger and completed-history timestamps.",
+          "Keep both holes and all reuse cycles linked; stratify uncertainty by whole workpieces/surface groups.",
+          "Report target-window eligibility and early-prefix corruption sensitivity separately from score."
+        ]
+      }
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "novelty_is_not_certified": true
+}

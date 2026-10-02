@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-062",
+  "title": "Hydrogen permeation test on MS AHSS grade 1300",
+  "default_task": "P100-062.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "measured anodic permeation current",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Two chronological traces with no independent specimen identifiers; nonoverlapping temporal blocks are scoring units, not independent specimens. All trace linkage is explicit.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Mean first3 native current observations per trace; all candidate families receive identical values. Fit parameters may use development prefixes only.",
+  "baseline_strength": {
+    "registered_controls": 15,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "measured anodic permeation current",
+    "prediction_time": "Forward extrapolation within two linked permeation traces. Parameters are learned only from earlier chronological blocks; confirmation is the last20% of each trace. Known imposed current step and initial three-point current calibration are permitted.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Two traces without independent specimen identifiers; time blocks are not specimens."
+  },
+  "task_ids": [
+    "P100-062.original.v1"
+  ],
+  "finding_ids": [
+    "P100-062-F01",
+    "P100-062-F02",
+    "P100-062-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-062/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-062.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate measured anodic permeation current under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Forward extrapolation within two linked permeation traces. Parameters are learned only from earlier chronological blocks; confirmation is the last20% of each trace. Known imposed current step and initial three-point current calibration are permitted.",
+    "calibration_requirement": "Mean first3 native current observations per trace; all candidate families receive identical values. Fit parameters may use development prefixes only.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "measured anodic permeation current in \u03bcA",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Two traces without independent specimen identifiers; time blocks are not specimens."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "\u03bcA",
+    "reference_model": "reference",
+    "reference_primary_error": 0.6741346694049625,
+    "reference_physical_mae": 0.6741346694049625,
+    "physical_error_units": "\u03bcA",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.6741346694049625,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-062.original.v1/evidence/metrics.csv",
+      "bytes": 2030,
+      "sha256": "7a5a65f3c2429029607c5a00ef90f364f8f4b72532f1e492a320b7473270930b"
+    },
+    "models": 15
+  },
+  "case_specific_next_evidence": "Two traces without independent specimen identifiers; time blocks are not specimens."
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "id": "P100-048-F01",
+    "classification": "validated_extension",
+    "disposition": "supported",
+    "claim": "The equation refines established atmospheric-emissivity parameterizations with a humidity–cloud interaction and fixed site calibration. These terms represent effective radiative conditions, not directly measured cloud fraction. Same-site temporal validation cannot establish unseen-site portability or novel radiative physics.",
+    "equation": "\\widehat L=\\sigma T_K^4\\,[a+bv+cq+dvq+es+fsq]",
+    "model_id": "reference",
+    "task_id": "P100-048.original.v1",
+    "evidence": {
+      "prediction_file": "evidence/predictions.csv.gz",
+      "metrics_file": "evidence/metrics.csv",
+      "reference_group_MAE": 9.242201170376289,
+      "best_baseline": "flexible",
+      "best_baseline_group_MAE": 13.254628385566678,
+      "wins": 12,
+      "groups": 14
+    },
+    "prior_art": "Existing domain parameterizations; see PRIOR_ART.json. No certified novelty.",
+    "falsification": "All baselines and alternatives evaluated on identical frozen eligible observations; no confirmation promotion.",
+    "scope": "Only daytime empirical clear/all-sky emissivity diagnostics; no nighttime extension, no independent cloud observations, no cloud causality.",
+    "admission": "supported",
+    "finding_id": "P100-048-F01",
+    "admission_rationale": "Supported as a scoped predictive extension; novelty and demonstrated industrial impact are not established."
+  },
+  {
+    "id": "P100-048-F02",
+    "classification": "falsified",
+    "disposition": "supported",
+    "claim": "Cloud-gap closure and alternative Brunt/clearness representations expose accuracy–worst-day tradeoffs; they remain available instead of being hidden behind a single winner.",
+    "equation": null,
+    "model_id": null,
+    "task_id": "P100-048.original.v1",
+    "evidence": {
+      "metrics_file": "evidence/metrics.csv",
+      "development_selection": "research_history/DEVELOPMENT_SELECTION.json"
+    },
+    "prior_art": "Mechanism claims need controls and information ablations.",
+    "falsification": "Comparison is bounded to the recorded model families and eligible cohort. It does not establish universal nonexistence of a physical process.",
+    "scope": "Only daytime empirical clear/all-sky emissivity diagnostics; no nighttime extension, no independent cloud observations, no cloud causality.",
+    "admission": "supported",
+    "finding_id": "P100-048-F02",
+    "admission_rationale": "Retain negative scientific evidence; no independent positive law claimed."
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "case_id": "P100-026",
+  "title": "Catalytic induction trajectory transfer",
+  "target": "Dimethoxymethane selectivity",
+  "target_units": "percentage points",
+  "error_units": "percentage points",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "elapsed_min",
+    "anchor_selectivity_pct",
+    "prefix_slope_pct_min",
+    "ag_wt_pct"
+  ],
+  "input_units": {
+    "elapsed_min": "min",
+    "anchor_selectivity_pct": "percent",
+    "prefix_slope_pct_min": "percent/min",
+    "ag_wt_pct": "wt percent"
+  },
+  "numeric_columns": [
+    "elapsed_min",
+    "anchor_selectivity_pct",
+    "prefix_slope_pct_min",
+    "ag_wt_pct"
+  ],
+  "timing_contract": "Six complete reactor runs were developed with leave-run-out validation; the 220\u00b0C-labelled and calcined-catalyst runs were reserved. All models receive the same fixed 300-minute calibration prefix. The long-term figure duplicated in the source is counted once. No instantaneous conversion or other selectivity enters the predictor.",
+  "calibration": "Last available DMM selectivity at t<=300min plus least-squares prefix slope on120<=t<=300; both recomputed independently per run. Score300<t<=1500.",
+  "independent_unit": "Complete reactor run. Diagnostic forecast after 300 min with fixed prefix calibration; no future conversion/selectivity predictors.",
+  "scope_limits": [
+    "Complete reactor run. Diagnostic forecast after 300 min with fixed prefix calibration; no future conversion/selectivity predictors.",
+    "A two-parameter, causal prefix-conditioned forecast improves persistence and straight-line continuation on two reserved reactor runs. It loses to the flexible control and several other frozen candidates, so evidence supports useful short-horizon calibration rather than a superior or universal kinetic law.",
+    "No independent population confidence interval from dependent rows."
+  ],
+  "source_url": "https://zenodo.org/records/15691695",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "source_assets": "SOURCE_MANIFEST.json",
+  "exposure": {
+    "historical": "Internal confirmation reserved until FREEZE.json; schema-stage exposures documented in SOURCE_AND_UNITS.md.",
+    "current": "All confirmation outcomes exposed to future users."
+  },
+  "uncertainty_policy": "Report individual top-level groups and their range; no row-bootstrap population inference.",
+  "aggregation": "Equal group weight then equal eligible rows within group.",
+  "eligibility": "Nonfinite native values excluded with anchors; none excluded by fit residuals. All source bytes unchanged.",
+  "prior_analysis": "https://pubs.rsc.org/en/content/articlepdf/2025/cy/d5cy00544b",
+  "native_adapter": "native.py at scenario research root; shared benchmark integration supplies canonical adapter registration",
+  "reader_dependencies": [
+    "numpy",
+    "pandas",
+    "scipy",
+    "openpyxl",
+    "matplotlib",
+    "py7zr"
+  ],
+  "claim_admission": "partially_supported",
+  "reference_selection": "Min primary error with simpler coefficient count within1percent; retain all controls even if superior.",
+  "physical_bounds": "Selectivity is0\u2013100percent physically; local equation may not be extrapolated beyond1500min."
+}

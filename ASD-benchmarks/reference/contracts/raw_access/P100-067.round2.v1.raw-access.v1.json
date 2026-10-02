@@ -1,0 +1,91 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-067.round2.v1.raw-access.v1",
+  "parent_task_id": "P100-067.round2.v1",
+  "case_id": "P100-067",
+  "protocol_version": "P100-067.round2.v1.raw-access.v1",
+  "cohort_id": "P100-067.round2.v1.development-oof",
+  "parent_task_sha256": "0383c553595dc99ff4457be3bf56ab567e8119d25b52a9e996fbac28b9d1d594",
+  "input_sha256": "e6a46ca1330054c82e496b9e97dfe5cfe06c6cd0edfdd3a56c8aca9f0e2e34d6",
+  "observations_sha256": "40cf6dd57488d01b4421c794a4be5d3ea9cd19edb54b1f9fdea80084b66d113f",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "67_environment_microplastic_settling",
+  "source_assets": [
+    {
+      "path": "raw/Density_and_refractive_index_profiles.zip",
+      "bytes": 11201,
+      "sha256": "877812f87a6bc66d24d6242cd5013f1b8632d561b1c7727efcb33be22f1425f5"
+    },
+    {
+      "path": "raw/MPs_sinking_dynamics.zip",
+      "bytes": 2617479,
+      "sha256": "e776125e0623382e824c7c72aa20a44abe85d93abfb2da1b63feaaf274a7fcbf"
+    },
+    {
+      "path": "raw/README_Density_and_refractive_index_profiles.txt",
+      "bytes": 454,
+      "sha256": "e5faa87038fe3e96cff360c3c56a86730339bec5dadee4b3c36abea0746c4055"
+    },
+    {
+      "path": "raw/README_MPs_sinking_dynamics.txt",
+      "bytes": 1351,
+      "sha256": "d973cd1efa42c15d04aec54705bbf58f357803c3225526d04241c0a0d2cf0614"
+    },
+    {
+      "path": "raw/README_rheological_data.txt",
+      "bytes": 1614,
+      "sha256": "3b91e4b2d56aa348b6efbbbc6f61ac02aee73465398a339ba8e336dd70621198"
+    },
+    {
+      "path": "raw/README_sample_videos.txt",
+      "bytes": 956,
+      "sha256": "cc0d5431c8d96474dd3776f5f6f1aebb7d691b002d4833e4aac8b5744fd73afc"
+    },
+    {
+      "path": "raw/Rheological_data.zip",
+      "bytes": 33121,
+      "sha256": "1ffadfc79e1088fbc22613677383181358c308b51eb471d97a23ccea1d95e5f7"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "width_m": "m",
+      "longest_m": "m",
+      "v_up_m_s": "m/s",
+      "v_near_m_s": "m/s",
+      "v_far_m_s": "m/s",
+      "orientation_cos2": "dimensionless mean cos(2 theta), range [-1,1]",
+      "orientation_dispersion": "dimensionless 1 - magnitude of mean exp(2i theta)",
+      "delta_density_kg_m3": "kg/m^3",
+      "particle": "categorical particle ID",
+      "family": "categorical fluid family"
+    },
+    "observation_window": "Use native upstream observations ending before interface entry; no interpolation across entry. orientation_cos2 is mean cos(2 theta), NOT mean cos\u00b2(theta). Expanded information budget: width_m, longest_m, v_up_m_s, v_near_m_s, v_far_m_s, orientation_cos2, orientation_dispersion, delta_density_kg_m3, particle, family",
+    "calibration_and_history": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Source-defined interface width; upstream speed and orientation from the strict upstream observation prefix. No target transit is an input.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

@@ -1,0 +1,15 @@
+{
+  "case": 94,
+  "type": "linear",
+  "features": [
+    "one",
+    "P",
+    "logP"
+  ],
+  "offset": null,
+  "scale": null,
+  "alpha": 0,
+  "title": "Depth-only competing explanation",
+  "hypothesis": "CDOM stratification may be predominantly vertical rather than a salinity-mixture law; test pressure/log-pressure without salinity.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Adding temperature improves the salinity baseline mean error, but worsens the worst cast. A depth-only competitor can expose spatial confounding.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state."
+}

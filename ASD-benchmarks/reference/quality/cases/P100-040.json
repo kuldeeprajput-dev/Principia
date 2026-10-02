@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-040",
+  "title": "New York City green-taxi trips in 2025",
+  "default_task": "P100-040.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Recorded completed-trip duration conditional on recorded trip distance",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 92,
+    "independent_unit_description": "Whole pickup calendar days; serial weather/traffic/vendor dependence persists. Forward month blocks, not random trips.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Forward training on earlier whole days. Jan\u2013Sepdevelopment,Oct\u2013Decconfirmation. Same city/provider system; no future-day targets enter coefficients. Fixed clock windows, no held tuning.",
+  "baseline_strength": {
+    "registered_controls": 14,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Recorded completed-trip duration conditional on recorded trip distance",
+    "prediction_time": "Trip distance is recorded after the journey. Task is retrospective travel-time diagnostics with completed distance, not pickup-time ETA. Pickup time and endpoint categories are known; no fare/payment/duration-derived predictors.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Completed-trip distance is an after-trip input; this is not pickup-time ETA."
+  },
+  "task_ids": [
+    "P100-040.original.v1"
+  ],
+  "finding_ids": [
+    "P100-040-F01",
+    "P100-040-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-040/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-040.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Recorded completed-trip duration conditional on recorded trip distance under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Trip distance is recorded after the journey. Task is retrospective travel-time diagnostics with completed distance, not pickup-time ETA. Pickup time and endpoint categories are known; no fare/payment/duration-derived predictors.",
+    "calibration_requirement": "Forward training on earlier whole days. Jan\u2013Sepdevelopment,Oct\u2013Decconfirmation. Same city/provider system; no future-day targets enter coefficients. Fixed clock windows, no held tuning.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Recorded completed-trip duration conditional on recorded trip distance in minutes",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Completed-trip distance is an after-trip input; this is not pickup-time ETA."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "minutes",
+    "reference_model": "reference",
+    "reference_primary_error": 9.453891766133635,
+    "reference_physical_mae": 9.453891766133635,
+    "physical_error_units": "minutes",
+    "lowest_registered_error_model": "attempt_006",
+    "lowest_registered_error": 9.399661701031253,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-040.original.v1/evidence/metrics.csv",
+      "bytes": 1397,
+      "sha256": "8dfb749c0544cadbe50d27f20ff6092d62a26b77465375deca0dd94663362620"
+    },
+    "models": 14
+  },
+  "case_specific_next_evidence": "Completed-trip distance is an after-trip input; this is not pickup-time ETA."
+}

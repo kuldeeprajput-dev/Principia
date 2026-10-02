@@ -1,0 +1,59 @@
+{
+  "case_id": "P100-056",
+  "findings": [
+    {
+      "finding_id": "P100-056-F01",
+      "classification": "validated_extension",
+      "admission": "supported",
+      "claim": "Calibrated force saturation reduces late-curve prediction error versus elastic and flexible controls on two reserved beams.",
+      "equation": "Define $u=d-d_0$, $k_0=F_0/d_0$, and $m=1$ for lightweight concrete ($m=0$ for normal-weight concrete). The frozen selected reference is\n\n$$\n\\widehat F=\\min\\{F_0+k_0u,\\ C_0+C_1m\\},\n\\qquad C_0=60.247645\\,\\mathrm{kN},\\quad C_1=-5.080368\\,\\mathrm{kN}.\n$$\n\nThe elastic component uses only the initial calibration prefix. The cap approximates loss of composite-action stiffness; it is not a design resistance. Exact coefficients and all competing states are in rules.json.",
+      "evidence": [
+        "evidence/metrics.csv",
+        "evidence/by_group.csv",
+        "evidence/predictions.csv.gz",
+        "rules.json"
+      ],
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "falsification": "The main supported conclusion is protection against unrestricted elastic continuation. Concrete-specific advantage is not confirmed: the simpler common cap achieves4.75397kN, better than the preselected5.28109kN. The reference is not replaced after seeing this. Progressive rational compliance and the recent-stiffness variant achieve9.67599and9.28458kN, respectively; their favorable development fit fails to transfer to both C beams. Abrupt force drops and specimen variability remain important counterexamples.",
+      "scope": "Only two confirmation beams; fitted caps are not structural acceptance limits.",
+      "novelty": "not_assessed",
+      "industrial_impact": "not_demonstrated"
+    },
+    {
+      "finding_id": "P100-056-F02",
+      "classification": "unsupported_or_falsified",
+      "admission": "unsupported",
+      "claim": "Concrete-specific saturation limits improve transfer over a common cap.",
+      "equation": null,
+      "evidence": [
+        "evidence/metrics.csv",
+        "evidence/by_group.csv",
+        "evidence/predictions.csv.gz",
+        "rules.json"
+      ],
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "falsification": "The main supported conclusion is protection against unrestricted elastic continuation. Concrete-specific advantage is not confirmed: the simpler common cap achieves4.75397kN, better than the preselected5.28109kN. The reference is not replaced after seeing this. Progressive rational compliance and the recent-stiffness variant achieve9.67599and9.28458kN, respectively; their favorable development fit fails to transfer to both C beams. Abrupt force drops and specimen variability remain important counterexamples.",
+      "scope": "The claim fails confirmation: selected5.28109kN versus common4.75397kN. Failure is retained, not reclassified as a discovery.",
+      "novelty": "not_assessed",
+      "industrial_impact": "not_demonstrated"
+    },
+    {
+      "finding_id": "P100-056-F03",
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Smooth compliance growth and recent prefix tangent calibration are insufficient descriptions of the reserved late response.",
+      "equation": null,
+      "evidence": [
+        "evidence/metrics.csv",
+        "evidence/by_group.csv",
+        "evidence/predictions.csv.gz",
+        "rules.json"
+      ],
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "falsification": "The main supported conclusion is protection against unrestricted elastic continuation. Concrete-specific advantage is not confirmed: the simpler common cap achieves4.75397kN, better than the preselected5.28109kN. The reference is not replaced after seeing this. Progressive rational compliance and the recent-stiffness variant achieve9.67599and9.28458kN, respectively; their favorable development fit fails to transfer to both C beams. Abrupt force drops and specimen variability remain important counterexamples.",
+      "scope": "Negative transfer result; failure mechanisms are not uniquely identified from six summary curves.",
+      "novelty": "not_assessed",
+      "industrial_impact": "not_demonstrated"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-060.original.v1",
+  "case_id": "P100-060",
+  "case_number": 60,
+  "family": "original",
+  "protocol_version": "P100-060-prepared-primary-v1",
+  "cohort_id": "P100-060.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-060.original.v1",
+  "legacy_package": "60_acoustics_ultrasonic_transmission/final_results",
+  "source_scenario": "scenarios/60_acoustics_ultrasonic_transmission",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Post-trigger peak absolute receiver voltage",
+  "target_units": "V",
+  "error_units": "V",
+  "primary_units": "V",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "condition",
+    "distance_mm",
+    "resonance_kHz",
+    "width_us"
+  ],
+  "input_units": {
+    "condition": "calibrated distance/sensor label",
+    "distance_mm": "mm",
+    "resonance_kHz": "kHz; confounded with sensor type",
+    "width_us": "us"
+  },
+  "numeric_columns": [
+    "distance_mm",
+    "resonance_kHz",
+    "width_us"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Target is maximum absolute receiver voltage across all t>=0 samples, subtracting each trace mean over t<0. No response-selected time window or denoising. Ten actual waveform columns kept per file.",
+  "calibration": "w is pulse width in microseconds; f is nominal resonance in cycles per microsecond (kHz/1000). The effective damping time12us was selected on development widths. Six calibrated gains in V are12.271204,0.941597,0.00302123,0.000609934,0.00227582,0.000462384 for(d0,f110),(d0,f500),(d20,f110),(d20,f500),(d50,f110),(d50,f500). The maximum accounts for an initial pulse edge before the second edge; it is a phenomenological peak approximation. Sensor type is confounded with nominal resonance.",
+  "independent_unit": "whole width block across sensor/distance; six correlated files",
+  "evaluation_groups": [
+    "ts3_d00_f110_w050.mat",
+    "ts3_d00_f500_w050.mat",
+    "ts3_d20_f110_w050.mat",
+    "ts3_d20_f500_w050.mat",
+    "ts3_d50_f110_w050.mat",
+    "ts3_d50_f500_w050.mat"
+  ],
+  "assigned_rows": 60,
+  "eligible_rows": 60,
+  "baseline_models": [
+    "reference",
+    "challenger",
+    "baseline_linear_width",
+    "baseline_mean",
+    "baseline_rbf",
+    "baseline_residual_rbf"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "\\widehat{A}_{ds}=a_{ds}\\max[1,\\sqrt{1+e^{-2w/12}-2e^{-w/12}\\cos(2\\pi fw)}]",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "challenger": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the synthesis branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_linear_width": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the linear_width branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_mean": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the mean branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rbf": {
+      "equation": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_residual_rbf": {
+      "equation": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared conditions, sensor/system dependence or small numbers of reserved groups do not support precise population-level confidence. No row-bootstrap intervals."
+  },
+  "scope_limits": "Six condition files at one reserved5us width, not six independent reserved width experiments. Gain is concentrated in zero-distance110kHz contact; air and500kHz sensor counterexamples remain.",
+  "source_url": "https://zenodo.org/records/17266427",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All packaged targets are now exposed; future scoring is retrospective. Only numerical schema/sample metadata were inspected before fitting. The reserved pulse width is allocated by metadata hash. No final performance inspected.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "a21f6fffff18c9227487c74d31ef0e1dfe5e50e8b606480b3dda51ed0ebaa72a",
+  "observations_sha256": "2f0856cf7721225e4e43ab62f61f1d025b6f60410879df859a561e90c66513f7",
+  "legacy_protocol_sha256": "fb2cb134131df42bc7f2149ad6d722397d6eaf5a2ea60229a9a6387f0b8217cb",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

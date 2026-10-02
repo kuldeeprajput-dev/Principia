@@ -1,0 +1,21 @@
+{
+  "target": "Closed-division Server throughput for matched token-generating workloads",
+  "target_units": "tokens/s",
+  "metric_kind": "mae",
+  "independent_unit": "Submitter+platform system; all model/scenario aliases linked",
+  "timing_contract": "Predict reported Server throughput using same-system Offline benchmark result, workload label and accelerator count. This is calibrated scenario transfer, not performance prediction before benchmarking.",
+  "calibration": "Matched Offline throughput on every evaluation system; held-system Server/Interactive results forbidden.",
+  "scope_limits": "Self-selected published MLPerf submissions; quality99.9 aliases removed and inferred results excluded. Different task families, software and latency constraints confound mechanism. No hardware causal efficiency ranking.",
+  "split": "System-hashmod5 confirmation; leave-system-hashfold-out development",
+  "question": "Can a compact utilization law transfer Offline capacity to latency-constrained Server throughput?",
+  "case_id": "P100-011",
+  "error_units": "tokens/s",
+  "source_url": "https://github.com/mlcommons/inference_results_v6.0",
+  "source_license": "Apache License 2.0",
+  "exposure": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+  "uncertainty_policy": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics.",
+  "selection": "Lowest development mean-group MAE, simpler model on relative1% tie. Exact mathematical algorithm baselines do not claim novel accuracy. Retain every attempt and compare named strong controls.",
+  "stopping": "At least5distinct scientific attempts; continue while a justified distinct mechanism yields prediction/robustness/interpretation gain; stop after2consecutive substantive no-gain attempts after minimum5.",
+  "created_utc": "2026-10-02T01:37:42.441429+00:00",
+  "before_first_fit": true
+}

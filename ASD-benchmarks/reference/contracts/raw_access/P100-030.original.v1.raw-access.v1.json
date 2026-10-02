@@ -1,0 +1,70 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-030.original.v1.raw-access.v1",
+  "parent_task_id": "P100-030.original.v1",
+  "case_id": "P100-030",
+  "protocol_version": "P100-030.original.v1.raw-access.v1",
+  "cohort_id": "P100-030.original.v1.cohort-1",
+  "parent_task_sha256": "4d6a6ddb83c0133a0b0bf6ba683bce5c5da2e53d3acbbc00bac001a7beabd909",
+  "input_sha256": "56f6bcf32cad71768e8b0d8c30021815fb06cbfd3a23e9e21f107e310bf318fd",
+  "observations_sha256": "6e5d24c303584e223368998aa80b159e4dcfc87f55b3e9ee6ced41889645bbc8",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "30_nanomaterials_hbn_lubricants",
+  "source_assets": [
+    {
+      "path": "PROVENANCE.json",
+      "bytes": 7773,
+      "sha256": "73dcfc269dd9cbd4ee03645b6e9a48c6d3485ea37aa270c2dd4e95bda625cffe"
+    },
+    {
+      "path": "raw/README.txt",
+      "bytes": 1295,
+      "sha256": "e5230b4f68ef1c46a85a414a2e75ba198fc3d0426d337ab2c430d88c35859483"
+    },
+    {
+      "path": "raw/dataset.zip",
+      "bytes": 19590034,
+      "sha256": "658c7be90b88e2755fd568fd25842536a4e9d154ac3b1354cc1d91812251b195"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "speed_mm_s": "mm/s",
+      "boundary_cof": "dimensionless",
+      "highspeed_cof": "dimensionless",
+      "concentration_wt_pct": "wt percent"
+    },
+    "observation_window": "Six formulations were developed with leave-formulation-out validation; N+S functionalization and NG supplier curves were reserved. Duplicate curves cannot cross partitions. Both endpoint calibrations are provided for every curve. Scoring covers only 0.28\u201310 mm/s and tests calibrated shape transfer, not unmeasured-lubricant performance.",
+    "calibration_and_history": "Two exact endpoint friction measurements at0.2 and500mm/s on the same curve; endpoint rows excluded from scored set.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Same-formulation two-point calibration; source-fitted response is not independent mechanism evidence.",
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

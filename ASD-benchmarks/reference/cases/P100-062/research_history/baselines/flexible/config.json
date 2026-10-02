@@ -1,0 +1,23 @@
+{
+  "name": "flexible",
+  "formula": "offset+b0*t/1000+b1*(t/1000)**2+b2*(t/1000)**3+b3*high*t/1000+b4*high*(t/1000)**2",
+  "hypothesis": "Five-coefficient polynomial extrapolation with known current-condition contrast.",
+  "inputs": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "initial": {},
+  "bounds": {},
+  "linear_terms": [
+    "t/1000",
+    "(t/1000)**2",
+    "(t/1000)**3",
+    "high*t/1000",
+    "high*(t/1000)**2"
+  ],
+  "base": "offset",
+  "recorded_utc": "2026-10-02T01:58:18.205244+00:00",
+  "parent": null
+}

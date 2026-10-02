@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-078",
+  "title": "Data for study \"A Multicenter Study to Standardize a Mouse Pneumonia Model with Pseudomonas aeruginosa and Klebsiella pneumoniae for Antibiotic Development\"",
+  "default_task": "P100-078.continuation.v1",
+  "default_tier": "adequacy_falsification_diagnostic",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Untreated bacterial burden in total lung",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 1,
+    "independent_unit_description": "whole laboratory/site, all strains and studies",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "DSM/site-reference strain aliases resolved from source RefToDict plus explicit single-strain-study Overview links (source labeling discrepancies retained) and kept together. All ExperimentResults sheets included. Explicit untreated CFU lung single-value observations only, equality operator, compatible log-CFU lung units, numeric actual times 0\u201324 h. Time-zero animals form an explicitly allowed cohort calibration, not the same later animals. Non-numeric early-death times and censoring cannot be interpreted as exact scheduled times; exclusions are counted, and this creates survivorship/measurement selection limits. Source already reports virulence/reproducibility criteria; no new clinical efficacy claim. Source laboratory directory supplies validation identity; the original SITE field is inconsistent in one workbook and is preserved as provided_site. Header templates and source censoring inconsistencies require caution.",
+  "baseline_strength": {
+    "registered_controls": 8,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Untreated bacterial burden in total lung",
+    "prediction_time": "Only numeric actual time within0-24h and the mean time-zero log burden for the linked strain-study are prediction inputs. Different time-zero animals supply declared cohort calibration. No later burden, laboratory parameter, animal outcome or study/strain identity is a numerical predictor. Numeric <24 strings and censored inequality burdens are not exact-time targets.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Reserved endpoints all at24h; kinetics and nonrandom humane-endpoint exclusions limit the task."
+  },
+  "task_ids": [
+    "P100-078.original.v1",
+    "P100-078.continuation.v1"
+  ],
+  "finding_ids": [
+    "P100-078-SCI-01",
+    "P100-078-SCI-02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-078/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-078.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Untreated bacterial burden in total lung under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Only numeric actual time within0-24h and the mean time-zero log burden for the linked strain-study are prediction inputs. Different time-zero animals supply declared cohort calibration. No later burden, laboratory parameter, animal outcome or study/strain identity is a numerical predictor. Numeric <24 strings and censored inequality burdens are not exact-time targets.",
+    "calibration_requirement": "DSM/site-reference strain aliases resolved from source RefToDict plus explicit single-strain-study Overview links (source labeling discrepancies retained) and kept together. All ExperimentResults sheets included. Explicit untreated CFU lung single-value observations only, equality operator, compatible log-CFU lung units, numeric actual times 0\u201324 h. Time-zero animals form an explicitly allowed cohort calibration, not the same later animals. Non-numeric early-death times and censoring cannot be interpreted as exact scheduled times; exclusions are counted, and this creates survivorship/measurement selection limits. Source already reports virulence/reproducibility criteria; no new clinical efficacy claim. Source laboratory directory supplies validation identity; the original SITE field is inconsistent in one workbook and is preserved as provided_site. Header templates and source censoring inconsistencies require caution.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Untreated bacterial burden in total lung in log10 CFU / total lung",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Reserved endpoints all at24h; kinetics and nonrandom humane-endpoint exclusions limit the task."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "log10 CFU / total lung",
+    "reference_model": "reference",
+    "reference_primary_error": 0.5156031409831086,
+    "reference_physical_mae": 0.5156031409831086,
+    "physical_error_units": "log10 ratio (decades)",
+    "lowest_registered_error_model": "burden_clock",
+    "lowest_registered_error": 0.4343307609665504,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-078.continuation.v1/evidence/metrics.csv",
+      "bytes": 1053,
+      "sha256": "47d136072f139a13b1c306b0ef65bee891a12bf1915b8089135dd25cf8c8fe1c"
+    },
+    "models": 8
+  },
+  "case_specific_next_evidence": "Create a separately contracted interval-censored/early-endpoint task if authoritative censoring/time metadata permit it.\n\nSeek fresh laboratories and early time courses; never impute early-death values as 24-hour measurements."
+}

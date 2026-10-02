@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-098",
+  "title": "Dataset of Kantorovich-Rubinstein-Wasserstein Polytopes of Metric Spaces on up to 6 Points",
+  "default_task": "P100-098.original.v1",
+  "default_tier": "adequacy_falsification_diagnostic",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Number of facets of the five-point KRW polytope",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 15,
+    "independent_unit_description": "Source facet-incidence combinatorial type modulo coordinate permutation; all metric representatives of that type stay together",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "None for exact geometric algorithms; training-only coefficients for coarse degeneracy heuristics.",
+  "baseline_strength": {
+    "registered_controls": 8,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Number of facets of the five-point KRW polytope",
+    "prediction_time": "Ten exact pairwise distances permitted; source facets/incidence/f-vector forbidden predictors.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Exact finite polytope computation reproduces established mathematics; accuracy is not a new theorem."
+  },
+  "task_ids": [
+    "P100-098.original.v1"
+  ],
+  "finding_ids": [
+    "P100-098-F01",
+    "P100-098-F02",
+    "P100-098-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-098/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-098.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Number of facets of the five-point KRW polytope under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Ten exact pairwise distances permitted; source facets/incidence/f-vector forbidden predictors.",
+    "calibration_requirement": "None for exact geometric algorithms; training-only coefficients for coarse degeneracy heuristics.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Number of facets of the five-point KRW polytope in facets",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Exact finite polytope computation reproduces established mathematics; accuracy is not a new theorem."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "facets",
+    "reference_model": "reference",
+    "reference_primary_error": 0.0,
+    "reference_physical_mae": 0.0,
+    "physical_error_units": "facets",
+    "lowest_registered_error_model": "qhull",
+    "lowest_registered_error": 0.0,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-098.original.v1/evidence/metrics.csv",
+      "bytes": 584,
+      "sha256": "09d414b839e220fe92cb14de235bbe4e14aaf07b87be548bcd8af3c75eaee377"
+    },
+    "models": 8
+  },
+  "case_specific_next_evidence": "Exact finite polytope computation reproduces established mathematics; accuracy is not a new theorem."
+}

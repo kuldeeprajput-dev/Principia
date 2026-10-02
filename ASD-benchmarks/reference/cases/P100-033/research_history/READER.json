@@ -1,0 +1,42 @@
+{
+  "intro": "# Smartphone pulse measurement: uncertainty-aware shrinkage\n\nThe released dataset contains3888 ten-second smartphone photoplethysmography segments from50 people, with simultaneous ECG-derived reference heart rate. Forty people develop the models in five whole-person folds; ten people (756 segments) are reserved. Human quality labels are preserved for diagnostics, not used as predictors or inclusion filters.\n\n## Equation and information budget\n\nLet $F$ be the dominant Fourier rate in bpm and $Q$ the fraction of fixed-band spectral energy around its peak. The selected rule is\n\n$$w=\\sigma(-2.1392928+2.1042882(Q-0.3)),\\qquad \\widehat h=\\operatorname{clip}(wF+(1-w)84.61005,30,240)\\;\\mathrm{bpm}.$$\n\nThe search band is0.5\u20134Hz. The ECG-derived target never enters a waveform feature or per-person calibration. The coefficient84.61bpm is a development population prior, not a physiological constant. Signal concentration raises confidence in the Fourier estimate; it does not establish a calibrated probability of correctness.\n\nSix substantive attempts tested harmonic correction, Fourier/autocorrelation fusion, quality shrinkage, motion/contact effects, discrete harmonic gating and agreement-conditioned consensus shrinkage. The shrinkage result motivated an additional development-only constant-median control before freezing; its historical addition is explicit.\n",
+  "interpretation": "The selected rule gives9.3292bpm held-person MAE, versus9.8002 for a population median and9.0320 for the flexible fusion comparator. It improves severely noisy direct estimators but does not beat the strongest flexible reference. Most apparent gain is attributable to the population prior, so this is a bounded calibration/robustness descriptor, not a new pulse law or clinically validated monitor. The waveform reader must honor gain/baseline encoding:48 records store300 channels in one frame, while later records store three RGB time series. Their native bytes are unchanged. Clinical acceptance tolerances and independent device transfer are absent.",
+  "summary": "Six attempts completed. Quality shrinkage is selected by development; held-person error9.3292bpm is better than raw spectral methods and slightly better than a median prior, but worse than flexible fusion. No new cardiovascular law admitted.",
+  "lessons": "Inspect WFDB gain/baseline and channel/frame conventions before interpreting zeros. Harmonic correction can make noisy windows worse. Always challenge shrinkage with a population-only prior; apparent waveform skill may mostly be prevalence. Keep all recordings of each person together and preserve source quality flags without leaking them as acquisition-time predictors. Clinical performance needs predefined acceptance limits and independent devices.",
+  "findings": [
+    {
+      "finding_id": "P100-033-F01",
+      "classification": "validated_scoped_descriptor",
+      "claim": "Quality-dependent Fourier shrinkage has modest held-person benefit over a population median, while most improvement over raw estimates comes from the prior",
+      "equation": "h_hat=clip(sigmoid(b0+b1*(Q-.3))*F+(1-sigmoid(b0+b1*(Q-.3)))*mu,30,240)",
+      "coefficients": [
+        -2.1392927775759514,
+        2.104288249996586,
+        84.6100504251943
+      ],
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv",
+        "evidence/paired_uncertainty.json"
+      ],
+      "scope": "One smartphone collection; whole-person transfer",
+      "admission": "partially_supported",
+      "prior_art": "Signal-quality fusion and shrinkage are established",
+      "falsification": "Flexible model has lower confirmation error; no clinical tolerance or device transfer demonstrated"
+    },
+    {
+      "finding_id": "P100-033-F02",
+      "classification": "supported_negative_finding",
+      "claim": "The tested harmonic and motion fusion extensions do not establish reliable pulse recovery from all low-quality source windows",
+      "equation": null,
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv"
+      ],
+      "scope": "These declared candidate estimators and cohort",
+      "admission": "supported",
+      "prior_art": "Harmonic ambiguity is known; this is a reproducible failure analysis",
+      "falsification": "Better waveform processing or additional measured channels may change results"
+    }
+  ]
+}

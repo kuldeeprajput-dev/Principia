@@ -1,0 +1,43 @@
+{
+  "case": 5,
+  "kind": "interval_midpoint",
+  "hypothesis": "Combine a constructive greedy stable-set lower bound with the strengthenedLP upper bound. A midpoint may predict size but does not certify it; contrast numerical accuracy with logically valid two-sided certification.",
+  "parent": "attempt-005",
+  "created_utc": "2026-10-02T02:10:41.049521+00:00",
+  "before_execution": true,
+  "confirmation_accessed": false,
+  "development_evidence_available": [
+    {
+      "attempt": "attempt-001",
+      "primary_error": 1.0,
+      "worst_group": 1.0
+    },
+    {
+      "attempt": "attempt-002",
+      "primary_error": 1.8256917508844739,
+      "worst_group": 2.5
+    },
+    {
+      "attempt": "attempt-003",
+      "primary_error": 1.838486250399757,
+      "worst_group": 2.6666666666666665
+    },
+    {
+      "attempt": "attempt-004",
+      "primary_error": 0.43584664780770505,
+      "worst_group": 1.0
+    },
+    {
+      "attempt": "attempt-005",
+      "primary_error": 0.13329627799736493,
+      "worst_group": 1.0
+    }
+  ],
+  "primary_metric": "mean_group_absolute_error",
+  "falsifying_tests": [
+    "Matched strong baselines under identical inputs",
+    "Per-group errors and worst-group behavior",
+    "Parameter boundary/identifiability audit or exact-arithmetic preconditions",
+    "Physical/mathematical applicability and negative cases retained"
+  ]
+}

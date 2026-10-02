@@ -1,0 +1,52 @@
+{
+  "features": [
+    "one",
+    "is_tket",
+    "is_bqskit",
+    "parallelism",
+    "log_depth"
+  ],
+  "offset": "log_pilot",
+  "link": "log",
+  "equation": "t=pilot*exp(a+bT*T+bB*B+c*log((1+gates)/(1+depth))+d*log1p(depth))",
+  "case": 31,
+  "type": "linear",
+  "training_groups": [
+    "adder",
+    "barenco_tof",
+    "bigadder",
+    "csla_mux",
+    "csum_mux",
+    "ham-high",
+    "ham-low",
+    "hwb",
+    "inverseqft",
+    "mod",
+    "mod_red",
+    "qcla_adder",
+    "qcla_com",
+    "qcla_mod",
+    "qec",
+    "qft",
+    "qpt",
+    "rb",
+    "rc_adder",
+    "teleport",
+    "teleportv",
+    "tof",
+    "vbe_adder",
+    "w-state"
+  ],
+  "training_rows": 98,
+  "training_ids_sha256": "3a80d704665539d8259791f6555b07c5c1eb418021381957a2459aa86989b926",
+  "coef": [
+    -1.3622507179028798,
+    3.4185099340737213,
+    5.3359583112202165,
+    -0.20205007397415176,
+    -0.0422783212593655
+  ],
+  "complexity": 5,
+  "rank": 5,
+  "condition_number": 5.495555311048954
+}

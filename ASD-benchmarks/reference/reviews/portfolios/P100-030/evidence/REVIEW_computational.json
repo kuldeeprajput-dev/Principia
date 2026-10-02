@@ -1,0 +1,203 @@
+{
+  "case_id": "P100-030",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "51491e47c8c0973ed95100b3a60cde77f0ac03f09988cd7993b4d39212edf1ab"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "e1e4bfc1d7ac11ad730e119a34f4079586d5700ad622d216d649747e946266cf"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "4978a17472fb519e98d914d03f2fc20f3cea8864aa673dc0166d7a33b708e820"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "ceeb1cecbca85e787fcc2dd7538e493128bccb07241ff5e7ac5479af0d25d429"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "56f6bcf32cad71768e8b0d8c30021815fb06cbfd3a23e9e21f107e310bf318fd"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "6e5d24c303584e223368998aa80b159e4dcfc87f55b3e9ee6ced41889645bbc8"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "a26d3d036f6829fb7054aa8c7048d5f62c8886e8b68f16b5e00388489e7aaa9d"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "c52a2996f721765906a39eebfada86f79bf960cb003836be2532299f58675183"
+    },
+    {
+      "path": "native.py",
+      "sha256": "9239061460879dbd6fe5ff723cb2259f82b10103d575a9eb2243ee14374b6006"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "874c7d33b3c36f70a7de4b85878ecf0cf5add71f379d770236e5b858f2f4a0e9"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "0e82ded96baf39991dcc5be0e5671095b9ce7e9686ee24daf8087a12f9c8c5d5"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "5fef4463b48a3117605e6e29e5d13dc01030ba7d8780637d7360e1d5d7ebfec1"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "90c393dddf605280e4ca7c8c98b6fad79d072e44dd29868205a03423facab6f9"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "80346ace012de46d2246b80d69e70b9b4cfbc887d65e4582d81b23cf697fef9a"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-030-F01",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "The positive superiority proposal is contradicted by reproduced confirmation MAE0.0177607 vs calibrated log-speed0.013141. Arithmetic is reproducible; the claimed improvement is unsupported."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No literature-priority adjudication in this computational review."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped benchmark comparison. Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.; The concentration-dependent load-sharing extension does not survive reserved-formulation comparison with simple calibrated log-speed interpolation. Its development gain is preserved as a failed transfer hypothesis, not benchmark ground truth.; No independent population confidence interval from dependent rows."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native-source reconstruction and every saved model/metric passed independent computation."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention/cost/safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+        "All top-level groups disjoint across development and confirmation",
+        "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+        "Independently recomputed equal-group physical-unit MAE for every model",
+        "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+      ],
+      "limitations": [
+        "Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.; The concentration-dependent load-sharing extension does not survive reserved-formulation comparison with simple calibrated log-speed interpolation. Its development gain is preserved as a failed transfer hypothesis, not benchmark ground truth.; No independent population confidence interval from dependent rows."
+      ]
+    },
+    {
+      "finding_id": "P100-030-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact frozen numerical evidence reproduces, including losing controls; this verifies computation, not universal interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No literature-priority adjudication in this computational review."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped benchmark comparison. Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.; The concentration-dependent load-sharing extension does not survive reserved-formulation comparison with simple calibrated log-speed interpolation. Its development gain is preserved as a failed transfer hypothesis, not benchmark ground truth.; No independent population confidence interval from dependent rows."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native-source reconstruction and every saved model/metric passed independent computation."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention/cost/safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+        "All top-level groups disjoint across development and confirmation",
+        "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+        "Independently recomputed equal-group physical-unit MAE for every model",
+        "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+      ],
+      "limitations": [
+        "Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.; The concentration-dependent load-sharing extension does not survive reserved-formulation comparison with simple calibrated log-speed interpolation. Its development gain is preserved as a failed transfer hypothesis, not benchmark ground truth.; No independent population confidence interval from dependent rows."
+      ]
+    }
+  ],
+  "numerical_checks": [
+    {
+      "model": "reference",
+      "primary_error": 0.017760711137596148,
+      "max_prediction_difference": 9.71445146547012e-17
+    },
+    {
+      "model": "baseline_constant",
+      "primary_error": 0.06810700231481481,
+      "max_prediction_difference": 8.326672684688674e-17
+    },
+    {
+      "model": "baseline_flex30",
+      "primary_error": 0.03693416648680461,
+      "max_prediction_difference": 8.326672684688674e-17
+    },
+    {
+      "model": "baseline_trib_linearlog",
+      "primary_error": 0.01314091556428837,
+      "max_prediction_difference": 9.71445146547012e-17
+    },
+    {
+      "model": "attempt_001",
+      "primary_error": 0.019385329126046798,
+      "max_prediction_difference": 8.673617379884035e-17
+    },
+    {
+      "model": "attempt_002",
+      "primary_error": 0.019506110456950596,
+      "max_prediction_difference": 9.71445146547012e-17
+    },
+    {
+      "model": "attempt_003",
+      "primary_error": 0.017760711137596148,
+      "max_prediction_difference": 9.71445146547012e-17
+    },
+    {
+      "model": "attempt_004",
+      "primary_error": 0.022425656867691015,
+      "max_prediction_difference": 9.71445146547012e-17
+    },
+    {
+      "model": "attempt_005",
+      "primary_error": 0.02012427595236913,
+      "max_prediction_difference": 9.020562075079397e-17
+    }
+  ],
+  "checks": [
+    "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+    "All top-level groups disjoint across development and confirmation",
+    "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+    "Independently recomputed equal-group physical-unit MAE for every model",
+    "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+  ],
+  "limitations": [
+    "Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.; The concentration-dependent load-sharing extension does not survive reserved-formulation comparison with simple calibrated log-speed interpolation. Its development gain is preserved as a failed transfer hypothesis, not benchmark ground truth.; No independent population confidence interval from dependent rows."
+  ],
+  "independent_experimental_replication": false
+}

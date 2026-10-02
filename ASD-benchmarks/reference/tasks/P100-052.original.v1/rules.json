@@ -1,0 +1,700 @@
+{
+  "schema_version": "1.0",
+  "case_id": "P100-052",
+  "source": {
+    "landing_url": "https://zenodo.org/records/15356141",
+    "upstream_case": "52_energy_wind_induction_control",
+    "version_evidence": "SOURCE_ASSETS.json"
+  },
+  "target": "Interpolated time-average streamwise wake velocity",
+  "target_units": "m/s",
+  "input_units": {
+    "turbine": "1 or 2 (within installation)",
+    "x_D": "downstream distance/0.58 m rotor diameter",
+    "y_D": "lateral coordinate/rotor diameter",
+    "z_D": "vertical coordinate/rotor diameter",
+    "St": "actuation Strouhal number, 0 labels greedy baseline"
+  },
+  "input_columns": [
+    "turbine",
+    "x_D",
+    "y_D",
+    "z_D",
+    "St"
+  ],
+  "numeric_columns": [
+    "turbine",
+    "x_D",
+    "y_D",
+    "z_D",
+    "St"
+  ],
+  "missingness": "Source-native lidar-derived uu grids; grid cells are correlated interpolated products. Raw vlos retained upstream. Rotor-equivalent wind and virtual turbine power are excluded as targets and predictors. No cubic-power identity is counted as a rule. ABL Type II only.",
+  "primary_metric": "mae",
+  "assigned_rows": 2205,
+  "models": {
+    "reference": {
+      "case": 52,
+      "kind": "a5",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.512221736149453,
+        0.5114602061168334,
+        0.045807104485046,
+        -0.35029606489587944,
+        0.973813825535292,
+        0.3113348180560595
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+        "wake * indicator(turbine2)",
+        "wake * Strouhal",
+        "wake * Strouhal * turbine2",
+        "vertical ABL shear z/D",
+        "wake anisotropy quadrupole"
+      ],
+      "fitted_parameters": 7,
+      "design_rank": 6,
+      "design_condition": 6.448599987981202,
+      "positive_coefficients": false
+    },
+    "mechanistic_reference": {
+      "case": 52,
+      "kind": "a5",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.512221736149453,
+        0.5114602061168334,
+        0.045807104485046,
+        -0.35029606489587944,
+        0.973813825535292,
+        0.3113348180560595
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+        "wake * indicator(turbine2)",
+        "wake * Strouhal",
+        "wake * Strouhal * turbine2",
+        "vertical ABL shear z/D",
+        "wake anisotropy quadrupole"
+      ],
+      "fitted_parameters": 7,
+      "design_rank": 6,
+      "design_condition": 6.448599987981202,
+      "positive_coefficients": false
+    },
+    "attempt_001": {
+      "case": 52,
+      "kind": "a1",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.5229100605221397,
+        0.42972445765645473
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+        "wake * indicator(turbine2)"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 2,
+      "design_condition": 2.0996809562992533,
+      "positive_coefficients": false
+    },
+    "attempt_002": {
+      "case": 52,
+      "kind": "a2",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.544685588916441,
+        0.42972445766006884,
+        -0.09332369313391435
+      ],
+      "active_columns": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+        "wake * indicator(turbine2)",
+        "wake * Strouhal"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 3,
+      "design_condition": 3.634136707911755,
+      "positive_coefficients": false
+    },
+    "attempt_003": {
+      "case": 52,
+      "kind": "a3",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.512221736149454,
+        0.511460206116831,
+        0.04580710448504289,
+        -0.3502960648958694
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+        "wake * indicator(turbine2)",
+        "wake * Strouhal",
+        "wake * Strouhal * turbine2"
+      ],
+      "fitted_parameters": 5,
+      "design_rank": 4,
+      "design_condition": 6.448599987981198,
+      "positive_coefficients": false
+    },
+    "attempt_004": {
+      "case": 52,
+      "kind": "a4",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.512221736149453,
+        0.5114602061168331,
+        0.04580710448504507,
+        -0.35029606489587795,
+        0.9738138255352919
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+        "wake * indicator(turbine2)",
+        "wake * Strouhal",
+        "wake * Strouhal * turbine2",
+        "vertical ABL shear z/D"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 5,
+      "design_condition": 6.448599987981202,
+      "positive_coefficients": false
+    },
+    "attempt_005": {
+      "case": 52,
+      "kind": "a5",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.512221736149453,
+        0.5114602061168334,
+        0.045807104485046,
+        -0.35029606489587944,
+        0.973813825535292,
+        0.3113348180560595
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+        "wake * indicator(turbine2)",
+        "wake * Strouhal",
+        "wake * Strouhal * turbine2",
+        "vertical ABL shear z/D",
+        "wake anisotropy quadrupole"
+      ],
+      "fitted_parameters": 7,
+      "design_rank": 6,
+      "design_condition": 6.448599987981202,
+      "positive_coefficients": false
+    },
+    "attempt_006": {
+      "case": 52,
+      "kind": "a5",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.512221736149453,
+        0.5114602061168331,
+        0.04580710448504507,
+        -0.35029606489587795,
+        0.9738138255352919
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+        "wake * indicator(turbine2)",
+        "wake * Strouhal",
+        "wake * Strouhal * turbine2",
+        "vertical ABL shear z/D"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 5,
+      "design_condition": 6.448599987981202,
+      "positive_coefficients": false
+    },
+    "attempt_007": {
+      "case": 52,
+      "kind": "a5",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.512221736149454,
+        0.5114602061168316,
+        0.045807104485042285,
+        -0.35029606489587023,
+        0.3113348180560597
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+        "wake * indicator(turbine2)",
+        "wake * Strouhal",
+        "wake * Strouhal * turbine2",
+        "wake anisotropy quadrupole"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 5,
+      "design_condition": 6.448599987981202,
+      "positive_coefficients": false
+    },
+    "baseline_mean": {
+      "case": 52,
+      "kind": "mean",
+      "knobs": {},
+      "beta": [
+        6.465022531967986
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "1"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "baseline_domain": {
+      "case": 52,
+      "kind": "domain",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.693588274079648
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2"
+      ],
+      "fitted_parameters": 2,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "baseline_rbf": {
+      "case": 52,
+      "kind": "rbf",
+      "features": [
+        "turbine",
+        "x_D",
+        "y_D",
+        "z_D",
+        "St"
+      ],
+      "columns": [
+        "turbine",
+        "x_D",
+        "y_D",
+        "z_D",
+        "St"
+      ],
+      "center": [
+        1.4,
+        3.4,
+        1.0070050109978745e-19,
+        2.5510793611946153e-18,
+        0.23333333333333625
+      ],
+      "scale": [
+        0.4898979485566154,
+        1.2000000000000042,
+        0.7830130226114161,
+        0.783013022611416,
+        0.1699673171197552
+      ],
+      "centers": [
+        [
+          1.2247448713916398,
+          0.49999999999999833,
+          0.9908673886137299,
+          1.6514456476895498,
+          0.9805806756909278
+        ],
+        [
+          1.2247448713916398,
+          -1.1666666666666625,
+          0.33028912953791,
+          0.8257228238447749,
+          -1.37281294596734
+        ],
+        [
+          -0.8164965809277596,
+          -1.1666666666666625,
+          -1.3211565181516394,
+          0.49543369430686496,
+          -1.37281294596734
+        ],
+        [
+          1.2247448713916398,
+          -1.1666666666666625,
+          -1.286064192954832e-19,
+          -1.3211565181516396,
+          -1.37281294596734
+        ],
+        [
+          -0.8164965809277596,
+          0.49999999999999833,
+          -0.66057825907582,
+          1.3211565181516396,
+          0.3922322702763607
+        ],
+        [
+          -0.8164965809277596,
+          0.49999999999999833,
+          -0.66057825907582,
+          1.3211565181516396,
+          -1.37281294596734
+        ],
+        [
+          -0.8164965809277596,
+          -1.1666666666666625,
+          -1.3211565181516394,
+          0.49543369430686496,
+          0.9805806756909278
+        ],
+        [
+          -0.8164965809277596,
+          1.3333333333333288,
+          -0.33028912953791,
+          -3.258029288818908e-18,
+          -1.37281294596734
+        ],
+        [
+          -0.8164965809277596,
+          0.49999999999999833,
+          -0.66057825907582,
+          1.3211565181516396,
+          0.9805806756909278
+        ],
+        [
+          1.2247448713916398,
+          0.49999999999999833,
+          0.66057825907582,
+          -0.49543369430686496,
+          0.3922322702763607
+        ],
+        [
+          1.2247448713916398,
+          -1.1666666666666625,
+          0.33028912953791,
+          0.8257228238447749,
+          0.3922322702763607
+        ],
+        [
+          -0.8164965809277596,
+          -1.1666666666666625,
+          -1.3211565181516394,
+          0.49543369430686496,
+          0.3922322702763607
+        ],
+        [
+          -0.8164965809277596,
+          1.3333333333333288,
+          -0.33028912953791,
+          -3.258029288818908e-18,
+          0.9805806756909278
+        ],
+        [
+          -0.8164965809277596,
+          -1.1666666666666625,
+          -1.6514456476895496,
+          -1.6514456476895498,
+          0.3922322702763607
+        ],
+        [
+          -0.8164965809277596,
+          0.49999999999999833,
+          -0.9908673886137299,
+          -0.8257228238447749,
+          -1.37281294596734
+        ],
+        [
+          1.2247448713916398,
+          0.49999999999999833,
+          0.9908673886137299,
+          1.6514456476895498,
+          -1.37281294596734
+        ],
+        [
+          1.2247448713916398,
+          -1.1666666666666625,
+          0.33028912953791,
+          0.8257228238447749,
+          0.9805806756909278
+        ],
+        [
+          1.2247448713916398,
+          0.49999999999999833,
+          0.66057825907582,
+          -0.49543369430686496,
+          0.9805806756909278
+        ],
+        [
+          -0.8164965809277596,
+          -1.1666666666666625,
+          -1.6514456476895496,
+          -1.6514456476895498,
+          -1.37281294596734
+        ],
+        [
+          -0.8164965809277596,
+          0.49999999999999833,
+          -0.9908673886137299,
+          -0.8257228238447749,
+          0.9805806756909278
+        ],
+        [
+          -0.8164965809277596,
+          1.3333333333333288,
+          -0.33028912953791,
+          -3.258029288818908e-18,
+          0.3922322702763607
+        ],
+        [
+          -0.8164965809277596,
+          -1.1666666666666625,
+          -1.6514456476895496,
+          -1.6514456476895498,
+          0.9805806756909278
+        ],
+        [
+          1.2247448713916398,
+          0.49999999999999833,
+          0.66057825907582,
+          -0.49543369430686496,
+          -1.37281294596734
+        ],
+        [
+          1.2247448713916398,
+          -1.1666666666666625,
+          -1.286064192954832e-19,
+          -1.3211565181516396,
+          0.9805806756909278
+        ],
+        [
+          1.2247448713916398,
+          -1.1666666666666625,
+          -1.286064192954832e-19,
+          -1.3211565181516396,
+          0.3922322702763607
+        ],
+        [
+          1.2247448713916398,
+          0.49999999999999833,
+          0.9908673886137299,
+          1.6514456476895498,
+          0.3922322702763607
+        ],
+        [
+          -0.8164965809277596,
+          0.49999999999999833,
+          -0.9908673886137299,
+          -0.8257228238447749,
+          0.3922322702763607
+        ]
+      ],
+      "width": 2.0,
+      "beta": [
+        0.611334719241734,
+        0.0004849136184074475,
+        0.2478404078641257,
+        -0.484981049568083,
+        1.0065674173728003,
+        1.1916526329394115,
+        -0.05039892795285929,
+        -0.7077477083730799,
+        0.8449771998995799,
+        -0.45412610557225797,
+        -0.13129625122360725,
+        0.016461388329294755,
+        -0.661309477337034,
+        0.020391131878217953,
+        -0.17365694975851545,
+        0.8081093110015003,
+        -0.15612663986381273,
+        -0.3619682838005304,
+        -0.08010943697243164,
+        0.019887059083964057,
+        -0.7334673424551948,
+        0.03289799169905472,
+        -0.6545262960624556,
+        -0.19532943172615844,
+        -0.2653152433482864,
+        0.7157254768508209,
+        -0.012594091256975413
+      ],
+      "intercept": 6.465022532614521,
+      "log": false,
+      "fitted_parameters": 28
+    },
+    "attempt_008": {
+      "case": 52,
+      "kind": "a5",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.512221736149453,
+        0.5114602061168331,
+        0.04580710448504507,
+        -0.35029606489587795,
+        0.9738138255352919
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+        "wake * indicator(turbine2)",
+        "wake * Strouhal",
+        "wake * Strouhal * turbine2",
+        "vertical ABL shear z/D"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 5,
+      "design_condition": 6.448599987981202,
+      "positive_coefficients": false
+    },
+    "attempt_009": {
+      "case": 52,
+      "kind": "a5",
+      "knobs": {
+        "wake_spread": 0.05
+      },
+      "beta": [
+        3.512221736149454,
+        0.5114602061168316,
+        0.045807104485042285,
+        -0.35029606489587023,
+        0.3113348180560597
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "terms": [
+        "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+        "wake * indicator(turbine2)",
+        "wake * Strouhal",
+        "wake * Strouhal * turbine2",
+        "wake anisotropy quadrupole"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 5,
+      "design_condition": 6.448599987981202,
+      "positive_coefficients": false
+    }
+  },
+  "selection": {
+    "mechanistic_attempt": "attempt-005",
+    "default_origin": "mechanistic_reference",
+    "rule": "Default = strongest frozen development predictor among scientific hypotheses and all controls; separately select simplest mechanistic hypothesis within 1% of its best grouped development primary error. No confirmation selection.",
+    "used_confirmation": false
+  },
+  "equations": {
+    "reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "mechanistic_reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_001": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_002": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_003": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_004": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_005": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_006": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_007": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_mean": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_domain": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_rbf": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+    "attempt_008": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_009": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis."
+  },
+  "scope": "Only four controls and one wind-tunnel system; three development controls and one reserved. Spatial errors describe field interpolation/transfer, not independent grid replicates.",
+  "timing": "Geometry and actuation settings only; no reserved velocity or rotor-equivalent speed is a predictor.",
+  "fresh_confirmation_after_delivery": false,
+  "admission": "Numerical reference collection; no independently established new physical law or measured deployed industrial benefit."
+}

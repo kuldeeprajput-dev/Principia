@@ -1,0 +1,55 @@
+{
+  "case_id": "P100-064",
+  "target": "signed photodiode current after early calibration during operation",
+  "target_units": "nA",
+  "error_units": "nA",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "time_s",
+    "current_uA",
+    "voltage_V",
+    "polymer_fraction",
+    "charge_uC",
+    "cal_photo_nA",
+    "cal_current_uA"
+  ],
+  "input_units": {
+    "time_s": "s",
+    "current_uA": "uA",
+    "voltage_V": "V",
+    "polymer_fraction": "mass fraction",
+    "charge_uC": "uC",
+    "cal_photo_nA": "nA",
+    "cal_current_uA": "uA"
+  },
+  "numeric_columns": [
+    "time_s",
+    "current_uA",
+    "voltage_V",
+    "polymer_fraction",
+    "charge_uC",
+    "cal_photo_nA",
+    "cal_current_uA"
+  ],
+  "timing_contract": "online simultaneous optical-response estimation after first20s: latest electrical observation at or before optical timestamp, maximum2s old; cumulative charge uses current history only",
+  "calibration": "Median optical current at aligned0..20s and median electrical current first20s per run. No later optical responses enter predictors.",
+  "independent_unit": "complete polymer-fraction/device number; all voltage runs and paired optical/electrical traces",
+  "scope_limits": "17 named devices; source lacks complete strain timeline, device emissive area and causal interventions. Endpoint remains signed photocurrent, not calibrated luminance. Uneven lengths and malformed/restarted clocks explicitly handled. Fixed>=3 optical calibration points in first20s and <=2s electrical staleness restricts slower-cadence runs. One held-devicegroup has only4eligible rows. This task does not assess the entire native timing range.",
+  "source_url": "https://doi.org/10.6084/m9.figshare.29298161.v1",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "internal_confirmation": "held out until frozen model/stop selection",
+    "fresh_for_future_users": false
+  },
+  "uncertainty_policy": "Individual group errors; empirical group range, no row bootstrap or population CI.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "weights": "equal group then equal eligible row"
+  },
+  "selection": "persistence",
+  "training_scope": "See each state training_scope; complete development groups only.",
+  "outcome_cohort": "reserved groups recorded in SPLITS.json; no calibration anchors scored."
+}

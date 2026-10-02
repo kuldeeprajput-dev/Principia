@@ -1,0 +1,196 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-078",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-078/computational.json",
+      "bytes": 6325,
+      "sha256": "7af9bb8d13849757aa1ac14b9c1780c2cf1d4474161bc8c30acf2bd1e3348f2f"
+    },
+    {
+      "path": "reviews/portfolios/P100-078/scientific_critical.json",
+      "bytes": 8625,
+      "sha256": "c0ed62d526af800756d079ce1b9998e01a1f67a0ea20bdcb2ab8e93e19f6dac3"
+    },
+    {
+      "path": "reviews/portfolios/P100-078/combined/review.json",
+      "bytes": 14426,
+      "sha256": "707953d3b6a06ea9ab41684714578dc54c18607b7d9fded98646992b34c8a75d"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-078-SCI-01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole source laboratories; two development labs and one historically exposed GSK cohort; exact actual times and numeric equality targets only. Strong adverse evidence: Previously invalidated grouping exposed part of the GSK cohort; source strain/SITE alias inconsistencies make directory-level labs the only defensible existing group.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Capacitylimited kinetics is not identified by nearconstant 24 hendpoints. Calibrationsensitivity algebra demonstrates this boundary; it is not fresh biological evidence.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source already investigates multicenter virulence; endpointselection/identifiability audit is valuable but not a new pathogen law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole source laboratories; two development labs and one historically exposed GSK cohort; exact actual times and numeric equality targets only.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-078-SCI-02",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole source laboratories; two development labs and one historically exposed GSK cohort; exact actual times and numeric equality targets only. Strong adverse evidence: Twenty untreated < 24 h humane endpoint assays have mean 9.2970/range 8.9120\u20139.3979 log units and are excluded from exact-time prediction. This nonrandom selection cannot be repaired by assigning 24 h.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Capacitylimited kinetics is not identified by nearconstant 24 hendpoints. Calibrationsensitivity algebra demonstrates this boundary; it is not fresh biological evidence.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source already investigates multicenter virulence; endpointselection/identifiability audit is valuable but not a new pathogen law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole source laboratories; two development labs and one historically exposed GSK cohort; exact actual times and numeric equality targets only.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

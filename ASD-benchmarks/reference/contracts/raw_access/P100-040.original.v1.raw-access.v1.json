@@ -1,0 +1,142 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-040.original.v1.raw-access.v1",
+  "parent_task_id": "P100-040.original.v1",
+  "case_id": "P100-040",
+  "protocol_version": "P100-040.original.v1.raw-access.v1",
+  "cohort_id": "P100-040.original.v1.cohort-1",
+  "parent_task_sha256": "c54dfb140c4993d6a72506f32004e2400fd0164fd7b9a210de506453452d44a8",
+  "input_sha256": "38e466498de1394f32bbbffd39de802e2e300e457b8f5f20f331af3cf5d3d7de",
+  "observations_sha256": "1d94adf61ff872249d1e25fc0e26024f3b8061d8129268bf334af534f5671f0c",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "40_transport_nyc_green_taxi_2025",
+  "source_assets": [
+    {
+      "path": "context/data_dictionary_trip_records_green.pdf",
+      "bytes": 148750,
+      "sha256": "25dce860acf20150f3f66a56194808089fe8403d049bf998925d0815f1a77f30"
+    },
+    {
+      "path": "context/source_record.html",
+      "bytes": 142316,
+      "sha256": "ad0410561c5d107dccf3f942e40ffa6b506edc2cee53cbb5e66ffb7cca0c3dcc"
+    },
+    {
+      "path": "context/taxi_zone_lookup.csv",
+      "bytes": 12331,
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed"
+    },
+    {
+      "path": "context/taxi_zones.zip",
+      "bytes": 1022574,
+      "sha256": "f6d711917bb4340f8f644d5366c51665489eb2d426dd1a4a55677721ae5adf17"
+    },
+    {
+      "path": "context/trip_record_user_guide.pdf",
+      "bytes": 202694,
+      "sha256": "ef1c8a67c5b1398f0a9abf370793c8bd7e3dee80089ff8e6ce85b8a2ce319164"
+    },
+    {
+      "path": "raw/green_tripdata_2025-01.parquet",
+      "bytes": 1178451,
+      "sha256": "84f3a121667157efcbf012c3566a6065df6f8e0312c678cb2f29cd72cc9c0f10"
+    },
+    {
+      "path": "raw/green_tripdata_2025-02.parquet",
+      "bytes": 1117474,
+      "sha256": "b3ffe16a96ba0c68c8a8f8b10f049294ae6eb8d21f2e13b3fdbd452fa2e3498e"
+    },
+    {
+      "path": "raw/green_tripdata_2025-03.parquet",
+      "bytes": 1253510,
+      "sha256": "d58e8d08e5e8a34c12f0d3f5ea049ae25c7c8215218a6af7bf6b8124ecde1c79"
+    },
+    {
+      "path": "raw/green_tripdata_2025-04.parquet",
+      "bytes": 1269227,
+      "sha256": "6cf7ca2a4dd8907437e2e4b4728f62b353712ff09b322223a61e01aecee02411"
+    },
+    {
+      "path": "raw/green_tripdata_2025-05.parquet",
+      "bytes": 1338798,
+      "sha256": "dcbf4afce26d1adc544a89ee1bdac88089b1bbaa300685144d31eee646da58bb"
+    },
+    {
+      "path": "raw/green_tripdata_2025-06.parquet",
+      "bytes": 1212934,
+      "sha256": "451bc9f29382cca5dc33db05ff399cb137735d19c7449bbaa8b3348b0824f8e3"
+    },
+    {
+      "path": "raw/green_tripdata_2025-07.parquet",
+      "bytes": 1188380,
+      "sha256": "bbd6f9e5955570521df5c6dd40c1a75b37cccd730fcaff4fb50bcd32d2d35f69"
+    },
+    {
+      "path": "raw/green_tripdata_2025-08.parquet",
+      "bytes": 1149707,
+      "sha256": "ebaab192c199b850b0244e10c90622e472c1d4f2851168f950c9f75fe8db18d1"
+    },
+    {
+      "path": "raw/green_tripdata_2025-09.parquet",
+      "bytes": 1209831,
+      "sha256": "932ea2cb6a56f83c4389148ce73427b07a63106375b607a361cd107cf7a32042"
+    },
+    {
+      "path": "raw/green_tripdata_2025-10.parquet",
+      "bytes": 1205685,
+      "sha256": "b124d57fb63fe610d085ce9ebef1528c082932313d86133a33d9c7a000883fe6"
+    },
+    {
+      "path": "raw/green_tripdata_2025-11.parquet",
+      "bytes": 1164775,
+      "sha256": "efcd45635c7982aa7ac832e5922c2e5495ebb5ce44e35491fea58d63fa7eba05"
+    },
+    {
+      "path": "raw/green_tripdata_2025-12.parquet",
+      "bytes": 1171145,
+      "sha256": "d1e9def5085c3be62dc8f827c9bbb6d32455b8ba69921d3e823d95435ab155fc"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "distance_km": "recorded post-trip miles*1.609344",
+      "hour": "pickup local clock hour including fraction",
+      "weekend": "Saturday/Sunday binary",
+      "peak": "fixed7\u201310 or16\u201319localclock binary",
+      "airport": "either endpoint in official JFK/LGA/Newark zones",
+      "manhattan": "either endpoint boroughManhattan"
+    },
+    "observation_window": "Trip distance is recorded after the journey. Task is retrospective travel-time diagnostics with completed distance, not pickup-time ETA. Pickup time and endpoint categories are known; no fare/payment/duration-derived predictors.",
+    "calibration_and_history": "Forward training on earlier whole days. Jan\u2013Sepdevelopment,Oct\u2013Decconfirmation. Same city/provider system; no future-day targets enter coefficients. Fixed clock windows, no held tuning.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "input_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Completed-trip distance is an after-trip input; this is not pickup-time ETA."
+  ],
+  "current_outcomes_exposed": true
+}

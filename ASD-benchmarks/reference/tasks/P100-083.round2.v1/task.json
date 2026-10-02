@@ -1,0 +1,176 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-083.round2.v1",
+  "case_id": "P100-083",
+  "case_number": 83,
+  "family": "round2",
+  "protocol_version": "P100-083.round2.v1.contract-1",
+  "cohort_id": "P100-083.round2.v1.development-oof",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-083.round2.v1",
+  "legacy_package": "83_ecology_hive_microclimate/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/83_ecology_hive_microclimate",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "One-hour future internal sensor temperature",
+  "target_units": "degree C",
+  "error_units": "degree C",
+  "primary_units": "degC",
+  "metric_kind": "rmse",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_rmse"
+  },
+  "permitted_inputs": [
+    "T_now",
+    "T_lag",
+    "T_external",
+    "T_external_lag",
+    "RH_external",
+    "hour_sin",
+    "hour_cos",
+    "stream"
+  ],
+  "input_units": {
+    "T_now": "degC",
+    "T_lag": "degC,causal lag1h",
+    "T_external": "degC,current",
+    "T_external_lag": "degC, causal lag 1 h",
+    "RH_external": "percent,current",
+    "hour_sin": "dimensionless source-clock phase",
+    "hour_cos": "dimensionless source-clock phase",
+    "stream": "calibrated sensor label"
+  },
+  "numeric_columns": [
+    "T_now",
+    "T_lag",
+    "T_external",
+    "T_external_lag",
+    "RH_external",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "One hourly origin: first native observation within first15min. Forecast nominal1hour, score nearest native target within5min, same calendar day, no interpolation. Causal lag<=origin\u22121hour within15min. Latest20percent native dates per stream reserved. Native response outliers retained. Expanded information budget: T_now, T_lag, T_external, T_external_lag, RH_external, hour_sin, hour_cos, stream",
+  "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. T and Te are current internal/external Celsius temperatures; T\u22121 is a causal one-hour lag, He is current external relative humidity percent, and v is external vapor-pressure deficit in kPa. Five offsets c_s are\u22120.384543,\u22120.316614,\u22120.340834,+0.138741,+0.323654degC in rules.json sensor order. Coefficients ba=\u22120.002878, br=0.050874, bm=0.083403 are dimensionless; bv=0.481876degC/kPa and bvr=0.084243/kPa. The reference30degC is an algebraic centering constant, not a prescribed biological setpoint.",
+  "independent_unit": "future native-date block per calibrated sensor stream",
+  "evaluation_groups": [
+    "DadosMeliponas:sensor1:block1",
+    "DadosMeliponas:sensor1:block2",
+    "DadosMeliponas:sensor1:block3",
+    "DadosMeliponas:sensor2:block1",
+    "DadosMeliponas:sensor2:block2",
+    "DadosMeliponas:sensor2:block3",
+    "DadosMeliponas:sensor3:block1",
+    "DadosMeliponas:sensor3:block2",
+    "DadosMeliponas:sensor3:block3",
+    "dadosColmeia1Apis:sensor1:block1",
+    "dadosColmeia1Apis:sensor1:block2",
+    "dadosColmeia1Apis:sensor1:block3",
+    "dadosColmeia2Apis:sensor3:block1",
+    "dadosColmeia2Apis:sensor3:block2",
+    "dadosColmeia2Apis:sensor3:block3"
+  ],
+  "assigned_rows": 4111,
+  "eligible_rows": 4111,
+  "baseline_models": [
+    "previous/baseline-flex",
+    "previous/baseline-old",
+    "current/cycle-001",
+    "previous/baseline-unconstrained_exchange",
+    "previous/ablation-positive_no_ambient",
+    "previous/cycle-001",
+    "previous/cycle-002",
+    "previous/ablation-positive_no_memory",
+    "current/baseline-hgb",
+    "previous/baseline-persistence",
+    "previous/cycle-003"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "previous/baseline-flex": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-old": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-unconstrained_exchange": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/ablation-positive_no_ambient": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-001": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-002": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/ablation-positive_no_memory": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-persistence": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-003": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Latest native dates at five calibrated sensor streams from one apiary; sensor/colony, species and season are confounded. No unseen-apiary or colony-health prediction. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+  "source_url": "https://zenodo.org/records/20399470",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "3305d59f2b09f218ebecb99e25ddb39eae5d9da2d71528f79fe0549f184431f2",
+  "observations_sha256": "2f2f6e67ed4f820779e27dc0c3909f3fbf80fc083722335fdd68a510aa61b0ef",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified"
+}

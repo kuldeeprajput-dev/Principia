@@ -1,0 +1,76 @@
+{
+  "case_id": "P100-021",
+  "title": "Josephson junction fabrication and characterization",
+  "default_task": "P100-021.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "effective high-current differential resistance of recorded voltage/current channels",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 5,
+    "independent_unit_description": "complete wafer die: all junction widths and paired traces",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No per-device response calibration. Current conversion V_gen/100 ohm is source-provided. Native response gain is not documented; endpoint is recorded-channel differential resistance, not intrinsic junction resistance.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "effective high-current differential resistance of recorded voltage/current channels",
+    "prediction_time": "design prediction before electrical measurement; wafer and inner/outer region known",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Unknown electrical gain and nominal rather than measured junction area."
+  },
+  "task_ids": [
+    "P100-021.original.v1"
+  ],
+  "finding_ids": [
+    "P100-021-F01",
+    "P100-021-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-021/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-021.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate effective high-current differential resistance of recorded voltage/current channels under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "design prediction before electrical measurement; wafer and inner/outer region known",
+    "calibration_requirement": "No per-device response calibration. Current conversion V_gen/100 ohm is source-provided. Native response gain is not documented; endpoint is recorded-channel differential resistance, not intrinsic junction resistance.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "effective high-current differential resistance of recorded voltage/current channels in ohm",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Unknown electrical gain and nominal rather than measured junction area."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "ohm",
+    "reference_model": "reference",
+    "reference_primary_error": 766.2706225556708,
+    "reference_physical_mae": 766.2706225556708,
+    "physical_error_units": "ohm",
+    "lowest_registered_error_model": "attempt-004",
+    "lowest_registered_error": 758.1523056250905,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-021.original.v1/evidence/metrics.csv",
+      "bytes": 630,
+      "sha256": "f1777573f7f42af4d1bcf5ec191332f2f1badbc04b440e74d18ce095672017e6"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Resolve amplifier gain and measure actual junction dimensions; design die/wafer-held evaluation with retained defective devices."
+}

@@ -1,0 +1,180 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-027.round2.v1",
+  "case_id": "P100-027",
+  "case_number": 27,
+  "family": "round2",
+  "protocol_version": "P100-027.round2.v1.contract-1",
+  "cohort_id": "P100-027.round2.v1.development-oof",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-027.round2.v1",
+  "legacy_package": "27_fluid_dynamics_kth_boiling/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/27_fluid_dynamics_kth_boiling",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Measured local vapor void fraction",
+  "target_units": "dimensionless",
+  "error_units": "dimensionless",
+  "primary_units": "void fraction",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "pressure_Pa",
+    "massflux_kg_m2_s",
+    "quality",
+    "radial_fraction",
+    "rho_liquid",
+    "rho_vapor",
+    "saturation_temperature_K"
+  ],
+  "input_units": {
+    "pressure_Pa": "Pa, absolute",
+    "massflux_kg_m2_s": "kg m^-2 s^-1",
+    "quality": "kg vapor per kg mixture",
+    "radial_fraction": "dimensionless native coordinate / maximum sampled coordinate",
+    "rho_liquid": "kg m^-3",
+    "rho_vapor": "kg m^-3",
+    "saturation_temperature_K": "K"
+  },
+  "numeric_columns": [
+    "pressure_Pa",
+    "massflux_kg_m2_s",
+    "quality",
+    "radial_fraction",
+    "rho_liquid",
+    "rho_vapor",
+    "saturation_temperature_K"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Boundary pressure, mass flux, supplied thermodynamic quality, density properties and measurement coordinate only; no measured target-derived velocity, dynamic pressure, phase label or fitted per-run offset. Expanded information budget: pressure_Pa, massflux_kg_m2_s, quality, radial_fraction, rho_liquid, rho_vapor",
+  "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Saturation densities are fixed IAPWS-derived inputs from absolute pressure, not learned from void-fraction targets. Global profile coefficients use development runs only.",
+  "independent_unit": "complete experimental run",
+  "evaluation_groups": [
+    "ID_20230808_Run_02",
+    "ID_20230808_Run_07",
+    "ID_20230809_Run_10",
+    "ID_20230809_Run_13",
+    "ID_20230809_Run_16",
+    "ID_20230809_Run_18",
+    "ID_20230809_Run_20",
+    "ID_20230810_Run_04",
+    "ID_20230810_Run_07"
+  ],
+  "assigned_rows": 108,
+  "eligible_rows": 108,
+  "baseline_models": [
+    "current/baseline-hgb",
+    "previous/cycle-001",
+    "previous/cycle-002",
+    "previous/baselines/old_radial",
+    "previous/cycle-004",
+    "previous/cycle-003",
+    "current/cycle-001",
+    "current/cycle-002",
+    "previous/baselines/kernel_nested",
+    "previous/baselines/old_drift",
+    "previous/baselines/old_homogeneous",
+    "previous/baselines/old_nested_flex",
+    "previous/baselines/old_mean"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-001": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-002": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_radial": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-004": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-003": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-002": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/kernel_nested": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_drift": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_homogeneous": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_nested_flex": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_mean": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Three complete radial profiles at one KTH facility. Conditional on supplied boundary quality and normalized observed measurement coordinates; no universal closure, flow-regime discovery or physical wall-coordinate claim. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+  "source_url": "https://zenodo.org/records/14627088",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "df699b17ad7c91a3f5b0beef00b6926f13b6db3d2a689c90fcd7c52d019641d3",
+  "observations_sha256": "2cc35039e3ed58fc9532974a506d1998406605ea5714af96562b26b392eda052",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified"
+}

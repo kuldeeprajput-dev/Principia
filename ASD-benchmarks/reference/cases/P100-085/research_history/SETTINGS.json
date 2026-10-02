@@ -1,0 +1,30 @@
+{
+  "title": "Flask glycolic-acid recovery from independent HPLC substrate measurements",
+  "files": [
+    "raw/DATA.zip",
+    "raw/readme.txt",
+    "context/source_record.json"
+  ],
+  "target": "Glycolic acid concentration",
+  "unit": "g/L",
+  "inputs": {
+    "elapsed_h": "h",
+    "eg_consumed_g_L": "g/L",
+    "eg_initial_g_L": "g/L",
+    "pH": "dimensionless",
+    "acetate_cofeed": "indicator",
+    "glucose_cofeed": "indicator"
+  },
+  "timing": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+  "grouping": "Complete flask conditions; three development conditions and one metadata-hash confirmation condition; leave-one-condition-out folds keep all replicates together.",
+  "limits": [
+    "Only one held-out condition and two replicate curves; no precise population confidence.",
+    "Bioreactor filenames imply opposing feed regimes but members are byte-identical: both excluded.",
+    "Measured EG depletion can be negative from measurement error; preserve sign, do not impute.",
+    "Native early rows for most conditions were seen at schema audit: confirmation is outcome-exposed retrospective transfer, not fresh experimental confirmation."
+  ],
+  "url": "https://zenodo.org/records/17396158",
+  "pub": "https://doi.org/10.1016/j.biortech.2025.133540",
+  "prior": "The authors already report acetate-enhanced EG assimilation and GA production with isotope evidence. Mass-ratio stoichiometry is a comparator, not a discovery. We test predictive recovery heterogeneity without asserting causal pH effects.",
+  "audit": "Native CSV previews exposed several GA observations in all four flask conditions before task freezing; explicitly retrospective; no confirmation metrics used in model selection."
+}

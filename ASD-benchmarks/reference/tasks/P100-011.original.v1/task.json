@@ -1,0 +1,156 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-011.original.v1",
+  "case_id": "P100-011",
+  "case_number": 11,
+  "family": "original",
+  "protocol_version": "P100-011-asd7-native-v1",
+  "cohort_id": "P100-011.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-011.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/11_ai_mlperf_inference_v6_0",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Closed-division Server throughput for matched token-generating workloads",
+  "target_units": "tokens/s",
+  "error_units": "tokens/s",
+  "primary_units": "tokens/s",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "offline",
+    "accelerators",
+    "nodes",
+    "workload",
+    "precision"
+  ],
+  "input_units": {
+    "offline": "tokens/s; measured matched Offline calibration",
+    "accelerators": "count",
+    "nodes": "count",
+    "workload": "source workload category",
+    "precision": "source precision label"
+  },
+  "numeric_columns": [
+    "offline",
+    "accelerators",
+    "nodes"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Predict reported Server throughput using same-system Offline benchmark result, workload label and accelerator count. This is calibrated scenario transfer, not performance prediction before benchmarking.",
+  "calibration": "Matched Offline throughput on every evaluation system; held-system Server/Interactive results forbidden.",
+  "independent_unit": "Submitter+platform system; all model/scenario aliases linked",
+  "evaluation_groups": [
+    "AMD/94xMI355X_24xEPYC_9575F",
+    "CoreWeave/GB300-NVL72_GB300-288GB_aarch64x64_TRT",
+    "Dell_MangoBoost/8xMI355X_2xEPYC_9965",
+    "Google/GB200-NVL72_GB200-186GB_aarch64x72_TRT",
+    "HPE/HPE_Proliant_DL385_RTX_PRO_6000_PCIe_96GBx4_TRT_10_11_0_33_TRT",
+    "Lambda_SIT/B200-SXM-180GBx8_TRT",
+    "MangoBoost/8xMI325X_2xEPYC_9655",
+    "NVIDIA/GB300-NVL72_GB300-288GB_aarch64x288_TRT",
+    "NVIDIA/GB300-NVL72_GB300-288GB_aarch64x72_TRT",
+    "Quanta_Cloud_Technology/D75H-10U_B300-270GBx8_TRT",
+    "Supermicro/SYS-822GS-NBRT_B200-SXM-180GB_TRT"
+  ],
+  "assigned_rows": 16,
+  "eligible_rows": 16,
+  "baseline_models": [
+    "offline",
+    "rbf",
+    "utilization",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "reference"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "offline": {
+      "equation": "S_hat=Q",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rbf": {
+      "equation": "Frozen 24-center Gaussian radial-basis ridge comparator; all feature means, scales, centers, coefficients and ridge=0.3 are in rules.json. Additive residual for cases2/3/4/45; multiplicative clipped-log ratio for cases11/46.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "utilization": {
+      "equation": "S_hat=Q*sigmoid(b0)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "S_hat=Q*sigmoid(b_workload)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "S_hat=Q*sigmoid(b_workload+a*ln(1+N))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "S_hat=Q/(1+exp(-b_workload)*Q/(100000*N))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "S_hat=Q*sigmoid(b_workload)/(1+exp(a)*nodes/N)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "S_hat=Q*sigmoid(b_workload+a*I_4bit)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "reference": {
+      "equation": "S_hat=Q*sigmoid(b_workload+a*ln(1+N))",
+      "state": "rules.json",
+      "role": "reference"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics."
+  },
+  "scope_limits": "Self-selected published MLPerf submissions; quality99.9 aliases removed and inferred results excluded. Different task families, software and latency constraints confound mechanism. No hardware causal efficiency ranking.",
+  "source_url": "https://github.com/mlcommons/inference_results_v6.0",
+  "source_license": "Apache License 2.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "ba249e5b7e8b0ef426e7f83f01289fbea8d655acaba49b7d0259355c8bf1eb71",
+  "observations_sha256": "e53bd7652220702729707ebc372dd9328ea3f283e538b6d2a2beb9cfc596e4fa",
+  "legacy_protocol_sha256": "2003251cc747ee05c260fcf828a3c0938ff7f320438786655a777418aff0d723",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "offline"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

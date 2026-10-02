@@ -1,0 +1,73 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-025.original.v1.raw-access.v1",
+  "parent_task_id": "P100-025.original.v1",
+  "case_id": "P100-025",
+  "protocol_version": "P100-025.original.v1.raw-access.v1",
+  "cohort_id": "P100-025.original.v1.cohort-1",
+  "parent_task_sha256": "3093f1ffca5147bf8266b905175bfd2fb010518930aad5752532dd749fc93ee9",
+  "input_sha256": "746fb63be183268b71b3d539661f06660bfb7d220aa4b13dce70c8053a45e0de",
+  "observations_sha256": "7be04f9f092c207b055c169f222dcddaf37ae80b7696064ccdf4029c0ba0d419",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "25_electrochemistry_operando_xas",
+  "source_assets": [
+    {
+      "path": "raw/data.zip",
+      "bytes": 6760031,
+      "sha256": "b8f4ecabcdbc033e16b2fd2fa431ce81c8a446c2cbb5ac401aca6656b0ee53de"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "pre": "raw\u03bc(E),dimensionless",
+      "jump": "raw\u03bc(E),dimensionless",
+      "rL": "normalizedmeasuredLiFePO4reference",
+      "rF": "normalizedmeasuredFePO4reference",
+      "dL": "eV\u207b\u00b9",
+      "d2L": "eV\u207b\u00b2",
+      "f": "dimensionlessnominalprotocolprogress",
+      "discharge": "binarydischarge/rest2branch",
+      "rest": "binaryrestsegment",
+      "e": "eVrelative7112"
+    },
+    "observation_window": "Retrospective spectral-shape reconstruction after pre/post-edge calibration bands and experimental segment durations are known. This is not an online state-of-charge forecast.",
+    "calibration_and_history": "Each spectrum contributes only7000\u20137050eV and7250\u20137300eV bandmeans. SuppliedmeasuredFePO4/LiFePO4references are normalized identically. Targetband7070\u20137200eV is withheld.",
+    "calibration_columns": [
+      "pre",
+      "jump",
+      "rL",
+      "rF",
+      "dL",
+      "d2L"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Spectral prediction is not identification of physical phase fractions."
+  ],
+  "current_outcomes_exposed": true
+}

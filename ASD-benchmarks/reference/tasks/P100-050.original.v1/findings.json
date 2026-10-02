@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-050",
+  "findings": [
+    {
+      "finding_id": "P100-050-F01",
+      "classification": "unsupported",
+      "claim": "A locally oscillatory height model improves the 200 ms forecast over native persistence on a new complete release.",
+      "equation": "hhat=h+v sin(omega H)/omega+a[1-cos(omega H)]/omega\u00b2, H=0.2 s.",
+      "evidence": "Selected development MAE 13.223 mm; reserved MAE 12.228 mm versus persistence 11.667 mm and flexible 13.688 mm.",
+      "known_prior_art": "Local harmonic propagation is an established kinematic approximation.",
+      "falsification": "Its modest development advantage over persistence does not survive the reserved event.",
+      "scope": "One station, one reserved controlled release, causal 220 ms history.",
+      "admission": "unsupported"
+    },
+    {
+      "finding_id": "P100-050-F02",
+      "classification": "informative_falsification",
+      "claim": "Unattenuated local slope extrapolation is a poor transferable 200 ms surface-height predictor in these experiments.",
+      "equation": "hhat=h+0.2v compared with native persistence.",
+      "evidence": "Development MAE 28.956 versus 13.718 mm; confirmation 23.193 versus 11.667 mm.",
+      "known_prior_art": "Noisy surface measurements and evolving fronts need not follow constant local velocity.",
+      "falsification": "This is not a test of bulk flow velocity or a proof of a particular turbulence mechanism.",
+      "scope": "Fixed issuance grid, original signed laser signal, all eligible observations.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-050-F03",
+      "classification": "informative_falsification",
+      "claim": "Depth-dependent memory, front/recession asymmetry and median observation filtering do not establish a stronger selected predictive law.",
+      "equation": "Frozen alternatives in rules.json.",
+      "evidence": "All three fail to improve the best development structure; all saved confirmation comparisons remain available.",
+      "known_prior_art": "Dissipation, gravity-wave scaling and robust filtering are established families.",
+      "falsification": "The short history and five runs cannot identify a unique governing flow mechanism.",
+      "scope": "Sensor nowcasting only; not field early-warning performance.",
+      "admission": "supported"
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted analysis; not independent experimental replication or human expert adjudication."
+}

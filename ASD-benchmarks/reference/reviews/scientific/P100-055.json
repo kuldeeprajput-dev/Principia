@@ -1,0 +1,384 @@
+{
+  "schema_version": "p100-scientific-review-1.0",
+  "scenario_id": "P100-055",
+  "title": "Printable-slag penetration force",
+  "review_date": "2026-10-01",
+  "reviewer_role": "scientific-critical review agent",
+  "review_mode": "read-only review of retained scientific/equation/evidence records; no fitting, acquisition or new literature search",
+  "current_outcome_exposure": "exposed",
+  "review_scope": "Original findings, first continuation when present, latest continuation and supplemental material-response tasks when present. Independent computational review is a separate artifact.",
+  "grouping_and_information_scope": "Whole mixtures with both trace replicates; old two-age uncalibrated task differs from age 30 task with measured age 0 replicate-mean map.",
+  "portfolio_disposition": "Scoped numerical references, tested hypotheses and preserved falsifications; no independently established new fundamental law or demonstrated deployment impact is admitted.",
+  "aggregate_score": null,
+  "aggregate_score_reason": "Scientific dimensions are distinct; task difficulty and validation scope are disclosed without converting them into invented precision or a composite discovery score.",
+  "evidence_assets": [
+    {
+      "id": "E001",
+      "legacy_path": "55_materials_slag_printing/final_results/FINDINGS.md",
+      "sha256": "8ee088839fa0b7752209a6433a04e43e656e6fb2318100cb2b83d11b866a6117",
+      "bytes": 5289,
+      "role": "original scientific description"
+    },
+    {
+      "id": "E002",
+      "legacy_path": "55_materials_slag_printing/final_results/rules.json",
+      "sha256": "1add6ad39494bc114d9c9070b3a1a6cab5c08db2e2aec21558c41d2b25f4f2ee",
+      "bytes": 31268,
+      "role": "original frozen model state"
+    },
+    {
+      "id": "E003",
+      "legacy_path": "55_materials_slag_printing/final_results/evidence/metrics.csv",
+      "sha256": "81801cca41f118450e51963be4fca4cdc7948df4867d8c32ec44929b097a634e",
+      "bytes": 1626,
+      "role": "original numerical comparison"
+    },
+    {
+      "id": "E004",
+      "legacy_path": "55_materials_slag_printing/final_results/evidence/by_group.csv",
+      "sha256": "a877f3800424cc76f432745289354e3d2d40cce07c1c0c3a16362b39091dc4eb",
+      "bytes": 4031,
+      "role": "original grouped errors"
+    },
+    {
+      "id": "E005",
+      "legacy_path": "55_materials_slag_printing/research_history/continuation-20261001/candidate/FINDINGS.md",
+      "sha256": "bb143e01fa3aa4feb7b805841929cac072e982cb96f07428e61ca08f4f2f24f5",
+      "bytes": 6056,
+      "role": "latest scientific account"
+    },
+    {
+      "id": "E006",
+      "legacy_path": "55_materials_slag_printing/research_history/continuation-20261001/candidate/PROTOCOL.json",
+      "sha256": "250ef29d9e886ca0b93bfbd7c39142ea11f4743a137827d90e97b47a478e57dd",
+      "bytes": 3486,
+      "role": "latest task protocol"
+    },
+    {
+      "id": "E007",
+      "legacy_path": "55_materials_slag_printing/research_history/continuation-20261001/candidate/rules.json",
+      "sha256": "c0f187b81a65e571e44d38d1d944e1c5575c31589574da03a5416d77c10f8c96",
+      "bytes": 27652,
+      "role": "latest frozen model state"
+    },
+    {
+      "id": "E008",
+      "legacy_path": "55_materials_slag_printing/research_history/continuation-20261001/candidate/evidence/metrics.csv",
+      "sha256": "e5fc38273ef6208b505ee1a06fef53566080675c355af17aec45c4387db82ac8",
+      "bytes": 1400,
+      "role": "latest numerical comparison"
+    },
+    {
+      "id": "E009",
+      "legacy_path": "55_materials_slag_printing/research_history/continuation-20261001/candidate/evidence/by_group.csv",
+      "sha256": "87912c2f255a95ee75e0353fa87b9dc7aa04c9f1346ee1a872823fc8c4a05117",
+      "bytes": 3051,
+      "role": "latest grouped errors"
+    }
+  ],
+  "finding_reviews": [
+    {
+      "finding_id": "P100-055-SCI-01",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results",
+      "statement": "The uncalibrated original task supports a flexible force reference and physical-law abstention.",
+      "classification": "numerical_control",
+      "disposition": "supported",
+      "current_outcome_exposure": "exposed",
+      "historical_evidence_status": "Original historical reserve status is retained in source records; every outcome is exposed now. Continuation model selection uses development evidence but cannot restore fresh confirmation.",
+      "numerical_evidence": [
+        {
+          "cohort": "original two reserved mixtures/both ages",
+          "measure": "kernel MAE",
+          "value": 0.150097,
+          "unit": "N",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original two reserved mixtures/both ages",
+          "measure": "mechanistic MAE",
+          "value": 0.211628,
+          "unit": "N",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "equation_if_supported": null,
+      "strongest_adverse_evidence": "Native 1–600 penetration index lacks documented sampling interval and enough probe geometry; force cannot identify intrinsic yield stress.",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole mixtures with both trace replicates; old two-age uncalibrated task differs from age 30 task with measured age 0 replicate-mean map. Strong adverse evidence: Native 1–600 penetration index lacks documented sampling interval and enough probe geometry; force cannot identify intrinsic yield stress.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Structural buildup is compatible with rising force but chemistry/contact geometry/specimen variability are not separated. A calibrated gain is not a universal material law.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Penetration-based structural buildup is prior art; recipe recovery and rejected mechanisms improve auditability rather than establish novelty. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole mixtures with both trace replicates; old two-age uncalibrated task differs from age 30 task with measured age 0 replicate-mean map.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "scientific_validators": [
+        "Verify final workbook row 75 recipe while retaining conflicting intermediate ratios/PDFomission.",
+        "Do not pair specimens across ages; keep age 0 calibration excluded from age 30 score.",
+        "Exclude both ambiguously duplicated 1.0_0.30 squeeze labels from mapping and never impute unreached strain thresholds."
+      ],
+      "next_evidence": "Documented probe kinematics, replicated independent batches, controlled additive experiments and reserved extrusion/shape-retention endpoints.",
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ]
+    },
+    {
+      "finding_id": "P100-055-SCI-02",
+      "task_family": "continuation",
+      "task_version_history": "2026-10-01 continuation",
+      "statement": "A single proportional aging gain wins development selection; six plausible material extensions do not improve it.",
+      "classification": "numerical_control",
+      "disposition": "supported",
+      "current_outcome_exposure": "exposed",
+      "historical_evidence_status": "Original historical reserve status is retained in source records; every outcome is exposed now. Continuation model selection uses development evidence but cannot restore fresh confirmation.",
+      "numerical_evidence": [
+        {
+          "cohort": "new age 30 calibrated development",
+          "measure": "gain MAE",
+          "value": 0.084949,
+          "unit": "N",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009"
+          ]
+        },
+        {
+          "cohort": "new age 30 calibrated development",
+          "measure": "shape candidate MAE",
+          "value": 0.0918007,
+          "unit": "N",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009"
+          ]
+        },
+        {
+          "cohort": "exposed two mixtures age 30",
+          "measure": "selected gain MAE",
+          "value": 0.1363226,
+          "unit": "N",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009"
+          ]
+        },
+        {
+          "cohort": "exposed two mixtures age 30",
+          "measure": "kernel MAE",
+          "value": 0.0828189,
+          "unit": "N",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009"
+          ]
+        },
+        {
+          "cohort": "exposed two mixtures age 30",
+          "measure": "inverse-water MAE",
+          "value": 0.0728601,
+          "unit": "N",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009"
+          ]
+        }
+      ],
+      "equation_if_supported": {
+        "expression": "Fhat_30(i)=1.713763480463801 * mean(F0_replicate1(i),F0_replicate2(i)).",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009"
+        ]
+      },
+      "strongest_adverse_evidence": "Gain errors .203735/.068910 N are uneven; diagnostic-better models are not promoted. Water/aggregate/additive covariation and independent specimens across ages prevent a causal aging or paired-specimen mechanism.",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole mixtures with both trace replicates; old two-age uncalibrated task differs from age 30 task with measured age 0 replicate-mean map. Strong adverse evidence: Gain errors .203735/.068910 N are uneven; diagnostic-better models are not promoted. Water/aggregate/additive covariation and independent specimens across ages prevent a causal aging or paired-specimen mechanism.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Structural buildup is compatible with rising force but chemistry/contact geometry/specimen variability are not separated. A calibrated gain is not a universal material law.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Penetration-based structural buildup is prior art; recipe recovery and rejected mechanisms improve auditability rather than establish novelty. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole mixtures with both trace replicates; old two-age uncalibrated task differs from age 30 task with measured age 0 replicate-mean map.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009"
+          ]
+        }
+      },
+      "scientific_validators": [
+        "Verify final workbook row 75 recipe while retaining conflicting intermediate ratios/PDFomission.",
+        "Do not pair specimens across ages; keep age 0 calibration excluded from age 30 score.",
+        "Exclude both ambiguously duplicated 1.0_0.30 squeeze labels from mapping and never impute unreached strain thresholds."
+      ],
+      "next_evidence": "Documented probe kinematics, replicated independent batches, controlled additive experiments and reserved extrusion/shape-retention endpoints.",
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009"
+      ]
+    }
+  ],
+  "recorded_equations": [
+    {
+      "task_family": "original",
+      "expression_latex": "\\widehat{F}=c_0+c_1\\frac{\\theta}{w}+c_2\\frac{a\\theta}{w},\\qquad\\theta=t_{\\rm native}/100,\\quad w=w_{\\rm label}/0.30,\\quad a=t_{\\rm age}/30.",
+      "legacy_path": "55_materials_slag_printing/final_results/FINDINGS.md",
+      "status": "recorded_equation_not_automatic_mechanism_admission"
+    },
+    {
+      "task_family": "continuation",
+      "expression_latex": "\\widehat F_{30}(i)=g\\,\\overline{F}_0(i),\\qquad g=1.713763480463801.",
+      "legacy_path": "55_materials_slag_printing/research_history/continuation-20261001/candidate/FINDINGS.md",
+      "status": "recorded_equation_not_automatic_mechanism_admission"
+    }
+  ],
+  "required_followup_evidence": "Documented probe kinematics, replicated independent batches, controlled additive experiments and reserved extrusion/shape-retention endpoints.",
+  "review_limitations": [
+    "Documentary checks do not independently replicate the original experiment.",
+    "Novelty is bounded to retained targeted literature records, not an exhaustive search.",
+    "Previously reserved data and supplemental PLA challenge responses are now exposed; new evidence must be genuinely unexposed.",
+    "Predictive improvement alone does not establish causal mechanism, physical parameter identification or industrial benefit."
+  ]
+}

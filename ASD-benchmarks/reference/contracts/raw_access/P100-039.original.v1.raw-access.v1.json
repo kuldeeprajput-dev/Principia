@@ -1,0 +1,84 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-039.original.v1.raw-access.v1",
+  "parent_task_id": "P100-039.original.v1",
+  "case_id": "P100-039",
+  "protocol_version": "P100-039.original.v1.raw-access.v1",
+  "cohort_id": "P100-039.original.v1.cohort-1",
+  "parent_task_sha256": "da1e051bd1ab7044554296e9d0ad1e1dd4acc974bfe904db40f42fddd0ef56cb",
+  "input_sha256": "56c0b6e18073d9f651b7b3f2332be8a078ee6dc5ab2cdbdfd35f841b2164b80a",
+  "observations_sha256": "5ad7a739157ff9d24d1e0be065008775b57132b6a1d30d7105ed9964055c670d",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "39_sociology_oecd_piaac",
+  "source_assets": [
+    {
+      "path": "context/3639d1e2-en.pdf",
+      "bytes": 3619063,
+      "sha256": "0f213ff4034c1fae94b06d334a7eb11be94a82d2fff782e507f39cb58994076f"
+    },
+    {
+      "path": "context/NCES_technical_notes.html",
+      "bytes": 118736,
+      "sha256": "3a6039ff5e0aa87fe8660e91a8b3e0945682cc056fe15fd7b5fc7c2b928f414a"
+    },
+    {
+      "path": "context/piaac-cy2-codebook-and-sql-codes-for-derived-variables.pdf",
+      "bytes": 1099044,
+      "sha256": "19043c850365611d715da279b9fba12d53a5decb7b845042df50350ee51d67d1"
+    },
+    {
+      "path": "context/piaac-cy2-international-codebook.xlsx",
+      "bytes": 288096,
+      "sha256": "02bb30f84763ba27871daee7ee1133c3c98e26d716173272e313e596ce7908d2"
+    },
+    {
+      "path": "raw/prgjpnp2.csv",
+      "bytes": 47787872,
+      "sha256": "498bd1372de027006a424f26d9a1209a5c4437bb978144f7b9e8c0228e91729b"
+    },
+    {
+      "path": "raw/prgusap2.csv",
+      "bytes": 35241173,
+      "sha256": "f20a4677d9c4b03638f77e61bdf307fc282561bd129334ccf2179ef2b960641e"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "education": "source derived years of formal education",
+      "age": "fixed midpoint of published five-year age bin; final60\u201365midpoint62.5",
+      "japan": "country indicator"
+    },
+    "observation_window": "Contemporaneous cross-sectional earnings association using age/education/country. All10 plausible numeracy values are excluded: conditioned on background and unsuitable individual prediction scores. This is not future earnings or causal education return.",
+    "calibration_and_history": "Respondent hashblocks within both countries; no held respondent wage fitting. Country intercepts use training respondents in that same country. No transfer to an unseen economy.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "input_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Within-country earnings classes and survey weighting do not identify causal labor returns."
+  ],
+  "current_outcomes_exposed": true
+}

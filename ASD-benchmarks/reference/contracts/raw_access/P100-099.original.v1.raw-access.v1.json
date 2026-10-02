@@ -1,0 +1,72 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-099.original.v1.raw-access.v1",
+  "parent_task_id": "P100-099.original.v1",
+  "case_id": "P100-099",
+  "protocol_version": "P100-099.original.v1.raw-access.v1",
+  "cohort_id": "P100-099.original.v1.cohort-1",
+  "parent_task_sha256": "07e83e266790fbfe0ab4a070f6575afcec94d2684846a60c99442731f78281eb",
+  "input_sha256": "bcfca77187f3344f053ec496afa769e08f428d80723e208d7f96d986f1bf7358",
+  "observations_sha256": "0e01a2304fbb28979befcdf28e5253195e0486ef1afcc981974004f81f227914",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "99_neuroscience_hippocampal_calcium",
+  "source_assets": [
+    {
+      "name": "Data_ToUpload.zip",
+      "path": "raw/Data_ToUpload.zip",
+      "sha256": "b60e32ee1401e6a6e4264a4f646d622ae2aa0b4cae5c24d6d0ae00a41b51b286",
+      "bytes": 399538366
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "level": "author processed-trace units",
+      "lag30": "author processed-trace units",
+      "lag60": "author processed-trace units",
+      "mean300": "author processed-trace units",
+      "dispersion": "author processed-trace units",
+      "zero_fraction": "dimensionless",
+      "ventral": "binary",
+      "condition_group3": "binary"
+    },
+    "observation_window": "Every30 native frames after300-frame history, forecast next30-frame population mean ending60 frames later. Only trace frames<=t are inputs. Native frame index is used without inferring seconds or behavior alignment.",
+    "calibration_and_history": "Past observed trace history is allowed. No held future calibration or source fitted maps/pvpreS/pvpostS enter features. All model parameters and flexible transforms are fitted on development animals.",
+    "calibration_columns": [
+      "level",
+      "lag30",
+      "lag60",
+      "mean300",
+      "dispersion",
+      "zero_fraction"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Processed traces have unresolved normalization and publisher-causality scope; no fear-memory mechanism."
+  ],
+  "current_outcomes_exposed": true
+}

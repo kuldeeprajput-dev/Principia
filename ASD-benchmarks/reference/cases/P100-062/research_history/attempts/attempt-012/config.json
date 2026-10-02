@@ -1,0 +1,37 @@
+{
+  "name": "common_breakthrough_scale",
+  "formula": "offset+(a0+a1*high)*exp(-(tau/t)**beta)",
+  "hypothesis": "Development evidence available before this fit: activated_breakthrough: MAE 1.51247, worst group 3.73404; semi_infinite_arrival: MAE 3.42019, worst group 5.52057.\n\nChallenge the need for condition-dependent transport: keep separate amplitudes but require the same breakthrough time scale under both charging conditions. This controlled mechanism restriction tests whether a common effective diffusivity-shaped response is defensible.",
+  "inputs": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "initial": {
+    "a0": 20,
+    "a1": 40,
+    "tau": 1000,
+    "beta": 1
+  },
+  "bounds": {
+    "a0": [
+      -500,
+      500
+    ],
+    "a1": [
+      -1000,
+      1000
+    ],
+    "tau": [
+      10,
+      1000000.0
+    ],
+    "beta": [
+      0.3,
+      3
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:02:00.747398+00:00",
+  "parent": "attempt-011"
+}

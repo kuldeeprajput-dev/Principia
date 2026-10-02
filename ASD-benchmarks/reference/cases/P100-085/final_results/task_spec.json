@@ -1,0 +1,50 @@
+{
+  "target": "Glycolic acid concentration",
+  "target_units": "g/L",
+  "error_units": "g/L",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "elapsed_h",
+    "eg_consumed_g_L",
+    "eg_initial_g_L",
+    "pH",
+    "acetate_cofeed",
+    "glucose_cofeed"
+  ],
+  "input_units": {
+    "elapsed_h": "h",
+    "eg_consumed_g_L": "g/L",
+    "eg_initial_g_L": "g/L",
+    "pH": "dimensionless",
+    "acetate_cofeed": "indicator",
+    "glucose_cofeed": "indicator"
+  },
+  "numeric_columns": [
+    "elapsed_h",
+    "eg_consumed_g_L",
+    "eg_initial_g_L",
+    "pH",
+    "acetate_cofeed",
+    "glucose_cofeed"
+  ],
+  "timing_contract": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+  "calibration": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+  "independent_unit": "Complete flask conditions; three development conditions and one metadata-hash confirmation condition; leave-one-condition-out folds keep all replicates together.",
+  "scope_limits": [
+    "Only one held-out condition and two replicate curves; no precise population confidence.",
+    "Bioreactor filenames imply opposing feed regimes but members are byte-identical: both excluded.",
+    "Measured EG depletion can be negative from measurement error; preserve sign, do not impute.",
+    "Native early rows for most conditions were seen at schema audit: confirmation is outcome-exposed retrospective transfer, not fresh experimental confirmation."
+  ],
+  "source_url": "https://zenodo.org/records/17396158",
+  "source_license": "CC-BY-4.0",
+  "exposure": {
+    "status": "exposed_after_local_confirmation",
+    "original_audit": "Native CSV previews exposed several GA observations in all four flask conditions before task freezing; explicitly retrospective; no confirmation metrics used in model selection.",
+    "fresh_for_future_users": false,
+    "new_independent_experiments": false
+  },
+  "uncertainty_policy": "No row bootstrap; enumerate group errors and leave-group development variability. Single heldout condition is bounded evidence.",
+  "applicability": "Only stated experimental conditions and declared information budget; no universal or intervention claim",
+  "physical_bounds": "prediction>=0"
+}

@@ -1,0 +1,278 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-075",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication."
+  },
+  "findings": [
+    {
+      "id": "P100-075-F01",
+      "classification": "falsified",
+      "source_classification": "falsified_candidate",
+      "statement": "A donor-calibrated shared shear response generalizes better than calibration alone",
+      "applicability": "Four cultured donors; one held donor; five linked conditions",
+      "limitations": "Reserved donor MAE0.763484 exceeds calibration-copy0.496276",
+      "falsification": "Reserved donor MAE0.763484 exceeds calibration-copy0.496276",
+      "prior_art": "Source study already reports stiffness/shear-associated VCAM1 changes",
+      "equation_or_program": {
+        "expression": "y_hat=max(0,c-0.8590802454101593*s)",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "log2(1+CPM)",
+        "stiffness_kpa": "kPa",
+        "hss": "indicator HSS (10 versus 4 dyn/cm2)",
+        "calibration": "log2(1+CPM)"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-075.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-075-F02",
+      "classification": "falsified",
+      "source_classification": "supported_negative_finding",
+      "statement": "Adding stiffness, shear interactions or calibration-dependent response does not establish a robust transferable law in this cohort",
+      "applicability": "Only tested families and measured design; not an absence-of-biology claim",
+      "limitations": "Independent new donors with prespecified controls could overturn this bounded failure",
+      "falsification": "Independent new donors with prespecified controls could overturn this bounded failure",
+      "prior_art": "Known mechanosensing; the result is a validation failure of these specific response models",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "log2(1+CPM)",
+        "stiffness_kpa": "kPa",
+        "hss": "indicator HSS (10 versus 4 dyn/cm2)",
+        "calibration": "log2(1+CPM)"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-075.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 11016,
+      "sha256": "3b1ba14505247723c2fb5be237e1bd7fbdd7cf66d04ac0cc86e1e6ff5b40b62e",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 792,
+      "sha256": "2bd29d16994464121b3039e738ab1ac42011c4527e461ea62da1a1d7fd3d3cd6",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 1410,
+      "sha256": "cce763ab374ac9a944afcfe8d98b2fcc6357e44c6904f1f7ba8d51c3fa9013c1",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 7661,
+      "sha256": "60a39375325c3fc12a41c98d2452573d9bf0fa2d88269dba123949f2d7528d5c",
+      "id": "E004",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E005_SOURCE_AND_UNITS.md",
+      "bytes": 1153,
+      "sha256": "f1ee980bcedcc3faa4f3cc8b646bdeba25835f4cb54837e45d901532b2dcf6b3",
+      "id": "E005",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E006_SOURCE_MANIFEST.json",
+      "bytes": 512,
+      "sha256": "6c851cf9625dec95d56738ff4e64f164fd293c5fd0093fe5f777e39da76d6f3f",
+      "id": "E006",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E007_SPLITS.json",
+      "bytes": 289,
+      "sha256": "3cf22d8d2772fe64455e03a6a1d70bdc83a4baa5bd1e6ebc83ecb3cf2d608710",
+      "id": "E007",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 2073,
+      "sha256": "325c0ea26df8448548425b1d7c9b29eb0d69a6546c05b639b17fe908a89247ec",
+      "id": "E008",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E009_EQUATIONS.md",
+      "bytes": 1840,
+      "sha256": "cd36891bbb5b257d64cc3c1b865499080d630348f864e156772097101da3249f",
+      "id": "E009",
+      "role": "package/EQUATIONS.md"
+    },
+    {
+      "path": "evidence/E010_FINDINGS.md",
+      "bytes": 4438,
+      "sha256": "34393b0d9407953b4ef1287fcb725210c5be20da4d5b5c78fff94d1ebd052355",
+      "id": "E010",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E011_inputs.csv.gz",
+      "bytes": 144,
+      "sha256": "6b86c2d03fed5656d1a50aa02c350dbd9490c0a00053127030c7363a52e0be16",
+      "id": "E011",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E012_observations.csv.gz",
+      "bytes": 312,
+      "sha256": "24b93683a92c8761362b9e670f20590de161f8f610ad6b2cb8285077a3a9ebab",
+      "id": "E012",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E013_metrics.csv",
+      "bytes": 953,
+      "sha256": "a2bf3e77809f2dd3c23c4772ba2ab022c332d43f5e4338bc079196406a8305d1",
+      "id": "E013",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 593,
+      "sha256": "ae785bc15aff0244cf517b28109b4653977411df2ff6ed1f9638517acf42deb1",
+      "id": "E014",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_findings.json",
+      "bytes": 1354,
+      "sha256": "396571e6149f055757d3f4d49c8463d8412c4d22cfd999fe857fd098bc787035",
+      "id": "E015",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E016_rules.json",
+      "bytes": 7771,
+      "sha256": "50e302409e92a2e974cfe08a51d657619404bcc6e37f689954dc1cfb1bd29732",
+      "id": "E016",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E017_run.py",
+      "bytes": 2409,
+      "sha256": "ee5e29aac57a5260836caeedb625fe14e0ee9e926503c0c0ce4011074a080b5a",
+      "id": "E017",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E018_task_spec.json",
+      "bytes": 1889,
+      "sha256": "c03693e7272b516a517295d4f93961bc2e89db1de2b7ca976d7a234097aa3b13",
+      "id": "E018",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 16601,
+      "sha256": "80904cb7f8ed76a64a5231bf75423e8cd5db6d2feb45dce88dfd7d396191ea57",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 6657,
+      "sha256": "49524d95c4842b3a32721ce58ff32e943151f7aaf032bdc9d940e33dc9c9d3c7",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

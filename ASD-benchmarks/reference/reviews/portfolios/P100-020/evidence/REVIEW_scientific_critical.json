@@ -1,0 +1,200 @@
+{
+  "case_id": "P100-020",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_bio_behavior",
+  "reviewed_utc": "2026-10-02T03:31:23.185579+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "4eff6fd7b2bdda2523ff69bbc99342b2073d31bf85a5f0e286aafbbb9efbda90"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "6158ad7b86d1376bf9d4dba02d2ad196e495e7794364fefa70a016685383ca1e"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "0fb8c87e413f2196c2990b3daa11dd83047555a85266fb8476e552b4c36d3d5c"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "18a12efe085abb1c0e7b447b1ba4a92483621a77dcd75e01e29ebedace7e7091"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "6dfc4d5e519cae5bcfa0a79236201080faae37790f33ae3326aa978b08614085"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "49fdc1b67cee9ed212d5b74ec39073b3a35791d619cf6d3fb1bd95285d6b67ce"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "3f12b2c71ae085b4f74557b71aa58f4cb3027a2e7389fa9cd549405f69003f09"
+    },
+    {
+      "path": "CONFIRMATION_RECEIPT.json",
+      "sha256": "e7b2d5945a9ead2f4f40ed5887c99a4b4302773df584a068c14418ff60fd188c"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "a40e6d680c83681fe3439e22572ff7f06b7c0f2f2abecd05121a1e51d8fabc29"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "c7e43b79a335089b31aa2f41247e9b31e3ab5794cdf83064928e0b58a18a4c26"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "33dc6a6660b620847151fd28357e6fc886e371a68b6b6aea916593aed70d2a20"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "148533771dab8e1519020f42b11449af3059b41e7859fa69ef0efe439bfb04be"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300"
+    },
+    {
+      "path": "package/MANIFEST.json",
+      "sha256": "8cee984fd62553831926cbf8b67da16479a56cb53593fdaf9562433f01e89d05"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "3a5492a643650eaa78fdb881fcceb3c49fe7ce64d4871097aea839634583c195"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "6ac594b0f8c16c23a2dddadfbeb9f5a97553a5f7818c44c8ba6840c6e226786a"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-020-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "23 held geographic tiles give 0.03284 degC MAE against local-mean 0.05750, but observations are dependent pixels from one processed map. Claim-specific conclusion: A small calibrated spatial stencil reconstructs fixed withheld water pixels more accurately than unweighted local averaging on this daily map."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The two-scale Taylor stencil and spherical metric correction are standard numerical constructions. Same-map neighbor calibration explains a spatial reconstruction gain without establishing ocean dynamics."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reproducible map interpolation under a strict sparse target lattice; no temporal climate or bleaching prediction."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "One date; complete water neighborhoods within 60 degrees latitude exclude coasts/ice. Upstream satellite processing and spatial dependence remain.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-020-F02",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "23 held geographic tiles give 0.03284 degC MAE against local-mean 0.05750, but observations are dependent pixels from one processed map. Claim-specific conclusion: Accounting for spherical distance and local curvature is useful for this map reconstruction problem."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The two-scale Taylor stencil and spherical metric correction are standard numerical constructions. Same-map neighbor calibration explains a spatial reconstruction gain without establishing ocean dynamics."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reproducible map interpolation under a strict sparse target lattice; no temporal climate or bleaching prediction."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "One date; complete water neighborhoods within 60 degrees latitude exclude coasts/ice. Upstream satellite processing and spatial dependence remain.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-020-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "23 held geographic tiles give 0.03284 degC MAE against local-mean 0.05750, but observations are dependent pixels from one processed map. Claim-specific conclusion: These interpolation results demonstrate a new climate law, future thermal stress forecast or coral bleaching threshold."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "The two-scale Taylor stencil and spherical metric correction are standard numerical constructions. Same-map neighbor calibration explains a spatial reconstruction gain without establishing ocean dynamics."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reproducible map interpolation under a strict sparse target lattice; no temporal climate or bleaching prediction."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "One date; complete water neighborhoods within 60 degrees latitude exclude coasts/ice. Upstream satellite processing and spatial dependence remain.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    }
+  ],
+  "review_scope": "Scientific interpretation, source semantics, information budget and evidence; independent from discovery and the computational reviewer for these cases.",
+  "literature": [
+    {
+      "url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta_clim19912020.php",
+      "use": "Primary-source context and distinction from the scoped task",
+      "access": "Primary source inspected by this reviewer on 2026-10-02."
+    }
+  ],
+  "blocking_defects": [],
+  "recommendations": [
+    "Keep same-map calibration and target-lattice exclusions prominent; acquire independently dated maps for any future forecasting claim."
+  ]
+}

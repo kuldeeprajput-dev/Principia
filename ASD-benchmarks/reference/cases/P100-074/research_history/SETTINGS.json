@@ -1,0 +1,28 @@
+{
+  "title": "Calibrated Src biosensor fluorescence trajectories",
+  "files": [
+    "raw/Fig_S3A.csv",
+    "raw/Fig_S3B.csv",
+    "context/source_record.json"
+  ],
+  "target": "Src kinetic fluorescence in source instrument units",
+  "unit": "source fluorescence units",
+  "inputs": {
+    "concentration_uM": "uM",
+    "time_min": "min",
+    "calibration_F6": "source fluorescence units",
+    "calibration_v6": "source fluorescence units/min",
+    "calibration_curvature": "source fluorescence units/min^2"
+  },
+  "timing": "Predict all t>7.5 min from source dose and same-curve measurements at 3,4.5,6 min. Calibration fixed at6 min; no later response access.",
+  "grouping": "Complete dose curves; seven development and two hash-selected confirmation doses; leave-one-dose-out validation. No biological replicate identifiers.",
+  "limits": [
+    "One source assay, source units are not enzyme concentration or clinical activity.",
+    "Kinetic export lacks raw triplicate labels. Dose validation is not independent biological replication.",
+    "Akt1 response copying time is excluded; source fitted velocity tables are never targets."
+  ],
+  "url": "https://zenodo.org/records/18911385",
+  "pub": "https://pubmed.ncbi.nlm.nih.gov/42619562/",
+  "prior": "PET-quenching relief under phosphorylation and Michaelis-Menten initial velocities are reported by the authors. Our late-curve calibrated forecast is separate; neither first-order saturation nor power laws are novel families.",
+  "audit": "First9 lines and schemas inspected; early values through6.75 min were visible across doses, outside target window. Later outcomes not printed before freeze."
+}

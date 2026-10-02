@@ -1,0 +1,21 @@
+{
+  "target": "Next nonoverlapping16-second recorded 30\u201380Hz strain RMS",
+  "target_units": "10^-21 strain",
+  "metric_kind": "mae",
+  "independent_unit": "Contiguous512-second block in one detector segment; blocks not independent experiments",
+  "timing_contract": "Only earlier16-second strain summaries used. Quality masks applied to entire predictor and target windows; no centered filters or future PSD.",
+  "calibration": "Four preceding16-second windows; training-only global coefficients.",
+  "scope_limits": "Single4096-second H1 segment; this is detector-noise monitoring, not GW detection or source parameter inference. Conditional on supplied quality mask. The entire source has injectionmask23: a continuous-wave hardware injection is present. This study concerns recorded strain-band power including possible injected contribution, NOT uncontaminated detector noise or astrophysical inference. No-cbc/burst/detchar/stochastic injections required; CW status retained.",
+  "split": "Lasttwo512-second blocks confirmation; earlier chronological development folds",
+  "question": "Is local strain-band noise stationary, mean reverting or driven by coupled bands?",
+  "case_id": "P100-003",
+  "error_units": "10^-21 strain",
+  "source_url": "https://gwosc.org/O4/O4a/",
+  "source_license": "CC BY 4.0",
+  "exposure": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+  "uncertainty_policy": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics.",
+  "selection": "Lowest development mean-group MAE, simpler model on relative1% tie. Exact mathematical algorithm baselines do not claim novel accuracy. Retain every attempt and compare named strong controls.",
+  "stopping": "At least5distinct scientific attempts; continue while a justified distinct mechanism yields prediction/robustness/interpretation gain; stop after2consecutive substantive no-gain attempts after minimum5.",
+  "created_utc": "2026-10-02T01:37:42.106110+00:00",
+  "before_first_fit": true
+}

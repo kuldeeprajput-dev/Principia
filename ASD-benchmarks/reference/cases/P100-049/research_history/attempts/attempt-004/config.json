@@ -1,0 +1,31 @@
+{
+  "name": "diffusion_rc_mixture",
+  "formula": "u120+(u120-u60)*(((1-w)*(sqrt(t+pulse_s)-sqrt(t))/sqrt(pulse_s)+w*exp(-t/tau))-((1-w)*(sqrt(t120+pulse_s)-sqrt(t120))/sqrt(pulse_s)+w*exp(-t120/tau)))/(((1-w)*(sqrt(t120+pulse_s)-sqrt(t120))/sqrt(pulse_s)+w*exp(-t120/tau))-((1-w)*(sqrt(t60+pulse_s)-sqrt(t60))/sqrt(pulse_s)+w*exp(-t60/tau)))",
+  "hypothesis": "Attempt4: fractional tail did not improve finite-pulse diffusion; test superposed charge-transfer and diffusion channels. A nonzero fast-channel contribution should improve transfer if the60\u2013120s calibration still contains RC contamination; otherwise the extra mechanism is unsupported.",
+  "inputs": [
+    "t",
+    "t60",
+    "t120",
+    "u60",
+    "u120",
+    "u10",
+    "pulse_s",
+    "current"
+  ],
+  "initial": {
+    "w": 0.2,
+    "tau": 50
+  },
+  "bounds": {
+    "w": [
+      0,
+      0.95
+    ],
+    "tau": [
+      10,
+      1000
+    ]
+  },
+  "recorded_utc": "2026-10-02T01:45:01.384941+00:00",
+  "parent": "attempt-003"
+}

@@ -1,0 +1,167 @@
+{
+  "case_id": "P100-063",
+  "reference_equation_markdown": "Let $f$ be frequency in GHz, $B$ magnetic field in tesla and $T$ termination temperature in kelvin. The film temperature stays near 293 K. Define\n\\[\n\\theta=(T-293)/200,\\quad f_r=f_0+s_B(B-0.1702),\\quad z=(f-f_r)/w,\\quad L=(1+z^2)^{-1}.\n\\]\nThe selected model is\n\\[\n\\widehat S_n=b_0+b_T\\theta-A\\theta[L+\\eta zL].\n\\]\n$S_n,b_0,b_T,A$ are in nV$^2$/Hz; $w,f_0$ are in GHz and $s_B$ in GHz/T. The local resonance-field relation avoids separately claiming magnetization and gyromagnetic ratio from a narrow field interval. The dispersive coefficient does not establish an independent new mechanism.",
+  "reference_parameters": [
+    {
+      "name": "f_0",
+      "unit": "GHz",
+      "value": 6.995348752086381
+    },
+    {
+      "name": "s_B",
+      "unit": "GHz/T",
+      "value": 29.430891270064272
+    },
+    {
+      "name": "w",
+      "unit": "GHz",
+      "value": 0.005816487869886099
+    },
+    {
+      "name": "b_0",
+      "unit": "nV^2/Hz",
+      "value": 0.20871222377793194
+    },
+    {
+      "name": "b_T",
+      "unit": "nV^2/Hz",
+      "value": 0.03135888689121946
+    },
+    {
+      "name": "A",
+      "unit": "nV^2/Hz",
+      "value": 0.029570046743516813
+    },
+    {
+      "name": "eta",
+      "unit": "dimensionless",
+      "value": 0.08629215069055177
+    }
+  ],
+  "all_models": {
+    "reference": {
+      "name": "Thermal Lorentzian plus dispersion",
+      "kind": "mag_asym",
+      "coefficients": [
+        6.995348752086381,
+        29.430891270064272,
+        0.005816487869886099,
+        0.20871222377793194,
+        0.03135888689121946,
+        0.029570046743516813,
+        0.08629215069055177
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_constant": {
+      "name": "Constant response",
+      "kind": "constant",
+      "coefficients": [
+        0.20295736686783536
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_flex63": {
+      "name": "Polynomial field-temperature response",
+      "kind": "flex63",
+      "coefficients": [
+        0.20896107314005224,
+        0.026100853440997825,
+        -0.0011155597520091534,
+        -0.0007676366126255668,
+        -0.1214612335779983,
+        0.0055710613721866465,
+        0.03515342956149808,
+        0.004999647565261546,
+        0.007540262879298106,
+        0.29937920331154566,
+        0.08308296600259822
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_mag_domain": {
+      "name": "Symmetric thermal Lorentzian",
+      "kind": "mag_domain",
+      "coefficients": [
+        6.995863543627071,
+        29.41417734293202,
+        0.005840803467377904,
+        0.20871338608555537,
+        0.03136600256591361,
+        0.02957785070062626
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_001": {
+      "name": "Thermal Lorentzian plus dispersion",
+      "kind": "mag_asym",
+      "coefficients": [
+        6.995348752086381,
+        29.430891270064272,
+        0.005816487869886099,
+        0.20871222377793194,
+        0.03135888689121946,
+        0.029570046743516813,
+        0.08629215069055177
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_002": {
+      "name": "Temperature-dependent linewidth",
+      "kind": "mag_tempwidth",
+      "coefficients": [
+        6.996072203278173,
+        29.249216424658478,
+        0.039999999999983084,
+        0.21187468548941926,
+        0.035053997243327605,
+        0.024597485871772476,
+        1.6559399781762243
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_003": {
+      "name": "Field-dependent coupling",
+      "kind": "mag_field",
+      "coefficients": [
+        6.995868404575375,
+        29.429600232265397,
+        0.0059489117483275825,
+        0.20871050520125653,
+        0.0313902559299113,
+        0.029467010658670093,
+        -0.5091191233676581
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_004": {
+      "name": "Common frequency background",
+      "kind": "mag_bg",
+      "coefficients": [
+        6.995859295671377,
+        29.424100738972793,
+        0.0057948045860917174,
+        0.2090372506773784,
+        0.03134228436387661,
+        0.029528352225186585,
+        -0.0011057414289071545,
+        -0.09696562348326937
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_005": {
+      "name": "Nonlinear thermal amplitude",
+      "kind": "mag_thermalnonlinear",
+      "coefficients": [
+        6.995842293627967,
+        29.449610010965348,
+        0.006006639676880094,
+        0.20886515139524864,
+        0.03147043362921976,
+        0.033459851466747216,
+        -0.005131370573915631
+      ],
+      "execution": "run.py:predict"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "case_id": 71,
+  "created_utc": "2026-09-30T09:22:53.645074+00:00",
+  "study": "Evidence-driven continuation; original cohorts already exposed",
+  "fresh_confirmation": false,
+  "exposure": "All prior development and confirmation targets were exposed before this new protocol. Fits/tuning use ORIGINAL DEVELOPMENT ONLY; no new winner is chosen using original confirmation. No independent confirmation is asserted.",
+  "data_file": "data/development.csv.gz",
+  "data_sha256": "e29630750aa10fc3720165afb39d6e0e39c012c3fd34bf642ef037e36ed68eb0",
+  "data_rows": 286,
+  "source_manifest_sha256": "c98cf3dcaffab20c6bf49c2eab64c0fb3484d8b8d4b5dd405f201bd10c7e5aad",
+  "engine_sha256": "6e605a7fca3e428fb4e77585684caa5daa6a859cdca6b233911e1687595a0324",
+  "inputs": [
+    "perm",
+    "permittivity_decline",
+    "perm_decline_fraction",
+    "perm_peak_past",
+    "deltaeps",
+    "fc",
+    "conductivity",
+    "cole_r2",
+    "od",
+    "transmission",
+    "reflection",
+    "time_h",
+    "fed_batch",
+    "dperm24",
+    "dod24"
+  ],
+  "target": "target",
+  "metric_kind": "rmse",
+  "metric_units": "million cells/mL",
+  "grouping": "same original independent grouping and folds; case92 chronological forward dates; case67 balanced particle within complete configuration",
+  "units_reference": "../../final_results/evaluator/protocol.json and preserved records/SOURCE_AUDIT.md",
+  "hypotheses": [
+    {
+      "id": "cycle-001",
+      "title": "Causal decline-gated dielectric response",
+      "equation": "VCD=max(0,b0+bP*perm*exp(-c*perm_decline_fraction)+bM*missing_perm), bP>=0,c>=0; the decline is from running past peak only",
+      "shapes": [
+        0,
+        0.5,
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "id": "cycle-002",
+      "title": "Conductivity-normalized positive spectral density",
+      "equation": "Q=deltaeps*((fc/median_train_fc)/(conductivity/median_train_conductivity))^p; VCD=max(0,b0+bP*perm+bQ*Q+bMP*missing_perm+bMQ*missing_Q), bP,bQ>=0",
+      "shapes": [
+        0,
+        1,
+        2,
+        4
+      ]
+    }
+  ],
+  "comparators": [
+    "simple/domain comparator",
+    "training-only imputed/scaled robust linear with identical expanded inputs",
+    "fold-refitted fixed HistGradientBoosting using identical expanded inputs",
+    "nested exact RBF when <=500 rows"
+  ],
+  "fitting": "Group-balanced robust constrained least squares (8 deterministic IRLS iterations). Huber scales fixed before fit:37=5W,53=.025Nm,67=.3 log ratio,71=2million/mL,92=3dB. Model shape selected entirely within outer training partitions using inner whole-group or forward validation. Learned imputation/scales/categorical dictionaries only training data. No identifier predictors.",
+  "selection": "Select simplest candidate within 2% of minimum new-candidate development error; report strong-comparator gaps and every group. Selection does not admit a law.",
+  "stopping": "Two material hypotheses required; stop after two cycles without >=2% development gain against the strongest equal-information comparator or stronger identified mechanism. A distinct supported follow-up can use a separately frozen amendment before fitting.",
+  "fresh_source_candidate": null,
+  "bounds": "No microscopic mechanism or industrial intervention benefit inferred solely from regression; calibration and missingness remain declared. Baseline error improvements are retrospective unless independent fresh data admitted.",
+  "prefit_amendment": "All five commands failed at sklearn import before load(), START, or any model fit. Lazy import now permits portable JSON replay without sklearn; flexible baseline explicitly disables internal random-row early stopping. No input values, model results or selections changed.",
+  "technical_amendment": "NumPy2.5 removed row_stack alias. The first IRLS call failed before coefficients were estimated; replace it with equivalent vstack. All scientific hypotheses, grids, inputs, splits, metrics and comparisons unchanged. Initial partial results preserved at results/. Corrected run writes results-v2/."
+}

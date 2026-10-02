@@ -1,0 +1,72 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-090.original.v1.raw-access.v1",
+  "parent_task_id": "P100-090.original.v1",
+  "case_id": "P100-090",
+  "protocol_version": "P100-090.original.v1.raw-access.v1",
+  "cohort_id": "P100-090.original.v1.cohort-1",
+  "parent_task_sha256": "a1de86f22ab27c94f48ccdf9a200e4432f86a2fec4bd8600dd28bc2e0850a17a",
+  "input_sha256": "b9870f9cc2683dea2fd24278ffc61729e75f7833ffae9d5c01310bbd918cda1a",
+  "observations_sha256": "0dcd3b0568e2cd08f10bebaf69b85b03d756383513d1d61ef731ab76ccc5b89a",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "90_transport_crowd_rotation",
+  "source_assets": [
+    {
+      "path": "context/source_record.json",
+      "bytes": 6888,
+      "sha256": "07c4c1a70345a38818f9d18cd94a04077fad6a833bf2f1637ed123d4634d25c3"
+    },
+    {
+      "path": "raw/ExperimentalData.zip",
+      "bytes": 64727907,
+      "sha256": "2e421df218b9a2f8e5fde65cf71f0ef838ae0627cfb702c0cb8f95866ca41f14"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "p_now": "dimensionless current signed angular order",
+      "p_past": "previous2integerseconds mean order",
+      "p_initial": "first2seconds mean order, declared pertrialcalibration",
+      "density": "tracked persons/(pi*r90\u00b2), proxy persons/m\u00b2",
+      "speed": "mean1sbackwardsecant m/s",
+      "radius90": "90th-percentile centroiddistance metres",
+      "polarization_variance": "withinframe variance of individual signedorder"
+    },
+    "observation_window": "Every predictor uses trajectory rows at/before origin t. Integer positions use previous observed sample only, at most1second stale; current tracked count uses prefix-present IDs, never full-trial future membership. No interpolation from future. Velocities derived by backward1s differences; supplied VX/VY/Pol forbidden because smoothing provenance can include future. Target uses t+1..t+2.",
+    "calibration_and_history": "First2seconds of each trial used as explicit calibration; no future held-group target fit. Whole condition/session A/C/D identifiers keep repetitions linked. Calibration baseline given same prefix access.",
+    "calibration_columns": [
+      "p_now",
+      "p_past",
+      "p_initial"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "input_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Normalized crowd-rotation model does not outperform controls; no causal handedness law."
+  ],
+  "current_outcomes_exposed": true
+}

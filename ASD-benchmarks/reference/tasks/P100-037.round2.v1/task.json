@@ -1,0 +1,147 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-037.round2.v1",
+  "case_id": "P100-037",
+  "case_number": 37,
+  "family": "round2",
+  "protocol_version": "P100-037.round2.v1.contract-1",
+  "cohort_id": "P100-037.round2.v1.development-oof",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-037.round2.v1",
+  "legacy_package": "37_networks_router_power/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/37_networks_router_power",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Measured electrical router power",
+  "target_units": "W",
+  "error_units": "W",
+  "primary_units": "W",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "u",
+    "q",
+    "packet_bytes",
+    "router"
+  ],
+  "input_units": {
+    "u": "dimensionless throughput / (200 Gbit/s)",
+    "q": "dimensionless packet rate / (100 million packets/s)",
+    "packet_bytes": "bytes",
+    "router": "categorical A/B"
+  },
+  "numeric_columns": [
+    "u",
+    "q",
+    "packet_bytes"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Current throughput and packet-size metadata only. Derived packet-rate proxies are not independent measurements; no measured temperature supports a thermal mechanism. Expanded information budget: u, q, packet_bytes, router",
+  "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Separate A/B model parameters from the original development runs; no target-run refit.",
+  "independent_unit": "complete native run",
+  "evaluation_groups": [
+    "TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+    "TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+    "TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+    "TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+    "TC3.2_traffic_load_variation_modelA_iteration1.csv",
+    "TC3.2_traffic_load_variation_modelA_iteration2.csv"
+  ],
+  "assigned_rows": 55330,
+  "eligible_rows": 55323,
+  "baseline_models": [
+    "current/baseline-hgb",
+    "previous/results-v2/flexible",
+    "previous/results-v2/unconstrained1",
+    "previous/results-v2/cycle2",
+    "previous/results-v2/cycle1",
+    "previous/results-v2/unconstrained2",
+    "current/cycle-001",
+    "previous/results-v2/simple",
+    "previous/results-v2/linear"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/flexible": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/unconstrained1": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/cycle2": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/cycle1": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/unconstrained2": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/simple": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/linear": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Five reserved runs on two calibrated router models. No new-router or identified component-energy law is established. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+  "source_url": "https://zenodo.org/records/17282065",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "bdb677ac9bed5329ea642041e3effdae3f34854668e35f74ea1dd1decbecbde2",
+  "observations_sha256": "c00b5437979fdd49b16f48a661f6477e12234d929b5a6dc9fe9cae7d4c611e5c",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified"
+}

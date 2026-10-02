@@ -1,0 +1,78 @@
+{
+  "case_id": "P100-050",
+  "title": "USGS debris-flow gate-release laser measurements",
+  "default_task": "P100-050.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "analog laser flow-depth signal 200 ms ahead",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 1,
+    "independent_unit_description": "Complete gate-release run/date; firstfour columns develop, final11April2024 column confirms. Five controlled events are not a field-hazard population.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Causal recent laser history is permitted at every issuance. No peak alignment, future smoothing or held-run fitted offset.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "unsupported": 1,
+    "not_assessed": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "analog laser flow-depth signal 200 ms ahead",
+    "prediction_time": "Predict analog-laser depth200ms ahead, issuing every50ms after400ms of history. All features end at the issuance time; the target remains one native1kHz sample.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "One held gate-release event; local nowcast gain was not established."
+  },
+  "task_ids": [
+    "P100-050.original.v1"
+  ],
+  "finding_ids": [
+    "P100-050-F01",
+    "P100-050-F02",
+    "P100-050-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-050/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-050.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate analog laser flow-depth signal 200 ms ahead under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Predict analog-laser depth200ms ahead, issuing every50ms after400ms of history. All features end at the issuance time; the target remains one native1kHz sample.",
+    "calibration_requirement": "Causal recent laser history is permitted at every issuance. No peak alignment, future smoothing or held-run fitted offset.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "analog laser flow-depth signal 200 ms ahead in m",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "One held gate-release event; local nowcast gain was not established."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "m",
+    "reference_model": "reference",
+    "reference_primary_error": 0.012228414255934827,
+    "reference_physical_mae": 0.012228414255934827,
+    "physical_error_units": "m",
+    "lowest_registered_error_model": "persistence",
+    "lowest_registered_error": 0.011667232313432837,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-050.original.v1/evidence/metrics.csv",
+      "bytes": 1340,
+      "sha256": "659f43458a0e5877e6a51820db2e21b914ad6816ec74432698b60f1c04be6eb2"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "One held gate-release event; local nowcast gain was not established."
+}

@@ -1,0 +1,200 @@
+{
+  "case_id": "P100-084",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_bio_behavior",
+  "reviewed_utc": "2026-10-02T03:31:23.239936+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "f0ac3da499ea5e9a452ceb99fdcb463820801bf7df35e4aea9502842ac607182"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "f18d093e108b953fdaa318a5495134f4b6dacf5c5a68876435027635ea8b834e"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "117ed2f7f0a725d10393ce1a5cb4c71d42969bdd89f548a1cd4a14928372118f"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "31794dfe896da1586e0a03302e6a632e55b94b174a407ba0db3f6da13ee1296a"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "d6b807c6c4c106f26dc46b49a76e9552242fc362d8068e1859135d1d4d375759"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "2916ea06a101a1baf7feec7f42e152b95d50de50de2a5f2d8801d268b8d2af9b"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "92a63ea83f01bf3512c607ffc48e2f3ca445f2213ccd4f0e044c2964fe07d992"
+    },
+    {
+      "path": "CONFIRMATION_RECEIPT.json",
+      "sha256": "5d24bd0d68a26ee7714269f8903f959bfce693a4d0ec83e8fd2926806c64815d"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "46a8e00d25ac00b2a7bc28fd8fe58a6ccf60b99acce2a5af5e35baba0ae37fbb"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "fc4c4923dc0d8b174ae600e03eb38d41cd123ca68b2e1c1e45681af1c85066f9"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "65d44872938aa86796d9a9bf0135f73afcb969e2c47db65ce1d349c52371f604"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "4d853854d01539479e0e1fbeaa66c4f657c57ab90e6e3903647d7021fc798c06"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300"
+    },
+    {
+      "path": "package/MANIFEST.json",
+      "sha256": "2ba1f9262cb26f5510d4b3590d519e24a551140abd552fe7bca4da14531048be"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "a5eae5f1fcf503b8e3b677aed2f0df059a9b75b593d281bae61e486760dc0bf3"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "fe5a7573009831b6bfa0564b74ffae0c45ef03939a01c774dbdaceb36f0239a0"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-084-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Three held curve locations support calibrated retraction MAE 1.360 nN versus spherical 2.212 and polynomial 1.522, with favorable RMSE and worst-curve comparisons. Claim-specific conclusion: A localized-adhesion correction improves calibrated late-retraction force prediction across reserved locations on the three samples."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Localized attraction plausibly captures detachment deficits, but x is normalized piezo travel rather than true indentation. Dimensionless A/ell and nN calibration preserve units, not unique modulus or adhesion energy."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A compact effective response with a nontrivial attraction ablation; useful for evaluating calibrated force-curve reconstruction."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "13 locations on three samples, whole approach plus five retraction points allowed; no independent manufacturing batches, cell outcomes or resolved physical relaxation clock.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-084-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Three held curve locations support calibrated retraction MAE 1.360 nN versus spherical 2.212 and polynomial 1.522, with favorable RMSE and worst-curve comparisons. Claim-specific conclusion: Changing the repulsive exponent alone is insufficient to explain the retraction force shape."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Localized attraction plausibly captures detachment deficits, but x is normalized piezo travel rather than true indentation. Dimensionless A/ell and nN calibration preserve units, not unique modulus or adhesion energy."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A compact effective response with a nontrivial attraction ablation; useful for evaluating calibrated force-curve reconstruction."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "13 locations on three samples, whole approach plus five retraction points allowed; no independent manufacturing batches, cell outcomes or resolved physical relaxation clock.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-084-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "Three held curve locations support calibrated retraction MAE 1.360 nN versus spherical 2.212 and polynomial 1.522, with favorable RMSE and worst-curve comparisons. Claim-specific conclusion: These fits demonstrate improved osteogenic commitment or a uniquely measured Youngmodulus."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Localized attraction plausibly captures detachment deficits, but x is normalized piezo travel rather than true indentation. Dimensionless A/ell and nN calibration preserve units, not unique modulus or adhesion energy."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A compact effective response with a nontrivial attraction ablation; useful for evaluating calibrated force-curve reconstruction."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "13 locations on three samples, whole approach plus five retraction points allowed; no independent manufacturing batches, cell outcomes or resolved physical relaxation clock.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    }
+  ],
+  "review_scope": "Scientific interpretation, source semantics, information budget and evidence; independent from discovery and the computational reviewer for these cases.",
+  "literature": [
+    {
+      "url": "https://zenodo.org/records/20281797",
+      "use": "Primary-source context and distinction from the scoped task",
+      "access": "Primary source inspected by this reviewer on 2026-10-02."
+    }
+  ],
+  "blocking_defects": [],
+  "recommendations": [
+    "Keep actual deflection at the target excluded because it algebraically determines force; preserve the lower retrospective exponent-model error without reselection."
+  ]
+}

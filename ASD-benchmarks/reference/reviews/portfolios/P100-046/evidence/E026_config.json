@@ -1,0 +1,33 @@
+{
+  "case": 46,
+  "kind": "relaxation",
+  "hypothesis": "Double-adiabatic closures omit anisotropy relaxation. Add only the60-second-old parallel/perpendicular ratio as a relaxation driver, with currenttemperature still forbidden.",
+  "parent": "attempt-003",
+  "created_utc": "2026-10-02T02:05:27.778665+00:00",
+  "before_execution": true,
+  "confirmation_accessed": false,
+  "development_evidence_available": [
+    {
+      "attempt": "attempt-001",
+      "primary_error": 1.9365275264551123,
+      "worst_group": 2.427688749972659
+    },
+    {
+      "attempt": "attempt-002",
+      "primary_error": 2.0052269678501133,
+      "worst_group": 2.4325197343482405
+    },
+    {
+      "attempt": "attempt-003",
+      "primary_error": 1.8683275509415442,
+      "worst_group": 2.3378705733788556
+    }
+  ],
+  "primary_metric": "mean_group_absolute_error",
+  "falsifying_tests": [
+    "Matched strong baselines under identical inputs",
+    "Per-group errors and worst-group behavior",
+    "Parameter boundary/identifiability audit or exact-arithmetic preconditions",
+    "Physical/mathematical applicability and negative cases retained"
+  ]
+}

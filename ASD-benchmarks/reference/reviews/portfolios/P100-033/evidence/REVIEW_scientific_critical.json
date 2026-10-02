@@ -1,0 +1,125 @@
+{
+  "case_id": "P100-033",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_electronics",
+  "review_date": "2026-10-02",
+  "checked_files": [
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "0cfa716a569264e2cbeb0f68f0cba38edd8a2f9c1f2e6bb3ebdba9662c046e7d"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "06a0f47ee52766b9d3bd5138dec8e85c45491d7c6e922a3dcb3ace39561826d4"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "cbf2c2a4d5cf75cebefbe3a5afdfb967b219984614a774795842aa88029abc1e"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "af6dc6ecec22e9f7f682359db57306d38ff179ffbd7c65437a9ef8ba69964c16"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "c881486086a11e06570926b8a2d14304e69e014618a921b6e90951301afcb9f6"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "a2c5957b46765ffb6041035fad52d137126b41cea30a8a904e02909006a6682f"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "59ec7f149cab2188baaadba904b3697ef5093dcaa0dbf4e69691ba501a291950"
+    },
+    {
+      "path": "package/EQUATIONS.md",
+      "sha256": "e5536d0516836e98c224dd6c5500408b46a1f8d5754f4d4272adaaab07c63edc"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-033-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Shrinkage9.32917 bpm improves constant9.80023 and noisy spectral estimators but loses to flexible9.03196. Prior dependence is properly disclosed. Claim-specific scope: Quality-dependent Fourier shrinkage has modest held-person benefit over a population median, while most improvement over raw estimates comes from the prior"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Spectral concentration modulates a population prior; it is not a physical pulse law or calibrated confidence. ECG supplies an independent sensor target."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a transparent bounded research/evaluation case. Ten held people from one smartphone protocol; unusual WFDB gain/baseline representations need exact decoding; no clinical tolerance/device transfer."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured."
+        }
+      },
+      "checks": [
+        "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+        "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+        "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+      ],
+      "limitations": [
+        "Ten held people from one smartphone protocol; unusual WFDB gain/baseline representations need exact decoding; no clinical tolerance/device transfer.",
+        "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+      ]
+    },
+    {
+      "finding_id": "P100-033-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Shrinkage9.32917 bpm improves constant9.80023 and noisy spectral estimators but loses to flexible9.03196. Prior dependence is properly disclosed. Claim-specific scope: The tested harmonic and motion fusion extensions do not establish reliable pulse recovery from all low-quality source windows"
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Spectral concentration modulates a population prior; it is not a physical pulse law or calibrated confidence. ECG supplies an independent sensor target."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a transparent bounded research/evaluation case. Ten held people from one smartphone protocol; unusual WFDB gain/baseline representations need exact decoding; no clinical tolerance/device transfer."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured."
+        }
+      },
+      "checks": [
+        "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+        "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+        "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+      ],
+      "limitations": [
+        "Ten held people from one smartphone protocol; unusual WFDB gain/baseline representations need exact decoding; no clinical tolerance/device transfer.",
+        "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+      ]
+    }
+  ],
+  "review_scope": "Independent critical assessment of source semantics, evidence and claims; not independent experiments, clinical advice, human expert adjudication or a fresh confirmation campaign.",
+  "source_review": {
+    "primary_url": "https://physionet.org/content/butppg/2.0.0/",
+    "web_access": "Official source fetched after initial timeout; inspected signal semantics and source documentation."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "P100-094",
+  "target": "Calibrated CDOM fluorescence channel",
+  "target_units": "ppb",
+  "error_units": "ppb",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "pressure",
+    "temperature",
+    "salinity"
+  ],
+  "input_units": {
+    "pressure": "dbar",
+    "temperature": "degC",
+    "salinity": "psu"
+  },
+  "numeric_columns": [
+    "pressure",
+    "temperature",
+    "salinity"
+  ],
+  "source_url": "https://zenodo.org/records/17530624",
+  "source_license": "CC-BY-4.0",
+  "exposure": "Schema inspection printed first CSV row from all six casts. These shallow pump-off rows are excluded by prefit5dbar/pump rule; confirmation groups partially schema-exposed, numerical eligible outcomes not inspected. All public source-aware; confirmation after final freeze will become exposed.",
+  "uncertainty_policy": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "calibration": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "scope_limits": "CDOM ppb is the publisher-calibrated fluorescence channel, not chemically measured DOC concentration. Quality control does not establish a universal conservative-mixing relationship. No target-based outlier removal.",
+  "timing_contract": "Contemporaneous calibrated CDOM fluorescence diagnostic using pressure,T1,S1; no other optical or oxygen response input. Good T/S flags0, pump on,5\u2013500dbar. CDOM has no independent QC column.",
+  "independent_unit": "Entire station casts02,06,08 development (cast04 has no eligible good-QC observations) leave-one-cast-out; casts10 and12 confirmation. Same expedition/instrument, spatial transfer not independent sensor calibration."
+}

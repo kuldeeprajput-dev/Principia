@@ -1,0 +1,76 @@
+{
+  "case_id": "P100-030",
+  "title": "Particle size and surface modification of hBN lubricants",
+  "default_task": "P100-030.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Coefficient of friction",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Two exact endpoint friction measurements at0.2 and500mm/s on the same curve; endpoint rows excluded from scored set.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "unsupported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Coefficient of friction",
+    "prediction_time": "Six formulations were developed with leave-formulation-out validation; N+S functionalization and NG supplier curves were reserved. Duplicate curves cannot cross partitions. Both endpoint calibrations are provided for every curve. Scoring covers only 0.28\u201310 mm/s and tests calibrated shape transfer, not unmeasured-lubricant performance.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Same-formulation two-point calibration; source-fitted response is not independent mechanism evidence."
+  },
+  "task_ids": [
+    "P100-030.original.v1"
+  ],
+  "finding_ids": [
+    "P100-030-F01",
+    "P100-030-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-030/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-030.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Coefficient of friction under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Six formulations were developed with leave-formulation-out validation; N+S functionalization and NG supplier curves were reserved. Duplicate curves cannot cross partitions. Both endpoint calibrations are provided for every curve. Scoring covers only 0.28\u201310 mm/s and tests calibrated shape transfer, not unmeasured-lubricant performance.",
+    "calibration_requirement": "Two exact endpoint friction measurements at0.2 and500mm/s on the same curve; endpoint rows excluded from scored set.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Coefficient of friction in dimensionless",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Same-formulation two-point calibration; source-fitted response is not independent mechanism evidence."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "dimensionless",
+    "reference_model": "reference",
+    "reference_primary_error": 0.017760711137596148,
+    "reference_physical_mae": 0.017760711137596148,
+    "physical_error_units": "dimensionless",
+    "lowest_registered_error_model": "baseline_trib_linearlog",
+    "lowest_registered_error": 0.01314091556428837,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-030.original.v1/evidence/metrics.csv",
+      "bytes": 789,
+      "sha256": "c52a2996f721765906a39eebfada86f79bf960cb003836be2532299f58675183"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

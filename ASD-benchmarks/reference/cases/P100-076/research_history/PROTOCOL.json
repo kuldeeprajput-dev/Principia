@@ -1,0 +1,24 @@
+{
+  "frozen_utc": "2026-10-01T15:21:33.637311+00:00",
+  "target": "evoked_spike_count",
+  "unit": "spikes per stimulus",
+  "inputs": [
+    "current",
+    "soft",
+    "kd",
+    "cal_mean",
+    "cal_last"
+  ],
+  "kind": "mae",
+  "source": "https://zenodo.org/records/12802682",
+  "paper": "https://doi.org/10.1038/s41467-025-64810-3",
+  "scope": "DIV7 cells only; complete dishes linked, final recording date reserved. Culture/animal provenance may share latent batches; do not treat cells or dishes as independent donor replications.",
+  "calibration": "Per-cell spike counts at applied current<=10pA; later currents>10pA forecast. Source manual FI eligibility preserved.",
+  "timing": "Predict higher-current evoked spike counts after the lower-current prefix for that cell. No future rheobase or peak-response calibration.",
+  "selection": "Whole-group OOF primary metric; choose simplest parameter-count model within1% of minimum among baselines and attempts. At least5 substantive adaptive attempts, followed by two consecutive no>1% prediction gains and no unresolved promising mechanistic/robustness hypothesis.",
+  "group_weighting": "Each independent group equal; rows within group equal.",
+  "uncertainty": "Individual-group errors and paired group deltas; small-group evidence not population confidence. No dependent-row bootstrap.",
+  "exposure": "Public source-aware data. Only schemas, metadata and published interpretations inspected before this freeze; case76 one zero-spike first-prefix row seen and its date assigned development. Internal confirmation outcomes not printed or scored before model/stopping freeze.",
+  "baseline_families": "simple, established domain and constrained flexible predictor with identical input budget",
+  "confirmation_rule": "Separate confirm.py; verifies frozen scripts, source/splits, attempt states and selected identity; no fitting."
+}

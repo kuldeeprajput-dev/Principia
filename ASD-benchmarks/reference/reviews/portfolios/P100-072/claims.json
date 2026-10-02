@@ -1,0 +1,255 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-072",
+  "claim_origin": "Curator index of existing retained findings; review judgments remain separate. No new discovery claim added.",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "exposed"
+  },
+  "findings": [
+    {
+      "id": "P100-072-SCI-01",
+      "classification": "predictive_reference",
+      "source_classification": "numerical_control",
+      "statement": "The original conditional competition-percentage forecast is a provisional retrospective reference, not fresh confirmation of selection reversal.",
+      "applicability": "Keep qPCRpercentage and HPLCresidual-sugar tasksdistinct; whole strain groups retain cultures, replicates and futuretimes; 22/72 h prefixes arecalibration.",
+      "limitations": "One of 2 strains slightly worsens; schemaaudit exposed later percentages before construction. Negativeearly-rate coefficient doesnot identify nitrogen or selection reversal.",
+      "falsification": [
+        "Never merge percentage-points and g/L task identities.",
+        "Score only laterassays; test prefix units and rising/noisy-prefix clipping without deleting native targets.",
+        "Keep whole strains and linkedculture/replicate representations together and disclose qPCR audit exposure."
+      ],
+      "prior_art": "Differentialglucose/fructose uptake and consumptionmodels are established. Exactformpriority remains unadjudicated. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "target": "percentage points",
+        "p22_pct": "percentage points; own replicate at22h",
+        "p72_pct": "percentage points; own replicate at72h",
+        "time_h": "h since inoculation"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-072.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-072-SCI-02",
+      "classification": "predictive_reference",
+      "source_classification": "retrospective_extension",
+      "statement": "HPLC glucose+fructose forecasting creates a distinct measured endpoint from the original qPCR competition percentage.",
+      "applicability": "Keep qPCRpercentage and HPLCresidual-sugar tasksdistinct; whole strain groups retain cultures, replicates and futuretimes; 22/72 h prefixes arecalibration.",
+      "limitations": "Separate-pool development MAE 14.656974 g/L vs 17.782176 flexible; fitted Monod-like K=200 g/L hits upper search bound. An upper-bound parameter is not an identified uptake constant; the later two-clock model simplifies it.",
+      "falsification": [
+        "Never merge percentage-points and g/L task identities.",
+        "Score only laterassays; test prefix units and rising/noisy-prefix clipping without deleting native targets.",
+        "Keep whole strains and linkedculture/replicate representations together and disclose qPCR audit exposure."
+      ],
+      "prior_art": "Differentialglucose/fructose uptake and consumptionmodels are established. Exactformpriority remains unadjudicated. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E005",
+          "E006"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "scope": "See bound equations/source audit; no substitute units are invented"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006"
+      ],
+      "task_id": null,
+      "task_family": "continuation",
+      "task_version_history": "2026-09-30 first continuation"
+    },
+    {
+      "id": "P100-072-SCI-03",
+      "classification": "predictive_reference",
+      "source_classification": "retrospective_extension",
+      "statement": "Separate early-assay clocks improve later HPLC residual-sugar prediction over the prior chemistry model and a matched flexible control.",
+      "applicability": "Keep qPCRpercentage and HPLCresidual-sugar tasksdistinct; whole strain groups retain cultures, replicates and futuretimes; 22/72 h prefixes arecalibration.",
+      "limitations": "Fiveof 6 strains improve; Ec 1118 worsens. Smaller 3 parameter error 13.370341 waswithin 1 %simplicity margin. Prefix agreement is imposed and is not validation.",
+      "falsification": [
+        "Never merge percentage-points and g/L task identities.",
+        "Score only laterassays; test prefix units and rising/noisy-prefix clipping without deleting native targets.",
+        "Keep whole strains and linkedculture/replicate representations together and disclose qPCR audit exposure."
+      ],
+      "prior_art": "Differentialglucose/fructose uptake and consumptionmodels are established. Exactformpriority remains unadjudicated. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "qhat(t)=q72 exp[-max(ln(q22/q72),0)*(((t-22h)/50h)^beta_q-1)]; Shat=Ghat+Fhat; beta_G=2.039890,beta_F=1.245706.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E007",
+          "E008",
+          "E009",
+          "E010"
+        ]
+      },
+      "variables_and_units": {
+        "target": "g/L",
+        "S22": "g/L; glucose + fructose at 22 h",
+        "S72": "g/L; glucose + fructose at 72 h",
+        "G22": "g/L glucose",
+        "G72": "g/L glucose",
+        "F22": "g/L fructose",
+        "F72": "g/L fructose",
+        "time_h": "h since inoculation",
+        "coculture": "binary indicator"
+      },
+      "evidence_ids": [
+        "E007",
+        "E008",
+        "E009",
+        "E010"
+      ],
+      "task_id": "P100-072.round2.v1",
+      "task_family": "round2",
+      "task_version_history": "2026-09-30 second continuation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "id": "E001",
+      "role": "original scientific description",
+      "path": "evidence/E001_FINDINGS.md",
+      "bytes": 4468,
+      "sha256": "805b6735adc27a038275211ac913e68474552f69f1c9e148ab3a3392fa8daa54"
+    },
+    {
+      "id": "E002",
+      "role": "original frozen model state",
+      "path": "evidence/E002_rules.json",
+      "bytes": 18330,
+      "sha256": "66873831aef64fda9a41fcaf4f50f23617088ff5d09815af0e1c15637542f508"
+    },
+    {
+      "id": "E003",
+      "role": "original numerical comparison",
+      "path": "evidence/E003_metrics.csv",
+      "bytes": 570,
+      "sha256": "8e1e1bef5cc19451a4322da668466c6ce681f4dc863c832442381c481fee3433"
+    },
+    {
+      "id": "E004",
+      "role": "original grouped errors",
+      "path": "evidence/E004_by_group.csv",
+      "bytes": 945,
+      "sha256": "261db3b4f18b54fdf148aba9f92f5b1361326afa1fd926de6082d7c884f57142"
+    },
+    {
+      "id": "E005",
+      "role": "first continuation scientific account",
+      "path": "evidence/E005_FINDINGS.md",
+      "bytes": 6858,
+      "sha256": "d63f686f3e6c3c1b05973be6a8b9d9b5f5a4d65b5dfd542cfc3aca5dd56b5aa8"
+    },
+    {
+      "id": "E006",
+      "role": "first continuation task contract",
+      "path": "evidence/E006_PROTOCOL.json",
+      "bytes": 3619,
+      "sha256": "9dd611f3bbc6df1fae61d704709f69281b1aa501ebb214be4c1e1df0f652ef62"
+    },
+    {
+      "id": "E007",
+      "role": "latest scientific account",
+      "path": "evidence/E007_FINDINGS.md",
+      "bytes": 2834,
+      "sha256": "7e4e2a046c5b2cf0d02a8ecb9e4ae4b7404e72d5c23381796ebb2de1bc404c0a"
+    },
+    {
+      "id": "E008",
+      "role": "latest task protocol",
+      "path": "evidence/E008_PROTOCOL.json",
+      "bytes": 7238,
+      "sha256": "084b172819c9bd3d47897e0c6069a3f1f7f39a8ec6a3c3dbb85a88fcf7920123"
+    },
+    {
+      "id": "E009",
+      "role": "latest development comparison",
+      "path": "evidence/E009_COMPARISON.csv",
+      "bytes": 2945,
+      "sha256": "5b0500420a7b4fd87bcc24402cf31135d0716d2a49479a9370a975674b4c2a7e"
+    },
+    {
+      "id": "E010",
+      "role": "latest development grouped errors",
+      "path": "evidence/E010_BY_GROUP.csv",
+      "bytes": 3651,
+      "sha256": "5bafae7c5731691b67cbc683b69192a29bcfe5fc1ede68e79edbf1cf45bfcd9b"
+    },
+    {
+      "id": "E011",
+      "role": "retained competing frozen model/fold states",
+      "path": "evidence/E011_states.json",
+      "bytes": 12706,
+      "sha256": "8610a0d0edfce88010805a0bb300468169d0f3cdadc89df0060f1549780b4161"
+    },
+    {
+      "id": "E012",
+      "role": "retained competing frozen model/fold states",
+      "path": "evidence/E012_states.json",
+      "bytes": 12618,
+      "sha256": "27515ce3cabe6765dc6c0fd411629f8abdd1b6cb03f70b6736151684d9b43459"
+    },
+    {
+      "id": "E013",
+      "role": "retained competing frozen model/fold states",
+      "path": "evidence/E013_states.json",
+      "bytes": 12814,
+      "sha256": "4f7bfc8cc11c066cf541091db18cc9ab9871eb178f02afa3510de23ac6d51e2c"
+    },
+    {
+      "id": "E014",
+      "role": "retained competing frozen model/fold states",
+      "path": "evidence/E014_states.json",
+      "bytes": 12287,
+      "sha256": "05f10e8b1cb7cfe02315f4355dba7de841f6471db2690e444b2b7898ac987019"
+    },
+    {
+      "id": "E015",
+      "role": "retained cross-case scientific context and selected-model clarification",
+      "path": "evidence/E015_ASD_REASSESSMENT_15_ROUND2.md",
+      "bytes": 30458,
+      "sha256": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253"
+    },
+    {
+      "id": "E016",
+      "role": "retained cross-case scientific context and selected-model clarification",
+      "path": "evidence/E016_ASD_CONTINUATION_15_ROUND2.md",
+      "bytes": 18283,
+      "sha256": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078"
+    },
+    {
+      "id": "SCIENTIFIC",
+      "role": "Independent scientific review before schema adaptation",
+      "path": "evidence/SCIENTIFIC.json",
+      "bytes": 22196,
+      "sha256": "ce7ae67554c8a1065d5211a16a8a46d22329dbd397da9308061c86f2f96e3af9"
+    },
+    {
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational portfolio review",
+      "path": "evidence/COMPUTATIONAL.json",
+      "bytes": 125684,
+      "sha256": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    }
+  ]
+}

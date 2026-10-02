@@ -1,0 +1,381 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-020",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Only dimensions, flags, coordinates and scale metadata were inspected before this fixed geometry/hash split. All resulting scores become exposed."
+  },
+  "findings": [
+    {
+      "id": "P100-020-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "A small calibrated spatial stencil reconstructs fixed withheld water pixels more accurately than unweighted local averaging on this daily map.",
+      "applicability": "Valid-water complete neighborhoods within60degrees latitude; fixed sparse target lattice.",
+      "limitations": "Same-map neighbors are explicit calibration; this does not predict an unobserved date.",
+      "falsification": "Same-map neighbors are explicit calibration; this does not predict an unobserved date.",
+      "prior_art": "Spatial interpolation and high-order stencils are established numerical methods.",
+      "equation_or_program": {
+        "expression": "T_hat=b0+b1 Hx+b2 Hy+b3 Ox+b4 Oy+b5 D, with fixed axial inner/outer means and diagonal mean.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "degree C",
+        "hx": "degree C",
+        "hy": "degree C",
+        "ox": "degree C",
+        "oy": "degree C",
+        "dg": "degree C",
+        "gx": "degree C",
+        "gy": "degree C",
+        "clat": "dimensionless cosine latitude"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-020.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-020-F02",
+      "classification": "reproduction",
+      "source_classification": "reproduction",
+      "statement": "Accounting for spherical distance and local curvature is useful for this map reconstruction problem.",
+      "applicability": "One processed global map; dependent pixels and geographic tiles.",
+      "limitations": "Directional fronts, coast exclusion and upstream satellite processing limit interpretation.",
+      "falsification": "Directional fronts, coast exclusion and upstream satellite processing limit interpretation.",
+      "prior_art": "Geographic metric corrections and Taylor-error cancellation are known techniques, not new ocean laws.",
+      "equation_or_program": {
+        "expression": "Spherical weighting H=(Hx+cos\u00b2(latitude)Hy)/(1+cos\u00b2(latitude)); a learned two-scale curvature correction is preserved.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "degree C",
+        "hx": "degree C",
+        "hy": "degree C",
+        "ox": "degree C",
+        "oy": "degree C",
+        "dg": "degree C",
+        "gx": "degree C",
+        "gy": "degree C",
+        "clat": "dimensionless cosine latitude"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-020.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-020-F03",
+      "classification": "unsupported",
+      "source_classification": "unsupported",
+      "statement": "These interpolation results demonstrate a new climate law, future thermal stress forecast or coral bleaching threshold.",
+      "applicability": "Metrology and interpolation benchmark only.",
+      "limitations": "Required independent endpoint and temporal evidence are absent.",
+      "falsification": "Required independent endpoint and temporal evidence are absent.",
+      "prior_art": "NOAA distinguishes this standard anomaly product from its coral bleaching heat-stress suite.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "degree C",
+        "hx": "degree C",
+        "hy": "degree C",
+        "ox": "degree C",
+        "oy": "degree C",
+        "dg": "degree C",
+        "gx": "degree C",
+        "gy": "degree C",
+        "clat": "dimensionless cosine latitude"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-020.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_CONFIRMATION_RECEIPT.json",
+      "bytes": 4765,
+      "sha256": "e7b2d5945a9ead2f4f40ed5887c99a4b4302773df584a068c14418ff60fd188c",
+      "id": "E001",
+      "role": "CONFIRMATION_RECEIPT.json"
+    },
+    {
+      "path": "evidence/E002_FREEZE.json",
+      "bytes": 3223,
+      "sha256": "3f12b2c71ae085b4f74557b71aa58f4cb3027a2e7389fa9cd549405f69003f09",
+      "id": "E002",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E003_PRIOR_ART.json",
+      "bytes": 399,
+      "sha256": "49fdc1b67cee9ed212d5b74ec39073b3a35791d619cf6d3fb1bd95285d6b67ce",
+      "id": "E003",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E004_PROTOCOL.json",
+      "bytes": 2140,
+      "sha256": "18a12efe085abb1c0e7b447b1ba4a92483621a77dcd75e01e29ebedace7e7091",
+      "id": "E004",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E005_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 32313,
+      "sha256": "0206efe4aaa9a346d019db6b3f917b1452e04b6c9969fced4bfde70cd1fc1ca3",
+      "id": "E005",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E006_SOURCE_AND_UNITS.md",
+      "bytes": 667,
+      "sha256": "6dfc4d5e519cae5bcfa0a79236201080faae37790f33ae3326aa978b08614085",
+      "id": "E006",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E007_SOURCE_MANIFEST.json",
+      "bytes": 670,
+      "sha256": "6158ad7b86d1376bf9d4dba02d2ad196e495e7794364fefa70a016685383ca1e",
+      "id": "E007",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E008_SPLITS.json",
+      "bytes": 223,
+      "sha256": "0fb8c87e413f2196c2990b3daa11dd83047555a85266fb8476e552b4c36d3d5c",
+      "id": "E008",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E009_native.py",
+      "bytes": 2102,
+      "sha256": "4eff6fd7b2bdda2523ff69bbc99342b2073d31bf85a5f0e286aafbbb9efbda90",
+      "id": "E009",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E010_FINDINGS.md",
+      "bytes": 5618,
+      "sha256": "a40e6d680c83681fe3439e22572ff7f06b7c0f2f2abecd05121a1e51d8fabc29",
+      "id": "E010",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E011_MANIFEST.json",
+      "bytes": 2042,
+      "sha256": "8cee984fd62553831926cbf8b67da16479a56cb53593fdaf9562433f01e89d05",
+      "id": "E011",
+      "role": "package/MANIFEST.json"
+    },
+    {
+      "path": "evidence/E012_inputs.csv.gz",
+      "bytes": 27669,
+      "sha256": "43358a5c58d7334c9f06522698b355575c7c8fd26a20478082b7311187b49e09",
+      "id": "E012",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E013_observations.csv.gz",
+      "bytes": 56532,
+      "sha256": "dc14bda775d03d56a49d7dddeace8674da8d8fe1c1a85edf7262b808d71654a4",
+      "id": "E013",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E014_by_group.csv",
+      "bytes": 22652,
+      "sha256": "6ac594b0f8c16c23a2dddadfbeb9f5a97553a5f7818c44c8ba6840c6e226786a",
+      "id": "E014",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E015_metrics.csv",
+      "bytes": 1779,
+      "sha256": "3a5492a643650eaa78fdb881fcceb3c49fe7ce64d4871097aea839634583c195",
+      "id": "E015",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E016_predictions.csv.gz",
+      "bytes": 86398,
+      "sha256": "df394423ba9f5cf1703c4257c76892fbbdfcbf9c72d130ead7aac8229bca4f67",
+      "id": "E016",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E017_findings.json",
+      "bytes": 2644,
+      "sha256": "c7e43b79a335089b31aa2f41247e9b31e3ab5794cdf83064928e0b58a18a4c26",
+      "id": "E017",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E018_rules.json",
+      "bytes": 29521,
+      "sha256": "148533771dab8e1519020f42b11449af3059b41e7859fa69ef0efe439bfb04be",
+      "id": "E018",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E019_run.py",
+      "bytes": 3216,
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300",
+      "id": "E019",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E020_task_spec.json",
+      "bytes": 1931,
+      "sha256": "33dc6a6660b620847151fd28357e6fc886e371a68b6b6aea916593aed70d2a20",
+      "id": "E020",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 46490,
+      "sha256": "53d4a19deb0d90e8d1032dda7deca10af8c691edd46ad0e375b656d709d0fca5",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 10217,
+      "sha256": "fa1008682fd9cb84ff5ada7faebe421d67de84f82baf5c30f8883219a36e8be3",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

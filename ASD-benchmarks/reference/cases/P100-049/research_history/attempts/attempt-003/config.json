@@ -1,0 +1,26 @@
+{
+  "name": "fractional_tail",
+  "formula": "u120+(u120-u60)*(t**(-alpha)-t120**(-alpha))/(t120**(-alpha)-t60**(-alpha))",
+  "hypothesis": "Attempt3: learnedRC remains worse(0.670mV) than finite-pulse diffusion(0.391mV). Test a scale-free distribution of relaxation times through a fractional algebraic tail, which removes pulse-duration geometry and estimates its exponent.",
+  "inputs": [
+    "t",
+    "t60",
+    "t120",
+    "u60",
+    "u120",
+    "u10",
+    "pulse_s",
+    "current"
+  ],
+  "initial": {
+    "alpha": 0.5
+  },
+  "bounds": {
+    "alpha": [
+      0.05,
+      2
+    ]
+  },
+  "recorded_utc": "2026-10-02T01:44:29.245123+00:00",
+  "parent": "attempt-002"
+}

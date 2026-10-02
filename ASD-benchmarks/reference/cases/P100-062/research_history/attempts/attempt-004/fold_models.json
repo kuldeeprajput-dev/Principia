@@ -1,0 +1,137 @@
+[
+  {
+    "fold": 1,
+    "state": {
+      "name": "surface_saturation",
+      "formula": "offset+gain*drive/(1+k*drive)*(1-exp(-t/tau))",
+      "hypothesis": "Development evidence available before this fit: fick_slab: MAE 5.99224, worst group 9.37037; fick_slab_corrected: MAE 10.3538, worst group 21.6434.\n\nTest nonproportional boundary supply: the high cathodic step may saturate adsorption/entry so that permeation amplitude is sublinear in imposed charging current. This competes with a shared diffusion coefficient explanation.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:45.739622+00:00",
+      "parent": "attempt-003",
+      "parameters": {
+        "gain": 999.9999999999999,
+        "k": 0.20573553712461048,
+        "tau": 175690.73379588913
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-1-block-0"
+      ],
+      "training_rows": 372,
+      "optimizer_success": true,
+      "nfev": 16,
+      "jacobian_condition": 425224949.3789128,
+      "bounds": {
+        "gain": [
+          -1000,
+          1000
+        ],
+        "k": [
+          0,
+          10
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ]
+      }
+    }
+  },
+  {
+    "fold": 2,
+    "state": {
+      "name": "surface_saturation",
+      "formula": "offset+gain*drive/(1+k*drive)*(1-exp(-t/tau))",
+      "hypothesis": "Development evidence available before this fit: fick_slab: MAE 5.99224, worst group 9.37037; fick_slab_corrected: MAE 10.3538, worst group 21.6434.\n\nTest nonproportional boundary supply: the high cathodic step may saturate adsorption/entry so that permeation amplitude is sublinear in imposed charging current. This competes with a shared diffusion coefficient explanation.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:45.739622+00:00",
+      "parent": "attempt-003",
+      "parameters": {
+        "gain": 999.9999999999901,
+        "k": 0.14635644168649967,
+        "tau": 182260.59055427724
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-1-block-0",
+        "trace-1-block-1"
+      ],
+      "training_rows": 742,
+      "optimizer_success": true,
+      "nfev": 24,
+      "jacobian_condition": 282980107.7495152,
+      "bounds": {
+        "gain": [
+          -1000,
+          1000
+        ],
+        "k": [
+          0,
+          10
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ]
+      }
+    }
+  },
+  {
+    "fold": 3,
+    "state": {
+      "name": "surface_saturation",
+      "formula": "offset+gain*drive/(1+k*drive)*(1-exp(-t/tau))",
+      "hypothesis": "Development evidence available before this fit: fick_slab: MAE 5.99224, worst group 9.37037; fick_slab_corrected: MAE 10.3538, worst group 21.6434.\n\nTest nonproportional boundary supply: the high cathodic step may saturate adsorption/entry so that permeation amplitude is sublinear in imposed charging current. This competes with a shared diffusion coefficient explanation.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:45.739622+00:00",
+      "parent": "attempt-003",
+      "parameters": {
+        "gain": 36.324735358871514,
+        "k": 0.30103222825066434,
+        "tau": 3641.017485997757
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2"
+      ],
+      "training_rows": 1113,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 69103.92531524753,
+      "bounds": {
+        "gain": [
+          -1000,
+          1000
+        ],
+        "k": [
+          0,
+          10
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ]
+      }
+    }
+  }
+]

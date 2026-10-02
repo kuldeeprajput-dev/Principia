@@ -1,0 +1,979 @@
+{
+  "audit_version": "1.0",
+  "reviewer": "/root/asd5_bio_behavior",
+  "audited_utc": "2026-10-02T03:43:07.619003+00:00",
+  "scope": "Read-only integrated contract and reader audit; no model execution, refit, reselection, source edit or new confirmation.",
+  "status": "pass",
+  "blocking_scientific_or_numerical_issues": [],
+  "required_documentation_sync": [],
+  "case_audits": [
+    {
+      "case_id": "P100-007",
+      "status": "explored_evaluator_equipped",
+      "predictive_ready": true,
+      "classifications": [
+        {
+          "finding_id": "P100-007-F01",
+          "classification": "reproduction",
+          "advisory_disposition": "supported"
+        },
+        {
+          "finding_id": "P100-007-F02",
+          "classification": "falsified",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "protocol_version": "P100-007-asd7-native-v1",
+      "task_spec_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "task_json_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "timing_contract": "Causal10ms block means sampled100Hz from source1000Hz sequence. At block end t, predict the10ms block ending t+100ms. Every feature uses blocks ending at or before t.",
+      "calibration": "No target calibration from held run; preceding five seconds of its force waveform supply causal period and history. Known treadmill speed is permitted.",
+      "calibration_columns": [
+        "force",
+        "lag20",
+        "lag50",
+        "lag100",
+        "opposite",
+        "opposite50",
+        "cycle",
+        "cycle_previous",
+        "period"
+      ],
+      "payload_parity": {
+        "evidence/predictions.csv.gz": true,
+        "evidence/metrics.csv": true,
+        "data/observations.csv.gz": true,
+        "data/inputs.csv.gz": true,
+        "rules.json": true
+      }
+    },
+    {
+      "case_id": "P100-008",
+      "status": "explored_scientific_abstention",
+      "predictive_ready": false,
+      "classifications": [
+        {
+          "finding_id": "P100-008-F01",
+          "classification": "abstention",
+          "advisory_disposition": "supported"
+        },
+        {
+          "finding_id": "P100-008-F02",
+          "classification": "abstention",
+          "advisory_disposition": "supported"
+        },
+        {
+          "finding_id": "P100-008-F03",
+          "classification": "abstention",
+          "advisory_disposition": "supported"
+        },
+        {
+          "finding_id": "P100-008-F04",
+          "classification": "abstention",
+          "advisory_disposition": "supported"
+        },
+        {
+          "finding_id": "P100-008-F05",
+          "classification": "abstention",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "assessment": [
+        {
+          "assessment_id": "P100-008.adequacy.v1",
+          "case_id": "P100-008",
+          "case_number": 8,
+          "protocol_version": "P100-008-asd7-adequacy-v1",
+          "evaluator_version": "asd7-adequacy/1.0",
+          "package": "assessments/P100-008.adequacy.v1",
+          "manifest_sha256": "2e5af014df0004a0a523f97f53167b4815c06db1002a4e09c5e3e73cb25971e0",
+          "predictive_comparability": false,
+          "prediction_metrics": null,
+          "source_scope": "original_corpus",
+          "current_exposure": "exposed"
+        }
+      ],
+      "checks": "No fabricated numerical target, task or predictive metric; executable adequacy assessment is separate."
+    },
+    {
+      "case_id": "P100-009",
+      "status": "explored_evaluator_equipped",
+      "predictive_ready": true,
+      "classifications": [
+        {
+          "finding_id": "P100-009-F01",
+          "classification": "reproduction",
+          "advisory_disposition": "supported"
+        },
+        {
+          "finding_id": "P100-009-F02",
+          "classification": "falsified",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "protocol_version": "P100-009-asd7-native-v1",
+      "task_spec_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "task_json_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "timing_contract": "Predict1s-ahead author-released pupil radius from prior pupil and treadmill samples. Source prior filtering may be noncausal; causal-prefix guarantee applies to released traces only, not original camera pixels.",
+      "calibration": "No held-target calibration; observed past5s from each session supplies history. Pixel units are retained without invented millimeter scaling.",
+      "calibration_columns": [
+        "radius",
+        "lag05",
+        "lag1",
+        "mean5",
+        "speed",
+        "speed1"
+      ],
+      "payload_parity": {
+        "evidence/predictions.csv.gz": true,
+        "evidence/metrics.csv": true,
+        "data/observations.csv.gz": true,
+        "data/inputs.csv.gz": true,
+        "rules.json": true
+      }
+    },
+    {
+      "case_id": "P100-033",
+      "status": "explored_evaluator_equipped",
+      "predictive_ready": true,
+      "classifications": [
+        {
+          "finding_id": "P100-033-F01",
+          "classification": "validated_extension",
+          "advisory_disposition": "partially_supported"
+        },
+        {
+          "finding_id": "P100-033-F02",
+          "classification": "falsified",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "protocol_version": "P100-033-asd7-native-v1",
+      "task_spec_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "task_json_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "timing_contract": "After the complete ten-second PPG segment; simultaneous ECG supplies the target but is never an input. Known recording motion/contact conditions are allowed. No human quality annotation is a predictor.",
+      "calibration": "No per-person ECG or target calibration. Spectral transforms are fixed within each PPG window; any fusion/shrinkage parameters or flexible scaling are trained on development people only.",
+      "calibration_columns": [],
+      "payload_parity": {
+        "evidence/predictions.csv.gz": true,
+        "evidence/metrics.csv": true,
+        "data/observations.csv.gz": true,
+        "data/inputs.csv.gz": true,
+        "rules.json": true
+      }
+    },
+    {
+      "case_id": "P100-035",
+      "status": "explored_evaluator_equipped",
+      "predictive_ready": true,
+      "classifications": [
+        {
+          "finding_id": "P100-035-F01",
+          "classification": "validated_extension",
+          "advisory_disposition": "partially_supported"
+        },
+        {
+          "finding_id": "P100-035-F02",
+          "classification": "falsified",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "protocol_version": "P100-035-asd7-native-v1",
+      "task_spec_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "task_json_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "timing_contract": "After the complete author-extracted call. Predictors only waveform summaries and known species. File context words, animal ID, call label and source reference are never predictors.",
+      "calibration": "No held-animal labeled calibration. Fixed waveform summaries; any coefficients, centers or species normalization fitted only on training animals.",
+      "calibration_columns": [],
+      "payload_parity": {
+        "evidence/predictions.csv.gz": true,
+        "evidence/metrics.csv": true,
+        "data/observations.csv.gz": true,
+        "data/inputs.csv.gz": true,
+        "rules.json": true
+      }
+    },
+    {
+      "case_id": "P100-036",
+      "status": "explored_evaluator_equipped",
+      "predictive_ready": true,
+      "classifications": [
+        {
+          "finding_id": "P100-036-F01",
+          "classification": "validated_extension",
+          "advisory_disposition": "partially_supported"
+        },
+        {
+          "finding_id": "P100-036-F02",
+          "classification": "falsified",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "protocol_version": "P100-036-asd7-native-v1",
+      "task_spec_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "task_json_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "timing_contract": "Contemporaneous imaging diagnostic: source NPQ_Lss, Rfd_Lss, NGRDI, morphology and known cultivar/treatment predict separately reported maximum quantum yield. No QY_max-derived feature or future plant measurement is supplied.",
+      "calibration": "No per-plant target calibration. Learned feature normalization or flexible centers are fitted on development training plants only.",
+      "calibration_columns": [],
+      "payload_parity": {
+        "evidence/predictions.csv.gz": true,
+        "evidence/metrics.csv": true,
+        "data/observations.csv.gz": true,
+        "data/inputs.csv.gz": true,
+        "rules.json": true
+      }
+    },
+    {
+      "case_id": "P100-075",
+      "status": "explored_evaluator_equipped",
+      "predictive_ready": true,
+      "classifications": [
+        {
+          "finding_id": "P100-075-F01",
+          "classification": "falsified",
+          "advisory_disposition": "unsupported"
+        },
+        {
+          "finding_id": "P100-075-F02",
+          "classification": "falsified",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "protocol_version": "P100-075-asd7-native-v1",
+      "task_spec_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "task_json_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "timing_contract": "Before target-condition expression assay: known stiffness/shear design and same-donor LSS30kPa calibration expression. Contemporaneous designed-culture response diagnostic; no real-time sensor or uncalibrated donor claim.",
+      "calibration": "One LSS/30kPa VCAM1 measurement per donor. Calibration rows excluded from target cohort; every comparator receives identical value.",
+      "calibration_columns": [
+        "calibration"
+      ],
+      "payload_parity": {
+        "evidence/predictions.csv.gz": true,
+        "evidence/metrics.csv": true,
+        "data/observations.csv.gz": true,
+        "data/inputs.csv.gz": true,
+        "rules.json": true
+      }
+    },
+    {
+      "case_id": "P100-077",
+      "status": "explored_evaluator_equipped",
+      "predictive_ready": true,
+      "classifications": [
+        {
+          "finding_id": "P100-077-F01",
+          "classification": "validated_extension",
+          "advisory_disposition": "partially_supported"
+        },
+        {
+          "finding_id": "P100-077-F02",
+          "classification": "falsified",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "protocol_version": "P100-077-asd7-native-v1",
+      "task_spec_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "task_json_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "timing_contract": "Contemporaneous assay diagnostic: green and red marginal positive fractions measured from the same FCS well; joint fraction withheld as target. Marginals do not algebraically determine the joint without an independence/dependence assumption.",
+      "calibration": "One source BOB negative control defines each channel threshold at its 99.5th percentile, identically for all wells and models. Event gating uses finite scatter/fluorescence and positive FSC-A/SSC-A only; source FlowJo manual gates were not supplied and are not reproduced.",
+      "calibration_columns": [
+        "green",
+        "red",
+        "threshold_green",
+        "threshold_red"
+      ],
+      "payload_parity": {
+        "evidence/predictions.csv.gz": true,
+        "evidence/metrics.csv": true,
+        "data/observations.csv.gz": true,
+        "data/inputs.csv.gz": true,
+        "rules.json": true
+      }
+    },
+    {
+      "case_id": "P100-080",
+      "status": "explored_evaluator_equipped",
+      "predictive_ready": true,
+      "classifications": [
+        {
+          "finding_id": "P100-080-F01",
+          "classification": "reproduction",
+          "advisory_disposition": "supported"
+        },
+        {
+          "finding_id": "P100-080-F02",
+          "classification": "falsified",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "protocol_version": "P100-080-asd7-native-v1",
+      "task_spec_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "task_json_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "timing_contract": "After120s observed history, every5s predict a future5s EDA mean ending30s later. All EDA,temperature and accelerometer summaries are causal and aligned by native starts/sample rates.",
+      "calibration": "No held-person outcome calibration. Past120s EDA is permitted state, identical for every model; response coefficients and flexible transforms fit training people only.",
+      "calibration_columns": [
+        "level",
+        "lag10",
+        "lag30",
+        "mean120",
+        "activity",
+        "temperature",
+        "temperature30"
+      ],
+      "payload_parity": {
+        "evidence/predictions.csv.gz": true,
+        "evidence/metrics.csv": true,
+        "data/observations.csv.gz": true,
+        "data/inputs.csv.gz": true,
+        "rules.json": true
+      }
+    },
+    {
+      "case_id": "P100-088",
+      "status": "explored_evaluator_equipped",
+      "predictive_ready": true,
+      "classifications": [
+        {
+          "finding_id": "P100-088-F01",
+          "classification": "validated_extension",
+          "advisory_disposition": "partially_supported"
+        },
+        {
+          "finding_id": "P100-088-F02",
+          "classification": "falsified",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "protocol_version": "P100-088-asd7-native-v1.1",
+      "task_spec_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "task_json_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "timing_contract": "Prediction precedes each current choice. Current lottery information is available; feedback availability is given only if block instructions announce it or an earlier trial revealed it. Previous choice and observed feedback from the same block are allowed; current choice, current outcomes, future trials and response time are prohibited. Complete-feedback type is zero unless currently announced with feedback present or revealed by a strictly previous trial; when inferred from history its previous TYPE_FEEDBACK is used.",
+      "calibration": "No participant-specific fitted calibration. Online historical choices/visible outcomes are allowed identically for all models, beginning with neutral prior 0.5; history resets at every block.",
+      "calibration_columns": [
+        "lag_choice",
+        "history_mean",
+        "visible_pe",
+        "visible_regret",
+        "has_history"
+      ],
+      "payload_parity": {
+        "evidence/predictions.csv.gz": true,
+        "evidence/metrics.csv": true,
+        "data/observations.csv.gz": true,
+        "data/inputs.csv.gz": true,
+        "rules.json": true
+      }
+    },
+    {
+      "case_id": "P100-093",
+      "status": "explored_evaluator_equipped",
+      "predictive_ready": true,
+      "classifications": [
+        {
+          "finding_id": "P100-093-F01",
+          "classification": "reproduction",
+          "advisory_disposition": "partially_supported"
+        },
+        {
+          "finding_id": "P100-093-F02",
+          "classification": "falsified",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "protocol_version": "P100-093-asd7-native-v1",
+      "task_spec_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "task_json_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "timing_contract": "After paired uninduced control well is measured, before observing induced well target. Quantiles0.1–0.9 and cell-line identity are known; no induced fluorescence enters predictors.",
+      "calibration": "Same-block, same-cell-line uninduced distribution is permitted calibration for every model. Source identity compensation retained; no fitted manual gates or target-based threshold.",
+      "calibration_columns": [
+        "control",
+        "control_median",
+        "control_width"
+      ],
+      "payload_parity": {
+        "evidence/predictions.csv.gz": true,
+        "evidence/metrics.csv": true,
+        "data/observations.csv.gz": true,
+        "data/inputs.csv.gz": true,
+        "rules.json": true
+      }
+    },
+    {
+      "case_id": "P100-099",
+      "status": "explored_evaluator_equipped",
+      "predictive_ready": true,
+      "classifications": [
+        {
+          "finding_id": "P100-099-F01",
+          "classification": "validated_extension",
+          "advisory_disposition": "partially_supported"
+        },
+        {
+          "finding_id": "P100-099-F02",
+          "classification": "falsified",
+          "advisory_disposition": "supported"
+        }
+      ],
+      "reader_pdf_exists": true,
+      "reader_source_exists": true,
+      "correspondence_issues": [],
+      "protocol_version": "P100-099-asd7-native-v1",
+      "task_spec_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "task_json_matches_registry_fields": {
+        "target": true,
+        "target_units": true,
+        "permitted_inputs": true,
+        "timing_contract": true,
+        "calibration": true,
+        "independent_unit": true,
+        "source_url": true,
+        "scope_limits": true,
+        "input_units": true
+      },
+      "timing_contract": "Every30 native frames after300-frame history, forecast next30-frame population mean ending60 frames later. Only trace frames<=t are inputs. Native frame index is used without inferring seconds or behavior alignment.",
+      "calibration": "Past observed trace history is allowed. No held future calibration or source fitted maps/pvpreS/pvpostS enter features. All model parameters and flexible transforms are fitted on development animals.",
+      "calibration_columns": [
+        "level",
+        "lag30",
+        "lag60",
+        "mean300",
+        "dispersion",
+        "zero_fraction"
+      ],
+      "payload_parity": {
+        "evidence/predictions.csv.gz": true,
+        "evidence/metrics.csv": true,
+        "data/observations.csv.gz": true,
+        "data/inputs.csv.gz": true,
+        "rules.json": true
+      }
+    }
+  ],
+  "numerical_artifact_parity_count": 55,
+  "case80_citation_check": {
+    "markdown_and_pdf_links": [
+      "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+      "https://doi.org/10.1038/s41597-025-04845-9",
+      "https://doi.org/10.13026/he0v-tf17"
+    ],
+    "privacy_date_shift_and_two_protocols_disclosed_in_reader": true
+  },
+  "case88_correction": {
+    "protocol": "P100-088-asd7-native-v1.1",
+    "canonical_native_matches_corrected_source": true,
+    "unknown_feedback_rows": 13716,
+    "all_unknown_feedback_type_masked": true,
+    "frozen_state_predictions_and_metrics_byte_identical": true,
+    "receipt_max_prediction_change": 1.1102230246251565e-16,
+    "refit": false,
+    "reselection": false
+  },
+  "aggregate_counts": {
+    "cases": 100,
+    "predictive_cases": 99,
+    "adequacy_only_cases": 1,
+    "numerical_task_versions": 135,
+    "core_tasks": 130,
+    "supplemental_tasks": 5,
+    "model_task_comparisons": 1381,
+    "findings": 252,
+    "unique_finding_ids": 252,
+    "new_campaign_attempt_folders": 268,
+    "invalid_technical_attempts": [
+      "cases/P100-062/attempts/attempt-002/DISPOSITION.json"
+    ],
+    "new_campaign_substantive_investigations": 267,
+    "task_preparation_statuses": {
+      "native_reconstruction_verified": 44,
+      "verified_native_reconstruction": 91
+    },
+    "all_tasks_mark_future_confirmation_not_fresh": true
+  },
+  "old55_scope": {
+    "cases": 55,
+    "tasks": 91,
+    "all_old_task_dictionaries_equal": true,
+    "all_old_case_task_associations_equal": true,
+    "inventoried_case_task_review_files": 8497,
+    "unchanged_files": 8497,
+    "changed_or_missing": []
+  },
+  "collection_claim_assessment": {
+    "readme_and_dataset_counts_match": true,
+    "no_claim_of_100_positive_or_new_physical_laws": true,
+    "current_outcomes_exposed_and_future_scores_retrospective": true,
+    "case8_nonpredictive_route_and_case5_degeneracy_disclosed": true,
+    "remaining_integration_action": "Root is updating ACCEPTANCE.md and release projection; the current acceptance text was a55-case milestone when first inspected. Do not treat it as final100-case acceptance until replaced."
+  },
+  "checked_file_hashes": {
+    "registry.json": "b0f133c181498820adbf99d86037f48b12f4565cfe0e0df9738e838cf8efcabb",
+    "REGISTRY_BEFORE.json": "aabbead529ea291bd0ec5bcc080b6535035a184779e4b5e8147501363ce0e162",
+    "cases/P100-007/final_results/FINDINGS.md": "3a456244a4beeaa2e17e489b128fb51217a633b479799fc788cc56cfecaae78c",
+    "cases/P100-007/final_results/FINDINGS.pdf": "bbd13e00f6e7fdb7c535dc86e8fe28ae5a55ca08dd2ad53ac473f7f423d3ed44",
+    "cases/P100-007/final_results/findings.json": "8c6cd2d69ed69f02a6d9dbd8777741f1a97288a8749ee357c53a89c5cf660f77",
+    "cases/P100-007/final_results/task_spec.json": "8ad71a06e02161990c6fc9fb768e52538422c536660c2c047d4e5bb1256c98a5",
+    "tasks/P100-007.original.v1/task.json": "a89610498f4a0cad927c338b8fb0e7751a3f6a68a229ffd92e4313e666049094",
+    "cases/P100-007/package/evidence/predictions.csv.gz": "bab78493373e0adef4a5ada564cddba717707f21dfc8f607319328d9c8c73b92",
+    "tasks/P100-007.original.v1/evidence/predictions.csv.gz": "bab78493373e0adef4a5ada564cddba717707f21dfc8f607319328d9c8c73b92",
+    "cases/P100-007/final_results/evidence/predictions.csv.gz": "bab78493373e0adef4a5ada564cddba717707f21dfc8f607319328d9c8c73b92",
+    "cases/P100-007/package/evidence/metrics.csv": "df87a3b55902c1f3a4b906f9674c3c71ac400f86a6e633738c4bf1e332b5b112",
+    "tasks/P100-007.original.v1/evidence/metrics.csv": "df87a3b55902c1f3a4b906f9674c3c71ac400f86a6e633738c4bf1e332b5b112",
+    "cases/P100-007/final_results/evidence/metrics.csv": "df87a3b55902c1f3a4b906f9674c3c71ac400f86a6e633738c4bf1e332b5b112",
+    "cases/P100-007/package/data/observations.csv.gz": "4127ced29e3b9b64da6dd5df387a827ad61798020a4dba5c895747fc98016450",
+    "tasks/P100-007.original.v1/data/observations.csv.gz": "4127ced29e3b9b64da6dd5df387a827ad61798020a4dba5c895747fc98016450",
+    "cases/P100-007/final_results/data/observations.csv.gz": "4127ced29e3b9b64da6dd5df387a827ad61798020a4dba5c895747fc98016450",
+    "cases/P100-007/package/data/inputs.csv.gz": "c1c58e61cb7de174c5d7afd3190c9b9e33601ade54561b1e2e12bcdf6aed89a6",
+    "tasks/P100-007.original.v1/data/inputs.csv.gz": "c1c58e61cb7de174c5d7afd3190c9b9e33601ade54561b1e2e12bcdf6aed89a6",
+    "cases/P100-007/final_results/data/inputs.csv.gz": "c1c58e61cb7de174c5d7afd3190c9b9e33601ade54561b1e2e12bcdf6aed89a6",
+    "cases/P100-007/package/rules.json": "7e7382001ec8b3c21f5872165fb9e116d37248d3f3cb812eec4d00f64d9ab908",
+    "tasks/P100-007.original.v1/rules.json": "7e7382001ec8b3c21f5872165fb9e116d37248d3f3cb812eec4d00f64d9ab908",
+    "cases/P100-007/final_results/rules.json": "7e7382001ec8b3c21f5872165fb9e116d37248d3f3cb812eec4d00f64d9ab908",
+    "cases/P100-008/final_results/FINDINGS.md": "dbaacc7485a1546b52b1333b09e57ac78dc4bb84ab58c88bb7d69d716fe4208d",
+    "cases/P100-008/final_results/FINDINGS.pdf": "39e14d831937133e8c40755cb2cdadcdfeb5e6e587a9b1b5487b733c17d7cc89",
+    "cases/P100-008/final_results/findings.json": "ffa0bd06a437cec62bbbf0bbef27a2e624bdb3f8ccddd68ea6e0d4b1e35776f0",
+    "cases/P100-008/final_results/task_spec.json": "2e8d7cbeda530ad40432c7b69e79e43f43f7b26552b753bda208d4df5b1e96cd",
+    "cases/P100-009/final_results/FINDINGS.md": "75ffc645aa3a4e1e8df455b7c0069bcd554b2861709293b2df5fe31a15e45c26",
+    "cases/P100-009/final_results/FINDINGS.pdf": "3383b6dcb6a278ae8bba8d2580c092e317e0bde273ba0b2cb7d07a759a60018a",
+    "cases/P100-009/final_results/findings.json": "e7ef5edc151cefa790236a30f92ae2ef0f6474a3377c3ccf6693e56431f5a60e",
+    "cases/P100-009/final_results/task_spec.json": "221b01a5126dc6b97c86e4583807c2845603238e95459c668e70b5738bb55793",
+    "tasks/P100-009.original.v1/task.json": "680b31c855cfbe7684eb0c7a96f120630f9c14cbc83757a612d8e0fe158db907",
+    "cases/P100-009/package/evidence/predictions.csv.gz": "40709153071a128eab0abc361b0ccf7096224140a22a89492185b8302555fa42",
+    "tasks/P100-009.original.v1/evidence/predictions.csv.gz": "40709153071a128eab0abc361b0ccf7096224140a22a89492185b8302555fa42",
+    "cases/P100-009/final_results/evidence/predictions.csv.gz": "40709153071a128eab0abc361b0ccf7096224140a22a89492185b8302555fa42",
+    "cases/P100-009/package/evidence/metrics.csv": "dc107c84af7c0f65811b6b09bbdf2bc9298f8eb63067fb41be131d2d854b8cbf",
+    "tasks/P100-009.original.v1/evidence/metrics.csv": "dc107c84af7c0f65811b6b09bbdf2bc9298f8eb63067fb41be131d2d854b8cbf",
+    "cases/P100-009/final_results/evidence/metrics.csv": "dc107c84af7c0f65811b6b09bbdf2bc9298f8eb63067fb41be131d2d854b8cbf",
+    "cases/P100-009/package/data/observations.csv.gz": "a271bcd5b2cc7645257f328b7393e1e8cf5a594e4d169abdb134b40d31dcf165",
+    "tasks/P100-009.original.v1/data/observations.csv.gz": "a271bcd5b2cc7645257f328b7393e1e8cf5a594e4d169abdb134b40d31dcf165",
+    "cases/P100-009/final_results/data/observations.csv.gz": "a271bcd5b2cc7645257f328b7393e1e8cf5a594e4d169abdb134b40d31dcf165",
+    "cases/P100-009/package/data/inputs.csv.gz": "f77a51007e24680aebd743c37d8417f46485373e6400071ae489215a7849a2f4",
+    "tasks/P100-009.original.v1/data/inputs.csv.gz": "f77a51007e24680aebd743c37d8417f46485373e6400071ae489215a7849a2f4",
+    "cases/P100-009/final_results/data/inputs.csv.gz": "f77a51007e24680aebd743c37d8417f46485373e6400071ae489215a7849a2f4",
+    "cases/P100-009/package/rules.json": "64f551d36e4049734499b5bd3a4a744b8d9a612a65a7de07dbe0cf23707d45b7",
+    "tasks/P100-009.original.v1/rules.json": "64f551d36e4049734499b5bd3a4a744b8d9a612a65a7de07dbe0cf23707d45b7",
+    "cases/P100-009/final_results/rules.json": "64f551d36e4049734499b5bd3a4a744b8d9a612a65a7de07dbe0cf23707d45b7",
+    "cases/P100-033/final_results/FINDINGS.md": "2af94a2ed3515df5f451b5eada9a04548a02e1e9a43fc06beacf001b8b1e0d9e",
+    "cases/P100-033/final_results/FINDINGS.pdf": "1838573e797ab057803cabe55061c087fdb537829ed203184bc9e399723ff3e6",
+    "cases/P100-033/final_results/findings.json": "eb364fdf196b9b45c3eb720d5266dbcc794f7481baa6e1898fdaba00d72d0a15",
+    "cases/P100-033/final_results/task_spec.json": "c881486086a11e06570926b8a2d14304e69e014618a921b6e90951301afcb9f6",
+    "tasks/P100-033.original.v1/task.json": "922cf29f8825ed1c8eef794273686624f73b7d0dfe47baa5fe03221069c14be7",
+    "cases/P100-033/package/evidence/predictions.csv.gz": "44e90f95553e609259a0020f7e716b06b557ec23dfeef64a072debd213f03fe7",
+    "tasks/P100-033.original.v1/evidence/predictions.csv.gz": "44e90f95553e609259a0020f7e716b06b557ec23dfeef64a072debd213f03fe7",
+    "cases/P100-033/final_results/evidence/predictions.csv.gz": "44e90f95553e609259a0020f7e716b06b557ec23dfeef64a072debd213f03fe7",
+    "cases/P100-033/package/evidence/metrics.csv": "59ec7f149cab2188baaadba904b3697ef5093dcaa0dbf4e69691ba501a291950",
+    "tasks/P100-033.original.v1/evidence/metrics.csv": "59ec7f149cab2188baaadba904b3697ef5093dcaa0dbf4e69691ba501a291950",
+    "cases/P100-033/final_results/evidence/metrics.csv": "59ec7f149cab2188baaadba904b3697ef5093dcaa0dbf4e69691ba501a291950",
+    "cases/P100-033/package/data/observations.csv.gz": "141fe2c9695126339500408f3ed425e5f4ffe73c0810b0bc16bc60ad870b65a4",
+    "tasks/P100-033.original.v1/data/observations.csv.gz": "141fe2c9695126339500408f3ed425e5f4ffe73c0810b0bc16bc60ad870b65a4",
+    "cases/P100-033/final_results/data/observations.csv.gz": "141fe2c9695126339500408f3ed425e5f4ffe73c0810b0bc16bc60ad870b65a4",
+    "cases/P100-033/package/data/inputs.csv.gz": "b876f85b982fed13e93ac94b28424b3aa64bd6dc5e722a0e34120fc9b0054d63",
+    "tasks/P100-033.original.v1/data/inputs.csv.gz": "b876f85b982fed13e93ac94b28424b3aa64bd6dc5e722a0e34120fc9b0054d63",
+    "cases/P100-033/final_results/data/inputs.csv.gz": "b876f85b982fed13e93ac94b28424b3aa64bd6dc5e722a0e34120fc9b0054d63",
+    "cases/P100-033/package/rules.json": "a2c5957b46765ffb6041035fad52d137126b41cea30a8a904e02909006a6682f",
+    "tasks/P100-033.original.v1/rules.json": "a2c5957b46765ffb6041035fad52d137126b41cea30a8a904e02909006a6682f",
+    "cases/P100-033/final_results/rules.json": "a2c5957b46765ffb6041035fad52d137126b41cea30a8a904e02909006a6682f",
+    "cases/P100-035/final_results/FINDINGS.md": "405562efca915f2e8d5159af72fb09d1df1514965e44c52a984d06dcad7fbd2c",
+    "cases/P100-035/final_results/FINDINGS.pdf": "1af430f0118659bd7d7e678adade9104054ae315f429490cbe2667cd0a51010b",
+    "cases/P100-035/final_results/findings.json": "25cd6418c4e304d4dcc9c50f4d6bd2d155c2195551e071b60cbb96e59ed31898",
+    "cases/P100-035/final_results/task_spec.json": "789fa5662ac85fc133322295edaac84e666ac2d7bfb2a985723d5bc4957beb6e",
+    "tasks/P100-035.original.v1/task.json": "1d83da31009877763ba6e3ac752c0227ee310b82cbf7f82a7f182ad2a2cab562",
+    "cases/P100-035/package/evidence/predictions.csv.gz": "8be980b06db2f4440bf9fb0cea6fa96d12d0fc243db73776736e500bf83cd3f9",
+    "tasks/P100-035.original.v1/evidence/predictions.csv.gz": "8be980b06db2f4440bf9fb0cea6fa96d12d0fc243db73776736e500bf83cd3f9",
+    "cases/P100-035/final_results/evidence/predictions.csv.gz": "8be980b06db2f4440bf9fb0cea6fa96d12d0fc243db73776736e500bf83cd3f9",
+    "cases/P100-035/package/evidence/metrics.csv": "fc1ec73b985d3832e9df568380983d1cedad9ffc73b10fc2c68f9a753ed39cca",
+    "tasks/P100-035.original.v1/evidence/metrics.csv": "fc1ec73b985d3832e9df568380983d1cedad9ffc73b10fc2c68f9a753ed39cca",
+    "cases/P100-035/final_results/evidence/metrics.csv": "fc1ec73b985d3832e9df568380983d1cedad9ffc73b10fc2c68f9a753ed39cca",
+    "cases/P100-035/package/data/observations.csv.gz": "03b085abf7b93805cafb277197dfe2406855b678d59daa0cf0d8e920381ed326",
+    "tasks/P100-035.original.v1/data/observations.csv.gz": "03b085abf7b93805cafb277197dfe2406855b678d59daa0cf0d8e920381ed326",
+    "cases/P100-035/final_results/data/observations.csv.gz": "03b085abf7b93805cafb277197dfe2406855b678d59daa0cf0d8e920381ed326",
+    "cases/P100-035/package/data/inputs.csv.gz": "a62f19ed195b091500e40f2ee9682ed5c8c13ab1a48a77beca871b8c64390054",
+    "tasks/P100-035.original.v1/data/inputs.csv.gz": "a62f19ed195b091500e40f2ee9682ed5c8c13ab1a48a77beca871b8c64390054",
+    "cases/P100-035/final_results/data/inputs.csv.gz": "a62f19ed195b091500e40f2ee9682ed5c8c13ab1a48a77beca871b8c64390054",
+    "cases/P100-035/package/rules.json": "9e4bebe34a5bd91269a7c8780dd921e6fcfb42231446820cf68932f5e902f34f",
+    "tasks/P100-035.original.v1/rules.json": "9e4bebe34a5bd91269a7c8780dd921e6fcfb42231446820cf68932f5e902f34f",
+    "cases/P100-035/final_results/rules.json": "9e4bebe34a5bd91269a7c8780dd921e6fcfb42231446820cf68932f5e902f34f",
+    "cases/P100-036/final_results/FINDINGS.md": "7ced7bb0330fcf8ca466f3472bf4fdbc856e385233e3aec7be5837b63ed8b199",
+    "cases/P100-036/final_results/FINDINGS.pdf": "190d61e9ba2c945ccecd749f1552deb2bc601a1fdc7b1120d441f4f57c7182fa",
+    "cases/P100-036/final_results/findings.json": "102bee3c084b5e69674361d5b463a8ef312637cdfd3268886c9a7a4119e52dfd",
+    "cases/P100-036/final_results/task_spec.json": "f37d1dd821e401a04baa87d59bff68fe71783a954bd53e5ebd1e6ce2e946039f",
+    "tasks/P100-036.original.v1/task.json": "abbfd616827c47501f375d850dc43d8adc9dffe975e8760bd177e9f266fb7e71",
+    "cases/P100-036/package/evidence/predictions.csv.gz": "7ea2dfcfc8af97e08f667ecf8cefb42cfc82600d4fd7fe5a9d87da79143cf774",
+    "tasks/P100-036.original.v1/evidence/predictions.csv.gz": "7ea2dfcfc8af97e08f667ecf8cefb42cfc82600d4fd7fe5a9d87da79143cf774",
+    "cases/P100-036/final_results/evidence/predictions.csv.gz": "7ea2dfcfc8af97e08f667ecf8cefb42cfc82600d4fd7fe5a9d87da79143cf774",
+    "cases/P100-036/package/evidence/metrics.csv": "a90bbcf715321dda3605c9ebbd9d146b602bcde3c74b99c7fac5126306e268c0",
+    "tasks/P100-036.original.v1/evidence/metrics.csv": "a90bbcf715321dda3605c9ebbd9d146b602bcde3c74b99c7fac5126306e268c0",
+    "cases/P100-036/final_results/evidence/metrics.csv": "a90bbcf715321dda3605c9ebbd9d146b602bcde3c74b99c7fac5126306e268c0",
+    "cases/P100-036/package/data/observations.csv.gz": "d2850218305cfe0a70b9b54c89fa196e418deee54225be20f7ec563341bac48e",
+    "tasks/P100-036.original.v1/data/observations.csv.gz": "d2850218305cfe0a70b9b54c89fa196e418deee54225be20f7ec563341bac48e",
+    "cases/P100-036/final_results/data/observations.csv.gz": "d2850218305cfe0a70b9b54c89fa196e418deee54225be20f7ec563341bac48e",
+    "cases/P100-036/package/data/inputs.csv.gz": "1a0b461dc43ceb9b4373081e1e0d7a5d831ab2194173befa3a4ec1234ed060ba",
+    "tasks/P100-036.original.v1/data/inputs.csv.gz": "1a0b461dc43ceb9b4373081e1e0d7a5d831ab2194173befa3a4ec1234ed060ba",
+    "cases/P100-036/final_results/data/inputs.csv.gz": "1a0b461dc43ceb9b4373081e1e0d7a5d831ab2194173befa3a4ec1234ed060ba",
+    "cases/P100-036/package/rules.json": "07bdbaf981685cc61dd708f45f826d839419cfcf4fff0d39f80444ecd7a75a3c",
+    "tasks/P100-036.original.v1/rules.json": "07bdbaf981685cc61dd708f45f826d839419cfcf4fff0d39f80444ecd7a75a3c",
+    "cases/P100-036/final_results/rules.json": "07bdbaf981685cc61dd708f45f826d839419cfcf4fff0d39f80444ecd7a75a3c",
+    "cases/P100-075/final_results/FINDINGS.md": "e88fc6da7dfb52b3d2bd9f3a1275968fbb2be147642f570e290317c4b11740d8",
+    "cases/P100-075/final_results/FINDINGS.pdf": "aaf1d43c6f200aa845293497df32a03ca1e3bde26c5ccdd65832c72c62a77789",
+    "cases/P100-075/final_results/findings.json": "040713fc372274375d03d39ab3569754e3314ff84ea30d30c2d747be4ac9649a",
+    "cases/P100-075/final_results/task_spec.json": "c03693e7272b516a517295d4f93961bc2e89db1de2b7ca976d7a234097aa3b13",
+    "tasks/P100-075.original.v1/task.json": "3929774e3061478fc4d2d6b424a6c79a187a1563c8ff244c319f45948ba129aa",
+    "cases/P100-075/package/evidence/predictions.csv.gz": "ae785bc15aff0244cf517b28109b4653977411df2ff6ed1f9638517acf42deb1",
+    "tasks/P100-075.original.v1/evidence/predictions.csv.gz": "ae785bc15aff0244cf517b28109b4653977411df2ff6ed1f9638517acf42deb1",
+    "cases/P100-075/final_results/evidence/predictions.csv.gz": "ae785bc15aff0244cf517b28109b4653977411df2ff6ed1f9638517acf42deb1",
+    "cases/P100-075/package/evidence/metrics.csv": "a2bf3e77809f2dd3c23c4772ba2ab022c332d43f5e4338bc079196406a8305d1",
+    "tasks/P100-075.original.v1/evidence/metrics.csv": "a2bf3e77809f2dd3c23c4772ba2ab022c332d43f5e4338bc079196406a8305d1",
+    "cases/P100-075/final_results/evidence/metrics.csv": "a2bf3e77809f2dd3c23c4772ba2ab022c332d43f5e4338bc079196406a8305d1",
+    "cases/P100-075/package/data/observations.csv.gz": "24b93683a92c8761362b9e670f20590de161f8f610ad6b2cb8285077a3a9ebab",
+    "tasks/P100-075.original.v1/data/observations.csv.gz": "24b93683a92c8761362b9e670f20590de161f8f610ad6b2cb8285077a3a9ebab",
+    "cases/P100-075/final_results/data/observations.csv.gz": "24b93683a92c8761362b9e670f20590de161f8f610ad6b2cb8285077a3a9ebab",
+    "cases/P100-075/package/data/inputs.csv.gz": "6b86c2d03fed5656d1a50aa02c350dbd9490c0a00053127030c7363a52e0be16",
+    "tasks/P100-075.original.v1/data/inputs.csv.gz": "6b86c2d03fed5656d1a50aa02c350dbd9490c0a00053127030c7363a52e0be16",
+    "cases/P100-075/final_results/data/inputs.csv.gz": "6b86c2d03fed5656d1a50aa02c350dbd9490c0a00053127030c7363a52e0be16",
+    "cases/P100-075/package/rules.json": "50e302409e92a2e974cfe08a51d657619404bcc6e37f689954dc1cfb1bd29732",
+    "tasks/P100-075.original.v1/rules.json": "50e302409e92a2e974cfe08a51d657619404bcc6e37f689954dc1cfb1bd29732",
+    "cases/P100-075/final_results/rules.json": "50e302409e92a2e974cfe08a51d657619404bcc6e37f689954dc1cfb1bd29732",
+    "cases/P100-077/final_results/FINDINGS.md": "5f25a9d54604e3f71a45f6cf10ba52d9299cf9f03372d32fae712dc13218adcc",
+    "cases/P100-077/final_results/FINDINGS.pdf": "40b09d7b58a58e78101c3a88689c370b2514f1d7263a19b98bd6bb1d214b5fff",
+    "cases/P100-077/final_results/findings.json": "74382ac101b4a9dff6133d466e5725a259a088e3435b6cf84936cc73fb4201b5",
+    "cases/P100-077/final_results/task_spec.json": "54f0b85a1cd38317ee44647ceb8de56c3b37b445fc41d917661cfa7ba1820748",
+    "tasks/P100-077.original.v1/task.json": "8e4cd2ec9f0e2e891ea8cdfb47d42ec8ce43e84fb113df96059c3a07608caa66",
+    "cases/P100-077/package/evidence/predictions.csv.gz": "0ad28b3de3fa5da6e2862a87058bbaa8fc5d789dd15315fed322aa8932272385",
+    "tasks/P100-077.original.v1/evidence/predictions.csv.gz": "0ad28b3de3fa5da6e2862a87058bbaa8fc5d789dd15315fed322aa8932272385",
+    "cases/P100-077/final_results/evidence/predictions.csv.gz": "0ad28b3de3fa5da6e2862a87058bbaa8fc5d789dd15315fed322aa8932272385",
+    "cases/P100-077/package/evidence/metrics.csv": "6d61e92b297f2e74d7a300dc4cd30d904ce0a6c35484f18f8ff17e47ffb5ba2f",
+    "tasks/P100-077.original.v1/evidence/metrics.csv": "6d61e92b297f2e74d7a300dc4cd30d904ce0a6c35484f18f8ff17e47ffb5ba2f",
+    "cases/P100-077/final_results/evidence/metrics.csv": "6d61e92b297f2e74d7a300dc4cd30d904ce0a6c35484f18f8ff17e47ffb5ba2f",
+    "cases/P100-077/package/data/observations.csv.gz": "12a9b964cf98d541179ef892da3fbd97709b1dcfcc12fa08e057a1d41580f63d",
+    "tasks/P100-077.original.v1/data/observations.csv.gz": "12a9b964cf98d541179ef892da3fbd97709b1dcfcc12fa08e057a1d41580f63d",
+    "cases/P100-077/final_results/data/observations.csv.gz": "12a9b964cf98d541179ef892da3fbd97709b1dcfcc12fa08e057a1d41580f63d",
+    "cases/P100-077/package/data/inputs.csv.gz": "3790526184b0364a27d89cd4cc766cda6c4478da4978087ab1857e0b58f589ee",
+    "tasks/P100-077.original.v1/data/inputs.csv.gz": "3790526184b0364a27d89cd4cc766cda6c4478da4978087ab1857e0b58f589ee",
+    "cases/P100-077/final_results/data/inputs.csv.gz": "3790526184b0364a27d89cd4cc766cda6c4478da4978087ab1857e0b58f589ee",
+    "cases/P100-077/package/rules.json": "7c3648fad7ac3293a9260ce4081683671dfed470c3d5dba53b89a9f8faee4834",
+    "tasks/P100-077.original.v1/rules.json": "7c3648fad7ac3293a9260ce4081683671dfed470c3d5dba53b89a9f8faee4834",
+    "cases/P100-077/final_results/rules.json": "7c3648fad7ac3293a9260ce4081683671dfed470c3d5dba53b89a9f8faee4834",
+    "cases/P100-080/final_results/FINDINGS.md": "ddf4d8212ba4dc2b93d33f0df7c659112537c03542cf75a1d705fdc757ae41b6",
+    "cases/P100-080/final_results/FINDINGS.pdf": "b3da94ead31720af98b19f3a5791130caf2d019d63399bd4902fde5c312e9dba",
+    "cases/P100-080/final_results/findings.json": "6ca93ff1a5729b3bb5aea25450a432269002b70d455815b582e429821024189d",
+    "cases/P100-080/final_results/task_spec.json": "7cf5ff4bd465808a6f9a5e79d10c063f39bfc80bd271c4dec66ecd696b2e3510",
+    "tasks/P100-080.original.v1/task.json": "a1a06c8648a96848d2fb50d0d0353c688eb678226db718071da1983d03bf3ffa",
+    "cases/P100-080/package/evidence/predictions.csv.gz": "5d49df90b0a14ea1580d74ff353077e938eebf75806fda8b294d677ab26edc33",
+    "tasks/P100-080.original.v1/evidence/predictions.csv.gz": "5d49df90b0a14ea1580d74ff353077e938eebf75806fda8b294d677ab26edc33",
+    "cases/P100-080/final_results/evidence/predictions.csv.gz": "5d49df90b0a14ea1580d74ff353077e938eebf75806fda8b294d677ab26edc33",
+    "cases/P100-080/package/evidence/metrics.csv": "bc59228c4778dacad01be23ba2130a1e0c2dad13cf7525b0ca60d3a3a53de597",
+    "tasks/P100-080.original.v1/evidence/metrics.csv": "bc59228c4778dacad01be23ba2130a1e0c2dad13cf7525b0ca60d3a3a53de597",
+    "cases/P100-080/final_results/evidence/metrics.csv": "bc59228c4778dacad01be23ba2130a1e0c2dad13cf7525b0ca60d3a3a53de597",
+    "cases/P100-080/package/data/observations.csv.gz": "ac029085b6c01fe793df299ee424cee21e50397cd1f4b94926b6ca70b6238352",
+    "tasks/P100-080.original.v1/data/observations.csv.gz": "ac029085b6c01fe793df299ee424cee21e50397cd1f4b94926b6ca70b6238352",
+    "cases/P100-080/final_results/data/observations.csv.gz": "ac029085b6c01fe793df299ee424cee21e50397cd1f4b94926b6ca70b6238352",
+    "cases/P100-080/package/data/inputs.csv.gz": "446124db4e7dd1e2705ba8b5887d08a28212190f6bba59952a8a50d6779fc183",
+    "tasks/P100-080.original.v1/data/inputs.csv.gz": "446124db4e7dd1e2705ba8b5887d08a28212190f6bba59952a8a50d6779fc183",
+    "cases/P100-080/final_results/data/inputs.csv.gz": "446124db4e7dd1e2705ba8b5887d08a28212190f6bba59952a8a50d6779fc183",
+    "cases/P100-080/package/rules.json": "09c62f24009a044a46856eed51e74987b1556dacbb40076679896c0440675525",
+    "tasks/P100-080.original.v1/rules.json": "09c62f24009a044a46856eed51e74987b1556dacbb40076679896c0440675525",
+    "cases/P100-080/final_results/rules.json": "09c62f24009a044a46856eed51e74987b1556dacbb40076679896c0440675525",
+    "cases/P100-088/final_results/FINDINGS.md": "85ef5341ae0cee6a44de33891bcb8e15bb68726f58d083ec19f7843dac5790b1",
+    "cases/P100-088/final_results/FINDINGS.pdf": "e8ebd2a05a5d742266a73d4c7e5c13524d9584e70367bde2b5d93872d627a45b",
+    "cases/P100-088/final_results/findings.json": "2b2557b1c9bda3be302ba4c6620586f07e60a3cb42644d721797ec2e589e9715",
+    "cases/P100-088/final_results/task_spec.json": "bddb30aaa9bf1f503ff2ff413b62f1d54cb2af5965e071e807a348dd61d61215",
+    "tasks/P100-088.original.v1/task.json": "05053cdf3a904a6a719d269b2ea49d8ba9de4bec64ba83ac084ff3a763d279b0",
+    "cases/P100-088/package/evidence/predictions.csv.gz": "d27ab596cfb667bd006d8808279d885b67d89fe4666b1f3b3eb783e191485678",
+    "tasks/P100-088.original.v1/evidence/predictions.csv.gz": "d27ab596cfb667bd006d8808279d885b67d89fe4666b1f3b3eb783e191485678",
+    "cases/P100-088/final_results/evidence/predictions.csv.gz": "d27ab596cfb667bd006d8808279d885b67d89fe4666b1f3b3eb783e191485678",
+    "cases/P100-088/package/evidence/metrics.csv": "6a206b5fe6735d5a859c0273210297e64270ab8e91142f1bdb4601e1b68a9999",
+    "tasks/P100-088.original.v1/evidence/metrics.csv": "6a206b5fe6735d5a859c0273210297e64270ab8e91142f1bdb4601e1b68a9999",
+    "cases/P100-088/final_results/evidence/metrics.csv": "6a206b5fe6735d5a859c0273210297e64270ab8e91142f1bdb4601e1b68a9999",
+    "cases/P100-088/package/data/observations.csv.gz": "849b3eeb82bfb36cba792bfe360ed1d8436f29f44bf9d9dfc2f5c9649fa54679",
+    "tasks/P100-088.original.v1/data/observations.csv.gz": "849b3eeb82bfb36cba792bfe360ed1d8436f29f44bf9d9dfc2f5c9649fa54679",
+    "cases/P100-088/final_results/data/observations.csv.gz": "849b3eeb82bfb36cba792bfe360ed1d8436f29f44bf9d9dfc2f5c9649fa54679",
+    "cases/P100-088/package/data/inputs.csv.gz": "f93eb449abbe53f2994fcd791098c1044d419200debe4a6bdd67486cb4649db2",
+    "tasks/P100-088.original.v1/data/inputs.csv.gz": "f93eb449abbe53f2994fcd791098c1044d419200debe4a6bdd67486cb4649db2",
+    "cases/P100-088/final_results/data/inputs.csv.gz": "f93eb449abbe53f2994fcd791098c1044d419200debe4a6bdd67486cb4649db2",
+    "cases/P100-088/package/rules.json": "90a7579ec27ab92a289217b12d74b97507a586e7c4c27abb3c96efbfc8540541",
+    "tasks/P100-088.original.v1/rules.json": "90a7579ec27ab92a289217b12d74b97507a586e7c4c27abb3c96efbfc8540541",
+    "cases/P100-088/final_results/rules.json": "90a7579ec27ab92a289217b12d74b97507a586e7c4c27abb3c96efbfc8540541",
+    "cases/P100-093/final_results/FINDINGS.md": "bcf531a63d974ccfc2467710b2d6f66bfeb9f9e30e5ac160c12afc921f925ce7",
+    "cases/P100-093/final_results/FINDINGS.pdf": "81d90f08ca27e0ea7f94eef47b7db0c254ee195f0c51cd107b36ae88442fc217",
+    "cases/P100-093/final_results/findings.json": "54301127517d4afd84a252561044ddaac175455e1f7e977a3f91e88ec308c657",
+    "cases/P100-093/final_results/task_spec.json": "a7f717f8a3586bdf8f5bca0cdf8cdd619674bee8dd87c6626eb5282fbaf5812e",
+    "tasks/P100-093.original.v1/task.json": "9be0091c76efc6d6e8791181d79884923f00e0afbf48bf69d6515dc48f8ff2a4",
+    "cases/P100-093/package/evidence/predictions.csv.gz": "b0554d20c294ab8b1b6f534a1df3814cd4fb94935a49c0a44fd2b1eca03d323e",
+    "tasks/P100-093.original.v1/evidence/predictions.csv.gz": "b0554d20c294ab8b1b6f534a1df3814cd4fb94935a49c0a44fd2b1eca03d323e",
+    "cases/P100-093/final_results/evidence/predictions.csv.gz": "b0554d20c294ab8b1b6f534a1df3814cd4fb94935a49c0a44fd2b1eca03d323e",
+    "cases/P100-093/package/evidence/metrics.csv": "f16bc755d0d9e0c38735c22307ffe09af88f291f44dc955bd050b99192db55f9",
+    "tasks/P100-093.original.v1/evidence/metrics.csv": "f16bc755d0d9e0c38735c22307ffe09af88f291f44dc955bd050b99192db55f9",
+    "cases/P100-093/final_results/evidence/metrics.csv": "f16bc755d0d9e0c38735c22307ffe09af88f291f44dc955bd050b99192db55f9",
+    "cases/P100-093/package/data/observations.csv.gz": "a296b59127aff3d2106143aad4bfa5bc48707a122c2d3b46c76526272deb35ba",
+    "tasks/P100-093.original.v1/data/observations.csv.gz": "a296b59127aff3d2106143aad4bfa5bc48707a122c2d3b46c76526272deb35ba",
+    "cases/P100-093/final_results/data/observations.csv.gz": "a296b59127aff3d2106143aad4bfa5bc48707a122c2d3b46c76526272deb35ba",
+    "cases/P100-093/package/data/inputs.csv.gz": "087bb85c6eefd1bded40873b95c68b596087cc82022ba35f0ea210ae20ad7f29",
+    "tasks/P100-093.original.v1/data/inputs.csv.gz": "087bb85c6eefd1bded40873b95c68b596087cc82022ba35f0ea210ae20ad7f29",
+    "cases/P100-093/final_results/data/inputs.csv.gz": "087bb85c6eefd1bded40873b95c68b596087cc82022ba35f0ea210ae20ad7f29",
+    "cases/P100-093/package/rules.json": "c55e2d5fe2b5c34b2030a177cdcb4ab6f4b08a297994b20842df967123e59139",
+    "tasks/P100-093.original.v1/rules.json": "c55e2d5fe2b5c34b2030a177cdcb4ab6f4b08a297994b20842df967123e59139",
+    "cases/P100-093/final_results/rules.json": "c55e2d5fe2b5c34b2030a177cdcb4ab6f4b08a297994b20842df967123e59139",
+    "cases/P100-099/final_results/FINDINGS.md": "1a2e38f67f6152c5adccacb5dc0eb4f18c45a32724b177eb9dceb95f9de21adf",
+    "cases/P100-099/final_results/FINDINGS.pdf": "767a16b25b6ce632a5572a174cdb9e76ff6c47143b12353ab04b6895036a4f44",
+    "cases/P100-099/final_results/findings.json": "c7cd0edf701c19b1b4e5f4734dab3ae5bb97f5ce5d591a9ad0cdb6cad9d38e50",
+    "cases/P100-099/final_results/task_spec.json": "d29080395e3763ebbe8834078e15873f4851abefde34e7355a50f1ecf3adb2fd",
+    "tasks/P100-099.original.v1/task.json": "07e83e266790fbfe0ab4a070f6575afcec94d2684846a60c99442731f78281eb",
+    "cases/P100-099/package/evidence/predictions.csv.gz": "054e05d87f4c50106336ec5ca23e696aee4f531506b8c00b9661a606f6d5a6e3",
+    "tasks/P100-099.original.v1/evidence/predictions.csv.gz": "054e05d87f4c50106336ec5ca23e696aee4f531506b8c00b9661a606f6d5a6e3",
+    "cases/P100-099/final_results/evidence/predictions.csv.gz": "054e05d87f4c50106336ec5ca23e696aee4f531506b8c00b9661a606f6d5a6e3",
+    "cases/P100-099/package/evidence/metrics.csv": "975f2765e481dc379512570e4768ff18bbb91b841d167ef52c65130af234bc02",
+    "tasks/P100-099.original.v1/evidence/metrics.csv": "975f2765e481dc379512570e4768ff18bbb91b841d167ef52c65130af234bc02",
+    "cases/P100-099/final_results/evidence/metrics.csv": "975f2765e481dc379512570e4768ff18bbb91b841d167ef52c65130af234bc02",
+    "cases/P100-099/package/data/observations.csv.gz": "0e01a2304fbb28979befcdf28e5253195e0486ef1afcc981974004f81f227914",
+    "tasks/P100-099.original.v1/data/observations.csv.gz": "0e01a2304fbb28979befcdf28e5253195e0486ef1afcc981974004f81f227914",
+    "cases/P100-099/final_results/data/observations.csv.gz": "0e01a2304fbb28979befcdf28e5253195e0486ef1afcc981974004f81f227914",
+    "cases/P100-099/package/data/inputs.csv.gz": "bcfca77187f3344f053ec496afa769e08f428d80723e208d7f96d986f1bf7358",
+    "tasks/P100-099.original.v1/data/inputs.csv.gz": "bcfca77187f3344f053ec496afa769e08f428d80723e208d7f96d986f1bf7358",
+    "cases/P100-099/final_results/data/inputs.csv.gz": "bcfca77187f3344f053ec496afa769e08f428d80723e208d7f96d986f1bf7358",
+    "cases/P100-099/package/rules.json": "f2a9036644384da0e7089ce82e916882c7e1dd6fd5826ff4e8662416d970b250",
+    "tasks/P100-099.original.v1/rules.json": "f2a9036644384da0e7089ce82e916882c7e1dd6fd5826ff4e8662416d970b250",
+    "cases/P100-099/final_results/rules.json": "f2a9036644384da0e7089ce82e916882c7e1dd6fd5826ff4e8662416d970b250",
+    "evaluation/preparation/new_cases/P100-088/native.py": "eeee0aabc32a989e6b7c0df81e63ad7d2b43fe1c31000afebfb45a327c36b2cf"
+  }
+}

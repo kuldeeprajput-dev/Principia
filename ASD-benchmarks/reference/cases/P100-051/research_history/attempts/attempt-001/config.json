@@ -1,0 +1,26 @@
+{
+  "case": 51,
+  "kind": "power",
+  "label": "attempt-001",
+  "parent": "baselines",
+  "created_utc": "2026-10-01T14:05:51.242234+00:00",
+  "hypothesis": "The training-normalized shape control lowers MAE by nearly an order of magnitude versus linear/log interpolation, indicating transferable curve curvature. Test one global power exponent shared by both gate halves as a compact transport-shape description; three anchors are explicit calibration.",
+  "preceding_development_evidence": [
+    {
+      "label": "linear",
+      "primary_error": 0.1661012722479649,
+      "worst_group_error": 0.21079129461755053
+    },
+    {
+      "label": "loglinear",
+      "primary_error": 0.16824411328977715,
+      "worst_group_error": 0.2203366758313779
+    },
+    {
+      "label": "shape",
+      "primary_error": 0.01806741580789332,
+      "worst_group_error": 0.038632094633561154
+    }
+  ],
+  "falsifier": "Reject superiority if grouped development MAE does not improve or worst-group behavior deteriorates without justified interpretation; no confirmation access."
+}

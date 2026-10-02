@@ -1,0 +1,42 @@
+{
+  "kind": "saturating_synergy",
+  "coef": [
+    -3.7380263998239034,
+    -1.1454083391499525,
+    6.672738040758973
+  ],
+  "K": 3000.0,
+  "equation": "y_hat=max(0,c+b1*q+b2*s+b3*q*s), q=E/(K+E)-30/(K+30)",
+  "training_groups": [
+    "A",
+    "B",
+    "D"
+  ],
+  "training_rows": 15,
+  "rank": 3,
+  "parameter_count": 4,
+  "profile_training_mse": [
+    {
+      "K": 30.0,
+      "weighted_sse": 2.7674708634888665
+    },
+    {
+      "K": 100.0,
+      "weighted_sse": 2.7211967577677436
+    },
+    {
+      "K": 300.0,
+      "weighted_sse": 2.6627371389522465
+    },
+    {
+      "K": 1000.0,
+      "weighted_sse": 2.612191538539216
+    },
+    {
+      "K": 3000.0,
+      "weighted_sse": 2.5898983406093006
+    }
+  ],
+  "ridge": 1e-08,
+  "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+}

@@ -1,0 +1,3 @@
+# ZIP indicator encoding correction before confirmation
+
+The official dictionary lists BR_PRESENT and BR_NET_CLOSED as0/1, but both matched native CSVs demonstrate actual1=Yes,2=No. Initial development001–007 therefore admitted only Yes/Yes respondents and produced constant access columns. All fits/protocols/outputs preserved under preparation_history/codebook_encoding_development. No confirmation targets/scores opened. Corrected native encoding uses1=>1,2=>0, preserves the same hash-reserved Census region, freezes a corrected eligible cohort before rerunning development. Earlier access-mechanism claims are invalid; this source inconsistency is scientific negative evidence.

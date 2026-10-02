@@ -1,0 +1,245 @@
+{
+  "schema": "principia.clean-reference-results/v2",
+  "case_id": "P100-067",
+  "title": "Microplastic settling",
+  "scientific_status": "Reference evidence and known-baseline reproduction; zero admitted new laws.",
+  "ground_truth_new_law_eligible": false,
+  "original_selection": "orientation (original A03)",
+  "selection_unchanged": true,
+  "metric_kind": "log_transit",
+  "metric_units": "absolute log ratio",
+  "input_columns": [
+    "width_m",
+    "v_up_m_s",
+    "orientation_cos2",
+    "particle",
+    "family"
+  ],
+  "numeric_columns": [
+    "width_m",
+    "v_up_m_s",
+    "orientation_cos2"
+  ],
+  "allows_missing_predictors": false,
+  "models": {
+    "orientation": {
+      "type": "log_ridge",
+      "intercept": -0.37197512958284784,
+      "coefficients": {
+        "log_v": 0.21106942142942725,
+        "disk_broadside": 0.35045721877660574,
+        "rod_broadside": 1.0511991080603476
+      },
+      "features": [
+        "log_v",
+        "disk_broadside",
+        "rod_broadside"
+      ],
+      "success": true,
+      "constraint": "broadside coefficients nonnegative; 2D orientation proxy only",
+      "train_configs": [
+        "1.2",
+        "1.3",
+        "2.2",
+        "2.3",
+        "3.2",
+        "3.3"
+      ]
+    },
+    "ballistic": {
+      "type": "ballistic",
+      "equation": "T=(z_l-z_u)/v_up"
+    },
+    "particle_family": {
+      "type": "log_ridge",
+      "intercept": 0.38642320227010607,
+      "coefficients": {
+        "particle=D_b": -0.06957148501293801,
+        "particle=D_c": -0.12412821069899452,
+        "particle=R_a": 0.21928990955122946,
+        "particle=R_b": 0.1721969676418587,
+        "particle=S": -0.15964656508500036,
+        "family=2": 0.020149720953857853,
+        "family=3": -0.9041194839945205
+      },
+      "features": [
+        "particle",
+        "family"
+      ],
+      "ridge": 0.25,
+      "train_configs": [
+        "1.2",
+        "1.3",
+        "2.2",
+        "2.3",
+        "3.2",
+        "3.3"
+      ]
+    },
+    "mean_orientation_control": {
+      "type": "family_mean_orientation",
+      "training_group_orientation": {
+        "1/D_a": 0.999727812986404,
+        "1/D_b": 0.9998470717033736,
+        "1/D_c": 0.9994996496517151,
+        "1/R_a": 0.8245967438832817,
+        "1/R_b": 0.9963725257187558,
+        "1/S": 0.0,
+        "2/D_a": 0.9997286731500461,
+        "2/D_b": 0.9997778462781327,
+        "2/D_c": 0.9996733056222112,
+        "2/R_a": 0.7491192774658598,
+        "2/R_b": 0.8014098130111116,
+        "2/S": 0.0,
+        "3/D_a": -0.48461250078104956,
+        "3/D_b": -0.2798744281470228,
+        "3/D_c": -0.3949875253648641,
+        "3/R_a": -0.9560420015632299,
+        "3/R_b": -0.9731107947059657,
+        "3/S": 0.0
+      },
+      "regression": {
+        "type": "log_ridge",
+        "intercept": -0.4213640831640608,
+        "coefficients": {
+          "log_v": 0.20205621661237116,
+          "disk_broadside": 0.4359423879742554,
+          "rod_broadside": 1.1626606649964342
+        },
+        "features": [
+          "log_v",
+          "disk_broadside",
+          "rod_broadside"
+        ],
+        "success": true,
+        "constraint": "broadside coefficients nonnegative; 2D orientation proxy only",
+        "train_configs": [
+          "1.2",
+          "1.3",
+          "2.2",
+          "2.3",
+          "3.2",
+          "3.3"
+        ]
+      },
+      "training_configs": [
+        "1.2",
+        "1.3",
+        "2.2",
+        "2.3",
+        "3.2",
+        "3.3"
+      ],
+      "hyperparameters": "exact A03 bounds/penalty; training-only family\u00d7particle mean; no new choice"
+    }
+  },
+  "historical_model_origins": {
+    "orientation": {
+      "historical_path": "attempts_strict/03_anisotropic_drag/development_refit.json",
+      "sha256": "65bad1005ae7c7146544d1a075e1e8e9490a1acc24e526515d843bdded3d1661"
+    },
+    "ballistic": {
+      "historical_path": "development_strict/B0_ballistic/development_refit.json",
+      "sha256": "68d8ca40911ffb0c3509d2a04299177d0a1551de14ac16c02f6fae56f47b027f"
+    },
+    "particle_family": {
+      "historical_path": "development_strict/B2_particle_family/development_refit.json",
+      "sha256": "a260202a0767d6b7bdc3142b49d8d0a1197210e85f59925335a74c79c78d270d"
+    },
+    "mean_orientation_control": {
+      "historical_path": "final_scoring_preparation/C_group_mean_orientation.json",
+      "sha256": "f70e51a951d02a245ba9826b52af6ab533b0bff8eb53bc400396e0907fc9767d"
+    }
+  },
+  "findings": [
+    {
+      "id": "P100-067-F1",
+      "title": "The elementary upstream-speed transit predictor is the strongest of these reserved comparisons",
+      "evidence": "The known transport approximation `T0 = h/v_up` has 0.11742 mean absolute log error, while the selected orientation correction has 0.36604. The ballistic approximation wins all three reserved fluid configurations. This is a scoped reproduction of an established approximation.",
+      "classification": "baseline_reproduction",
+      "new_physical_law": false
+    },
+    {
+      "id": "P100-067-F2",
+      "title": "The proposed individual-orientation mechanism does not survive the controls",
+      "evidence": "The orientation correction loses to the original particle/family comparator and to a training-group mean-orientation control. Development shuffles and strict causal corrections also undermine the mechanism. No particle-thickness or normal-stress law is supported.",
+      "classification": "negative_reference",
+      "new_physical_law": false
+    }
+  ],
+  "source": {
+    "landing_url": "https://data.mendeley.com/datasets/ccm9k8pjft/1",
+    "publisher": "Magdalena Mrokowska, Karolina Dzie\u0144 and Anna Krzto\u0144-Maziopa; Polish Academy of Sciences and Warsaw University of Technology",
+    "identifiers": [
+      "10.17632/ccm9k8pjft.1"
+    ],
+    "terms": "CC BY 4.0",
+    "assets": [
+      {
+        "path": "raw/Density_and_refractive_index_profiles.zip",
+        "bytes": 11201,
+        "sha256": "877812f87a6bc66d24d6242cd5013f1b8632d561b1c7727efcb33be22f1425f5",
+        "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/77f7e2df-c41c-449b-9053-b8c2f2811713/file_downloaded",
+        "terms": "CC BY 4.0"
+      },
+      {
+        "path": "raw/MPs_sinking_dynamics.zip",
+        "bytes": 2617479,
+        "sha256": "e776125e0623382e824c7c72aa20a44abe85d93abfb2da1b63feaaf274a7fcbf",
+        "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/ab47af4d-9ed1-4aa0-8d6c-9215d0d0dfc4/file_downloaded",
+        "terms": "CC BY 4.0"
+      },
+      {
+        "path": "raw/README_Density_and_refractive_index_profiles.txt",
+        "bytes": 454,
+        "sha256": "e5faa87038fe3e96cff360c3c56a86730339bec5dadee4b3c36abea0746c4055",
+        "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/4a4cd24e-48e5-47f3-bfda-f4d6307f41d9/file_downloaded",
+        "terms": "CC BY 4.0"
+      },
+      {
+        "path": "raw/README_MPs_sinking_dynamics.txt",
+        "bytes": 1351,
+        "sha256": "d973cd1efa42c15d04aec54705bbf58f357803c3225526d04241c0a0d2cf0614",
+        "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/b93187c9-27a5-4d9a-bc3c-655bc936e6fa/file_downloaded",
+        "terms": "CC BY 4.0"
+      },
+      {
+        "path": "raw/README_rheological_data.txt",
+        "bytes": 1614,
+        "sha256": "3b91e4b2d56aa348b6efbbbc6f61ac02aee73465398a339ba8e336dd70621198",
+        "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/7eedff48-6058-427a-b729-cad0cb04a035/file_downloaded",
+        "terms": "CC BY 4.0"
+      },
+      {
+        "path": "raw/README_sample_videos.txt",
+        "bytes": 956,
+        "sha256": "cc0d5431c8d96474dd3776f5f6f1aebb7d691b002d4833e4aac8b5744fd73afc",
+        "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/6c088692-025f-4933-90e1-dea6e07018b3/file_downloaded",
+        "terms": "CC BY 4.0"
+      },
+      {
+        "path": "raw/Rheological_data.zip",
+        "bytes": 33121,
+        "sha256": "1ffadfc79e1088fbc22613677383181358c308b51eb471d97a23ccea1d95e5f7",
+        "download_url": "https://data.mendeley.com/public-files/datasets/ccm9k8pjft/files/4c8cbef5-2b7b-42f9-87d4-35893feebbb4/file_downloaded",
+        "terms": "CC BY 4.0"
+      },
+      {
+        "path": "context/SOURCE_FACTS.json",
+        "bytes": 6204,
+        "sha256": "3ffe24404e3d7ae57ec42cb1e9ea741acfbff0e85cf12b3546d32d1a5a39cf7e",
+        "download_url": null,
+        "terms": "CC-BY-4.0 (proposed release terms for curator documentation; pending owner acceptance)"
+      }
+    ]
+  },
+  "confirmation_is_exposed": true,
+  "applicability": "Seventy-six trajectories from configurations 1.1, 2.1 and 3.1. This predicts complete visible-interface transit, not a full trajectory. The observed transit target does not define the upstream speed; thus the comparison is not a restated identity. Interface bounds are supplied metadata whose availability must be declared in an application. Ambiguous thickness and fluid labels and absent normal-stress measurements limit mechanistic conclusions. Earlier interpolated-input analyses remain explicitly invalidated history.",
+  "packaging_change": "Only navigation, code representation and packaging changed. No source measurement, fitted parameter, sample selection or admission decision changed.",
+  "assigned_rows": 76,
+  "packaged_rows": 76,
+  "variable_semantics": {
+    "orientation_cos2": "Mean cos(2*theta), dimensionless, range [-1,1]",
+    "disk_or_rod_orientation_factor": "(1 + orientation_cos2)/2 = mean(cos(theta)^2)"
+  }
+}

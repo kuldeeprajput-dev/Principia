@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-079",
+  "target": "post_treatment_DMS_emission",
+  "target_units": "ug animal^-1 h^-1",
+  "error_units": "ug animal^-1 h^-1",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "hours",
+    "baseline",
+    "baseline_change",
+    "age"
+  ],
+  "input_units": {
+    "hours": "h",
+    "baseline": "ug animal^-1 h^-1",
+    "baseline_change": "ug animal^-1 h^-1",
+    "age": "days"
+  },
+  "numeric_columns": [
+    "hours",
+    "baseline",
+    "baseline_change",
+    "age"
+  ],
+  "timing_contract": "Prediction at treatment administration from pre-dose breath samples and scheduled post-dose time.",
+  "calibration": "Mean DMS emission at-48/-24h, difference and age at first post-dose row; five post-dose points are forecast. Other VOCs and disease labels excluded.",
+  "independent_unit": "calf",
+  "scope_limits": "Seven retained complete calves, while paper describes ten antibiotic-trial calves. Two reserved calves permit bounded internal transfer only. No untreated controls, dose-response or molecule-specific mechanism identification.",
+  "source_url": "https://zenodo.org/records/17940806",
+  "source_license": "CC BY4.0",
+  "prior_art_url": "https://doi.org/10.1371/journal.pone.0351838",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": 0,
+    "target_max": null
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

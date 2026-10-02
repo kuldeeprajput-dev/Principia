@@ -1,0 +1,194 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-035.original.v1",
+  "case_id": "P100-035",
+  "case_number": 35,
+  "family": "original",
+  "protocol_version": "P100-035-asd7-native-v1",
+  "cohort_id": "P100-035.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-035.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/35_bioacoustics_ungulate_calls",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Source positive-context label probability",
+  "target_units": "probability",
+  "error_units": "probability squared",
+  "primary_units": "probability squared",
+  "metric_kind": "brier",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "log_duration",
+    "log_centroid",
+    "log_peak",
+    "high_share",
+    "entropy",
+    "flatness",
+    "envelope_cv",
+    "log_modulation",
+    "log_rms",
+    "species_code"
+  ],
+  "input_units": {
+    "log_duration": "dimensionless",
+    "log_centroid": "dimensionless",
+    "log_peak": "dimensionless",
+    "high_share": "dimensionless",
+    "entropy": "dimensionless",
+    "flatness": "dimensionless",
+    "envelope_cv": "dimensionless",
+    "log_modulation": "dimensionless",
+    "log_rms": "dimensionless",
+    "species_code": "dimensionless"
+  },
+  "numeric_columns": [
+    "log_duration",
+    "log_centroid",
+    "log_peak",
+    "high_share",
+    "entropy",
+    "flatness",
+    "envelope_cv",
+    "log_modulation",
+    "log_rms",
+    "species_code"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "After the complete author-extracted call. Predictors only waveform summaries and known species. File context words, animal ID, call label and source reference are never predictors.",
+  "calibration": "No held-animal labeled calibration. Fixed waveform summaries; any coefficients, centers or species normalization fitted only on training animals.",
+  "independent_unit": "Animal within species; all calls and typo-linked names grouped",
+  "evaluation_groups": [
+    "Cow:1191",
+    "Cow:1192",
+    "Cow:1197",
+    "Cow:1203",
+    "Cow:1205",
+    "Cow:1207",
+    "Goat:99006",
+    "Goat:99010",
+    "Goat:99058",
+    "Goat:99067",
+    "Horse:99004",
+    "Horse:99053",
+    "Horse:99054",
+    "Horse:99057",
+    "Pig:22",
+    "Pig:23",
+    "Pig:24",
+    "Pig:40",
+    "Pig:42",
+    "Pig:44",
+    "PrzewalskiHorse:99007",
+    "PrzewalskiHorse:99014",
+    "PrzewalskiHorse:99065",
+    "Sheep:1165",
+    "Sheep:2459",
+    "Sheep:2472",
+    "Sheep:2750",
+    "Sheep:2850",
+    "Sheep:3924",
+    "Sheep:9669",
+    "WildBoar:99024",
+    "WildBoar:99038",
+    "WildBoar:99045",
+    "WildBoar:99050"
+  ],
+  "assigned_rows": 475,
+  "eligible_rows": 475,
+  "baseline_models": [
+    "reference",
+    "baseline_constant",
+    "baseline_species",
+    "baseline_flexible",
+    "attempt_001_arousal",
+    "attempt_002_tonality",
+    "attempt_003_modulation",
+    "attempt_004_recording",
+    "attempt_005_spectrotemporal"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Pr(positive-context)=sigmoid(sum_j b_j*x_j); x in exact order ['intercept', 'species_code=1', 'species_code=2', 'species_code=3', 'species_code=4', 'species_code=5', 'species_code=6', 'log_rms', 'log_duration']; species code lookup in SPECIES.json. Logs use duration/1s, centroid or peak/1000Hz, modulation/1Hz, RMS relative PCM full scale.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_constant": {
+      "equation": "Pr(positive-context)=sigmoid(sum_j b_j*x_j); x in exact order ['intercept']; species code lookup in SPECIES.json. Logs use duration/1s, centroid or peak/1000Hz, modulation/1Hz, RMS relative PCM full scale.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_species": {
+      "equation": "Pr(positive-context)=sigmoid(sum_j b_j*x_j); x in exact order ['intercept', 'species_code=1', 'species_code=2', 'species_code=3', 'species_code=4', 'species_code=5', 'species_code=6']; species code lookup in SPECIES.json. Logs use duration/1s, centroid or peak/1000Hz, modulation/1Hz, RMS relative PCM full scale.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "Pr(positive-context)=sigmoid(sum_j b_j*x_j); x in exact order ['intercept', 'species_code=1', 'species_code=2', 'species_code=3', 'species_code=4', 'species_code=5', 'species_code=6', 'training_RBF0', 'training_RBF1', 'training_RBF2', 'training_RBF3', 'training_RBF4', 'training_RBF5', 'training_RBF6', 'training_RBF7', 'training_RBF8', 'training_RBF9', 'training_RBF10', 'training_RBF11', 'training_RBF12', 'training_RBF13', 'training_RBF14', 'training_RBF15']; species code lookup in SPECIES.json. Logs use duration/1s, centroid or peak/1000Hz, modulation/1Hz, RMS relative PCM full scale.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_arousal": {
+      "equation": "Pr(positive-context)=sigmoid(sum_j b_j*x_j); x in exact order ['intercept', 'species_code=1', 'species_code=2', 'species_code=3', 'species_code=4', 'species_code=5', 'species_code=6', 'log_duration', 'log_centroid', 'high_share', 'envelope_cv']; species code lookup in SPECIES.json. Logs use duration/1s, centroid or peak/1000Hz, modulation/1Hz, RMS relative PCM full scale.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_tonality": {
+      "equation": "Pr(positive-context)=sigmoid(sum_j b_j*x_j); x in exact order ['intercept', 'species_code=1', 'species_code=2', 'species_code=3', 'species_code=4', 'species_code=5', 'species_code=6', 'log_peak', 'entropy', 'flatness']; species code lookup in SPECIES.json. Logs use duration/1s, centroid or peak/1000Hz, modulation/1Hz, RMS relative PCM full scale.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_modulation": {
+      "equation": "Pr(positive-context)=sigmoid(sum_j b_j*x_j); x in exact order ['intercept', 'species_code=1', 'species_code=2', 'species_code=3', 'species_code=4', 'species_code=5', 'species_code=6', 'log_duration', 'envelope_cv', 'log_modulation']; species code lookup in SPECIES.json. Logs use duration/1s, centroid or peak/1000Hz, modulation/1Hz, RMS relative PCM full scale.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_recording": {
+      "equation": "Pr(positive-context)=sigmoid(sum_j b_j*x_j); x in exact order ['intercept', 'species_code=1', 'species_code=2', 'species_code=3', 'species_code=4', 'species_code=5', 'species_code=6', 'log_rms', 'log_duration']; species code lookup in SPECIES.json. Logs use duration/1s, centroid or peak/1000Hz, modulation/1Hz, RMS relative PCM full scale.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_spectrotemporal": {
+      "equation": "Pr(positive-context)=sigmoid(sum_j b_j*x_j); x in exact order ['intercept', 'species_code=1', 'species_code=2', 'species_code=3', 'species_code=4', 'species_code=5', 'species_code=6', 'log_duration', 'log_centroid', 'entropy', 'envelope_cv', 'log_modulation']; species code lookup in SPECIES.json. Logs use duration/1s, centroid or peak/1000Hz, modulation/1Hz, RMS relative PCM full scale.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "Seven ungulate species, source behavioral contexts and recording studies. Labels are experimental context-based valence annotations, not independently verified subjective emotion; held animals do not remove study/recording confounding.",
+  "source_url": "https://zenodo.org/records/14636641",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "a62f19ed195b091500e40f2ee9682ed5c8c13ab1a48a77beca871b8c64390054",
+  "observations_sha256": "03b085abf7b93805cafb277197dfe2406855b678d59daa0cf0d8e920381ed326",
+  "legacy_protocol_sha256": "6a6960d2957a2514faef4f3a35a1d6ecec45efaaaee754183068b1a869d09a08",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": "asd6-probability/1.1",
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

@@ -1,0 +1,46 @@
+{
+  "case_id": "P100-064",
+  "protocol_version": "1.0.0",
+  "created_utc": "2026-10-01T14:02:37.528776+00:00",
+  "target": "signed photodiode current after early calibration during operation",
+  "units": "nA",
+  "inputs": [
+    "time_s",
+    "current_uA",
+    "voltage_V",
+    "polymer_fraction",
+    "charge_uC",
+    "cal_photo_nA",
+    "cal_current_uA"
+  ],
+  "input_units": {
+    "time_s": "s",
+    "current_uA": "uA",
+    "voltage_V": "V",
+    "polymer_fraction": "mass fraction",
+    "charge_uC": "uC",
+    "cal_photo_nA": "nA",
+    "cal_current_uA": "uA"
+  },
+  "group": "complete polymer-fraction/device number; all voltage runs and paired optical/electrical traces",
+  "timing": "online simultaneous optical-response estimation after first20s: latest electrical observation at or before optical timestamp, maximum2s old; cumulative charge uses current history only",
+  "calibration": "Median optical current at aligned0..20s and median electrical current first20s per run. No later optical responses enter predictors.",
+  "scope": "17 named devices; source lacks complete strain timeline, device emissive area and causal interventions. Endpoint remains signed photocurrent, not calibrated luminance. Uneven lengths and malformed/restarted clocks explicitly handled.",
+  "baseline": [
+    "early optical median persistence",
+    "pooled current-change conversion",
+    "ridge flexible interactions with identical calibration/history"
+  ],
+  "metric": "mean over independent groups of mean absolute target error; every eligible row in a group equally weighted",
+  "validation": "leave-one-development-group-out; all rows, sibling widths/runs and calibration linked; confirmation held separately",
+  "confirmation": "SPLITS.json hash allocation before target analysis; no confirmation summaries accessed",
+  "schema_exposure": "Source CSV headers and first data row per asset inspected; case21 die1A13 waveforms inspected and forced development. Development-only descriptive targets inspected. Public paper prior analyses already source-aware. This is internal withheld-group confirmation, not new experiment.",
+  "selection": "minimize development group-balanced MAE among attempts; if within1% choose fewer coefficients; baselines compete and remain eligible as reference. No confirmation selection.",
+  "stopping": "At least5 substantive attempts, then stop after two consecutive candidates do not improve development prediction by1%, worst-group error, or supported simplification/interpretation; max9 attempts before explicit unresolved hypothesis report.",
+  "uncertainty": "Individual group errors; empirical group range, no row bootstrap or population CI.",
+  "source_manifest_sha256": "b10374ac4d1fc5e05e882017d6377981adf8e1a2d6a5272763107c1c72503827",
+  "splits_sha256": "8ebedd95a69d63db7f6752229a63c2c5853ae446bc08a0aab398bc452c89698f",
+  "native_parser_sha256": "2b59f5dd8293e98e5723db6cdd8b424fe062b0a6f1024769c9053bd38080efb2",
+  "target_safety": "Native prepare can construct all records for deterministic integrity, but develop loads development.csv.gz only; confirm separately gated by FREEZE.json.",
+  "thresholds": "No industrial acceptance threshold invented; predictive errors are diagnostic."
+}

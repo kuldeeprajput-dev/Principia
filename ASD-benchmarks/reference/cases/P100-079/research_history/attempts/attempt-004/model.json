@@ -1,0 +1,41 @@
+{
+  "case": 79,
+  "kind": "baseline_drift",
+  "coef": [
+    0.03785645973823511,
+    40.53084116160204,
+    0.1693133738626416
+  ],
+  "training_groups": [
+    "204708",
+    "304716",
+    "404710",
+    "404724",
+    "604705"
+  ],
+  "training_rows": 25,
+  "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+  "equation": "yhat=max(0,baseline+A*exp(-hours/tau)+b*baseline_change*exp(-hours/24))",
+  "optimizer": {
+    "success": true,
+    "cost": 6.909048866451537,
+    "bounds": [
+      [
+        0,
+        0.01,
+        -5
+      ],
+      [
+        10,
+        1000,
+        5
+      ]
+    ],
+    "jacobian_rank": 3,
+    "jacobian_singular_values": [
+      56.95017365359178,
+      0.7805338132729532,
+      0.023459424577755083
+    ]
+  }
+}

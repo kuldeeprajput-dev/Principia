@@ -1,0 +1,200 @@
+{
+  "case_id": "P100-070",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_bio_behavior",
+  "reviewed_utc": "2026-10-02T03:31:23.228304+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "f6bf07cab887db4169c13195d617c5e4cc9d782e41018e712c30e106d916d22d"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "e23371f2f8608353f74ff2f5c4f27accff103b192f38156612883a64572bd043"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "32bd6860ed52b2ac58625c2668036c6009b30cf256565b81aa458dabd58ef898"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "914623e89ba486c00c2d77da65c3191ff9db22d52f836047b879e90f4634399d"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "12c157cd957ab252c7becf3a1fc7489156ee16ec124b17940952f33f29c5d91a"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "35e67f72a3131ae34bca24971d6dacf9e5972d8bf844347f0d2b2e529a7f17ed"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "fe1b9daf3245054dbce565afe1d46372cd7730518a7adc0449f29f3688ba60ae"
+    },
+    {
+      "path": "CONFIRMATION_RECEIPT.json",
+      "sha256": "bf55de2fe001528244e905f2144db5f93f99773cfef398c4ddeb750117d389a8"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "2b2be1381f6b9eb702a7be97e84260b619696f8b7f92893a52533460c7c4353b"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "0a4f0c76e46aa7fec2317f22e1f2d034ee57042b2b1afb57a5f0422db5e20dab"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "b20422d6f93dc09be877f836d1f90cab44991caa6b568bb832117bac92caa681"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "0d34f51f0472446b58a57cb41a2d073530fd83bfd65eb21de3c610bee9f654b6"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300"
+    },
+    {
+      "path": "package/MANIFEST.json",
+      "sha256": "286a683adaa4871a3ba20970ab69a94dbad5677156037a6c4ca0f754977c989b"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "e3077b0a069dd99949b8db1470756730ba088e126515e5c12d99fb7a0c8a5ef9"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "0a1bb0ed344b65474fb457c65525a3ed9b8d424e5762189100ff9db08a6eab41"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-070-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "One held specimen supports the fixed two-scale stencil at 2.084e-6 native Bz units versus affine 2.283e-6 and mean 2.468e-6. Its 36 map blocks are not 36 independent specimens. Claim-specific conclusion: A fixed two-scale curvature stencil reconstructs measured Bz map pixels more accurately than the matched affine control on the reserved specimen."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The expression is a known fourth-order interpolation stencil. Horizontal curvature alone does not enforce the full three-dimensional Laplace equation; source inverse temperatures are not independent observed endpoints."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A portable metrology reconstruction and explicit refusal to convert an image-prediction gain into a thermal law."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "Same-map neighbor calibration, only two fields of view, unresolved native-to-SI mapping; no independent temperature endpoint.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-070-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "One held specimen supports the fixed two-scale stencil at 2.084e-6 native Bz units versus affine 2.283e-6 and mean 2.468e-6. Its 36 map blocks are not 36 independent specimens. Claim-specific conclusion: The tested imaging-axis anisotropy and additional spatial smoothing do not improve the development-selected reconstruction."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "The expression is a known fourth-order interpolation stencil. Horizontal curvature alone does not enforce the full three-dimensional Laplace equation; source inverse temperatures are not independent observed endpoints."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A portable metrology reconstruction and explicit refusal to convert an image-prediction gain into a thermal law."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "Same-map neighbor calibration, only two fields of view, unresolved native-to-SI mapping; no independent temperature endpoint.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-070-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "One held specimen supports the fixed two-scale stencil at 2.084e-6 native Bz units versus affine 2.283e-6 and mean 2.468e-6. Its 36 map blocks are not 36 independent specimens. Claim-specific conclusion: These reconstructions independently validate source temperatures, frictional energy or a new earthquake heating law."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "The expression is a known fourth-order interpolation stencil. Horizontal curvature alone does not enforce the full three-dimensional Laplace equation; source inverse temperatures are not independent observed endpoints."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A portable metrology reconstruction and explicit refusal to convert an image-prediction gain into a thermal law."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "Same-map neighbor calibration, only two fields of view, unresolved native-to-SI mapping; no independent temperature endpoint.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    }
+  ],
+  "review_scope": "Scientific interpretation, source semantics, information budget and evidence; independent from discovery and the computational reviewer for these cases.",
+  "literature": [
+    {
+      "url": "https://zenodo.org/records/14776881",
+      "use": "Primary-source context and distinction from the scoped task",
+      "access": "Primary source inspected by this reviewer on 2026-10-02."
+    }
+  ],
+  "blocking_defects": [],
+  "recommendations": [
+    "Require authoritative SI conversion and independent thermal measurement before any quantitative heating or friction-energy claim."
+  ]
+}

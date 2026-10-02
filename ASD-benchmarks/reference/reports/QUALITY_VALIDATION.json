@@ -1,0 +1,84 @@
+{
+  "schema_version": "principia.quality-validation/1.0",
+  "status": "pass",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "corpus": {
+    "cases": 100,
+    "historical_tasks": 135,
+    "raw_access_contracts": 135,
+    "historical_findings": 252,
+    "default_tiers": {
+      "comparative_core": 35,
+      "exploratory_limited_scope": 58,
+      "adequacy_falsification_diagnostic": 7
+    },
+    "task_tiers": {
+      "comparative_core": 50,
+      "exploratory_limited_scope": 78,
+      "adequacy_falsification_diagnostic": 7
+    },
+    "finding_roles": {
+      "finding": 243,
+      "limitation": 9
+    },
+    "unresolved_combined": 0
+  },
+  "numerical_parity": {
+    "status": "pass",
+    "tasks": 135,
+    "models": 1381,
+    "evaluator_version": "3.1.0-rc.1"
+  },
+  "source_preservation": {
+    "status": "pass",
+    "native_and_context_assets_checked": 1685,
+    "mismatches": [],
+    "source_receipt_sha256": "7a0cbd06f05e7192653054e3d7cb0d5fc3c07b4deba6cd0ee654e7d6241051a4"
+  },
+  "historical_preservation": {
+    "status": "pass",
+    "historical_scientific_assets_checked": 15796,
+    "changed_historical_scientific_assets": [],
+    "before_inventory_sha256": "d2d64a548f68ce78327f7d26dbfe9588c8b639f80a63dac6f5874803303baa8f",
+    "scope": "All pre-existing numerical task packages, source-adequacy packages, final-result files, research histories and historical review portfolios; current navigation and implementation are versioned changes."
+  },
+  "fixture_checks": 210,
+  "fixture_suites": 10,
+  "latest_changed_code_suites": [
+    {
+      "suite": "test_quality_release",
+      "exit_code": 0,
+      "output": "{\n  \"passed\": 36,\n  \"total\": 36,\n  \"failures\": []\n}\n"
+    },
+    {
+      "suite": "test_review_workflow",
+      "exit_code": 0,
+      "output": "{\n  \"checks\": 15,\n  \"passed\": 15,\n  \"failures\": []\n}\n"
+    },
+    {
+      "suite": "test_shared_engine",
+      "exit_code": 0,
+      "output": "{\n  \"checks\": 39,\n  \"passed\": 39,\n  \"failures\": []\n}\n"
+    },
+    {
+      "suite": "final quality bindings and release fixture suite",
+      "exit_code": 0,
+      "output": "37/37 passed; includes all finding evidence hashes and projection links"
+    }
+  ],
+  "native_feature_example": {
+    "case_id": "P100-037",
+    "extractor": "evaluation/examples/native_router_features.py",
+    "native_feature_replay": "passed",
+    "prediction_replay": "passed",
+    "scientific_finding": false
+  },
+  "historical_outcomes": "exposed",
+  "new_discoveries_claimed": false,
+  "publication_performed": false,
+  "portable_projection_validation": {
+    "status": "pass",
+    "report": "QUALITY_EXPORT_VALIDATION.json",
+    "report_sha256": "01d65ee8b1beb559674c74bed71072b0fa5c03a646b069355709d9559b6cb606"
+  }
+}

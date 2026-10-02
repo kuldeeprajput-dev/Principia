@@ -1,0 +1,48 @@
+{
+  "name": "hysteretic_detachment",
+  "formula": "base+amp*maximum(x,0)**1.5-A*amp*0.5*(1+tanh((x-xoff)/width))*(1-minimum(maximum(x,0),1))",
+  "hypothesis": "Development evidence available before this fit: shifted_contact_pull_off: MAE 1.81803, worst group 6.39742; rough_asperity_exponent: MAE 1.64024, worst group 6.5072.\n\nTest persistent adhesive contact followed by a finite detachment threshold. This asymmetric hysteresis mechanism contrasts with a symmetric attractive well; the smooth switch approximates heterogeneous pull-off rather than claiming an exactDMTlaw.",
+  "inputs": [
+    "x",
+    "base",
+    "amp",
+    "progress"
+  ],
+  "recorded_utc": "2026-10-02T02:13:55.629010+00:00",
+  "parent": "attempt-004",
+  "parameters": {
+    "A": 1.7107473247655693,
+    "xoff": 0.4999999999999832,
+    "width": 0.49999999999999467
+  },
+  "training_groups": [
+    "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_32893.spm.txt",
+    "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_33161.spm.txt",
+    "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_34949.spm.txt",
+    "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32378.spm.txt",
+    "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32384.spm.txt",
+    "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_34177.spm.txt",
+    "230807_CA_high.0_00022.pfc-56F0_ForceCurveIndex_32640.spm.txt",
+    "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_30859.spm.txt",
+    "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32388.spm.txt",
+    "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_33925.spm.txt"
+  ],
+  "training_rows": 1120,
+  "optimizer_success": true,
+  "nfev": 17,
+  "jacobian_condition": 63.76180566675839,
+  "bounds": {
+    "A": [
+      0,
+      2
+    ],
+    "xoff": [
+      -1,
+      0.5
+    ],
+    "width": [
+      0.005,
+      0.5
+    ]
+  }
+}

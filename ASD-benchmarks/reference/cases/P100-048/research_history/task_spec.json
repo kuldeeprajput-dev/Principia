@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-048",
+  "target": "Daylight downwelling longwave irradiance",
+  "target_units": "W/m2",
+  "error_units": "W/m2",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "temperature",
+    "humidity",
+    "solar",
+    "diffuse",
+    "zenith",
+    "site_dra"
+  ],
+  "input_units": {
+    "temperature": "degC",
+    "humidity": "percent",
+    "solar": "W/m2",
+    "diffuse": "W/m2",
+    "zenith": "degree",
+    "site_dra": "indicator"
+  },
+  "numeric_columns": [
+    "temperature",
+    "humidity",
+    "solar",
+    "diffuse",
+    "zenith",
+    "site_dra"
+  ],
+  "source_url": "https://gml.noaa.gov/grad/surfrad/overview.html",
+  "source_license": "US government public domain",
+  "exposure": "First row of dra26190.dat (July9) inspected; this belongs to development. No reserved July25\u201331 target values printed. All public source-aware; confirmation after final freeze will become exposed.",
+  "uncertainty_policy": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "calibration": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "scope_limits": "Only daytime empirical clear/all-sky emissivity diagnostics; no nighttime extension, no independent cloud observations, no cloud causality.",
+  "timing_contract": "Contemporaneous daytime downwelling longwave from independently measured temperature/RH and solar/diffuse channels. Zenith<75deg, globalSW>20W/m2, required QC=0. Cloud proxy is clipped diffuse/global ratio; not net-radiation closure.",
+  "independent_unit": "Whole site-day blocks; forward folds Jan21\u201331,July8\u201315,July16\u201324 trained on preceding dates. July25\u201331 both sites reserved. Two sites only and correlated days."
+}

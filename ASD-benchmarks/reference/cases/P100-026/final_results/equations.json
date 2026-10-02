@@ -1,0 +1,132 @@
+{
+  "case_id": "P100-026",
+  "reference_equation_markdown": "Let $t$ be minutes after the last calibration observation at or before 300 min, $S_0$ that observation's DMM selectivity in percent, and $s_0$ the fixed 120\u2013300 min calibration slope in percentage points per minute. Then\n\\[\n\\widehat S(t)=S_0+s_0\\tau(1-e^{-t/\\tau})+kt.\n\\]\n$\\tau$ is a relaxation time in minutes; $k$ is a slow drift in percentage points per minute. This is a local forecast for total time on stream up to 1500 min. The drift is not an identified reaction intermediate or a justified infinite-time extrapolation.",
+  "reference_parameters": [
+    {
+      "name": "tau",
+      "unit": "min",
+      "value": 243.6424985069681
+    },
+    {
+      "name": "k",
+      "unit": "percentage points/min",
+      "value": 0.003560953442362707
+    }
+  ],
+  "all_models": {
+    "reference": {
+      "name": "Relaxation plus slow drift",
+      "kind": "cat_relaxdrift",
+      "coefficients": [
+        243.6424985069681,
+        0.003560953442362707
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_cat_hold": {
+      "name": "Last calibration value",
+      "kind": "cat_hold",
+      "coefficients": [],
+      "execution": "run.py:predict"
+    },
+    "baseline_cat_linear": {
+      "name": "Prefix slope persistence",
+      "kind": "cat_linear",
+      "coefficients": [],
+      "execution": "run.py:predict"
+    },
+    "baseline_constant": {
+      "name": "Constant response",
+      "kind": "constant",
+      "coefficients": [
+        52.58613867707915
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_flex26": {
+      "name": "Flexible calibrated trajectory",
+      "kind": "flex26",
+      "coefficients": [
+        0.8987080512016126,
+        100.17158145124104,
+        1.3299471626771697,
+        1.8303790163036309,
+        5.495267981574654,
+        -2.8370899187700345,
+        -1.474238051332692
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_001": {
+      "name": "Single relaxing prefix rate",
+      "kind": "cat_relax",
+      "coefficients": [
+        312.2215416431252
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_002": {
+      "name": "Algebraic aging rate",
+      "kind": "cat_log",
+      "coefficients": [
+        157.31288013497985
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_003": {
+      "name": "Loading-dependent relaxation",
+      "kind": "cat_loading",
+      "coefficients": [
+        304.2732060682522,
+        -0.44233704751571856
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_004": {
+      "name": "Two-timescale induction",
+      "kind": "cat_twochannel",
+      "coefficients": [
+        243.6287918053529,
+        72.81066814919657,
+        19999.999999999996
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_005": {
+      "name": "Shrunk prefix relaxation",
+      "kind": "cat_shrink",
+      "coefficients": [
+        456.5637592081204,
+        0.7655194416187553
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_006": {
+      "name": "Relaxation plus slow drift",
+      "kind": "cat_relaxdrift",
+      "coefficients": [
+        243.6424985069681,
+        0.003560953442362707
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_007": {
+      "name": "Loading-dependent equilibrium",
+      "kind": "cat_equilibrium",
+      "coefficients": [
+        28.17713631561697,
+        18.93330497798518,
+        1789.4765725477566
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_008": {
+      "name": "Rational rate decay",
+      "kind": "cat_rational",
+      "coefficients": [
+        444.3073481578468
+      ],
+      "execution": "run.py:predict"
+    }
+  }
+}

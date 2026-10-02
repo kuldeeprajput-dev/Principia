@@ -1,0 +1,40 @@
+{
+  "case_id": "P100-054",
+  "created_utc": "2026-10-01T14:01:46.094450+00:00",
+  "title": "Bridge-notch microfracture",
+  "target": "second bridge failure load Pb2",
+  "target_units": "mN",
+  "input_units": {
+    "width_um": "um",
+    "thickness_um": "um",
+    "length_um": "um",
+    "notch_depth_um": "um",
+    "notch_width_um": "um"
+  },
+  "permitted_inputs": [
+    "width_um",
+    "thickness_um",
+    "length_um",
+    "notch_depth_um",
+    "notch_width_um"
+  ],
+  "independent_unit": "Cantilever specimen; one source wafer and manufacturing campaign",
+  "timing_contract": "Predict measured second-bridge failure load conditional on reported SEM geometry; geometry may be measured post-test, so this is retrospective geometry-conditioned response, not pre-test control.",
+  "scope_limits": "Complete specimen identities linked; three C/D/E manufacturing families for development folds. Header specimens C1,C11,C35,C36 forced development; hash allocation ignores all remaining target values. No toughness/author-fitted correction factors or outcome labels as inputs.",
+  "source_url": "https://zenodo.org/records/15581944",
+  "metric_kind": "mae",
+  "primary_metric": "Mean over independent groups of within-group mean absolute physical-unit error. Equal groups.",
+  "source_manifest_sha256": "472ab6103c4d4ed072f75c079344496ccbc833a0a441fd03e26016bf0f9a6bf0",
+  "native_sha256": "03c4addd598a835fd6d59f7c754efb64bc8980bcbe05e66abe38815a84b2b8ce",
+  "selection": "Minimum development grouped MAE; models within1% of best prefer fewer free parameters. Baselines eligible. Confirmation cannot select or revise.",
+  "stopping": "At least5substantive attempts; thereafter two consecutive distinct attempts failing \u22651% primary improvement or improved worst-group error/identified simplification; no confirmation feedback.",
+  "fitting": "Group-balanced bounded nonlinear least squares; fixed deterministic starts. Flexible baseline fixed ridge or nonlinear low-dimensional logistic. All fits within applicable training folds.",
+  "confirmation": "Separate confirm.py checks frozen all states/code hashes; no fit or selection.",
+  "exposure": {
+    "public_source_aware": true,
+    "internal_confirmation_opened": false,
+    "audit": "Complete specimen identities linked; three C/D/E manufacturing families for development folds. Header specimens C1,C11,C35,C36 forced development; hash allocation ignores all remaining target values. No toughness/author-fitted correction factors or outcome labels as inputs."
+  },
+  "uncertainty": "Individual experimental group errors; no row bootstrap or population CI from dependent rows.",
+  "source_license": "cc-by-4.0"
+}

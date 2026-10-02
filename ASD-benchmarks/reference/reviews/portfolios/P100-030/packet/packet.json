@@ -1,0 +1,149 @@
+{
+  "schema_version": "principia.review-packet/3.0",
+  "bindings": {
+    "claims_sha256": "9a1605ecc008662e16a22448ca767cd07b63f2dbeb3fa9d995e96fbfebe14f9c",
+    "evidence_sha256": {
+      "E001": "80346ace012de46d2246b80d69e70b9b4cfbc887d65e4582d81b23cf697fef9a",
+      "E002": "90c393dddf605280e4ca7c8c98b6fad79d072e44dd29868205a03423facab6f9",
+      "E003": "5fef4463b48a3117605e6e29e5d13dc01030ba7d8780637d7360e1d5d7ebfec1",
+      "E004": "874c7d33b3c36f70a7de4b85878ecf0cf5add71f379d770236e5b858f2f4a0e9",
+      "E005": "0e82ded96baf39991dcc5be0e5671095b9ce7e9686ee24daf8087a12f9c8c5d5",
+      "E006": "9239061460879dbd6fe5ff723cb2259f82b10103d575a9eb2243ee14374b6006",
+      "E007": "56f6bcf32cad71768e8b0d8c30021815fb06cbfd3a23e9e21f107e310bf318fd",
+      "E008": "6e5d24c303584e223368998aa80b159e4dcfc87f55b3e9ee6ced41889645bbc8",
+      "E009": "b3f898fdf14c72b7cd12124bd3421d95e2c5399ee52272e30daf367b603d080d",
+      "E010": "c52a2996f721765906a39eebfada86f79bf960cb003836be2532299f58675183",
+      "E011": "a26d3d036f6829fb7054aa8c7048d5f62c8886e8b68f16b5e00388489e7aaa9d",
+      "E012": "4978a17472fb519e98d914d03f2fc20f3cea8864aa673dc0166d7a33b708e820",
+      "E013": "e1e4bfc1d7ac11ad730e119a34f4079586d5700ad622d216d649747e946266cf",
+      "E014": "51491e47c8c0973ed95100b3a60cde77f0ac03f09988cd7993b4d39212edf1ab",
+      "E015": "ceeb1cecbca85e787fcc2dd7538e493128bccb07241ff5e7ac5479af0d25d429",
+      "COMPUTATIONAL": "6af52beecb9cce27a42cdd5d6b773adce61597f3dae062d50cd3906fb462a111",
+      "SCIENTIFIC_CRITICAL": "5966eb885859622d11aaa9646ce293d8ed9b770004f0b54ca1203a14709395bc"
+    },
+    "case_id": "P100-030",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "findings": [
+    {
+      "id": "P100-030-F01",
+      "classification": "unsupported",
+      "source_classification": "unsupported",
+      "statement": "A concentration-dependent load-sharing extension improves transfer to reserved material formulations beyond simple calibrated log-speed interpolation.",
+      "applicability": "Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.",
+      "limitations": "Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.; The concentration-dependent load-sharing extension does not survive reserved-formulation comparison with simple calibrated log-speed interpolation. Its development gain is preserved as a failed transfer hypothesis, not benchmark ground truth.; No independent population confidence interval from dependent rows.",
+      "falsification": "See source scope and adverse models",
+      "prior_art": "https://www.sciencedirect.com/science/article/pii/S0301679X26007504",
+      "equation_or_program": {
+        "expression": "equations.json",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015"
+        ]
+      },
+      "variables_and_units": {
+        "target": "dimensionless",
+        "speed_mm_s": "mm/s",
+        "boundary_cof": "dimensionless",
+        "highspeed_cof": "dimensionless",
+        "concentration_wt_pct": "wt percent"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015"
+      ],
+      "task_id": "P100-030.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-030-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "Concentration alone does not guarantee calibrated curve-shape transfer across surface treatment and supplier.",
+      "applicability": "The tested equations and current data only; no claim of universal impossibility.",
+      "limitations": "Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.; The concentration-dependent load-sharing extension does not survive reserved-formulation comparison with simple calibrated log-speed interpolation. Its development gain is preserved as a failed transfer hypothesis, not benchmark ground truth.; No independent population confidence interval from dependent rows.",
+      "falsification": "See source scope and adverse models",
+      "prior_art": "Targeted source literature only; no novelty certification",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015"
+        ]
+      },
+      "variables_and_units": {
+        "target": "dimensionless",
+        "speed_mm_s": "mm/s",
+        "boundary_cof": "dimensionless",
+        "highspeed_cof": "dimensionless",
+        "concentration_wt_pct": "wt percent"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015"
+      ],
+      "task_id": "P100-030.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    }
+  ],
+  "reviews_required": [
+    "computational",
+    "scientific_critical"
+  ],
+  "automatic_scientific_admission": false,
+  "current_exposure": "exposed"
+}

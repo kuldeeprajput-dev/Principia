@@ -1,0 +1,78 @@
+{
+  "case_id": "P100-083",
+  "title": "Hive Monitoring (Apis mellifera and Stingless Bees) and Rainfall Data - Federal University of Cear\u00e1 (UFC) Apiary - Brazil",
+  "default_task": "P100-083.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "One-hour future internal sensor temperature",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 5,
+    "independent_unit_description": "future native-date block per calibrated sensor stream",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "T and Te are current internal/external Celsius temperatures; T\u22121 is a causal one-hour lag, He is current external relative humidity percent, and v is external vapor-pressure deficit in kPa. Five offsets c_s are\u22120.384543,\u22120.316614,\u22120.340834,+0.138741,+0.323654degC in rules.json sensor order. Coefficients ba=\u22120.002878, br=0.050874, bm=0.083403 are dimensionless; bv=0.481876degC/kPa and bvr=0.084243/kPa. The reference30degC is an algebraic centering constant, not a prescribed biological setpoint.",
+  "baseline_strength": {
+    "registered_controls": 6,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "unsupported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "One-hour future internal sensor temperature",
+    "prediction_time": "One hourly origin: first native observation within first15min. Forecast nominal1hour, score nearest native target within5min, same calendar day, no interpolation. Causal lag<=origin\u22121hour within15min. Latest20percent native dates per stream reserved. Native response outliers retained.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-083.original.v1",
+    "P100-083.round2.v1",
+    "P100-083.round2.v2"
+  ],
+  "finding_ids": [
+    "P100-083-SCI-01",
+    "P100-083-SCI-02",
+    "P100-083-SCI-03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-083/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-083.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate One-hour future internal sensor temperature under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "One hourly origin: first native observation within first15min. Forecast nominal1hour, score nearest native target within5min, same calendar day, no interpolation. Causal lag<=origin\u22121hour within15min. Latest20percent native dates per stream reserved. Native response outliers retained.",
+    "calibration_requirement": "T and Te are current internal/external Celsius temperatures; T\u22121 is a causal one-hour lag, He is current external relative humidity percent, and v is external vapor-pressure deficit in kPa. Five offsets c_s are\u22120.384543,\u22120.316614,\u22120.340834,+0.138741,+0.323654degC in rules.json sensor order. Coefficients ba=\u22120.002878, br=0.050874, bm=0.083403 are dimensionless; bv=0.481876degC/kPa and bvr=0.084243/kPa. The reference30degC is an algebraic centering constant, not a prescribed biological setpoint.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "One-hour future internal sensor temperature in degC",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "rmse",
+    "primary_units": "degC",
+    "reference_model": "reference",
+    "reference_primary_error": 0.20454827626942568,
+    "reference_physical_mae": 0.15694298901181988,
+    "physical_error_units": "degC",
+    "lowest_registered_error_model": "baseline_residual_rbf",
+    "lowest_registered_error": 0.20210259716704598,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-083.original.v1/evidence/metrics.csv",
+      "bytes": 522,
+      "sha256": "04755463005d922909b6d8e59d03a7c556abf71124d122f2a62dcf36735d2635"
+    },
+    "models": 6
+  },
+  "case_specific_next_evidence": "Add independent apiaries and colonies with sensor placement and response calibration; reserve complete seasons/sites.\n\nObtain heat-flow or controlled perturbation evidence before interpreting conductance or active regulation.\n\nKeep statistical forecast quality separate from biological mechanism and verify timestamp tolerances in external submissions."
+}

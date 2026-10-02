@@ -1,0 +1,15 @@
+{
+  "kind": "inertia",
+  "coef": [
+    0.1941185640382664,
+    0.08274017646100337
+  ],
+  "equation": "max(0,p+b0*r+b1*v); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+  "training_groups": [
+    "16",
+    "22713"
+  ],
+  "training_rows": 4462,
+  "parameter_count": 2,
+  "rank": 2
+}

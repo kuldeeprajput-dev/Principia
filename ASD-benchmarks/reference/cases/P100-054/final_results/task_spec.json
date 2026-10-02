@@ -1,0 +1,41 @@
+{
+  "target": "second bridge failure load Pb2",
+  "target_units": "mN",
+  "permitted_inputs": [
+    "width_um",
+    "thickness_um",
+    "length_um",
+    "notch_depth_um",
+    "notch_width_um"
+  ],
+  "input_units": {
+    "width_um": "um",
+    "thickness_um": "um",
+    "length_um": "um",
+    "notch_depth_um": "um",
+    "notch_width_um": "um"
+  },
+  "timing_contract": "Predict measured second-bridge failure load conditional on reported SEM geometry; geometry may be measured post-test, so this is retrospective geometry-conditioned response, not pre-test control.",
+  "independent_unit": "Cantilever specimen; one source wafer and manufacturing campaign",
+  "scope_limits": "Complete specimen identities linked; three C/D/E manufacturing families for development folds. Header specimens C1,C11,C35,C36 forced development; hash allocation ignores all remaining target values. No toughness/author-fitted correction factors or outcome labels as inputs.",
+  "source_url": "https://zenodo.org/records/15581944",
+  "source_license": "cc-by-4.0",
+  "uncertainty": "Individual experimental group errors; no row bootstrap or population CI from dependent rows.",
+  "error_units": "mN",
+  "metric_kind": "mae",
+  "numeric_columns": [
+    "width_um",
+    "thickness_um",
+    "length_um",
+    "notch_depth_um",
+    "notch_width_um"
+  ],
+  "calibration": "Predict measured second-bridge failure load conditional on reported SEM geometry; geometry may be measured post-test, so this is retrospective geometry-conditioned response, not pre-test control.",
+  "exposure": {
+    "status": "exposed",
+    "confirmation_originally_withheld": true,
+    "public_source_aware": true
+  },
+  "uncertainty_policy": "Individual experimental group errors; no row bootstrap or population CI from dependent rows.",
+  "applicability": "Only source material, geometry, heating-rate or measured beam ranges; no unobserved population guarantee."
+}

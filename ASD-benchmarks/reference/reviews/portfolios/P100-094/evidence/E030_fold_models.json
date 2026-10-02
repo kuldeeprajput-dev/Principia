@@ -1,0 +1,83 @@
+{
+  "station-02": {
+    "case": 94,
+    "type": "linear",
+    "features": [
+      "one",
+      "S"
+    ],
+    "offset": null,
+    "scale": null,
+    "alpha": 0,
+    "title": "Matched-information baseline",
+    "hypothesis": "Baseline salinity_mixing; not counted as an ASD attempt.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "station-06",
+      "station-08"
+    ],
+    "training_rows": 4943,
+    "training_ids_sha256": "12082438fe59c82844402be03ce6a9271db99a6a9c5de22a41b0a91bf4079b6d",
+    "coef": [
+      0.597961377680099,
+      -0.21069230315000084
+    ],
+    "rank": 2,
+    "condition_number": 1.6985665870827813,
+    "complexity": 2
+  },
+  "station-06": {
+    "case": 94,
+    "type": "linear",
+    "features": [
+      "one",
+      "S"
+    ],
+    "offset": null,
+    "scale": null,
+    "alpha": 0,
+    "title": "Matched-information baseline",
+    "hypothesis": "Baseline salinity_mixing; not counted as an ASD attempt.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "station-02",
+      "station-08"
+    ],
+    "training_rows": 4917,
+    "training_ids_sha256": "5fcfa566b24d911fe6b6dd7b5dd27493682a90777b627c2be85e95971b15295b",
+    "coef": [
+      0.5857117019652838,
+      -0.21224931212117262
+    ],
+    "rank": 2,
+    "condition_number": 1.7419116733324163,
+    "complexity": 2
+  },
+  "station-08": {
+    "case": 94,
+    "type": "linear",
+    "features": [
+      "one",
+      "S"
+    ],
+    "offset": null,
+    "scale": null,
+    "alpha": 0,
+    "title": "Matched-information baseline",
+    "hypothesis": "Baseline salinity_mixing; not counted as an ASD attempt.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "station-02",
+      "station-06"
+    ],
+    "training_rows": 4912,
+    "training_ids_sha256": "17e0cf29cd9b64c6a58eb882895f9924d6546828a73fc04e1f8e5f5895ea9064",
+    "coef": [
+      0.6283091404157019,
+      -0.2216522326474724
+    ],
+    "rank": 2,
+    "condition_number": 1.490757162288605,
+    "complexity": 2
+  }
+}

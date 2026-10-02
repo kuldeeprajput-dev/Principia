@@ -1,0 +1,170 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-036.original.v1",
+  "case_id": "P100-036",
+  "case_number": 36,
+  "family": "original",
+  "protocol_version": "P100-036-asd7-native-v1",
+  "cohort_id": "P100-036.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-036.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/36_plant_biology_tomato_stress",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Author QY_max",
+  "target_units": "dimensionless quantum yield",
+  "error_units": "dimensionless quantum yield",
+  "primary_units": "dimensionless quantum yield",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "npq",
+    "rfd",
+    "ngrdi",
+    "area",
+    "tiny",
+    "salt",
+    "drought",
+    "high_stress"
+  ],
+  "input_units": {
+    "npq": "dimensionless author NPQ_Lss",
+    "rfd": "dimensionless author Rfd_Lss",
+    "ngrdi": "dimensionless RGB index",
+    "area": "source AREA_MM scale; only relative/log descriptor used",
+    "tiny": "cultivar indicator",
+    "salt": "salt-treatment indicator",
+    "drought": "drought-treatment indicator",
+    "high_stress": "source second stress-level indicator; no invented dose units"
+  },
+  "numeric_columns": [
+    "npq",
+    "rfd",
+    "ngrdi",
+    "area",
+    "tiny",
+    "salt",
+    "drought",
+    "high_stress"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Contemporaneous imaging diagnostic: source NPQ_Lss, Rfd_Lss, NGRDI, morphology and known cultivar/treatment predict separately reported maximum quantum yield. No QY_max-derived feature or future plant measurement is supplied.",
+  "calibration": "No per-plant target calibration. Learned feature normalization or flexible centers are fitted on development training plants only.",
+  "independent_unit": "Plant; repeated sampling remains linked",
+  "evaluation_groups": [
+    "2024_ToAB_Stress_53",
+    "2024_ToAB_Stress_58",
+    "2024_ToAB_Stress_60",
+    "2024_ToAB_Stress_65",
+    "2024_ToAB_Stress_70",
+    "23_ToAB_Stress_002",
+    "23_ToAB_Stress_003",
+    "23_ToAB_Stress_004",
+    "23_ToAB_Stress_009",
+    "23_ToAB_Stress_020",
+    "23_ToAB_Stress_033",
+    "23_ToAB_Stress_039",
+    "23_ToAB_Stress_040",
+    "23_ToAB_Stress_043",
+    "23_ToAB_Stress_048",
+    "23_ToAB_Stress_050"
+  ],
+  "assigned_rows": 66,
+  "eligible_rows": 66,
+  "baseline_models": [
+    "reference",
+    "baseline_constant",
+    "baseline_context",
+    "baseline_flexible",
+    "attempt_001_quenching",
+    "attempt_002_recovery",
+    "attempt_003_pigment",
+    "attempt_004_morphology",
+    "attempt_005_stress_regime"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "sigmoid(b0+b1*r+b2*q+b3*NGRDI+b4*q*NGRDI+b5*tiny); r=Rfd/(1+abs(Rfd)), q=asinh(NPQ), size=ln(1+max(AREA_MM,0))/10",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_constant": {
+      "equation": "sigmoid(b0); r=Rfd/(1+abs(Rfd)), q=asinh(NPQ), size=ln(1+max(AREA_MM,0))/10",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_context": {
+      "equation": "sigmoid(b0+b1*tiny+b2*salt+b3*drought+b4*highstress); r=Rfd/(1+abs(Rfd)), q=asinh(NPQ), size=ln(1+max(AREA_MM,0))/10",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "sigmoid(b0+sum_j b_j exp(-mean((z-center_j)^2)/2)); training-only standardization; r=Rfd/(1+abs(Rfd)), q=asinh(NPQ), size=ln(1+max(AREA_MM,0))/10",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_quenching": {
+      "equation": "sigmoid(b0+b1/(1+max(NPQ,0))+b2*tiny); r=Rfd/(1+abs(Rfd)), q=asinh(NPQ), size=ln(1+max(AREA_MM,0))/10",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_recovery": {
+      "equation": "sigmoid(b0+b1*Rfd/(1+abs(Rfd))+b2*asinh(NPQ)+b3*tiny); r=Rfd/(1+abs(Rfd)), q=asinh(NPQ), size=ln(1+max(AREA_MM,0))/10",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_pigment": {
+      "equation": "sigmoid(b0+b1*r+b2*q+b3*NGRDI+b4*q*NGRDI+b5*tiny); r=Rfd/(1+abs(Rfd)), q=asinh(NPQ), size=ln(1+max(AREA_MM,0))/10",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_morphology": {
+      "equation": "sigmoid(b0+b1*r+b2*q+b3*NGRDI+b4*size+b5*size*q+b6*tiny); r=Rfd/(1+abs(Rfd)), q=asinh(NPQ), size=ln(1+max(AREA_MM,0))/10",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_stress_regime": {
+      "equation": "sigmoid(b0+b1*r+b2*q+b3*NGRDI+b4*tiny+b5*salt+b6*drought+b7*highstress+b8*q*salt+b9*q*drought); r=Rfd/(1+abs(Rfd)), q=asinh(NPQ), size=ln(1+max(AREA_MM,0))/10",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "Two dwarf cultivars under this controlled stress protocol. Source-extracted contemporaneous fluorescence/RGB traits; no independently measured hydration or new photosynthetic law.",
+  "source_url": "https://zenodo.org/records/20638584",
+  "source_license": "CC BY 4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "1a0b461dc43ceb9b4373081e1e0d7a5d831ab2194173befa3a4ec1234ed060ba",
+  "observations_sha256": "d2850218305cfe0a70b9b54c89fa196e418deee54225be20f7ec563341bac48e",
+  "legacy_protocol_sha256": "ab366eef7d7b87cb268f33ae5f9505240959ec59594897e30911cca31759ddea",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

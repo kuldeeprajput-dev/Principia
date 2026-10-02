@@ -1,0 +1,46 @@
+{
+  "name": "depth_compaction",
+  "formula": "1/((1-1.724*C/100)/(m0+m1*(1-exp(-depth/L)))+(1.724*C/100)/organic)",
+  "hypothesis": "Attempt3: exponential structural porosity worsens held-country MAE to0.326. Reconcile that failure with the better mixture by allowing depth-dependent mineral packing, using a finite consolidation length rather than an unconstrained density-depth slope.",
+  "inputs": [
+    "C",
+    "depth",
+    "pH"
+  ],
+  "recorded_utc": "2026-10-02T01:50:21.290900+00:00",
+  "parent": "attempt-002",
+  "parameters": {
+    "m0": 1.1115082017479108,
+    "m1": 0.5996835020175381,
+    "L": 4.956248289462415,
+    "organic": 0.14665741078161837
+  },
+  "training_groups": [
+    "Finland",
+    "Italy",
+    "Portugal",
+    "Spain"
+  ],
+  "training_rows": 304,
+  "optimizer_success": true,
+  "nfev": 23,
+  "jacobian_condition": 414.7219172386156,
+  "bounds": {
+    "m0": [
+      0.5,
+      2
+    ],
+    "m1": [
+      0,
+      1
+    ],
+    "L": [
+      2,
+      100
+    ],
+    "organic": [
+      0.05,
+      1
+    ]
+  }
+}

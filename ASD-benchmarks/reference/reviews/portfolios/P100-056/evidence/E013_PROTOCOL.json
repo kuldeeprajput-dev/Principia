@@ -1,0 +1,42 @@
+{
+  "case_id": "P100-056",
+  "created_utc": "2026-10-01T14:01:45.832979+00:00",
+  "title": "Timber-concrete beam response",
+  "target": "applied force",
+  "target_units": "kN",
+  "input_units": {
+    "deflection_mm": "mm",
+    "calibration_deflection_mm": "mm",
+    "calibration_force_kN": "kN",
+    "initial_stiffness_kN_mm": "kN/mm",
+    "recent_stiffness_kN_mm": "kN/mm",
+    "lightweight": "1"
+  },
+  "permitted_inputs": [
+    "deflection_mm",
+    "calibration_deflection_mm",
+    "calibration_force_kN",
+    "initial_stiffness_kN_mm",
+    "recent_stiffness_kN_mm",
+    "lightweight"
+  ],
+  "independent_unit": "Whole beam; six beams in two concrete classes",
+  "timing_contract": "Given current imposed displacement, concrete class, and beam-specific initial force-displacement calibration prefix through\u226410mm; no later force or failure capacity allowed.",
+  "scope_limits": "Four development beams and two confirmation beams. Header audit exposed confirmation first11points (all below10mm); these are permitted calibration only. All late damage rows retained.",
+  "source_url": "https://zenodo.org/records/17967735",
+  "metric_kind": "mae",
+  "primary_metric": "Mean over independent groups of within-group mean absolute physical-unit error. Equal groups.",
+  "source_manifest_sha256": "d2df2f12b60f2fbbe6f87c11637af501ef9f3e1db6d282d5bb41e7928f1d6d33",
+  "native_sha256": "f56cf4f36714668b0fb637f63419efe509bc60d8d176b8d4c59d140d5a54ad6f",
+  "selection": "Minimum development grouped MAE; models within1% of best prefer fewer free parameters. Baselines eligible. Confirmation cannot select or revise.",
+  "stopping": "At least5substantive attempts; thereafter two consecutive distinct attempts failing \u22651% primary improvement or improved worst-group error/identified simplification; no confirmation feedback.",
+  "fitting": "Group-balanced bounded nonlinear least squares; fixed deterministic starts. Flexible baseline fixed ridge or nonlinear low-dimensional logistic. All fits within applicable training folds.",
+  "confirmation": "Separate confirm.py checks frozen all states/code hashes; no fit or selection.",
+  "exposure": {
+    "public_source_aware": true,
+    "internal_confirmation_opened": false,
+    "audit": "Four development beams and two confirmation beams. Header audit exposed confirmation first11points (all below10mm); these are permitted calibration only. All late damage rows retained."
+  },
+  "uncertainty": "Individual experimental group errors; no row bootstrap or population CI from dependent rows.",
+  "source_license": "cc-by-4.0"
+}

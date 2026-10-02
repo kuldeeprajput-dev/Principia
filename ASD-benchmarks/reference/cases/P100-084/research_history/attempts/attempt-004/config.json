@@ -1,0 +1,32 @@
+{
+  "name": "rough_asperity_exponent",
+  "formula": "base+amp*maximum(x,0)**p-A*amp*exp(-abs(x)/ell)",
+  "hypothesis": "Development evidence available before this fit: localized_adhesion: MAE 1.56177, worst group 6.11862; shifted_contact_pull_off: MAE 1.81803, worst group 6.39742.\n\nTest whether rough-asperity geometry changes the repulsive exponent after adhesion is included. A stable non-Hertz exponent would be an effective response descriptor, not a universal tip-contact law.",
+  "inputs": [
+    "x",
+    "base",
+    "amp",
+    "progress"
+  ],
+  "initial": {
+    "p": 1.5,
+    "A": 0.2,
+    "ell": 0.2
+  },
+  "bounds": {
+    "p": [
+      0.5,
+      4
+    ],
+    "A": [
+      0,
+      2
+    ],
+    "ell": [
+      0.01,
+      2
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:13:53.128979+00:00",
+  "parent": "attempt-003"
+}

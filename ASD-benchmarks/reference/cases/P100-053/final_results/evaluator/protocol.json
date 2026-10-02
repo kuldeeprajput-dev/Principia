@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-053",
+  "protocol_id": "P100-053-prepared-primary-v1",
+  "target": "Angle-mean thread-forming torque, 700\u20131300 degrees",
+  "target_units": "Nm",
+  "primary_units": "Nm",
+  "metric_kind": "mae",
+  "metric_definition": "Mean across 50 workpieces of within-workpiece mean absolute torque error (Nm). The 27 operations with unavailable target support remain excluded by the original eligibility file.",
+  "independent_unit": "workpiece (both locations and every reuse cycle)",
+  "evaluation_groups": [
+    "30000000009266",
+    "30000000009276",
+    "30000000009284",
+    "30000000009297",
+    "30000000009298",
+    "30000000009301",
+    "30000000009305",
+    "30000000009308",
+    "30000000009314",
+    "30000000009315",
+    "30000000009326",
+    "30000000009328",
+    "30000000009334",
+    "30000000009339",
+    "30000000009340",
+    "30000000009351",
+    "30000000009355",
+    "30000000009357",
+    "30000000009359",
+    "30000000009361",
+    "30000000009365",
+    "30000000009370",
+    "30000000009372",
+    "30000000009374",
+    "30000000009383",
+    "30000000009407",
+    "30000000009415",
+    "30000000009417",
+    "30000000009426",
+    "30000000009427",
+    "30000000009436",
+    "30000000009438",
+    "30000000009442",
+    "30000000009445",
+    "30000000009450",
+    "30000000009846",
+    "30000000009847",
+    "30000000009855",
+    "30000000009863",
+    "30000000009871",
+    "30000000009877",
+    "30000000009879",
+    "30000000009883",
+    "30000000009884",
+    "30000000009896",
+    "30000000009899",
+    "30000000009901",
+    "30000000009902",
+    "30000000009912",
+    "30000000009919"
+  ],
+  "input_sha256": "851b36c6b20b62817b685b41e0b41711399ff8383bd84f491720ae4aea8e04f0",
+  "input_rows": 2473,
+  "assigned_rows": 2500,
+  "permitted_inputs": [
+    "early",
+    "finding",
+    "gradient_proxy",
+    "roughness",
+    "usage",
+    "left",
+    "has_history",
+    "prev_y",
+    "prev_early",
+    "prev_gradient",
+    "first_y",
+    "mean_past_y",
+    "history_gap"
+  ],
+  "input_units": {
+    "early": "Nm",
+    "finding": "Nm",
+    "gradient_proxy": "Nm",
+    "roughness": "Nm",
+    "prev_y": "Nm",
+    "prev_early": "Nm",
+    "prev_gradient": "Nm",
+    "first_y": "Nm",
+    "mean_past_y": "Nm",
+    "usage": "cycle count",
+    "history_gap": "cycle count",
+    "left": "binary indicator",
+    "has_history": "binary indicator"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "memory",
+    "linear",
+    "robust_linear",
+    "flexible"
+  ],
+  "reference_equations": {
+    "memory": "T=previous_completed_T + beta dot history/change features when history exists; frozen A3 cold branch otherwise; frozen C1 virgin branch for usage=0. All branches and coefficients are explicit in model.json and runtime.predict.",
+    "linear": "T=beta dot [1,early,finding,gradient_proxy,roughness,usage,left,has_history,prev_y,prev_early,prev_gradient,first_y,mean_past_y,history_gap,inverse_usage,log_usage,delta_early,delta_gradient]",
+    "robust_linear": "T=robust_beta dot the declared 18-term linear feature vector; exact transformed terms in runtime.predict.",
+    "flexible": "T=baseline + sum(tree_leaf_value_k(x)); all fixed tree thresholds, routing and leaf values are in model.json."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "scope_limit": "50 workpieces in eight observed surface conditions; predict torque, not clamping force, joint strength or the controller OK/NOK label.",
+  "calibration_note": "Early and completed Finding-phase features; prior completed same-hole cycles are permitted. No current late-window target calibration.",
+  "timing_contract": "Current measurements stop at the frozen first-forward-crossing prefix (first sampled angle at/above 250 degrees); prior responses only from completed same-hole operations. Both holes and every reuse of a workpiece stay together.",
+  "exposure_notice": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "paired_stratified_workpiece_bootstrap",
+    "seed": 20260916,
+    "draws": 10000,
+    "reason": "Whole-workpiece resampling within surface condition; descriptive exposed-cohort intervals only."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Audit raw sample anchors and timestamp/phase cutoffs. Identify every predictor and all calibration; exclude future responses and identifier memorization. Current measurements stop at the frozen first-forward-crossing prefix (first sampled angle at/above 250 degrees); prior responses only from completed same-hole operations. Both holes and every reuse of a workpiece stay together."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

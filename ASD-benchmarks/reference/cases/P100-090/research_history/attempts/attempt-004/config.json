@@ -1,0 +1,15 @@
+{
+  "features": [
+    "memory",
+    "drift",
+    "noise_p"
+  ],
+  "offset": "p_past",
+  "clip": [
+    -1,
+    1
+  ],
+  "equation": "Pnext=Ppast+a*memory+b*drift+c*sqrt(within-personorder variance)*Ppast",
+  "case": 90,
+  "type": "linear"
+}

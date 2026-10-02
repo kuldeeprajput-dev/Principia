@@ -1,0 +1,229 @@
+{
+  "schema_version": "p100.agent-review/1.0",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_materials",
+  "case_id": "P100-085",
+  "created_utc": "2026-10-01T14:25:58.988136+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "0f4119b0912f24ad5e5fec53292293f5695fa3d739ad697782591d6373112df2"
+    },
+    {
+      "path": "run.py",
+      "sha256": "6b07d0fe4a882c9ade8375f49f1927ba43b48d4b171c7b72d66c4a698e9dec9a"
+    },
+    {
+      "path": "develop.py",
+      "sha256": "ea559442f06d3c2eded516f9cabbd168e3f5b4ad07ad9927729d5c3464fd89fd"
+    },
+    {
+      "path": "confirm.py",
+      "sha256": "b56b4c323c3e084a33ec6c9dd7900a25cbbbd5e86df677b3268b28e44293b192"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "c1f39af257ec911cd93de5e10f90e1eebb8d4f7bbbcce4130bbdcee81ae437f2"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "c6d214e70e88ac37a9cb3a452ae873340851d3a635634dede1cb65a88da07e46"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "b37ad13f8f7e4ff26ff8e473bcd5c04e6f03a3b70289d0f91b93a7a326b1e463"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "6b7dc7f27ffc98acaecbd0d2d8133889c167a91fb6136a12711b5861bdbab9ce"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "77a3b3ed6033773ae10a8598bf1b671f26322b07cddc34d0e7f36f9fc4896763"
+    },
+    {
+      "path": "SUMMARY.md",
+      "sha256": "299bf6904332f5131136ed3162b26cf8eedee01f93d5cdf402cb133dad0739d1"
+    },
+    {
+      "path": "SOURCE_DEFECTS.json",
+      "sha256": "498684274786641194a613d7aa2464d8bb84918b71bd5c6ac0b84b997756ecf2"
+    },
+    {
+      "path": "PARAMETER_STABILITY.json",
+      "sha256": "92f90a3291a119161d61298c403f5876f2bcbbea31ae7d274d82da0ed755f49d"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "6b07d0fe4a882c9ade8375f49f1927ba43b48d4b171c7b72d66c4a698e9dec9a"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "27d3dd21a50fc5c56e7f7f0fe4b175a8493236f4fe7ee1751259fcad348e3b9d"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "980f8bb001926ca30c8a6205bfea0e858fa5b404407ffebfc13d5e60fc23f835"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "e55f9b50880aafe761f560ae7008bd76fa1e994b303470651ebf2d7e5d214b17"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "60e90b9679202def522d3073e7deb5cf14471eb1f587e126a11abffe26c7470f"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "10b6b630820993716e54aab65f2a83c13ed104106608106766d7385805d6eafe"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "37374f36daa5f72e391820d022d28338ae5e4d077ed12bb5e10460fc2b7466d2"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "4534c6179bcf85c6ae01af618b95acecc0ddfab5b76ce29db72d8e579b933471"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "9d7b55523fcb82f37c15d692e6d6378139639a08e0b21a2bee8462a7c30d9818"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "751cad3ccbe25c57ed7116f67c8771f260be172920f8e0b0531b9445c21a4aff"
+    }
+  ],
+  "overall_limitations": [
+    "All current outcomes are exposed for future users.",
+    "Claim wording is reviewed literally: a supported statement of model failure must remain distinct from an unsupported underlying positive mechanism.",
+    "No aggregate discovery score or definitive novelty/impact certification."
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-085-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Unit mass recovery is a useful declared baseline, with0.945g/L on four rows from one exposed condition; flexible0.3793g/L is stronger there. Stoichiometric universal recovery and assay replacement are not supported."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Substrate consumption is mechanistically relevant, but equal mass recovery is not the chemical molar mass balance and conditions/pH are confounded."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source relationships and prior analyses are disclosed. Targeted primary-source URLs were checked, but current fetches were blocked/empty; no exhaustive novelty assessment or new-law certification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The calibrated task and preserved counterexamples provide a reusable research/evaluation target. Significance is bounded by the small number of independent experimental conditions or locations."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native anchors, executable states, source hashes, grouped predictions and freeze receipts are present. Independent computational reviewer is responsible for replay checks."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, controlled intervention, clinical validation or population-wide replication is provided."
+        }
+      },
+      "checks": [
+        "Read task information budget and native target/predictor construction.",
+        "Compare selected reference, domain/simple/flexible controls and adverse alternatives.",
+        "Inspect complete-group allocation, schema-stage exposure and stopping/freeze history.",
+        "Separate failure evidence from positive mechanism claims and prior source analyses."
+      ],
+      "limitations": [
+        "Contemporaneous HPLC diagnostic; condition transfer is retrospective.",
+        "A model-based scientific review is not independent experimental replication or expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-085-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The negative claim that all five tested mechanisms fail whole-condition development transfer is supported:best2.9925g/L versus1.7484unit baseline. Some win the single held-out condition, preventing a universal failure claim."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "No causal pH, loss-flux or acid-dissociation mechanism is identified from the correlated four-condition design."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source relationships and prior analyses are disclosed. Targeted primary-source URLs were checked, but current fetches were blocked/empty; no exhaustive novelty assessment or new-law certification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The calibrated task and preserved counterexamples provide a reusable research/evaluation target. Significance is bounded by the small number of independent experimental conditions or locations."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native anchors, executable states, source hashes, grouped predictions and freeze receipts are present. Independent computational reviewer is responsible for replay checks."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, controlled intervention, clinical validation or population-wide replication is provided."
+        }
+      },
+      "checks": [
+        "Read task information budget and native target/predictor construction.",
+        "Compare selected reference, domain/simple/flexible controls and adverse alternatives.",
+        "Inspect complete-group allocation, schema-stage exposure and stopping/freeze history.",
+        "Separate failure evidence from positive mechanism claims and prior source analyses."
+      ],
+      "limitations": [
+        "Failure of these tested low-dimensional mechanisms, not disproof of biological pH effects.",
+        "A model-based scientific review is not independent experimental replication or expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-085-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Identical bioreactor payloads under opposing feed names prevent identifying an experimental feed-regime contrast; excluding both prevents a false scientific result."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "This is an evidential data defect, not a biochemical mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source relationships and prior analyses are disclosed. Targeted primary-source URLs were checked, but current fetches were blocked/empty; no exhaustive novelty assessment or new-law certification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The calibrated task and preserved counterexamples provide a reusable research/evaluation target. Significance is bounded by the small number of independent experimental conditions or locations."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native anchors, executable states, source hashes, grouped predictions and freeze receipts are present. Independent computational reviewer is responsible for replay checks."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, controlled intervention, clinical validation or population-wide replication is provided."
+        }
+      },
+      "checks": [
+        "Read task information budget and native target/predictor construction.",
+        "Compare selected reference, domain/simple/flexible controls and adverse alternatives.",
+        "Inspect complete-group allocation, schema-stage exposure and stopping/freeze history.",
+        "Separate failure evidence from positive mechanism claims and prior source analyses."
+      ],
+      "limitations": [
+        "Data-identifiability finding, not a new biochemical law.",
+        "A model-based scientific review is not independent experimental replication or expert adjudication."
+      ]
+    }
+  ],
+  "external_source_checks": {
+    "date": "2026-10-01",
+    "status": "PubMed empty response; journal DOI pages403/unavailable; MDPI429. Local source-bound prior-art records retained as provenance, not represented as newly independently verified full-text review."
+  },
+  "classification_correction_verified": "Latest findings distinguish the unsupported positive mechanism from supported negative evidence; numerical states unchanged."
+}

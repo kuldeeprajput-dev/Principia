@@ -1,0 +1,100 @@
+{
+  "schema": "principia.continuation.v1",
+  "case_id": "P100-060",
+  "created_at": "2026-09-30T09:16:09.868583+00:00",
+  "exposure": "All original cohorts are exposed. New results are retrospective development diagnostics; no fresh confirmation admitted.",
+  "cohort": "Original development groups only; original reserved groups excluded from selection and all continuation scores.",
+  "target": "Post-trigger peak absolute receiver voltage; supplemental condition-normalized track",
+  "units": "V",
+  "primary_metric": "normalized_mae",
+  "original_metric_preserved": "mean whole-group physical-unit error remains reported, including the new normalized acoustic track",
+  "inputs": [
+    "condition",
+    "distance_mm",
+    "resonance_kHz",
+    "width_us"
+  ],
+  "input_units": {
+    "condition": "calibrated distance/sensor category",
+    "distance_mm": "mm",
+    "resonance_kHz": "kHz,confounded sensor identity",
+    "width_us": "us"
+  },
+  "grouping": "Whole TestID / width-file / strain / stream-dateblock / sourcePING-run. 83 forward folds; others leave original whole-group folds out. All associated observations stay together.",
+  "folds": [
+    {
+      "fold": 0,
+      "groups": [
+        "ts3_d00_f110_w025.mat",
+        "ts3_d00_f500_w025.mat",
+        "ts3_d20_f110_w025.mat",
+        "ts3_d20_f500_w025.mat",
+        "ts3_d50_f110_w025.mat",
+        "ts3_d50_f500_w025.mat"
+      ],
+      "rows": 60
+    },
+    {
+      "fold": 1,
+      "groups": [
+        "ts3_d00_f110_w075.mat",
+        "ts3_d00_f500_w075.mat",
+        "ts3_d20_f110_w075.mat",
+        "ts3_d20_f500_w075.mat",
+        "ts3_d50_f110_w075.mat",
+        "ts3_d50_f500_w075.mat"
+      ],
+      "rows": 60
+    },
+    {
+      "fold": 2,
+      "groups": [
+        "ts3_d00_f110_w100.mat",
+        "ts3_d00_f500_w100.mat",
+        "ts3_d20_f110_w100.mat",
+        "ts3_d20_f500_w100.mat",
+        "ts3_d50_f110_w100.mat",
+        "ts3_d50_f500_w100.mat"
+      ],
+      "rows": 60
+    },
+    {
+      "fold": 3,
+      "groups": [
+        "ts3_d00_f110_w125.mat",
+        "ts3_d00_f500_w125.mat",
+        "ts3_d20_f110_w125.mat",
+        "ts3_d20_f500_w125.mat",
+        "ts3_d50_f110_w125.mat",
+        "ts3_d50_f500_w125.mat"
+      ],
+      "rows": 60
+    },
+    {
+      "fold": 4,
+      "groups": [
+        "ts3_d00_f110_w150.mat",
+        "ts3_d00_f500_w150.mat",
+        "ts3_d20_f110_w150.mat",
+        "ts3_d20_f500_w150.mat",
+        "ts3_d50_f110_w150.mat",
+        "ts3_d50_f500_w150.mat"
+      ],
+      "rows": 60
+    }
+  ],
+  "fitting": "All coefficients/scales/imputation/tuning use applicable training partitions only. Nested fold validation for tuned alternatives and flexible baselines. Same allowable inputs for all comparators.",
+  "baselines": "Persistence/constant, established mechanistic prediction, original selected equations refit, train-only Gaussian residual kernel (80centers; widths0.5/1/2,ridges0.01/1). Strong causal-history linear comparator when applicable.",
+  "selection": "Primary development criterion plus per-group noninferiority and complexity; <=1percent indistinguishable favors simplicity. No admission as fresh validated extension. Additional cycles chosen from actual prior residual/control evidence.",
+  "uncertainty": "Paired whole-group errors; disclose number of distinct systems and serial/repeated dependence; no observation-level CI.",
+  "decision_threshold": null,
+  "limits": [
+    "Normalization is a NEW supplemental robustness track; original voltage primary and final results remain unchanged.",
+    "Scale estimated only from training-condition mean response, never validation targets.",
+    "Only five development widths; six calibrated conditions, repeat pulses not independent devices.",
+    "Contact/air and nominal resonance/sensor identity are confounded."
+  ],
+  "source_landing_url": "https://zenodo.org/records/17266427",
+  "fresh_source_status": "Authoritative current landing pages checked30Sept2026: retained records remain same releases; no genuinely new experimental cohort was established. No fresh confirmation claimed.",
+  "minimum_material_cycles": 2
+}

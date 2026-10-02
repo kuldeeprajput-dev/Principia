@@ -1,0 +1,331 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-061",
+  "findings": [
+    {
+      "finding_id": "P100-061-SCI-01",
+      "statement": "Bounded coupled transport captures known depletion/resistance but loses strongly to a tuned kernel on the original reserved temperature.",
+      "classification": "reproduction",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-061.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators. Strong adverse evidence: Calibrated exponents 0.633\u20130.668 reproduce known nonideal pressure response; four devices and intersecting flow/composition slices cannot identify independent resistances.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Conservation, nonlinear film resistance and entrance effects are grounded in established transport. Effective gas mass scaling omits collision integrals/viscosity; fitted families are calibration, not universal constants.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source-matching paper already contains axial/film transport; contribution is a smaller local closure and falsification, not new transport theory. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original 400 C reserve",
+          "measure": "coupled transport",
+          "value": 0.012896,
+          "unit": "mol m^-2 s^-1",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original 400 C reserve",
+          "measure": "nested RBF",
+          "value": 0.001688,
+          "unit": "mol m^-2 s^-1",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original 400 C reserve",
+          "measure": "Richardson/Arrhenius",
+          "value": 0.159518,
+          "unit": "mol m^-2 s^-1",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Calibrated exponents 0.633\u20130.668 reproduce known nonideal pressure response; four devices and intersecting flow/composition slices cannot identify independent resistances.",
+      "scientific_validators": [
+        "Check positivity/feed capacity and dimensionless pressure conventions.",
+        "Refine the mesh while preserving the identical physical film field; retained 64\u21921024 cell error .00333994\u2192.00333728 is consistent.",
+        "Keep pure-gas calibration count and original 22.414 L/mol convention explicit; test normal-volume sensitivity."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-061.json",
+      "source_classification": "reproduction"
+    },
+    {
+      "finding_id": "P100-061-SCI-02",
+      "statement": "Axial depletion plus nonlinear Stefan-film balance is a more conservative reconstruction of the source transport setup.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "partially_supported",
+      "task_ids": [],
+      "task_version_history": "2026-09-30 first continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators. Strong adverse evidence: Original reserved outcomes were already exposed, and the physical candidate still lost the tuned kernel on that diagnostic. Retain feed bounds and source pressure/normal-volume convention; source layered modeling is prior art.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Conservation, nonlinear film resistance and entrance effects are grounded in established transport. Effective gas mass scaling omits collision integrals/viscosity; fitted families are calibration, not universal constants.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source-matching paper already contains axial/film transport; contribution is a smaller local closure and falsification, not new transport theory. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ]
+        }
+      },
+      "numerical_evidence": [],
+      "strongest_adverse_evidence": "Original reserved outcomes were already exposed, and the physical candidate still lost the tuned kernel on that diagnostic. Retain feed bounds and source pressure/normal-volume convention; source layered modeling is prior art.",
+      "scientific_validators": [
+        "Check positivity/feed capacity and dimensionless pressure conventions.",
+        "Refine the mesh while preserving the identical physical film field; retained 64\u21921024 cell error .00333994\u2192.00333728 is consistent.",
+        "Keep pure-gas calibration count and original 22.414 L/mol convention explicit; test normal-volume sensitivity."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-061.json",
+      "source_classification": "retrospective_extension"
+    },
+    {
+      "finding_id": "P100-061-SCI-03",
+      "statement": "A two-family developing-film closure improves development accuracy while replacing six mixture coefficients with two, retaining twelve pure-gas coefficients.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "partially_supported",
+      "task_ids": [
+        "P100-061.round2.v1"
+      ],
+      "task_version_history": "2026-09-30 second continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators. Strong adverse evidence: OneHe/350 Cblock loses; the exact author layered model is not reproduced under a matched protocol. Two geometry families cannot prove a universal geometry law.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Conservation, nonlinear film resistance and entrance effects are grounded in established transport. Effective gas mass scaling omits collision integrals/viscosity; fitted families are calibration, not universal constants.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source-matching paper already contains axial/film transport; contribution is a smaller local closure and falsification, not new transport theory. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "round 2 six development gas-temperature blocks",
+          "measure": "developing film",
+          "value": 0.00333993965,
+          "unit": "mol m^-2 s^-1",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ]
+        },
+        {
+          "cohort": "round 2 same cohort",
+          "measure": "prior best",
+          "value": 0.00410891989,
+          "unit": "mol m^-2 s^-1",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ]
+        },
+        {
+          "cohort": "round 2 same cohort",
+          "measure": "one film scale",
+          "value": 0.00427677033,
+          "unit": "mol m^-2 s^-1",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ]
+        },
+        {
+          "cohort": "round 2 same cohort",
+          "measure": "reversed gas mass factor",
+          "value": 0.00620033009,
+          "unit": "mol m^-2 s^-1",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "OneHe/350 Cblock loses; the exact author layered model is not reproduced under a matched protocol. Two geometry families cannot prove a universal geometry law.",
+      "scientific_validators": [
+        "Check positivity/feed capacity and dimensionless pressure conventions.",
+        "Refine the mesh while preserving the identical physical film field; retained 64\u21921024 cell error .00333994\u2192.00333728 is consistent.",
+        "Keep pure-gas calibration count and original 22.414 L/mol convention explicit; test normal-volume sensitivity."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-061.json",
+      "source_classification": "retrospective_extension"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "id": "P100-095-F01",
+    "classification": "validated_extension",
+    "disposition": "supported",
+    "claim": "A positive mean-flow-production proxy and negative energy-dependent decay term give modest temporal-transfer improvement. Their signs are compatible with an energy budget, but temporal averaging, shared sensor derivation and omitted advection/buoyancy prevent identification of a complete turbulence closure.",
+    "equation": "\\widehat E_{t+30\\,min}=\\max[0,E_t+aU_t^3+bE_t^{3/2}]",
+    "model_id": "reference",
+    "task_id": "P100-095.original.v1",
+    "evidence": {
+      "prediction_file": "evidence/predictions.csv.gz",
+      "metrics_file": "evidence/metrics.csv",
+      "reference_group_MAE": 0.2472841182266309,
+      "best_baseline": "flexible",
+      "best_baseline_group_MAE": 0.2627256651952876,
+      "wins": 3,
+      "groups": 3
+    },
+    "prior_art": "Existing domain parameterizations; see PRIOR_ART.json. No certified novelty.",
+    "falsification": "All baselines and alternatives evaluated on identical frozen eligible observations; no confirmation promotion.",
+    "scope": "MeanTKE2 is author-derived from turbulent measurements; mean wind/thermal gradients are observational predictors, not mechanical interventions. Flag0 subset can select calmer/instrument-quality regimes; no universal turbulence closure.",
+    "admission": "supported",
+    "finding_id": "P100-095-F01",
+    "admission_rationale": "Supported as a scoped predictive extension; novelty and demonstrated industrial impact are not established."
+  },
+  {
+    "id": "P100-095-F02",
+    "classification": "falsified",
+    "disposition": "supported",
+    "claim": "Mean-wind-squared without energy history has substantially worse confirmation error than causal persistence.",
+    "equation": null,
+    "model_id": null,
+    "task_id": "P100-095.original.v1",
+    "evidence": {
+      "metrics_file": "evidence/metrics.csv",
+      "development_selection": "research_history/DEVELOPMENT_SELECTION.json"
+    },
+    "prior_art": "Mechanism claims need controls and information ablations.",
+    "falsification": "Comparison is bounded to the recorded model families and eligible cohort. It does not establish universal nonexistence of a physical process.",
+    "scope": "MeanTKE2 is author-derived from turbulent measurements; mean wind/thermal gradients are observational predictors, not mechanical interventions. Flag0 subset can select calmer/instrument-quality regimes; no universal turbulence closure.",
+    "admission": "supported",
+    "finding_id": "P100-095-F02",
+    "admission_rationale": "Retain negative scientific evidence; no independent positive law claimed."
+  }
+]

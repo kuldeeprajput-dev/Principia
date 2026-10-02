@@ -1,0 +1,76 @@
+{
+  "case_id": "P100-041",
+  "title": "Hourly electric-grid balance and forecasts",
+  "default_task": "P100-041.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Unimputed hourly balancing-authority demand",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 53,
+    "independent_unit_description": "Authority-month groups; rolling train Jan\u2013Feb->March, Jan\u2013March->April, Jan\u2013April->May. June confirmation. Same authorities across time, correlated national weather; no independence claim across all authorities.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "baseline_strength": {
+    "registered_controls": 15,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Unimputed hourly balancing-authority demand",
+    "prediction_time": "Retrospective published-snapshot forecast correction. Input official forecast for target hour, preceding-hour forecast, and actual/forecast residuals 48 and168 hours before target. Nominal issuance t\u221224h is an analysis convention, not observed release timestamp. The observed load/residual histories refer to hours at least24h before nominal issuance. This timestamp statement does not establish their actual publication availability. Target-hour and preceding-hour forecast vintages and issuance times are unknown in the revised snapshot; no historical as-issued forecast availability is claimed. No target-hour demand, generation or interchange predictor.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Revised demand/forecast snapshots lack as-issued publication timestamps; operational benefit is unmeasured."
+  },
+  "task_ids": [
+    "P100-041.original.v1"
+  ],
+  "finding_ids": [
+    "P100-041-F01",
+    "P100-041-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-041/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-041.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Unimputed hourly balancing-authority demand under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Retrospective published-snapshot forecast correction. Input official forecast for target hour, preceding-hour forecast, and actual/forecast residuals 48 and168 hours before target. Nominal issuance t\u221224h is an analysis convention, not observed release timestamp. The observed load/residual histories refer to hours at least24h before nominal issuance. This timestamp statement does not establish their actual publication availability. Target-hour and preceding-hour forecast vintages and issuance times are unknown in the revised snapshot; no historical as-issued forecast availability is claimed. No target-hour demand, generation or interchange predictor.",
+    "calibration_requirement": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Unimputed hourly balancing-authority demand in MW",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Revised demand/forecast snapshots lack as-issued publication timestamps; operational benefit is unmeasured."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "MW",
+    "reference_model": "reference",
+    "reference_primary_error": 283.8716430457046,
+    "reference_physical_mae": 283.8716430457046,
+    "physical_error_units": "MW",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 283.8716430457046,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-041.original.v1/evidence/metrics.csv",
+      "bytes": 2009,
+      "sha256": "f168ef37f92e5eb6779a42b1709f09aa1e66362b1ff2091510231d80682eb5c1"
+    },
+    "models": 15
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

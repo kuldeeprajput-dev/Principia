@@ -1,0 +1,44 @@
+{
+  "case_id": "P100-044",
+  "created_utc": "2026-10-01T15:20:10.891880+00:00",
+  "target": "Capped elapsed solver consumption min(Total Runtime,7200 seconds)",
+  "units": "seconds",
+  "purpose": "Before-run resource planning/formulation comparison within one solver/version/hardware experiment",
+  "source": "All48 published deterministic runs, three formulations on16 instances; failed and time-limit runs retained",
+  "inputs": [
+    "nodes",
+    "max_degree",
+    "is_flow",
+    "is_linear",
+    "is_quadratic",
+    "moore2_occupancy"
+  ],
+  "forbidden": [
+    "source CPU Runtime, which is WorkMeasure not seconds",
+    "postsolve objective/bound/gap/success or fitted runtime",
+    "post-presolve variable counts",
+    "solution graphs as predictors"
+  ],
+  "calibration": "None from target instance; all three formulations for instance held together",
+  "validation": "12 development instances; leave-one-instance-out;4 fixed metadata-hash confirmation instances",
+  "metric": "mean over instances of mean absolute runtime error across all3 formulations; seconds",
+  "secondary": [
+    "RMSE and bias",
+    "each formulation and each held instance",
+    "completed/time-limited strata descriptive only",
+    "formulation-selection runtime regret; offline paired replay, not deployment effect"
+  ],
+  "baselines": [
+    "constant development median",
+    "formulation-specific median",
+    "capped size-degree exponential complexity equation",
+    "nested grouped RBF flexible model"
+  ],
+  "selection": "minimum development whole-instance MAE; within1% prefer fewer fitted parameters",
+  "attempts": "minimum5 material hypotheses; stop after2 substantive no-gain attempts once minimum met, using development only",
+  "confirm": "separate no-fitting process after code/state/selection freeze; never reselect final winner",
+  "censoring": "This endpoint is observed capped resource consumption, not unconstrained time-to-optimality. Runs reaching7200 retain target7200. Censoring is not imputed as a solved runtime.",
+  "limits": "Single machine, Gurobi11, one deterministic seed per formulation/instance;16 structural instances not repeated runtime trials;4 confirmation units insufficient population claims.",
+  "source_manifest_sha256": "96ed055fc479dca7e50bbc7df407541f4ac40022e8d22075185d4367881d0eef",
+  "split_sha256": "fcfd80ecf2b455ea091cf282e25f81b133a1797d4fdcd219e16c008991fcd37f"
+}

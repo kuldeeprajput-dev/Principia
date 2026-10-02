@@ -1,0 +1,154 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-075.original.v1",
+  "case_id": "P100-075",
+  "case_number": 75,
+  "family": "original",
+  "protocol_version": "P100-075-asd7-native-v1",
+  "cohort_id": "P100-075.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-075.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/75_biology_endothelial_mechanics",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "VCAM1 log2(1+CPM)",
+  "target_units": "log2(1+CPM)",
+  "error_units": "log2(1+CPM)",
+  "primary_units": "log2(1+CPM)",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "stiffness_kpa",
+    "hss",
+    "calibration"
+  ],
+  "input_units": {
+    "stiffness_kpa": "kPa",
+    "hss": "indicator HSS (10 versus 4 dyn/cm2)",
+    "calibration": "log2(1+CPM)"
+  },
+  "numeric_columns": [
+    "stiffness_kpa",
+    "hss",
+    "calibration"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Before target-condition expression assay: known stiffness/shear design and same-donor LSS30kPa calibration expression. Contemporaneous designed-culture response diagnostic; no real-time sensor or uncalibrated donor claim.",
+  "calibration": "One LSS/30kPa VCAM1 measurement per donor. Calibration rows excluded from target cohort; every comparator receives identical value.",
+  "independent_unit": "Donor; four donors, three development and one confirmation",
+  "evaluation_groups": [
+    "C"
+  ],
+  "assigned_rows": 5,
+  "eligible_rows": 5,
+  "baseline_models": [
+    "reference",
+    "baseline_copy",
+    "baseline_log_additive",
+    "baseline_quadratic",
+    "attempt_001_saturation",
+    "attempt_002_synergy",
+    "attempt_003_mechanical_only",
+    "attempt_004_threshold",
+    "attempt_005_shear_only",
+    "attempt_006_calibration_scaling",
+    "attempt_007_saturating_synergy"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "y_hat=max(0,c+b1*s)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_copy": {
+      "equation": "y_hat=c",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_log_additive": {
+      "equation": "y_hat=max(0,c+b1*ln(E/30)+b2*s)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_quadratic": {
+      "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s+b4*x^2+b5*x^2*s), x=ln(E/30)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_saturation": {
+      "equation": "y_hat=max(0,c+b1*q+b2*s), q=E/(K+E)-30/(K+30)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_synergy": {
+      "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s), x=ln(E/30)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_mechanical_only": {
+      "equation": "y_hat=max(0,c+b1*ln(E/30))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_threshold": {
+      "equation": "y_hat=max(0,c+b1*I(E>=200)+b2*s+b3*s*I(E>=200))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_shear_only": {
+      "equation": "y_hat=max(0,c+b1*s)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006_calibration_scaling": {
+      "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s+b4*(c-5)*s), x=ln(E/30)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007_saturating_synergy": {
+      "equation": "y_hat=max(0,c+b1*q+b2*s+b3*q*s), q=E/(K+E)-30/(K+30)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "Condition response in four cultured endothelial donors; one held donor cannot establish population generalization. One measured LSS/30kPa VCAM1 calibration per donor is required.",
+  "source_url": "https://zenodo.org/records/17925228",
+  "source_license": "CC BY 4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "6b86c2d03fed5656d1a50aa02c350dbd9490c0a00053127030c7363a52e0be16",
+  "observations_sha256": "24b93683a92c8761362b9e670f20590de161f8f610ad6b2cb8285077a3a9ebab",
+  "legacy_protocol_sha256": "cce763ab374ac9a944afcfe8d98b2fcc6357e44c6904f1f7ba8d51c3fa9013c1",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "calibration"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

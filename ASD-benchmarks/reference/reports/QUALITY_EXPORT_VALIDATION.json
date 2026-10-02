@@ -1,0 +1,96 @@
+{
+  "schema_version": "principia.export-validation/1.0",
+  "status": "pass",
+  "validation_scope": "Standalone staging export of the exact evaluator and scientific assets; final assembly adds only documentation and this acceptance receipt.",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "validated_engine_manifest_sha256": "3cfb10d32fe512ebd7433e94baa1ed3b8f3350372dacc6731b5557055122f652",
+  "dependency_lock_sha256": "516ff464d0a313be3529fd90ac05a5840f88dd22d37d8f39040150c1497d385a",
+  "runtime_sha256": "ac0a0c564a8a5defdbbd3d21e7bb92e97fc1ec3ed10756f64c03e2981cb06985",
+  "environment_matches_lock": true,
+  "public_cases": 100,
+  "public_numerical_tasks": 134,
+  "public_model_comparisons": 1362,
+  "local_numerical_tasks": 135,
+  "local_model_comparisons": 1381,
+  "local_collection_checks": 240,
+  "standalone_collection_checks": 239,
+  "standalone_quality_fixture_checks": 37,
+  "standalone_projection_checks": [
+    {
+      "check": "closed_allowlist_and_no_finder_files",
+      "status": "pass",
+      "detail": {
+        "explicitly_admitted_files": 17264
+      }
+    },
+    {
+      "check": "portable_per_asset_rights_paths",
+      "status": "pass",
+      "detail": {
+        "portable_asset_rights_records": 17263
+      }
+    },
+    {
+      "check": "projected_finding_and_adjudication_bindings",
+      "status": "pass",
+      "detail": {
+        "exact_evidence_bindings": 2028
+      }
+    },
+    {
+      "check": "registered_scope_and_baseline_attribution",
+      "status": "pass",
+      "detail": {
+        "cases": 100,
+        "tasks": 134,
+        "baseline_label": "implemented by GPT-6 Astra"
+      }
+    }
+  ],
+  "native_reconstruction": {
+    "case_id": "P100-037",
+    "rows": 27692,
+    "source_assets_verified": 15,
+    "historical_prepared_tables_read": false,
+    "fitting_performed": false
+  },
+  "native_feature_and_prediction_replay": "passed",
+  "review_replay": {
+    "status": "pass",
+    "case_id": "P100-074",
+    "claim_source_sha256": "ae4cff6cdcc10591211a56dbcb1ee44607f7fb62d0a793c507e477e13f73c51e",
+    "findings": 3,
+    "substantive_disagreements": {
+      "P100-074-F01": [
+        "mechanism"
+      ]
+    },
+    "adjudication_sha256": "0f486a50c57ae00ac72dee45e4a8691a154d9e5b6b11051c01223b70697f4a36",
+    "new_independent_review": false,
+    "history_unchanged": true
+  },
+  "receipt_bindings": [
+    {
+      "qa_receipt": "EXPORT_COLLECTION.json",
+      "sha256": "855b0745a79d36788b7c9f2bd17453b7cfad7bde413c4110122d4a8264b6d913"
+    },
+    {
+      "qa_receipt": "EXPORT_FULL_PARITY.json",
+      "sha256": "3f811fca698bdcedcfd594769db07f42c34ba61aaa0247c00861a51f98717599"
+    },
+    {
+      "qa_receipt": "EXPORT_PROJECTION.json",
+      "sha256": "d5a1d89a6a24b7a1d4d11cd3068c982d277bc4bab9d9dcd9959773a654bfc870"
+    },
+    {
+      "qa_receipt": "LOCAL_COLLECTION.json",
+      "sha256": "e6060076ee8c450f21b180dc0802ce39db1758a3dab1cf0e2ab6928535167118"
+    }
+  ],
+  "limitations": [
+    "All evaluation outcomes remain exposed.",
+    "Only the router native adapter was re-executed during standalone export QA; prior corpus-wide adapter receipts and source bytes are preserved.",
+    "Source rights qualifications and excluded optional case96 supplement remain explicit.",
+    "No new independent scientific reviewer, novelty adjudication, deployed impact experiment or publication."
+  ]
+}

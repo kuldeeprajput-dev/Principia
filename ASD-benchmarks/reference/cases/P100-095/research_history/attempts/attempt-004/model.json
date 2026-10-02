@@ -1,0 +1,41 @@
+{
+  "case": 95,
+  "type": "linear",
+  "features": [
+    "E",
+    "U2",
+    "direction",
+    "cross"
+  ],
+  "offset": null,
+  "scale": null,
+  "alpha": 0,
+  "nonnegative": true,
+  "title": "Directional terrain response",
+  "hypothesis": "Along/cross orientation of unrotated mean flow modifies energy production, reflecting possible terrain dependence.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.3173972561524605, \"worst_group\": 0.5982098856436229}, {\"attempt\": \"attempt-002\", \"group_MAE\": 0.3122647880296719, \"worst_group\": 0.575888428751605}, {\"attempt\": \"attempt-003\", \"group_MAE\": 0.3330655183078203, \"worst_group\": 0.5932360025825785}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Buoyancy-gradient interaction worsens the energy-budget error. Test terrain-direction modulation rather than adding more stability coefficients.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+  "training_groups": [
+    "week-00",
+    "week-01",
+    "week-02",
+    "week-03",
+    "week-04",
+    "week-05",
+    "week-06",
+    "week-07",
+    "week-08",
+    "week-09",
+    "week-10"
+  ],
+  "training_rows": 775,
+  "training_ids_sha256": "bbef8774a13a8283b4739c04c54f936c32223f66b743e02181ce0c745c56a55a",
+  "coef": [
+    0.8215655070621806,
+    0.002679415545807052,
+    0.0004507120696450198,
+    0.000489477805497818
+  ],
+  "rank": 4,
+  "condition_number": 3.154036018651112,
+  "complexity": 4
+}

@@ -1,0 +1,499 @@
+{
+  "case_id": "P100-006",
+  "schema_version": "asd6.portable/1.0",
+  "input_columns": [
+    "detuning_MHz",
+    "rabi_MHz"
+  ],
+  "numeric_columns": [
+    "detuning_MHz",
+    "rabi_MHz"
+  ],
+  "input_units": {
+    "detuning_MHz": "MHz",
+    "rabi_MHz": "MHz"
+  },
+  "target": "Ion-readout amplitude",
+  "target_units": "arbitrary units",
+  "error_units": "arbitrary units",
+  "metric_kind": "mae",
+  "aggregation": "Equal top-level group weight; equal rows within group. Dependent spectral bins are not independent replication.",
+  "reference_attempt": "attempt-002",
+  "models": {
+    "reference": {
+      "kind": "atom_asym",
+      "parameters": [
+        -1.7559411902406654,
+        0.3522131349048381,
+        -0.008965174305523555,
+        0.44222885841572473,
+        6.7036497496507685,
+        0.10000000000008472,
+        8.50333602622332,
+        0.10000000006812161,
+        4.1345462321825535,
+        2.3394101597365977,
+        3.397256675936973,
+        0.0172496223557492
+      ],
+      "training_groups": [
+        "rabi-block-00",
+        "rabi-block-01",
+        "rabi-block-02",
+        "rabi-block-03",
+        "rabi-block-04",
+        "rabi-block-05",
+        "rabi-block-07",
+        "rabi-block-08"
+      ],
+      "training_rows": 19200,
+      "optimizer_success": true,
+      "nfev": 31,
+      "jacobian_condition": 5546.14630705508,
+      "bounds": [
+        [
+          -10,
+          -2,
+          -0.5,
+          0,
+          0.1,
+          0.1,
+          0,
+          0.1,
+          0,
+          0,
+          0.1,
+          -0.5
+        ],
+        [
+          10,
+          2,
+          0.5,
+          5,
+          50,
+          70,
+          20,
+          40,
+          20,
+          5,
+          20,
+          0.5
+        ]
+      ],
+      "training_residual_rms": 0.248687700893044,
+      "display_name": "Asymmetric dual response",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 12
+    },
+    "baseline_atom_domain": {
+      "kind": "atom_domain",
+      "parameters": [
+        -3.141354059953464,
+        0.3094558161448615,
+        0.07656666985373434,
+        0.389802355912916,
+        -0.20781740028020376,
+        0.8359328310771668,
+        2.7113933193191384
+      ],
+      "training_groups": [
+        "rabi-block-00",
+        "rabi-block-01",
+        "rabi-block-02",
+        "rabi-block-03",
+        "rabi-block-04",
+        "rabi-block-05",
+        "rabi-block-07",
+        "rabi-block-08"
+      ],
+      "training_rows": 19200,
+      "optimizer_success": true,
+      "nfev": 22,
+      "jacobian_condition": 2511.7429765941424,
+      "bounds": [
+        [
+          -10,
+          -2,
+          -2,
+          -4,
+          -4,
+          0.1,
+          0
+        ],
+        [
+          10,
+          2,
+          2,
+          4,
+          4,
+          60,
+          30
+        ]
+      ],
+      "training_residual_rms": 0.4548256870452672,
+      "display_name": "Single Lorentzian with power broadening",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 7
+    },
+    "baseline_constant": {
+      "kind": "constant",
+      "parameters": [
+        0.46331004358239586
+      ],
+      "training_groups": [
+        "rabi-block-00",
+        "rabi-block-01",
+        "rabi-block-02",
+        "rabi-block-03",
+        "rabi-block-04",
+        "rabi-block-05",
+        "rabi-block-07",
+        "rabi-block-08"
+      ],
+      "training_rows": 19200,
+      "display_name": "Constant response",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 1
+    },
+    "baseline_flex6": {
+      "kind": "flex6",
+      "parameters": [
+        0.3769462631002538,
+        0.30952693259827796,
+        -0.5164603449258721,
+        0.12290388349760661,
+        0.08949789363255985,
+        0.24679828853094882,
+        -0.11788245191656324,
+        -0.01008437128697102,
+        0.7946936635157159,
+        0.047732757920283496,
+        -0.7614209319321165
+      ],
+      "training_groups": [
+        "rabi-block-00",
+        "rabi-block-01",
+        "rabi-block-02",
+        "rabi-block-03",
+        "rabi-block-04",
+        "rabi-block-05",
+        "rabi-block-07",
+        "rabi-block-08"
+      ],
+      "training_rows": 19200,
+      "display_name": "Polynomial response surface",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 11
+    },
+    "attempt_001": {
+      "kind": "atom_double",
+      "parameters": [
+        -2.329646675235136,
+        0.35014046225084544,
+        -0.0059104882853369956,
+        0.41975535074686754,
+        7.208442295325819,
+        0.10000000000000016,
+        8.571043353464724,
+        0.10000000001287324,
+        4.160556351371665,
+        2.36547453614174,
+        3.509202545466441
+      ],
+      "training_groups": [
+        "rabi-block-00",
+        "rabi-block-01",
+        "rabi-block-02",
+        "rabi-block-03",
+        "rabi-block-04",
+        "rabi-block-05",
+        "rabi-block-07",
+        "rabi-block-08"
+      ],
+      "training_rows": 19200,
+      "optimizer_success": true,
+      "nfev": 34,
+      "jacobian_condition": 6232.159523858361,
+      "bounds": [
+        [
+          -10,
+          -2,
+          -0.5,
+          0,
+          0.1,
+          0.1,
+          0,
+          0.1,
+          0,
+          0,
+          0.1
+        ],
+        [
+          10,
+          2,
+          0.5,
+          5,
+          50,
+          70,
+          20,
+          40,
+          20,
+          5,
+          20
+        ]
+      ],
+      "training_residual_rms": 0.2918263697672945,
+      "display_name": "Symmetric dual response",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 11
+    },
+    "attempt_002": {
+      "kind": "atom_asym",
+      "parameters": [
+        -1.7559411902406654,
+        0.3522131349048381,
+        -0.008965174305523555,
+        0.44222885841572473,
+        6.7036497496507685,
+        0.10000000000008472,
+        8.50333602622332,
+        0.10000000006812161,
+        4.1345462321825535,
+        2.3394101597365977,
+        3.397256675936973,
+        0.0172496223557492
+      ],
+      "training_groups": [
+        "rabi-block-00",
+        "rabi-block-01",
+        "rabi-block-02",
+        "rabi-block-03",
+        "rabi-block-04",
+        "rabi-block-05",
+        "rabi-block-07",
+        "rabi-block-08"
+      ],
+      "training_rows": 19200,
+      "optimizer_success": true,
+      "nfev": 31,
+      "jacobian_condition": 5546.14630705508,
+      "bounds": [
+        [
+          -10,
+          -2,
+          -0.5,
+          0,
+          0.1,
+          0.1,
+          0,
+          0.1,
+          0,
+          0,
+          0.1,
+          -0.5
+        ],
+        [
+          10,
+          2,
+          0.5,
+          5,
+          50,
+          70,
+          20,
+          40,
+          20,
+          5,
+          20,
+          0.5
+        ]
+      ],
+      "training_residual_rms": 0.248687700893044,
+      "display_name": "Asymmetric dual response",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 12
+    },
+    "attempt_003": {
+      "kind": "atom_saturatingline",
+      "parameters": [
+        -2.8909798117310395,
+        0.2944541906424141,
+        0.08954795520143907,
+        0.3442763955533046,
+        1.9544183881292727,
+        0.10000000000000002,
+        2.6475786563938786,
+        38.62472864464157,
+        9.301082649371942
+      ],
+      "training_groups": [
+        "rabi-block-00",
+        "rabi-block-01",
+        "rabi-block-02",
+        "rabi-block-03",
+        "rabi-block-04",
+        "rabi-block-05",
+        "rabi-block-07",
+        "rabi-block-08"
+      ],
+      "training_rows": 19200,
+      "optimizer_success": true,
+      "nfev": 27,
+      "jacobian_condition": 37547.92743701277,
+      "bounds": [
+        [
+          -10,
+          -2,
+          -2,
+          -4,
+          0.1,
+          0.1,
+          0,
+          0.1,
+          0.1
+        ],
+        [
+          10,
+          2,
+          4,
+          4,
+          8,
+          60,
+          30,
+          50,
+          50
+        ]
+      ],
+      "training_residual_rms": 0.44704666679447175,
+      "display_name": "Saturating single response",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 9
+    },
+    "attempt_004": {
+      "kind": "atom_powerwidth",
+      "parameters": [
+        -2.337104554062739,
+        0.3554086315640872,
+        -0.009474776904624758,
+        0.4864286081913181,
+        5.728593031359318,
+        0.10000547713809865,
+        8.580280306374616,
+        4.167853301509863,
+        4.144928967327022,
+        2.3367039602627027,
+        3.2880986645274772
+      ],
+      "training_groups": [
+        "rabi-block-00",
+        "rabi-block-01",
+        "rabi-block-02",
+        "rabi-block-03",
+        "rabi-block-04",
+        "rabi-block-05",
+        "rabi-block-07",
+        "rabi-block-08"
+      ],
+      "training_rows": 19200,
+      "optimizer_success": true,
+      "nfev": 41,
+      "jacobian_condition": 126863.92798527918,
+      "bounds": [
+        [
+          -10,
+          -2,
+          -0.5,
+          0,
+          0.1,
+          0.1,
+          0,
+          0.1,
+          0,
+          0,
+          0.1
+        ],
+        [
+          10,
+          2,
+          0.5,
+          5,
+          50,
+          70,
+          20,
+          40,
+          20,
+          5,
+          20
+        ]
+      ],
+      "training_residual_rms": 0.2904247863973848,
+      "display_name": "Quadrature-broadened dual response",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 11
+    },
+    "attempt_005": {
+      "kind": "atom_saturate",
+      "parameters": [
+        -2.3283523375652484,
+        0.33618571378433204,
+        -0.015459012145920957,
+        0.4038954120105037,
+        8.77268477518503,
+        0.10000000000000002,
+        8.608820929054351,
+        0.10000000001130029,
+        4.1956968417740415,
+        2.43492817147578,
+        3.561492385166179,
+        0.04572624382560956
+      ],
+      "training_groups": [
+        "rabi-block-00",
+        "rabi-block-01",
+        "rabi-block-02",
+        "rabi-block-03",
+        "rabi-block-04",
+        "rabi-block-05",
+        "rabi-block-07",
+        "rabi-block-08"
+      ],
+      "training_rows": 19200,
+      "optimizer_success": true,
+      "nfev": 40,
+      "jacobian_condition": 8218.771108737368,
+      "bounds": [
+        [
+          -10,
+          -2,
+          -0.5,
+          0,
+          0.1,
+          0.1,
+          0,
+          0.1,
+          0,
+          0,
+          0.1,
+          -0.5
+        ],
+        [
+          10,
+          2,
+          0.5,
+          5,
+          50,
+          70,
+          20,
+          40,
+          20,
+          5,
+          20,
+          0.5
+        ]
+      ],
+      "training_residual_rms": 0.29127508822190323,
+      "display_name": "Dual response with saturating background",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 12
+    }
+  }
+}

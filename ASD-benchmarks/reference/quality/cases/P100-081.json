@@ -1,0 +1,78 @@
+{
+  "case_id": "P100-081",
+  "title": "Methods to Verify and Account for the Carbon and Soil Health Benefits of Agroforestry - Annex to Deliverable 3.5 ( DigitAF EU Project) : Soil Dataset (Machine readable).",
+  "default_task": "P100-081.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "measured soil bulk density",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Entire country/site portfolio, with all transects, fields and depths linked. Eight countries are convenience samples, not a random population sample.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No held-out country BD calibration; country identifiers are grouping metadata, never predictors.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "unsupported": 1,
+    "not_assessed": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "measured soil bulk density",
+    "prediction_time": "Same soil-sampling occasion; Corg, sampling depth and pH are measured covariates available before BD inference. This is a laboratory-measurement substitution task, not a future forecast.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Carbon metadata ambiguity and limited country transfer; soil mechanism is unestablished."
+  },
+  "task_ids": [
+    "P100-081.original.v1"
+  ],
+  "finding_ids": [
+    "P100-081-F01",
+    "P100-081-F02",
+    "P100-081-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-081/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-081.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate measured soil bulk density under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Same soil-sampling occasion; Corg, sampling depth and pH are measured covariates available before BD inference. This is a laboratory-measurement substitution task, not a future forecast.",
+    "calibration_requirement": "No held-out country BD calibration; country identifiers are grouping metadata, never predictors.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "measured soil bulk density in g/cm\u00b3",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Carbon metadata ambiguity and limited country transfer; soil mechanism is unestablished."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "g/cm\u00b3",
+    "reference_model": "reference",
+    "reference_primary_error": 0.33612456091162335,
+    "reference_physical_mae": 0.33612456091162335,
+    "physical_error_units": "g/cm\u00b3",
+    "lowest_registered_error_model": "constant",
+    "lowest_registered_error": 0.17260082388350073,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-081.original.v1/evidence/metrics.csv",
+      "bytes": 1285,
+      "sha256": "2e3bd537d88b13608b2be40d97f491b183cb45d64b316a1625f002bffe64ef3e"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Carbon metadata ambiguity and limited country transfer; soil mechanism is unestablished."
+}

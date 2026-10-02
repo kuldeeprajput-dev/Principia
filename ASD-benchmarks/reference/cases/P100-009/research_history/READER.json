@@ -1,0 +1,37 @@
+{
+  "intro": "# Pupil forecasting: a strong persistence null result\n\nSeven released NWB sessions contain pupil radius and treadmill velocity from three animals. Animals16 and22713 supply development folds; every session of animal18 is reserved. Radius is in pixels, not millimeters. Animal16/18 recordings accompany ACh-M1 measurements, while animal22713 accompanies ACh-V1; animal, region and optical setup are therefore confounded.\n\n## Endpoint and reference\n\nThe task predicts the mean pupil radius over the final0.25s of a one-second horizon, using only preceding released pupil and treadmill traces. The selected rule is the transparent persistence control:\n\n$$\\widehat r_{t+1\\mathrm{s}}=\\overline r_{[t-0.25\\mathrm{s},t]}.$$\n\nNo coefficients or labeled held-animal calibration are fitted. A complete five-second prior pupil window and valid future target are required; NaN padding, blinks and gaps are excluded without interpolation or bridging. Every tenth native pupil sample is a forecast time. Treadmill summaries use only samples at or before issuance.\n\nFive substantive attempts challenged persistence with local relaxation, damped inertia, movement-related arousal, asymmetric dilation/constriction and curvature. None improved whole-animal development error by the prespecified1% threshold, so the simpler zero-parameter rule remained selected.\n",
+  "interpretation": "Persistence achieves0.6673px MAE on the one held animal, versus1.0528px local velocity and0.6775px flexible prediction. This is a scientifically useful null result: the tested additional state/movement equations do not establish robust incremental transfer. It does not show that real pupil mechanics or arousal coupling are absent. Source preprocessing already includes DeepLabCut estimation,1Hz low-pass filtering and blink removal; its filter causality is unspecified. Thus all causal-prefix claims apply to the released trace, not raw-camera real-time forecasting. One held animal cannot support a population confidence interval or a new cholinergic mechanism.",
+  "summary": "Five substantive challenges completed; persistence is selected and gives0.6673px reserved-animal MAE. No robust incremental dynamical law admitted; source-filter and three-animal limits are explicit.",
+  "lessons": "A field named raw can still contain author processing; inspect methods, not only variable names. Enforce whole-animal grouping across sessions and disclose region/calibration confounding. Compare dynamics with persistence before assigning biological interpretation to fitted coefficients. Noncausal upstream filtering limits any real-time claim even when the new adapter uses only prefixes. Preserve honest null results.",
+  "findings": [
+    {
+      "finding_id": "P100-009-F01",
+      "classification": "reproduction",
+      "claim": "Pupil persistence remains the development-selected one-second forecast and transfers to the reserved animal",
+      "equation": "rhat(t+1s)=mean(r over[t-.25s,t])",
+      "coefficients": [],
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv"
+      ],
+      "scope": "Three author-processed animals; one held animal",
+      "admission": "supported",
+      "prior_art": "Established short-horizon persistence",
+      "falsification": "No raw-camera latency guarantee, new population or clinical endpoint"
+    },
+    {
+      "finding_id": "P100-009-F02",
+      "classification": "supported_negative_finding",
+      "claim": "The five declared relaxation/inertia/arousal/asymmetry/curvature extensions do not justify a new transferable pupil mechanism",
+      "equation": null,
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv"
+      ],
+      "scope": "These candidates and the development animal split",
+      "admission": "supported",
+      "prior_art": "Pupil and movement dynamics are known; model failures do not deny them",
+      "falsification": "More animals and documented causal preprocessing could alter the result"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "created_before_fitting": "2026-09-30T13:47:40.107878+00:00",
+  "case": 61,
+  "version": "continuation-20260930b",
+  "fresh_confirmation": false,
+  "exposure": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+  "hypothesis": [
+    "geometry_film",
+    "A shared gas-film coefficient with length/diameter scaling transfers across the four calibrated membrane designs.",
+    "The preceding model used four independent film scales; prediction alone did not distinguish membrane-specific defects from external transport.",
+    "Use the earlier conservative Stefan/axial equations with kappa_m=kappa_ref*(d_ref/d_m)*(L_ref/L_m)^0.6 and two relative gas scales. This proposed scaling is tested, not assumed to describe the unknown annular gap."
+  ],
+  "rows": 120,
+  "input_sha256": "070d8629f4fdde585a00cf957007bb215e4b3f24dc61ada046e45c787e785c59",
+  "engine_sha256": "50fc710c38bbdb511cb95cd417a7a712482da19f53c2c0fb105ff5629476afdd",
+  "dependencies": {
+    "61_chemistry_membrane_permeation/research_history/tools/baseline_strength.py": "1fa894a0f7301de082854f63122503e0933bdbe230d07249b17da1c344b144c6",
+    "61_chemistry_membrane_permeation/research_history/tools/campaign.py": "211ab405951000cdd7262ccd467e6f9c8a60058f0a17395e96613d91b2ef026f",
+    "61_chemistry_membrane_permeation/research_history/tools/model_runtime.py": "e0b3d640d5a4ee8a056b0f78cba58c799194c3a624a5475cf7bc81495dd926af",
+    "61_chemistry_membrane_permeation/research_history/attempt-006/run.py": "a8dce1bd4d1c1a77f04f59dcf178e80e7b4fd90e052fd139671ba9a5184e2120",
+    "61_chemistry_membrane_permeation/research_history/attempt-001/run.py": "a8dce1bd4d1c1a77f04f59dcf178e80e7b4fd90e052fd139671ba9a5184e2120",
+    "61_chemistry_membrane_permeation/research_history/attempt-004/run.py": "a8dce1bd4d1c1a77f04f59dcf178e80e7b4fd90e052fd139671ba9a5184e2120",
+    "61_chemistry_membrane_permeation/research_history/attempt-003/run.py": "a8dce1bd4d1c1a77f04f59dcf178e80e7b4fd90e052fd139671ba9a5184e2120",
+    "61_chemistry_membrane_permeation/research_history/attempt-002/run.py": "a8dce1bd4d1c1a77f04f59dcf178e80e7b4fd90e052fd139671ba9a5184e2120",
+    "61_chemistry_membrane_permeation/research_history/attempt-005/run.py": "a8dce1bd4d1c1a77f04f59dcf178e80e7b4fd90e052fd139671ba9a5184e2120",
+    "61_chemistry_membrane_permeation/research_history/continuation-20260930/nested_rbf_original_grid.py": "9e5ad8b4d741b390ab73cfc9822bd6bc51a87aa052cd2283041c0b284601952c",
+    "61_chemistry_membrane_permeation/research_history/continuation-20260930/verify_retrospective.py": "f19a08c5e0e2e41da55bb75117fe2ceb2378e47c2170aa3d57379c28922eb34e",
+    "61_chemistry_membrane_permeation/research_history/continuation-20260930/nested_rbf.py": "a9129aadc66c2fd01901a33aa7b05fb85a240495edba507a4be27120ce43d458",
+    "61_chemistry_membrane_permeation/research_history/continuation-20260930/campaign.py": "ccbf08a69ad114775c84cd7f4eef2886b89c78f44467b1fa0705ad8fd820b769",
+    "61_chemistry_membrane_permeation/research_history/continuation-20260930/document.py": "ec604120ffa319bdc945dab077a4ce37b7984d1115db43d3347e1eddec5a41f6",
+    "61_chemistry_membrane_permeation/research_history/continuation-20260930/finish.py": "28c132e39fb7eb7bb13981d9ba34ab7ce059f222b071537c032e1d0d0ef65ba6",
+    "61_chemistry_membrane_permeation/research_history/continuation-20260930/code_versions/17459084a084e46257eb5b9b8bb42bcf06ee2faf6794a1c97706671fecb73483.py": "17459084a084e46257eb5b9b8bb42bcf06ee2faf6794a1c97706671fecb73483",
+    "61_chemistry_membrane_permeation/research_history/continuation-20260930/code_versions/ccbf08a69ad114775c84cd7f4eef2886b89c78f44467b1fa0705ad8fd820b769.py": "ccbf08a69ad114775c84cd7f4eef2886b89c78f44467b1fa0705ad8fd820b769",
+    "61_chemistry_membrane_permeation/research_history/continuation-20260930/code_versions/9320091faef13592801cd766b80e119f78095c3ea82562fde74a1ac8cfc470d4.py": "9320091faef13592801cd766b80e119f78095c3ea82562fde74a1ac8cfc470d4",
+    "61_chemistry_membrane_permeation/research_history/continuation-20260930/code_versions/4f4914e5b4a80b02549414d074e40bf013eac39b809949fbcbf9dbc8f50b702b.py": "4f4914e5b4a80b02549414d074e40bf013eac39b809949fbcbf9dbc8f50b702b",
+    "61_chemistry_membrane_permeation/research_history/continuation-20260930/development.csv.gz": "35f60f2025c74a052f260fdb78d80c38bcc6fbdd57e0b7b6740cfa4a987d00b4",
+    "61_chemistry_membrane_permeation/research_history/data/development.csv.gz": "26e3cfc3ee6af39a847f2c0540dbbb0467edf582bdfa67641fe4466f10b90af9"
+  },
+  "inputs": [
+    "temperature_K",
+    "feed_fraction",
+    "normal_flow_L_min",
+    "retentate_bar",
+    "permeate_bar",
+    "area_m2",
+    "calibration_j0"
+  ],
+  "categories": [
+    "membrane",
+    "gas"
+  ],
+  "unit": "mol m^-2 s^-1",
+  "metric": "Same whole-group primary metric as preceding continuation;67 equal configuration/particle absolute log error;60 train-condition-normalized MAE;71/73/82/83 RMSE, otherwise MAE.",
+  "selection": "Compare candidate to every exact-cohort saved predecessor and new matched HGB. Gains under1% are practically inconclusive; lower error alone does not establish a mechanism.",
+  "validation": "Predecessor whole-group or forward folds, preserved. Every fit excludes its validation groups except permitted causal within-group/history/context calibration. No targets used for added moisture or initial-map inputs.",
+  "continuation": "One discriminating new cycle per case, followed by revisions only when actual development evidence supports a distinct test. Stop after two substantive no-gain revisions.",
+  "input_additions": "No new measurements; deterministic transforms of existing allowed inputs.",
+  "candidate_kind": "geometry_film",
+  "baselines": "Exact-cohort predecessor OOF predictions and fixed constrained HGB with same permitted information; no group IDs as new predictors.",
+  "admission": "retrospective candidate only; no novel-law, causality, fresh validation or intervention-impact claim."
+}

@@ -1,0 +1,122 @@
+{
+  "case_id": "P100-021",
+  "role": "scientific_critical",
+  "reviewer_id": "root-independent-scientific-review",
+  "checked_files": [
+    {
+      "path": "package/findings.json",
+      "sha256": "2895a2ef0b9e11f91d651067a1da62c2a6bcda3e069283f1d466d1286a6bc83d"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "c8cfe9558cbead9e69ee6f22138afaf7d9f9d85b2c424ac3de48f77d8549e45f"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "87061aba726a62fe6c493fd3fafb542c606cc284bb22449fb61a1899159d08da"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "c7a2b20d59a84d9669a564e965c2590a2e1ca3f4a70a0ec2bd8354db63a0b485"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "f1777573f7f42af4d1bcf5ec191332f2f1badbc04b440e74d18ce095672017e6"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "d87b2225ed9d44c07d1fda0b5c1ac4e3ea659250f88dca9294b2d8b405c31642"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "50789f8fb943ffd3ee6fce5a60631d378cf9aed4ecf0c672bbf020bad2318772"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "7aac0a747fa26e28c4ae9ec3af5271665c1c45f0479c795eeea34aab024ce849"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-021-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Coarse inverse-area scaling beats the constant on held dies, but one die accounts for a large error and an extreme development device is retained. Failure of richer hypotheses is informative."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Nominal-area conductance is physically plausible and established; response-channel gain and measured dimensions are absent, so intrinsic junction resistance and edge physics are not identified."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted source-paper review is disclosed. These known model families and local extensions do not establish literature priority or a new fundamental law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A reproducible screening baseline with explicit device counterexamples; accuracy is insufficient for universal yield or fabrication optimization."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact states, native anchors and held-group results are present; independent computational replay is a separate review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, intervention, measurement-cost experiment or external replication is included."
+        }
+      },
+      "checks": [
+        "Read source/units and prior-art audit",
+        "Inspected all group results and baseline comparisons",
+        "Checked explicit calibration, target meaning and interpretation limits"
+      ],
+      "limitations": [
+        "Only two wafers; five held dies; response gain undocumented; no process intervention."
+      ]
+    },
+    {
+      "finding_id": "P100-021-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Coarse inverse-area scaling beats the constant on held dies, but one die accounts for a large error and an extreme development device is retained. Failure of richer hypotheses is informative."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Nominal-area conductance is physically plausible and established; response-channel gain and measured dimensions are absent, so intrinsic junction resistance and edge physics are not identified."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted source-paper review is disclosed. These known model families and local extensions do not establish literature priority or a new fundamental law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A reproducible screening baseline with explicit device counterexamples; accuracy is insufficient for universal yield or fabrication optimization."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact states, native anchors and held-group results are present; independent computational replay is a separate review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, intervention, measurement-cost experiment or external replication is included."
+        }
+      },
+      "checks": [
+        "Read source/units and prior-art audit",
+        "Inspected all group results and baseline comparisons",
+        "Checked explicit calibration, target meaning and interpretation limits"
+      ],
+      "limitations": [
+        "Only two wafers; five held dies; response gain undocumented; no process intervention."
+      ]
+    }
+  ],
+  "limitations": [
+    "Only two wafers; five held dies; response gain undocumented; no process intervention."
+  ],
+  "novelty_certified": false,
+  "independent_experimental_replication": false
+}

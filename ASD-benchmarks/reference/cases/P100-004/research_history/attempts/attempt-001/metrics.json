@@ -1,0 +1,110 @@
+{
+  "primary_error": 21.077550213564557,
+  "worst_group": 21.60102499619289,
+  "by_group": {
+    "periodD": 20.026349633055574,
+    "periodE": 21.40668159334302,
+    "periodF": 21.27614463166673,
+    "periodG": 21.60102499619289
+  },
+  "bias_by_group": {
+    "periodD": 1.0461331640180496,
+    "periodE": -0.9561808816380228,
+    "periodF": -0.7849295758479292,
+    "periodG": -1.1369216652698362
+  },
+  "rmse_by_group": {
+    "periodD": 27.313186361471384,
+    "periodE": 30.98348310378242,
+    "periodF": 30.273318407437607,
+    "periodG": 31.30923490535581
+  },
+  "exact_fraction": null,
+  "fold_states": {
+    "periodD": {
+      "case": 4,
+      "kind": "rayleigh",
+      "training_groups": [
+        "periodE",
+        "periodF",
+        "periodG"
+      ],
+      "training_rows": 86014,
+      "parameters": 1,
+      "equation": "See executable predict in run.py and parameter state; no target lookup.",
+      "coefficients": [
+        3.037660671715905
+      ],
+      "fit_objective": "equal-group weighted least squares; development selection by MAE",
+      "jacobian_condition": 1.0,
+      "optimizer_success": true,
+      "boundary_contacts": [
+        false
+      ]
+    },
+    "periodE": {
+      "case": 4,
+      "kind": "rayleigh",
+      "training_groups": [
+        "periodD",
+        "periodF",
+        "periodG"
+      ],
+      "training_rows": 62221,
+      "parameters": 1,
+      "equation": "See executable predict in run.py and parameter state; no target lookup.",
+      "coefficients": [
+        3.0025197212103243
+      ],
+      "fit_objective": "equal-group weighted least squares; development selection by MAE",
+      "jacobian_condition": 1.0,
+      "optimizer_success": true,
+      "boundary_contacts": [
+        false
+      ]
+    },
+    "periodF": {
+      "case": 4,
+      "kind": "rayleigh",
+      "training_groups": [
+        "periodD",
+        "periodE",
+        "periodG"
+      ],
+      "training_rows": 71939,
+      "parameters": 1,
+      "equation": "See executable predict in run.py and parameter state; no target lookup.",
+      "coefficients": [
+        3.0057421652320557
+      ],
+      "fit_objective": "equal-group weighted least squares; development selection by MAE",
+      "jacobian_condition": 1.0,
+      "optimizer_success": true,
+      "boundary_contacts": [
+        false
+      ]
+    },
+    "periodG": {
+      "case": 4,
+      "kind": "rayleigh",
+      "training_groups": [
+        "periodD",
+        "periodE",
+        "periodF"
+      ],
+      "training_rows": 48992,
+      "parameters": 1,
+      "equation": "See executable predict in run.py and parameter state; no target lookup.",
+      "coefficients": [
+        2.998444703189707
+      ],
+      "fit_objective": "equal-group weighted least squares; development selection by MAE",
+      "jacobian_condition": 1.0,
+      "optimizer_success": true,
+      "boundary_contacts": [
+        false
+      ]
+    }
+  },
+  "development_seconds": 0.279999031976331
+}

@@ -1,0 +1,155 @@
+{
+  "schema_version": "principia.review-packet/3.0",
+  "bindings": {
+    "claims_sha256": "d937c8faf7a6b64e29970a6591b2e5db47c081509e4a6acb0b2446d1fc5cfbc3",
+    "evidence_sha256": {
+      "E001": "ad276cad3adf8f530847b974049b71066a558a932c478c9b1380d9203769c3e3",
+      "E002": "756b7f1a7e6e761b756b49da5e914651780dd113b7cb81cb0eaaec4447343351",
+      "E003": "ea2bd8b64a11bd1b33fc03d6d242a75f17049363bdfdf33185a2c32136777168",
+      "E004": "3e385e5f270d90d84d0899598aa122f96a3ea46ab4f02be41c7e66ee25c3b4a7",
+      "E005": "b14e415b2f1f64685ac092816181d99afe9e9bfae714b870d800712196518ca1",
+      "E006": "ad7001315bbbff282b6dac906e1108c773bbbfd81d2d7dcb603ee1e41412cb37",
+      "E007": "fe2ade36508644773feb278cf2f4674f4012d10a84d63c31ec72fcbc644cfc66",
+      "E008": "6fdcef4c52359b760e9117d587cd03a1cce20d032ad69475336326bb9d034121",
+      "E009": "6e363befe9022e33199d1f28cff6a0ee4a0faca4332930a92b602d1572f8b945",
+      "E010": "8a129d70863a68e2cf9ad63beec46ad5602af0c02f6ec2e225e99478069dbbb6",
+      "E011": "85b621695298a4a4bfedf3c421b48e2b50fe1ca5eab2b21ed4ecf151fe806eca",
+      "E012": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253",
+      "E013": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078",
+      "SCIENTIFIC": "53532b3216d27f8f7b790521519d30fab3c87184ff1374a13b8344973977f555",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-092",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "findings": [
+    {
+      "id": "P100-092-SCI-01",
+      "classification": "predictive_reference",
+      "source_classification": "numerical_control",
+      "statement": "Six contrast coefficients improve an unchanged radio map but remain slightly weaker than the flexible comparator.",
+      "applicability": "Complete dates retain furniture variants; known positions and 3120 initial calibration-cell means are declared access.",
+      "limitations": "Only 1/3 dates beat flexible. Correction has six coefficients plus a 3120-cell measured map; temporal transfer at calibrated positions is not localization or unseen-position transfer.",
+      "falsification": [
+        "Distinguish RSSI dBm measurements from dB errors and preserve actual calendar dates.",
+        "Disallow target-date offsets or recalibration; baseline coverage must include both furniture states when available.",
+        "Keep date-level uncertainty and report missing furniture day 86 rather than inventing it."
+      ],
+      "prior_art": "Known calibration/power aggregation structures; no new propagation law or localization improvement established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "Rhat=R0+a+d*f+bc*(c/10dB)+bcf*f*(c/10dB)+bs*(s/10dB)+bsf*f*(s/10dB).",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ]
+      },
+      "variables_and_units": {
+        "target": "dBm",
+        "r0": "dBm",
+        "channel_contrast": "dB",
+        "spatial_contrast": "dB",
+        "port": "categorical P1\u2013P8",
+        "channel": "channel number 37/38/39",
+        "day": "elapsed days",
+        "furniture": "binary indicator"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-092.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-092-SCI-02",
+      "classification": "predictive_reference",
+      "source_classification": "numerical_control",
+      "statement": "Exact positive-power mixing compresses the calibration correction to three parameters but remains weaker than flexible prediction.",
+      "applicability": "Complete dates retain furniture variants; known positions and 3120 initial calibration-cell means are declared access.",
+      "limitations": "Exposed MAE 3.581295 dB vs 3.438900 dBflexible, losing every date; the initial 3120-cell map remains required. Improved correction is not reduced calibration cost or a propagation law.",
+      "falsification": [
+        "Distinguish RSSI dBm measurements from dB errors and preserve actual calendar dates.",
+        "Disallow target-date offsets or recalibration; baseline coverage must include both furniture states when available.",
+        "Keep date-level uncertainty and report missing furniture day 86 rather than inventing it."
+      ],
+      "prior_art": "Known calibration/power aggregation structures; no new propagation law or localization improvement established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E005",
+          "E006"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "scope": "See bound equations/source audit; no substitute units are invented"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006"
+      ],
+      "task_id": null,
+      "task_family": "continuation",
+      "task_version_history": "2026-09-30 first continuation"
+    },
+    {
+      "id": "P100-092-SCI-03",
+      "classification": "falsified",
+      "source_classification": "unsupported_or_falsified",
+      "statement": "Local channel-power redistribution fails to replace the prior globally calibrated/flexible descriptions.",
+      "applicability": "Complete dates retain furniture variants; known positions and 3120 initial calibration-cell means are declared access.",
+      "limitations": "All three development dates lose. Earlier positive-power correction diagnostic 3.581295 dB still loses flexible 3.438900 dB on every exposed date.",
+      "falsification": [
+        "Distinguish RSSI dBm measurements from dB errors and preserve actual calendar dates.",
+        "Disallow target-date offsets or recalibration; baseline coverage must include both furniture states when available.",
+        "Keep date-level uncertainty and report missing furniture day 86 rather than inventing it."
+      ],
+      "prior_art": "Known calibration/power aggregation structures; no new propagation law or localization improvement established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E007",
+          "E008",
+          "E009",
+          "E010"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "target": "dBm",
+        "r0": "dBm",
+        "channel_contrast": "dB",
+        "position_contrast": "dB",
+        "spatial_contrast": "dB",
+        "global_power_reference": "dBm; power-domain spatial calibration mean",
+        "local_channel_power_dB": "dBm; power-domain channel calibration mean",
+        "furniture": "binary indicator",
+        "day": "elapsed days",
+        "lwa": "binary indicator for ports P1-P4",
+        "port": "categorical P1\u2013P8",
+        "channel": "channel number 37/38/39"
+      },
+      "evidence_ids": [
+        "E007",
+        "E008",
+        "E009",
+        "E010"
+      ],
+      "task_id": "P100-092.round2.v1",
+      "task_family": "round2",
+      "task_version_history": "2026-09-30 second continuation"
+    }
+  ],
+  "reviews_required": [
+    "computational",
+    "scientific_critical"
+  ],
+  "automatic_scientific_admission": false,
+  "current_exposure": "exposed"
+}

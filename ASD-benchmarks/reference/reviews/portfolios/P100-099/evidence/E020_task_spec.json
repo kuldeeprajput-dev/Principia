@@ -1,0 +1,51 @@
+{
+  "case_id": "P100-099",
+  "target": "Population trace mean over native frames t+31 through t+60",
+  "target_units": "author processed-trace units",
+  "error_units": "author processed-trace units",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "level",
+    "lag30",
+    "lag60",
+    "mean300",
+    "dispersion",
+    "zero_fraction",
+    "ventral",
+    "condition_group3"
+  ],
+  "input_units": {
+    "level": "author processed-trace units",
+    "lag30": "author processed-trace units",
+    "lag60": "author processed-trace units",
+    "mean300": "author processed-trace units",
+    "dispersion": "author processed-trace units",
+    "zero_fraction": "dimensionless",
+    "ventral": "binary",
+    "condition_group3": "binary"
+  },
+  "numeric_columns": [
+    "level",
+    "lag30",
+    "lag60",
+    "mean300",
+    "dispersion",
+    "zero_fraction",
+    "ventral",
+    "condition_group3"
+  ],
+  "timing_contract": "Every30 native frames after300-frame history, forecast next30-frame population mean ending60 frames later. Only trace frames<=t are inputs. Native frame index is used without inferring seconds or behavior alignment.",
+  "calibration": "Past observed trace history is allowed. No held future calibration or source fitted maps/pvpreS/pvpostS enter features. All model parameters and flexible transforms are fitted on development animals.",
+  "independent_unit": "Animal suffix across all days,contexts and sessions",
+  "scope_limits": "Retained author-processed calcium traces only; amplitude normalization/calcium-event interpretation is not documented in the archive. No spikes,absolute calcium concentration or real-time physiology claim. Twenty-eight source animals; held animals stay within the same study.",
+  "source_url": "https://zenodo.org/records/21225888",
+  "source_license": "CC BY4.0",
+  "prior_art_url": "https://doi.org/10.1038/s41593-026-02435-5",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": null,
+    "target_max": null
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

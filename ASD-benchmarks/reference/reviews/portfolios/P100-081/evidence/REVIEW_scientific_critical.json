@@ -1,0 +1,200 @@
+{
+  "case_id": "P100-081",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_bio_behavior",
+  "reviewed_utc": "2026-10-02T03:31:23.234204+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "f8a798f453779cc78431365b4a94f4723dcb9451b45ea90bb17ed91daee110e9"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "b907ebb6471b4fdd6f055015fbb40a65a2a7f19c62508402521fc1fdbec24650"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "83177f93dcaacc0af49047d5c40f4c035b17147d759e9d83751a4db6aca689f7"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "02c98bc89d94a97731aa67fcba53ca92587d325ccbaad0b78e088e36a431a583"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "fcb2ea7ca021482d28dbcadfddede5a17fdc1254c696deb637c0202144147cf5"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "d0e85bcf739977ba2affc7b86a83ed148a4b8bbedde58084c5f6d5273b4255f0"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "38397c74fe5fe6a72426958dcc0a5fc6f85dc69ff8dc626bc1777654b2f80719"
+    },
+    {
+      "path": "CONFIRMATION_RECEIPT.json",
+      "sha256": "60bd5dfc883368e4899f738c8c6444d8a98d1188e7c4215a043a7b64a2143354"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "307205dd2b537cfbadad10ba7e057d9af7f92cb05f3daa30b237967444c740ff"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "3532a4ded4105a4fd7ec70320934dbf406d64c1b28f8addfd9bca3257a3bb21a"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "843be6e9018af0ad6721563d95e4dd824d5caf3a5c57f318a9f673664e4809d0"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "7873a583e81b8ed5b1074765f0afb9c24f8ee5da87eb0895116789da01c6eddf"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300"
+    },
+    {
+      "path": "package/MANIFEST.json",
+      "sha256": "1ba797129c50385a02e22d5dfe5ef5ce050b1f9bc5353ea6a5ca9b01bb6b5a04"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "2e3bd537d88b13608b2be40d97f491b183cb45d64b316a1625f002bffe64ef3e"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "fd7c39d265dbb912ea26d365445f0644da7168a228ec6ef4dc301a265383de38"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-081-F01",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "The development-selected mixture fails held-country transfer: 0.336 g/cm3 versus constant 0.173, with German error 0.608. Both held countries remain included. Claim-specific conclusion: An uncalibrated two-phase carbon-density mixture improves transfer to unseen countries over simple controls."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Organic/mineral mixing is established; fitted effective bulk packing densities are not intrinsic material densities. The 1.724 carbon conversion is assumed and cannot isolate mineralogy, compaction or texture."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A valuable negative pedotransfer example showing that a plausible physical form may transfer worse than a simple mean."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "Four development/two confirmation countries from convenience sites; complete-case water-pH criteria remove two source countries. No causal agroforestry treatment inference.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-081-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The development-selected mixture fails held-country transfer: 0.336 g/cm3 versus constant 0.173, with German error 0.608. Both held countries remain included. Claim-specific conclusion: Development-selected carbon-only mixing does not provide reliable country transfer for this complete-case cohort."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Organic/mineral mixing is established; fitted effective bulk packing densities are not intrinsic material densities. The 1.724 carbon conversion is assumed and cannot isolate mineralogy, compaction or texture."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A valuable negative pedotransfer example showing that a plausible physical form may transfer worse than a simple mean."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "Four development/two confirmation countries from convenience sites; complete-case water-pH criteria remove two source countries. No causal agroforestry treatment inference.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-081-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The development-selected mixture fails held-country transfer: 0.336 g/cm3 versus constant 0.173, with German error 0.608. Both held countries remain included. Claim-specific conclusion: The tested depth and acidity mechanisms do not repair the development transfer limitation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Organic/mineral mixing is established; fitted effective bulk packing densities are not intrinsic material densities. The 1.724 carbon conversion is assumed and cannot isolate mineralogy, compaction or texture."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A valuable negative pedotransfer example showing that a plausible physical form may transfer worse than a simple mean."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "Four development/two confirmation countries from convenience sites; complete-case water-pH criteria remove two source countries. No causal agroforestry treatment inference.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    }
+  ],
+  "review_scope": "Scientific interpretation, source semantics, information budget and evidence; independent from discovery and the computational reviewer for these cases.",
+  "literature": [
+    {
+      "url": "https://zenodo.org/records/21204617",
+      "use": "Primary-source context and distinction from the scoped task",
+      "access": "Primary source inspected by this reviewer on 2026-10-02."
+    }
+  ],
+  "blocking_defects": [],
+  "recommendations": [
+    "Retain F01 as unsupported, with F02/F03 supported negative evidence; do not repair unknown carbon or texture semantics from outcome patterns."
+  ]
+}

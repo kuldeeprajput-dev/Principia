@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-082",
+  "protocol_id": "P100-082-prepared-primary-v1",
+  "target": "Author-derived forest-soil CO2 mass flux on reserved future dates",
+  "target_units": "g CO2 m^-2 h^-1",
+  "primary_units": "g CO2 m^-2 h^-1",
+  "metric_kind": "rmse",
+  "metric_definition": "Equal-calibrated-site future-block mean RMSE: take square root within group, then average groups equally.",
+  "independent_unit": "complete reserved future temporal block at each calibrated site",
+  "evaluation_groups": [
+    "DumbravitaTrench|confirmation",
+    "Dumbravita|confirmation",
+    "Gamiz|confirmation",
+    "Kacergine|confirmation",
+    "Karstula75|confirmation",
+    "Karstula76|confirmation",
+    "Kelheim-Parsberg|confirmation",
+    "Kranzberg-Freising|confirmation",
+    "Llobera|confirmation",
+    "RincondelBatovi|confirmation",
+    "R\u00e4nsk\u00e4l\u00e4nkorpi|confirmation",
+    "Saint Mitre|confirmation",
+    "Secanella|confirmation",
+    "St Christol|confirmation",
+    "Wasserburg-Maitenbeth|confirmation"
+  ],
+  "input_sha256": "d0f030b8483dd35f2a713a251da4a9899bfe1e607154878cfd43fc5d92998ec4",
+  "input_rows": 6928,
+  "assigned_rows": 6928,
+  "permitted_inputs": [
+    "site",
+    "context",
+    "t05",
+    "tsmoisture",
+    "doy"
+  ],
+  "input_units": {
+    "site": "categorical calibrated site",
+    "context": "categorical subsite/trenching context",
+    "t05": "degrees Celsius, native 5-cm soil temperature",
+    "tsmoisture": "native soil-water-content percent; may be missing",
+    "doy": "day of year"
+  },
+  "allows_missing_predictors": true,
+  "baseline_models": [
+    "lloyd_taylor",
+    "temperature_moisture",
+    "q10",
+    "context_mean",
+    "flexible_fixed",
+    "flexible_nested"
+  ],
+  "reference_equations": {
+    "lloyd_taylor": "Fhat=A_context*exp(E0_K*(1/(10+46.02)-1/(T_degC+46.02))); context/site fallback amplitudes frozen; E0 optimizer qualification applies.",
+    "temperature_moisture": "Fhat=A_context*exp(b*x+c*z+d*z^2+interaction*x*z+missing*I_missing); x=(T-10)/10,z=(SWC-30)/30; missing SWC uses fixed30 percent plus flag.",
+    "q10": "Fhat=A_context*exp(b*(T_degC-10)/10+missing*I_missing_moisture).",
+    "context_mean": "Fhat=A_context, with frozen development-only context/site/global fallback.",
+    "flexible_fixed": "yhat=max(0,intercept+sum_i w_i*exp(-gamma*||encoded_scaled_X-center_i||^2)); all imputation, category encoding, scales and kernel state frozen.",
+    "flexible_nested": "yhat=max(0,intercept+sum_i w_i*exp(-gamma*||encoded_scaled_X-center_i||^2)); all imputation, category encoding, scales and kernel state frozen."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "scope_limit": "Future dates at fifteen input-eligible calibrated sites, including a Uruguay site in the source. Not unseen-site transfer or causal treatment effects. Native negative flux measurements remain scored; missing 5-cm temperature limits coverage.",
+  "calibration_note": "Context/site amplitudes are trained on earlier dates only. Lloyd\u2013Taylor E0 is near 200 K with a documented optimizer-scaling limitation; it is not an identified globally optimized physiological coefficient.",
+  "timing_contract": "Known site/context, measurement date, native 5-cm soil temperature and soil moisture only; exclude author response-fit slopes, chamber conversions, confidence bounds and future flux.",
+  "exposure_notice": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every complete reserved group. Within-system and temporal dependence, few condition blocks or calibrated sites limit population-level claims; no row-bootstrap confidence interval is claimed."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Audit native sample anchors and the declared prediction-time cutoff. Disclose every input/calibration and exclude future outcomes. Known site/context, measurement date, native 5-cm soil temperature and soil moisture only; exclude author response-fit slopes, chamber conversions, confidence bounds and future flux."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

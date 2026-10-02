@@ -1,0 +1,2801 @@
+{
+  "schema_version": "principia.report/3.0",
+  "evaluator_version": "3.0.0-rc.1",
+  "contract_notice": null,
+  "additive_extensions": {
+    "probability": "asd6-probability/1.0",
+    "endpoint_diagnostics": "asd6-diagnostics/1.0"
+  },
+  "identity": {
+    "case_id": "P100-089",
+    "task_id": "P100-089.original.v1",
+    "protocol_version": "P100-089-asd6-native-v1",
+    "cohort_id": "P100-089.original.v1.cohort-1"
+  },
+  "bindings": {
+    "task_sha256": "7cf0e1ea52b1a24d6d2361de72756e64665c20bb6a21f4877894b11b977c58c2",
+    "manifest_sha256": "536d2f1cdab41c9500543fee24693f647be51ff665a47f12e35422665855f579",
+    "input_sha256": "3d5dfa7fba860f2b8dac8602628666fed284e1996a36965d442fabd83646bcaa",
+    "observations_sha256": "425397ac552366e65759c9a4ae7dad11ec23a0925e28d7eff6d2dd41c5c24d9e",
+    "submission_sha256": "8e78164c274a30780d2abe417684cdf53ad166be8b049f5e6ffef79550b8e831",
+    "predictions_sha256": "f5091218f096ea206dffe55a4f5c6ee81154941fa089aae180cae2433523b2da"
+  },
+  "coverage": {
+    "assigned_rows": 6008,
+    "eligible_target_rows": 6008,
+    "predicted_rows": 6008,
+    "scored_rows": 6008,
+    "abstained_rows": 0,
+    "eligible_group_weighted_coverage": 1.0000000000000013,
+    "full_eligible_cohort": true
+  },
+  "scores": {
+    "candidate": {
+      "primary_error": 0.14335861588395382,
+      "primary_units": "probability squared",
+      "primary_eligible_rows": 6008,
+      "primary_eligible_groups": 12,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 0.2777299018967963,
+      "group_balanced_rmse": 0.37862727831464266,
+      "mean_group_rmse": 0.3717327184799719,
+      "group_balanced_bias": -0.007924950262364581,
+      "median_absolute_error": 0.19907335985409283,
+      "p90_absolute_error": 0.6855298194564481,
+      "p95_absolute_error": 0.7742873763203317,
+      "maximum_absolute_error": 0.9999214616891712,
+      "tail_conditional_mae_p90": 0.8003295106040041,
+      "worst_group_mae": 0.38670321295990756,
+      "groups": 12,
+      "rows": 6008,
+      "error_units": "probability squared",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "probability_diagnostics": {
+        "extension_version": "asd6-probability/1.0",
+        "brier": 0.14335861588395388,
+        "log_loss_nats": 0.442830755326044,
+        "log_loss_undefined_reason": null,
+        "certainty_error_rows": 0,
+        "clipped_log_loss_nats": 0.442830755326044,
+        "clipping_epsilon": 1e-12,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "weight": 0.132805384701841,
+            "rows": 856,
+            "mean_probability": 0.047430179055198834,
+            "event_frequency": 0.03602657563656653
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "weight": 0.09737688678164869,
+            "rows": 606,
+            "mean_probability": 0.1424936030435494,
+            "event_frequency": 0.13563497128078583
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "weight": 0.08488066473946873,
+            "rows": 495,
+            "mean_probability": 0.2509240879767398,
+            "event_frequency": 0.25534717726408024
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "weight": 0.07610254878319664,
+            "rows": 453,
+            "mean_probability": 0.3493393451709482,
+            "event_frequency": 0.522927620862179
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "weight": 0.06986188381468006,
+            "rows": 406,
+            "mean_probability": 0.4438014065840283,
+            "event_frequency": 0.4946709595809618
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "weight": 0.056051090920276964,
+            "rows": 334,
+            "mean_probability": 0.5515968233337887,
+            "event_frequency": 0.554743703894931
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "weight": 0.08470335740200083,
+            "rows": 493,
+            "mean_probability": 0.6529329109387797,
+            "event_frequency": 0.6790366124762921
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "weight": 0.08677445997974792,
+            "rows": 498,
+            "mean_probability": 0.7444895543621282,
+            "event_frequency": 0.6839579994689156
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "weight": 0.08074537496464407,
+            "rows": 477,
+            "mean_probability": 0.8574349544256095,
+            "event_frequency": 0.8601616724481925
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "weight": 0.23069834791249522,
+            "rows": 1390,
+            "mean_probability": 0.966898345205672,
+            "event_frequency": 0.9478798323310561
+          }
+        ],
+        "calibration_status": "descriptive on exposed cohort; dependent trial rows are not independent populations",
+        "binary_events": {
+          "event": "target >= threshold",
+          "threshold": 0.5,
+          "target_units": "binary choice",
+          "weighted_confusion": {
+            "tp": 0.4360891448232263,
+            "fp": 0.10288348635593927,
+            "fn": 0.11402104250595388,
+            "tn": 0.3470063263148816
+          },
+          "row_confusion": {
+            "tp": 2615,
+            "fp": 577,
+            "fn": 684,
+            "tn": 2132
+          },
+          "precision": 0.8091118539157535,
+          "recall": 0.7927305381135855,
+          "specificity": 0.7713140341072406,
+          "f1": 0.8008374338702958,
+          "undefined_reasons": {
+            "precision": null,
+            "recall": null,
+            "specificity": null,
+            "f1": null
+          },
+          "operational_claim": false,
+          "status": "registered_binary_decision_threshold",
+          "threshold_registered_before_outcomes": true
+        }
+      },
+      "matched_baseline_skill": {
+        "reference": 0.0,
+        "baseline_mean": 0.4210609968739011,
+        "baseline_utility": 0.23923691786471224,
+        "baseline_persistence": 0.38381652882699513,
+        "baseline_flexible": 0.0,
+        "attempt_001_prospect": 0.23341498238514846,
+        "attempt_002_context": 0.24927336823260215,
+        "attempt_003_memory": 0.04393705870655862,
+        "attempt_004_description": 0.03516779634118472,
+        "attempt_005_history_interaction": 0.026624529811235642
+      },
+      "normalized_mae_to_exposed_reference_scale": 1.0,
+      "tolerance_accuracy": [
+        {
+          "absolute_tolerance": 0.13886495094839815,
+          "units": "probability squared",
+          "weighted_fraction": 0.4296549327584773,
+          "interpretation": "Exposed-reference diagnostic; not an operational acceptance limit"
+        },
+        {
+          "absolute_tolerance": 0.2777299018967963,
+          "units": "probability squared",
+          "weighted_fraction": 0.5952774338730875,
+          "interpretation": "Exposed-reference diagnostic; not an operational acceptance limit"
+        },
+        {
+          "absolute_tolerance": 0.5554598037935926,
+          "units": "probability squared",
+          "weighted_fraction": 0.8126399905158227,
+          "interpretation": "Exposed-reference diagnostic; not an operational acceptance limit"
+        }
+      ]
+    },
+    "reference": {
+      "primary_error": 0.14335861588395382,
+      "primary_units": "probability squared",
+      "primary_eligible_rows": 6008,
+      "primary_eligible_groups": 12,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 0.2777299018967963,
+      "group_balanced_rmse": 0.37862727831464266,
+      "mean_group_rmse": 0.3717327184799719,
+      "group_balanced_bias": -0.007924950262364568,
+      "median_absolute_error": 0.19907335985409283,
+      "p90_absolute_error": 0.6855298194564481,
+      "p95_absolute_error": 0.7742873763203317,
+      "maximum_absolute_error": 0.9999214616891711,
+      "tail_conditional_mae_p90": 0.8003295106040041,
+      "worst_group_mae": 0.38670321295990756,
+      "groups": 12,
+      "rows": 6008,
+      "error_units": "probability squared",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "probability_diagnostics": {
+        "extension_version": "asd6-probability/1.0",
+        "brier": 0.14335861588395385,
+        "log_loss_nats": 0.4428307553260439,
+        "log_loss_undefined_reason": null,
+        "certainty_error_rows": 0,
+        "clipped_log_loss_nats": 0.4428307553260439,
+        "clipping_epsilon": 1e-12,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "weight": 0.132805384701841,
+            "rows": 856,
+            "mean_probability": 0.04743017905519888,
+            "event_frequency": 0.03602657563656653
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "weight": 0.09737688678164869,
+            "rows": 606,
+            "mean_probability": 0.14249360304354947,
+            "event_frequency": 0.13563497128078583
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "weight": 0.08488066473946873,
+            "rows": 495,
+            "mean_probability": 0.25092408797673993,
+            "event_frequency": 0.25534717726408024
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "weight": 0.07610254878319664,
+            "rows": 453,
+            "mean_probability": 0.3493393451709483,
+            "event_frequency": 0.522927620862179
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "weight": 0.06986188381468006,
+            "rows": 406,
+            "mean_probability": 0.4438014065840283,
+            "event_frequency": 0.4946709595809618
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "weight": 0.056051090920276964,
+            "rows": 334,
+            "mean_probability": 0.5515968233337887,
+            "event_frequency": 0.554743703894931
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "weight": 0.08470335740200083,
+            "rows": 493,
+            "mean_probability": 0.6529329109387797,
+            "event_frequency": 0.6790366124762921
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "weight": 0.08677445997974792,
+            "rows": 498,
+            "mean_probability": 0.7444895543621282,
+            "event_frequency": 0.6839579994689156
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "weight": 0.08074537496464407,
+            "rows": 477,
+            "mean_probability": 0.8574349544256095,
+            "event_frequency": 0.8601616724481925
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "weight": 0.23069834791249522,
+            "rows": 1390,
+            "mean_probability": 0.966898345205672,
+            "event_frequency": 0.9478798323310561
+          }
+        ],
+        "calibration_status": "descriptive on exposed cohort; dependent trial rows are not independent populations",
+        "binary_events": {
+          "event": "target >= threshold",
+          "threshold": 0.5,
+          "target_units": "binary choice",
+          "weighted_confusion": {
+            "tp": 0.4360891448232263,
+            "fp": 0.10288348635593927,
+            "fn": 0.11402104250595388,
+            "tn": 0.3470063263148816
+          },
+          "row_confusion": {
+            "tp": 2615,
+            "fp": 577,
+            "fn": 684,
+            "tn": 2132
+          },
+          "precision": 0.8091118539157535,
+          "recall": 0.7927305381135855,
+          "specificity": 0.7713140341072406,
+          "f1": 0.8008374338702958,
+          "undefined_reasons": {
+            "precision": null,
+            "recall": null,
+            "specificity": null,
+            "f1": null
+          },
+          "operational_claim": false,
+          "status": "registered_binary_decision_threshold",
+          "threshold_registered_before_outcomes": true
+        }
+      }
+    },
+    "baseline_mean": {
+      "primary_error": 0.24762300537683557,
+      "primary_units": "probability squared",
+      "primary_eligible_rows": 6008,
+      "primary_eligible_groups": 12,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 0.49613822987797584,
+      "group_balanced_rmse": 0.4976173282521784,
+      "mean_group_rmse": 0.4975268750253244,
+      "group_balanced_bias": -0.011577402601664524,
+      "median_absolute_error": 0.4614672152724849,
+      "p90_absolute_error": 0.5385327847275151,
+      "p95_absolute_error": 0.5385327847275151,
+      "maximum_absolute_error": 0.5385327847275151,
+      "tail_conditional_mae_p90": 0.5385327847275158,
+      "worst_group_mae": 0.5101326952431614,
+      "groups": 12,
+      "rows": 6008,
+      "error_units": "probability squared",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "probability_diagnostics": {
+        "extension_version": "asd6-probability/1.0",
+        "brier": 0.24762300537683626,
+        "log_loss_nats": 0.6883866996015789,
+        "log_loss_undefined_reason": null,
+        "certainty_error_rows": 0,
+        "clipped_log_loss_nats": 0.6883866996015789,
+        "clipping_epsilon": 1e-12,
+        "calibration_bins": [
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "weight": 1.0,
+            "rows": 6008,
+            "mean_probability": 0.5385327847275135,
+            "event_frequency": 0.5501101873291805
+          }
+        ],
+        "calibration_status": "descriptive on exposed cohort; dependent trial rows are not independent populations",
+        "binary_events": {
+          "event": "target >= threshold",
+          "threshold": 0.5,
+          "target_units": "binary choice",
+          "weighted_confusion": {
+            "tp": 0.5501101873291805,
+            "fp": 0.4498898126708215,
+            "fn": 0.0,
+            "tn": 0.0
+          },
+          "row_confusion": {
+            "tp": 3299,
+            "fp": 2709,
+            "fn": 0,
+            "tn": 0
+          },
+          "precision": 0.5501101873291794,
+          "recall": 1.0,
+          "specificity": 0.0,
+          "f1": 0.7097691400596656,
+          "undefined_reasons": {
+            "precision": null,
+            "recall": null,
+            "specificity": null,
+            "f1": null
+          },
+          "operational_claim": false,
+          "status": "registered_binary_decision_threshold",
+          "threshold_registered_before_outcomes": true
+        }
+      }
+    },
+    "baseline_utility": {
+      "primary_error": 0.18844055297948872,
+      "primary_units": "probability squared",
+      "primary_eligible_rows": 6008,
+      "primary_eligible_groups": 12,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 0.3621523457869712,
+      "group_balanced_rmse": 0.4340974003371693,
+      "mean_group_rmse": 0.43087621682975796,
+      "group_balanced_bias": -0.014634555329093395,
+      "median_absolute_error": 0.2565638871717388,
+      "p90_absolute_error": 0.7434361128282612,
+      "p95_absolute_error": 0.8077209400715226,
+      "maximum_absolute_error": 0.9983959477860087,
+      "tail_conditional_mae_p90": 0.7858368530883175,
+      "worst_group_mae": 0.4237269914812125,
+      "groups": 12,
+      "rows": 6008,
+      "error_units": "probability squared",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "probability_diagnostics": {
+        "extension_version": "asd6-probability/1.0",
+        "brier": 0.18844055297948864,
+        "log_loss_nats": 0.5542027271699186,
+        "log_loss_undefined_reason": null,
+        "certainty_error_rows": 0,
+        "clipped_log_loss_nats": 0.5542027271699186,
+        "clipping_epsilon": 1e-12,
+        "calibration_bins": [
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "weight": 0.05715954867186872,
+            "rows": 341,
+            "mean_probability": 0.16953989549131596,
+            "event_frequency": 0.1569039958017472
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "weight": 0.2649735552940149,
+            "rows": 1572,
+            "mean_probability": 0.25656388717173856,
+            "event_frequency": 0.2853708858857924
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "weight": 0.12245835224309756,
+            "rows": 760,
+            "mean_probability": 0.35331924342880383,
+            "event_frequency": 0.4743404243066825
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "weight": 0.01852682150301198,
+            "rows": 120,
+            "mean_probability": 0.4683636005475675,
+            "event_frequency": 0.466797508847301
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "weight": 0.19521280875516756,
+            "rows": 1156,
+            "mean_probability": 0.5452536887077424,
+            "event_frequency": 0.543276797438967
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "weight": 0.019299285370713952,
+            "rows": 125,
+            "mean_probability": 0.6394675344700244,
+            "event_frequency": 0.9360007120922155
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "weight": 0.1472824255181675,
+            "rows": 883,
+            "mean_probability": 0.8172732780536857,
+            "event_frequency": 0.7664373162450698
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "weight": 0.17508720264395794,
+            "rows": 1051,
+            "mean_probability": 0.9521325250842424,
+            "event_frequency": 0.9240491757800524
+          }
+        ],
+        "calibration_status": "descriptive on exposed cohort; dependent trial rows are not independent populations",
+        "binary_events": {
+          "event": "target >= threshold",
+          "threshold": 0.5,
+          "target_units": "binary choice",
+          "weighted_confusion": {
+            "tp": 0.3987906666464257,
+            "fp": 0.13809105564158158,
+            "fn": 0.15131952068275428,
+            "tn": 0.311798757029239
+          },
+          "row_confusion": {
+            "tp": 2403,
+            "fp": 812,
+            "fn": 896,
+            "tn": 1897
+          },
+          "precision": 0.7427905441573155,
+          "recall": 0.7249287067061596,
+          "specificity": 0.6930558288888811,
+          "f1": 0.7337509380118024,
+          "undefined_reasons": {
+            "precision": null,
+            "recall": null,
+            "specificity": null,
+            "f1": null
+          },
+          "operational_claim": false,
+          "status": "registered_binary_decision_threshold",
+          "threshold_registered_before_outcomes": true
+        }
+      }
+    },
+    "baseline_persistence": {
+      "primary_error": 0.23265573094819877,
+      "primary_units": "probability squared",
+      "primary_eligible_rows": 6008,
+      "primary_eligible_groups": 12,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 0.43050112649356403,
+      "group_balanced_rmse": 0.4823439964881897,
+      "mean_group_rmse": 0.48184725741969775,
+      "group_balanced_bias": -0.0048092786659527055,
+      "median_absolute_error": 0.4074306762997772,
+      "p90_absolute_error": 0.7066666666666667,
+      "p95_absolute_error": 0.7727272727272727,
+      "maximum_absolute_error": 0.999,
+      "tail_conditional_mae_p90": 0.8000156346204175,
+      "worst_group_mae": 0.4799149920240153,
+      "groups": 12,
+      "rows": 6008,
+      "error_units": "probability squared",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "probability_diagnostics": {
+        "extension_version": "asd6-probability/1.0",
+        "brier": 0.23265573094819875,
+        "log_loss_nats": 0.6833349787094276,
+        "log_loss_undefined_reason": null,
+        "certainty_error_rows": 0,
+        "clipped_log_loss_nats": 0.6833349787094276,
+        "clipping_epsilon": 1e-12,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "weight": 0.024773901808785526,
+            "rows": 159,
+            "mean_probability": 0.04158451379216371,
+            "event_frequency": 0.18238447052006376
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "weight": 0.033911139821992536,
+            "rows": 209,
+            "mean_probability": 0.1397073577680192,
+            "event_frequency": 0.27103397184887285
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "weight": 0.07335256003583801,
+            "rows": 462,
+            "mean_probability": 0.26212164111266945,
+            "event_frequency": 0.3942216099743315
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "weight": 0.1633383217823971,
+            "rows": 988,
+            "mean_probability": 0.3556848180702989,
+            "event_frequency": 0.4465945649975301
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "weight": 0.1327991258362244,
+            "rows": 808,
+            "mean_probability": 0.4478386360320644,
+            "event_frequency": 0.4841478414036572
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "weight": 0.12328901956601293,
+            "rows": 721,
+            "mean_probability": 0.538758073824688,
+            "event_frequency": 0.518438771508595
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "weight": 0.1955807335070901,
+            "rows": 1147,
+            "mean_probability": 0.649882443710785,
+            "event_frequency": 0.6087132070818321
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "weight": 0.11095687834682852,
+            "rows": 655,
+            "mean_probability": 0.7382899680822743,
+            "event_frequency": 0.6536474393839937
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "weight": 0.07947794269222841,
+            "rows": 472,
+            "mean_probability": 0.8400872530547371,
+            "event_frequency": 0.7808533941120311
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "weight": 0.06252037660260251,
+            "rows": 387,
+            "mean_probability": 0.9680369027749536,
+            "event_frequency": 0.8426928790070591
+          }
+        ],
+        "calibration_status": "descriptive on exposed cohort; dependent trial rows are not independent populations",
+        "binary_events": {
+          "event": "target >= threshold",
+          "threshold": 0.5,
+          "target_units": "binary choice",
+          "weighted_confusion": {
+            "tp": 0.3702431602583873,
+            "fp": 0.20158179045637492,
+            "fn": 0.17986702707079216,
+            "tn": 0.24830802221444503
+          },
+          "row_confusion": {
+            "tp": 2197,
+            "fp": 1185,
+            "fn": 1102,
+            "tn": 1524
+          },
+          "precision": 0.6474763995442935,
+          "recall": 0.6730345461441858,
+          "specificity": 0.551930751088444,
+          "f1": 0.6600081371974756,
+          "undefined_reasons": {
+            "precision": null,
+            "recall": null,
+            "specificity": null,
+            "f1": null
+          },
+          "operational_claim": false,
+          "status": "registered_binary_decision_threshold",
+          "threshold_registered_before_outcomes": true
+        }
+      }
+    },
+    "baseline_flexible": {
+      "primary_error": 0.14335861588395382,
+      "primary_units": "probability squared",
+      "primary_eligible_rows": 6008,
+      "primary_eligible_groups": 12,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 0.2777299018967963,
+      "group_balanced_rmse": 0.37862727831464266,
+      "mean_group_rmse": 0.3717327184799719,
+      "group_balanced_bias": -0.007924950262364568,
+      "median_absolute_error": 0.19907335985409283,
+      "p90_absolute_error": 0.6855298194564481,
+      "p95_absolute_error": 0.7742873763203317,
+      "maximum_absolute_error": 0.9999214616891711,
+      "tail_conditional_mae_p90": 0.8003295106040041,
+      "worst_group_mae": 0.38670321295990756,
+      "groups": 12,
+      "rows": 6008,
+      "error_units": "probability squared",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "probability_diagnostics": {
+        "extension_version": "asd6-probability/1.0",
+        "brier": 0.14335861588395385,
+        "log_loss_nats": 0.4428307553260439,
+        "log_loss_undefined_reason": null,
+        "certainty_error_rows": 0,
+        "clipped_log_loss_nats": 0.4428307553260439,
+        "clipping_epsilon": 1e-12,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "weight": 0.132805384701841,
+            "rows": 856,
+            "mean_probability": 0.04743017905519888,
+            "event_frequency": 0.03602657563656653
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "weight": 0.09737688678164869,
+            "rows": 606,
+            "mean_probability": 0.14249360304354947,
+            "event_frequency": 0.13563497128078583
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "weight": 0.08488066473946873,
+            "rows": 495,
+            "mean_probability": 0.25092408797673993,
+            "event_frequency": 0.25534717726408024
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "weight": 0.07610254878319664,
+            "rows": 453,
+            "mean_probability": 0.3493393451709483,
+            "event_frequency": 0.522927620862179
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "weight": 0.06986188381468006,
+            "rows": 406,
+            "mean_probability": 0.4438014065840283,
+            "event_frequency": 0.4946709595809618
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "weight": 0.056051090920276964,
+            "rows": 334,
+            "mean_probability": 0.5515968233337887,
+            "event_frequency": 0.554743703894931
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "weight": 0.08470335740200083,
+            "rows": 493,
+            "mean_probability": 0.6529329109387797,
+            "event_frequency": 0.6790366124762921
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "weight": 0.08677445997974792,
+            "rows": 498,
+            "mean_probability": 0.7444895543621282,
+            "event_frequency": 0.6839579994689156
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "weight": 0.08074537496464407,
+            "rows": 477,
+            "mean_probability": 0.8574349544256095,
+            "event_frequency": 0.8601616724481925
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "weight": 0.23069834791249522,
+            "rows": 1390,
+            "mean_probability": 0.966898345205672,
+            "event_frequency": 0.9478798323310561
+          }
+        ],
+        "calibration_status": "descriptive on exposed cohort; dependent trial rows are not independent populations",
+        "binary_events": {
+          "event": "target >= threshold",
+          "threshold": 0.5,
+          "target_units": "binary choice",
+          "weighted_confusion": {
+            "tp": 0.4360891448232263,
+            "fp": 0.10288348635593927,
+            "fn": 0.11402104250595388,
+            "tn": 0.3470063263148816
+          },
+          "row_confusion": {
+            "tp": 2615,
+            "fp": 577,
+            "fn": 684,
+            "tn": 2132
+          },
+          "precision": 0.8091118539157535,
+          "recall": 0.7927305381135855,
+          "specificity": 0.7713140341072406,
+          "f1": 0.8008374338702958,
+          "undefined_reasons": {
+            "precision": null,
+            "recall": null,
+            "specificity": null,
+            "f1": null
+          },
+          "operational_claim": false,
+          "status": "registered_binary_decision_threshold",
+          "threshold_registered_before_outcomes": true
+        }
+      }
+    },
+    "attempt_001_prospect": {
+      "primary_error": 0.18700941525050807,
+      "primary_units": "probability squared",
+      "primary_eligible_rows": 6008,
+      "primary_eligible_groups": 12,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 0.36024273329615414,
+      "group_balanced_rmse": 0.43244585239138084,
+      "mean_group_rmse": 0.4292856620423596,
+      "group_balanced_bias": -0.012785013451029257,
+      "median_absolute_error": 0.26527053284295155,
+      "p90_absolute_error": 0.7347294671570485,
+      "p95_absolute_error": 0.814760300029397,
+      "maximum_absolute_error": 0.9986959712879014,
+      "tail_conditional_mae_p90": 0.7862190534658663,
+      "worst_group_mae": 0.42385400657310024,
+      "groups": 12,
+      "rows": 6008,
+      "error_units": "probability squared",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "probability_diagnostics": {
+        "extension_version": "asd6-probability/1.0",
+        "brier": 0.18700941525050796,
+        "log_loss_nats": 0.5508582994735374,
+        "log_loss_undefined_reason": null,
+        "certainty_error_rows": 0,
+        "clipped_log_loss_nats": 0.5508582994735374,
+        "clipping_epsilon": 1e-12,
+        "calibration_bins": [
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "weight": 0.05715954867186872,
+            "rows": 341,
+            "mean_probability": 0.16791398831307894,
+            "event_frequency": 0.1569039958017472
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "weight": 0.2649735552940149,
+            "rows": 1572,
+            "mean_probability": 0.2549629739177381,
+            "event_frequency": 0.2853708858857924
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "weight": 0.09077207768237669,
+            "rows": 572,
+            "mean_probability": 0.3456341907463603,
+            "event_frequency": 0.4562584084082498
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "weight": 0.03168627456072086,
+            "rows": 188,
+            "mean_probability": 0.4194475247515812,
+            "event_frequency": 0.5261402074790832
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "weight": 0.21373963025817955,
+            "rows": 1276,
+            "mean_probability": 0.536826047334362,
+            "event_frequency": 0.5366476190937829
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "weight": 0.019299285370713952,
+            "rows": 125,
+            "mean_probability": 0.6716191755330257,
+            "event_frequency": 0.9360007120922155
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "weight": 0.1472824255181675,
+            "rows": 883,
+            "mean_probability": 0.8245580923937536,
+            "event_frequency": 0.7664373162450698
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "weight": 0.17508720264395794,
+            "rows": 1051,
+            "mean_probability": 0.9501464872255704,
+            "event_frequency": 0.9240491757800524
+          }
+        ],
+        "calibration_status": "descriptive on exposed cohort; dependent trial rows are not independent populations",
+        "binary_events": {
+          "event": "target >= threshold",
+          "threshold": 0.5,
+          "target_units": "binary choice",
+          "weighted_confusion": {
+            "tp": 0.4074389407708903,
+            "fp": 0.14796960302012896,
+            "fn": 0.14267124655828972,
+            "tn": 0.30192020965069144
+          },
+          "row_confusion": {
+            "tp": 2459,
+            "fp": 876,
+            "fn": 840,
+            "tn": 1833
+          },
+          "precision": 0.7335842153054731,
+          "recall": 0.7406496919263253,
+          "specificity": 0.6710981248015128,
+          "f1": 0.7371000224628322,
+          "undefined_reasons": {
+            "precision": null,
+            "recall": null,
+            "specificity": null,
+            "f1": null
+          },
+          "operational_claim": false,
+          "status": "registered_binary_decision_threshold",
+          "threshold_registered_before_outcomes": true
+        }
+      }
+    },
+    "attempt_002_context": {
+      "primary_error": 0.19095981122509517,
+      "primary_units": "probability squared",
+      "primary_eligible_rows": 6008,
+      "primary_eligible_groups": 12,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 0.3453168670952099,
+      "group_balanced_rmse": 0.4369894864010977,
+      "mean_group_rmse": 0.43008517712035915,
+      "group_balanced_bias": -0.012588491777664454,
+      "median_absolute_error": 0.23779409971177026,
+      "p90_absolute_error": 0.762637873792872,
+      "p95_absolute_error": 0.8381460950609794,
+      "maximum_absolute_error": 0.9999573010671386,
+      "tail_conditional_mae_p90": 0.8437456102464905,
+      "worst_group_mae": 0.46890639671826667,
+      "groups": 12,
+      "rows": 6008,
+      "error_units": "probability squared",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "probability_diagnostics": {
+        "extension_version": "asd6-probability/1.0",
+        "brier": 0.19095981122509514,
+        "log_loss_nats": 0.5636703586113049,
+        "log_loss_undefined_reason": null,
+        "certainty_error_rows": 0,
+        "clipped_log_loss_nats": 0.5636703586113049,
+        "clipping_epsilon": 1e-12,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "weight": 0.0362826106873726,
+            "rows": 235,
+            "mean_probability": 0.058722077855049445,
+            "event_frequency": 0.1403590451765634
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "weight": 0.1865059323392657,
+            "rows": 1208,
+            "mean_probability": 0.14632158857164462,
+            "event_frequency": 0.24758179526659735
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "weight": 0.07487946356993977,
+            "rows": 485,
+            "mean_probability": 0.2386666242349243,
+            "event_frequency": 0.4331002206222541
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "weight": 0.025174108324717406,
+            "rows": 154,
+            "mean_probability": 0.3412246776297971,
+            "event_frequency": 0.35123677311721674
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "weight": 0.2021120335613691,
+            "rows": 1191,
+            "mean_probability": 0.44989550130863615,
+            "event_frequency": 0.45334408531448583
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "weight": 0.02602963599502913,
+            "rows": 141,
+            "mean_probability": 0.5564495112737434,
+            "event_frequency": 0.5286256770660841
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "weight": 0.07807100596483212,
+            "rows": 414,
+            "mean_probability": 0.615901055695745,
+            "event_frequency": 0.5204458399876529
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "weight": 0.10641124735463053,
+            "rows": 617,
+            "mean_probability": 0.7724064825826497,
+            "event_frequency": 0.6850673964108714
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "weight": 0.09743776590191319,
+            "rows": 536,
+            "mean_probability": 0.862776770933695,
+            "event_frequency": 0.8150634105331389
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "weight": 0.16709619630093053,
+            "rows": 1027,
+            "mean_probability": 0.9687996649014369,
+            "event_frequency": 0.9529537282024517
+          }
+        ],
+        "calibration_status": "descriptive on exposed cohort; dependent trial rows are not independent populations",
+        "binary_events": {
+          "event": "target >= threshold",
+          "threshold": 0.5,
+          "target_units": "binary choice",
+          "weighted_confusion": {
+            "tp": 0.3659434414279381,
+            "fp": 0.10910241008939789,
+            "fn": 0.18416674590124177,
+            "tn": 0.3407874025814229
+          },
+          "row_confusion": {
+            "tp": 2151,
+            "fp": 584,
+            "fn": 1148,
+            "tn": 2125
+          },
+          "precision": 0.7703328852553586,
+          "recall": 0.6652184414264658,
+          "specificity": 0.7574908188258379,
+          "f1": 0.713927299964384,
+          "undefined_reasons": {
+            "precision": null,
+            "recall": null,
+            "specificity": null,
+            "f1": null
+          },
+          "operational_claim": false,
+          "status": "registered_binary_decision_threshold",
+          "threshold_registered_before_outcomes": true
+        }
+      }
+    },
+    "attempt_003_memory": {
+      "primary_error": 0.14994683894975197,
+      "primary_units": "probability squared",
+      "primary_eligible_rows": 6008,
+      "primary_eligible_groups": 12,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 0.2874195368295529,
+      "group_balanced_rmse": 0.3872296979181116,
+      "mean_group_rmse": 0.3803059828221113,
+      "group_balanced_bias": -0.017493036735830914,
+      "median_absolute_error": 0.19714674795892867,
+      "p90_absolute_error": 0.7049829224812774,
+      "p95_absolute_error": 0.8052500670071,
+      "maximum_absolute_error": 0.9999606069083986,
+      "tail_conditional_mae_p90": 0.8138129915821345,
+      "worst_group_mae": 0.390046247785896,
+      "groups": 12,
+      "rows": 6008,
+      "error_units": "probability squared",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "probability_diagnostics": {
+        "extension_version": "asd6-probability/1.0",
+        "brier": 0.14994683894975197,
+        "log_loss_nats": 0.45751682477732003,
+        "log_loss_undefined_reason": null,
+        "certainty_error_rows": 0,
+        "clipped_log_loss_nats": 0.45751682477732003,
+        "clipping_epsilon": 1e-12,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "weight": 0.1268535097854035,
+            "rows": 817,
+            "mean_probability": 0.05754964434785715,
+            "event_frequency": 0.03743625976898805
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "weight": 0.11804409650478313,
+            "rows": 725,
+            "mean_probability": 0.1472757359309141,
+            "event_frequency": 0.17187118908543914
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "weight": 0.0857872131508621,
+            "rows": 515,
+            "mean_probability": 0.2512445511566366,
+            "event_frequency": 0.3709305347825151
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "weight": 0.08015840023661178,
+            "rows": 470,
+            "mean_probability": 0.3531685678845013,
+            "event_frequency": 0.4694749717899407
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "weight": 0.05789424894145272,
+            "rows": 340,
+            "mean_probability": 0.44625097544599446,
+            "event_frequency": 0.4472015617090875
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "weight": 0.0742669153833329,
+            "rows": 438,
+            "mean_probability": 0.5515396512215845,
+            "event_frequency": 0.568957655231997
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "weight": 0.07199146317363372,
+            "rows": 408,
+            "mean_probability": 0.6426096561410712,
+            "event_frequency": 0.6800955246856346
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "weight": 0.07322366402515906,
+            "rows": 431,
+            "mean_probability": 0.7475857923490313,
+            "event_frequency": 0.7522870989578792
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "weight": 0.08734555050584952,
+            "rows": 498,
+            "mean_probability": 0.8438249431624991,
+            "event_frequency": 0.8152023834862178
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "weight": 0.22443493829291172,
+            "rows": 1366,
+            "mean_probability": 0.9649322037769713,
+            "event_frequency": 0.9455912256090571
+          }
+        ],
+        "calibration_status": "descriptive on exposed cohort; dependent trial rows are not independent populations",
+        "binary_events": {
+          "event": "target >= threshold",
+          "threshold": 0.5,
+          "target_units": "binary choice",
+          "weighted_confusion": {
+            "tp": 0.42972902907149924,
+            "fp": 0.10153350230938822,
+            "fn": 0.12038115825768092,
+            "tn": 0.34835631036143266
+          },
+          "row_confusion": {
+            "tp": 2573,
+            "fp": 568,
+            "fn": 726,
+            "tn": 2141
+          },
+          "precision": 0.8088826214687556,
+          "recall": 0.7811690075362191,
+          "specificity": 0.7743147334085577,
+          "f1": 0.7947842989494099,
+          "undefined_reasons": {
+            "precision": null,
+            "recall": null,
+            "specificity": null,
+            "f1": null
+          },
+          "operational_claim": false,
+          "status": "registered_binary_decision_threshold",
+          "threshold_registered_before_outcomes": true
+        }
+      }
+    },
+    "attempt_004_description": {
+      "primary_error": 0.14858398728847613,
+      "primary_units": "probability squared",
+      "primary_eligible_rows": 6008,
+      "primary_eligible_groups": 12,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 0.285245153088555,
+      "group_balanced_rmse": 0.38546593531527024,
+      "mean_group_rmse": 0.37847337255417274,
+      "group_balanced_bias": -0.01749904610363546,
+      "median_absolute_error": 0.1922039031706259,
+      "p90_absolute_error": 0.7058071745930186,
+      "p95_absolute_error": 0.8064580645576152,
+      "maximum_absolute_error": 0.9999616294697858,
+      "tail_conditional_mae_p90": 0.8131229156843537,
+      "worst_group_mae": 0.38116224530392234,
+      "groups": 12,
+      "rows": 6008,
+      "error_units": "probability squared",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "probability_diagnostics": {
+        "extension_version": "asd6-probability/1.0",
+        "brier": 0.14858398728847608,
+        "log_loss_nats": 0.4543045347916811,
+        "log_loss_undefined_reason": null,
+        "certainty_error_rows": 0,
+        "clipped_log_loss_nats": 0.4543045347916811,
+        "clipping_epsilon": 1e-12,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "weight": 0.13048686783459762,
+            "rows": 839,
+            "mean_probability": 0.05705718658460784,
+            "event_frequency": 0.03757651642618781
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "weight": 0.1191062922506721,
+            "rows": 730,
+            "mean_probability": 0.1483710600031878,
+            "event_frequency": 0.1781401075136523
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "weight": 0.08131811643301123,
+            "rows": 488,
+            "mean_probability": 0.2526003014145837,
+            "event_frequency": 0.37013429146395754
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "weight": 0.07796733251675114,
+            "rows": 459,
+            "mean_probability": 0.3539123131931332,
+            "event_frequency": 0.4699930121469237
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "weight": 0.06788363150835466,
+            "rows": 394,
+            "mean_probability": 0.4497387670475433,
+            "event_frequency": 0.4293154315085146
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "weight": 0.062193130815085415,
+            "rows": 370,
+            "mean_probability": 0.5485515764615267,
+            "event_frequency": 0.6085496781268457
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "weight": 0.07518714773905805,
+            "rows": 431,
+            "mean_probability": 0.6483830257168262,
+            "event_frequency": 0.6810782579474837
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "weight": 0.07443964642469626,
+            "rows": 435,
+            "mean_probability": 0.7487984175046243,
+            "event_frequency": 0.7219108484340981
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "weight": 0.08646926171220191,
+            "rows": 490,
+            "mean_probability": 0.8457254362731903,
+            "event_frequency": 0.8391018201897267
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "weight": 0.2249485727655717,
+            "rows": 1372,
+            "mean_probability": 0.9650817689848208,
+            "event_frequency": 0.9457800736881579
+          }
+        ],
+        "calibration_status": "descriptive on exposed cohort; dependent trial rows are not independent populations",
+        "binary_events": {
+          "event": "target >= threshold",
+          "threshold": 0.5,
+          "target_units": "binary choice",
+          "weighted_confusion": {
+            "tp": 0.42810312226840525,
+            "fp": 0.0951346371882086,
+            "fn": 0.12200706506077488,
+            "tn": 0.3547551754826123
+          },
+          "row_confusion": {
+            "tp": 2565,
+            "fp": 533,
+            "fn": 734,
+            "tn": 2176
+          },
+          "precision": 0.8181808643034352,
+          "recall": 0.7782134054758613,
+          "specificity": 0.7885379163768319,
+          "f1": 0.7976968205890479,
+          "undefined_reasons": {
+            "precision": null,
+            "recall": null,
+            "specificity": null,
+            "f1": null
+          },
+          "operational_claim": false,
+          "status": "registered_binary_decision_threshold",
+          "threshold_registered_before_outcomes": true
+        }
+      }
+    },
+    "attempt_005_history_interaction": {
+      "primary_error": 0.14727987326016406,
+      "primary_units": "probability squared",
+      "primary_eligible_rows": 6008,
+      "primary_eligible_groups": 12,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 0.2834376769130984,
+      "group_balanced_rmse": 0.38377059978607553,
+      "mean_group_rmse": 0.3767523942297439,
+      "group_balanced_bias": -0.005990713404282488,
+      "median_absolute_error": 0.20255489125203532,
+      "p90_absolute_error": 0.6958698914054332,
+      "p95_absolute_error": 0.7921522449774536,
+      "maximum_absolute_error": 0.9999723247022567,
+      "tail_conditional_mae_p90": 0.8081965900266678,
+      "worst_group_mae": 0.399379849244028,
+      "groups": 12,
+      "rows": 6008,
+      "error_units": "probability squared",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "probability_diagnostics": {
+        "extension_version": "asd6-probability/1.0",
+        "brier": 0.14727987326016415,
+        "log_loss_nats": 0.4503458254027595,
+        "log_loss_undefined_reason": null,
+        "certainty_error_rows": 0,
+        "clipped_log_loss_nats": 0.4503458254027595,
+        "clipping_epsilon": 1e-12,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "weight": 0.13169618054723262,
+            "rows": 853,
+            "mean_probability": 0.0541648770134835,
+            "event_frequency": 0.03194476134823266
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "weight": 0.0888403959970959,
+            "rows": 557,
+            "mean_probability": 0.14825925831261524,
+            "event_frequency": 0.13560832544073453
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "weight": 0.09725862751333406,
+            "rows": 574,
+            "mean_probability": 0.24175090388823994,
+            "event_frequency": 0.33104820397615997
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "weight": 0.07784575704841487,
+            "rows": 455,
+            "mean_probability": 0.34896933531751456,
+            "event_frequency": 0.45063460054664367
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "weight": 0.04930698544001424,
+            "rows": 289,
+            "mean_probability": 0.44972037248363367,
+            "event_frequency": 0.5110354067282861
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "weight": 0.07298826908807529,
+            "rows": 432,
+            "mean_probability": 0.543118400498887,
+            "event_frequency": 0.5442170502362219
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "weight": 0.08636709638439982,
+            "rows": 491,
+            "mean_probability": 0.651283943259901,
+            "event_frequency": 0.6502139104329548
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "weight": 0.07354003003989162,
+            "rows": 426,
+            "mean_probability": 0.7490661673338711,
+            "event_frequency": 0.7197314556647576
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "weight": 0.09585601639449923,
+            "rows": 548,
+            "mean_probability": 0.8509918782075289,
+            "event_frequency": 0.818203636251941
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "weight": 0.22630064154704246,
+            "rows": 1383,
+            "mean_probability": 0.9651428285205078,
+            "event_frequency": 0.9462784661402824
+          }
+        ],
+        "calibration_status": "descriptive on exposed cohort; dependent trial rows are not independent populations",
+        "binary_events": {
+          "event": "target >= threshold",
+          "threshold": 0.5,
+          "target_units": "binary choice",
+          "weighted_confusion": {
+            "tp": 0.44138078598834485,
+            "fp": 0.11367126746556423,
+            "fn": 0.10872940134083542,
+            "tn": 0.33621854520525657
+          },
+          "row_confusion": {
+            "tp": 2643,
+            "fp": 637,
+            "fn": 656,
+            "tn": 2072
+          },
+          "precision": 0.7952061130875479,
+          "recall": 0.8023497767443218,
+          "specificity": 0.7473353157504453,
+          "f1": 0.7987619730395309,
+          "undefined_reasons": {
+            "precision": null,
+            "recall": null,
+            "specificity": null,
+            "f1": null
+          },
+          "operational_claim": false,
+          "status": "registered_binary_decision_threshold",
+          "threshold_registered_before_outcomes": true
+        }
+      }
+    }
+  },
+  "groups": [
+    {
+      "model": "candidate",
+      "group": "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+      "mae": 0.25166066307115115,
+      "rmse": 0.348309546223249,
+      "bias": -0.08937661871895013,
+      "primary_error": 0.12131953999024564,
+      "rows": 539
+    },
+    {
+      "model": "candidate",
+      "group": "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+      "mae": 0.23119236228914747,
+      "rmse": 0.33566253502783544,
+      "bias": -0.10899008848578814,
+      "primary_error": 0.11266933742131285,
+      "rows": 540
+    },
+    {
+      "model": "candidate",
+      "group": "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+      "mae": 0.22315228479816906,
+      "rmse": 0.3256211156207067,
+      "bias": -0.013003568280860777,
+      "primary_error": 0.10602911093807367,
+      "rows": 540
+    },
+    {
+      "model": "candidate",
+      "group": "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+      "mae": 0.3541217700007331,
+      "rmse": 0.47543819768633133,
+      "bias": -0.11989079845153462,
+      "primary_error": 0.2260414798192271,
+      "rows": 540
+    },
+    {
+      "model": "candidate",
+      "group": "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+      "mae": 0.38670321295990756,
+      "rmse": 0.4617188074484899,
+      "bias": 0.13095654437479556,
+      "primary_error": 0.2131842571516557,
+      "rows": 430
+    },
+    {
+      "model": "candidate",
+      "group": "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+      "mae": 0.3465385333420093,
+      "rmse": 0.4320210973460325,
+      "bias": 0.05539188136138902,
+      "primary_error": 0.18664222855207008,
+      "rows": 400
+    },
+    {
+      "model": "candidate",
+      "group": "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+      "mae": 0.2625935770896556,
+      "rmse": 0.3622566428177848,
+      "bias": 0.012552521238266504,
+      "primary_error": 0.1312298752656121,
+      "rows": 540
+    },
+    {
+      "model": "candidate",
+      "group": "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+      "mae": 0.35149292981775415,
+      "rmse": 0.4352889778689511,
+      "bias": 0.06088862092170353,
+      "primary_error": 0.18947649425419621,
+      "rows": 430
+    },
+    {
+      "model": "candidate",
+      "group": "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+      "mae": 0.25129650218192917,
+      "rmse": 0.35494160051389495,
+      "bias": -0.047971995131763416,
+      "primary_error": 0.1259835397753654,
+      "rows": 539
+    },
+    {
+      "model": "candidate",
+      "group": "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+      "mae": 0.1960594505355048,
+      "rmse": 0.29026393877432227,
+      "bias": 0.025359424390987633,
+      "primary_error": 0.0842531541527835,
+      "rows": 540
+    },
+    {
+      "model": "candidate",
+      "group": "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+      "mae": 0.3294305434650071,
+      "rmse": 0.4174645323004165,
+      "bias": -0.005842130135311334,
+      "primary_error": 0.17427663572880553,
+      "rows": 430
+    },
+    {
+      "model": "candidate",
+      "group": "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19",
+      "mae": 0.14851699321058676,
+      "rmse": 0.2218056301316492,
+      "bias": 0.00482680376869113,
+      "primary_error": 0.04919773755809796,
+      "rows": 540
+    },
+    {
+      "model": "reference",
+      "group": "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+      "mae": 0.25166066307115115,
+      "rmse": 0.348309546223249,
+      "bias": -0.08937661871895011,
+      "primary_error": 0.12131953999024564,
+      "rows": 539
+    },
+    {
+      "model": "reference",
+      "group": "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+      "mae": 0.23119236228914747,
+      "rmse": 0.33566253502783544,
+      "bias": -0.10899008848578812,
+      "primary_error": 0.11266933742131285,
+      "rows": 540
+    },
+    {
+      "model": "reference",
+      "group": "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+      "mae": 0.2231522847981691,
+      "rmse": 0.3256211156207067,
+      "bias": -0.013003568280860755,
+      "primary_error": 0.10602911093807367,
+      "rows": 540
+    },
+    {
+      "model": "reference",
+      "group": "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+      "mae": 0.3541217700007331,
+      "rmse": 0.47543819768633133,
+      "bias": -0.11989079845153462,
+      "primary_error": 0.22604147981922706,
+      "rows": 540
+    },
+    {
+      "model": "reference",
+      "group": "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+      "mae": 0.38670321295990756,
+      "rmse": 0.4617188074484899,
+      "bias": 0.1309565443747956,
+      "primary_error": 0.2131842571516557,
+      "rows": 430
+    },
+    {
+      "model": "reference",
+      "group": "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+      "mae": 0.3465385333420093,
+      "rmse": 0.4320210973460325,
+      "bias": 0.055391881361389034,
+      "primary_error": 0.18664222855207008,
+      "rows": 400
+    },
+    {
+      "model": "reference",
+      "group": "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+      "mae": 0.2625935770896556,
+      "rmse": 0.3622566428177848,
+      "bias": 0.012552521238266525,
+      "primary_error": 0.1312298752656121,
+      "rows": 540
+    },
+    {
+      "model": "reference",
+      "group": "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+      "mae": 0.35149292981775415,
+      "rmse": 0.4352889778689511,
+      "bias": 0.06088862092170354,
+      "primary_error": 0.18947649425419621,
+      "rows": 430
+    },
+    {
+      "model": "reference",
+      "group": "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+      "mae": 0.25129650218192917,
+      "rmse": 0.35494160051389495,
+      "bias": -0.0479719951317634,
+      "primary_error": 0.1259835397753654,
+      "rows": 539
+    },
+    {
+      "model": "reference",
+      "group": "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+      "mae": 0.1960594505355048,
+      "rmse": 0.29026393877432227,
+      "bias": 0.025359424390987664,
+      "primary_error": 0.0842531541527835,
+      "rows": 540
+    },
+    {
+      "model": "reference",
+      "group": "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+      "mae": 0.3294305434650071,
+      "rmse": 0.4174645323004165,
+      "bias": -0.005842130135311327,
+      "primary_error": 0.17427663572880553,
+      "rows": 430
+    },
+    {
+      "model": "reference",
+      "group": "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19",
+      "mae": 0.14851699321058678,
+      "rmse": 0.2218056301316492,
+      "bias": 0.004826803768691155,
+      "primary_error": 0.04919773755809797,
+      "rows": 540
+    },
+    {
+      "model": "baseline_mean",
+      "group": "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+      "mae": 0.4869174404357417,
+      "rmse": 0.4882644938295213,
+      "bias": -0.13122602788844037,
+      "primary_error": 0.23840221593459865,
+      "rows": 539
+    },
+    {
+      "model": "baseline_mean",
+      "group": "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+      "mae": 0.4882974505642361,
+      "rmse": 0.48967563351987725,
+      "bias": -0.11331906712433677,
+      "primary_error": 0.23978222606309316,
+      "rows": 540
+    },
+    {
+      "model": "baseline_mean",
+      "group": "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+      "mae": 0.5031397083852049,
+      "rmse": 0.5046032935723487,
+      "bias": 0.07927352546825582,
+      "primary_error": 0.25462448388406195,
+      "rows": 540
+    },
+    {
+      "model": "baseline_mean",
+      "group": "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+      "mae": 0.48401603003895677,
+      "rmse": 0.48528425230766936,
+      "bias": -0.1688746226798923,
+      "primary_error": 0.23550080553781372,
+      "rows": 540
+    },
+    {
+      "model": "baseline_mean",
+      "group": "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+      "mae": 0.5078857792000496,
+      "rmse": 0.5092843554429162,
+      "bias": 0.14085836612286393,
+      "primary_error": 0.25937055469890663,
+      "rows": 430
+    },
+    {
+      "model": "baseline_mean",
+      "group": "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+      "mae": 0.49113745951267157,
+      "rmse": 0.4925669853040585,
+      "bias": -0.07646721527248491,
+      "primary_error": 0.24262223501152858,
+      "rows": 400
+    },
+    {
+      "model": "baseline_mean",
+      "group": "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+      "mae": 0.5005708560700373,
+      "rmse": 0.502051423231619,
+      "bias": 0.0459401921349225,
+      "primary_error": 0.25205563156889427,
+      "rows": 540
+    },
+    {
+      "model": "baseline_mean",
+      "group": "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+      "mae": 0.49749088843634787,
+      "rmse": 0.49897461251571196,
+      "bias": 0.00597464519263137,
+      "primary_error": 0.24897566393520487,
+      "rows": 430
+    },
+    {
+      "model": "baseline_mean",
+      "group": "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+      "mae": 0.4890621223315217,
+      "rmse": 0.49045580619499113,
+      "bias": -0.10339671434484113,
+      "primary_error": 0.2405468978303787,
+      "rows": 539
+    },
+    {
+      "model": "baseline_mean",
+      "group": "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+      "mae": 0.5097045531906333,
+      "rmse": 0.5110668534443321,
+      "bias": 0.164458710653441,
+      "primary_error": 0.2611893286894904,
+      "rows": 540
+    },
+    {
+      "model": "baseline_mean",
+      "group": "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+      "mae": 0.48530377512718026,
+      "rmse": 0.48660923812237405,
+      "bias": -0.15216488969108957,
+      "primary_error": 0.23678855062603732,
+      "rows": 430
+    },
+    {
+      "model": "baseline_mean",
+      "group": "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19",
+      "mae": 0.5101326952431614,
+      "rmse": 0.5114855528184725,
+      "bias": 0.17001426620899657,
+      "primary_error": 0.2616174707420184,
+      "rows": 540
+    },
+    {
+      "model": "baseline_utility",
+      "group": "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+      "mae": 0.34145673566961304,
+      "rmse": 0.41015571398035805,
+      "bias": -0.12934884242244996,
+      "primary_error": 0.16822770971073728,
+      "rows": 539
+    },
+    {
+      "model": "baseline_utility",
+      "group": "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+      "mae": 0.3811321557002727,
+      "rmse": 0.4545521612116382,
+      "bias": -0.11730107798203089,
+      "primary_error": 0.20661766726217112,
+      "rows": 540
+    },
+    {
+      "model": "baseline_utility",
+      "group": "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+      "mae": 0.31235123432875195,
+      "rmse": 0.3723849097800331,
+      "bias": 0.07582541041797648,
+      "primary_error": 0.13867052103188338,
+      "rows": 540
+    },
+    {
+      "model": "baseline_utility",
+      "group": "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+      "mae": 0.41484953372564615,
+      "rmse": 0.49202864683776326,
+      "bias": -0.16658759873635662,
+      "primary_error": 0.24209218930900034,
+      "rows": 540
+    },
+    {
+      "model": "baseline_utility",
+      "group": "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+      "mae": 0.41912509024857053,
+      "rmse": 0.4974600380774036,
+      "bias": 0.13724274719953755,
+      "primary_error": 0.24746648948397182,
+      "rows": 430
+    },
+    {
+      "model": "baseline_utility",
+      "group": "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+      "mae": 0.3962956030535365,
+      "rmse": 0.4703641226321802,
+      "bias": -0.08469649711168527,
+      "primary_error": 0.22124240785954064,
+      "rows": 400
+    },
+    {
+      "model": "baseline_utility",
+      "group": "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+      "mae": 0.3232568579035392,
+      "rmse": 0.3830942802884388,
+      "bias": 0.042605940469058766,
+      "primary_error": 0.14676122758971688,
+      "rows": 540
+    },
+    {
+      "model": "baseline_utility",
+      "group": "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+      "mae": 0.37323123118647333,
+      "rmse": 0.44903947372065156,
+      "bias": -0.0010662100775229852,
+      "primary_error": 0.2016364489593197,
+      "rows": 430
+    },
+    {
+      "model": "baseline_utility",
+      "group": "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+      "mae": 0.35823250277976937,
+      "rmse": 0.42905143942905066,
+      "bias": -0.10615536451078972,
+      "primary_error": 0.18408513767614035,
+      "rows": 539
+    },
+    {
+      "model": "baseline_utility",
+      "group": "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+      "mae": 0.3172470836512532,
+      "rmse": 0.3799762885975203,
+      "bias": 0.1665246808537758,
+      "primary_error": 0.14438197989634605,
+      "rows": 540
+    },
+    {
+      "model": "baseline_utility",
+      "group": "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+      "mae": 0.4237269914812125,
+      "rmse": 0.4988285515592554,
+      "bias": -0.1623078957325012,
+      "primary_error": 0.24882992385070468,
+      "rows": 430
+    },
+    {
+      "model": "baseline_utility",
+      "group": "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19",
+      "mae": 0.2849231297150135,
+      "rmse": 0.33357897584280194,
+      "bias": 0.16965004368386763,
+      "primary_error": 0.11127493312433263,
+      "rows": 540
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+      "mae": 0.4409568068199211,
+      "rmse": 0.4777073772259676,
+      "bias": 0.0005573614676375302,
+      "primary_error": 0.22820433825611292,
+      "rows": 539
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+      "mae": 0.3223585870501555,
+      "rmse": 0.4403614522034165,
+      "bias": -0.05648543949800266,
+      "primary_error": 0.1939182085867019,
+      "rows": 540
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+      "mae": 0.477726114713467,
+      "rmse": 0.50381172818109,
+      "bias": -0.04571223025263873,
+      "primary_error": 0.25382625745281656,
+      "rows": 540
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+      "mae": 0.40617298828468956,
+      "rmse": 0.4466185694216495,
+      "bias": -0.030941524570372563,
+      "primary_error": 0.19946814655224077,
+      "rows": 540
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+      "mae": 0.4669529133388172,
+      "rmse": 0.4970999546019117,
+      "bias": -0.006076826568025509,
+      "primary_error": 0.2471083648652227,
+      "rows": 430
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+      "mae": 0.4498908744980927,
+      "rmse": 0.4968444075213112,
+      "bias": 0.083581215499753,
+      "primary_error": 0.24685436528520274,
+      "rows": 400
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+      "mae": 0.46382301953316546,
+      "rmse": 0.5062854097869712,
+      "bias": 0.09031440334922207,
+      "primary_error": 0.25632491616316133,
+      "rows": 540
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+      "mae": 0.4799149920240153,
+      "rmse": 0.5018886916718309,
+      "bias": -0.005122703734118139,
+      "primary_error": 0.2518922588280622,
+      "rows": 430
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+      "mae": 0.40552384654242457,
+      "rmse": 0.47831685325615636,
+      "bias": 0.05123289865815287,
+      "primary_error": 0.2287870121088714,
+      "rows": 539
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+      "mae": 0.43971020833274455,
+      "rmse": 0.4904675836102105,
+      "bias": -0.0409039867644003,
+      "primary_error": 0.24055845057243883,
+      "rows": 540
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+      "mae": 0.38635749181562606,
+      "rmse": 0.45520427280087816,
+      "bias": -0.0177524319582806,
+      "primary_error": 0.20721092997617632,
+      "rows": 430
+    },
+    {
+      "model": "baseline_persistence",
+      "group": "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19",
+      "mae": 0.42662567496964815,
+      "rmse": 0.4875607887549788,
+      "bias": -0.08040207962035945,
+      "primary_error": 0.2377155227313771,
+      "rows": 540
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+      "mae": 0.25166066307115115,
+      "rmse": 0.348309546223249,
+      "bias": -0.08937661871895011,
+      "primary_error": 0.12131953999024564,
+      "rows": 539
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+      "mae": 0.23119236228914747,
+      "rmse": 0.33566253502783544,
+      "bias": -0.10899008848578812,
+      "primary_error": 0.11266933742131285,
+      "rows": 540
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+      "mae": 0.2231522847981691,
+      "rmse": 0.3256211156207067,
+      "bias": -0.013003568280860755,
+      "primary_error": 0.10602911093807367,
+      "rows": 540
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+      "mae": 0.3541217700007331,
+      "rmse": 0.47543819768633133,
+      "bias": -0.11989079845153462,
+      "primary_error": 0.22604147981922706,
+      "rows": 540
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+      "mae": 0.38670321295990756,
+      "rmse": 0.4617188074484899,
+      "bias": 0.1309565443747956,
+      "primary_error": 0.2131842571516557,
+      "rows": 430
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+      "mae": 0.3465385333420093,
+      "rmse": 0.4320210973460325,
+      "bias": 0.055391881361389034,
+      "primary_error": 0.18664222855207008,
+      "rows": 400
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+      "mae": 0.2625935770896556,
+      "rmse": 0.3622566428177848,
+      "bias": 0.012552521238266525,
+      "primary_error": 0.1312298752656121,
+      "rows": 540
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+      "mae": 0.35149292981775415,
+      "rmse": 0.4352889778689511,
+      "bias": 0.06088862092170354,
+      "primary_error": 0.18947649425419621,
+      "rows": 430
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+      "mae": 0.25129650218192917,
+      "rmse": 0.35494160051389495,
+      "bias": -0.0479719951317634,
+      "primary_error": 0.1259835397753654,
+      "rows": 539
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+      "mae": 0.1960594505355048,
+      "rmse": 0.29026393877432227,
+      "bias": 0.025359424390987664,
+      "primary_error": 0.0842531541527835,
+      "rows": 540
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+      "mae": 0.3294305434650071,
+      "rmse": 0.4174645323004165,
+      "bias": -0.005842130135311327,
+      "primary_error": 0.17427663572880553,
+      "rows": 430
+    },
+    {
+      "model": "baseline_flexible",
+      "group": "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19",
+      "mae": 0.14851699321058678,
+      "rmse": 0.2218056301316492,
+      "bias": 0.004826803768691155,
+      "primary_error": 0.04919773755809797,
+      "rows": 540
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+      "mae": 0.3365233761732391,
+      "rmse": 0.4048243095229753,
+      "bias": -0.1267403042450081,
+      "primary_error": 0.16388272158075373,
+      "rows": 539
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+      "mae": 0.37754788666449346,
+      "rmse": 0.45116652310611216,
+      "bias": -0.1142631236209247,
+      "primary_error": 0.20355123157165803,
+      "rows": 540
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+      "mae": 0.3125671193135862,
+      "rmse": 0.37337002346849657,
+      "bias": 0.07868882493131192,
+      "primary_error": 0.1394051744248657,
+      "rows": 540
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+      "mae": 0.4112745025135266,
+      "rmse": 0.4889348441380711,
+      "bias": -0.16400790565879803,
+      "primary_error": 0.2390572818123199,
+      "rows": 540
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+      "mae": 0.4177762558290101,
+      "rmse": 0.49643477327465463,
+      "bias": 0.13717669967314608,
+      "primary_error": 0.24644748411625772,
+      "rows": 430
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+      "mae": 0.39312293814317867,
+      "rmse": 0.46744864964176774,
+      "bias": -0.0843953248377543,
+      "primary_error": 0.2185082400519121,
+      "rows": 400
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+      "mae": 0.3231047989017365,
+      "rmse": 0.3835768487526085,
+      "bias": 0.04547006460418733,
+      "primary_error": 0.14713119889898152,
+      "rows": 540
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+      "mae": 0.37129597729693703,
+      "rmse": 0.4472907727640986,
+      "bias": -0.0009036421847088049,
+      "primary_error": 0.2000690353999045,
+      "rows": 430
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+      "mae": 0.3538462095137981,
+      "rmse": 0.4245385734387447,
+      "bias": -0.10324191267992244,
+      "primary_error": 0.18023300033740441,
+      "rows": 539
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+      "mae": 0.3185729239461546,
+      "rmse": 0.38250121271677207,
+      "bias": 0.16922667028541002,
+      "primary_error": 0.1463071777298013,
+      "rows": 540
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+      "mae": 0.42385400657310024,
+      "rmse": 0.49920562178531347,
+      "bias": -0.16278968200599128,
+      "primary_error": 0.24920625282206146,
+      "rows": 430
+    },
+    {
+      "model": "attempt_001_prospect",
+      "group": "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19",
+      "mae": 0.2834268046850876,
+      "rmse": 0.3321357918987005,
+      "bias": 0.17235947432670154,
+      "primary_error": 0.11031418426017689,
+      "rows": 540
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+      "mae": 0.3388979707181076,
+      "rmse": 0.446367751264089,
+      "bias": -0.19700357360185342,
+      "primary_error": 0.19924416936855965,
+      "rows": 539
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+      "mae": 0.3867370121176816,
+      "rmse": 0.49634233829607965,
+      "bias": -0.18652547258006705,
+      "primary_error": 0.24635571678521997,
+      "rows": 540
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+      "mae": 0.26197744527101047,
+      "rmse": 0.35023007559294717,
+      "bias": 0.0063949989644122174,
+      "primary_error": 0.12266110584984147,
+      "rows": 540
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+      "mae": 0.43178184375447615,
+      "rmse": 0.5413566836613847,
+      "bias": -0.23422774588321693,
+      "primary_error": 0.2930670589448525,
+      "rows": 540
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+      "mae": 0.46890639671826667,
+      "rmse": 0.5355015897790962,
+      "bias": 0.27761021616885617,
+      "primary_error": 0.28676195265593946,
+      "rows": 430
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+      "mae": 0.39335258354410507,
+      "rmse": 0.4577036273492239,
+      "bias": 0.0615744017423418,
+      "primary_error": 0.2094926104886372,
+      "rows": 400
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+      "mae": 0.2830787678839775,
+      "rmse": 0.37407736074650316,
+      "bias": -0.02725941197961532,
+      "primary_error": 0.13993387182306946,
+      "rows": 540
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+      "mae": 0.3871383506276256,
+      "rmse": 0.45222464962875397,
+      "bias": 0.14139779972356925,
+      "primary_error": 0.2045071337318493,
+      "rows": 430
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+      "mae": 0.35100723785397897,
+      "rmse": 0.4591472698294422,
+      "bias": -0.17519094846528271,
+      "primary_error": 0.21081621539183062,
+      "rows": 539
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+      "mae": 0.25476555000171935,
+      "rmse": 0.34059556891527243,
+      "bias": 0.0989370374859602,
+      "primary_error": 0.11600534156471808,
+      "rows": 540
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+      "mae": 0.37103953568820575,
+      "rmse": 0.4325156841354695,
+      "bias": -0.0180212262096855,
+      "primary_error": 0.18706981702317318,
+      "rows": 430
+    },
+    {
+      "model": "attempt_002_context",
+      "group": "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19",
+      "mae": 0.21511971096336385,
+      "rmse": 0.27495952624604797,
+      "bias": 0.10125202330260723,
+      "primary_error": 0.07560274107345115,
+      "rows": 540
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+      "mae": 0.2784734754099092,
+      "rmse": 0.3789822409773977,
+      "bias": -0.10155120884463997,
+      "primary_error": 0.14362753897625033,
+      "rows": 539
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+      "mae": 0.25298626882302166,
+      "rmse": 0.35526030935780123,
+      "bias": -0.12655776810754507,
+      "primary_error": 0.12620988740500064,
+      "rows": 540
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+      "mae": 0.22291924608480765,
+      "rmse": 0.3263855643506566,
+      "bias": -0.018098711889882598,
+      "primary_error": 0.1065275366164966,
+      "rows": 540
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+      "mae": 0.36438038725218735,
+      "rmse": 0.4813332748839809,
+      "bias": -0.12926965263813947,
+      "primary_error": 0.23168172151053795,
+      "rows": 540
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+      "mae": 0.390046247785896,
+      "rmse": 0.4620958071051283,
+      "bias": 0.0829686570715585,
+      "primary_error": 0.21353253494413996,
+      "rows": 430
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+      "mae": 0.3561848933471583,
+      "rmse": 0.43929371515244603,
+      "bias": 0.06693936093455813,
+      "primary_error": 0.1929789681724384,
+      "rows": 400
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+      "mae": 0.26622946180563595,
+      "rmse": 0.3651706357409544,
+      "bias": 0.005832746335427031,
+      "primary_error": 0.1333495932074528,
+      "rows": 540
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+      "mae": 0.3673073582120577,
+      "rmse": 0.4460166768102218,
+      "bias": 0.03884100723591335,
+      "primary_error": 0.19893087599283382,
+      "rows": 430
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+      "mae": 0.27652962039884355,
+      "rmse": 0.3788176981830917,
+      "bias": -0.06288629871287384,
+      "primary_error": 0.14350284845673594,
+      "rows": 539
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+      "mae": 0.198360762597994,
+      "rmse": 0.29374047323718416,
+      "bias": 0.037165286145934055,
+      "primary_error": 0.0862834656176049,
+      "rows": 540
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+      "mae": 0.3310075062531578,
+      "rmse": 0.41859467233466785,
+      "bias": -0.017600967820727405,
+      "primary_error": 0.17522149970696796,
+      "rows": 430
+    },
+    {
+      "model": "attempt_003_memory",
+      "group": "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19",
+      "mae": 0.14460921398396562,
+      "rmse": 0.21798072573180532,
+      "bias": 0.014301109460446406,
+      "primary_error": 0.04751559679056454,
+      "rows": 540
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+      "mae": 0.2744651496737806,
+      "rmse": 0.3742787190994503,
+      "bias": -0.10025843110184157,
+      "primary_error": 0.14008455957072524,
+      "rows": 539
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+      "mae": 0.25057813994619826,
+      "rmse": 0.35239462085778,
+      "bias": -0.12700396377919754,
+      "primary_error": 0.1241819688094985,
+      "rows": 540
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+      "mae": 0.22001789155103893,
+      "rmse": 0.3231498633989525,
+      "bias": -0.017779868664284614,
+      "primary_error": 0.10442583421476169,
+      "rows": 540
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+      "mae": 0.36618247827422035,
+      "rmse": 0.48350170070398174,
+      "bias": -0.12827842273464538,
+      "primary_error": 0.23377389458364276,
+      "rows": 540
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+      "mae": 0.38116224530392234,
+      "rmse": 0.4546710110701228,
+      "bias": 0.0802181076811816,
+      "primary_error": 0.20672572830752772,
+      "rows": 430
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+      "mae": 0.3583575757028724,
+      "rmse": 0.441938603748895,
+      "bias": 0.06563525418430154,
+      "primary_error": 0.19530972948352282,
+      "rows": 400
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+      "mae": 0.2619942094601124,
+      "rmse": 0.36127056295461774,
+      "bias": 0.006363558967736225,
+      "primary_error": 0.13051641965754643,
+      "rows": 540
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+      "mae": 0.36590864662716577,
+      "rmse": 0.44590484296877525,
+      "bias": 0.03681835344596728,
+      "primary_error": 0.19883112898300812,
+      "rows": 430
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+      "mae": 0.2727280638696278,
+      "rmse": 0.37527979462000627,
+      "bias": -0.060453972221123774,
+      "primary_error": 0.14083492425003408,
+      "rows": 539
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+      "mae": 0.19558323466358282,
+      "rmse": 0.2906148136078604,
+      "bias": 0.03676033811845849,
+      "primary_error": 0.08445696988833146,
+      "rows": 540
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+      "mae": 0.3311112639772481,
+      "rmse": 0.41912076558851113,
+      "bias": -0.016084417724590353,
+      "primary_error": 0.17566221614749972,
+      "rows": 430
+    },
+    {
+      "model": "attempt_004_description",
+      "group": "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19",
+      "mae": 0.14485293801288926,
+      "rmse": 0.2195551720311209,
+      "bias": 0.014074910584412643,
+      "primary_error": 0.048204473565615094,
+      "rows": 540
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+      "mae": 0.274214323530441,
+      "rmse": 0.37248224628594445,
+      "bias": -0.08626137399252631,
+      "primary_error": 0.13874302379822298,
+      "rows": 539
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+      "mae": 0.23300434975654408,
+      "rmse": 0.33635611192011916,
+      "bias": -0.0961580676226167,
+      "primary_error": 0.11313543402601973,
+      "rows": 540
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+      "mae": 0.2200521949741749,
+      "rmse": 0.32835855139292147,
+      "bias": -0.018694822257856954,
+      "primary_error": 0.10781933827285785,
+      "rows": 540
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+      "mae": 0.3517930880264049,
+      "rmse": 0.46871105346396613,
+      "bias": -0.11247199746244968,
+      "primary_error": 0.21969005163930094,
+      "rows": 540
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+      "mae": 0.399379849244028,
+      "rmse": 0.47004250511307166,
+      "bias": 0.1338475919871285,
+      "primary_error": 0.220939956612972,
+      "rows": 430
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+      "mae": 0.35812634941362687,
+      "rmse": 0.4376078260591767,
+      "bias": 0.05678604729701566,
+      "primary_error": 0.19150060942823866,
+      "rows": 400
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+      "mae": 0.265263898231915,
+      "rmse": 0.364667928492451,
+      "bias": 0.007625474071937136,
+      "primary_error": 0.13298269807097537,
+      "rows": 540
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+      "mae": 0.368462944369475,
+      "rmse": 0.44670232216795774,
+      "bias": 0.0650756258032002,
+      "primary_error": 0.19954296463024593,
+      "rows": 430
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+      "mae": 0.2707036972556577,
+      "rmse": 0.37196613895958225,
+      "bias": -0.04813405651010657,
+      "primary_error": 0.13835880853249924,
+      "rows": 539
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+      "mae": 0.1919333253529106,
+      "rmse": 0.2922183072995967,
+      "bias": 0.028388430125617915,
+      "primary_error": 0.08539153912104151,
+      "rows": 540
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+      "mae": 0.330230852671646,
+      "rmse": 0.41494095929401126,
+      "bias": -0.007091248888489444,
+      "primary_error": 0.1721759996998343,
+      "rows": 430
+    },
+    {
+      "model": "attempt_005_history_interaction",
+      "group": "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19",
+      "mae": 0.13808725013035683,
+      "rmse": 0.21697478030812772,
+      "bias": 0.005199836597756411,
+      "primary_error": 0.04707805528976029,
+      "rows": 540
+    }
+  ],
+  "uncertainty": null,
+  "events": [],
+  "training_audit": {
+    "compatibility_import": false,
+    "training_overlap_groups": [],
+    "training_auditability": "prediction_only",
+    "training_independence_verified_by_scoring": false
+  },
+  "replay": {
+    "status": "passed",
+    "maximum_absolute_difference": 4.996003610813204e-16,
+    "security_sandbox": false,
+    "execution_mode": "explicitly_trusted_local",
+    "environment_secrets_inherited": false
+  },
+  "normalization": {
+    "physical_mae_scale": 0.2777299018967963,
+    "units": "probability squared",
+    "source": "Best frozen comparator on exposed full cohort; diagnostic only"
+  },
+  "scientific_status": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "automatic_admission": false,
+    "novelty": "not_assessed",
+    "industrial_intervention_impact": "not_assessed",
+    "review_required": true
+  },
+  "scientific_checks": {
+    "deterministic_checks": [],
+    "causal_and_linked_group_audit": "reports/RAW_INVARIANTS.json; properties of native preparation, not verification of submitter training behavior",
+    "mechanistic_tests": "reviews/portfolios/P100-089/combined/review.json",
+    "mechanism_admission": "not_assessed_by_endpoint_checks",
+    "training_independence": "not_established_by_prediction_files",
+    "task_specific": {
+      "version": "asd6-diagnostics/1.0",
+      "rows": 6008,
+      "diagnostic_only": true,
+      "automatic_mechanism_admission": false,
+      "tests": [
+        {
+          "test": "endpoint_domain",
+          "lower": 0.0,
+          "upper": 1.0,
+          "interpretation": "Binary choice probability",
+          "violations": 0
+        }
+      ]
+    }
+  },
+  "metric_corrections": [
+    "F1=2TP/(2TP+FP+FN); zero for complete nonempty failure, undefined only when denominator is zero."
+  ]
+}

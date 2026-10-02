@@ -1,0 +1,171 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-066.original.v1",
+  "case_id": "P100-066",
+  "case_number": 66,
+  "family": "original",
+  "protocol_version": "P100-066-batch4-frozen-v1",
+  "cohort_id": "P100-066.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-066.original.v1",
+  "legacy_package": "66_chemistry_mof_hydrogen/final_results",
+  "source_scenario": "scenarios/66_chemistry_mof_hydrogen",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Excess hydrogen uptake",
+  "target_units": "wt.%",
+  "error_units": "wt.%",
+  "primary_units": "wt.%",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "eg_pct",
+    "temperature_K",
+    "pressure_bar",
+    "branch"
+  ],
+  "input_units": {
+    "eg_pct": "wt.% expanded graphite in material label",
+    "temperature_K": "K",
+    "pressure_bar": "bar",
+    "branch": "0 adsorption, 1 desorption"
+  },
+  "numeric_columns": [
+    "eg_pct",
+    "temperature_K",
+    "pressure_bar",
+    "branch"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Composition, pressure, temperature, branch only; no measured uptake-derived quantity as an input.",
+  "calibration": "Excess uptake is the native experimental response. Total uptake, cyclic reuse files and descriptor curves remain upstream; they are not independent excess-uptake confirmation. Excess adsorption can decline with pressure through gas-volume displacement; a monotone absolute-Langmuir law alone is an intentionally falsifiable baseline.",
+  "independent_unit": "whole material composition across temperatures and both branches",
+  "evaluation_groups": [
+    "EG5"
+  ],
+  "assigned_rows": 58,
+  "eligible_rows": 58,
+  "baseline_models": [
+    "reference",
+    "mechanistic_reference",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007",
+    "baseline_mean",
+    "baseline_domain",
+    "baseline_rbf",
+    "attempt_008",
+    "attempt_009"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "mechanistic_reference": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_mean": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_domain": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rbf": {
+      "equation": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_008": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_009": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "scope_limits": "Four MOF/graphite compositions and one source campaign. A branch contrast has different sampled pressures and cannot by itself establish irreversible hysteresis.",
+  "source_url": "https://doi.org/10.57745/KR8BIW",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All packaged targets are exposed for future agents; future scoring is retrospective. Public source-aware corpus. Illustrative header/first-row values were inspected during the semantics audit; these do not constitute blind source acquisition. All delivered targets become exposed after confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "efc21bb3ec0df491514510fb115faba2082626f037cb07acc883eeb2dcd50591",
+  "observations_sha256": "9857491111377ecc6d0b4ad0dd5d8427c2d06ff6d23ae266c738bc844c23f7d3",
+  "legacy_protocol_sha256": "51cd449fa8f87329b5b544c3a005bee57f6ea35da5017f7caaee34e4b8d18130",
+  "source_license": "etalab 2.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

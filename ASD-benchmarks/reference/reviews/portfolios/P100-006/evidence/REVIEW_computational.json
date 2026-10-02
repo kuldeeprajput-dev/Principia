@@ -1,0 +1,203 @@
+{
+  "case_id": "P100-006",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "51491e47c8c0973ed95100b3a60cde77f0ac03f09988cd7993b4d39212edf1ab"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "8016a7ef504f75dc4117b9644f7f70b2dc438c045ebe9a11fa18d6187dd72ba0"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "61c9b563928e38a5cac030b27e37ca01eb49afe3577dd80e60708349c0942529"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "d155104c72400ebc703b86a0e46a98ee4fd3649df8523217746ce4ff16d00353"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "61a7606b9f65134079d378d4d91a83586c085ed28731b43b820fce57c29e8adc"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "392094decfc6a6f2992b04e8111e15bb025e9ba4c4aa0b00505b5b8e1e8d2a42"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "6635179499b49dab2c0c699014a90976e9a7a44c3a8d30178ecbc6e4e2b0c15e"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "d785accc03c88492aae9f96c1e3f6b02ce4e64e5c022214eb18bddb61f78876e"
+    },
+    {
+      "path": "native.py",
+      "sha256": "9239061460879dbd6fe5ff723cb2259f82b10103d575a9eb2243ee14374b6006"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "ea94e5744090d960d4d595862651fc57877394ee3ce1eebb2333622ccbeadf9a"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "a8e16baabeffb2dca400027d5347a938b8b3d8a0272abaeb3ffdbe2e42d44633"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "d810b21f58b5425b300caf70020414d8f6c1838af32774524679f7c758ee524c"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "e655615bceb51cbb100911bc692861e52d798de2fa35fb2e19041e41f79a97d2"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "e9e3f648054b57e6b8476f5b948f82d6a1cb06719a8ba3d37127b721740741d7"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-006-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact frozen numerical evidence reproduces, including losing controls; this verifies computation, not universal interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No literature-priority adjudication in this computational review."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped benchmark comparison. Entire contiguous probe-Rabi blocks; one vapor cell. No independent atomic-cell replication.; The asymmetric dual-response equation improves prediction on two reserved contiguous Rabi blocks compared with the single-line and polynomial controls. Its practical contribution is a scoped response surrogate with explicit uncertainty about mechanism, not a new atomic law.; No independent population confidence interval from dependent rows."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native-source reconstruction and every saved model/metric passed independent computation."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention/cost/safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+        "All top-level groups disjoint across development and confirmation",
+        "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+        "Independently recomputed equal-group physical-unit MAE for every model",
+        "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+      ],
+      "limitations": [
+        "Entire contiguous probe-Rabi blocks; one vapor cell. No independent atomic-cell replication.; The asymmetric dual-response equation improves prediction on two reserved contiguous Rabi blocks compared with the single-line and polynomial controls. Its practical contribution is a scoped response surrogate with explicit uncertainty about mechanism, not a new atomic law.; No independent population confidence interval from dependent rows."
+      ]
+    },
+    {
+      "finding_id": "P100-006-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact frozen numerical evidence reproduces, including losing controls; this verifies computation, not universal interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No literature-priority adjudication in this computational review."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped benchmark comparison. Entire contiguous probe-Rabi blocks; one vapor cell. No independent atomic-cell replication.; The asymmetric dual-response equation improves prediction on two reserved contiguous Rabi blocks compared with the single-line and polynomial controls. Its practical contribution is a scoped response surrogate with explicit uncertainty about mechanism, not a new atomic law.; No independent population confidence interval from dependent rows."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native-source reconstruction and every saved model/metric passed independent computation."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention/cost/safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+        "All top-level groups disjoint across development and confirmation",
+        "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+        "Independently recomputed equal-group physical-unit MAE for every model",
+        "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+      ],
+      "limitations": [
+        "Entire contiguous probe-Rabi blocks; one vapor cell. No independent atomic-cell replication.; The asymmetric dual-response equation improves prediction on two reserved contiguous Rabi blocks compared with the single-line and polynomial controls. Its practical contribution is a scoped response surrogate with explicit uncertainty about mechanism, not a new atomic law.; No independent population confidence interval from dependent rows."
+      ]
+    }
+  ],
+  "numerical_checks": [
+    {
+      "model": "reference",
+      "primary_error": 0.049285928923830824,
+      "max_prediction_difference": 9.8879238130678e-17
+    },
+    {
+      "model": "baseline_atom_domain",
+      "primary_error": 0.07712984005852766,
+      "max_prediction_difference": 9.80118763926896e-17
+    },
+    {
+      "model": "baseline_constant",
+      "primary_error": 0.23216768274866684,
+      "max_prediction_difference": 5.551115123125783e-17
+    },
+    {
+      "model": "baseline_flex6",
+      "primary_error": 0.11171259772646173,
+      "max_prediction_difference": 9.71445146547012e-17
+    },
+    {
+      "model": "attempt_001",
+      "primary_error": 0.056269189684722436,
+      "max_prediction_difference": 9.8879238130678e-17
+    },
+    {
+      "model": "attempt_002",
+      "primary_error": 0.049285928923830824,
+      "max_prediction_difference": 9.8879238130678e-17
+    },
+    {
+      "model": "attempt_003",
+      "primary_error": 0.07339582723177007,
+      "max_prediction_difference": 9.71445146547012e-17
+    },
+    {
+      "model": "attempt_004",
+      "primary_error": 0.055418807495002775,
+      "max_prediction_difference": 9.84455572616838e-17
+    },
+    {
+      "model": "attempt_005",
+      "primary_error": 0.05618297803065184,
+      "max_prediction_difference": 9.80118763926896e-17
+    }
+  ],
+  "checks": [
+    "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+    "All top-level groups disjoint across development and confirmation",
+    "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+    "Independently recomputed equal-group physical-unit MAE for every model",
+    "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+  ],
+  "limitations": [
+    "Entire contiguous probe-Rabi blocks; one vapor cell. No independent atomic-cell replication.; The asymmetric dual-response equation improves prediction on two reserved contiguous Rabi blocks compared with the single-line and polynomial controls. Its practical contribution is a scoped response surrogate with explicit uncertainty about mechanism, not a new atomic law.; No independent population confidence interval from dependent rows."
+  ],
+  "independent_experimental_replication": false
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "finding_id": "P100-030-F01",
+    "title": "Concentration-shifted load sharing",
+    "classification": "unsupported",
+    "claim": "A concentration-dependent load-sharing extension improves transfer to reserved material formulations beyond simple calibrated log-speed interpolation.",
+    "admission": "unsupported",
+    "equation": "equations.json",
+    "model_id": "reference",
+    "task_id": "P100-030.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "equations.json",
+      "rules.json"
+    ],
+    "performance": {
+      "development_MAE": 0.006831450120367674,
+      "confirmation_MAE": 0.0177607111375961,
+      "unit": "dimensionless"
+    },
+    "prior_art": "https://www.sciencedirect.com/science/article/pii/S0301679X26007504",
+    "scope": "Material formulation, repeated representations linked. Two-point calibration at 0.2 and500 mm/s; score0.28\u201310 mm/s.",
+    "limitations": [
+      "Public source-aware confirmation is now exposed.",
+      "Predictive success does not prove a causal mechanism, exhaustive novelty, or realized industrial impact.",
+      "Alternative valid equations are admissible under the same task."
+    ],
+    "negative_evidence": "The proposal is unsupported: confirmation MAE 0.0177607 exceeds log-speed interpolation 0.013141. Development gains do not survive this transfer test."
+  },
+  {
+    "finding_id": "P100-030-F02",
+    "title": "Mechanistic or transfer falsification",
+    "classification": "informative_falsification",
+    "claim": "Concentration alone does not guarantee calibrated curve-shape transfer across surface treatment and supplier.",
+    "admission": "supported",
+    "underlying_proposal_disposition": "unsupported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "equations.json",
+      "rules.json"
+    ],
+    "rationale": "The reserved-formulation reference MAE exceeds log-speed interpolation despite a large development improvement.",
+    "scope": "The tested equations and current data only; no claim of universal impossibility."
+  }
+]

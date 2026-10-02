@@ -1,0 +1,257 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-052",
+  "findings": [
+    {
+      "finding_id": "P100-052-SCI-01",
+      "statement": "The original Gaussian/shear field reconstructs one reserved control, with insufficient evidence for an actuation law.",
+      "classification": "validated_extension",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-052.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole actuation controls in one wind tunnel; correlated interpolated lidar cells; new task additionally permits no-turbine background calibration. Strong adverse evidence: One reserved control and source-interpolated cells do not establish wind-farm or energy transfer; the later coordinate/background repair changes information access.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Flat-core wake shape and background calibration are established descriptions. Source contrasts support rotor-aperture redistribution, not a newly identified momentum/turbulence or frequency law.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source publication already analyzes induction and wake recovery; claimed contribution is matched calibration and bounded shape comparison. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole actuation controls in one wind tunnel; correlated interpolated lidar cells; new task additionally permits no-turbine background calibration.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original reserved control",
+          "measure": "reference MAE",
+          "value": 0.32626,
+          "unit": "m/s",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original reserved control",
+          "measure": "weak domain MAE",
+          "value": 0.703965,
+          "unit": "m/s",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "One reserved control and source-interpolated cells do not establish wind-farm or energy transfer; the later coordinate/background repair changes information access.",
+      "scientific_validators": [
+        "Keep WT 2 local 2 D/4 D distinct from global 7 D/9 D in empty-field mapping.",
+        "Declare empty-flow calibration identically for every competitor and do not compare gains to lower-information original task as algorithm-only effects.",
+        "Aggregate by complete actuation control; retain rotor-disk versus whole-plane contrast distinction."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-052.json",
+      "source_classification": "validated_extension"
+    },
+    {
+      "finding_id": "P100-052-SCI-02",
+      "statement": "A calibrated quartic wake profile provides a small matched improvement, while actuation-specific coefficients fail development transfer.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "partially_supported",
+      "task_ids": [
+        "P100-052.continuation.v1"
+      ],
+      "task_version_history": "2026-10-01 continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole actuation controls in one wind tunnel; correlated interpolated lidar cells; new task additionally permits no-turbine background calibration. Strong adverse evidence: Replacing empty-flow by 7 m/s hurts badly. Diagnostic-better actuation MAE.232071 was worse in development and is not promoted. Power summary/rotor-derived identities cannot independently confirm a control benefit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Flat-core wake shape and background calibration are established descriptions. Source contrasts support rotor-aperture redistribution, not a newly identified momentum/turbulence or frequency law.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source publication already analyzes induction and wake recovery; claimed contribution is matched calibration and bounded shape comparison. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole actuation controls in one wind tunnel; correlated interpolated lidar cells; new task additionally permits no-turbine background calibration.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "new background-calibrated development",
+          "measure": "super-Gaussian MAE",
+          "value": 0.268655,
+          "unit": "m/s",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "new background-calibrated development",
+          "measure": "Gaussian MAE",
+          "value": 0.276592,
+          "unit": "m/s",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed background-calibrated control",
+          "measure": "super-Gaussian MAE",
+          "value": 0.267234,
+          "unit": "m/s",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed background-calibrated control",
+          "measure": "Gaussian MAE",
+          "value": 0.273307,
+          "unit": "m/s",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "development ablation without background",
+          "measure": "MAE",
+          "value": 0.722592,
+          "unit": "m/s",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Replacing empty-flow by 7 m/s hurts badly. Diagnostic-better actuation MAE.232071 was worse in development and is not promoted. Power summary/rotor-derived identities cannot independently confirm a control benefit.",
+      "scientific_validators": [
+        "Keep WT 2 local 2 D/4 D distinct from global 7 D/9 D in empty-field mapping.",
+        "Declare empty-flow calibration identically for every competitor and do not compare gains to lower-information original task as algorithm-only effects.",
+        "Aggregate by complete actuation control; retain rotor-disk versus whole-plane contrast distinction."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-052.json",
+      "source_classification": "retrospective_extension"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

@@ -1,3 +1,5 @@
+> **v0.2.0 update:** This source-corpus document is complemented by the [Astra reference package](reference/README.md), [current evaluation protocol](EVALUATION_PROTOCOL.md), and [publication audit](RELEASE_AUDIT.md). Acquisition-stage statements describe the earlier data release; current executable contracts govern registered-task comparisons.
+
 # Reproduction and validation tools
 
 Run from the `ASD-benchmarks/` directory after downloading the required Git LFS objects using [DOWNLOAD.md](DOWNLOAD.md). Basic integrity/replay tools require Python 3.9+ and only the standard library. They do not run publisher analysis code.

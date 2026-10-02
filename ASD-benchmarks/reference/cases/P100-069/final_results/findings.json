@@ -1,0 +1,269 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-069",
+  "findings": [
+    {
+      "finding_id": "P100-069-SCI-01",
+      "statement": "A causal housing/speed observer is a useful calibrated reference within one gearbox, with long-duration failures.",
+      "classification": "validated_extension",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-069.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete runs from one gearbox; external causal forcing plus first lubricanttemperature initialization; startup excluded from score. Strong adverse evidence: Worst original run 2.728 C; no new gearbox/sensorless claim. Source already describes an observer.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Stable memory modes are interpretable observer states, not independently identified heat capacities or heat-transfer paths. Five constant-speed runs underexcite competing mechanisms.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source two-state observer has unmatched reported 1.3 KMAE; absent exact code/coefficients prohibit superiority claims. No new thermodynamic law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete runs from one gearbox; external causal forcing plus first lubricanttemperature initialization; startup excluded from score.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original eight source validation runs",
+          "measure": "single-speed observer MAE",
+          "value": 1.400021,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original eight source validation runs",
+          "measure": "housing/persistence MAE",
+          "value": 4.026116,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Worst original run 2.728 C; no new gearbox/sensorless claim. Source already describes an observer.",
+      "scientific_validators": [
+        "Perturb future forcing and later lubricant targets to confirm prefix invariance.",
+        "Exclude initialization from score and report cooldown, long-term and high-speed separately.",
+        "Test stable recurrences, parametergrid sensitivity and prespecified temperature-alarm delay/miss rates only if independent thresholds exist."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-069.json",
+      "source_classification": "validated_extension"
+    },
+    {
+      "finding_id": "P100-069-SCI-02",
+      "statement": "Two memory clocks improve mean and long-duration prediction but substantially worsen cooldown; the slow physical mechanism is unidentifiable.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "partially_supported",
+      "task_ids": [
+        "P100-069.continuation.v1"
+      ],
+      "task_version_history": "2026-10-01 continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete runs from one gearbox; external causal forcing plus first lubricanttemperature initialization; startup excluded from score. Strong adverse evidence: Only 5/8 runs improve; cooldown bias+1.616079 C. Slowtau 6400 s hitsgrid limit and varies 1600/6400 acrossfolds. Diagnostic-better temperature-power .732699 was worse in development and isnot promoted.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Stable memory modes are interpretable observer states, not independently identified heat capacities or heat-transfer paths. Five constant-speed runs underexcite competing mechanisms.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source two-state observer has unmatched reported 1.3 KMAE; absent exact code/coefficients prohibit superiority claims. No new thermodynamic law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete runs from one gearbox; external causal forcing plus first lubricanttemperature initialization; startup excluded from score.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "continuation development 5 runs",
+          "measure": "double-speed MAE",
+          "value": 0.346777,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "continuation development 5 runs",
+          "measure": "single-speed MAE",
+          "value": 0.638738,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed 8 runs",
+          "measure": "double-speed MAE",
+          "value": 1.221122,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed 8 runs",
+          "measure": "single-speed MAE",
+          "value": 1.400021,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed cooldown",
+          "measure": "double-speed MAE",
+          "value": 1.708414,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed cooldown",
+          "measure": "single-speed MAE",
+          "value": 0.424427,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Only 5/8 runs improve; cooldown bias+1.616079 C. Slowtau 6400 s hitsgrid limit and varies 1600/6400 acrossfolds. Diagnostic-better temperature-power .732699 was worse in development and isnot promoted.",
+      "scientific_validators": [
+        "Perturb future forcing and later lubricant targets to confirm prefix invariance.",
+        "Exclude initialization from score and report cooldown, long-term and high-speed separately.",
+        "Test stable recurrences, parametergrid sensitivity and prespecified temperature-alarm delay/miss rates only if independent thresholds exist."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-069.json",
+      "source_classification": "retrospective_extension"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

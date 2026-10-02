@@ -1,0 +1,78 @@
+{
+  "case_id": "P100-020",
+  "title": "NOAA Coral Reef Watch global 5 km sea-surface temperature anomaly",
+  "default_task": "P100-020.original.v1",
+  "default_tier": "adequacy_falsification_diagnostic",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "SST anomaly at a withheld pixel",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 23,
+    "independent_unit_description": "Complete20degree geographic tile for scoring; all tiles belong to one dependent global map, not independent temporal replicates.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Cardinal neighbors at4 and8 pixels plus four diagonal neighbors at4pixels. Target centers lie on a40pixel lattice and can never be calibration pixels for any scored center.",
+  "baseline_strength": {
+    "registered_controls": 12,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "SST anomaly at a withheld pixel",
+    "prediction_time": "Retrospective reconstruction of one daily map, using twelve fixed neighboring pixels from the same date. Not a future forecast.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "One-date same-map interpolation; no future climate or bleaching response."
+  },
+  "task_ids": [
+    "P100-020.original.v1"
+  ],
+  "finding_ids": [
+    "P100-020-F01",
+    "P100-020-F02",
+    "P100-020-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-020/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-020.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate SST anomaly at a withheld pixel under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Retrospective reconstruction of one daily map, using twelve fixed neighboring pixels from the same date. Not a future forecast.",
+    "calibration_requirement": "Cardinal neighbors at4 and8 pixels plus four diagonal neighbors at4pixels. Target centers lie on a40pixel lattice and can never be calibration pixels for any scored center.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "SST anomaly at a withheld pixel in degree C",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "One-date same-map interpolation; no future climate or bleaching response."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "degree C",
+    "reference_model": "reference",
+    "reference_primary_error": 0.03283650688908308,
+    "reference_physical_mae": 0.03283650688908308,
+    "physical_error_units": "degree C",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.03283650688908308,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-020.original.v1/evidence/metrics.csv",
+      "bytes": 1779,
+      "sha256": "3a5492a643650eaa78fdb881fcceb3c49fe7ce64d4871097aea839634583c195"
+    },
+    "models": 12
+  },
+  "case_specific_next_evidence": "One-date same-map interpolation; no future climate or bleaching response."
+}

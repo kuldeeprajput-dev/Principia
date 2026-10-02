@@ -1,0 +1,216 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-071.round2.v1",
+  "case_id": "P100-071",
+  "case_number": 71,
+  "family": "round2",
+  "protocol_version": "P100-071.round2.v1.contract-1",
+  "cohort_id": "P100-071.round2.v1.development-oof",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-071.round2.v1",
+  "legacy_package": "71_biotechnology_cho_cultivations/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/71_biotechnology_cho_cultivations",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Viable-cell density",
+  "target_units": "million cells/mL",
+  "error_units": "million cells/mL",
+  "primary_units": "million cells/mL",
+  "metric_kind": "rmse",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_rmse"
+  },
+  "permitted_inputs": [
+    "perm",
+    "permittivity_decline",
+    "perm_decline_fraction",
+    "perm_peak_past",
+    "deltaeps",
+    "fc",
+    "conductivity",
+    "cole_r2",
+    "od",
+    "transmission",
+    "reflection",
+    "time_h",
+    "fed_batch",
+    "dperm24",
+    "dod24"
+  ],
+  "input_units": {
+    "perm": "pF/cm",
+    "permittivity_decline": "pF/cm",
+    "perm_decline_fraction": "dimensionless",
+    "perm_peak_past": "pF/cm",
+    "deltaeps": "pF/cm",
+    "fc": "kHz",
+    "conductivity": "mS/cm",
+    "cole_r2": "dimensionless",
+    "od": "dimensionless source optical-density transform",
+    "transmission": "source arbitrary units",
+    "reflection": "source arbitrary units",
+    "time_h": "h",
+    "fed_batch": "binary indicator",
+    "dperm24": "(pF/cm)/h",
+    "dod24": "1/h"
+  },
+  "numeric_columns": [
+    "perm",
+    "permittivity_decline",
+    "perm_decline_fraction",
+    "perm_peak_past",
+    "deltaeps",
+    "fc",
+    "conductivity",
+    "cole_r2",
+    "od",
+    "transmission",
+    "reflection",
+    "time_h",
+    "fed_batch",
+    "dperm24",
+    "dod24"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Sensor median in [t\u22120.5h,t], fallback latest valid <=2h old; quality Ok and Cole R\u00b2>=0.9 where applicable. Lags and peaks use only the past. Do not use aligned duplicate tables as independent evidence. Expanded information budget: perm, permittivity_decline, perm_decline_fraction, perm_peak_past, deltaeps, fc, conductivity, cole_r2, od, transmission, reflection, time_h, fed_batch, dperm24, dod24",
+  "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Training-only imputation, scale and missingness transforms; causal native sensors with quality flags. Offline VCD and its SEM are responses, never online predictors.",
+  "independent_unit": "experiment pair (both reactors)",
+  "evaluation_groups": [
+    "EXP001",
+    "EXP002",
+    "EXP003",
+    "EXP004",
+    "EXP006",
+    "EXP007",
+    "EXP008",
+    "EXP010",
+    "EXP011"
+  ],
+  "assigned_rows": 286,
+  "eligible_rows": 286,
+  "baseline_models": [
+    "previous/adaptive-003/results/linear_magnitude",
+    "previous/results-v2/unconstrained2",
+    "previous/adaptive-003/results/availability",
+    "previous/adaptive-003/results/unconstrained",
+    "previous/adaptive-003/results/bounded_correction",
+    "previous/results-v2/availability",
+    "previous/results-v2/cycle1",
+    "previous/results-v2/unconstrained1",
+    "previous/results-v2/cycle2",
+    "previous/results-v2/simple",
+    "current/cycle-001",
+    "previous/results-v2/rbf",
+    "previous/results-v2/flexible",
+    "current/baseline-hgb",
+    "previous/results-v2/linear"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "previous/adaptive-003/results/linear_magnitude": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/unconstrained2": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/adaptive-003/results/availability": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/adaptive-003/results/unconstrained": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/adaptive-003/results/bounded_correction": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/availability": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/cycle1": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/unconstrained1": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/cycle2": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/simple": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/rbf": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/flexible": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/results-v2/linear": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Three reserved cultivation pairs: EXP005 and EXP009 batch; EXP012 fed-batch. Limited process-domain evidence, not universal cell-line or plant transfer. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+  "source_url": "https://zenodo.org/records/20829178",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "17041850c306c916f1aec2308426c23f0455b2c4fcf63a6d7bfe57e8b4709959",
+  "observations_sha256": "6ee21d16e4af5a2dcb4c378278463725177e7eaa0bf064d31da1ba2d586af60a",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified"
+}

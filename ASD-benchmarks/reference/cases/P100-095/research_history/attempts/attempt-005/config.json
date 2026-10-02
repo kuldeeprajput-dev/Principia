@@ -1,0 +1,16 @@
+{
+  "case": 95,
+  "type": "linear",
+  "features": [
+    "E",
+    "suppressed",
+    "unstable"
+  ],
+  "offset": null,
+  "scale": null,
+  "alpha": 0,
+  "nonnegative": true,
+  "title": "Stable versus unstable response",
+  "hypothesis": "A bulk stability proxy suppresses shear under stable stratification and includes unstable enhancement separately.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.3173972561524605, \"worst_group\": 0.5982098856436229}, {\"attempt\": \"attempt-002\", \"group_MAE\": 0.3122647880296719, \"worst_group\": 0.575888428751605}, {\"attempt\": \"attempt-003\", \"group_MAE\": 0.3330655183078203, \"worst_group\": 0.5932360025825785}, {\"attempt\": \"attempt-004\", \"group_MAE\": 0.31426346791198856, \"worst_group\": 0.5883650557183144}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Directional correction does not beat the production/dissipation incumbent. Challenge it with a stable/unstable regime hypothesis.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state."
+}

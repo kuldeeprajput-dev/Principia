@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-034",
+  "target": "first_pulse_ePSC_magnitude",
+  "target_units": "nA",
+  "error_units": "nA",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "calcium",
+    "mutant",
+    "low04",
+    "low075"
+  ],
+  "input_units": {
+    "calcium": "mM",
+    "mutant": "binary",
+    "low04": "nA",
+    "low075": "nA"
+  },
+  "numeric_columns": [
+    "calcium",
+    "mutant",
+    "low04",
+    "low075"
+  ],
+  "timing_contract": "After two lower-dose blocks, forecast mean first-pulse current at the three later calcium doses; all animal data linked.",
+  "calibration": "First-pulse mean across ten sweeps at0.4 and0.75mM per animal. Later1.5/3/6mM targets are excluded from calibration.",
+  "independent_unit": "animal",
+  "scope_limits": "One muscle6 cell per animal, control and mutant. Dose sequence is confounded with time; sweeps are technical repetitions. Author peak measurements, not newly extracted raw-ABF amplitudes.",
+  "source_url": "https://zenodo.org/records/15629377",
+  "source_license": "CC BY4.0",
+  "prior_art_url": "https://doi.org/10.1073/pnas.2514151122",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": 0,
+    "target_max": null
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

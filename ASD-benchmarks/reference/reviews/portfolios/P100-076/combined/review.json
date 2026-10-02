@@ -1,0 +1,741 @@
+{
+  "schema_version": "principia.advisory-review/3.0",
+  "bindings": {
+    "claims_sha256": "59b58d72f8c40290515c2d48174e3788da6fc0ffdc8fcdf1e4c5d16fb06f8106",
+    "evidence_sha256": {
+      "E001": "ca1cd85f3fbee733e8c37e9ee47d69d644bd10b445595ab9c4bf338c338e2726",
+      "E002": "a46e860a98c940d4c561f2c140abe9943c0f5498f3c13232c3185bb1f92a2185",
+      "E003": "9041a85a440a1edd706f164b85f8ba8e38fe1ae97a9c68ec79d841dd99d746c9",
+      "E004": "6293bb878cf9f97d0ce2790d28eb63005ee2a534053fd33b5915bdf305d023a5",
+      "E005": "68e6fd2c321fe18b0245a36910e607ebbbbacba0f857cb84b50703120adadb7d",
+      "E006": "ea823d033cf54da151ffbb1484256b150d89e20cfeac559203887c1b12fdfcad",
+      "E007": "a8aa7ec222f14896af6c84f4ea5987edb5330e2c80f1ea50a8fb3d25452ce73e",
+      "E008": "054eff1f13774c6bd2190a516748f22b814cbbfdf2edb03955efa921d4e9a542",
+      "E009": "a90a4c5a03f7e8af453dcda13b4ffbb0d102dccdce83300a636e72d17e213ac4",
+      "E010": "a50fdb1fe844a0f0345790008a8071dd1d5513ad7324173cd0a68b7e97634208",
+      "E011": "cc7191d7158a44b2672336bef046488f9367e0aa15fab25379da0e5ea2bda93c",
+      "E012": "7c05798c174e2a368cd2a1a33c4040a8776395872343a14131d41584e0eb03a8",
+      "E013": "62281d35db0282683d41dba63c8ec56fdc24b31d53c934a2d7ca2ca77bbb96f8",
+      "E014": "35793375cd20a6a162370713944992b38b6c5d8306a17be19ee0acae00913484",
+      "E015": "cef6d926d86615d93837b53ccada11389ae1a9901fe942aa1689c9afdfcb2e3b",
+      "E016": "d84a4e667ccd7b0b30deacc8fc62df2685963053795358d255b6601f4c7642c6",
+      "E017": "9119985a53737d57dec07f6e2ab4e3cf043b9fe013901337de9d676367d0e276",
+      "E018": "2ec8e47ec3e5a8d50f67be34ecef62556370c0daef251be98e42fb410e00d328",
+      "COMPUTATIONAL": "cb9fd35f1be1b5bb8ff47e6212a0a26443365bd3875de04b364fe6ef7255ebc3",
+      "SCIENTIFIC_CRITICAL": "08c7e422408cfe3fd60bb2e453cc5e319afe104c11ba27db7e6112ec91c2c675"
+    },
+    "case_id": "P100-076",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "reviews": [
+    {
+      "finding_id": "P100-076-F01",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-076-F01",
+        "disposition": "partially_supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Manual FI eligibility and <=10pA cell calibration reproduce. Grouped reference MAE0.441964 spikes/stimulus beats all recorded frozen alternatives on eight dishes.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Computational parity validates implementation, not causal mechanism; scientific-critical review is separate.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No computational result certifies novelty; disclosed source analyses remain prior art.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Performance and negative evidence are meaningful only under the stated input/calibration and grouped cohort.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Independent native reconstruction, every frozen equation, equal-group metric recomputation, target poison, row-order invariance and standalone replay all passed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No prospective operational or experimental intervention was performed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          {
+            "name": "native_reconstruction",
+            "passed": true,
+            "rows": 546,
+            "confirmation_rows": 266,
+            "columns_checked": [
+              "group",
+              "current",
+              "soft",
+              "kd",
+              "cal_mean",
+              "cal_last"
+            ]
+          },
+          {
+            "name": "complete_group_partition",
+            "passed": true,
+            "groups": 17
+          },
+          {
+            "name": "all_equations_metrics_target_poison_order",
+            "passed": true,
+            "models": 9,
+            "metric": "equal_group_MAE"
+          },
+          {
+            "name": "standalone_replay",
+            "passed": true
+          }
+        ],
+        "limitations": [
+          "Eight confirmation dishes occupy one date; latent culture batches and sparse zero responses prevent broad mechanistic conclusions. This is a calibrated control, not an absence-of-excitability law.",
+          "All outcomes are exposed. This review is computational review by a separate agent, not experimental replication."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-076-F01",
+        "disposition": "partially_supported",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Prefix persistence0.44196spikes beats rheobase0.72561 and flexible0.73781 on eight dishes of one final date. The negative result is a valid comparator challenge.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "unsupported",
+            "rationale": "Sparse/zero spike counts, same-recording calibration and one held date limit identifiability; prediction failure does not refute stiffness/Piezo1 biology.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Source-publication review is disclosed, but the model families are established and the search is targeted. No literature-priority certification.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Improve with repeated independent culture batches and stratified spike-event calibration; retain the whole-date boundary and explicit zero-response prevalence.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Executable coefficients, native anchors and group evidence are present; independent computational review checks arithmetic separately.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent clinical, industrial, financial or experimental intervention benefit was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          "Inspected native units/endpoint audit, source prior art, frozen information budget and selection history",
+          "Read every comparator and group error including adverse retrospective winners",
+          "Separated calibrated prediction, mechanistic interpretation and novelty/impact claims"
+        ],
+        "limitations": [
+          "Sparse/zero spike counts, same-recording calibration and one held date limit identifiability; prediction failure does not refute stiffness/Piezo1 biology.",
+          "Improve with repeated independent culture batches and stratified spike-event calibration; retain the whole-date boundary and explicit zero-response prevalence."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-076-F02",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-076-F02",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Manual FI eligibility and <=10pA cell calibration reproduce. Grouped reference MAE0.441964 spikes/stimulus beats all recorded frozen alternatives on eight dishes.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Computational parity validates implementation, not causal mechanism; scientific-critical review is separate.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No computational result certifies novelty; disclosed source analyses remain prior art.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Performance and negative evidence are meaningful only under the stated input/calibration and grouped cohort.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Independent native reconstruction, every frozen equation, equal-group metric recomputation, target poison, row-order invariance and standalone replay all passed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No prospective operational or experimental intervention was performed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          {
+            "name": "native_reconstruction",
+            "passed": true,
+            "rows": 546,
+            "confirmation_rows": 266,
+            "columns_checked": [
+              "group",
+              "current",
+              "soft",
+              "kd",
+              "cal_mean",
+              "cal_last"
+            ]
+          },
+          {
+            "name": "complete_group_partition",
+            "passed": true,
+            "groups": 17
+          },
+          {
+            "name": "all_equations_metrics_target_poison_order",
+            "passed": true,
+            "models": 9,
+            "metric": "equal_group_MAE"
+          },
+          {
+            "name": "standalone_replay",
+            "passed": true
+          }
+        ],
+        "limitations": [
+          "Eight confirmation dishes occupy one date; latent culture batches and sparse zero responses prevent broad mechanistic conclusions. This is a calibrated control, not an absence-of-excitability law.",
+          "All outcomes are exposed. This review is computational review by a separate agent, not experimental replication."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-076-F02",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Prefix persistence0.44196spikes beats rheobase0.72561 and flexible0.73781 on eight dishes of one final date. The negative result is a valid comparator challenge.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Sparse/zero spike counts, same-recording calibration and one held date limit identifiability; prediction failure does not refute stiffness/Piezo1 biology.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Source-publication review is disclosed, but the model families are established and the search is targeted. No literature-priority certification.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Improve with repeated independent culture batches and stratified spike-event calibration; retain the whole-date boundary and explicit zero-response prevalence.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Executable coefficients, native anchors and group evidence are present; independent computational review checks arithmetic separately.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent clinical, industrial, financial or experimental intervention benefit was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          "Inspected native units/endpoint audit, source prior art, frozen information budget and selection history",
+          "Read every comparator and group error including adverse retrospective winners",
+          "Separated calibrated prediction, mechanistic interpretation and novelty/impact claims"
+        ],
+        "limitations": [
+          "Sparse/zero spike counts, same-recording calibration and one held date limit identifiability; prediction failure does not refute stiffness/Piezo1 biology.",
+          "Improve with repeated independent culture batches and stratified spike-event calibration; retain the whole-date boundary and explicit zero-response prevalence."
+        ]
+      }
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "novelty_is_not_certified": true
+}

@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-090",
+  "title": "Individual locomotor bias drives counterclockwise motion in pedestrian crowds",
+  "default_task": "P100-090.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Mean next-two-second signed angular polarization about instantaneous group centroid",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 5,
+    "independent_unit_description": "Whole country/experiment-condition group with all repetitions; participants may recur across conditions and identifiers do not resolve all dependence. One teen condition keptdevelopment, no heldteen generalization.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "First2seconds of each trial used as explicit calibration; no future held-group target fit. Whole condition/session A/C/D identifiers keep repetitions linked. Calibration baseline given same prefix access.",
+  "baseline_strength": {
+    "registered_controls": 12,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "unsupported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Mean next-two-second signed angular polarization about instantaneous group centroid",
+    "prediction_time": "Every predictor uses trajectory rows at/before origin t. Integer positions use previous observed sample only, at most1second stale; current tracked count uses prefix-present IDs, never full-trial future membership. No interpolation from future. Velocities derived by backward1s differences; supplied VX/VY/Pol forbidden because smoothing provenance can include future. Target uses t+1..t+2.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Normalized crowd-rotation model does not outperform controls; no causal handedness law."
+  },
+  "task_ids": [
+    "P100-090.original.v1"
+  ],
+  "finding_ids": [
+    "P100-090-F01",
+    "P100-090-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-090/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-090.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Mean next-two-second signed angular polarization about instantaneous group centroid under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Every predictor uses trajectory rows at/before origin t. Integer positions use previous observed sample only, at most1second stale; current tracked count uses prefix-present IDs, never full-trial future membership. No interpolation from future. Velocities derived by backward1s differences; supplied VX/VY/Pol forbidden because smoothing provenance can include future. Target uses t+1..t+2.",
+    "calibration_requirement": "First2seconds of each trial used as explicit calibration; no future held-group target fit. Whole condition/session A/C/D identifiers keep repetitions linked. Calibration baseline given same prefix access.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Mean next-two-second signed angular polarization about instantaneous group centroid in dimensionless signed[-1,1]",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Normalized crowd-rotation model does not outperform controls; no causal handedness law."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "polarization units",
+    "reference_model": "reference",
+    "reference_primary_error": 0.06595787273467804,
+    "reference_physical_mae": 0.06595787273467804,
+    "physical_error_units": "polarization units",
+    "lowest_registered_error_model": "flexible",
+    "lowest_registered_error": 0.06474652192116906,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-090.original.v1/evidence/metrics.csv",
+      "bytes": 1309,
+      "sha256": "fcadf79d97cbac1ca28c3854ca969246e358bc2a556074c44fe2c492b4fe688d"
+    },
+    "models": 12
+  },
+  "case_specific_next_evidence": "Normalized crowd-rotation model does not outperform controls; no causal handedness law."
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-007.original.v1.raw-access.v1",
+  "parent_task_id": "P100-007.original.v1",
+  "case_id": "P100-007",
+  "protocol_version": "P100-007.original.v1.raw-access.v1",
+  "cohort_id": "P100-007.original.v1.cohort-1",
+  "parent_task_sha256": "a89610498f4a0cad927c338b8fb0e7751a3f6a68a229ffd92e4313e666049094",
+  "input_sha256": "c1c58e61cb7de174c5d7afd3190c9b9e33601ade54561b1e2e12bcdf6aed89a6",
+  "observations_sha256": "4127ced29e3b9b64da6dd5df387a827ad61798020a4dba5c895747fc98016450",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "07_neuroscience_physionet_gait_s1",
+  "source_assets": [
+    {
+      "name": "FP_S1_0.5.csv",
+      "path": "raw/FP_Data/FP_S1_0.5.csv",
+      "sha256": "2249adc9645bc95b035bd76b6e2545456cc4b6ac9694d340712f40facc302bc3",
+      "bytes": 12048656
+    },
+    {
+      "name": "FP_S1_0.75.csv",
+      "path": "raw/FP_Data/FP_S1_0.75.csv",
+      "sha256": "5c8ccc8f12bc70efe68a818d2fd65b68ec7ea9c887b0e1f81318d8169d5bf207",
+      "bytes": 11012505
+    },
+    {
+      "name": "FP_S1_1.csv",
+      "path": "raw/FP_Data/FP_S1_1.csv",
+      "sha256": "66411a26cb89ba608518e9708883d2084a052c9f8db03df7833980565e99ca0c",
+      "bytes": 12479457
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "force": "N",
+      "lag20": "N",
+      "lag50": "N",
+      "lag100": "N",
+      "opposite": "N",
+      "opposite50": "N",
+      "cycle": "N",
+      "cycle_previous": "N",
+      "period": "s",
+      "speed": "m/s"
+    },
+    "observation_window": "Causal10ms block means sampled100Hz from source1000Hz sequence. At block end t, predict the10ms block ending t+100ms. Every feature uses blocks ending at or before t.",
+    "calibration_and_history": "No target calibration from held run; preceding five seconds of its force waveform supply causal period and history. Known treadmill speed is permitted.",
+    "calibration_columns": [
+      "force",
+      "lag20",
+      "lag50",
+      "lag100",
+      "opposite",
+      "opposite50",
+      "cycle",
+      "cycle_previous",
+      "period"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "One participant and one held speed run; between-person transfer is untested.",
+    "Only 1 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

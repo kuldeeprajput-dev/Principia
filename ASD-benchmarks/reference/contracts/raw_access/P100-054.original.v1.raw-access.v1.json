@@ -1,0 +1,66 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-054.original.v1.raw-access.v1",
+  "parent_task_id": "P100-054.original.v1",
+  "case_id": "P100-054",
+  "protocol_version": "P100-054.original.v1.raw-access.v1",
+  "cohort_id": "P100-054.original.v1.cohort-1",
+  "parent_task_sha256": "2d2c071ceaf5a97285b8025acac105ea0ff30bffcf774ea4eb3f8fd72f90bd0a",
+  "input_sha256": "3a912581f972797a070f9ccc57b79b537c98e1b0eb4ca7de0964f24d9d26b7e1",
+  "observations_sha256": "4b269d4a71d531737ea4e3e0185ef1ec7462153a945e5245d1c5318783f6def5",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "54_materials_microfracture",
+  "source_assets": [
+    {
+      "path": "raw/Data for publication.zip",
+      "sha256": "6981c22d36dc139ee7e53aa6f12a2a16cb80a875b0a9a546250ae261765b55df",
+      "bytes": 36678522
+    },
+    {
+      "path": "context/source_record.json",
+      "sha256": "21b0b6de717efe2569368200363bec814485ee6309c7a1be23e087b9a2928f18",
+      "bytes": 6288
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "width_um": "um",
+      "thickness_um": "um",
+      "length_um": "um",
+      "notch_depth_um": "um",
+      "notch_width_um": "um"
+    },
+    "observation_window": "Predict measured second-bridge failure load conditional on reported SEM geometry; geometry may be measured post-test, so this is retrospective geometry-conditioned response, not pre-test control.",
+    "calibration_and_history": "Predict measured second-bridge failure load conditional on reported SEM geometry; geometry may be measured post-test, so this is retrospective geometry-conditioned response, not pre-test control.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_asset",
+      "source_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "SEM geometry may be post-test; one wafer, not prospective safe-load design."
+  ],
+  "current_outcomes_exposed": true
+}

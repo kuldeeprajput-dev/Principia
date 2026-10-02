@@ -1,0 +1,197 @@
+{
+  "development_only": true,
+  "best_raw_error_model": "baseline_flexible",
+  "paired_group_comparisons": {
+    "baseline_persistence": {
+      "wins": 9,
+      "ties": 0,
+      "groups": 15,
+      "mean_mae_difference": -0.050372661410504456,
+      "differences": {
+        "Subject10": -0.04847432294078419,
+        "Subject11": 0.005601972776196229,
+        "Subject12": -0.0884604228683673,
+        "Subject13": 0.008109255269929644,
+        "Subject14": -0.1508314607349921,
+        "Subject15": -0.057567379572668775,
+        "Subject16": 0.021683918174922434,
+        "Subject17": 0.03157038776351809,
+        "Subject18": -0.12197856531565099,
+        "Subject19": -0.10196277467660803,
+        "Subject2": -0.07870322109496397,
+        "Subject3": -0.08092529742937338,
+        "Subject6": -0.12358741636157239,
+        "Subject8": 0.017063784162473478,
+        "Subject9": 0.01287162169037448
+      }
+    },
+    "baseline_tangent": {
+      "wins": 15,
+      "ties": 0,
+      "groups": 15,
+      "mean_mae_difference": -0.11825356227564256,
+      "differences": {
+        "Subject10": -0.18557005121494735,
+        "Subject11": -0.16783861458746696,
+        "Subject12": -0.13273828241518598,
+        "Subject13": -0.11883365053237738,
+        "Subject14": -0.07809739325319998,
+        "Subject15": -0.09945491765294967,
+        "Subject16": -0.08206741595599071,
+        "Subject17": -0.08939695216805404,
+        "Subject18": -0.08381879047485163,
+        "Subject19": -0.16846493262064094,
+        "Subject2": -0.1329122972110885,
+        "Subject3": -0.17440394049576113,
+        "Subject6": -0.14450272919377788,
+        "Subject8": -0.04608054124523259,
+        "Subject9": -0.06962292511311352
+      }
+    },
+    "baseline_flexible": {
+      "wins": 0,
+      "ties": 15,
+      "groups": 15,
+      "mean_mae_difference": 0.0,
+      "differences": {
+        "Subject10": 0.0,
+        "Subject11": 0.0,
+        "Subject12": 0.0,
+        "Subject13": 0.0,
+        "Subject14": 0.0,
+        "Subject15": 0.0,
+        "Subject16": 0.0,
+        "Subject17": 0.0,
+        "Subject18": 0.0,
+        "Subject19": 0.0,
+        "Subject2": 0.0,
+        "Subject3": 0.0,
+        "Subject6": 0.0,
+        "Subject8": 0.0,
+        "Subject9": 0.0
+      }
+    }
+  },
+  "identifiability": {
+    "baseline_persistence": {
+      "parameters": 0,
+      "meaning": "Fixed calibration/persistence control"
+    },
+    "baseline_tangent": {
+      "parameters": 0,
+      "meaning": "Fixed calibration/persistence control"
+    },
+    "baseline_flexible": {
+      "feature_rank": 14,
+      "parameters": 14,
+      "ridge_penalty": 1,
+      "warning": "Regularized coefficients are not uniquely identified mechanisms when design columns are dependent."
+    },
+    "attempt_001_damped": {
+      "rank": 1,
+      "parameters": 1,
+      "near_bound_indices": [],
+      "singular_values": [
+        17.001293632458587
+      ],
+      "condition_number": 1.0
+    },
+    "attempt_002_periodic": {
+      "feature_rank": 2,
+      "parameters": 2,
+      "ridge_penalty": 0.01,
+      "warning": "Regularized coefficients are not uniquely identified mechanisms when design columns are dependent."
+    },
+    "attempt_003_flow": {
+      "feature_rank": 4,
+      "parameters": 4,
+      "ridge_penalty": 0.01,
+      "warning": "Regularized coefficients are not uniquely identified mechanisms when design columns are dependent."
+    },
+    "attempt_004_regime": {
+      "feature_rank": 6,
+      "parameters": 6,
+      "ridge_penalty": 0.01,
+      "warning": "Regularized coefficients are not uniquely identified mechanisms when design columns are dependent."
+    },
+    "attempt_005_limited": {
+      "rank": 2,
+      "parameters": 2,
+      "near_bound_indices": [],
+      "singular_values": [
+        16.84380100630425,
+        3.1970147509856255
+      ],
+      "condition_number": 5.268602843046433
+    }
+  },
+  "source_limits": "Twenty healthy participants; three complete trials linked. Forecasts assess device/airway signal continuity under rapid occlusion, not separately identified lung compliance or clinical accuracy.",
+  "local_input_sensitivity": {
+    "p0": {
+      "step": 0.025591756559646534,
+      "median_prediction_change": 0.04474528807545619,
+      "min_change": 0.04452188347507402,
+      "max_change": 0.04565586679720823
+    },
+    "p05": {
+      "step": 0.025362046591570347,
+      "median_prediction_change": -0.010804270513525172,
+      "min_change": -0.01080427051352828,
+      "max_change": -0.010804270513524283
+    },
+    "p10": {
+      "step": 0.02527988049947032,
+      "median_prediction_change": -0.006222573448860236,
+      "min_change": -0.006222573448862789,
+      "max_change": -0.006222573448859237
+    },
+    "p20": {
+      "step": 0.02536134315342037,
+      "median_prediction_change": -0.0033775186658105416,
+      "min_change": -0.003377518665814705,
+      "max_change": -0.0033775186658075995
+    },
+    "p30": {
+      "step": 0.025138887583091487,
+      "median_prediction_change": 0.003468373418922144,
+      "min_change": 0.003468373418918702,
+      "max_change": 0.0034683734189258075
+    },
+    "p40": {
+      "step": 0.025494164248391644,
+      "median_prediction_change": -0.002167823310058603,
+      "min_change": -0.0021678233100601574,
+      "max_change": -0.0021678233100566047
+    },
+    "p50": {
+      "step": 0.02521191961099173,
+      "median_prediction_change": -0.0015683491300502173,
+      "min_change": -0.001568349130053548,
+      "max_change": -0.0015683491300499952
+    },
+    "di0": {
+      "step": 0.003313935835931162,
+      "median_prediction_change": -0.0009821486529053847,
+      "min_change": -0.0009821486529091317,
+      "max_change": -0.0009821486529020262
+    },
+    "de0": {
+      "step": 0.011768821408592683,
+      "median_prediction_change": -0.0004417675163663759,
+      "min_change": -0.0004417675163708168,
+      "max_change": -0.00044176751636371137
+    },
+    "di20": {
+      "step": 0.003306132477075795,
+      "median_prediction_change": 0.002077464900026693,
+      "min_change": 0.002077464900025916,
+      "max_change": 0.0020774649000294687
+    },
+    "de20": {
+      "step": 0.011660748160615112,
+      "median_prediction_change": 0.00042741266557877466,
+      "min_change": 0.0004274126655765542,
+      "max_change": 0.00042741266558010693
+    }
+  }
+}

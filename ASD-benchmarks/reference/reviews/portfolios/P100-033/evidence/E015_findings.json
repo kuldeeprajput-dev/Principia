@@ -1,0 +1,36 @@
+[
+  {
+    "finding_id": "P100-033-F01",
+    "classification": "validated_scoped_descriptor",
+    "claim": "Quality-dependent Fourier shrinkage has modest held-person benefit over a population median, while most improvement over raw estimates comes from the prior",
+    "equation": "h_hat=clip(sigmoid(b0+b1*(Q-.3))*F+(1-sigmoid(b0+b1*(Q-.3)))*mu,30,240)",
+    "coefficients": [
+      -2.1392927775759514,
+      2.104288249996586,
+      84.6100504251943
+    ],
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv",
+      "evidence/paired_uncertainty.json"
+    ],
+    "scope": "One smartphone collection; whole-person transfer",
+    "admission": "partially_supported",
+    "prior_art": "Signal-quality fusion and shrinkage are established",
+    "falsification": "Flexible model has lower confirmation error; no clinical tolerance or device transfer demonstrated"
+  },
+  {
+    "finding_id": "P100-033-F02",
+    "classification": "supported_negative_finding",
+    "claim": "The tested harmonic and motion fusion extensions do not establish reliable pulse recovery from all low-quality source windows",
+    "equation": null,
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv"
+    ],
+    "scope": "These declared candidate estimators and cohort",
+    "admission": "supported",
+    "prior_art": "Harmonic ambiguity is known; this is a reproducible failure analysis",
+    "falsification": "Better waveform processing or additional measured channels may change results"
+  }
+]

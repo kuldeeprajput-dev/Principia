@@ -1,0 +1,27 @@
+{
+  "frozen_utc": "2026-10-02T02:57:49.094021+00:00",
+  "target": "Population trace mean over native frames t+31 through t+60",
+  "units": "author processed-trace units",
+  "inputs": [
+    "level",
+    "lag30",
+    "lag60",
+    "mean300",
+    "dispersion",
+    "zero_fraction",
+    "ventral",
+    "condition_group3"
+  ],
+  "groups": "28animals, all157MATsessions linked",
+  "eligibility": "Trace is a finite numeric neuron-by-frame matrix; each complete300past+60future frame window has finite population summaries. Signed native values retained; no outcome thresholding. Source missing sessions remain missing.",
+  "timing": "Every30 native frames after300-frame history, forecast next30-frame population mean ending60 frames later. Only trace frames<=t are inputs. Native frame index is used without inferring seconds or behavior alignment.",
+  "baseline_families": [
+    "current30-frame mean persistence",
+    "linear60-frame forecast",
+    "constrained RBF"
+  ],
+  "selection": "Animal-balanced MAE, smallest coefficient count within1%best, >=5 substantiveadaptiveattempts andtwo finalno-gain challenges",
+  "exposure": "Only schema and behavior indexing examples from permanentlydevelopment3DH2 inspected. No held trace outcomes shown. Native behavior indexing ambiguity prompted pre-fit trace-only endpoint revision.",
+  "pre_fit_revision": "Freezing/speed endpoint rejected: fzframes appears start/duration but authoritative convention absent; validTraceFrames contains duplicate finalindex. Avoid inferred behavior mapping, timeunits and fitted source spatial maps.",
+  "source_layout_amendment_before_any_fit": "157MATfiles:27Day4 files lack processed.trace and are excluded by missing endpoint, leaving130eligible sessions across28animals. processed.exclude.SFPs flags in12files have undocumented polarity; retained but not used for cell selection. Target is mean of all released component rows, not a curated neuron-only signal."
+}

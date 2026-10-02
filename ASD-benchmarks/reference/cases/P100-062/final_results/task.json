@@ -1,0 +1,182 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-062.original.v1",
+  "case_id": "P100-062",
+  "case_number": 62,
+  "family": "original",
+  "protocol_version": "P100-062-asd7-native-v1",
+  "cohort_id": "P100-062.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-062.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/62_materials_steel_hydrogen",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "measured anodic permeation current",
+  "target_units": "\u03bcA",
+  "error_units": "\u03bcA",
+  "primary_units": "\u03bcA",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "input_units": {
+    "t": "s since third baseline observation",
+    "offset": "\u03bcA; mean first3 observations",
+    "drive": "mA/cm\u00b2; imposed cathodic-current step",
+    "high": "binary known high-current condition"
+  },
+  "numeric_columns": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Forward extrapolation within two linked permeation traces. Parameters are learned only from earlier chronological blocks; confirmation is the last20% of each trace. Known imposed current step and initial three-point current calibration are permitted.",
+  "calibration": "Mean first3 native current observations per trace; all candidate families receive identical values. Fit parameters may use development prefixes only.",
+  "independent_unit": "Two chronological traces with no independent specimen identifiers; nonoverlapping temporal blocks are scoring units, not independent specimens. All trace linkage is explicit.",
+  "evaluation_groups": [
+    "trace-0-block-4",
+    "trace-1-block-4"
+  ],
+  "assigned_rows": 370,
+  "eligible_rows": 370,
+  "baseline_models": [
+    "reference",
+    "fixed_diffusion",
+    "flexible",
+    "persistence",
+    "shared_boundary_response",
+    "fick_slab_corrected",
+    "surface_saturation",
+    "trapping_two_timescales",
+    "occupancy_dependent_transport",
+    "shared_fick_separate_amplitudes",
+    "distributed_trapping",
+    "finite_capacity_trapping",
+    "activated_breakthrough",
+    "semi_infinite_arrival",
+    "common_breakthrough_scale"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "fixed_diffusion": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persistence": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "shared_boundary_response": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "fick_slab_corrected": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "surface_saturation": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "trapping_two_timescales": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "occupancy_dependent_transport": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "shared_fick_separate_amplitudes": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "distributed_trapping": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "finite_capacity_trapping": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "activated_breakthrough": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "semi_infinite_arrival": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "common_breakthrough_scale": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report both trace-tail errors; no population interval or independent-specimen significance test."
+  },
+  "scope_limits": "The two traces do not establish independent-specimen transfer. Temperature is293K; nominal sheet thickness1.2mm.; Native time zero is used as reported; true boundary concentration and its step timing are not independently measured.; An effective relaxation scale must not be relabeled a unique lattice diffusivity because trapping, boundary kinetics and baseline uncertainty can be confounded.",
+  "source_url": "https://data.mendeley.com/datasets/tnsgf7v76z/1",
+  "source_license": "CC BY 4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Firsttwo observations per sheet were inspected for schema and belong to permitted initial calibration. No reserved tail current was inspected before freeze.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "a2bc27c3430860e96099427289c4061377a7da211b3c51e96ed647ce8870af32",
+  "observations_sha256": "19130b08a644e065bc51699ad739ab89891895b08f3652db9ad4a21ee8f499d5",
+  "legacy_protocol_sha256": "c1f817103f322ba6708be95ab339dadd9bba5c36c4298b50600906eb325b0b0b",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "offset"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

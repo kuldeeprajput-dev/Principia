@@ -1,0 +1,48 @@
+[
+  {
+    "classification": "reproduction",
+    "admission": "partially_supported",
+    "claim": "Declared household resources and reported income loss help describe food-insufficiency responses relative to prevalence-only prediction.",
+    "equation": "R=ln(I/sqrt(H)), A=(age-45)/20, S=employment-income-loss flag. p=logistic(a+bL*(3-R)_+ +bH*(R-3)_+ +c*S+d*A). Coefficients [a,bL,bH,c,d]=[-1.7111056039151187, 0.311445242697529, -2.0804188967995554, 1.126870451085675, -0.5980075149258]. I uses declared income-bracket thousandUSD proxies; fixed logresource hinge3 is not an official poverty boundary. Exact executable state: rules.json models.reference; task_id P100-014.original.v1.",
+    "interpretation": "Consistent with established material-resource vulnerability, with coarse brackets and overlapping recall windows.",
+    "falsification": "Mayflexible model outperforms reference; fourregions,complete-case selection and cross-wave composition limit generalization.",
+    "finding_id": "P100-014-F01",
+    "task_id": "P100-014.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.census.gov/programs-surveys/household-pulse-survey/data/datasets.html",
+        "checked": "2026-10-02",
+        "known": "March/May2026 are cross-sectional; corrected weights10Sep2026. Food insufficiency and income-shock questions are established survey constructs; household resource equivalence is a modeling hypothesis, not a new economic law."
+      }
+    ],
+    "scope": "Responding complete-case households; region-balanced HWEIGHT risk, not a national prevalence estimate. Bracket midpoints including175k open upper bracket are declared proxies; source topcodes preserved; missing/negative codes and nonpositive weights excluded, no imputation."
+  },
+  {
+    "classification": "informative_falsification",
+    "admission": "supported",
+    "claim": "Development preference for a fixed resource hinge does not establish its cross-wave superiority or a physical household threshold.",
+    "equation": "Attempts002/003/006/008/009 challenge equivalence,buffering,agecurvature,link andper-capita scales.",
+    "interpretation": "Conflicting mean/worst-region tradeoffs and future-wave reversal expose model-selection uncertainty.",
+    "falsification": "HeldBrierreference0.060243 exceedsflexible0.059176; source has no independent intervention outcome.",
+    "finding_id": "P100-014-F02",
+    "task_id": "P100-014.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.census.gov/programs-surveys/household-pulse-survey/data/datasets.html",
+        "checked": "2026-10-02",
+        "known": "March/May2026 are cross-sectional; corrected weights10Sep2026. Food insufficiency and income-shock questions are established survey constructs; household resource equivalence is a modeling hypothesis, not a new economic law."
+      }
+    ],
+    "scope": "Responding complete-case households; region-balanced HWEIGHT risk, not a national prevalence estimate. Bracket midpoints including175k open upper bracket are declared proxies; source topcodes preserved; missing/negative codes and nonpositive weights excluded, no imputation."
+  }
+]

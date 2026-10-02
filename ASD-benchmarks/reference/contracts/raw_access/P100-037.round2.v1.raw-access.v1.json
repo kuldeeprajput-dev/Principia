@@ -1,0 +1,125 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-037.round2.v1.raw-access.v1",
+  "parent_task_id": "P100-037.round2.v1",
+  "case_id": "P100-037",
+  "protocol_version": "P100-037.round2.v1.raw-access.v1",
+  "cohort_id": "P100-037.round2.v1.development-oof",
+  "parent_task_sha256": "18b45092d23f247f00927b44b10d95c6647219699df49fcbf2e6b7e53d0e872a",
+  "input_sha256": "bdb677ac9bed5329ea642041e3effdae3f34854668e35f74ea1dd1decbecbde2",
+  "observations_sha256": "c00b5437979fdd49b16f48a661f6477e12234d929b5a6dc9fe9cae7d4c611e5c",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "37_networks_router_power",
+  "source_assets": [
+    {
+      "path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+      "bytes": 352633,
+      "sha256": "c28ef54ff14446dc3e07e2ad9c1e31e8a495ab7d275bd8a9073729b9de5363d9"
+    },
+    {
+      "path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+      "bytes": 343560,
+      "sha256": "b5d47aaabf76f21784a68f45262f568f619b69ce1805c456f83c993ca8a1a89c"
+    },
+    {
+      "path": "raw/TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+      "bytes": 352528,
+      "sha256": "ecb98a077f4b203c47cc90064a7abbc6620f1011db12a2e17b953b36edae5310"
+    },
+    {
+      "path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+      "bytes": 391900,
+      "sha256": "c149f0fef4f6c0434e38eb45e9582c1e9f24a8a7415e91457bd353488cd7ef52"
+    },
+    {
+      "path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+      "bytes": 391824,
+      "sha256": "b1d1dddca4f6b7618f1d2f8cfc01beabdb83b594dd0bf8fd2c6cd171e0cca283"
+    },
+    {
+      "path": "raw/TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+      "bytes": 391805,
+      "sha256": "b6e0cace871984a211160e079824b6269a12afbd4f38bdf4142d424275543680"
+    },
+    {
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+      "bytes": 334338,
+      "sha256": "20579db698833a940acb58899adf07f6871359fd9231232fde35204583a598c8"
+    },
+    {
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+      "bytes": 340741,
+      "sha256": "d99ee716a7af802caef5175f82d459a7a921edb1e670176cbbbb0287fa7f60f9"
+    },
+    {
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+      "bytes": 335456,
+      "sha256": "347e0803dd1df7f8cb216b13b5948ed82dcb96c53cb7505e34409eab39ad13c1"
+    },
+    {
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+      "bytes": 373044,
+      "sha256": "de7ea1b23944365abdcc6aa7f5f98d137e9c9fb89170ceb9dca3e2a3b5da7f0d"
+    },
+    {
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+      "bytes": 373019,
+      "sha256": "139a34137988f7889566436f18e7b7b0ab67115df8edd37fa3bd39ab1485548e"
+    },
+    {
+      "path": "raw/TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+      "bytes": 412600,
+      "sha256": "74d5373610b6143c7d10c2273f8229ed57c7d7905ea0e8579a7a38f8b7892c73"
+    },
+    {
+      "path": "raw/TC3.2_traffic_load_variation_modelA_iteration1.csv",
+      "bytes": 66725,
+      "sha256": "93c4c088682987e0f3773eab78e7998c859d582b31a2d73375ecf22605fd0043"
+    },
+    {
+      "path": "raw/TC3.2_traffic_load_variation_modelA_iteration2.csv",
+      "bytes": 67222,
+      "sha256": "26815c57c06ff7018bf5b6084d4f7dfdcd74349d7f38335a0f76a75d3defee93"
+    },
+    {
+      "path": "raw/TC3.2_traffic_load_variation_modelA_iteration3.csv",
+      "bytes": 67242,
+      "sha256": "8a83967bcb24679de3d683e2b1181b4e130cb8b58ed8ef2352e6627be515251d"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "u": "dimensionless throughput / (200 Gbit/s)",
+      "q": "dimensionless packet rate / (100 million packets/s)",
+      "packet_bytes": "bytes",
+      "router": "categorical A/B"
+    },
+    "observation_window": "Current throughput and packet-size metadata only. Derived packet-rate proxies are not independent measurements; no measured temperature supports a thermal mechanism. Expanded information budget: u, q, packet_bytes, router",
+    "calibration_and_history": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Separate A/B model parameters from the original development runs; no target-run refit.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Throughput_Gbps and PacketSize_B from the assigned source row plus router/protocol if parent permits it. Power_Consumption is target-only; operating history is allowed only in a parent contract explicitly granting it."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

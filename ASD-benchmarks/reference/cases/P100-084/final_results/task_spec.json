@@ -1,0 +1,40 @@
+{
+  "case_id": "P100-084",
+  "target": "native AFM retraction force",
+  "target_units": "nN",
+  "input_units": {
+    "x": "dimensionless normalized piezo position relative to fixed5nNapproach crossing",
+    "base": "nN; mean first10approachpoints",
+    "amp": "nN; initialretractionlevel minusbase",
+    "progress": "dimensionless fraction ofretractionramp"
+  },
+  "timing_contract": "Predict late retraction after the entire approach and firstfive retraction samples are available. Targets begin at retractionindex16. Measured retraction deflection is excluded because it algebraically determines force.",
+  "calibration": "Approach baseline, first5nNabovebaselinecrossing, known ramp extent, and initialfive retractionforce samples. Everycandidate receives the same frozen summaries.",
+  "independent_unit": "Complete approach/retraction curve is held together; one hashselectedcurveper surface type confirms. Curves are locations on three samples, not independentmanufacturingbatches.",
+  "scope_limits": [
+    "Piezo position is not true indentation; effective contact models are predictive surrogates, not certified elasticmoduli.",
+    "No stem-cell response measurements are present in this retained package; no osteogenesis conclusion follows.",
+    "Ramp sampling frequency is not resolved; progress is dimensionless and no relaxation time in seconds is inferred."
+  ],
+  "source_url": "https://zenodo.org/records/20281797",
+  "source_license": "cc-by-4.0",
+  "exposure": "Schema showed initialretraction rows that are inside the declaredfirstfivecalibrationwindow, plus a few firstapproachrows. Late reserved retraction targets were not inspected.",
+  "uncertainty_policy": "Curve-wise errors; three heldcurve locations do not justify independentmaterialpopulationconfidence.",
+  "error_units": "nN",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "x",
+    "base",
+    "amp",
+    "progress"
+  ],
+  "numeric_columns": [
+    "x",
+    "base",
+    "amp",
+    "progress"
+  ],
+  "physical_bounds": {},
+  "protocol": "original.v1",
+  "outcome_exposure": "All packaged outcomes exposed after this campaign."
+}

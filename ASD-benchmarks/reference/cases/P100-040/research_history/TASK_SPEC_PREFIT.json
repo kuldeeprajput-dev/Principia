@@ -1,0 +1,52 @@
+{
+  "target": "Recorded completed-trip duration conditional on recorded trip distance",
+  "target_units": "minutes",
+  "error_units": "minutes",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "distance_km",
+    "hour",
+    "weekend",
+    "peak",
+    "airport",
+    "manhattan"
+  ],
+  "input_units": {
+    "distance_km": "recorded post-trip miles*1.609344",
+    "hour": "pickup local clock hour including fraction",
+    "weekend": "Saturday/Sunday binary",
+    "peak": "fixed7\u201310 or16\u201319localclock binary",
+    "airport": "either endpoint in official JFK/LGA/Newark zones",
+    "manhattan": "either endpoint boroughManhattan"
+  },
+  "timing_contract": "Trip distance is recorded after the journey. Task is retrospective travel-time diagnostics with completed distance, not pickup-time ETA. Pickup time and endpoint categories are known; no fare/payment/duration-derived predictors.",
+  "calibration": "Forward training on earlier whole days. Jan\u2013Sepdevelopment,Oct\u2013Decconfirmation. Same city/provider system; no future-day targets enter coefficients. Fixed clock windows, no held tuning.",
+  "independent_unit": "Whole pickup calendar days; serial weather/traffic/vendor dependence persists. Forward month blocks, not random trips.",
+  "scope_limits": "Green-taxi2025 declared routine records, duration0\u201324h and distance0\u20131000km; known officialzones and source-month-consistent timestamps. Provider-reported records may contain errors; no congestion intervention, routing policy or achieved operational benefit.",
+  "applicability": {
+    "predictions_nonnegative": true
+  },
+  "case_id": "P100-040",
+  "source_url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+  "source_license": "NYC Open Data terms; attribution retained",
+  "numeric_columns": [
+    "distance_km",
+    "hour",
+    "weekend",
+    "peak",
+    "airport",
+    "manhattan"
+  ],
+  "exposure": {
+    "schema": "Only schema and source-publication aggregate descriptions inspected; reserved target values and scores not inspected.",
+    "current": "reserved_internal_only",
+    "fresh_for_future_users": false
+  },
+  "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  }
+}

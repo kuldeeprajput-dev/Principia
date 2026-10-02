@@ -1,0 +1,289 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-100",
+  "findings": [
+    {
+      "finding_id": "P100-100-SCI-01",
+      "statement": "The original compact history model slightly improves a residual kernel on average, but misses a simpler lag-two control.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-100.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity. Strong adverse evidence: The compact model loses 2/3 runs against kernel; one lost probe has no RTT and remains missing. A 1.68 %mean gain does not identify scheduler/queue physics.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Observed short-history recurrence supports forecasting; its network origin and lost-packet reliability remain unidentified.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original three reserved runs",
+          "measure": "compact MAE",
+          "value": 2.070016,
+          "unit": "ms",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original three reserved runs",
+          "measure": "residual kernel MAE",
+          "value": 2.105397,
+          "unit": "ms",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "The compact model loses 2/3 runs against kernel; one lost probe has no RTT and remains missing. A 1.68 %mean gain does not identify scheduler/queue physics.",
+      "scientific_validators": [
+        "Include lag-two persistence with identical information access.",
+        "Keep missing lost-probe RTTs unscored but assigned, and never use lost flags or current response timestamps as predictors.",
+        "Treat 50 msdecision thresholds as illustrative unless a service requirement is independently documented."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-100.json",
+      "source_classification": "numerical_control"
+    },
+    {
+      "finding_id": "P100-100-SCI-02",
+      "statement": "Adding lag-two persistence overturns a weak earlier improvement claim and creates the mandatory simple history control.",
+      "classification": "metrology_correction",
+      "advisory_disposition": "supported",
+      "task_ids": [],
+      "task_version_history": "2026-09-30 first continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity. Strong adverse evidence: Development lag-two MAE 2.422715 ms beats robust correction 2.4771391 ms; fitted corrections also lose all exposed runs. Observed recurrence does not identify a scheduler or queue mechanism.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Observed short-history recurrence supports forecasting; its network origin and lost-packet reliability remain unidentified.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        }
+      },
+      "numerical_evidence": [],
+      "strongest_adverse_evidence": "Development lag-two MAE 2.422715 ms beats robust correction 2.4771391 ms; fitted corrections also lose all exposed runs. Observed recurrence does not identify a scheduler or queue mechanism.",
+      "scientific_validators": [
+        "Include lag-two persistence with identical information access.",
+        "Keep missing lost-probe RTTs unscored but assigned, and never use lost flags or current response timestamps as predictors.",
+        "Treat 50 msdecision thresholds as illustrative unless a service requirement is independently documented."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-100.json",
+      "source_classification": "measurement_audit"
+    },
+    {
+      "finding_id": "P100-100-SCI-03",
+      "statement": "The strongest simple recurrence is lag-two persistence; a theoretically motivated parity filter fails its empirical improvement test.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-100.round2.v1"
+      ],
+      "task_version_history": "2026-09-30 second continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity. Strong adverse evidence: Equal-variance independent noise and constant alternating means are not measured assumptions. Earlier fitted lag-two corrections also lose on all development and exposed runs.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Observed short-history recurrence supports forecasting; its network origin and lost-packet reliability remain unidentified.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Persistence/filtering families are known; an omitted-comparator correction is valuable methodological evidence, not new communications physics. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Complete PING runs with successful-response targets; five completed prior probes and causal radio data, not target sequence/timestamp/parity.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "round 2 six development runs",
+          "measure": "parity filter MAE",
+          "value": 2.69166704,
+          "unit": "ms",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        {
+          "cohort": "round 2 same cohort",
+          "measure": "lag-two MAE",
+          "value": 2.422715,
+          "unit": "ms",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Equal-variance independent noise and constant alternating means are not measured assumptions. Earlier fitted lag-two corrections also lose on all development and exposed runs.",
+      "scientific_validators": [
+        "Include lag-two persistence with identical information access.",
+        "Keep missing lost-probe RTTs unscored but assigned, and never use lost flags or current response timestamps as predictors.",
+        "Treat 50 msdecision thresholds as illustrative unless a service requirement is independently documented."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-100.json",
+      "source_classification": "unsupported_or_falsified"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

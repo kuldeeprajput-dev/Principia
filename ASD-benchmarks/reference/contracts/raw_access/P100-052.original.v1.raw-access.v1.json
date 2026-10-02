@@ -1,0 +1,73 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-052.original.v1.raw-access.v1",
+  "parent_task_id": "P100-052.original.v1",
+  "case_id": "P100-052",
+  "protocol_version": "P100-052.original.v1.raw-access.v1",
+  "cohort_id": "P100-052.original.v1.cohort-1",
+  "parent_task_sha256": "7f6ec5d29e6843dff771f8b5ccf2b1e83ffb71def38a86d17015b79ec0cd5644",
+  "input_sha256": "62bafb5b73639a856812f26a1466b2e8af8e6fdf82f67d5f5cc5d37fd51ffa0d",
+  "observations_sha256": "55fc94c22a99217ff559eeaa91acbd2fa33b73e5eb802aaa6bc9ec5f8cab43a6",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "52_energy_wind_induction_control",
+  "source_assets": [
+    {
+      "path": "raw/NoTurbine_ABL_Type_II.mat",
+      "bytes": 40247886,
+      "sha256": "cb09bbe085c8fac9d151db6f20a3aa5c57aa2d681129df1d6948ab8ef0fa035f"
+    },
+    {
+      "path": "raw/WF_Power.mat",
+      "bytes": 1293,
+      "sha256": "d73babd79c6a7921f302a0edaad94f21069b37a7e174757bdf734f3fe0500d1c"
+    },
+    {
+      "path": "raw/WT1_ABL_Type_II.mat",
+      "bytes": 140903013,
+      "sha256": "326d1ae3f5617149559edb35b85ffffa5cd6705d77ba90772205f93be7e69041"
+    },
+    {
+      "path": "raw/WT2_ABL_Type_II.mat",
+      "bytes": 91132624,
+      "sha256": "c9bbb434a41d0b6bdfe2939668c8a741f7de48d987ad393338ea1a728add905a"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "turbine": "1 or 2 (within installation)",
+      "x_D": "downstream distance/0.58 m rotor diameter",
+      "y_D": "lateral coordinate/rotor diameter",
+      "z_D": "vertical coordinate/rotor diameter",
+      "St": "actuation Strouhal number, 0 labels greedy baseline"
+    },
+    "observation_window": "Geometry and actuation settings only; no reserved velocity or rotor-equivalent speed is a predictor.",
+    "calibration_and_history": "Source-native lidar-derived uu grids; grid cells are correlated interpolated products. Raw vlos retained upstream. Rotor-equivalent wind and virtual turbine power are excluded as targets and predictors. No cubic-power identity is counted as a rule. ABL Type II only.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Only 1 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

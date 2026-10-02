@@ -1,0 +1,82 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-043.original.v1.raw-access.v1",
+  "parent_task_id": "P100-043.original.v1",
+  "case_id": "P100-043",
+  "protocol_version": "P100-043.original.v1.raw-access.v1",
+  "cohort_id": "P100-043.original.v1.cohort-1",
+  "parent_task_sha256": "d3c0dc73f050bec26dfa31e682f8df0692723d8f869f3c23788da2e8362f3bef",
+  "input_sha256": "da0c6c049ae3b6399edef2735279e27ce47878ef4c1bc6fbe8d6ad92b236cc60",
+  "observations_sha256": "4dbdc9d8078265f5d6a1be9ec4e7b5d5e36b0c2e419564ad43a0a7ac56acce25",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "43_ai_gemstones_training",
+  "source_assets": [
+    {
+      "path": "raw/LICENSE",
+      "bytes": 1185,
+      "sha256": "f16385e497f4ae54ab342e26d2540c3f17378907074301ad10793a3d1fb398eb"
+    },
+    {
+      "path": "raw/README.md",
+      "bytes": 6473,
+      "sha256": "298bc36844a44118157fe1b051fd7079ed88c94877c6d94b80f32cc3bc96110a"
+    },
+    {
+      "path": "raw/wandb_data_extraction.py",
+      "bytes": 15061,
+      "sha256": "91c2f175b3081351ca3cd864e4642c209614c150f91ec320b6b09796f27260ab"
+    },
+    {
+      "path": "raw/wandb_dfs/summary_df.jsonl",
+      "bytes": 9732301,
+      "sha256": "b5aa126dd0140d11f4f629e4f653ebcd9944a8e2bb36333a662fa7b1dc0dbc79"
+    },
+    {
+      "path": "raw/wandb_dfs/wandb_df_raw.jsonl",
+      "bytes": 7888198,
+      "sha256": "9e883d4105ace4f739b4d440a9ad51257f775b7fd71e8243c0c0ee9d0130a18c"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "tokens_B": "billions of training tokens",
+      "anchor_tokens_B": "billions of training tokens",
+      "early_tokens_B": "billions of training tokens",
+      "anchor_loss": "nats per token",
+      "early_loss": "nats per token",
+      "params_B": "billions of parameters",
+      "width": "embedding dimensions",
+      "depth": "layers"
+    },
+    "observation_window": "Only checkpoints at or before10B/20B tokens may calibrate the20\u2013100B forecast",
+    "calibration_and_history": "Two same-architecture early validation checkpoints, exact native anchors in observations",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "native_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

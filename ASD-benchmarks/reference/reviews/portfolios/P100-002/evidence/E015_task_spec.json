@@ -1,0 +1,65 @@
+{
+  "target": "Next hourly median systematics-corrected stellar flux",
+  "target_units": "relative flux (native normalization)",
+  "metric_kind": "mae",
+  "independent_unit": "Star; repeated hourly bins are dependent",
+  "timing_contract": "Predict next disjoint hourly bin using preceding observed hourly medians only. The released light curve was author-corrected using full-sector information; this is a retrospective product-space forecast, not a raw real-time pipeline.",
+  "calibration": "Causal observed flux history within each star; no fitted header period or future light curve values.",
+  "scope_limits": "Eight selected stars in one TESS sector; no new planet, stellar period or universal rotation law. Missing per-cadence quality/error columns limit robustness.",
+  "split": "Two stars with smallest seeded SHA256 identifiers held; leave-one-star-out development folds",
+  "question": "Does a damped local dynamical model transfer between stars better than persistence?",
+  "case_id": "P100-002",
+  "error_units": "relative flux (native normalization)",
+  "source_url": "https://archive.stsci.edu/hlsp/tars",
+  "source_license": "CC BY 4.0",
+  "exposure": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+  "uncertainty_policy": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics.",
+  "selection": "Lowest development mean-group MAE, simpler model on relative1% tie. Exact mathematical algorithm baselines do not claim novel accuracy. Retain every attempt and compare named strong controls.",
+  "stopping": "At least5distinct scientific attempts; continue while a justified distinct mechanism yields prediction/robustness/interpretation gain; stop after2consecutive substantive no-gain attempts after minimum5.",
+  "created_utc": "2026-10-02T01:37:41.605977+00:00",
+  "before_first_fit": true,
+  "permitted_inputs": [
+    "lag1",
+    "lag2",
+    "lag3",
+    "lag4",
+    "lag6",
+    "lag12",
+    "lag24",
+    "median6",
+    "median24",
+    "mad6"
+  ],
+  "input_units": {
+    "lag1": "author-normalized relative flux",
+    "lag2": "author-normalized relative flux",
+    "lag3": "author-normalized relative flux",
+    "lag4": "author-normalized relative flux",
+    "lag6": "author-normalized relative flux",
+    "lag12": "author-normalized relative flux",
+    "lag24": "author-normalized relative flux",
+    "median6": "author-normalized relative flux",
+    "median24": "author-normalized relative flux",
+    "mad6": "author-normalized relative flux"
+  },
+  "numeric_columns": [
+    "lag1",
+    "lag2",
+    "lag3",
+    "lag4",
+    "lag6",
+    "lag12",
+    "lag24",
+    "median6",
+    "median24",
+    "mad6"
+  ],
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "nonnegative_prediction": false,
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0"
+}

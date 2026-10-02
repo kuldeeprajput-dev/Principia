@@ -1,0 +1,9 @@
+# Prepared research task inputs
+
+Native source files are unchanged. These are explicit analysis tables; sample identities and whole groups are binding. Observation targets remain exposed and are excluded from inputs.
+
+Only numeric actual time within0-24h and the mean time-zero log burden for the linked strain-study are prediction inputs. Different time-zero animals supply declared cohort calibration. No later burden, laboratory parameter, animal outcome or study/strain identity is a numerical predictor. Numeric <24 strings and censored inequality burdens are not exact-time targets.
+
+DSM/site-reference strain aliases resolved from source RefToDict plus explicit single-strain-study Overview links (source labeling discrepancies retained) and kept together. All ExperimentResults sheets included. Explicit untreated CFU lung single-value observations only, equality operator, compatible log-CFU lung units, numeric actual times 0–24 h. Time-zero animals form an explicitly allowed cohort calibration, not the same later animals. Non-numeric early-death times and censoring cannot be interpreted as exact scheduled times; exclusions are counted, and this creates survivorship/measurement selection limits. Source already reports virulence/reproducibility criteria; no new clinical efficacy claim. Source laboratory directory supplies validation identity; the original SITE field is inconsistent in one workbook and is preserved as provided_site. Header templates and source censoring inconsistencies require caution.
+
+Two development laboratories and one historically exposed diagnostic laboratory. All15scored GSK observations are at24h; no kinetic, survival or antibiotic-efficacy admission. The continuation removes site from numerical inputs; site remains the whole-group validation identity.

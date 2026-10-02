@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-025",
+  "findings": [
+    {
+      "finding_id": "P100-025-F01",
+      "classification": "validated_extension",
+      "claim": "An explicitly calibrated six-coefficient spectral compression predicts reserved edge ordinates more accurately than either supplied reference or nominal-time two-phase mixing.",
+      "equation": "mu_hat = pre + jump [r_L + (b0+b1 f+b2 f\u00b2+b3 discharge+b4 rest)(r_F-r_L) + b5(E-7112 eV)/(100 eV)].",
+      "evidence": "Thirteen reserved three-spectrum blocks: MAE 0.06130 dimensionless, versus 0.13619 nominal-time mixing and 0.14324 equal mixture.",
+      "known_prior_art": "Two-endpoint XAS decomposition and electrochemical phase tracking are established and discussed by the source authors.",
+      "falsification": "This is retrospective calibrated compression of one measured sequence, not an independently identified chemical phase fraction.",
+      "scope": "Each spectrum supplies pre-edge and post-edge calibration outside the scored edge window; future spectra may be used in development.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-025-F02",
+      "classification": "informative_falsification",
+      "claim": "Nominal protocol progress cannot be treated as a directly measured phase fraction under this two-reference response model.",
+      "equation": "The fixed nominal-time mixture, continuous edge shift, bounded partial transformation, intermediate component and branch-hysteresis tests are preserved.",
+      "evidence": "All five physical reductions lose to the matched flexible control in development; reserved errors remain larger.",
+      "known_prior_art": "Measurement normalization, electrochemical timing and reaction state are distinct quantities.",
+      "falsification": "Model failure does not falsify LiFePO4 two-phase chemistry; geometry and response differences remain possible.",
+      "scope": "Single cell sequence, source-native mu(E); no independent state-of-charge or cycling-lifetime admission.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-025-F03",
+      "classification": "unsupported",
+      "claim": "The fitted mixture coefficient establishes an absolute FePO4 fraction or a new reaction mechanism.",
+      "equation": null,
+      "evidence": "Calibration and energy-trend terms are phenomenological and no independent phase-fraction endpoint is provided.",
+      "known_prior_art": "The source publication already investigates operando XAS transitions.",
+      "falsification": "Neither an additional battery nor an independent structural phase assay confirms this interpretation.",
+      "scope": "Do not use these coefficients as chemical concentrations.",
+      "admission": "unsupported"
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted analysis; not independent experimental replication or human expert adjudication."
+}

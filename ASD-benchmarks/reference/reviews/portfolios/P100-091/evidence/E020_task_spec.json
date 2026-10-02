@@ -1,0 +1,41 @@
+{
+  "target": "Mean UDP trial one-way end-to-end latency",
+  "target_units": "ms",
+  "error_units": "ms",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "offered_Mbps",
+    "achieved_Mbps"
+  ],
+  "numeric_columns": [
+    "offered_Mbps",
+    "achieved_Mbps"
+  ],
+  "input_units": {
+    "offered_Mbps": "Mbit/s, configured target",
+    "achieved_Mbps": "Mbit/s, same-run server report"
+  },
+  "timing_contract": "Conditional reconstruction after a60-second run. Same-run achieved throughput is permitted; all latency-derived fields, NetPwr, loss, jitter, current location targets and future TCP calibration are forbidden. Not a prospective offered-load forecast.",
+  "calibration": "No held-out location latency calibration. Six global offered-rate offsets and shared slope are fitted on development locations only.",
+  "independent_unit": "Complete measurement location; all offered rates and repetitions linked. Locations share one network installation.",
+  "scope_limits": "Q4/Q5 within the same seven-location installation; six offered rates1,10,50,100,200,500Mbit/s. No unseen offered-rate extrapolation, hardware transfer, pure radio latency or intervention claim.",
+  "source_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+  "source_license": "CC BY4.0 data and documentation; MIT source code",
+  "exposure": "Public source-aware study; Q1 repetition1 at1 and100Mbit/s inspected for parser semantics; Q1 assigned development. Source paper results inspected. Other confirmation outcomes unscored until freeze. Internal confirmation was opened only after FREEZE.json. All targets now exposed; future benchmark scoring is retrospective.",
+  "uncertainty_policy": "Report both held-out locations and tail errors. Two locations do not support precise population confidence intervals. Source-rate rounding sensitivity is diagnostic, not a predictive interval.",
+  "nonnegative_prediction": true,
+  "applicability": {
+    "offered_Mbps": [
+      1,
+      10,
+      50,
+      100,
+      200,
+      500
+    ],
+    "achieved_Mbps": [
+      0,
+      550
+    ]
+  }
+}

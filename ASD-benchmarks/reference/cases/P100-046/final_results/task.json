@@ -1,0 +1,165 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-046.original.v1",
+  "case_id": "P100-046",
+  "case_number": 46,
+  "family": "original",
+  "protocol_version": "P100-046-asd7-native-v1",
+  "cohort_id": "P100-046.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-046.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/46_space_physics_mms1_plasma",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Electron perpendicular temperature",
+  "target_units": "eV",
+  "error_units": "eV",
+  "primary_units": "eV",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "temperature_lag",
+    "density_ratio",
+    "field_ratio",
+    "density_lag",
+    "field_lag",
+    "anisotropy_lag",
+    "elapsed_lag_s"
+  ],
+  "input_units": {
+    "temperature_lag": "eV",
+    "density_ratio": "dimensionless n(t)/n(t-60s)",
+    "field_ratio": "dimensionless B(t)/B(t-60s)",
+    "density_lag": "cm^-3",
+    "field_lag": "nT",
+    "anisotropy_lag": "dimensionless T_parallel/T_perpendicular",
+    "elapsed_lag_s": "s"
+  },
+  "numeric_columns": [
+    "temperature_lag",
+    "density_ratio",
+    "field_ratio",
+    "density_lag",
+    "field_lag",
+    "anisotropy_lag",
+    "elapsed_lag_s"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Diagnostic closure using current electron density and magnetic-field magnitude plus electron temperature/density/field measured at least60s earlier; current temperature and tensor-derived equivalents forbidden.",
+  "calibration": "Causal60-second-old electron state, same information for every model. Magnetic matching backward only.",
+  "independent_unit": "Contiguous20-minute blocks in one MMS1 passage, not independent spacecraft or experiments",
+  "evaluation_groups": [
+    "block4",
+    "block5"
+  ],
+  "assigned_rows": 533,
+  "eligible_rows": 533,
+  "baseline_models": [
+    "adiabatic",
+    "cgl",
+    "persist",
+    "rbf",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "reference"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "adiabatic": {
+      "equation": "T_hat=T0*(n/n0)^(2/3)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "cgl": {
+      "equation": "T_hat=T0*(B/B0)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persist": {
+      "equation": "T_hat=T0",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rbf": {
+      "equation": "Frozen 24-center Gaussian radial-basis ridge comparator; all feature means, scales, centers, coefficients and ridge=0.3 are in rules.json. Additive residual for cases2/3/4/45; multiplicative clipped-log ratio for cases11/46.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "T_hat=T0*exp(clip(a*ln(n/n0),-5,5))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "T_hat=T0*exp(clip(b*ln(B/B0),-5,5))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "T_hat=T0*exp(clip(a*ln(n/n0)+b*ln(B/B0),-5,5))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "T_hat=T0*exp(clip(a*ln(n/n0)+b*ln(B/B0)+c*(T_parallel0/T0-1),-5,5))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "T_hat=T0*exp(clip((a+c*beta0/(1+beta0))*ln(n/n0)+b*ln(B/B0),-5,5)); beta0=0.402670*n0*T0/B0^2",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "reference": {
+      "equation": "T_hat=T0*exp(clip(a*ln(n/n0)+b*ln(B/B0),-5,5))",
+      "state": "rules.json",
+      "role": "reference"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics."
+  },
+  "scope_limits": "One2-hour MMS1 interval. All ion moments have qualityflag66 (saturation plus highMach); ion targets excluded before any fit. Electron flags0 and FGMflags0 retained. Moment errors and unmeasured heat flux/geometry limit CGL interpretation.",
+  "source_url": "https://spdf.gsfc.nasa.gov/pub/data/mms/mms1/",
+  "source_license": "CC0 per NASA SPDF data-use policy",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "447ed0fbf22ccf72784454ba2fe9c64387aaf1d8cda74dd7664f892e82feb12f",
+  "observations_sha256": "7f4a60d388a97f3e37496f545a7117f14545b028ce662ae78d30c1068cad4fd3",
+  "legacy_protocol_sha256": "2412746083535ac46d79ea0656c25f300bc4e2a71a6f87fa9887d84d0b166b10",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "temperature_lag",
+    "density_lag",
+    "field_lag",
+    "anisotropy_lag",
+    "elapsed_lag_s"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

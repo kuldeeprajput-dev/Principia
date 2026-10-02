@@ -1,0 +1,89 @@
+{
+  "station-02": {
+    "case": 94,
+    "type": "linear",
+    "features": [
+      "one",
+      "P",
+      "logP"
+    ],
+    "offset": null,
+    "scale": null,
+    "alpha": 0,
+    "title": "Depth-only competing explanation",
+    "hypothesis": "CDOM stratification may be predominantly vertical rather than a salinity-mixture law; test pressure/log-pressure without salinity.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Adding temperature improves the salinity baseline mean error, but worsens the worst cast. A depth-only competitor can expose spatial confounding.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "station-06",
+      "station-08"
+    ],
+    "training_rows": 4943,
+    "training_ids_sha256": "12082438fe59c82844402be03ce6a9271db99a6a9c5de22a41b0a91bf4079b6d",
+    "coef": [
+      1.123176786712986,
+      2.3427013812173643,
+      -1.0439232847127118
+    ],
+    "rank": 3,
+    "condition_number": 27.484334429439244,
+    "complexity": 3
+  },
+  "station-06": {
+    "case": 94,
+    "type": "linear",
+    "features": [
+      "one",
+      "P",
+      "logP"
+    ],
+    "offset": null,
+    "scale": null,
+    "alpha": 0,
+    "title": "Depth-only competing explanation",
+    "hypothesis": "CDOM stratification may be predominantly vertical rather than a salinity-mixture law; test pressure/log-pressure without salinity.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Adding temperature improves the salinity baseline mean error, but worsens the worst cast. A depth-only competitor can expose spatial confounding.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "station-02",
+      "station-08"
+    ],
+    "training_rows": 4917,
+    "training_ids_sha256": "5fcfa566b24d911fe6b6dd7b5dd27493682a90777b627c2be85e95971b15295b",
+    "coef": [
+      1.0689406303159263,
+      1.829882818416121,
+      -0.8944561261912125
+    ],
+    "rank": 3,
+    "condition_number": 28.167595188458417,
+    "complexity": 3
+  },
+  "station-08": {
+    "case": 94,
+    "type": "linear",
+    "features": [
+      "one",
+      "P",
+      "logP"
+    ],
+    "offset": null,
+    "scale": null,
+    "alpha": 0,
+    "title": "Depth-only competing explanation",
+    "hypothesis": "CDOM stratification may be predominantly vertical rather than a salinity-mixture law; test pressure/log-pressure without salinity.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.06957232562423508, \"worst_group\": 0.09173675149858355}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Adding temperature improves the salinity baseline mean error, but worsens the worst cast. A depth-only competitor can expose spatial confounding.",
+    "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+    "training_groups": [
+      "station-02",
+      "station-06"
+    ],
+    "training_rows": 4912,
+    "training_ids_sha256": "17e0cf29cd9b64c6a58eb882895f9924d6546828a73fc04e1f8e5f5895ea9064",
+    "coef": [
+      1.3667384994485385,
+      2.934509328005088,
+      -1.3428617957572362
+    ],
+    "rank": 3,
+    "condition_number": 28.326950489638737,
+    "complexity": 3
+  }
+}

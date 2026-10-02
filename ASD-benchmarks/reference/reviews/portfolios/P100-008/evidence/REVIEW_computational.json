@@ -1,0 +1,272 @@
+{
+  "case_id": "P100-008",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "dac4b82213adee668d7db1e2f919f4905c3c4af554f127387a284993784bc560"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "12d440cd65704cdec3e89b0f222cf4650cdd746275208e4daf330f088e2df4e5"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "1446fd08b26dcdedafbd85216db0d93defacf339e8c6e39ce3fa21fca066ef6c"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "0f79a294b01fbfe5fc362efae0dfa3b272375b328444a3f0f6c939857a958e65"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "84a08e630c70eb036a1a465c153859d2b8d0289f83d7f22545ad3e953110ff29"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "2e8d7cbeda530ad40432c7b69e79e43f43f7b26552b753bda208d4df5b1e96cd"
+    },
+    {
+      "path": "package/data/source_evidence.json",
+      "sha256": "ca0e05628f714936beed517fdc044a3f10e97ce8533f404c8295832dd64cf3b6"
+    },
+    {
+      "path": "package/data/native_anchors.csv",
+      "sha256": "e6d7d291bf63e9140a3751175e02814576b3112ad64fc4d5e095ce4ba0681e71"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-008-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native counts, unique patient, echo and coordinate-frame constraints reproduce. Missing outcome/calibration evidence is a reviewed retained-inventory limitation, not a claim about the full TCIA collection."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "One echo at one repetition time cannot separately identify amplitude and relaxation time without additional assumptions. Metadata does not establish tissue mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Standard identifiability and validation principles are reproduced; no new MRI law is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful benchmark abstention test prevents slice pseudoreplication and invented clinical accuracy."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "All native headers independently parsed and altered/missing/truncated/extra assets rejected. No model is fitted."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No patient outcome, diagnosis or deployed clinical benefit was measured."
+        }
+      },
+      "checks": [
+        "Independently parsed all71 source DICOM headers",
+        "One patient,70 single-echo MR instances and one mammographic projection",
+        "Distinct modality coordinate frames; no diagnostic labels or physical calibration in native-file inventory",
+        "No predictive accuracy metric fabricated",
+        "missing native asset rejected before interpretation",
+        "truncated native asset rejected before interpretation",
+        "mismatched native asset rejected before interpretation",
+        "Changed raw inventory forces reassessment"
+      ],
+      "limitations": [
+        "Findings concern only the71 retained instances, not the full source study.",
+        "No predictive task or held-out accuracy is claimed."
+      ]
+    },
+    {
+      "finding_id": "P100-008-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native counts, unique patient, echo and coordinate-frame constraints reproduce. Missing outcome/calibration evidence is a reviewed retained-inventory limitation, not a claim about the full TCIA collection."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "One echo at one repetition time cannot separately identify amplitude and relaxation time without additional assumptions. Metadata does not establish tissue mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Standard identifiability and validation principles are reproduced; no new MRI law is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful benchmark abstention test prevents slice pseudoreplication and invented clinical accuracy."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "All native headers independently parsed and altered/missing/truncated/extra assets rejected. No model is fitted."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No patient outcome, diagnosis or deployed clinical benefit was measured."
+        }
+      },
+      "checks": [
+        "Independently parsed all71 source DICOM headers",
+        "One patient,70 single-echo MR instances and one mammographic projection",
+        "Distinct modality coordinate frames; no diagnostic labels or physical calibration in native-file inventory",
+        "No predictive accuracy metric fabricated",
+        "missing native asset rejected before interpretation",
+        "truncated native asset rejected before interpretation",
+        "mismatched native asset rejected before interpretation",
+        "Changed raw inventory forces reassessment"
+      ],
+      "limitations": [
+        "Findings concern only the71 retained instances, not the full source study.",
+        "No predictive task or held-out accuracy is claimed."
+      ]
+    },
+    {
+      "finding_id": "P100-008-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native counts, unique patient, echo and coordinate-frame constraints reproduce. Missing outcome/calibration evidence is a reviewed retained-inventory limitation, not a claim about the full TCIA collection."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "One echo at one repetition time cannot separately identify amplitude and relaxation time without additional assumptions. Metadata does not establish tissue mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Standard identifiability and validation principles are reproduced; no new MRI law is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful benchmark abstention test prevents slice pseudoreplication and invented clinical accuracy."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "All native headers independently parsed and altered/missing/truncated/extra assets rejected. No model is fitted."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No patient outcome, diagnosis or deployed clinical benefit was measured."
+        }
+      },
+      "checks": [
+        "Independently parsed all71 source DICOM headers",
+        "One patient,70 single-echo MR instances and one mammographic projection",
+        "Distinct modality coordinate frames; no diagnostic labels or physical calibration in native-file inventory",
+        "No predictive accuracy metric fabricated",
+        "missing native asset rejected before interpretation",
+        "truncated native asset rejected before interpretation",
+        "mismatched native asset rejected before interpretation",
+        "Changed raw inventory forces reassessment"
+      ],
+      "limitations": [
+        "Findings concern only the71 retained instances, not the full source study.",
+        "No predictive task or held-out accuracy is claimed."
+      ]
+    },
+    {
+      "finding_id": "P100-008-F04",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native counts, unique patient, echo and coordinate-frame constraints reproduce. Missing outcome/calibration evidence is a reviewed retained-inventory limitation, not a claim about the full TCIA collection."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "One echo at one repetition time cannot separately identify amplitude and relaxation time without additional assumptions. Metadata does not establish tissue mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Standard identifiability and validation principles are reproduced; no new MRI law is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful benchmark abstention test prevents slice pseudoreplication and invented clinical accuracy."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "All native headers independently parsed and altered/missing/truncated/extra assets rejected. No model is fitted."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No patient outcome, diagnosis or deployed clinical benefit was measured."
+        }
+      },
+      "checks": [
+        "Independently parsed all71 source DICOM headers",
+        "One patient,70 single-echo MR instances and one mammographic projection",
+        "Distinct modality coordinate frames; no diagnostic labels or physical calibration in native-file inventory",
+        "No predictive accuracy metric fabricated",
+        "missing native asset rejected before interpretation",
+        "truncated native asset rejected before interpretation",
+        "mismatched native asset rejected before interpretation",
+        "Changed raw inventory forces reassessment"
+      ],
+      "limitations": [
+        "Findings concern only the71 retained instances, not the full source study.",
+        "No predictive task or held-out accuracy is claimed."
+      ]
+    },
+    {
+      "finding_id": "P100-008-F05",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native counts, unique patient, echo and coordinate-frame constraints reproduce. Missing outcome/calibration evidence is a reviewed retained-inventory limitation, not a claim about the full TCIA collection."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "One echo at one repetition time cannot separately identify amplitude and relaxation time without additional assumptions. Metadata does not establish tissue mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Standard identifiability and validation principles are reproduced; no new MRI law is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful benchmark abstention test prevents slice pseudoreplication and invented clinical accuracy."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "All native headers independently parsed and altered/missing/truncated/extra assets rejected. No model is fitted."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No patient outcome, diagnosis or deployed clinical benefit was measured."
+        }
+      },
+      "checks": [
+        "Independently parsed all71 source DICOM headers",
+        "One patient,70 single-echo MR instances and one mammographic projection",
+        "Distinct modality coordinate frames; no diagnostic labels or physical calibration in native-file inventory",
+        "No predictive accuracy metric fabricated",
+        "missing native asset rejected before interpretation",
+        "truncated native asset rejected before interpretation",
+        "mismatched native asset rejected before interpretation",
+        "Changed raw inventory forces reassessment"
+      ],
+      "limitations": [
+        "Findings concern only the71 retained instances, not the full source study.",
+        "No predictive task or held-out accuracy is claimed."
+      ]
+    }
+  ],
+  "checks": [
+    "Independently parsed all71 source DICOM headers",
+    "One patient,70 single-echo MR instances and one mammographic projection",
+    "Distinct modality coordinate frames; no diagnostic labels or physical calibration in native-file inventory",
+    "No predictive accuracy metric fabricated",
+    "missing native asset rejected before interpretation",
+    "truncated native asset rejected before interpretation",
+    "mismatched native asset rejected before interpretation",
+    "Changed raw inventory forces reassessment"
+  ],
+  "independent_experimental_replication": false
+}

@@ -1,0 +1,479 @@
+{
+  "case_id": "P100-042",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "6889fd6f43802f8c16965d03828d6f4d6b632a2f18a4df26b96ef90e14958777"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "497b5b389673045eb1d21a76c3fa97fd150818a2f0b1f1fad973c49bbe0ab54c"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "96e28c33731dfd35107f199c9ae3a405cb366f2a59756af14e5a34927006c380"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "ec2d320df8767dfb96218e4241f7c7457305ab788fcb625b97f46863da651ab1"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "dfdfa93495abefad40b136968a26391f87a314e7c8bffc101d2ca7989a404c72"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "b1afec2595b3ef8fb3bbae68fedaa3bde07fb05a53b84d604a425f131c903a34"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "fa177735d0883b73d4fd2f3e68ac8c790a2d8cbee865455b73645901599fec58"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "806ecbff46f93340390f02e5e1fb984a74847212785cf5ec05128fe00cbe3aef"
+    },
+    {
+      "path": "native.py",
+      "sha256": "416c12e4d11e1ec28843a24fb0d2f07442b1be54adbddf42ba0f5f02eeb8dd49"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "98cc2b17f3b88cfeb5d74ff80694f24e8effea3daf3fbd7896241ff238d937b3"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "227eba94b04ed3faa1dc7bfaf60402d1d09c4efcf5561014e9c14758eeaa232e"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "89c36e935667afcb16c03e72f04bc075c88e2ca7e6377b5880c5bd3b481f3788"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "f713036f7d4d9fc187387836b21535051b88fc6c173d82fe5c0834f7da0d6598"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "62c97364d29beff0003a8885b8f1a52ac7a9804bf8e1047631f725230f887875"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "44d35eaf12b55f3890aa8d1f560a25aff8ea4232b2c2a44e3c26729f884bd8a0"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-042-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The corrected branch-access cohort uses paired labeled/unlabeled evidence to resolve the actual1Yes/2No coding. Earlier invalid development was retained without opening confirmation; the revised frozen model fails held-region transfer against controls."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The corrected branch-access cohort uses paired labeled/unlabeled evidence to resolve the actual1Yes/2No coding. Earlier invalid development was retained without opening confirmation; the revised frozen model fails held-region transfer against controls."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The corrected branch-access cohort uses paired labeled/unlabeled evidence to resolve the actual1Yes/2No coding. Earlier invalid development was retained without opening confirmation; the revised frozen model fails held-region transfer against controls."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The corrected branch-access cohort uses paired labeled/unlabeled evidence to resolve the actual1Yes/2No coding. Earlier invalid development was retained without opening confirmation; the revised frozen model fails held-region transfer against controls.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-042-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The corrected branch-access cohort uses paired labeled/unlabeled evidence to resolve the actual1Yes/2No coding. Earlier invalid development was retained without opening confirmation; the revised frozen model fails held-region transfer against controls."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The corrected branch-access cohort uses paired labeled/unlabeled evidence to resolve the actual1Yes/2No coding. Earlier invalid development was retained without opening confirmation; the revised frozen model fails held-region transfer against controls."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The corrected branch-access cohort uses paired labeled/unlabeled evidence to resolve the actual1Yes/2No coding. Earlier invalid development was retained without opening confirmation; the revised frozen model fails held-region transfer against controls."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The corrected branch-access cohort uses paired labeled/unlabeled evidence to resolve the actual1Yes/2No coding. Earlier invalid development was retained without opening confirmation; the revised frozen model fails held-region transfer against controls.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-042",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-042",
+      "native_rows": 2559,
+      "confirmation_rows": 327,
+      "models": 9,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 9,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 5.551115123125783e-17,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 327,
+        "primary_error": 0.25170026475368346,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "constant",
+        "rows": 327,
+        "primary_error": 0.2499101239785309,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "domain",
+        "rows": 327,
+        "primary_error": 0.24890662136514635,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 327,
+        "primary_error": 0.24893421705269006,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001",
+        "rows": 327,
+        "primary_error": 0.24879008745007902,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002",
+        "rows": 327,
+        "primary_error": 0.25161524778104305,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003",
+        "rows": 327,
+        "primary_error": 0.25414359592217795,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004",
+        "rows": 327,
+        "primary_error": 0.2516181964852362,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005",
+        "rows": 327,
+        "primary_error": 0.25170026475368346,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:4"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:4"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:4"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:4"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:4"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:4"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:4"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:3"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 2,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "region:4"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "The corrected branch-access cohort uses paired labeled/unlabeled evidence to resolve the actual1Yes/2No coding. Earlier invalid development was retained without opening confirmation; the revised frozen model fails held-region transfer against controls."
+}

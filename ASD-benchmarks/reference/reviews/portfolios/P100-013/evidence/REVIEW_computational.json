@@ -1,0 +1,226 @@
+{
+  "case_id": "P100-013",
+  "role": "computational",
+  "reviewer_id": "root-independent-computational-review",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "90435239d1de5599f0318ad4a691a7598388a12005c8f4bd3c6b7dd12134347f"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "ec833a054d39d87d3108aaa8b7b01d851e4542cbf23a827c17e69c9fe400a66d"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "76348477d0623a83b70143c4bc2288c19ed5f489c7b2fea9bb15811a3d4d7f1e"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "4874865eb390180f3d5b62a1850bc4b2f9af36051a3ef6ba2191b85cf3ef39c8"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "cd1fdb0d2630fc3e075bc8451449adfa2ee51bbf6162e754299b9f694d61ead6"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "485c68d6c070659eabdc81fe2fd3907dad7cf38182546b0f3dfb955ba2088b46"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "1ea85fc176601a7ad6e4f143e0c658946fbc025f8ad0d49aa649de76e981c7ae"
+    },
+    {
+      "path": "package/preparation/native.py",
+      "sha256": "1526e4ac6c3c9cbcbd4634edc526ce070a3deca9ad975d3aee23a8a2d18acaf1"
+    },
+    {
+      "path": "research_history/PROTOCOL.json",
+      "sha256": "981e6f2c7f04b84bd055d1d09b99fd9ee07ee9f0d337ab35f4d9ffeb9dc72a3b"
+    },
+    {
+      "path": "research_history/FREEZE.json",
+      "sha256": "53ad1570910327046946a2d68183156c9bf36568965650f000c09589b48fb8c3"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-013-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact states reproduce all saved predictions and complete-group errors; adverse comparators remain included."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement alone does not establish the proposed physical mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This computational review does not adjudicate literature priority."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The task is a usable numerical comparison within its measured-system contract. One held heating-rate program on one source material; fitted channels are not independently identified chemical species."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native assets, deterministic parser, exact frozen state and independent arithmetic agree in this review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent operational intervention or cost/reliability outcome is measured."
+        }
+      },
+      "checks": [
+        "Independent native reconstruction agrees with frozen predictors, targets and complete-group identities",
+        "No group crosses development/confirmation; source hashes checked by deterministic parser",
+        "Every saved equation independently executed and every group-balanced MAE recomputed using NumPy/pandas",
+        "No fitting, network or history imports in prediction function",
+        "All confirmation samples come from the20 K/min trace; conversion constrained to0..1",
+        "Source native reader selects observed columns only; fitted columns not targets"
+      ],
+      "limitations": [
+        "One held heating-rate program on one source material; fitted channels are not independently identified chemical species."
+      ]
+    },
+    {
+      "finding_id": "P100-013-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact states reproduce all saved predictions and complete-group errors; adverse comparators remain included."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement alone does not establish the proposed physical mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This computational review does not adjudicate literature priority."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The task is a usable numerical comparison within its measured-system contract. One held heating-rate program on one source material; fitted channels are not independently identified chemical species."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native assets, deterministic parser, exact frozen state and independent arithmetic agree in this review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent operational intervention or cost/reliability outcome is measured."
+        }
+      },
+      "checks": [
+        "Independent native reconstruction agrees with frozen predictors, targets and complete-group identities",
+        "No group crosses development/confirmation; source hashes checked by deterministic parser",
+        "Every saved equation independently executed and every group-balanced MAE recomputed using NumPy/pandas",
+        "No fitting, network or history imports in prediction function",
+        "All confirmation samples come from the20 K/min trace; conversion constrained to0..1",
+        "Source native reader selects observed columns only; fitted columns not targets"
+      ],
+      "limitations": [
+        "One held heating-rate program on one source material; fitted channels are not independently identified chemical species."
+      ]
+    },
+    {
+      "finding_id": "P100-013-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact states reproduce all saved predictions and complete-group errors; adverse comparators remain included."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement alone does not establish the proposed physical mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This computational review does not adjudicate literature priority."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The task is a usable numerical comparison within its measured-system contract. One held heating-rate program on one source material; fitted channels are not independently identified chemical species."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native assets, deterministic parser, exact frozen state and independent arithmetic agree in this review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent operational intervention or cost/reliability outcome is measured."
+        }
+      },
+      "checks": [
+        "Independent native reconstruction agrees with frozen predictors, targets and complete-group identities",
+        "No group crosses development/confirmation; source hashes checked by deterministic parser",
+        "Every saved equation independently executed and every group-balanced MAE recomputed using NumPy/pandas",
+        "No fitting, network or history imports in prediction function",
+        "All confirmation samples come from the20 K/min trace; conversion constrained to0..1",
+        "Source native reader selects observed columns only; fitted columns not targets"
+      ],
+      "limitations": [
+        "One held heating-rate program on one source material; fitted channels are not independently identified chemical species."
+      ]
+    }
+  ],
+  "checks": [
+    "Independent native reconstruction agrees with frozen predictors, targets and complete-group identities",
+    "No group crosses development/confirmation; source hashes checked by deterministic parser",
+    "Every saved equation independently executed and every group-balanced MAE recomputed using NumPy/pandas",
+    "No fitting, network or history imports in prediction function",
+    "All confirmation samples come from the20 K/min trace; conversion constrained to0..1",
+    "Source native reader selects observed columns only; fitted columns not targets"
+  ],
+  "numerical_checks": [
+    {
+      "model": "reference",
+      "mae": 0.05894657534029303,
+      "max_prediction_difference": 2.4424906541753444e-15
+    },
+    {
+      "model": "baseline_domain",
+      "mae": 0.07528058321052242,
+      "max_prediction_difference": 2.6645352591003757e-15
+    },
+    {
+      "model": "baseline_flexible",
+      "mae": 0.0836004723574297,
+      "max_prediction_difference": 1.27675647831893e-15
+    },
+    {
+      "model": "attempt_001",
+      "mae": 0.08452500310851693,
+      "max_prediction_difference": 2.3314683517128287e-15
+    },
+    {
+      "model": "attempt_002",
+      "mae": 0.07691202967552413,
+      "max_prediction_difference": 3.9968028886505635e-15
+    },
+    {
+      "model": "attempt_003",
+      "mae": 0.05894657534029303,
+      "max_prediction_difference": 2.4424906541753444e-15
+    },
+    {
+      "model": "attempt_004",
+      "mae": 0.07666033204149589,
+      "max_prediction_difference": 3.6637359812630166e-15
+    },
+    {
+      "model": "attempt_005",
+      "mae": 0.06847765278885969,
+      "max_prediction_difference": 2.6645352591003757e-15
+    }
+  ],
+  "limitations": [
+    "One held heating-rate program on one source material; fitted channels are not independently identified chemical species."
+  ],
+  "independent_experimental_replication": false
+}

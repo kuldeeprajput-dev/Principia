@@ -1,0 +1,37 @@
+{
+  "title": "Causal contribution forecasts in asymmetric threshold public-goods games",
+  "files": [
+    "raw/ThresholdPGG_ExperimentalData.xlsx",
+    "context/source_record.json"
+  ],
+  "target": "Next-round individual contribution",
+  "unit": "experimental tokens",
+  "inputs": {
+    "round": "round",
+    "own_previous": "experimental tokens",
+    "peer_previous": "experimental tokens",
+    "own_lag2": "experimental tokens",
+    "peer_lag2": "experimental tokens",
+    "own_history_mean": "experimental tokens",
+    "peer_history_mean": "experimental tokens",
+    "endowment": "experimental tokens",
+    "peer_endowment": "experimental tokens",
+    "productivity": "dimensionless",
+    "peer_productivity": "dimensionless",
+    "threshold": "productivity-weighted tokens",
+    "previous_success": "indicator",
+    "required_contribution": "experimental tokens"
+  },
+  "timing": "One-step prediction before round3..20 using strictly prior own/peer contributions and publicly announced rules. Earlier confirmation responses are permitted causal online history, never fitted parameters. Surveys and session2 excluded.",
+  "grouping": "Complete first-session interacting pair;20% hash heldout in each treatment; remaining groups in5 deterministic whole-pair folds. Both players remain together.",
+  "limits": [
+    "University laboratory sample; observational behavioral forecasts, no causal policy effect.",
+    "Type2 records duplicate Type1 interactions; session2 reuses participants, both excluded.",
+    "Prior outcomes available online are not unknown fixed-horizon trajectories.",
+    "Threshold matching is a known game-rule calculation; predicting measured contributions remains nontrivial."
+  ],
+  "url": "https://zenodo.org/records/16918146",
+  "pub": "https://doi.org/10.1073/pnas.2525760123",
+  "prior": "The source paper analyzes equilibrium, reciprocity, relative contributions and coordination. We compare causal forecasts beyond these mechanisms, without claiming a new universal behavioral law.",
+  "audit": "Schema inspection exposed first two full-equality pairs and their duplicate records. Exact overlap with hash confirmation recorded; no aggregate confirmation metrics before freeze."
+}

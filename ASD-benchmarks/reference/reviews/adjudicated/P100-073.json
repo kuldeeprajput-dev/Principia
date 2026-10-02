@@ -1,0 +1,277 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-073",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-073/computational.json",
+      "bytes": 9207,
+      "sha256": "37740cd02d5fc94d11b089a8ba336351189b461a43cfbd2719cb9d60e8305e19"
+    },
+    {
+      "path": "reviews/portfolios/P100-073/scientific_critical.json",
+      "bytes": 12112,
+      "sha256": "713e0885d8898cca963ce93f244169e3cf3799af4872e81b95d88ab6b10a2762"
+    },
+    {
+      "path": "reviews/portfolios/P100-073/combined/review.json",
+      "bytes": 20861,
+      "sha256": "c0f10a1b2d7fbb9e5fe24c9ff69828eda2ec1290c1845d44be48366367bc3d0e"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-073-SCI-01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole DG runs link all protocols/flasks/horizons; metric averages protocol\u00d7run RMSE, not individual flask independence. Strong adverse evidence: The compact model fails the frozen 5 %all-baseline gate. Slow-pool times reach 500 h; prefix-exact agreement does not identify biological pools.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Saturation and changing hazard are established useful abstractions; pool fractions, microbial dynamics and methane suppression are not identified.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Finite-pool and time-varying-rate models have explicit prior art; no new biological principle is admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole DG runs link all protocols/flasks/horizons; metric averages protocol\u00d7run RMSE, not individual flask independence.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-073-SCI-02",
+      "disagreements": [],
+      "coverage_differences": [
+        "reliability",
+        "mechanism",
+        "novelty",
+        "significance",
+        "reproducibility",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole DG runs link all protocols/flasks/horizons; metric averages protocol\u00d7run RMSE, not individual flask independence. Strong adverse evidence: Slow rates hit the searched boundary; exact 4/8 hagreement is imposed and cannot validate later gas or biological pools. The nested kernel remains the selected numerical comparator.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Saturation and changing hazard are established useful abstractions; pool fractions, microbial dynamics and methane suppression are not identified.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Finite-pool and time-varying-rate models have explicit prior art; no new biological principle is admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole DG runs link all protocols/flasks/horizons; metric averages protocol\u00d7run RMSE, not individual flask independence.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "documentation_sufficiency"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-073-SCI-03",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole DG runs link all protocols/flasks/horizons; metric averages protocol\u00d7run RMSE, not individual flask independence. Strong adverse evidence: Every scoring block loses; nine protocol\u00d7run blocks are not nine independent experimental runs. Gas volume is not methane or in-vivo digestibility.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Saturation and changing hazard are established useful abstractions; pool fractions, microbial dynamics and methane suppression are not identified.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Finite-pool and time-varying-rate models have explicit prior art; no new biological principle is admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole DG runs link all protocols/flasks/horizons; metric averages protocol\u00d7run RMSE, not individual flask independence.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

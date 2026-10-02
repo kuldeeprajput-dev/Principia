@@ -1,3 +1,5 @@
+> **v0.2.0 update:** This source-corpus document is complemented by the [Astra reference package](reference/README.md), [current evaluation protocol](EVALUATION_PROTOCOL.md), and [publication audit](RELEASE_AUDIT.md). Acquisition-stage statements describe the earlier data release; current executable contracts govern registered-task comparisons.
+
 # Reviewer guide
 
 This document is outside scenario inputs. The corpus has no hidden answer key and no required number of positive discoveries.

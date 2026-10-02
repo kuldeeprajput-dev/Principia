@@ -1,0 +1,203 @@
+{
+  "case_id": "P100-063",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "51491e47c8c0973ed95100b3a60cde77f0ac03f09988cd7993b4d39212edf1ab"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "dc6afad763cdaf4d9624b2f07fe138305cce8e1cbf2c381508cd315893b3fcf9"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "fcb016889b7e3d2740e46b23adc522102cfd52621b03c53d5c88693c31a420fa"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "c84db282cb9b0e1d8ed9d57a11f060fa6afbcaf25dc1421bb521be04902aecfb"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "08a1c65bd5ef5a8b4c8fd71bf31cd9d26c8f7179aa3ac7fd36976d01aa68ed83"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "bfbb40d03405f67ecafb88fc384942eed5bcd55ff5d4804401e7adf6e3cb6c7d"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "a733dc852919f7e253cb9cccf35b6cacc45eef1c4ce0495881c51f24b767368c"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "6ba4a73a8c8da60ad2fb06a8812dab87f4a29a1638e7a299240f698432b7342d"
+    },
+    {
+      "path": "native.py",
+      "sha256": "9239061460879dbd6fe5ff723cb2259f82b10103d575a9eb2243ee14374b6006"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "4c751b66c2fe40b6fa20c9d3bbc53790269bb498dbe9f0322a116e33f977c4b7"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "443b7c37ae236e0563ade909e9e04e97227280187714acb387b69f3416cce16c"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "f2b0551debf17edbf429a5c39c3dc8c88821f6d53f8f5d770382efba2393843c"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "a9fc6245c7cef0d7ea51c9384643312b28c91baaf91740d802392806da7e3771"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "f99381f696f60cd633fecc72ce27c7aadcbf003e429d4f278c3fc55aa79afa94"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-063-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact frozen numerical evidence reproduces, including losing controls; this verifies computation, not universal interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No literature-priority adjudication in this computational review."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped benchmark comparison. Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.; The measured thermal peak/dip response is reproducible with a compact Lorentzian family across two reserved termination temperatures. The extra dispersive term is effectively tied with the symmetric control; no new magnon law is established.; No independent population confidence interval from dependent rows."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native-source reconstruction and every saved model/metric passed independent computation."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention/cost/safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+        "All top-level groups disjoint across development and confirmation",
+        "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+        "Independently recomputed equal-group physical-unit MAE for every model",
+        "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+      ],
+      "limitations": [
+        "Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.; The measured thermal peak/dip response is reproducible with a compact Lorentzian family across two reserved termination temperatures. The extra dispersive term is effectively tied with the symmetric control; no new magnon law is established.; No independent population confidence interval from dependent rows."
+      ]
+    },
+    {
+      "finding_id": "P100-063-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact frozen numerical evidence reproduces, including losing controls; this verifies computation, not universal interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No literature-priority adjudication in this computational review."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped benchmark comparison. Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.; The measured thermal peak/dip response is reproducible with a compact Lorentzian family across two reserved termination temperatures. The extra dispersive term is effectively tied with the symmetric control; no new magnon law is established.; No independent population confidence interval from dependent rows."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native-source reconstruction and every saved model/metric passed independent computation."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention/cost/safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+        "All top-level groups disjoint across development and confirmation",
+        "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+        "Independently recomputed equal-group physical-unit MAE for every model",
+        "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+      ],
+      "limitations": [
+        "Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.; The measured thermal peak/dip response is reproducible with a compact Lorentzian family across two reserved termination temperatures. The extra dispersive term is effectively tied with the symmetric control; no new magnon law is established.; No independent population confidence interval from dependent rows."
+      ]
+    }
+  ],
+  "numerical_checks": [
+    {
+      "model": "reference",
+      "primary_error": 0.0029772941628629056,
+      "max_prediction_difference": 8.326672684688674e-17
+    },
+    {
+      "model": "baseline_constant",
+      "primary_error": 0.010866716535498724,
+      "max_prediction_difference": 5.551115123125783e-17
+    },
+    {
+      "model": "baseline_flex63",
+      "primary_error": 0.003380826488209838,
+      "max_prediction_difference": 8.326672684688674e-17
+    },
+    {
+      "model": "baseline_mag_domain",
+      "primary_error": 0.0029791716801073173,
+      "max_prediction_difference": 8.326672684688674e-17
+    },
+    {
+      "model": "attempt_001",
+      "primary_error": 0.0029772941628629056,
+      "max_prediction_difference": 8.326672684688674e-17
+    },
+    {
+      "model": "attempt_002",
+      "primary_error": 0.003712104765677347,
+      "max_prediction_difference": 8.326672684688674e-17
+    },
+    {
+      "model": "attempt_003",
+      "primary_error": 0.0029789674320154667,
+      "max_prediction_difference": 8.326672684688674e-17
+    },
+    {
+      "model": "attempt_004",
+      "primary_error": 0.0029663017144677677,
+      "max_prediction_difference": 8.326672684688674e-17
+    },
+    {
+      "model": "attempt_005",
+      "primary_error": 0.0029869028718795404,
+      "max_prediction_difference": 8.326672684688674e-17
+    }
+  ],
+  "checks": [
+    "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+    "All top-level groups disjoint across development and confirmation",
+    "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+    "Independently recomputed equal-group physical-unit MAE for every model",
+    "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+  ],
+  "limitations": [
+    "Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.; The measured thermal peak/dip response is reproducible with a compact Lorentzian family across two reserved termination temperatures. The extra dispersive term is effectively tied with the symmetric control; no new magnon law is established.; No independent population confidence interval from dependent rows."
+  ],
+  "independent_experimental_replication": false
+}

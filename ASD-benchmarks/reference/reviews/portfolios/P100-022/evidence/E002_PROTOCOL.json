@@ -1,0 +1,34 @@
+{
+  "case_id": "P100-022",
+  "title": "First-forming current across perovskite devices",
+  "created_utc": "2026-10-01T15:22:06.053930+00:00",
+  "target": "Initial positive forming-sweep current",
+  "target_units": "microampere",
+  "error_units": "microampere",
+  "metric_kind": "mae",
+  "input_columns": [
+    "voltage_V",
+    "bromine_rich"
+  ],
+  "input_units": {
+    "voltage_V": "V",
+    "bromine_rich": "indicator"
+  },
+  "scope": "Complete device, both compositions; all duplicate device traces linked. No future current or state permitted.",
+  "source_paper": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202502152",
+  "selection": "Lowest whole-group OOF physical-unit MAE among substantive attempts; prefer fewer coefficients within1percent. Baselines retained even if superior. No test-based replacement.",
+  "stopping": "At least five materially distinct attempts. Continue distinct evidence-led hypotheses; stop after two consecutive substantive attempts after the current best with no >=1percent MAE gain, >=5percent worst-group gain, or supported structural simplification.",
+  "confirmation": "Separate process only after code/states/selection/stopping hashes frozen; all outcomes become exposed thereafter.",
+  "exposure": "Public source-aware corpus; source plots and published analyses known. Schema previews exposed first rows only. Case30 speeds>=13.9mm/s previewed; scored0.28\u201310mm/s unviewed. Case22 initial~0.006V row previewed; targetV>=0.05V unviewed. Case65 10Hz first rows previewed; scoref>=100Hz. Reserved response distributions and scores unopened.",
+  "uncertainty": "Per-group errors and ranges only; no dependent-row confidence interval. Very few top-level conditions constrain generalization.",
+  "calibration": "None. First100 voltage rows of each device, V>=0.05V; no measured current allowed as predictor.",
+  "source_hash": "364ece37fd3e8fe324771befae81dd3d8c2729e14417f7b4cd7ba2531004d67e",
+  "split_hash": "b6042c416773740c76af78dd769d4adcdf5fbc6d47091f48ef49d660da4e3fb1",
+  "baselines": [
+    "mean/constant",
+    "established physical or matched calibration baseline",
+    "constrained flexible model under same information"
+  ],
+  "fit": "Development-only group-balanced least squares; forcase65 equivalent least squares in decibels. Frozen transformations; parameter bounds recorded per candidate.",
+  "exclusions": "Nonfinite native values excluded with anchors; none excluded by fit residuals. All source bytes unchanged."
+}

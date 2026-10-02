@@ -1,0 +1,157 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-045.original.v1",
+  "case_id": "P100-045",
+  "case_number": 45,
+  "family": "original",
+  "protocol_version": "P100-045-asd7-native-v1",
+  "cohort_id": "P100-045.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-045.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/45_astronomy_fermi_grb250206a",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "GBM NaI channel4 count rate during fixed post-trigger window",
+  "target_units": "counts/s",
+  "error_units": "counts/s",
+  "primary_units": "counts/s",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "low",
+    "low_lag",
+    "background_low",
+    "background_high",
+    "time_s",
+    "channel_low_keV",
+    "channel_high_keV"
+  ],
+  "input_units": {
+    "low": "counts/s in channels 2+3",
+    "low_lag": "counts/s in preceding bin, channels 2+3",
+    "background_low": "counts/s in pretrigger channels 2+3",
+    "background_high": "counts/s in pretrigger channel 4",
+    "time_s": "s after trigger",
+    "channel_low_keV": "keV",
+    "channel_high_keV": "keV"
+  },
+  "numeric_columns": [
+    "low",
+    "low_lag",
+    "background_low",
+    "background_high",
+    "time_s",
+    "channel_low_keV",
+    "channel_high_keV"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Same-bin channel2+3 count rates and previous-bin low-energy rate permitted; targetchannel4 observations aftertrigger forbidden as predictors.",
+  "calibration": "Pretrigger[-200,-100]s background rate in each low/high channel; instrument-specific energy edges recorded.",
+  "independent_unit": "Detector within one GRB; detectors share one incident event",
+  "evaluation_groups": [
+    "n0",
+    "n3"
+  ],
+  "assigned_rows": 200,
+  "eligible_rows": 200,
+  "baseline_models": [
+    "background",
+    "background_ratio",
+    "rbf",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "reference"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "background": {
+      "equation": "H_hat=B_H",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "background_ratio": {
+      "equation": "H_hat=B_H*L/B_L",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rbf": {
+      "equation": "Frozen 24-center Gaussian radial-basis ridge comparator; all feature means, scales, centers, coefficients and ridge=0.3 are in rules.json. Additive residual for cases2/3/4/45; multiplicative clipped-log ratio for cases11/46.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "H_hat=max(0,B_H+a*(L-B_L))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "H_hat=max(0,B_H+1000*a*sign(z)*abs(z)^b); z=(L-B_L)/1000",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "H_hat=B_H+a*max(L-B_L,0)/(1+max(L-B_L,0)/c)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "H_hat=max(0,B_H+a*(L-B_L)+b*(L-L_previous))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "H_hat=max(0,B_H+a*(L-B_L)*(E_low/100keV)^b)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "reference": {
+      "equation": "H_hat=max(0,B_H+1000*a*sign(z)*abs(z)^b); z=(L-B_L)/1000",
+      "state": "rules.json",
+      "role": "reference"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics."
+  },
+  "scope_limits": "SingleGRB250206827, observed detector counts not deconvolved photon flux. NaI channel4 spans slightly different energy ranges by detector. No universal burst hardness law or independent event replication.",
+  "source_url": "https://heasarc.gsfc.nasa.gov/FTP/fermi/data/gbm/triggers/2025/bn250206827/current/",
+  "source_license": "Public domain; Fermi/HEASARC acknowledgment",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "d863aa331a9b8a29ccf3d036d92f85585babbf345ccedade5a8bae580a463876",
+  "observations_sha256": "28399d516ce89e9f8adee22b62cb510dba0c296048f9d2eed975964c9f5f68f9",
+  "legacy_protocol_sha256": "8c835cad43e2d7c974a01614c89c65e54c944dcdf5f57bef82da5e94ca4495d7",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "low_lag",
+    "background_low",
+    "background_high"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

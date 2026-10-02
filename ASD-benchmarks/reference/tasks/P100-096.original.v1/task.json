@@ -1,0 +1,187 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-096.original.v1",
+  "case_id": "P100-096",
+  "case_number": 96,
+  "family": "original",
+  "protocol_version": "P100-096-batch4-frozen-v1",
+  "cohort_id": "P100-096.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-096.original.v1",
+  "legacy_package": "96_transport_bikez/final_results",
+  "source_scenario": "scenarios/96_transport_bikez",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Author-extracted cyclist speed one second ahead",
+  "target_units": "m/s",
+  "error_units": "m/s",
+  "primary_units": "m/s",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "speed",
+    "past_acc",
+    "gap",
+    "relative_speed",
+    "radius",
+    "lateral_gap",
+    "count"
+  ],
+  "input_units": {
+    "speed": "m/s at current native frame",
+    "past_acc": "m/s^2 from native speed 1 s earlier",
+    "gap": "m; positive-angle arc gap to nearest forward angular bicycle",
+    "relative_speed": "m/s; leader minus follower",
+    "radius": "m",
+    "lateral_gap": "m; radial separation to angular leader",
+    "count": "tracked bicycles in frame"
+  },
+  "numeric_columns": [
+    "speed",
+    "past_acc",
+    "gap",
+    "relative_speed",
+    "radius",
+    "lateral_gap",
+    "count"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Only current and past extracted speeds and current geometry/neighbor state. Future target speed is inaccessible to candidate replay.",
+  "calibration": "Source computer-vision/Kalman trajectories, 25 Hz; select every 25th frame and exact +/-25-frame pairs. Parts of the same original video remain together. Track IDs may be ambiguous; all 28 riders recur across videos. Source preprocessing may use future smoothing, so predictions are retrospective trajectory dynamics and not certified online safety. Angular-neighbor interaction is a testable approximation; lateral separation and direction reversal are falsifiers.",
+  "independent_unit": "whole original video, all parts/participants",
+  "evaluation_groups": [
+    "DJI_20240906110027_0011_D",
+    "DJI_20240906110432_0012_D"
+  ],
+  "assigned_rows": 4437,
+  "eligible_rows": 4437,
+  "baseline_models": [
+    "reference",
+    "mechanistic_reference",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007",
+    "baseline_mean",
+    "baseline_domain",
+    "baseline_rbf",
+    "baseline_persistence",
+    "attempt_008",
+    "attempt_009"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "mechanistic_reference": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_mean": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_domain": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rbf": {
+      "equation": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_persistence": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_008": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_009": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "scope_limits": "One controlled circular-track session, recurring riders; no new-rider, on-road safety or crash-prevention transfer claim.",
+  "source_url": "https://zenodo.org/records/18098714",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All packaged targets are exposed for future agents; future scoring is retrospective. Public source-aware corpus. Illustrative header/first-row values were inspected during the semantics audit; these do not constitute blind source acquisition. All delivered targets become exposed after confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "2055a7bc96fd6fe4444db2161e7c81b64a94806aa5c1cd3e4e62bcf9c7e09b69",
+  "observations_sha256": "8ef4335aa851bc7f2262b272e82db98f093e726958e12bebb7e889051ae1390e",
+  "legacy_protocol_sha256": "b37a4fb90b7076bdf7458de0869b60fd27e5bf7b3ffef21e0c7a0d6db6489e0f",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

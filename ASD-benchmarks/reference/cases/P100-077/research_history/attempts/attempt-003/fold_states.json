@@ -1,0 +1,48 @@
+{
+  "0": {
+    "kind": "common_fraction",
+    "coef": [
+      0.04670107600233314
+    ],
+    "equation": "j=clip(p*q/tau,L,U); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+    "parameter_count": 1,
+    "rank": 1,
+    "bounds": [
+      [
+        0.02
+      ],
+      [
+        1
+      ]
+    ],
+    "training_groups": [
+      "C"
+    ],
+    "training_rows": 3,
+    "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+    "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+  },
+  "1": {
+    "kind": "common_fraction",
+    "coef": [
+      0.04322669614759293
+    ],
+    "equation": "j=clip(p*q/tau,L,U); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+    "parameter_count": 1,
+    "rank": 1,
+    "bounds": [
+      [
+        0.02
+      ],
+      [
+        1
+      ]
+    ],
+    "training_groups": [
+      "A"
+    ],
+    "training_rows": 3,
+    "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+    "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-042.original.v1",
+  "case_id": "P100-042",
+  "case_number": 42,
+  "family": "original",
+  "protocol_version": "P100-042-asd7-native-v1",
+  "cohort_id": "P100-042.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-042.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/42_economics_cfpb_banking",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Used primary bank or credit union in-person branch during pastmonth",
+  "target_units": "binary BRANCH1 versus2",
+  "error_units": "squared probability (Brier)",
+  "primary_units": "squared probability (Brier)",
+  "metric_kind": "brier",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error",
+    "within_group_weight": "sample_weight"
+  },
+  "permitted_inputs": [
+    "mobile",
+    "web",
+    "age_category",
+    "income_category",
+    "branch_present",
+    "branch_closed"
+  ],
+  "input_units": {
+    "mobile": "pastmonth app use binary",
+    "web": "pastmonth website use binary",
+    "age_category": "ordered seven source bins",
+    "income_category": "ordered nine source bins",
+    "branch_present": "ZIP branch present Q12024 binary author-derived",
+    "branch_closed": "ZIP net branch decrease2019Q4\u20132024Q1 binary author-derived"
+  },
+  "numeric_columns": [
+    "mobile",
+    "web",
+    "age_category",
+    "income_category",
+    "branch_present",
+    "branch_closed"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Contemporaneous self-reported channels; ZIP branch access covariates from source linked records. Association, no causal digital substitution or closure effect.",
+  "calibration": "Three whole regions leave-one-region-out development; hash-reserved fourth region, no target calibration.",
+  "independent_unit": "Respondents nested in four Census regions. Only one held region: within-survey regional transfer, no population-level precision.",
+  "evaluation_groups": [
+    "region:1"
+  ],
+  "assigned_rows": 327,
+  "eligible_rows": 327,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "domain",
+    "flexible",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "p=logistic(a+bM*M+bW*W+cA*A+cI*I+cP*P+cC*C)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "p=logistic(a)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "domain": {
+      "equation": "p=logistic(a+b*digital)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "p=logistic(a+sum b_j exp(-||standardized_x-center_j||\u00b2/8));32train-onlycenters",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "p=logistic(a+bM*M+bW*W+bMW*MW)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "p=logistic(a+bM*M+bW*W+bMW*MW+cA*A+cI*I+cP*P+cC*C)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "p=logistic(context002+u*M*(A-4)+v*W*(A-4))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "p=logistic(context002+u*branch_present*M+v*closure*older)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "p=logistic(a+bM*M+bW*W+cA*A+cI*I+cP*P+cC*C)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze."
+  },
+  "scope_limits": "Complete-case banked adult survey with positive WEIGHT_FINAL; WEIGHT_ALT is not used. Region-balanced survey-weighted risk is not national prevalence. DK/refused/skipped are exclusions, not non-use. Geographic author-derived indicators are not measured travel distance.",
+  "source_url": "https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/",
+  "source_license": "U.S. government public-domain data",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Schema and source codebook aggregate tabulations inspected; no reserved respondent target or confirmation metric inspected. Source-aware public survey.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"62c97364d29beff0003a8885b8f1a52ac7a9804bf8e1047631f725230f887875\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "dfdfa93495abefad40b136968a26391f87a314e7c8bffc101d2ca7989a404c72",
+  "observations_sha256": "b1afec2595b3ef8fb3bbae68fedaa3bde07fb05a53b84d604a425f131c903a34",
+  "legacy_protocol_sha256": "f713036f7d4d9fc187387836b21535051b88fc6c173d82fe5c0834f7da0d6598",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": "asd6-probability/1.1",
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

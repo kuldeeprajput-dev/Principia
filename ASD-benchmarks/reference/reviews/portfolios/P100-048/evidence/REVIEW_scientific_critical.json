@@ -1,0 +1,132 @@
+{
+  "case_id": "P100-048",
+  "role": "scientific_critical",
+  "reviewer_id": "asd5_materials",
+  "checked_files": [
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "e6b793f6f71c2ca61bfe37b0258741ef4568ab6103134d699437ed035db72f2e"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "1beec8bd45679e9300b5e67907c009b4bd80d5e01a4431fd876654c44836b9e8"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "7a64eac2a6248674f070f7c72acfa3dae7c239f102609bb08b18376bbbf946fb"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "a57dca1f6154fb5350b681147eb90eade3c799c8164d56ea293a35f6c9bd324d"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "5722b1e3bec8d94e3f3e27e48f65ae9df16f9fba8b56302ca8afb1021910662d"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "c6f59b5f9d7f9b36e345b2392ee53726a6b7326af7349851d17625ceae13a7ce"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "2833149a1132d621ad9e8fe3ebddce4d7d50f108bcde59328187638c07aa98ef"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-048-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Whole-day forward validation yields9.24220W/m\u00b2 versus13.25463 flexible and16.41570 Brutsaert;12/14 reserved days improve. The independently measured longwave target makes this more than a radiation-budget identity."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Stefan-Boltzmann/emissivity scaling is established prior art. Humidity-cloud-proxy and site interactions are empirical calibrations; diffuse/global shortwave ratio does not directly observe cloud fraction or causal forcing."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Prior physical/statistical families are disclosed. This bounded literature check does not certify new laws or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful reproducible prediction or informative failure within a precisely scoped cohort; no automatic discovery score."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected executable equation, coefficients, source/task definitions and saved group results; independent numerical execution belongs to the separate computational reviewer."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention, deployment-cost study or external experimental replication."
+        }
+      },
+      "checks": [
+        "Matched input-budget comparator review",
+        "Equation dimensional and variable-semantics review",
+        "Independent-unit and outcome-exposure review",
+        "Positive proposal separated from negative evidence",
+        "Primary-source context checked through public source pages; no new numerical assets acquired"
+      ],
+      "limitations": [
+        "Two calibrated sites and daytime July transfer only; no nighttime, new-site or seasonal generality. Neighboring days share meteorology. A mean-error win does not remove all worst-day failures.",
+        "Scientific-critical agent review is advisory; it is not human expert adjudication or independent experimental replication."
+      ],
+      "recommendations": [
+        "Test withheld sites/seasons with frozen site-free equation and direct cloud observables; preserve daytime and quality-flag eligibility."
+      ]
+    },
+    {
+      "finding_id": "P100-048-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Whole-day forward validation yields9.24220W/m\u00b2 versus13.25463 flexible and16.41570 Brutsaert;12/14 reserved days improve. The independently measured longwave target makes this more than a radiation-budget identity."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Stefan-Boltzmann/emissivity scaling is established prior art. Humidity-cloud-proxy and site interactions are empirical calibrations; diffuse/global shortwave ratio does not directly observe cloud fraction or causal forcing."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Prior physical/statistical families are disclosed. This bounded literature check does not certify new laws or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful reproducible prediction or informative failure within a precisely scoped cohort; no automatic discovery score."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected executable equation, coefficients, source/task definitions and saved group results; independent numerical execution belongs to the separate computational reviewer."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention, deployment-cost study or external experimental replication."
+        }
+      },
+      "checks": [
+        "Matched input-budget comparator review",
+        "Equation dimensional and variable-semantics review",
+        "Independent-unit and outcome-exposure review",
+        "Positive proposal separated from negative evidence",
+        "Primary-source context checked through public source pages; no new numerical assets acquired"
+      ],
+      "limitations": [
+        "Two calibrated sites and daytime July transfer only; no nighttime, new-site or seasonal generality. Neighboring days share meteorology. A mean-error win does not remove all worst-day failures.",
+        "Scientific-critical agent review is advisory; it is not human expert adjudication or independent experimental replication."
+      ],
+      "recommendations": [
+        "Test withheld sites/seasons with frozen site-free equation and direct cloud observables; preserve daytime and quality-flag eligibility."
+      ]
+    }
+  ],
+  "primary_sources_checked": [
+    "https://gml.noaa.gov/grad/surfrad/"
+  ],
+  "literature_access_limits": [
+    "AMS article request returned403 and PMC contextual article showed browser check; neither inaccessible text was treated as independently verified."
+  ],
+  "blocking_defects": []
+}

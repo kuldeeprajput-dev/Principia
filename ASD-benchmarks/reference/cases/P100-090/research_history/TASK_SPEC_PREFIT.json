@@ -1,0 +1,58 @@
+{
+  "target": "Mean next-two-second signed angular polarization about instantaneous group centroid",
+  "target_units": "dimensionless signed[-1,1]",
+  "error_units": "polarization units",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "p_now",
+    "p_past",
+    "p_initial",
+    "density",
+    "speed",
+    "radius90",
+    "polarization_variance"
+  ],
+  "input_units": {
+    "p_now": "dimensionless current signed angular order",
+    "p_past": "previous2integerseconds mean order",
+    "p_initial": "first2seconds mean order, declared pertrialcalibration",
+    "density": "tracked persons/(pi*r90\u00b2), proxy persons/m\u00b2",
+    "speed": "mean1sbackwardsecant m/s",
+    "radius90": "90th-percentile centroiddistance metres",
+    "polarization_variance": "withinframe variance of individual signedorder"
+  },
+  "timing_contract": "Every predictor uses trajectory rows at/before origin t. Integer positions use previous observed sample only, at most1second stale; current tracked count uses prefix-present IDs, never full-trial future membership. No interpolation from future. Velocities derived by backward1s differences; supplied VX/VY/Pol forbidden because smoothing provenance can include future. Target uses t+1..t+2.",
+  "calibration": "First2seconds of each trial used as explicit calibration; no future held-group target fit. Whole condition/session A/C/D identifiers keep repetitions linked. Calibration baseline given same prefix access.",
+  "independent_unit": "Whole country/experiment-condition group with all repetitions; participants may recur across conditions and identifiers do not resolve all dependence. One teen condition keptdevelopment, no heldteen generalization.",
+  "scope_limits": "Within-source group-rotation temporal dynamics after observed prefix. Centroid-based XY-derived order differs from authors supplied Pol; no arithmetic identity predicted at same time. Source published conditionmeans already known; confirmation not unseen-world evidence. No novel biological handedness or safety intervention law.",
+  "applicability": {
+    "prediction_bounds": [
+      -1,
+      1
+    ]
+  },
+  "case_id": "P100-090",
+  "source_url": "https://zenodo.org/records/19592341",
+  "source_license": "cc-by-4.0",
+  "numeric_columns": [
+    "p_now",
+    "p_past",
+    "p_initial",
+    "density",
+    "speed",
+    "radius90",
+    "polarization_variance"
+  ],
+  "exposure": {
+    "schema": "Public experimentsPDF lists allcondition aggregate means and SDs; those were seen before modeling. Microdata future-window targets/metrics were not printed beforefreeze. Confirmation is internal source-aware, not an unknown law.",
+    "current": "reserved_internal_only",
+    "fresh_for_future_users": false
+  },
+  "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  }
+}

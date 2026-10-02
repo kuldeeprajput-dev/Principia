@@ -1,0 +1,217 @@
+{
+  "case_id": "P100-006",
+  "reference_equation_markdown": "Let $u$ denote probe Rabi frequency in MHz and $\\delta$ the coupling detuning in MHz. Define\n\\[\nL(w)=\\frac{1}{1+[(\\delta-\\delta_0)/w]^2},\\quad W=w_0+w_1u,\\quad N=n_0+n_1u.\n\\]\nThe selected predictor is\n\\[\n\\widehat I=b_0+b_1u+\\frac{Au}{1+u/u_s}L(W)-\\frac{Du^2}{u_d^2+u^2}L(N)+a u\\frac{\\delta-\\delta_0}{W}L(W).\n\\]\nThe broad and narrow responses have opposite signs; the last term permits line asymmetry. This is a compact response model, not a unique identification of two microscopic species.",
+  "reference_parameters": [
+    {
+      "name": "delta_0",
+      "unit": "MHz",
+      "value": -1.7559411902406654
+    },
+    {
+      "name": "b_0",
+      "unit": "a.u.",
+      "value": 0.3522131349048381
+    },
+    {
+      "name": "b_1",
+      "unit": "a.u./MHz",
+      "value": -0.008965174305523555
+    },
+    {
+      "name": "A",
+      "unit": "a.u./MHz",
+      "value": 0.44222885841572473
+    },
+    {
+      "name": "u_s",
+      "unit": "MHz",
+      "value": 6.7036497496507685
+    },
+    {
+      "name": "w_0",
+      "unit": "MHz",
+      "value": 0.10000000000008472
+    },
+    {
+      "name": "w_1",
+      "unit": "dimensionless",
+      "value": 8.50333602622332
+    },
+    {
+      "name": "n_0",
+      "unit": "MHz",
+      "value": 0.10000000006812161
+    },
+    {
+      "name": "n_1",
+      "unit": "dimensionless",
+      "value": 4.1345462321825535
+    },
+    {
+      "name": "D",
+      "unit": "a.u.",
+      "value": 2.3394101597365977
+    },
+    {
+      "name": "u_d",
+      "unit": "MHz",
+      "value": 3.397256675936973
+    },
+    {
+      "name": "a",
+      "unit": "a.u./MHz",
+      "value": 0.0172496223557492
+    }
+  ],
+  "all_models": {
+    "reference": {
+      "name": "Asymmetric dual response",
+      "kind": "atom_asym",
+      "coefficients": [
+        -1.7559411902406654,
+        0.3522131349048381,
+        -0.008965174305523555,
+        0.44222885841572473,
+        6.7036497496507685,
+        0.10000000000008472,
+        8.50333602622332,
+        0.10000000006812161,
+        4.1345462321825535,
+        2.3394101597365977,
+        3.397256675936973,
+        0.0172496223557492
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_atom_domain": {
+      "name": "Single Lorentzian with power broadening",
+      "kind": "atom_domain",
+      "coefficients": [
+        -3.141354059953464,
+        0.3094558161448615,
+        0.07656666985373434,
+        0.389802355912916,
+        -0.20781740028020376,
+        0.8359328310771668,
+        2.7113933193191384
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_constant": {
+      "name": "Constant response",
+      "kind": "constant",
+      "coefficients": [
+        0.46331004358239586
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_flex6": {
+      "name": "Polynomial response surface",
+      "kind": "flex6",
+      "coefficients": [
+        0.3769462631002538,
+        0.30952693259827796,
+        -0.5164603449258721,
+        0.12290388349760661,
+        0.08949789363255985,
+        0.24679828853094882,
+        -0.11788245191656324,
+        -0.01008437128697102,
+        0.7946936635157159,
+        0.047732757920283496,
+        -0.7614209319321165
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_001": {
+      "name": "Symmetric dual response",
+      "kind": "atom_double",
+      "coefficients": [
+        -2.329646675235136,
+        0.35014046225084544,
+        -0.0059104882853369956,
+        0.41975535074686754,
+        7.208442295325819,
+        0.10000000000000016,
+        8.571043353464724,
+        0.10000000001287324,
+        4.160556351371665,
+        2.36547453614174,
+        3.509202545466441
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_002": {
+      "name": "Asymmetric dual response",
+      "kind": "atom_asym",
+      "coefficients": [
+        -1.7559411902406654,
+        0.3522131349048381,
+        -0.008965174305523555,
+        0.44222885841572473,
+        6.7036497496507685,
+        0.10000000000008472,
+        8.50333602622332,
+        0.10000000006812161,
+        4.1345462321825535,
+        2.3394101597365977,
+        3.397256675936973,
+        0.0172496223557492
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_003": {
+      "name": "Saturating single response",
+      "kind": "atom_saturatingline",
+      "coefficients": [
+        -2.8909798117310395,
+        0.2944541906424141,
+        0.08954795520143907,
+        0.3442763955533046,
+        1.9544183881292727,
+        0.10000000000000002,
+        2.6475786563938786,
+        38.62472864464157,
+        9.301082649371942
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_004": {
+      "name": "Quadrature-broadened dual response",
+      "kind": "atom_powerwidth",
+      "coefficients": [
+        -2.337104554062739,
+        0.3554086315640872,
+        -0.009474776904624758,
+        0.4864286081913181,
+        5.728593031359318,
+        0.10000547713809865,
+        8.580280306374616,
+        4.167853301509863,
+        4.144928967327022,
+        2.3367039602627027,
+        3.2880986645274772
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_005": {
+      "name": "Dual response with saturating background",
+      "kind": "atom_saturate",
+      "coefficients": [
+        -2.3283523375652484,
+        0.33618571378433204,
+        -0.015459012145920957,
+        0.4038954120105037,
+        8.77268477518503,
+        0.10000000000000002,
+        8.608820929054351,
+        0.10000000001130029,
+        4.1956968417740415,
+        2.43492817147578,
+        3.561492385166179,
+        0.04572624382560956
+      ],
+      "execution": "run.py:predict"
+    }
+  }
+}

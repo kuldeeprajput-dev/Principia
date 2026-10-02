@@ -1,0 +1,74 @@
+{
+  "case_id": "P100-047",
+  "title": "Two GO-BGC Argo float lifetimes and metadata",
+  "default_task": "P100-047.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Adjusted dissolved oxygen at observed nitrate/water-mass state",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 64,
+    "independent_unit_description": "Whole float profiles; rolling half-year tests 2023H2,2024H1,H2,2025H1, earlier times train. July2025 onward reserved. Two serially sampled floats, not hundreds of independent oceans.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "baseline_strength": {
+    "registered_controls": 12,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Adjusted dissolved oxygen at observed nitrate/water-mass state",
+    "prediction_time": "Contemporaneous adjusted oxygen diagnostic using independently instrumented nitrate and CTD measurements from the same aligned synthetic profile. No prospective acquisition claim. Adjusted T/S flags1,2,8 permit source interpolation; oxygen/nitrate/pressure flags1,2 only.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-047.original.v1"
+  ],
+  "finding_ids": [
+    "P100-047-F01",
+    "P100-047-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-047/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-047.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Adjusted dissolved oxygen at observed nitrate/water-mass state under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Contemporaneous adjusted oxygen diagnostic using independently instrumented nitrate and CTD measurements from the same aligned synthetic profile. No prospective acquisition claim. Adjusted T/S flags1,2,8 permit source interpolation; oxygen/nitrate/pressure flags1,2 only.",
+    "calibration_requirement": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Adjusted dissolved oxygen at observed nitrate/water-mass state in umol/kg",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "umol/kg",
+    "reference_model": "reference",
+    "reference_primary_error": 8.853463002229073,
+    "reference_physical_mae": 8.853463002229073,
+    "physical_error_units": "umol/kg",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 8.853463002229073,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-047.original.v1/evidence/metrics.csv",
+      "bytes": 1668,
+      "sha256": "7dafdf18e16eef050078162b453cf431f81b2a216c12453b9c8172025d152ff3"
+    },
+    "models": 12
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

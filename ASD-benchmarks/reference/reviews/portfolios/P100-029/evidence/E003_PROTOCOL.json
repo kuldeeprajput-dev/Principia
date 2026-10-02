@@ -1,0 +1,28 @@
+{
+  "frozen_utc": "2026-10-01T15:21:33.637311+00:00",
+  "target": "spectral_mean_fluorescence",
+  "unit": "source fluorescence a.u.",
+  "inputs": [
+    "dose",
+    "dose_cal",
+    "F0",
+    "F1",
+    "F2",
+    "F5",
+    "dose1",
+    "dose2",
+    "dye_NR"
+  ],
+  "kind": "mae",
+  "source": "https://zenodo.org/records/13335904",
+  "paper": "https://pubs.acs.org/doi/10.1021/jacs.4c16633",
+  "scope": "Six peptide\u2013dye conditions; four contiguous replicate curves per condition are linked. Shared peptide/dye factors make this condition transfer, not fully independent molecular systems. Low-dose calibration is required; no spectral peak chosen using outcomes.",
+  "calibration": "Spectrum-wide mean fluorescence at native concentrations 0,1,2,5 nominal uM, per replicate; target concentrations 7.5 to30. No maximal-response normalization.",
+  "timing": "Predict remaining higher-dose assay values after declared lower-dose measurements; sequential assay not real-time kinetics.",
+  "selection": "Whole-group OOF primary metric; choose simplest parameter-count model within1% of minimum among baselines and attempts. At least5 substantive adaptive attempts, followed by two consecutive no>1% prediction gains and no unresolved promising mechanistic/robustness hypothesis.",
+  "group_weighting": "Each independent group equal; rows within group equal.",
+  "uncertainty": "Individual-group errors and paired group deltas; small-group evidence not population confidence. No dependent-row bootstrap.",
+  "exposure": "Public source-aware data. Only schemas, metadata and published interpretations inspected before this freeze; case76 one zero-spike first-prefix row seen and its date assigned development. Internal confirmation outcomes not printed or scored before model/stopping freeze.",
+  "baseline_families": "simple, established domain and constrained flexible predictor with identical input budget",
+  "confirmation_rule": "Separate confirm.py; verifies frozen scripts, source/splits, attempt states and selected identity; no fitting."
+}

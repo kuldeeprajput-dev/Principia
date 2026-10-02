@@ -1,0 +1,35 @@
+{
+  "title": "Calibrated X-ray reflectivity transfer across hafnia deposition batches",
+  "target": "native higher-angle XRR intensity",
+  "target_units": "counts",
+  "input_columns": [
+    "q",
+    "q0",
+    "I0",
+    "outer"
+  ],
+  "input_units": {
+    "q": "Å⁻¹;4πsin(theta)/lambda",
+    "q0": "Å⁻¹; calibration mean wavevector",
+    "I0": "counts; mean at2theta1.0±0.008deg",
+    "outer": "binary noncenter measurement position"
+  },
+  "fold_design": "leave_group",
+  "timing_contract": "Predict higher-angle intensity after measuring a fixed low-angle calibration band of the same spectrum. Position and angle are known acquisition settings.",
+  "calibration": "Five native intensity samples near2theta1.0deg per spectrum; no other held-out intensity is a predictor. Same calibration for every model.",
+  "independent_unit": "Complete deposition batch is the split unit; wafer is the primary aggregation unit. All positions on a wafer stay together. Three deposition batches develop; fourth confirms.",
+  "scope_limits": [
+    "Twelve200mmwafers with65ALDcycles from one process; three confirmation wafers share one deposition run.",
+    "Intensity-envelope and fringe parameters are effective metrology surrogates; density/thickness/roughness are not independently identified or verified by the author-fitted SE outputs.",
+    "The fixed angle range lies above critical-angle effects; calibrated counts are not absolute reflectivity."
+  ],
+  "exposure": "Schema inspection saw firstthree low-angle counts and lasttwo points near6deg in wafer11, outside the eligible target/calibration bands. Higher-angle eligible confirmation values were not inspected.",
+  "uncertainty_policy": "Show each held-out wafer; one reserved deposition batch supplies no independent-batch confidence interval.",
+  "case_id": "P100-012",
+  "source_url": "https://data.nist.gov/od/id/mds2-3930",
+  "source_license": "NIST public data license",
+  "freeze_utc": "2026-10-02T02:08:07.125147+00:00",
+  "selection_rule": "Lowest mean group development MAE among all controls and attempts; within 0.5% choose fewer parameters. Selection and continuation use development only.",
+  "continuation_rule": "At least five substantive attempts; stop after two consecutive attempts without supported predictive, worst-group, or interpretive gain.",
+  "metric_kind": "mae"
+}

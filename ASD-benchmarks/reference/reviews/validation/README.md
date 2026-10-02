@@ -1,0 +1,3 @@
+# Independent native-prefix evidence
+
+The ASD7 receipts bind six finite counterfactual variants for cases7,9,80,88 and99 and one-probe checks for2 and3. The original audit script is preserved byte-for-byte as evidence of the campaign procedure; it expects the documented campaign layout and is not a standalone benchmark entry point. The shared `prepare` command reconstructs native tasks. `evaluation/tests/replay_native_prefix.py` supplies a portable launcher for the preserved counterfactual probes. No script is run during prediction-file scoring. Native-prefix invariance at finite tested origins does not establish that upstream publisher preprocessing was causal.

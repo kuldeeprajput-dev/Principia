@@ -1,0 +1,137 @@
+[
+  {
+    "fold": 1,
+    "state": {
+      "name": "fick_slab",
+      "formula": "offset+gain*drive*(slab((t+lag)/tau)-slab(lag+0*t))",
+      "hypothesis": "Development evidence available before this fit: shared_boundary_response: MAE 7.31915, worst group 15.7251.\n\nThe shared first-order response improves over polynomial extrapolation. Test the full Fickian slab breakthrough shape, allowing a boundary-onset lag rather than assuming first-order arrival. The normalized lag is explicit; model failure is not evidence against diffusion generally.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:10.614658+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "gain": 12.619566477147718,
+        "tau": 1173.6695253268588,
+        "lag": 0.15799367463931188
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-1-block-0"
+      ],
+      "training_rows": 372,
+      "optimizer_success": true,
+      "nfev": 109,
+      "jacobian_condition": 371.98989467658816,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "lag": [
+          0.001,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "fold": 2,
+    "state": {
+      "name": "fick_slab",
+      "formula": "offset+gain*drive*(slab((t+lag)/tau)-slab(lag+0*t))",
+      "hypothesis": "Development evidence available before this fit: shared_boundary_response: MAE 7.31915, worst group 15.7251.\n\nThe shared first-order response improves over polynomial extrapolation. Test the full Fickian slab breakthrough shape, allowing a boundary-onset lag rather than assuming first-order arrival. The normalized lag is explicit; model failure is not evidence against diffusion generally.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:10.614658+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "gain": 10.425966826180494,
+        "tau": 1118.2292744445754,
+        "lag": 0.1698088122729953
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-1-block-0",
+        "trace-1-block-1"
+      ],
+      "training_rows": 742,
+      "optimizer_success": true,
+      "nfev": 64,
+      "jacobian_condition": 451.48276087618996,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "lag": [
+          0.001,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "fold": 3,
+    "state": {
+      "name": "fick_slab",
+      "formula": "offset+gain*drive*(slab((t+lag)/tau)-slab(lag+0*t))",
+      "hypothesis": "Development evidence available before this fit: shared_boundary_response: MAE 7.31915, worst group 15.7251.\n\nThe shared first-order response improves over polynomial extrapolation. Test the full Fickian slab breakthrough shape, allowing a boundary-onset lag rather than assuming first-order arrival. The normalized lag is explicit; model failure is not evidence against diffusion generally.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:10.614658+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "gain": 9.978283689910525,
+        "tau": 1087.1997924399732,
+        "lag": 0.17201851420414013
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2"
+      ],
+      "training_rows": 1113,
+      "optimizer_success": true,
+      "nfev": 25,
+      "jacobian_condition": 597.0082001254984,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "lag": [
+          0.001,
+          4
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "finding_id": "P100-008-F01",
+    "classification": "supported_negative_finding",
+    "claim": "There is one patient and no retained diagnostic target or outcome table.",
+    "equation": null,
+    "evidence": [
+      "data/source_evidence.json",
+      "data/native_anchors.csv"
+    ],
+    "prior_art": "Established identifiability and validation prerequisites, not a novel law",
+    "falsification": "Add patient-level pathology/outcome labels, a sufficient independent cohort, and a frozen endpoint/validation protocol.",
+    "scope": "Retained single-patient subset",
+    "admission": "supported",
+    "proposed_positive_claim": "unsupported"
+  },
+  {
+    "finding_id": "P100-008-F02",
+    "classification": "supported_negative_finding",
+    "claim": "All 70 MR instances share one echo time; slice variation cannot replace repeated echoes of the same tissue. A and T2 are not separately identifiable.",
+    "equation": "S(TE)=A exp(-TE/T2); one echo leaves A and T2 unidentifiable",
+    "evidence": [
+      "data/source_evidence.json",
+      "data/native_anchors.csv"
+    ],
+    "prior_art": "Established identifiability and validation prerequisites, not a novel law",
+    "falsification": "Acquire matched multi-echo measurements, noise model and pulse-sequence calibration. T1 effects require independent treatment.",
+    "scope": "Retained single-patient subset",
+    "admission": "supported",
+    "proposed_positive_claim": "unsupported"
+  },
+  {
+    "finding_id": "P100-008-F03",
+    "classification": "supported_negative_finding",
+    "claim": "The MR and MG use distinct frames and only one CC projection is retained; no correspondence truth is supplied. A visually plausible warp is not validated anatomy.",
+    "equation": null,
+    "evidence": [
+      "data/source_evidence.json",
+      "data/native_anchors.csv"
+    ],
+    "prior_art": "Established identifiability and validation prerequisites, not a novel law",
+    "falsification": "Supply compression geometry, fiducials or adjudicated correspondences, plus independent registration checks.",
+    "scope": "Retained single-patient subset",
+    "admission": "supported",
+    "proposed_positive_claim": "unsupported"
+  },
+  {
+    "finding_id": "P100-008-F04",
+    "classification": "supported_negative_finding",
+    "claim": "T2-weighted image intensity is sequence-dependent; no phantom, concentration assay, calibrated relaxation map or repeated acquisition is retained.",
+    "equation": null,
+    "evidence": [
+      "data/source_evidence.json",
+      "data/native_anchors.csv"
+    ],
+    "prior_art": "Established identifiability and validation prerequisites, not a novel law",
+    "falsification": "Add calibrated references and independent physical measurements; specify coil, sequence and noise dependencies.",
+    "scope": "Retained single-patient subset",
+    "admission": "supported",
+    "proposed_positive_claim": "unsupported"
+  },
+  {
+    "finding_id": "P100-008-F05",
+    "classification": "supported_negative_finding",
+    "claim": "Seventy linked slices belong to one series and one patient. Slice interpolation tests image redundancy, not between-patient scientific validity.",
+    "equation": null,
+    "evidence": [
+      "data/source_evidence.json",
+      "data/native_anchors.csv"
+    ],
+    "prior_art": "Established identifiability and validation prerequisites, not a novel law",
+    "falsification": "Add independent patients or independent interventions/repeats with endpoints, and hold entire linked systems together.",
+    "scope": "Retained single-patient subset",
+    "admission": "supported",
+    "proposed_positive_claim": "unsupported"
+  }
+]

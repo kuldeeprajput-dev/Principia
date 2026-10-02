@@ -1,0 +1,284 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-093",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication."
+  },
+  "findings": [
+    {
+      "id": "P100-093-F01",
+      "classification": "reproduction",
+      "source_classification": "reproduction",
+      "statement": "Line-specific paired-control scaling transfers induced native AF488 quantiles to a held technical block",
+      "applicability": "One plate; paired uninduced calibration; native AF488 channel",
+      "limitations": "Only one held technical block, no biological replication, absent manual gates and inconsistent dye caption",
+      "falsification": "Only one held technical block, no biological replication, absent manual gates and inconsistent dye caption",
+      "prior_art": "Source already reports WT response and mutant attenuation; this compact calibration is not a new transporter law",
+      "equation_or_program": {
+        "expression": "Yhat_line(q)=a_line*C_line(q)",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "native AF488 channel units",
+        "control": "native AF488 channel units",
+        "control_median": "native AF488 channel units",
+        "control_width": "native AF488 channel units",
+        "quantile": "dimensionless",
+        "wt": "binary",
+        "mutant": "binary"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-093.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-093-F02",
+      "classification": "falsified",
+      "source_classification": "supported_negative_finding",
+      "statement": "The available quantile transfer does not identify a unique recruitment,distribution-width or saturation mechanism beyond simple scaling",
+      "applicability": "Five model families and two development technical blocks",
+      "limitations": "New doses,timecourses and independent biological replicates could distinguish mechanisms",
+      "falsification": "New doses,timecourses and independent biological replicates could distinguish mechanisms",
+      "prior_art": "Distribution heterogeneity and source WT bimodality already described",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "native AF488 channel units",
+        "control": "native AF488 channel units",
+        "control_median": "native AF488 channel units",
+        "control_width": "native AF488 channel units",
+        "quantile": "dimensionless",
+        "wt": "binary",
+        "mutant": "binary"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-093.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 8613,
+      "sha256": "9e565d9554212c03c0308cfd8450efe35fb52dfece463de8429ca9da269836e9",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 448,
+      "sha256": "ab1e5bdd2783190dcf11969aa827a03bde26d675a946c2a5ef00467041ada479",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 1148,
+      "sha256": "431d22879fc68a0b29a23f43ac337e03ac89f285180446177ff8981dc91dcc43",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 4789,
+      "sha256": "84d908eb689364bf67c461c135b16ed473170dc17c35cafb0d51b59c2753a0cd",
+      "id": "E004",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E005_SOURCE_AND_UNITS.md",
+      "bytes": 1150,
+      "sha256": "b58ef256f8660e571964a1ccaaeb713e1220b90aa8407e55d009549d8e504b22",
+      "id": "E005",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E006_SOURCE_MANIFEST.json",
+      "bytes": 4507,
+      "sha256": "4fa748d32fb73769261044a0adce972e59214d073fb3b19f55dda0f5984a6dee",
+      "id": "E006",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E007_SPLITS.json",
+      "bytes": 341,
+      "sha256": "51b1cf022982d4312ed11c83f0a027b5bba731e610f992aa0576d2ddd70f1856",
+      "id": "E007",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 2314,
+      "sha256": "dbdd204f4b826cbc08c4a5569affa59350646ad145739ce81fed86799e4a40f8",
+      "id": "E008",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E009_EQUATIONS.md",
+      "bytes": 5730,
+      "sha256": "64d1ba397185366dc19488f8991ac466af7af0375f0a6f3816981fe218425cf7",
+      "id": "E009",
+      "role": "package/EQUATIONS.md"
+    },
+    {
+      "path": "evidence/E010_FINDINGS.md",
+      "bytes": 4738,
+      "sha256": "42d5d87372cec4d7ab729f722d79f9ae3aa3524c3f4242a2cdcfa4d7b767f450",
+      "id": "E010",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E011_inputs.csv.gz",
+      "bytes": 576,
+      "sha256": "087bb85c6eefd1bded40873b95c68b596087cc82022ba35f0ea210ae20ad7f29",
+      "id": "E011",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E012_observations.csv.gz",
+      "bytes": 656,
+      "sha256": "a296b59127aff3d2106143aad4bfa5bc48707a122c2d3b46c76526272deb35ba",
+      "id": "E012",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E013_metrics.csv",
+      "bytes": 921,
+      "sha256": "f16bc755d0d9e0c38735c22307ffe09af88f291f44dc955bd050b99192db55f9",
+      "id": "E013",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 2368,
+      "sha256": "b0554d20c294ab8b1b6f534a1df3814cd4fb94935a49c0a44fd2b1eca03d323e",
+      "id": "E014",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_findings.json",
+      "bytes": 1491,
+      "sha256": "924c9c7db65c32d73a7b1a3a9e2a8c58544dd42819d27905687761868e234a36",
+      "id": "E015",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E016_rules.json",
+      "bytes": 10473,
+      "sha256": "c55e2d5fe2b5c34b2030a177cdcb4ab6f4b08a297994b20842df967123e59139",
+      "id": "E016",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E017_run.py",
+      "bytes": 2358,
+      "sha256": "c8761f97a2808f116dbae3fd3971fbb7fcc97245aedd9d82c9fc832c2c6bb149",
+      "id": "E017",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E018_task_spec.json",
+      "bytes": 2224,
+      "sha256": "a7f717f8a3586bdf8f5bca0cdf8cdd619674bee8dd87c6626eb5282fbaf5812e",
+      "id": "E018",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 14362,
+      "sha256": "20e00fb91a6a862dc5f759d41c82c25c71fdfef07d18856c444dfdffcb75eef1",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 6918,
+      "sha256": "aa483aed951c7a1b803c7639193ad3a7bcaaeb7aa2ac24fef58420390963871b",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

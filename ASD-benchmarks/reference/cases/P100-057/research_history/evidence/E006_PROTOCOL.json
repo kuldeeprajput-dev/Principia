@@ -1,0 +1,112 @@
+{
+  "schema": "principia.continuation.v1",
+  "case_id": "P100-057",
+  "created_at": "2026-09-30T09:16:09.588289+00:00",
+  "exposure": "All original cohorts are exposed. New results are retrospective development diagnostics; no fresh confirmation admitted.",
+  "cohort": "Original development groups only; original reserved groups excluded from selection and all continuation scores.",
+  "target": "Viscosity at the next temperature block, calibrated using previous block",
+  "units": "cP",
+  "primary_metric": "mae",
+  "original_metric_preserved": "mean whole-group physical-unit error remains reported, including the new normalized acoustic track",
+  "inputs": [
+    "formulation",
+    "T_C",
+    "shear_s",
+    "T_previous",
+    "eta_previous",
+    "eta_first",
+    "previous_shear_s",
+    "first_shear_s"
+  ],
+  "input_units": {
+    "formulation": "source calibrated category",
+    "T_C": "degC",
+    "shear_s": "s^-1",
+    "T_previous": "degC",
+    "eta_previous": "cP at preceding completed block, same shear rate",
+    "eta_first": "cP at first completed block, same nominal sweep point; actual rate declared",
+    "previous_shear_s": "s^-1 at preceding completed block",
+    "first_shear_s": "s^-1 at first completed block"
+  },
+  "grouping": "Whole TestID / width-file / strain / stream-dateblock / sourcePING-run. 83 forward folds; others leave original whole-group folds out. All associated observations stay together.",
+  "folds": [
+    {
+      "fold": 0,
+      "groups": [
+        "06d41a99-04ab-4893-a8d2-8b19e91a066c",
+        "1a7d89c4-66c3-4f97-9de0-fc2b2f93ee77",
+        "83af6125-7cf5-42e6-bf59-69382eaf9b01",
+        "88111e55-8964-4e20-ad9e-3e4d8a646e5d",
+        "a27dc2f1-7e62-4c52-84e5-cd7a9a51fb0c",
+        "bfe0f4a1-7a32-4710-8bc6-7296c9d3f9a4",
+        "c1a3d42e-6f41-47a2-9f13-6b37a54f527d",
+        "d8ab4c72-8413-4d7c-92ee-57b801a40f7e",
+        "f25f37a4-019f-42d8-b013-5f6deafcaac7",
+        "ffb8e84c-c552-4862-8155-ee8103a49909"
+      ],
+      "rows": 2250
+    },
+    {
+      "fold": 1,
+      "groups": [
+        "1c2e9ff2-f09d-4bc4-bf51-c7f9f7ef1d2a",
+        "31efbfa6-0aaf-413e-85b8-83eaea95ca17",
+        "62a1e489-c5f0-472e-b37d-d45f3a40a8e1",
+        "7f1b3c86-f91b-4fa7-80af-4f929fa01a68",
+        "94a3136f-9885-4911-8fde-95922ec02084",
+        "a6ece2ca-d760-4f4c-a736-59c1afea91ce",
+        "ba7d629e-b0c6-4e82-9d64-bb038c8ecdb0",
+        "c26ff0e4-2ad6-4895-b14d-df4175f32a21",
+        "c538cdfc-f0f7-420d-b420-a826ed263783",
+        "ea9fdb2d-d8b4-4c56-9c43-7a0c214f25db"
+      ],
+      "rows": 2250
+    },
+    {
+      "fold": 2,
+      "groups": [
+        "06ac4a62-5a31-4b98-8440-3dd4fdad83c1",
+        "2fc82e68-30a6-4ab4-b87d-6f8432340127",
+        "58cf8937-8d67-44f6-8f0d-74ad882d832a",
+        "5a57c3d7-812f-47d4-8027-cfcb6b63b589",
+        "70d93392-17a1-4f32-8bb2-bfae2f5dfd7e",
+        "a4e17cb7-27c3-44dd-becf-412ddc48f540",
+        "bd1e09b7-2f0c-44c6-9eaf-3c3bcb9729d4",
+        "df7e2b65-6c82-49e2-8d37-ef1f7281fbc9",
+        "f6e17483-3ec9-47d3-975f-cf498e42f94c",
+        "fb27c4d2-1297-4720-b81e-f8c34db4c48c"
+      ],
+      "rows": 2250
+    },
+    {
+      "fold": 3,
+      "groups": [
+        "0c62a8d1-2f7d-4e4a-92c2-2de53d42c6c1",
+        "539125a3-cd33-4d7c-b54e-41ba559af2b8",
+        "58e1e51a-5d86-41ac-8439-9401738f5865",
+        "8947d55b-5c4b-4fa6-97c7-8c27d2de0a27",
+        "89a6d821-517f-42e3-9e4d-23147f3b2a99",
+        "a8b9f61c-2cd4-49a9-9a36-5c632d00c2f8",
+        "b2a94418-8730-46c3-a516-5df43d932e93",
+        "d037248e-187f-485f-9082-35b92a2fd129",
+        "ef7288d2-d16e-47f9-bc09-5f9b4a4af471",
+        "f85dc29b-62c1-4664-8c8b-ef8134a2c709"
+      ],
+      "rows": 2250
+    }
+  ],
+  "fitting": "All coefficients/scales/imputation/tuning use applicable training partitions only. Nested fold validation for tuned alternatives and flexible baselines. Same allowable inputs for all comparators.",
+  "baselines": "Persistence/constant, established mechanistic prediction, original selected equations refit, train-only Gaussian residual kernel (80centers; widths0.5/1/2,ridges0.01/1). Strong causal-history linear comparator when applicable.",
+  "selection": "Primary development criterion plus per-group noninferiority and complexity; <=1percent indistinguishable favors simplicity. No admission as fresh validated extension. Additional cycles chosen from actual prior residual/control evidence.",
+  "uncertainty": "Paired whole-group errors; disclose number of distinct systems and serial/repeated dependence; no observation-level CI.",
+  "decision_threshold": null,
+  "limits": [
+    "This changes information access relative to static viscosity prediction: previous completed ramp measurements are declared online calibration for all comparators.",
+    "Native export order is sometimes reversed. Chronology is determined by source Result Start Time, not line order; no current-block viscosity is used.",
+    "Temperature and ramp history remain perfectly ordered; thixotropy, curing and equilibrium thermal response cannot be separated.",
+    "Repeated curves of calibrated formulations are not independent synthesis lots."
+  ],
+  "source_landing_url": "https://zenodo.org/records/19699588",
+  "fresh_source_status": "Authoritative current landing pages checked30Sept2026: retained records remain same releases; no genuinely new experimental cohort was established. No fresh confirmation claimed.",
+  "minimum_material_cycles": 2
+}

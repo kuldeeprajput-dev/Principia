@@ -1,0 +1,148 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-023.continuation.v1",
+  "case_id": "P100-023",
+  "case_number": 23,
+  "family": "continuation",
+  "protocol_version": "P100-023-retrospective-continuation-20261001",
+  "cohort_id": "P100-023.continuation.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-023.continuation.v1",
+  "legacy_package": "23_tribology_inm_finger_liquid/research_history/continuation-20261001/candidate",
+  "source_scenario": "scenarios/23_tribology_inm_finger_liquid",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Author-derived median coefficient of friction",
+  "target_units": "1",
+  "error_units": "1",
+  "primary_units": "1",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "H",
+    "viscosity",
+    "speed",
+    "load",
+    "hydration",
+    "area"
+  ],
+  "input_units": {
+    "H": "dimensionless; author Hersey calibration",
+    "viscosity": "Pa s at 500 s^-1; author rheology fit",
+    "speed": "m/s",
+    "load": "N",
+    "hydration": "corneometer instrument units",
+    "area": "cm^2"
+  },
+  "numeric_columns": [
+    "H",
+    "viscosity",
+    "speed",
+    "load",
+    "hydration",
+    "area"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Conditional prediction at supplied trial-average speed/load. These trial summaries are not prospective controller inputs; no temporal forecasting claim.",
+  "calibration": "165 participant\u2013fluid observations (check actual count); primary response is author-derived median CoF, not instantaneous raw telemetry. Source already reports the Stribeck collapse and hydrodynamic exponent. Area/hydration are separate measurements; author-fit Hersey coefficients cannot validate their own physics. Raw force/position files remain untouched.",
+  "independent_unit": "whole participant",
+  "evaluation_groups": [
+    "ID03",
+    "ID06"
+  ],
+  "assigned_rows": 30,
+  "eligible_rows": 30,
+  "baseline_models": [
+    "reference",
+    "source_fixed",
+    "free_power",
+    "saturation",
+    "hydration",
+    "pressure",
+    "newtonian",
+    "constant",
+    "kernel"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "mu=a+b*h^(-p)*hydrationFactor*pressureFactor+c*h^q; saturation replaces h^(-p) by1/(1+h^p); h=H/.02.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "source_fixed": {
+      "equation": "mu=a+b*h^(-p)*hydrationFactor*pressureFactor+c*h^q; saturation replaces h^(-p) by1/(1+h^p); h=H/.02.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "free_power": {
+      "equation": "mu=a+b*h^(-p)*hydrationFactor*pressureFactor+c*h^q; saturation replaces h^(-p) by1/(1+h^p); h=H/.02.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "saturation": {
+      "equation": "mu=a+b*h^(-p)*hydrationFactor*pressureFactor+c*h^q; saturation replaces h^(-p) by1/(1+h^p); h=H/.02.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "hydration": {
+      "equation": "mu=a+b*h^(-p)*hydrationFactor*pressureFactor+c*h^q; saturation replaces h^(-p) by1/(1+h^p); h=H/.02.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "pressure": {
+      "equation": "mu=a+b*h^(-p)*hydrationFactor*pressureFactor+c*h^q; saturation replaces h^(-p) by1/(1+h^p); h=H/.02.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "newtonian": {
+      "equation": "mu=a+b*h^(-p)*hydrationFactor*pressureFactor+c*h^q; saturation replaces h^(-p) by1/(1+h^p); h=H/.02.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "constant": {
+      "equation": "See rules.json full state and run.py executable equations",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "kernel": {
+      "equation": "group-tuned Gaussian kernel ridge with frozen training scales, centers and coefficients.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "scope_limits": "One substrate, eleven participants; transfer to reserved people under the same fluid panel, not other surfaces or contact systems. Fluids shared across participants.",
+  "source_url": "https://zenodo.org/records/15365365",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Original confirmation is exposed. New candidates chosen only development and frozen before this retrospective diagnostic.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "e65156011eafded284d749b85608a597bfc774d99f0627da10e5667818bac451",
+  "observations_sha256": "05750f0f0024903b13e7a4d10cd47db96fd80d9c50762f2a224ce7353320b908",
+  "legacy_protocol_sha256": "99a3da65f99eb197848ba3dbab55a0977293ee2a17dc2a7c76e5f50a3962820f",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

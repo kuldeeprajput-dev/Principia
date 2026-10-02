@@ -1,0 +1,527 @@
+{
+  "schema_version": "1.0",
+  "case_id": "P100-078",
+  "source": {
+    "landing_url": "https://zenodo.org/records/15124940",
+    "upstream_case": "78_medicine_assay_reproducibility",
+    "version_evidence": "SOURCE_ASSETS.json"
+  },
+  "target": "Untreated bacterial burden in total lung",
+  "target_units": "log10 CFU / total lung",
+  "input_units": {
+    "time_h": "h; numeric actual time only",
+    "initial_logCFU": "log10 CFU / total lung; mean observed time-zero cohort",
+    "site": "source laboratory label"
+  },
+  "input_columns": [
+    "time_h",
+    "initial_logCFU",
+    "site"
+  ],
+  "numeric_columns": [
+    "time_h",
+    "initial_logCFU"
+  ],
+  "missingness": "DSM/site-reference strain aliases resolved from source RefToDict plus explicit single-strain-study Overview links (source labeling discrepancies retained) and kept together. All ExperimentResults sheets included. Explicit untreated CFU lung single-value observations only, equality operator, compatible log-CFU lung units, numeric actual times 0\u201324 h. Time-zero animals form an explicitly allowed cohort calibration, not the same later animals. Non-numeric early-death times and censoring cannot be interpreted as exact scheduled times; exclusions are counted, and this creates survivorship/measurement selection limits. Source already reports virulence/reproducibility criteria; no new clinical efficacy claim. Source laboratory directory supplies validation identity; the original SITE field is inconsistent in one workbook and is preserved as provided_site. Header templates and source censoring inconsistencies require caution.",
+  "primary_metric": "mae",
+  "assigned_rows": 15,
+  "models": {
+    "reference": {
+      "case": 78,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        2.007169617207792,
+        0.9807704376646119
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "elapsed time/(24h)",
+        "capacity-gap growth: time * (7-initial burden)"
+      ],
+      "fitted_parameters": 2,
+      "design_rank": 2,
+      "design_condition": 1.6200339506564996,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "mechanistic_reference": {
+      "case": 78,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        2.007169617207792,
+        0.9807704376646119
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "elapsed time/(24h)",
+        "capacity-gap growth: time * (7-initial burden)"
+      ],
+      "fitted_parameters": 2,
+      "design_rank": 2,
+      "design_condition": 1.6200339506564996,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "attempt_001": {
+      "case": 78,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        2.007169617207792,
+        0.9807704376646119
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "elapsed time/(24h)",
+        "capacity-gap growth: time * (7-initial burden)"
+      ],
+      "fitted_parameters": 2,
+      "design_rank": 2,
+      "design_condition": 1.6200339506564996,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "attempt_002": {
+      "case": 78,
+      "kind": "a2",
+      "knobs": {},
+      "beta": [
+        5.113619470014895,
+        0.6777168685053264,
+        -3.464428880977182
+      ],
+      "active_columns": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        "elapsed time/(24h)",
+        "capacity-gap growth: time * (7-initial burden)",
+        "curvature time^2/(24h)^2"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 3,
+      "design_condition": 10.293518228466194,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "attempt_003": {
+      "case": 78,
+      "kind": "a3",
+      "knobs": {},
+      "beta": [
+        3.5678344353441727,
+        -0.8680681700075699,
+        -3.4644288848094074,
+        1.5457850382421277
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "terms": [
+        "elapsed time/(24h)",
+        "capacity-gap growth: time * (7-initial burden)",
+        "curvature time^2/(24h)^2",
+        "positive capacity-gap at 8 logCFU"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 3,
+      "design_condition": 1.381333645534204e+16,
+      "rank_deficient": true,
+      "positive_coefficients": false
+    },
+    "attempt_004": {
+      "case": 78,
+      "kind": "a4",
+      "knobs": {},
+      "beta": [
+        2.119013333364377,
+        -0.26816967274877296,
+        -3.5849671930046147,
+        0.9724854515615722,
+        0.0008881784197001252,
+        2.1966670475962675,
+        1.9162084811419458
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "terms": [
+        "elapsed time/(24h)",
+        "capacity-gap growth: time * (7-initial burden)",
+        "curvature time^2/(24h)^2",
+        "positive capacity-gap at 8 logCFU",
+        "site-specific time slope GSK",
+        "site-specific time slope PEI",
+        "site-specific time slope SSI"
+      ],
+      "fitted_parameters": 7,
+      "design_rank": 4,
+      "design_condition": 2.2124462934888307e+32,
+      "rank_deficient": true,
+      "positive_coefficients": false
+    },
+    "attempt_005": {
+      "case": 78,
+      "kind": "a5",
+      "knobs": {},
+      "beta": [
+        1.5719627693007907,
+        0.2520362694814254,
+        -3.3949566151097303,
+        0.8206103769904473,
+        -1.1458056725643928,
+        1.5513168417955356,
+        1.6258846307607413,
+        1.1417153801971178
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "terms": [
+        "elapsed time/(24h)",
+        "capacity-gap growth: time * (7-initial burden)",
+        "curvature time^2/(24h)^2",
+        "positive capacity-gap at 8 logCFU",
+        "site-specific time slope GSK",
+        "site-specific time slope PEI",
+        "site-specific time slope SSI",
+        "initial-burden nonlinear growth interaction"
+      ],
+      "fitted_parameters": 8,
+      "design_rank": 5,
+      "design_condition": 1.095889609454094e+17,
+      "rank_deficient": true,
+      "positive_coefficients": false
+    },
+    "attempt_006": {
+      "case": 78,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        2.3026486199960954
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "elapsed time/(24h)"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "attempt_007": {
+      "case": 78,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        2.3191244043649357
+      ],
+      "active_columns": [
+        1
+      ],
+      "terms": [
+        "capacity-gap growth: time * (7-initial burden)"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "baseline_mean": {
+      "case": 78,
+      "kind": "mean",
+      "knobs": {},
+      "beta": [
+        8.090711368081486
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "1"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "baseline_domain": {
+      "case": 78,
+      "kind": "domain",
+      "knobs": {},
+      "beta": [
+        2.3026486199960954
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "elapsed time/(24h)"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "baseline_rbf": {
+      "case": 78,
+      "kind": "rbf",
+      "features": [
+        "time_h",
+        "initial_logCFU",
+        "site"
+      ],
+      "columns": [
+        "time_h",
+        "initial_logCFU",
+        "site_PEI",
+        "site_SSI"
+      ],
+      "center": [
+        11.35340393343419,
+        6.342658238337267,
+        0.15128593040847202,
+        0.848714069591528
+      ],
+      "scale": [
+        7.86388601387753,
+        0.5967815582959923,
+        0.35832736103863216,
+        0.35832736103863216
+      ],
+      "centers": [
+        [
+          0.972368629589968,
+          -0.699899519717365,
+          -0.42220033092075687,
+          0.4222003309207569
+        ],
+        [
+          0.5908778507681678,
+          1.168433644681045,
+          -0.42220033092075687,
+          0.4222003309207569
+        ],
+        [
+          0.3365506648869678,
+          -0.5374538212477867,
+          -0.42220033092075687,
+          0.4222003309207569
+        ],
+        [
+          1.608186594292968,
+          1.6045426221195664,
+          2.368543856465446,
+          -2.368543856465446
+        ],
+        [
+          1.608186594292968,
+          1.193810608555828,
+          2.368543856465446,
+          -2.368543856465446
+        ],
+        [
+          1.608186594292968,
+          -0.26474623063927133,
+          2.368543856465446,
+          -2.368543856465446
+        ],
+        [
+          -0.4264308927566324,
+          -0.8203757374883244,
+          -0.42220033092075687,
+          0.4222003309207569
+        ],
+        [
+          1.608186594292968,
+          0.13068656501329165,
+          2.368543856465446,
+          -2.368543856465446
+        ],
+        [
+          -1.1894124504002326,
+          -0.2490366628322929,
+          -0.42220033092075687,
+          0.4222003309207569
+        ],
+        [
+          1.608186594292968,
+          0.13347853885795172,
+          2.368543856465446,
+          -2.368543856465446
+        ],
+        [
+          0.5908778507681678,
+          0.8268734820096918,
+          2.368543856465446,
+          -2.368543856465446
+        ],
+        [
+          -0.23568550334573235,
+          -0.724436962618275,
+          -0.42220033092075687,
+          0.4222003309207569
+        ],
+        [
+          1.608186594292968,
+          1.7043521024266959,
+          2.368543856465446,
+          -2.368543856465446
+        ],
+        [
+          0.8452050366493679,
+          0.18545488293413007,
+          2.368543856465446,
+          -2.368543856465446
+        ],
+        [
+          -1.1894124504002326,
+          -0.10910637832927729,
+          -0.42220033092075687,
+          0.4222003309207569
+        ],
+        [
+          1.608186594292968,
+          0.8304838099281627,
+          2.368543856465446,
+          -2.368543856465446
+        ],
+        [
+          1.608186594292968,
+          1.163397819455335,
+          -0.42220033092075687,
+          0.4222003309207569
+        ],
+        [
+          1.353859408411768,
+          -1.4332184226450526,
+          -0.42220033092075687,
+          0.4222003309207569
+        ]
+      ],
+      "width": 2.0,
+      "beta": [
+        0.12781301200405226,
+        1.2720089819313651,
+        0.11808182360279998,
+        0.7060000460798405,
+        -0.03844579681050323,
+        -0.35315466405602086,
+        -0.6628813770268595,
+        -0.7884706325089026,
+        -0.8378051428716798,
+        -0.7900009837151801,
+        1.0261982630314261,
+        -0.39604176917531453,
+        0.8961889199098847,
+        0.4254706173942944,
+        -0.6610894544365303,
+        -0.5520045762927702,
+        0.4716962773529955,
+        0.1512047485715942
+      ],
+      "intercept": 8.090711368890528,
+      "log": false,
+      "fitted_parameters": 19
+    },
+    "attempt_008": {
+      "case": 78,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        2.3026486199960954
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "elapsed time/(24h)"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "attempt_009": {
+      "case": 78,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        2.3191244043649357
+      ],
+      "active_columns": [
+        1
+      ],
+      "terms": [
+        "capacity-gap growth: time * (7-initial burden)"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    }
+  },
+  "selection": {
+    "mechanistic_attempt": "attempt-001",
+    "default_origin": "mechanistic_reference",
+    "rule": "Default = strongest frozen development predictor among scientific hypotheses and all controls; separately select simplest mechanistic hypothesis within 1% of its best grouped development primary error. No confirmation selection.",
+    "used_confirmation": false
+  },
+  "equations": {
+    "reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "mechanistic_reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_001": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_002": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_003": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_004": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_005": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_006": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_007": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_mean": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_domain": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_rbf": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+    "attempt_008": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_009": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis."
+  },
+  "scope": "Three laboratories with recurring bacterial strains; two development sites and one exposed reserved site. This is retrospective laboratory transfer, not new-strain generalization or independent confirmation. Unresolved source strain labels remain anchors, not split identities.",
+  "timing": "Initial cohort burden and time/site only. No post-baseline measured target is an input; study/strain IDs are anchors, not predictors.",
+  "fresh_confirmation_after_delivery": false,
+  "admission": "Numerical reference collection; no independently established new physical law or measured deployed industrial benefit."
+}

@@ -1,0 +1,986 @@
+{
+  "case_id": "P100-090",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "6889fd6f43802f8c16965d03828d6f4d6b632a2f18a4df26b96ef90e14958777"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "e7fae229d27bc9541753c9ad8755748607c245f4854462eb684f0047bf65975e"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "d81ebc244326b0c137cfb1c5dd66cb8861da1b1db910d791bb774334fd7f2e6e"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "5d04ee185271e16fffbc8667e86cfad110b8ccb40e3d3810fdd6d82ab2d8c76a"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "b9870f9cc2683dea2fd24278ffc61729e75f7833ffae9d5c01310bbd918cda1a"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "0dcd3b0568e2cd08f10bebaf69b85b03d756383513d1d61ef731ab76ccc5b89a"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "12976906cd9413dd4fbebcc442348d0aca8f3587e2e046c31af0e1ac29d9cf97"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "fcadf79d97cbac1ca28c3854ca969246e358bc2a556074c44fe2c492b4fe688d"
+    },
+    {
+      "path": "native.py",
+      "sha256": "96c15a5cf32e5f8fb3abe69e67a4ab8f38d4eb72a7814b9969e958293e2ae07c"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "30ec2d187790bc18b842d863d309239bd34da7c46420efa0913266152db62898"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "68f08ba063d57350e58797066e8b1ae5623a4bf927c16b02fb6eb450983f8088"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "98a4c115c88ba3196bb65596b29a4e9ce4e25a947dc48e5ec8e46b31fe3e2a79"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "1ac1d9501d253e83cd58344e840cac2d4b58e7c6f8366a2ed2729a58baa0b3bc"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "046c54988821a8135a02c09457f4666f9f51f38a6cf38db8f752fba9e62d6065"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "fc84c946fce041e88095f7eaab0b34f1744fb5cdff25ebb168eac58761418370"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-090-F01",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Rotation nowcasting uses preceding aggregate tracks and two-second prefix calibration within conditions. The frozen candidate fails controls; coordinate offsets, short child records and missing persons are addressed before fitting, and no universal collective-motion law is admitted."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Rotation nowcasting uses preceding aggregate tracks and two-second prefix calibration within conditions. The frozen candidate fails controls; coordinate offsets, short child records and missing persons are addressed before fitting, and no universal collective-motion law is admitted."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Rotation nowcasting uses preceding aggregate tracks and two-second prefix calibration within conditions. The frozen candidate fails controls; coordinate offsets, short child records and missing persons are addressed before fitting, and no universal collective-motion law is admitted."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Rotation nowcasting uses preceding aggregate tracks and two-second prefix calibration within conditions. The frozen candidate fails controls; coordinate offsets, short child records and missing persons are addressed before fitting, and no universal collective-motion law is admitted.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-090-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Rotation nowcasting uses preceding aggregate tracks and two-second prefix calibration within conditions. The frozen candidate fails controls; coordinate offsets, short child records and missing persons are addressed before fitting, and no universal collective-motion law is admitted."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Rotation nowcasting uses preceding aggregate tracks and two-second prefix calibration within conditions. The frozen candidate fails controls; coordinate offsets, short child records and missing persons are addressed before fitting, and no universal collective-motion law is admitted."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Rotation nowcasting uses preceding aggregate tracks and two-second prefix calibration within conditions. The frozen candidate fails controls; coordinate offsets, short child records and missing persons are addressed before fitting, and no universal collective-motion law is admitted."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Rotation nowcasting uses preceding aggregate tracks and two-second prefix calibration within conditions. The frozen candidate fails controls; coordinate offsets, short child records and missing persons are addressed before fitting, and no universal collective-motion law is admitted.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-090",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-090",
+      "native_rows": 1428,
+      "confirmation_rows": 270,
+      "models": 12,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 12,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 5.551115123125783e-17,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 270,
+        "primary_error": 0.06595787273467804,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "calibration",
+        "rows": 270,
+        "primary_error": 0.183570622461821,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "constant",
+        "rows": 270,
+        "primary_error": 0.22436158599861758,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "current",
+        "rows": 270,
+        "primary_error": 0.06571862221242247,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 270,
+        "primary_error": 0.06474652192116906,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "persistence",
+        "rows": 270,
+        "primary_error": 0.07354351536743296,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001",
+        "rows": 270,
+        "primary_error": 0.06590347260523838,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002",
+        "rows": 270,
+        "primary_error": 0.07247814663963367,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003",
+        "rows": 270,
+        "primary_error": 0.06655615704576673,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004",
+        "rows": 270,
+        "primary_error": 0.06614824633167887,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005",
+        "rows": 270,
+        "primary_error": 0.06595787273467804,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_006",
+        "rows": 270,
+        "primary_error": 0.06611649151152048,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 16,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "Japan/C4",
+          "Japan/C9",
+          "Kids/D3",
+          "Kids/D4",
+          "Spain/A8"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Japan/C7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 14,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "Japan/C3",
+          "Japan/C5",
+          "Spain/A10",
+          "Spain/A2",
+          "Spain/A4",
+          "Spain/A6",
+          "Spain/A9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "Japan/C2",
+          "Kids/D2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 15,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "Japan/C10",
+          "Japan/C8",
+          "Spain/A11",
+          "Spain/A3",
+          "Spain/A7",
+          "Teenagers/B1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 16,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "Japan/C4",
+          "Japan/C9",
+          "Kids/D3",
+          "Kids/D4",
+          "Spain/A8"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Japan/C7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 14,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "Japan/C3",
+          "Japan/C5",
+          "Spain/A10",
+          "Spain/A2",
+          "Spain/A4",
+          "Spain/A6",
+          "Spain/A9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "Japan/C2",
+          "Kids/D2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 15,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "Japan/C10",
+          "Japan/C8",
+          "Spain/A11",
+          "Spain/A3",
+          "Spain/A7",
+          "Teenagers/B1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 16,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "Japan/C4",
+          "Japan/C9",
+          "Kids/D3",
+          "Kids/D4",
+          "Spain/A8"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Japan/C7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 14,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "Japan/C3",
+          "Japan/C5",
+          "Spain/A10",
+          "Spain/A2",
+          "Spain/A4",
+          "Spain/A6",
+          "Spain/A9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "Japan/C2",
+          "Kids/D2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 15,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "Japan/C10",
+          "Japan/C8",
+          "Spain/A11",
+          "Spain/A3",
+          "Spain/A7",
+          "Teenagers/B1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 16,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "Japan/C4",
+          "Japan/C9",
+          "Kids/D3",
+          "Kids/D4",
+          "Spain/A8"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Japan/C7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 14,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "Japan/C3",
+          "Japan/C5",
+          "Spain/A10",
+          "Spain/A2",
+          "Spain/A4",
+          "Spain/A6",
+          "Spain/A9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "Japan/C2",
+          "Kids/D2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 15,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "Japan/C10",
+          "Japan/C8",
+          "Spain/A11",
+          "Spain/A3",
+          "Spain/A7",
+          "Teenagers/B1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 16,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "Japan/C4",
+          "Japan/C9",
+          "Kids/D3",
+          "Kids/D4",
+          "Spain/A8"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Japan/C7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 14,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "Japan/C3",
+          "Japan/C5",
+          "Spain/A10",
+          "Spain/A2",
+          "Spain/A4",
+          "Spain/A6",
+          "Spain/A9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "Japan/C2",
+          "Kids/D2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 15,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "Japan/C10",
+          "Japan/C8",
+          "Spain/A11",
+          "Spain/A3",
+          "Spain/A7",
+          "Teenagers/B1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 16,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "Japan/C4",
+          "Japan/C9",
+          "Kids/D3",
+          "Kids/D4",
+          "Spain/A8"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Japan/C7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 14,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "Japan/C3",
+          "Japan/C5",
+          "Spain/A10",
+          "Spain/A2",
+          "Spain/A4",
+          "Spain/A6",
+          "Spain/A9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "Japan/C2",
+          "Kids/D2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 15,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "Japan/C10",
+          "Japan/C8",
+          "Spain/A11",
+          "Spain/A3",
+          "Spain/A7",
+          "Teenagers/B1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/calibration/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 16,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "Japan/C4",
+          "Japan/C9",
+          "Kids/D3",
+          "Kids/D4",
+          "Spain/A8"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/calibration/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Japan/C7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/calibration/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 14,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "Japan/C3",
+          "Japan/C5",
+          "Spain/A10",
+          "Spain/A2",
+          "Spain/A4",
+          "Spain/A6",
+          "Spain/A9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/calibration/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "Japan/C2",
+          "Kids/D2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/calibration/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 15,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "Japan/C10",
+          "Japan/C8",
+          "Spain/A11",
+          "Spain/A3",
+          "Spain/A7",
+          "Teenagers/B1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 16,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "Japan/C4",
+          "Japan/C9",
+          "Kids/D3",
+          "Kids/D4",
+          "Spain/A8"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Japan/C7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 14,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "Japan/C3",
+          "Japan/C5",
+          "Spain/A10",
+          "Spain/A2",
+          "Spain/A4",
+          "Spain/A6",
+          "Spain/A9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "Japan/C2",
+          "Kids/D2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 15,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "Japan/C10",
+          "Japan/C8",
+          "Spain/A11",
+          "Spain/A3",
+          "Spain/A7",
+          "Teenagers/B1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/current/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 16,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "Japan/C4",
+          "Japan/C9",
+          "Kids/D3",
+          "Kids/D4",
+          "Spain/A8"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/current/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Japan/C7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/current/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 14,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "Japan/C3",
+          "Japan/C5",
+          "Spain/A10",
+          "Spain/A2",
+          "Spain/A4",
+          "Spain/A6",
+          "Spain/A9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/current/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "Japan/C2",
+          "Kids/D2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/current/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 15,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "Japan/C10",
+          "Japan/C8",
+          "Spain/A11",
+          "Spain/A3",
+          "Spain/A7",
+          "Teenagers/B1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 16,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "Japan/C4",
+          "Japan/C9",
+          "Kids/D3",
+          "Kids/D4",
+          "Spain/A8"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Japan/C7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 14,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "Japan/C3",
+          "Japan/C5",
+          "Spain/A10",
+          "Spain/A2",
+          "Spain/A4",
+          "Spain/A6",
+          "Spain/A9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "Japan/C2",
+          "Kids/D2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 15,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "Japan/C10",
+          "Japan/C8",
+          "Spain/A11",
+          "Spain/A3",
+          "Spain/A7",
+          "Teenagers/B1"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 16,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "Japan/C4",
+          "Japan/C9",
+          "Kids/D3",
+          "Kids/D4",
+          "Spain/A8"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Japan/C7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 14,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "Japan/C3",
+          "Japan/C5",
+          "Spain/A10",
+          "Spain/A2",
+          "Spain/A4",
+          "Spain/A6",
+          "Spain/A9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "Japan/C2",
+          "Kids/D2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 15,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "Japan/C10",
+          "Japan/C8",
+          "Spain/A11",
+          "Spain/A3",
+          "Spain/A7",
+          "Teenagers/B1"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "Rotation nowcasting uses preceding aggregate tracks and two-second prefix calibration within conditions. The frozen candidate fails controls; coordinate offsets, short child records and missing persons are addressed before fitting, and no universal collective-motion law is admitted."
+}

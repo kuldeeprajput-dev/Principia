@@ -1,0 +1,34 @@
+{
+  "case_id": "P100-006",
+  "title": "Rydberg ionization spectral transfer",
+  "created_utc": "2026-10-01T15:22:06.022130+00:00",
+  "target": "Ion-readout amplitude",
+  "target_units": "arbitrary units",
+  "error_units": "arbitrary units",
+  "metric_kind": "mae",
+  "input_columns": [
+    "detuning_MHz",
+    "rabi_MHz"
+  ],
+  "input_units": {
+    "detuning_MHz": "MHz",
+    "rabi_MHz": "MHz"
+  },
+  "scope": "Entire contiguous probe-Rabi blocks; one vapor cell. No independent atomic-cell replication.",
+  "source_paper": "https://arxiv.org/html/2509.15463v1",
+  "selection": "Lowest whole-group OOF physical-unit MAE among substantive attempts; prefer fewer coefficients within1percent. Baselines retained even if superior. No test-based replacement.",
+  "stopping": "At least five materially distinct attempts. Continue distinct evidence-led hypotheses; stop after two consecutive substantive attempts after the current best with no >=1percent MAE gain, >=5percent worst-group gain, or supported structural simplification.",
+  "confirmation": "Separate process only after code/states/selection/stopping hashes frozen; all outcomes become exposed thereafter.",
+  "exposure": "Public source-aware corpus; source plots and published analyses known. Schema previews exposed first rows only. Case30 speeds>=13.9mm/s previewed; scored0.28\u201310mm/s unviewed. Case22 initial~0.006V row previewed; targetV>=0.05V unviewed. Case65 10Hz first rows previewed; scoref>=100Hz. Reserved response distributions and scores unopened.",
+  "uncertainty": "Per-group errors and ranges only; no dependent-row confidence interval. Very few top-level conditions constrain generalization.",
+  "calibration": "None. Inputdetuning/Rabi only. Fixed43D5/2 neighborhood abs(detuning)<=60MHz.",
+  "source_hash": "ea94e5744090d960d4d595862651fc57877394ee3ce1eebb2333622ccbeadf9a",
+  "split_hash": "a8e16baabeffb2dca400027d5347a938b8b3d8a0272abaeb3ffdbe2e42d44633",
+  "baselines": [
+    "mean/constant",
+    "established physical or matched calibration baseline",
+    "constrained flexible model under same information"
+  ],
+  "fit": "Development-only group-balanced least squares; forcase65 equivalent least squares in decibels. Frozen transformations; parameter bounds recorded per candidate.",
+  "exclusions": "Nonfinite native values excluded with anchors; none excluded by fit residuals. All source bytes unchanged."
+}

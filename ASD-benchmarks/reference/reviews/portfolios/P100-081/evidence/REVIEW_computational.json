@@ -1,0 +1,599 @@
+{
+  "case_id": "P100-081",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "7873a583e81b8ed5b1074765f0afb9c24f8ee5da87eb0895116789da01c6eddf"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "3532a4ded4105a4fd7ec70320934dbf406d64c1b28f8addfd9bca3257a3bb21a"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "843be6e9018af0ad6721563d95e4dd824d5caf3a5c57f318a9f673664e4809d0"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "14227c0cec24707b34357c6bff7d5113561b6145c27053c20943add0208066a4"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "88ad481ca1b693d32d2b4a027d44b7fa8a9de7a7e8937c2502c0ef2462e88df6"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "3e7a06ae55b8d1f940630185f0d9f569feed0e695950fb1974219f757591479e"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "2e3bd537d88b13608b2be40d97f491b183cb45d64b316a1625f002bffe64ef3e"
+    },
+    {
+      "path": "native.py",
+      "sha256": "f8a798f453779cc78431365b4a94f4723dcb9451b45ea90bb17ed91daee110e9"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "b907ebb6471b4fdd6f055015fbb40a65a2a7f19c62508402521fc1fdbec24650"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "fcb2ea7ca021482d28dbcadfddede5a17fdc1254c696deb637c0202144147cf5"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "83177f93dcaacc0af49047d5c40f4c035b17147d759e9d83751a4db6aca689f7"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "02c98bc89d94a97731aa67fcba53ca92587d325ccbaad0b78e088e36a431a583"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "38397c74fe5fe6a72426958dcc0a5fc6f85dc69ff8dc626bc1777654b2f80719"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "b7365cb7e31efdfb216b9c7877b0d4b0fccfb72822097f9f5c80a9da27d4f091"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-081-F01",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-081-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-081-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-081",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-081",
+      "native_rows": 430,
+      "confirmation_rows": 126,
+      "models": 9,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 9,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 1.1102230246251565e-16,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 126,
+        "primary_error": 0.33612456091162335,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "constant",
+        "rows": 126,
+        "primary_error": 0.17260082388350073,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 126,
+        "primary_error": 0.3145452434465047,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "linear",
+        "rows": 126,
+        "primary_error": 0.3128579244110682,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "two_phase_volume",
+        "rows": 126,
+        "primary_error": 0.33612456091162335,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "structural_porosity",
+        "rows": 126,
+        "primary_error": 0.33778825891652,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "depth_compaction",
+        "rows": 126,
+        "primary_error": 0.32358240339374844,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "organic_consolidation",
+        "rows": 126,
+        "primary_error": 0.3266083689026691,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "acidity_aggregation",
+        "rows": 126,
+        "primary_error": 0.35942384252586845,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Finland"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Italy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Portugal"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Spain"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Finland"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Italy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Portugal"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Spain"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Finland"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Italy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Portugal"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Spain"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Finland"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Italy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Portugal"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Spain"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Finland"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Italy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Portugal"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Spain"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Finland"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Italy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Portugal"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Spain"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Finland"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Italy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Portugal"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Spain"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/linear/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Finland"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/linear/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Italy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/linear/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Portugal"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/linear/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 3,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "Spain"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "Country-held soil density transfer fails: the carbon-mixture reference is worse than a constant on Czechia/Germany. Water-pH complete-case exclusions and carbon semantics limit both generalization and mechanism."
+}

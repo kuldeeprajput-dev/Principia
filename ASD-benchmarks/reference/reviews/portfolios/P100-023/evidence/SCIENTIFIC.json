@@ -1,0 +1,385 @@
+{
+  "schema_version": "p100-scientific-review-1.0",
+  "scenario_id": "P100-023",
+  "title": "Finger–liquid friction",
+  "review_date": "2026-10-01",
+  "reviewer_role": "scientific-critical review agent",
+  "review_mode": "read-only review of retained scientific/equation/evidence records; no fitting, acquisition or new literature search",
+  "current_outcome_exposure": "exposed",
+  "review_scope": "Original findings, first continuation when present, latest continuation and supplemental material-response tasks when present. Independent computational review is a separate artifact.",
+  "grouping_and_information_scope": "Whole participants with shared fluid panel; trial-median coefficient of friction at trial-average speed/load, not prospective control.",
+  "portfolio_disposition": "Scoped numerical references, tested hypotheses and preserved falsifications; no independently established new fundamental law or demonstrated deployment impact is admitted.",
+  "aggregate_score": null,
+  "aggregate_score_reason": "Scientific dimensions are distinct; task difficulty and validation scope are disclosed without converting them into invented precision or a composite discovery score.",
+  "evidence_assets": [
+    {
+      "id": "E001",
+      "legacy_path": "23_tribology_inm_finger_liquid/final_results/FINDINGS.md",
+      "sha256": "f822fd8696afbd9ace6cf593d868581adc5787069db257b18a73f9c0b530c44a",
+      "bytes": 4898,
+      "role": "original scientific description"
+    },
+    {
+      "id": "E002",
+      "legacy_path": "23_tribology_inm_finger_liquid/final_results/rules.json",
+      "sha256": "eb952f8889f6bb3f926ddaa554f57104104555dba0af5de927a9ae41f39c1ebb",
+      "bytes": 27850,
+      "role": "original frozen model state"
+    },
+    {
+      "id": "E003",
+      "legacy_path": "23_tribology_inm_finger_liquid/final_results/evidence/metrics.csv",
+      "sha256": "2d8a7a451531b82d2800329a56ecc6b04367a9174ba30012c7a0ad179eadce3b",
+      "bytes": 1583,
+      "role": "original numerical comparison"
+    },
+    {
+      "id": "E004",
+      "legacy_path": "23_tribology_inm_finger_liquid/final_results/evidence/by_group.csv",
+      "sha256": "4f825c10049bdf5658d382679be1c04692bd0b7a619b3a18c5b5b15fabfd8e62",
+      "bytes": 4043,
+      "role": "original grouped errors"
+    },
+    {
+      "id": "E005",
+      "legacy_path": "23_tribology_inm_finger_liquid/research_history/continuation-20261001/candidate/FINDINGS.md",
+      "sha256": "e3e12cefaffcb5e883da2eee86461069dfac7c8c5bdd090d22e979e2849d68cb",
+      "bytes": 3241,
+      "role": "latest scientific account"
+    },
+    {
+      "id": "E006",
+      "legacy_path": "23_tribology_inm_finger_liquid/research_history/continuation-20261001/candidate/rules.json",
+      "sha256": "a5e8809a8f9d1a92ffd2fd087a2baa173fd5d0d04f9a1556e347c343dcf0351c",
+      "bytes": 41091,
+      "role": "latest frozen model state"
+    },
+    {
+      "id": "E007",
+      "legacy_path": "23_tribology_inm_finger_liquid/research_history/continuation-20261001/candidate/evidence/metrics.csv",
+      "sha256": "009b608026506b7106cefc5030c2f148af772a6b81739b5c1037022ef12ff91b",
+      "bytes": 953,
+      "role": "latest numerical comparison"
+    },
+    {
+      "id": "E008",
+      "legacy_path": "23_tribology_inm_finger_liquid/research_history/continuation-20261001/candidate/evidence/by_group.csv",
+      "sha256": "268ad5e426c56bcfaea036b0fb49e9be58271f5c214e6c64fe616fd804a04189",
+      "bytes": 2289,
+      "role": "latest grouped errors"
+    }
+  ],
+  "finding_reviews": [
+    {
+      "finding_id": "P100-023-SCI-01",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results",
+      "statement": "An established Hersey/Stribeck response is the useful original reference; physiological additions do not establish a new rule.",
+      "classification": "reproduction",
+      "disposition": "supported",
+      "current_outcome_exposure": "exposed",
+      "historical_evidence_status": "Original historical reserve status is retained in source records; every outcome is exposed now. Continuation model selection uses development evidence but cannot restore fresh confirmation.",
+      "numerical_evidence": [
+        {
+          "cohort": "original two reserved people",
+          "measure": "domain/reference MAE",
+          "value": 0.0876692,
+          "unit": "1",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original two reserved people",
+          "measure": "mechanistic extension MAE",
+          "value": 0.123484,
+          "unit": "1",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "equation_if_supported": {
+        "expression": "mu_hat=c0+c1*h^(-1/4)+c2*h^.55, h=H/.02; c0=0,c1=.1469803,c2=.08365411.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ]
+      },
+      "strongest_adverse_evidence": "Source full-data exponent 0.55 and fitted rheology are shared prior information, not independent verification of the same mechanism.",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole participants with shared fluid panel; trial-median coefficient of friction at trial-average speed/load, not prospective control. Strong adverse evidence: Source full-data exponent 0.55 and fitted rheology are shared prior information, not independent verification of the same mechanism.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Known lubrication branches are plausible; the pressure term is an observational conditional association and does not transfer fluid-independently.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source already presents Stribeck collapse; refitting exponents repairs information fairness. No new universal friction law is supported. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole participants with shared fluid panel; trial-median coefficient of friction at trial-average speed/load, not prospective control.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "scientific_validators": [
+        "Separate person-only from person-and-fluid excluded validation.",
+        "Disclose author-H/rheology calibration and compare fixed-source versus train-only exponents.",
+        "Check pressure conclusions against force appearing insideH and distinguish pad photograph from loaded contact area."
+      ],
+      "next_evidence": "Randomized repeat fluid sessions, independent surfaces and synchronized true contact-area/pressure measurements.",
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ]
+    },
+    {
+      "finding_id": "P100-023-SCI-02",
+      "task_family": "continuation",
+      "task_version_history": "2026-10-01 continuation",
+      "statement": "A train-only free-exponent pressure model improves same-fluid person transfer but fails the stronger unseen-fluid transfer challenge.",
+      "classification": "retrospective_extension",
+      "disposition": "partially_supported",
+      "current_outcome_exposure": "exposed",
+      "historical_evidence_status": "Original historical reserve status is retained in source records; every outcome is exposed now. Continuation model selection uses development evidence but cannot restore fresh confirmation.",
+      "numerical_evidence": [
+        {
+          "cohort": "continuation whole-person development",
+          "measure": "pressure MAE",
+          "value": 0.077064,
+          "unit": "1",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "continuation whole-person development",
+          "measure": "free exponents/no pressure",
+          "value": 0.078925,
+          "unit": "1",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed two-person diagnostic",
+          "measure": "pressure MAE",
+          "value": 0.084917,
+          "unit": "1",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed two-person diagnostic",
+          "measure": "kernel MAE",
+          "value": 0.08172,
+          "unit": "1",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "development person+fluid exclusion",
+          "measure": "pressure MAE",
+          "value": 0.120469,
+          "unit": "1",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "development person+fluid exclusion",
+          "measure": "no pressure MAE",
+          "value": 0.090762,
+          "unit": "1",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      ],
+      "equation_if_supported": {
+        "expression": "mu_hat=a+b*h^(-p)*pi^r+c*h^q; pi=(F_N/1N)/(A/4cm²); a=2.5790e-11,b=.126335,c=.0405567,p=.263105,q=.754523,r=-.322758.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007",
+          "E008"
+        ]
+      },
+      "strongest_adverse_evidence": "Negative pressure exponent appears 9/9 folds but Hersey itself contains inverse force. Photographic area is not instantaneous loaded area; fixed fluid order and shared calibration undermine causal pressure interpretation.",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole participants with shared fluid panel; trial-median coefficient of friction at trial-average speed/load, not prospective control. Strong adverse evidence: Negative pressure exponent appears 9/9 folds but Hersey itself contains inverse force. Photographic area is not instantaneous loaded area; fixed fluid order and shared calibration undermine causal pressure interpretation.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Known lubrication branches are plausible; the pressure term is an observational conditional association and does not transfer fluid-independently.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source already presents Stribeck collapse; refitting exponents repairs information fairness. No new universal friction law is supported. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole participants with shared fluid panel; trial-median coefficient of friction at trial-average speed/load, not prospective control.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      },
+      "scientific_validators": [
+        "Separate person-only from person-and-fluid excluded validation.",
+        "Disclose author-H/rheology calibration and compare fixed-source versus train-only exponents.",
+        "Check pressure conclusions against force appearing insideH and distinguish pad photograph from loaded contact area."
+      ],
+      "next_evidence": "Randomized repeat fluid sessions, independent surfaces and synchronized true contact-area/pressure measurements.",
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007",
+        "E008"
+      ]
+    }
+  ],
+  "recorded_equations": [
+    {
+      "task_family": "original",
+      "expression_latex": "\\widehat{\\mu}=c_0+c_1h^{-1/4}+c_2h^{0.55},\\qquad h=H/0.02.",
+      "legacy_path": "23_tribology_inm_finger_liquid/final_results/FINDINGS.md",
+      "status": "recorded_equation_not_automatic_mechanism_admission"
+    },
+    {
+      "task_family": "continuation",
+      "expression_latex": "\\widehat\\mu=a+b h^{-p}\\pi^r+c h^q,\\qquad h=H/0.02,\\quad\\pi=(F_N/1\\mathrm{N})/(A/4\\mathrm{cm}^2).",
+      "legacy_path": "23_tribology_inm_finger_liquid/research_history/continuation-20261001/candidate/FINDINGS.md",
+      "status": "recorded_equation_not_automatic_mechanism_admission"
+    }
+  ],
+  "required_followup_evidence": "Randomized repeat fluid sessions, independent surfaces and synchronized true contact-area/pressure measurements.",
+  "review_limitations": [
+    "Documentary checks do not independently replicate the original experiment.",
+    "Novelty is bounded to retained targeted literature records, not an exhaustive search.",
+    "Previously reserved data and supplemental PLA challenge responses are now exposed; new evidence must be genuinely unexposed.",
+    "Predictive improvement alone does not establish causal mechanism, physical parameter identification or industrial benefit."
+  ]
+}

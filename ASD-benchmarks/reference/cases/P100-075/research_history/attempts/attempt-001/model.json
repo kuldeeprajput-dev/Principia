@@ -1,0 +1,41 @@
+{
+  "kind": "saturation",
+  "coef": [
+    -1.4342459653760593,
+    -0.7191465948627176
+  ],
+  "K": 3000.0,
+  "equation": "y_hat=max(0,c+b1*q+b2*s), q=E/(K+E)-30/(K+30)",
+  "training_groups": [
+    "A",
+    "B",
+    "D"
+  ],
+  "training_rows": 15,
+  "rank": 2,
+  "parameter_count": 3,
+  "profile_training_mse": [
+    {
+      "K": 30.0,
+      "weighted_sse": 3.2489961478697285
+    },
+    {
+      "K": 100.0,
+      "weighted_sse": 3.2339762056191934
+    },
+    {
+      "K": 300.0,
+      "weighted_sse": 3.2026052460919776
+    },
+    {
+      "K": 1000.0,
+      "weighted_sse": 3.1654824685040057
+    },
+    {
+      "K": 3000.0,
+      "weighted_sse": 3.1471306432156405
+    }
+  ],
+  "ridge": 1e-08,
+  "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+}

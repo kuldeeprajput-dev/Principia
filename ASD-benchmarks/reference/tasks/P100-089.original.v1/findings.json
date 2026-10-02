@@ -1,0 +1,47 @@
+{
+  "case_id": "P100-089",
+  "findings": [
+    {
+      "finding_id": "P100-089-F01",
+      "classification": "validated_extension",
+      "admission": "supported",
+      "claim": "Context and causal choice history support a stronger bounded probability reference than expected value alone. This is useful for assessing new choice predictors with matched online information, not for ranking individual risk tolerance or making demographic decisions.",
+      "equation": "Pr(Choice=1 | available history) = 1 / (1 + exp(-beta dot phi)). Let r=reward/2, p=the experimenter-specified probability, a=child, m=multi-option context, v=explicit-description context, h=the previous-choice running mean minus0.5, and l=the immediately previous choice minus0.5. The ordered vector phi is (1,r,p,r*p,r^2,p^2,a,m,v,a*m,a*v,r*a,p*a,r*m,p*m,r*v,p*v,h,l,h*a,h*m,trial_progress). The intercept is -3.302904, and the h and l coefficients are 2.629934 and 1.308668. Child/adult and context interactions alter those effects; an isolated coefficient is not a causal effect. The frozen coefficients already undo training feature-RMS scaling, so the displayed vector is used directly without standardization. Adult age is not included in this selected model.",
+      "model_id": "reference",
+      "task_id": "P100-089.original.v1",
+      "evidence": {
+        "development_primary_error": 0.1273648253813338,
+        "confirmation_primary_error": 0.14335861588395382,
+        "confirmation_groups": 12,
+        "confirmation_rows": 6008,
+        "unit": "probability squared",
+        "metrics": "evidence/metrics.csv",
+        "group_metrics": "evidence/by_group.csv",
+        "predictions": "evidence/predictions.csv.gz",
+        "state": "rules.json"
+      },
+      "falsification": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "known_prior_art": "Lacombe et al., Frontiers2025, already report age-dependent context shifts, description/experience differences and exploration/framing hypotheses using binomial models. Expected utility, prospect weighting and logistic choice models are established. Better prediction cannot adjudicate a unique cognitive mechanism.",
+      "scope": "All trial contexts for each person stay in one partition. The stored probability is an experimenter setting and may be hidden from the participant; this is an analyst forecast. Binary Choice is retained unchanged, with1 treated as the recorded risky-choice code; no separate codebook was supplied. Adult ages are unavailable; age_child uses an explicit adult sentinel. Histories reset at each protocol."
+    },
+    {
+      "finding_id": "P100-089-F02",
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Compact prospect weighting does not explain the main predictive gain. Context and memory candidates improve the expected-utility comparison but do not beat the frozen flexible control. Correlated history columns in one candidate are regularized rather than mechanistically identifiable.",
+      "equation": null,
+      "evidence": {
+        "attempts": 5,
+        "best_attempt_development_error": 0.1306726362472368,
+        "development_selected_error": 0.1273648253813338,
+        "development_diagnostics": "research_history/DEVELOPMENT_DIAGNOSTICS.json"
+      },
+      "known_prior_art": "Lacombe et al., Frontiers2025, already report age-dependent context shifts, description/experience differences and exploration/framing hypotheses using binomial models. Expected utility, prospect weighting and logistic choice models are established. Better prediction cannot adjudicate a unique cognitive mechanism.",
+      "falsification": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "scope": "All trial contexts for each person stay in one partition. The stored probability is an experimenter setting and may be hidden from the participant; this is an analyst forecast. Binary Choice is retained unchanged, with1 treated as the recorded risky-choice code; no separate codebook was supplied. Adult ages are unavailable; age_child uses an explicit adult sentinel. Histories reset at each protocol.",
+      "underlying_proposal_disposition": "Several proposed mechanisms are unsupported; this negative finding and the tested models have distinct dispositions."
+    }
+  ],
+  "reference_disposition": "Frozen development-selected reference; candidate laws and negative findings require separate scientific review.",
+  "review_pending": "Independent computational and scientific-critical review by different agents"
+}

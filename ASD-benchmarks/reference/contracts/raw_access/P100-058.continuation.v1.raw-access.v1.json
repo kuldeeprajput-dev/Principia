@@ -1,0 +1,56 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-058.continuation.v1.raw-access.v1",
+  "parent_task_id": "P100-058.continuation.v1",
+  "case_id": "P100-058",
+  "protocol_version": "P100-058.continuation.v1.raw-access.v1",
+  "cohort_id": "P100-058.continuation.v1.cohort-1",
+  "parent_task_sha256": "0996ebb0f2fead5732ad4d5ec265c87e1acf423651c54b8d8e672bedf75d07fe",
+  "input_sha256": "c22307f8616754773079305570f6608ca3678c61ac4bb4f3f0a8731ab44e9061",
+  "observations_sha256": "8a7e49c5f8eeb6ac1298c4d9801ba394f1b72e1877882b747df4b75a374f5de9",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "58_polymer_pdlla_rheology",
+  "source_assets": [
+    {
+      "path": "raw/PDLLA15k_DSC_GPC_rheo.zip",
+      "bytes": 1124027,
+      "sha256": "a556a226ac4759039ec860a9a113a4036017755ecef3caac78a7e22854837c4b"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "temperature_C": "degree C",
+      "omega": "rad/s"
+    },
+    "observation_window": "Temperature and imposed frequency only. Loss modulus is withheld as an orthogonal mechanistic check; never a primary predictor.",
+    "calibration_and_history": "Native DFS text exports only; paired TAD exports are linked duplicates, not independent samples. Target storage modulus and secondary loss modulus are separate native instrument outputs, though both share systematic calibration. No compliance correction was applied by the authors. A single purchased polymer batch.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Spectrum is nonidentifiable; unfitted recycled-PLA loss defeats universal transfer.",
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

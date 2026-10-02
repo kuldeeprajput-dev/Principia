@@ -1,0 +1,208 @@
+{
+  "case_id": "P100-011",
+  "role": "computational",
+  "reviewer_id": "asd5_materials",
+  "status": "passed",
+  "checks": [
+    "Exact raw-reconstructed confirmation identities",
+    "Native targets reproduce saved observations",
+    "Scoring groups reproduce native groups",
+    "No group crosses partitions",
+    "Unique native identities",
+    "Target excluded from input table",
+    "Reconstructed input offline",
+    "Reconstructed input accelerators",
+    "Reconstructed input nodes",
+    "Reconstructed input workload",
+    "Reconstructed input precision",
+    "Replay offline",
+    "Independent group MAE offline",
+    "Target poisoning ignored offline",
+    "Replay rbf",
+    "Independent group MAE rbf",
+    "Target poisoning ignored rbf",
+    "Replay utilization",
+    "Independent group MAE utilization",
+    "Target poisoning ignored utilization",
+    "Replay attempt_001",
+    "Independent group MAE attempt_001",
+    "Target poisoning ignored attempt_001",
+    "Replay attempt_002",
+    "Independent group MAE attempt_002",
+    "Target poisoning ignored attempt_002",
+    "Replay attempt_003",
+    "Independent group MAE attempt_003",
+    "Target poisoning ignored attempt_003",
+    "Replay attempt_004",
+    "Independent group MAE attempt_004",
+    "Target poisoning ignored attempt_004",
+    "Replay attempt_005",
+    "Independent group MAE attempt_005",
+    "Target poisoning ignored attempt_005",
+    "Replay reference",
+    "Independent group MAE reference",
+    "Target poisoning ignored reference",
+    "Clearly rejects missing source",
+    "Clearly rejects hash source",
+    "Portable standalone replay",
+    "Standalone rejects truncated manifest asset"
+  ],
+  "rows": 16,
+  "models": 9,
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "23c05b8c61210998a8b30d12634dba51821cae914f81b1b303c4a744ca2c35b8"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "5d6499cdbe8896128bdca97eda6963a9a5175d5ee6957a0ef7268590ab2d884e"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "23b8039fb09b6c21081f6278ba5e0180440192c1136fe265b24e98d188f7ee49"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "081d9569ec933a9d1cabf8b003180cf2fd0f80c2c173c7896d7d251f63047fb9"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "86a749fcfdaabbbb46681ce3e15d8e2f44d65452239dee6c7deb7ed68f1add7e"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "969b6a928995a726e1d6f4435ed069aa26f55999212d4780b1d09d90ad2f4201"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "8a5ed54534952d1a5f5bf464f9201c798bd902a605cb6facd10e1e4b25fed7bb"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "f5abc5a4b89d4ea14ed42b476c810b37ab37d3d8eff56656982591ad9d061f94"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "ba249e5b7e8b0ef426e7f83f01289fbea8d655acaba49b7d0259355c8bf1eb71"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "e53bd7652220702729707ebc372dd9328ea3f283e538b6d2a2beb9cfc596e4fa"
+    }
+  ],
+  "limitations": [
+    "Computational reproducibility is not independent experimental replication or certification of novelty."
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-011-F01",
+      "disposition": "partially_supported",
+      "checks": [
+        "Native reconstruction, exact identities, all frozen model predictions, independent group MAE and target-poisoning tests passed."
+      ],
+      "limitations": [
+        "Computational reproducibility is not independent experimental replication or certification of novelty."
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Matched Offline/Server reconstruction reproduces all11 held-system group scores. Selected MAE77,726.76tokens/s improves flexible86,915.27 but does not beat the later diagnostic workload-only model67,991.20; no reselection occurred."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Separate scientific-critical review addresses interpretation; numerical replay does not identify causality."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No computational test certifies novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The declared cohort and calibration define the scope of utility."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Exact native identities, targets, inputs, all frozen predictions, group MAE, target poisoning and standalone integrity tests passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention or deployment benefit measured."
+        }
+      }
+    },
+    {
+      "finding_id": "P100-011-F02",
+      "disposition": "supported",
+      "checks": [
+        "Native reconstruction, exact identities, all frozen model predictions, independent group MAE and target-poisoning tests passed."
+      ],
+      "limitations": [
+        "Computational reproducibility is not independent experimental replication or certification of novelty."
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Matched Offline/Server reconstruction reproduces all11 held-system group scores. Selected MAE77,726.76tokens/s improves flexible86,915.27 but does not beat the later diagnostic workload-only model67,991.20; no reselection occurred."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Separate scientific-critical review addresses interpretation; numerical replay does not identify causality."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No computational test certifies novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The declared cohort and calibration define the scope of utility."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Exact native identities, targets, inputs, all frozen predictions, group MAE, target poisoning and standalone integrity tests passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention or deployment benefit measured."
+        }
+      }
+    },
+    {
+      "finding_id": "P100-011-F03",
+      "disposition": "unsupported",
+      "checks": [
+        "Native reconstruction, exact identities, all frozen model predictions, independent group MAE and target-poisoning tests passed."
+      ],
+      "limitations": [
+        "Computational reproducibility is not independent experimental replication or certification of novelty."
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Matched Offline/Server reconstruction reproduces all11 held-system group scores. Selected MAE77,726.76tokens/s improves flexible86,915.27 but does not beat the later diagnostic workload-only model67,991.20; no reselection occurred."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Separate scientific-critical review addresses interpretation; numerical replay does not identify causality."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No computational test certifies novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The declared cohort and calibration define the scope of utility."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Exact native identities, targets, inputs, all frozen predictions, group MAE, target poisoning and standalone integrity tests passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention or deployment benefit measured."
+        }
+      }
+    }
+  ],
+  "blocking_defects": []
+}

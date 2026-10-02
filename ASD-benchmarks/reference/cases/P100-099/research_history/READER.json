@@ -1,0 +1,42 @@
+{
+  "intro": "# Hippocampal processed traces: a bounded population-state forecast\n\nThe source archive contains157MATsessions from28animal suffixes across dorsal/ventralCA1,contexts and study days. Twenty-seven Day4files have no processed.trace endpoint, leaving130trace sessions. All sessions from each animal are linked:23development animals and five reserved animals. A schema-inspected animal was permanently assigned development before numerical fitting.\n\n## Endpoint and selected equation\n\nThe task predicts the source-component population mean over native frames $t+31$ through $t+60$. Let $e_t$ be the current30-frame population mean, $m_t$ the preceding300-frame mean, and $v_t=2(e_t-e_{t-30})$. The selected compact equation is\n\n$$\\widehat e=0.31327391e_t+0.68672609m_t-0.088994875\\max(v_t,0)-0.0065038607\\min(v_t,0).$$\n\nAll amplitudes remain **author processed-trace units** and all times remain native frame indices. The dimensionless coefficients describe released-signal recovery/asymmetry; they are not calcium lifetimes, spike rates or neuronal coupling constants. The current and historical summaries use only frames at or before $t$.\n\nSix adaptive attempts tested uniform decay, local set-point recovery, inertia, cross-component heterogeneity, regional response and asymmetric rising/declining states. Development selected the compact asymmetric recovery relation within the1% simplicity tolerance. All coefficient states and alternative results remain available.\n",
+  "interpretation": "The selected rule gives0.000276179author-trace-unit MAE on five reserved animals, compared with0.000336935persistence,0.000839270linear extrapolation and0.000303232flexible prediction. This is a useful scoped processed-signal forecasting extension, with no claim of a new neural law or demonstrated behavioral impact. The source does not document exact trace normalization or the polarity of exclude.SFPs flags in twelve sessions. Accordingly, all released component rows contribute; this is not an independently curated neuron-only target. Behavior arrays and validTraceFrames have unresolved indexing semantics, so freezing, speed alignment and seconds were excluded before fitting. Upstream author denoising/normalization may use future observations: causal-prefix guarantees apply to the released trace, not real-time fluorescence acquisition. Source fear/context findings are prior art, and this forecast cannot independently confirm them.",
+  "summary": "Six substantive attempts completed. Asymmetric local recovery transfers to five held animals with0.000276179native-trace MAE versus0.000303232flexible and0.000336935persistence. Bounded signal descriptor; no new neural/fear mechanism admitted.",
+  "lessons": "Do not infer behavioral labels or time units from plausible-looking array shapes. Exclude absent endpoints explicitly, keeping source inventories and reasons. Undocumented quality-flag polarity must remain visible; do not silently claim curated neurons. Group all animal sessions and contexts together. Normalize numerical regularization to the actual feature scale; fixed raw-unit penalties can manufacture shrinkage. Source-derived trace prediction is not independent neural mechanism evidence, even when whole-animal error improves.",
+  "findings": [
+    {
+      "finding_id": "P100-099-F01",
+      "classification": "validated_scoped_descriptor",
+      "claim": "A compact asymmetric local-recovery equation predicts future released population-trace means across held animals better than registered controls in mean error",
+      "equation": "ehat=(1-a)*e+a*m+b_plus*max(v,0)+b_minus*min(v,0); v=2*(e-e_t-30)",
+      "coefficients": [
+        0.6867260870834122,
+        -0.08899487451882716,
+        -0.006503860674957402
+      ],
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv",
+        "evidence/by_group.csv"
+      ],
+      "scope": "Author-processed source-component traces;five held animals in one study",
+      "admission": "partially_supported",
+      "prior_art": "Relaxation/autoregression are established; source hippocampal fear/context results are already published",
+      "falsification": "Undocumented normalization,source component flags,and no raw-camera timing guarantee prevent neural-mechanism inference"
+    },
+    {
+      "finding_id": "P100-099-F02",
+      "classification": "supported_negative_finding",
+      "claim": "Uniform decay and region-only effects do not uniquely explain the predictive improvement; behavior-aligned physical claims remain unsupported by retained semantics",
+      "equation": null,
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv"
+      ],
+      "scope": "Six declared candidate families and audited source schema",
+      "admission": "supported",
+      "prior_art": "Negative identifiability evidence, not denial of hippocampal physiology",
+      "falsification": "Author clarification of preprocessing,flags and behavior indexing plus new animals could enable stronger tasks"
+    }
+  ]
+}

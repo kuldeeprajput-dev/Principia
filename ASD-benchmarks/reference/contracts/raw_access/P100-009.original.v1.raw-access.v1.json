@@ -1,0 +1,107 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-009.original.v1.raw-access.v1",
+  "parent_task_id": "P100-009.original.v1",
+  "case_id": "P100-009",
+  "protocol_version": "P100-009.original.v1.raw-access.v1",
+  "cohort_id": "P100-009.original.v1.cohort-1",
+  "parent_task_sha256": "680b31c855cfbe7684eb0c7a96f120630f9c14cbc83757a612d8e0fe158db907",
+  "input_sha256": "f77a51007e24680aebd743c37d8417f46485373e6400071ae489215a7849a2f4",
+  "observations_sha256": "a271bcd5b2cc7645257f328b7393e1e8cf5a594e4d169abdb134b40d31dcf165",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "09_neuroscience_dandi_001176",
+  "source_assets": [
+    {
+      "name": "sub-16_ses-16-1-2-Ach-M1_behavior+ophys.nwb",
+      "path": "raw/sub-16/sub-16_ses-16-1-2-Ach-M1_behavior+ophys.nwb",
+      "sha256": "94aa2c8a4bd9119bfbc26cd26d6283832196c6f170021375c11b6e318fb3e987",
+      "bytes": 4311973
+    },
+    {
+      "name": "sub-16_ses-16-3-1-Ach-M1_behavior+ophys.nwb",
+      "path": "raw/sub-16/sub-16_ses-16-3-1-Ach-M1_behavior+ophys.nwb",
+      "sha256": "17520a6770693e86e1b181ea9cd8aa6ca9d92ffc934b1862908f2ae5fd18022c",
+      "bytes": 7880355
+    },
+    {
+      "name": "sub-16_ses-16-4-1-Ach-M1_behavior+ophys.nwb",
+      "path": "raw/sub-16/sub-16_ses-16-4-1-Ach-M1_behavior+ophys.nwb",
+      "sha256": "dc23e412aea7d600cdf03e9d94fa715e7995728de54678f57fc6f766403c4906",
+      "bytes": 7995712
+    },
+    {
+      "name": "sub-18_ses-18-1-2-Ach-M1_behavior+ophys.nwb",
+      "path": "raw/sub-18/sub-18_ses-18-1-2-Ach-M1_behavior+ophys.nwb",
+      "sha256": "2e5bca4e5d34459afa84dffdea808d751b9dfa3633eb2b071a2cadd27c16dfb6",
+      "bytes": 5001950
+    },
+    {
+      "name": "sub-22713_ses-22713-2-1-Ach-V1_behavior+ophys.nwb",
+      "path": "raw/sub-22713/sub-22713_ses-22713-2-1-Ach-V1_behavior+ophys.nwb",
+      "sha256": "7665f26b42b24abdfd0c44fcd1092835fea1f64951e8fe974548cbc6a4899a7b",
+      "bytes": 1767522
+    },
+    {
+      "name": "sub-22713_ses-22713-2-2-Ach-V1_behavior+ophys.nwb",
+      "path": "raw/sub-22713/sub-22713_ses-22713-2-2-Ach-V1_behavior+ophys.nwb",
+      "sha256": "ff1eca2449c8c8ac56c92b1a00e0ecd5d8a1e121a0d6e0b1ae6fe11d77119075",
+      "bytes": 1755210
+    },
+    {
+      "name": "sub-22713_ses-22713-2-3-Ach-V1_behavior+ophys.nwb",
+      "path": "raw/sub-22713/sub-22713_ses-22713-2-3-Ach-V1_behavior+ophys.nwb",
+      "sha256": "49e771afcf06a1a65d3ace6c8100a820a0553332c0ad5014bf119c6f763da36c",
+      "bytes": 2195078
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "radius": "px",
+      "lag05": "px",
+      "lag1": "px",
+      "mean5": "px",
+      "speed": "cm/s",
+      "speed1": "cm/s"
+    },
+    "observation_window": "Predict1s-ahead author-released pupil radius from prior pupil and treadmill samples. Source prior filtering may be noncausal; causal-prefix guarantee applies to released traces only, not original camera pixels.",
+    "calibration_and_history": "No held-target calibration; observed past5s from each session supplies history. Pixel units are retained without invented millimeter scaling.",
+    "calibration_columns": [
+      "radius",
+      "lag05",
+      "lag1",
+      "mean5",
+      "speed",
+      "speed1"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "One held animal; animal and brain-region/context may be confounded.",
+    "Only 1 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

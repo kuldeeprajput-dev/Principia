@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-10-01T14:22:08.291034+00:00",
+  "reason": "Independent reviewer detected a generic dictionary description containing two case equations. Scoped expression text to owning case. No coefficients, predictions, numerical logic, metrics, selection or confirmation receipt changed.",
+  "changes": [
+    {
+      "model": "baseline_persistence",
+      "before": "74: F_hat(t)=F6; 87: c_hat(t)=c(t-1)",
+      "after": "F_hat(t)=F6"
+    },
+    {
+      "model": "attempt_001_saturation",
+      "before": "74: F_hat=F6+v6*tau*(1-exp(-(t-6)/tau));85: P_hat=max(0,A*(1-exp(-q*max(E0-E,0)/A)))",
+      "after": "F_hat=F6+v6*tau*(1-exp(-(t-6)/tau))"
+    }
+  ],
+  "rules_sha_before": "f9e42cc769f0cf9fb8d013c78202d6febc4b00981c0ec460f5e63667f92eb5ae",
+  "rules_sha_after": "dfd24f4f872733bad9099d056b526fd4d140764e7207d6f5d62ed24f432ed103",
+  "receipt_alias": "CONFIRMATION.json is byte-identical copy of original FINAL_VALIDATION.json, not a new evaluation.",
+  "confirmation_executor_documentation_only_patch": {
+    "sha256_before": "434c8b23b2525f3ad540bf91b1ab2dad4e7c31825d6a605df7581e7561e2af68",
+    "sha256_after": "b56b4c323c3e084a33ec6c9dd7900a25cbbbd5e86df677b3268b28e44293b192",
+    "reason": "Same scoped equation-label fix in exporter for future replay. No fitting or numerical prediction/scoring code changed. Original confirmation not rerun."
+  },
+  "finding_level_clarification": {
+    "before_sha256": "4a8e3cb70d211598780d4231b2bf314d96b4ca9410c25d76279cf477d24cddb1",
+    "after_sha256": "54fa2892d60b11bb4483ef2fb67d5db3a8679355415ca73fcf961d2e9015d169",
+    "reason": "Separate the supported negative conclusion from the unsupported proposed model improvement. No outcome or disposition of a predictive candidate changed."
+  }
+}

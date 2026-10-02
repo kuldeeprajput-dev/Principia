@@ -1,0 +1,48 @@
+[
+  {
+    "finding_id": "P100-065-F01",
+    "title": "Shared white floor plus feedback",
+    "classification": "reproduction",
+    "claim": "A compact sum of feedback-sensitive and common noise contributions predicts the reserved injection ratio, but the selected extension loses to the simpler fixed-exponent domain control. This supports bounded reproduction and model ambiguity, not a new laser-noise law.",
+    "admission": "partially_supported",
+    "equation": "equations.json",
+    "model_id": "reference",
+    "task_id": "P100-065.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "equations.json",
+      "rules.json"
+    ],
+    "performance": {
+      "development_MAE": 3.8650039489702115,
+      "confirmation_MAE": 3.04916532516805,
+      "unit": "dB"
+    },
+    "prior_art": "https://eprints.soton.ac.uk/507397/1/prj-13-3-611.pdf",
+    "scope": "Complete injection ratio; one laser/resonator setup. Development validation blocks complete log-frequency bands across two ratios.",
+    "limitations": [
+      "Public source-aware confirmation is now exposed.",
+      "Predictive success does not prove a causal mechanism, exhaustive novelty, or realized industrial impact.",
+      "Alternative valid equations are admissible under the same task."
+    ]
+  },
+  {
+    "finding_id": "P100-065-F02",
+    "title": "Mechanistic or transfer falsification",
+    "classification": "informative_falsification",
+    "claim": "Extra spectral components are not automatically better than the fixed physical comparator.",
+    "admission": "supported",
+    "underlying_proposal_disposition": "unsupported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "equations.json",
+      "rules.json"
+    ],
+    "rationale": "The chosen shared-floor extension loses to the fixed f^-2/inverse-feedback control; a later-looking best confirmation candidate is explicitly not promoted.",
+    "scope": "The tested equations and current data only; no claim of universal impossibility."
+  }
+]

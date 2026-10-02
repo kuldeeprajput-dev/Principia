@@ -1,0 +1,58 @@
+{
+  "case_id": "P100-025",
+  "target": "raw measured FeK-edge \u03bc(E)",
+  "target_units": "dimensionless \u03bc(E)",
+  "input_units": {
+    "pre": "raw\u03bc(E),dimensionless",
+    "jump": "raw\u03bc(E),dimensionless",
+    "rL": "normalizedmeasuredLiFePO4reference",
+    "rF": "normalizedmeasuredFePO4reference",
+    "dL": "eV\u207b\u00b9",
+    "d2L": "eV\u207b\u00b2",
+    "f": "dimensionlessnominalprotocolprogress",
+    "discharge": "binarydischarge/rest2branch",
+    "rest": "binaryrestsegment",
+    "e": "eVrelative7112"
+  },
+  "timing_contract": "Retrospective spectral-shape reconstruction after pre/post-edge calibration bands and experimental segment durations are known. This is not an online state-of-charge forecast.",
+  "calibration": "Each spectrum contributes only7000\u20137050eV and7250\u20137300eV bandmeans. SuppliedmeasuredFePO4/LiFePO4references are normalized identically. Targetband7070\u20137200eV is withheld.",
+  "independent_unit": "Complete three-acquisitionblock linked to the source3\u00d7binnedrepresentation; oneLFPcycleonly. Fivecontiguouschronologicaldevelopmentfolds holdout wholeblocks, withfuturedevelopmentsegments allowed for thisretrospectivecompressiontask.",
+  "scope_limits": [
+    "Nominalprogress is normalizedreportedsegmenttime, not measuredstateofcharge or an identifiedphasefraction.",
+    "Author3\u00d7binned spectra are excluded as duplicateobservations; onlyunbinnedcolumns are targets.",
+    "Onecell/onecycle; cross-blockcalibration successdoesnotestablishnewbatterychemistry orindustrialcycletransfer."
+  ],
+  "source_url": "https://zenodo.org/records/14922524",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "exposure": "Onlyfarpreedgeinitialrows near6404eV were inspected forschema. Targetband7070\u20137200eV reservedvalues were unseen beforefreeze.",
+  "uncertainty_policy": "Reportwholetripletblock errors; dependentblocksfromonecycle do not yieldindependent-cellconfidence.",
+  "error_units": "dimensionless \u03bc(E)",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "pre",
+    "jump",
+    "rL",
+    "rF",
+    "dL",
+    "d2L",
+    "f",
+    "discharge",
+    "rest",
+    "e"
+  ],
+  "numeric_columns": [
+    "pre",
+    "jump",
+    "rL",
+    "rF",
+    "dL",
+    "d2L",
+    "f",
+    "discharge",
+    "rest",
+    "e"
+  ],
+  "physical_bounds": {},
+  "protocol": "original.v1",
+  "outcome_exposure": "All packaged outcomes exposed after this campaign."
+}

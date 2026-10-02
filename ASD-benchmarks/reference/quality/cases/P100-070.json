@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-070",
+  "title": "Imaging Localized Slip-induced Frictional Heating during Laboratory Earthquakes Using Magnetic Microscopy",
+  "default_task": "P100-070.original.v1",
+  "default_tier": "adequacy_falsification_diagnostic",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "native Bz map ordinate at a withheld pixel",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 36,
+    "independent_unit_description": "Two specimens: CSH/119DOA development and CSL/129DOA confirmation. Spatial blocks balance errors but are not independent specimens; development folds are entire200row strips.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Twelve same-map neighbors: cardinal offsets4/8pixels and diagonal4pixels. Centers are20pixel lattice points, none can be a calibration point for another scored center.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "native Bz map ordinate at a withheld pixel",
+    "prediction_time": "Retrospective reconstruction at one microscopy acquisition; all neighboring measurements are available. No prediction of an earthquake or temperature history.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Same-map Bz interpolation; unresolved SI scale and no thermal inversion validation."
+  },
+  "task_ids": [
+    "P100-070.original.v1"
+  ],
+  "finding_ids": [
+    "P100-070-F01",
+    "P100-070-F02",
+    "P100-070-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-070/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-070.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate native Bz map ordinate at a withheld pixel under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Retrospective reconstruction at one microscopy acquisition; all neighboring measurements are available. No prediction of an earthquake or temperature history.",
+    "calibration_requirement": "Twelve same-map neighbors: cardinal offsets4/8pixels and diagonal4pixels. Centers are20pixel lattice points, none can be a calibration point for another scored center.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "native Bz map ordinate at a withheld pixel in source-native Bz unit (SI conversion unresolved)",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Same-map Bz interpolation; unresolved SI scale and no thermal inversion validation."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "source-native Bz unit (SI conversion unresolved)",
+    "reference_model": "reference",
+    "reference_primary_error": 2.0839625475165466e-06,
+    "reference_physical_mae": 2.0839625475165466e-06,
+    "physical_error_units": "source-native Bz unit (SI conversion unresolved)",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 2.0839625475165466e-06,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-070.original.v1/evidence/metrics.csv",
+      "bytes": 1837,
+      "sha256": "e3077b0a069dd99949b8db1470756730ba088e126515e5c12d99fb7a0c8a5ef9"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Same-map Bz interpolation; unresolved SI scale and no thermal inversion validation."
+}

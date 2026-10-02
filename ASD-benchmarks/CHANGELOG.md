@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.0 — 2026-10-02
+
+- Added all 100 reference ASD portfolios, **implemented by GPT-6 Astra**, with PDF/Markdown reports, equations, measured targets, frozen programs and preserved failures.
+- Published 134 numerical task versions across 99 cases, plus a source-adequacy assessment; added raw-data feature contracts and reviewed task admission.
+- Added task eligibility, finding-to-evidence links and scoped adjudications. Existing outcomes remain exposed.
+- Integrated native data, results and evaluators in one catalog; updated both benchmark and Principia READMEs.
+- Adapted native verification to the accepted public folder/metadata layout, without changing scientific source bytes or numerical targets. Exact adaptations and fresh checks accompany the release.
+- Preserved the original corpus and excluded the unresolved optional case-96 supplement. No application changes or new discovery campaign.
+
+# Changelog
+
 ## 0.1.1 — download compatibility, 2026-09-15
 
 - Download selected LFS payloads during sparse checkout. This avoids the whole-tree blob scan performed by `git lfs pull` with some older Git versions in partial clones.

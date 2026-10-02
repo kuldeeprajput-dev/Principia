@@ -1,0 +1,33 @@
+{
+  "case": 4,
+  "kind": "rician",
+  "hypothesis": "The quadrature RMS is not the mean magnitude of a noisy transverse vector. Use the Rician mean with positive resolution variance and compare physical-unit errors under the same information budget.",
+  "parent": "attempt-003",
+  "created_utc": "2026-10-02T02:04:56.726449+00:00",
+  "before_execution": true,
+  "confirmation_accessed": false,
+  "development_evidence_available": [
+    {
+      "attempt": "attempt-001",
+      "primary_error": 21.077550213564557,
+      "worst_group": 21.60102499619289
+    },
+    {
+      "attempt": "attempt-002",
+      "primary_error": 22.57437541687973,
+      "worst_group": 23.2816279931791
+    },
+    {
+      "attempt": "attempt-003",
+      "primary_error": 19.934123685326362,
+      "worst_group": 20.52626493419126
+    }
+  ],
+  "primary_metric": "mean_group_absolute_error",
+  "falsifying_tests": [
+    "Matched strong baselines under identical inputs",
+    "Per-group errors and worst-group behavior",
+    "Parameter boundary/identifiability audit or exact-arithmetic preconditions",
+    "Physical/mathematical applicability and negative cases retained"
+  ]
+}

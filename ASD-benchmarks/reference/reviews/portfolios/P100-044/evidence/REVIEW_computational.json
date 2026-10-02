@@ -1,0 +1,232 @@
+{
+  "case_id": "P100-044",
+  "role": "computational",
+  "reviewer_id": "/root/asd5_electronics",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "66f116005295aa9eb39e52b242d1471ec2ae34c097650e8dc9b51d7b63e31219"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "96ed055fc479dca7e50bbc7df407541f4ac40022e8d22075185d4367881d0eef"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "fcfd80ecf2b455ea091cf282e25f81b133a1797d4fdcd219e16c008991fcd37f"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "ecd367bb806eadfe4c322317d64b14ae4c9958ed38be49afc900552e035a8267"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "20d6fb1cfd01e899368a0bbc9e6cf5cf6f9879b6c2b175c8803082abd59a08e9"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "ee5e3965148d6f791c9d181047b598b8696e7e7202ed6652ca11222ccf0eaff6"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "d7e15d81d13fc2a1fa1e6d83d327a27913614724a4f3023cecc1a5eded5bfb0a"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "cbfd8c5cd7fca40a60ab408f907e9767bc04b23a5267b08abc2d9442f5c49ec8"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "8f9364e5b424d4323d85663408edeb17291aa5e3df716d2dbcbe311570cb5e2e"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "33dfd7784ac2232b42fb33273ee3cb7b98c6161c2702119cdaf19ed12e1d985e"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "85fca33cb612cd011372336ca429fdbe37aa9e5939d000a131c6723be528ca64"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "a8c343a1246a46dcf55f0070362600460c5d3aaa0cdd9aae823fcd59000caf26"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "378ac50146d2a92fe88e86a821e9979bc2269bb0c62cb7235426942426039c29"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "c95814f966dd7c77fa18113e8e13bf0f8e877b4ff04a48132b055c020d306121"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "8537f3952e9eea093128fe64e58e311123dcdea5504dc4b1bb89cdc07a2b90e0"
+    },
+    {
+      "path": "package/verify_graphs.py",
+      "sha256": "30c87cc6136ab43952fe94e37e183139d96519d59790f3a36a8bcdb9eb70c62d"
+    },
+    {
+      "path": "package/graph_source_manifest.json",
+      "sha256": "fb84129813af2c240ecba687c0058339456cfe50ff977a4ab906f3e8e5c51489"
+    }
+  ],
+  "checks": {
+    "native_rows": 48,
+    "confirmation_rows": 12,
+    "models_replayed": 10,
+    "max_prediction_difference": 0,
+    "max_primary_metric_difference": 4.547473508864641e-13,
+    "group_split_disjoint": true,
+    "undeclared_target_column_ignored": true,
+    "all_graphs": 47,
+    "objective_mismatches": [
+      {
+        "file": "44_mathematics_qoblib_topology/raw/10-topology/submissions/20241206_MIP-Seidel-Linear_Schicker/topology_40_6/topology_40_6_solution.gph",
+        "diameter": 3,
+        "reported_objective": 12.0,
+        "classical_lower_bound": 3,
+        "matches": true
+      },
+      {
+        "file": "44_mathematics_qoblib_topology/raw/10-topology/submissions/20241206_MIP-Seidel-Quadratic_Schicker/topology_40_6/topology_40_6_solution.gph",
+        "diameter": 4,
+        "reported_objective": 5.0,
+        "classical_lower_bound": 3,
+        "matches": false
+      }
+    ],
+    "classical_counting_certificates": 27,
+    "implementation": "Independent SciPy sparse shortest_path, not owner BFS implementation"
+  },
+  "overall_limitations": [
+    "Computational review is not independent experimental replication.",
+    "Public-source-aware outcomes are exposed; no scientific novelty certification."
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-044-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native reconstruction, declared calibration/grouping and independent MAE reproduction agree; scope remains the fixed source experiment."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Executed all10 frozen predictors; independently recomputed equal-group physical-unit MAE. Maximum metric discrepancy4.55e-13."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        }
+      },
+      "checks": [
+        "Source hashes verified by native reader",
+        "Exact held observation identities and targets reconstructed",
+        "All model predictions and primary metrics independently recomputed",
+        "Declared-input-only replay invariant to an extra target column",
+        "Independent graph algorithm checked every released solution"
+      ],
+      "limitations": [
+        "One solver/hardware experiment,16 structural instances,three formulations,one run each. Consumption censored by a7200s resource cap; not latent solve time or general computational complexity. No deployed impact evidence.",
+        "Evidence supports a scoped numerical/reference claim, not universal physical/complexity law."
+      ]
+    },
+    {
+      "finding_id": "P100-044-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Independent sparse shortest paths reproduce47 valid graphs,27 counting certificates and exactly two slack-objective mismatches."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Executed all10 frozen predictors; independently recomputed equal-group physical-unit MAE. Maximum metric discrepancy4.55e-13."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        }
+      },
+      "checks": [
+        "Source hashes verified by native reader",
+        "Exact held observation identities and targets reconstructed",
+        "All model predictions and primary metrics independently recomputed",
+        "Declared-input-only replay invariant to an extra target column",
+        "Independent graph algorithm checked every released solution"
+      ],
+      "limitations": [
+        "One solver/hardware experiment,16 structural instances,three formulations,one run each. Consumption censored by a7200s resource cap; not latent solve time or general computational complexity. No deployed impact evidence.",
+        "Evidence supports a scoped numerical/reference claim, not universal physical/complexity law."
+      ]
+    },
+    {
+      "finding_id": "P100-044-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native reconstruction, declared calibration/grouping and independent MAE reproduction agree; scope remains the fixed source experiment."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "significance": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Executed all10 frozen predictors; independently recomputed equal-group physical-unit MAE. Maximum metric discrepancy4.55e-13."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Computational checks do not establish this scientific dimension."
+        }
+      },
+      "checks": [
+        "Source hashes verified by native reader",
+        "Exact held observation identities and targets reconstructed",
+        "All model predictions and primary metrics independently recomputed",
+        "Declared-input-only replay invariant to an extra target column",
+        "Independent graph algorithm checked every released solution"
+      ],
+      "limitations": [
+        "One solver/hardware experiment,16 structural instances,three formulations,one run each. Consumption censored by a7200s resource cap; not latent solve time or general computational complexity. No deployed impact evidence.",
+        "Evidence supports a scoped numerical/reference claim, not universal physical/complexity law."
+      ]
+    }
+  ]
+}

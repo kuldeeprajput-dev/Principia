@@ -1,0 +1,22 @@
+{
+  "name": "roughness_envelope",
+  "formula": "I0*(q0/q)**4*exp(-sigma**2*(q**2-q0**2))",
+  "hypothesis": "Attempt1: a Debye-Waller-like roughness envelope attenuates the asymptotic Fresnel tail. Test transfer of one effective interface width across complete deposition batches.",
+  "inputs": [
+    "q",
+    "q0",
+    "I0",
+    "outer"
+  ],
+  "initial": {
+    "sigma": 3
+  },
+  "bounds": {
+    "sigma": [
+      0,
+      30
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:08:15.903254+00:00",
+  "parent": null
+}

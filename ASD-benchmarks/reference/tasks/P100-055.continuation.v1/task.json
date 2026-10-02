@@ -1,0 +1,173 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-055.continuation.v1",
+  "case_id": "P100-055",
+  "case_number": 55,
+  "family": "continuation",
+  "protocol_version": "P100-055-AGING30-v1-CONT-20261001",
+  "cohort_id": "P100-055.continuation.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-055.continuation.v1",
+  "legacy_package": "55_materials_slag_printing/research_history/continuation-20261001/candidate",
+  "source_scenario": "scenarios/55_materials_slag_printing",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Individual penetration normal force at mixing age30min",
+  "target_units": "N",
+  "error_units": "N",
+  "primary_units": "N",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "ratio",
+    "water",
+    "sp_fraction",
+    "vma_fraction",
+    "penetration_index",
+    "initial_force",
+    "initial_shape_change"
+  ],
+  "input_units": {
+    "ratio": "dimensionless author aggregate/binder mass ratio",
+    "water": "dimensionless author water/binder ratio",
+    "sp_fraction": "SP/binder mass ratio, dimensionless",
+    "vma_fraction": "VMA/binder mass ratio, dimensionless",
+    "penetration_index": "native index; sampling interval unresolved",
+    "initial_force": "N, measured age0 replicate mean at matching index",
+    "initial_shape_change": "N, age0 mean difference over50native indices"
+  },
+  "numeric_columns": [],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Completed age0 mean force curve and known formulation precede every age30 target. Native index is supplied; no future age30 target, stress fit or mislabeled mixture supplies predictors.",
+  "calibration": "Complete age0 traces are permitted per-mixture calibration for every model. No age30 force is an input. SP/VMA fractions use final author-entered masses; intermediate label inconsistencies are retained in the audit.",
+  "independent_unit": "whole mixture, all aged traces; age0 calibration available",
+  "evaluation_groups": [
+    "0.5_0.30",
+    "0.7_0.30"
+  ],
+  "assigned_rows": 2400,
+  "eligible_rows": 2400,
+  "baseline_models": [
+    "reference",
+    "scientific_candidate",
+    "baseline_affine",
+    "baseline_gain",
+    "baseline_identity",
+    "baseline_kernel",
+    "baseline_mean",
+    "cycle_001_finite_buildup",
+    "cycle_002_packing_additives",
+    "cycle_003_shape_memory",
+    "cycle_004_water_rebuild",
+    "cycle_005_clock_build",
+    "cycle_006_shape_water",
+    "cycle_007_parsimonious_gain"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "scientific_candidate": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_affine": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_gain": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_identity": {
+      "equation": "F30 = F0",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_kernel": {
+      "equation": "F30 = max(0, intercept + K beta)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_mean": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "cycle_001_finite_buildup": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "cycle_002_packing_additives": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "cycle_003_shape_memory": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "cycle_004_water_rebuild": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "cycle_005_clock_build": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "cycle_006_shape_water": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "cycle_007_parsimonious_gain": {
+      "equation": "F30 = max(0, sum_j beta_j phi_j)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "scope_limits": "Nine mixtures, two initial and two aged traces per mixture. Aged prediction is calibrated with the completed initial-force map. No intrinsic stress/rate or causal additive law identified.",
+  "source_url": "https://zenodo.org/records/17092152",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Every original source outcome is exposed. Development used seven fixed mixtures; diagnostic used the other two after selection freeze. Scores are retrospective. Revised calibration task differs from the old both-age uncalibrated task; do not compare their MAEs directly.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "0358a1ffd9544b2e12fc6b09339bf31a204440301fe43594d41b142883d22e67",
+  "observations_sha256": "0aa259a234f075bf432863dbdcde89c9446f73b95c17da2abdbdb3be3dc71406",
+  "legacy_protocol_sha256": "b904bdf083f39d6ec75fbad7c59f548a956620c32dae06163681669fc85ec751",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

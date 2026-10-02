@@ -1,0 +1,148 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-084.original.v1",
+  "case_id": "P100-084",
+  "case_number": 84,
+  "family": "original",
+  "protocol_version": "P100-084-asd7-native-v1",
+  "cohort_id": "P100-084.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-084.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/84_biomaterials_cellulose_afm",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "native AFM retraction force",
+  "target_units": "nN",
+  "error_units": "nN",
+  "primary_units": "nN",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "x",
+    "base",
+    "amp",
+    "progress"
+  ],
+  "input_units": {
+    "x": "dimensionless normalized piezo position relative to fixed5nNapproach crossing",
+    "base": "nN; mean first10approachpoints",
+    "amp": "nN; initialretractionlevel minusbase",
+    "progress": "dimensionless fraction ofretractionramp"
+  },
+  "numeric_columns": [
+    "x",
+    "base",
+    "amp",
+    "progress"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict late retraction after the entire approach and firstfive retraction samples are available. Targets begin at retractionindex16. Measured retraction deflection is excluded because it algebraically determines force.",
+  "calibration": "Approach baseline, first5nNabovebaselinecrossing, known ramp extent, and initialfive retractionforce samples. Everycandidate receives the same frozen summaries.",
+  "independent_unit": "Complete approach/retraction curve is held together; one hashselectedcurveper surface type confirms. Curves are locations on three samples, not independentmanufacturingbatches.",
+  "evaluation_groups": [
+    "230804_CA_Flat.0_00002.pfc-C488_ForceCurveIndex_36494.spm.txt",
+    "230804_CA_Low.0_00016.pfc-228E_ForceCurveIndex_32904.spm.txt",
+    "230807_CA_high.0_00022.pfc-D316_ForceCurveIndex_32907.spm.txt"
+  ],
+  "assigned_rows": 336,
+  "eligible_rows": 336,
+  "baseline_models": [
+    "reference",
+    "flexible",
+    "hertz_shape",
+    "initial_level",
+    "conical_contact",
+    "localized_adhesion",
+    "shifted_contact_pull_off",
+    "rough_asperity_exponent",
+    "hysteretic_detachment"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "flexible": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "hertz_shape": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "initial_level": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "conical_contact": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "localized_adhesion": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "shifted_contact_pull_off": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rough_asperity_exponent": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "hysteretic_detachment": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Curve-wise errors; three heldcurve locations do not justify independentmaterialpopulationconfidence."
+  },
+  "scope_limits": "Piezo position is not true indentation; effective contact models are predictive surrogates, not certified elasticmoduli.; No stem-cell response measurements are present in this retained package; no osteogenesis conclusion follows.; Ramp sampling frequency is not resolved; progress is dimensionless and no relaxation time in seconds is inferred.",
+  "source_url": "https://zenodo.org/records/20281797",
+  "source_license": "cc-by-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Schema showed initialretraction rows that are inside the declaredfirstfivecalibrationwindow, plus a few firstapproachrows. Late reserved retraction targets were not inspected.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "3e469fc0420d282e327e6f64aaa95c3b8e04b5a6c43cbfee3179f1c75e63f04b",
+  "observations_sha256": "d4ff7c61907f8f768596af9c2d146a99fc4702ae6797a9c8da993bfdec5261c8",
+  "legacy_protocol_sha256": "31794dfe896da1586e0a03302e6a632e55b94b174a407ba0db3f6da13ee1296a",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "base",
+    "amp"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

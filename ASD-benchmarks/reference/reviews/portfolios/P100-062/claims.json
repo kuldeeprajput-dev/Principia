@@ -1,0 +1,369 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-062",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Firsttwo observations per sheet were inspected for schema and belong to permitted initial calibration. No reserved tail current was inspected before freeze."
+  },
+  "findings": [
+    {
+      "id": "P100-062-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "A condition-aware activated-breakthrough surrogate predicts the reserved late portions of these two traces more accurately than the matched controls.",
+      "applicability": "293K, same recorded steel system, late-time extrapolation using development prefixes.",
+      "limitations": "Both tails have positive bias; two linked traces cannot establish specimen transfer.",
+      "falsification": "Both tails have positive bias; two linked traces cannot establish specimen transfer.",
+      "prior_art": "Inverse-time breakthrough and distributed arrival forms are established empirical families; this is a scoped surrogate comparison, not a new diffusion law.",
+      "equation_or_program": {
+        "expression": "Ihat(t)=I0+(A0+A1 z) exp[-(tau exp(k z)/t)^beta], z\u2208{0,1}.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "\u03bcA",
+        "t": "s since third baseline observation",
+        "offset": "\u03bcA; mean first3 observations",
+        "drive": "mA/cm\u00b2; imposed cathodic-current step",
+        "high": "binary known high-current condition"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-062.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-062-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "A common linear gain and single transport-shaped timescale across cathodic current steps is insufficient for this prediction task.",
+      "applicability": "Prediction-shape evidence only, not causal trap identification.",
+      "limitations": "These data do not isolate which microscopic process causes the mismatch.",
+      "falsification": "These data do not isolate which microscopic process causes the mismatch.",
+      "prior_art": "Boundary entry, trapping and imposed current can confound apparent transport time.",
+      "equation_or_program": {
+        "expression": "Shared response I0+gain*drive*(1-exp(-t/tau)); common-breakthrough ablation sets k=0.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "\u03bcA",
+        "t": "s since third baseline observation",
+        "offset": "\u03bcA; mean first3 observations",
+        "drive": "mA/cm\u00b2; imposed cathodic-current step",
+        "high": "binary known high-current condition"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-062.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-062-F03",
+      "classification": "unsupported",
+      "source_classification": "unsupported",
+      "statement": "The fitted timescale is a unique microscopic lattice diffusion coefficient applicable to new steel specimens.",
+      "applicability": "No independent-specimen confirmation.",
+      "limitations": "Comparable flexible breakthrough families and condition dependence show inferential ambiguity.",
+      "falsification": "Comparable flexible breakthrough families and condition dependence show inferential ambiguity.",
+      "prior_art": "Diffusion-coefficient inference requires justified boundary conditions and sample geometry.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "\u03bcA",
+        "t": "s since third baseline observation",
+        "offset": "\u03bcA; mean first3 observations",
+        "drive": "mA/cm\u00b2; imposed cathodic-current step",
+        "high": "binary known high-current condition"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-062.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_CONFIRMATION_RECEIPT.json",
+      "bytes": 5787,
+      "sha256": "e47e9819d67a5011168f9cad52bc04ae33f954299bcc0f58e35d47f5189fc86a",
+      "id": "E001",
+      "role": "CONFIRMATION_RECEIPT.json"
+    },
+    {
+      "path": "evidence/E002_FREEZE.json",
+      "bytes": 4110,
+      "sha256": "08bc98425dcf0f5483710fb60b44514f5a40e8c92ff86270b8f0bea21d88ecb4",
+      "id": "E002",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E003_PRIOR_ART.json",
+      "bytes": 599,
+      "sha256": "fcfa060ca987ab57e724053fd915599c29a349e49843277d45b956860e1b417c",
+      "id": "E003",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E004_PROTOCOL.json",
+      "bytes": 2401,
+      "sha256": "c1f817103f322ba6708be95ab339dadd9bba5c36c4298b50600906eb325b0b0b",
+      "id": "E004",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E005_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 15729,
+      "sha256": "26ffdbd69f2b8d685ee62efe81d88a2dfb6d1b51dd966b48da1e29781a3b0a0f",
+      "id": "E005",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E006_SOURCE_AND_UNITS.md",
+      "bytes": 556,
+      "sha256": "077bfa0b64a22ed385ed9084ec1cc5aaa858410c44dd6d0380567045781c5a60",
+      "id": "E006",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E007_SOURCE_MANIFEST.json",
+      "bytes": 414,
+      "sha256": "d6fbb14201a709f74d50d1e9c09354efb515162309b448b087cbdac830003ee5",
+      "id": "E007",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E008_SPLITS.json",
+      "bytes": 353,
+      "sha256": "6f2096de433156dc13b7083c4d24a0278946997c467419c8af68374caa58c0c2",
+      "id": "E008",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E009_native.py",
+      "bytes": 1728,
+      "sha256": "47bda61a260a69ed0eaa4809a7defe10bb94a198389bda6c2ac59c217805f59a",
+      "id": "E009",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E010_FINDINGS.md",
+      "bytes": 7373,
+      "sha256": "7931bf2d76f11a0ed706841a45a21a104355930ba60a6c906c72d275a34026e5",
+      "id": "E010",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E011_MANIFEST.json",
+      "bytes": 2039,
+      "sha256": "b67680d98dc997943d4e68236d3b3ed80c8187f0c4dcf332e3b05d4801e89593",
+      "id": "E011",
+      "role": "package/MANIFEST.json"
+    },
+    {
+      "path": "evidence/E012_inputs.csv.gz",
+      "bytes": 2180,
+      "sha256": "a2bc27c3430860e96099427289c4061377a7da211b3c51e96ed647ce8870af32",
+      "id": "E012",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E013_observations.csv.gz",
+      "bytes": 4216,
+      "sha256": "19130b08a644e065bc51699ad739ab89891895b08f3652db9ad4a21ee8f499d5",
+      "id": "E013",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E014_by_group.csv",
+      "bytes": 2832,
+      "sha256": "ac9e24d837aa990ca25f1e62087b576f6de3aa87944ef15c8528a665996fdc58",
+      "id": "E014",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E015_metrics.csv",
+      "bytes": 2030,
+      "sha256": "7a5a65f3c2429029607c5a00ef90f364f8f4b72532f1e492a320b7473270930b",
+      "id": "E015",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E016_predictions.csv.gz",
+      "bytes": 43536,
+      "sha256": "d91dcbc43b3cf8b742d730f1b2bced6e283abd247028a1b146e9569fac77dd9a",
+      "id": "E016",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E017_findings.json",
+      "bytes": 2738,
+      "sha256": "a5144fdee5f540da6c051d380bc4af91a451d8c1056ff435fec7ba3a7207ac3a",
+      "id": "E017",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E018_rules.json",
+      "bytes": 21607,
+      "sha256": "a127fa21779545f9e31d4f00592ca14513dd36e9e84ffbf5f4eac2e281b51002",
+      "id": "E018",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E019_run.py",
+      "bytes": 3424,
+      "sha256": "3bb0052f6170ea59b990de50c8e8182f43217048cbffb4d6ccaa41adb08ae5d6",
+      "id": "E019",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E020_task_spec.json",
+      "bytes": 2151,
+      "sha256": "75dd051320523dad307baef1561d106f134f2d04c8db535010941ddf01004cf6",
+      "id": "E020",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 28396,
+      "sha256": "ae9f1cfa22069b075483ee24165a584017848fcc8dfd616024fb2c1d64cc32ab",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 10456,
+      "sha256": "53439c67beb5269ebc416c7593e8fd7fa738c02f64e5aebcf6468c3e0ad43e50",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

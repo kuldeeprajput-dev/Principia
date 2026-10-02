@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-024",
+  "title": "Glass-fiber composite fatigue under different cure profiles",
+  "default_task": "P100-024.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Future measured composite stiffness conditional on continued recorded survival",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 6,
+    "independent_unit_description": "complete specimen",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "E0 is the median native stiffness at cycles 10\u201320 for the same specimen; later stiffness and terminal cycle are unavailable to predictors.",
+  "baseline_strength": {
+    "registered_controls": 6,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "unsupported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Future measured composite stiffness conditional on continued recorded survival",
+    "prediction_time": "Use cycle count, prescribed strain, supplied cure/header-frequency metadata and early E0 calibration only; no failure-cycle normalization or future measured stiffness. Exact header-frequency acquisition timing is undocumented; the selected log equation does not use frequency, while comparators condition on its availability.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-024.original.v1",
+    "P100-024.round2.v1"
+  ],
+  "finding_ids": [
+    "P100-024-SCI-01",
+    "P100-024-SCI-02",
+    "P100-024-SCI-03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-024/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-024.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Future measured composite stiffness conditional on continued recorded survival under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Use cycle count, prescribed strain, supplied cure/header-frequency metadata and early E0 calibration only; no failure-cycle normalization or future measured stiffness. Exact header-frequency acquisition timing is undocumented; the selected log equation does not use frequency, while comparators condition on its availability.",
+    "calibration_requirement": "E0 is the median native stiffness at cycles 10\u201320 for the same specimen; later stiffness and terminal cycle are unavailable to predictors.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Future measured composite stiffness conditional on continued recorded survival in GPa",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "GPa",
+    "reference_model": "attempt_001_log",
+    "reference_primary_error": 1.8254475510397128,
+    "reference_physical_mae": 1.8254475510397128,
+    "physical_error_units": "GPa",
+    "lowest_registered_error_model": "competitor_two_mechanism",
+    "lowest_registered_error": 1.825447550518426,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-024.original.v1/evidence/metrics.csv",
+      "bytes": 651,
+      "sha256": "113ac4659aaa8c2ecc0880a6ee07b3cc18f44bf438446af603968197a49caeec"
+    },
+    "models": 6
+  },
+  "case_specific_next_evidence": "Add censoring-aware lifetime endpoints only with complete failure/runout records and new whole-specimen confirmation."
+}

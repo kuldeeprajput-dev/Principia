@@ -1,0 +1,23 @@
+{
+  "name": "oscillatory_memory",
+  "formula": "h+v*sin(omega*0.2)/omega+a*(1-cos(omega*0.2))/omega**2",
+  "hypothesis": "Development evidence available before this fit: damped_velocity: MAE 0.013819, worst group 0.0160151.\n\nDamped drift did not beat native persistence. Test a competing local oscillatory-wave explanation: displacement, velocity and curvature propagate as a harmonic mode, rather than monotone relaxation.",
+  "inputs": [
+    "h0",
+    "h",
+    "v",
+    "a",
+    "median"
+  ],
+  "initial": {
+    "omega": 15
+  },
+  "bounds": {
+    "omega": [
+      1,
+      100
+    ]
+  },
+  "recorded_utc": "2026-10-02T01:55:58.105143+00:00",
+  "parent": "attempt-001"
+}

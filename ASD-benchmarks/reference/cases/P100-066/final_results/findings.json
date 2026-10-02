@@ -1,0 +1,257 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-066",
+  "findings": [
+    {
+      "finding_id": "P100-066-SCI-01",
+      "statement": "The original displaced-gas term improves a weak monotone adsorption baseline but fails an optimum-pressure interpretation.",
+      "classification": "reproduction",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-066.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole material compositions with complete temperature/branch curves; excess uptake rather than absolute capacity. Strong adverse evidence: Idealized pressure subtraction is insufficient at cryogenic high pressure; fitted uptake and derived total-uptake/reuse quantities are not independent confirmation.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Excess/absolute distinction and nonideal hydrogen properties are physically necessary. Two fitted sites and volume are not unique pore populations; branch mismatch does not prove hysteresis.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Leachman EOS and dual-site adsorption are established; specificationrepair and bounded curve diagnostics are the contribution. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole material compositions with complete temperature/branch curves; excess uptake rather than absolute capacity.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original EG 5 diagnostic",
+          "measure": "reference MAE",
+          "value": 0.546458,
+          "unit": "wt.%",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original EG 5 diagnostic",
+          "measure": "domain MAE",
+          "value": 0.639155,
+          "unit": "wt.%",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Idealized pressure subtraction is insufficient at cryogenic high pressure; fitted uptake and derived total-uptake/reuse quantities are not independent confirmation.",
+      "scientific_validators": [
+        "Audit rho[g/cm\u00b3], f[bar], V[cm\u00b3/g]\u2192wt.% dimensional consistency and normal-hydrogen assumption.",
+        "Score peaks only where an interior extremum is observed and retain boundary maxima separately.",
+        "Treat 5\u2013100 bar excess swing as excesscurve diagnostic, not absolute deliverable capacity; freeze EOS interpolation domain."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-066.json",
+      "source_classification": "reproduction"
+    },
+    {
+      "finding_id": "P100-066-SCI-02",
+      "statement": "Correct real-gas excess modeling gives much better local curves, but improvement over a repaired strong ideal-excess baseline is only 3.19% on EG 5.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "partially_supported",
+      "task_ids": [
+        "P100-066.continuation.v1"
+      ],
+      "task_version_history": "2026-10-01 continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole material compositions with complete temperature/branch curves; excess uptake rather than absolute capacity. Strong adverse evidence: Effective pore volume is fitted from uptake, not independently measured .77 Kpeak differs 3.91 bar from sampled maximum, but 160/273 Kmaxima lie at upper pressure boundary and are not interior optima. PSDREADME/filename material mismatch prevents independent pore calibration.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Excess/absolute distinction and nonideal hydrogen properties are physically necessary. Two fitted sites and volume are not unique pore populations; branch mismatch does not prove hysteresis.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Leachman EOS and dual-site adsorption are established; specificationrepair and bounded curve diagnostics are the contribution. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole material compositions with complete temperature/branch curves; excess uptake rather than absolute capacity.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "development three compositions",
+          "measure": "two-site real-gas MAE",
+          "value": 0.128481,
+          "unit": "wt.%",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "development three compositions",
+          "measure": "correct ideal-excess MAE",
+          "value": 0.141589,
+          "unit": "wt.%",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed EG 5",
+          "measure": "two-site real-gas MAE",
+          "value": 0.20146,
+          "unit": "wt.%",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed EG 5",
+          "measure": "correct ideal-excess MAE",
+          "value": 0.208098,
+          "unit": "wt.%",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed EG 5",
+          "measure": "bias",
+          "value": -0.194047,
+          "unit": "wt.%",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Effective pore volume is fitted from uptake, not independently measured .77 Kpeak differs 3.91 bar from sampled maximum, but 160/273 Kmaxima lie at upper pressure boundary and are not interior optima. PSDREADME/filename material mismatch prevents independent pore calibration.",
+      "scientific_validators": [
+        "Audit rho[g/cm\u00b3], f[bar], V[cm\u00b3/g]\u2192wt.% dimensional consistency and normal-hydrogen assumption.",
+        "Score peaks only where an interior extremum is observed and retain boundary maxima separately.",
+        "Treat 5\u2013100 bar excess swing as excesscurve diagnostic, not absolute deliverable capacity; freeze EOS interpolation domain."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-066.json",
+      "source_classification": "retrospective_extension"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

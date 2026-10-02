@@ -1,0 +1,172 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-032.original.v1",
+  "case_id": "P100-032",
+  "case_number": 32,
+  "family": "original",
+  "protocol_version": "P100-032-asd6-native-v1",
+  "cohort_id": "P100-032.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-032.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/32_medicine_cpap_pressure",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "gauge_pressure_200ms_future",
+  "target_units": "cmH2O",
+  "error_units": "cmH2O",
+  "primary_units": "cmH2O",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "p0",
+    "p05",
+    "p10",
+    "p20",
+    "p30",
+    "p40",
+    "p50",
+    "di0",
+    "de0",
+    "di20",
+    "de20",
+    "trial_BH",
+    "trial_FEM"
+  ],
+  "input_units": {
+    "p0": "cmH2O",
+    "p05": "cmH2O",
+    "p10": "cmH2O",
+    "p20": "cmH2O",
+    "p30": "cmH2O",
+    "p40": "cmH2O",
+    "p50": "cmH2O",
+    "di0": "cmH2O",
+    "de0": "cmH2O",
+    "di20": "cmH2O",
+    "de20": "cmH2O",
+    "trial_BH": "binary",
+    "trial_FEM": "binary"
+  },
+  "numeric_columns": [
+    "p0",
+    "p05",
+    "p10",
+    "p20",
+    "p30",
+    "p40",
+    "p50",
+    "di0",
+    "de0",
+    "di20",
+    "de20",
+    "trial_BH",
+    "trial_FEM"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "At each fixed1s origin predict native gauge pressure0.20s later using only present/past pressure and differential-pressure signals.",
+  "calibration": "Source fixed ADC-to-cmH2O conversion; no target-participant fitted coefficients. All history at or before forecast origin.",
+  "independent_unit": "participant",
+  "evaluation_groups": [
+    "Subject1",
+    "Subject20",
+    "Subject4",
+    "Subject5",
+    "Subject7"
+  ],
+  "assigned_rows": 3768,
+  "eligible_rows": 3768,
+  "baseline_models": [
+    "reference",
+    "baseline_persistence",
+    "baseline_tangent",
+    "baseline_flexible",
+    "attempt_001_damped",
+    "attempt_002_periodic",
+    "attempt_003_flow",
+    "attempt_004_regime",
+    "attempt_005_limited"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_persistence": {
+      "equation": "p_hat(t+.2)=p(t)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_tangent": {
+      "equation": "p_hat(t+.2)=p(t)+2*(p(t)-p(t-.1))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_damped": {
+      "equation": "p_hat=p0+a*(p0-p10)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_periodic": {
+      "equation": "p_hat=p0+a*(p0-p20)+b*(p0-2*p20+p40)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_flow": {
+      "equation": "p_hat=p0+a*(p0-p20)+b*(di0-de0)+c*(di0-di20)+d*(de0-de20)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_regime": {
+      "equation": "p_hat=p0+beta dot [v,acc,flow,v*I(flow>0),v*FEM,v*BH]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_limited": {
+      "equation": "p_hat=p0+a*s*tanh((p0-p20)/s)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "Twenty healthy participants; three complete trials linked. Forecasts assess device/airway signal continuity under rapid occlusion, not separately identified lung compliance or clinical accuracy.",
+  "source_url": "https://physionet.org/content/respiratory-heartrate-dataset/1.0.0/",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "e4c2fd9ed5e1db14beb5d87d1d03d5530793ec8921f48bd3f2731ced3d541661",
+  "observations_sha256": "40103d5a18a0cfdac6d68d54df22f783d500fd5fd9b112a7a5952e59e2801530",
+  "legacy_protocol_sha256": "77e903ec394ee07ed9b6162a82e77ef06e8b302a762bbcce9d9be37c93ac2161",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

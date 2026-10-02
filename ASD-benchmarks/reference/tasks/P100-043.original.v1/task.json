@@ -1,0 +1,175 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-043.original.v1",
+  "case_id": "P100-043",
+  "case_number": 43,
+  "family": "original",
+  "protocol_version": "P100-043-asd6-native-v1",
+  "cohort_id": "P100-043.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-043.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/43_ai_gemstones_training",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "hot-run validation log-perplexity at20\u2013100B tokens",
+  "target_units": "nats per token",
+  "error_units": "nats per token",
+  "primary_units": "nats per token",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "tokens_B",
+    "anchor_tokens_B",
+    "early_tokens_B",
+    "anchor_loss",
+    "early_loss",
+    "params_B",
+    "width",
+    "depth"
+  ],
+  "input_units": {
+    "tokens_B": "billions of training tokens",
+    "anchor_tokens_B": "billions of training tokens",
+    "early_tokens_B": "billions of training tokens",
+    "anchor_loss": "nats per token",
+    "early_loss": "nats per token",
+    "params_B": "billions of parameters",
+    "width": "embedding dimensions",
+    "depth": "layers"
+  },
+  "numeric_columns": [
+    "tokens_B",
+    "anchor_tokens_B",
+    "early_tokens_B",
+    "anchor_loss",
+    "early_loss",
+    "params_B",
+    "width",
+    "depth"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Only checkpoints at or before10B/20B tokens may calibrate the20\u2013100B forecast",
+  "calibration": "Two same-architecture early validation checkpoints, exact native anchors in observations",
+  "independent_unit": "complete architecture",
+  "evaluation_groups": [
+    "1024x28",
+    "1280x36",
+    "1536x50",
+    "384x13",
+    "512x12"
+  ],
+  "assigned_rows": 221,
+  "eligible_rows": 221,
+  "baseline_models": [
+    "log_tangent",
+    "persist",
+    "power",
+    "rbf",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007",
+    "reference"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "log_tangent": {
+      "equation": "Lhat=L0+(L0-L1)*ln(T/T0)/ln(T0/T1)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persist": {
+      "equation": "Lhat=L0",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "power": {
+      "equation": "Lhat=L0+(L0-L1)*R(beta); R(b)=[(T/T0)^(-b)-1]/[1-(T1/T0)^(-b)]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rbf": {
+      "equation": "Lhat=L0+sum_j w_j*exp(-||standardized_z-center_j||^2/(2*length^2))+intercept; z=[ln(T/T0),ln(N in billions),ln(width/depth),L0,L1-L0]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "Lhat=L0+(L0-L1)*R(exp(b0+b1*ln((width/depth)/32)))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "Lhat=L0+(L0-L1)*[w*R(beta_slow)+(1-w)*R(beta_fast)]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "Lhat=L0+(L0-L1)*R(exp(b0+b1*ln(N/0.5B)))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "Lhat=L0+c*(L0-L1)*R(beta)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "Lhat=L0+(L0-L1)*R(exp(b0+b1*ln((width/depth)/32)+b2*ln(N/0.5B)))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "Lhat=L0+(L0-L1)*R(beta_inf+a/(1+N/Nc))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "Lhat=L0+(L0-L1)*R(exp(b0+b1*ln(N/0.5B)+b2*abs(ln((width/depth)/32))))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "reference": {
+      "equation": "Lhat=L0+(L0-L1)*R(exp(b0+b1*ln(N/0.5B)))",
+      "state": "rules.json",
+      "role": "reference"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report every independent group; do not infer new seeds/hardware/data populations or bootstrap dependent checkpoint/formulation rows."
+  },
+  "scope_limits": "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+  "source_url": "https://github.com/mcleish7/gemstone-scaling-laws",
+  "source_license": "MIT",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; selection and stopping frozen before first internal confirmation. All current scores are now exposed; future evaluation is retrospective.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "da0c6c049ae3b6399edef2735279e27ce47878ef4c1bc6fbe8d6ad92b236cc60",
+  "observations_sha256": "4dbdc9d8078265f5d6a1be9ec4e7b5d5e36b0c2e419564ad43a0a7ac56acce25",
+  "legacy_protocol_sha256": "57a218ac1c118d7159e1bf21a4596952508f7b19fa8fdf26580aa482f42e16fd",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

@@ -1,0 +1,447 @@
+{
+  "schema_version": "principia.advisory-review/3.0",
+  "bindings": {
+    "claims_sha256": "fc9b561c8055f2e5690487490217fc7e86ed1943235219cb362ecbc9d42c186f",
+    "evidence_sha256": {
+      "E001": "644c7d7f7da5657738e08e9c31d1f3f4c50387add158f59964009887a160edd2",
+      "E002": "da2ba5d34369acaeb3c52681d34d7be283a28591d51ec0b160cf435befa32321",
+      "E003": "c46fed001ed807d4353e2a16c11cd4e222c090334009b7d2a3c612fd51819a80",
+      "E004": "43132faae9caec7140907625c5896812865e3d6e595ade326c2062246b7b187e",
+      "E005": "ffa19348a0f43e6d8b273981d27e67d0669dd0d6a3f7b7dfb759f7f4c5a8054c",
+      "E006": "7eb968156f482a2d1870f92303476f5dea827adfcdbe9c963056e44b4d399c43",
+      "E007": "b33c0f2cb4cc9f4d7b2317b444ed603b11451639a606b8c3478df537b7c962d4",
+      "E008": "078dccc7714af65b34d0a4ed0ccad28c10726692ad1ba982bc4c6ff7f0292283",
+      "E009": "feac4ba55101fa3a6ab25066049969820b348378218d80b8f044fc10ca041e59",
+      "E010": "9588cab726a6f980f14820da2dd4cbc85d4786ce04bc469650df0fea74527456",
+      "E011": "e095f22830c5efb07dc4ee8a07e84d0cd168b47429e4792533a1c1b17dffd7e7",
+      "E012": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253",
+      "E013": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078",
+      "SCIENTIFIC": "81b45128acbc8a65f28bcd6c4e7609b8e0ebe8847af5135f181efc4635051bb1",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-067",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "reviews": [
+    {
+      "finding_id": "P100-067-SCI-01",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-067-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-067-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows. Strong adverse evidence: Two-dimensional orientation, ambiguous thickness/fluid metadata and absent normal stress block a unique drag mechanism. Constant-speed success does not prove unchanged drag.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Travel-time dimensional scaling is supported within theapparatus; interface drag/orientation causation is not identified.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Ballistic transit is established; preserved falsification is the contribution rather than an admitted new settling law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Two-dimensional orientation, ambiguous thickness/fluid metadata and absent normal stress block a unique drag mechanism. Constant-speed success does not prove unchanged drag."
+        ],
+        "checks": [
+          "Require every predictor row strictly before interface entry; prohibit interpolation across entry.",
+          "Reproduce nested configuration\u2192particle weighting on every covered subset.",
+          "Keep duplicate trajectory representations linked and do not infer thickness or unmeasured normal stress."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-067-SCI-02",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-067-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "not_assessed",
+            "rationale": "This exact historical claim does not map one-to-one to a registered numerical task. The portfolio-level replay review does not establish claim-specific implementation parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "not_assessed",
+            "rationale": "This exact historical claim does not map one-to-one to a registered numerical task. The portfolio-level replay review does not establish claim-specific implementation parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "not_assessed",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-067-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows. Strong adverse evidence: Development errors .528587 and .470794 absolute-log units do not establish a density/orientation mechanism; exposed simple ballistic control remains superior. Strict upstream windows and calibration timing limits are more solid than the rejected correction.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "mechanism": {
+            "status": "unsupported",
+            "rationale": "Travel-time dimensional scaling is supported within theapparatus; interface drag/orientation causation is not identified.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Ballistic transit is established; preserved falsification is the contribution rather than an admitted new settling law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "significance": {
+            "status": "supported",
+            "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Development errors .528587 and .470794 absolute-log units do not establish a density/orientation mechanism; exposed simple ballistic control remains superior. Strict upstream windows and calibration timing limits are more solid than the rejected correction."
+        ],
+        "checks": [
+          "Require every predictor row strictly before interface entry; prohibit interpolation across entry.",
+          "Reproduce nested configuration\u2192particle weighting on every covered subset.",
+          "Keep duplicate trajectory representations linked and do not infer thickness or unmeasured normal stress."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-067-SCI-03",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-067-SCI-03",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-067-SCI-03",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows. Strong adverse evidence: Five of six configurations lose toRBF. The first continuation density/orientation corrections also failed exposed transfer.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "unsupported",
+            "rationale": "Travel-time dimensional scaling is supported within theapparatus; interface drag/orientation causation is not identified.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Ballistic transit is established; preserved falsification is the contribution rather than an admitted new settling law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "supported",
+            "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Five of six configurations lose toRBF. The first continuation density/orientation corrections also failed exposed transfer."
+        ],
+        "checks": [
+          "Require every predictor row strictly before interface entry; prohibit interpolation across entry.",
+          "Reproduce nested configuration\u2192particle weighting on every covered subset.",
+          "Keep duplicate trajectory representations linked and do not infer thickness or unmeasured normal stress."
+        ]
+      }
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "novelty_is_not_certified": true
+}

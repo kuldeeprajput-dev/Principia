@@ -1,0 +1,1413 @@
+{
+  "case_id": "P100-010",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "fef20ed7288f4a3ab0ce28a5c9e5d5ddcb77d9a78a1c5b9d44079afd6aba5596"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "187b199e3230807a8e0bbd6a5c9b1a9ff343647f79707cdceebba4f0da931842"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "28b6e54a6ca7d9293ad5b8ea3bfa55c007dfdf906b37b53354eda46cda087166"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "94124d2f5e591680f747ad54830de7e12c8f51de822a9e296983e1a2c38711b5"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "668b51ab1b67ebf9341fdaf2c06008b969b3ece18bd70c7e67c89de162702eb1"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "0a90566fccab6ebc2ea3d9e8d8a3194e6514ef0cf8abf4161fd0fd41e7103648"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "438d440cbc54ffa3edb25d495d8bb4c3f1c21f16cdaff5427de7babbd3d8f612"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "b2bfd3f2ca34e4fab845ade622d259f3ca44cfa824b16609625707219ca825ee"
+    },
+    {
+      "path": "native.py",
+      "sha256": "746027c937c2674e7560a1d07819cbef6c3f8b088ef280fbdd4767d7172b7c62"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "d9834d2603ae1557012866275aec7f6ae68a3fd153204da03a6443177ca8281c"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "66185a821273a8843590b1883cd33fdade52472291246f440b805a5f154d4d66"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "bc7e7e6590fc90824e2e3f9e3f0ac538093cf145d584d8f9067105d914503c3f"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "27aafa375c2d4cbff3e54559982afb0583c903f5fcefa2167279b3006eadf239"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "f8c2625c91ee08a313e9c9eb5c3dde12db1f3fc50ca15e5f7742ba6478c1db83"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "3b2662eb36428a913bd7356d1e39d28dfa898cec7c37c78a925a0bfa47e12c7b"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-010-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The endpoint is NVD-authored annotation presence, not exploitation. All17 reserved source groups have zero positives, so error/calibration remain defined but discrimination and positive-event recall cannot support an enrichment law."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The endpoint is NVD-authored annotation presence, not exploitation. All17 reserved source groups have zero positives, so error/calibration remain defined but discrimination and positive-event recall cannot support an enrichment law."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The endpoint is NVD-authored annotation presence, not exploitation. All17 reserved source groups have zero positives, so error/calibration remain defined but discrimination and positive-event recall cannot support an enrichment law."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The endpoint is NVD-authored annotation presence, not exploitation. All17 reserved source groups have zero positives, so error/calibration remain defined but discrimination and positive-event recall cannot support an enrichment law.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-010-F02",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The endpoint is NVD-authored annotation presence, not exploitation. All17 reserved source groups have zero positives, so error/calibration remain defined but discrimination and positive-event recall cannot support an enrichment law."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The endpoint is NVD-authored annotation presence, not exploitation. All17 reserved source groups have zero positives, so error/calibration remain defined but discrimination and positive-event recall cannot support an enrichment law."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The endpoint is NVD-authored annotation presence, not exploitation. All17 reserved source groups have zero positives, so error/calibration remain defined but discrimination and positive-event recall cannot support an enrichment law."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The endpoint is NVD-authored annotation presence, not exploitation. All17 reserved source groups have zero positives, so error/calibration remain defined but discrimination and positive-event recall cannot support an enrichment law.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-010",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-010",
+      "native_rows": 4425,
+      "confirmation_rows": 1388,
+      "models": 11,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 11,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 6.776263578034403e-21,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 1388,
+        "primary_error": 1.8433835367076705e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "constant",
+        "rows": 1388,
+        "primary_error": 1.8433835367076705e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "domain",
+        "rows": 1388,
+        "primary_error": 1.9135088432798003e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 1388,
+        "primary_error": 0.0030684991205404376,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001",
+        "rows": 1388,
+        "primary_error": 3.442366946112427e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002",
+        "rows": 1388,
+        "primary_error": 5.723475490832598e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003",
+        "rows": 1388,
+        "primary_error": 3.4414379129999984e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004",
+        "rows": 1388,
+        "primary_error": 3.547687732434758e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005",
+        "rows": 1388,
+        "primary_error": 3.561245727020582e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_006",
+        "rows": 1388,
+        "primary_error": 6.847329591813656e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_007",
+        "rows": 1388,
+        "primary_error": 3.5612457487228145e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 48,
+        "validation_groups_count": 23,
+        "validation_groups": [
+          "13061848-ea10-403d-bd75-c83a022c2891",
+          "367425dc-4d06-4041-9650-c2dc6aaa27ce",
+          "50a63c94-1ea7-4568-8c11-eb79e7c5a2b5",
+          "6b3ad84c-e1a6-4bf7-a703-f496b71e49db",
+          "8338d8cb-57f7-4252-abc0-96fd13e98d21",
+          "PSIRT@rockwellautomation.com",
+          "a6d3dc9e-0591-4a13-bce7-0f5b31ff6158",
+          "ce714d77-add3-4f53-aff5-83d477b104bb",
+          "cna@vuldb.com",
+          "cvd@cert.pl",
+          "ff89ba41-3aa1-4d27-914a-91399e9639e5",
+          "hp-security-alert@hp.com",
+          "iletisim@usom.gov.tr",
+          "product-security@apple.com",
+          "psirt@cisco.com",
+          "psirt@esri.com",
+          "psirt@huawei.com",
+          "security-advisories@github.com",
+          "security@grafana.com",
+          "security@hashicorp.com",
+          "security@opentext.com",
+          "security@zabbix.com",
+          "vulnerabilities@zephyrproject.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "3b236295-4ccd-4a1f-a1c1-a72eecc8d7b6",
+          "74b3a70d-cca6-4d34-9789-e83b222ae3be",
+          "a5532a13-c4dd-4202-bef1-e0b8f2f8d12b",
+          "cna@python.org",
+          "cve@gitlab.com",
+          "cve@jetbrains.com",
+          "ics-cert@hq.dhs.gov",
+          "info@cert.vde.com",
+          "productsecurity@jci.com",
+          "security@joomla.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 60,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "0b655efc-079c-4cb9-9e8d-164871239f4e",
+          "ART@zuso.ai",
+          "ab69c47f-b95e-4bf2-b2d9-4b1fd1b24b4a",
+          "contact@wpscan.com",
+          "cret@cert.org",
+          "secalert@redhat.com",
+          "secteam@freebsd.org",
+          "security@checkmk.com",
+          "security@mozilla.org",
+          "security@ubuntu.com",
+          "security@wordfence.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "09832df1-09c1-45b4-8a85-16c601d30feb",
+          "5a6e4751-2f3f-4070-9419-94fb35b644e8",
+          "cve@rapid7.com",
+          "dl_cve@linecorp.com",
+          "help@fluidattacks.com",
+          "mandiant-cve@google.com",
+          "responsibledisclosure@mattermost.com",
+          "secalert_us@oracle.com",
+          "security@atlassian.com",
+          "vulnerability@ncsc.ch"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 54,
+        "validation_groups_count": 17,
+        "validation_groups": [
+          "22e2d327-25fe-45d7-9f0c-dcd23b7108df",
+          "3938794e-25f5-4123-a1ba-5cbd7f104512",
+          "8fc372e3-d9c5-46e4-9410-38469745c639",
+          "9b29abf9-4ab0-4765-b253-1875cd9b441e",
+          "audit@patchstack.com",
+          "chrome-cve-admin@google.com",
+          "disclosure@vulncheck.com",
+          "f23511db-6c3e-4e32-a477-6aa17d310630",
+          "psirt@nvidia.com",
+          "secure@citrix.com",
+          "secure@microsoft.com",
+          "security@m-files.com",
+          "security@octopus.com",
+          "security_alert@emc.com",
+          "support@hackerone.com",
+          "twcert@cert.org.tw",
+          "vulnerability@kaspersky.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 48,
+        "validation_groups_count": 23,
+        "validation_groups": [
+          "13061848-ea10-403d-bd75-c83a022c2891",
+          "367425dc-4d06-4041-9650-c2dc6aaa27ce",
+          "50a63c94-1ea7-4568-8c11-eb79e7c5a2b5",
+          "6b3ad84c-e1a6-4bf7-a703-f496b71e49db",
+          "8338d8cb-57f7-4252-abc0-96fd13e98d21",
+          "PSIRT@rockwellautomation.com",
+          "a6d3dc9e-0591-4a13-bce7-0f5b31ff6158",
+          "ce714d77-add3-4f53-aff5-83d477b104bb",
+          "cna@vuldb.com",
+          "cvd@cert.pl",
+          "ff89ba41-3aa1-4d27-914a-91399e9639e5",
+          "hp-security-alert@hp.com",
+          "iletisim@usom.gov.tr",
+          "product-security@apple.com",
+          "psirt@cisco.com",
+          "psirt@esri.com",
+          "psirt@huawei.com",
+          "security-advisories@github.com",
+          "security@grafana.com",
+          "security@hashicorp.com",
+          "security@opentext.com",
+          "security@zabbix.com",
+          "vulnerabilities@zephyrproject.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "3b236295-4ccd-4a1f-a1c1-a72eecc8d7b6",
+          "74b3a70d-cca6-4d34-9789-e83b222ae3be",
+          "a5532a13-c4dd-4202-bef1-e0b8f2f8d12b",
+          "cna@python.org",
+          "cve@gitlab.com",
+          "cve@jetbrains.com",
+          "ics-cert@hq.dhs.gov",
+          "info@cert.vde.com",
+          "productsecurity@jci.com",
+          "security@joomla.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 60,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "0b655efc-079c-4cb9-9e8d-164871239f4e",
+          "ART@zuso.ai",
+          "ab69c47f-b95e-4bf2-b2d9-4b1fd1b24b4a",
+          "contact@wpscan.com",
+          "cret@cert.org",
+          "secalert@redhat.com",
+          "secteam@freebsd.org",
+          "security@checkmk.com",
+          "security@mozilla.org",
+          "security@ubuntu.com",
+          "security@wordfence.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "09832df1-09c1-45b4-8a85-16c601d30feb",
+          "5a6e4751-2f3f-4070-9419-94fb35b644e8",
+          "cve@rapid7.com",
+          "dl_cve@linecorp.com",
+          "help@fluidattacks.com",
+          "mandiant-cve@google.com",
+          "responsibledisclosure@mattermost.com",
+          "secalert_us@oracle.com",
+          "security@atlassian.com",
+          "vulnerability@ncsc.ch"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 54,
+        "validation_groups_count": 17,
+        "validation_groups": [
+          "22e2d327-25fe-45d7-9f0c-dcd23b7108df",
+          "3938794e-25f5-4123-a1ba-5cbd7f104512",
+          "8fc372e3-d9c5-46e4-9410-38469745c639",
+          "9b29abf9-4ab0-4765-b253-1875cd9b441e",
+          "audit@patchstack.com",
+          "chrome-cve-admin@google.com",
+          "disclosure@vulncheck.com",
+          "f23511db-6c3e-4e32-a477-6aa17d310630",
+          "psirt@nvidia.com",
+          "secure@citrix.com",
+          "secure@microsoft.com",
+          "security@m-files.com",
+          "security@octopus.com",
+          "security_alert@emc.com",
+          "support@hackerone.com",
+          "twcert@cert.org.tw",
+          "vulnerability@kaspersky.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 48,
+        "validation_groups_count": 23,
+        "validation_groups": [
+          "13061848-ea10-403d-bd75-c83a022c2891",
+          "367425dc-4d06-4041-9650-c2dc6aaa27ce",
+          "50a63c94-1ea7-4568-8c11-eb79e7c5a2b5",
+          "6b3ad84c-e1a6-4bf7-a703-f496b71e49db",
+          "8338d8cb-57f7-4252-abc0-96fd13e98d21",
+          "PSIRT@rockwellautomation.com",
+          "a6d3dc9e-0591-4a13-bce7-0f5b31ff6158",
+          "ce714d77-add3-4f53-aff5-83d477b104bb",
+          "cna@vuldb.com",
+          "cvd@cert.pl",
+          "ff89ba41-3aa1-4d27-914a-91399e9639e5",
+          "hp-security-alert@hp.com",
+          "iletisim@usom.gov.tr",
+          "product-security@apple.com",
+          "psirt@cisco.com",
+          "psirt@esri.com",
+          "psirt@huawei.com",
+          "security-advisories@github.com",
+          "security@grafana.com",
+          "security@hashicorp.com",
+          "security@opentext.com",
+          "security@zabbix.com",
+          "vulnerabilities@zephyrproject.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "3b236295-4ccd-4a1f-a1c1-a72eecc8d7b6",
+          "74b3a70d-cca6-4d34-9789-e83b222ae3be",
+          "a5532a13-c4dd-4202-bef1-e0b8f2f8d12b",
+          "cna@python.org",
+          "cve@gitlab.com",
+          "cve@jetbrains.com",
+          "ics-cert@hq.dhs.gov",
+          "info@cert.vde.com",
+          "productsecurity@jci.com",
+          "security@joomla.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 60,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "0b655efc-079c-4cb9-9e8d-164871239f4e",
+          "ART@zuso.ai",
+          "ab69c47f-b95e-4bf2-b2d9-4b1fd1b24b4a",
+          "contact@wpscan.com",
+          "cret@cert.org",
+          "secalert@redhat.com",
+          "secteam@freebsd.org",
+          "security@checkmk.com",
+          "security@mozilla.org",
+          "security@ubuntu.com",
+          "security@wordfence.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "09832df1-09c1-45b4-8a85-16c601d30feb",
+          "5a6e4751-2f3f-4070-9419-94fb35b644e8",
+          "cve@rapid7.com",
+          "dl_cve@linecorp.com",
+          "help@fluidattacks.com",
+          "mandiant-cve@google.com",
+          "responsibledisclosure@mattermost.com",
+          "secalert_us@oracle.com",
+          "security@atlassian.com",
+          "vulnerability@ncsc.ch"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 54,
+        "validation_groups_count": 17,
+        "validation_groups": [
+          "22e2d327-25fe-45d7-9f0c-dcd23b7108df",
+          "3938794e-25f5-4123-a1ba-5cbd7f104512",
+          "8fc372e3-d9c5-46e4-9410-38469745c639",
+          "9b29abf9-4ab0-4765-b253-1875cd9b441e",
+          "audit@patchstack.com",
+          "chrome-cve-admin@google.com",
+          "disclosure@vulncheck.com",
+          "f23511db-6c3e-4e32-a477-6aa17d310630",
+          "psirt@nvidia.com",
+          "secure@citrix.com",
+          "secure@microsoft.com",
+          "security@m-files.com",
+          "security@octopus.com",
+          "security_alert@emc.com",
+          "support@hackerone.com",
+          "twcert@cert.org.tw",
+          "vulnerability@kaspersky.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 48,
+        "validation_groups_count": 23,
+        "validation_groups": [
+          "13061848-ea10-403d-bd75-c83a022c2891",
+          "367425dc-4d06-4041-9650-c2dc6aaa27ce",
+          "50a63c94-1ea7-4568-8c11-eb79e7c5a2b5",
+          "6b3ad84c-e1a6-4bf7-a703-f496b71e49db",
+          "8338d8cb-57f7-4252-abc0-96fd13e98d21",
+          "PSIRT@rockwellautomation.com",
+          "a6d3dc9e-0591-4a13-bce7-0f5b31ff6158",
+          "ce714d77-add3-4f53-aff5-83d477b104bb",
+          "cna@vuldb.com",
+          "cvd@cert.pl",
+          "ff89ba41-3aa1-4d27-914a-91399e9639e5",
+          "hp-security-alert@hp.com",
+          "iletisim@usom.gov.tr",
+          "product-security@apple.com",
+          "psirt@cisco.com",
+          "psirt@esri.com",
+          "psirt@huawei.com",
+          "security-advisories@github.com",
+          "security@grafana.com",
+          "security@hashicorp.com",
+          "security@opentext.com",
+          "security@zabbix.com",
+          "vulnerabilities@zephyrproject.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "3b236295-4ccd-4a1f-a1c1-a72eecc8d7b6",
+          "74b3a70d-cca6-4d34-9789-e83b222ae3be",
+          "a5532a13-c4dd-4202-bef1-e0b8f2f8d12b",
+          "cna@python.org",
+          "cve@gitlab.com",
+          "cve@jetbrains.com",
+          "ics-cert@hq.dhs.gov",
+          "info@cert.vde.com",
+          "productsecurity@jci.com",
+          "security@joomla.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 60,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "0b655efc-079c-4cb9-9e8d-164871239f4e",
+          "ART@zuso.ai",
+          "ab69c47f-b95e-4bf2-b2d9-4b1fd1b24b4a",
+          "contact@wpscan.com",
+          "cret@cert.org",
+          "secalert@redhat.com",
+          "secteam@freebsd.org",
+          "security@checkmk.com",
+          "security@mozilla.org",
+          "security@ubuntu.com",
+          "security@wordfence.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "09832df1-09c1-45b4-8a85-16c601d30feb",
+          "5a6e4751-2f3f-4070-9419-94fb35b644e8",
+          "cve@rapid7.com",
+          "dl_cve@linecorp.com",
+          "help@fluidattacks.com",
+          "mandiant-cve@google.com",
+          "responsibledisclosure@mattermost.com",
+          "secalert_us@oracle.com",
+          "security@atlassian.com",
+          "vulnerability@ncsc.ch"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 54,
+        "validation_groups_count": 17,
+        "validation_groups": [
+          "22e2d327-25fe-45d7-9f0c-dcd23b7108df",
+          "3938794e-25f5-4123-a1ba-5cbd7f104512",
+          "8fc372e3-d9c5-46e4-9410-38469745c639",
+          "9b29abf9-4ab0-4765-b253-1875cd9b441e",
+          "audit@patchstack.com",
+          "chrome-cve-admin@google.com",
+          "disclosure@vulncheck.com",
+          "f23511db-6c3e-4e32-a477-6aa17d310630",
+          "psirt@nvidia.com",
+          "secure@citrix.com",
+          "secure@microsoft.com",
+          "security@m-files.com",
+          "security@octopus.com",
+          "security_alert@emc.com",
+          "support@hackerone.com",
+          "twcert@cert.org.tw",
+          "vulnerability@kaspersky.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 48,
+        "validation_groups_count": 23,
+        "validation_groups": [
+          "13061848-ea10-403d-bd75-c83a022c2891",
+          "367425dc-4d06-4041-9650-c2dc6aaa27ce",
+          "50a63c94-1ea7-4568-8c11-eb79e7c5a2b5",
+          "6b3ad84c-e1a6-4bf7-a703-f496b71e49db",
+          "8338d8cb-57f7-4252-abc0-96fd13e98d21",
+          "PSIRT@rockwellautomation.com",
+          "a6d3dc9e-0591-4a13-bce7-0f5b31ff6158",
+          "ce714d77-add3-4f53-aff5-83d477b104bb",
+          "cna@vuldb.com",
+          "cvd@cert.pl",
+          "ff89ba41-3aa1-4d27-914a-91399e9639e5",
+          "hp-security-alert@hp.com",
+          "iletisim@usom.gov.tr",
+          "product-security@apple.com",
+          "psirt@cisco.com",
+          "psirt@esri.com",
+          "psirt@huawei.com",
+          "security-advisories@github.com",
+          "security@grafana.com",
+          "security@hashicorp.com",
+          "security@opentext.com",
+          "security@zabbix.com",
+          "vulnerabilities@zephyrproject.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "3b236295-4ccd-4a1f-a1c1-a72eecc8d7b6",
+          "74b3a70d-cca6-4d34-9789-e83b222ae3be",
+          "a5532a13-c4dd-4202-bef1-e0b8f2f8d12b",
+          "cna@python.org",
+          "cve@gitlab.com",
+          "cve@jetbrains.com",
+          "ics-cert@hq.dhs.gov",
+          "info@cert.vde.com",
+          "productsecurity@jci.com",
+          "security@joomla.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 60,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "0b655efc-079c-4cb9-9e8d-164871239f4e",
+          "ART@zuso.ai",
+          "ab69c47f-b95e-4bf2-b2d9-4b1fd1b24b4a",
+          "contact@wpscan.com",
+          "cret@cert.org",
+          "secalert@redhat.com",
+          "secteam@freebsd.org",
+          "security@checkmk.com",
+          "security@mozilla.org",
+          "security@ubuntu.com",
+          "security@wordfence.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "09832df1-09c1-45b4-8a85-16c601d30feb",
+          "5a6e4751-2f3f-4070-9419-94fb35b644e8",
+          "cve@rapid7.com",
+          "dl_cve@linecorp.com",
+          "help@fluidattacks.com",
+          "mandiant-cve@google.com",
+          "responsibledisclosure@mattermost.com",
+          "secalert_us@oracle.com",
+          "security@atlassian.com",
+          "vulnerability@ncsc.ch"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 54,
+        "validation_groups_count": 17,
+        "validation_groups": [
+          "22e2d327-25fe-45d7-9f0c-dcd23b7108df",
+          "3938794e-25f5-4123-a1ba-5cbd7f104512",
+          "8fc372e3-d9c5-46e4-9410-38469745c639",
+          "9b29abf9-4ab0-4765-b253-1875cd9b441e",
+          "audit@patchstack.com",
+          "chrome-cve-admin@google.com",
+          "disclosure@vulncheck.com",
+          "f23511db-6c3e-4e32-a477-6aa17d310630",
+          "psirt@nvidia.com",
+          "secure@citrix.com",
+          "secure@microsoft.com",
+          "security@m-files.com",
+          "security@octopus.com",
+          "security_alert@emc.com",
+          "support@hackerone.com",
+          "twcert@cert.org.tw",
+          "vulnerability@kaspersky.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 48,
+        "validation_groups_count": 23,
+        "validation_groups": [
+          "13061848-ea10-403d-bd75-c83a022c2891",
+          "367425dc-4d06-4041-9650-c2dc6aaa27ce",
+          "50a63c94-1ea7-4568-8c11-eb79e7c5a2b5",
+          "6b3ad84c-e1a6-4bf7-a703-f496b71e49db",
+          "8338d8cb-57f7-4252-abc0-96fd13e98d21",
+          "PSIRT@rockwellautomation.com",
+          "a6d3dc9e-0591-4a13-bce7-0f5b31ff6158",
+          "ce714d77-add3-4f53-aff5-83d477b104bb",
+          "cna@vuldb.com",
+          "cvd@cert.pl",
+          "ff89ba41-3aa1-4d27-914a-91399e9639e5",
+          "hp-security-alert@hp.com",
+          "iletisim@usom.gov.tr",
+          "product-security@apple.com",
+          "psirt@cisco.com",
+          "psirt@esri.com",
+          "psirt@huawei.com",
+          "security-advisories@github.com",
+          "security@grafana.com",
+          "security@hashicorp.com",
+          "security@opentext.com",
+          "security@zabbix.com",
+          "vulnerabilities@zephyrproject.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "3b236295-4ccd-4a1f-a1c1-a72eecc8d7b6",
+          "74b3a70d-cca6-4d34-9789-e83b222ae3be",
+          "a5532a13-c4dd-4202-bef1-e0b8f2f8d12b",
+          "cna@python.org",
+          "cve@gitlab.com",
+          "cve@jetbrains.com",
+          "ics-cert@hq.dhs.gov",
+          "info@cert.vde.com",
+          "productsecurity@jci.com",
+          "security@joomla.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 60,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "0b655efc-079c-4cb9-9e8d-164871239f4e",
+          "ART@zuso.ai",
+          "ab69c47f-b95e-4bf2-b2d9-4b1fd1b24b4a",
+          "contact@wpscan.com",
+          "cret@cert.org",
+          "secalert@redhat.com",
+          "secteam@freebsd.org",
+          "security@checkmk.com",
+          "security@mozilla.org",
+          "security@ubuntu.com",
+          "security@wordfence.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "09832df1-09c1-45b4-8a85-16c601d30feb",
+          "5a6e4751-2f3f-4070-9419-94fb35b644e8",
+          "cve@rapid7.com",
+          "dl_cve@linecorp.com",
+          "help@fluidattacks.com",
+          "mandiant-cve@google.com",
+          "responsibledisclosure@mattermost.com",
+          "secalert_us@oracle.com",
+          "security@atlassian.com",
+          "vulnerability@ncsc.ch"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 54,
+        "validation_groups_count": 17,
+        "validation_groups": [
+          "22e2d327-25fe-45d7-9f0c-dcd23b7108df",
+          "3938794e-25f5-4123-a1ba-5cbd7f104512",
+          "8fc372e3-d9c5-46e4-9410-38469745c639",
+          "9b29abf9-4ab0-4765-b253-1875cd9b441e",
+          "audit@patchstack.com",
+          "chrome-cve-admin@google.com",
+          "disclosure@vulncheck.com",
+          "f23511db-6c3e-4e32-a477-6aa17d310630",
+          "psirt@nvidia.com",
+          "secure@citrix.com",
+          "secure@microsoft.com",
+          "security@m-files.com",
+          "security@octopus.com",
+          "security_alert@emc.com",
+          "support@hackerone.com",
+          "twcert@cert.org.tw",
+          "vulnerability@kaspersky.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 48,
+        "validation_groups_count": 23,
+        "validation_groups": [
+          "13061848-ea10-403d-bd75-c83a022c2891",
+          "367425dc-4d06-4041-9650-c2dc6aaa27ce",
+          "50a63c94-1ea7-4568-8c11-eb79e7c5a2b5",
+          "6b3ad84c-e1a6-4bf7-a703-f496b71e49db",
+          "8338d8cb-57f7-4252-abc0-96fd13e98d21",
+          "PSIRT@rockwellautomation.com",
+          "a6d3dc9e-0591-4a13-bce7-0f5b31ff6158",
+          "ce714d77-add3-4f53-aff5-83d477b104bb",
+          "cna@vuldb.com",
+          "cvd@cert.pl",
+          "ff89ba41-3aa1-4d27-914a-91399e9639e5",
+          "hp-security-alert@hp.com",
+          "iletisim@usom.gov.tr",
+          "product-security@apple.com",
+          "psirt@cisco.com",
+          "psirt@esri.com",
+          "psirt@huawei.com",
+          "security-advisories@github.com",
+          "security@grafana.com",
+          "security@hashicorp.com",
+          "security@opentext.com",
+          "security@zabbix.com",
+          "vulnerabilities@zephyrproject.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "3b236295-4ccd-4a1f-a1c1-a72eecc8d7b6",
+          "74b3a70d-cca6-4d34-9789-e83b222ae3be",
+          "a5532a13-c4dd-4202-bef1-e0b8f2f8d12b",
+          "cna@python.org",
+          "cve@gitlab.com",
+          "cve@jetbrains.com",
+          "ics-cert@hq.dhs.gov",
+          "info@cert.vde.com",
+          "productsecurity@jci.com",
+          "security@joomla.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 60,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "0b655efc-079c-4cb9-9e8d-164871239f4e",
+          "ART@zuso.ai",
+          "ab69c47f-b95e-4bf2-b2d9-4b1fd1b24b4a",
+          "contact@wpscan.com",
+          "cret@cert.org",
+          "secalert@redhat.com",
+          "secteam@freebsd.org",
+          "security@checkmk.com",
+          "security@mozilla.org",
+          "security@ubuntu.com",
+          "security@wordfence.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "09832df1-09c1-45b4-8a85-16c601d30feb",
+          "5a6e4751-2f3f-4070-9419-94fb35b644e8",
+          "cve@rapid7.com",
+          "dl_cve@linecorp.com",
+          "help@fluidattacks.com",
+          "mandiant-cve@google.com",
+          "responsibledisclosure@mattermost.com",
+          "secalert_us@oracle.com",
+          "security@atlassian.com",
+          "vulnerability@ncsc.ch"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 54,
+        "validation_groups_count": 17,
+        "validation_groups": [
+          "22e2d327-25fe-45d7-9f0c-dcd23b7108df",
+          "3938794e-25f5-4123-a1ba-5cbd7f104512",
+          "8fc372e3-d9c5-46e4-9410-38469745c639",
+          "9b29abf9-4ab0-4765-b253-1875cd9b441e",
+          "audit@patchstack.com",
+          "chrome-cve-admin@google.com",
+          "disclosure@vulncheck.com",
+          "f23511db-6c3e-4e32-a477-6aa17d310630",
+          "psirt@nvidia.com",
+          "secure@citrix.com",
+          "secure@microsoft.com",
+          "security@m-files.com",
+          "security@octopus.com",
+          "security_alert@emc.com",
+          "support@hackerone.com",
+          "twcert@cert.org.tw",
+          "vulnerability@kaspersky.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 48,
+        "validation_groups_count": 23,
+        "validation_groups": [
+          "13061848-ea10-403d-bd75-c83a022c2891",
+          "367425dc-4d06-4041-9650-c2dc6aaa27ce",
+          "50a63c94-1ea7-4568-8c11-eb79e7c5a2b5",
+          "6b3ad84c-e1a6-4bf7-a703-f496b71e49db",
+          "8338d8cb-57f7-4252-abc0-96fd13e98d21",
+          "PSIRT@rockwellautomation.com",
+          "a6d3dc9e-0591-4a13-bce7-0f5b31ff6158",
+          "ce714d77-add3-4f53-aff5-83d477b104bb",
+          "cna@vuldb.com",
+          "cvd@cert.pl",
+          "ff89ba41-3aa1-4d27-914a-91399e9639e5",
+          "hp-security-alert@hp.com",
+          "iletisim@usom.gov.tr",
+          "product-security@apple.com",
+          "psirt@cisco.com",
+          "psirt@esri.com",
+          "psirt@huawei.com",
+          "security-advisories@github.com",
+          "security@grafana.com",
+          "security@hashicorp.com",
+          "security@opentext.com",
+          "security@zabbix.com",
+          "vulnerabilities@zephyrproject.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "3b236295-4ccd-4a1f-a1c1-a72eecc8d7b6",
+          "74b3a70d-cca6-4d34-9789-e83b222ae3be",
+          "a5532a13-c4dd-4202-bef1-e0b8f2f8d12b",
+          "cna@python.org",
+          "cve@gitlab.com",
+          "cve@jetbrains.com",
+          "ics-cert@hq.dhs.gov",
+          "info@cert.vde.com",
+          "productsecurity@jci.com",
+          "security@joomla.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 60,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "0b655efc-079c-4cb9-9e8d-164871239f4e",
+          "ART@zuso.ai",
+          "ab69c47f-b95e-4bf2-b2d9-4b1fd1b24b4a",
+          "contact@wpscan.com",
+          "cret@cert.org",
+          "secalert@redhat.com",
+          "secteam@freebsd.org",
+          "security@checkmk.com",
+          "security@mozilla.org",
+          "security@ubuntu.com",
+          "security@wordfence.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "09832df1-09c1-45b4-8a85-16c601d30feb",
+          "5a6e4751-2f3f-4070-9419-94fb35b644e8",
+          "cve@rapid7.com",
+          "dl_cve@linecorp.com",
+          "help@fluidattacks.com",
+          "mandiant-cve@google.com",
+          "responsibledisclosure@mattermost.com",
+          "secalert_us@oracle.com",
+          "security@atlassian.com",
+          "vulnerability@ncsc.ch"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 54,
+        "validation_groups_count": 17,
+        "validation_groups": [
+          "22e2d327-25fe-45d7-9f0c-dcd23b7108df",
+          "3938794e-25f5-4123-a1ba-5cbd7f104512",
+          "8fc372e3-d9c5-46e4-9410-38469745c639",
+          "9b29abf9-4ab0-4765-b253-1875cd9b441e",
+          "audit@patchstack.com",
+          "chrome-cve-admin@google.com",
+          "disclosure@vulncheck.com",
+          "f23511db-6c3e-4e32-a477-6aa17d310630",
+          "psirt@nvidia.com",
+          "secure@citrix.com",
+          "secure@microsoft.com",
+          "security@m-files.com",
+          "security@octopus.com",
+          "security_alert@emc.com",
+          "support@hackerone.com",
+          "twcert@cert.org.tw",
+          "vulnerability@kaspersky.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 48,
+        "validation_groups_count": 23,
+        "validation_groups": [
+          "13061848-ea10-403d-bd75-c83a022c2891",
+          "367425dc-4d06-4041-9650-c2dc6aaa27ce",
+          "50a63c94-1ea7-4568-8c11-eb79e7c5a2b5",
+          "6b3ad84c-e1a6-4bf7-a703-f496b71e49db",
+          "8338d8cb-57f7-4252-abc0-96fd13e98d21",
+          "PSIRT@rockwellautomation.com",
+          "a6d3dc9e-0591-4a13-bce7-0f5b31ff6158",
+          "ce714d77-add3-4f53-aff5-83d477b104bb",
+          "cna@vuldb.com",
+          "cvd@cert.pl",
+          "ff89ba41-3aa1-4d27-914a-91399e9639e5",
+          "hp-security-alert@hp.com",
+          "iletisim@usom.gov.tr",
+          "product-security@apple.com",
+          "psirt@cisco.com",
+          "psirt@esri.com",
+          "psirt@huawei.com",
+          "security-advisories@github.com",
+          "security@grafana.com",
+          "security@hashicorp.com",
+          "security@opentext.com",
+          "security@zabbix.com",
+          "vulnerabilities@zephyrproject.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "3b236295-4ccd-4a1f-a1c1-a72eecc8d7b6",
+          "74b3a70d-cca6-4d34-9789-e83b222ae3be",
+          "a5532a13-c4dd-4202-bef1-e0b8f2f8d12b",
+          "cna@python.org",
+          "cve@gitlab.com",
+          "cve@jetbrains.com",
+          "ics-cert@hq.dhs.gov",
+          "info@cert.vde.com",
+          "productsecurity@jci.com",
+          "security@joomla.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 60,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "0b655efc-079c-4cb9-9e8d-164871239f4e",
+          "ART@zuso.ai",
+          "ab69c47f-b95e-4bf2-b2d9-4b1fd1b24b4a",
+          "contact@wpscan.com",
+          "cret@cert.org",
+          "secalert@redhat.com",
+          "secteam@freebsd.org",
+          "security@checkmk.com",
+          "security@mozilla.org",
+          "security@ubuntu.com",
+          "security@wordfence.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "09832df1-09c1-45b4-8a85-16c601d30feb",
+          "5a6e4751-2f3f-4070-9419-94fb35b644e8",
+          "cve@rapid7.com",
+          "dl_cve@linecorp.com",
+          "help@fluidattacks.com",
+          "mandiant-cve@google.com",
+          "responsibledisclosure@mattermost.com",
+          "secalert_us@oracle.com",
+          "security@atlassian.com",
+          "vulnerability@ncsc.ch"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 54,
+        "validation_groups_count": 17,
+        "validation_groups": [
+          "22e2d327-25fe-45d7-9f0c-dcd23b7108df",
+          "3938794e-25f5-4123-a1ba-5cbd7f104512",
+          "8fc372e3-d9c5-46e4-9410-38469745c639",
+          "9b29abf9-4ab0-4765-b253-1875cd9b441e",
+          "audit@patchstack.com",
+          "chrome-cve-admin@google.com",
+          "disclosure@vulncheck.com",
+          "f23511db-6c3e-4e32-a477-6aa17d310630",
+          "psirt@nvidia.com",
+          "secure@citrix.com",
+          "secure@microsoft.com",
+          "security@m-files.com",
+          "security@octopus.com",
+          "security_alert@emc.com",
+          "support@hackerone.com",
+          "twcert@cert.org.tw",
+          "vulnerability@kaspersky.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 48,
+        "validation_groups_count": 23,
+        "validation_groups": [
+          "13061848-ea10-403d-bd75-c83a022c2891",
+          "367425dc-4d06-4041-9650-c2dc6aaa27ce",
+          "50a63c94-1ea7-4568-8c11-eb79e7c5a2b5",
+          "6b3ad84c-e1a6-4bf7-a703-f496b71e49db",
+          "8338d8cb-57f7-4252-abc0-96fd13e98d21",
+          "PSIRT@rockwellautomation.com",
+          "a6d3dc9e-0591-4a13-bce7-0f5b31ff6158",
+          "ce714d77-add3-4f53-aff5-83d477b104bb",
+          "cna@vuldb.com",
+          "cvd@cert.pl",
+          "ff89ba41-3aa1-4d27-914a-91399e9639e5",
+          "hp-security-alert@hp.com",
+          "iletisim@usom.gov.tr",
+          "product-security@apple.com",
+          "psirt@cisco.com",
+          "psirt@esri.com",
+          "psirt@huawei.com",
+          "security-advisories@github.com",
+          "security@grafana.com",
+          "security@hashicorp.com",
+          "security@opentext.com",
+          "security@zabbix.com",
+          "vulnerabilities@zephyrproject.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "3b236295-4ccd-4a1f-a1c1-a72eecc8d7b6",
+          "74b3a70d-cca6-4d34-9789-e83b222ae3be",
+          "a5532a13-c4dd-4202-bef1-e0b8f2f8d12b",
+          "cna@python.org",
+          "cve@gitlab.com",
+          "cve@jetbrains.com",
+          "ics-cert@hq.dhs.gov",
+          "info@cert.vde.com",
+          "productsecurity@jci.com",
+          "security@joomla.org"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 60,
+        "validation_groups_count": 11,
+        "validation_groups": [
+          "0b655efc-079c-4cb9-9e8d-164871239f4e",
+          "ART@zuso.ai",
+          "ab69c47f-b95e-4bf2-b2d9-4b1fd1b24b4a",
+          "contact@wpscan.com",
+          "cret@cert.org",
+          "secalert@redhat.com",
+          "secteam@freebsd.org",
+          "security@checkmk.com",
+          "security@mozilla.org",
+          "security@ubuntu.com",
+          "security@wordfence.com"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 61,
+        "validation_groups_count": 10,
+        "validation_groups": [
+          "09832df1-09c1-45b4-8a85-16c601d30feb",
+          "5a6e4751-2f3f-4070-9419-94fb35b644e8",
+          "cve@rapid7.com",
+          "dl_cve@linecorp.com",
+          "help@fluidattacks.com",
+          "mandiant-cve@google.com",
+          "responsibledisclosure@mattermost.com",
+          "secalert_us@oracle.com",
+          "security@atlassian.com",
+          "vulnerability@ncsc.ch"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 54,
+        "validation_groups_count": 17,
+        "validation_groups": [
+          "22e2d327-25fe-45d7-9f0c-dcd23b7108df",
+          "3938794e-25f5-4123-a1ba-5cbd7f104512",
+          "8fc372e3-d9c5-46e4-9410-38469745c639",
+          "9b29abf9-4ab0-4765-b253-1875cd9b441e",
+          "audit@patchstack.com",
+          "chrome-cve-admin@google.com",
+          "disclosure@vulncheck.com",
+          "f23511db-6c3e-4e32-a477-6aa17d310630",
+          "psirt@nvidia.com",
+          "secure@citrix.com",
+          "secure@microsoft.com",
+          "security@m-files.com",
+          "security@octopus.com",
+          "security_alert@emc.com",
+          "support@hackerone.com",
+          "twcert@cert.org.tw",
+          "vulnerability@kaspersky.com"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "The endpoint is NVD-authored annotation presence, not exploitation. All17 reserved source groups have zero positives, so error/calibration remain defined but discrimination and positive-event recall cannot support an enrichment law."
+}

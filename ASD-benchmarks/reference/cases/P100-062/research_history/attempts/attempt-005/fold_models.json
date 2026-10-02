@@ -1,0 +1,152 @@
+[
+  {
+    "fold": 1,
+    "state": {
+      "name": "trapping_two_timescales",
+      "formula": "offset+gain*drive*((1-w)*(1-exp(-t/tau))+w*(1-exp(-t/(tau+slow))))",
+      "hypothesis": "Development evidence available before this fit: fick_slab_corrected: MAE 10.3538, worst group 21.6434; surface_saturation: MAE 5.06106, worst group 11.946.\n\nTest a distinct reversible-storage mechanism: a fast mobile response plus slow trap-filling response. Both gains stay shared across traces; boundaries and identifiability diagnose whether the extra timescale is actually resolved.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:47.948125+00:00",
+      "parent": "attempt-004",
+      "parameters": {
+        "gain": 499.9999999999912,
+        "w": 0.9999999999999999,
+        "tau": 11096.360160015529,
+        "slow": 161114.36522673888
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-1-block-0"
+      ],
+      "training_rows": 372,
+      "optimizer_success": true,
+      "nfev": 40,
+      "jacobian_condition": 373677892809.7295,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "w": [
+          0,
+          1
+        ],
+        "tau": [
+          10,
+          100000.0
+        ],
+        "slow": [
+          1,
+          1000000.0
+        ]
+      }
+    }
+  },
+  {
+    "fold": 2,
+    "state": {
+      "name": "trapping_two_timescales",
+      "formula": "offset+gain*drive*((1-w)*(1-exp(-t/tau))+w*(1-exp(-t/(tau+slow))))",
+      "hypothesis": "Development evidence available before this fit: fick_slab_corrected: MAE 10.3538, worst group 21.6434; surface_saturation: MAE 5.06106, worst group 11.946.\n\nTest a distinct reversible-storage mechanism: a fast mobile response plus slow trap-filling response. Both gains stay shared across traces; boundaries and identifiability diagnose whether the extra timescale is actually resolved.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:47.948125+00:00",
+      "parent": "attempt-004",
+      "parameters": {
+        "gain": 499.99999999999994,
+        "w": 0.9999999999999999,
+        "tau": 16340.030918064884,
+        "slow": 137398.92092133814
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-1-block-0",
+        "trace-1-block-1"
+      ],
+      "training_rows": 742,
+      "optimizer_success": true,
+      "nfev": 37,
+      "jacobian_condition": 687471713168.714,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "w": [
+          0,
+          1
+        ],
+        "tau": [
+          10,
+          100000.0
+        ],
+        "slow": [
+          1,
+          1000000.0
+        ]
+      }
+    }
+  },
+  {
+    "fold": 3,
+    "state": {
+      "name": "trapping_two_timescales",
+      "formula": "offset+gain*drive*((1-w)*(1-exp(-t/tau))+w*(1-exp(-t/(tau+slow))))",
+      "hypothesis": "Development evidence available before this fit: fick_slab_corrected: MAE 10.3538, worst group 21.6434; surface_saturation: MAE 5.06106, worst group 11.946.\n\nTest a distinct reversible-storage mechanism: a fast mobile response plus slow trap-filling response. Both gains stay shared across traces; boundaries and identifiability diagnose whether the extra timescale is actually resolved.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:47.948125+00:00",
+      "parent": "attempt-004",
+      "parameters": {
+        "gain": 499.99999418660803,
+        "w": 0.9955511648438236,
+        "tau": 1293.0812144809868,
+        "slow": 237395.34628299708
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2"
+      ],
+      "training_rows": 1113,
+      "optimizer_success": true,
+      "nfev": 279,
+      "jacobian_condition": 42890251847.35162,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "w": [
+          0,
+          1
+        ],
+        "tau": [
+          10,
+          100000.0
+        ],
+        "slow": [
+          1,
+          1000000.0
+        ]
+      }
+    }
+  }
+]

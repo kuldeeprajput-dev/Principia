@@ -1,0 +1,178 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-090.original.v1",
+  "case_id": "P100-090",
+  "case_number": 90,
+  "family": "original",
+  "protocol_version": "P100-090-asd7-native-v1",
+  "cohort_id": "P100-090.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-090.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/90_transport_crowd_rotation",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Mean next-two-second signed angular polarization about instantaneous group centroid",
+  "target_units": "dimensionless signed[-1,1]",
+  "error_units": "polarization units",
+  "primary_units": "polarization units",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "p_now",
+    "p_past",
+    "p_initial",
+    "density",
+    "speed",
+    "radius90",
+    "polarization_variance"
+  ],
+  "input_units": {
+    "p_now": "dimensionless current signed angular order",
+    "p_past": "previous2integerseconds mean order",
+    "p_initial": "first2seconds mean order, declared pertrialcalibration",
+    "density": "tracked persons/(pi*r90\u00b2), proxy persons/m\u00b2",
+    "speed": "mean1sbackwardsecant m/s",
+    "radius90": "90th-percentile centroiddistance metres",
+    "polarization_variance": "withinframe variance of individual signedorder"
+  },
+  "numeric_columns": [
+    "p_now",
+    "p_past",
+    "p_initial",
+    "density",
+    "speed",
+    "radius90",
+    "polarization_variance"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Every predictor uses trajectory rows at/before origin t. Integer positions use previous observed sample only, at most1second stale; current tracked count uses prefix-present IDs, never full-trial future membership. No interpolation from future. Velocities derived by backward1s differences; supplied VX/VY/Pol forbidden because smoothing provenance can include future. Target uses t+1..t+2.",
+  "calibration": "First2seconds of each trial used as explicit calibration; no future held-group target fit. Whole condition/session A/C/D identifiers keep repetitions linked. Calibration baseline given same prefix access.",
+  "independent_unit": "Whole country/experiment-condition group with all repetitions; participants may recur across conditions and identifiers do not resolve all dependence. One teen condition keptdevelopment, no heldteen generalization.",
+  "evaluation_groups": [
+    "Japan/C1",
+    "Japan/C6",
+    "Kids/D1",
+    "Spain/A1",
+    "Spain/A5"
+  ],
+  "assigned_rows": 270,
+  "eligible_rows": 270,
+  "baseline_models": [
+    "reference",
+    "calibration",
+    "constant",
+    "current",
+    "flexible",
+    "persistence",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Pnext=Ppast+a*memory+c*heterogeneity*Ppast",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "calibration": {
+      "equation": "P_hat=p_initial",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "constant": {
+      "equation": "P_hat=a",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "current": {
+      "equation": "P_hat=p_now",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "32center matched-prefix smooth predictor",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persistence": {
+      "equation": "P_hat=p_past",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "Pnext=Ppast+a*(Pnow-Ppast)+b*(Ppast-Pinitial)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "Pnext=Ppast+bias+a*Ppast-b*Ppast\u00b3",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "Pnext=Ppast+a*memory+b*drift+c*log1p(density)*memory+d*(speed/r90)*Ppast",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "Pnext=Ppast+a*memory+b*drift+c*sqrt(within-personorder variance)*Ppast",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "Pnext=Ppast+a*memory+c*heterogeneity*Ppast",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "Pnext=Ppast+a*memory+b*drift+c*heterogeneity",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze."
+  },
+  "scope_limits": "Within-source group-rotation temporal dynamics after observed prefix. Centroid-based XY-derived order differs from authors supplied Pol; no arithmetic identity predicted at same time. Source published conditionmeans already known; confirmation not unseen-world evidence. No novel biological handedness or safety intervention law.",
+  "source_url": "https://zenodo.org/records/19592341",
+  "source_license": "cc-by-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Public experimentsPDF lists allcondition aggregate means and SDs; those were seen before modeling. Microdata future-window targets/metrics were not printed beforefreeze. Confirmation is internal source-aware, not an unknown law.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"046c54988821a8135a02c09457f4666f9f51f38a6cf38db8f752fba9e62d6065\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "b9870f9cc2683dea2fd24278ffc61729e75f7833ffae9d5c01310bbd918cda1a",
+  "observations_sha256": "0dcd3b0568e2cd08f10bebaf69b85b03d756383513d1d61ef731ab76ccc5b89a",
+  "legacy_protocol_sha256": "1ac1d9501d253e83cd58344e840cac2d4b58e7c6f8366a2ed2729a58baa0b3bc",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "p_now",
+    "p_past",
+    "p_initial"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

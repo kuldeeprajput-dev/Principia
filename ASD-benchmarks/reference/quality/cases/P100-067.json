@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-067",
+  "title": "Dataset on settling dynamics of microplastic particles sinking through exopolymer-induced rheological stratification",
+  "default_task": "P100-067.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Interface transit time",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 3,
+    "independent_unit_description": "complete fluid configuration; particles balanced within configuration",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Source-defined interface width; upstream speed and orientation from the strict upstream observation prefix. No target transit is an input.",
+  "baseline_strength": {
+    "registered_controls": 4,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "unsupported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Interface transit time",
+    "prediction_time": "Use native upstream observations ending before interface entry; no interpolation across entry. orientation_cos2 is mean cos(2 theta), NOT mean cos\u00b2(theta).",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-067.original.v1",
+    "P100-067.round2.v1"
+  ],
+  "finding_ids": [
+    "P100-067-SCI-01",
+    "P100-067-SCI-02",
+    "P100-067-SCI-03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-067/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-067.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Interface transit time under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Use native upstream observations ending before interface entry; no interpolation across entry. orientation_cos2 is mean cos(2 theta), NOT mean cos\u00b2(theta).",
+    "calibration_requirement": "Source-defined interface width; upstream speed and orientation from the strict upstream observation prefix. No target transit is an input.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Interface transit time in s",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "log_transit",
+    "primary_units": "absolute log ratio",
+    "reference_model": "orientation",
+    "reference_primary_error": 0.36604102644455105,
+    "reference_physical_mae": 0.230553928858703,
+    "physical_error_units": "s",
+    "lowest_registered_error_model": "ballistic",
+    "lowest_registered_error": 0.11741797804105447,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-067.original.v1/evidence/metrics.csv",
+      "bytes": 421,
+      "sha256": "c46fed001ed807d4353e2a16c11cd4e222c090334009b7d2a3c612fd51819a80"
+    },
+    "models": 4
+  },
+  "case_specific_next_evidence": "Preserve strict native upstream windows and quantify velocity uncertainty from prefix data alone.\n\nObtain fresh rheological configurations with unambiguous particle geometry and orthogonal rheometry before proposing drag mechanisms."
+}

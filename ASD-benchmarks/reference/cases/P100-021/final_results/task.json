@@ -1,0 +1,141 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-021.original.v1",
+  "case_id": "P100-021",
+  "case_number": 21,
+  "family": "original",
+  "protocol_version": "P100-021-asd5-native-v1",
+  "cohort_id": "P100-021.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-021.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/21_semiconductor_heidelberg_josephson",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "effective high-current differential resistance of recorded voltage/current channels",
+  "target_units": "ohm",
+  "error_units": "ohm",
+  "primary_units": "ohm",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "width_um",
+    "wafer_b",
+    "outer"
+  ],
+  "input_units": {
+    "width_um": "um",
+    "wafer_b": "dimensionless indicator",
+    "outer": "dimensionless indicator"
+  },
+  "numeric_columns": [
+    "width_um",
+    "wafer_b",
+    "outer"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "design prediction before electrical measurement; wafer and inner/outer region known",
+  "calibration": "No per-device response calibration. Current conversion V_gen/100 ohm is source-provided. Native response gain is not documented; endpoint is recorded-channel differential resistance, not intrinsic junction resistance.",
+  "independent_unit": "complete wafer die: all junction widths and paired traces",
+  "evaluation_groups": [
+    "InnerWaferRegion_WaferA/3A7",
+    "OuterWaferRegion_WaferA/4C4",
+    "WaferB/3A12",
+    "WaferB/3D",
+    "WaferB/4A8"
+  ],
+  "assigned_rows": 21,
+  "eligible_rows": 21,
+  "baseline_models": [
+    "reference",
+    "area",
+    "constant",
+    "flexible",
+    "attempt-001",
+    "attempt-002",
+    "attempt-003",
+    "attempt-004",
+    "attempt-005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Rhat = exp(a) / w^2",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "area": {
+      "equation": "Rhat = exp(a) / w^2",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "constant": {
+      "equation": "Rhat = c",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "Rhat=max(0,c0+c1/w+c2/w^2+c3*b+c4*b/w+c5*b/w^2+c6*o/w^2)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-001": {
+      "equation": "Rhat=exp(a)/(w-delta)^2",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-002": {
+      "equation": "Rhat=1/(exp(a)*w^2+exp(b)*w)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-003": {
+      "equation": "Rhat=exp(a+b*wafer_b)/(w-delta0-delta1*wafer_b)^2",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-004": {
+      "equation": "Rhat=exp(a+b*wafer_b+c*outer)/(w-delta)^2",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-005": {
+      "equation": "Rhat=exp(a+b*wafer_b)/w^2",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Individual group errors; empirical group range, no row bootstrap or population CI."
+  },
+  "scope_limits": "19 dies on two wafers. Unknown acquisition gain/offset, nominal rather than measured area. Tail fits operationally define a response and may include defective junctions; all unambiguous devices retained.",
+  "source_url": "https://zenodo.org/records/22113590",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"current\": \"exposed\", \"internal_confirmation\": \"held out until frozen model/stop selection\", \"fresh_for_future_users\": false}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "47f61b8fb92002b8af6dc9dcc05b32fea327a9502553427eeea99e8a5149dd2b",
+  "observations_sha256": "d1ca32899826ec40a85a6518cd17f50774df3da4d3819fdb27be3dfe7d6faf43",
+  "legacy_protocol_sha256": "47f1b5d67a3b003051f766eda1dc87401bbc2b25f22a087fb27400579129b3d9",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd5-diagnostics/1.0"
+}

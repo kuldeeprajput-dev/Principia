@@ -1,0 +1,63 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-062.original.v1.raw-access.v1",
+  "parent_task_id": "P100-062.original.v1",
+  "case_id": "P100-062",
+  "protocol_version": "P100-062.original.v1.raw-access.v1",
+  "cohort_id": "P100-062.original.v1.cohort-1",
+  "parent_task_sha256": "d952771897ac319fd8b40a28081b556e0acc629b8cdf1794bf67f77193c32116",
+  "input_sha256": "a2bc27c3430860e96099427289c4061377a7da211b3c51e96ed647ce8870af32",
+  "observations_sha256": "19130b08a644e065bc51699ad739ab89891895b08f3652db9ad4a21ee8f499d5",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "62_materials_steel_hydrogen",
+  "source_assets": [
+    {
+      "path": "raw/Permeation_MS AHSS 1300.xlsx",
+      "bytes": 88885,
+      "sha256": "117d75a3f8329456732beada95b8f2be8bda688da88e6b8c7c83a9ee49698b3b"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "t": "s since third baseline observation",
+      "offset": "\u03bcA; mean first3 observations",
+      "drive": "mA/cm\u00b2; imposed cathodic-current step",
+      "high": "binary known high-current condition"
+    },
+    "observation_window": "Forward extrapolation within two linked permeation traces. Parameters are learned only from earlier chronological blocks; confirmation is the last20% of each trace. Known imposed current step and initial three-point current calibration are permitted.",
+    "calibration_and_history": "Mean first3 native current observations per trace; all candidate families receive identical values. Fit parameters may use development prefixes only.",
+    "calibration_columns": [
+      "offset"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Two traces without independent specimen identifiers; time blocks are not specimens.",
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

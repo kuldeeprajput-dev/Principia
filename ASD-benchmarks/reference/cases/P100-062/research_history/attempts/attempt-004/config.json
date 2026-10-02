@@ -1,0 +1,32 @@
+{
+  "name": "surface_saturation",
+  "formula": "offset+gain*drive/(1+k*drive)*(1-exp(-t/tau))",
+  "hypothesis": "Development evidence available before this fit: fick_slab: MAE 5.99224, worst group 9.37037; fick_slab_corrected: MAE 10.3538, worst group 21.6434.\n\nTest nonproportional boundary supply: the high cathodic step may saturate adsorption/entry so that permeation amplitude is sublinear in imposed charging current. This competes with a shared diffusion coefficient explanation.",
+  "inputs": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "initial": {
+    "gain": 30,
+    "k": 0.2,
+    "tau": 2000
+  },
+  "bounds": {
+    "gain": [
+      -1000,
+      1000
+    ],
+    "k": [
+      0,
+      10
+    ],
+    "tau": [
+      10,
+      1000000.0
+    ]
+  },
+  "recorded_utc": "2026-10-02T01:59:45.739622+00:00",
+  "parent": "attempt-003"
+}

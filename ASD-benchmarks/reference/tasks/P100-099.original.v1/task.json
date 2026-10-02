@@ -1,0 +1,182 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-099.original.v1",
+  "case_id": "P100-099",
+  "case_number": 99,
+  "family": "original",
+  "protocol_version": "P100-099-asd7-native-v1",
+  "cohort_id": "P100-099.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-099.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/99_neuroscience_hippocampal_calcium",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Population trace mean over native frames t+31 through t+60",
+  "target_units": "author processed-trace units",
+  "error_units": "author processed-trace units",
+  "primary_units": "author processed-trace units",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "level",
+    "lag30",
+    "lag60",
+    "mean300",
+    "dispersion",
+    "zero_fraction",
+    "ventral",
+    "condition_group3"
+  ],
+  "input_units": {
+    "level": "author processed-trace units",
+    "lag30": "author processed-trace units",
+    "lag60": "author processed-trace units",
+    "mean300": "author processed-trace units",
+    "dispersion": "author processed-trace units",
+    "zero_fraction": "dimensionless",
+    "ventral": "binary",
+    "condition_group3": "binary"
+  },
+  "numeric_columns": [
+    "level",
+    "lag30",
+    "lag60",
+    "mean300",
+    "dispersion",
+    "zero_fraction",
+    "ventral",
+    "condition_group3"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Every30 native frames after300-frame history, forecast next30-frame population mean ending60 frames later. Only trace frames<=t are inputs. Native frame index is used without inferring seconds or behavior alignment.",
+  "calibration": "Past observed trace history is allowed. No held future calibration or source fitted maps/pvpreS/pvpostS enter features. All model parameters and flexible transforms are fitted on development animals.",
+  "independent_unit": "Animal suffix across all days,contexts and sessions",
+  "evaluation_groups": [
+    "10VH7",
+    "2DH5",
+    "3DH4",
+    "3VH7",
+    "9VH8"
+  ],
+  "assigned_rows": 17475,
+  "eligible_rows": 17475,
+  "baseline_models": [
+    "reference",
+    "baseline_persistence",
+    "baseline_velocity",
+    "baseline_flexible",
+    "attempt_001_decay",
+    "attempt_002_relaxation",
+    "attempt_003_inertia",
+    "attempt_004_heterogeneity",
+    "attempt_005_region",
+    "attempt_006_asymmetry"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "e+b0*r+b1*max(v,0)+b2*min(v,0); e=current30frame population mean,v=2*(e-e_t-30frames),r=prior300frame mean-e,a=e-2*e_t-30+e_t-60,sd=across-neuron SD of current30frame means,z=fraction of exactly-zero current neuron means,V=ventralCA1,G=sourcegroup3. All trace terms author processed units; coefficients dimensionless except RBF response coefficients in trace units.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_persistence": {
+      "equation": "e; e=current30frame population mean,v=2*(e-e_t-30frames),r=prior300frame mean-e,a=e-2*e_t-30+e_t-60,sd=across-neuron SD of current30frame means,z=fraction of exactly-zero current neuron means,V=ventralCA1,G=sourcegroup3. All trace terms author processed units; coefficients dimensionless except RBF response coefficients in trace units.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_velocity": {
+      "equation": "e+v; e=current30frame population mean,v=2*(e-e_t-30frames),r=prior300frame mean-e,a=e-2*e_t-30+e_t-60,sd=across-neuron SD of current30frame means,z=fraction of exactly-zero current neuron means,V=ventralCA1,G=sourcegroup3. All trace terms author processed units; coefficients dimensionless except RBF response coefficients in trace units.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "e+b0+sum_j b_j exp(-mean((z-center_j)^2)/2); e=current30frame population mean,v=2*(e-e_t-30frames),r=prior300frame mean-e,a=e-2*e_t-30+e_t-60,sd=across-neuron SD of current30frame means,z=fraction of exactly-zero current neuron means,V=ventralCA1,G=sourcegroup3. All trace terms author processed units; coefficients dimensionless except RBF response coefficients in trace units.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_decay": {
+      "equation": "(1+b0)*e; e=current30frame population mean,v=2*(e-e_t-30frames),r=prior300frame mean-e,a=e-2*e_t-30+e_t-60,sd=across-neuron SD of current30frame means,z=fraction of exactly-zero current neuron means,V=ventralCA1,G=sourcegroup3. All trace terms author processed units; coefficients dimensionless except RBF response coefficients in trace units.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_relaxation": {
+      "equation": "e+b0*r; e=current30frame population mean,v=2*(e-e_t-30frames),r=prior300frame mean-e,a=e-2*e_t-30+e_t-60,sd=across-neuron SD of current30frame means,z=fraction of exactly-zero current neuron means,V=ventralCA1,G=sourcegroup3. All trace terms author processed units; coefficients dimensionless except RBF response coefficients in trace units.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_inertia": {
+      "equation": "e+b0*r+b1*v; e=current30frame population mean,v=2*(e-e_t-30frames),r=prior300frame mean-e,a=e-2*e_t-30+e_t-60,sd=across-neuron SD of current30frame means,z=fraction of exactly-zero current neuron means,V=ventralCA1,G=sourcegroup3. All trace terms author processed units; coefficients dimensionless except RBF response coefficients in trace units.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_heterogeneity": {
+      "equation": "e+b0*r+b1*v+b2*sd+b3*sd*z; e=current30frame population mean,v=2*(e-e_t-30frames),r=prior300frame mean-e,a=e-2*e_t-30+e_t-60,sd=across-neuron SD of current30frame means,z=fraction of exactly-zero current neuron means,V=ventralCA1,G=sourcegroup3. All trace terms author processed units; coefficients dimensionless except RBF response coefficients in trace units.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_region": {
+      "equation": "e+b0*r+b1*v+b2*r*V+b3*v*V; e=current30frame population mean,v=2*(e-e_t-30frames),r=prior300frame mean-e,a=e-2*e_t-30+e_t-60,sd=across-neuron SD of current30frame means,z=fraction of exactly-zero current neuron means,V=ventralCA1,G=sourcegroup3. All trace terms author processed units; coefficients dimensionless except RBF response coefficients in trace units.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006_asymmetry": {
+      "equation": "e+b0*r+b1*max(v,0)+b2*min(v,0); e=current30frame population mean,v=2*(e-e_t-30frames),r=prior300frame mean-e,a=e-2*e_t-30+e_t-60,sd=across-neuron SD of current30frame means,z=fraction of exactly-zero current neuron means,V=ventralCA1,G=sourcegroup3. All trace terms author processed units; coefficients dimensionless except RBF response coefficients in trace units.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "Retained author-processed calcium traces only; amplitude normalization/calcium-event interpretation is not documented in the archive. No spikes,absolute calcium concentration or real-time physiology claim. Twenty-eight source animals; held animals stay within the same study.",
+  "source_url": "https://zenodo.org/records/21225888",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "bcfca77187f3344f053ec496afa769e08f428d80723e208d7f96d986f1bf7358",
+  "observations_sha256": "0e01a2304fbb28979befcdf28e5253195e0486ef1afcc981974004f81f227914",
+  "legacy_protocol_sha256": "859eabca958d7461f712f94088ce2cc37112a3002cd3271f69ff453acba58ecd",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "level",
+    "lag30",
+    "lag60",
+    "mean300",
+    "dispersion",
+    "zero_fraction"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0",
+  "native_prefix_audit": {
+    "status": "passed_finite_native_counterfactual_probes",
+    "receipt": "reviews/validation/ASD7_NATIVE_PREFIX.json",
+    "receipt_sha256": "0beef68cea2994c1e53c625868a6c9fdf5d8008d40a00fc8bf8bb402b6f8d5df",
+    "tested_origins": 130,
+    "scope": [
+      "One middle eligible forecast origin from every native recording/session with at least one eligible origin; all currently exposed partitions covered."
+    ],
+    "limits": "Released-product prefix invariance at tested origins; not a proof of publisher upstream processing causality or every possible mutation."
+  }
+}

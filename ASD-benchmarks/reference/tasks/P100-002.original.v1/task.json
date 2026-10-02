@@ -1,0 +1,186 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-002.original.v1",
+  "case_id": "P100-002",
+  "case_number": 2,
+  "family": "original",
+  "protocol_version": "P100-002-asd7-native-v1.1",
+  "cohort_id": "P100-002.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-002.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/02_astronomy_mast_tars_sector96",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Next hourly median systematics-corrected stellar flux",
+  "target_units": "relative flux (native normalization)",
+  "error_units": "relative flux (native normalization)",
+  "primary_units": "relative flux (native normalization)",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "lag1",
+    "lag2",
+    "lag3",
+    "lag4",
+    "lag6",
+    "lag12",
+    "lag24",
+    "median6",
+    "median24",
+    "mad6"
+  ],
+  "input_units": {
+    "lag1": "author-normalized relative flux",
+    "lag2": "author-normalized relative flux",
+    "lag3": "author-normalized relative flux",
+    "lag4": "author-normalized relative flux",
+    "lag6": "author-normalized relative flux",
+    "lag12": "author-normalized relative flux",
+    "lag24": "author-normalized relative flux",
+    "median6": "author-normalized relative flux",
+    "median24": "author-normalized relative flux",
+    "mad6": "author-normalized relative flux"
+  },
+  "numeric_columns": [
+    "lag1",
+    "lag2",
+    "lag3",
+    "lag4",
+    "lag6",
+    "lag12",
+    "lag24",
+    "median6",
+    "median24",
+    "mad6"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict next disjoint hourly bin using preceding observed hourly medians only. The released light curve was author-corrected using full-sector information; this is a retrospective product-space forecast, not a raw real-time pipeline.",
+  "calibration": "Causal observed flux history within each star; no fitted header period or future light curve values.",
+  "independent_unit": "Star; repeated hourly bins are dependent",
+  "evaluation_groups": [
+    "hlsp_tars_tess_ffi_s0096-0000000231055285_tess_v01_lc",
+    "hlsp_tars_tess_ffi_s0096-0000000350184430_tess_v01_lc"
+  ],
+  "assigned_rows": 981,
+  "eligible_rows": 981,
+  "baseline_models": [
+    "persist",
+    "rbf",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "reference"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "persist": {
+      "equation": "F_hat(t)=F(t-1)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rbf": {
+      "equation": "Frozen 24-center Gaussian radial-basis ridge comparator; all feature means, scales, centers, coefficients and ridge=0.3 are in rules.json. Additive residual for cases2/3/4/45; multiplicative clipped-log ratio for cases11/46.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "F_hat=F1+a*(F1-F2)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "F_hat=F1+a*(F1-median24)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "F_hat=F1+a*(F1-F2)+b*(F1-2*F2+F3)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "F_hat=F1+a*DeltaF/(1+abs(DeltaF)/s)+b*(F1-median24); s=max(MAD6,1e-9)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "F_hat=F1+a*(F1-F6)/5+b*(F1-median24)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "reference": {
+      "equation": "F_hat=F1+a*(F1-F2)+b*(F1-2*F2+F3)",
+      "state": "rules.json",
+      "role": "reference"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics."
+  },
+  "scope_limits": "Eight selected stars in one TESS sector; no new planet, stellar period or universal rotation law. Missing per-cadence quality/error columns limit robustness.",
+  "source_url": "https://archive.stsci.edu/hlsp/tars",
+  "source_license": "CC BY 4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "0e5fafa6dce2e543f43842c244f8dcb438fc57105c6e9f519ac8f0a152c32247",
+  "observations_sha256": "1ad9885934ab45279cda79163c68e618b920b6eebdd5b70b85a0926def1f0ee4",
+  "legacy_protocol_sha256": "a037b4652a030f06b92233c81af1693a15014cead0fbd55cc3ca5d1de82735d8",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "contract_corrections": [
+    {
+      "revision": "target-window-exclusion/1.0",
+      "timing": "Postconfirmation independent scientific-review correction",
+      "reason": "delta_h used median observation time inside target bin; not known at causal prediction time. No frozen model used it.",
+      "removed_predictor": "delta_h",
+      "all_frozen_predictions_unchanged": true,
+      "models_checked": 8,
+      "original_contract_and_inputs_preserved": "technical_history/target_window_metadata_exclusion",
+      "historical_protocol_hash_unchanged": true
+    }
+  ],
+  "calibration_columns": [
+    "lag1",
+    "lag2",
+    "lag3",
+    "lag4",
+    "lag6",
+    "lag12",
+    "lag24",
+    "median6",
+    "median24",
+    "mad6"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0",
+  "native_prefix_audit": {
+    "status": "passed_one_native_counterfactual_probe",
+    "receipt": "reviews/validation/P100-002.native_prefix_receipt.json",
+    "receipt_sha256": "115f6c56010b38ec963da866e2abc3453080f5a9693f265ca24ae0c9c475712e",
+    "tested_origins": 1,
+    "limits": "One development origin of released calibrated product; upstream author preprocessing causality is not independently established."
+  }
+}

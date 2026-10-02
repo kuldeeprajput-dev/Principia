@@ -1,0 +1,1 @@
+The initial flexible comparator used fixed length2/ridge0.03, contrary to the protocol promising nested grouped tuning. Before any ASD attempt or confirmation, the comparator was corrected to train-only nested leave-architecture-out tuning over length1/2/4 and ridge0.03/0.3. Earlier receipts remain here. This is an implementation repair, not an ASD attempt.\n

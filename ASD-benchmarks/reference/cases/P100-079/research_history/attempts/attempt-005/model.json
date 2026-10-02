@@ -1,0 +1,41 @@
+{
+  "case": 79,
+  "kind": "lognormal",
+  "coef": [
+    9.999999999999991,
+    5.117105542774052,
+    0.4741629379181309
+  ],
+  "training_groups": [
+    "204708",
+    "304716",
+    "404710",
+    "404724",
+    "604705"
+  ],
+  "training_rows": 25,
+  "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+  "equation": "yhat=max(0,baseline+A*exp(-.5*(log(hours/tpeak)/sigma)^2))",
+  "optimizer": {
+    "success": true,
+    "cost": 5.509231189802043,
+    "bounds": [
+      [
+        0,
+        0.1,
+        0.05
+      ],
+      [
+        10,
+        96,
+        5
+      ]
+    ],
+    "jacobian_rank": 3,
+    "jacobian_singular_values": [
+      62.39810307868727,
+      3.2174339244500345,
+      0.0007427818594976101
+    ]
+  }
+}

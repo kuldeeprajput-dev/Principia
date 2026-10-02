@@ -1,0 +1,650 @@
+{
+  "baseline_persistence": {
+    "metrics": {
+      "primary_error": 0.024515140600000002,
+      "mean_group_absolute_error": 0.024515140600000002,
+      "group_rmse_mean": 0.03374364881862344,
+      "worst_group_mae": 0.0431976018,
+      "bias": -0.013583290719999998,
+      "groups": 5,
+      "rows": 25,
+      "by_group": [
+        {
+          "group": "204708",
+          "mae": 0.009053140300000002,
+          "mse": 0.00016674397190218708,
+          "bias": -0.0089043721
+        },
+        {
+          "group": "304716",
+          "mae": 0.0333812381,
+          "mse": 0.001196116516752321,
+          "bias": 0.013565017100000002
+        },
+        {
+          "group": "404710",
+          "mae": 0.006662296399999999,
+          "mse": 8.115360422271598e-05,
+          "bias": -0.0065970692
+        },
+        {
+          "group": "404724",
+          "mae": 0.0431976018,
+          "mse": 0.0040924680481799645,
+          "bias": -0.0431976018
+        },
+        {
+          "group": "604705",
+          "mae": 0.0302814264,
+          "mse": 0.002327045332968577,
+          "bias": -0.0227824276
+        }
+      ]
+    },
+    "model": {
+      "case": 79,
+      "kind": "persistence",
+      "coef": [],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "yhat=baseline"
+    },
+    "fold_states": {
+      "204708": {
+        "case": 79,
+        "kind": "persistence",
+        "coef": [],
+        "training_groups": [
+          "304716",
+          "404710",
+          "404724",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "77a3c8da0895d77db0c930d262b0a15d2b36858814617e63e2f8bd65718297ac",
+        "equation": "yhat=baseline"
+      },
+      "304716": {
+        "case": 79,
+        "kind": "persistence",
+        "coef": [],
+        "training_groups": [
+          "204708",
+          "404710",
+          "404724",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "d181e5944dfbffe64dee5c3083b97a070b3c30419f0feffd95cec4d4eb1b8a40",
+        "equation": "yhat=baseline"
+      },
+      "404710": {
+        "case": 79,
+        "kind": "persistence",
+        "coef": [],
+        "training_groups": [
+          "204708",
+          "304716",
+          "404724",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "0428165f41b9fd15d7881f73ce80e948a6190b12bd86405dc668c2c65b06c0ee",
+        "equation": "yhat=baseline"
+      },
+      "404724": {
+        "case": 79,
+        "kind": "persistence",
+        "coef": [],
+        "training_groups": [
+          "204708",
+          "304716",
+          "404710",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "4d0763d4fa35a9e29e1e480137afcbfd67844e3318d413e73c2caad59f17d517",
+        "equation": "yhat=baseline"
+      },
+      "604705": {
+        "case": 79,
+        "kind": "persistence",
+        "coef": [],
+        "training_groups": [
+          "204708",
+          "304716",
+          "404710",
+          "404724"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "c6a8494ae0e5c97cbab3d7c73893603c307f19b3fd70feac6a6711bb7abde97d",
+        "equation": "yhat=baseline"
+      }
+    }
+  },
+  "baseline_decay": {
+    "metrics": {
+      "primary_error": 0.02471555078505802,
+      "mean_group_absolute_error": 0.02471555078505802,
+      "group_rmse_mean": 0.03290414215840526,
+      "worst_group_mae": 0.03975975731589839,
+      "bias": 0.0023790423934322135,
+      "groups": 5,
+      "rows": 25,
+      "by_group": [
+        {
+          "group": "204708",
+          "mae": 0.008384316312174888,
+          "mse": 9.738685252695104e-05,
+          "bias": 0.008384316312174888
+        },
+        {
+          "group": "304716",
+          "mae": 0.03944311512772612,
+          "mse": 0.00177714318393985,
+          "bias": 0.03497236472178361
+        },
+        {
+          "group": "404710",
+          "mae": 0.011340916612914234,
+          "mse": 0.000209641400792542,
+          "bias": 0.011340916612914234
+        },
+        {
+          "group": "404724",
+          "mae": 0.03975975731589839,
+          "mse": 0.0034115642132348965,
+          "bias": -0.033015625463289656
+        },
+        {
+          "group": "604705",
+          "mae": 0.02464964855657648,
+          "mse": 0.0015688302041515889,
+          "bias": -0.009786760216422006
+        }
+      ]
+    },
+    "model": {
+      "case": 79,
+      "kind": "decay",
+      "coef": [
+        0.037324425352184616,
+        40.684166947137264
+      ],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "yhat=max(0,baseline+A*exp(-hours/tau))",
+      "optimizer": {
+        "success": true,
+        "cost": 6.917770511157196,
+        "bounds": [
+          [
+            0,
+            0.01
+          ],
+          [
+            10,
+            1000
+          ]
+        ],
+        "jacobian_rank": 2,
+        "jacobian_singular_values": [
+          57.00995316645541,
+          0.0230839475411675
+        ]
+      }
+    },
+    "fold_states": {
+      "204708": {
+        "case": 79,
+        "kind": "decay",
+        "coef": [
+          0.04048620575199885,
+          41.7736694405521
+        ],
+        "training_groups": [
+          "304716",
+          "404710",
+          "404724",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "77a3c8da0895d77db0c930d262b0a15d2b36858814617e63e2f8bd65718297ac",
+        "equation": "yhat=max(0,baseline+A*exp(-hours/tau))",
+        "optimizer": {
+          "success": true,
+          "cost": 5.8154875933745185,
+          "bounds": [
+            [
+              0,
+              0.01
+            ],
+            [
+              10,
+              1000
+            ]
+          ],
+          "jacobian_rank": 2,
+          "jacobian_singular_values": [
+            47.422500262967176,
+            0.020216117895112268
+          ]
+        }
+      },
+      "304716": {
+        "case": 79,
+        "kind": "decay",
+        "coef": [
+          0.038942353972316525,
+          66.79418868428118
+        ],
+        "training_groups": [
+          "204708",
+          "404710",
+          "404724",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "d181e5944dfbffe64dee5c3083b97a070b3c30419f0feffd95cec4d4eb1b8a40",
+        "equation": "yhat=max(0,baseline+A*exp(-hours/tau))",
+        "optimizer": {
+          "success": true,
+          "cost": 4.832244268799659,
+          "bounds": [
+            [
+              0,
+              0.01
+            ],
+            [
+              10,
+              1000
+            ]
+          ],
+          "jacobian_rank": 2,
+          "jacobian_singular_values": [
+            57.27906410617088,
+            0.012585051020596988
+          ]
+        }
+      },
+      "404710": {
+        "case": 79,
+        "kind": "decay",
+        "coef": [
+          0.04268246626970836,
+          40.65345700506224
+        ],
+        "training_groups": [
+          "204708",
+          "304716",
+          "404724",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "0428165f41b9fd15d7881f73ce80e948a6190b12bd86405dc668c2c65b06c0ee",
+        "equation": "yhat=max(0,baseline+A*exp(-hours/tau))",
+        "optimizer": {
+          "success": true,
+          "cost": 5.472314212211137,
+          "bounds": [
+            [
+              0,
+              0.01
+            ],
+            [
+              10,
+              1000
+            ]
+          ],
+          "jacobian_rank": 2,
+          "jacobian_singular_values": [
+            46.00676195833045,
+            0.02132083185741524
+          ]
+        }
+      },
+      "404724": {
+        "case": 79,
+        "kind": "decay",
+        "coef": [
+          0.03409780612971456,
+          23.00579111751353
+        ],
+        "training_groups": [
+          "204708",
+          "304716",
+          "404710",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "4d0763d4fa35a9e29e1e480137afcbfd67844e3318d413e73c2caad59f17d517",
+        "equation": "yhat=max(0,baseline+A*exp(-hours/tau))",
+        "optimizer": {
+          "success": true,
+          "cost": 4.538688911435538,
+          "bounds": [
+            [
+              0,
+              0.01
+            ],
+            [
+              10,
+              1000
+            ]
+          ],
+          "jacobian_rank": 2,
+          "jacobian_singular_values": [
+            52.51927256623823,
+            0.03260536018884368
+          ]
+        }
+      },
+      "604705": {
+        "case": 79,
+        "kind": "decay",
+        "coef": [
+          0.03279011737394621,
+          36.83748853528074
+        ],
+        "training_groups": [
+          "204708",
+          "304716",
+          "404710",
+          "404724"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "c6a8494ae0e5c97cbab3d7c73893603c307f19b3fd70feac6a6711bb7abde97d",
+        "equation": "yhat=max(0,baseline+A*exp(-hours/tau))",
+        "optimizer": {
+          "success": true,
+          "cost": 6.282603761953836,
+          "bounds": [
+            [
+              0,
+              0.01
+            ],
+            [
+              10,
+              1000
+            ]
+          ],
+          "jacobian_rank": 2,
+          "jacobian_singular_values": [
+            54.861119257363306,
+            0.021722926272747616
+          ]
+        }
+      }
+    }
+  },
+  "baseline_flexible": {
+    "metrics": {
+      "primary_error": 0.033371166190457394,
+      "mean_group_absolute_error": 0.033371166190457394,
+      "group_rmse_mean": 0.04228746900818033,
+      "worst_group_mae": 0.056094428133937266,
+      "bias": 0.010600208066688094,
+      "groups": 5,
+      "rows": 25,
+      "by_group": [
+        {
+          "group": "204708",
+          "mae": 0.017575394439423013,
+          "mse": 0.0004035894566180552,
+          "bias": 0.017575394439423013
+        },
+        {
+          "group": "304716",
+          "mae": 0.056094428133937266,
+          "mse": 0.0036952910393656287,
+          "bias": 0.056094428133937266
+        },
+        {
+          "group": "404710",
+          "mae": 0.03254483761600332,
+          "mse": 0.0011089055031421001,
+          "bias": 0.03254483761600332
+        },
+        {
+          "group": "404724",
+          "mae": 0.03746303861897686,
+          "mse": 0.003188675511135223,
+          "bias": -0.03425902653752323
+        },
+        {
+          "group": "604705",
+          "mae": 0.023178132143946494,
+          "mse": 0.0016638495699514359,
+          "bias": -0.0189545933183999
+        }
+      ]
+    },
+    "model": {
+      "case": 79,
+      "kind": "flexible",
+      "coef": [
+        0.02631727769008783,
+        0.007348746289236323,
+        -0.005744658171535808,
+        -0.003940941118426077,
+        0.7254283812267862,
+        -0.7715626904568124,
+        0.053673803237320586,
+        0.010832477890192939
+      ],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "feature_rms": [
+        1.0,
+        1.113658013900177,
+        1.555026017278918,
+        2.2955116877432817,
+        0.020665873912902914,
+        0.023014716097354948,
+        0.01591457397914534,
+        0.9589725661956958
+      ],
+      "ridge_alpha": 1,
+      "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+    },
+    "fold_states": {
+      "204708": {
+        "case": 79,
+        "kind": "flexible",
+        "coef": [
+          0.027977897713322885,
+          0.007863947055000925,
+          -0.006552567100198482,
+          -0.005227391739011642,
+          0.9760841253412466,
+          -0.6450826075596762,
+          0.501014867325717,
+          0.01053164108216739
+        ],
+        "training_groups": [
+          "304716",
+          "404710",
+          "404724",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "77a3c8da0895d77db0c930d262b0a15d2b36858814617e63e2f8bd65718297ac",
+        "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+        "feature_rms": [
+          1.0,
+          1.113658013900177,
+          1.555026017278918,
+          2.2955116877432817,
+          0.021865695278576527,
+          0.024350906776486013,
+          0.016503750398699446,
+          0.9387899536959293
+        ],
+        "ridge_alpha": 1,
+        "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+      },
+      "304716": {
+        "case": 79,
+        "kind": "flexible",
+        "coef": [
+          0.027052545471196985,
+          0.01387700683464279,
+          -0.006391321150400477,
+          -0.006857337066793111,
+          1.2656207851815382,
+          -0.5215134619782967,
+          -0.8172671509033441,
+          0.004287717425469516
+        ],
+        "training_groups": [
+          "204708",
+          "404710",
+          "404724",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "d181e5944dfbffe64dee5c3083b97a070b3c30419f0feffd95cec4d4eb1b8a40",
+        "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+        "feature_rms": [
+          1.0,
+          1.113658013900177,
+          1.555026017278918,
+          2.2955116877432817,
+          0.013326713892188168,
+          0.014841401724990173,
+          0.0066998512461069045,
+          0.981988229418233
+        ],
+        "ridge_alpha": 1,
+        "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+      },
+      "404710": {
+        "case": 79,
+        "kind": "flexible",
+        "coef": [
+          0.030217869315666963,
+          0.009211029942781501,
+          -0.005725752228290166,
+          -0.004725984616881678,
+          -0.05566174471966935,
+          -0.8446233619681658,
+          -0.3876235417726159,
+          0.026416605607791292
+        ],
+        "training_groups": [
+          "204708",
+          "304716",
+          "404724",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "0428165f41b9fd15d7881f73ce80e948a6190b12bd86405dc668c2c65b06c0ee",
+        "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+        "feature_rms": [
+          1.0,
+          1.113658013900177,
+          1.555026017278918,
+          2.2955116877432817,
+          0.022927753645491756,
+          0.025533676588030896,
+          0.017791369641420203,
+          0.9521533603389992
+        ],
+        "ridge_alpha": 1,
+        "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+      },
+      "404724": {
+        "case": 79,
+        "kind": "flexible",
+        "coef": [
+          0.009405117201565531,
+          -0.006218781400691829,
+          -0.0046157898675217544,
+          -0.00035827560614100975,
+          1.1513624042837738,
+          -0.58180490775663,
+          0.2663000565975193,
+          0.017995027598684158
+        ],
+        "training_groups": [
+          "204708",
+          "304716",
+          "404710",
+          "604705"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "4d0763d4fa35a9e29e1e480137afcbfd67844e3318d413e73c2caad59f17d517",
+        "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+        "feature_rms": [
+          1.0,
+          1.113658013900177,
+          1.555026017278918,
+          2.2955116877432817,
+          0.02296010505944345,
+          0.025569704999439204,
+          0.017783898586042835,
+          1.0024169649426544
+        ],
+        "ridge_alpha": 1,
+        "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+      },
+      "604705": {
+        "case": 79,
+        "kind": "flexible",
+        "coef": [
+          0.02887115808436568,
+          0.004739810587492117,
+          -0.0033195785593086798,
+          -0.0024968160795862857,
+          0.5094772464035371,
+          -0.8245915247870416,
+          -0.14910153063436182,
+          0.004969481544982926
+        ],
+        "training_groups": [
+          "204708",
+          "304716",
+          "404710",
+          "404724"
+        ],
+        "training_rows": 20,
+        "training_ids_sha256": "c6a8494ae0e5c97cbab3d7c73893603c307f19b3fd70feac6a6711bb7abde97d",
+        "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+        "feature_rms": [
+          1.0,
+          1.113658013900177,
+          1.555026017278918,
+          2.2955116877432817,
+          0.020659948648802603,
+          0.02300811737950516,
+          0.017785012176257074,
+          0.9171034077429546
+        ],
+        "ridge_alpha": 1,
+        "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+      }
+    }
+  }
+}

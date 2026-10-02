@@ -1,0 +1,762 @@
+{
+  "case_id": "P100-034",
+  "input_columns": [
+    "calcium",
+    "mutant",
+    "low04",
+    "low075"
+  ],
+  "numeric_columns": [
+    "calcium",
+    "mutant",
+    "low04",
+    "low075"
+  ],
+  "input_units": {
+    "calcium": "mM",
+    "mutant": "binary",
+    "low04": "nA",
+    "low075": "nA"
+  },
+  "target": "first_pulse_ePSC_magnitude",
+  "target_units": "nA",
+  "metric_kind": "mae",
+  "reference_selected_model": "attempt_008_reserve_conserved",
+  "models": {
+    "reference": {
+      "case": 34,
+      "kind": "reserve_conserved",
+      "coef": [
+        148.32641678977362,
+        -1.4876839434816904,
+        0.7983075329888836
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-I(.75),0)*(Ca-.75)/(K+Ca-.75); exact unit depletion coefficient.",
+      "optimizer": {
+        "success": true,
+        "cost": 0.5509089794652973,
+        "bounds": [
+          [
+            0,
+            -5,
+            0.01
+          ],
+          [
+            500,
+            5,
+            100
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          1.877408502525673,
+          0.5393936159235456,
+          0.018824854300838707
+        ]
+      }
+    },
+    "baseline_persistence": {
+      "case": 34,
+      "kind": "persistence",
+      "coef": [],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Ihat=I(.75)"
+    },
+    "baseline_hill4": {
+      "case": 34,
+      "kind": "hill4",
+      "coef": [
+        0.859122596910882
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Ihat=I(.75)*H(C)/H(.75); H(C)=C^4/(K^4+C^4)",
+      "optimizer": {
+        "success": true,
+        "cost": 6.421263888128122,
+        "bounds": [
+          [
+            0.01
+          ],
+          [
+            100
+          ]
+        ],
+        "jacobian_rank": 1,
+        "jacobian_singular_values": [
+          18.535766927494564
+        ]
+      }
+    },
+    "baseline_flexible": {
+      "case": 34,
+      "kind": "flexible",
+      "coef": [
+        92.65668644903877,
+        -0.415349256895664,
+        -1.0940810500244311,
+        0.5128495039476437,
+        0.4137876080018605,
+        0.03264748825923436,
+        0.1454529142440326,
+        -0.10048607748675645
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "feature_rms": [
+        0.9999999999999999,
+        35.23281915153819,
+        12.800372010638306,
+        52.04640499711326,
+        25.385789369083575,
+        19.147424553842402,
+        31.217229374892113,
+        45.9407359609746
+      ],
+      "ridge_alpha": 1,
+      "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+    },
+    "attempt_001_genotype_hill": {
+      "case": 34,
+      "kind": "genotype_hill",
+      "coef": [
+        0.23530793415732112,
+        -0.34477688085998615,
+        2.4129264660724092
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Ihat=I(.75)*H(C)/H(.75); H=C^n/(K_g^n+C^n); log K_g=b0+b1*mutant",
+      "optimizer": {
+        "success": true,
+        "cost": 5.022750113572563,
+        "bounds": [
+          [
+            -4,
+            -4,
+            0.5
+          ],
+          [
+            5,
+            4,
+            6
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          11.10121988570718,
+          4.489413093110365,
+          0.5418141865781706
+        ]
+      }
+    },
+    "attempt_002_local_hill": {
+      "case": 34,
+      "kind": "local_hill",
+      "coef": [
+        1.0000000000000002
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "n shared; invert K from ratio I(.4)/I(.75), then Hill extrapolation; clipped ill-conditioned inversions recorded",
+      "optimizer": {
+        "success": true,
+        "cost": 29.068314173661754,
+        "bounds": [
+          [
+            1
+          ],
+          [
+            6
+          ]
+        ],
+        "jacobian_rank": 1,
+        "jacobian_singular_values": [
+          23.462500845397386
+        ]
+      }
+    },
+    "attempt_003_two_pool": {
+      "case": 34,
+      "kind": "two_pool",
+      "coef": [
+        0.7941934856192849,
+        2.846605612608085,
+        0.7375528807657605
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "H=w*H4(C;K1)+(1-w)*H4(C;K2), scale fixed at.75mM",
+      "optimizer": {
+        "success": true,
+        "cost": 6.229872862685907,
+        "bounds": [
+          [
+            0.01,
+            0.02,
+            0
+          ],
+          [
+            100,
+            100,
+            1
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          18.812534197266476,
+          2.550089083587771,
+          0.2416954837539402
+        ]
+      }
+    },
+    "attempt_004_reserve": {
+      "case": 34,
+      "kind": "reserve",
+      "coef": [
+        122.12093199507025,
+        3.5266975128435436,
+        1.205852148970011,
+        0.9095049953946986
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Ihat=I(.75)+max(A0+Ag*mutant-lambda*I(.75),0)*(1-exp(-(Ca-.75)/K)); effective recruitable response reserve, not identified vesicle count.",
+      "optimizer": {
+        "success": true,
+        "cost": 0.7246972127705649,
+        "bounds": [
+          [
+            0,
+            -200,
+            0,
+            0.01
+          ],
+          [
+            500,
+            200,
+            3,
+            100
+          ]
+        ],
+        "jacobian_rank": 4,
+        "jacobian_singular_values": [
+          2.396459931399288,
+          1.2550098408344748,
+          0.02489969774650696,
+          0.02265104687606203
+        ]
+      }
+    },
+    "attempt_005_reserve_pooled": {
+      "case": 34,
+      "kind": "reserve_pooled",
+      "coef": [
+        121.89286724136196,
+        1.1392235401733308,
+        0.910784255906115
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Ihat=I(.75)+max(A-lambda*I(.75),0)*(1-exp(-(Ca-.75)/K)); common reserve across both genotypes.",
+      "optimizer": {
+        "success": true,
+        "cost": 0.728237327835806,
+        "bounds": [
+          [
+            0,
+            0,
+            0.01
+          ],
+          [
+            500,
+            3,
+            100
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          2.394890010556564,
+          1.2533322574145038,
+          0.023643685184542226
+        ]
+      }
+    },
+    "attempt_006_reserve_low04": {
+      "case": 34,
+      "kind": "reserve_low04",
+      "coef": [
+        123.61271692638373,
+        -1.364401214834275,
+        0.7493375178580057,
+        0.9324153010769258
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-lambda*I(.75),0)*(1-exp(-(Ca-.75)/K)); test information from second calibration anchor.",
+      "optimizer": {
+        "success": true,
+        "cost": 0.577220870155357,
+        "bounds": [
+          [
+            0,
+            -5,
+            0,
+            0.01
+          ],
+          [
+            500,
+            5,
+            3,
+            100
+          ]
+        ],
+        "jacobian_rank": 4,
+        "jacobian_singular_values": [
+          2.4649014471366404,
+          1.2700586978036166,
+          0.3820488355099508,
+          0.023376620240766356
+        ]
+      }
+    },
+    "attempt_007_reserve_rational": {
+      "case": 34,
+      "kind": "reserve_rational",
+      "coef": [
+        145.00924862457157,
+        -1.6167921915726222,
+        0.8704550961445153,
+        0.7809444212298421
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-lambda*I(.75),0)*(Ca-.75)/(K+Ca-.75); rational rather than exponential reserve recruitment.",
+      "optimizer": {
+        "success": true,
+        "cost": 0.5472416272703222,
+        "bounds": [
+          [
+            0,
+            -5,
+            0,
+            0.01
+          ],
+          [
+            500,
+            5,
+            3,
+            100
+          ]
+        ],
+        "jacobian_rank": 4,
+        "jacobian_singular_values": [
+          2.4224574875006835,
+          1.0682071767788044,
+          0.3238549397848198,
+          0.015404220915370068
+        ]
+      }
+    },
+    "attempt_008_reserve_conserved": {
+      "case": 34,
+      "kind": "reserve_conserved",
+      "coef": [
+        148.32641678977362,
+        -1.4876839434816904,
+        0.7983075329888836
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-I(.75),0)*(Ca-.75)/(K+Ca-.75); exact unit depletion coefficient.",
+      "optimizer": {
+        "success": true,
+        "cost": 0.5509089794652973,
+        "bounds": [
+          [
+            0,
+            -5,
+            0.01
+          ],
+          [
+            500,
+            5,
+            100
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          1.877408502525673,
+          0.5393936159235456,
+          0.018824854300838707
+        ]
+      }
+    },
+    "attempt_009_reserve_genotype_rate": {
+      "case": 34,
+      "kind": "reserve_genotype_rate",
+      "coef": [
+        148.59568507362795,
+        -1.6054513536335546,
+        0.888445988339913,
+        -0.32905165881663656
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Ihat=I(.75)+max(A+B*I(.4)-I(.75),0)*(Ca-.75)/(K*exp(bg*mutant)+Ca-.75)",
+      "optimizer": {
+        "success": true,
+        "cost": 0.5259671636141693,
+        "bounds": [
+          [
+            0,
+            -5,
+            0.01,
+            -3
+          ],
+          [
+            500,
+            5,
+            100,
+            3
+          ]
+        ],
+        "jacobian_rank": 4,
+        "jacobian_singular_values": [
+          1.7757265951060655,
+          0.6839326014359953,
+          0.5256161667372873,
+          0.018977377509372017
+        ]
+      }
+    },
+    "attempt_010_reserve_no04": {
+      "case": 34,
+      "kind": "reserve_no04",
+      "coef": [
+        130.0156669366768,
+        0.6862839704928955
+      ],
+      "training_groups": [
+        "control_cell10",
+        "control_cell11",
+        "control_cell12",
+        "control_cell2",
+        "control_cell3",
+        "control_cell5",
+        "control_cell6",
+        "control_cell8",
+        "control_cell9",
+        "mutant_block1",
+        "mutant_block10",
+        "mutant_block11",
+        "mutant_block12",
+        "mutant_block3",
+        "mutant_block4",
+        "mutant_block5",
+        "mutant_block6",
+        "mutant_block8",
+        "mutant_block9"
+      ],
+      "training_rows": 56,
+      "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+      "equation": "Ihat=I(.75)+max(A-I(.75),0)*(Ca-.75)/(K+Ca-.75); earlier calibration ablation.",
+      "optimizer": {
+        "success": true,
+        "cost": 0.7355022895714635,
+        "bounds": [
+          [
+            0,
+            0.01
+          ],
+          [
+            500,
+            100
+          ]
+        ],
+        "jacobian_rank": 2,
+        "jacobian_singular_values": [
+          1.9573725587690591,
+          0.027221318225756245
+        ]
+      }
+    }
+  }
+}

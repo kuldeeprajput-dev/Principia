@@ -1,0 +1,57 @@
+{
+  "case_id": "P100-035",
+  "target": "Source positive-context label probability",
+  "target_units": "probability",
+  "error_units": "probability squared",
+  "metric_kind": "brier",
+  "permitted_inputs": [
+    "log_duration",
+    "log_centroid",
+    "log_peak",
+    "high_share",
+    "entropy",
+    "flatness",
+    "envelope_cv",
+    "log_modulation",
+    "log_rms",
+    "species_code"
+  ],
+  "input_units": {
+    "log_duration": "dimensionless",
+    "log_centroid": "dimensionless",
+    "log_peak": "dimensionless",
+    "high_share": "dimensionless",
+    "entropy": "dimensionless",
+    "flatness": "dimensionless",
+    "envelope_cv": "dimensionless",
+    "log_modulation": "dimensionless",
+    "log_rms": "dimensionless",
+    "species_code": "dimensionless"
+  },
+  "numeric_columns": [
+    "log_duration",
+    "log_centroid",
+    "log_peak",
+    "high_share",
+    "entropy",
+    "flatness",
+    "envelope_cv",
+    "log_modulation",
+    "log_rms",
+    "species_code"
+  ],
+  "timing_contract": "After the complete author-extracted call. Predictors only waveform summaries and known species. File context words, animal ID, call label and source reference are never predictors.",
+  "calibration": "No held-animal labeled calibration. Fixed waveform summaries; any coefficients, centers or species normalization fitted only on training animals.",
+  "independent_unit": "Animal within species; all calls and typo-linked names grouped",
+  "scope_limits": "Seven ungulate species, source behavioral contexts and recording studies. Labels are experimental context-based valence annotations, not independently verified subjective emotion; held animals do not remove study/recording confounding.",
+  "source_url": "https://zenodo.org/records/14636641",
+  "source_license": "CC BY4.0",
+  "prior_art_url": "https://doi.org/10.1016/j.isci.2025.111834",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": 0,
+    "target_max": 1
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

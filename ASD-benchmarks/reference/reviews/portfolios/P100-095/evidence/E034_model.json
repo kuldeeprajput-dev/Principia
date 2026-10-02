@@ -1,0 +1,35 @@
+{
+  "case": 95,
+  "type": "linear",
+  "features": [
+    "U2"
+  ],
+  "offset": null,
+  "scale": null,
+  "alpha": 0,
+  "nonnegative": true,
+  "title": "Matched-information baseline",
+  "hypothesis": "Baseline shear_energy; not counted as an ASD attempt.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state.",
+  "training_groups": [
+    "week-00",
+    "week-01",
+    "week-02",
+    "week-03",
+    "week-04",
+    "week-05",
+    "week-06",
+    "week-07",
+    "week-08",
+    "week-09",
+    "week-10"
+  ],
+  "training_rows": 775,
+  "training_ids_sha256": "bbef8774a13a8283b4739c04c54f936c32223f66b743e02181ce0c745c56a55a",
+  "coef": [
+    0.020727592946204486
+  ],
+  "rank": 1,
+  "condition_number": 1.0,
+  "complexity": 1
+}

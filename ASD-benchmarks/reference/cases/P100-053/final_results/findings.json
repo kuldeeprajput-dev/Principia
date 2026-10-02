@@ -1,0 +1,301 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-053",
+  "findings": [
+    {
+      "finding_id": "P100-053-SCI-01",
+      "statement": "Causal engagement history supplies a useful manufacturing forecasting task, while the proposed memory equation lacks superiority over matched robust and tree controls.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-053.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation. Strong adverse evidence: 27/2500 assigned operations lack the 700\u20131300 degree target window. Prediction includes the first sampled crossing 250 degrees and overshoot; this must not become arbitrary future access.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Torque history is consistent with retained thread engagement; geometry, wear, friction and station effects remain confounded.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "History compression is an operational approximation; no universal wear law or new constitutive mechanism is established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original 50 reserved workpieces",
+          "measure": "A 9 memory",
+          "value": 0.023164,
+          "unit": "N m",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original 50 reserved workpieces",
+          "measure": "robust linear",
+          "value": 0.022803,
+          "unit": "N m",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original 50 reserved workpieces",
+          "measure": "tree control",
+          "value": 0.022296,
+          "unit": "N m",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "27/2500 assigned operations lack the 700\u20131300 degree target window. Prediction includes the first sampled crossing 250 degrees and overshoot; this must not become arbitrary future access.",
+      "scientific_validators": [
+        "Audit native phase/angle trigger and completed-history timestamps.",
+        "Keep both holes and all reuse cycles linked; stratify uncertainty by whole workpieces/surface groups.",
+        "Report target-window eligibility and early-prefix corruption sensitivity separately from score."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-053.json",
+      "source_classification": "numerical_control"
+    },
+    {
+      "finding_id": "P100-053-SCI-02",
+      "statement": "A six-coefficient engagement-history update compresses the original branches at a measured accuracy cost.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "supported",
+      "task_ids": [],
+      "task_version_history": "2026-09-30 first continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation. Strong adverse evidence: Its development MAE.0244117 Nm exceeds equally informed flexible accuracy; disturbance-reset .0244366 Nm adds no gain. Simplicity can be useful but is distinct from a new friction mechanism.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Torque history is consistent with retained thread engagement; geometry, wear, friction and station effects remain confounded.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "History compression is an operational approximation; no universal wear law or new constitutive mechanism is established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        }
+      },
+      "numerical_evidence": [],
+      "strongest_adverse_evidence": "Its development MAE.0244117 Nm exceeds equally informed flexible accuracy; disturbance-reset .0244366 Nm adds no gain. Simplicity can be useful but is distinct from a new friction mechanism.",
+      "scientific_validators": [
+        "Audit native phase/angle trigger and completed-history timestamps.",
+        "Keep both holes and all reuse cycles linked; stratify uncertainty by whole workpieces/surface groups.",
+        "Report target-window eligibility and early-prefix corruption sensitivity separately from score."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-053.json",
+      "source_classification": "numerical_control"
+    },
+    {
+      "finding_id": "P100-053-SCI-03",
+      "statement": "Multiplicative wear transfer fails against the additive/flexible history control; it is retained as a negative physical proposal.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-053.round2.v1"
+      ],
+      "task_version_history": "2026-09-30 second continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation. Strong adverse evidence: Only 15/200 workpieces improve. Surface class, controller OK/NOK, clamping force and joint strength cannot be substituted for measured targets.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Torque history is consistent with retained thread engagement; geometry, wear, friction and station effects remain confounded.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "History compression is an operational approximation; no universal wear law or new constitutive mechanism is established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole workpieces retain both screw locations and every reuse cycle; prior torque allowed only after completed same-hole operation.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "round 2 development 200 workpieces",
+          "measure": "multiplicative wear",
+          "value": 0.0265255042,
+          "unit": "N m",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        {
+          "cohort": "round 2 development 200 workpieces",
+          "measure": "prior flexible",
+          "value": 0.0229473482,
+          "unit": "N m",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Only 15/200 workpieces improve. Surface class, controller OK/NOK, clamping force and joint strength cannot be substituted for measured targets.",
+      "scientific_validators": [
+        "Audit native phase/angle trigger and completed-history timestamps.",
+        "Keep both holes and all reuse cycles linked; stratify uncertainty by whole workpieces/surface groups.",
+        "Report target-window eligibility and early-prefix corruption sensitivity separately from score."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-053.json",
+      "source_classification": "unsupported_or_falsified"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

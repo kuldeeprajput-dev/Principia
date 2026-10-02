@@ -1,0 +1,277 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-024",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-024/computational.json",
+      "bytes": 9207,
+      "sha256": "c4d792bd3d75824f2e7039fd810fb677a4914d6f9963c3ba4faccae7c21c88fe"
+    },
+    {
+      "path": "reviews/portfolios/P100-024/scientific_critical.json",
+      "bytes": 12345,
+      "sha256": "a1612ccab02d6d8bea132b26af23d7d334627743fb0b82262a00e6727dbb75c0"
+    },
+    {
+      "path": "reviews/portfolios/P100-024/combined/review.json",
+      "bytes": 21094,
+      "sha256": "926a31ef63535b59f5ee3b8227fa61a0ed67910c213d881d7a7cf33cd484906a"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-024-SCI-01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole specimens; early cycles 10\u201320 are declared specimen calibration; target begins at cycle 1000 and conditions on continued recorded testing. Strong adverse evidence: Two terminal extracted values of 136/251 GPa remain scored; cure and laminate covary. Initial calibration is median in original audit while some continuation prose says mean; preserve and resolve through executable lineage.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Distributed degradation is compatible with the equation; no independent crack/damage measurement identifies a microscopic mechanism or remaining life.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Logarithmic/strain-dependent degradation is established in the retained prior art; exact-new-form novelty is not adjudicated. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole specimens; early cycles 10\u201320 are declared specimen calibration; target begins at cycle 1000 and conditions on continued recorded testing.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-024-SCI-02",
+      "disagreements": [],
+      "coverage_differences": [
+        "reliability",
+        "mechanism",
+        "novelty",
+        "significance",
+        "reproducibility",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole specimens; early cycles 10\u201320 are declared specimen calibration; target begins at cycle 1000 and conditions on continued recorded testing. Strong adverse evidence: The parallel floor collapses to zero; a fitted load-feedback floor can be removed with unchanged predictions. The older logarithmic reference remains selected.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Distributed degradation is compatible with the equation; no independent crack/damage measurement identifies a microscopic mechanism or remaining life.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Logarithmic/strain-dependent degradation is established in the retained prior art; exact-new-form novelty is not adjudicated. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole specimens; early cycles 10\u201320 are declared specimen calibration; target begins at cycle 1000 and conditions on continued recorded testing.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "documentation_sufficiency"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-024-SCI-03",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole specimens; early cycles 10\u201320 are declared specimen calibration; target begins at cycle 1000 and conditions on continued recorded testing. Strong adverse evidence: Changing an exponent has no fresh confirmation and performs worse. A fitted surviving fraction can have zero effect on all development predictions.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Distributed degradation is compatible with the equation; no independent crack/damage measurement identifies a microscopic mechanism or remaining life.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Logarithmic/strain-dependent degradation is established in the retained prior art; exact-new-form novelty is not adjudicated. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Whole specimens; early cycles 10\u201320 are declared specimen calibration; target begins at cycle 1000 and conditions on continued recorded testing.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

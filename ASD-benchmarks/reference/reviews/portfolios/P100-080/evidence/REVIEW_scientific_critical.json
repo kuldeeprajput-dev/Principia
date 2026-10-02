@@ -1,0 +1,158 @@
+{
+  "case_id": "P100-080",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_electronics",
+  "review_date": "2026-10-02",
+  "checked_files": [
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "e5e7bb7df87ed1cfa572ee967257f5a3b4704c4300308d24d33ff8014034b733"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "0529912135763c0df97d9a7f96839dcbdff4cf770f586165f74047d5070b8c5f"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "3432809f7b7e79ee19da52f2b88d68949b7e5c694d093987c848c9ef2011519c"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "4ea9fba98e6f7e1acd10ac206a4947e9fab72edb9e514c4894afd853c5301dc3"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "7cf5ff4bd465808a6f9a5e79d10c063f39bfc80bd271c4dec66ecd696b2e3510"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "09c62f24009a044a46856eed51e74987b1556dacbb40076679896c0440675525"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "bc59228c4778dacad01be23ba2130a1e0c2dad13cf7525b0ca60d3a3a53de597"
+    },
+    {
+      "path": "package/EQUATIONS.md",
+      "sha256": "0f1ea74c3b90c90b8dc64c864b12b432e96b2b1f744af25970220b11236eff57"
+    },
+    {
+      "path": "package/SOURCE_CITATION_CORRECTION.json",
+      "sha256": "0f6444bd153bada10765954ab3d978ff55784129aac0aaaa534c4003d0e93e0b"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-080-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Persistence0.490197 microSiemens beats flexible0.542012 and all five physiological extensions on six held people. This supports a bounded null result. Claim-specific scope: Causal EDA persistence transfers to held participants better than registered drift/flexible controls"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Slow EDA memory does not isolate sweat physiology, mental stress, temperature effects or motion artifacts. Signed source values are preserved."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a transparent bounded research/evaluation case. Only aerobic protocol; S11 linked breaks held together; alignment uses each native sensor clock/rate; no narrow population confidence or clinical benefit."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured."
+        }
+      },
+      "checks": [
+        "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+        "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+        "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+      ],
+      "limitations": [
+        "Only aerobic protocol; S11 linked breaks held together; alignment uses each native sensor clock/rate; no narrow population confidence or clinical benefit.",
+        "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+      ]
+    },
+    {
+      "finding_id": "P100-080-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Persistence0.490197 microSiemens beats flexible0.542012 and all five physiological extensions on six held people. This supports a bounded null result. Claim-specific scope: The tested relaxation,activity,thermal and asymmetric-response extensions do not establish transferable physiological gains"
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Slow EDA memory does not isolate sweat physiology, mental stress, temperature effects or motion artifacts. Signed source values are preserved."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a transparent bounded research/evaluation case. Only aerobic protocol; S11 linked breaks held together; alignment uses each native sensor clock/rate; no narrow population confidence or clinical benefit."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured."
+        }
+      },
+      "checks": [
+        "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+        "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+        "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+      ],
+      "limitations": [
+        "Only aerobic protocol; S11 linked breaks held together; alignment uses each native sensor clock/rate; no narrow population confidence or clinical benefit.",
+        "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+      ]
+    }
+  ],
+  "review_scope": "Independent critical assessment of source semantics, evidence and claims; not independent experiments, clinical advice, human expert adjudication or a fresh confirmation campaign.",
+  "source_review": {
+    "primary_url": "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+    "web_access": "Official PhysioNet1.0.1 page read live; corrected dataset DOI and primary article verified, privacy date-shifting and two aerobic protocol versions disclosed."
+  },
+  "metadata_corrections": "Owner corrected unsupported old DOI to official dataset10.13026/he0v-tf17 and article10.1038/s41597-025-04845-9, retaining history; numerical states unchanged.",
+  "independent_native_prefix_evidence": {
+    "receipt": {
+      "path": "reviews/ASD7_NATIVE_PREFIX.json",
+      "base": "campaign_root",
+      "sha256": "0beef68cea2994c1e53c625868a6c9fdf5d8008d40a00fc8bf8bb402b6f8d5df"
+    },
+    "implementation": {
+      "path": "reviews/asd7_native_prefix.py",
+      "base": "campaign_root",
+      "sha256": "f491a5b6f2777c7884b8af379bedf7bc6760df48ecb70da2adae836337ea85cb"
+    },
+    "coverage": [
+      {
+        "test_variant": "middle eligible recording origin",
+        "origins": 31,
+        "max_input_change": 0.0,
+        "targets_changed": 31
+      }
+    ],
+    "scope": "Independent unchanged-adapter reconstruction from disposable future-mutated native assets. All original source hashes preserved. This supplements scientific review without revising findings, selection or numerical outcomes.",
+    "limits": [
+      "Tests are finite adversarial probes, not a formal proof for every possible input.",
+      "Only already-released native products are tested; publisher full-session filtering, denoising and normalization can have used future data.",
+      "Finite additive/choice mutations preserve timing, dimensions, existing missingness and source quality flags; missingness/eligibility changes are outside this probe.",
+      "No physiological or causal mechanism is established by prefix invariance.",
+      "For cases7/9/80/99 one midpoint origin per eligible native recording/session is tested; full temporal coverage is not claimed."
+    ]
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "case_id": "P100-074",
+  "input_columns": [
+    "concentration_uM",
+    "time_min",
+    "calibration_F6",
+    "calibration_v6",
+    "calibration_curvature"
+  ],
+  "numeric_columns": [
+    "concentration_uM",
+    "time_min",
+    "calibration_F6",
+    "calibration_v6",
+    "calibration_curvature"
+  ],
+  "input_units": {
+    "concentration_uM": "uM",
+    "time_min": "min",
+    "calibration_F6": "source fluorescence units",
+    "calibration_v6": "source fluorescence units/min",
+    "calibration_curvature": "source fluorescence units/min^2"
+  },
+  "source": {
+    "landing_url": "https://zenodo.org/records/18911385",
+    "publication": "https://pubmed.ncbi.nlm.nih.gov/42619562/"
+  },
+  "target": "Src kinetic fluorescence in source instrument units",
+  "units": "source fluorescence units",
+  "metric_units": "source fluorescence units",
+  "metric_kind": "mae",
+  "assigned_rows": 86,
+  "selected_development_model": "attempt_006_slope_gate",
+  "models": {
+    "reference": {
+      "case": 74,
+      "kind": "slope_gate",
+      "coef": [
+        0.8825742078808954,
+        0.1221614883479558
+      ],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "fit_method": "group-weighted ridge least squares; fixed penalty",
+      "ridge_alpha": 1e-07,
+      "feature_rms": [
+        409.87385395896666,
+        669.7490998816595
+      ],
+      "equation": "F_hat=F6+d*(a*v6+b*6*c6)",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "baseline_persistence": {
+      "case": 74,
+      "kind": "persistence",
+      "coef": [],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "equation": "F_hat(t)=F6",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "baseline_linear": {
+      "case": 74,
+      "kind": "linear",
+      "coef": [],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "equation": "F_hat=F6+v6*(t-6)",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "baseline_mm": {
+      "case": 74,
+      "kind": "mm",
+      "coef": [
+        29.37050184557921,
+        3.114026728980732
+      ],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "optimizer": {
+        "success": true,
+        "cost": 4435991.733137358,
+        "optimality": 5481.48813266314,
+        "bounds": [
+          [
+            1e-05,
+            0.001
+          ],
+          [
+            100000.0,
+            10000.0
+          ]
+        ]
+      },
+      "equation": "F_hat=V*S*t/(K+S)",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "baseline_flexible": {
+      "case": 74,
+      "kind": "flexible",
+      "coef": [
+        -46.16584457710312,
+        352.2867689600295,
+        -408.94166169207153,
+        112.94986429467278,
+        160.57205259255304,
+        212.58365499133293,
+        122.98439918047346,
+        1881.6468009868001,
+        173.61307597457971
+      ],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "fit_method": "group-weighted ridge least squares; fixed penalty",
+      "ridge_alpha": 1.0,
+      "feature_rms": [
+        1.0,
+        0.3377314021526574,
+        0.14877904784654655,
+        0.448559201380216,
+        0.6320602642735095,
+        0.40453631825614744,
+        0.5508561402581749,
+        0.13662461798632225,
+        0.18604141663379428
+      ],
+      "equation": "Frozen ridge polynomial: y_hat=phi(x)^T beta; exact dimensionless feature order/scales in run.features and coefficients in rules.json;85 nonnegative,87 clipped0..endowment",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_001_saturation": {
+      "case": 74,
+      "kind": "saturation",
+      "coef": [
+        50.098239146135846
+      ],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "optimizer": {
+        "success": true,
+        "cost": 1447470.3466075798,
+        "optimality": 0.0024363516824008947,
+        "bounds": [
+          [
+            0.1
+          ],
+          [
+            100000.0
+          ]
+        ]
+      },
+      "equation": "F_hat=F6+v6*tau*(1-exp(-(t-6)/tau))",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_002_accelerating": {
+      "case": 74,
+      "kind": "accelerating",
+      "coef": [
+        -0.9899999999999999,
+        49.5016004216328
+      ],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "optimizer": {
+        "success": true,
+        "cost": 1447585.0077951034,
+        "optimality": 0.008758645170057954,
+        "bounds": [
+          [
+            -0.99,
+            0.1
+          ],
+          [
+            10,
+            500
+          ]
+        ]
+      },
+      "equation": "F_hat=F6+v6*d+a*v6*(d-tau*(1-exp(-d/tau))),d=t-6",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_003_power": {
+      "case": 74,
+      "kind": "power",
+      "coef": [
+        1.3640848440490052,
+        0.43754258720518713
+      ],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "optimizer": {
+        "success": true,
+        "cost": 1427201.4938780947,
+        "optimality": 0.08329954910914114,
+        "bounds": [
+          [
+            0.01,
+            0.1
+          ],
+          [
+            10,
+            2
+          ]
+        ]
+      },
+      "equation": "F_hat=F6+a*v6*6*((1+d/6)^p-1)/p",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_004_dose_saturation": {
+      "case": 74,
+      "kind": "dose_saturation",
+      "coef": [
+        9.04825063288548,
+        -1.9999999999999998
+      ],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "optimizer": {
+        "success": true,
+        "cost": 834635.4242445705,
+        "optimality": 0.03348458797013976,
+        "bounds": [
+          [
+            -3,
+            -2
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      "equation": "F_hat=F6+v6*tau*(1-exp(-d/tau)),tau=exp(a+b*log(S));S is numerical concentration in uM",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_005_curvature": {
+      "case": 74,
+      "kind": "curvature",
+      "coef": [
+        0.9681736988447623
+      ],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "optimizer": {
+        "success": true,
+        "cost": 1068929.120095577,
+        "optimality": 0.009005620851188135,
+        "bounds": [
+          [
+            0.01
+          ],
+          [
+            300
+          ]
+        ]
+      },
+      "equation": "F_hat=F6+v6*d+c6*tau*(d-tau*(1-exp(-d/tau)))",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_006_slope_gate": {
+      "case": 74,
+      "kind": "slope_gate",
+      "coef": [
+        0.8825742078808954,
+        0.1221614883479558
+      ],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "fit_method": "group-weighted ridge least squares; fixed penalty",
+      "ridge_alpha": 1e-07,
+      "feature_rms": [
+        409.87385395896666,
+        669.7490998816595
+      ],
+      "equation": "F_hat=F6+d*(a*v6+b*6*c6)",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_007_slope_only": {
+      "case": 74,
+      "kind": "slope_only",
+      "coef": [
+        0.7911024332856156
+      ],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "fit_method": "group-weighted ridge least squares; fixed penalty",
+      "ridge_alpha": 1e-07,
+      "feature_rms": [
+        409.87385395896666
+      ],
+      "equation": "F_hat=F6+a*d*v6",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    },
+    "attempt_008_physical_saturation": {
+      "case": 74,
+      "kind": "physical_saturation",
+      "coef": [
+        3.9139858584373983,
+        1.796043518621054e-18
+      ],
+      "training_groups": [
+        "dose-0.25",
+        "dose-0.5",
+        "dose-0.75",
+        "dose-10",
+        "dose-2.5",
+        "dose-20",
+        "dose-7.5"
+      ],
+      "training_rows": 301,
+      "training_ids_sha256": "49ca467eeaeabef590646360d262405f8547a146758549699ddc881d58ff4fec",
+      "optimizer": {
+        "success": true,
+        "cost": 1447470.3466075796,
+        "optimality": 0.10237757490953354,
+        "bounds": [
+          [
+            -3,
+            0
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      "equation": "F_hat=F6+v6*tau*(1-exp(-d/tau)),tau=exp(a+b*log(S)),b>=0",
+      "coefficients_order": "Expression and run.features define exact order; raw double precision coefficients in coef."
+    }
+  },
+  "missingness_policy": "No imputation; explicit native eligibility; all packaged predictors finite",
+  "classification": "Reproduction/validated scoped comparison; novelty not established",
+  "fresh_confirmation_for_future_users": false,
+  "training_scope": "Coefficients fit development only; group/fold states in research history",
+  "limits": [
+    "One source assay, source units are not enzyme concentration or clinical activity.",
+    "Kinetic export lacks raw triplicate labels. Dose validation is not independent biological replication.",
+    "Akt1 response copying time is excluded; source fitted velocity tables are never targets."
+  ]
+}

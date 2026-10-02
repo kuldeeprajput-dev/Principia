@@ -1,0 +1,37 @@
+{
+  "case_id": "P100-074",
+  "task_id": "P100-074.original.v1",
+  "created_utc": "2026-10-01T14:01:55.735258+00:00",
+  "target": "Src kinetic fluorescence in source instrument units",
+  "units": "source fluorescence units",
+  "inputs": {
+    "concentration_uM": "uM",
+    "time_min": "min",
+    "calibration_F6": "source fluorescence units",
+    "calibration_v6": "source fluorescence units/min",
+    "calibration_curvature": "source fluorescence units/min^2"
+  },
+  "timing": "Predict all t>7.5 min from source dose and same-curve measurements at 3,4.5,6 min. Calibration fixed at6 min; no later response access.",
+  "grouping": "Complete dose curves; seven development and two hash-selected confirmation doses; leave-one-dose-out validation. No biological replicate identifiers.",
+  "primary_metric": "MAE averaged within group, then equally across groups",
+  "secondary": [
+    "RMSE",
+    "bias",
+    "worst group MAE",
+    "per-group error",
+    "matched baseline differences"
+  ],
+  "calibration": "Predict all t>7.5 min from source dose and same-curve measurements at 3,4.5,6 min. Calibration fixed at6 min; no later response access.",
+  "source_sha256": "04554bf9aeba3a947d5b6f74d0981e6977760ca82f4317b97b3a64dc2c8b4db6",
+  "split_sha256": "8fc1b2fbf1c44ba7287793dfb2000f45dc89b7a7a10002c1094d9dfe845b0bb5",
+  "selection": "Smallest development group-balanced OOF MAE among baseline/candidate families; within1% choose lower parameter count. Confirmation never selects reference.",
+  "continuation": "At least5 material hypotheses, continue justified distinct hypotheses until2 consecutive after minimum5 show no improvement of >1% in prediction or explicit robustness/interpretation. No retuning after confirmation.",
+  "uncertainty": "No row bootstrap; enumerate group errors and leave-group development variability. Single heldout condition is bounded evidence.",
+  "exposure_audit": "First9 lines and schemas inspected; early values through6.75 min were visible across doses, outside target window. Later outcomes not printed before freeze.",
+  "baselines": [
+    "frozen6-min response",
+    "6-min slope linear extrapolation",
+    "concentration Michaelis-Menten rate",
+    "regularized quadratic flexible control"
+  ]
+}

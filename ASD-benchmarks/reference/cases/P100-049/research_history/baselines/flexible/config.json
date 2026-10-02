@@ -1,0 +1,26 @@
+{
+  "name": "flexible",
+  "formula": "u120+b0*(u120-u60)+b1*(u120-u60)*log(t/t120)+b2*(u120-u60)*log(t/t120)**2+b3*(u120-u10)",
+  "hypothesis": "Constrained flexible contrast control, four global coefficients; no group-specific future fit.",
+  "inputs": [
+    "t",
+    "t60",
+    "t120",
+    "u60",
+    "u120",
+    "u10",
+    "pulse_s",
+    "current"
+  ],
+  "initial": {},
+  "bounds": {},
+  "linear_terms": [
+    "u120-u60",
+    "(u120-u60)*log(t/t120)",
+    "(u120-u60)*log(t/t120)**2",
+    "u120-u10"
+  ],
+  "base": "u120",
+  "recorded_utc": "2026-10-02T01:43:27.600378+00:00",
+  "parent": null
+}

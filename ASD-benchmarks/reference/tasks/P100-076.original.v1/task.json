@@ -1,0 +1,151 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-076.original.v1",
+  "case_id": "P100-076",
+  "case_number": 76,
+  "family": "original",
+  "protocol_version": "P100-076-asd6-native-v1",
+  "cohort_id": "P100-076.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-076.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/76_neuroscience_neuronal_maturation",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "evoked_spike_count",
+  "target_units": "spikes per stimulus",
+  "error_units": "spikes per stimulus",
+  "primary_units": "spikes per stimulus",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "current",
+    "soft",
+    "kd",
+    "cal_mean",
+    "cal_last"
+  ],
+  "input_units": {
+    "current": "pA",
+    "soft": "binary",
+    "kd": "binary",
+    "cal_mean": "spikes per stimulus",
+    "cal_last": "spikes per stimulus"
+  },
+  "numeric_columns": [
+    "current",
+    "soft",
+    "kd",
+    "cal_mean",
+    "cal_last"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict higher-current evoked spike counts after the lower-current prefix for that cell. No future rheobase or peak-response calibration.",
+  "calibration": "Per-cell spike counts at applied current<=10pA; later currents>10pA forecast. Source manual FI eligibility preserved.",
+  "independent_unit": "complete culture dish within recording date",
+  "evaluation_groups": [
+    "20250418:D4S1",
+    "20250418:D4S3",
+    "20250418:D4S4",
+    "20250418:D4S5",
+    "20250418:D4S6",
+    "20250418:D4S7",
+    "20250418:D4S8",
+    "20250418:D4S9"
+  ],
+  "assigned_rows": 266,
+  "eligible_rows": 266,
+  "baseline_models": [
+    "reference",
+    "baseline_persistence",
+    "baseline_rheobase",
+    "baseline_flexible",
+    "attempt_001_condition_threshold",
+    "attempt_002_saturation",
+    "attempt_003_recruitment",
+    "attempt_004_block",
+    "attempt_005_condition_gain"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Nhat=N_last_prefix",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_persistence": {
+      "equation": "Nhat=N_last_prefix",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rheobase": {
+      "equation": "Nhat=max(0,g*(I-I0))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_condition_threshold": {
+      "equation": "Nhat=max(0,g*(I-I0-bs*soft-bk*kd-bsk*soft*kd))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_saturation": {
+      "equation": "Nhat=N_last+A*(1-exp(-(I-10)/K))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_recruitment": {
+      "equation": "Nhat=max(0,(a+b*N_last+c*N_prefix_mean)*(I-10))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_block": {
+      "equation": "Nhat=N_last+g*(I-10)*exp(-max(I-Iblock,0)/K)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_condition_gain": {
+      "equation": "Nhat=N_last+max(0,a+bs*soft+bk*kd+bsk*soft*kd)*(I-10)^n",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "DIV7 cells only; complete dishes linked, final recording date reserved. Culture/animal provenance may share latent batches; do not treat cells or dishes as independent donor replications.",
+  "source_url": "https://zenodo.org/records/12802682",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "a50fdb1fe844a0f0345790008a8071dd1d5513ad7324173cd0a68b7e97634208",
+  "observations_sha256": "cc7191d7158a44b2672336bef046488f9367e0aa15fab25379da0e5ea2bda93c",
+  "legacy_protocol_sha256": "9041a85a440a1edd706f164b85f8ba8e38fe1ae97a9c68ec79d841dd99d746c9",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

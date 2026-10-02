@@ -1,0 +1,28 @@
+{
+  "case_id": "P100-041",
+  "frozen_before_first_fit_utc": "2026-10-01T15:25:22.246514+00:00",
+  "target": "Unimputed hourly balancing-authority demand",
+  "unit": "MW",
+  "inputs": [
+    "forecast",
+    "error48",
+    "error168",
+    "load48",
+    "load168",
+    "ramp",
+    "hour",
+    "weekend"
+  ],
+  "timing": "Retrospective published-snapshot forecast correction. Input official forecast for target hour, preceding-hour forecast, and actual/forecast residuals 48 and168 hours before target. Nominal issuance t\u221224h is an analysis convention, not observed release timestamp. Inputs at least24h older than nominal issuance; exact publication and revision vintages unavailable. No target-hour demand, generation or interchange predictor.",
+  "groups": "Authority-month groups; rolling train Jan\u2013Feb->March, Jan\u2013March->April, Jan\u2013April->May. June confirmation. Same authorities across time, correlated national weather; no independence claim across all authorities.",
+  "eligibility": "Deterministic native.py finite, timing and quality rules; no outcome-performance filtering.",
+  "primary_metric": "Arithmetic mean of within-group MAE in target units; original observations retained.",
+  "baselines": "Strong simple/persistence/domain baseline and constrained radial-basis flexible control under identical permitted inputs.",
+  "selection": "Minimum whole-group development MAE; within1% choose lower coefficient complexity, then lexicographic model identity. Baselines may win.",
+  "stopping": "At least5 distinct substantive attempts. Continue if distinct justified hypothesis remains and recent attempts improve development prediction, robustness or supported interpretation. Stop after2 consecutive substantive attempts without incumbent MAE/robustness/interpretation gain.",
+  "uncertainty": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "exposure": "Schema-stage first row of original table inspected. First row belongs to January development. No June targets/scores inspected. All public source-aware; confirmation after final freeze will become exposed.",
+  "source_manifest_sha256": "47c53879827e1bf1db1ae4cca6e996a1c82433a6a69ebe0575997e737ea96b3f",
+  "native_sha256": "acb87e0a5bc7c04f88f164c07cc10ed2b41d722ffdf4ac284883eae8e064e8f6",
+  "final_prefit_contract_utc": "2026-10-01T15:29:06.073132+00:00"
+}

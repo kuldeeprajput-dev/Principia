@@ -1,0 +1,188 @@
+{
+  "case_id": "P100-077",
+  "reviewer": "/root",
+  "discovery_owner_distinct": true,
+  "native_reconstruction": {
+    "case_id": "P100-077",
+    "native_rows": 9,
+    "confirmation_rows": 3,
+    "models": 9,
+    "native_reconstruction": "pass",
+    "group_separation": "pass",
+    "trusted_isolated_replay": "pass",
+    "metric_parity": "pass",
+    "mismatch_rejection": "pass",
+    "missing_source_rejection": "pass"
+  },
+  "models_replayed": 9,
+  "max_prediction_difference": 0.0,
+  "max_primary_metric_difference": 5.551115123125783e-17,
+  "models": [
+    {
+      "model": "reference",
+      "rows": 3,
+      "primary_error": 0.09624171838053952,
+      "undeclared_target_ignored": true,
+      "row_order_invariant": true
+    },
+    {
+      "model": "baseline_independence",
+      "rows": 3,
+      "primary_error": 0.29297322336871423,
+      "undeclared_target_ignored": true,
+      "row_order_invariant": true
+    },
+    {
+      "model": "baseline_constant",
+      "rows": 3,
+      "primary_error": 0.27256173760137714,
+      "undeclared_target_ignored": true,
+      "row_order_invariant": true
+    },
+    {
+      "model": "baseline_flexible",
+      "rows": 3,
+      "primary_error": 0.03221893871602523,
+      "undeclared_target_ignored": true,
+      "row_order_invariant": true
+    },
+    {
+      "model": "attempt_001_competence",
+      "rows": 3,
+      "primary_error": 0.04082552117814834,
+      "undeclared_target_ignored": true,
+      "row_order_invariant": true
+    },
+    {
+      "model": "attempt_002_odds_ratio",
+      "rows": 3,
+      "primary_error": 0.09624171838053952,
+      "undeclared_target_ignored": true,
+      "row_order_invariant": true
+    },
+    {
+      "model": "attempt_003_common_fraction",
+      "rows": 3,
+      "primary_error": 0.16216046919719357,
+      "undeclared_target_ignored": true,
+      "row_order_invariant": true
+    },
+    {
+      "model": "attempt_004_dose_competence",
+      "rows": 3,
+      "primary_error": 0.04040792525394298,
+      "undeclared_target_ignored": true,
+      "row_order_invariant": true
+    },
+    {
+      "model": "attempt_005_competition",
+      "rows": 3,
+      "primary_error": 0.2929732233687146,
+      "undeclared_target_ignored": true,
+      "row_order_invariant": true
+    }
+  ],
+  "fold_scope_records": [
+    {
+      "path": "attempts/attempt-001/fold_states.json",
+      "fold": "0",
+      "training_groups_count": 1,
+      "validation_groups_count": 1,
+      "validation_groups": [
+        "A"
+      ],
+      "overlap": []
+    },
+    {
+      "path": "attempts/attempt-001/fold_states.json",
+      "fold": "1",
+      "training_groups_count": 1,
+      "validation_groups_count": 1,
+      "validation_groups": [
+        "C"
+      ],
+      "overlap": []
+    },
+    {
+      "path": "attempts/attempt-002/fold_states.json",
+      "fold": "0",
+      "training_groups_count": 1,
+      "validation_groups_count": 1,
+      "validation_groups": [
+        "A"
+      ],
+      "overlap": []
+    },
+    {
+      "path": "attempts/attempt-002/fold_states.json",
+      "fold": "1",
+      "training_groups_count": 1,
+      "validation_groups_count": 1,
+      "validation_groups": [
+        "C"
+      ],
+      "overlap": []
+    },
+    {
+      "path": "attempts/attempt-003/fold_states.json",
+      "fold": "0",
+      "training_groups_count": 1,
+      "validation_groups_count": 1,
+      "validation_groups": [
+        "A"
+      ],
+      "overlap": []
+    },
+    {
+      "path": "attempts/attempt-003/fold_states.json",
+      "fold": "1",
+      "training_groups_count": 1,
+      "validation_groups_count": 1,
+      "validation_groups": [
+        "C"
+      ],
+      "overlap": []
+    },
+    {
+      "path": "attempts/attempt-004/fold_states.json",
+      "fold": "0",
+      "training_groups_count": 1,
+      "validation_groups_count": 1,
+      "validation_groups": [
+        "A"
+      ],
+      "overlap": []
+    },
+    {
+      "path": "attempts/attempt-004/fold_states.json",
+      "fold": "1",
+      "training_groups_count": 1,
+      "validation_groups_count": 1,
+      "validation_groups": [
+        "C"
+      ],
+      "overlap": []
+    },
+    {
+      "path": "attempts/attempt-005/fold_states.json",
+      "fold": "0",
+      "training_groups_count": 1,
+      "validation_groups_count": 1,
+      "validation_groups": [
+        "A"
+      ],
+      "overlap": []
+    },
+    {
+      "path": "attempts/attempt-005/fold_states.json",
+      "fold": "1",
+      "training_groups_count": 1,
+      "validation_groups_count": 1,
+      "validation_groups": [
+        "C"
+      ],
+      "overlap": []
+    }
+  ],
+  "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+}

@@ -1,0 +1,26 @@
+{
+  "case": 32,
+  "target": "gauge_pressure_200ms_future",
+  "unit": "cmH2O",
+  "inputs": [
+    "p0",
+    "p05",
+    "p10",
+    "p20",
+    "p30",
+    "p40",
+    "p50",
+    "di0",
+    "de0",
+    "di20",
+    "de20",
+    "trial_BH",
+    "trial_FEM"
+  ],
+  "kind": "mae",
+  "source": "https://physionet.org/content/respiratory-heartrate-dataset/1.0.0/",
+  "paper": "https://doi.org/10.1016/j.ifacol.2023.10.1107",
+  "scope": "Twenty healthy participants; three complete trials linked. Forecasts assess device/airway signal continuity under rapid occlusion, not separately identified lung compliance or clinical accuracy.",
+  "calibration": "Source fixed ADC-to-cmH2O conversion; no target-participant fitted coefficients. All history at or before forecast origin.",
+  "timing": "At each fixed1s origin predict native gauge pressure0.20s later using only present/past pressure and differential-pressure signals."
+}

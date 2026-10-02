@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-020",
+  "findings": [
+    {
+      "finding_id": "P100-020-F01",
+      "classification": "validated_extension",
+      "claim": "A small calibrated spatial stencil reconstructs fixed withheld water pixels more accurately than unweighted local averaging on this daily map.",
+      "equation": "T_hat=b0+b1 Hx+b2 Hy+b3 Ox+b4 Oy+b5 D, with fixed axial inner/outer means and diagonal mean.",
+      "evidence": "23 reserved geographic tiles: MAE0.03284degreeC versus0.05750 local mean; worst tile0.06714 versus0.2450degreeC.",
+      "known_prior_art": "Spatial interpolation and high-order stencils are established numerical methods.",
+      "falsification": "Same-map neighbors are explicit calibration; this does not predict an unobserved date.",
+      "scope": "Valid-water complete neighborhoods within60degrees latitude; fixed sparse target lattice.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-020-F02",
+      "classification": "reproduction",
+      "claim": "Accounting for spherical distance and local curvature is useful for this map reconstruction problem.",
+      "equation": "Spherical weighting H=(Hx+cos\u00b2(latitude)Hy)/(1+cos\u00b2(latitude)); a learned two-scale curvature correction is preserved.",
+      "evidence": "Fixed distance weighting MAE0.05037degreeC; curvature-plus-latitude candidate0.03459, compared with0.05750 unweighted local mean. The flexible stencil remains the frozen reference.",
+      "known_prior_art": "Geographic metric corrections and Taylor-error cancellation are known techniques, not new ocean laws.",
+      "falsification": "Directional fronts, coast exclusion and upstream satellite processing limit interpretation.",
+      "scope": "One processed global map; dependent pixels and geographic tiles.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-020-F03",
+      "classification": "unsupported",
+      "claim": "These interpolation results demonstrate a new climate law, future thermal stress forecast or coral bleaching threshold.",
+      "equation": null,
+      "evidence": "One date contains no temporal response; no bleaching observations or causal intervention are provided.",
+      "known_prior_art": "NOAA distinguishes this standard anomaly product from its coral bleaching heat-stress suite.",
+      "falsification": "Required independent endpoint and temporal evidence are absent.",
+      "scope": "Metrology and interpolation benchmark only.",
+      "admission": "unsupported"
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted analysis; not independent experimental replication or human expert adjudication."
+}

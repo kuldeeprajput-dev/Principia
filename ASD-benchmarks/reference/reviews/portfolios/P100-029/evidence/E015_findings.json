@@ -1,0 +1,47 @@
+{
+  "case_id": "P100-029",
+  "findings": [
+    {
+      "finding_id": "P100-029-F01",
+      "classification": "reproduction",
+      "admission": "partially_supported",
+      "claim": "Persistent low-dose signal is a conservative assay control. Its error is substantial, and near-equality with the domain comparator on two conditions provides no claim of molecular universality or strong predictive accuracy.",
+      "equation": "Fhat=F5",
+      "model_id": "reference",
+      "task_id": "P100-029.original.v1",
+      "evidence": {
+        "development_primary_error": 26573.565533088236,
+        "confirmation_primary_error": 38661.13118872549,
+        "confirmation_groups": 2,
+        "confirmation_rows": 48,
+        "unit": "source fluorescence a.u.",
+        "metrics": "evidence/metrics.csv",
+        "group_metrics": "evidence/by_group.csv",
+        "predictions": "evidence/predictions.csv.gz",
+        "state": "rules.json"
+      },
+      "falsification": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "known_prior_art": "Petrenas et al., JACS2025, already demonstrate binding and confinement effects, FRET and anthracene photochemistry. Equilibrium binding, Hill curves and fluorescence quenching are established model families. This experiment tests condition transfer of those families; it does not establish a new binding law.",
+      "scope": "Four development and two confirmation peptide\u2013dye conditions share peptides and dyes. Spectral means mix intensity and band-shape responses. Fluorescence is not independently measured occupancy; optical controls would be needed to distinguish binding from quenching. Replicates are linked, not counted as independent conditions."
+    },
+    {
+      "finding_id": "P100-029-F02",
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Shared cooperativity, effective quenching, local curvature inversion, dye-specific affinity and shrunk affinity all fail to improve the development-selected control. Boundary parameters and leave-condition failures limit identifiable binding interpretations.",
+      "equation": null,
+      "evidence": {
+        "attempts": 5,
+        "best_attempt_development_error": 33360.55271351142,
+        "development_selected_error": 26573.565533088236,
+        "development_diagnostics": "research_history/DEVELOPMENT_DIAGNOSTICS.json"
+      },
+      "known_prior_art": "Petrenas et al., JACS2025, already demonstrate binding and confinement effects, FRET and anthracene photochemistry. Equilibrium binding, Hill curves and fluorescence quenching are established model families. This experiment tests condition transfer of those families; it does not establish a new binding law.",
+      "falsification": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "scope": "Four development and two confirmation peptide\u2013dye conditions share peptides and dyes. Spectral means mix intensity and band-shape responses. Fluorescence is not independently measured occupancy; optical controls would be needed to distinguish binding from quenching. Replicates are linked, not counted as independent conditions.",
+      "underlying_proposal_disposition": "Several proposed mechanisms are unsupported; this negative finding and the tested models have distinct dispositions."
+    }
+  ],
+  "reference_disposition": "Frozen development-selected reference; candidate laws and negative findings require separate scientific review.",
+  "review_pending": "Independent computational and scientific-critical review by different agents"
+}

@@ -1,0 +1,54 @@
+{
+  "case_id": "P100-074",
+  "findings": [
+    {
+      "classification": "unsupported",
+      "admission": "unsupported",
+      "claim": "The development-selected early-curvature projection provides a robust predictive improvement over matched controls on previously withheld doses.",
+      "equation": "F_hat=F6+d*(a*v6+b*6*c6)",
+      "evidence": {
+        "development_mae": 64.618719,
+        "confirmation_mae": 130.23334009001044
+      },
+      "falsification": "On reserved doses, all three named controls beat the selected equation.",
+      "scope": "Calibrated single-assay dose transfer only.",
+      "finding_id": "P100-074-F01",
+      "known_prior_art": "PET-quenching relief under phosphorylation and Michaelis-Menten initial velocities are reported by the authors. Our late-curve calibrated forecast is separate; neither first-order saturation nor power laws are novel families.",
+      "source_url": "https://zenodo.org/records/18911385",
+      "negative_evidence_disposition": "supported: this proposed improvement is falsified by the reserved-dose comparison"
+    },
+    {
+      "classification": "reproduction",
+      "admission": "partially_supported",
+      "claim": "Same-curve early response carries useful later-response information; carrying F6 unchanged is much less accurate than its calibrated tangent on these two doses.",
+      "equation": "F_hat=F6+v6*(t-6)",
+      "evidence": {
+        "tangent_mae": 126.72489534883724,
+        "constant_mae": 291.1548953488372
+      },
+      "falsification": "A useful calibration control is not a novel kinetic law; only two doses, no biological replicate identification.",
+      "scope": "Source response units and t>7.5min.",
+      "finding_id": "P100-074-F02",
+      "known_prior_art": "PET-quenching relief under phosphorylation and Michaelis-Menten initial velocities are reported by the authors. Our late-curve calibrated forecast is separate; neither first-order saturation nor power laws are novel families.",
+      "source_url": "https://zenodo.org/records/18911385"
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "The inverse-dose saturation parameterization cannot be interpreted as identified substrate depletion.",
+      "equation": "tau=exp(a+b log S)",
+      "evidence": {
+        "exponent_at_lower_bound": -2,
+        "constrained_nonnegative_exponent_dev_mae": 81.545243
+      },
+      "falsification": "Unconstrained exponent reaches its preset boundary; enforcing nondecreasing substrate-pool timescale does not beat development controls.",
+      "scope": "Falsifies this fitted explanation, not all biochemical depletion mechanisms.",
+      "finding_id": "P100-074-F03",
+      "known_prior_art": "PET-quenching relief under phosphorylation and Michaelis-Menten initial velocities are reported by the authors. Our late-curve calibrated forecast is separate; neither first-order saturation nor power laws are novel families.",
+      "source_url": "https://zenodo.org/records/18911385",
+      "underlying_proposal_disposition": "unsupported: inverse-dose fit does not identify substrate depletion"
+    }
+  ],
+  "reference_disposition": "reference baseline or exposed comparison, not automatically admitted new law",
+  "review_pending": "independent root computational and scientific-critical reviews"
+}

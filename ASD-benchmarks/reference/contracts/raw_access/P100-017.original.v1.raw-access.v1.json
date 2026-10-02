@@ -1,0 +1,78 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-017.original.v1.raw-access.v1",
+  "parent_task_id": "P100-017.original.v1",
+  "case_id": "P100-017",
+  "protocol_version": "P100-017.original.v1.raw-access.v1",
+  "cohort_id": "P100-017.original.v1.cohort-1",
+  "parent_task_sha256": "f34ddf80aaf54214128f3df89c62b1e84dba3af33e0612b226475e8d34a87b9d",
+  "input_sha256": "e0f6fed696b0b65e00708ee9181f61c332cc1228852d34464f2c8b877eb90a60",
+  "observations_sha256": "879438a83dfa7af994794a9b51f95bb67c62348febbc946329596b0731308c1c",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "17_geography_usgs_comcat_2026_07",
+  "source_assets": [
+    {
+      "path": "context/count.txt",
+      "bytes": 4,
+      "sha256": "5dec2555aa54ac568f403b140af7d6fcd39f041a3b7f2b69e283fd7d29a73a1c"
+    },
+    {
+      "path": "context/service_version.txt",
+      "bytes": 5,
+      "sha256": "f972084131b8c2eba9339f5bc95cf6d85183eb1b1af87c723f12c48542f84445"
+    },
+    {
+      "path": "raw/usgs_2026-07_m2.5.geojson",
+      "bytes": 1862884,
+      "sha256": "310528f127785a084eea2fc8799605de83e4d3c7fc5d26ca2982a9088d706e38"
+    },
+    {
+      "path": "raw/usgs_2026-07_m2.5.quakeml",
+      "bytes": 6316842,
+      "sha256": "16bc9bcf4ebcfca1a2334260f4982cf639babb98f47c8277866fb46bc1d363da"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "depth_km": "km below network reference (may negative)",
+      "rms_s": "seconds phase residual standardError",
+      "phases": "used phase count",
+      "stations": "used station count",
+      "gap_deg": "largest azimuthal gap degrees",
+      "dmin_km": "minimum angular station distance*111.195km/degree"
+    },
+    "observation_window": "Contemporaneous reported location-quality diagnostics, never pre-event earthquake forecast or independent true depth error.",
+    "calibration_and_history": "Complete spatiotemporal connected clusters held out; same snapshot networks/measurement procedures. No new waveform or independent hypocenter calibration.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "time",
+      "source_anchor",
+      "input_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Target is author-reported depth uncertainty, not true depth error."
+  ],
+  "current_outcomes_exposed": true
+}

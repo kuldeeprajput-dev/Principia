@@ -1,0 +1,141 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-073.original.v1.raw-access.v1",
+  "parent_task_id": "P100-073.original.v1",
+  "case_id": "P100-073",
+  "protocol_version": "P100-073.original.v1.raw-access.v1",
+  "cohort_id": "P100-073.original.v1.cohort-1",
+  "parent_task_sha256": "5700bf8c89e2360aab0f2af45bddb78b895e5c70ee3c76a245e5d447d602470b",
+  "input_sha256": "36286692b27b589698aae99793955d1a5155fd8a8b88fc1dea917464091670bb",
+  "observations_sha256": "aa29e758823a5ff44554044f8bda99759368ee7e31d0e54309dbf1ff3ce56a0e",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "73_agriculture_rumen_fermentation",
+  "source_assets": [
+    {
+      "path": "raw/00_invitro_data_overwiev.csv",
+      "bytes": 2765,
+      "sha256": "d8149907cfe60de9f1244e5a90820308761e53e5226942f04a65007f9bdcc323"
+    },
+    {
+      "path": "raw/01_invitro_SCFA_01.csv",
+      "bytes": 13589,
+      "sha256": "ba18f435d5743b9329586c87a8abe5a2a2e858c00552352acbaa231e99282900"
+    },
+    {
+      "path": "raw/02_invitro_SCFA_02.csv",
+      "bytes": 14232,
+      "sha256": "c4874f6481efce88fd39b951345921f31ee703e281810fc9d7efa956cb35b922"
+    },
+    {
+      "path": "raw/03_invitro_SCFA_03.csv",
+      "bytes": 8037,
+      "sha256": "9581110098ce6ca898b97f8117e2a6d971056ee9c42e14046973bd8dc6e6af16"
+    },
+    {
+      "path": "raw/04_legend_invitro_SCFA_01-03.csv",
+      "bytes": 1698,
+      "sha256": "3e9b5075d7f8cd32dd9d05bfb753f7b3bfbb5c38973032e5c91c174155fbcb39"
+    },
+    {
+      "path": "raw/05_invitro_fermentationData_01.csv",
+      "bytes": 40241,
+      "sha256": "a7395ed92a14062ea2229b45d036139de3c8a9eaf70d8a88132867a8d71930ed"
+    },
+    {
+      "path": "raw/06_legend_invitro_fermentationData_01.csv",
+      "bytes": 1501,
+      "sha256": "0928f232ab2cd989945072d1c645d646bdb82d1d6603e3f841d22fd02b47ec49"
+    },
+    {
+      "path": "raw/07_invitro_fermentationData_02.csv",
+      "bytes": 43352,
+      "sha256": "f1cf369a96b28d6f4160546b128886cfd496ca9a4949be05bd44895d6d94ef7e"
+    },
+    {
+      "path": "raw/08_legend_invitro_fermentationData_02.csv",
+      "bytes": 1517,
+      "sha256": "65defd05ae289753b32e5f5f410fe3055f809eef69a71cb8171a18b31a9752a2"
+    },
+    {
+      "path": "raw/09_invitro_fermentationData_03.csv",
+      "bytes": 20716,
+      "sha256": "ec1260fd1926747d68d1269c1cb48117695aa8207122a575d602711c1cfa986d"
+    },
+    {
+      "path": "raw/10_legend_invitro_fermentationData_03.csv",
+      "bytes": 1114,
+      "sha256": "7247f68856c10cb2c45f71b3d2730b82dc7653b3a680f3f379719ac85d2a8300"
+    },
+    {
+      "path": "raw/11_invitro_gasdata_01.csv",
+      "bytes": 448237,
+      "sha256": "7182c973b866d2eee0408d346a3507aa352e934349b1fdc62b1f958a72e38169"
+    },
+    {
+      "path": "raw/12_legend_invitro_gasdata_01.csv",
+      "bytes": 951,
+      "sha256": "f8163c9d68089a76e712840b2a4b1a620495bb3cb9ab0f0c355f6687e04e11b3"
+    },
+    {
+      "path": "raw/13_invitro_gasdata_02.csv",
+      "bytes": 461002,
+      "sha256": "c2753dce2d70bde85bc99eaa1c8dc48874df9ade55574d5db21b1125b12ce377"
+    },
+    {
+      "path": "raw/14_legend_invitro_gasdata_02.csv",
+      "bytes": 963,
+      "sha256": "dd292845539046d374d23dd383cd69e6fb9248e76198950f9b77577c6faac5c3"
+    },
+    {
+      "path": "raw/15_invitro_gasdata_03.csv",
+      "bytes": 224876,
+      "sha256": "5acc36695d280daa151f8c96e1077163de7ba8c8b125bc566eb2fa87cad35d6c"
+    },
+    {
+      "path": "raw/16_legend_invitro_gasdata_03.csv",
+      "bytes": 821,
+      "sha256": "17bf2f2adbec3e6c4878fbf373202a635219f1dcd3f39f7833475b1de77970ce"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "trial": "categorical protocol 1, 2 or 3",
+      "algae": "categorical source substrate/treatment label",
+      "hour": "h",
+      "g4": "mL, native volume at 4 h",
+      "g8": "mL, native volume at 8 h"
+    },
+    "observation_window": "Only native 4/8-hour gas volumes and known trial/algae/horizon; no later volume, end-of-incubation digestibility or GasDM target-derived normalization.",
+    "calibration_and_history": "Trial/algae kinetic and empirical parameters come from development DG1\u20133; current flask gas at 4/8 h is declared early calibration available to all comparators.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_file",
+      "source_row"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Only 3 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

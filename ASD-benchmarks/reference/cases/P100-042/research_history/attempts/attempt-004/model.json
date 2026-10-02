@@ -1,0 +1,40 @@
+{
+  "features": [
+    "one",
+    "mobile",
+    "web",
+    "both",
+    "age_category",
+    "income_category",
+    "branch_present",
+    "branch_closed",
+    "access_mobile",
+    "closure_older"
+  ],
+  "link": "logit",
+  "equation": "p=logistic(context002+u*branch_present*M+v*closure*older)",
+  "case": 42,
+  "type": "linear",
+  "training_groups": [
+    "region:2",
+    "region:3",
+    "region:4"
+  ],
+  "training_rows": 2232,
+  "training_ids_sha256": "fb10d582d2cb76ac14b99be1e90a565ef44a44d019baa1d121d1c06b57dc1265",
+  "coef": [
+    -0.27789667476059204,
+    -0.5390561670455531,
+    -0.10113159947074782,
+    0.511812024887749,
+    0.21011518267148868,
+    -0.06657764754480588,
+    -0.08867434671511565,
+    -0.09506134921083803,
+    -0.028308957200959658,
+    0.08864807945557224
+  ],
+  "complexity": 10,
+  "rank": 10,
+  "condition_number": 32.40309525998414
+}

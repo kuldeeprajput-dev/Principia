@@ -1,0 +1,58 @@
+{
+  "schema": "principia.native-preparation-acceptance/v1",
+  "status": "pass",
+  "task_versions": 54,
+  "scenarios": 25,
+  "core_tasks": 49,
+  "supplemental_tasks": 5,
+  "family_counts": {
+    "original": 25,
+    "continuation": 10,
+    "round2": 15,
+    "supplemental": 4
+  },
+  "task_row_count": 307478,
+  "column_comparisons": 754,
+  "numeric_comparisons": 438,
+  "maximum_absolute_numerical_difference_across_mixed_units": 2.2737367544323206e-13,
+  "comparison_policy": {
+    "native_identifiers_metadata": "exact",
+    "numerical": "float64 rtol1e-11 atol1e-11, equal native missingness",
+    "gzip_bytes": "not equated; deterministic17-digit reconstruction and historical formatting may differ"
+  },
+  "current_expected_asset_hashes_verified": true,
+  "core_native_assets": {
+    "count": 283,
+    "bytes": 1331859853
+  },
+  "supplemental_native_assets": {
+    "count": 23,
+    "bytes": 7382155
+  },
+  "invariant_checks": {
+    "passed": 8,
+    "total": 8
+  },
+  "source_data_modified": false,
+  "historical_outputs_modified": false,
+  "historical_prepared_tables_read_by_preparation": false,
+  "models_fitted": false,
+  "network_required": false,
+  "frozen_learned_preparation_records": [
+    "metadata/60_normalization.json",
+    "metadata/61_calibration.json"
+  ],
+  "evidence": {
+    "RAW_RECONSTRUCTION.json": "f91c0c94a3dd603eff872238152f7cde4ef2d1eabf628defc5079b7b51703463",
+    "RAW_INITIAL_FULL_PASS.json": "2a206e5db49ec4bb5b56a1eb6a2e49507a6f5081c99d8c10f001dba13dfd1449",
+    "RAW_FINAL_INTERFACE_RECHECK.json": "b0d799064eab17a8cab35fbbd650f7d89ba64d8e749c1d1f68ade2d207f13038",
+    "RAW_INVARIANTS.json": "61bb7eaf0649d87b34ca026fbb6bf3fad6428ef2446d1570d639db6fd0885375"
+  },
+  "preparation_manifest_sha256": "a9f976e35fd37d45736e8d1babb2b121deea58fa28b19a19358ffa037382e529",
+  "limitations": [
+    "Archived evaluation outcomes are exposed; reconstruction creates no new confirmation cohort.",
+    "Eligibility output covers reconstructed measurements and their membership in the frozen task cohort; source-only malformed/missing records remain described by native parsing contracts rather than invented numerical observations.",
+    "Supplemental case 96 earlier-stage annotations are required only by the optional corrected task and retain their separate redistribution status.",
+    "Computational agreement is not independent experimental replication or scientific novelty adjudication."
+  ]
+}

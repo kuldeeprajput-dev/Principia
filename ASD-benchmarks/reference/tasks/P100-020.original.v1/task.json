@@ -1,0 +1,203 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-020.original.v1",
+  "case_id": "P100-020",
+  "case_number": 20,
+  "family": "original",
+  "protocol_version": "P100-020-asd7-native-v1",
+  "cohort_id": "P100-020.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-020.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/20_ocean_noaa_coral_ssta_20260816",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "SST anomaly at a withheld pixel",
+  "target_units": "degree C",
+  "error_units": "degree C",
+  "primary_units": "degree C",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "clat"
+  ],
+  "input_units": {
+    "hx": "degree C",
+    "hy": "degree C",
+    "ox": "degree C",
+    "oy": "degree C",
+    "dg": "degree C",
+    "gx": "degree C",
+    "gy": "degree C",
+    "clat": "dimensionless cosine latitude"
+  },
+  "numeric_columns": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "clat"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Retrospective reconstruction of one daily map, using twelve fixed neighboring pixels from the same date. Not a future forecast.",
+  "calibration": "Cardinal neighbors at4 and8 pixels plus four diagonal neighbors at4pixels. Target centers lie on a40pixel lattice and can never be calibration pixels for any scored center.",
+  "independent_unit": "Complete20degree geographic tile for scoring; all tiles belong to one dependent global map, not independent temporal replicates.",
+  "evaluation_groups": [
+    "01-04",
+    "01-11",
+    "01-12",
+    "01-13",
+    "01-15",
+    "02-13",
+    "03-05",
+    "03-07",
+    "03-10",
+    "03-15",
+    "04-00",
+    "04-07",
+    "04-11",
+    "04-16",
+    "05-01",
+    "05-02",
+    "06-01",
+    "06-04",
+    "06-06",
+    "06-17",
+    "07-02",
+    "07-05",
+    "07-09"
+  ],
+  "assigned_rows": 1338,
+  "eligible_rows": 1338,
+  "baseline_models": [
+    "reference",
+    "flexible",
+    "local_mean",
+    "zero_anomaly",
+    "spherical_distance",
+    "fourth_order_smooth",
+    "front_adaptive",
+    "rotational_ninepoint",
+    "limited_curvature",
+    "latitude_curvature",
+    "range_preserving",
+    "broad_noise_average"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "flexible": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "local_mean": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "zero_anomaly": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "spherical_distance": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "fourth_order_smooth": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "front_adaptive": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rotational_ninepoint": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "limited_curvature": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "latitude_curvature": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "range_preserving": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "broad_noise_average": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Tile-balanced errors and individual tile results only; no population confidence from dependent pixels."
+  },
+  "scope_limits": "Fixed complete-water neighborhoods exclude coasts, ice and missing neighborhoods.; No climate evolution, causal ocean mechanism or coral bleaching hazard is identified. This is not the NOAA coral bleaching heat-stress product.",
+  "source_url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta_clim19912020.php",
+  "source_license": "U.S. Government public data",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Only dimensions, flags, coordinates and scale metadata were inspected before this fixed geometry/hash split. All resulting scores become exposed.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "43358a5c58d7334c9f06522698b355575c7c8fd26a20478082b7311187b49e09",
+  "observations_sha256": "dc14bda775d03d56a49d7dddeace8674da8d8fe1c1a85edf7262b808d71654a4",
+  "legacy_protocol_sha256": "18a12efe085abb1c0e7b447b1ba4a92483621a77dcd75e01e29ebedace7e7091",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

@@ -1,0 +1,131 @@
+{
+  "case_id": "P100-047",
+  "role": "scientific_critical",
+  "reviewer_id": "asd5_materials",
+  "checked_files": [
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "ff8aafa73e55205480a4e0c9c1ca8648cfe449f468f93addfec117a84ccf257f"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "368255a6723d7ad7eaaf84a5bf7e0cab24d767f8db0be67c5d88d4cdb3727323"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "1ec767b178c8c82d6e0e85ad004a0c12000d271ae1ea123766a1ce29d7aff06f"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "b40c859756af5475584fb49093503a69afe39ce66dd2ca8863f94322f04f7500"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "032f9ad957f655c887505c955666ce26dc2db6045056effece8d549c57d07db0"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "7dafdf18e16eef050078162b453cf431f81b2a216c12453b9c8172025d152ff3"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "75c34cbc7f515f663869c66943acc74b8b83631ccbb6ef9f749f59b675929b9e"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-047-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The nitrate-free selected predictor has8.85346umol/kg group-MAE versus9.94856 flexible and19.8098 depth-only; it wins54/64 profiles. This supports the stated limited surrogate, not a universal oxygen-nitrate relation."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Temperature/salinity/depth water-mass structure is compatible with oxygen observations; solubility is an in-situ-temperature surface-equilibrium proxy, not pressure-corrected AOU. Biological consumption and mixing remain confounded."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Prior physical/statistical families are disclosed. This bounded literature check does not certify new laws or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful reproducible prediction or informative failure within a precisely scoped cohort; no automatic discovery score."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected executable equation, coefficients, source/task definitions and saved group results; independent numerical execution belongs to the separate computational reviewer."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention, deployment-cost study or external experimental replication."
+        }
+      },
+      "checks": [
+        "Matched input-budget comparator review",
+        "Equation dimensional and variable-semantics review",
+        "Independent-unit and outcome-exposure review",
+        "Positive proposal separated from negative evidence",
+        "Primary-source context checked through public source pages; no new numerical assets acquired"
+      ],
+      "limitations": [
+        "Two floats sampled serially;64 profiles are not64 independent ocean systems. Adjusted and synthetic aligned products include author processing and possible later calibration. Nitrate eligibility restricts the selected model cohort despite nitrate-free equation.",
+        "Scientific-critical agent review is advisory; it is not human expert adjudication or independent experimental replication."
+      ],
+      "recommendations": [
+        "Pre-register oxygen-only eligibility if testing nitrate-free deployment; use independent floats, sensor adjustment uncertainty and potential-temperature solubility before a broader biogeochemical interpretation."
+      ]
+    },
+    {
+      "finding_id": "P100-047-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The nitrate-free selected predictor has8.85346umol/kg group-MAE versus9.94856 flexible and19.8098 depth-only; it wins54/64 profiles. This supports the stated limited surrogate, not a universal oxygen-nitrate relation."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Temperature/salinity/depth water-mass structure is compatible with oxygen observations; solubility is an in-situ-temperature surface-equilibrium proxy, not pressure-corrected AOU. Biological consumption and mixing remain confounded."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Prior physical/statistical families are disclosed. This bounded literature check does not certify new laws or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful reproducible prediction or informative failure within a precisely scoped cohort; no automatic discovery score."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected executable equation, coefficients, source/task definitions and saved group results; independent numerical execution belongs to the separate computational reviewer."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention, deployment-cost study or external experimental replication."
+        }
+      },
+      "checks": [
+        "Matched input-budget comparator review",
+        "Equation dimensional and variable-semantics review",
+        "Independent-unit and outcome-exposure review",
+        "Positive proposal separated from negative evidence",
+        "Primary-source context checked through public source pages; no new numerical assets acquired"
+      ],
+      "limitations": [
+        "Two floats sampled serially;64 profiles are not64 independent ocean systems. Adjusted and synthetic aligned products include author processing and possible later calibration. Nitrate eligibility restricts the selected model cohort despite nitrate-free equation.",
+        "Scientific-critical agent review is advisory; it is not human expert adjudication or independent experimental replication."
+      ],
+      "recommendations": [
+        "Pre-register oxygen-only eligibility if testing nitrate-free deployment; use independent floats, sensor adjustment uncertainty and potential-temperature solubility before a broader biogeochemical interpretation."
+      ]
+    }
+  ],
+  "primary_sources_checked": [
+    "https://argo.ucsd.edu/data/how-to-use-argo-files/",
+    "https://www.teos-10.org/pubs/gsw/html/gsw_O2sol_SP_pt.html"
+  ],
+  "literature_access_limits": [],
+  "blocking_defects": []
+}

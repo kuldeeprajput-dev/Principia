@@ -1,0 +1,152 @@
+[
+  {
+    "fold": 1,
+    "state": {
+      "name": "semi_infinite_arrival",
+      "formula": "offset+(a0+a1*high)*erfc(sqrt(tau*exp(k*high)/t))",
+      "hypothesis": "Development evidence available before this fit: finite_capacity_trapping: MAE 5.11432, worst group 10.9732; activated_breakthrough: MAE 1.51247, worst group 3.73404.\n\nActivated breakthrough improves development MAE to1.512\u03bcA. Test the established semi-infinite diffusion arrival solution, which imposes an erfc tail rather than an unconstrained inverse-Weibull exponent. This supplies a stronger physical-shape falsifier.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:01:58.611212+00:00",
+      "parent": "attempt-010",
+      "parameters": {
+        "a0": 46.608904844559206,
+        "a1": 121.39637281509198,
+        "tau": 2564.688687700285,
+        "k": -0.5314117610989909
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-1-block-0"
+      ],
+      "training_rows": 372,
+      "optimizer_success": true,
+      "nfev": 16,
+      "jacobian_condition": 39741.82473549484,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "fold": 2,
+    "state": {
+      "name": "semi_infinite_arrival",
+      "formula": "offset+(a0+a1*high)*erfc(sqrt(tau*exp(k*high)/t))",
+      "hypothesis": "Development evidence available before this fit: finite_capacity_trapping: MAE 5.11432, worst group 10.9732; activated_breakthrough: MAE 1.51247, worst group 3.73404.\n\nActivated breakthrough improves development MAE to1.512\u03bcA. Test the established semi-infinite diffusion arrival solution, which imposes an erfc tail rather than an unconstrained inverse-Weibull exponent. This supplies a stronger physical-shape falsifier.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:01:58.611212+00:00",
+      "parent": "attempt-010",
+      "parameters": {
+        "a0": 33.669359511342634,
+        "a1": 87.66127661455491,
+        "tau": 1997.7930749189,
+        "k": -0.5032872279978771
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-1-block-0",
+        "trace-1-block-1"
+      ],
+      "training_rows": 742,
+      "optimizer_success": true,
+      "nfev": 11,
+      "jacobian_condition": 24665.365668034945,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "fold": 3,
+    "state": {
+      "name": "semi_infinite_arrival",
+      "formula": "offset+(a0+a1*high)*erfc(sqrt(tau*exp(k*high)/t))",
+      "hypothesis": "Development evidence available before this fit: finite_capacity_trapping: MAE 5.11432, worst group 10.9732; activated_breakthrough: MAE 1.51247, worst group 3.73404.\n\nActivated breakthrough improves development MAE to1.512\u03bcA. Test the established semi-infinite diffusion arrival solution, which imposes an erfc tail rather than an unconstrained inverse-Weibull exponent. This supplies a stronger physical-shape falsifier.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T02:01:58.611212+00:00",
+      "parent": "attempt-010",
+      "parameters": {
+        "a0": 27.763735831824206,
+        "a1": 71.07626571832066,
+        "tau": 1603.3513002690595,
+        "k": -0.4906998581325436
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2"
+      ],
+      "training_rows": 1113,
+      "optimizer_success": true,
+      "nfev": 9,
+      "jacobian_condition": 17212.59534579732,
+      "bounds": {
+        "a0": [
+          -500,
+          500
+        ],
+        "a1": [
+          -1000,
+          1000
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "k": [
+          -4,
+          4
+        ]
+      }
+    }
+  }
+]

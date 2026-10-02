@@ -1,0 +1,41 @@
+{
+  "name": "acidity_aggregation",
+  "formula": "1/((1-1.724*C/100)/(mineral*exp(k*(pH-6)))+(1.724*C/100)/organic)",
+  "hypothesis": "Attempt5: both depth-consolidation mechanisms worsen transfer. Test a chemical-aggregation alternative: pH modulates effective mineral packing through a positive exponential multiplier. pH is an observational proxy and a successful fit could not establish a causal acidity effect.",
+  "inputs": [
+    "C",
+    "depth",
+    "pH"
+  ],
+  "recorded_utc": "2026-10-02T01:51:04.817579+00:00",
+  "parent": "attempt-004",
+  "parameters": {
+    "mineral": 1.5107712044185406,
+    "organic": 0.1514100343531796,
+    "k": 0.09384485369864343
+  },
+  "training_groups": [
+    "Finland",
+    "Italy",
+    "Portugal",
+    "Spain"
+  ],
+  "training_rows": 304,
+  "optimizer_success": true,
+  "nfev": 7,
+  "jacobian_condition": 5.857523741313244,
+  "bounds": {
+    "mineral": [
+      0.5,
+      2.5
+    ],
+    "organic": [
+      0.05,
+      1
+    ],
+    "k": [
+      -0.3,
+      0.3
+    ]
+  }
+}

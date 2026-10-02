@@ -1,0 +1,333 @@
+{
+  "case_id": "P100-029",
+  "input_columns": [
+    "dose",
+    "dose_cal",
+    "F0",
+    "F1",
+    "F2",
+    "F5",
+    "dose1",
+    "dose2",
+    "dye_NR"
+  ],
+  "numeric_columns": [
+    "dose",
+    "dose_cal",
+    "F0",
+    "F1",
+    "F2",
+    "F5",
+    "dose1",
+    "dose2",
+    "dye_NR"
+  ],
+  "input_units": {
+    "dose": "uM barrel",
+    "dose_cal": "uM barrel",
+    "dose1": "uM barrel",
+    "dose2": "uM barrel",
+    "F0": "fluorescence a.u.",
+    "F1": "fluorescence a.u.",
+    "F2": "fluorescence a.u.",
+    "F5": "fluorescence a.u.",
+    "dye_NR": "binary"
+  },
+  "target": "spectral_mean_fluorescence",
+  "target_units": "source fluorescence a.u.",
+  "metric_kind": "mae",
+  "reference_selected_model": "baseline_persistence",
+  "models": {
+    "reference": {
+      "case": 29,
+      "kind": "persistence",
+      "coef": [],
+      "training_groups": [
+        "6g66_05_uM_DPH_binding",
+        "6g66_05_uM_NR_binding",
+        "9a5f_05uM_DPH_binding",
+        "9a5f_05uM_NR_binding"
+      ],
+      "training_rows": 96,
+      "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+      "equation": "Fhat=F5"
+    },
+    "baseline_persistence": {
+      "case": 29,
+      "kind": "persistence",
+      "coef": [],
+      "training_groups": [
+        "6g66_05_uM_DPH_binding",
+        "6g66_05_uM_NR_binding",
+        "9a5f_05uM_DPH_binding",
+        "9a5f_05uM_NR_binding"
+      ],
+      "training_rows": 96,
+      "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+      "equation": "Fhat=F5"
+    },
+    "baseline_linear": {
+      "case": 29,
+      "kind": "linear",
+      "coef": [],
+      "training_groups": [
+        "6g66_05_uM_DPH_binding",
+        "6g66_05_uM_NR_binding",
+        "9a5f_05uM_DPH_binding",
+        "9a5f_05uM_NR_binding"
+      ],
+      "training_rows": 96,
+      "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+      "equation": "Fhat=F0+(F5-F0)*dose/dose_cal"
+    },
+    "baseline_langmuir": {
+      "case": 29,
+      "kind": "langmuir",
+      "coef": [
+        0.001000000000000084
+      ],
+      "training_groups": [
+        "6g66_05_uM_DPH_binding",
+        "6g66_05_uM_NR_binding",
+        "9a5f_05uM_DPH_binding",
+        "9a5f_05uM_NR_binding"
+      ],
+      "training_rows": 96,
+      "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+      "equation": "Fhat=F0+(F5-F0)*H(dose)/H(dose_cal); H(x)=x/(K+x)",
+      "optimizer": {
+        "success": true,
+        "cost": 6.648687939004965,
+        "bounds": [
+          [
+            0.001
+          ],
+          [
+            1000
+          ]
+        ],
+        "jacobian_rank": 1,
+        "jacobian_singular_values": [
+          1.3828126388008217
+        ]
+      }
+    },
+    "baseline_flexible": {
+      "case": 29,
+      "kind": "flexible",
+      "coef": [
+        55132.21293964042,
+        1.3573462107270977,
+        -0.014143678382775473,
+        0.22057331164892705,
+        -0.05080896497253727,
+        -0.006191493862308386,
+        0.0922569915211483,
+        0.101172062340472,
+        0.09484420210623111
+      ],
+      "training_groups": [
+        "6g66_05_uM_DPH_binding",
+        "6g66_05_uM_NR_binding",
+        "9a5f_05uM_DPH_binding",
+        "9a5f_05uM_NR_binding"
+      ],
+      "training_rows": 96,
+      "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "feature_rms": [
+        1.0,
+        11870.906080331117,
+        95879.15776841062,
+        78331.76653104115,
+        44712.68138898811,
+        113719.50496900786,
+        60417.68855814246,
+        79636.65634100339,
+        100598.40563815345
+      ],
+      "ridge_alpha": 1,
+      "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+    },
+    "attempt_001_hill": {
+      "case": 29,
+      "kind": "hill",
+      "coef": [
+        0.001000000000333834,
+        0.10000000000004323
+      ],
+      "training_groups": [
+        "6g66_05_uM_DPH_binding",
+        "6g66_05_uM_NR_binding",
+        "9a5f_05uM_DPH_binding",
+        "9a5f_05uM_NR_binding"
+      ],
+      "training_rows": 96,
+      "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+      "equation": "Fhat=F0+(F5-F0)*H(dose)/H(dose_cal); H(x)=x^n/(K^n+x^n)",
+      "optimizer": {
+        "success": true,
+        "cost": 6.936892457134535,
+        "bounds": [
+          [
+            0.001,
+            0.1
+          ],
+          [
+            1000,
+            4
+          ]
+        ],
+        "jacobian_rank": 2,
+        "jacobian_singular_values": [
+          24.60537496876101,
+          0.05687746782817586
+        ]
+      }
+    },
+    "attempt_002_quenching": {
+      "case": 29,
+      "kind": "quenching",
+      "coef": [
+        0.001000000000139066,
+        0.00417708337899305
+      ],
+      "training_groups": [
+        "6g66_05_uM_DPH_binding",
+        "6g66_05_uM_NR_binding",
+        "9a5f_05uM_DPH_binding",
+        "9a5f_05uM_NR_binding"
+      ],
+      "training_rows": 96,
+      "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+      "equation": "Fhat=F0+(F5-F0)*H(x)/H(z)*exp(-q*(x-z)); H(x)=x/(K+x). Effective fluorescence loss, not binding occupancy.",
+      "optimizer": {
+        "success": true,
+        "cost": 6.529874736610289,
+        "bounds": [
+          [
+            0.001,
+            0
+          ],
+          [
+            1000,
+            1
+          ]
+        ],
+        "jacobian_rank": 2,
+        "jacobian_singular_values": [
+          114.2530305585016,
+          0.4254280626197623
+        ]
+      }
+    },
+    "attempt_003_local": {
+      "case": 29,
+      "kind": "local",
+      "coef": [
+        0.010000000000328104
+      ],
+      "training_groups": [
+        "6g66_05_uM_DPH_binding",
+        "6g66_05_uM_NR_binding",
+        "9a5f_05uM_DPH_binding",
+        "9a5f_05uM_NR_binding"
+      ],
+      "training_rows": 96,
+      "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+      "equation": "Langmuir normalized at calibration dose; K inverted from F2/F5 baseline-subtracted ratio then multiplied by fitted factor",
+      "optimizer": {
+        "success": true,
+        "cost": 7.635902851912688,
+        "bounds": [
+          [
+            0.01
+          ],
+          [
+            100
+          ]
+        ],
+        "jacobian_rank": 1,
+        "jacobian_singular_values": [
+          154.49618153351076
+        ]
+      }
+    },
+    "attempt_004_dye_hill": {
+      "case": 29,
+      "kind": "dye_hill",
+      "coef": [
+        -0.16940844633698102,
+        -5.999953218021911,
+        1.0956013842742225
+      ],
+      "training_groups": [
+        "6g66_05_uM_DPH_binding",
+        "6g66_05_uM_NR_binding",
+        "9a5f_05uM_DPH_binding",
+        "9a5f_05uM_NR_binding"
+      ],
+      "training_rows": 96,
+      "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+      "equation": "Hill H with log K=b0+b1*dye_NR and common exponent n",
+      "optimizer": {
+        "success": true,
+        "cost": 6.545189598502694,
+        "bounds": [
+          [
+            -6,
+            -6,
+            0.1
+          ],
+          [
+            8,
+            6,
+            4
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          0.7186405758839142,
+          0.04180315712271964,
+          0.0014072423545767312
+        ]
+      }
+    },
+    "attempt_005_shrink_local": {
+      "case": 29,
+      "kind": "shrink_local",
+      "coef": [
+        0.5577914291656536,
+        0.001000000000000049
+      ],
+      "training_groups": [
+        "6g66_05_uM_DPH_binding",
+        "6g66_05_uM_NR_binding",
+        "9a5f_05uM_DPH_binding",
+        "9a5f_05uM_NR_binding"
+      ],
+      "training_rows": 96,
+      "training_ids_sha256": "c5ac77ab4e5bd13a52df246905e5195c30ebb9029afb47764c17432f572cff1f",
+      "equation": "log K=w*log K_local+(1-w)*log K_shared",
+      "optimizer": {
+        "success": true,
+        "cost": 6.445411926058309,
+        "bounds": [
+          [
+            0,
+            0.001
+          ],
+          [
+            1,
+            1000
+          ]
+        ],
+        "jacobian_rank": 2,
+        "jacobian_singular_values": [
+          266.81803353850813,
+          0.40802904559208736
+        ]
+      }
+    }
+  }
+}

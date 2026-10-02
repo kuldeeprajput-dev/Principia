@@ -1,0 +1,26 @@
+{
+  "name": "latitude_curvature",
+  "formula": "(hx+clat**2*hy)/(1+clat**2)+k*((hx-ox)+clat**2*(hy-oy))/(1+clat**2)",
+  "hypothesis": "Development evidence available before this fit: rotational_ninepoint: MAE 0.0444504, worst group 0.114452; limited_curvature: MAE 0.0392258, worst group 0.0932574.\n\nTest whether curvature correction benefits from spherical distance rather than treating latitude-longitude cells as squares. This competes directly with the unweighted limited-curvature explanation.",
+  "inputs": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "clat"
+  ],
+  "initial": {
+    "k": 0.3
+  },
+  "bounds": {
+    "k": [
+      0,
+      1
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:40:03.089474+00:00",
+  "parent": "attempt-005"
+}

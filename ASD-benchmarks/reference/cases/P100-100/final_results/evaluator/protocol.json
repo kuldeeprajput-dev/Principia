@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-100",
+  "protocol_id": "P100-100-prepared-primary-v1",
+  "target": "Next successful ICMP probe RTT",
+  "target_units": "ms",
+  "primary_units": "ms",
+  "metric_kind": "mae",
+  "metric_definition": "Equal complete reserved-group mean MAE in physical units; RMSE square root is taken within group, before averaging groups.",
+  "independent_unit": "whole PING run; sequential packets correlated",
+  "evaluation_groups": [
+    "2024-11-20_19-05-38_ping",
+    "2024-11-22_11-04-17_ping",
+    "2024-11-22_17-29-19_ping"
+  ],
+  "input_sha256": "0d7d828a907f376b39f205e6a2f2dd611561487472e16533be6c18e886d287a2",
+  "input_rows": 2943,
+  "assigned_rows": 2943,
+  "permitted_inputs": [
+    "route",
+    "payload_B",
+    "last_rtt",
+    "mean5_rtt",
+    "mean3_rtt",
+    "trend_rtt",
+    "RSRP",
+    "RSRQ"
+  ],
+  "input_units": {
+    "route": "calibrated route label",
+    "payload_B": "B",
+    "last_rtt": "ms,previous completion",
+    "mean5_rtt": "ms,previous5 completions",
+    "mean3_rtt": "ms,previous3 completions",
+    "trend_rtt": "ms,previous RTT difference",
+    "RSRP": "dBm,asof previouscompletion",
+    "RSRQ": "dB,asof previouscompletion"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "challenger",
+    "baseline_persistence",
+    "baseline_rbf",
+    "baseline_residual_rbf",
+    "baseline_rolling",
+    "baseline_static"
+  ],
+  "reference_equations": {
+    "reference": "\\widehat r_{n+1}=\\max[0,r_n+c_q+0.675521(\\overline r_5-r_n)+0.085666(r_n-55)_+-0.662004(r_n-r_{n-1})]",
+    "challenger": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the two_scale branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_persistence": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the persistence branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_rbf": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+    "baseline_residual_rbf": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+    "baseline_rolling": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the rolling branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_static": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the static branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "scope_limit": "Three complete PING runs, one per calibrated route, one platform; online previous-probe calibration. No new-network or packet-loss reliability prediction.",
+  "calibration_note": "r_n and r_(n\u22121) are completed previous RTTs in milliseconds; rbar5 averages the last five completed probes. c_q in ms is\u22120.002897 for indoor random,\u22120.069945 for indoor rectangle and\u22120.049676 for outdoor rectangle. The55ms breakpoint was selected using nested development groups. Payload and causal radio measurements are available to comparators, but the selected equation uses history and the calibrated route offset only. It predicts a conditional successful next response, not a missing lost-packet RTT.",
+  "timing_contract": "Predict next probe RTT using only five previous completed RTTs and radio asof previous completion, <=0.5s old. No current response-completion timestamp, ICMPseq, cumulative average/loss, future gap, throughput or same-probe radio in inputs. Successful response conditional target; missing lost responses retained when inputs eligible.",
+  "exposure_notice": "All packaged targets are now exposed; future scoring is retrospective. First indoor-rectangle1000B file audit responses viewed; this complete file excluded from reserved allocation. Metadata hash chooses one run per route from remaining source-defined runs.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared conditions, sensor/system dependence or small numbers of reserved groups do not support precise population-level confidence. No row-bootstrap intervals."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Verify native anchors and prediction-time inputs. Predict next probe RTT using only five previous completed RTTs and radio asof previous completion, <=0.5s old. No current response-completion timestamp, ICMPseq, cumulative average/loss, future gap, throughput or same-probe radio in inputs. Successful response conditional target; missing lost responses retained when inputs eligible."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

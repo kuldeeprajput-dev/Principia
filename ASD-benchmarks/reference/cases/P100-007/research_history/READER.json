@@ -1,0 +1,38 @@
+{
+  "intro": "# Single-participant gait: phase memory beats local extrapolation\n\nThe retained source contains three treadmill force-platform runs from participant S1 at0.5,0.75 and1m/s. Both native vertical-force channels are present. The0.5/0.75m/s runs develop models in whole-run folds; the1m/s run is reserved. This tests within-person speed transfer, not generalization to other people.\n\n## Task and selected rule\n\nAt each forecast time, the target is the10ms-averaged plate1 force ending100ms later, in newtons. Features may use only prior force samples and the known treadmill speed. Let $F_t$ denote the causal10ms block mean. Estimate a period $T_t$ from the largest interior autocorrelation peak of the preceding5s, searching0.6\u20132s. Then\n\n$$\\widehat F_{t+0.1\\mathrm{s}}=F_{t+0.1\\mathrm{s}-T_t}.$$\n\nThe right-hand side is always historical because the shortest searched period exceeds the forecast horizon. No fitted response coefficient is required. Source timestamps are all zero; native order and the source-declared1000Hz sampling rate define time. The new blocks are deterministic10ms means; no cross-modal synchronization is asserted.\n\nFive substantive extensions tested local damping/curvature, phase\u2013slope fusion, bilateral load transfer, load-dependent local stiffness, and combined phase/bilateral correction. None beat the prior-cycle control on the development runs.\n",
+  "interpretation": "The prior-cycle rule achieves55.8734N reserved-run MAE versus238.9250N persistence,288.3787N linear extrapolation and173.0685N flexible prediction. The large improvement demonstrates useful phase memory in this one gait record, but it reproduces established periodic prediction rather than discovering a new biomechanical law. The fitted local or bilateral coefficients did not transfer better; they should not be interpreted as stiffness, damping or causal limb-coupling constants. There is only one reserved run, so no population confidence interval or clinical outcome is justified.",
+  "summary": "Five hypotheses completed; the established causal prior-cycle baseline remains selected. It transfers to the faster run with55.87N MAE, strongly outperforming local extrapolation. No new biomechanical law admitted.",
+  "lessons": "Do not invent timestamps when source timing columns are constant: state the sampling-rate assumption. Separate plate identity from unsupported anatomical labels. Whole-run transfer is meaningful but single-person evidence stays within-system. A strong phase-memory control can falsify elaborate local dynamics. Effective autoregressive coefficients are not automatically mechanical stiffness or damping.",
+  "findings": [
+    {
+      "finding_id": "P100-007-F01",
+      "classification": "reproduction",
+      "claim": "Causal previous-cycle force provides the strongest registered development-selected forecast and transfers to the faster held run",
+      "equation": "Fhat(t+0.1s)=F(t+0.1s-T_t); T_t=peak historical autocorrelation lag in0.6\u20132s",
+      "coefficients": [],
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv",
+        "evidence/by_group.csv"
+      ],
+      "scope": "One participant and three treadmill speeds",
+      "admission": "supported",
+      "prior_art": "Established periodic time-series/biomechanical phase prediction",
+      "falsification": "Other people, irregular gait and perturbations are untested"
+    },
+    {
+      "finding_id": "P100-007-F02",
+      "classification": "supported_negative_finding",
+      "claim": "The tested local-damping, stiffness and bilateral extensions fail to improve development over a phase-copy control",
+      "equation": null,
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv"
+      ],
+      "scope": "Five declared model families and the two development runs",
+      "admission": "supported",
+      "prior_art": "Failure does not falsify real biomechanics",
+      "falsification": "Different interventions or more independent runs could identify mechanisms"
+    }
+  ]
+}

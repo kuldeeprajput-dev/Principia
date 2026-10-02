@@ -1,0 +1,59 @@
+{
+  "case": 34,
+  "kind": "reserve",
+  "coef": [
+    122.12093199507025,
+    3.5266975128435436,
+    1.205852148970011,
+    0.9095049953946986
+  ],
+  "training_groups": [
+    "control_cell10",
+    "control_cell11",
+    "control_cell12",
+    "control_cell2",
+    "control_cell3",
+    "control_cell5",
+    "control_cell6",
+    "control_cell8",
+    "control_cell9",
+    "mutant_block1",
+    "mutant_block10",
+    "mutant_block11",
+    "mutant_block12",
+    "mutant_block3",
+    "mutant_block4",
+    "mutant_block5",
+    "mutant_block6",
+    "mutant_block8",
+    "mutant_block9"
+  ],
+  "training_rows": 56,
+  "training_ids_sha256": "11941aa878668a8c883447c81d4c759b1d23d4d8996ad6a4918caafa038a6561",
+  "equation": "Ihat=I(.75)+max(A0+Ag*mutant-lambda*I(.75),0)*(1-exp(-(Ca-.75)/K)); effective recruitable response reserve, not identified vesicle count.",
+  "optimizer": {
+    "success": true,
+    "cost": 0.7246972127705649,
+    "bounds": [
+      [
+        0,
+        -200,
+        0,
+        0.01
+      ],
+      [
+        500,
+        200,
+        3,
+        100
+      ]
+    ],
+    "jacobian_rank": 4,
+    "jacobian_singular_values": [
+      2.396459931399288,
+      1.2550098408344748,
+      0.02489969774650696,
+      0.02265104687606203
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-092.original.v1",
+  "case_id": "P100-092",
+  "case_number": 92,
+  "family": "original",
+  "protocol_version": "P100-092-prepared-primary-v1",
+  "cohort_id": "P100-092.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-092.original.v1",
+  "legacy_package": "92_communications_ble_antennas/final_results",
+  "source_scenario": "scenarios/92_communications_ble_antennas",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Channel-resolved burst-mean RSSI",
+  "target_units": "dBm",
+  "error_units": "dB",
+  "primary_units": "dB",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "r0",
+    "channel_contrast",
+    "spatial_contrast",
+    "port",
+    "channel",
+    "day",
+    "furniture"
+  ],
+  "input_units": {
+    "r0": "dBm",
+    "channel_contrast": "dB",
+    "spatial_contrast": "dB",
+    "port": "categorical P1\u2013P8",
+    "channel": "channel number 37/38/39",
+    "day": "elapsed days",
+    "furniture": "binary indicator"
+  },
+  "numeric_columns": [
+    "r0",
+    "channel_contrast",
+    "spatial_contrast",
+    "channel",
+    "day",
+    "furniture"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Only the initial calibration map and known date/furniture/antenna/channel metadata are allowed. Whole dates remain grouped; repeated packets/cells are not independent experiments.",
+  "calibration": "Initial 3120-cell measured RSSI map is a declared input, with same-position channel and same-channel spatial contrasts. No target-date RSSI recalibration.",
+  "independent_unit": "complete measurement date (all available furniture states)",
+  "evaluation_groups": [
+    "11012024",
+    "15022024",
+    "23022024"
+  ],
+  "assigned_rows": 15600,
+  "eligible_rows": 15600,
+  "baseline_models": [
+    "compact",
+    "flexible",
+    "unchanged_calibration"
+  ],
+  "reference_model": "compact",
+  "models": {
+    "compact": {
+      "equation": "RSSI=r0+b0+bf*furniture+bc*channel_contrast/10+bcf*furniture*channel_contrast/10+bs*spatial_contrast/10+bsf*furniture*spatial_contrast/10",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "flexible": {
+      "equation": "RSSI=r0+sum(beta_j*phi_j); 48 port/channel\u00d7furniture terms plus 27 declared quadratic terms, all fixed in model.json and runtime.predict.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "unchanged_calibration": {
+      "equation": "RSSI=r0",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Only 3 groups, with system-level dependence; report individual effects without a population confidence interval."
+  },
+  "scope_limits": "Temporal transfer on days 51,86,94 at calibrated positions in one installation. Not unseen-position prediction or independent antenna-efficiency identification.",
+  "source_url": "https://zenodo.org/records/14548531",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "c0d3b3114abd405158839dee7418f258e29b92c546d887ffcaea199ed842767c",
+  "observations_sha256": "b371937b092ce320e03ac8eea57f350c06cba6d81e0762aa3f392d87b211dbb4",
+  "legacy_protocol_sha256": "57a7d686ef6f92f87c98a0ba1dede7b3154e9147b36008611c82b7f6825101ee",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

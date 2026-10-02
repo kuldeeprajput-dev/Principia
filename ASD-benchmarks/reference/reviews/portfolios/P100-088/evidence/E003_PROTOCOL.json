@@ -1,0 +1,33 @@
+{
+  "frozen_utc": "2026-10-02T01:56:38.973733+00:00",
+  "target": "Current risky choice",
+  "units": "binary choice",
+  "metric": "mean of participant Brier scores; secondary group MAE/logloss and row-count plus group event diagnostics",
+  "inputs": [
+    "ev_difference",
+    "probability",
+    "valence",
+    "safe_risk",
+    "feedback_known",
+    "feedback_observed",
+    "complete",
+    "trial_progress",
+    "lag_choice",
+    "history_mean",
+    "visible_pe",
+    "visible_regret",
+    "has_history"
+  ],
+  "timing": "Prediction precedes each current choice. Current lottery information is available; feedback availability is given only if block instructions announce it or an earlier trial revealed it. Previous choice and observed feedback from the same block are allowed; current choice, current outcomes, future trials and response time are prohibited.",
+  "calibration": "No participant-specific fitted calibration. Online historical choices/visible outcomes are allowed identically for all models, beginning with neutral prior 0.5; history resets at every block.",
+  "groups": "SPLITS.json; whole participants stratified by experiment",
+  "source_hashes": "SOURCE_MANIFEST.json",
+  "eligibility": "All source new-experiment rows with finite declared inputs and binary choices; older Erev comparison observations excluded. No source optimal-choice label or supplied previous-outcome transformation used.",
+  "baseline_families": [
+    "constant participant-balanced probability",
+    "expected value/probability/valence logistic",
+    "regularized polynomial logistic with identical full input budget"
+  ],
+  "selection": "Smallest parameter count within 1% of best whole-participant development Brier; >=5 adaptive hypotheses, continue until two substantive no-gain outcomes after minimum. No confirmation feedback.",
+  "exposure": "Header and lottery design values inspected, no response values printed before freezing. Original source publishes aggregate outcome patterns; corpus is source aware."
+}

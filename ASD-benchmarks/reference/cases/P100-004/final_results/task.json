@@ -1,0 +1,153 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-004.original.v1",
+  "case_id": "P100-004",
+  "case_number": 4,
+  "family": "original",
+  "protocol_version": "P100-004-asd7-native-v1",
+  "cohort_id": "P100-004.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-004.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/04_particle_physics_atlas_4lep_2015",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Measured missing transverse momentum magnitude",
+  "target_units": "GeV",
+  "error_units": "GeV",
+  "primary_units": "GeV",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "scalar_activity",
+    "recoil",
+    "lepton_recoil",
+    "jet_activity",
+    "jet_n",
+    "max_lep_eta",
+    "muon_fraction"
+  ],
+  "input_units": {
+    "scalar_activity": "GeV",
+    "recoil": "GeV",
+    "lepton_recoil": "GeV",
+    "jet_activity": "GeV",
+    "jet_n": "count",
+    "max_lep_eta": "dimensionless pseudorapidity magnitude",
+    "muon_fraction": "dimensionless fraction"
+  },
+  "numeric_columns": [
+    "scalar_activity",
+    "recoil",
+    "lepton_recoil",
+    "jet_activity",
+    "jet_n",
+    "max_lep_eta",
+    "muon_fraction"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Diagnostic event reconstruction from lepton and jet kinematics; met_phi/met_mpx/met_mpy and truth fields forbidden. Inputs are measured same-event objects, not a pre-collision forecast.",
+  "calibration": "Training events only; no held-period target calibration.",
+  "independent_unit": "Run period, with unique runNumber+eventNumber observations",
+  "evaluation_groups": [
+    "periodH",
+    "periodJ"
+  ],
+  "assigned_rows": 87854,
+  "eligible_rows": 87854,
+  "baseline_models": [
+    "constant",
+    "rbf",
+    "recoil_identity",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "reference"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "constant": {
+      "equation": "y_hat = training-fold median(target); final coefficient refit on development only",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rbf": {
+      "equation": "Frozen 24-center Gaussian radial-basis ridge comparator; all feature means, scales, centers, coefficients and ridge=0.3 are in rules.json. Additive residual for cases2/3/4/45; multiplicative clipped-log ratio for cases11/46.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "recoil_identity": {
+      "equation": "MET_hat=R=norm(sum measured transverse lepton and jet momenta)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "MET_hat=a*sqrt(H)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "MET_hat=k*R",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "MET_hat=sqrt((k*R)^2+a^2*H+c^2)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "MET_hat=sigma*sqrt(pi/2)*[(1+2z)*i0e(z)+2z*i1e(z)]; z=(k*R)^2/(4*sigma^2), sigma^2=a^2*H+c^2",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "Same Rician mean, with sigma^2=a_l^2*L+a_j^2*J+c^2",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "reference": {
+      "equation": "MET_hat=sqrt((k*R)^2+a^2*H+c^2)",
+      "state": "rules.json",
+      "role": "reference"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics."
+  },
+  "scope_limits": "2015 four-lepton educational skim, no MC or control background supplied. Object recoil and MET share reconstruction components; predictive agreement is not independent discovery of momentum conservation or new physics.",
+  "source_url": "https://opendata.cern.ch/record/93918",
+  "source_license": "CC0 1.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "9e3e81460b6e7c10f14872aa648f281e0ae3661ae754dad2bee4659b75c1e4cc",
+  "observations_sha256": "fa966849dd66dd6fd0c6043addeda6f4b11352273d49f886f052e4c53851c1a7",
+  "legacy_protocol_sha256": "68554baaaab683080adbdd9603dc4d60d7f8832fae59bdae49f0bd6b5bd32cff",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

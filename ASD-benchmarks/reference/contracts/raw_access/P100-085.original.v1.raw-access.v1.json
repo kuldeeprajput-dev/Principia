@@ -1,0 +1,73 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-085.original.v1.raw-access.v1",
+  "parent_task_id": "P100-085.original.v1",
+  "case_id": "P100-085",
+  "protocol_version": "P100-085.original.v1.raw-access.v1",
+  "cohort_id": "P100-085.original.v1.cohort-1",
+  "parent_task_sha256": "bc9812a226457425a871e781e5e319572fd58b6233abe26487410fba6e3da895",
+  "input_sha256": "10b6b630820993716e54aab65f2a83c13ed104106608106766d7385805d6eafe",
+  "observations_sha256": "37374f36daa5f72e391820d022d28338ae5e4d077ed12bb5e10460fc2b7466d2",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "85_biotechnology_yarrowia_cofeeding",
+  "source_assets": [
+    {
+      "path": "raw/DATA.zip",
+      "bytes": 2296181,
+      "sha256": "5c06acaf42c1f930100d53ea506ec0a8bc542fec45ef5af4cd59311069364ed2"
+    },
+    {
+      "path": "raw/readme.txt",
+      "bytes": 19414,
+      "sha256": "691224db90be129f8674b33316a14cad6207f54a4d0b34fc6d3f398ce169c8af"
+    },
+    {
+      "path": "context/source_record.json",
+      "bytes": 8964,
+      "sha256": "20fd41824ce4651d4611f6b54856e4bf8066d222e593d94d46c8051b9a9e585c"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "elapsed_h": "h",
+      "eg_consumed_g_L": "g/L",
+      "eg_initial_g_L": "g/L",
+      "pH": "dimensionless",
+      "acetate_cofeed": "indicator",
+      "glucose_cofeed": "indicator"
+    },
+    "observation_window": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+    "calibration_and_history": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "All four scored targets were visible during schema inspection; retrospective throughout.",
+    "Only 1 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

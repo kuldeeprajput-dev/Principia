@@ -1,0 +1,186 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-016.original.v1",
+  "case_id": "P100-016",
+  "case_number": 16,
+  "family": "original",
+  "protocol_version": "P100-016-asd7-native-v1",
+  "cohort_id": "P100-016.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-016.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/16_economics_bls_cpi_ces_2026",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Next-month seasonally adjusted all-items CPI log change",
+  "target_units": "percentage points per month (100 natural log index ratio)",
+  "error_units": "percentage points",
+  "primary_units": "percentage points",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "inflation1",
+    "inflation3",
+    "inflation12",
+    "housing1",
+    "medical1",
+    "jobs1",
+    "mfg1",
+    "info1"
+  ],
+  "input_units": {
+    "inflation1": "percentage points per month (100 log ratio)",
+    "inflation3": "percentage points per month (100 log ratio)",
+    "inflation12": "percentage points per month (100 log ratio)",
+    "housing1": "percentage points per month (100 log ratio)",
+    "medical1": "percentage points per month (100 log ratio)",
+    "jobs1": "percentage points per month (100 log ratio)",
+    "mfg1": "percentage points per month (100 log ratio)",
+    "info1": "percentage points per month (100 log ratio)"
+  },
+  "numeric_columns": [
+    "inflation1",
+    "inflation3",
+    "inflation12",
+    "housing1",
+    "medical1",
+    "jobs1",
+    "mfg1",
+    "info1"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Only calendar months through t-1 enter predictors for month t. This is a retrospectively revised and seasonally adjusted bulk snapshot, not an as-issued forecast archive. Calendar lags do not establish historical release availability; the nominal origin is after prior-month releases. No month-t prices/employment or CPI accounting decomposition enters inputs.",
+  "calibration": "All regression coefficients, centering/scales and flexible centers fit only preceding development blocks. No held-quarter target fitting.",
+  "independent_unit": "Whole calendar quarter; forward chronological development folds and2023-onward confirmation. One national economic system, overlapping lag windows and persistent macro shocks; quarters are not independent economies.",
+  "evaluation_groups": [
+    "2023Q1",
+    "2023Q2",
+    "2023Q3",
+    "2023Q4",
+    "2024Q1",
+    "2024Q2",
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3"
+  ],
+  "assigned_rows": 33,
+  "eligible_rows": 33,
+  "baseline_models": [
+    "reference",
+    "annual_mean",
+    "constant",
+    "flexible",
+    "persistence",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "pi_hat=pi12+a*(pi1-pi12)+b*((housing1+medical1)/2-pi1)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "annual_mean": {
+      "equation": "pi_hat=mean previous12monthly log growth",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "constant": {
+      "equation": "pi_hat=c",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "regularized32-centerGaussianRBF; training-onlyscale/centers",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persistence": {
+      "equation": "pi_hat=pi_(t-1)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "pi_hat=pi12+a*(pi1-pi12)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "pi_hat=pi12+a*(pi1-pi12)+b*((housing1+medical1)/2-pi1)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "pi_hat=pi12+a*inertia+b*sector_gap+c*j+d*f+e*i",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "pi_hat=pi12+a_up*max(inertia,0)+a_down*min(inertia,0)+b*sector_gap",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "pi_hat=pi12+a*inertia+b*sector_gap; coefficients soft-L1 trained",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "pi_hat=pi12+a*inertia+b*sector_gap+c*(pi1-pi3)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Quarter-group errors/ranges; no row bootstrap or independent-quarter population confidence. Confirmation will become exposed."
+  },
+  "scope_limits": "1990\u20132026 US selected national seasonally adjusted series. Revised historical values and seasonal factors can incorporate later information. No causal Phillips-curve, policy intervention, operational financial-return or structural-inflation law claim.",
+  "source_url": "https://download.bls.gov/pub/time.series/",
+  "source_license": "U.S. Government public data",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Native series IDs, date ranges, dictionary units and filenames inspected; no reserved numerical targets or metrics printed before freeze. Source public/source-aware.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"e58ee9411c0baff8409e17f00edde78146cfea4c9458143b4b1f03211c5a5fcf\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "84cad44965ed54ffd85dbbd244ce87c9e396e3fefda16b075db06f16ba1b83c6",
+  "observations_sha256": "6e77a6ab6248309b633f14efdea1f6ad540be57ca32867d28ad9c16d1e631860",
+  "legacy_protocol_sha256": "5a9a0b301fa1665bb1196ab487cb8ac01e945ce8908acf330411fb865041bf78",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "inflation1",
+    "inflation3",
+    "inflation12",
+    "housing1",
+    "medical1",
+    "jobs1",
+    "mfg1",
+    "info1"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

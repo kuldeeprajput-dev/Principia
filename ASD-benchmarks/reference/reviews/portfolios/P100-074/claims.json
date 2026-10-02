@@ -1,0 +1,424 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-074",
+  "claim_origin": "New ASD5 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "{\"status\": \"exposed_after_local_confirmation\", \"original_audit\": \"First9 lines and schemas inspected; early values through6.75 min were visible across doses, outside target window. Later outcomes not printed before freeze.\", \"fresh_for_future_users\": false, \"new_independent_experiments\": false}"
+  },
+  "findings": [
+    {
+      "id": "P100-074-F01",
+      "classification": "unsupported",
+      "source_classification": "unsupported",
+      "statement": "The development-selected early-curvature projection provides a robust predictive improvement over matched controls on previously withheld doses.",
+      "applicability": "Calibrated single-assay dose transfer only.",
+      "limitations": "On reserved doses, all three named controls beat the selected equation.",
+      "falsification": "On reserved doses, all three named controls beat the selected equation.",
+      "prior_art": "PET-quenching relief under phosphorylation and Michaelis-Menten initial velocities are reported by the authors. Our late-curve calibrated forecast is separate; neither first-order saturation nor power laws are novel families.",
+      "equation_or_program": {
+        "expression": "F_hat=F6+d*(a*v6+b*6*c6)",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020",
+          "E021",
+          "E022",
+          "E023",
+          "E024"
+        ]
+      },
+      "variables_and_units": {
+        "target": "source fluorescence units",
+        "concentration_uM": "uM",
+        "time_min": "min",
+        "calibration_F6": "source fluorescence units",
+        "calibration_v6": "source fluorescence units/min",
+        "calibration_curvature": "source fluorescence units/min^2"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020",
+        "E021",
+        "E022",
+        "E023",
+        "E024"
+      ],
+      "task_id": "P100-074.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-074-F02",
+      "classification": "reproduction",
+      "source_classification": "reproduction",
+      "statement": "Same-curve early response carries useful later-response information; carrying F6 unchanged is much less accurate than its calibrated tangent on these two doses.",
+      "applicability": "Source response units and t>7.5min.",
+      "limitations": "A useful calibration control is not a novel kinetic law; only two doses, no biological replicate identification.",
+      "falsification": "A useful calibration control is not a novel kinetic law; only two doses, no biological replicate identification.",
+      "prior_art": "PET-quenching relief under phosphorylation and Michaelis-Menten initial velocities are reported by the authors. Our late-curve calibrated forecast is separate; neither first-order saturation nor power laws are novel families.",
+      "equation_or_program": {
+        "expression": "F_hat=F6+v6*(t-6)",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020",
+          "E021",
+          "E022",
+          "E023",
+          "E024"
+        ]
+      },
+      "variables_and_units": {
+        "target": "source fluorescence units",
+        "concentration_uM": "uM",
+        "time_min": "min",
+        "calibration_F6": "source fluorescence units",
+        "calibration_v6": "source fluorescence units/min",
+        "calibration_curvature": "source fluorescence units/min^2"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020",
+        "E021",
+        "E022",
+        "E023",
+        "E024"
+      ],
+      "task_id": "P100-074.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-074-F03",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "The inverse-dose saturation parameterization cannot be interpreted as identified substrate depletion.",
+      "applicability": "Falsifies this fitted explanation, not all biochemical depletion mechanisms.",
+      "limitations": "Unconstrained exponent reaches its preset boundary; enforcing nondecreasing substrate-pool timescale does not beat development controls.",
+      "falsification": "Unconstrained exponent reaches its preset boundary; enforcing nondecreasing substrate-pool timescale does not beat development controls.",
+      "prior_art": "PET-quenching relief under phosphorylation and Michaelis-Menten initial velocities are reported by the authors. Our late-curve calibrated forecast is separate; neither first-order saturation nor power laws are novel families.",
+      "equation_or_program": {
+        "expression": "tau=exp(a+b log S)",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020",
+          "E021",
+          "E022",
+          "E023",
+          "E024"
+        ]
+      },
+      "variables_and_units": {
+        "target": "source fluorescence units",
+        "concentration_uM": "uM",
+        "time_min": "min",
+        "calibration_F6": "source fluorescence units",
+        "calibration_v6": "source fluorescence units/min",
+        "calibration_curvature": "source fluorescence units/min^2"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020",
+        "E021",
+        "E022",
+        "E023",
+        "E024"
+      ],
+      "task_id": "P100-074.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FINAL_VALIDATION.json",
+      "bytes": 4243,
+      "sha256": "ae21a4f7117e84a66be0af92c4007a379577730232368a002f1a1dd17d66ccee",
+      "id": "E001",
+      "role": "FINAL_VALIDATION.json"
+    },
+    {
+      "path": "evidence/E002_FREEZE.json",
+      "bytes": 10495,
+      "sha256": "e342c75ebcf5b0e8947fa6d65662d4bbc3b0e3a9a237092eee6a50986b671f39",
+      "id": "E002",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E003_PARAMETER_STABILITY.json",
+      "bytes": 3342,
+      "sha256": "4a60784bca8f2112423efa4a25cbfe2e3d3c536c6cb259b53c9922076b16ead7",
+      "id": "E003",
+      "role": "PARAMETER_STABILITY.json"
+    },
+    {
+      "path": "evidence/E004_PRIOR_ART.json",
+      "bytes": 607,
+      "sha256": "40ce8f3045c513918b28d03c9d663b49429f11d541d7335dd9133f36f9293f06",
+      "id": "E004",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E005_PROTOCOL.json",
+      "bytes": 2233,
+      "sha256": "b8e3b8373c0c14e23b591820611960c9376b15af0ad20c9de638d53bcc7a9442",
+      "id": "E005",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E006_SOURCE_AND_UNITS.md",
+      "bytes": 1112,
+      "sha256": "2dc50e07f42721535608c96ee9734b2f76d1c39391cee495211ae8846dad5891",
+      "id": "E006",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E007_SOURCE_DEFECTS.json",
+      "bytes": 83,
+      "sha256": "c67edb52c2a943ad7ffb1ce5fef0e0463674412abfb0c55f629baede52bab565",
+      "id": "E007",
+      "role": "SOURCE_DEFECTS.json"
+    },
+    {
+      "path": "evidence/E008_SOURCE_MANIFEST.json",
+      "bytes": 541,
+      "sha256": "04554bf9aeba3a947d5b6f74d0981e6977760ca82f4317b97b3a64dc2c8b4db6",
+      "id": "E008",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E009_SPLITS.json",
+      "bytes": 51919,
+      "sha256": "8fc1b2fbf1c44ba7287793dfb2000f45dc89b7a7a10002c1094d9dfe845b0bb5",
+      "id": "E009",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E010_SUMMARY.md",
+      "bytes": 1245,
+      "sha256": "0a0e48868e729b50186ea9d8b9ac3353ab4c0a8231036a12b0f141c49067d1c7",
+      "id": "E010",
+      "role": "SUMMARY.md"
+    },
+    {
+      "path": "evidence/E011_confirm.py",
+      "bytes": 7654,
+      "sha256": "b56b4c323c3e084a33ec6c9dd7900a25cbbbd5e86df677b3268b28e44293b192",
+      "id": "E011",
+      "role": "confirm.py"
+    },
+    {
+      "path": "evidence/E012_develop.py",
+      "bytes": 7202,
+      "sha256": "e68d740755a8b1708a3fb1616333720bf269cb1d60a4932f086e729343f046b1",
+      "id": "E012",
+      "role": "develop.py"
+    },
+    {
+      "path": "evidence/E013_native.py",
+      "bytes": 1646,
+      "sha256": "49388fb69da68b68bcd4c195fabf8182dcc0cca92430b712418f019db96026a8",
+      "id": "E013",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E014_FINDINGS.md",
+      "bytes": 4094,
+      "sha256": "3064fef90be66f5bd02e609c15651b71d0edf63fdbe4324ddda9379f0a09b6f5",
+      "id": "E014",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E015_inputs.csv.gz",
+      "bytes": 626,
+      "sha256": "635f57a8655eedf1d64009fb5aa1d9a6c819773fdff3b0f5104ed80a80b66c00",
+      "id": "E015",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E016_observations.csv.gz",
+      "bytes": 1210,
+      "sha256": "6b2e468c6c346310587e3d90eb1f579c31d00c87046afeaecbcd2e82afd6ed68",
+      "id": "E016",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E017_by_group.csv",
+      "bytes": 2308,
+      "sha256": "ae5b3e07d4063b24503b114fa44d327465391c9b6ddeb24b7da28db35d8e2576",
+      "id": "E017",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E018_metrics.csv",
+      "bytes": 1290,
+      "sha256": "916182cccfc99d79002f07572c61364f49d41a81d9fa8ee59885a2ffb1cba568",
+      "id": "E018",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E019_predictions.csv.gz",
+      "bytes": 9508,
+      "sha256": "dd2bb69aac6485bfd0908ce511348c8ba1eb65650f96d9fda7fec309127a2aed",
+      "id": "E019",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E020_findings.json",
+      "bytes": 3355,
+      "sha256": "54fa2892d60b11bb4483ef2fb67d5db3a8679355415ca73fcf961d2e9015d169",
+      "id": "E020",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E021_rules.json",
+      "bytes": 12850,
+      "sha256": "dfd24f4f872733bad9099d056b526fd4d140764e7207d6f5d62ed24f432ed103",
+      "id": "E021",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E022_run.py",
+      "bytes": 4581,
+      "sha256": "8e8ee856caab4170b1b3add7d496eae82a8fcb39fc6f3ece3671da4e8fd55fdf",
+      "id": "E022",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E023_task_spec.json",
+      "bytes": 2309,
+      "sha256": "e2fd787f416c23565d338d1e178f9b5f913bc9149bffff2336c15a8563f41944",
+      "id": "E023",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/E024_run.py",
+      "bytes": 4581,
+      "sha256": "8e8ee856caab4170b1b3add7d496eae82a8fcb39fc6f3ece3671da4e8fd55fdf",
+      "id": "E024",
+      "role": "run.py"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 14049,
+      "sha256": "9ba358e422e73aefb43833246f95918483b56a9575233748dfffeec05f69ea6f",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 10827,
+      "sha256": "1366f1fe6dc67f15b499e551800d353fb2ba369c40025674f39c6eee07e2303a",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

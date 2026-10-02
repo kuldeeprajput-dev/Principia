@@ -1,0 +1,180 @@
+{
+  "salt": "P100-043-batch6-stratified-architecture-v1",
+  "allocation": "one minimum hash architecture per nearest nominal parameter-count stratum; all linked histories and stages remain together",
+  "groups": {
+    "1024x28": {
+      "partition": "confirmation",
+      "params": 543482880,
+      "width": 1024,
+      "depth": 28
+    },
+    "1280x15": {
+      "partition": "development",
+      "params": 497457920,
+      "width": 1280,
+      "depth": 15
+    },
+    "1280x36": {
+      "partition": "confirmation",
+      "params": 1013607680,
+      "width": 1280,
+      "depth": 36
+    },
+    "1536x50": {
+      "partition": "confirmation",
+      "params": 1924161024,
+      "width": 1536,
+      "depth": 50
+    },
+    "1792x18": {
+      "partition": "development",
+      "params": 1047397120,
+      "width": 1792,
+      "depth": 18
+    },
+    "1792x7": {
+      "partition": "development",
+      "params": 517499136,
+      "width": 1792,
+      "depth": 7
+    },
+    "2048x27": {
+      "partition": "development",
+      "params": 1904850944,
+      "width": 2048,
+      "depth": 27
+    },
+    "2560x8": {
+      "partition": "development",
+      "params": 1044032000,
+      "width": 2560,
+      "depth": 8
+    },
+    "256x23": {
+      "partition": "development",
+      "params": 48377600,
+      "width": 256,
+      "depth": 23
+    },
+    "256x27": {
+      "partition": "development",
+      "params": 52311808,
+      "width": 256,
+      "depth": 27
+    },
+    "256x71": {
+      "partition": "development",
+      "params": 95588096,
+      "width": 256,
+      "depth": 71
+    },
+    "256x80": {
+      "partition": "development",
+      "params": 104440064,
+      "width": 256,
+      "depth": 80
+    },
+    "3072x12": {
+      "partition": "development",
+      "params": 2007837696,
+      "width": 3072,
+      "depth": 12
+    },
+    "384x13": {
+      "partition": "confirmation",
+      "params": 66758784,
+      "width": 384,
+      "depth": 13
+    },
+    "384x36": {
+      "partition": "development",
+      "params": 116518272,
+      "width": 384,
+      "depth": 36
+    },
+    "512x11": {
+      "partition": "development",
+      "params": 94776832,
+      "width": 512,
+      "depth": 11
+    },
+    "512x12": {
+      "partition": "confirmation",
+      "params": 98710016,
+      "width": 512,
+      "depth": 12
+    },
+    "512x13": {
+      "partition": "development",
+      "params": 102643200,
+      "width": 512,
+      "depth": 13
+    },
+    "512x14": {
+      "partition": "development",
+      "params": 106576384,
+      "width": 512,
+      "depth": 14
+    },
+    "512x16": {
+      "partition": "development",
+      "params": 114442752,
+      "width": 512,
+      "depth": 16
+    },
+    "768x3": {
+      "partition": "development",
+      "params": 103814400,
+      "width": 768,
+      "depth": 3
+    },
+    "768x45": {
+      "partition": "development",
+      "params": 475468032,
+      "width": 768,
+      "depth": 45
+    }
+  },
+  "strata": {
+    "500000000.0": [
+      "1024x28",
+      "1280x15",
+      "1792x7",
+      "768x45"
+    ],
+    "1000000000.0": [
+      "1280x36",
+      "1792x18",
+      "2560x8"
+    ],
+    "2000000000.0": [
+      "1536x50",
+      "2048x27",
+      "3072x12"
+    ],
+    "50000000.0": [
+      "256x23",
+      "256x27",
+      "384x13"
+    ],
+    "100000000.0": [
+      "256x71",
+      "256x80",
+      "384x36",
+      "512x11",
+      "512x12",
+      "512x13",
+      "512x14",
+      "512x16",
+      "768x3"
+    ]
+  },
+  "holdout": [
+    "1024x28",
+    "1280x36",
+    "1536x50",
+    "384x13",
+    "512x12"
+  ],
+  "audit_exposure": "Only schemas, metadata and step inventories printed; no validation loss values printed. Preliminary unstratified metadata allocation replaced before any fitting with declared parameter-scale stratification."
+}

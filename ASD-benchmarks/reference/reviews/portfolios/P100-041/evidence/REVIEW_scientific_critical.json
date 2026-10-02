@@ -1,0 +1,135 @@
+{
+  "case_id": "P100-041",
+  "role": "scientific_critical",
+  "reviewer_id": "asd5_materials",
+  "checked_files": [
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "5909bbe367a1f11a5e8d6ade8e0a656f5f73a83d25255590b95fa454eac31b05"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "e4ba8f4dcca37590299f45efbf3fed9137b3f6d4a8d5bbef7cf29936def4f643"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "ca4f858106f73f933fde1009997f03c63bdd2aa318e689330727a621316600ce"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "91feae1dc789887928ec458c53259b2b89b150299c842655ff21452205a641cf"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "2efe71961728dfae72e6694967301812f4d0927d2d334cce10ca5d5c132163f8"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "f168ef37f92e5eb6779a42b1709f09aa1e66362b1ff2091510231d80682eb5c1"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "b7d61743e200c31a94bdadb0fbde6bc188f1f279f825a6ae88e7082cf4b8d9bc"
+    },
+    {
+      "path": "package/TIMING_CLARIFICATION.json",
+      "sha256": "9fe8cf60816d64b41d39b2aaa35ecacb7282eb3c66bba6afebdf526bc873310d"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-041-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The selected two-memory correction reduces June equal-authority MAE to283.8716MW from323.8625MW for48h residual and464.3410MW for official forecasts, winning50/53 authority groups. Fixed temporal contract and no target-hour balance variables avoid an accounting identity."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Recent/weekly forecast residuals plausibly encode persistent bias, but are not electricity-conservation laws. Revisions and common weather can generate correlation; coefficients do not identify a causal forecasting mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Prior physical/statistical families are disclosed. This bounded literature check does not certify new laws or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful reproducible prediction or informative failure within a precisely scoped cohort; no automatic discovery score."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected executable equation, coefficients, source/task definitions and saved group results; independent numerical execution belongs to the separate computational reviewer."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention, deployment-cost study or external experimental replication."
+        }
+      },
+      "checks": [
+        "Matched input-budget comparator review",
+        "Equation dimensional and variable-semantics review",
+        "Independent-unit and outcome-exposure review",
+        "Positive proposal separated from negative evidence",
+        "Primary-source context checked through public source pages; no new numerical assets acquired"
+      ],
+      "limitations": [
+        "Final public snapshot is not as-issued information. Authorities share weather/interconnection and loads differ greatly; absolute MW errors emphasize larger systems. Forecast release times are not observed.",
+        "Scientific-critical agent review is advisory; it is not human expert adjudication or independent experimental replication."
+      ],
+      "recommendations": [
+        "An independently frozen as-issued forecast-vintage study with costs and dispatch constraints is required before operational-value claims."
+      ]
+    },
+    {
+      "finding_id": "P100-041-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The selected two-memory correction reduces June equal-authority MAE to283.8716MW from323.8625MW for48h residual and464.3410MW for official forecasts, winning50/53 authority groups. Fixed temporal contract and no target-hour balance variables avoid an accounting identity."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Recent/weekly forecast residuals plausibly encode persistent bias, but are not electricity-conservation laws. Revisions and common weather can generate correlation; coefficients do not identify a causal forecasting mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Prior physical/statistical families are disclosed. This bounded literature check does not certify new laws or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful reproducible prediction or informative failure within a precisely scoped cohort; no automatic discovery score."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected executable equation, coefficients, source/task definitions and saved group results; independent numerical execution belongs to the separate computational reviewer."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent intervention, deployment-cost study or external experimental replication."
+        }
+      },
+      "checks": [
+        "Matched input-budget comparator review",
+        "Equation dimensional and variable-semantics review",
+        "Independent-unit and outcome-exposure review",
+        "Positive proposal separated from negative evidence",
+        "Primary-source context checked through public source pages; no new numerical assets acquired"
+      ],
+      "limitations": [
+        "Final public snapshot is not as-issued information. Authorities share weather/interconnection and loads differ greatly; absolute MW errors emphasize larger systems. Forecast release times are not observed.",
+        "Scientific-critical agent review is advisory; it is not human expert adjudication or independent experimental replication."
+      ],
+      "recommendations": [
+        "An independently frozen as-issued forecast-vintage study with costs and dispatch constraints is required before operational-value claims."
+      ]
+    }
+  ],
+  "primary_sources_checked": [
+    "https://www.eia.gov/electricity/gridmonitor/about"
+  ],
+  "literature_access_limits": [],
+  "blocking_defects": [],
+  "documentation_followup": "Inspected timestamp/release-vintage distinction; revised wording correctly restricts >=24h age to residual-history observation timestamps. Judgment unchanged."
+}

@@ -1,0 +1,107 @@
+{
+  "case_id": "P100-030",
+  "reference_equation_markdown": "For speed $v$ in mm/s and particle concentration $c$ in wt.%, define\n\\[\nv_s=v_0e^{\\gamma c/5},\\qquad f(v)=[1+(v/v_s)^p]^{-1}.\n\\]\nGiven measured calibration coefficients $\\mu_L=\\mu(0.2)$ and $\\mu_H=\\mu(500)$,\n\\[\n\\widehat\\mu(v)=\\mu_H+(\\mu_L-\\mu_H)\\frac{f(v)-f(500)}{f(0.2)-f(500)}.\n\\]\nBoth calibration endpoints are supplied even for reserved formulations. The expression preserves their values exactly. Its concentration dependence was selected in development but did not beat simple log-speed interpolation in confirmation.",
+  "reference_parameters": [
+    {
+      "name": "v_0",
+      "unit": "mm/s",
+      "value": 1.1629451354959923
+    },
+    {
+      "name": "p",
+      "unit": "dimensionless",
+      "value": 1.1856763426450416
+    },
+    {
+      "name": "gamma",
+      "unit": "dimensionless",
+      "value": 1.5641270965872278
+    }
+  ],
+  "all_models": {
+    "reference": {
+      "name": "Concentration-shifted load sharing",
+      "kind": "trib_concentration",
+      "coefficients": [
+        1.1629451354959923,
+        1.1856763426450416,
+        1.5641270965872278
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_constant": {
+      "name": "Constant response",
+      "kind": "constant",
+      "coefficients": [
+        0.04759513888888888
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_flex30": {
+      "name": "Flexible calibrated friction",
+      "kind": "flex30",
+      "coefficients": [
+        0.039050056361805065,
+        0.37411620882133245,
+        -1.0575305702810265,
+        0.01067380643849955,
+        -0.004996966708461452,
+        -0.33754658642438773,
+        0.05105743189436473
+      ],
+      "execution": "run.py:predict"
+    },
+    "baseline_trib_linearlog": {
+      "name": "Calibrated log-speed interpolation",
+      "kind": "trib_linearlog",
+      "coefficients": [],
+      "execution": "run.py:predict"
+    },
+    "attempt_001": {
+      "name": "Exponential entrainment",
+      "kind": "trib_domain",
+      "coefficients": [
+        2.344769573328995,
+        0.6230622570786637
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_002": {
+      "name": "Algebraic load sharing",
+      "kind": "trib_rational",
+      "coefficients": [
+        1.6293237263793767,
+        1.0934583507084443
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_003": {
+      "name": "Concentration-shifted load sharing",
+      "kind": "trib_concentration",
+      "coefficients": [
+        1.1629451354959923,
+        1.1856763426450416,
+        1.5641270965872278
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_004": {
+      "name": "Load sharing plus shear term",
+      "kind": "trib_drag",
+      "coefficients": [
+        1.5809351551310407,
+        1.408741103953438,
+        0.0012384579453133251
+      ],
+      "execution": "run.py:predict"
+    },
+    "attempt_005": {
+      "name": "Fixed square-root sharing",
+      "kind": "trib_sqrt",
+      "coefficients": [
+        0.27815931311637015
+      ],
+      "execution": "run.py:predict"
+    }
+  }
+}

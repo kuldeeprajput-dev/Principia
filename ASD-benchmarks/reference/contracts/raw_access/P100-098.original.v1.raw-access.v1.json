@@ -1,0 +1,125 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-098.original.v1.raw-access.v1",
+  "parent_task_id": "P100-098.original.v1",
+  "case_id": "P100-098",
+  "protocol_version": "P100-098.original.v1.raw-access.v1",
+  "cohort_id": "P100-098.original.v1.cohort-1",
+  "parent_task_sha256": "8ba3da9f4715cf2d7c2aa15ab900541214518f9d26a2604ccd1e25dc9ae36d06",
+  "input_sha256": "1f656a5d8c5941439f06af8341c53b721453092aeaf7fc780bf9f69947de7bc6",
+  "observations_sha256": "a66b398800636da2ffc4121aa76cbf4b113ebe6d8b9081a015279a242351d500",
+  "source_scope": "original_corpus",
+  "tier": "adequacy_falsification_diagnostic",
+  "source_folder": "98_mathematics_krw_polytopes",
+  "source_assets": [
+    {
+      "path": "raw/Polytopes_generic_metrics_5.mrdi",
+      "sha256": "d5013e6b42e6332e22f7a8572de72086d8a9b436b8650db99a1bd937ae5429be",
+      "bytes": 69842,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/triangulations_5.jl",
+      "sha256": "c2185d8bcbe80f2181e5bf684782e9b3c6c17d1c00b30d9cf018983baa9d3c03",
+      "bytes": 12563,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/wasserstein_arrangement_code.pdf",
+      "sha256": "f534f19ae81fa99ad9bd6c959e140c7de05b646a2a95277d754b5d9e8f007a25",
+      "bytes": 90940,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/wasserstein_arrangement_code.ipynb",
+      "sha256": "c43dacab3578ad3e1585018289cabe1f37d03963e42dea6c49d6fdd5426e06ac",
+      "bytes": 68649,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/triangulations_4.jl",
+      "sha256": "344acaea74d6127613a31c0114c3f973b5c29bba7897e88a7b1854dd0208ce01",
+      "bytes": 230,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/wasserstein_arrangement_code.jl",
+      "sha256": "d77816969998a8675fea674dacd36915f6cd1c7480d6638ba4aa2ab1f600b92e",
+      "bytes": 9533,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/rootpoly_center_5.regular.results",
+      "sha256": "6d8acf5735c38ab93c490953c1a8fddd8c2f02c6de0f370b36188d546784c688",
+      "bytes": 19966,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/read_triangulations.jl",
+      "sha256": "5c0b3f95993251cfea0e983e4f07e3e77f70bb11b5771822a0af6f8fa41642b9",
+      "bytes": 5574,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/Polytopes_strict_metrics_5.mrdi",
+      "sha256": "608e96002dd710c927da618585238cb08c7d852bb479085685390049fc0fa744",
+      "bytes": 1037132,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/rootpoly_center_6.regular.results.zip",
+      "sha256": "ce22dac0814fc000c746310f73b94ba6cb4d0d45c26facd53907de7a65720552",
+      "bytes": 3905299,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/triangulations_6.jl.zip",
+      "sha256": "c3ab7a7fc724b52715cb89e5bbce7bada78ee750de64bb687a3533d020b34aef",
+      "bytes": 2848842,
+      "role": "native source; parser declares consumed members"
+    },
+    {
+      "path": "raw/rootpoly_center_4.regular.results",
+      "sha256": "1d831a95a11ba6c745538ae8c79fbaa4062c8b947491582ab087af857debdaaa",
+      "bytes": 6701,
+      "role": "native source; parser declares consumed members"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "metric_json": "JSON array of 10 positive rational distances; arbitrary common scale"
+    },
+    "observation_window": "Ten exact pairwise distances permitted; source facets/incidence/f-vector forbidden predictors.",
+    "calibration_and_history": "None for exact geometric algorithms; training-only coefficients for coarse degeneracy heuristics.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor",
+      "source_class"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Exact finite polytope computation reproduces established mathematics; accuracy is not a new theorem."
+  ],
+  "current_outcomes_exposed": true
+}

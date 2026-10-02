@@ -1,0 +1,213 @@
+{
+  "case_id": "P100-004",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_bio_behavior",
+  "reviewed_utc": "2026-10-02T03:31:23.250911+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "7fbae2d88cc764c425f40ef945d97818df1af701bff2e06664961bf23eb3b10f"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "6ff6c79cbf177e5172b2d9eacc64e2359936fd1db23e051f20ec97b5b451c299"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "ff219b7644fc0bf6fd1b931e431ff66ac67474d0e5239b85aa88d42243a23534"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "68554baaaab683080adbdd9603dc4d60d7f8832fae59bdae49f0bd6b5bd32cff"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "1728c838f8533e2c988b4d0a6a258c2b9577d8c7b6e822305b99813d7288683e"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "8b7adc2c3bbbdc4b726f9aabeb0234caa53e52ed7cff5bc77770f347b81dc745"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "338a10412c9248994c170dd1a6d72b1b0fa54606d5e586a43924376ad776eca0"
+    },
+    {
+      "path": "CONFIRMATION_RECEIPT.json",
+      "sha256": "7d86399dd039eb846385e88e3f2e19edd6d05e79f6c2e5eea28ffd7e5eb90d75"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "b55d55c42842122338f34464060f3bbba10162b7d7af5b942943b9dfc56ba274"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "fbdd681bf20e465257a9c078b3398899864f340834f162e7c4fee1bd29d5ffa1"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "5313de934ae2e3983581f34324a017982cb49b52981611efc7dfc38699d1c105"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "970d8756cc9124d1cb9a82964487f8515ec12fdb99f74355bbbeae52fcedd5e8"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "ef168de18dec31432d8faaaab8ef028b14dadec837447867d29d3f48fa9bdbc6"
+    },
+    {
+      "path": "package/MANIFEST.json",
+      "sha256": "3c2001767547cb6c37d312bf7c5877915baef003906f5318cfc7a9397e318033"
+    },
+    {
+      "path": "package/EQUATIONS.md",
+      "sha256": "4fd85d4608d9275b4c79fa9fde6ce2dd2f57f046c507c8b1fb2cdd26ce5c12db"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "0edafb4a3882d8f6c02a9360ea69b3bae1e53631bf5f98d8483fb5702123c2f0"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "54e023652a038be008ad8095e088431dd51e74d4ed13f2125917db9ef2af9aca"
+    },
+    {
+      "path": "package/evidence/scientific_checks.json",
+      "sha256": "b987946d561a88eadd05985cf0b20e3da4c151ca39c42d5a390393aa3205a323"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-004-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Whole-period comparison supports 20.9421 GeV MAE versus constant 23.4594 and RBF 21.8207 on two held periods. Many events do not create many independent detector conditions. Claim-specific conclusion: A compact quadrature reconstruction response transfers to the two reserved run periods under this educational-skim contract."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Quadrature combines coherent recoil, activity-linked dispersion and a floor with correct units: k dimensionless, a sqrt(GeV), c GeV. Shared detector reconstruction makes agreement diagnostic rather than independent momentum-conservation evidence."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A concise selected-sample reconstruction response with tested Rician and subsystem-variance countermodels."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "2015 educational four-lepton skim, related object/MET reconstruction, no control backgrounds or truth simulation; only two held periods.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-004-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Whole-period comparison supports 20.9421 GeV MAE versus constant 23.4594 and RBF 21.8207 on two held periods. Many events do not create many independent detector conditions. Claim-specific conclusion: Replacing the quadrature response by a Rician mean or separately fitted lepton/jet variances does not provide a material development gain under the1% simplicity rule."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Quadrature combines coherent recoil, activity-linked dispersion and a floor with correct units: k dimensionless, a sqrt(GeV), c GeV. Shared detector reconstruction makes agreement diagnostic rather than independent momentum-conservation evidence."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A concise selected-sample reconstruction response with tested Rician and subsystem-variance countermodels."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "2015 educational four-lepton skim, related object/MET reconstruction, no control backgrounds or truth simulation; only two held periods.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-004-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "Whole-period comparison supports 20.9421 GeV MAE versus constant 23.4594 and RBF 21.8207 on two held periods. Many events do not create many independent detector conditions. Claim-specific conclusion: These results establish a universal new physical or mathematical law, or a demonstrated deployed industrial impact."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Quadrature combines coherent recoil, activity-linked dispersion and a floor with correct units: k dimensionless, a sqrt(GeV), c GeV. Shared detector reconstruction makes agreement diagnostic rather than independent momentum-conservation evidence."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A concise selected-sample reconstruction response with tested Rician and subsystem-variance countermodels."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "2015 educational four-lepton skim, related object/MET reconstruction, no control backgrounds or truth simulation; only two held periods.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    }
+  ],
+  "review_scope": "Scientific interpretation, source semantics, information budget and evidence; independent from discovery and the computational reviewer for these cases.",
+  "literature": [
+    {
+      "url": "https://opendata.cern.ch/record/93918",
+      "use": "Primary-source context and distinction from the scoped task",
+      "access": "Primary source inspected by this reviewer on 2026-10-02."
+    },
+    {
+      "url": "https://arxiv.org/abs/1802.08168",
+      "use": "Primary-source context and distinction from the scoped task",
+      "access": "Primary source inspected by this reviewer on 2026-10-02."
+    }
+  ],
+  "blocking_defects": [],
+  "recommendations": [
+    "Keep MET components/angle/truth excluded and retain the positive-floor/reconstruction interpretation rather than inferring missing-particle physics."
+  ]
+}

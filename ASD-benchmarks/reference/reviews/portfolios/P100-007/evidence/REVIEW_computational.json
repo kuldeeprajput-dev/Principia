@@ -1,0 +1,346 @@
+{
+  "case_id": "P100-007",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "1d449d311045df2d6ad9652b9133db26aebef8433c694765904b17f1f7cb8394"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "7e7382001ec8b3c21f5872165fb9e116d37248d3f3cb812eec4d00f64d9ab908"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "dcce3bc24c57d3022dfa08b23695fa82c48a4592b825c61cc3784c9e69201809"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "8ad71a06e02161990c6fc9fb768e52538422c536660c2c047d4e5bb1256c98a5"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "c1c58e61cb7de174c5d7afd3190c9b9e33601ade54561b1e2e12bcdf6aed89a6"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "4127ced29e3b9b64da6dd5df387a827ad61798020a4dba5c895747fc98016450"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "bab78493373e0adef4a5ada564cddba717707f21dfc8f607319328d9c8c73b92"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "df87a3b55902c1f3a4b906f9674c3c71ac400f86a6e633738c4bf1e332b5b112"
+    },
+    {
+      "path": "native.py",
+      "sha256": "dc048238e29dc8a8c3348f6d658c1468a2b78ccd67af029b16a7fb53602d1408"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "da4da77cba349ab20ca523c6249462796aa053e7f9562bbfe38a59dbfcd191af"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "83780dd2956351a283066e1d850451377e4265681d53d41bcc229320bccc1f44"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "893f3058494fd590a9e22ad9b7d2d8b2c9d74437cc6b4b6d352f17a86d155c9e"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "80a5255c950481f994dedba72d4715f8dc900a32315f63c702a619e188ce57a9"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "e1f227eec36439f67428f7753913c5e40372b67f94e632590a683fc5ac16fd32"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "5eb198383a49cc628b81931c64f622f58e4bebf85852f9a049d62447e4be807b"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-007-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. A phase-copy baseline transfers to one held faster trial from the same participant. The tested damping, stiffness and bilateral extensions fail; this is within-person gait-force forecasting, not population biomechanics or joint-load inference."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. A phase-copy baseline transfers to one held faster trial from the same participant. The tested damping, stiffness and bilateral extensions fail; this is within-person gait-force forecasting, not population biomechanics or joint-load inference."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. A phase-copy baseline transfers to one held faster trial from the same participant. The tested damping, stiffness and bilateral extensions fail; this is within-person gait-force forecasting, not population biomechanics or joint-load inference."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "A phase-copy baseline transfers to one held faster trial from the same participant. The tested damping, stiffness and bilateral extensions fail; this is within-person gait-force forecasting, not population biomechanics or joint-load inference.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-007-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. A phase-copy baseline transfers to one held faster trial from the same participant. The tested damping, stiffness and bilateral extensions fail; this is within-person gait-force forecasting, not population biomechanics or joint-load inference."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. A phase-copy baseline transfers to one held faster trial from the same participant. The tested damping, stiffness and bilateral extensions fail; this is within-person gait-force forecasting, not population biomechanics or joint-load inference."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. A phase-copy baseline transfers to one held faster trial from the same participant. The tested damping, stiffness and bilateral extensions fail; this is within-person gait-force forecasting, not population biomechanics or joint-load inference."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "A phase-copy baseline transfers to one held faster trial from the same participant. The tested damping, stiffness and bilateral extensions fail; this is within-person gait-force forecasting, not population biomechanics or joint-load inference.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-007",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-007",
+      "native_rows": 2958,
+      "confirmation_rows": 1041,
+      "models": 10,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 10,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 5.684341886080802e-14,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 1041,
+        "primary_error": 55.873406682997114,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_persistence",
+        "rows": 1041,
+        "primary_error": 238.92502427396735,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_velocity",
+        "rows": 1041,
+        "primary_error": 288.3786969035542,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_periodic",
+        "rows": 1041,
+        "primary_error": 55.873406682997114,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_flexible",
+        "rows": 1041,
+        "primary_error": 173.06852914371478,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001_damped",
+        "rows": 1041,
+        "primary_error": 219.8783457910095,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002_phase",
+        "rows": 1041,
+        "primary_error": 94.17585176069386,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003_bilateral",
+        "rows": 1041,
+        "primary_error": 212.9500227878653,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004_stance",
+        "rows": 1041,
+        "primary_error": 208.49072394167658,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005_phase_bilateral",
+        "rows": 1041,
+        "primary_error": 100.34144335507781,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "0.5"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "0.75"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "0.5"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "0.75"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "0.5"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "0.75"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "0.5"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "0.75"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "0.5"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "0.75"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "A phase-copy baseline transfers to one held faster trial from the same participant. The tested damping, stiffness and bilateral extensions fail; this is within-person gait-force forecasting, not population biomechanics or joint-load inference."
+}

@@ -1,0 +1,18 @@
+{
+  "case": 76,
+  "target": "evoked_spike_count",
+  "unit": "spikes per stimulus",
+  "inputs": [
+    "current",
+    "soft",
+    "kd",
+    "cal_mean",
+    "cal_last"
+  ],
+  "kind": "mae",
+  "source": "https://zenodo.org/records/12802682",
+  "paper": "https://doi.org/10.1038/s41467-025-64810-3",
+  "scope": "DIV7 cells only; complete dishes linked, final recording date reserved. Culture/animal provenance may share latent batches; do not treat cells or dishes as independent donor replications.",
+  "calibration": "Per-cell spike counts at applied current<=10pA; later currents>10pA forecast. Source manual FI eligibility preserved.",
+  "timing": "Predict higher-current evoked spike counts after the lower-current prefix for that cell. No future rheobase or peak-response calibration."
+}

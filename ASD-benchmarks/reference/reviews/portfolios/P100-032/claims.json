@@ -1,0 +1,298 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-032",
+  "claim_origin": "New ASD6 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication."
+  },
+  "findings": [
+    {
+      "id": "P100-032-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "The selected autoregressive control gives a usable signal-prediction reference for this instrument/protocol. Its gain is a bounded signal-model result, not a new respiratory law.",
+      "applicability": "Five reserved participants are a small internal cohort, and all are from a healthy study. Trial duration affects within-person weighting; complete trials stay linked. The target is one recorded pressure signal, not an independently measured physiological parameter.",
+      "limitations": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "falsification": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "prior_art": "The source study describes respiratory monitoring under rapid occlusion and model-based work-of-breathing analysis. Persistence, pressure-slope extrapolation and autoregressive forecasting are established controls; predictive success does not identify resistance, compliance, muscle pressure or clinical utility.",
+      "equation_or_program": {
+        "expression": "P_hat(t+0.20 s) = beta_0 + sum_{j=1}^{13} beta_j * phi_j(t). Here phi=(p0,p05,p10,p20,p30,p40,p50,di0,de0,di20,de20,p0*FEM,p0*BH). The p terms are gauge pressures at lags0,0.05,0.10,0.20,0.30,0.40 and0.50s; di and de are inspiratory/expiratory differential pressures, with0 and0.20s lags. Every pressure is in cmH2O; FEM and BH are declared trial indicators. The intercept is 0.04519408cmH2O, and the current gauge-pressure coefficient is 1.739696. All coefficients are already transformed back from training feature-RMS scaling: apply this dot product directly to the physical-unit inputs, with no additional scaling.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "cmH2O",
+        "p0": "cmH2O",
+        "p05": "cmH2O",
+        "p10": "cmH2O",
+        "p20": "cmH2O",
+        "p30": "cmH2O",
+        "p40": "cmH2O",
+        "p50": "cmH2O",
+        "di0": "cmH2O",
+        "de0": "cmH2O",
+        "di20": "cmH2O",
+        "de20": "cmH2O",
+        "trial_BH": "binary",
+        "trial_FEM": "binary"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-032.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-032-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "Damped slopes, occlusion-period acceleration, differential-pressure drive, regime interactions and bounded inertia were tested. None displaced the flexible control on participant-held-out development data.",
+      "applicability": "Five reserved participants are a small internal cohort, and all are from a healthy study. Trial duration affects within-person weighting; complete trials stay linked. The target is one recorded pressure signal, not an independently measured physiological parameter.",
+      "limitations": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "falsification": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "prior_art": "The source study describes respiratory monitoring under rapid occlusion and model-based work-of-breathing analysis. Persistence, pressure-slope extrapolation and autoregressive forecasting are established controls; predictive success does not identify resistance, compliance, muscle pressure or clinical utility.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "cmH2O",
+        "p0": "cmH2O",
+        "p05": "cmH2O",
+        "p10": "cmH2O",
+        "p20": "cmH2O",
+        "p30": "cmH2O",
+        "p40": "cmH2O",
+        "p50": "cmH2O",
+        "di0": "cmH2O",
+        "de0": "cmH2O",
+        "di20": "cmH2O",
+        "de20": "cmH2O",
+        "trial_BH": "binary",
+        "trial_FEM": "binary"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-032.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 8859,
+      "sha256": "4a7f3acb40ab24cd50b80bf863e6f48ef0d1e293454896426dcbe4ac0c956ac4",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 682,
+      "sha256": "09a7856d309745cfebbd3bed9ee1e002202eab8100736a972d989d6f7ca261e8",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 2005,
+      "sha256": "77e903ec394ee07ed9b6162a82e77ef06e8b302a762bbcce9d9be37c93ac2161",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_SOURCE_AND_UNITS.md",
+      "bytes": 947,
+      "sha256": "f6cedef921c78e531a4c6789b47d3451ddd35f5aac546b69a04507671361d985",
+      "id": "E004",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E005_SOURCE_MANIFEST.json",
+      "bytes": 15770,
+      "sha256": "c1dd1d6bcc5992c219e6595b31256942db2bf51fdde8d78017750f07da8b641d",
+      "id": "E005",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E006_SPLITS.json",
+      "bytes": 1347,
+      "sha256": "4b3f8f414ab76ec9b716a9dffde0214b3d1e295e804b6bb1ff453a4b625bcff6",
+      "id": "E006",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E007_native.py",
+      "bytes": 2038,
+      "sha256": "bc95a506d879c7a9e65ad7bbc1be60bdc087cd2f4c516b64218119e6ef30f7c8",
+      "id": "E007",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E008_EQUATIONS.md",
+      "bytes": 1572,
+      "sha256": "f39ccd92bff32c1b71c1b4166012e14413bc316629a2aece5168e1a8a3ab1505",
+      "id": "E008",
+      "role": "package/EQUATIONS.md"
+    },
+    {
+      "path": "evidence/E009_FINDINGS.md",
+      "bytes": 4765,
+      "sha256": "7afa1c1d35673143ea230059fde7e4822d82457ca2f54a20da31ca07f74809aa",
+      "id": "E009",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E010_inputs.csv.gz",
+      "bytes": 121525,
+      "sha256": "e4c2fd9ed5e1db14beb5d87d1d03d5530793ec8921f48bd3f2731ced3d541661",
+      "id": "E010",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E011_observations.csv.gz",
+      "bytes": 46357,
+      "sha256": "40103d5a18a0cfdac6d68d54df22f783d500fd5fd9b112a7a5952e59e2801530",
+      "id": "E011",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E012_by_group.csv",
+      "bytes": 3931,
+      "sha256": "212a630690d06344f0c752729db01f5d9e8580979135af697f30018f4c24bee9",
+      "id": "E012",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E013_metrics.csv",
+      "bytes": 763,
+      "sha256": "d755aafa0b3db871a7be9b7119316e59c418c1b0ff3d3babc0b3e15667e998d0",
+      "id": "E013",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 267401,
+      "sha256": "bbc6e8c0095c97f3baa3c5e5344c9d274876d8ef7f4d28a31dbab31225fe204a",
+      "id": "E014",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_findings.json",
+      "bytes": 4134,
+      "sha256": "2af205b64c06f69bbd982276a621762991b30cf54d919a725099abdb1c130d73",
+      "id": "E015",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E016_rules.json",
+      "bytes": 10400,
+      "sha256": "2fbc21c435c6685a524c5d80c45292e8dd5c85a57b12b1aad60e85c81b381ad6",
+      "id": "E016",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E017_run.py",
+      "bytes": 6907,
+      "sha256": "9119985a53737d57dec07f6e2ab4e3cf043b9fe013901337de9d676367d0e276",
+      "id": "E017",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E018_task_spec.json",
+      "bytes": 2155,
+      "sha256": "b9aa300751ce4890ba2ffd5110fcbffec2d9e3b6f8e67f464806bcc823b4e022",
+      "id": "E018",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 7106,
+      "sha256": "a901171438f1c1d6f39da306f50dbbd81d14be56753ce25038a2c0e98c09c21a",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 6192,
+      "sha256": "a7206a95336413eb1889ea7343055ccbc52dcfca621f9e4e8cccd2cce8b503be",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "finite_pulse_diffusion",
+  "formula": "u120+(u120-u60)*(sqrt(t+pulse_s)-sqrt(t)-sqrt(t120+pulse_s)+sqrt(t120))/(sqrt(t120+pulse_s)-sqrt(t120)-sqrt(t60+pulse_s)+sqrt(t60))",
+  "hypothesis": "Attempt1: finite-duration diffusion relaxation fixes its shape from the measured pulse duration; it can extrapolate voltage increments without identifying equilibrium voltage or diffusivity.",
+  "inputs": [
+    "t",
+    "t60",
+    "t120",
+    "u60",
+    "u120",
+    "u10",
+    "pulse_s",
+    "current"
+  ],
+  "initial": {},
+  "bounds": {},
+  "recorded_utc": "2026-10-02T01:43:29.255311+00:00",
+  "parent": null
+}

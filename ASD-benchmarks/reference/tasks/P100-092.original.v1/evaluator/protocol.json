@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-092",
+  "protocol_id": "P100-092-prepared-primary-v1",
+  "target": "Channel-resolved burst-mean RSSI",
+  "target_units": "dBm",
+  "primary_units": "dB",
+  "metric_kind": "mae",
+  "metric_definition": "Mean across the three reserved dates of within-date mean absolute RSSI error (dB). Both available furniture conditions remain on their native date.",
+  "independent_unit": "complete measurement date (all available furniture states)",
+  "evaluation_groups": [
+    "11012024",
+    "15022024",
+    "23022024"
+  ],
+  "input_sha256": "c0d3b3114abd405158839dee7418f258e29b92c546d887ffcaea199ed842767c",
+  "input_rows": 15600,
+  "assigned_rows": 15600,
+  "permitted_inputs": [
+    "r0",
+    "channel_contrast",
+    "spatial_contrast",
+    "port",
+    "channel",
+    "day",
+    "furniture"
+  ],
+  "input_units": {
+    "r0": "dBm",
+    "channel_contrast": "dB",
+    "spatial_contrast": "dB",
+    "port": "categorical P1\u2013P8",
+    "channel": "channel number 37/38/39",
+    "day": "elapsed days",
+    "furniture": "binary indicator"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "compact",
+    "flexible",
+    "unchanged_calibration"
+  ],
+  "reference_equations": {
+    "compact": "RSSI=r0+b0+bf*furniture+bc*channel_contrast/10+bcf*furniture*channel_contrast/10+bs*spatial_contrast/10+bsf*furniture*spatial_contrast/10",
+    "flexible": "RSSI=r0+sum(beta_j*phi_j); 48 port/channel\u00d7furniture terms plus 27 declared quadratic terms, all fixed in model.json and runtime.predict.",
+    "unchanged_calibration": "RSSI=r0"
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "scope_limit": "Temporal transfer on days 51,86,94 at calibrated positions in one installation. Not unseen-position prediction or independent antenna-efficiency identification.",
+  "calibration_note": "Initial 3120-cell measured RSSI map is a declared input, with same-position channel and same-channel spatial contrasts. No target-date RSSI recalibration.",
+  "timing_contract": "Only the initial calibration map and known date/furniture/antenna/channel metadata are allowed. Whole dates remain grouped; repeated packets/cells are not independent experiments.",
+  "exposure_notice": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Only 3 groups, with system-level dependence; report individual effects without a population confidence interval."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Audit raw sample anchors and timestamp/phase cutoffs. Identify every predictor and all calibration; exclude future responses and identifier memorization. Only the initial calibration map and known date/furniture/antenna/channel metadata are allowed. Whole dates remain grouped; repeated packets/cells are not independent experiments."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

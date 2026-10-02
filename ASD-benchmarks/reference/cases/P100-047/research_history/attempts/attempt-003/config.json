@@ -1,0 +1,18 @@
+{
+  "case": 47,
+  "type": "linear",
+  "features": [
+    "one",
+    "N",
+    "S",
+    "T",
+    "NP",
+    "logP"
+  ],
+  "offset": "O",
+  "scale": null,
+  "alpha": 0,
+  "title": "Depth-dependent remineralization proxy",
+  "hypothesis": "The nitrate association can vary with log pressure; this tests regime structure, not a reaction-rate mechanism.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 29.77296729820867, \"worst_group\": 45.382285764999715}, {\"attempt\": \"attempt-002\", \"group_MAE\": 17.42558269500077, \"worst_group\": 25.556498462561166}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Water-mass controls reduce error from29.77 to17.43 but flexible control reaches10.18. Test a depth-dependent nitrate association.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state."
+}

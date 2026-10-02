@@ -1,0 +1,70 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-051.original.v1.raw-access.v1",
+  "parent_task_id": "P100-051.original.v1",
+  "case_id": "P100-051",
+  "protocol_version": "P100-051.original.v1.raw-access.v1",
+  "cohort_id": "P100-051.original.v1.cohort-1",
+  "parent_task_sha256": "000b50d2c65b4a5ca2e51368b86da7c4ed4398059a832e84e36cc17d1c8a04f9",
+  "input_sha256": "89865ca1db73dc3005b8f0e820022bb251b880e76271223815a27c77463981bc",
+  "observations_sha256": "77598fcf5db5afda627ed98e714b1daa2e67556c3f3541994cfddbe51e2b2898",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "51_semiconductor_heterostructure_memories",
+  "source_assets": [
+    {
+      "path": "raw/Figure 2e-Vg sweep of 36 FET.csv",
+      "sha256": "d085783652415cca892f51c5e5db06f0ac4777a9fa30bf2b9f7ed30892fb9cfa",
+      "bytes": 87396
+    },
+    {
+      "path": "PROVENANCE.json",
+      "sha256": "902ac6ee82510f27b7a90cbf1690a228d2f8cf9e481375989d2c69fb263011b1",
+      "bytes": 59856
+    },
+    {
+      "path": "context/source_record.json",
+      "sha256": "5ee5955cfad64ab0bcb16a758a14d0e521714ed3ba3257e2ed86edcf683cdda1",
+      "bytes": 17412
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "gate_V": "V",
+      "cal_minus20_uA": "uA",
+      "cal_zero_uA": "uA",
+      "cal_plus20_uA": "uA"
+    },
+    "observation_window": "offline sparse-characterization task: three responses at -20,0,20 V are obtained before reconstructing other gate points; not an uncalibrated or causal sweep forecast",
+    "calibration_and_history": "Exactly three same-device current measurements at Vg=-20,0,20 V; all models see the same anchors; those points excluded from scores.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Same-device three-anchor calibration and one array; no between-batch replication."
+  ],
+  "current_outcomes_exposed": true
+}

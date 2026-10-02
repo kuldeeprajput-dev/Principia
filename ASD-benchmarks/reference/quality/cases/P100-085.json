@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-085",
+  "title": "Acetate co-feeding increases Ethylene Glycol assimilation and Glycolic Acid production in Yarrowia lipolytica",
+  "default_task": "P100-085.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Glycolic acid concentration",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 1,
+    "independent_unit_description": "Complete flask conditions; three development conditions and one metadata-hash confirmation condition; leave-one-condition-out folds keep all replicates together.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+  "baseline_strength": {
+    "registered_controls": 11,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "unsupported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Glycolic acid concentration",
+    "prediction_time": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "All four scored targets were visible during schema inspection; retrospective throughout."
+  },
+  "task_ids": [
+    "P100-085.original.v1"
+  ],
+  "finding_ids": [
+    "P100-085-F01",
+    "P100-085-F02",
+    "P100-085-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-085/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-085.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Glycolic acid concentration under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+    "calibration_requirement": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Glycolic acid concentration in g/L",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "All four scored targets were visible during schema inspection; retrospective throughout."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "g/L",
+    "reference_model": "reference",
+    "reference_primary_error": 0.9450000000000005,
+    "reference_physical_mae": 0.9450000000000005,
+    "physical_error_units": "g/L",
+    "lowest_registered_error_model": "baseline_flexible",
+    "lowest_registered_error": 0.37929853786441337,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-085.original.v1/evidence/metrics.csv",
+      "bytes": 810,
+      "sha256": "9d7b55523fcb82f37c15d692e6d6378139639a08e0b21a2bee8462a7c30d9818"
+    },
+    "models": 11
+  },
+  "case_specific_next_evidence": "Obtain independently repeated medium/pH conditions with assay uncertainty and carbon-balance measurements.\n\nResolve identical but oppositely named bioreactor files with the depositor before any feed-regime scientific claim.\n\nTest proposed kinetics with controlled substrate/cofeed experiments and a genuinely unexposed whole-condition cohort."
+}

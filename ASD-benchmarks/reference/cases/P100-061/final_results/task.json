@@ -1,0 +1,139 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-061.original.v1",
+  "case_id": "P100-061",
+  "case_number": 61,
+  "family": "original",
+  "protocol_version": "P100-061-prepared-primary-v1",
+  "cohort_id": "P100-061.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-061.original.v1",
+  "legacy_package": "61_chemistry_membrane_permeation/final_results",
+  "source_scenario": "scenarios/61_chemistry_membrane_permeation",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Measured hydrogen permeation flux",
+  "target_units": "mol s^-1 m^-2",
+  "error_units": "mol s^-1 m^-2",
+  "primary_units": "mol s^-1 m^-2",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "membrane_index",
+    "gas",
+    "temperature_K",
+    "feed_fraction",
+    "normal_flow_L_min",
+    "permeate_bar",
+    "retentate_bar",
+    "area_m2",
+    "diameter_m"
+  ],
+  "input_units": {
+    "membrane_index": "integer index 0 to 3 of calibrated membrane",
+    "gas": "categorical N2, Ar or He",
+    "temperature_K": "K",
+    "feed_fraction": "mol H2 per mol feed, fraction",
+    "normal_flow_L_min": "normal L min^-1; assumed 22.414 L mol^-1",
+    "permeate_bar": "bar, absolute",
+    "retentate_bar": "bar, absolute",
+    "area_m2": "m^2",
+    "diameter_m": "m"
+  },
+  "numeric_columns": [
+    "membrane_index",
+    "temperature_K",
+    "feed_fraction",
+    "normal_flow_L_min",
+    "permeate_bar",
+    "retentate_bar",
+    "area_m2",
+    "diameter_m"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Known membrane, inert gas, temperature, feed fraction, absolute pressures, normal feed flow and specimen geometry only; no mixture flux or held-out pure-hydrogen response.",
+  "calibration": "All models have the declared 64 pure-hydrogen measurements at 350/450 C through frozen pressure/permeance calibration. No 400 C calibration was available during fitting. Normal molar volume 22.414 L/mol is a stated convention.",
+  "independent_unit": "complete inert-gas block at reserved 400 C across the four calibrated membranes",
+  "evaluation_groups": [
+    "Ar-T400",
+    "He-T400",
+    "N2-T400"
+  ],
+  "assigned_rows": 60,
+  "eligible_rows": 60,
+  "baseline_models": [
+    "attempt-004",
+    "mean",
+    "sieverts",
+    "richardson",
+    "rbf",
+    "rbf_nested"
+  ],
+  "reference_model": "attempt-004",
+  "models": {
+    "attempt-004": {
+      "equation": "J=P_m(T)*[max(p_r*xbar(J)-J/k,p_p)^n_m-p_p^n_m]; xbar=(x-z/2)/(1-z/2); z=J*A/Fmol; k=K_m*G_g*(F/5)^0.6*(T/673.15)^1.75; numerical pressures are absolute bar; Fmol=F/(60*22.414). Positive bounded root.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "mean": {
+      "equation": "Jhat=development mixture mean for the calibrated membrane.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "sieverts": {
+      "equation": "J0=P_m(T)*max((x*p_r/bar)^n_m-(p_p/bar)^n_m,0), with frozen pure-hydrogen Arrhenius calibration; n=0.5 for Sieverts.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "richardson": {
+      "equation": "J0=P_m(T)*max((x*p_r/bar)^n_m-(p_p/bar)^n_m,0), with frozen pure-hydrogen Arrhenius calibration; n=0.5 for Sieverts.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rbf": {
+      "equation": "Jhat=J0*exp(clip(sum_i w_i exp(-||standardize(X)-center_i||^2/(2*h^2)),-3,3)); all calibration, scaling, centers and weights frozen.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rbf_nested": {
+      "equation": "Jhat=J0*exp(clip(sum_i w_i exp(-||standardize(X)-center_i||^2/(2*h^2)),-3,3)); all calibration, scaling, centers and weights frozen.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every complete reserved group. Within-system and temporal dependence, few condition blocks or calibrated sites limit population-level claims; no row-bootstrap confidence interval is claimed."
+  },
+  "scope_limits": "Sixty mixture observations in three gas blocks at 400 C, on four previously calibrated membranes. Temperature interpolation in these systems, not independent new-specimen or separator transfer.",
+  "source_url": "https://zenodo.org/records/10691625",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "2538f8c2dc968a15b353c1dcc913c7dca48fdf8a9c8ad9546ab198e1694e191e",
+  "observations_sha256": "405cf858df8c88b9347046cfe35ec5fad10d86a2b588355df744327390600a52",
+  "legacy_protocol_sha256": "0f5dd9f0e6572336c0cdb6bab20dbcb990091400d4fc0417206edf735f3413e0",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Household food insufficiency: cross-wave limits of resource-response models",
+  "summary": "A compact resource-threshold model improves development risk, but its advantage over a matched flexible model does not transfer to May2026. The portfolio supports limited descriptive resource associations and preserves a failed cross-wave extension.",
+  "data": "Census March/May2026 HTOPS HPS cross-sections,10799complete development households and10986Mayconfirmation households; fourregions each. No linkedSCRAMID overlap. HWEIGHT operates within equalregions. Household-size topcodes and source missing codes remain explicit.",
+  "equations": "R=ln(I/sqrt(H)), A=(age-45)/20, S=employment-income-loss flag. p=logistic(a+bL*(3-R)_+ +bH*(R-3)_+ +c*S+d*A). Coefficients [a,bL,bH,c,d]=[-1.7111056039151187, 0.311445242697529, -2.0804188967995554, 1.126870451085675, -0.5980075149258]. I uses declared income-bracket thousandUSD proxies; fixed logresource hinge3 is not an official poverty boundary.",
+  "performance": "Selected005 confirmation Brier0.060243 versusconstant0.063749,resourcebaseline0.060808 andflexible0.059176. The flexible control is better, as are several unselected alternatives; no post-confirmation reselection. Worstregion0.097214 shows substantial regional heterogeneity.",
+  "value": "Useful for assessing whether an interpretable survey relationship transfers across surveywaves and whether development-selected simplicity survives changing household composition. It does not establish a causal income-loss intervention or a new universal household-needs scale.",
+  "findings": [
+    {
+      "classification": "reproduction",
+      "admission": "partially_supported",
+      "claim": "Declared household resources and reported income loss help describe food-insufficiency responses relative to prevalence-only prediction.",
+      "equation": "Resource-hinge logistic equation above.",
+      "interpretation": "Consistent with established material-resource vulnerability, with coarse brackets and overlapping recall windows.",
+      "falsification": "Mayflexible model outperforms reference; fourregions,complete-case selection and cross-wave composition limit generalization."
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Development preference for a fixed resource hinge does not establish its cross-wave superiority or a physical household threshold.",
+      "equation": "Attempts002/003/006/008/009 challenge equivalence,buffering,agecurvature,link andper-capita scales.",
+      "interpretation": "Conflicting mean/worst-region tradeoffs and future-wave reversal expose model-selection uncertainty.",
+      "falsification": "HeldBrierreference0.060243 exceedsflexible0.059176; source has no independent intervention outcome."
+    }
+  ],
+  "lessons": "A complete held wave is stronger than random rows. Keep household weights separate from personweights. Resource bracket proxies and a convenient hinge cannot become an economic law. Report unselected models that outperform later without promoting them.",
+  "unresolved": [
+    "No independent scientific adjudication or new experimental replication.",
+    "Source-aware final cohort is exposed for all future revisions."
+  ]
+}

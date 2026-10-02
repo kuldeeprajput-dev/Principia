@@ -1,0 +1,133 @@
+{
+  "case_id": "P100-032",
+  "role": "scientific_critical",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "7afa1c1d35673143ea230059fde7e4822d82457ca2f54a20da31ca07f74809aa"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "2af205b64c06f69bbd982276a621762991b30cf54d919a725099abdb1c130d73"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "2fbc21c435c6685a524c5d80c45292e8dd5c85a57b12b1aad60e85c81b381ad6"
+    },
+    {
+      "path": "package/EQUATIONS.md",
+      "sha256": "f39ccd92bff32c1b71c1b4166012e14413bc316629a2aece5168e1a8a3ab1505"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "b9aa300751ce4890ba2ffd5110fcbffec2d9e3b6f8e67f464806bcc823b4e022"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "d755aafa0b3db871a7be9b7119316e59c418c1b0ff3d3babc0b3e15667e998d0"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "212a630690d06344f0c752729db01f5d9e8580979135af697f30018f4c24bee9"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "f6cedef921c78e531a4c6789b47d3451ddd35f5aac546b69a04507671361d985"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "09a7856d309745cfebbd3bed9ee1e002202eab8100736a972d989d6f7ca261e8"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "77e903ec394ee07ed9b6162a82e77ef06e8b302a762bbcce9d9be37c93ac2161"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "4a7f3acb40ab24cd50b80bf863e6f48ef0d1e293454896426dcbe4ac0c956ac4"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-032-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The autoregressive reference improves five-participant pressure forecast MAE0.49151 to0.37185cmH2O, while every proposed physical extension loses to the flexible control."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Gauge pressure is a measured signal; absent independent muscle pressure/flow-volume identification prevents interpreting fitted lags as resistance or compliance."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source-publication review is disclosed, but the model families are established and the search is targeted. No literature-priority certification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful causal signal-forecasting test, not a clinical utility result. Assess independent patient populations and device/protocol transfer separately."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Executable coefficients, native anchors and group evidence are present; independent computational review checks arithmetic separately."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent clinical, industrial, financial or experimental intervention benefit was measured."
+        }
+      },
+      "checks": [
+        "Inspected native units/endpoint audit, source prior art, frozen information budget and selection history",
+        "Read every comparator and group error including adverse retrospective winners",
+        "Separated calibrated prediction, mechanistic interpretation and novelty/impact claims"
+      ],
+      "limitations": [
+        "Gauge pressure is a measured signal; absent independent muscle pressure/flow-volume identification prevents interpreting fitted lags as resistance or compliance.",
+        "A useful causal signal-forecasting test, not a clinical utility result. Assess independent patient populations and device/protocol transfer separately."
+      ]
+    },
+    {
+      "finding_id": "P100-032-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The autoregressive reference improves five-participant pressure forecast MAE0.49151 to0.37185cmH2O, while every proposed physical extension loses to the flexible control."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Gauge pressure is a measured signal; absent independent muscle pressure/flow-volume identification prevents interpreting fitted lags as resistance or compliance."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source-publication review is disclosed, but the model families are established and the search is targeted. No literature-priority certification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful causal signal-forecasting test, not a clinical utility result. Assess independent patient populations and device/protocol transfer separately."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Executable coefficients, native anchors and group evidence are present; independent computational review checks arithmetic separately."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent clinical, industrial, financial or experimental intervention benefit was measured."
+        }
+      },
+      "checks": [
+        "Inspected native units/endpoint audit, source prior art, frozen information budget and selection history",
+        "Read every comparator and group error including adverse retrospective winners",
+        "Separated calibrated prediction, mechanistic interpretation and novelty/impact claims"
+      ],
+      "limitations": [
+        "Gauge pressure is a measured signal; absent independent muscle pressure/flow-volume identification prevents interpreting fitted lags as resistance or compliance.",
+        "A useful causal signal-forecasting test, not a clinical utility result. Assess independent patient populations and device/protocol transfer separately."
+      ]
+    }
+  ],
+  "novelty_certified": false,
+  "independent_experimental_replication": false
+}

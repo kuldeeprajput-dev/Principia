@@ -1,0 +1,447 @@
+{
+  "schema_version": "principia.advisory-review/3.0",
+  "bindings": {
+    "claims_sha256": "7900d43fa28f06e1838020e2ab37f443c265ed3edf7294f538a2c642f83348e6",
+    "evidence_sha256": {
+      "E001": "2eb60315d34d82c32dce7770ce2489ad5af937e4e158c505f808d9a176f29fc4",
+      "E002": "51756554495a5336c0c9c0c492c7c4f665627b1e52a1abe1a0c604ff521daebe",
+      "E003": "15d56bb86ef27eb9e13650b5a9618b0434f270afde4be258be852a7d21af87ec",
+      "E004": "9438b78a7b952653755c017c33c689cef32d3b81262c40e41e50fe77e4249d4c",
+      "E005": "869513099fd91c1bd15c4b116596a5816d86798abaf82d75f7eec3f0c05a0af3",
+      "E006": "efab7989e3ddd17dfc22815c99e7f20896da83565d21f9da4141ae2aa32f4362",
+      "E007": "501d2733bf259db3456652baef786e1311739f16db594dfba149a52d42ddd645",
+      "E008": "58fdc65713e03fb5cbbf784d34bd98b6972614734710b158d376c28e0070ef11",
+      "E009": "5a190e1a22b69626cf9b1f679ebc7733ef08e6ecbcdeb14607e962f1452682a2",
+      "E010": "afaad9c701c68787b2a3b5877743f3d81e18dbbd4ade27c3f64b559d85b9e35b",
+      "E011": "3c2701119161f145326db7bd85dd8699c6884bf613906b344296865ec9eea0a3",
+      "E012": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253",
+      "E013": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078",
+      "SCIENTIFIC": "73f9a85768b8b4637041b9ba505dd45a971f6b158ec2aae8ecf40258a7e6eeb9",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-037",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "reviews": [
+    {
+      "finding_id": "P100-037-SCI-01",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-037-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-037-SCI-01",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history. Strong adverse evidence: Compact wins only 1/5 runs against flexible; routerA standalone byte-load coefficient is negative. Packet rate is algebraic throughput/size rather than independent energy evidence.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Workload correlates with power; separate byte, packet and thermal costs are not experimentally identified.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Saturation/workload power models are established; no independent new processing law is supported. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Compact wins only 1/5 runs against flexible; routerA standalone byte-load coefficient is negative. Packet rate is algebraic throughput/size rather than independent energy evidence."
+        ],
+        "checks": [
+          "Compare whole-run errors by router/protocol and retain the missing power response.",
+          "Keep algebraic packet-rate derivation explicit and test matched information access.",
+          "Require a future-input perturbation test for any dynamic submission and independently timed temperature for thermal claims."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-037-SCI-02",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-037-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "not_assessed",
+            "rationale": "This exact historical claim does not map one-to-one to a registered numerical task. The portfolio-level replay review does not establish claim-specific implementation parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "not_assessed",
+            "rationale": "This exact historical claim does not map one-to-one to a registered numerical task. The portfolio-level replay review does not establish claim-specific implementation parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "not_assessed",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-037-SCI-02",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history. Strong adverse evidence: Development MAE 4.19072 W and 4.1835 W for two positive families remains worse than flexible controls. Physical positivity alone does not identify processing costs.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "mechanism": {
+            "status": "unsupported",
+            "rationale": "Workload correlates with power; separate byte, packet and thermal costs are not experimentally identified.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Saturation/workload power models are established; no independent new processing law is supported. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "significance": {
+            "status": "supported",
+            "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E005",
+              "E006"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Development MAE 4.19072 W and 4.1835 W for two positive families remains worse than flexible controls. Physical positivity alone does not identify processing costs."
+        ],
+        "checks": [
+          "Compare whole-run errors by router/protocol and retain the missing power response.",
+          "Keep algebraic packet-rate derivation explicit and test matched information access.",
+          "Require a future-input perturbation test for any dynamic submission and independently timed temperature for thermal claims."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-037-SCI-03",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "significance",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-037-SCI-03",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Numerical contracts, independent aggregate metrics and isolated reference replay pass. Computational evidence does not establish original causal identification or unseen-population performance.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Scientific interpretation belongs to the independent scientific-critical portfolio review.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No novelty inference is made from computational parity.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "significance": {
+            "status": "not_assessed",
+            "rationale": "Magnitude and domain value are evaluated by the independent scientific-critical role.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployment intervention or industrial benefit is demonstrated by replay.",
+            "evidence_ids": [
+              "COMPUTATIONAL"
+            ]
+          }
+        },
+        "disposition": "partially_supported",
+        "limitations": [
+          "All existing outcomes are exposed for future users.",
+          "Prediction-file scoring does not establish training independence.",
+          "Some historical state files omit explicit training-group inventories; missing inventories remain unknown.",
+          "Trusted replay is explicitly authorized local execution, not a security sandbox.",
+          "Alternative discoveries can be scored; references are not unique scientific ground truth."
+        ],
+        "checks": [
+          "Registered task independent metric parity and isolated reference replay; see bound computational review."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-037-SCI-03",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "The retained evidence supports the stated narrow conclusion under Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history. Strong adverse evidence: Physical positivity in the first continuation did not establish component costs; no measured temperature supports a thermal-memory interpretation.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "unsupported",
+            "rationale": "Workload correlates with power; separate byte, packet and thermal costs are not experimentally identified.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Saturation/workload power models are established; no independent new processing law is supported. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "supported",
+            "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+            "evidence_ids": [
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "disposition": "supported",
+        "limitations": [
+          "Physical positivity in the first continuation did not establish component costs; no measured temperature supports a thermal-memory interpretation."
+        ],
+        "checks": [
+          "Compare whole-run errors by router/protocol and retain the missing power response.",
+          "Keep algebraic packet-rate derivation explicit and test matched information access.",
+          "Require a future-input perturbation test for any dynamic submission and independently timed temperature for thermal claims."
+        ]
+      }
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "novelty_is_not_certified": true
+}

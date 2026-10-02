@@ -1,0 +1,297 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-056",
+  "claim_origin": "New ASD5 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "{\"status\": \"exposed\", \"confirmation_originally_withheld\": true, \"public_source_aware\": true}"
+  },
+  "findings": [
+    {
+      "id": "P100-056-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "Calibrated force saturation reduces late-curve prediction error versus elastic and flexible controls on two reserved beams.",
+      "applicability": "Only two confirmation beams; fitted caps are not structural acceptance limits.",
+      "limitations": "The main supported conclusion is protection against unrestricted elastic continuation. Concrete-specific advantage is not confirmed: the simpler common cap achieves4.75397kN, better than the preselected5.28109kN. The reference is not replaced after seeing this. Progressive rational compliance and the recent-stiffness variant achieve9.67599and9.28458kN, respectively; their favorable development fit fails to transfer to both C beams. Abrupt force drops and specimen variability remain important counterexamples.",
+      "falsification": "The main supported conclusion is protection against unrestricted elastic continuation. Concrete-specific advantage is not confirmed: the simpler common cap achieves4.75397kN, better than the preselected5.28109kN. The reference is not replaced after seeing this. Progressive rational compliance and the recent-stiffness variant achieve9.67599and9.28458kN, respectively; their favorable development fit fails to transfer to both C beams. Abrupt force drops and specimen variability remain important counterexamples.",
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "equation_or_program": {
+        "expression": "Define $u=d-d_0$, $k_0=F_0/d_0$, and $m=1$ for lightweight concrete ($m=0$ for normal-weight concrete). The frozen selected reference is\n\n$$\n\\widehat F=\\min\\{F_0+k_0u,\\ C_0+C_1m\\},\n\\qquad C_0=60.247645\\,\\mathrm{kN},\\quad C_1=-5.080368\\,\\mathrm{kN}.\n$$\n\nThe elastic component uses only the initial calibration prefix. The cap approximates loss of composite-action stiffness; it is not a design resistance. Exact coefficients and all competing states are in rules.json.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "variables_and_units": {
+        "target": "kN",
+        "deflection_mm": "mm",
+        "calibration_deflection_mm": "mm",
+        "calibration_force_kN": "kN",
+        "initial_stiffness_kN_mm": "kN/mm",
+        "recent_stiffness_kN_mm": "kN/mm",
+        "lightweight": "1"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014"
+      ],
+      "task_id": "P100-056.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-056-F02",
+      "classification": "falsified",
+      "source_classification": "unsupported_or_falsified",
+      "statement": "Concrete-specific saturation limits improve transfer over a common cap.",
+      "applicability": "The claim fails confirmation: selected5.28109kN versus common4.75397kN. Failure is retained, not reclassified as a discovery.",
+      "limitations": "The main supported conclusion is protection against unrestricted elastic continuation. Concrete-specific advantage is not confirmed: the simpler common cap achieves4.75397kN, better than the preselected5.28109kN. The reference is not replaced after seeing this. Progressive rational compliance and the recent-stiffness variant achieve9.67599and9.28458kN, respectively; their favorable development fit fails to transfer to both C beams. Abrupt force drops and specimen variability remain important counterexamples.",
+      "falsification": "The main supported conclusion is protection against unrestricted elastic continuation. Concrete-specific advantage is not confirmed: the simpler common cap achieves4.75397kN, better than the preselected5.28109kN. The reference is not replaced after seeing this. Progressive rational compliance and the recent-stiffness variant achieve9.67599and9.28458kN, respectively; their favorable development fit fails to transfer to both C beams. Abrupt force drops and specimen variability remain important counterexamples.",
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "variables_and_units": {
+        "target": "kN",
+        "deflection_mm": "mm",
+        "calibration_deflection_mm": "mm",
+        "calibration_force_kN": "kN",
+        "initial_stiffness_kN_mm": "kN/mm",
+        "recent_stiffness_kN_mm": "kN/mm",
+        "lightweight": "1"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014"
+      ],
+      "task_id": "P100-056.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-056-F03",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "Smooth compliance growth and recent prefix tangent calibration are insufficient descriptions of the reserved late response.",
+      "applicability": "Negative transfer result; failure mechanisms are not uniquely identified from six summary curves.",
+      "limitations": "The main supported conclusion is protection against unrestricted elastic continuation. Concrete-specific advantage is not confirmed: the simpler common cap achieves4.75397kN, better than the preselected5.28109kN. The reference is not replaced after seeing this. Progressive rational compliance and the recent-stiffness variant achieve9.67599and9.28458kN, respectively; their favorable development fit fails to transfer to both C beams. Abrupt force drops and specimen variability remain important counterexamples.",
+      "falsification": "The main supported conclusion is protection against unrestricted elastic continuation. Concrete-specific advantage is not confirmed: the simpler common cap achieves4.75397kN, better than the preselected5.28109kN. The reference is not replaced after seeing this. Progressive rational compliance and the recent-stiffness variant achieve9.67599and9.28458kN, respectively; their favorable development fit fails to transfer to both C beams. Abrupt force drops and specimen variability remain important counterexamples.",
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014"
+        ]
+      },
+      "variables_and_units": {
+        "target": "kN",
+        "deflection_mm": "mm",
+        "calibration_deflection_mm": "mm",
+        "calibration_force_kN": "kN",
+        "initial_stiffness_kN_mm": "kN/mm",
+        "recent_stiffness_kN_mm": "kN/mm",
+        "lightweight": "1"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014"
+      ],
+      "task_id": "P100-056.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FINDINGS.md",
+      "bytes": 3699,
+      "sha256": "61b553441770dbe6608e990b71f4fef8f395b0864324044f08882341cfaa1564",
+      "id": "E001",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E002_inputs.csv.gz",
+      "bytes": 569,
+      "sha256": "365e8b199a830017d75f7bb04e9dfba49067fa31bb4e5a2f00440de9e256475d",
+      "id": "E002",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E003_observations.csv.gz",
+      "bytes": 1325,
+      "sha256": "7dc39b57116ebd605bd235041d31d91a32d6e53135788c0ba9c7067fadad6818",
+      "id": "E003",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E004_by_group.csv",
+      "bytes": 720,
+      "sha256": "dbc635139eedc2d2a52d08ca05b191e202584172c9b75d78416052ebd826efe3",
+      "id": "E004",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E005_metrics.csv",
+      "bytes": 573,
+      "sha256": "76d9c57a4b5ad94ef11df264e48ec3ba48809560ed06b5c33854bf5eac72e92c",
+      "id": "E005",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E006_predictions.csv.gz",
+      "bytes": 2525,
+      "sha256": "4bf76daf3775f5323085c31f8193852eb3baff53a05f5a43bf4ff0074e63a1b9",
+      "id": "E006",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E007_findings.json",
+      "bytes": 4457,
+      "sha256": "10f2cb3c3ef325e2f4f22fff24de4c10622db88a52f01b2c74497beb64883d81",
+      "id": "E007",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 1978,
+      "sha256": "f56cf4f36714668b0fb637f63419efe509bc60d8d176b8d4c59d140d5a54ad6f",
+      "id": "E008",
+      "role": "package/preparation/native.py"
+    },
+    {
+      "path": "evidence/E009_rules.json",
+      "bytes": 22570,
+      "sha256": "a78776d285d6248a3f4afd65f39e4f579ab54471f8d642cd2cde6136dd7eabb4",
+      "id": "E009",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E010_run.py",
+      "bytes": 6300,
+      "sha256": "90435239d1de5599f0318ad4a691a7598388a12005c8f4bd3c6b7dd12134347f",
+      "id": "E010",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E011_FREEZE.json",
+      "bytes": 12264,
+      "sha256": "a70a2e7c892ff03a76c95fb5967b4d7d4b62eb5fadace64ba7d384e9548e8a97",
+      "id": "E011",
+      "role": "research_history/FREEZE.json"
+    },
+    {
+      "path": "evidence/E012_PRIOR_ART.json",
+      "bytes": 1223,
+      "sha256": "4819a022fe57fe0e3e1333c745b91bee48ee70f1742c7d10a4b79996eaf7ef4f",
+      "id": "E012",
+      "role": "research_history/PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E013_PROTOCOL.json",
+      "bytes": 2575,
+      "sha256": "907e33d4689551c345a2cd72572ab0abe7b11b3d5e4263f0747106402c60bb8c",
+      "id": "E013",
+      "role": "research_history/PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E014_SOURCE_AND_UNITS.md",
+      "bytes": 962,
+      "sha256": "a3b4f38a041a40e1ab5626a52d23ec2c0420932036e33667112bb4c4aff76bb2",
+      "id": "E014",
+      "role": "research_history/SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 10014,
+      "sha256": "2ba65255b61725b6e3f9a2f81152efa24774ea0f2da3892f64c7fd525cf3c7d0",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 10923,
+      "sha256": "abcceeb3a1ec65a99193d47143832f794b2a90535738390e7854e62c8c5c2abe",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

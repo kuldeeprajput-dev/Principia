@@ -1,0 +1,31 @@
+{
+  "name": "limited_curvature",
+  "formula": "(hx+hy)/2+k*((hx+hy)-(ox+oy))/2/(1+a*(gx*gx+gy*gy))",
+  "hypothesis": "Development evidence available before this fit: front_adaptive: MAE 0.0507908, worst group 0.153314; rotational_ninepoint: MAE 0.0444504, worst group 0.114452.\n\nReconcile curvature recovery with front preservation. A learned curvature coefficient is attenuated in high-contrast neighborhoods; both scales are determined using development tiles only.",
+  "inputs": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "clat"
+  ],
+  "initial": {
+    "k": 0.3,
+    "a": 1
+  },
+  "bounds": {
+    "k": [
+      0,
+      1
+    ],
+    "a": [
+      0,
+      100
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:39:45.214670+00:00",
+  "parent": "attempt-004"
+}

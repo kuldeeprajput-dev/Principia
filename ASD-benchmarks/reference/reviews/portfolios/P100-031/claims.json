@@ -1,0 +1,286 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-031",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "{\"schema\": \"Only schema and source-publication aggregate descriptions inspected; reserved target values and scores not inspected.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"21a5a324aa8901316e6a7e6070169304036e8ef13abf49a645bda7c6e1bef830\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}"
+  },
+  "findings": [
+    {
+      "id": "P100-031-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "A positive Staq startup floor plus shared pilot-time scaling improves reserved-family runtime prediction over matched frozen controls.",
+      "applicability": "Only device-transpilation successful matched tasks forTket/BQSKIT/Staq; no service remote latency. Missing/failed/timeouts excluded from conditional-success runtime target and retained in source audit; cannot infer success probability or realized routing speedup. Author timing environment differs in frequency/run state despite same CPU model.",
+      "limitations": "The pilot is a measured per-circuit calibration with real computational cost. Only successful matched cases and five held families are tested; no asymptotic-complexity, cross-hardware, quantum-physics or deployed-benefit claim is established. Metric reversal: mean family absolute runtime error is 5.1900 seconds for the reference versus 2.1163 seconds for proportional scaling. The admitted gain concerns relative log error, not uniformly improved error in seconds or measured scheduling time saved.",
+      "falsification": "The pilot is a measured per-circuit calibration with real computational cost. Only successful matched cases and five held families are tested; no asymptotic-complexity, cross-hardware, quantum-physics or deployed-benefit claim is established. Metric reversal: mean family absolute runtime error is 5.1900 seconds for the reference versus 2.1163 seconds for proportional scaling. The admitted gain concerns relative log error, not uniformly improved error in seconds or measured scheduling time saved.",
+      "prior_art": "[{\"url\": \"https://www.nature.com/articles/s43588-025-00792-y\", \"checked\": \"2026-10-02\", \"known\": \"Benchpress paper compares quantum software performance and reports compilation/task successes/failures; no new quantum physical law inferred from runtime.\"}, {\"url\": \"https://github.com/Qiskit/benchpress\", \"checked\": \"2026-10-02\", \"known\": \"Primary benchmark implementation; exact archived results are frozen locally, not rerun against current software.\"}]",
+      "equation_or_program": {
+        "expression": "rules.json models.reference: t_hat,k=A_k+B_k*x^p, SDK order Staq,Tket,BQSKIT; fixed negligible floors for Tket/BQSKIT.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "seconds",
+        "pilot_seconds": "seconds Qiskit calibration cost",
+        "qubits": "input qubit count",
+        "pilot_gates": "Qiskit output two-qubit gate count",
+        "pilot_depth": "Qiskit output two-qubit depth",
+        "load_seconds": "Qiskit QASM loading seconds",
+        "is_tket": "SDK indicator",
+        "is_bqskit": "SDK indicator,elseStaq"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-031.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-031-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "Three independently estimated SDK startup floors are not identifiable from the available data.",
+      "applicability": "Only device-transpilation successful matched tasks forTket/BQSKIT/Staq; no service remote latency. Missing/failed/timeouts excluded from conditional-success runtime target and retained in source audit; cannot infer success probability or realized routing speedup. Author timing environment differs in frequency/run state despite same CPU model.",
+      "limitations": "A positive Staq floor is an empirical identifiable fit parameter, not a uniquely identified source-code operation. Alternative pipeline decompositions require new measurements.",
+      "falsification": "A positive Staq floor is an empirical identifiable fit parameter, not a uniquely identified source-code operation. Alternative pipeline decompositions require new measurements.",
+      "prior_art": "[{\"url\": \"https://www.nature.com/articles/s43588-025-00792-y\", \"checked\": \"2026-10-02\", \"known\": \"Benchpress paper compares quantum software performance and reports compilation/task successes/failures; no new quantum physical law inferred from runtime.\"}, {\"url\": \"https://github.com/Qiskit/benchpress\", \"checked\": \"2026-10-02\", \"known\": \"Primary benchmark implementation; exact archived results are frozen locally, not rerun against current software.\"}]",
+      "equation_or_program": {
+        "expression": "Attempt010 estimates three floors plus three scales and one power; attempt011 fixes Tket/BQSKIT floors to exp(-60) and retains five parameters.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "seconds",
+        "pilot_seconds": "seconds Qiskit calibration cost",
+        "qubits": "input qubit count",
+        "pilot_gates": "Qiskit output two-qubit gate count",
+        "pilot_depth": "Qiskit output two-qubit depth",
+        "load_seconds": "Qiskit QASM loading seconds",
+        "is_tket": "SDK indicator",
+        "is_bqskit": "SDK indicator,elseStaq"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-031.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 23507,
+      "sha256": "21a5a324aa8901316e6a7e6070169304036e8ef13abf49a645bda7c6e1bef830",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 493,
+      "sha256": "249a9cc0a1b3242506de94ff1d643ec032103fff7727c0961a852c2fd669b8df",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 3648,
+      "sha256": "52cce2154796dbcd245dd12189930eaddb4ce1bdd8d1da529f98e5ac9abebad0",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 28175,
+      "sha256": "f2378c2426e6ebfb6811826920199c1091d405ae0d3a1d57770e67e110104f47",
+      "id": "E004",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E005_SOURCE_AND_UNITS.md",
+      "bytes": 1140,
+      "sha256": "9284db7f92fa6a20010c3c26d05fdff2adf690477970cb3ed001707f9bc030a9",
+      "id": "E005",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E006_SOURCE_MANIFEST.json",
+      "bytes": 662,
+      "sha256": "b80db176acd7a9f63ccdb50c8767c5a5e5ad6eaf95a944263f2973a1a686d490",
+      "id": "E006",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E007_SPLITS.json",
+      "bytes": 709,
+      "sha256": "9f6294d1b14ed0f91f8e8aae4dde184c670adb839bb9ee56b919e4e980ccaabf",
+      "id": "E007",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 2735,
+      "sha256": "fa0d22187d12b5e71d863d4bd41a5617860d79f6e481eefb2e5bb7a02a7ecbfd",
+      "id": "E008",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E009_FINDINGS.md",
+      "bytes": 7646,
+      "sha256": "b98ea2a260bc42e778965eea21e8e473a49e5ed7cc8485d975cf5b3b275b3198",
+      "id": "E009",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E010_inputs.csv.gz",
+      "bytes": 718,
+      "sha256": "8569c930c9c551f28b375d27a5796fec3c8a913740b7c4f4caf11c6abb25e774",
+      "id": "E010",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E011_observations.csv.gz",
+      "bytes": 1277,
+      "sha256": "72b485c1ac31f75b143ea6b16be559fc309f0a67e8bcefc1db51e53528ad14e6",
+      "id": "E011",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E012_integrity_revision.json",
+      "bytes": 440,
+      "sha256": "02798bf2e48200ff75415ea07cbe16dc4b6cc56efd05981be05a51a6cb1f221b",
+      "id": "E012",
+      "role": "package/evidence/integrity_revision.json"
+    },
+    {
+      "path": "evidence/E013_metrics.csv",
+      "bytes": 1944,
+      "sha256": "2c658b19060f8850b6040a3532934992b803386eec0a3c3e32c6f4f39eed9777",
+      "id": "E013",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 5972,
+      "sha256": "b5d6359117da8ba9f9b259bf417c187811acd94985dac82b690d883fba499542",
+      "id": "E014",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_findings.json",
+      "bytes": 4033,
+      "sha256": "68a891d361210de2198221309100b8583eb948e223e8eff8d9677cc4833ba3a2",
+      "id": "E015",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E016_rules.json",
+      "bytes": 31355,
+      "sha256": "5cfc428dbb72734738af9af59e71804133413d28172c3d6a12d764178e69fc34",
+      "id": "E016",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E017_run.py",
+      "bytes": 8491,
+      "sha256": "4cf6212e4b49994b4c7c9058af16802266c20d30626cbe1d2226e7b5e954e28e",
+      "id": "E017",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E018_task_spec.json",
+      "bytes": 2951,
+      "sha256": "faeb590d51d106f37747bceb0cb67ed55ded0a0fe79f43f9060b02ff2c263abe",
+      "id": "E018",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 39796,
+      "sha256": "4b333918785a7529092bee8bfcd20df4ba21e8ae48fcf57c5a4d820b317f837f",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 8513,
+      "sha256": "704877c394b5dc7f0b98dcc5c510455651d2622d21615e90ab8d0ddd4924df6e",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "finding_id": "P100-035-F01",
+    "classification": "validated_scoped_descriptor",
+    "claim": "A compact species/duration/digital-amplitude equation transfers source context-label prediction to held animals",
+    "equation": "Pr(positive)=sigmoid(alpha_species+bR*ln(RMS)+bD*ln(duration/1s))",
+    "coefficients": [
+      -3.145577229688622,
+      -0.3683783116211599,
+      1.2055140005728848,
+      -0.48709290393401616,
+      1.1538436860247656,
+      0.2464294188278621,
+      -0.6310322435674381,
+      -0.6937636091245193,
+      -1.4197150371841805
+    ],
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv",
+      "evidence/detailed_metrics.json",
+      "evidence/paired_uncertainty.json"
+    ],
+    "scope": "Seven species within retained studies and contexts",
+    "admission": "partially_supported",
+    "prior_art": "Authors already classify vocal valence; this is a grouped compact predictive extension",
+    "falsification": "No independent recording-study or context transfer, and label is context-based"
+  },
+  {
+    "finding_id": "P100-035-F02",
+    "classification": "supported_negative_finding",
+    "claim": "Predictive success does not uniquely support an emotional acoustic mechanism because recording amplitude/duration match richer acoustic summaries",
+    "equation": null,
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv"
+    ],
+    "scope": "The compared candidate families and fixed source contexts",
+    "admission": "supported",
+    "prior_art": "Recording confounding and context-defined valence are known concerns",
+    "falsification": "Calibrated acoustic acquisition and held contexts/studies could separate explanations"
+  }
+]

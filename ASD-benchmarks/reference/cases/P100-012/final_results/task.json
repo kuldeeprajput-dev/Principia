@@ -1,0 +1,154 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-012.original.v1",
+  "case_id": "P100-012",
+  "case_number": 12,
+  "family": "original",
+  "protocol_version": "P100-012-asd7-native-v1",
+  "cohort_id": "P100-012.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-012.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/12_semiconductor_nist_hafnia_wafer",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "native higher-angle XRR intensity",
+  "target_units": "counts",
+  "error_units": "counts",
+  "primary_units": "counts",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "q",
+    "q0",
+    "I0",
+    "outer"
+  ],
+  "input_units": {
+    "q": "\u00c5\u207b\u00b9;4\u03c0sin(theta)/lambda",
+    "q0": "\u00c5\u207b\u00b9; calibration mean wavevector",
+    "I0": "counts; mean at2theta1.0\u00b10.008deg",
+    "outer": "binary noncenter measurement position"
+  },
+  "numeric_columns": [
+    "q",
+    "q0",
+    "I0",
+    "outer"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict higher-angle intensity after measuring a fixed low-angle calibration band of the same spectrum. Position and angle are known acquisition settings.",
+  "calibration": "Five native intensity samples near2theta1.0deg per spectrum; no other held-out intensity is a predictor. Same calibration for every model.",
+  "independent_unit": "Complete deposition batch is the split unit; wafer is the primary aggregation unit. All positions on a wafer stay together. Three deposition batches develop; fourth confirms.",
+  "evaluation_groups": [
+    "wafer-10",
+    "wafer-11",
+    "wafer-12"
+  ],
+  "assigned_rows": 774,
+  "eligible_rows": 774,
+  "baseline_models": [
+    "reference",
+    "flat_calibration",
+    "flexible",
+    "fresnel_tail",
+    "roughness_envelope",
+    "finite_angle_fresnel",
+    "kiessig_interference",
+    "contrast_decoherence",
+    "center_outer_thickness",
+    "instrument_background"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "flat_calibration": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "fresnel_tail": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "roughness_envelope": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "finite_angle_fresnel": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "kiessig_interference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "contrast_decoherence": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "center_outer_thickness": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "instrument_background": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show each held-out wafer; one reserved deposition batch supplies no independent-batch confidence interval."
+  },
+  "scope_limits": "Twelve200mmwafers with65ALDcycles from one process; three confirmation wafers share one deposition run.; Intensity-envelope and fringe parameters are effective metrology surrogates; density/thickness/roughness are not independently identified or verified by the author-fitted SE outputs.; The fixed angle range lies above critical-angle effects; calibrated counts are not absolute reflectivity.",
+  "source_url": "https://data.nist.gov/od/id/mds2-3930",
+  "source_license": "NIST public data license",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Schema inspection saw firstthree low-angle counts and lasttwo points near6deg in wafer11, outside the eligible target/calibration bands. Higher-angle eligible confirmation values were not inspected.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "3191f746364f7752d59f6907f3fe45d243c972a7009b25605d9d35d01c25f41e",
+  "observations_sha256": "a896924624c0d2fcc7a1d7875057a7c6926c1efdf93d1b5ec167052fea28fce1",
+  "legacy_protocol_sha256": "0f7d781ef6af73bd3c736cf8a8db361ad2c95217106e998e8f388451d9a4405a",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "I0",
+    "q0"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

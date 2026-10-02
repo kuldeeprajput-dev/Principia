@@ -1,0 +1,201 @@
+{
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_bio_behavior",
+  "case_id": "P100-013",
+  "created_utc": "2026-10-01T14:27:08.174115+00:00",
+  "checked_files": [
+    {
+      "path": "package/findings.json",
+      "sha256": "76348477d0623a83b70143c4bc2288c19ed5f489c7b2fea9bb15811a3d4d7f1e"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "2763ab2a96a2b48d63a7e3187212940654bb560dacd5ed4fe227d0abc7b80393"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "ec833a054d39d87d3108aaa8b7b01d851e4542cbf23a827c17e69c9fe400a66d"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "90435239d1de5599f0318ad4a691a7598388a12005c8f4bd3c6b7dd12134347f"
+    },
+    {
+      "path": "package/preparation/native.py",
+      "sha256": "1526e4ac6c3c9cbcbd4634edc526ce070a3deca9ad975d3aee23a8a2d18acaf1"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "1ea85fc176601a7ad6e4f143e0c658946fbc025f8ad0d49aa649de76e981c7ae"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "1fcf404be703a7d65f6ae16f78224b52eaaec4cfd8e412a20d6ab81724259b6e"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "485c68d6c070659eabdc81fe2fd3907dad7cf38182546b0f3dfb955ba2088b46"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "4874865eb390180f3d5b62a1850bc4b2f9af36051a3ef6ba2191b85cf3ef39c8"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "cd1fdb0d2630fc3e075bc8451449adfa2ee51bbf6162e754299b9f694d61ead6"
+    },
+    {
+      "path": "research_history/PROTOCOL.json",
+      "sha256": "981e6f2c7f04b84bd055d1d09b99fd9ee07ee9f0d337ab35f4d9ffeb9dc72a3b"
+    },
+    {
+      "path": "research_history/PRIOR_ART.json",
+      "sha256": "e1608d9f85a9a1b344e9f47e94f5a15192c8240dd79e05aeb1b4d30f1f186412"
+    },
+    {
+      "path": "research_history/SOURCE_AND_UNITS.md",
+      "sha256": "475d2483524ddb38d4d6e8e5e47a03cbe8986ee13262436ab1fd280d4995785e"
+    }
+  ],
+  "overall_limitations": [
+    "The observed conversion is an author-processed DSC endpoint, not direct molecular occupancy.",
+    "One material/formulation and one confirmation ramp constrain applicability.",
+    "Fixed273.15K integration baseline and Arrhenius extrapolation should not be interpreted outside fitted thermal programs.",
+    "Agent scientific criticism is not independent experimental replication or human domain-expert adjudication."
+  ],
+  "primary_source_check": {
+    "url": "https://www.nist.gov/publications/advanced-characterization-cure-kinetics-liquid-encapsulant",
+    "status": "PrimaryNIST abstract independently inspected; cure-history sensitivity is prior art, full component-specific validation absent."
+  },
+  "findings": [
+    {
+      "finding_id": "P100-013-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preselected mixture reduces held-out20K/min conversion MAE to0.0589466 versus0.0752806 domain and0.0836005 flexible. This is one independent thermal history, not501 independent experiments."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Two Arrhenius-weighted channels are a bounded phenomenological representation. Parameter exchangeability, rate/energy compensation, Jacobian conditioning and only four training programs prevent chemical-species identification."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted primary-source context and established equation families do not establish global novelty. No independent expert/literature adjudication performed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful compact transfer benchmark for one faster ramp; isothermal, multistep and batch transfer remain untested."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native parser, equations, frozen coefficients, predictions and grouping contracts are explicit and inspected. Full independent executable testing belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No intervention, deployed savings, reliability qualification or independent experiment demonstrates industrial impact."
+        }
+      },
+      "checks": [
+        "All measured DSC columns are distinct from author-fitted columns in the native adapter.",
+        "Model inputs contain only temperature and imposed rate, not conversion history.",
+        "The integral has time units after division by heating rate; multiplying the per-minute reference rate gives dimensionless dose.",
+        "One heldout ramp is better for selected model than both prespecified controls.",
+        "Distinct barriers improve development but do not uniquely identify two reactions."
+      ],
+      "limitations": [
+        "The observed conversion is an author-processed DSC endpoint, not direct molecular occupancy.",
+        "One material/formulation and one confirmation ramp constrain applicability.",
+        "Fixed273.15K integration baseline and Arrhenius extrapolation should not be interpreted outside fitted thermal programs."
+      ],
+      "negative_evidence_note": "A supported negative conclusion is distinct from an unsupported positive model claim; case56F02 is the latter."
+    },
+    {
+      "finding_id": "P100-013-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preselected mixture reduces held-out20K/min conversion MAE to0.0589466 versus0.0752806 domain and0.0836005 flexible. This is one independent thermal history, not501 independent experiments."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Two Arrhenius-weighted channels are a bounded phenomenological representation. Parameter exchangeability, rate/energy compensation, Jacobian conditioning and only four training programs prevent chemical-species identification."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted primary-source context and established equation families do not establish global novelty. No independent expert/literature adjudication performed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful compact transfer benchmark for one faster ramp; isothermal, multistep and batch transfer remain untested."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native parser, equations, frozen coefficients, predictions and grouping contracts are explicit and inspected. Full independent executable testing belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No intervention, deployed savings, reliability qualification or independent experiment demonstrates industrial impact."
+        }
+      },
+      "checks": [
+        "All measured DSC columns are distinct from author-fitted columns in the native adapter.",
+        "Model inputs contain only temperature and imposed rate, not conversion history.",
+        "The integral has time units after division by heating rate; multiplying the per-minute reference rate gives dimensionless dose.",
+        "One heldout ramp is better for selected model than both prespecified controls.",
+        "Distinct barriers improve development but do not uniquely identify two reactions."
+      ],
+      "limitations": [
+        "The observed conversion is an author-processed DSC endpoint, not direct molecular occupancy.",
+        "One material/formulation and one confirmation ramp constrain applicability.",
+        "Fixed273.15K integration baseline and Arrhenius extrapolation should not be interpreted outside fitted thermal programs."
+      ],
+      "negative_evidence_note": "A supported negative conclusion is distinct from an unsupported positive model claim; case56F02 is the latter."
+    },
+    {
+      "finding_id": "P100-013-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preselected mixture reduces held-out20K/min conversion MAE to0.0589466 versus0.0752806 domain and0.0836005 flexible. This is one independent thermal history, not501 independent experiments."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Two Arrhenius-weighted channels are a bounded phenomenological representation. Parameter exchangeability, rate/energy compensation, Jacobian conditioning and only four training programs prevent chemical-species identification."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted primary-source context and established equation families do not establish global novelty. No independent expert/literature adjudication performed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful compact transfer benchmark for one faster ramp; isothermal, multistep and batch transfer remain untested."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native parser, equations, frozen coefficients, predictions and grouping contracts are explicit and inspected. Full independent executable testing belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No intervention, deployed savings, reliability qualification or independent experiment demonstrates industrial impact."
+        }
+      },
+      "checks": [
+        "All measured DSC columns are distinct from author-fitted columns in the native adapter.",
+        "Model inputs contain only temperature and imposed rate, not conversion history.",
+        "The integral has time units after division by heating rate; multiplying the per-minute reference rate gives dimensionless dose.",
+        "One heldout ramp is better for selected model than both prespecified controls.",
+        "Distinct barriers improve development but do not uniquely identify two reactions."
+      ],
+      "limitations": [
+        "The observed conversion is an author-processed DSC endpoint, not direct molecular occupancy.",
+        "One material/formulation and one confirmation ramp constrain applicability.",
+        "Fixed273.15K integration baseline and Arrhenius extrapolation should not be interpreted outside fitted thermal programs."
+      ],
+      "negative_evidence_note": "A supported negative conclusion is distinct from an unsupported positive model claim; case56F02 is the latter."
+    }
+  ]
+}

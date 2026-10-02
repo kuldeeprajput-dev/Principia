@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-10-02T02:16:54.702018+00:00",
+  "case_id": "P100-019",
+  "task": {
+    "target": "Next-month unique received vehicle complaints per known make/model",
+    "target_units": "complaints/month",
+    "error_units": "complaints/month",
+    "metric_kind": "mae",
+    "permitted_inputs": [
+      "lag1",
+      "lag3",
+      "lag6",
+      "month"
+    ],
+    "input_units": {
+      "lag1": "prior calendar month unique ODINO count",
+      "lag3": "mean prior3monthly counts",
+      "lag6": "mean prior6monthly counts",
+      "month": "target calendar month1\u201312"
+    },
+    "timing_contract": "Only prior-month LDATE received counts predict next month. Retrospective snapshot may revise product labels and records; historical DATEA/report publication lag means calendar causality is not verified as-issued availability. No incident-date future information used.",
+    "calibration": "Cohort selected before targetperiod using>=6receivedJan\u2013Jun2025complaints. Development targetsJul2025\u2013Apr2026, rolling forward blocks; May\u2013Jul2026confirmation. No target-month counts enter predictors.",
+    "independent_unit": "Whole target months; same known vehicle cohorts repeat, lag windows overlap. Three held months are not independent fleets or defect experiments.",
+    "scope_limits": "Administrative complaint workload among known productVmake/model labels, not vehicle failures or safety risk. No fleet-at-risk denominator, reporting propensity or causal recall effect; dedupODINO/vehicle across components, snapshot relabeling remains.",
+    "applicability": {
+      "prediction_nonnegative": true
+    },
+    "case_id": "P100-019",
+    "source_url": "https://www.nhtsa.gov/nhtsa-datasets-and-apis",
+    "source_license": "U.S. Government public data",
+    "numeric_columns": [
+      "lag1",
+      "lag3",
+      "lag6",
+      "month"
+    ],
+    "exposure": {
+      "schema": "Only schema and source-publication aggregate descriptions inspected; reserved target values and scores not inspected.",
+      "current": "reserved_internal_only",
+      "fresh_for_future_users": false
+    },
+    "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+    "aggregation": {
+      "hierarchy": [
+        "group"
+      ],
+      "primary": "mean_group_error"
+    }
+  },
+  "source_manifest_sha256": "0b218dd05aea35330aa2a9a5d72b994f237f740ac0f4622dbbb4cafa5f31bde7",
+  "native_sha256": "c79f8db50156c1ae45026f16e94b8a8e371e87501aa439ad05ef2eaced0e706c",
+  "split_manifest_sha256": "af146962b63ff3750268df47dfe95e34f20f9fccbbb74653b4d8ba2c611089db",
+  "baseline_families": [
+    "training constant",
+    "domain simple law",
+    "regularized32-center RBF same permitted inputs"
+  ],
+  "selection": "Minimize group-balanced primary error; prefer fewer coefficients within1percent of minimum; baseline may win.",
+  "stopping": "At least5distinct scientific hypotheses, adaptive to development evidence; stop after2consecutive substantive attempts without accuracy/robustness/interpretation gain.",
+  "folds": [
+    {
+      "train_before": 24311,
+      "validation_from": 24311,
+      "validation_through": 24312
+    },
+    {
+      "train_before": 24313,
+      "validation_from": 24313,
+      "validation_through": 24314
+    },
+    {
+      "train_before": 24315,
+      "validation_from": 24315,
+      "validation_through": 24316
+    }
+  ]
+}

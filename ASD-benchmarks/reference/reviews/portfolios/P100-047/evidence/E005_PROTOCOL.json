@@ -1,0 +1,25 @@
+{
+  "case_id": "P100-047",
+  "frozen_before_first_fit_utc": "2026-10-01T15:25:22.249317+00:00",
+  "target": "Adjusted dissolved oxygen at observed nitrate/water-mass state",
+  "unit": "umol/kg",
+  "inputs": [
+    "pressure",
+    "temperature",
+    "salinity",
+    "nitrate",
+    "float_id"
+  ],
+  "timing": "Contemporaneous adjusted oxygen diagnostic using independently instrumented nitrate and CTD measurements from the same aligned synthetic profile. No prospective acquisition claim. Adjusted T/S flags1,2,8 permit source interpolation; oxygen/nitrate/pressure flags1,2 only.",
+  "groups": "Whole float profiles; rolling half-year tests 2023H2,2024H1,H2,2025H1, earlier times train. July2025 onward reserved. Two serially sampled floats, not hundreds of independent oceans.",
+  "eligibility": "Deterministic native.py finite, timing and quality rules; no outcome-performance filtering.",
+  "primary_metric": "Arithmetic mean of within-group MAE in target units; original observations retained.",
+  "baselines": "Strong simple/persistence/domain baseline and constrained radial-basis flexible control under identical permitted inputs.",
+  "selection": "Minimum whole-group development MAE; within1% choose lower coefficient complexity, then lexicographic model identity. Baselines may win.",
+  "stopping": "At least5 distinct substantive attempts. Continue if distinct justified hypothesis remains and recent attempts improve development prediction, robustness or supported interpretation. Stop after2 consecutive substantive attempts without incumbent MAE/robustness/interpretation gain.",
+  "uncertainty": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "exposure": "Inspected dimensions, parameter names/QC inventories and dates only, no numerical oxygen values. All public source-aware; confirmation after final freeze will become exposed.",
+  "source_manifest_sha256": "8cdf48b1cf1622a2e4cc7b8a1f91881fb072ac33e147984597f15205e22d3ae3",
+  "native_sha256": "eb915beaf12bbe4dd2ef7ccb4229105c81b1a49b74ab869df4014966982ee3f9",
+  "final_prefit_contract_utc": "2026-10-01T15:29:06.075078+00:00"
+}

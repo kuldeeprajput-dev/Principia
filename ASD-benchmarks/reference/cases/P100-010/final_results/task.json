@@ -1,0 +1,168 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-010.original.v1",
+  "case_id": "P100-010",
+  "case_number": 10,
+  "family": "original",
+  "protocol_version": "P100-010-asd7-native-v1",
+  "cohort_id": "P100-010.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-010.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/10_computer_security_nvd_recent_snapshot",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "NVD-authored CVSSv3.1 assessment present in current snapshot",
+  "target_units": "binary source=nvd@nist.gov in cvssMetricV31",
+  "error_units": "squared probability (Brier)",
+  "primary_units": "squared probability (Brier)",
+  "metric_kind": "brier",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "age_days",
+    "cna_score",
+    "batch_size"
+  ],
+  "input_units": {
+    "age_days": "days since publication at snapshot",
+    "cna_score": "non-NVD CVSSv3.1 assessment present binary",
+    "batch_size": "records from same assigning source and publication day"
+  },
+  "numeric_columns": [
+    "age_days",
+    "cna_score",
+    "batch_size"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "All covariates are snapshot-available contemporaneous metadata. Source-day count and CNA assessment may be added after initial disclosure. This is current coverage diagnostics, not prediction of future NVD action or security exploitation.",
+  "calibration": "Whole CNA/source group folds and held sources; no held-source target calibration.",
+  "independent_unit": "CVE records nested in complete assigning sources; duplicated JSON/gzip representations linked. Source-day batches dependent.",
+  "evaluation_groups": [
+    "02762ae7-200e-4b20-9b2b-a77d5b8fc4cb",
+    "416baaa9-dc9f-4396-8d5f-8c081fb06d67",
+    "4daa8cea-433a-44bd-9456-53b127fc289a",
+    "59469e6c-7ea7-446f-8e43-06aa32c115e8",
+    "9119a7d8-5eab-497f-8521-727c672e3725",
+    "cve@mitre.org",
+    "emo@eclipse.org",
+    "f45cbf4e-4146-4068-b7e1-655ffc2c548c",
+    "psirt@hcl.com",
+    "psirt@us.ibm.com",
+    "security@apache.org",
+    "security@docker.com",
+    "security@oppo.com",
+    "security@progress.com",
+    "security@vmware.com",
+    "vultures@jpcert.or.jp",
+    "zdi-disclosures@trendmicro.com"
+  ],
+  "assigned_rows": 1388,
+  "eligible_rows": 1388,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "domain",
+    "flexible",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "constant on logit scale",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "constant on logit scale",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "domain": {
+      "equation": "link(a+b*log_age)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "32-center same-input radial-basis comparator",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "p=1-exp(-exp(a+b*log(1+age)+c*CNA_score))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "p=1-exp(-exp(a+b*log_age+c*CNA+d*log_batch+e*log_batch/(1+age)))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "p=logistic(a+b*log_age+c*CNA+d*CNA*log_age)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "p=1-exp(-exp(a+bY*min(log_age,log7)+bO*max(log_age-log7,0)+c*CNA))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "p=logistic(a+c*CNA_score)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "p=logistic(a+b*log1p(source_day_batch))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "p=1-exp(-exp(a+c*CNA_score))",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze."
+  },
+  "scope_limits": "August23,2026 recent-feed snapshot only. Source status code is excluded; CVSS score formula and severity are not predicted. NIST policy deprioritizes duplicate scoring, so absence is not unsafe analysis failure.",
+  "source_url": "https://nvd.nist.gov/vuln/data-feeds",
+  "source_license": "U.S. Government work; see NVD data-use policy",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Native schema inspected and source-public aggregate descriptions known; case10 status counts were inspected, not new endpoint NVD-score presence scores. No reserved individual target metric printed.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"f8c2625c91ee08a313e9c9eb5c3dde12db1f3fc50ca15e5f7742ba6478c1db83\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "668b51ab1b67ebf9341fdaf2c06008b969b3ece18bd70c7e67c89de162702eb1",
+  "observations_sha256": "0a90566fccab6ebc2ea3d9e8d8a3194e6514ef0cf8abf4161fd0fd41e7103648",
+  "legacy_protocol_sha256": "27aafa375c2d4cbff3e54559982afb0583c903f5fcefa2167279b3006eadf239",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": "asd6-probability/1.1",
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

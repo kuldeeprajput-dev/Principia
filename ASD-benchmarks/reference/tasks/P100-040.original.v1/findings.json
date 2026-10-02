@@ -1,0 +1,48 @@
+[
+  {
+    "classification": "validated_extension",
+    "admission": "partially_supported",
+    "claim": "A short/long-distance and cyclic-clock equation improves completed-trip duration prediction in a reserved quarter against the frozen matched controls.",
+    "equation": "See rules.json models.reference: T_hat=clip[a+bS min(d,3)+bL max(d-3,0)+cA A+cM M+u d sin(2pi h/24)+v d cos(2pi h/24),0,10000].",
+    "interpretation": "A parsimonious phenomenological account of route mixtures and time-dependent congestion within this provider release.",
+    "falsification": "Recorded distance is post-trip; only one city/year is tested. Negative airport offset, high residual errors and provider quality limitations exclude a universal speed or operational dispatch claim.",
+    "finding_id": "P100-040-F01",
+    "task_id": "P100-040.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+        "checked": "2026-10-02",
+        "known": "Official trip dictionaries/zone lookup; provider-submitted records have no accuracy guarantee. Distance/time scaling and daily traffic cycles are established; no prospective routing benefit follows from post-trip distance prediction."
+      }
+    ],
+    "scope": "Green-taxi2025 declared routine records, duration0\u201324h and distance0\u20131000km; known officialzones and source-month-consistent timestamps. Provider-reported records may contain errors; no congestion intervention, routing policy or achieved operational benefit."
+  },
+  {
+    "classification": "informative_falsification",
+    "admission": "supported",
+    "claim": "Simple distance proportionality and an operational pickup-time interpretation are inadequate for this task.",
+    "equation": "Domain T=a+b*d and matched robust variant are retained; input availability excludes pickup-time use of actual trip distance.",
+    "interpretation": "Better fitting needs route/time structure, but that structure remains observational and calibrated to the source cohort.",
+    "falsification": "The causal and information-budget limits persist even where the numerical gain is strong; no prospective intervention was performed.",
+    "finding_id": "P100-040-F02",
+    "task_id": "P100-040.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+        "checked": "2026-10-02",
+        "known": "Official trip dictionaries/zone lookup; provider-submitted records have no accuracy guarantee. Distance/time scaling and daily traffic cycles are established; no prospective routing benefit follows from post-trip distance prediction."
+      }
+    ],
+    "scope": "Green-taxi2025 declared routine records, duration0\u201324h and distance0\u20131000km; known officialzones and source-month-consistent timestamps. Provider-reported records may contain errors; no congestion intervention, routing policy or achieved operational benefit."
+  }
+]

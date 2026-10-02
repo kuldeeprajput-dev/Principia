@@ -1,0 +1,34 @@
+{
+  "case": 99,
+  "title": "Hippocampal processed-population trace forecasting",
+  "kind": "mae",
+  "target": "Population trace mean over native frames t+31 through t+60",
+  "unit": "author processed-trace units",
+  "inputs": [
+    "level",
+    "lag30",
+    "lag60",
+    "mean300",
+    "dispersion",
+    "zero_fraction",
+    "ventral",
+    "condition_group3"
+  ],
+  "input_units": {
+    "level": "author processed-trace units",
+    "lag30": "author processed-trace units",
+    "lag60": "author processed-trace units",
+    "mean300": "author processed-trace units",
+    "dispersion": "author processed-trace units",
+    "zero_fraction": "dimensionless",
+    "ventral": "binary",
+    "condition_group3": "binary"
+  },
+  "source_url": "https://zenodo.org/records/21225888",
+  "license": "CC BY4.0",
+  "paper": "https://doi.org/10.1038/s41593-026-02435-5",
+  "independent_unit": "Animal suffix across all days,contexts and sessions",
+  "scope": "Retained author-processed calcium traces only; amplitude normalization/calcium-event interpretation is not documented in the archive. No spikes,absolute calcium concentration or real-time physiology claim. Twenty-eight source animals; held animals stay within the same study.",
+  "timing": "Every30 native frames after300-frame history, forecast next30-frame population mean ending60 frames later. Only trace frames<=t are inputs. Native frame index is used without inferring seconds or behavior alignment.",
+  "calibration": "Past observed trace history is allowed. No held future calibration or source fitted maps/pvpreS/pvpostS enter features. All model parameters and flexible transforms are fitted on development animals."
+}

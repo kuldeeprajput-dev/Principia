@@ -1,0 +1,73 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-031.original.v1.raw-access.v1",
+  "parent_task_id": "P100-031.original.v1",
+  "case_id": "P100-031",
+  "protocol_version": "P100-031.original.v1.raw-access.v1",
+  "cohort_id": "P100-031.original.v1.cohort-1",
+  "parent_task_sha256": "b1d9e8b0691cf322678f227353ee74a01514f0e29547b2ffe1dd563865059244",
+  "input_sha256": "8569c930c9c551f28b375d27a5796fec3c8a913740b7c4f4caf11c6abb25e774",
+  "observations_sha256": "72b485c1ac31f75b143ea6b16be559fc309f0a67e8bcefc1db51e53528ad14e6",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "31_quantum_computing_ibm_benchpress",
+  "source_assets": [
+    {
+      "path": "context/zenodo_record.json",
+      "bytes": 4630,
+      "sha256": "015362979c2f28669bf79772437911081ea1b64e616b84f16f8553390ebfabee"
+    },
+    {
+      "path": "raw/published_results.zip",
+      "bytes": 1289241,
+      "sha256": "df77a8c7b297601469777559c5d9d84254e463e8cfb1a150e9d92c186629a7e8"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "pilot_seconds": "seconds Qiskit calibration cost",
+      "qubits": "input qubit count",
+      "pilot_gates": "Qiskit output two-qubit gate count",
+      "pilot_depth": "Qiskit output two-qubit depth",
+      "load_seconds": "Qiskit QASM loading seconds",
+      "is_tket": "SDK indicator",
+      "is_bqskit": "SDK indicator,elseStaq"
+    },
+    "observation_window": "Must execute the complete Qiskit pilot first; its runtime and resulting circuit statistics are known only afterward. Candidate SDK timing is withheld. Pilot cost is not free. This is runtime diagnostics, not pre-compilation prediction or quantum-device performance.",
+    "calibration_and_history": "Whole circuit families held across allSDKs; exact same inputfilename matched. No held family candidate-runtime measurements enter fitting. Qiskit pilot is declared per-instance calibration.",
+    "calibration_columns": [
+      "pilot_seconds",
+      "pilot_gates",
+      "pilot_depth",
+      "load_seconds"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "input_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Measured Qiskit pilot has cost; relative-log improvement reverses in absolute seconds."
+  ],
+  "current_outcomes_exposed": true
+}

@@ -1,0 +1,347 @@
+{
+  "case_id": "P100-081",
+  "input_columns": [
+    "C",
+    "depth",
+    "pH"
+  ],
+  "numeric_columns": [
+    "C",
+    "depth",
+    "pH"
+  ],
+  "input_units": {
+    "C": "mass % organic carbon",
+    "depth": "cm midpoint of sampled interval",
+    "pH": "pH unit in water"
+  },
+  "target": "measured soil bulk density",
+  "target_units": "g/cm\u00b3",
+  "error_units": "g/cm\u00b3",
+  "metric_kind": "mae",
+  "models": {
+    "reference": {
+      "name": "two_phase_volume",
+      "formula": "1/((1-1.724*C/100)/mineral+(1.724*C/100)/organic)",
+      "hypothesis": "Attempt1: a two-phase organic/mineral volume mixture predicts decreasing bulk density through different effective component bulk densities. The1.724 conversion is an explicit approximate organic-matter convention, not a measured composition.",
+      "inputs": [
+        "C",
+        "depth",
+        "pH"
+      ],
+      "recorded_utc": "2026-10-02T01:49:38.790873+00:00",
+      "parent": null,
+      "parameters": {
+        "mineral": 1.5992327948246097,
+        "organic": 0.1423709170556547
+      },
+      "training_groups": [
+        "Finland",
+        "Italy",
+        "Portugal",
+        "Spain"
+      ],
+      "training_rows": 304,
+      "optimizer_success": true,
+      "nfev": 7,
+      "jacobian_condition": 5.776601999358168,
+      "bounds": {
+        "mineral": [
+          0.5,
+          2.5
+        ],
+        "organic": [
+          0.05,
+          1
+        ]
+      }
+    },
+    "constant": {
+      "name": "constant",
+      "formula": "b0",
+      "hypothesis": "Country-balanced mean-density baseline.",
+      "inputs": [
+        "C",
+        "depth",
+        "pH"
+      ],
+      "recorded_utc": "2026-10-02T01:49:34.072448+00:00",
+      "parent": null,
+      "parameters": {
+        "b0": 1.2071757739589988
+      },
+      "training_groups": [
+        "Finland",
+        "Italy",
+        "Portugal",
+        "Spain"
+      ],
+      "training_rows": 304,
+      "fit_method": "weighted linear least squares",
+      "condition": 1.0
+    },
+    "flexible": {
+      "name": "flexible",
+      "formula": "b0+b1*C+b2*depth+b3*pH+b4*C**2+b5*C*depth+b6*depth**2",
+      "hypothesis": "Seven-coefficient constrained polynomial control with matched covariates.",
+      "inputs": [
+        "C",
+        "depth",
+        "pH"
+      ],
+      "recorded_utc": "2026-10-02T01:49:37.202242+00:00",
+      "parent": null,
+      "parameters": {
+        "b0": 0.551647463847822,
+        "b1": -0.0809714484345975,
+        "b2": 0.032799586383381964,
+        "b3": 0.1007053264604397,
+        "b4": 0.002680451173070845,
+        "b5": -0.001754172406654014,
+        "b6": -0.0006984671183141308
+      },
+      "training_groups": [
+        "Finland",
+        "Italy",
+        "Portugal",
+        "Spain"
+      ],
+      "training_rows": 304,
+      "fit_method": "weighted linear least squares",
+      "condition": 23.58878114202507
+    },
+    "linear": {
+      "name": "linear",
+      "formula": "b0+b1*C+b2*depth",
+      "hypothesis": "Simple linear carbon and depth baseline.",
+      "inputs": [
+        "C",
+        "depth",
+        "pH"
+      ],
+      "recorded_utc": "2026-10-02T01:49:35.631571+00:00",
+      "parent": null,
+      "parameters": {
+        "b0": 1.3344542243613122,
+        "b1": -0.07849868014622403,
+        "b2": 0.005415567365554086
+      },
+      "training_groups": [
+        "Finland",
+        "Italy",
+        "Portugal",
+        "Spain"
+      ],
+      "training_rows": 304,
+      "fit_method": "weighted linear least squares",
+      "condition": 3.74859376615739
+    },
+    "two_phase_volume": {
+      "name": "two_phase_volume",
+      "formula": "1/((1-1.724*C/100)/mineral+(1.724*C/100)/organic)",
+      "hypothesis": "Attempt1: a two-phase organic/mineral volume mixture predicts decreasing bulk density through different effective component bulk densities. The1.724 conversion is an explicit approximate organic-matter convention, not a measured composition.",
+      "inputs": [
+        "C",
+        "depth",
+        "pH"
+      ],
+      "recorded_utc": "2026-10-02T01:49:38.790873+00:00",
+      "parent": null,
+      "parameters": {
+        "mineral": 1.5992327948246097,
+        "organic": 0.1423709170556547
+      },
+      "training_groups": [
+        "Finland",
+        "Italy",
+        "Portugal",
+        "Spain"
+      ],
+      "training_rows": 304,
+      "optimizer_success": true,
+      "nfev": 7,
+      "jacobian_condition": 5.776601999358168,
+      "bounds": {
+        "mineral": [
+          0.5,
+          2.5
+        ],
+        "organic": [
+          0.05,
+          1
+        ]
+      }
+    },
+    "structural_porosity": {
+      "name": "structural_porosity",
+      "formula": "a*exp(-b*C)+c*log1p(depth/10)",
+      "hypothesis": "Attempt2: two-phase mixing narrowly improves mean error over the flexible control but has worse worst-country error. Test a competing exponentially carbon-dependent pore-volume law with gradual depth consolidation rather than additive phase volumes.",
+      "inputs": [
+        "C",
+        "depth",
+        "pH"
+      ],
+      "recorded_utc": "2026-10-02T01:49:59.411993+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "a": 1.4296667734092963,
+        "b": 0.12316888192566709,
+        "c": 0.12740769550630016
+      },
+      "training_groups": [
+        "Finland",
+        "Italy",
+        "Portugal",
+        "Spain"
+      ],
+      "training_rows": 304,
+      "optimizer_success": true,
+      "nfev": 5,
+      "jacobian_condition": 8.253018516543296,
+      "bounds": {
+        "a": [
+          0.3,
+          2.5
+        ],
+        "b": [
+          0,
+          2
+        ],
+        "c": [
+          -0.3,
+          0.5
+        ]
+      }
+    },
+    "depth_compaction": {
+      "name": "depth_compaction",
+      "formula": "1/((1-1.724*C/100)/(m0+m1*(1-exp(-depth/L)))+(1.724*C/100)/organic)",
+      "hypothesis": "Attempt3: exponential structural porosity worsens held-country MAE to0.326. Reconcile that failure with the better mixture by allowing depth-dependent mineral packing, using a finite consolidation length rather than an unconstrained density-depth slope.",
+      "inputs": [
+        "C",
+        "depth",
+        "pH"
+      ],
+      "recorded_utc": "2026-10-02T01:50:21.290900+00:00",
+      "parent": "attempt-002",
+      "parameters": {
+        "m0": 1.1115082017479108,
+        "m1": 0.5996835020175381,
+        "L": 4.956248289462415,
+        "organic": 0.14665741078161837
+      },
+      "training_groups": [
+        "Finland",
+        "Italy",
+        "Portugal",
+        "Spain"
+      ],
+      "training_rows": 304,
+      "optimizer_success": true,
+      "nfev": 23,
+      "jacobian_condition": 414.7219172386156,
+      "bounds": {
+        "m0": [
+          0.5,
+          2
+        ],
+        "m1": [
+          0,
+          1
+        ],
+        "L": [
+          2,
+          100
+        ],
+        "organic": [
+          0.05,
+          1
+        ]
+      }
+    },
+    "organic_consolidation": {
+      "name": "organic_consolidation",
+      "formula": "1/((1-1.724*C/100)/mineral+(1.724*C/100)/(organic*(1+depth/L)))",
+      "hypothesis": "Attempt4: assigning depth consolidation to mineral packing did not help. Test the distinct mechanism that only the low-density organic phase consolidates with overburden; this predicts carbon-by-depth coupling and tends to constant mineral density as carbon vanishes.",
+      "inputs": [
+        "C",
+        "depth",
+        "pH"
+      ],
+      "recorded_utc": "2026-10-02T01:50:46.075328+00:00",
+      "parent": "attempt-003",
+      "parameters": {
+        "mineral": 1.5996590094194227,
+        "organic": 0.12703903481189058,
+        "L": 93.14720066090253
+      },
+      "training_groups": [
+        "Finland",
+        "Italy",
+        "Portugal",
+        "Spain"
+      ],
+      "training_rows": 304,
+      "optimizer_success": true,
+      "nfev": 7,
+      "jacobian_condition": 11315.435763832369,
+      "bounds": {
+        "mineral": [
+          0.5,
+          2.5
+        ],
+        "organic": [
+          0.03,
+          1
+        ],
+        "L": [
+          2,
+          500
+        ]
+      }
+    },
+    "acidity_aggregation": {
+      "name": "acidity_aggregation",
+      "formula": "1/((1-1.724*C/100)/(mineral*exp(k*(pH-6)))+(1.724*C/100)/organic)",
+      "hypothesis": "Attempt5: both depth-consolidation mechanisms worsen transfer. Test a chemical-aggregation alternative: pH modulates effective mineral packing through a positive exponential multiplier. pH is an observational proxy and a successful fit could not establish a causal acidity effect.",
+      "inputs": [
+        "C",
+        "depth",
+        "pH"
+      ],
+      "recorded_utc": "2026-10-02T01:51:04.817579+00:00",
+      "parent": "attempt-004",
+      "parameters": {
+        "mineral": 1.5107712044185406,
+        "organic": 0.1514100343531796,
+        "k": 0.09384485369864343
+      },
+      "training_groups": [
+        "Finland",
+        "Italy",
+        "Portugal",
+        "Spain"
+      ],
+      "training_rows": 304,
+      "optimizer_success": true,
+      "nfev": 7,
+      "jacobian_condition": 5.857523741313244,
+      "bounds": {
+        "mineral": [
+          0.5,
+          2.5
+        ],
+        "organic": [
+          0.05,
+          1
+        ],
+        "k": [
+          -0.3,
+          0.3
+        ]
+      }
+    }
+  },
+  "selected_from": "attempts/attempt-001",
+  "selection": "Development only; reference remains fixed even if another model is better on confirmation."
+}

@@ -1,0 +1,121 @@
+{
+  "case_id": "P100-067",
+  "protocol_version": "pilot-v1",
+  "frozen_utc": "2026-09-15T12:26:52.157511+00:00",
+  "status": "development_only; final test sealed",
+  "seed": 670915,
+  "source_aware": true,
+  "primary_question": "Predict a particle's remaining transit time through the visible rheological interface in an unseen fluid configuration, using only observations strictly upstream of that interface and declared independent contextual measurements.",
+  "primary_target": {
+    "name": "interface_transit_seconds",
+    "definition": "first passage time at source lower visible interface boundary minus first passage time at source upper visible interface boundary in IW1, each obtained by linear interpolation between consecutive measured (z,t) observations that straddle the boundary",
+    "derived_from": "MPs_position/IW1 only; no author velocities or averaged trajectories used as targets",
+    "units": "s",
+    "observation_cutoff": "source upper visible interface boundary z_u; all model inputs from z <= z_u-0.002 m; upstream reference speed determined from crossings of z_u-0.010 m and z_u-0.003 m, both strictly before z_u",
+    "primary_loss": "absolute log ratio abs(log(predicted_transit / measured_transit)); average equally within each configuration\u00d7particle class, then within configuration, then equally across six configurations",
+    "secondary_metrics": [
+      "seconds MAE",
+      "median absolute relative error",
+      "per-configuration losses",
+      "per-particle-type losses",
+      "trajectory passage-time error at interface fractions .25,.5,.75,1 for trajectory models"
+    ]
+  },
+  "coordinate_schema": {
+    "native_columns": [
+      "x",
+      "z",
+      "t",
+      "angle",
+      "optional empty trailing field"
+    ],
+    "x_z_interpretation": "metres already present in source CSVs; README pixels label conflicts with observed native numerical scale. Same-scale development companion averaged-position data explicitly labelled metres and source interface coordinates establish this interpretation. Do not multiply these CSV values by 31e-6 again.",
+    "angle": "degrees, major-axis angle to horizontal modulo180; sphere orientation not a shape measure",
+    "time": "seconds, local to interrogation window; no assumed IW1/IW2 global time join",
+    "unit_uncertainty": "Interpretation documented; no independent instrument calibration obtained. Literal pixel interpretation is a falsifying source-consistency alternative, not silently repaired."
+  },
+  "source_interface_bounds_m": {
+    "1.1": [
+      0.0323,
+      0.038
+    ],
+    "1.2": [
+      0.0267,
+      0.035
+    ],
+    "1.3": [
+      0.0317,
+      0.0371
+    ],
+    "2.1": [
+      0.0252,
+      0.0325
+    ],
+    "2.2": [
+      0.0239,
+      0.0335
+    ],
+    "2.3": [
+      0.0376,
+      0.0399
+    ],
+    "3.1": [
+      0.0184,
+      0.0295
+    ],
+    "3.2": [
+      0.03,
+      0.04
+    ],
+    "3.3": [
+      0.0389,
+      0.0554
+    ]
+  },
+  "eligibility": {
+    "include": "all six particle classes with finite upstream history and observed positive interface first-passage transit",
+    "exclude": "only nonfinite/duplicate nonincreasing time rows for parser safety; no target-based outlier deletion; no velocity-based trimming",
+    "censoring": "no crossing or inadequate upstream coverage recorded as non-evaluable/censored, with all counts and group membership preserved; no claim for noncrossing trajectories",
+    "minimum_upstream_rows": 4,
+    "positive_upstream_crossing_duration": true
+  },
+  "forbidden_predictors": [
+    "future orientation",
+    "future velocity",
+    "full-trajectory summary",
+    "author rational-fit derivatives",
+    "author averaged position/velocity",
+    "test-target fitted normalizations",
+    "configuration numeric index interpreted as concentration",
+    "unverified rheology-to-configuration join",
+    "D_b disputed thickness in main model",
+    "normal stress N1 absent from archive"
+  ],
+  "baseline_commitment": [
+    "ballistic constant incoming velocity: T0=(z_l-z_u)/v_up",
+    "training-only pooled multiplicative correction to T0",
+    "training-only particle and first-digit family additive log correction",
+    "simple flexible ridge model using declared upstream/geometry features with training-only scaling"
+  ],
+  "attempt_policy": {
+    "minimum_substantive_attempts": 5,
+    "one_attempt": "new mechanistic hypothesis or substantive falsifiable model revision, trained and evaluated on grouped development folds, logged with equation, predictions, diagnostics and negative evidence",
+    "feedback": "send results to root between attempts; revisions can use development evidence only",
+    "continued_work": "after at least five attempts continue if either of last two attempts improves best grouped loss by >=2% or an identified feasible hypothesis remains; stop after two consecutive substantive no-gain attempts with no unresolved feasible mechanism",
+    "max_attempts_resource_guard": 10,
+    "gain_threshold_relative": 0.02,
+    "no_positive_rule_quota": true
+  },
+  "selection": "lowest equal-configuration grouped primary loss; prefer simpler model if within 2%; final rule selected before test authorization",
+  "uncertainty": "report six development-configuration paired effects and 2000 configuration-cluster bootstrap intervals descriptively; bootstrap does not create more independent fluid preparations; no calibrated global novelty p-value",
+  "negative_controls": [
+    "particle-class-only and family-only alternatives",
+    "source-buoyancy range versus observed response scale",
+    "history/orientation features must be strictly upstream",
+    "upstream observation-window sensitivity declared .001/.003 m cutoff alternatives as sensitivity only, primary fixed .002m",
+    "configuration holdout versus misleading row split never presented as independent validation"
+  ],
+  "practical_threshold": "at least10% lower grouped primary loss than strongest admissible baseline with no catastrophic fold failure is a development criterion, not a final validation claim",
+  "literature_access": "primary source record, source paper abstract/method snippets, related author2024DataInBrief and established dynamics; logs in PRIOR_ART.md",
+  "publication": "no publication or general ecological/industrial readiness claim; final validation requires separate root authorization"
+}

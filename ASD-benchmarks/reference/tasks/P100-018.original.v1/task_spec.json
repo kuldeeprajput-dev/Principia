@@ -1,0 +1,52 @@
+{
+  "target": "Log transformed reported tornado property-damage estimate",
+  "target_units": "ln(1+property damage in USD)",
+  "error_units": "natural-log dollars offset1USD",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "length_km",
+    "width_km",
+    "duration_min",
+    "latitude",
+    "month"
+  ],
+  "input_units": {
+    "length_km": "km path length",
+    "width_km": "km maximum path width",
+    "duration_min": "minutes event duration",
+    "latitude": "degrees north",
+    "month": "calendar1\u201312"
+  },
+  "timing_contract": "Post-event path and timing diagnostic of reported loss. EF damage-derived scale, casualty counts, narratives, monetary/crop losses excluded from predictors.",
+  "calibration": "Whole EPISODE_ID groups held; no held-event monetary outcomes. Linked tornado segments within episode remain together.",
+  "independent_unit": "NOAA EPISODE_ID outbreak groups; nearby episodes may still be correlated or linked across offices. Not individual property samples.",
+  "scope_limits": "2025 tornado segments with nonmissing explicit damage. Broad estimates including reported0, not insured claim totals. Maximum width times length is bounding footprint proxy, not actual damaged area. Exposure/building stock and wind speed unavailable; no prospective loss or causal damage law.",
+  "applicability": {
+    "target_nonnegative": true
+  },
+  "case_id": "P100-018",
+  "source_url": "https://www.ncei.noaa.gov/stormevents/ftp.jsp",
+  "source_license": "U.S. Government public data",
+  "numeric_columns": [
+    "length_km",
+    "width_km",
+    "duration_min",
+    "latitude",
+    "month"
+  ],
+  "exposure": {
+    "schema": "Native schema inspected and source-public aggregate descriptions known; case10 status counts were inspected, not new endpoint NVD-score presence scores. No reserved individual target metric printed.",
+    "current": "exposed",
+    "fresh_for_future_users": false,
+    "confirmation_freeze_sha256": "78da1d0fc89a5a79911f5f84714f854d148ecac9d9ddcbc09f08d7eb70141a0f",
+    "original_validation": "Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed."
+  },
+  "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "task_id": "P100-018.original.v1"
+}

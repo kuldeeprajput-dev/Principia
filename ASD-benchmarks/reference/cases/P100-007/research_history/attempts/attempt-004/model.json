@@ -1,0 +1,17 @@
+{
+  "kind": "stance",
+  "coef": [
+    -0.3382437073743341,
+    -0.19854864798499913,
+    0.9151437161020427,
+    0.6556618120791294
+  ],
+  "equation": "F+b0*v+b1*a+b2*v*tanh(F/100N)+b3*a*tanh(F/100N); F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+  "training_groups": [
+    "0.5",
+    "0.75"
+  ],
+  "training_rows": 1917,
+  "parameter_count": 4,
+  "rank": 4
+}

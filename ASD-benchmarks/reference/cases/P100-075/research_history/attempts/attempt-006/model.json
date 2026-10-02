@@ -1,0 +1,27 @@
+{
+  "kind": "calibration_scaling",
+  "coef": [
+    -0.18115186155916702,
+    -1.9295159119836087,
+    0.44575762587104095,
+    -0.46242639365185434
+  ],
+  "K": 200.0,
+  "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s+b4*(c-5)*s), x=ln(E/30)",
+  "training_groups": [
+    "A",
+    "B",
+    "D"
+  ],
+  "training_rows": 15,
+  "rank": 4,
+  "parameter_count": 4,
+  "profile_training_mse": [
+    {
+      "K": 200.0,
+      "weighted_sse": 2.370268534321263
+    }
+  ],
+  "ridge": 1e-08,
+  "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+}

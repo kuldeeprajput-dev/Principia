@@ -1,0 +1,70 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-082.round2.v1.raw-access.v1",
+  "parent_task_id": "P100-082.round2.v1",
+  "case_id": "P100-082",
+  "protocol_version": "P100-082.round2.v1.raw-access.v1",
+  "cohort_id": "P100-082.round2.v1.development-oof",
+  "parent_task_sha256": "a5b93d6ca7f8e649b33d8e04286a5efaf3a955b7c9c4b9c7caaca6dfa31ae86f",
+  "input_sha256": "66aaa3959069268d621d6b92b3568fd923bb3e9383d26965ee46f69e5d5c6041",
+  "observations_sha256": "ab7375d167a138331f14b34fe41e13f814ec2ad13cad600d54e00c7a56314e30",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "82_ecology_soil_respiration",
+  "source_assets": [
+    {
+      "path": "raw/holisoils_soil_respiration_dataset.csv",
+      "bytes": 11215296,
+      "sha256": "bcbf7e1a87b056ee8deb75f8b3fd10c1bfba9a725030da8dede1bf3bf9b57438"
+    },
+    {
+      "path": "raw/holisois_data_structure.csv",
+      "bytes": 19595,
+      "sha256": "861367b7e3f01626478776a8acc1528fd7fde2a49a13f1f555163f9669f38b8d"
+    },
+    {
+      "path": "raw/wp4_data_check_rcode.txt",
+      "bytes": 6164,
+      "sha256": "47781536dd0914c6deb68f5ba9755e85c79109ea8150c570746005dffdf6b6a9"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "t05": "degrees Celsius, native 5-cm soil temperature",
+      "tsmoisture": "native soil-water-content percent; may be missing",
+      "doy": "day of year",
+      "moisture_change": "percentage points of native soil water content; change from past mean",
+      "site": "categorical calibrated site",
+      "context": "categorical subsite/trenching context",
+      "past_temperature": "degree C; strictly earlier temperature summary"
+    },
+    "observation_window": "Known site/context, measurement date, native 5-cm soil temperature and soil moisture only; exclude author response-fit slopes, chamber conversions, confidence bounds and future flux. Expanded information budget: t05, tsmoisture, doy, moisture_change, site, context",
+    "calibration_and_history": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Context/site amplitudes are trained on earlier dates only. Lloyd\u2013Taylor E0 is near 200 K with a documented optimizer-scaling limitation; it is not an identified globally optimized physiological coefficient.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Historical training membership is missing for 30 model/fold records; replay cannot recover it."
+  ],
+  "current_outcomes_exposed": true
+}

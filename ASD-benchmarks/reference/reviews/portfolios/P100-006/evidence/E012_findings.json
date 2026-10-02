@@ -1,0 +1,49 @@
+[
+  {
+    "finding_id": "P100-006-F01",
+    "title": "Asymmetric dual response",
+    "classification": "validated_extension",
+    "claim": "The asymmetric dual-response equation improves prediction on two reserved contiguous Rabi blocks compared with the single-line and polynomial controls. Its practical contribution is a scoped response surrogate with explicit uncertainty about mechanism, not a new atomic law.",
+    "admission": "supported",
+    "equation": "equations.json",
+    "model_id": "reference",
+    "task_id": "P100-006.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "equations.json",
+      "rules.json"
+    ],
+    "performance": {
+      "development_MAE": 0.030733781628645096,
+      "confirmation_MAE": 0.0492859289238308,
+      "unit": "arbitrary units"
+    },
+    "prior_art": "https://arxiv.org/html/2509.15463v1",
+    "scope": "Entire contiguous probe-Rabi blocks; one vapor cell. No independent atomic-cell replication.",
+    "limitations": [
+      "Public source-aware confirmation is now exposed.",
+      "Predictive success does not prove a causal mechanism, exhaustive novelty, or realized industrial impact.",
+      "Alternative valid equations are admissible under the same task.",
+      "Both width intercepts w0 and n0 reach the imposed 0.1 MHz lower bound; intrinsic zero-power linewidths are not identified."
+    ]
+  },
+  {
+    "finding_id": "P100-006-F02",
+    "title": "Mechanistic or transfer falsification",
+    "classification": "informative_falsification",
+    "claim": "A single saturating line fails to explain the response as well as the two-sign line-shape family.",
+    "admission": "supported",
+    "underlying_proposal_disposition": "unsupported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "equations.json",
+      "rules.json"
+    ],
+    "rationale": "The failed single-line candidate has larger grouped development and confirmation error; the result does not uniquely prove two microscopic channels.",
+    "scope": "The tested equations and current data only; no claim of universal impossibility."
+  }
+]

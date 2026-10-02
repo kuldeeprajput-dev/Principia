@@ -1,0 +1,44 @@
+{
+  "target": "applied force",
+  "target_units": "kN",
+  "permitted_inputs": [
+    "deflection_mm",
+    "calibration_deflection_mm",
+    "calibration_force_kN",
+    "initial_stiffness_kN_mm",
+    "recent_stiffness_kN_mm",
+    "lightweight"
+  ],
+  "input_units": {
+    "deflection_mm": "mm",
+    "calibration_deflection_mm": "mm",
+    "calibration_force_kN": "kN",
+    "initial_stiffness_kN_mm": "kN/mm",
+    "recent_stiffness_kN_mm": "kN/mm",
+    "lightweight": "1"
+  },
+  "timing_contract": "Given current imposed displacement, concrete class, and beam-specific initial force-displacement calibration prefix through\u226410mm; no later force or failure capacity allowed.",
+  "independent_unit": "Whole beam; six beams in two concrete classes",
+  "scope_limits": "Four development beams and two confirmation beams. Header audit exposed confirmation first11points (all below10mm); these are permitted calibration only. All late damage rows retained.",
+  "source_url": "https://zenodo.org/records/17967735",
+  "source_license": "cc-by-4.0",
+  "uncertainty": "Individual experimental group errors; no row bootstrap or population CI from dependent rows.",
+  "error_units": "kN",
+  "metric_kind": "mae",
+  "numeric_columns": [
+    "deflection_mm",
+    "calibration_deflection_mm",
+    "calibration_force_kN",
+    "initial_stiffness_kN_mm",
+    "recent_stiffness_kN_mm",
+    "lightweight"
+  ],
+  "calibration": "Given current imposed displacement, concrete class, and beam-specific initial force-displacement calibration prefix through\u226410mm; no later force or failure capacity allowed.",
+  "exposure": {
+    "status": "exposed",
+    "confirmation_originally_withheld": true,
+    "public_source_aware": true
+  },
+  "uncertainty_policy": "Individual experimental group errors; no row bootstrap or population CI from dependent rows.",
+  "applicability": "Only source material, geometry, heating-rate or measured beam ranges; no unobserved population guarantee."
+}

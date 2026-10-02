@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-084",
+  "findings": [
+    {
+      "finding_id": "P100-084-F01",
+      "classification": "validated_extension",
+      "claim": "A localized-adhesion correction improves calibrated late-retraction force prediction across reserved locations on the three samples.",
+      "equation": "Fhat=B+P max(x,0)^(3/2)-A P exp(-|x|/ell).",
+      "evidence": "Three held curves,336 targets: MAE1.360nN versus sphericalshape2.212nN and polynomial1.522nN; RMSE2.571 versus3.074nN for polynomial.",
+      "known_prior_art": "Spherical contact and localized adhesion are established ideas; this is an effective piezo-coordinate surrogate, not a newly derived contact law.",
+      "falsification": "Another diagnostic exponent model achieves1.282nN on confirmation but was not development-selected.",
+      "scope": "Whole approach and firstfive retractionpoints are explicitly permitted calibration; three samples, not independentmanufacturingbatches.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-084-F02",
+      "classification": "informative_falsification",
+      "claim": "Changing the repulsive exponent alone is insufficient to explain the retraction force shape.",
+      "equation": "Spherical exponent1.5 and conical exponent2 versus localizedattraction.",
+      "evidence": "Conical control reservedMAE2.129nN; adding attraction reduces it to1.360nN.",
+      "known_prior_art": "Adhesion creates retraction behavior not represented by repulsivecontact alone.",
+      "falsification": "The measured piezo coordinate and calibrated force do not identify a unique adhesionenergy or modulus.",
+      "scope": "Calibrated force-curve reconstruction only.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-084-F03",
+      "classification": "unsupported",
+      "claim": "These fits demonstrate improved osteogenic commitment or a uniquely measured Youngmodulus.",
+      "equation": null,
+      "evidence": "Retained files provideAFMcharacterization; no cell-response targets enter this task. True indentation is not an input.",
+      "known_prior_art": "The related article uses independentbiologicalexperiments; its conclusions are not recreated bythisAFMfit.",
+      "falsification": "No independentcelloutcomes or modulusmeasurement is availablehere.",
+      "scope": "No biologicaleffect or certifiedmodulus claim.",
+      "admission": "unsupported"
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted analysis; not independent experimental replication or human expert adjudication."
+}

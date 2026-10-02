@@ -1,0 +1,32 @@
+{
+  "target": "conversion",
+  "target_units": "1",
+  "permitted_inputs": [
+    "temperature_K",
+    "heating_rate_K_min"
+  ],
+  "input_units": {
+    "temperature_K": "K",
+    "heating_rate_K_min": "K/min"
+  },
+  "timing_contract": "Predict author-observed DSC conversion from temperature and imposed constant heating rate; no target history.",
+  "independent_unit": "Complete heating-rate experiment; not independent material batches",
+  "scope_limits": "Source-fitted conversion excluded. Four development traces; one high-rate extrapolation confirmation. Audit exposed first four rows near zero of every trace.",
+  "source_url": "https://data.nist.gov/od/id/mds2-3702",
+  "source_license": "NIST public data license",
+  "uncertainty": "Individual experimental group errors; no row bootstrap or population CI from dependent rows.",
+  "error_units": "1",
+  "metric_kind": "mae",
+  "numeric_columns": [
+    "temperature_K",
+    "heating_rate_K_min"
+  ],
+  "calibration": "Predict author-observed DSC conversion from temperature and imposed constant heating rate; no target history.",
+  "exposure": {
+    "status": "exposed",
+    "confirmation_originally_withheld": true,
+    "public_source_aware": true
+  },
+  "uncertainty_policy": "Individual experimental group errors; no row bootstrap or population CI from dependent rows.",
+  "applicability": "Only source material, geometry, heating-rate or measured beam ranges; no unobserved population guarantee."
+}

@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-015",
+  "title": "Federal Reserve 2025 SHED public-use microdata",
+  "default_task": "P100-015.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Unable to pay hypothetical400USD emergency expense by any listed means",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 10,
+    "independent_unit_description": "Respondents nested in whole states; source respondents may share unreported household/environmental dependencies. States not independent populations.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Development states only; five whole-state hash folds. No held-state outcomes/calibration. EF3 other response checkboxes and EF1 savings coverage excluded to avoid near-endpoint restatement.",
+  "baseline_strength": {
+    "registered_controls": 10,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Unable to pay hypothetical400USD emergency expense by any listed means",
+    "prediction_time": "Contemporaneous2025 household survey association. No future distress observation and no income intervention.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-015.original.v1"
+  ],
+  "finding_ids": [
+    "P100-015-F01",
+    "P100-015-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-015/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-015.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Unable to pay hypothetical400USD emergency expense by any listed means under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Contemporaneous2025 household survey association. No future distress observation and no income intervention.",
+    "calibration_requirement": "Development states only; five whole-state hash folds. No held-state outcomes/calibration. EF3 other response checkboxes and EF1 savings coverage excluded to avoid near-endpoint restatement.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Unable to pay hypothetical400USD emergency expense by any listed means in binary EF3_h",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "brier",
+    "primary_units": "squared probability (Brier)",
+    "reference_model": "reference",
+    "reference_primary_error": 0.07371214814365087,
+    "reference_physical_mae": 0.1585070255401624,
+    "physical_error_units": "probability",
+    "lowest_registered_error_model": "attempt_005",
+    "lowest_registered_error": 0.07336200617292367,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-015.original.v1/evidence/metrics.csv",
+      "bytes": 1219,
+      "sha256": "abc8e2ece669dd397b745bd6c6ae443985b7830488e29291cc3951bc9872aae7"
+    },
+    "models": 10
+  },
+  "case_specific_next_evidence": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+}

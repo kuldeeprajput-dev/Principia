@@ -1,0 +1,163 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-029.original.v1",
+  "case_id": "P100-029",
+  "case_number": 29,
+  "family": "original",
+  "protocol_version": "P100-029-asd6-native-v1",
+  "cohort_id": "P100-029.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-029.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/29_biophysics_peptide_barrels",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "spectral_mean_fluorescence",
+  "target_units": "source fluorescence a.u.",
+  "error_units": "source fluorescence a.u.",
+  "primary_units": "source fluorescence a.u.",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "dose",
+    "dose_cal",
+    "F0",
+    "F1",
+    "F2",
+    "F5",
+    "dose1",
+    "dose2",
+    "dye_NR"
+  ],
+  "input_units": {
+    "dose": "uM barrel",
+    "dose_cal": "uM barrel",
+    "F0": "fluorescence a.u.",
+    "F1": "fluorescence a.u.",
+    "F2": "fluorescence a.u.",
+    "F5": "fluorescence a.u.",
+    "dose1": "uM barrel",
+    "dose2": "uM barrel",
+    "dye_NR": "binary"
+  },
+  "numeric_columns": [
+    "dose",
+    "dose_cal",
+    "F0",
+    "F1",
+    "F2",
+    "F5",
+    "dose1",
+    "dose2",
+    "dye_NR"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict remaining higher-dose assay values after declared lower-dose measurements; sequential assay not real-time kinetics.",
+  "calibration": "Spectrum-wide mean fluorescence at native concentrations 0,1,2,5 nominal uM, per replicate; target concentrations 7.5 to30. No maximal-response normalization.",
+  "independent_unit": "peptide-dye condition",
+  "evaluation_groups": [
+    "Hex2_05_uM_NR_binding",
+    "Hex2_05uM_DPH_binding"
+  ],
+  "assigned_rows": 48,
+  "eligible_rows": 48,
+  "baseline_models": [
+    "reference",
+    "baseline_persistence",
+    "baseline_linear",
+    "baseline_langmuir",
+    "baseline_flexible",
+    "attempt_001_hill",
+    "attempt_002_quenching",
+    "attempt_003_local",
+    "attempt_004_dye_hill",
+    "attempt_005_shrink_local"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Fhat=F5",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_persistence": {
+      "equation": "Fhat=F5",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_linear": {
+      "equation": "Fhat=F0+(F5-F0)*dose/dose_cal",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_langmuir": {
+      "equation": "Fhat=F0+(F5-F0)*H(dose)/H(dose_cal); H(x)=x/(K+x)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_hill": {
+      "equation": "Fhat=F0+(F5-F0)*H(dose)/H(dose_cal); H(x)=x^n/(K^n+x^n)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_quenching": {
+      "equation": "Fhat=F0+(F5-F0)*H(x)/H(z)*exp(-q*(x-z)); H(x)=x/(K+x). Effective fluorescence loss, not binding occupancy.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_local": {
+      "equation": "Langmuir normalized at calibration dose; K inverted from F2/F5 baseline-subtracted ratio then multiplied by fitted factor",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_dye_hill": {
+      "equation": "Hill H with log K=b0+b1*dye_NR and common exponent n",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_shrink_local": {
+      "equation": "log K=w*log K_local+(1-w)*log K_shared",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "Six peptide\u2013dye conditions; four contiguous replicate curves per condition are linked. Shared peptide/dye factors make this condition transfer, not fully independent molecular systems. Low-dose calibration is required; no spectral peak chosen using outcomes.",
+  "source_url": "https://zenodo.org/records/13335904",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "6fb76f3a4e8aac739964ec7b32dba90d4cfe7f45215871a9005b3e250f65ee4a",
+  "observations_sha256": "f4cf418fd9d86ae47fb5d14f8b756071f18448daf3c80b0c6bfa4c29053f3e45",
+  "legacy_protocol_sha256": "5db681e8520f0494b75e878853ac169d51aa811feeb4a21ef7bcbb9f0b9ac7df",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

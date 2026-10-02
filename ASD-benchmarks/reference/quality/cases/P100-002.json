@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-002",
+  "title": "MAST TARS TESS Sector 96 light curves and vetting images",
+  "default_task": "P100-002.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Next hourly median systematics-corrected stellar flux",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Star; repeated hourly bins are dependent",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Causal observed flux history within each star; no fitted header period or future light curve values.",
+  "baseline_strength": {
+    "registered_controls": 8,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Next hourly median systematics-corrected stellar flux",
+    "prediction_time": "Predict next disjoint hourly bin using preceding observed hourly medians only. The released light curve was author-corrected using full-sector information; this is a retrospective product-space forecast, not a raw real-time pipeline.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Publisher full-sector flux correction may use later observations; future-bin input was corrected historically."
+  },
+  "task_ids": [
+    "P100-002.original.v1"
+  ],
+  "finding_ids": [
+    "P100-002-F01",
+    "P100-002-F02",
+    "P100-002-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-002/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-002.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Next hourly median systematics-corrected stellar flux under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Predict next disjoint hourly bin using preceding observed hourly medians only. The released light curve was author-corrected using full-sector information; this is a retrospective product-space forecast, not a raw real-time pipeline.",
+    "calibration_requirement": "Causal observed flux history within each star; no fitted header period or future light curve values.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Next hourly median systematics-corrected stellar flux in relative flux (native normalization)",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Publisher full-sector flux correction may use later observations; future-bin input was corrected historically."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "relative flux (native normalization)",
+    "reference_model": "reference",
+    "reference_primary_error": 0.0008651911708958213,
+    "reference_physical_mae": 0.0008651911708958212,
+    "physical_error_units": "relative flux (native normalization)",
+    "lowest_registered_error_model": "attempt_004",
+    "lowest_registered_error": 0.0008423980625621842,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-002.original.v1/evidence/metrics.csv",
+      "bytes": 1090,
+      "sha256": "72e943563b8845cff7231e9fefa00c5a79b8e488ec519fc6cf7026554ac2f302"
+    },
+    "models": 8
+  },
+  "case_specific_next_evidence": "Publisher full-sector flux correction may use later observations; future-bin input was corrected historically."
+}

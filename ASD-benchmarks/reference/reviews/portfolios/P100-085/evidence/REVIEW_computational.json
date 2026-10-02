@@ -1,0 +1,300 @@
+{
+  "reviewer_id": "/root/asd5_electronics",
+  "case_id": "P100-085",
+  "role": "computational",
+  "checked_files": [
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "c1f39af257ec911cd93de5e10f90e1eebb8d4f7bbbcce4130bbdcee81ae437f2"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "c6d214e70e88ac37a9cb3a452ae873340851d3a635634dede1cb65a88da07e46"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "00a61012fc7b3fc450717903f69f103fb47adaaab07a2c657aa6961e58fe8dec"
+    },
+    {
+      "path": "native.py",
+      "sha256": "0f4119b0912f24ad5e5fec53292293f5695fa3d739ad697782591d6373112df2"
+    },
+    {
+      "path": "run.py",
+      "sha256": "6b07d0fe4a882c9ade8375f49f1927ba43b48d4b171c7b72d66c4a698e9dec9a"
+    },
+    {
+      "path": "develop.py",
+      "sha256": "ea559442f06d3c2eded516f9cabbd168e3f5b4ad07ad9927729d5c3464fd89fd"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "b37ad13f8f7e4ff26ff8e473bcd5c04e6f03a3b70289d0f91b93a7a326b1e463"
+    },
+    {
+      "path": "FINAL_VALIDATION.json",
+      "sha256": "f0be1d081e5a079dcdb30e04ecb1821f34f2a0e54edbee450ee0c3b604388106"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "6b07d0fe4a882c9ade8375f49f1927ba43b48d4b171c7b72d66c4a698e9dec9a"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "27d3dd21a50fc5c56e7f7f0fe4b175a8493236f4fe7ee1751259fcad348e3b9d"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "e55f9b50880aafe761f560ae7008bd76fa1e994b303470651ebf2d7e5d214b17"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "980f8bb001926ca30c8a6205bfea0e858fa5b404407ffebfc13d5e60fc23f835"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "4534c6179bcf85c6ae01af618b95acecc0ddfab5b76ce29db72d8e579b933471"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "9d7b55523fcb82f37c15d692e6d6378139639a08e0b21a2bee8462a7c30d9818"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "10b6b630820993716e54aab65f2a83c13ed104106608106766d7385805d6eafe"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "37374f36daa5f72e391820d022d28338ae5e4d077ed12bb5e10460fc2b7466d2"
+    }
+  ],
+  "overall_limitations": [
+    "Only one exposed held condition with four rows; retrospective transfer rather than fresh confirmation.",
+    "EG and GA are contemporaneous assays, so no online forecasting or HPLC replacement demonstrated."
+  ],
+  "checks": [
+    "Frozen model/code/protocol asset hashes verified",
+    "Isolated package CLI replay: {\"models_replayed\": 11, \"rows\": 4, \"max_tolerance\": \"1e-10\", \"status\": \"pass\"}",
+    "Independent native preparation matches every packaged predictor/target/identity",
+    "Whole-group partitions are disjoint; source sample IDs unique",
+    "Every frozen model reproduced independently recomputed group-balanced MAE",
+    "Reported training groups exclude confirmation",
+    "All 15 attempt fold states exclude their held groups",
+    "Opposing-named bioreactor members independently confirmed byte-identical",
+    "All GA targets and independently measured EG-depletion inputs checked against native replicate columns"
+  ],
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "reference": {
+      "mae": 0.9450000000000005,
+      "by_group": {
+        "Flask_EG_OD0.5": 0.9450000000000005
+      }
+    },
+    "baseline_zero": {
+      "mae": 3.015,
+      "by_group": {
+        "Flask_EG_OD0.5": 3.015
+      }
+    },
+    "baseline_unit_yield": {
+      "mae": 0.9450000000000005,
+      "by_group": {
+        "Flask_EG_OD0.5": 0.9450000000000005
+      }
+    },
+    "baseline_stoichiometric": {
+      "mae": 1.0291928467858864,
+      "by_group": {
+        "Flask_EG_OD0.5": 1.0291928467858864
+      }
+    },
+    "baseline_global_yield": {
+      "mae": 0.9897992246573544,
+      "by_group": {
+        "Flask_EG_OD0.5": 0.9897992246573544
+      }
+    },
+    "baseline_flexible": {
+      "mae": 0.37929853786441337,
+      "by_group": {
+        "Flask_EG_OD0.5": 0.37929853786441337
+      }
+    },
+    "attempt_001_ph_yield": {
+      "mae": 1.1074166324731642,
+      "by_group": {
+        "Flask_EG_OD0.5": 1.1074166324731642
+      }
+    },
+    "attempt_002_loss_flux": {
+      "mae": 0.7087417327785883,
+      "by_group": {
+        "Flask_EG_OD0.5": 0.7087417327785883
+      }
+    },
+    "attempt_003_composition": {
+      "mae": 1.3318330624281705,
+      "by_group": {
+        "Flask_EG_OD0.5": 1.3318330624281705
+      }
+    },
+    "attempt_004_saturation": {
+      "mae": 0.9834052399236081,
+      "by_group": {
+        "Flask_EG_OD0.5": 0.9834052399236081
+      }
+    },
+    "attempt_005_acid": {
+      "mae": 0.9644419157178135,
+      "by_group": {
+        "Flask_EG_OD0.5": 0.9644419157178135
+      }
+    }
+  },
+  "maximum_prediction_discrepancy": 0.0,
+  "findings": [
+    {
+      "finding_id": "P100-085-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Saved-state replay, native reconstruction and independent group-metric calculation support the stated bounded numerical result; small-cohort/exposure limits remain."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "All predictors, targets, code/state predictions and group metrics reproduced from local hash-verified native source and isolated final package."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical controls do not uniquely identify the proposed mechanism. Negative predictive outcomes are supported as failures of tested equations, not as disproof of all domain mechanisms."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This is computational review, not an independent exhaustive prior-art adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The portable task and counterexamples are useful for fair benchmark comparison within the disclosed measurement/information budget."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, industrial gain or out-of-source replication was evaluated."
+        }
+      },
+      "checks": [
+        "Frozen model/code/protocol asset hashes verified",
+        "Isolated package CLI replay: {\"models_replayed\": 11, \"rows\": 4, \"max_tolerance\": \"1e-10\", \"status\": \"pass\"}",
+        "Independent native preparation matches every packaged predictor/target/identity",
+        "Whole-group partitions are disjoint; source sample IDs unique",
+        "Every frozen model reproduced independently recomputed group-balanced MAE",
+        "Reported training groups exclude confirmation",
+        "All 15 attempt fold states exclude their held groups",
+        "Opposing-named bioreactor members independently confirmed byte-identical",
+        "All GA targets and independently measured EG-depletion inputs checked against native replicate columns"
+      ],
+      "limitations": [
+        "Only one exposed held condition with four rows; retrospective transfer rather than fresh confirmation.",
+        "EG and GA are contemporaneous assays, so no online forecasting or HPLC replacement demonstrated."
+      ],
+      "reviewed_claim": "Unit mass recovery is a compact measured-data screening control across these flask conditions, but it is not universally stoichiometric or an industrial replacement for GA assay."
+    },
+    {
+      "finding_id": "P100-085-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Saved-state replay, native reconstruction and independent group-metric calculation support the stated bounded numerical result; small-cohort/exposure limits remain."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "All predictors, targets, code/state predictions and group metrics reproduced from local hash-verified native source and isolated final package."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "The evidence supports a failure or identifiability limit of the tested mechanism/equation; it does not identify an alternative microscopic or behavioral mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This is computational review, not an independent exhaustive prior-art adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The portable task and counterexamples are useful for fair benchmark comparison within the disclosed measurement/information budget."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, industrial gain or out-of-source replication was evaluated."
+        }
+      },
+      "checks": [
+        "Frozen model/code/protocol asset hashes verified",
+        "Isolated package CLI replay: {\"models_replayed\": 11, \"rows\": 4, \"max_tolerance\": \"1e-10\", \"status\": \"pass\"}",
+        "Independent native preparation matches every packaged predictor/target/identity",
+        "Whole-group partitions are disjoint; source sample IDs unique",
+        "Every frozen model reproduced independently recomputed group-balanced MAE",
+        "Reported training groups exclude confirmation",
+        "All 15 attempt fold states exclude their held groups",
+        "Opposing-named bioreactor members independently confirmed byte-identical",
+        "All GA targets and independently measured EG-depletion inputs checked against native replicate columns"
+      ],
+      "limitations": [
+        "Only one exposed held condition with four rows; retrospective transfer rather than fresh confirmation.",
+        "EG and GA are contemporaneous assays, so no online forecasting or HPLC replacement demonstrated."
+      ],
+      "reviewed_claim": "pH-only recovery, product-loss time trend, medium coefficients, saturation and acid-dissociation gates do not improve whole-condition development transfer."
+    },
+    {
+      "finding_id": "P100-085-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Saved-state replay, native reconstruction and independent group-metric calculation support the stated bounded numerical result; small-cohort/exposure limits remain."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "All predictors, targets, code/state predictions and group metrics reproduced from local hash-verified native source and isolated final package."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "The evidence supports a failure or identifiability limit of the tested mechanism/equation; it does not identify an alternative microscopic or behavioral mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This is computational review, not an independent exhaustive prior-art adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The portable task and counterexamples are useful for fair benchmark comparison within the disclosed measurement/information budget."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, industrial gain or out-of-source replication was evaluated."
+        }
+      },
+      "checks": [
+        "Frozen model/code/protocol asset hashes verified",
+        "Isolated package CLI replay: {\"models_replayed\": 11, \"rows\": 4, \"max_tolerance\": \"1e-10\", \"status\": \"pass\"}",
+        "Independent native preparation matches every packaged predictor/target/identity",
+        "Whole-group partitions are disjoint; source sample IDs unique",
+        "Every frozen model reproduced independently recomputed group-balanced MAE",
+        "Reported training groups exclude confirmation",
+        "All 15 attempt fold states exclude their held groups",
+        "Opposing-named bioreactor members independently confirmed byte-identical",
+        "All GA targets and independently measured EG-depletion inputs checked against native replicate columns"
+      ],
+      "limitations": [
+        "Only one exposed held condition with four rows; retrospective transfer rather than fresh confirmation.",
+        "EG and GA are contemporaneous assays, so no online forecasting or HPLC replacement demonstrated."
+      ],
+      "reviewed_claim": "The two bioreactor files cannot support a feed-regime contrast because their native payloads are identical despite opposing names."
+    }
+  ],
+  "independent_of_discovery": true,
+  "experimental_replication": false,
+  "documentation_update_review": "Reviewed corrected finding semantics and equation text; numerical state/replay/metric evidence unchanged.74F01 is now a positive claim explicitly rejected; negative findings are supported as bounded falsifications."
+}

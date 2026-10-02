@@ -1,0 +1,112 @@
+{
+  "case_id": "P100-022",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_electronics",
+  "review_date": "2026-10-02",
+  "checked_files": [
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "36bd268835b8c1101a059ecaaea94daa67d3d376253f694df06477596f8fc167"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "527538678b032765a5f0c984cf3cd0e8e119c2e4698c906fa26ad597315fd1dc"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "608fb6cc796d0501377dbb3c7cc3d53dd7be1a80093204a93df598f7eba6b5e6"
+    },
+    {
+      "path": "package/equations.json",
+      "sha256": "a260c7cf7d88f6587ff2a1e774ee220745751f13a9dd08203877605afe71c410"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "151f7561d011e80ae522d2ef8c4aa6596deb43e37bef7b2fb40b710458e963da"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-022-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Whole-device MAE 74.9489129 microampere improves 83.2742598 domain control but is slightly worse than flexible spline 74.8678488. Twenty devices support scoped ensemble prediction, not universal material behavior."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "The logistic/compliance transition is an empirical forming curve. Instrument compliance, negative fitted precursor, and source-known filaments prevent identification of a new conduction law."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is validated_extension."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Compact ensemble-forming reference with clear device grouping and no current calibration; parity with a larger spline rather than superior accuracy."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task."
+        }
+      },
+      "checks": [
+        "Checked whole-device grouping, no-current input budget, exact duplicate handling, independent target, source-known first-forming distinction, sign of precursor and strongest comparator."
+      ],
+      "limitations": [
+        "Ninety-nine distinct released curves after duplicate linking; independent manufacturing-batch replication is not established.",
+        "Source reports 1 mA compliance while exported plateaus approach 1.15 mA; fitted ceiling is circuit/instrument dependent.",
+        "No retention, endurance, or neuromorphic benefit tested by this first-forming task."
+      ]
+    },
+    {
+      "finding_id": "P100-022-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Negative I-rich precursor coefficient -17.00194 microampere/V contradicts interpreting every fitted precursor as a positive Ohmic conductance."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "A coefficient sign contradiction is a valid falsifier of the positive-conductance interpretation; it does not falsify all filamentary transport."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is informative_falsification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Scientifically useful boundary separating a compact predictor from physical conductance."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task."
+        }
+      },
+      "checks": [
+        "Checked whole-device grouping, no-current input budget, exact duplicate handling, independent target, source-known first-forming distinction, sign of precursor and strongest comparator."
+      ],
+      "limitations": [
+        "Ninety-nine distinct released curves after duplicate linking; independent manufacturing-batch replication is not established.",
+        "Source reports 1 mA compliance while exported plateaus approach 1.15 mA; fitted ceiling is circuit/instrument dependent.",
+        "No retention, endurance, or neuromorphic benefit tested by this first-forming task."
+      ]
+    }
+  ],
+  "review_scope": "Independent critical interpretation of the released evidence and primary-source context; not independent experimental replication, human adjudication, or a fresh confirmation campaign.",
+  "source_review": {
+    "primary_url": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.202502152",
+    "web_access": "primary article inspected"
+  },
+  "metadata_corrections": "none requested"
+}

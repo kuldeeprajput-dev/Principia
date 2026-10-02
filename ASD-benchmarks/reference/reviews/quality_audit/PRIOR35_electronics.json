@@ -1,0 +1,814 @@
+{
+  "schema_version": "principia.prior_quality_audit/1.0",
+  "reviewer_id": "/root/asd5_electronics",
+  "date": "2026-10-02",
+  "scope": "Targeted scientific-quality audit of eight preserved existing portfolios. No source data, model states, historical scores, or reference selections were changed. Source acquisition and new fitting were outside scope.",
+  "cases": [
+    {
+      "case_id": "P100-083",
+      "strongest_admitted_conclusion": "A modest, calibrated one-hour hive-temperature forecast is supported; thermal conductance, biological setpoints and thermoregulation are not identified. Physically signed passive and weather-increment challengers fail stronger flexible controls.",
+      "comparisons": [
+        {
+          "task_id": "P100-083.original.v1",
+          "protocol_version": "P100-083-prepared-primary-v1",
+          "cohort_id": "P100-083.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "rmse",
+          "units": "degC",
+          "groups": 5,
+          "scored_rows": 1282,
+          "assigned_rows": 1282,
+          "reference": {
+            "model": "reference",
+            "error": 0.20454827626942568
+          },
+          "strongest_control": {
+            "model": "baseline_residual_rbf",
+            "error": 0.20210259716704598
+          },
+          "best_other_frozen_model": {
+            "model": "baseline_residual_rbf",
+            "error": 0.20210259716704598,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "One hourly origin: first native observation within first15min. Forecast nominal1hour, score nearest native target within5min, same calendar day, no interpolation. Causal lag<=origin\u22121hour within15min. Latest20percent native dates per stream reserved. Native response outliers retained.",
+          "calibration": "T and Te are current internal/external Celsius temperatures; T\u22121 is a causal one-hour lag, He is current external relative humidity percent, and v is external vapor-pressure deficit in kPa. Five offsets c_s are\u22120.384543,\u22120.316614,\u22120.340834,+0.138741,+0.323654degC in rules.json sensor order. Coefficients ba=\u22120.002878, br=0.050874, bm=0.083403 are dimensionless; bv=0.481876degC/kPa and bvr=0.084243/kPa. The reference30degC is an algebraic centering constant, not a prescribed biological setpoint.",
+          "independent_unit": "future native-date block per calibrated sensor stream"
+        },
+        {
+          "task_id": "P100-083.round2.v1",
+          "protocol_version": "P100-083.round2.v1.contract-1",
+          "cohort_id": "P100-083.round2.v1.development-oof",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "rmse",
+          "units": "degC",
+          "groups": 15,
+          "scored_rows": 4111,
+          "assigned_rows": 4111,
+          "reference": {
+            "model": "current/cycle-001",
+            "error": 0.1868242534908163
+          },
+          "strongest_control": {
+            "model": "previous/baseline-flex",
+            "error": 0.1609614479087286
+          },
+          "best_other_frozen_model": {
+            "model": "previous/baseline-flex",
+            "error": 0.1609614479087286,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "One hourly origin: first native observation within first15min. Forecast nominal1hour, score nearest native target within5min, same calendar day, no interpolation. Causal lag<=origin\u22121hour within15min. Latest20percent native dates per stream reserved. Native response outliers retained. Expanded information budget: T_now, T_lag, T_external, T_external_lag, RH_external, hour_sin, hour_cos, stream",
+          "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. T and Te are current internal/external Celsius temperatures; T\u22121 is a causal one-hour lag, He is current external relative humidity percent, and v is external vapor-pressure deficit in kPa. Five offsets c_s are\u22120.384543,\u22120.316614,\u22120.340834,+0.138741,+0.323654degC in rules.json sensor order. Coefficients ba=\u22120.002878, br=0.050874, bm=0.083403 are dimensionless; bv=0.481876degC/kPa and bvr=0.084243/kPa. The reference30degC is an algebraic centering constant, not a prescribed biological setpoint.",
+          "independent_unit": "future native-date block per calibrated sensor stream"
+        }
+      ],
+      "calibration_timing_independent_unit_limits": [
+        "Five sensor streams in one apiary are not independent colonies/sites. Species, sensor placement and season are confounded.",
+        "Causal one-hour lag and target matching tolerances matter; original uses future dates while round2 is development OOF with an extra ambient lag.",
+        "Negative ambient-gradient coefficient cannot be positive passive conductance; 35.72 degC derived coefficient combination is not a measured brood setpoint."
+      ],
+      "claim_quality_issues": [
+        "Round2 calibration prose appends coefficients of the older reference after the training-scope description; future readers should use per-fold states, not treat those old coefficients as the round2 equation.",
+        "The original reference loses to residual kernel; continuation loses13/15 blocks. These negative outcomes deserve equal prominence."
+      ],
+      "recommended_improvements": [
+        "Add independent apiaries and colonies with sensor placement and response calibration; reserve complete seasons/sites.",
+        "Obtain heat-flow or controlled perturbation evidence before interpreting conductance or active regulation.",
+        "Keep statistical forecast quality separate from biological mechanism and verify timestamp tolerances in external submissions."
+      ],
+      "blocking_defects": [],
+      "not_a_blocking_defect": "Scientific limitations above constrain admissible claims; no newly demonstrated numerical corruption is asserted by this targeted documentary audit. Root separately executes whole-collection reconstruction/replay.",
+      "checked_files": [
+        {
+          "path": "cases/P100-083/final_results/evidence/metrics.csv",
+          "sha256": "04755463005d922909b6d8e59d03a7c556abf71124d122f2a62dcf36735d2635"
+        },
+        {
+          "path": "cases/P100-083/final_results/findings.json",
+          "sha256": "1a4bf225aa61c66202d17807359df20da7c51b31a2901d88cdbe97d75edfda15"
+        },
+        {
+          "path": "cases/P100-083/final_results/task.json",
+          "sha256": "83092d7de6c697ca00b9e6d0cbe593ef2232c666d07abc5a6d1ba4a4cdf4b286"
+        },
+        {
+          "path": "cases/P100-083/final_results/tasks.json",
+          "sha256": "e4e39640c8cdd1778e2c2b26541c6d8c22fd414a2e32bc38be732ccb951542ad"
+        },
+        {
+          "path": "tasks/P100-083.original.v1/evidence/metrics.csv",
+          "sha256": "04755463005d922909b6d8e59d03a7c556abf71124d122f2a62dcf36735d2635"
+        },
+        {
+          "path": "tasks/P100-083.original.v1/task.json",
+          "sha256": "83092d7de6c697ca00b9e6d0cbe593ef2232c666d07abc5a6d1ba4a4cdf4b286"
+        },
+        {
+          "path": "tasks/P100-083.round2.v1/evidence/metrics.csv",
+          "sha256": "8fd1a9ca9f9b9c7aa6d7a465f012f1c4920bf8df5e04bc10eeb571b6439d50a4"
+        },
+        {
+          "path": "tasks/P100-083.round2.v1/task.json",
+          "sha256": "1794e1912ef5e300420c1f6929401a6d3448fe55dce70273532dab94ddaf086e"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-085",
+      "strongest_admitted_conclusion": "The unit mass-recovery equation is a transparent contemporaneous assay screening control, not a new stoichiometric law or a superior estimator. The duplicate bioreactor payloads cannot establish a feed-regime contrast.",
+      "comparisons": [
+        {
+          "task_id": "P100-085.original.v1",
+          "protocol_version": "P100-085-asd5-native-v1",
+          "cohort_id": "P100-085.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "units": "g/L",
+          "groups": 1,
+          "scored_rows": 4,
+          "assigned_rows": 4,
+          "reference": {
+            "model": "reference",
+            "error": 0.9450000000000005
+          },
+          "strongest_control": {
+            "model": "baseline_flexible",
+            "error": 0.37929853786441337
+          },
+          "best_other_frozen_model": {
+            "model": "baseline_flexible",
+            "error": 0.37929853786441337,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+          "calibration": "Diagnostic contemporaneous assay: initial and current independently measured EG and current pH, known medium and elapsed time. No GA calibration. Not an online forecast or replacement of HPLC.",
+          "independent_unit": "Complete flask conditions; three development conditions and one metadata-hash confirmation condition; leave-one-condition-out folds keep all replicates together."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": [
+        "Only one reserved condition with four targets; all four targets were visible during schema preview, so evaluation is retrospective even historically.",
+        "Current ethylene-glycol depletion and pH are measured inputs; the task is neither an online forecast nor replacement of laboratory GA assay.",
+        "Mass recovery ratio1 differs from molecular stoichiometry, and cofeeding pathways are not isolated."
+      ],
+      "claim_quality_issues": [
+        "The flexible control substantially beats the selected screening reference; preserve that adverse comparison.",
+        "Failure of five mechanisms in development cannot universally falsify those mechanisms; several look better on the single exposed condition."
+      ],
+      "recommended_improvements": [
+        "Obtain independently repeated medium/pH conditions with assay uncertainty and carbon-balance measurements.",
+        "Resolve identical but oppositely named bioreactor files with the depositor before any feed-regime scientific claim.",
+        "Test proposed kinetics with controlled substrate/cofeed experiments and a genuinely unexposed whole-condition cohort."
+      ],
+      "blocking_defects": [],
+      "not_a_blocking_defect": "Scientific limitations above constrain admissible claims; no newly demonstrated numerical corruption is asserted by this targeted documentary audit. Root separately executes whole-collection reconstruction/replay.",
+      "checked_files": [
+        {
+          "path": "cases/P100-085/final_results/evidence/metrics.csv",
+          "sha256": "9d7b55523fcb82f37c15d692e6d6378139639a08e0b21a2bee8462a7c30d9818"
+        },
+        {
+          "path": "cases/P100-085/final_results/findings.json",
+          "sha256": "67e188bda3c9456353aa4ac716d0fa15d4162b2887839591fde29b9bc487b640"
+        },
+        {
+          "path": "cases/P100-085/final_results/task.json",
+          "sha256": "bc9812a226457425a871e781e5e319572fd58b6233abe26487410fba6e3da895"
+        },
+        {
+          "path": "cases/P100-085/final_results/tasks.json",
+          "sha256": "07eb6af08b06c580bab8449c58e6f99819075045bfce8874573be08d5a085b24"
+        },
+        {
+          "path": "tasks/P100-085.original.v1/evidence/metrics.csv",
+          "sha256": "9d7b55523fcb82f37c15d692e6d6378139639a08e0b21a2bee8462a7c30d9818"
+        },
+        {
+          "path": "tasks/P100-085.original.v1/task.json",
+          "sha256": "bc9812a226457425a871e781e5e319572fd58b6233abe26487410fba6e3da895"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-086",
+      "strongest_admitted_conclusion": "A multiscale causal-history ensemble improves six-hour potency forecasting relative to the secant under a declared assay-history budget. This is a conditional forecasting contribution, not an identified biochemical growth law or demonstrated online industrial benefit.",
+      "comparisons": [
+        {
+          "task_id": "P100-086.continuation.v1",
+          "protocol_version": "P100-086-continuation-20261001-documentation-v2",
+          "cohort_id": "P100-086.continuation.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "units": "source potency unit (undocumented)",
+          "groups": 81,
+          "scored_rows": 9132,
+          "assigned_rows": 9132,
+          "reference": {
+            "model": "reference",
+            "error": 24.48441857279256
+          },
+          "strongest_control": {
+            "model": "ar",
+            "error": 33.984821639064705
+          },
+          "best_other_frozen_model": {
+            "model": "hgb",
+            "error": 24.48441857279256,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "At native hour t, the current hx assay and strictly earlier assay history plus cultivation clock are allowed. Features use exact earlier1/3/6/12h observations, backward slope curvature, causal EWMA and past-rate variability; no later assay or target smoothing supplies inputs. Target is hx at t+6h. Assays are assumed available at their recorded source times; true receipt latency is unresolved. New history features expand the former current/slope6 information contract for every comparator.",
+          "calibration": "Native hx is the source-loader target. Other undocumented abbreviations are excluded. Source units are not asserted to be mg/L or activity U/mL. 406 independent production batches; rows with exact 6 h lag/horizon only. No target smoothing or imputation. This is a six-hour prediction conditional on an available current potency assay, not an inline soft sensor.",
+          "independent_unit": "whole production batch; chronologically latest 81 reserved"
+        },
+        {
+          "task_id": "P100-086.original.v1",
+          "protocol_version": "P100-086-batch4-frozen-v1",
+          "cohort_id": "P100-086.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "units": "source potency unit (undocumented)",
+          "groups": 81,
+          "scored_rows": 9132,
+          "assigned_rows": 9132,
+          "reference": {
+            "model": "reference",
+            "error": 37.75907599324304
+          },
+          "strongest_control": {
+            "model": "baseline_domain",
+            "error": 37.75907599324304
+          },
+          "best_other_frozen_model": {
+            "model": "attempt_004",
+            "error": 36.43355139256836,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "Strictly causal potency history and cultivation clock. Matching plus/minus 6 h uses source clock; future values only become targets.",
+          "calibration": "Native hx is the source-loader target. Other undocumented abbreviations are excluded. Source units are not asserted to be mg/L or activity U/mL. 406 independent production batches; rows with exact 6 h lag/horizon only. No target smoothing or imputation. This is a six-hour prediction conditional on an available current potency assay, not an inline soft sensor.",
+          "independent_unit": "whole production batch; chronologically latest 81 reserved"
+        }
+      ],
+      "calibration_timing_independent_unit_limits": [
+        "Native hx potency units and source assay receipt times remain undocumented; numerical source-clock causality is not proven production-time availability.",
+        "Source smoothness audit reports92.646% of39,217 hourly triples with second differences <=1 native unit; interpolation lineage remains unresolved.",
+        "Original and continuation have different information budgets. The latter admits1/3/6/12h history; both cohorts contain81 later batch IDs within a single production dataset."
+      ],
+      "claim_quality_issues": [
+        "The original development-selected secant remains reference even though several exposed diagnostic models score lower.",
+        "Continuation gain is substantial but no contract-matched comparison to author MASTER exists, and artificial delay sensitivity exposes operational risk.",
+        "Use native potency units; never relabel asmg/L orU/mL."
+      ],
+      "recommended_improvements": [
+        "Obtain laboratory timestamp, receipt delay, interpolation lineage and physical unit metadata before claiming online deployment.",
+        "Benchmark delay-aware histories with real assay arrival times, then reserve later production campaigns.",
+        "Measure production decision utility under prespecified costs, constraints and matched source-model access."
+      ],
+      "blocking_defects": [],
+      "not_a_blocking_defect": "Scientific limitations above constrain admissible claims; no newly demonstrated numerical corruption is asserted by this targeted documentary audit. Root separately executes whole-collection reconstruction/replay.",
+      "checked_files": [
+        {
+          "path": "cases/P100-086/final_results/evidence/metrics.csv",
+          "sha256": "429f39bcd5235d58dcabc9fd3328c04e42c563a6dfb1845ac5bb9a5992eb685f"
+        },
+        {
+          "path": "cases/P100-086/final_results/findings.json",
+          "sha256": "4b1d29a8a1927f1262792a3809a1a742056994592fb36eee0a09248a795b5163"
+        },
+        {
+          "path": "cases/P100-086/final_results/task.json",
+          "sha256": "380748db5fc1a351e2403d00ef7a0c69b9e66094fd94a9104353f380f2bae282"
+        },
+        {
+          "path": "cases/P100-086/final_results/tasks.json",
+          "sha256": "49bba65e7acc004a3ba40d4c8699a6eca584d54d76a52d3e31864505f0a99e07"
+        },
+        {
+          "path": "tasks/P100-086.continuation.v1/evidence/metrics.csv",
+          "sha256": "f547e9e738a91581c71b0933d6955faf0448a8e358f0d3e8b7df48f8ccda65cd"
+        },
+        {
+          "path": "tasks/P100-086.continuation.v1/task.json",
+          "sha256": "fbb99329c9a3136fbedef0c5efc99e36ec0bf12560c86039a6fc511cbf091faf"
+        },
+        {
+          "path": "tasks/P100-086.original.v1/evidence/metrics.csv",
+          "sha256": "429f39bcd5235d58dcabc9fd3328c04e42c563a6dfb1845ac5bb9a5992eb685f"
+        },
+        {
+          "path": "tasks/P100-086.original.v1/task.json",
+          "sha256": "380748db5fc1a351e2403d00ef7a0c69b9e66094fd94a9104353f380f2bae282"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-087",
+      "strongest_admitted_conclusion": "Previous own contribution is the strongest tested next-round forecast in the retained first-session games; five richer behavioral responses provide informative negative evidence, not new behavioral laws.",
+      "comparisons": [
+        {
+          "task_id": "P100-087.original.v1",
+          "protocol_version": "P100-087-asd5-native-v1",
+          "cohort_id": "P100-087.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "units": "experimental tokens",
+          "groups": 55,
+          "scored_rows": 1980,
+          "assigned_rows": 1980,
+          "reference": {
+            "model": "reference",
+            "error": 0.3646464646464646
+          },
+          "strongest_control": {
+            "model": "baseline_persistence",
+            "error": 0.3646464646464646
+          },
+          "best_other_frozen_model": {
+            "model": "baseline_persistence",
+            "error": 0.3646464646464646,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "One-step prediction before round3..20 using strictly prior own/peer contributions and publicly announced rules. Earlier confirmation responses are permitted causal online history, never fitted parameters. Surveys and session2 excluded.",
+          "calibration": "One-step prediction before round3..20 using strictly prior own/peer contributions and publicly announced rules. Earlier confirmation responses are permitted causal online history, never fitted parameters. Surveys and session2 excluded.",
+          "independent_unit": "Complete first-session interacting pair;20% hash heldout in each treatment; remaining groups in5 deterministic whole-pair folds. Both players remain together."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": [
+        "Complete interacting pairs are held together;55 held pairs remain from one university laboratory sample.",
+        "Strictly previous own/peer actions and announced rules are permitted, including earlier held-pair actions as online history. This is not a fixed-horizon unseen-pair trajectory prediction.",
+        "Type2 duplicates and session2 participant reuse are excluded; treatment associations are not causal policy effects."
+      ],
+      "claim_quality_issues": [
+        "No fitted behavioral extension beats persistence on the declared objective. Rare changes can be obscured by MAE even when average persistence is strong.",
+        "Threshold success is a rule identity; predicting contributions is the independent target."
+      ],
+      "recommended_improvements": [
+        "Prespecify a change-event task with scientifically meaningful token thresholds and report precision, recall, calibration and per-treatment errors alongside MAE.",
+        "Test whole-session/laboratory/treatment transfer on fresh pairs without repurposing exposed outcomes.",
+        "Separate descriptive forecasts from causal reciprocity or incentive-effect hypotheses requiring randomized contrasts."
+      ],
+      "blocking_defects": [],
+      "not_a_blocking_defect": "Scientific limitations above constrain admissible claims; no newly demonstrated numerical corruption is asserted by this targeted documentary audit. Root separately executes whole-collection reconstruction/replay.",
+      "checked_files": [
+        {
+          "path": "cases/P100-087/final_results/evidence/metrics.csv",
+          "sha256": "cee88f9eb4c21838b48bb37c2d253358ced0d6ab64c150b03bb0b349095eae64"
+        },
+        {
+          "path": "cases/P100-087/final_results/findings.json",
+          "sha256": "9698f40f494fade33a5868fff493e0df400baacb3f85892d546e75b2b1967bd8"
+        },
+        {
+          "path": "cases/P100-087/final_results/task.json",
+          "sha256": "1400e746a6f410340f91c4bcea02749a342329053558648dd84ba8ba6a6b37b4"
+        },
+        {
+          "path": "cases/P100-087/final_results/tasks.json",
+          "sha256": "149c4b592224bc85210f312daf2e968199d97a4f3d34e18e830181e530a05a13"
+        },
+        {
+          "path": "tasks/P100-087.original.v1/evidence/metrics.csv",
+          "sha256": "cee88f9eb4c21838b48bb37c2d253358ced0d6ab64c150b03bb0b349095eae64"
+        },
+        {
+          "path": "tasks/P100-087.original.v1/task.json",
+          "sha256": "1400e746a6f410340f91c4bcea02749a342329053558648dd84ba8ba6a6b37b4"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-091",
+      "strongest_admitted_conclusion": "A finite offered-rate rule with achieved-throughput correction improves a regularized queue curve but loses to the matched flexible control. The data do not identify network capacity or packet loss from a fitted pole/throughput difference.",
+      "comparisons": [
+        {
+          "task_id": "P100-091.original.v1",
+          "protocol_version": "P100-091-asd5-native-v1",
+          "cohort_id": "P100-091.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "units": "ms",
+          "groups": 2,
+          "scored_rows": 60,
+          "assigned_rows": 60,
+          "reference": {
+            "model": "reference",
+            "error": 2.1955568333333337
+          },
+          "strongest_control": {
+            "model": "baseline_rbf",
+            "error": 1.9164574194366188
+          },
+          "best_other_frozen_model": {
+            "model": "baseline_rbf",
+            "error": 1.9164574194366188,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "Conditional reconstruction after a60-second run. Same-run achieved throughput is permitted; all latency-derived fields, NetPwr, loss, jitter, current location targets and future TCP calibration are forbidden. Not a prospective offered-load forecast.",
+          "calibration": "No held-out location latency calibration. Six global offered-rate offsets and shared slope are fitted on development locations only.",
+          "independent_unit": "Complete measurement location; all offered rates and repetitions linked. Locations share one network installation."
+        }
+      ],
+      "calibration_timing_independent_unit_limits": [
+        "Contemporaneous achieved throughput is measured after the60-second trial; this is conditional latency reconstruction, not prospective offered-load prediction.",
+        "Only two held locations in a single seven-location installation; all offered rates and repetitions stay linked.",
+        "Endpoint is mean one-way end-to-end UDP latency, not pure radio latency; source clock/synchronization and complete-stack contributions limit mechanisms."
+      ],
+      "claim_quality_issues": [
+        "Reference MAE improves a queue comparator but RMSE4.4458ms is worse than flexible2.9480ms; mean-error claims should include tail degradation.",
+        "Six offered-rate offsets are calibration parameters, so no unseen-rate extrapolation is established.",
+        "Neither offered-minus-achieved throughput nor an unstable fitted queue pole is an independent physical loss/capacity measurement."
+      ],
+      "recommended_improvements": [
+        "Preserve flexible and finite-rate lookup baselines under identical same-run input access.",
+        "Add fresh locations/installations and controlled offered-rate/interference experiments with synchronized packet-level latency/loss logs.",
+        "If prospective control is desired, freeze a new task without same-run achieved throughput; use tail quantiles and operational limits justified externally."
+      ],
+      "blocking_defects": [],
+      "not_a_blocking_defect": "Scientific limitations above constrain admissible claims; no newly demonstrated numerical corruption is asserted by this targeted documentary audit. Root separately executes whole-collection reconstruction/replay.",
+      "checked_files": [
+        {
+          "path": "cases/P100-091/final_results/evidence/metrics.csv",
+          "sha256": "e96d6e43c5c795bab11ea3a7494274b644789ed4ad6ecc2132d51996057bbe3f"
+        },
+        {
+          "path": "cases/P100-091/final_results/findings.json",
+          "sha256": "00dbff46a568affb4a4d60136b341f48eed6c02864d7d0c3435d46decfcd5bea"
+        },
+        {
+          "path": "cases/P100-091/final_results/task.json",
+          "sha256": "d2b3ca0e7a17e2feb135d3082dc70c3449cf1c8deafdb7b8852dfddade8aafc2"
+        },
+        {
+          "path": "cases/P100-091/final_results/tasks.json",
+          "sha256": "68797f06318c966df0666feba2b046305dcaaf2753ad99b8cfa8341aaa53a5c6"
+        },
+        {
+          "path": "tasks/P100-091.original.v1/evidence/metrics.csv",
+          "sha256": "e96d6e43c5c795bab11ea3a7494274b644789ed4ad6ecc2132d51996057bbe3f"
+        },
+        {
+          "path": "tasks/P100-091.original.v1/task.json",
+          "sha256": "d2b3ca0e7a17e2feb135d3082dc70c3449cf1c8deafdb7b8852dfddade8aafc2"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-092",
+      "strongest_admitted_conclusion": "Compact contrast or positive-power corrections offer a readable calibration-drift description, but do not beat flexible prediction and do not establish propagation physics or reduced calibration cost.",
+      "comparisons": [
+        {
+          "task_id": "P100-092.original.v1",
+          "protocol_version": "P100-092-prepared-primary-v1",
+          "cohort_id": "P100-092.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "units": "dB",
+          "groups": 3,
+          "scored_rows": 15600,
+          "assigned_rows": 15600,
+          "reference": {
+            "model": "compact",
+            "error": 3.689564285086661
+          },
+          "strongest_control": {
+            "model": "flexible",
+            "error": 3.6554818358451606
+          },
+          "best_other_frozen_model": {
+            "model": "flexible",
+            "error": 3.6554818358451606,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "Only the initial calibration map and known date/furniture/antenna/channel metadata are allowed. Whole dates remain grouped; repeated packets/cells are not independent experiments.",
+          "calibration": "Initial 3120-cell measured RSSI map is a declared input, with same-position channel and same-channel spatial contrasts. No target-date RSSI recalibration.",
+          "independent_unit": "complete measurement date (all available furniture states)"
+        },
+        {
+          "task_id": "P100-092.round2.v1",
+          "protocol_version": "P100-092.round2.v1.contract-1",
+          "cohort_id": "P100-092.round2.v1.development-oof",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "units": "dB",
+          "groups": 3,
+          "scored_rows": 18720,
+          "assigned_rows": 18720,
+          "reference": {
+            "model": "current/cycle-001",
+            "error": 3.5764933171801085
+          },
+          "strongest_control": {
+            "model": "current/baseline-hgb",
+            "error": 3.33980226137731
+          },
+          "best_other_frozen_model": {
+            "model": "current/baseline-hgb",
+            "error": 3.33980226137731,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "Only the initial calibration map and known date/furniture/antenna/channel metadata are allowed. Whole dates remain grouped; repeated packets/cells are not independent experiments. Expanded information budget: r0, channel_contrast, position_contrast, spatial_contrast, global_power_reference, local_channel_power_dB, furniture, day, lwa, port, channel",
+          "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Initial 3120-cell measured RSSI map is a declared input, with same-position channel and same-channel spatial contrasts. No target-date RSSI recalibration.",
+          "independent_unit": "complete measurement date (all available furniture states)"
+        }
+      ],
+      "calibration_timing_independent_unit_limits": [
+        "The full3120-cell initial RSSI map remains required; three held dates test temporal transfer at calibrated positions, not localization/unseen-position prediction.",
+        "Whole dates contain correlated positions/channels/antenna ports in one installation.",
+        "Original held-date metrics and round2 development OOF metrics are different cohorts and must remain separate."
+      ],
+      "claim_quality_issues": [
+        "Original compact reference loses to flexible on2/3 dates; local redistribution loses on all three development dates.",
+        "The round2 task scope inherits mention of the original reserved days before explicitly saying OOF; reader navigation should show the actual three development dates first.",
+        "Three fitted power-mixing coefficients are not total model complexity when the3120-cell measured map is required."
+      ],
+      "recommended_improvements": [
+        "Measure calibration acquisition cost explicitly and evaluate sparse-map budgets as separately registered tasks.",
+        "Reserve entire rooms/installations and positions for spatial claims; collect independent antenna/geometry controls for mechanistic power transfer.",
+        "Report date-group uncertainty, worst-date performance and unchanged-map/flexible baselines under equal calibration access."
+      ],
+      "blocking_defects": [],
+      "not_a_blocking_defect": "Scientific limitations above constrain admissible claims; no newly demonstrated numerical corruption is asserted by this targeted documentary audit. Root separately executes whole-collection reconstruction/replay.",
+      "checked_files": [
+        {
+          "path": "cases/P100-092/final_results/evidence/metrics.csv",
+          "sha256": "ea2bd8b64a11bd1b33fc03d6d242a75f17049363bdfdf33185a2c32136777168"
+        },
+        {
+          "path": "cases/P100-092/final_results/findings.json",
+          "sha256": "c5fe924cd28f9de1008727c90894c380547b319c2e4b2f9caddc4b941f3ca867"
+        },
+        {
+          "path": "cases/P100-092/final_results/task.json",
+          "sha256": "b3fc96c680863face2d81ab77546c77f75c9d0645d4ee3ee8c7acda74dd76c29"
+        },
+        {
+          "path": "cases/P100-092/final_results/tasks.json",
+          "sha256": "4af1b9392392f009c7bd59cc1ad56bfd066daf1ad97470730f925b9f0ae48ad6"
+        },
+        {
+          "path": "tasks/P100-092.original.v1/evidence/metrics.csv",
+          "sha256": "ea2bd8b64a11bd1b33fc03d6d242a75f17049363bdfdf33185a2c32136777168"
+        },
+        {
+          "path": "tasks/P100-092.original.v1/task.json",
+          "sha256": "b3fc96c680863face2d81ab77546c77f75c9d0645d4ee3ee8c7acda74dd76c29"
+        },
+        {
+          "path": "tasks/P100-092.round2.v1/evidence/metrics.csv",
+          "sha256": "d26ea110352aef4a6e40cab238c98f13840eceefda19d8f1c640894add8783ab"
+        },
+        {
+          "path": "tasks/P100-092.round2.v1/task.json",
+          "sha256": "8a8f7fb0ae3004f3714601f9867f42982eaf3c50fa2957b1ad84e30340fb1ec8"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-096",
+      "strongest_admitted_conclusion": "The most substantive contribution is correcting observation timing and demonstrating a modest scoped directional-leader relation under matched wrong-neighbor controls. The original author-smoothed speed result alone is nearly tied with persistence.",
+      "comparisons": [
+        {
+          "task_id": "P100-096.continuation.v1",
+          "protocol_version": "P100-096-forward-arc-actual-clock-v2-documentation-v2",
+          "cohort_id": "P100-096.continuation.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "units": "m/s",
+          "groups": 1,
+          "scored_rows": 5833,
+          "assigned_rows": 5833,
+          "reference": {
+            "model": "reference",
+            "error": 0.2620453612731212
+          },
+          "strongest_control": {
+            "model": "geometry",
+            "error": 0.2702997659084816
+          },
+          "best_other_frozen_model": {
+            "model": "profile_gap_scale",
+            "error": 0.26113643527670166,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "supplemental",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "Manual position annotations are the latest observations at/before each nominal25frame decision; allowed age<=5frames. Current speed is the absolute past-window angular secant divided by actual frame interval/25Hz. past_acc is a backward difference of interval speeds (m/s), not measured acceleration. Direction/leader selection use only current/past states. The future target projects the future arc increment onto the direction fixed from the past window; negative targets are retained. No future interpolation, RTS state or future-neighbor availability supplies predictors.",
+          "calibration": "Author repository manually assisted position products are acquired at immutable commit ea1f8029c08949d7da019d12bc4a729ce4778ee6 before final Kalman/RTS processing. Homography, identities and annotation assistance remain author supplied. Actual annotation intervals alternate0.8/1.2s around nominal1s windows. Causal backward secants define predictors; future annotation positions define targets only. Videos0003-5/0007-9 form chronological development; all0010-12 stay together as one exposed wide-lane diagnostic block. All28riders recur; no independent session or rider transfer is claimed.",
+          "independent_unit": "One connected wide-lane temporal block within the same recurring-rider session"
+        },
+        {
+          "task_id": "P100-096.original.v1",
+          "protocol_version": "P100-096-batch4-frozen-v1",
+          "cohort_id": "P100-096.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "units": "m/s",
+          "groups": 2,
+          "scored_rows": 4437,
+          "assigned_rows": 4437,
+          "reference": {
+            "model": "reference",
+            "error": 0.2616423824431219
+          },
+          "strongest_control": {
+            "model": "baseline_persistence",
+            "error": 0.26582281854787937
+          },
+          "best_other_frozen_model": {
+            "model": "mechanistic_reference",
+            "error": 0.2616423824431219,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "Only current and past extracted speeds and current geometry/neighbor state. Future target speed is inaccessible to candidate replay.",
+          "calibration": "Source computer-vision/Kalman trajectories, 25 Hz; select every 25th frame and exact +/-25-frame pairs. Parts of the same original video remain together. Track IDs may be ambiguous; all 28 riders recur across videos. Source preprocessing may use future smoothing, so predictions are retrospective trajectory dynamics and not certified online safety. Angular-neighbor interaction is a testable approximation; lateral separation and direction reversal are falsifiers.",
+          "independent_unit": "whole original video, all parts/participants"
+        }
+      ],
+      "calibration_timing_independent_unit_limits": [
+        "Original source Kalman/RTS speeds may incorporate future smoothing, so timestamp-only predictor causality does not establish online measurement availability.",
+        "Supplemental manual-position trajectories use actual0.8/1.2s windows and form a distinct optional source/task; negative projected targets remain eligible.",
+        "All28 riders recur in one session. Connected videos0010\u20130012 are one exposed diagnostic block; no independent rider or safety transfer."
+      ],
+      "claim_quality_issues": [
+        "A nominal-clock acceleration coefficient near-0.9283 was a timing artifact, not behavior.",
+        "Supplemental leader-only diagnostic improvement is modest and some exposed parameter variants score slightly better; do not promote them as fresh confirmation.",
+        "Keep original and supplemental endpoints, units of backward speed difference, source manifests and source availability distinct."
+      ],
+      "recommended_improvements": [
+        "Collect independent sessions/riders and genuinely causal raw/manual tracking with explicit frame timing and annotation latency.",
+        "Repeat matched reverse-direction, shuffled-neighbor and persistence controls on new groups before physical car-following interpretation.",
+        "Use signed target validation and actual duration everywhere; no automatic nonnegative filtering of projected motion."
+      ],
+      "blocking_defects": [],
+      "not_a_blocking_defect": "Scientific limitations above constrain admissible claims; no newly demonstrated numerical corruption is asserted by this targeted documentary audit. Root separately executes whole-collection reconstruction/replay.",
+      "checked_files": [
+        {
+          "path": "cases/P100-096/final_results/evidence/metrics.csv",
+          "sha256": "a377a798ffaf6707dc1aa8266661a6465497648f9383e49f09b988021e287460"
+        },
+        {
+          "path": "cases/P100-096/final_results/findings.json",
+          "sha256": "0fb88671b66c6ca37860703b325adeb5746ab045dc2923e9c16cf32081443890"
+        },
+        {
+          "path": "cases/P100-096/final_results/task.json",
+          "sha256": "3f2d3c27da5530e9a13b01825eb1736bbbb3cc609c47b59e8d3d90090975024b"
+        },
+        {
+          "path": "cases/P100-096/final_results/tasks.json",
+          "sha256": "09576a8d02a6055f18f348085f33fee27ea259f90efca10134b22a33208fd5c6"
+        },
+        {
+          "path": "tasks/P100-096.continuation.v1/evidence/metrics.csv",
+          "sha256": "4aaaec069fe5c46376a077723bbbb1a4d6753aaf7baba4c7e4d03cbb471bf646"
+        },
+        {
+          "path": "tasks/P100-096.continuation.v1/task.json",
+          "sha256": "b256a78f01ae91b6815e949f66dc50e7237c2e194a43b003fa5c590f7ed90f85"
+        },
+        {
+          "path": "tasks/P100-096.original.v1/evidence/metrics.csv",
+          "sha256": "a377a798ffaf6707dc1aa8266661a6465497648f9383e49f09b988021e287460"
+        },
+        {
+          "path": "tasks/P100-096.original.v1/task.json",
+          "sha256": "3f2d3c27da5530e9a13b01825eb1736bbbb3cc609c47b59e8d3d90090975024b"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-100",
+      "strongest_admitted_conclusion": "Lag-two persistence is the mandatory recurrence control; adding it overturns a weak earlier improvement claim. This is a useful benchmark correction and negative mechanism test, not identification of a scheduler or queue.",
+      "comparisons": [
+        {
+          "task_id": "P100-100.original.v1",
+          "protocol_version": "P100-100-prepared-primary-v1",
+          "cohort_id": "P100-100.original.v1.cohort-1",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "units": "ms",
+          "groups": 3,
+          "scored_rows": 2942,
+          "assigned_rows": 2943,
+          "reference": {
+            "model": "reference",
+            "error": 2.0700160289221095
+          },
+          "strongest_control": {
+            "model": "baseline_residual_rbf",
+            "error": 2.1053968460062045
+          },
+          "best_other_frozen_model": {
+            "model": "baseline_residual_rbf",
+            "error": 2.1053968460062045,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "Predict next probe RTT using only five previous completed RTTs and radio asof previous completion, <=0.5s old. No current response-completion timestamp, ICMPseq, cumulative average/loss, future gap, throughput or same-probe radio in inputs. Successful response conditional target; missing lost responses retained when inputs eligible.",
+          "calibration": "r_n and r_(n\u22121) are completed previous RTTs in milliseconds; rbar5 averages the last five completed probes. c_q in ms is\u22120.002897 for indoor random,\u22120.069945 for indoor rectangle and\u22120.049676 for outdoor rectangle. The55ms breakpoint was selected using nested development groups. Payload and causal radio measurements are available to comparators, but the selected equation uses history and the calibrated route offset only. It predicts a conditional successful next response, not a missing lost-packet RTT.",
+          "independent_unit": "whole PING run; sequential packets correlated"
+        },
+        {
+          "task_id": "P100-100.round2.v1",
+          "protocol_version": "P100-100.round2.v1.contract-1",
+          "cohort_id": "P100-100.round2.v1.development-oof",
+          "evaluator_version": "3.0.0-rc.1",
+          "metric": "mae",
+          "units": "ms",
+          "groups": 6,
+          "scored_rows": 5938,
+          "assigned_rows": 5965,
+          "reference": {
+            "model": "current/cycle-001",
+            "error": 2.691667041274864
+          },
+          "strongest_control": {
+            "model": "previous/baseline-lag2",
+            "error": 2.422715003285162
+          },
+          "best_other_frozen_model": {
+            "model": "previous/baseline-lag2",
+            "error": 2.422715003285162,
+            "warning": "Retrospective minimum is diagnostic, never an automatic reference promotion."
+          },
+          "source_scope": "original_corpus",
+          "exposure": "exposed; future comparison retrospective",
+          "timing": "Predict next probe RTT using only five previous completed RTTs and radio asof previous completion, <=0.5s old. No current response-completion timestamp, ICMPseq, cumulative average/loss, future gap, throughput or same-probe radio in inputs. Successful response conditional target; missing lost responses retained when inputs eligible. Expanded information budget: payload_B, last_rtt, mean5_rtt, mean3_rtt, trend_rtt, RSRP, RSRQ, last2_rtt, last3_rtt, median5_rtt, std5_rtt, route",
+          "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. r_n and r_(n\u22121) are completed previous RTTs in milliseconds; rbar5 averages the last five completed probes. c_q in ms is\u22120.002897 for indoor random,\u22120.069945 for indoor rectangle and\u22120.049676 for outdoor rectangle. The55ms breakpoint was selected using nested development groups. Payload and causal radio measurements are available to comparators, but the selected equation uses history and the calibrated route offset only. It predicts a conditional successful next response, not a missing lost-packet RTT.",
+          "independent_unit": "whole PING run; sequential packets correlated"
+        }
+      ],
+      "calibration_timing_independent_unit_limits": [
+        "Complete route/run groups and only prior completed probes are allowed; radio is as-of previous completion with<=0.5s age.",
+        "Original has2942 measured RTTs among2943 assigned observations; one lost response has no RTT and cannot be imputed. Round2 has5938/5965.",
+        "Successful-response conditioning excludes a packet-loss outcome; three original held runs and six development runs do not establish network-wide reliability."
+      ],
+      "claim_quality_issues": [
+        "Original compact average gain versus residual kernel loses on2/3 runs and omitted a stronger simple lag-two control.",
+        "Parity-filter assumptions of equal-variance independent noise and stationary alternating means are not measured.",
+        "A50ms decision threshold is illustrative absent an externally justified service constraint; event metrics require declared provenance."
+      ],
+      "recommended_improvements": [
+        "Require lag-one, lag-two, rolling and flexible history baselines in every new proposal with equivalent input availability.",
+        "Register loss/timeout and tail-RTT tasks separately, preserving missing targets and identical eligibility denominators.",
+        "Reserve fresh operators/routes/time periods and measure relevant scheduling/queue state before a mechanism claim."
+      ],
+      "blocking_defects": [],
+      "not_a_blocking_defect": "Scientific limitations above constrain admissible claims; no newly demonstrated numerical corruption is asserted by this targeted documentary audit. Root separately executes whole-collection reconstruction/replay.",
+      "checked_files": [
+        {
+          "path": "cases/P100-100/final_results/evidence/metrics.csv",
+          "sha256": "38a5c55cf5552450034a9e29c394aa9a47fc92ba2bbc9a61a44b6e946b83528b"
+        },
+        {
+          "path": "cases/P100-100/final_results/findings.json",
+          "sha256": "7db815ab68b7e64dd8eb6c7d0ea287ae141d1dd0640c94efe6e6f3f81a2a4ddd"
+        },
+        {
+          "path": "cases/P100-100/final_results/task.json",
+          "sha256": "690aab32555b851652b973910e587e4566e768d3128ddafb4c196cad0a3b706f"
+        },
+        {
+          "path": "cases/P100-100/final_results/tasks.json",
+          "sha256": "68d9084dff3e6230ca18042e84442404361ffcc989fc67ce46a474a7df80b38a"
+        },
+        {
+          "path": "tasks/P100-100.original.v1/evidence/metrics.csv",
+          "sha256": "38a5c55cf5552450034a9e29c394aa9a47fc92ba2bbc9a61a44b6e946b83528b"
+        },
+        {
+          "path": "tasks/P100-100.original.v1/task.json",
+          "sha256": "690aab32555b851652b973910e587e4566e768d3128ddafb4c196cad0a3b706f"
+        },
+        {
+          "path": "tasks/P100-100.round2.v1/evidence/metrics.csv",
+          "sha256": "986382a670e25d26813aabb21cdcd740beffb53eb58f2da4d9f2bedee7af2a57"
+        },
+        {
+          "path": "tasks/P100-100.round2.v1/task.json",
+          "sha256": "9bed086a7f9d35f5a15c0a188bdeec683a578ac4ed31f67a918917a5a67983e5"
+        }
+      ]
+    }
+  ]
+}

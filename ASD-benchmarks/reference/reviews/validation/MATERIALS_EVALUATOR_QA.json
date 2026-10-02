@@ -1,0 +1,332 @@
+{
+  "utc": "2026-10-02T03:45:23.642866+00:00",
+  "reviewer": "asd5_materials",
+  "tests": [
+    {
+      "check": "weighted physical MAE",
+      "passed": true,
+      "actual": 2.375,
+      "expected": 2.375
+    },
+    {
+      "check": "weighted physical RMSE",
+      "passed": true,
+      "actual": 2.57390753524675,
+      "expected": 2.57390753524675
+    },
+    {
+      "check": "group normalization",
+      "passed": true,
+      "actual": [
+        0.125,
+        0.375,
+        0.25,
+        0.25
+      ],
+      "expected": [
+        0.125,
+        0.375,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "check": "mean weighted group RMSE",
+      "passed": true,
+      "actual": 2.482526648950187,
+      "expected": 2.482526648950187
+    },
+    {
+      "check": "weighted log error",
+      "passed": true,
+      "actual": 0.8451965961005069,
+      "expected": 0.845196596100507
+    },
+    {
+      "check": "weighted Brier",
+      "passed": true,
+      "actual": 0.39749999999999996,
+      "expected": 0.39749999999999996
+    },
+    {
+      "check": "weighted log loss",
+      "passed": true,
+      "actual": 1.0960920271565184,
+      "expected": 1.0960920271565184
+    },
+    {
+      "check": "weighted event masses",
+      "passed": true,
+      "actual": [
+        0.25,
+        0.25,
+        0.375,
+        0.125
+      ],
+      "expected": [
+        0.25,
+        0.25,
+        0.375,
+        0.125
+      ]
+    },
+    {
+      "check": "weighted event F1",
+      "passed": true,
+      "actual": 0.4444444444444444,
+      "expected": 0.4444444444444444
+    },
+    {
+      "check": "weighted interval coverage",
+      "passed": true,
+      "actual": 0.75,
+      "expected": 0.75
+    },
+    {
+      "check": "proper interval score",
+      "passed": true,
+      "actual": 9.0,
+      "expected": 9.0
+    },
+    {
+      "check": "group-particle weights",
+      "passed": true,
+      "actual": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "expected": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "check": "hierarchical MAE",
+      "passed": true,
+      "actual": 2.25,
+      "expected": 2.25
+    },
+    {
+      "check": "matched covered group weights",
+      "passed": true,
+      "actual": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "check": "coverage retains original mass",
+      "passed": true,
+      "actual": 0.375,
+      "expected": 0.375
+    },
+    {
+      "check": "undeclared threshold remains descriptive",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "check": "explicit frozen threshold provenance respected",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "declared calibration values exported 12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "calibration export source anchors 12",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "declared calibration values exported 31",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "calibration export source anchors 31",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "normalized rotation outside domain diagnosed",
+      "passed": true,
+      "actual": 270,
+      "expected": 270
+    },
+    {
+      "check": "joint event outside Frechet bounds diagnosed",
+      "passed": true,
+      "actual": 3,
+      "expected": 3
+    },
+    {
+      "check": "causal audit points to case-specific computational review",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "check": "native prefix status is not implicitly established",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    }
+  ],
+  "reproduced_issues": [
+    {
+      "id": "threshold_registration",
+      "status": "resolved",
+      "observed": {
+        "event": "target >= threshold",
+        "threshold": 0.5,
+        "target_units": "U",
+        "weighted_confusion": {
+          "tp": 0.25,
+          "fp": 0.25,
+          "fn": 0.375,
+          "tn": 0.125
+        },
+        "row_confusion": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 1,
+          "tn": 1
+        },
+        "precision": 0.5,
+        "recall": 0.4,
+        "specificity": 0.3333333333333333,
+        "f1": 0.4444444444444444,
+        "undefined_reasons": {
+          "precision": null,
+          "recall": null,
+          "specificity": null,
+          "f1": null
+        },
+        "operational_claim": false,
+        "status": "conventional_descriptive_threshold",
+        "threshold_registered_before_outcomes": false,
+        "threshold_provenance": null
+      },
+      "task_has_threshold_registration": false
+    },
+    {
+      "id": "calibration_export_12",
+      "status": "resolved",
+      "native_rows": 4816,
+      "calibration_rows": 4816,
+      "calibration_columns": [
+        "sample_id",
+        "group",
+        "I0",
+        "q0",
+        "source_anchor",
+        "calibration_anchor",
+        "calibration_status"
+      ],
+      "declared_calibration": "Five native intensity samples near2theta1.0deg per spectrum; no other held-out intensity is a predictor. Same calibration for every model.",
+      "missing_values": []
+    },
+    {
+      "id": "calibration_export_31",
+      "status": "resolved",
+      "native_rows": 135,
+      "calibration_rows": 135,
+      "calibration_columns": [
+        "sample_id",
+        "group",
+        "pilot_seconds",
+        "pilot_gates",
+        "pilot_depth",
+        "load_seconds",
+        "source_anchor",
+        "input_anchor",
+        "calibration_status"
+      ],
+      "declared_calibration": "Whole circuit families held across allSDKs; exact same inputfilename matched. No held family candidate-runtime measurements enter fitting. Qiskit pilot is declared per-instance calibration.",
+      "missing_values": []
+    },
+    {
+      "id": "polarization_bounds",
+      "status": "resolved",
+      "prediction": 2.0,
+      "target_mathematical_domain": [
+        -1.0,
+        1.0
+      ],
+      "diagnostics": {
+        "deterministic_checks": [],
+        "causal_and_linked_group_audit": "Case-specific review: reviews/portfolios/P100-090/computational.json; grouped reconstruction and target-poisoning do not by themselves prove native future-prefix invariance",
+        "mechanistic_tests": "reviews/portfolios/P100-090/combined/review.json",
+        "mechanism_admission": "not_assessed_by_endpoint_checks",
+        "training_independence": "not_established_by_prediction_files",
+        "native_prefix_mutation_test": {
+          "status": "not_assessed_by_this_score",
+          "scope": "No native future-prefix mutation coverage is inferred from prediction-file scoring. Historical RAW_INVARIANTS covers only its listed cases."
+        },
+        "task_specific": {
+          "version": "asd7-diagnostics/1.0",
+          "diagnostic_only": true,
+          "automatic_mechanism_admission": false,
+          "tests": [
+            {
+              "test": "normalized_rotation_bounds",
+              "lower": -1,
+              "upper": 1,
+              "violations": 270,
+              "interpretation": "Mean signed tangential direction cosine; a kinematic domain check, not a collective-motion law."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "causal_receipt_scope",
+      "status": "resolved",
+      "case_specific_pointer": "Case-specific review: reviews/portfolios/P100-077/computational.json; grouped reconstruction and target-poisoning do not by themselves prove native future-prefix invariance",
+      "native_prefix_mutation_test": {
+        "status": "not_assessed_by_this_score",
+        "scope": "No native future-prefix mutation coverage is inferred from prediction-file scoring. Historical RAW_INVARIANTS covers only its listed cases."
+      }
+    }
+  ],
+  "bound_code": [
+    {
+      "path": "evaluation/metrics.py",
+      "sha256": "0880497237149d5dc8c97a466bbf84d3c4273cb75cde5059fd8437a711a367a1"
+    },
+    {
+      "path": "evaluation/scientific.py",
+      "sha256": "a6ad60a9e8e101c21413c2b88f8d2e396e63e02da5fff3d90801cb9153c24153"
+    },
+    {
+      "path": "evaluation/batch7_checks.py",
+      "sha256": "c6d0aad15002a0422c463615816bedcedb27d9a51158f26a93a554b74697d22d"
+    },
+    {
+      "path": "evaluation/adequacy.py",
+      "sha256": "9d9d40b7e0f9e5aba4c3e05dc8c63fa34252e7678622ae4f77351cd45b2c9010"
+    },
+    {
+      "path": "evaluation/preparation/__init__.py",
+      "sha256": "423d7e078e6102fd8be382f581eca9299084a1f09838b00338a7600de8ab1030"
+    }
+  ],
+  "scope": "Read-only scientific assets; disposable numerical fixtures and review outputs only."
+}

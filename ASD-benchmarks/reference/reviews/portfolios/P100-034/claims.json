@@ -1,0 +1,343 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-034",
+  "claim_origin": "New ASD6 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication."
+  },
+  "findings": [
+    {
+      "id": "P100-034-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "A finite recruitable response gives a compact alternative to normalizing the entire dose curve by one low-dose value. The earlier calibration can carry information about the later response ceiling. The effective ceiling is measured in current; it is not a counted vesicle pool.",
+      "applicability": "Six reserved animals provide internal experimental-group evidence. Calcium is increased sequentially, so dose and recording time are confounded. Currents also depend on postsynaptic responsiveness and recording stability. The negative early-calibration coefficient is predictive, not a demonstrated causal depletion effect.",
+      "limitations": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "falsification": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "prior_art": "Blaum et al., PNAS2025, already report genotype-related calcium sensitivity and short-term depression. Hill dose-response families, saturation and depletion are established. The candidate here is a calibrated predictive extension within these data, not a newly established molecular release mechanism.",
+      "equation_or_program": {
+        "expression": "Ihat=I(.75)+max(A+B*I(.4)-I(.75),0)*(Ca-.75)/(K+Ca-.75); exact unit depletion coefficient.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "nA",
+        "calcium": "mM",
+        "mutant": "binary",
+        "low04": "nA",
+        "low075": "nA"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-034.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-034-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "Local Hill inversion is unstable; common Hill occupancy and two-pool mixtures transfer poorly. Genotype-specific capacity or recruitment rates can add complexity without improving transfer after calibration. Specific comparisons remain in the attempt history.",
+      "applicability": "Six reserved animals provide internal experimental-group evidence. Calcium is increased sequentially, so dose and recording time are confounded. Currents also depend on postsynaptic responsiveness and recording stability. The negative early-calibration coefficient is predictive, not a demonstrated causal depletion effect.",
+      "limitations": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "falsification": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "prior_art": "Blaum et al., PNAS2025, already report genotype-related calcium sensitivity and short-term depression. Hill dose-response families, saturation and depletion are established. The candidate here is a calibrated predictive extension within these data, not a newly established molecular release mechanism.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "nA",
+        "calcium": "mM",
+        "mutant": "binary",
+        "low04": "nA",
+        "low075": "nA"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-034.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-034-F03",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "Low-dose calibration enables a compact finite-response-reserve description; genotype-specific terms must justify improvement beyond those measurements.",
+      "applicability": "Six reserved animals provide internal experimental-group evidence. Calcium is increased sequentially, so dose and recording time are confounded. Currents also depend on postsynaptic responsiveness and recording stability. The negative early-calibration coefficient is predictive, not a demonstrated causal depletion effect.",
+      "limitations": "Requires paired evidence against both earlier-calibration ablation and genotype-rate expansion; source dose order remains confounded with time.",
+      "falsification": "Requires paired evidence against both earlier-calibration ablation and genotype-rate expansion; source dose order remains confounded with time.",
+      "prior_art": "Blaum et al., PNAS2025, already report genotype-related calcium sensitivity and short-term depression. Hill dose-response families, saturation and depletion are established. The candidate here is a calibrated predictive extension within these data, not a newly established molecular release mechanism.",
+      "equation_or_program": {
+        "expression": "Ihat=I(.75)+max(A+B*I(.4)-I(.75),0)*(Ca-.75)/(K+Ca-.75); exact unit depletion coefficient.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "nA",
+        "calcium": "mM",
+        "mutant": "binary",
+        "low04": "nA",
+        "low075": "nA"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-034.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 16272,
+      "sha256": "d12484bd180066faa0ef8b99420803a2b33038bd7f40ebd307de52e6d8590069",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 608,
+      "sha256": "532f2ae9b4e163fbdbdd9b0d68680030f6b0e77eb2170d2d390bf89e5a5dd23a",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 2024,
+      "sha256": "253273d80c2a68d1107ef03f233333b247459cd3ee1e850a8190355ad9f620bd",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_SOURCE_AND_UNITS.md",
+      "bytes": 1403,
+      "sha256": "76c8bacc166c35ef3593bca0d3949a4e2136a84c915eddc70e7f7548df9c7ad4",
+      "id": "E004",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E005_SOURCE_MANIFEST.json",
+      "bytes": 397,
+      "sha256": "51099d2545fe1c3f3fac295735a843e3711b30b366c24a64bec897f2767c688d",
+      "id": "E005",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E006_SPLITS.json",
+      "bytes": 2045,
+      "sha256": "e492718af1078c8de5eedff35c8452d1b98764b17f48a3ec3e83aa92af8edc5c",
+      "id": "E006",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E007_native.py",
+      "bytes": 2040,
+      "sha256": "8ee13053346b879dba1065d8fffab2becde1e198e4926c5e02020ec29d1bf376",
+      "id": "E007",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E008_EQUATIONS.md",
+      "bytes": 794,
+      "sha256": "737f5de7c37754f1af3f8a3b91e58a61f7341c97637f3c6ae3913db1268dc934",
+      "id": "E008",
+      "role": "package/EQUATIONS.md"
+    },
+    {
+      "path": "evidence/E009_FINDINGS.md",
+      "bytes": 4436,
+      "sha256": "292277a803a450aa705be1af533ff351eb9e658348cde97793bfcbff71a76198",
+      "id": "E009",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E010_inputs.csv.gz",
+      "bytes": 334,
+      "sha256": "d2cfe4ba0941e02aa7a45829919e7cbc25a233efee854a2b0ac96e62f0049940",
+      "id": "E010",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E011_observations.csv.gz",
+      "bytes": 606,
+      "sha256": "5621a220eec1b797455998d2d3f997d9a261f239496d45d33e46494238799bda",
+      "id": "E011",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E012_by_group.csv",
+      "bytes": 7846,
+      "sha256": "f7c8b32f93f1889c508e1b0ae6d343c31c4bb84b8acaa7a873211724c1159bb6",
+      "id": "E012",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E013_metrics.csv",
+      "bytes": 1084,
+      "sha256": "b5610e2a777c9082123729f1932b0985c92e2aabc2a376a96848fbae80db586b",
+      "id": "E013",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 2585,
+      "sha256": "517a1af5a9d81145c98444cf1f7d238cd5c0016699aa9af865785c2465485808",
+      "id": "E014",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_findings.json",
+      "bytes": 5238,
+      "sha256": "9a5e54630b33a3a75996ff829073beba4d67e226d977a4a57917af7ce8cdff7e",
+      "id": "E015",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E016_rules.json",
+      "bytes": 19143,
+      "sha256": "1d080733f95d41ce1868f4f02993af21bbf40b8327640f505935360543eb562a",
+      "id": "E016",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E017_run.py",
+      "bytes": 7616,
+      "sha256": "1b3cb92c861efb86ab6a504a9aa3f73a1338c98de12e8ef7cebdb0179bb7edd8",
+      "id": "E017",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E018_task_spec.json",
+      "bytes": 1691,
+      "sha256": "c189829e40746f2af30d072d681e9f89449e721668a84856ecd3b135f6b2f145",
+      "id": "E018",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 9396,
+      "sha256": "3614881ceb95a0fb53838c956d2f0bc49a73720154fb68e059f998450a85d344",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 9246,
+      "sha256": "8518de32b10aa919e0b9392c4ef48fb2a2f53b5c105cfc78045be7b343b0e697",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

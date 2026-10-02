@@ -1,0 +1,385 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-011",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze."
+  },
+  "findings": [
+    {
+      "id": "P100-011-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "A compact calibrated utilization predictor transfers to the reserved system set, with substantial residual error and workload dependence.",
+      "applicability": "Self-selected published MLPerf submissions; quality99.9 aliases removed and inferred results excluded. Different task families, software and latency constraints confound mechanism. No hardware causal efficiency ranking. Reserved mean error is much larger than development error, reflecting difficult system-scale transfer. Several workload logits contact bounds; coefficients are not universal efficiencies. Offline calibration is mandatory, so this is not prediction from specifications alone.",
+      "limitations": "Reserved mean error is much larger than development error, reflecting difficult system-scale transfer. Several workload logits contact bounds; coefficients are not universal efficiencies. Offline calibration is mandatory, so this is not prediction from specifications alone.",
+      "falsification": "Reserved mean error is much larger than development error, reflecting difficult system-scale transfer. Several workload logits contact bounds; coefficients are not universal efficiencies. Offline calibration is mandatory, so this is not prediction from specifications alone.",
+      "prior_art": "The source studies and domain constructions are disclosed in PRIOR_ART.json. This campaign does not certify broad novelty.",
+      "equation_or_program": {
+        "expression": "S_hat=Q*sigmoid(b_workload+a*ln(1+N))",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020",
+          "E021"
+        ]
+      },
+      "variables_and_units": {
+        "target": "tokens/s",
+        "offline": "tokens/s; measured matched Offline calibration",
+        "accelerators": "count",
+        "nodes": "count",
+        "workload": "source workload category",
+        "precision": "source precision label"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020",
+        "E021"
+      ],
+      "task_id": "P100-011.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-011-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "The direction and boundary behavior of fitted utilization terms do not identify a hardware-overhead mechanism. Retrospective workload-only gains were not used to reselect the reference.",
+      "applicability": "Self-selected published MLPerf submissions; quality99.9 aliases removed and inferred results excluded. Different task families, software and latency constraints confound mechanism. No hardware causal efficiency ranking. Reserved mean error is much larger than development error, reflecting difficult system-scale transfer. Several workload logits contact bounds; coefficients are not universal efficiencies. Offline calibration is mandatory, so this is not prediction from specifications alone.",
+      "limitations": "A new condition, measurement or richer model can be proposed through a separately frozen task; current outcomes are exposed.",
+      "falsification": "A new condition, measurement or richer model can be proposed through a separately frozen task; current outcomes are exposed.",
+      "prior_art": "Negative evidence concerns these declared hypotheses and source conditions only.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020",
+          "E021"
+        ]
+      },
+      "variables_and_units": {
+        "target": "tokens/s",
+        "offline": "tokens/s; measured matched Offline calibration",
+        "accelerators": "count",
+        "nodes": "count",
+        "workload": "source workload category",
+        "precision": "source precision label"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020",
+        "E021"
+      ],
+      "task_id": "P100-011.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-011-F03",
+      "classification": "unsupported",
+      "source_classification": "unsupported",
+      "statement": "These results establish a universal new physical or mathematical law, or a demonstrated deployed industrial impact.",
+      "applicability": "Self-selected published MLPerf submissions; quality99.9 aliases removed and inferred results excluded. Different task families, software and latency constraints confound mechanism. No hardware causal efficiency ranking. Reserved mean error is much larger than development error, reflecting difficult system-scale transfer. Several workload logits contact bounds; coefficients are not universal efficiencies. Offline calibration is mandatory, so this is not prediction from specifications alone.",
+      "limitations": "Reserved mean error is much larger than development error, reflecting difficult system-scale transfer. Several workload logits contact bounds; coefficients are not universal efficiencies. Offline calibration is mandatory, so this is not prediction from specifications alone.",
+      "falsification": "Reserved mean error is much larger than development error, reflecting difficult system-scale transfer. Several workload logits contact bounds; coefficients are not universal efficiencies. Offline calibration is mandatory, so this is not prediction from specifications alone.",
+      "prior_art": "Novelty needs independent literature adjudication and impact needs intervention/deployment evidence.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020",
+          "E021"
+        ]
+      },
+      "variables_and_units": {
+        "target": "tokens/s",
+        "offline": "tokens/s; measured matched Offline calibration",
+        "accelerators": "count",
+        "nodes": "count",
+        "workload": "source workload category",
+        "precision": "source precision label"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020",
+        "E021"
+      ],
+      "task_id": "P100-011.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_CONFIRMATION_RECEIPT.json",
+      "bytes": 3331,
+      "sha256": "d2c1cddf9969d9f917824dd52493178e46fd886dc849ca5b686683b2af286f74",
+      "id": "E001",
+      "role": "CONFIRMATION_RECEIPT.json"
+    },
+    {
+      "path": "evidence/E002_FREEZE.json",
+      "bytes": 10351,
+      "sha256": "129a998ba02d0aa9964b9719aefe489f9f50e44c6b36125e4360fe6f80d55bea",
+      "id": "E002",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E003_PRIOR_ART.json",
+      "bytes": 771,
+      "sha256": "5dbf533426bc9db1b44d79a6c39bcc8fa2986b9ec6a9c315c7752566d6691793",
+      "id": "E003",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E004_PROTOCOL.json",
+      "bytes": 2111,
+      "sha256": "2003251cc747ee05c260fcf828a3c0938ff7f320438786655a777418aff0d723",
+      "id": "E004",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E005_SOURCE_AND_UNITS.md",
+      "bytes": 1296,
+      "sha256": "474f7222b029c72e8c608a1e41f4d0c35a9d005790f50df12b4bf3ec951cb183",
+      "id": "E005",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E006_SOURCE_MANIFEST.json",
+      "bytes": 559,
+      "sha256": "5d6499cdbe8896128bdca97eda6963a9a5175d5ee6957a0ef7268590ab2d884e",
+      "id": "E006",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E007_SPLITS.json",
+      "bytes": 168,
+      "sha256": "250296ef3ae86ce5f03698ea7515b60cea231cdfbdb1fcf8a1fc72686a5e0196",
+      "id": "E007",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 2438,
+      "sha256": "23c05b8c61210998a8b30d12634dba51821cae914f81b1b303c4a744ca2c35b8",
+      "id": "E008",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E009_EQUATIONS.md",
+      "bytes": 43677,
+      "sha256": "54c2a5f317e573e3bbfe5ec0ac196a12a7ee6e49423983d74ba0922e6463a096",
+      "id": "E009",
+      "role": "package/EQUATIONS.md"
+    },
+    {
+      "path": "evidence/E010_FINDINGS.md",
+      "bytes": 4377,
+      "sha256": "9bf327226d6791f588f86bbf405169d7838af0daec753f35d330664a2ee1ef50",
+      "id": "E010",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E011_MANIFEST.json",
+      "bytes": 2967,
+      "sha256": "bf96d551b2ede514b747a046eefc794752f1c8a2a439fd162a53914afed4e14a",
+      "id": "E011",
+      "role": "package/MANIFEST.json"
+    },
+    {
+      "path": "evidence/E012_inputs.csv.gz",
+      "bytes": 658,
+      "sha256": "ba249e5b7e8b0ef426e7f83f01289fbea8d655acaba49b7d0259355c8bf1eb71",
+      "id": "E012",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E013_observations.csv.gz",
+      "bytes": 831,
+      "sha256": "e53bd7652220702729707ebc372dd9328ea3f283e538b6d2a2beb9cfc596e4fa",
+      "id": "E013",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E014_by_group.csv",
+      "bytes": 10948,
+      "sha256": "c681b9be097a189e02595611a5e38a3fd09db9ce9a9ea6aa6a778c9209547a05",
+      "id": "E014",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E015_metrics.csv",
+      "bytes": 850,
+      "sha256": "8a5ed54534952d1a5f5bf464f9201c798bd902a605cb6facd10e1e4b25fed7bb",
+      "id": "E015",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E016_predictions.csv.gz",
+      "bytes": 1813,
+      "sha256": "f5abc5a4b89d4ea14ed42b476c810b37ab37d3d8eff56656982591ad9d061f94",
+      "id": "E016",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E017_scientific_checks.json",
+      "bytes": 110238,
+      "sha256": "dc3d8fab323ea665f2d218bd0f6615c25516546429d49fe602af968e82c283c2",
+      "id": "E017",
+      "role": "package/evidence/scientific_checks.json"
+    },
+    {
+      "path": "evidence/E018_findings.json",
+      "bytes": 4158,
+      "sha256": "969b6a928995a726e1d6f4435ed069aa26f55999212d4780b1d09d90ad2f4201",
+      "id": "E018",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E019_rules.json",
+      "bytes": 48945,
+      "sha256": "081d9569ec933a9d1cabf8b003180cf2fd0f80c2c173c7896d7d251f63047fb9",
+      "id": "E019",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E020_run.py",
+      "bytes": 7102,
+      "sha256": "23b8039fb09b6c21081f6278ba5e0180440192c1136fe265b24e98d188f7ee49",
+      "id": "E020",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E021_task_spec.json",
+      "bytes": 2713,
+      "sha256": "86a749fcfdaabbbb46681ce3e15d8e2f44d65452239dee6c7deb7ed68f1add7e",
+      "id": "E021",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 8209,
+      "sha256": "0d5c924adbec4da6705127e69d0124ec82c2cedba44036798e908d560f070104",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 11332,
+      "sha256": "15c65b0fe6d99298918641d67bae014e2b6b0852faca5b9a97cdb0f8528e6428",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

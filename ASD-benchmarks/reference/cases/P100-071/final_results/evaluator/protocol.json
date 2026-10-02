@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-071",
+  "protocol_id": "P100-071-prepared-primary-v1",
+  "target": "Viable-cell density",
+  "target_units": "million cells/mL",
+  "primary_units": "million cells/mL",
+  "metric_kind": "rmse",
+  "metric_definition": "Mean of the three per-experiment root mean squared VCD errors (million cells/mL); square-root within each experiment before averaging. This is not pooled RMSE.",
+  "independent_unit": "experiment pair (both reactors)",
+  "evaluation_groups": [
+    "EXP005",
+    "EXP009",
+    "EXP012"
+  ],
+  "input_sha256": "96591c6efa9cf7260fb4ca65d4e78e4eac4e6c3a9738f42325048234299a59af",
+  "input_rows": 92,
+  "assigned_rows": 92,
+  "permitted_inputs": [
+    "perm",
+    "deltaeps_fc4",
+    "transmission",
+    "reflection",
+    "conductivity",
+    "deltaeps",
+    "fc",
+    "cole_alpha",
+    "c300",
+    "c1118",
+    "c9995",
+    "cole_r2",
+    "co2",
+    "ph",
+    "do",
+    "temperature",
+    "agitation",
+    "aeration",
+    "o2_inlet",
+    "volume",
+    "perm_lag24",
+    "transmission_lag24",
+    "perm_peak_past",
+    "fed_batch",
+    "od",
+    "dperm24",
+    "dod24",
+    "spectral_span",
+    "spectral_midspan",
+    "fc_mhz",
+    "permittivity_decline",
+    "perm_decline_fraction",
+    "od_sq",
+    "perm_sq",
+    "perm_fc",
+    "perm_x_decline",
+    "perm_x_conductivity",
+    "perm_x_growth",
+    "od_x_decline",
+    "time_h"
+  ],
+  "input_units": {
+    "perm": "pF/cm",
+    "deltaeps_fc4": "(pF/cm)*MHz^4",
+    "transmission": "source arbitrary units",
+    "reflection": "source arbitrary units",
+    "conductivity": "mS/cm",
+    "deltaeps": "pF/cm",
+    "fc": "kHz",
+    "cole_alpha": "dimensionless",
+    "c300": "source units unspecified",
+    "c1118": "source units unspecified",
+    "c9995": "source units unspecified",
+    "cole_r2": "dimensionless",
+    "co2": "source percent",
+    "ph": "dimensionless pH",
+    "do": "percent saturation",
+    "temperature": "degrees Celsius",
+    "agitation": "rpm",
+    "aeration": "standard L/h",
+    "o2_inlet": "percent inlet oxygen fraction",
+    "volume": "L",
+    "perm_lag24": "pF/cm",
+    "transmission_lag24": "source arbitrary units",
+    "perm_peak_past": "pF/cm",
+    "fed_batch": "binary indicator",
+    "od": "dimensionless source optical-density transform",
+    "dperm24": "(pF/cm)/h",
+    "dod24": "1/h",
+    "spectral_span": "source capacitance units unspecified",
+    "spectral_midspan": "source capacitance units unspecified",
+    "fc_mhz": "MHz",
+    "permittivity_decline": "pF/cm",
+    "perm_decline_fraction": "dimensionless",
+    "od_sq": "dimensionless",
+    "perm_sq": "(pF/cm)^2",
+    "perm_fc": "(pF/cm)*MHz",
+    "perm_x_decline": "pF/cm",
+    "perm_x_conductivity": "(pF/cm)*(mS/cm)",
+    "perm_x_growth": "(pF/cm)^2/h",
+    "od_x_decline": "dimensionless",
+    "time_h": "h"
+  },
+  "allows_missing_predictors": true,
+  "baseline_models": [
+    "spectral",
+    "linear_permittivity",
+    "availability_control",
+    "flexible"
+  ],
+  "reference_equations": {
+    "spectral": "VCD=max(0,b0+sum(bj*zj)); z standardizes [perm,deltaeps*fc_mhz^4,missing(perm),missing(deltaeps*fc_mhz^4)] with fixed development medians/means/scales.",
+    "linear_permittivity": "VCD=max(0,b0+sum(bj*zj)); z uses perm and its missingness indicator, with fixed development imputation/scaling.",
+    "availability_control": "VCD=max(0,b0+sum(bj*zj)); z uses perm, finite(deltaeps_fc4) and their missingness indicators, with fixed development transforms.",
+    "flexible": "VCD=max(0,intercept+sum(dual_coefficient_j*exp(-gamma*||z-center_j||\u00b2))); z uses frozen causal features, medians, missingness and scaling; all centers and weights in model.json."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "scope_limit": "Three reserved cultivation pairs: EXP005 and EXP009 batch; EXP012 fed-batch. Limited process-domain evidence, not universal cell-line or plant transfer.",
+  "calibration_note": "Training-only imputation, scale and missingness transforms; causal native sensors with quality flags. Offline VCD and its SEM are responses, never online predictors.",
+  "timing_contract": "Sensor median in [t\u22120.5h,t], fallback latest valid <=2h old; quality Ok and Cole R\u00b2>=0.9 where applicable. Lags and peaks use only the past. Do not use aligned duplicate tables as independent evidence.",
+  "exposure_notice": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Only 3 groups, with system-level dependence; report individual effects without a population confidence interval."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Audit raw sample anchors and timestamp/phase cutoffs. Identify every predictor and all calibration; exclude future responses and identifier memorization. Sensor median in [t\u22120.5h,t], fallback latest valid <=2h old; quality Ok and Cole R\u00b2>=0.9 where applicable. Lags and peaks use only the past. Do not use aligned duplicate tables as independent evidence."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ],
+  "derived_feature_clarification": {
+    "perm_x_decline": "perm * perm_decline_fraction (pF/cm), NOT perm * absolute decline",
+    "od_x_decline": "od * perm_decline_fraction (dimensionless), NOT od * absolute decline",
+    "o2_inlet": "Native inline_ProcessParameters column O2 fraction inlet (%)",
+    "source": "Frozen cho_pipeline.py feature construction, preserved in research history. Numeric inputs remain unchanged."
+  }
+}

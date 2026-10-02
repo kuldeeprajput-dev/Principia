@@ -1,0 +1,30 @@
+{
+  "case": 93,
+  "title": "Paired-well lectin-fluorescence response distributions",
+  "kind": "mae",
+  "target": "Induced AF488 fluorescence quantile",
+  "unit": "native AF488 channel units",
+  "inputs": [
+    "control",
+    "control_median",
+    "control_width",
+    "quantile",
+    "wt",
+    "mutant"
+  ],
+  "input_units": {
+    "control": "native AF488 channel units",
+    "control_median": "native AF488 channel units",
+    "control_width": "native AF488 channel units",
+    "quantile": "dimensionless",
+    "wt": "binary",
+    "mutant": "binary"
+  },
+  "source_url": "https://zenodo.org/records/14720967",
+  "license": "CC BY4.0",
+  "paper": "https://doi.org/10.1038/s44320-025-00106-4",
+  "independent_unit": "Matched technical replicate block across cell lines; three blocks on one plate",
+  "scope": "One plate and three technical replicate blocks. Does not establish biological-replicate transfer, transporter causality or glycan concentration. The channel/caption inconsistency prevents unqualified dye-specific biological claims.",
+  "timing": "After paired uninduced control well is measured, before observing induced well target. Quantiles0.1\u20130.9 and cell-line identity are known; no induced fluorescence enters predictors.",
+  "calibration": "Same-block, same-cell-line uninduced distribution is permitted calibration for every model. Source identity compensation retained; no fitted manual gates or target-based threshold."
+}

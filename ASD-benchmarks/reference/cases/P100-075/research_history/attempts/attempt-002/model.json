@@ -1,0 +1,26 @@
+{
+  "kind": "synergy",
+  "coef": [
+    -0.18115186155916724,
+    -1.3356950200122222,
+    0.4457576287641661
+  ],
+  "K": 200.0,
+  "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s), x=ln(E/30)",
+  "training_groups": [
+    "A",
+    "B",
+    "D"
+  ],
+  "training_rows": 15,
+  "rank": 3,
+  "parameter_count": 3,
+  "profile_training_mse": [
+    {
+      "K": 200.0,
+      "weighted_sse": 2.6891943549333157
+    }
+  ],
+  "ridge": 1e-08,
+  "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+}

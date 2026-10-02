@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-054",
+  "title": "Data set: Enhanced crack stability in micro scale fracture testing via optimized bridge notches",
+  "default_task": "P100-054.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "second bridge failure load Pb2",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 22,
+    "independent_unit_description": "Cantilever specimen; one source wafer and manufacturing campaign",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Predict measured second-bridge failure load conditional on reported SEM geometry; geometry may be measured post-test, so this is retrospective geometry-conditioned response, not pre-test control.",
+  "baseline_strength": {
+    "registered_controls": 10,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 3
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "second bridge failure load Pb2",
+    "prediction_time": "Predict measured second-bridge failure load conditional on reported SEM geometry; geometry may be measured post-test, so this is retrospective geometry-conditioned response, not pre-test control.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "SEM geometry may be post-test; one wafer, not prospective safe-load design."
+  },
+  "task_ids": [
+    "P100-054.original.v1"
+  ],
+  "finding_ids": [
+    "P100-054-F01",
+    "P100-054-F02",
+    "P100-054-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-054/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-054.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate second bridge failure load Pb2 under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Predict measured second-bridge failure load conditional on reported SEM geometry; geometry may be measured post-test, so this is retrospective geometry-conditioned response, not pre-test control.",
+    "calibration_requirement": "Predict measured second-bridge failure load conditional on reported SEM geometry; geometry may be measured post-test, so this is retrospective geometry-conditioned response, not pre-test control.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "second bridge failure load Pb2 in mN",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "SEM geometry may be post-test; one wafer, not prospective safe-load design."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "mN",
+    "reference_model": "reference",
+    "reference_primary_error": 0.0173157735041834,
+    "reference_physical_mae": 0.0173157735041834,
+    "physical_error_units": "mN",
+    "lowest_registered_error_model": "attempt_004",
+    "lowest_registered_error": 0.01596120460115448,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-054.original.v1/evidence/metrics.csv",
+      "bytes": 749,
+      "sha256": "fff64fafc40b45e90816770f613663d77a1ca9cda2a9275ef88408dd15856f66"
+    },
+    "models": 10
+  },
+  "case_specific_next_evidence": "Use pre-test geometry plus new-wafer specimens to test prospective transfer. Repeat geometric metrology to quantify errors-in-variables before intrinsic toughness claims."
+}

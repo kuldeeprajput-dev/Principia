@@ -1,0 +1,31 @@
+{
+  "title": "Emergency-expense resilience: a scoped household-resource reference",
+  "summary": "A compact piecewise-resource probability model predicts the SHED inability-to-pay400USD response better than matched controls on reserved states. The gain is modest and observational; it is not a causal poverty threshold, lending rule or demonstrated intervention.",
+  "data": "2025 Federal Reserve SHED public-use cross-section,12934respondents. Forty-one states supply10719development respondents; ten complete hash-reserved states supply2215confirmation respondents. Final survey weights operate within equal state losses. Official source-coded labels map deterministically to values, with no imputation.",
+  "equations": "Let R=ln(I/sqrt(H)), where I is the declared household-income bracket proxy inthousandUSD/year and H householdsize; A=(age-45)/20; S=1 for no paid/profit work lastmonth. Selected p=logistic(a+bL*max(3-R,0)+bH*max(R-3,0)+c*S+d*A+e*A\u00b2). Coefficients inthat order are [-0.8836098559778368, 0.31380714954933303, -1.6092569888184314, 0.8557459418933252, -0.3187511278524709, -0.3612550550290176]. The fixed R=3 hinge is a model diagnostic, not an official poverty or acceptance threshold.",
+  "performance": "Reserved-state Brier0.073712 versus constant0.085551, simple resource0.075831 and flexible0.074045. This is only about0.45percent relative better than the flexible comparator; no decisive population superiority claimed. Worst-state reference0.121274 versus flexible0.125485. Attempt005 has a lower confirmationmean but was not development-selected and remains diagnostic.",
+  "value": "Useful for evaluating grouped, weighted survey-risk modeling and whether compact interpretable equations can match flexible models. No causal effect of employment, actual household income amount or achieved financial-welfare benefit is demonstrated. The question measures inability to pay by any listed means, not inability to pay usingcash alone.",
+  "lessons": "Respect labeled native CSVs even when codebooks display numericcodes. State-balanced weighted risk differs from national prevalence. Work-status ablation and freely estimated household equivalence failed in development; retain them. A small numerical improvement is not novelty or a deployable financial screening policy.",
+  "findings": [
+    {
+      "classification": "validated_extension",
+      "admission": "partially_supported",
+      "claim": "Piecewise resource and age/work associations yield a compact regional-transfer predictor of the reported inability-to-pay response.",
+      "equation": "p=logistic(a+bL(3-R)_+ +bH(R-3)_+ +cS+dA+eA\u00b2)",
+      "interpretation": "A saturation-shaped resource association is consistent with heterogeneous liquidity constraints, but proxies/topcodes and overlapping self-reports preclude identifying a physical/economic threshold.",
+      "falsification": "Very small margin over flexible comparator; source-aware cross-section and onlytenheldstates; endpoint is hypothetical response, not observed emergency outcome."
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Removing work status or freeing household equivalence scaling did not improve the development-selected threshold model.",
+      "equation": "Attempt005 removesS;006 replaces resource hinge with independent logI/logH coefficients.",
+      "interpretation": "Independent predictive contribution does not establish causal unemployment risk; S includes retirement and voluntary nonparticipation.",
+      "falsification": "Attempt005 is retrospectivelybetteronconfirmationmean; it was not promoted or retuned, showing model-selection uncertainty."
+    }
+  ],
+  "unresolved": [
+    "Source weights do not provide full independent-state experimental replication.",
+    "Income bracket midpoint/topcode and broad no-work status limit mechanistic interpretation."
+  ]
+}

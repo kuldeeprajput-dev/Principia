@@ -1,0 +1,623 @@
+{
+  "case_id": "P100-019",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "ca0f4d7f8b258369079d0e78b15aead5d8ec72c18f5edad452b35c5785f19504"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "63a066dd66d35c0ca60db29bccaa539ecea02258dfe567debe2bf480b741c663"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "9963b36dbf8a42abdeb28c53ee102aee7739bd71566bc2467244a19c508fdc81"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "5f4f3d3795de48780655cdd7b1500fd412d6ee1e74982e16e9e180eca8fa213a"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "e91687d9899d754166e6e5c37590991db82a9cddbf89ea73f973dc2f3ef8cc10"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "afe60f832ad0cbe17bbf76a0d973d35026e1925245a15348c637c0dfcb9a38b1"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "9b0e8e8289e2717fe6a873e3bae0ed486f683057446170f948fdab363385ce8c"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "a30c26f9a87eed742bebbab9b1451705eb7d7345c5523eec5345f92a19cfed11"
+    },
+    {
+      "path": "native.py",
+      "sha256": "c79f8db50156c1ae45026f16e94b8a8e371e87501aa439ad05ef2eaced0e706c"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "0b218dd05aea35330aa2a9a5d72b994f237f740ac0f4622dbbb4cafa5f31bde7"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "d42c4688b344ff3dd4831e0766dad3c093b353e05142b45e4e72d382b123b507"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "af146962b63ff3750268df47dfe95e34f20f9fccbbb74653b4d8ba2c611089db"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "c655cad6c89cdca15914e50ad5ae6de699a630cf081769478fe178df23b950c0"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "d632d563f71b01133b442bd4662abe63842451185b766f94ce649ba43ee40e3b"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "874abb45c27282c0ffed930c711e7c80d7997a7345ae4abd212ffbc791195223"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-019-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. A two-timescale causal complaint-history blend modestly improves reserved-month absolute count error. Reporting counts have no exposed-vehicle denominator and are not defect rates; nonlinear burst alternatives and unfavorable regimes remain retained."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. A two-timescale causal complaint-history blend modestly improves reserved-month absolute count error. Reporting counts have no exposed-vehicle denominator and are not defect rates; nonlinear burst alternatives and unfavorable regimes remain retained."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. A two-timescale causal complaint-history blend modestly improves reserved-month absolute count error. Reporting counts have no exposed-vehicle denominator and are not defect rates; nonlinear burst alternatives and unfavorable regimes remain retained."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "A two-timescale causal complaint-history blend modestly improves reserved-month absolute count error. Reporting counts have no exposed-vehicle denominator and are not defect rates; nonlinear burst alternatives and unfavorable regimes remain retained.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-019-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. A two-timescale causal complaint-history blend modestly improves reserved-month absolute count error. Reporting counts have no exposed-vehicle denominator and are not defect rates; nonlinear burst alternatives and unfavorable regimes remain retained."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. A two-timescale causal complaint-history blend modestly improves reserved-month absolute count error. Reporting counts have no exposed-vehicle denominator and are not defect rates; nonlinear burst alternatives and unfavorable regimes remain retained."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. A two-timescale causal complaint-history blend modestly improves reserved-month absolute count error. Reporting counts have no exposed-vehicle denominator and are not defect rates; nonlinear burst alternatives and unfavorable regimes remain retained."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "A two-timescale causal complaint-history blend modestly improves reserved-month absolute count error. Reporting counts have no exposed-vehicle denominator and are not defect rates; nonlinear burst alternatives and unfavorable regimes remain retained.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-019",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-019",
+      "native_rows": 5642,
+      "confirmation_rows": 1302,
+      "models": 12,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 12,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 8.881784197001252e-16,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 1302,
+        "primary_error": 3.5118345172960104,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "constant",
+        "rows": 1302,
+        "primary_error": 15.648246228772464,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 1302,
+        "primary_error": 3.7721700849854343,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "persistence",
+        "rows": 1302,
+        "primary_error": 3.6528417818740397,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "trailing3",
+        "rows": 1302,
+        "primary_error": 3.769585253456221,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "trailing6",
+        "rows": 1302,
+        "primary_error": 4.075268817204301,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001",
+        "rows": 1302,
+        "primary_error": 3.504687039707148,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002",
+        "rows": 1302,
+        "primary_error": 3.5118345172960104,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003",
+        "rows": 1302,
+        "primary_error": 3.450968883928653,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004",
+        "rows": 1302,
+        "primary_error": 3.4784137238654207,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005",
+        "rows": 1302,
+        "primary_error": 3.4582270376747117,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_006",
+        "rows": 1302,
+        "primary_error": 3.4985507924776633,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "24311-24312",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2025-11",
+          "2025-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "24313-24314",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-01",
+          "2026-02"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "24315-24316",
+        "training_groups_count": 8,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-03",
+          "2026-04"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "24311-24312",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2025-11",
+          "2025-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "24313-24314",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-01",
+          "2026-02"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "24315-24316",
+        "training_groups_count": 8,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-03",
+          "2026-04"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "24311-24312",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2025-11",
+          "2025-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "24313-24314",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-01",
+          "2026-02"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "24315-24316",
+        "training_groups_count": 8,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-03",
+          "2026-04"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "24311-24312",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2025-11",
+          "2025-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "24313-24314",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-01",
+          "2026-02"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "24315-24316",
+        "training_groups_count": 8,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-03",
+          "2026-04"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "24311-24312",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2025-11",
+          "2025-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "24313-24314",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-01",
+          "2026-02"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "24315-24316",
+        "training_groups_count": 8,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-03",
+          "2026-04"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "24311-24312",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2025-11",
+          "2025-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "24313-24314",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-01",
+          "2026-02"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "24315-24316",
+        "training_groups_count": 8,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-03",
+          "2026-04"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "24311-24312",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2025-11",
+          "2025-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "24313-24314",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-01",
+          "2026-02"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "24315-24316",
+        "training_groups_count": 8,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-03",
+          "2026-04"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "24311-24312",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2025-11",
+          "2025-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "24313-24314",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-01",
+          "2026-02"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "24315-24316",
+        "training_groups_count": 8,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-03",
+          "2026-04"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "24311-24312",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2025-11",
+          "2025-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "24313-24314",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-01",
+          "2026-02"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/persistence/fold_models.json",
+        "fold": "24315-24316",
+        "training_groups_count": 8,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-03",
+          "2026-04"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/trailing3/fold_models.json",
+        "fold": "24311-24312",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2025-11",
+          "2025-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/trailing3/fold_models.json",
+        "fold": "24313-24314",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-01",
+          "2026-02"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/trailing3/fold_models.json",
+        "fold": "24315-24316",
+        "training_groups_count": 8,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-03",
+          "2026-04"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/trailing6/fold_models.json",
+        "fold": "24311-24312",
+        "training_groups_count": 4,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2025-11",
+          "2025-12"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/trailing6/fold_models.json",
+        "fold": "24313-24314",
+        "training_groups_count": 6,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-01",
+          "2026-02"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/trailing6/fold_models.json",
+        "fold": "24315-24316",
+        "training_groups_count": 8,
+        "validation_groups_count": 2,
+        "validation_groups": [
+          "2026-03",
+          "2026-04"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "A two-timescale causal complaint-history blend modestly improves reserved-month absolute count error. Reporting counts have no exposed-vehicle denominator and are not defect rates; nonlinear burst alternatives and unfavorable regimes remain retained."
+}

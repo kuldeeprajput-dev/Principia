@@ -1,0 +1,42 @@
+{
+  "intro": "# Paired-well fluorescence: a compact distribution-scaling reference\n\nThe source contains18flow-cytometry files: uninduced and doxycycline-induced triplicates of MFSD5,WT SLC30A8 and the D110N_D224N mutant. One matched technical block (AD) is reserved; the other two blocks develop models. Each block includes all three cell lines and their paired controls. Nine quantiles per induced well yield27 reserved endpoints; cells and quantiles are not independent biological replicates.\n\n## Endpoint and equation\n\nThe numerical response is the native AF488-channel fluorescence quantile, using a declared finite-event, positive-FSC/SSC gate. Let $C_\\ell(q)$ be the paired uninduced control quantile, where $q=0.1,0.2,\\ldots,0.9$. The selected equation is\n\n$$\\widehat Y_\\ell(q)=a_\\ell C_\\ell(q),\\qquad (a_{\\mathrm{MFSD5}},a_{\\mathrm{WT}},a_{\\mathrm{mutant}})=(8.581667,2.8155461,1.0296662).$$\n\nFactors are dimensionless. This is a calibrated distribution mapping in arbitrary detector units, not a glycan concentration or transport-affinity law. Paired uninduced measurements are allowed to every model; induced outcomes never enter predictors.\n\nFive adaptive attempts compared multiplicative scaling, quantile-dependent recruitment, location/scale deformation, saturation and a WT-specific tail change. Simple multiplicative scaling remained the smallest model within1% of best development performance. Profiled saturation scales and recruitment thresholds are preserved as additional fitted state, not counted as independent discoveries.\n",
+  "interpretation": "The selected mapping gives3272.21native-unit MAE on the held technical block, compared with14030.59 for control-copy,9471.53 for line-specific shifts and8023.27 for the flexible comparator. The mutant factor is close to one while the WT factor is larger, consistent with the source study\u2019s already-published selective response. This is replication-compatible technical calibration evidence, not a new transporter mechanism. The paper methods say Alexa488, matching native AF488, but figure captions say Alexa647; the discrepancy remains unresolved. Original manual FlowJo gates are absent, so these summaries do not claim exact reproduction of the published gated geometric means. One plate and one held technical block do not establish biological or instrument transfer.",
+  "summary": "Five substantive attempts completed; paired multiplicative fluorescence scaling selected. Held technical-block MAE3272.21native units is below registered controls, with one-plate and unresolved channel-caption limits.",
+  "lessons": "A single FACS plate does not become a large biological cohort because it contains thousands of events. Keep paired controls, wells and all quantiles together. Use explicit native channel names when paper captions and methods disagree; do not invent dye conversion. Distinguish reproducible distribution calibration from transporter mechanism or molecular concentration. Compare scaling with shifts and flexible maps, and retain saturating alternatives as identifiability counterexamples.",
+  "findings": [
+    {
+      "finding_id": "P100-093-F01",
+      "classification": "reproduction",
+      "claim": "Line-specific paired-control scaling transfers induced native AF488 quantiles to a held technical block",
+      "equation": "Yhat_line(q)=a_line*C_line(q)",
+      "coefficients": [
+        8.581667014750263,
+        2.8155460826606205,
+        1.0296661869445227
+      ],
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv",
+        "evidence/by_group.csv"
+      ],
+      "scope": "One plate; paired uninduced calibration; native AF488 channel",
+      "admission": "partially_supported",
+      "prior_art": "Source already reports WT response and mutant attenuation; this compact calibration is not a new transporter law",
+      "falsification": "Only one held technical block, no biological replication, absent manual gates and inconsistent dye caption"
+    },
+    {
+      "finding_id": "P100-093-F02",
+      "classification": "supported_negative_finding",
+      "claim": "The available quantile transfer does not identify a unique recruitment,distribution-width or saturation mechanism beyond simple scaling",
+      "equation": null,
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv"
+      ],
+      "scope": "Five model families and two development technical blocks",
+      "admission": "supported",
+      "prior_art": "Distribution heterogeneity and source WT bimodality already described",
+      "falsification": "New doses,timecourses and independent biological replicates could distinguish mechanisms"
+    }
+  ]
+}

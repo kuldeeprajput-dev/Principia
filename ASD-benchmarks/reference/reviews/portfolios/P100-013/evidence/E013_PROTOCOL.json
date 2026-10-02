@@ -1,0 +1,34 @@
+{
+  "case_id": "P100-013",
+  "created_utc": "2026-10-01T14:01:45.643111+00:00",
+  "title": "NIST encapsulant cure",
+  "target": "conversion",
+  "target_units": "1",
+  "input_units": {
+    "temperature_K": "K",
+    "heating_rate_K_min": "K/min"
+  },
+  "permitted_inputs": [
+    "temperature_K",
+    "heating_rate_K_min"
+  ],
+  "independent_unit": "Complete heating-rate experiment; not independent material batches",
+  "timing_contract": "Predict author-observed DSC conversion from temperature and imposed constant heating rate; no target history.",
+  "scope_limits": "Source-fitted conversion excluded. Four development traces; one high-rate extrapolation confirmation. Audit exposed first four rows near zero of every trace.",
+  "source_url": "https://data.nist.gov/od/id/mds2-3702",
+  "metric_kind": "mae",
+  "primary_metric": "Mean over independent groups of within-group mean absolute physical-unit error. Equal groups.",
+  "source_manifest_sha256": "469719ebb67e98589fb7ce2084c8f0c0adcb5442b8311cfc3bb26ebdcbccdd81",
+  "native_sha256": "1526e4ac6c3c9cbcbd4634edc526ce070a3deca9ad975d3aee23a8a2d18acaf1",
+  "selection": "Minimum development grouped MAE; models within1% of best prefer fewer free parameters. Baselines eligible. Confirmation cannot select or revise.",
+  "stopping": "At least5substantive attempts; thereafter two consecutive distinct attempts failing \u22651% primary improvement or improved worst-group error/identified simplification; no confirmation feedback.",
+  "fitting": "Group-balanced bounded nonlinear least squares; fixed deterministic starts. Flexible baseline fixed ridge or nonlinear low-dimensional logistic. All fits within applicable training folds.",
+  "confirmation": "Separate confirm.py checks frozen all states/code hashes; no fit or selection.",
+  "exposure": {
+    "public_source_aware": true,
+    "internal_confirmation_opened": false,
+    "audit": "Source-fitted conversion excluded. Four development traces; one high-rate extrapolation confirmation. Audit exposed first four rows near zero of every trace."
+  },
+  "uncertainty": "Individual experimental group errors; no row bootstrap or population CI from dependent rows.",
+  "source_license": "NIST public data license"
+}

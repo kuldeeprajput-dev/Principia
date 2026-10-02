@@ -1,0 +1,62 @@
+{
+  "name": "contrast_decoherence",
+  "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))*(1+r*exp(-sc**2*q**2)*cos(q*d+phase))/(1+r*exp(-sc**2*q0**2)*cos(q0*d+phase))",
+  "hypothesis": "Development evidence available before this fit: finite_angle_fresnel: MAE 10932, worst group 11506.2; kiessig_interference: MAE 5988.58, worst group 11368.1.\n\nChallenge the constant fringe-contrast assumption: differential interface roughness or thickness dispersion may wash out interference at high q. Test decaying contrast separately from the mean intensity envelope.",
+  "inputs": [
+    "q",
+    "q0",
+    "I0",
+    "outer"
+  ],
+  "recorded_utc": "2026-10-02T02:09:02.230578+00:00",
+  "parent": "attempt-003",
+  "parameters": {
+    "qc": 0.06043169776283587,
+    "sigma": 4.453432737812036,
+    "d": 87.30389149731653,
+    "r": 0.9499999999995415,
+    "phase": 1.1981690885140444,
+    "sc": 3.2411437453453527
+  },
+  "training_groups": [
+    "wafer-01",
+    "wafer-02",
+    "wafer-03",
+    "wafer-04",
+    "wafer-05",
+    "wafer-06",
+    "wafer-07",
+    "wafer-08",
+    "wafer-09"
+  ],
+  "training_rows": 4042,
+  "optimizer_success": true,
+  "nfev": 17,
+  "jacobian_condition": 11300.34360906852,
+  "bounds": {
+    "qc": [
+      0.005,
+      0.07
+    ],
+    "sigma": [
+      0,
+      30
+    ],
+    "d": [
+      60,
+      140
+    ],
+    "r": [
+      0,
+      0.95
+    ],
+    "phase": [
+      -3.141592653589793,
+      3.141592653589793
+    ],
+    "sc": [
+      0,
+      20
+    ]
+  }
+}

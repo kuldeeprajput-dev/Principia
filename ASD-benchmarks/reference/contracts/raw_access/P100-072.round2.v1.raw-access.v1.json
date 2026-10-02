@@ -1,0 +1,59 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-072.round2.v1.raw-access.v1",
+  "parent_task_id": "P100-072.round2.v1",
+  "case_id": "P100-072",
+  "protocol_version": "P100-072.round2.v1.raw-access.v1",
+  "cohort_id": "P100-072.round2.v1.development-oof",
+  "parent_task_sha256": "0a64671bb5221e508c58341b3b4cce0fd7650a7a85e30184e3361b350d2a6249",
+  "input_sha256": "54019470d411137ed10ee3bdce44c054440b71734149aea9fdf5e6ccc45830f8",
+  "observations_sha256": "4a3ef22998487eb77abdcc4d6e46ea585b0fd190d2cb4affa47ce7197d831cbb",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "72_biotechnology_yeast_competition",
+  "source_assets": [
+    {
+      "path": "raw/dataset competencias.xlsx",
+      "bytes": 269041,
+      "sha256": "3c1bf733f9bf117bd945ab3f7eb5a1913f88cb85d5eeec4c70211dd00a90918a"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "S22": "g/L; glucose + fructose at 22 h",
+      "S72": "g/L; glucose + fructose at 72 h",
+      "G22": "g/L glucose",
+      "G72": "g/L glucose",
+      "F22": "g/L fructose",
+      "F72": "g/L fructose",
+      "time_h": "h since inoculation",
+      "coculture": "binary indicator"
+    },
+    "observation_window": "Author cached spreadsheet percentage from same-row qPCR ratio is the target. No same-time Cp/ratio is a predictor. Use only own replicate22/72-hour percentages to forecast96h and later. Biological replicate pairing from Sample Name. Expanded information budget: S22, S72, G22, G72, F22, F72, time_h, coculture",
+    "calibration_and_history": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. p22 and p72 are own-replicate fractions (source percentages/100). Delta=t\u221272h, and s is early log-odds change per hour. Fractions are clipped to0.0001\u20130.9999 only for log-odds calculation; original targets are unchanged. The output is100 times logistic(log-odds), in percentage points.75h is a development-selected shape scale. This early/late conditional equation does not estimate an independently measured fitness coefficient.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

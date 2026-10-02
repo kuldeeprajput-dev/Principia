@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-016",
+  "title": "BLS CPI and CES selected bulk time-series files",
+  "default_task": "P100-016.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Next-month seasonally adjusted all-items CPI log change",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 11,
+    "independent_unit_description": "Whole calendar quarter; forward chronological development folds and2023-onward confirmation. One national economic system, overlapping lag windows and persistent macro shocks; quarters are not independent economies.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "All regression coefficients, centering/scales and flexible centers fit only preceding development blocks. No held-quarter target fitting.",
+  "baseline_strength": {
+    "registered_controls": 11,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Next-month seasonally adjusted all-items CPI log change",
+    "prediction_time": "Only calendar months through t-1 enter predictors for month t. This is a retrospectively revised and seasonally adjusted bulk snapshot, not an as-issued forecast archive. Calendar lags do not establish historical release availability; the nominal origin is after prior-month releases. No month-t prices/employment or CPI accounting decomposition enters inputs.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Revised vintages; no as-issued economic forecast evaluation."
+  },
+  "task_ids": [
+    "P100-016.original.v1"
+  ],
+  "finding_ids": [
+    "P100-016-F01",
+    "P100-016-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-016/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-016.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Next-month seasonally adjusted all-items CPI log change under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Only calendar months through t-1 enter predictors for month t. This is a retrospectively revised and seasonally adjusted bulk snapshot, not an as-issued forecast archive. Calendar lags do not establish historical release availability; the nominal origin is after prior-month releases. No month-t prices/employment or CPI accounting decomposition enters inputs.",
+    "calibration_requirement": "All regression coefficients, centering/scales and flexible centers fit only preceding development blocks. No held-quarter target fitting.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Next-month seasonally adjusted all-items CPI log change in percentage points per month (100 natural log index ratio)",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Revised vintages; no as-issued economic forecast evaluation."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "percentage points",
+    "reference_model": "reference",
+    "reference_primary_error": 0.1085851997515345,
+    "reference_physical_mae": 0.1085851997515345,
+    "physical_error_units": "percentage points",
+    "lowest_registered_error_model": "constant",
+    "lowest_registered_error": 0.10569324083838115,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-016.original.v1/evidence/metrics.csv",
+      "bytes": 1181,
+      "sha256": "a6fc7aa7b229a5c88808b2040dd5fd5dec63b06ee66422036351917e6c281feb"
+    },
+    "models": 11
+  },
+  "case_specific_next_evidence": "Revised vintages; no as-issued economic forecast evaluation."
+}

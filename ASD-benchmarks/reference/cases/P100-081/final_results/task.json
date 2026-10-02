@@ -1,0 +1,141 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-081.original.v1",
+  "case_id": "P100-081",
+  "case_number": 81,
+  "family": "original",
+  "protocol_version": "P100-081-asd7-native-v1",
+  "cohort_id": "P100-081.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-081.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/81_agroforestry_digitaf_soils",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "measured soil bulk density",
+  "target_units": "g/cm\u00b3",
+  "error_units": "g/cm\u00b3",
+  "primary_units": "g/cm\u00b3",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "C",
+    "depth",
+    "pH"
+  ],
+  "input_units": {
+    "C": "mass % organic carbon",
+    "depth": "cm midpoint of sampled interval",
+    "pH": "pH unit in water"
+  },
+  "numeric_columns": [
+    "C",
+    "depth",
+    "pH"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Same soil-sampling occasion; Corg, sampling depth and pH are measured covariates available before BD inference. This is a laboratory-measurement substitution task, not a future forecast.",
+  "calibration": "No held-out country BD calibration; country identifiers are grouping metadata, never predictors.",
+  "independent_unit": "Entire country/site portfolio, with all transects, fields and depths linked. Eight countries are convenience samples, not a random population sample.",
+  "evaluation_groups": [
+    "Czechia",
+    "Germany"
+  ],
+  "assigned_rows": 126,
+  "eligible_rows": 126,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "flexible",
+    "linear",
+    "two_phase_volume",
+    "structural_porosity",
+    "depth_compaction",
+    "organic_consolidation",
+    "acidity_aggregation"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "linear": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "two_phase_volume": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "structural_porosity": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "depth_compaction": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "organic_consolidation": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "acidity_aggregation": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Country-balanced errors and explicit individual-country results; two confirmation countries are insufficient for precise population confidence."
+  },
+  "scope_limits": "Texture is unavailable in six countries and excluded rather than imputed. C stocks are excluded because they use bulk density algebraically.; Observational associations do not identify an agroforestry treatment effect. Protocol adaptations and country effects may limit transfer.",
+  "source_url": "https://zenodo.org/records/21204617",
+  "source_license": "cc-by-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Two Finland rows were seen during schema inspection, so Finland is development-only. Reserved countries were allocated by metadata-only hash before target inspection. All outputs are exposed after this campaign.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "14227c0cec24707b34357c6bff7d5113561b6145c27053c20943add0208066a4",
+  "observations_sha256": "88ad481ca1b693d32d2b4a027d44b7fa8a9de7a7e8937c2502c0ef2462e88df6",
+  "legacy_protocol_sha256": "02c98bc89d94a97731aa67fcba53ca92587d325ccbaad0b78e088e36a431a583",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

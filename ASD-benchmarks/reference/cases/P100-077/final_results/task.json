@@ -1,0 +1,145 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-077.original.v1",
+  "case_id": "P100-077",
+  "case_number": 77,
+  "family": "original",
+  "protocol_version": "P100-077-asd7-native-v1",
+  "cohort_id": "P100-077.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-077.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/77_genetics_one_step_tagging",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Joint green-positive and red-positive fraction",
+  "target_units": "percentage points",
+  "error_units": "percentage points",
+  "primary_units": "percentage points",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "green",
+    "red",
+    "dose"
+  ],
+  "input_units": {
+    "green": "fraction",
+    "red": "fraction",
+    "dose": "source fold dose"
+  },
+  "numeric_columns": [
+    "green",
+    "red",
+    "dose"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Contemporaneous assay diagnostic: green and red marginal positive fractions measured from the same FCS well; joint fraction withheld as target. Marginals do not algebraically determine the joint without an independence/dependence assumption.",
+  "calibration": "One source BOB negative control defines each channel threshold at its 99.5th percentile, identically for all wells and models. Event gating uses finite scatter/fluorescence and positive FSC-A/SSC-A only; source FlowJo manual gates were not supplied and are not reproduced.",
+  "independent_unit": "Named experimental replicate block A/B/C; three doses within each",
+  "evaluation_groups": [
+    "B"
+  ],
+  "assigned_rows": 3,
+  "eligible_rows": 3,
+  "baseline_models": [
+    "reference",
+    "baseline_independence",
+    "baseline_constant",
+    "baseline_flexible",
+    "attempt_001_competence",
+    "attempt_002_odds_ratio",
+    "attempt_003_common_fraction",
+    "attempt_004_dose_competence",
+    "attempt_005_competition"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "j*(1-p-q+j)=exp(beta)*(p-j)*(q-j); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_independence": {
+      "equation": "j=p*q; y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_constant": {
+      "equation": "j=clip(b0,L,U); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "j=clip(b0+b1*p+b2*q+b3*ln(dose),L,U); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_competence": {
+      "equation": "j=p*q+alpha*(min(p,q)-p*q); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_odds_ratio": {
+      "equation": "j*(1-p-q+j)=exp(beta)*(p-j)*(q-j); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_common_fraction": {
+      "equation": "j=clip(p*q/tau,L,U); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_dose_competence": {
+      "equation": "j=p*q+sigmoid(b0+b1*ln(dose))*(min(p,q)-p*q); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_competition": {
+      "equation": "j=p*q+alpha*(p*q-L), -1<=alpha<=0; y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "One hiPSC cell line, one multiplex tagging design, three replicate blocks; same-well marginal readouts are permitted. This tests distributional dependence, not pre-experiment editing yield or a new gene-editing mechanism.",
+  "source_url": "https://zenodo.org/records/15772077",
+  "source_license": "CC BY 4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "3790526184b0364a27d89cd4cc766cda6c4478da4978087ab1857e0b58f589ee",
+  "observations_sha256": "12a9b964cf98d541179ef892da3fbd97709b1dcfcc12fa08e057a1d41580f63d",
+  "legacy_protocol_sha256": "e1a470f4bd3c99ce3858e947e8062908b89a08a634a951e30b36df632fd93882",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "green",
+    "red",
+    "threshold_green",
+    "threshold_red"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

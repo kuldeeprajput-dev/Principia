@@ -1,0 +1,372 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-050",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Only first9ms near-zero rows were seen in schema audit. Target horizon starts600ms; reserved future values were not inspected before freeze. All final outcomes become exposed."
+  },
+  "findings": [
+    {
+      "id": "P100-050-F01",
+      "classification": "unsupported",
+      "source_classification": "unsupported",
+      "statement": "A locally oscillatory height model improves the 200 ms forecast over native persistence on a new complete release.",
+      "applicability": "One station, one reserved controlled release, causal 220 ms history.",
+      "limitations": "Its modest development advantage over persistence does not survive the reserved event.",
+      "falsification": "Its modest development advantage over persistence does not survive the reserved event.",
+      "prior_art": "Local harmonic propagation is an established kinematic approximation.",
+      "equation_or_program": {
+        "expression": "hhat=h+v sin(omega H)/omega+a[1-cos(omega H)]/omega\u00b2, H=0.2 s.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "m",
+        "h0": "m",
+        "h": "m; mean of last20 native samples",
+        "v": "m/s; causal100ms difference",
+        "a": "m/s\u00b2; causal100ms second difference",
+        "median": "m; median of last20 native samples"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-050.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-050-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "Unattenuated local slope extrapolation is a poor transferable 200 ms surface-height predictor in these experiments.",
+      "applicability": "Fixed issuance grid, original signed laser signal, all eligible observations.",
+      "limitations": "This is not a test of bulk flow velocity or a proof of a particular turbulence mechanism.",
+      "falsification": "This is not a test of bulk flow velocity or a proof of a particular turbulence mechanism.",
+      "prior_art": "Noisy surface measurements and evolving fronts need not follow constant local velocity.",
+      "equation_or_program": {
+        "expression": "hhat=h+0.2v compared with native persistence.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "m",
+        "h0": "m",
+        "h": "m; mean of last20 native samples",
+        "v": "m/s; causal100ms difference",
+        "a": "m/s\u00b2; causal100ms second difference",
+        "median": "m; median of last20 native samples"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-050.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-050-F03",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "Depth-dependent memory, front/recession asymmetry and median observation filtering do not establish a stronger selected predictive law.",
+      "applicability": "Sensor nowcasting only; not field early-warning performance.",
+      "limitations": "The short history and five runs cannot identify a unique governing flow mechanism.",
+      "falsification": "The short history and five runs cannot identify a unique governing flow mechanism.",
+      "prior_art": "Dissipation, gravity-wave scaling and robust filtering are established families.",
+      "equation_or_program": {
+        "expression": "Frozen alternatives in rules.json.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "m",
+        "h0": "m",
+        "h": "m; mean of last20 native samples",
+        "v": "m/s; causal100ms difference",
+        "a": "m/s\u00b2; causal100ms second difference",
+        "median": "m; median of last20 native samples"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-050.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_CONFIRMATION_RECEIPT.json",
+      "bytes": 3615,
+      "sha256": "d3365c700e86e4d2bf32c6a2dd93526bbeb702e24ed7cee2b7d050f746f4bd1c",
+      "id": "E001",
+      "role": "CONFIRMATION_RECEIPT.json"
+    },
+    {
+      "path": "evidence/E002_FREEZE.json",
+      "bytes": 2600,
+      "sha256": "46b9a16f30e9ee8b8812cc5a5e05bdb2d56f01e2e31885e6310aadf099cbba70",
+      "id": "E002",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E003_PRIOR_ART.json",
+      "bytes": 876,
+      "sha256": "5c5f84b6c41d825decfbead55b0e047cbee3ac3de942403ba947f5eed9e9c6b6",
+      "id": "E003",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E004_PROTOCOL.json",
+      "bytes": 2326,
+      "sha256": "50a2573ec032f1fffe0293ae081857816c5cb65e3ee02d1ec68df26e67434675",
+      "id": "E004",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E005_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 10566,
+      "sha256": "974c27550ca7ce61d0dac1ddeb2cfc9200397d268821c5bde49367c76e3f9cb1",
+      "id": "E005",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E006_SOURCE_AND_UNITS.md",
+      "bytes": 596,
+      "sha256": "299c8c1013a69359fa00e5852b4dd29b09c06df2c2510d0a37818409d6c25640",
+      "id": "E006",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E007_SOURCE_MANIFEST.json",
+      "bytes": 617,
+      "sha256": "7c879abd0b8bceb8172c8c2e6574524c4ab1fd64fa707ff19dc6d2883cefe768",
+      "id": "E007",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E008_SPLITS.json",
+      "bytes": 223,
+      "sha256": "35840926d5c748f84de3287e6a47d58898c8d5d9d5a8d61cae5312b0bc07dd13",
+      "id": "E008",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E009_native.py",
+      "bytes": 1677,
+      "sha256": "821af70769e5ae1c499f0c63342f0ae28e71cf80d1654b8e9c2771924d44aefc",
+      "id": "E009",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E010_FINDINGS.md",
+      "bytes": 5292,
+      "sha256": "2aac06122e830512dd404c7f15f5e19ea128a7893457fb8fc07fdfdac0aa7291",
+      "id": "E010",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E011_MANIFEST.json",
+      "bytes": 2037,
+      "sha256": "20e4b5663480bf69fcd92610497536d58a46ba7c7e1bb8ed5f90e2b5c697bb3d",
+      "id": "E011",
+      "role": "package/MANIFEST.json"
+    },
+    {
+      "path": "evidence/E012_inputs.csv.gz",
+      "bytes": 9755,
+      "sha256": "a218bf206722b471a514690bace740ab7ef5e3ea0a225620291e3837fce26043",
+      "id": "E012",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E013_observations.csv.gz",
+      "bytes": 4943,
+      "sha256": "71b460aaa947d8b3dab478f8c741eb3b5d79c11acb951992495f5348ea542fe8",
+      "id": "E013",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E014_by_group.csv",
+      "bytes": 999,
+      "sha256": "9fde903fa8945668c10edd7b931b861e9ad76bc129e6c32c94230a140b85a6b3",
+      "id": "E014",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E015_metrics.csv",
+      "bytes": 1340,
+      "sha256": "659f43458a0e5877e6a51820db2e21b914ad6816ec74432698b60f1c04be6eb2",
+      "id": "E015",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E016_predictions.csv.gz",
+      "bytes": 17650,
+      "sha256": "5a77c03b78090e7f4d31e37b276531bbb5ad031a43e024ea8fedd840e2168326",
+      "id": "E016",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E017_findings.json",
+      "bytes": 2484,
+      "sha256": "7fbe7d21b5085d9061cd84248e9c017e49e6c9b2bf18e2b19f791f75fdffbf3f",
+      "id": "E017",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E018_rules.json",
+      "bytes": 9294,
+      "sha256": "14fa9d4ddbecd00cefffab992358f1b0086f6740eb60287ca2be32dc23a9c6ce",
+      "id": "E018",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E019_run.py",
+      "bytes": 3216,
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300",
+      "id": "E019",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E020_task_spec.json",
+      "bytes": 2065,
+      "sha256": "6329822be2c94f4723177c3bb6d0080e05ac7ff9362c8c880455848790d720b8",
+      "id": "E020",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 21694,
+      "sha256": "d3e35a0d3f84d631ee21f7f41194b81999403d57191e989f8b4069041a43b6b5",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 10408,
+      "sha256": "f70d7bd4e57ef0f86e7bff68feba1bdd1f1ce03e25443e57b7b6059f85f9354c",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

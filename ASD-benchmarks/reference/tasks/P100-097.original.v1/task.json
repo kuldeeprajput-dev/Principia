@@ -1,0 +1,138 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-097.original.v1",
+  "case_id": "P100-097",
+  "case_number": 97,
+  "family": "original",
+  "protocol_version": "P100-097-asd7-native-v1",
+  "cohort_id": "P100-097.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-097.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/97_transport_pedestrian_feet",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "pedestrian speed",
+  "target_units": "m/s",
+  "error_units": "m/s",
+  "primary_units": "m/s",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "eta",
+    "rho"
+  ],
+  "input_units": {
+    "eta": "m\u00b2/person specific volume",
+    "rho": "persons/m\u00b2, exact reciprocal of eta; predictor only"
+  },
+  "numeric_columns": [
+    "eta",
+    "rho"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Source-processed paired density/speed ordinates, used for retrospective condition transfer. Density is the published local spatial descriptor; the task is not an online evacuation forecast.",
+  "calibration": "No held-condition speed calibration. The supplied paper fit is an explicitly exposed prior-art baseline, not a newly discovered coefficient set.",
+  "independent_unit": "Complete source figure cohorts; F3D and F3E are linked as the multidirectional-study family and reserved together. Person/run identifiers are missing, so independence within or between figure cohorts is not established.",
+  "evaluation_groups": [
+    "F3D",
+    "F3E"
+  ],
+  "assigned_rows": 30080,
+  "eligible_rows": 30080,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "flexible",
+    "published_source",
+    "greenshields",
+    "underwood",
+    "free_area_exponential",
+    "distance_headway",
+    "two_regime_exclusion"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "published_source": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "greenshields": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "underwood": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "free_area_exponential": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "distance_headway": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "two_regime_exclusion": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Condition-balanced results and both individual reserved figures. F3D/F3E may share participants; no independent-cohort confidence interval."
+  },
+  "scope_limits": "F3A simulation is excluded; source-processed plotting tables are not raw trajectories.; Panel-to-study mapping follows the article ordered empirical-condition list and cited original studies: F3B unidirectional/Zhang2011; F3C counterflow/Zhang2012; F3D/F3E cross/four-directional/Cao2017. Exact original run accession IDs are not retained.; Only within-source condition transfer is assessed. No independent population validation, causal pedestrian mechanism or safe capacity limit is claimed.; Flow and gait algebraic identities are excluded as predictive targets and confirmations.",
+  "source_url": "https://zenodo.org/records/14737521",
+  "source_license": "cc-by-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Primary article known fitted equation and schema dimensions were inspected before allocation. Reserved numerical ordinates were not viewed before freeze.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "0d5c354bd340646e798f1929722d3f929f8f793f4a920bb91b938ed7d1743110",
+  "observations_sha256": "cfff80c32f497db21d73529a223d2884b830b7ee32c57019e3f175907f3ded27",
+  "legacy_protocol_sha256": "b3d9d48772828af6962fdb1f9d4c0f2aaac08ceecb31789d9bce522453129dee",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

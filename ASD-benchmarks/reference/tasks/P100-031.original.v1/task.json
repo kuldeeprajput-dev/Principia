@@ -1,0 +1,209 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-031.original.v1",
+  "case_id": "P100-031",
+  "case_number": 31,
+  "family": "original",
+  "protocol_version": "P100-031-asd7-native-v1",
+  "cohort_id": "P100-031.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-031.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/31_quantum_computing_ibm_benchpress",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Author-benchmarked mean compilation wall time after matched Qiskit pilot",
+  "target_units": "seconds",
+  "error_units": "absolute natural-log time ratio",
+  "primary_units": "absolute natural-log time ratio",
+  "metric_kind": "log_mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "pilot_seconds",
+    "qubits",
+    "pilot_gates",
+    "pilot_depth",
+    "load_seconds",
+    "is_tket",
+    "is_bqskit"
+  ],
+  "input_units": {
+    "pilot_seconds": "seconds Qiskit calibration cost",
+    "qubits": "input qubit count",
+    "pilot_gates": "Qiskit output two-qubit gate count",
+    "pilot_depth": "Qiskit output two-qubit depth",
+    "load_seconds": "Qiskit QASM loading seconds",
+    "is_tket": "SDK indicator",
+    "is_bqskit": "SDK indicator,elseStaq"
+  },
+  "numeric_columns": [
+    "pilot_seconds",
+    "qubits",
+    "pilot_gates",
+    "pilot_depth",
+    "load_seconds",
+    "is_tket",
+    "is_bqskit"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Must execute the complete Qiskit pilot first; its runtime and resulting circuit statistics are known only afterward. Candidate SDK timing is withheld. Pilot cost is not free. This is runtime diagnostics, not pre-compilation prediction or quantum-device performance.",
+  "calibration": "Whole circuit families held across allSDKs; exact same inputfilename matched. No held family candidate-runtime measurements enter fitting. Qiskit pilot is declared per-instance calibration.",
+  "independent_unit": "Circuit family after stripping numeric size suffixes; compiler observations on each family stay linked. One local CPU family; no independent hardware transfer.",
+  "evaluation_groups": [
+    "gf^_mult",
+    "grover",
+    "ham-med",
+    "mod_adder",
+    "mod_mult"
+  ],
+  "assigned_rows": 37,
+  "eligible_rows": 37,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "domain",
+    "flexible",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007",
+    "attempt_008",
+    "attempt_009",
+    "attempt_010",
+    "attempt_011",
+    "attempt_012",
+    "attempt_013"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "t=Staq_only_floor+scale_SDK*pilot^shared_power",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "t=exp(a+bT*is_tket+bB*is_bqskit)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "domain": {
+      "equation": "t=pilot_seconds*exp(a+bT*is_tket+bB*is_bqskit)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "32-center matched-input log-time comparator",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "t=exp(a+bT*T+bB*B)*pilot_seconds^p",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "t=pilot*exp(a+bT*T+bB*B+cQ*log(qubits)+cG*log1p(pilot_2q_gates))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "t=pilot*exp(a+bT*T+bB*B+c*log((1+gates)/(1+depth))+d*log1p(depth))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "t=exp(SDKintercept)*pilot_seconds^(SDKspecific exponent)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "t=exp(SDKintercept)*pilot^(SDKexponent),robust log residual fit",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "t=exp(SDKintercept)*pilot^(SDKexponent)*exp(c*max(logQ-log16,0))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "t=SDKpilot_power*exp(c*largeQ+d*pilotparallelism)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_008": {
+      "equation": "t=SDKintercept*pilot^(sharedTket/Staq exponent orBQSKIT exponent)*largeQcorrection",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_009": {
+      "equation": "t=exp(SDKintercept)*Q^a*(1+G)^b*(1+D)^c*loadtime^d; no pilotruntime",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_010": {
+      "equation": "t=positive_floor_SDK+positive_scale_SDK*pilot_seconds^shared_power",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_011": {
+      "equation": "t=Staq_only_floor+scale_SDK*pilot^shared_power",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_012": {
+      "equation": "t=Staq_only_floor+scale_SDK*pilot^power_SDK",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_013": {
+      "equation": "t=Staq_only_floor+scale_SDK*pilot",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze."
+  },
+  "scope_limits": "Only device-transpilation successful matched tasks forTket/BQSKIT/Staq; no service remote latency. Missing/failed/timeouts excluded from conditional-success runtime target and retained in source audit; cannot infer success probability or realized routing speedup. Author timing environment differs in frequency/run state despite same CPU model.",
+  "source_url": "https://zenodo.org/records/14977295",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Only schema and source-publication aggregate descriptions inspected; reserved target values and scores not inspected.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"21a5a324aa8901316e6a7e6070169304036e8ef13abf49a645bda7c6e1bef830\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "8569c930c9c551f28b375d27a5796fec3c8a913740b7c4f4caf11c6abb25e774",
+  "observations_sha256": "72b485c1ac31f75b143ea6b16be559fc309f0a67e8bcefc1db51e53528ad14e6",
+  "legacy_protocol_sha256": "52cce2154796dbcd245dd12189930eaddb4ce1bdd8d1da529f98e5ac9abebad0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "pilot_seconds",
+    "pilot_gates",
+    "pilot_depth",
+    "load_seconds"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

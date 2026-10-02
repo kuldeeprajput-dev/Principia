@@ -1,0 +1,80 @@
+{
+  "case_id": "P100-100",
+  "title": "6G-MOBKPI results: Network-layer and radio-related measurements from mobility experiments on the 6G-SANDBOX M\u00e1laga platform",
+  "default_task": "P100-100.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Next successful ICMP probe RTT",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 3,
+    "independent_unit_description": "whole PING run; sequential packets correlated",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "r_n and r_(n\u22121) are completed previous RTTs in milliseconds; rbar5 averages the last five completed probes. c_q in ms is\u22120.002897 for indoor random,\u22120.069945 for indoor rectangle and\u22120.049676 for outdoor rectangle. The55ms breakpoint was selected using nested development groups. Payload and causal radio measurements are available to comparators, but the selected equation uses history and the calibrated route offset only. It predicts a conditional successful next response, not a missing lost-packet RTT.",
+  "baseline_strength": {
+    "registered_controls": 7,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Next successful ICMP probe RTT",
+    "prediction_time": "Predict next probe RTT using only five previous completed RTTs and radio asof previous completion, <=0.5s old. No current response-completion timestamp, ICMPseq, cumulative average/loss, future gap, throughput or same-probe radio in inputs. Successful response conditional target; missing lost responses retained when inputs eligible.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-100.original.v1",
+    "P100-100.round2.v1",
+    "P100-100.round2.v2"
+  ],
+  "finding_ids": [
+    "P100-100-SCI-01",
+    "P100-100-SCI-02",
+    "P100-100-SCI-03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-100/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-100.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Next successful ICMP probe RTT under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Predict next probe RTT using only five previous completed RTTs and radio asof previous completion, <=0.5s old. No current response-completion timestamp, ICMPseq, cumulative average/loss, future gap, throughput or same-probe radio in inputs. Successful response conditional target; missing lost responses retained when inputs eligible.",
+    "calibration_requirement": "r_n and r_(n\u22121) are completed previous RTTs in milliseconds; rbar5 averages the last five completed probes. c_q in ms is\u22120.002897 for indoor random,\u22120.069945 for indoor rectangle and\u22120.049676 for outdoor rectangle. The55ms breakpoint was selected using nested development groups. Payload and causal radio measurements are available to comparators, but the selected equation uses history and the calibrated route offset only. It predicts a conditional successful next response, not a missing lost-packet RTT.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Next successful ICMP probe RTT in ms",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "ms",
+    "reference_model": "reference",
+    "reference_primary_error": 2.0700160289221095,
+    "reference_physical_mae": 2.0700160289221095,
+    "physical_error_units": "ms",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 2.0700160289221095,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-100.original.v1/evidence/metrics.csv",
+      "bytes": 568,
+      "sha256": "38a5c55cf5552450034a9e29c394aa9a47fc92ba2bbc9a61a44b6e946b83528b"
+    },
+    "models": 7
+  },
+  "case_specific_next_evidence": "Require lag-one, lag-two, rolling and flexible history baselines in every new proposal with equivalent input availability.\n\nRegister loss/timeout and tail-RTT tasks separately, preserving missing targets and identical eligibility denominators.\n\nReserve fresh operators/routes/time periods and measure relevant scheduling/queue state before a mechanism claim."
+}

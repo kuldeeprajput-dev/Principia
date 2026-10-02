@@ -1,0 +1,37 @@
+{
+  "case": 79,
+  "kind": "relative_decay",
+  "coef": [
+    1.5965780166692034,
+    19.24304237094966
+  ],
+  "training_groups": [
+    "204708",
+    "304716",
+    "404710",
+    "404724",
+    "604705"
+  ],
+  "training_rows": 25,
+  "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+  "equation": "yhat=max(0,baseline*(1+A*exp(-hours/tau)))",
+  "optimizer": {
+    "success": true,
+    "cost": 7.9217150365810145,
+    "bounds": [
+      [
+        0,
+        0.01
+      ],
+      [
+        1000,
+        1000
+      ]
+    ],
+    "jacobian_rank": 2,
+    "jacobian_singular_values": [
+      0.9943900415246854,
+      0.03244998417942141
+    ]
+  }
+}

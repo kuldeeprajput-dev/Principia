@@ -1,0 +1,691 @@
+{
+  "schema_version": "principia.advisory-review/3.0",
+  "bindings": {
+    "claims_sha256": "7fd04326402ca7654ef01dfca4377eb7841b90de9d1c2e6250c8b51a09e6be42",
+    "evidence_sha256": {
+      "E001": "aabc21a79c7c91bc0fed4e6011bc210a6ff9fe7e1b8ac9b1088f399cbb8359b6",
+      "E002": "be9b19eb057d9bde8a39391cad5053bdab715575c06b5beb98ccd25bc300388e",
+      "E003": "6a6960d2957a2514faef4f3a35a1d6ecec45efaaaee754183068b1a869d09a08",
+      "E004": "96f3502242df4989baa62ecd65e0a16ce61e9d28b506ff237f8fdbacd61bfd40",
+      "E005": "de52500f2671cf34dcfe9d0688c3679f31e5252b65d8b8089af0d8b184c456bd",
+      "E006": "41cbdd06055dae74f617ae29cf9f8a9c08799fabf1602e1e34c6ca9b49210af8",
+      "E007": "5e8c905864493c8027eb99f2fd636002abf98594a45997af079e8acc996e7e20",
+      "E008": "7fd73d68008c163d4752fc02ae78417cba06893a6525dcdb25c66e37532a6291",
+      "E009": "eefc2ef027886ca6763008d2ffba05f14114e8bbafa4c20b2c337d6f3de76bec",
+      "E010": "345ee3c59c0398e85d42669b3620fd755ce35bc67ceff03043b585310db91e57",
+      "E011": "a62f19ed195b091500e40f2ee9682ed5c8c13ab1a48a77beca871b8c64390054",
+      "E012": "03b085abf7b93805cafb277197dfe2406855b678d59daa0cf0d8e920381ed326",
+      "E013": "fc1ec73b985d3832e9df568380983d1cedad9ffc73b10fc2c68f9a753ed39cca",
+      "E014": "8be980b06db2f4440bf9fb0cea6fa96d12d0fc243db73776736e500bf83cd3f9",
+      "E015": "15cb0b5cf919861c04fa0cd0ceddbbe8c5cdc5cb4cc908975dc5ab63e3e5ea0f",
+      "E016": "9e4bebe34a5bd91269a7c8780dd921e6fcfb42231446820cf68932f5e902f34f",
+      "E017": "84ad6201824c39512d5d4e0f82413ffa4d088f8dadd6343f6fbf70ad66486eb6",
+      "E018": "789fa5662ac85fc133322295edaac84e666ac2d7bfb2a985723d5bc4957beb6e",
+      "COMPUTATIONAL": "bebc618f7c498e7cf769263bdd6128476d936f61e9011b7425bff225519d574f",
+      "SCIENTIFIC_CRITICAL": "dcae6d1c3a435abce2c176c235f815236249c9dd3f33140735d42031676cfa9b"
+    },
+    "case_id": "P100-035",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "reviews": [
+    {
+      "finding_id": "P100-035-F01",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-035-F01",
+        "disposition": "partially_supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Held-animal recorded-context Brier comparison favors the selected acoustic descriptor, but species/recording/context confounding prevents interpreting it as directly measured emotional state or animal-welfare impact.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Computational agreement cannot identify a physical or causal mechanism. Held-animal recorded-context Brier comparison favors the selected acoustic descriptor, but species/recording/context confounding prevents interpreting it as directly measured emotional state or animal-welfare impact.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Reusable scoped comparison and preserved falsification evidence. Held-animal recorded-context Brier comparison favors the selected acoustic descriptor, but species/recording/context confounding prevents interpreting it as directly measured emotional state or animal-welfare impact.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          "Native reconstruction and held-group separation",
+          "All frozen predictor and metric replay",
+          "Undeclared target poisoning and row-order invariance",
+          "Development-fold training/validation membership disjointness"
+        ],
+        "limitations": [
+          "Held-animal recorded-context Brier comparison favors the selected acoustic descriptor, but species/recording/context confounding prevents interpreting it as directly measured emotional state or animal-welfare impact.",
+          "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-035-F01",
+        "disposition": "partially_supported",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Held-animal Brier0.190215 beats species0.205977 and flexible0.201616; scope is experimental context classification. Claim-specific scope: A compact species/duration/digital-amplitude equation transfers source context-label prediction to held animals",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Uncalibrated digital amplitude and duration can encode recorder, call type or eliciting context. Animal holdout cannot isolate an emotional physiological mechanism.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Useful as a transparent bounded research/evaluation case. Seven species with study/context/recording confounding; WildBoar spelling linkage audited; subjective valence and deployed welfare decisions unmeasured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+          "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+          "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+        ],
+        "limitations": [
+          "Seven species with study/context/recording confounding; WildBoar spelling linkage audited; subjective valence and deployed welfare decisions unmeasured.",
+          "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-035-F02",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-035-F02",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Held-animal recorded-context Brier comparison favors the selected acoustic descriptor, but species/recording/context confounding prevents interpreting it as directly measured emotional state or animal-welfare impact.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Computational agreement cannot identify a physical or causal mechanism. Held-animal recorded-context Brier comparison favors the selected acoustic descriptor, but species/recording/context confounding prevents interpreting it as directly measured emotional state or animal-welfare impact.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Reusable scoped comparison and preserved falsification evidence. Held-animal recorded-context Brier comparison favors the selected acoustic descriptor, but species/recording/context confounding prevents interpreting it as directly measured emotional state or animal-welfare impact.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          "Native reconstruction and held-group separation",
+          "All frozen predictor and metric replay",
+          "Undeclared target poisoning and row-order invariance",
+          "Development-fold training/validation membership disjointness"
+        ],
+        "limitations": [
+          "Held-animal recorded-context Brier comparison favors the selected acoustic descriptor, but species/recording/context confounding prevents interpreting it as directly measured emotional state or animal-welfare impact.",
+          "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-035-F02",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Held-animal Brier0.190215 beats species0.205977 and flexible0.201616; scope is experimental context classification. Claim-specific scope: Predictive success does not uniquely support an emotional acoustic mechanism because recording amplitude/duration match richer acoustic summaries",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Uncalibrated digital amplitude and duration can encode recorder, call type or eliciting context. Animal holdout cannot isolate an emotional physiological mechanism.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Useful as a transparent bounded research/evaluation case. Seven species with study/context/recording confounding; WildBoar spelling linkage audited; subjective valence and deployed welfare decisions unmeasured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+          "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+          "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+        ],
+        "limitations": [
+          "Seven species with study/context/recording confounding; WildBoar spelling linkage audited; subjective valence and deployed welfare decisions unmeasured.",
+          "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+        ]
+      }
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "novelty_is_not_certified": true
+}

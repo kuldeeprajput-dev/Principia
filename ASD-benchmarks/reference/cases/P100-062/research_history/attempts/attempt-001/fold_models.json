@@ -1,0 +1,122 @@
+[
+  {
+    "fold": 1,
+    "state": {
+      "name": "shared_boundary_response",
+      "formula": "offset+gain*drive*(1-exp(-t/tau))",
+      "hypothesis": "Attempt1: a common linear permeation gain and relaxation time describe both applied-current increments. Failure would challenge proportional boundary-concentration response under a shared effective transport mode.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:58:19.805623+00:00",
+      "parent": null,
+      "parameters": {
+        "gain": 499.9999999794509,
+        "tau": 172210.72607502996
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-1-block-0"
+      ],
+      "training_rows": 372,
+      "optimizer_success": true,
+      "nfev": 14,
+      "jacobian_condition": 311425.65951838304,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ]
+      }
+    }
+  },
+  {
+    "fold": 2,
+    "state": {
+      "name": "shared_boundary_response",
+      "formula": "offset+gain*drive*(1-exp(-t/tau))",
+      "hypothesis": "Attempt1: a common linear permeation gain and relaxation time describe both applied-current increments. Failure would challenge proportional boundary-concentration response under a shared effective transport mode.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:58:19.805623+00:00",
+      "parent": null,
+      "parameters": {
+        "gain": 499.99999999999994,
+        "tau": 153738.95209931902
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-1-block-0",
+        "trace-1-block-1"
+      ],
+      "training_rows": 742,
+      "optimizer_success": true,
+      "nfev": 12,
+      "jacobian_condition": 125123.7385642373,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ]
+      }
+    }
+  },
+  {
+    "fold": 3,
+    "state": {
+      "name": "shared_boundary_response",
+      "formula": "offset+gain*drive*(1-exp(-t/tau))",
+      "hypothesis": "Attempt1: a common linear permeation gain and relaxation time describe both applied-current increments. Failure would challenge proportional boundary-concentration response under a shared effective transport mode.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:58:19.805623+00:00",
+      "parent": null,
+      "parameters": {
+        "gain": 30.733460222321966,
+        "tau": 9559.14384848439
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2"
+      ],
+      "training_rows": 1113,
+      "optimizer_success": true,
+      "nfev": 13,
+      "jacobian_condition": 6343.381713264523,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ]
+      }
+    }
+  }
+]

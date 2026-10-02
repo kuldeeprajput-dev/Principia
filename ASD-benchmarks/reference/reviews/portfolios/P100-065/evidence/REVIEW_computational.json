@@ -1,0 +1,203 @@
+{
+  "case_id": "P100-065",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "51491e47c8c0973ed95100b3a60cde77f0ac03f09988cd7993b4d39212edf1ab"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "6de26bcf75561d00acac4679638e514b8da4e2cdb4d3f0a5b197dea498db409d"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "be3fa4a59f5dba88649225bfc045dbe4ac99bd08c3fb454b315f71c1e6cabd1c"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "80a5efd0a61c1f8723410234fecff619b106b3e84068e151dd4a03d3213760c8"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "b1f59e98ff401f0b3228ce1fe6e30ca9f40215192f904a18d240a6476df87192"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "839c80a9ceda158933005b490e1b23582f1c548e7cb9d5fecaa55fe3b94fdc7c"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "6b5532553e24d8a09de823196b7bfd6b093ed2918647d1f8c2f520dbbab2701b"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "48270a0ad2b8abc11fa135bcd04b6256979235400a3b0f85ca4278b3399e9be5"
+    },
+    {
+      "path": "native.py",
+      "sha256": "9239061460879dbd6fe5ff723cb2259f82b10103d575a9eb2243ee14374b6006"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "3bed0048e3256a95a5a69025d343283e1f0f9e20fd59506f10560a720003a446"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "0e49d5557730b9a7c9a8d6504791093d6404ed42638de692a6fa33348d689dd3"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "53d5827bfeeb9c6d5827dba5615c3ff6a7f5b84d2712990a8037d81c0043c2c4"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "cb1a7f0398b989f32c2c716a8b870c3dd58bcecb062d95c6c96f608e0e2f8844"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "47adce46fdb2cb1fad41f93b1464d9c1e83befcbb4be74a1aacee9728aa459cd"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-065-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact frozen numerical evidence reproduces, including losing controls; this verifies computation, not universal interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No literature-priority adjudication in this computational review."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped benchmark comparison. Complete injection ratio; one laser/resonator setup. Development validation blocks complete log-frequency bands across two ratios.; A compact sum of feedback-sensitive and common noise contributions predicts the reserved injection ratio, but the selected extension loses to the simpler fixed-exponent domain control. This supports bounded reproduction and model ambiguity, not a new laser-noise law.; No independent population confidence interval from dependent rows."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native-source reconstruction and every saved model/metric passed independent computation."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention/cost/safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+        "All top-level groups disjoint across development and confirmation",
+        "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+        "Independently recomputed equal-group physical-unit MAE for every model",
+        "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+      ],
+      "limitations": [
+        "Complete injection ratio; one laser/resonator setup. Development validation blocks complete log-frequency bands across two ratios.; A compact sum of feedback-sensitive and common noise contributions predicts the reserved injection ratio, but the selected extension loses to the simpler fixed-exponent domain control. This supports bounded reproduction and model ambiguity, not a new laser-noise law.; No independent population confidence interval from dependent rows."
+      ]
+    },
+    {
+      "finding_id": "P100-065-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact frozen numerical evidence reproduces, including losing controls; this verifies computation, not universal interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No literature-priority adjudication in this computational review."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped benchmark comparison. Complete injection ratio; one laser/resonator setup. Development validation blocks complete log-frequency bands across two ratios.; A compact sum of feedback-sensitive and common noise contributions predicts the reserved injection ratio, but the selected extension loses to the simpler fixed-exponent domain control. This supports bounded reproduction and model ambiguity, not a new laser-noise law.; No independent population confidence interval from dependent rows."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native-source reconstruction and every saved model/metric passed independent computation."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention/cost/safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+        "All top-level groups disjoint across development and confirmation",
+        "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+        "Independently recomputed equal-group physical-unit MAE for every model",
+        "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+      ],
+      "limitations": [
+        "Complete injection ratio; one laser/resonator setup. Development validation blocks complete log-frequency bands across two ratios.; A compact sum of feedback-sensitive and common noise contributions predicts the reserved injection ratio, but the selected extension loses to the simpler fixed-exponent domain control. This supports bounded reproduction and model ambiguity, not a new laser-noise law.; No independent population confidence interval from dependent rows."
+      ]
+    }
+  ],
+  "numerical_checks": [
+    {
+      "model": "reference",
+      "primary_error": 3.04916532516805,
+      "max_prediction_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "baseline_constant",
+      "primary_error": 11.616631522479153,
+      "max_prediction_difference": 0.0
+    },
+    {
+      "model": "baseline_flex65",
+      "primary_error": 3.165751999005368,
+      "max_prediction_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "baseline_laser_domain",
+      "primary_error": 3.0152684570997144,
+      "max_prediction_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "attempt_001",
+      "primary_error": 3.037038663358433,
+      "max_prediction_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "attempt_002",
+      "primary_error": 3.1103016293830597,
+      "max_prediction_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "attempt_003",
+      "primary_error": 3.184847777612994,
+      "max_prediction_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "attempt_004",
+      "primary_error": 3.04916532516805,
+      "max_prediction_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "attempt_005",
+      "primary_error": 2.911601751174141,
+      "max_prediction_difference": 3.552713678800501e-15
+    }
+  ],
+  "checks": [
+    "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+    "All top-level groups disjoint across development and confirmation",
+    "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+    "Independently recomputed equal-group physical-unit MAE for every model",
+    "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+  ],
+  "limitations": [
+    "Complete injection ratio; one laser/resonator setup. Development validation blocks complete log-frequency bands across two ratios.; A compact sum of feedback-sensitive and common noise contributions predicts the reserved injection ratio, but the selected extension loses to the simpler fixed-exponent domain control. This supports bounded reproduction and model ambiguity, not a new laser-noise law.; No independent population confidence interval from dependent rows."
+  ],
+  "independent_experimental_replication": false
+}

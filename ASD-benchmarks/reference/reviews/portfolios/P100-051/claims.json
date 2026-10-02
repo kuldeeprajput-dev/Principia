@@ -1,0 +1,302 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-051",
+  "claim_origin": "New ASD5 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "{\"current\": \"exposed\", \"internal_confirmation\": \"held out until frozen model/stop selection\", \"fresh_for_future_users\": false}"
+  },
+  "findings": [
+    {
+      "id": "P100-051-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated extension",
+      "statement": "A three-anchor calibration-ratio-dependent power response improves reserved-device current reconstruction over a training-only normalized template within the measured FET array.",
+      "applicability": "36 fabricated FET curves from source Fig2e, not independent lots; no memory-retention extrapolation, no device-geometry control or interventions.",
+      "limitations": "All comparison models, unfavorable development folds and confirmation groups are retained; secondary model winners do not replace preselected reference.",
+      "falsification": "All comparison models, unfavorable development folds and confirmation groups are retained; secondary model winners do not replace preselected reference.",
+      "prior_art": "Primary paper reports FET electrical uniformity, reduced contact resistance, thermally activated channel transport, memory retention/endurance and separate device simulations. This portfolio tests reserved-device sparse-calibration reconstruction; it does not claim to discover those source results.",
+      "equation_or_program": {
+        "expression": "p=clip(1.963555864-0.012894033*ln(r),0.1,8); Ihat=Il+(Ih-Il)*u^(p if V>=0 else12)",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "uA",
+        "gate_V": "V",
+        "cal_minus20_uA": "uA",
+        "cal_zero_uA": "uA",
+        "cal_plus20_uA": "uA"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-051.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-051-F02",
+      "classification": "falsified",
+      "source_classification": "negative finding",
+      "statement": "Off-regime exponent and contact-saturation mechanisms are not identified: the exponent reaches its bound and contact saturation fails to improve transfer.",
+      "applicability": "36 fabricated FET curves from source Fig2e, not independent lots; no memory-retention extrapolation, no device-geometry control or interventions.",
+      "limitations": "All comparison models, unfavorable development folds and confirmation groups are retained; secondary model winners do not replace preselected reference.",
+      "falsification": "All comparison models, unfavorable development folds and confirmation groups are retained; secondary model winners do not replace preselected reference.",
+      "prior_art": "Primary paper reports FET electrical uniformity, reduced contact resistance, thermally activated channel transport, memory retention/endurance and separate device simulations. This portfolio tests reserved-device sparse-calibration reconstruction; it does not claim to discover those source results.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "uA",
+        "gate_V": "V",
+        "cal_minus20_uA": "uA",
+        "cal_zero_uA": "uA",
+        "cal_plus20_uA": "uA"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-051.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD5 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 12966,
+      "sha256": "d15e243d8fa158a82188b61bf4c8ff276742da0462cf09350c57ac54fa0377f0",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 840,
+      "sha256": "25af83e5d7422b1ac7242ee5bd7ec7db1b2340258822820a2e7f13f871408280",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 2920,
+      "sha256": "c3cf04c51dc5ed21d0602c1b32b3e3524e24b6b3d01457b0b588bbd75bc9ce5f",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_SOURCE_AND_UNITS.md",
+      "bytes": 1493,
+      "sha256": "99b1a390bdc189fee91df8b772a51189719b4ec89bcaf630b98a5696469ff5c7",
+      "id": "E004",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E005_SPLITS.json",
+      "bytes": 1536,
+      "sha256": "13ec52e8744ae0f3ad0dbef82fd957c9a710c4ff890b71599f4088fca108b95c",
+      "id": "E005",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E006_SUMMARY.md",
+      "bytes": 1338,
+      "sha256": "1b7ee09caa89ff8f6de1dbb3a44897b3b73171540ca8f03df1071db9583427f2",
+      "id": "E006",
+      "role": "SUMMARY.md"
+    },
+    {
+      "path": "evidence/E007_confirm.py",
+      "bytes": 4828,
+      "sha256": "7d64b62c962524a8acaca18685dc39bc1db4d50f34c469b5ad0d90696d83fcea",
+      "id": "E007",
+      "role": "confirm.py"
+    },
+    {
+      "path": "evidence/E008_develop.py",
+      "bytes": 4775,
+      "sha256": "9dc74f71848b7e3616f8dccbf3730119194535c204f274973b51684abe783354",
+      "id": "E008",
+      "role": "develop.py"
+    },
+    {
+      "path": "evidence/E009_native.py",
+      "bytes": 1896,
+      "sha256": "d4c73068e6bc2bb94db67b3af094d2859539af51b167fbbd6b89a982d27b8370",
+      "id": "E009",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E010_FINDINGS.md",
+      "bytes": 3872,
+      "sha256": "ecbdcf2bd780d44d746179a727eab9e88c9b0b3140bd7234554ddd8bc2230739",
+      "id": "E010",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E011_inputs.csv.gz",
+      "bytes": 9721,
+      "sha256": "89865ca1db73dc3005b8f0e820022bb251b880e76271223815a27c77463981bc",
+      "id": "E011",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E012_observations.csv.gz",
+      "bytes": 21614,
+      "sha256": "77598fcf5db5afda627ed98e714b1daa2e67556c3f3541994cfddbe51e2b2898",
+      "id": "E012",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E013_by_group.csv",
+      "bytes": 8690,
+      "sha256": "0107d8a311014601457d210e8c3b7ebd8a689553c1bb9db77116fe221b58d209",
+      "id": "E013",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E014_metrics.csv",
+      "bytes": 833,
+      "sha256": "8b3493d08317a2eaf712fdb3759a6cf949455dee119c17d8376782816e270926",
+      "id": "E014",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E015_predictions.csv.gz",
+      "bytes": 167807,
+      "sha256": "fa964a382892ba51b8cf5822a15106aa7ac74d60eb6fdbc4b2b317acaa7e39a0",
+      "id": "E015",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E016_findings.json",
+      "bytes": 2637,
+      "sha256": "3856e6dde5a3c6deabe9ac6510d0c7c057b4b5f64874378fd65150fb03aa8025",
+      "id": "E016",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E017_rules.json",
+      "bytes": 32068,
+      "sha256": "f4dae76d4e2cea3d30e7f0587cc55603851aab5531c2fffebdf7e562b478e8f7",
+      "id": "E017",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E018_run.py",
+      "bytes": 5114,
+      "sha256": "6bb8d1c80f0251f633e36ee681f6df0325416b08d839ab392054aa103f0cb020",
+      "id": "E018",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E019_task_spec.json",
+      "bytes": 1777,
+      "sha256": "d5506293659a8d9410e6f94494d28133912490985aea149807958a0595fc97c8",
+      "id": "E019",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/E020_run.py",
+      "bytes": 4671,
+      "sha256": "f67eb1c0b1c7a727e302c84bd3caa307e7495096aa8f9cf53d8d3169a41fc81e",
+      "id": "E020",
+      "role": "run.py"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 9516,
+      "sha256": "e5c30fc3f781c6ffe9fd2f8d1189b20154f8e3888a663e0e9209f0c684334728",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 5581,
+      "sha256": "a56c165f49793603757c709c453ae74219ac096985271f50a43136b491c9de04",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

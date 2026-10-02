@@ -1,0 +1,69 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-084.original.v1.raw-access.v1",
+  "parent_task_id": "P100-084.original.v1",
+  "case_id": "P100-084",
+  "protocol_version": "P100-084.original.v1.raw-access.v1",
+  "cohort_id": "P100-084.original.v1.cohort-1",
+  "parent_task_sha256": "eb6b54b702d772b7792b80e2db271557ae28e96ffdeaa8cf7ea63debb9bc4481",
+  "input_sha256": "3e469fc0420d282e327e6f64aaa95c3b8e04b5a6c43cbfee3179f1c75e63f04b",
+  "observations_sha256": "d4ff7c61907f8f768596af9c2d146a99fc4702ae6797a9c8da993bfdec5261c8",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "84_biomaterials_cellulose_afm",
+  "source_assets": [
+    {
+      "path": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_Dataset.zip",
+      "bytes": 5440639,
+      "sha256": "0102b2289400d96f1dc2e53c768ee731f1f13ed7ce9c63493a2fabe95fcdfba5"
+    },
+    {
+      "path": "raw/Microstructured cellulose acetate biointerfaces regulate mesenchymal stem cell response and promote osteogenic commitment_README.docx",
+      "bytes": 4632050,
+      "sha256": "c5d6383b376c00c7f94aae9225e3cd5d65545225407d7234977073f4b7969704"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "x": "dimensionless normalized piezo position relative to fixed5nNapproach crossing",
+      "base": "nN; mean first10approachpoints",
+      "amp": "nN; initialretractionlevel minusbase",
+      "progress": "dimensionless fraction ofretractionramp"
+    },
+    "observation_window": "Predict late retraction after the entire approach and firstfive retraction samples are available. Targets begin at retractionindex16. Measured retraction deflection is excluded because it algebraically determines force.",
+    "calibration_and_history": "Approach baseline, first5nNabovebaselinecrossing, known ramp extent, and initialfive retractionforce samples. Everycandidate receives the same frozen summaries.",
+    "calibration_columns": [
+      "base",
+      "amp"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Curves are locations on three samples, not independent manufacturing batches.",
+    "Only 3 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

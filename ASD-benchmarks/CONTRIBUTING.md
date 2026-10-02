@@ -1,3 +1,5 @@
+> **v0.2.0 update:** This source-corpus document is complemented by the [Astra reference package](reference/README.md), [current evaluation protocol](EVALUATION_PROTOCOL.md), and [publication audit](RELEASE_AUDIT.md). Acquisition-stage statements describe the earlier data release; current executable contracts govern registered-task comparisons.
+
 # Contributing to Principia-100
 
 Help improve the quality of the evidence, the documentation and the tools. Open an [issue](https://github.com/pzqpzq/Principia/issues) or pull request with a stable case ID, the release version and precise source anchors.

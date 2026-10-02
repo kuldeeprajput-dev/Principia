@@ -1,0 +1,58 @@
+[
+  {
+    "classification": "reproduction",
+    "admission": "partially_supported",
+    "claim": "Recorded pathgeometry carries descriptive information about broad reported property losses.",
+    "equation": "y=ln(1+damageUSD), predicted y=clip(a+bL ln(1+length_km)+bW ln(1+width_m)+bLat latitude+bSin sin(2pi month/12)+bCos cos(2pi month/12),0,50). Robust train-only residual fitting; coefficients=[3.099796961781409, 1.0765641714752674, 1.5023316079008489, -0.1478989662476028, 0.8455297618332634, -0.00746860537787219]. The length/maximumwidth proxy is not actual exposed assets, swept damage area or kinetic energy. Exact executable state: rules.json models.reference; task_id P100-018.original.v1.",
+    "interpretation": "Dimensions and regional/seasonal composition correlate with losses but also with reporting and asset exposure; maximumwidth timeslength is onlya bounding proxy.",
+    "falsification": "Flexiblecontrols outperform, verylarge logerrors and worseextremeepisodes remain. No wind/asset exposure or independent insuredloss truth.",
+    "finding_id": "P100-018-F01",
+    "task_id": "P100-018.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.ncei.noaa.gov/access/storm-events-database/assets/pdf/Storm_Events_Database_User_Guide.pdf",
+        "checked": "2026-10-02",
+        "known": "Property/crop damage are broad estimates."
+      },
+      {
+        "url": "https://www.ncei.noaa.gov/stormevents/pd01016005curr.pdf",
+        "checked": "2026-10-02",
+        "known": "Path length in miles and maximum width in yards; multi-segment tornadoes reported in segments. Geometry-loss scaling is a known descriptive approach; absent exposure forbids mechanistic damage claims."
+      }
+    ],
+    "scope": "2025 tornado segments with nonmissing explicit damage. Broad estimates including reported0, not insured claim totals. Maximum width times length is bounding footprint proxy, not actual damaged area. Exposure/building stock and wind speed unavailable; no prospective loss or causal damage law."
+  },
+  {
+    "classification": "informative_falsification",
+    "admission": "supported",
+    "claim": "The available geometry doesnot demonstrate an accurate transferable industrialdamage law.",
+    "equation": "Duration andcontext ablations005/006, plus matched robust controls, challenge the proposed law.",
+    "interpretation": "Negative duration slope conditional on geometry and strongfitlossdependence prevent a simple energy/exposuretime interpretation.",
+    "falsification": "Reportedmonetary losses are broad estimates, not direct mechanicalresponse; heldworsterror andstrongerflexiblecontrol reject deploymentclaim.",
+    "finding_id": "P100-018-F02",
+    "task_id": "P100-018.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.ncei.noaa.gov/access/storm-events-database/assets/pdf/Storm_Events_Database_User_Guide.pdf",
+        "checked": "2026-10-02",
+        "known": "Property/crop damage are broad estimates."
+      },
+      {
+        "url": "https://www.ncei.noaa.gov/stormevents/pd01016005curr.pdf",
+        "checked": "2026-10-02",
+        "known": "Path length in miles and maximum width in yards; multi-segment tornadoes reported in segments. Geometry-loss scaling is a known descriptive approach; absent exposure forbids mechanistic damage claims."
+      }
+    ],
+    "scope": "2025 tornado segments with nonmissing explicit damage. Broad estimates including reported0, not insured claim totals. Maximum width times length is bounding footprint proxy, not actual damaged area. Exposure/building stock and wind speed unavailable; no prospective loss or causal damage law."
+  }
+]

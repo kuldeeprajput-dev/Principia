@@ -1,0 +1,73 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-035.original.v1.raw-access.v1",
+  "parent_task_id": "P100-035.original.v1",
+  "case_id": "P100-035",
+  "protocol_version": "P100-035.original.v1.raw-access.v1",
+  "cohort_id": "P100-035.original.v1.cohort-1",
+  "parent_task_sha256": "1d83da31009877763ba6e3ac752c0227ee310b82cbf7f82a7f182ad2a2cab562",
+  "input_sha256": "a62f19ed195b091500e40f2ee9682ed5c8c13ab1a48a77beca871b8c64390054",
+  "observations_sha256": "03b085abf7b93805cafb277197dfe2406855b678d59daa0cf0d8e920381ed326",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "35_bioacoustics_ungulate_calls",
+  "source_assets": [
+    {
+      "name": "Data S1.zip",
+      "path": "raw/Data S1.zip",
+      "sha256": "ec2883fb18dc354b7700e2a87813e4befa5d8b79c918ecc659026643609ec38d",
+      "bytes": 19330
+    },
+    {
+      "name": "SoundsDatabase.zip",
+      "path": "raw/SoundsDatabase.zip",
+      "sha256": "2af4f5458f5ab9a14817d55fc037e3ae7df01224b8c329bf42a4ba647065eee2",
+      "bytes": 286854334
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "log_duration": "dimensionless",
+      "log_centroid": "dimensionless",
+      "log_peak": "dimensionless",
+      "high_share": "dimensionless",
+      "entropy": "dimensionless",
+      "flatness": "dimensionless",
+      "envelope_cv": "dimensionless",
+      "log_modulation": "dimensionless",
+      "log_rms": "dimensionless",
+      "species_code": "dimensionless"
+    },
+    "observation_window": "After the complete author-extracted call. Predictors only waveform summaries and known species. File context words, animal ID, call label and source reference are never predictors.",
+    "calibration_and_history": "No held-animal labeled calibration. Fixed waveform summaries; any coefficients, centers or species normalization fitted only on training animals.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Complete released call PCM waveform and species metadata only; context labels, filenames encoding labels and animal IDs are alignment-only. Fit feature transforms on training animals only."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Labels describe recording context; recording conditions and species can confound acoustic interpretation."
+  ],
+  "current_outcomes_exposed": true
+}

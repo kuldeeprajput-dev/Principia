@@ -1,0 +1,277 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-061",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-061/computational.json",
+      "bytes": 9781,
+      "sha256": "0d522367b7f2acbfb1331199e98dcca29a5c6a293c811ed6d1f0108cd4e33b42"
+    },
+    {
+      "path": "reviews/portfolios/P100-061/scientific_critical.json",
+      "bytes": 13269,
+      "sha256": "9989be227dbb55774c6bfda23788a5b0ec8e117d355c65266267d2651c129746"
+    },
+    {
+      "path": "reviews/portfolios/P100-061/combined/review.json",
+      "bytes": 21995,
+      "sha256": "ec5dc1eb26f09a3034c0c84a99c3b446aa0e2573443e2f4e55789e1b1675699a"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-061-SCI-01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators. Strong adverse evidence: Calibrated exponents 0.633\u20130.668 reproduce known nonideal pressure response; four devices and intersecting flow/composition slices cannot identify independent resistances.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Conservation, nonlinear film resistance and entrance effects are grounded in established transport. Effective gas mass scaling omits collision integrals/viscosity; fitted families are calibration, not universal constants.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source-matching paper already contains axial/film transport; contribution is a smaller local closure and falsification, not new transport theory. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-061-SCI-02",
+      "disagreements": [],
+      "coverage_differences": [
+        "reliability",
+        "mechanism",
+        "novelty",
+        "significance",
+        "reproducibility",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators. Strong adverse evidence: Original reserved outcomes were already exposed, and the physical candidate still lost the tuned kernel on that diagnostic. Retain feed bounds and source pressure/normal-volume convention; source layered modeling is prior art.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Conservation, nonlinear film resistance and entrance effects are grounded in established transport. Effective gas mass scaling omits collision integrals/viscosity; fitted families are calibration, not universal constants.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source-matching paper already contains axial/film transport; contribution is a smaller local closure and falsification, not new transport theory. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "documentation_sufficiency"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "partially_supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    },
+    {
+      "finding_id": "P100-061-SCI-03",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators. Strong adverse evidence: OneHe/350 Cblock loses; the exact author layered model is not reproduced under a matched protocol. Two geometry families cannot prove a universal geometry law.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Conservation, nonlinear film resistance and entrance effects are grounded in established transport. Effective gas mass scaling omits collision integrals/viscosity; fitted families are calibration, not universal constants.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source-matching paper already contains axial/film transport; contribution is a smaller local closure and falsification, not new transport theory. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete gas-temperature blocks across four calibrated membranes; pure-H2 calibration belongs to all matched comparators.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E008",
+            "E009",
+            "E010",
+            "E011"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "partially_supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

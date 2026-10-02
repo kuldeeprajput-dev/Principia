@@ -1,0 +1,1399 @@
+{
+  "case_id": "P100-031",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "4cf6212e4b49994b4c7c9058af16802266c20d30626cbe1d2226e7b5e954e28e"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "5cfc428dbb72734738af9af59e71804133413d28172c3d6a12d764178e69fc34"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "68a891d361210de2198221309100b8583eb948e223e8eff8d9677cc4833ba3a2"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "faeb590d51d106f37747bceb0cb67ed55ded0a0fe79f43f9060b02ff2c263abe"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "8569c930c9c551f28b375d27a5796fec3c8a913740b7c4f4caf11c6abb25e774"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "72b485c1ac31f75b143ea6b16be559fc309f0a67e8bcefc1db51e53528ad14e6"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "b5d6359117da8ba9f9b259bf417c187811acd94985dac82b690d883fba499542"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "2c658b19060f8850b6040a3532934992b803386eec0a3c3e32c6f4f39eed9777"
+    },
+    {
+      "path": "native.py",
+      "sha256": "fa0d22187d12b5e71d863d4bd41a5617860d79f6e481eefb2e5bb7a02a7ecbfd"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "b80db176acd7a9f63ccdb50c8767c5a5e5ad6eaf95a944263f2973a1a686d490"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "9284db7f92fa6a20010c3c26d05fdff2adf690477970cb3ed001707f9bc030a9"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "9f6294d1b14ed0f91f8e8aae4dde184c670adb839bb9ee56b919e4e980ccaabf"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "52cce2154796dbcd245dd12189930eaddb4ce1bdd8d1da529f98e5ac9abebad0"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "21a5a324aa8901316e6a7e6070169304036e8ef13abf49a645bda7c6e1bef830"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "f2378c2426e6ebfb6811826920199c1091d405ae0d3a1d57770e67e110104f47"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-031-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. A development-simplified five-parameter startup/pilot scaling improves log-runtime MAE on five circuit families. It needs measured Qiskit pilot runtime; absolute runtime MAE5.1900s is worse than proportional-domain2.1163s, and two attempted SDK floors were unidentifiable. No universal compiler-complexity law or absolute-time benefit is certified."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. A development-simplified five-parameter startup/pilot scaling improves log-runtime MAE on five circuit families. It needs measured Qiskit pilot runtime; absolute runtime MAE5.1900s is worse than proportional-domain2.1163s, and two attempted SDK floors were unidentifiable. No universal compiler-complexity law or absolute-time benefit is certified."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. A development-simplified five-parameter startup/pilot scaling improves log-runtime MAE on five circuit families. It needs measured Qiskit pilot runtime; absolute runtime MAE5.1900s is worse than proportional-domain2.1163s, and two attempted SDK floors were unidentifiable. No universal compiler-complexity law or absolute-time benefit is certified."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "A development-simplified five-parameter startup/pilot scaling improves log-runtime MAE on five circuit families. It needs measured Qiskit pilot runtime; absolute runtime MAE5.1900s is worse than proportional-domain2.1163s, and two attempted SDK floors were unidentifiable. No universal compiler-complexity law or absolute-time benefit is certified.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-031-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. A development-simplified five-parameter startup/pilot scaling improves log-runtime MAE on five circuit families. It needs measured Qiskit pilot runtime; absolute runtime MAE5.1900s is worse than proportional-domain2.1163s, and two attempted SDK floors were unidentifiable. No universal compiler-complexity law or absolute-time benefit is certified."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. A development-simplified five-parameter startup/pilot scaling improves log-runtime MAE on five circuit families. It needs measured Qiskit pilot runtime; absolute runtime MAE5.1900s is worse than proportional-domain2.1163s, and two attempted SDK floors were unidentifiable. No universal compiler-complexity law or absolute-time benefit is certified."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. A development-simplified five-parameter startup/pilot scaling improves log-runtime MAE on five circuit families. It needs measured Qiskit pilot runtime; absolute runtime MAE5.1900s is worse than proportional-domain2.1163s, and two attempted SDK floors were unidentifiable. No universal compiler-complexity law or absolute-time benefit is certified."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "A development-simplified five-parameter startup/pilot scaling improves log-runtime MAE on five circuit families. It needs measured Qiskit pilot runtime; absolute runtime MAE5.1900s is worse than proportional-domain2.1163s, and two attempted SDK floors were unidentifiable. No universal compiler-complexity law or absolute-time benefit is certified.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-031",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-031",
+      "native_rows": 135,
+      "confirmation_rows": 37,
+      "models": 17,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 17,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 2.220446049250313e-16,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 37,
+        "primary_error": 0.2341362720467599,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "constant",
+        "rows": 37,
+        "primary_error": 1.6599612248129296,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "domain",
+        "rows": 37,
+        "primary_error": 0.42440176979079947,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 37,
+        "primary_error": 1.0333369342216212,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001",
+        "rows": 37,
+        "primary_error": 0.45591382991288787,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002",
+        "rows": 37,
+        "primary_error": 0.45633949706353005,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003",
+        "rows": 37,
+        "primary_error": 0.45654332109964957,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004",
+        "rows": 37,
+        "primary_error": 0.3124160680404058,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005",
+        "rows": 37,
+        "primary_error": 0.3129271478884834,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_006",
+        "rows": 37,
+        "primary_error": 0.4048603077921237,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_007",
+        "rows": 37,
+        "primary_error": 0.4035050556955674,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_008",
+        "rows": 37,
+        "primary_error": 0.5194315797350866,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_009",
+        "rows": 37,
+        "primary_error": 0.6403820507521572,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_010",
+        "rows": 37,
+        "primary_error": 0.2341364760537806,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_011",
+        "rows": 37,
+        "primary_error": 0.2341362720467599,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_012",
+        "rows": 37,
+        "primary_error": 0.24031116471831435,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_013",
+        "rows": 37,
+        "primary_error": 0.23716417391025818,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-007/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-008/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-008/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-008/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-008/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-008/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-009/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-009/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-009/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-009/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-009/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-010/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-010/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-010/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-010/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-010/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-011/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-011/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-011/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-011/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-011/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-012/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-012/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-012/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-012/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-012/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-013/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-013/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-013/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-013/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-013/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 15,
+        "validation_groups_count": 9,
+        "validation_groups": [
+          "adder",
+          "bigadder",
+          "ham-low",
+          "inverseqft",
+          "mod_red",
+          "qcla_mod",
+          "qec",
+          "qpt",
+          "w-state"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 20,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "ham-high",
+          "rb",
+          "rc_adder",
+          "vbe_adder"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "csla_mux",
+          "qcla_adder",
+          "teleport"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "barenco_tof",
+          "csum_mux",
+          "qcla_com",
+          "qft",
+          "teleportv"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 21,
+        "validation_groups_count": 3,
+        "validation_groups": [
+          "hwb",
+          "mod",
+          "tof"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "A development-simplified five-parameter startup/pilot scaling improves log-runtime MAE on five circuit families. It needs measured Qiskit pilot runtime; absolute runtime MAE5.1900s is worse than proportional-domain2.1163s, and two attempted SDK floors were unidentifiable. No universal compiler-complexity law or absolute-time benefit is certified."
+}

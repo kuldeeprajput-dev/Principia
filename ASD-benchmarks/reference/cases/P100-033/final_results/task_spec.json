@@ -1,0 +1,51 @@
+{
+  "case_id": "P100-033",
+  "target": "ECG reference heart rate",
+  "target_units": "bpm",
+  "error_units": "bpm",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "fft_bpm",
+    "acf_bpm",
+    "half_bpm",
+    "half_strength",
+    "spectral_quality",
+    "agreement",
+    "motion",
+    "ear"
+  ],
+  "input_units": {
+    "fft_bpm": "bpm",
+    "acf_bpm": "bpm",
+    "half_bpm": "bpm",
+    "half_strength": "dimensionless",
+    "spectral_quality": "dimensionless",
+    "agreement": "bpm",
+    "motion": "dimensionless",
+    "ear": "dimensionless"
+  },
+  "numeric_columns": [
+    "fft_bpm",
+    "acf_bpm",
+    "half_bpm",
+    "half_strength",
+    "spectral_quality",
+    "agreement",
+    "motion",
+    "ear"
+  ],
+  "timing_contract": "After the complete ten-second PPG segment; simultaneous ECG supplies the target but is never an input. Known recording motion/contact conditions are allowed. No human quality annotation is a predictor.",
+  "calibration": "No per-person ECG or target calibration. Spectral transforms are fixed within each PPG window; any fusion/shrinkage parameters or flexible scaling are trained on development people only.",
+  "independent_unit": "Person; every recording from one person linked",
+  "scope_limits": "50 participants in one smartphone protocol;10 held people. ECG-derived rate is an independent sensor reference, but no clinical agreement threshold or cardiovascular diagnosis is established.",
+  "source_url": "https://physionet.org/content/butppg/2.0.0/",
+  "source_license": "CC BY 4.0",
+  "prior_art_url": "https://doi.org/10.13026/tn53-8153",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": 0,
+    "target_max": null
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

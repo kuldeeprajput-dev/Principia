@@ -1,0 +1,154 @@
+{
+  "schema_version": "principia.review-packet/3.0",
+  "bindings": {
+    "claims_sha256": "9720a255aaaeef490d44645cfa4b558fe95a703c9e1c60ba98b19f4b407a8455",
+    "evidence_sha256": {
+      "E001": "3fd3fa9c5114b208742e72d305a9ed5ad26ca7564315e7bde1656d72fc0f55d1",
+      "E002": "bd4a4cf1c98c7b1a2200bfe1fe90384f48d7081e3702feacae701af9fa224e2e",
+      "E003": "2f947b1e5423836d91f2d3aa17e4abcd83b48884a8115a3fa11633026dfe90cd",
+      "E004": "6ed0a192aea7874c459fbf704d15e54adb4e9b6f3ad5a58d2432ecdbd97304ea",
+      "E005": "6de5d6de44c86f79f67a4dc269f384f307610f9ed8ef4622cf4eb21dafc953f4",
+      "E006": "b33f5e900955dc3151efb41b5019592f254c7add7abbe653b775bd77de8ba75f",
+      "E007": "b94162888c8663c029a7f0fbd50d68c087c52b66cab892371c47a2daedcf4e40",
+      "E008": "b937a2aa72048f277b758ab6b28529c7ae1af41091fb52b5498f4e923d7144ee",
+      "E009": "7404b41b408b3db57b5b277b45e71a872813223b5825218e2bb928ae1586f77e",
+      "E010": "ecb05fa0b7aebc57013979146a69bbff321ee95adb154b889f4c83482b5c6485",
+      "E011": "1975f153f184fd11aefd09f7db9ea1bd95c764fcc90c7e6e8eb2d50c7c77b5c8",
+      "E012": "fab217731bedb87c5a155c7e6edaf44b5e82ad9ae1a296cd469aa37354b8aab8",
+      "E013": "43dfc1fa509edf955e1daf56962a3c5a2bab60467b842594e28ec6a7d260373b",
+      "E014": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253",
+      "E015": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078",
+      "SCIENTIFIC": "e8204b8c2573603e7d41ef6db0611e1bc60c122021a5b224b4e6ac7319c4b6f1",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-027",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "findings": [
+    {
+      "id": "P100-027-SCI-01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "A bounded spatial odds correction improves three original reserved runs against homogeneous-mixture prediction, with a low-quality counterexample against drift flux.",
+      "applicability": "Whole boiling runs; radial positions within one run are dependent; target is local void fraction conditional on supplied exit quality.",
+      "limitations": "Run 32 profile error 0.187872 exceeds drift-flux 0.051245; normalized source position does not identify tube radius or an area-conserving closure.",
+      "falsification": [
+        "Preserve complete runs and evaluate Run 32 separately.",
+        "Check 0 \u2264 alpha \u2264 1 and pure/dilute asymptotes where a proposed closure claims them.",
+        "Do not score an area conservation identity without verified radial geometry/weights."
+      ],
+      "prior_art": "Homogeneous mixture, drift flux and radial redistribution are known; the admissible extension is local predictive calibration. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "alpha_h=(x/rho_v)/(x/rho_v+(1-x)/rho_l); logit(alpha_hat)=logit(alpha_h)+0.644498-2.411380 s^2.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ]
+      },
+      "variables_and_units": {
+        "target": "dimensionless",
+        "pressure_Pa": "Pa, absolute",
+        "massflux_kg_m2_s": "kg m^-2 s^-1",
+        "quality": "kg vapor per kg mixture",
+        "radial_fraction": "dimensionless native coordinate / maximum sampled coordinate",
+        "rho_liquid": "kg m^-3",
+        "rho_vapor": "kg m^-3"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-027.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-027-SCI-02",
+      "classification": "predictive_reference",
+      "source_classification": "retrospective_extension",
+      "statement": "Joint drift-flux/spatial calibration improves local development prediction but cannot identify universal slip constants.",
+      "applicability": "Whole boiling runs; radial positions within one run are dependent; target is local void fraction conditional on supplied exit quality.",
+      "limitations": "C 0=.87924253 lies below one and compensates with odds/spatial terms; source coordinate geometry remains unresolved. The later positive-slip revision loses; the joint model remains an empirical calibrated reference.",
+      "falsification": [
+        "Preserve complete runs and evaluate Run 32 separately.",
+        "Check 0 \u2264 alpha \u2264 1 and pure/dilute asymptotes where a proposed closure claims them.",
+        "Do not score an area conservation identity without verified radial geometry/weights."
+      ],
+      "prior_art": "Homogeneous mixture, drift flux and radial redistribution are known; the admissible extension is local predictive calibration. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "scope": "See bound equations/source audit; no substitute units are invented"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007"
+      ],
+      "task_id": null,
+      "task_family": "continuation",
+      "task_version_history": "2026-09-30 first continuation"
+    },
+    {
+      "id": "P100-027-SCI-03",
+      "classification": "falsified",
+      "source_classification": "unsupported_or_falsified",
+      "statement": "A positive-slip physical revision does not improve the prior joint profile; the new flexible control sets a stronger numerical target.",
+      "applicability": "Whole boiling runs; radial positions within one run are dependent; target is local void fraction conditional on supplied exit quality.",
+      "limitations": "Earlier joint C 0=0.879 can compensate with spatial/intercept terms. Enforcing positive slip alone loses; parameters are not uniquely identified.",
+      "falsification": [
+        "Preserve complete runs and evaluate Run 32 separately.",
+        "Check 0 \u2264 alpha \u2264 1 and pure/dilute asymptotes where a proposed closure claims them.",
+        "Do not score an area conservation identity without verified radial geometry/weights."
+      ],
+      "prior_art": "Homogeneous mixture, drift flux and radial redistribution are known; the admissible extension is local predictive calibration. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E008",
+          "E009",
+          "E010",
+          "E011"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "target": "dimensionless",
+        "pressure_Pa": "Pa, absolute",
+        "massflux_kg_m2_s": "kg m^-2 s^-1",
+        "quality": "kg vapor per kg mixture",
+        "radial_fraction": "dimensionless native coordinate / maximum sampled coordinate",
+        "rho_liquid": "kg m^-3",
+        "rho_vapor": "kg m^-3",
+        "saturation_temperature_K": "K"
+      },
+      "evidence_ids": [
+        "E008",
+        "E009",
+        "E010",
+        "E011"
+      ],
+      "task_id": "P100-027.round2.v1",
+      "task_family": "round2",
+      "task_version_history": "2026-09-30 second continuation"
+    }
+  ],
+  "reviews_required": [
+    "computational",
+    "scientific_critical"
+  ],
+  "automatic_scientific_admission": false,
+  "current_exposure": "exposed"
+}

@@ -1,0 +1,379 @@
+{
+  "schema_version": "1.0",
+  "case_id": "P100-059",
+  "source": {
+    "landing_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+    "upstream_case": "59_energy_portugal_pv",
+    "version_evidence": "SOURCE_ASSETS.json"
+  },
+  "target": "Hourly produced energy divided by installed capacity",
+  "target_units": "kWh/kWp",
+  "metric_units": "kWh/kWp",
+  "metric_kind": "mae",
+  "primary_metric": "mae",
+  "assigned_rows": 16966,
+  "input_columns": [
+    "irradiance",
+    "temp_C",
+    "wind",
+    "hour",
+    "doy",
+    "limit",
+    "latitude",
+    "Gpast1",
+    "Gpast2"
+  ],
+  "numeric_columns": [
+    "irradiance",
+    "temp_C",
+    "wind",
+    "hour",
+    "doy",
+    "limit",
+    "latitude",
+    "Gpast1",
+    "Gpast2"
+  ],
+  "input_units": {
+    "irradiance": "kW/m^2; supplied weather shortwave radiation",
+    "temp_C": "degree C; supplied 2 m temperature",
+    "wind": "m/s; supplied 10 m wind converted from km/h",
+    "hour": "source-clock hour; no timezone assumed",
+    "doy": "calendar day of year",
+    "limit": "connection kW / installed kWp",
+    "latitude": "degree north",
+    "Gpast1": "kW/m2; exact previous native-clock hour supplied radiation",
+    "Gpast2": "kW/m2; exact two-hour-past radiation"
+  },
+  "missingness": "Original missing targets retained; no target-based exclusions; same cohort as original; new covariates from measured empty-flow or strict past native-clock weather only.",
+  "models": {
+    "reference": {
+      "case": 59,
+      "kind": "ridge_calendar",
+      "knobs": {
+        "ridge": 0.001
+      },
+      "beta": [
+        0.8718050077449118,
+        0.1719157336611305,
+        -0.021464772094262338,
+        0.7570967899948531,
+        -0.7541232921512508,
+        -0.0067951651361045935,
+        -0.006795165136412843,
+        1.5842272517635605,
+        -7.961371598101172,
+        0.09433407817027921,
+        1.3681532784018762,
+        -6.797240014515317,
+        0.11016323608684772,
+        0.43439642191889916,
+        -1.5924358457921615,
+        -0.09617166465611983,
+        0.018151117231576596,
+        0.09258378552117653
+      ],
+      "terms": [
+        "G weighted by nonpositive cell-temperature coefficient",
+        "season cos",
+        "season sin",
+        "source-clock asymmetry",
+        "hour curvature",
+        "season/hour interaction",
+        "calendar cross 1 1",
+        "calendar cross 1 2",
+        "calendar cross 1 3",
+        "calendar cross 2 1",
+        "calendar cross 2 2",
+        "calendar cross 2 3",
+        "calendar cross 3 1",
+        "calendar cross 3 2",
+        "calendar cross 3 3",
+        "radiation square",
+        "ambient",
+        "wind"
+      ],
+      "fitted_parameters": 19,
+      "design_condition": 1.6251822919644988e+16,
+      "design_rank": 17
+    },
+    "compact_candidate": {
+      "case": 59,
+      "kind": "lag_geometry",
+      "knobs": {
+        "mix": 0.5
+      },
+      "beta": [
+        0.8908426018698272,
+        0.24848153479592489,
+        -0.029081984299552967,
+        0.2537086862262533,
+        -0.5755363540326834,
+        -0.5631910758555156
+      ],
+      "terms": [
+        "G weighted by nonpositive cell-temperature coefficient",
+        "season cos",
+        "season sin",
+        "source-clock asymmetry",
+        "hour curvature",
+        "season/hour interaction"
+      ],
+      "fitted_parameters": 7,
+      "design_condition": 5.394937187439589,
+      "design_rank": 6
+    },
+    "signed_control": {
+      "case": 59,
+      "kind": "signed_control",
+      "knobs": {
+        "gamma": -0.004
+      },
+      "beta": [
+        0.8427262889953149
+      ],
+      "terms": [
+        "G weighted by nonpositive cell-temperature coefficient"
+      ],
+      "fitted_parameters": 2,
+      "design_condition": 1.0,
+      "design_rank": 1
+    },
+    "geometry": {
+      "case": 59,
+      "kind": "geometry",
+      "knobs": {},
+      "beta": [
+        0.8105746697587227,
+        0.20586769555831358,
+        -0.028288256610433722,
+        0.8178417076023092,
+        -0.18231088401616705,
+        -0.22966373438242807
+      ],
+      "terms": [
+        "G weighted by nonpositive cell-temperature coefficient",
+        "season cos",
+        "season sin",
+        "source-clock asymmetry",
+        "hour curvature",
+        "season/hour interaction"
+      ],
+      "fitted_parameters": 6,
+      "design_condition": 4.22530871489218,
+      "design_rank": 6
+    },
+    "lag_response": {
+      "case": 59,
+      "kind": "lag_response",
+      "knobs": {},
+      "beta": [
+        0.3057144025336653,
+        0.3880019536803506,
+        0.1369623085408406
+      ],
+      "terms": [
+        "G weighted by nonpositive cell-temperature coefficient",
+        "previous-hour radiation",
+        "two-hour-past radiation"
+      ],
+      "fitted_parameters": 3,
+      "design_condition": 22.489318250408157,
+      "design_rank": 3
+    },
+    "signed_thermal": {
+      "case": 59,
+      "kind": "signed_thermal",
+      "knobs": {
+        "gamma": -0.002
+      },
+      "beta": [
+        0.8270874878317542,
+        0.19345241968599913,
+        -0.03324749607562679,
+        0.8557904356476215,
+        -0.3276400588640024,
+        -0.24329899561842838
+      ],
+      "terms": [
+        "G weighted by nonpositive cell-temperature coefficient",
+        "season cos",
+        "season sin",
+        "source-clock asymmetry",
+        "hour curvature",
+        "season/hour interaction"
+      ],
+      "fitted_parameters": 7,
+      "design_condition": 4.136173777487422,
+      "design_rank": 6
+    },
+    "lag_geometry": {
+      "case": 59,
+      "kind": "lag_geometry",
+      "knobs": {
+        "mix": 0.5
+      },
+      "beta": [
+        0.8908426018698272,
+        0.24848153479592489,
+        -0.029081984299552967,
+        0.2537086862262533,
+        -0.5755363540326834,
+        -0.5631910758555156
+      ],
+      "terms": [
+        "G weighted by nonpositive cell-temperature coefficient",
+        "season cos",
+        "season sin",
+        "source-clock asymmetry",
+        "hour curvature",
+        "season/hour interaction"
+      ],
+      "fitted_parameters": 7,
+      "design_condition": 5.394937187439589,
+      "design_rank": 6
+    },
+    "unrestricted_thermal": {
+      "case": 59,
+      "kind": "unrestricted_thermal",
+      "knobs": {},
+      "beta": [
+        0.7936951066013446,
+        0.20803075392599976,
+        -0.029772018493655183,
+        0.8141603902805807,
+        -0.12323972003818713,
+        -0.23474696519544982,
+        -0.009671602782996908,
+        0.08993888281954482
+      ],
+      "terms": [
+        "G weighted by nonpositive cell-temperature coefficient",
+        "season cos",
+        "season sin",
+        "source-clock asymmetry",
+        "hour curvature",
+        "season/hour interaction",
+        "ambient interaction",
+        "heating surrogate"
+      ],
+      "fitted_parameters": 8,
+      "design_condition": 8.227050191929937,
+      "design_rank": 8
+    },
+    "ridge_calendar": {
+      "case": 59,
+      "kind": "ridge_calendar",
+      "knobs": {
+        "ridge": 0.001
+      },
+      "beta": [
+        0.8718050077449118,
+        0.1719157336611305,
+        -0.021464772094262338,
+        0.7570967899948531,
+        -0.7541232921512508,
+        -0.0067951651361045935,
+        -0.006795165136412843,
+        1.5842272517635605,
+        -7.961371598101172,
+        0.09433407817027921,
+        1.3681532784018762,
+        -6.797240014515317,
+        0.11016323608684772,
+        0.43439642191889916,
+        -1.5924358457921615,
+        -0.09617166465611983,
+        0.018151117231576596,
+        0.09258378552117653
+      ],
+      "terms": [
+        "G weighted by nonpositive cell-temperature coefficient",
+        "season cos",
+        "season sin",
+        "source-clock asymmetry",
+        "hour curvature",
+        "season/hour interaction",
+        "calendar cross 1 1",
+        "calendar cross 1 2",
+        "calendar cross 1 3",
+        "calendar cross 2 1",
+        "calendar cross 2 2",
+        "calendar cross 2 3",
+        "calendar cross 3 1",
+        "calendar cross 3 2",
+        "calendar cross 3 3",
+        "radiation square",
+        "ambient",
+        "wind"
+      ],
+      "fitted_parameters": 19,
+      "design_condition": 1.6251822919644988e+16,
+      "design_rank": 17
+    },
+    "legacy_reference": {
+      "kind": "legacy",
+      "state": {
+        "case": 59,
+        "kind": "a5",
+        "knobs": {},
+        "beta": [
+          0.8332718972581858,
+          0.09745503869401666,
+          -0.0488496917598592,
+          0.030521620837201686,
+          0.19757963412541368,
+          0.8929951225545892
+        ],
+        "active_columns": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "terms": [
+          "irradiance/(1kW m^-2)",
+          "irradiance * (ambientC-25)/25K",
+          "irradiance^2: heating/clipping surrogate",
+          "irradiance/(1+wind/(1m/s))",
+          "irradiance * seasonal cosine",
+          "irradiance * afternoon asymmetry"
+        ],
+        "fitted_parameters": 6,
+        "design_rank": 6,
+        "design_condition": 12.952578992712212,
+        "positive_coefficients": false
+      },
+      "case": 59
+    }
+  },
+  "equations": {
+    "reference": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "compact_candidate": "G_eff=(1\u2212m)G(t)+m G(t\u22121hour); yhat=clip(G_eff[b0+b1 cos(s)+b2 sin(s)+b3 h+b4 h\u00b2+b5 h cos(s)],0,connection/installed); s=2pi*doy/365.25,h=(hour\u221212)/12.",
+    "signed_control": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "geometry": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "lag_response": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "signed_thermal": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "lag_geometry": "G_eff=(1\u2212m)G(t)+m G(t\u22121hour); yhat=clip(G_eff[b0+b1 cos(s)+b2 sin(s)+b3 h+b4 h\u00b2+b5 h cos(s)],0,connection/installed); s=2pi*doy/365.25,h=(hour\u221212)/12.",
+    "unrestricted_thermal": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "ridge_calendar": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "legacy_reference": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state."
+  },
+  "classification": "retrospective_candidate",
+  "fresh_confirmation": false,
+  "selection": {
+    "default": "ridge_calendar",
+    "compact_reported": "lag_geometry",
+    "criterion": "least complexity within1% of best grouped development MAE",
+    "freeze_sha256": "b96bc700bb9711eec01ff8049a7d90fc1a7a8c47f660b2c0d735010417c225d1"
+  },
+  "limitations": [
+    "Six cities, nine plants; plants within a city share weather and are not independent weather sites. Same-hour conditional energy prediction, not weather forecasting or proven thermal causality.",
+    "ALL original confirmation exposed; no fresh confirmation; diagnostics opened only after candidate/stopping freeze",
+    "All model families established; no demonstrated new physical law or deployed intervention benefit.",
+    "Different information contract:52 independent no-turbine calibration;59 strict past weather inputs. Legacy reference is lower-information comparator in these cases."
+  ],
+  "reproduction": "run.py is input-only. Source targets are exposed; scientific review separate from numerical score."
+}

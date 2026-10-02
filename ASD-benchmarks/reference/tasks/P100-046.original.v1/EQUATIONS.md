@@ -1,0 +1,455 @@
+# Equations and frozen states
+
+## adiabatic
+
+T_hat=T0*(n/n0)^(2/3)
+
+```json
+{
+  "case": 46,
+  "kind": "adiabatic",
+  "training_groups": [
+    "block0",
+    "block1",
+    "block2",
+    "block3"
+  ],
+  "training_rows": 1053,
+  "parameters": 0,
+  "equation": "T_hat=T0*(n/n0)^(2/3)"
+}
+```
+
+## cgl
+
+T_hat=T0*(B/B0)
+
+```json
+{
+  "case": 46,
+  "kind": "cgl",
+  "training_groups": [
+    "block0",
+    "block1",
+    "block2",
+    "block3"
+  ],
+  "training_rows": 1053,
+  "parameters": 0,
+  "equation": "T_hat=T0*(B/B0)"
+}
+```
+
+## persist
+
+T_hat=T0
+
+```json
+{
+  "case": 46,
+  "kind": "persist",
+  "training_groups": [
+    "block0",
+    "block1",
+    "block2",
+    "block3"
+  ],
+  "training_rows": 1053,
+  "parameters": 0,
+  "equation": "T_hat=T0"
+}
+```
+
+## rbf
+
+Frozen 24-center Gaussian radial-basis ridge comparator; all feature means, scales, centers, coefficients and ridge=0.3 are in rules.json. Additive residual for cases2/3/4/45; multiplicative clipped-log ratio for cases11/46.
+
+```json
+{
+  "case": 46,
+  "kind": "rbf",
+  "training_groups": [
+    "block0",
+    "block1",
+    "block2",
+    "block3"
+  ],
+  "training_rows": 1053,
+  "parameters": 25,
+  "equation": "Frozen 24-center Gaussian radial-basis ridge comparator; all feature means, scales, centers, coefficients and ridge=0.3 are in rules.json. Additive residual for cases2/3/4/45; multiplicative clipped-log ratio for cases11/46.",
+  "coefficients": [
+    -0.0007009865805561847,
+    -0.021261521136368082,
+    -0.007722037256872819,
+    -0.01705628369674699,
+    0.0043407659444267355,
+    0.0030510435649473765,
+    0.007295034794634176,
+    -0.027745907126310955,
+    8.145637588133296e-05,
+    0.01440802274496409,
+    0.008901338052891086,
+    -0.0038635532519261063,
+    0.012411468971376328,
+    0.0035029389094108636,
+    -0.027412923425083488,
+    -0.027401300485120014,
+    0.023468172987303238,
+    -0.004978595047150831,
+    -0.0032121091319280396,
+    0.018493424388561747,
+    -0.0011817986384638243,
+    -0.012882724501515414,
+    0.0009063459963557004,
+    0.011892561333926776,
+    0.00022532671227602023
+  ],
+  "mean": [
+    0.005808618844685415,
+    0.0001495208071094459,
+    0.5196784978125736,
+    0.37906643709818133
+  ],
+  "scale": [
+    0.11727658868886157,
+    0.03922827826509766,
+    0.1492696395765551,
+    0.08154888935523609
+  ],
+  "centers": [
+    [
+      0.7037557625013646,
+      -1.103664089570515,
+      -0.1470814779135707,
+      0.018294237280881292
+    ],
+    [
+      0.15118353896581924,
+      -0.3194178393756114,
+      0.1843773698789232,
+      1.166045160357282
+    ],
+    [
+      0.22565538882337913,
+      -1.326379426132655,
+      0.11017785332899052,
+      0.3918096890247217
+    ],
+    [
+      -0.02028448625418445,
+      -0.14498610872951342,
+      0.429270115029829,
+      -0.5360866505937385
+    ],
+    [
+      -0.20467626731355054,
+      -0.3779472405225278,
+      0.9207015552144241,
+      -0.49675505828570415
+    ],
+    [
+      -0.11855288427024094,
+      0.19410496425183624,
+      0.19331469406049998,
+      0.2650552501897345
+    ],
+    [
+      1.7982257358409672,
+      -0.5924925493778044,
+      1.1387312163249672,
+      -1.2164705611917428
+    ],
+    [
+      -0.0883683008685508,
+      -0.6669468963914666,
+      0.8947169500052414,
+      -1.0089748062344421
+    ],
+    [
+      -0.7302356741783589,
+      0.018884706925963494,
+      1.7897455237474673,
+      -1.382393180925595
+    ],
+    [
+      -0.1832704995896614,
+      0.009388876469726042,
+      2.0710384385768723,
+      -1.601528118792866
+    ],
+    [
+      0.04768963685286501,
+      -1.2525665719478858,
+      2.3968766190840536,
+      -1.1722210502451758
+    ],
+    [
+      -0.8315281283278703,
+      0.5360884036933872,
+      0.199933632744881,
+      1.1373014561936188
+    ],
+    [
+      0.012754224237503574,
+      0.03516545147208573,
+      -0.7283174131583308,
+      1.2261717450022043
+    ],
+    [
+      1.0139127125959626,
+      -1.9293420715903906,
+      -0.5003162186967762,
+      1.3016785632971222
+    ],
+    [
+      2.5372760177479865,
+      -3.87247072720849,
+      0.013754419584444488,
+      0.8300970881978745
+    ],
+    [
+      -0.6284389185721863,
+      0.7688004548932021,
+      -1.084570128035199,
+      0.7883264183757664
+    ],
+    [
+      0.5839851685369954,
+      -0.09162618191925935,
+      -0.3135268620572293,
+      0.3896288606648153
+    ],
+    [
+      -0.05364493108373966,
+      -0.4826902966326238,
+      -0.21653241707241633,
+      0.6724823670653298
+    ],
+    [
+      -0.49140166828801934,
+      0.5890599048485958,
+      -0.24810255041366472,
+      0.4116445901355738
+    ],
+    [
+      0.28837157792339857,
+      -0.445358523874673,
+      -0.9793467322535879,
+      -0.4178100472648945
+    ],
+    [
+      1.0476737851702496,
+      -0.3514619924956687,
+      -1.4132593716581183,
+      -1.7583394105188797
+    ],
+    [
+      0.36612219272670954,
+      -0.2634154409150564,
+      -1.318042648380766,
+      -0.9192801292985975
+    ],
+    [
+      -0.029513853501137718,
+      0.04214016497329378,
+      -1.368062434411031,
+      -0.5328355363098218
+    ],
+    [
+      0.009179306012936607,
+      0.20550047378120423,
+      0.1794491036360039,
+      1.2042095346340231
+    ]
+  ],
+  "length": 2.0,
+  "ridge": 0.3
+}
+```
+
+## attempt_001
+
+T_hat=T0*exp(clip(a*ln(n/n0),-5,5))
+
+```json
+{
+  "case": 46,
+  "kind": "density",
+  "training_groups": [
+    "block0",
+    "block1",
+    "block2",
+    "block3"
+  ],
+  "training_rows": 1053,
+  "parameters": 1,
+  "equation": "T_hat=T0*exp(clip(a*ln(n/n0),-5,5))",
+  "coefficients": [
+    -0.39316443809264107
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 1.0,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false
+  ]
+}
+```
+
+## attempt_002
+
+T_hat=T0*exp(clip(b*ln(B/B0),-5,5))
+
+```json
+{
+  "case": 46,
+  "kind": "field",
+  "training_groups": [
+    "block0",
+    "block1",
+    "block2",
+    "block3"
+  ],
+  "training_rows": 1053,
+  "parameters": 1,
+  "equation": "T_hat=T0*exp(clip(b*ln(B/B0),-5,5))",
+  "coefficients": [
+    1.0195157733082336
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 1.0,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false
+  ]
+}
+```
+
+## attempt_003
+
+T_hat=T0*exp(clip(a*ln(n/n0)+b*ln(B/B0),-5,5))
+
+```json
+{
+  "case": 46,
+  "kind": "polytropic",
+  "training_groups": [
+    "block0",
+    "block1",
+    "block2",
+    "block3"
+  ],
+  "training_rows": 1053,
+  "parameters": 2,
+  "equation": "T_hat=T0*exp(clip(a*ln(n/n0)+b*ln(B/B0),-5,5))",
+  "coefficients": [
+    -0.28670183606937777,
+    0.447489262469799
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 4.224362596116917,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false,
+    false
+  ]
+}
+```
+
+## attempt_004
+
+T_hat=T0*exp(clip(a*ln(n/n0)+b*ln(B/B0)+c*(T_parallel0/T0-1),-5,5))
+
+```json
+{
+  "case": 46,
+  "kind": "relaxation",
+  "training_groups": [
+    "block0",
+    "block1",
+    "block2",
+    "block3"
+  ],
+  "training_rows": 1053,
+  "parameters": 3,
+  "equation": "T_hat=T0*exp(clip(a*ln(n/n0)+b*ln(B/B0)+c*(T_parallel0/T0-1),-5,5))",
+  "coefficients": [
+    -0.2851959360901397,
+    0.45465161137594673,
+    -0.005804660951170249
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 20.66807572720522,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false,
+    false,
+    false
+  ]
+}
+```
+
+## attempt_005
+
+T_hat=T0*exp(clip((a+c*beta0/(1+beta0))*ln(n/n0)+b*ln(B/B0),-5,5)); beta0=0.402670*n0*T0/B0^2
+
+```json
+{
+  "case": 46,
+  "kind": "beta_regime",
+  "training_groups": [
+    "block0",
+    "block1",
+    "block2",
+    "block3"
+  ],
+  "training_rows": 1053,
+  "parameters": 3,
+  "equation": "T_hat=T0*exp(clip((a+c*beta0/(1+beta0))*ln(n/n0)+b*ln(B/B0),-5,5)); beta0=0.402670*n0*T0/B0^2",
+  "coefficients": [
+    -0.6866102820062162,
+    0.5895207709106893,
+    2.8313616120783234
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 29.589369145165712,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false,
+    false,
+    false
+  ]
+}
+```
+
+## reference
+
+T_hat=T0*exp(clip(a*ln(n/n0)+b*ln(B/B0),-5,5))
+
+```json
+{
+  "case": 46,
+  "kind": "polytropic",
+  "training_groups": [
+    "block0",
+    "block1",
+    "block2",
+    "block3"
+  ],
+  "training_rows": 1053,
+  "parameters": 2,
+  "equation": "T_hat=T0*exp(clip(a*ln(n/n0)+b*ln(B/B0),-5,5))",
+  "coefficients": [
+    -0.28670183606937777,
+    0.447489262469799
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 4.224362596116917,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false,
+    false
+  ]
+}
+```
+

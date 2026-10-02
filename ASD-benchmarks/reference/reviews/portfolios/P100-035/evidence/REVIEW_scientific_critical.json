@@ -1,0 +1,125 @@
+{
+  "case_id": "P100-035",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_electronics",
+  "review_date": "2026-10-02",
+  "checked_files": [
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "de52500f2671cf34dcfe9d0688c3679f31e5252b65d8b8089af0d8b184c456bd"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "be9b19eb057d9bde8a39391cad5053bdab715575c06b5beb98ccd25bc300388e"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "345ee3c59c0398e85d42669b3620fd755ce35bc67ceff03043b585310db91e57"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "15cb0b5cf919861c04fa0cd0ceddbbe8c5cdc5cb4cc908975dc5ab63e3e5ea0f"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "789fa5662ac85fc133322295edaac84e666ac2d7bfb2a985723d5bc4957beb6e"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "9e4bebe34a5bd91269a7c8780dd921e6fcfb42231446820cf68932f5e902f34f"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "fc1ec73b985d3832e9df568380983d1cedad9ffc73b10fc2c68f9a753ed39cca"
+    },
+    {
+      "path": "package/EQUATIONS.md",
+      "sha256": "eefc2ef027886ca6763008d2ffba05f14114e8bbafa4c20b2c337d6f3de76bec"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-035-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Held-animal Brier0.190215 beats species0.205977 and flexible0.201616; scope is experimental context classification. Claim-specific scope: A compact species/duration/digital-amplitude equation transfers source context-label prediction to held animals"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Uncalibrated digital amplitude and duration can encode recorder, call type or eliciting context. Animal holdout cannot isolate an emotional physiological mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a transparent bounded research/evaluation case. Seven species with study/context/recording confounding; WildBoar spelling linkage audited; subjective valence and deployed welfare decisions unmeasured."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured."
+        }
+      },
+      "checks": [
+        "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+        "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+        "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+      ],
+      "limitations": [
+        "Seven species with study/context/recording confounding; WildBoar spelling linkage audited; subjective valence and deployed welfare decisions unmeasured.",
+        "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+      ]
+    },
+    {
+      "finding_id": "P100-035-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Held-animal Brier0.190215 beats species0.205977 and flexible0.201616; scope is experimental context classification. Claim-specific scope: Predictive success does not uniquely support an emotional acoustic mechanism because recording amplitude/duration match richer acoustic summaries"
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Uncalibrated digital amplitude and duration can encode recorder, call type or eliciting context. Animal holdout cannot isolate an emotional physiological mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a transparent bounded research/evaluation case. Seven species with study/context/recording confounding; WildBoar spelling linkage audited; subjective valence and deployed welfare decisions unmeasured."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured."
+        }
+      },
+      "checks": [
+        "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+        "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+        "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+      ],
+      "limitations": [
+        "Seven species with study/context/recording confounding; WildBoar spelling linkage audited; subjective valence and deployed welfare decisions unmeasured.",
+        "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+      ]
+    }
+  ],
+  "review_scope": "Independent critical assessment of source semantics, evidence and claims; not independent experiments, clinical advice, human expert adjudication or a fresh confirmation campaign.",
+  "source_review": {
+    "primary_url": "https://zenodo.org/records/14636641",
+    "web_access": "Author record inspected live; source already reports machine-learning valence prediction."
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-073.round2.v1",
+  "case_id": "P100-073",
+  "case_number": 73,
+  "family": "round2",
+  "protocol_version": "P100-073.round2.v1.contract-1",
+  "cohort_id": "P100-073.round2.v1.development-oof",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-073.round2.v1",
+  "legacy_package": "73_agriculture_rumen_fermentation/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/73_agriculture_rumen_fermentation",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Author-converted later fermentation gas volume at native 12/24/36/48 hours",
+  "target_units": "mL",
+  "error_units": "mL",
+  "primary_units": "mL",
+  "metric_kind": "rmse",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_rmse"
+  },
+  "permitted_inputs": [
+    "g4",
+    "g8",
+    "hour",
+    "trial",
+    "algae"
+  ],
+  "input_units": {
+    "g4": "mL, native volume at 4 h",
+    "g8": "mL, native volume at 8 h",
+    "hour": "h",
+    "trial": "categorical protocol 1, 2 or 3",
+    "algae": "categorical source substrate/treatment label"
+  },
+  "numeric_columns": [
+    "g4",
+    "g8",
+    "hour"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Only native 4/8-hour gas volumes and known trial/algae/horizon; no later volume, end-of-incubation digestibility or GasDM target-derived normalization. Expanded information budget: g4, g8, hour, trial, algae",
+  "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Trial/algae kinetic and empirical parameters come from development DG1\u20133; current flask gas at 4/8 h is declared early calibration available to all comparators.",
+  "independent_unit": "complete DG4 incubation run within each trial; every flask and horizon stay together",
+  "evaluation_groups": [
+    "T1-R1",
+    "T1-R2",
+    "T1-R3",
+    "T2-R1",
+    "T2-R2",
+    "T2-R3",
+    "T3-R1",
+    "T3-R2",
+    "T3-R3"
+  ],
+  "assigned_rows": 568,
+  "eligible_rows": 568,
+  "baseline_models": [
+    "previous/baselines/kernel_nested",
+    "previous/baselines/old_curvature",
+    "previous/baselines/old_dual_pool",
+    "previous/baselines/old_first_order",
+    "previous/cycle-002",
+    "previous/baselines/old_empirical_ratio",
+    "current/baseline-hgb",
+    "previous/cycle-001",
+    "current/cycle-001",
+    "previous/baselines/old_persistence",
+    "previous/baselines/old_linear_prefix"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "previous/baselines/kernel_nested": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_curvature": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_dual_pool": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_first_order": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-002": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_empirical_ratio": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-001": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_persistence": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_linear_prefix": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Three reserved incubation runs in three protocols with known algae labels and an 8-hour prefix. No methane-specific prediction, unseen-treatment or in-vivo livestock transfer. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+  "source_url": "https://zenodo.org/records/18335590",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "0445e3106a4867a8229a888aa27ca318f310f57440647ac0dc67fa912c620a21",
+  "observations_sha256": "158c166b072f1c261922ede30bf3d827f1281409bfbbdc1354e6f8f4874a0c59",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified"
+}

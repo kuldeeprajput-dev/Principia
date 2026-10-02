@@ -1,0 +1,226 @@
+{
+  "case_id": "P100-056",
+  "role": "computational",
+  "reviewer_id": "root-independent-computational-review",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "90435239d1de5599f0318ad4a691a7598388a12005c8f4bd3c6b7dd12134347f"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "a78776d285d6248a3f4afd65f39e4f579ab54471f8d642cd2cde6136dd7eabb4"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "10f2cb3c3ef325e2f4f22fff24de4c10622db88a52f01b2c74497beb64883d81"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "365e8b199a830017d75f7bb04e9dfba49067fa31bb4e5a2f00440de9e256475d"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "7dc39b57116ebd605bd235041d31d91a32d6e53135788c0ba9c7067fadad6818"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "4bf76daf3775f5323085c31f8193852eb3baff53a05f5a43bf4ff0074e63a1b9"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "76d9c57a4b5ad94ef11df264e48ec3ba48809560ed06b5c33854bf5eac72e92c"
+    },
+    {
+      "path": "package/preparation/native.py",
+      "sha256": "f56cf4f36714668b0fb637f63419efe509bc60d8d176b8d4c59d140d5a54ad6f"
+    },
+    {
+      "path": "research_history/PROTOCOL.json",
+      "sha256": "907e33d4689551c345a2cd72572ab0abe7b11b3d5e4263f0747106402c60bb8c"
+    },
+    {
+      "path": "research_history/FREEZE.json",
+      "sha256": "a70a2e7c892ff03a76c95fb5967b4d7d4b62eb5fadace64ba7d384e9548e8a97"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-056-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact states reproduce all saved predictions and complete-group errors; adverse comparators remain included."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement alone does not establish the proposed physical mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This computational review does not adjudicate literature priority."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The task is a usable numerical comparison within its measured-system contract. Two held beams; damage-phase observations remain scored; load-deflection fit does not certify structural safety or identify composite-action mechanisms."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native assets, deterministic parser, exact frozen state and independent arithmetic agree in this review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent operational intervention or cost/reliability outcome is measured."
+        }
+      },
+      "checks": [
+        "Independent native reconstruction agrees with frozen predictors, targets and complete-group identities",
+        "No group crosses development/confirmation; source hashes checked by deterministic parser",
+        "Every saved equation independently executed and every group-balanced MAE recomputed using NumPy/pandas",
+        "No fitting, network or history imports in prediction function",
+        "All target rows occur after the declared<=10mm calibration; complete beams held out",
+        "Concrete-specific cap remains preselected despite retrospective common-cap advantage"
+      ],
+      "limitations": [
+        "Two held beams; damage-phase observations remain scored; load-deflection fit does not certify structural safety or identify composite-action mechanisms."
+      ]
+    },
+    {
+      "finding_id": "P100-056-F02",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact states reproduce all saved predictions and complete-group errors; adverse comparators remain included."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement alone does not establish the proposed physical mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This computational review does not adjudicate literature priority."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The task is a usable numerical comparison within its measured-system contract. Two held beams; damage-phase observations remain scored; load-deflection fit does not certify structural safety or identify composite-action mechanisms."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native assets, deterministic parser, exact frozen state and independent arithmetic agree in this review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent operational intervention or cost/reliability outcome is measured."
+        }
+      },
+      "checks": [
+        "Independent native reconstruction agrees with frozen predictors, targets and complete-group identities",
+        "No group crosses development/confirmation; source hashes checked by deterministic parser",
+        "Every saved equation independently executed and every group-balanced MAE recomputed using NumPy/pandas",
+        "No fitting, network or history imports in prediction function",
+        "All target rows occur after the declared<=10mm calibration; complete beams held out",
+        "Concrete-specific cap remains preselected despite retrospective common-cap advantage"
+      ],
+      "limitations": [
+        "Two held beams; damage-phase observations remain scored; load-deflection fit does not certify structural safety or identify composite-action mechanisms."
+      ]
+    },
+    {
+      "finding_id": "P100-056-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact states reproduce all saved predictions and complete-group errors; adverse comparators remain included."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement alone does not establish the proposed physical mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This computational review does not adjudicate literature priority."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The task is a usable numerical comparison within its measured-system contract. Two held beams; damage-phase observations remain scored; load-deflection fit does not certify structural safety or identify composite-action mechanisms."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native assets, deterministic parser, exact frozen state and independent arithmetic agree in this review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent operational intervention or cost/reliability outcome is measured."
+        }
+      },
+      "checks": [
+        "Independent native reconstruction agrees with frozen predictors, targets and complete-group identities",
+        "No group crosses development/confirmation; source hashes checked by deterministic parser",
+        "Every saved equation independently executed and every group-balanced MAE recomputed using NumPy/pandas",
+        "No fitting, network or history imports in prediction function",
+        "All target rows occur after the declared<=10mm calibration; complete beams held out",
+        "Concrete-specific cap remains preselected despite retrospective common-cap advantage"
+      ],
+      "limitations": [
+        "Two held beams; damage-phase observations remain scored; load-deflection fit does not certify structural safety or identify composite-action mechanisms."
+      ]
+    }
+  ],
+  "checks": [
+    "Independent native reconstruction agrees with frozen predictors, targets and complete-group identities",
+    "No group crosses development/confirmation; source hashes checked by deterministic parser",
+    "Every saved equation independently executed and every group-balanced MAE recomputed using NumPy/pandas",
+    "No fitting, network or history imports in prediction function",
+    "All target rows occur after the declared<=10mm calibration; complete beams held out",
+    "Concrete-specific cap remains preselected despite retrospective common-cap advantage"
+  ],
+  "numerical_checks": [
+    {
+      "model": "reference",
+      "mae": 5.281085957110801,
+      "max_prediction_difference": 7.105427357601002e-15
+    },
+    {
+      "model": "baseline_domain",
+      "mae": 14.736685777869354,
+      "max_prediction_difference": 1.4210854715202004e-14
+    },
+    {
+      "model": "baseline_flexible",
+      "mae": 8.734985480785555,
+      "max_prediction_difference": 7.105427357601002e-15
+    },
+    {
+      "model": "attempt_001",
+      "mae": 9.675988240329746,
+      "max_prediction_difference": 7.105427357601002e-15
+    },
+    {
+      "model": "attempt_002",
+      "mae": 4.753967855996455,
+      "max_prediction_difference": 7.105427357601002e-15
+    },
+    {
+      "model": "attempt_003",
+      "mae": 5.281085957110801,
+      "max_prediction_difference": 7.105427357601002e-15
+    },
+    {
+      "model": "attempt_004",
+      "mae": 5.13079232576354,
+      "max_prediction_difference": 7.105427357601002e-15
+    },
+    {
+      "model": "attempt_005",
+      "mae": 9.284577101293856,
+      "max_prediction_difference": 7.105427357601002e-15
+    }
+  ],
+  "limitations": [
+    "Two held beams; damage-phase observations remain scored; load-deflection fit does not certify structural safety or identify composite-action mechanisms."
+  ],
+  "independent_experimental_replication": false
+}

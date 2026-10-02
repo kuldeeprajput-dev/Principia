@@ -1,0 +1,51 @@
+{
+  "case_id": "P100-020",
+  "target": "SST anomaly at a withheld pixel",
+  "target_units": "degree C",
+  "input_units": {
+    "hx": "degree C",
+    "hy": "degree C",
+    "ox": "degree C",
+    "oy": "degree C",
+    "dg": "degree C",
+    "gx": "degree C",
+    "gy": "degree C",
+    "clat": "dimensionless cosine latitude"
+  },
+  "timing_contract": "Retrospective reconstruction of one daily map, using twelve fixed neighboring pixels from the same date. Not a future forecast.",
+  "calibration": "Cardinal neighbors at4 and8 pixels plus four diagonal neighbors at4pixels. Target centers lie on a40pixel lattice and can never be calibration pixels for any scored center.",
+  "independent_unit": "Complete20degree geographic tile for scoring; all tiles belong to one dependent global map, not independent temporal replicates.",
+  "scope_limits": [
+    "Fixed complete-water neighborhoods exclude coasts, ice and missing neighborhoods.",
+    "No climate evolution, causal ocean mechanism or coral bleaching hazard is identified. This is not the NOAA coral bleaching heat-stress product."
+  ],
+  "source_url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_ssta_clim19912020.php",
+  "source_license": "U.S. Government public data",
+  "exposure": "Only dimensions, flags, coordinates and scale metadata were inspected before this fixed geometry/hash split. All resulting scores become exposed.",
+  "uncertainty_policy": "Tile-balanced errors and individual tile results only; no population confidence from dependent pixels.",
+  "error_units": "degree C",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "clat"
+  ],
+  "numeric_columns": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "clat"
+  ],
+  "physical_bounds": {},
+  "protocol": "original.v1",
+  "outcome_exposure": "All packaged outcomes exposed after this campaign."
+}

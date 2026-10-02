@@ -1,0 +1,806 @@
+{
+  "schema_version": "1.0",
+  "case_id": "P100-069",
+  "source": {
+    "landing_url": "https://doi.org/10.18419/DARUS-5015",
+    "upstream_case": "69_robotics_gearbox_thermal",
+    "version_evidence": "SOURCE_ASSETS.json"
+  },
+  "target": "Lubricant temperature",
+  "target_units": "degree C",
+  "input_units": {
+    "time_s": "s",
+    "housing_C": "degree C",
+    "environment_C": "degree C",
+    "speed": "rad/s",
+    "friction": "N m; source friction torque",
+    "initial_C": "degree C; explicitly permitted initial lubricant measurement"
+  },
+  "input_columns": [
+    "time_s",
+    "housing_C",
+    "environment_C",
+    "speed",
+    "friction",
+    "initial_C"
+  ],
+  "numeric_columns": [
+    "time_s",
+    "housing_C",
+    "environment_C",
+    "speed",
+    "friction",
+    "initial_C"
+  ],
+  "missingness": "Original identification and validation folder assignment preserved. First native sample of each 5 s bin used for compact, deterministic low-frequency thermal analysis; no interpolation. Startup TL is permitted calibration. Neither later lubricant temperatures nor their finite differences enter prediction. Source already presents a lubricant-temperature observer.",
+  "primary_metric": "mae",
+  "assigned_rows": 16568,
+  "models": {
+    "reference": {
+      "case": 69,
+      "kind": "a3",
+      "knobs": {
+        "tau": 200.0
+      },
+      "beta": [
+        0.9999999999999999,
+        9.76855403700466
+      ],
+      "active_columns": [
+        0,
+        2
+      ],
+      "terms": [
+        "causal housing-minus-environment convolution; complementary weights sum to one",
+        "causal absolute-speed convection surrogate"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 2,
+      "design_condition": 3.669663930164712,
+      "positive_coefficients": false
+    },
+    "mechanistic_reference": {
+      "case": 69,
+      "kind": "a3",
+      "knobs": {
+        "tau": 200.0
+      },
+      "beta": [
+        0.9999999999999999,
+        9.76855403700466
+      ],
+      "active_columns": [
+        0,
+        2
+      ],
+      "terms": [
+        "causal housing-minus-environment convolution; complementary weights sum to one",
+        "causal absolute-speed convection surrogate"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 2,
+      "design_condition": 3.669663930164712,
+      "positive_coefficients": false
+    },
+    "attempt_001": {
+      "case": 69,
+      "kind": "a1",
+      "knobs": {
+        "tau": 100.0
+      },
+      "beta": [
+        0.9999999999999999
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "causal housing-minus-environment convolution; complementary weights sum to one"
+      ],
+      "fitted_parameters": 2,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "attempt_002": {
+      "case": 69,
+      "kind": "a2",
+      "knobs": {
+        "tau": 1600.0
+      },
+      "beta": [
+        0.7812216191801724,
+        8.222625638051529
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "causal housing-minus-environment convolution; complementary weights sum to one",
+        "causal friction-power convolution"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 2,
+      "design_condition": 3.5698941834813374,
+      "positive_coefficients": false
+    },
+    "attempt_003": {
+      "case": 69,
+      "kind": "a3",
+      "knobs": {
+        "tau": 400.0
+      },
+      "beta": [
+        0.9999999999796135,
+        1.1144600943833058,
+        8.376599472718263
+      ],
+      "active_columns": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        "causal housing-minus-environment convolution; complementary weights sum to one",
+        "causal friction-power convolution",
+        "causal absolute-speed convection surrogate"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 3,
+      "design_condition": 41.49499326590381,
+      "positive_coefficients": false
+    },
+    "attempt_004": {
+      "case": 69,
+      "kind": "a4",
+      "knobs": {
+        "tau": 1600.0
+      },
+      "beta": [
+        0.9999999999856699,
+        9.24890355596225,
+        -0.2743731254313596
+      ],
+      "active_columns": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        "causal housing-minus-environment convolution; complementary weights sum to one",
+        "causal friction-power convolution",
+        "instantaneous housing-environment contrast"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 3,
+      "design_condition": 20.161706216343994,
+      "positive_coefficients": false
+    },
+    "attempt_005": {
+      "case": 69,
+      "kind": "a5",
+      "knobs": {
+        "tau": 800.0
+      },
+      "beta": [
+        0.9999999999336215,
+        2.740631777823141,
+        12.79087727951313,
+        -0.34836490498346806
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "terms": [
+        "causal housing-minus-environment convolution; complementary weights sum to one",
+        "causal friction-power convolution",
+        "causal absolute-speed convection surrogate",
+        "instantaneous housing-environment contrast"
+      ],
+      "fitted_parameters": 5,
+      "design_rank": 4,
+      "design_condition": 51.1732508348401,
+      "positive_coefficients": false
+    },
+    "attempt_006": {
+      "case": 69,
+      "kind": "a3",
+      "knobs": {
+        "tau": 1600.0
+      },
+      "beta": [
+        0.7812216191801724,
+        8.222625638051529
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "causal housing-minus-environment convolution; complementary weights sum to one",
+        "causal friction-power convolution"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 2,
+      "design_condition": 3.5698941834813374,
+      "positive_coefficients": false
+    },
+    "attempt_007": {
+      "case": 69,
+      "kind": "a3",
+      "knobs": {
+        "tau": 200.0
+      },
+      "beta": [
+        0.9999999999999999,
+        9.76855403700466
+      ],
+      "active_columns": [
+        0,
+        2
+      ],
+      "terms": [
+        "causal housing-minus-environment convolution; complementary weights sum to one",
+        "causal absolute-speed convection surrogate"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 2,
+      "design_condition": 3.669663930164712,
+      "positive_coefficients": false
+    },
+    "baseline_mean": {
+      "case": 69,
+      "kind": "mean",
+      "knobs": {},
+      "beta": [
+        38.44745295447163
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "1"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "baseline_domain": {
+      "case": 69,
+      "kind": "domain",
+      "beta": [
+        1.0
+      ],
+      "fitted_parameters": 0
+    },
+    "baseline_rbf": {
+      "case": 69,
+      "kind": "rbf",
+      "features": [
+        "time_s",
+        "housing_C",
+        "environment_C",
+        "speed",
+        "friction",
+        "initial_C"
+      ],
+      "columns": [
+        "time_s",
+        "housing_C",
+        "environment_C",
+        "speed",
+        "friction",
+        "initial_C"
+      ],
+      "center": [
+        1012.14405360134,
+        30.13225013958687,
+        21.150630932439874,
+        0.5706800349312038,
+        1.541647087144046,
+        19.920390843104403
+      ],
+      "scale": [
+        703.7445576882334,
+        6.201440352132673,
+        1.1150009544595694,
+        1.0592131287085815,
+        3.487820545133385,
+        0.7907200198969976
+      ],
+      "centers": [
+        [
+          -1.4311216230357209,
+          -1.7547939707014142,
+          -0.9960807010951731,
+          0.7958787711454056,
+          1.4134138957086326,
+          -0.7213562686558809
+        ],
+        [
+          2.661272369268333,
+          1.554114739989189,
+          2.3761137216642574,
+          -1.4305253976665846,
+          -1.2194174745806838,
+          -0.6454760601241497
+        ],
+        [
+          0.10352612407829938,
+          -0.24707971899784983,
+          -0.5117761829329155,
+          -1.429180825331682,
+          -1.4226797210132158,
+          -0.6454760601241497
+        ],
+        [
+          -0.4719667810894582,
+          0.2528041505509251,
+          -0.9512376901542227,
+          0.9485865967697346,
+          0.658352195459523,
+          -1.2651644297999647
+        ],
+        [
+          -0.46486193040837476,
+          -0.01648812756083419,
+          -0.6014622048148133,
+          0.7971047047448723,
+          0.6747744534742596,
+          -0.7213562686558809
+        ],
+        [
+          1.4676574548463173,
+          1.562177383046427,
+          2.429925334793396,
+          0.4992621594413416,
+          0.34351648075182273,
+          0.9859484233081021
+        ],
+        [
+          -0.3440794688299565,
+          -0.24224213316350723,
+          0.3761154336978934,
+          0.49486263966904476,
+          0.6171023623825125,
+          0.9859484233081021
+        ],
+        [
+          -1.2392906546464684,
+          -1.6693299542946878,
+          -1.426573606128292,
+          0.9480428358990002,
+          1.2539299130207915,
+          -1.2651644297999647
+        ],
+        [
+          -0.9053626726355473,
+          -0.8840285205196768,
+          -0.9602062923424141,
+          0.6552127771674904,
+          0.7959885750724314,
+          1.4665230773424078
+        ],
+        [
+          0.14615522816479995,
+          0.726887562316538,
+          -0.05437747133522557,
+          0.6557071052317945,
+          0.4610896366899381,
+          1.4665230773424078
+        ],
+        [
+          0.6719141785649735,
+          1.3573862493925732,
+          0.7079537146609233,
+          0.6536902467294413,
+          0.35475735328310154,
+          1.4665230773424078
+        ],
+        [
+          1.1053100701110625,
+          1.2638595899286091,
+          1.8918092035019995,
+          0.4979175871064365,
+          0.38046615480668194,
+          0.9859484233081021
+        ],
+        [
+          -1.4311216230357209,
+          -1.5193647934300554,
+          0.017371346170295853,
+          0.4908190361030541,
+          1.0659667663760293,
+          0.9859484233081021
+        ],
+        [
+          -1.168242147835634,
+          -1.3403741175593649,
+          -1.0319551098479323,
+          0.6581490858694435,
+          0.9397167378522222,
+          1.4665230773424078
+        ],
+        [
+          -1.4311216230357209,
+          -1.8225201723822162,
+          -1.426573606128292,
+          0.9525708809680105,
+          1.5734759609917592,
+          -1.2651644297999647
+        ],
+        [
+          -0.8556287178679632,
+          -0.6840749727001664,
+          -1.2830759711172526,
+          0.9518293888715544,
+          0.897956883999905,
+          -1.2651644297999647
+        ],
+        [
+          -1.4311216230357209,
+          -1.756406499312862,
+          -1.0319551098479323,
+          -1.42868649726738,
+          -1.8201917156888385,
+          -0.6454760601241497
+        ],
+        [
+          -0.28013581270020566,
+          0.6639989464700791,
+          -0.7001168288849025,
+          0.944374921661875,
+          0.5556439105617716,
+          -1.2651644297999647
+        ],
+        [
+          -1.0687742383004661,
+          -1.2484599867068482,
+          0.035308550546675414,
+          0.4927765752376927,
+          0.8457617509603185,
+          0.9859484233081021
+        ],
+        [
+          0.2598328390621348,
+          1.2106461457508366,
+          0.23261779868685376,
+          0.800891257717436,
+          0.4214043730102848,
+          -0.7213562686558809
+        ],
+        [
+          -0.6424831974354605,
+          -0.41962028042274974,
+          -0.8436144638959421,
+          0.656250866102529,
+          0.6905249986545074,
+          1.4665230773424078
+        ],
+        [
+          1.1266246221543128,
+          0.6075604450694106,
+          0.5196130687089331,
+          -1.431751331266055,
+          -1.3111392248945566,
+          -0.6454760601241497
+        ],
+        [
+          0.01826791590529826,
+          0.8462146795636653,
+          -0.1261262888407438,
+          0.798320751783064,
+          0.496595960858263,
+          -0.7213562686558809
+        ],
+        [
+          0.5013977622189713,
+          1.5573397972120837,
+          0.6810479080963523,
+          0.7975298268801776,
+          0.3536962424366494,
+          -0.7213562686558809
+        ],
+        [
+          -0.6637977494787107,
+          -0.20676650371165828,
+          -1.1216411317298332,
+          0.9485865967697346,
+          0.769559893068081,
+          -1.2651644297999647
+        ],
+        [
+          -1.4311216230357209,
+          -1.5338775509330842,
+          -1.0498923142243117,
+          0.6587027333014623,
+          1.2041670679803902,
+          1.4665230773424078
+        ],
+        [
+          -0.9195723739977141,
+          -1.3645620467310795,
+          -0.9960807010951731,
+          -1.4293587834348307,
+          -1.6183598082528732,
+          -0.6454760601241497
+        ],
+        [
+          -0.08830484431095315,
+          1.0461682273831745,
+          -0.40415295667463497,
+          0.9474891884669814,
+          0.4610828282735838,
+          -1.2651644297999647
+        ],
+        [
+          -0.37960372223537364,
+          0.004474744387985256,
+          -0.6283680113793843,
+          0.6574767997019957,
+          0.6049752872492181,
+          1.4665230773424078
+        ],
+        [
+          0.7429626853758078,
+          0.9397413390276294,
+          1.443379094092501,
+          0.4975517843388553,
+          0.42423830860031453,
+          0.9859484233081021
+        ],
+        [
+          1.6381738711923195,
+          0.9478039820848673,
+          1.1025722109412799,
+          -1.4315634866016202,
+          -1.2731396928930867,
+          -0.6454760601241497
+        ],
+        [
+          0.6150753731163061,
+          0.2108784066532862,
+          -0.045408869147034195,
+          -1.4297344727637007,
+          -1.359850895789847,
+          -0.6454760601241497
+        ],
+        [
+          -0.7064268535652113,
+          -0.7292257738207011,
+          0.14293177680495278,
+          0.49241077247011145,
+          0.7111488546989643,
+          0.9859484233081021
+        ],
+        [
+          -0.4080231249597074,
+          -0.7679264604954448,
+          -0.807740055143183,
+          -1.431751331266055,
+          -1.5039885937692037,
+          -0.6454760601241497
+        ],
+        [
+          -1.1895566998788842,
+          -1.5435527226017707,
+          -0.9871120989069818,
+          0.7957601324099765,
+          1.1061712108871093,
+          -0.7213562686558809
+        ],
+        [
+          -0.11672424703528685,
+          0.3834189680781855,
+          -0.35930994573368447,
+          0.6577239637341478,
+          0.5280347668961569,
+          1.4665230773424078
+        ],
+        [
+          0.38061530064055304,
+          0.5849850445091432,
+          1.0218547912475704,
+          0.4968102922423991,
+          0.47687855005226926,
+          0.9859484233081021
+        ],
+        [
+          -1.0474596862572159,
+          -1.2049217141977613,
+          -1.3727619929991504,
+          0.9469355410349627,
+          1.041866930251569,
+          -1.2651644297999647
+        ],
+        [
+          0.10352612407829938,
+          1.4251124510733753,
+          -0.0812832778997965,
+          0.9449186825326095,
+          0.3732959948237022,
+          -1.2651644297999647
+        ],
+        [
+          2.149723120230326,
+          1.2541844182599229,
+          1.7303743641145772,
+          -1.4298531114991326,
+          -1.2433099692536782,
+          -0.6454760601241497
+        ],
+        [
+          0.40903470336488673,
+          1.0510058132175177,
+          0.2953980140041838,
+          0.6538682048325851,
+          0.40480863157510544,
+          1.4665230773424078
+        ],
+        [
+          -0.7064268535652113,
+          -0.5018592396065807,
+          -0.7987714529549916,
+          0.7966696960482922,
+          0.7835861456961731,
+          -0.7213562686558809
+        ],
+        [
+          -0.9479917767220478,
+          -1.024318509715623,
+          -0.9063946792132722,
+          0.79734198221574,
+          0.9215183638997422,
+          -0.7213562686558809
+        ],
+        [
+          -0.22329700725153825,
+          0.43179482642161604,
+          -0.3862157522982554,
+          0.7990622438795109,
+          0.5814436476883756,
+          -0.7213562686558809
+        ],
+        [
+          0.01826791590529826,
+          0.19959070637315252,
+          0.6451734993435931,
+          0.4946747950046167,
+          0.5404106140064158,
+          0.9859484233081021
+        ]
+      ],
+      "width": 2.0,
+      "beta": [
+        -5.282568424848815,
+        5.7674906449231145,
+        1.97825491961619,
+        2.180715347652158,
+        1.6675640202161506,
+        5.392554688490256,
+        -2.888550676612409,
+        -3.265590942052556,
+        1.7373131166125426,
+        2.3369190991906135,
+        2.9975235356472596,
+        1.9544427099411894,
+        -5.236618879009875,
+        -1.339179842875121,
+        -6.194224797766746,
+        2.5721639696696474,
+        -8.65079639910021,
+        1.1372060886167175,
+        -3.1906489849211965,
+        -0.2877593235807338,
+        3.5060540405211382,
+        -1.1853798197868444,
+        -0.5285753123360873,
+        1.2652156951807911,
+        2.931485203999416,
+        -4.124579061105466,
+        -4.1474021008881055,
+        0.6136612963598663,
+        3.6774705353823216,
+        -1.4779642526409136,
+        -0.45766485347948693,
+        0.4767048140793978,
+        -2.0809949824426135,
+        0.5171950426985467,
+        -1.921209730095315,
+        3.0103718124683745,
+        -3.6057980622196935,
+        0.37702034857599187,
+        1.062836960603651,
+        2.560277675370926,
+        2.2385605889219304,
+        2.5364234345264025,
+        1.3922102302068922,
+        0.2873407239790455,
+        -3.764876471319604
+      ],
+      "intercept": 38.447452958316354,
+      "log": false,
+      "fitted_parameters": 46
+    },
+    "baseline_persistence": {
+      "case": 69,
+      "kind": "persistence",
+      "beta": [
+        0.0
+      ],
+      "fitted_parameters": 0
+    },
+    "attempt_008": {
+      "case": 69,
+      "kind": "a3",
+      "knobs": {
+        "tau": 100.0
+      },
+      "beta": [
+        0.9999999999999999
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "causal housing-minus-environment convolution; complementary weights sum to one"
+      ],
+      "fitted_parameters": 2,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "attempt_009": {
+      "case": 69,
+      "kind": "a3",
+      "knobs": {
+        "tau": 800.0
+      },
+      "beta": [
+        25.437531959868164
+      ],
+      "active_columns": [
+        2
+      ],
+      "terms": [
+        "causal absolute-speed convection surrogate"
+      ],
+      "fitted_parameters": 2,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    }
+  },
+  "selection": {
+    "mechanistic_attempt": "attempt-007",
+    "default_origin": "mechanistic_reference",
+    "rule": "Default = strongest frozen development predictor among scientific hypotheses and all controls; separately select simplest mechanistic hypothesis within 1% of its best grouped development primary error. No confirmation selection.",
+    "used_confirmation": false
+  },
+  "equations": {
+    "reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "mechanistic_reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_001": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_002": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_003": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_004": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_005": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_006": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_007": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_mean": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_domain": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_rbf": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+    "baseline_persistence": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_008": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_009": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis."
+  },
+  "scope": "Five identification runs and eight source validation runs in one gearbox. Initial calibration and measured housing/friction signals are required; no unseen gearbox or sensorless temperature claim.",
+  "timing": "Causal housing/environment/friction history through current sample plus first lubricant temperature. Exclude t=0 from scoring because it is calibration, not a forecast.",
+  "fresh_confirmation_after_delivery": false,
+  "admission": "Numerical reference collection; no independently established new physical law or measured deployed industrial benefit."
+}

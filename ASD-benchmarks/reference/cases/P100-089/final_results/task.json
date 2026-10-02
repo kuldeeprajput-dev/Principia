@@ -1,0 +1,177 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-089.original.v1",
+  "case_id": "P100-089",
+  "case_number": 89,
+  "family": "original",
+  "protocol_version": "P100-089-asd6-native-v1",
+  "cohort_id": "P100-089.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-089.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/89_psychology_age_risk",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "risky_choice",
+  "target_units": "binary choice",
+  "error_units": "probability squared",
+  "primary_units": "probability squared",
+  "metric_kind": "brier",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "reward",
+    "probability",
+    "child",
+    "age_child",
+    "multi",
+    "description",
+    "trial_progress",
+    "lag_choice",
+    "history_mean",
+    "has_history"
+  ],
+  "input_units": {
+    "reward": "points",
+    "probability": "probability",
+    "child": "binary",
+    "age_child": "years; adult sentinel0",
+    "multi": "binary",
+    "description": "binary",
+    "trial_progress": "trial index/40",
+    "lag_choice": "binary or first-trial prior0.5",
+    "history_mean": "proportion or first-trial prior0.5",
+    "has_history": "binary"
+  },
+  "numeric_columns": [
+    "reward",
+    "probability",
+    "child",
+    "age_child",
+    "multi",
+    "description",
+    "trial_progress",
+    "lag_choice",
+    "history_mean",
+    "has_history"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Before each choice using trial settings and only prior choices in that protocol; numeric Hidden and EV excluded.",
+  "calibration": "Causal previous choice and running mean within protocol, reset at protocol start; no future outcomes. Reward/probability are experimenter settings, not necessarily participant knowledge.",
+  "independent_unit": "participant",
+  "evaluation_groups": [
+    "288010b1e93d37eca3d19e82b843b015297eb9f11f43fa72b7e6b733c898ce0e",
+    "5fd95be218366486b3615dc658b2570162df3e07dcdfbf8d2ee092756841b922",
+    "644d489efeac7202ff20a15c36152a06b078febdf58b009d5db2a99a78db17c8",
+    "75450a803bf4ffc394110a34d857a309e8e2d01630f3f3cc0f874a7cb0d8a0a9",
+    "97891870806298a737c31b452f59d9ef89271da281094300507308c91bca0eb6",
+    "aadecc67ef2c3ae6d2f62773460881d35e1fc1767672a9443ccd823c56520548",
+    "ab4fac83a24417110ec00234b5eea468d35a692cd6171d7f29ab4ee4d907f595",
+    "b3310d070431e6703ea430139a2f71d9c84fa6d903aaefbf69800e2e998b1c75",
+    "c75b8e1c44c934d67e8b9507f618a4a67fd70b2e26245d1c1d328610853a9e48",
+    "d3d7c6fa71711fbf548400e0eb437eb3556ba2f0b485c64f43ef923bd00fe071",
+    "dfaf229e91a6e8c920af9cb6b46be8a8c76b55ab7278ef81526bdc21a07ad4ce",
+    "f96ff2c8e6826e58c02ee4648b9a5479c819b1bf53a22bf36c591296bad9ae19"
+  ],
+  "assigned_rows": 6008,
+  "eligible_rows": 6008,
+  "baseline_models": [
+    "reference",
+    "baseline_mean",
+    "baseline_utility",
+    "baseline_persistence",
+    "baseline_flexible",
+    "attempt_001_prospect",
+    "attempt_002_context",
+    "attempt_003_memory",
+    "attempt_004_description",
+    "attempt_005_history_interaction"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_mean": {
+      "equation": "p_hat=development group-weighted choice mean",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_utility": {
+      "equation": "logit(p_hat)=b0+b1*(reward*probability/2-1)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_persistence": {
+      "equation": "p_hat=clip(causal within-protocol previous-choice mean,.001,.999)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_prospect": {
+      "equation": "p_hat=sigmoid(beta*(w(p)*(reward/2)^alpha-1)+bias); w(p)=p^gamma/(p^gamma+(1-p)^gamma)^(1/gamma)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_context": {
+      "equation": "logit(p_hat)=beta dot [1,EVdiff,child,multi,description,child*multi,EVdiff*child,EVdiff*multi]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_memory": {
+      "equation": "Context logits plus h,l,has_history*h, where h=history_mean-.5 and l=lag_choice-.5",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_description": {
+      "equation": "Memory logits plus (probability-.5)*description and its child interaction",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_history_interaction": {
+      "equation": "Context logits plus h,l,h*EVdiff,h*multi,h*child",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "55 linked participants in E1.1/E1.2/E2.2; native file lacks E2.1. Age changes for two participants retained as per-trial metadata; identities stay linked. No population-wide cognitive mechanism claim.",
+  "source_url": "https://zenodo.org/records/15412216",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "3d5dfa7fba860f2b8dac8602628666fed284e1996a36965d442fabd83646bcaa",
+  "observations_sha256": "425397ac552366e65759c9a4ae7dad11ec23a0925e28d7eff6d2dd41c5c24d9e",
+  "legacy_protocol_sha256": "6332d6bae6ec7c1d7cf2d9e6297b09a275bdf03b85fbd2c2209da95547371bf4",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": "asd6-probability/1.0",
+  "probability_evaluator_extension": "asd6-probability/1.0"
+}

@@ -1,0 +1,375 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-068",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Firstthree rawsamples of1142n were seen during schema audit, beforethe50mseligible issuance window. No reserved target values were inspected."
+  },
+  "findings": [
+    {
+      "id": "P100-068-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "The constrained delay-history control supplies a reproducible5ms native-voltage predictor across held acquisition traces.",
+      "applicability": "Rawvoltage,sameinstallation,causal15ms history,5ms horizon.",
+      "limitations": "No independent object, unknown excitation mapping and unresolved voltage-to-velocity calibration.",
+      "falsification": "No independent object, unknown excitation mapping and unresolved voltage-to-velocity calibration.",
+      "prior_art": "Autoregressive waveform prediction is established and is not a physical-law discovery.",
+      "equation_or_program": {
+        "expression": "Vhat=offset+b0+b1*y0+b2*y1+b3*y2+b4*y3+b5*y0\u00b2+b6*y0*y1.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "V",
+        "y0": "V; currentrawminusinitialoffset",
+        "y1": "V;5mslagminusoffset",
+        "y2": "V;10mslagminusoffset",
+        "y3": "V;15mslagminusoffset",
+        "offset": "V; first20samplemean",
+        "t": "s; storedtimestamp"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-068.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-068-F02",
+      "classification": "reproduction",
+      "source_classification": "reproduction",
+      "statement": "Enforcing DC-offset invariance materially improves the harmonic predictor and removes much of its systematic bias.",
+      "applicability": "Initialwindowcentering can retain phase-dependent DC error.",
+      "limitations": "Flexiblecontrol remains better; no claim that the object is an exact linear oscillator.",
+      "falsification": "Flexiblecontrol remains better; no claim that the object is an exact linear oscillator.",
+      "prior_art": "A harmonic-plus-constant recurrence is a known signal-processing identity; empirical transfer is the tested result.",
+      "equation_or_program": {
+        "expression": "Vhat=offset+(1+2cos(omega*h))*y0-(1+2cos(omega*h))*y1+y2, h=.005s.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "V",
+        "y0": "V; currentrawminusinitialoffset",
+        "y1": "V;5mslagminusoffset",
+        "y2": "V;10mslagminusoffset",
+        "y3": "V;15mslagminusoffset",
+        "offset": "V; first20samplemean",
+        "t": "s; storedtimestamp"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-068.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-068-F03",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "The tested cubic-restoring, quadratic-drag and common-drive closures do not establish a superior physical model from these raw voltage traces.",
+      "applicability": "Unresolvedphysicalconversionpreventsforce-coefficientinterpretation.",
+      "limitations": "Our result does not refute the sourcepaper\u2019s fullmechanicalanalysis.",
+      "falsification": "Our result does not refute the sourcepaper\u2019s fullmechanicalanalysis.",
+      "prior_art": "The sourcepaper already reports SINDy nonlinearities on converted/filtered time series; that is a different information/processing contract.",
+      "equation_or_program": {
+        "expression": "Mechanistic-inspired delay closures are fully specified in rules.json.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "V",
+        "y0": "V; currentrawminusinitialoffset",
+        "y1": "V;5mslagminusoffset",
+        "y2": "V;10mslagminusoffset",
+        "y3": "V;15mslagminusoffset",
+        "offset": "V; first20samplemean",
+        "t": "s; storedtimestamp"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-068.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_CONFIRMATION_RECEIPT.json",
+      "bytes": 3560,
+      "sha256": "547367143ff7eb8f033ae113463ea3ace07a98b3277d0d7bd3f9b19c6b689de2",
+      "id": "E001",
+      "role": "CONFIRMATION_RECEIPT.json"
+    },
+    {
+      "path": "evidence/E002_FREEZE.json",
+      "bytes": 2583,
+      "sha256": "46cbd0eac4b095aa2eb267a5d764829c0e629e9244b57d353f8fe236a007bfe5",
+      "id": "E002",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E003_PRIOR_ART.json",
+      "bytes": 623,
+      "sha256": "0c0b610abe42d686a44e2c28ee3bd9fd36c43388e661d89dd3c0315002d6a50c",
+      "id": "E003",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E004_PROTOCOL.json",
+      "bytes": 2274,
+      "sha256": "f6b52d0d19882baf9d3db3db03335e02a4bb4d71af6844332fb26a4ce6a7a429",
+      "id": "E004",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E005_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 15326,
+      "sha256": "a8a64321c91041a830573690a53d331a70518af758f5820000d792b3640c7316",
+      "id": "E005",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E006_SOURCE_AND_UNITS.md",
+      "bytes": 571,
+      "sha256": "be74cdde4e848c9890a1d72435ec66b799da14ea8cbe0735310af782a2ed7a7e",
+      "id": "E006",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E007_SOURCE_MANIFEST.json",
+      "bytes": 726,
+      "sha256": "65c22f17cf0f491a8271d4dca0a02042213f758e650c24a35c1e3716be874e1f",
+      "id": "E007",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E008_SPLITS.json",
+      "bytes": 1147,
+      "sha256": "65dd5f6df6f1c1e7657366ca0f1efae1055e4077be11323733388857334dcb95",
+      "id": "E008",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E009_native.py",
+      "bytes": 2140,
+      "sha256": "5724148f23f25966c6b91665272a2968efa7dbee07b7cce2a3de78800437c797",
+      "id": "E009",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E010_FINDINGS.md",
+      "bytes": 5883,
+      "sha256": "33d5cbbd51391a63cfe629b47bb07a4e077a2eaeefb7a69ce2855026dd4a8387",
+      "id": "E010",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E011_MANIFEST.json",
+      "bytes": 2039,
+      "sha256": "7711723526dd4fd147ac7cbfce6ab6d77460c4b18857a050feb8a5f71dd6863c",
+      "id": "E011",
+      "role": "package/MANIFEST.json"
+    },
+    {
+      "path": "evidence/E012_inputs.csv.gz",
+      "bytes": 7412,
+      "sha256": "8feeca9b6f807e1429006635751776a6d52c9362d27475f95fca954beb34e534",
+      "id": "E012",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E013_observations.csv.gz",
+      "bytes": 8267,
+      "sha256": "9d8861927a4572ba9adcf99be6ab3e13bf59ca607a2d9f90828d9cb6f6c4cc0f",
+      "id": "E013",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E014_by_group.csv",
+      "bytes": 4763,
+      "sha256": "a98877ee4a537f08ed20030ddcde8ccf87e9eebabc7cabf730a9bec3eb749763",
+      "id": "E014",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E015_metrics.csv",
+      "bytes": 1287,
+      "sha256": "a42031978b1b715f9cf36c9311700d2100a3ddf7c823f9cd7549ee86d643887b",
+      "id": "E015",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E016_predictions.csv.gz",
+      "bytes": 38954,
+      "sha256": "3ecc963272de5ef78a63571523a6990adda208c63cb57d34ebb4df3b895d4bdf",
+      "id": "E016",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E017_findings.json",
+      "bytes": 2555,
+      "sha256": "006507540bf4bc857d8e01404fa042e4a1465686304846f5f2319fb9966280c6",
+      "id": "E017",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E018_rules.json",
+      "bytes": 13232,
+      "sha256": "8106fb3bb7841ff7d3baa8dafd50128030db8e5964e9490bce6a507cfb015f1c",
+      "id": "E018",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E019_run.py",
+      "bytes": 3216,
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300",
+      "id": "E019",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E020_task_spec.json",
+      "bytes": 2022,
+      "sha256": "e3763c15ad062c06cadd26e666da6e90b1522e19add1a8d30c27cbbf17c90025",
+      "id": "E020",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 27738,
+      "sha256": "77b9e13a272ccb19bd9c650db49a9182cde7e7f32bd460d9c0abee4eaa2fed9a",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 10553,
+      "sha256": "d8732ea39562dbaf903444129dc2584f1f8f1c6deeb77293c8724ee45491cb9e",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

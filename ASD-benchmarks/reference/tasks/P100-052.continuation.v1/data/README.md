@@ -1,0 +1,1 @@
+Prepared, source-anchored retrospective diagnostic inputs. Native bytes remain unchanged upstream. Inputs contain unique sample_id and group; observations retain missing targets and anchors. These exposed outcomes cannot provide fresh confirmation.

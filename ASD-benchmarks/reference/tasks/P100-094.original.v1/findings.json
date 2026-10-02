@@ -1,0 +1,45 @@
+[
+  {
+    "id": "P100-094-F01",
+    "classification": "validated_extension",
+    "disposition": "supported",
+    "claim": "A continuous two-slope salinity relation with a thermal endmember correction improves held-cast CDOM prediction. It is compatible with changing water-mass mixtures across a halocline. CDOM fluorescence does not independently measure chemical DOC, and the model cannot separate mixing, biology or photochemistry.",
+    "equation": "\\widehat C=a+b(S-34)+c\\max(S-33,0)+dT",
+    "model_id": "reference",
+    "task_id": "P100-094.original.v1",
+    "evidence": {
+      "prediction_file": "evidence/predictions.csv.gz",
+      "metrics_file": "evidence/metrics.csv",
+      "reference_group_MAE": 0.0410216791239566,
+      "best_baseline": "flexible",
+      "best_baseline_group_MAE": 0.04589147829431,
+      "wins": 2,
+      "groups": 2
+    },
+    "prior_art": "Existing domain parameterizations; see PRIOR_ART.json. No certified novelty.",
+    "falsification": "All baselines and alternatives evaluated on identical frozen eligible observations; no confirmation promotion.",
+    "scope": "CDOM ppb is the publisher-calibrated fluorescence channel, not chemically measured DOC concentration. Quality control does not establish a universal conservative-mixing relationship. No target-based outlier removal.",
+    "admission": "supported",
+    "finding_id": "P100-094-F01",
+    "admission_rationale": "Supported as a scoped predictive extension; novelty and demonstrated industrial impact are not established."
+  },
+  {
+    "id": "P100-094-F02",
+    "classification": "falsified",
+    "disposition": "supported",
+    "claim": "A purely depth-based relation is weaker than the selected salinity-hinge relation on the reserved casts.",
+    "equation": null,
+    "model_id": null,
+    "task_id": "P100-094.original.v1",
+    "evidence": {
+      "metrics_file": "evidence/metrics.csv",
+      "development_selection": "research_history/DEVELOPMENT_SELECTION.json"
+    },
+    "prior_art": "Mechanism claims need controls and information ablations.",
+    "falsification": "Comparison is bounded to the recorded model families and eligible cohort. It does not establish universal nonexistence of a physical process.",
+    "scope": "CDOM ppb is the publisher-calibrated fluorescence channel, not chemically measured DOC concentration. Quality control does not establish a universal conservative-mixing relationship. No target-based outlier removal.",
+    "admission": "supported",
+    "finding_id": "P100-094-F02",
+    "admission_rationale": "Retain negative scientific evidence; no independent positive law claimed."
+  }
+]

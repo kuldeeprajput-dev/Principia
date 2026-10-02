@@ -1,0 +1,30 @@
+{
+  "title": "Banking channels: a regional transfer limit",
+  "summary": "A multivariable model improves development prediction of branch use, but its gain does not transfer to the reserved region. This portfolio provides a reproducible negative result and resolves a consequential native codebook inconsistency.",
+  "data": "The CFPB National Age-Friendly Banking Survey contains paired coded and labeled native CSVs. BRANCH, MOBILE and WEB use 1=Yes and 2=No. Two local-access indicators also use 1/2 in the actual coded file despite a nominal 0/1 dictionary. CASEID-matched comparisons with all 2,721 labeled records resolve the discrepancy. The corrected eligible cohort contains 2,232 development respondents in three regions and 327 confirmation respondents in one reserved region. Positive WEIGHT_FINAL values normalize loss within each region; regions then receive equal weight.",
+  "equations": "Let M and W denote reported mobile and web banking, A and I the declared ordinal age and income categories, P local branch presence, and C local net closure. The selected equation is p(branch use)=logistic(a+bM*M+bW*W+bA*A+bI*I+bP*P+bC*C). Coefficients in that order are [-0.5079079571484614, -0.2876866081107598, 0.2821823804919333, 0.2325154626114306, -0.07144261651671474, -0.12083207960705532, -0.03127868393386126]. Categories are ordinal encodings, not exact years or monetary measurements.",
+  "performance": "Confirmation Brier error is 0.251700, compared with 0.249910 for prevalence, 0.248907 for the digital-channel count control, and 0.248934 for the flexible control. The reference loses to all three controls in the single held region. One region cannot support a population-level confidence claim.",
+  "value": "Useful for testing whether apparently plausible digital substitution associations survive regional transfer. Mobile and web coefficients have opposite signs, but contemporaneous self-reports, selection and confounding prevent a causal interpretation. No reduction in access barriers or branch-service benefit was demonstrated.",
+  "lessons": "Compare nominal codes with the actual paired native representation before defining eligibility. Preserve invalid-cohort experiments separately rather than counting them as valid discoveries. Seven earlier development attempts on a misencoded 1,093-person subset are retained in preparation_history; no confirmation was opened for that subset. Five corrected attempts and the unchanged region allocation form the valid campaign.",
+  "findings": [
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "The proposed contextual digital-substitution predictor fails to improve reserved-region branch-use risk over the frozen controls.",
+      "equation": "See rules.json models.reference: p=logistic(a+bM*M+bW*W+bA*A+bI*I+bP*P+bC*C).",
+      "interpretation": "Development associations depend on region and information distribution. Predictive improvement in three regions does not establish a portable mechanism.",
+      "falsification": "The positive transfer claim is unsupported: reference Brier exceeds prevalence, channel-count and flexible controls in region1."
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "The source dictionary alone is insufficient to decode local branch-access indicators in this release.",
+      "equation": "Actual native indicators: Yes=1, No=2; decode to binary using CASEID-matched labeled CSV evidence.",
+      "interpretation": "This is a source-semantics correction, not a new banking law. ENCODING_EVIDENCE.json records the exact concordance.",
+      "falsification": "The dictionary describes 0/1 while actual coded observations use 1/2; the invalid cohort and all preliminary failures remain preserved."
+    }
+  ],
+  "unresolved": [
+    "Source-aware exposed outcomes; no independent experimental replication or definitive novelty adjudication."
+  ]
+}

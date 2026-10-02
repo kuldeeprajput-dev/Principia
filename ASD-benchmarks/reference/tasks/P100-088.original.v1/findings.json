@@ -1,0 +1,44 @@
+[
+  {
+    "finding_id": "P100-088-F01",
+    "classification": "validated_scoped_extension",
+    "claim": "A compact historical-propensity and persistence model is competitive with the full matched flexible predictor on held participants",
+    "equation": "P(risky)=sigmoid(beta dot [1,Delta,p-.5,v,s,f,fH(p),fc,logit(h),lagcenter])",
+    "coefficients": [
+      -0.3386356885338235,
+      0.7324530536995275,
+      0.052966374297739656,
+      0.00015770404087037365,
+      -0.03986145388337154,
+      0.1299434011779057,
+      0.06583938890788321,
+      0.09155624191620863,
+      1.1443470408950018,
+      0.5612299728652841
+    ],
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/history_diagnostics.json"
+    ],
+    "prior_art": "Source feedback/attitudinal effects and standard history/persistence accounts are known; no novel cognitive law",
+    "falsification": "Advantage over flexible is small and its group-resampling interval must be checked; causal interpretation not identified",
+    "scope": "Same seven repeated-lottery experiment designs; participant-held sequential history access",
+    "admission": "partially_supported"
+  },
+  {
+    "finding_id": "P100-088-F02",
+    "classification": "supported_negative_finding",
+    "claim": "Prospective feedback or visible-outcome learning alone does not reproduce the predictive benefit of prior-choice history",
+    "equation": null,
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv"
+    ],
+    "prior_art": "Competing source-study accounts; numerical sufficiency rather than causal adjudication",
+    "falsification": "A richer properly causal learning model or new participants/design may change the ranking",
+    "scope": "Only tested families and input budget",
+    "admission": "supported"
+  }
+]

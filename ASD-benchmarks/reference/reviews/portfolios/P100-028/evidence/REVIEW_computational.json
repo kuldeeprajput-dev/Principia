@@ -1,0 +1,751 @@
+{
+  "case_id": "P100-028",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "c6799c6139d44a40d23f04ff43ba6463ecc41a5c1f2be378beed4416d737225b"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "59455444fa8d19eb3ae5aaddeff2d7cb4b25ef25df9976517c02e1c4bf8313b0"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "9357ef147156ea8ffcfceb9081cf0a1b1eaf48820c84336193d00a2a2a1ee279"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "81d1eafb08e5d2102d1585dd126b43b08d48ff4a60755dcaa9f79bf8a3feb27e"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "c07ff4280f56b5a34e43005d37804a02a13ce68a54cff606cbab5507b485cbbe"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "226bcba19c6fa78efd129a99ae8a6f6743b831279314fb010af0fe2e4062e893"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "4360d4f5e538a36b45f42005b7c7ce140b14d63eca20d7c0a98e88667f673cf1"
+    },
+    {
+      "path": "native.py",
+      "sha256": "0e643067d6468f4a4bc11a3068b7dbf69a0bda1bf20f79737b4de2a381d6c369"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "41cafa81ac427c55d9f07147c9a111879cf49a2f7e2e28f5f5d4a61b029ed11d"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "bf1300dd57de4f9dc17ca2ac0fa4c21e5e3b9943b61bc070d1040084e8317853"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "c930a223f2f6bef2fb6b144dc586660701068d68684a87f0e0cca90acafbeeb8"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "b419463ce0793f03b441f837f06d3c353ffb38af15d612857773b8f67bd85a85"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "c9192bad5f2ae07aabddbd4e08c275de1d428b48a677d6b2d4cd1a6e3268400b"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "3b20475c46177096d7d0392b44fb1a6b432f03008a28108694996371a6a5675a"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-028-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-028-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-028-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-028",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-028",
+      "native_rows": 6084,
+      "confirmation_rows": 1560,
+      "models": 9,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 9,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 6.776263578034403e-21,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 1560,
+        "primary_error": 3.757751525393557e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 1560,
+        "primary_error": 3.757751525393557e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "hold_calibration",
+        "rows": 1560,
+        "primary_error": 6.691482352157842e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "linear_increment",
+        "rows": 1560,
+        "primary_error": 4.034115056418033e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "saturating_increment",
+        "rows": 1560,
+        "primary_error": 4.1095911067597706e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "coherent_rotation",
+        "rows": 1560,
+        "primary_error": 4.109103965632781e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "detuning_saturation",
+        "rows": 1560,
+        "primary_error": 4.1182223105376275e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "incoherent_power_mixing",
+        "rows": 1560,
+        "primary_error": 3.907186602262231e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "pump_induced_loss",
+        "rows": 1560,
+        "primary_error": 4.1092137679217364e-05,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 6,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-18",
+          "pump-19",
+          "pump-20",
+          "pump-21",
+          "pump-22",
+          "pump-23"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 12,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-24",
+          "pump-25",
+          "pump-26",
+          "pump-27",
+          "pump-28",
+          "pump-29"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 18,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-30",
+          "pump-31",
+          "pump-32",
+          "pump-33",
+          "pump-34",
+          "pump-35"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 24,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "pump-36",
+          "pump-37",
+          "pump-38",
+          "pump-39",
+          "pump-40"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 6,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-18",
+          "pump-19",
+          "pump-20",
+          "pump-21",
+          "pump-22",
+          "pump-23"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 12,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-24",
+          "pump-25",
+          "pump-26",
+          "pump-27",
+          "pump-28",
+          "pump-29"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 18,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-30",
+          "pump-31",
+          "pump-32",
+          "pump-33",
+          "pump-34",
+          "pump-35"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 24,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "pump-36",
+          "pump-37",
+          "pump-38",
+          "pump-39",
+          "pump-40"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 6,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-18",
+          "pump-19",
+          "pump-20",
+          "pump-21",
+          "pump-22",
+          "pump-23"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 12,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-24",
+          "pump-25",
+          "pump-26",
+          "pump-27",
+          "pump-28",
+          "pump-29"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 18,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-30",
+          "pump-31",
+          "pump-32",
+          "pump-33",
+          "pump-34",
+          "pump-35"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 24,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "pump-36",
+          "pump-37",
+          "pump-38",
+          "pump-39",
+          "pump-40"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 6,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-18",
+          "pump-19",
+          "pump-20",
+          "pump-21",
+          "pump-22",
+          "pump-23"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 12,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-24",
+          "pump-25",
+          "pump-26",
+          "pump-27",
+          "pump-28",
+          "pump-29"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 18,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-30",
+          "pump-31",
+          "pump-32",
+          "pump-33",
+          "pump-34",
+          "pump-35"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 24,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "pump-36",
+          "pump-37",
+          "pump-38",
+          "pump-39",
+          "pump-40"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 6,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-18",
+          "pump-19",
+          "pump-20",
+          "pump-21",
+          "pump-22",
+          "pump-23"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 12,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-24",
+          "pump-25",
+          "pump-26",
+          "pump-27",
+          "pump-28",
+          "pump-29"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 18,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-30",
+          "pump-31",
+          "pump-32",
+          "pump-33",
+          "pump-34",
+          "pump-35"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 24,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "pump-36",
+          "pump-37",
+          "pump-38",
+          "pump-39",
+          "pump-40"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 6,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-18",
+          "pump-19",
+          "pump-20",
+          "pump-21",
+          "pump-22",
+          "pump-23"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 12,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-24",
+          "pump-25",
+          "pump-26",
+          "pump-27",
+          "pump-28",
+          "pump-29"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 18,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-30",
+          "pump-31",
+          "pump-32",
+          "pump-33",
+          "pump-34",
+          "pump-35"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 24,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "pump-36",
+          "pump-37",
+          "pump-38",
+          "pump-39",
+          "pump-40"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hold_calibration/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 6,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-18",
+          "pump-19",
+          "pump-20",
+          "pump-21",
+          "pump-22",
+          "pump-23"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hold_calibration/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 12,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-24",
+          "pump-25",
+          "pump-26",
+          "pump-27",
+          "pump-28",
+          "pump-29"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hold_calibration/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 18,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-30",
+          "pump-31",
+          "pump-32",
+          "pump-33",
+          "pump-34",
+          "pump-35"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/hold_calibration/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 24,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "pump-36",
+          "pump-37",
+          "pump-38",
+          "pump-39",
+          "pump-40"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/linear_increment/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 6,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-18",
+          "pump-19",
+          "pump-20",
+          "pump-21",
+          "pump-22",
+          "pump-23"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/linear_increment/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 12,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-24",
+          "pump-25",
+          "pump-26",
+          "pump-27",
+          "pump-28",
+          "pump-29"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/linear_increment/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 18,
+        "validation_groups_count": 6,
+        "validation_groups": [
+          "pump-30",
+          "pump-31",
+          "pump-32",
+          "pump-33",
+          "pump-34",
+          "pump-35"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/linear_increment/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 24,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "pump-36",
+          "pump-37",
+          "pump-38",
+          "pump-39",
+          "pump-40"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "The response is calibrated instrument full-scale magnitude on held pump matrices. Flexible regression beats the compact increments; no inference about quantum noise or universal scattering constraints is established."
+}

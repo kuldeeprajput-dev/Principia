@@ -1,0 +1,55 @@
+{
+  "name": "dc_invariant_harmonic",
+  "formula": "offset+(1+2*cos(omega*.005))*y0-(1+2*cos(omega*.005))*y1+y2",
+  "hypothesis": "Development evidence available before this fit: effective_harmonic: MAE 0.222198, worst group 0.400385.\n\nThe effective harmonic has substantial positive bias. Test a distinct calibration explanation: initial-window centering is phase-dependent, so enforce exact invariance to a constant voltageoffset through a third-order harmonic-plus-DC recurrence.",
+  "inputs": [
+    "y0",
+    "y1",
+    "y2",
+    "y3",
+    "offset",
+    "t"
+  ],
+  "recorded_utc": "2026-10-02T02:19:30.262061+00:00",
+  "parent": "attempt-001",
+  "parameters": {
+    "omega": 205.5491249811036
+  },
+  "training_groups": [
+    "data1145n",
+    "data1146n",
+    "data1147n",
+    "data1148n",
+    "data1149n",
+    "data1150n",
+    "data1151n",
+    "data1152n",
+    "data1154n",
+    "data1155n",
+    "data1156n",
+    "data1157n",
+    "data1158n",
+    "data1159n",
+    "data1160n",
+    "data1161n",
+    "data1162n",
+    "data1163n",
+    "data1164n",
+    "data1165n",
+    "data1166n",
+    "data1167n",
+    "data1169n",
+    "data1170n",
+    "data1172n"
+  ],
+  "training_rows": 2325,
+  "optimizer_success": true,
+  "nfev": 4,
+  "jacobian_condition": 1.0,
+  "bounds": {
+    "omega": [
+      30,
+      700
+    ]
+  }
+}

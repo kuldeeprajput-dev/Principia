@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-028",
+  "findings": [
+    {
+      "finding_id": "P100-028-F01",
+      "classification": "validated_extension",
+      "claim": "A small calibrated response model extrapolates off-diagonal USB magnitudes to the reserved higher pump settings better than holding the last calibration value.",
+      "equation": "Six-term calibrated equation in rules.json; low/high calibration amplitudes, normalizedpumpincrement,separation and zeropumpresponse.",
+      "evidence": "Tenheldpumpmatrices,1560edges:MAE3.758e-5fsu versus hold6.691e-5 and linear4.034e-5.",
+      "known_prior_art": "Calibrated low-orderresponse modeling is established; this is a small numericalforecast gain,notnewcoupled-modephysics.",
+      "falsification": "Singleinstrument/day andnativefsu response; no universal transfer or quantumfidelity claim.",
+      "scope": "Explicitthreeconditioncalibrationperdirectedmodepair.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-028-F02",
+      "classification": "informative_falsification",
+      "claim": "The tested shared saturation, coherent-rotation and pump-loss mechanisms do not yield a superior transferable amplitude predictor.",
+      "equation": "Five mechanisticcandidatefamilies are recorded in rules.json.",
+      "evidence": "None beats the flexiblecontrol on development; correspondingreservedMAEs are about4.11e-5fsu.",
+      "known_prior_art": "The sourcepaper already derives and tests inverseparametricdesign; these restrictedamplitudeonlysurrogates do not reproduce its fullcomplexmodel.",
+      "falsification": "Failure of these reductions doesnot falsify coherentmicrowavephysics.",
+      "scope": "Magnitudeonlyresponse losesphaseinformation andmustnotidentifyauniquemechanism.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-028-F03",
+      "classification": "unsupported",
+      "claim": "These native-amplitude results establish passivity, reciprocity or an improved quantum-operation fidelity.",
+      "equation": null,
+      "evidence": "NativeUSB isinstrumentfull-scalecomplexresponse,notindependentlynormalizedSparameters; phaseisdiscardedbythedefinedendpoint.",
+      "known_prior_art": "Fullscatteringnormalizationandcomplexphaseare required for suchclaims.",
+      "falsification": "Requiredmeasurementcontract isabsentfromthisreducedtask.",
+      "scope": "No quantumperformanceadmission.",
+      "admission": "unsupported"
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted analysis; not independent experimental replication or human expert adjudication."
+}

@@ -1,0 +1,15 @@
+{
+  "features": [
+    "up",
+    "down",
+    "decay"
+  ],
+  "offset": "l3",
+  "clip": [
+    0,
+    100000000
+  ],
+  "equation": "nextcount=lag3+aU*max(lag1-lag3,0)+aD*min(lag1-lag3,0)+b*(lag3-lag6)",
+  "case": 19,
+  "type": "linear"
+}

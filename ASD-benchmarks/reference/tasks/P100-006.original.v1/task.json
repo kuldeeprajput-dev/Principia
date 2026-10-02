@@ -1,0 +1,136 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-006.original.v1",
+  "case_id": "P100-006",
+  "case_number": 6,
+  "family": "original",
+  "protocol_version": "P100-006-asd6-native-v1",
+  "cohort_id": "P100-006.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-006.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/06_physics_nist_rydberg_rf_sensing",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Ion-readout amplitude",
+  "target_units": "arbitrary units",
+  "error_units": "arbitrary units",
+  "primary_units": "arbitrary units",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "detuning_MHz",
+    "rabi_MHz"
+  ],
+  "input_units": {
+    "detuning_MHz": "MHz",
+    "rabi_MHz": "MHz"
+  },
+  "numeric_columns": [
+    "detuning_MHz",
+    "rabi_MHz"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Eight contiguous 30-condition Rabi blocks were used for leave-block-out development; blocks 06 and 09 were reserved. Frequencies and nearby Rabi coordinates are dependent. The task covers only the fixed \u00b160 MHz spectral neighborhood on one cesium cell.",
+  "calibration": "None. Inputdetuning/Rabi only. Fixed43D5/2 neighborhood abs(detuning)<=60MHz.",
+  "independent_unit": "Entire contiguous probe-Rabi blocks; one vapor cell. No independent atomic-cell replication.",
+  "evaluation_groups": [
+    "rabi-block-06",
+    "rabi-block-09"
+  ],
+  "assigned_rows": 4800,
+  "eligible_rows": 4800,
+  "baseline_models": [
+    "reference",
+    "baseline_atom_domain",
+    "baseline_constant",
+    "baseline_flex6",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "atom_asym; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_atom_domain": {
+      "equation": "atom_domain; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_constant": {
+      "equation": "constant; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flex6": {
+      "equation": "flex6; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "atom_double; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "atom_asym; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "atom_saturatingline; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "atom_powerwidth; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "atom_saturate; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report individual top-level groups and their range; no row-bootstrap population inference."
+  },
+  "scope_limits": "Entire contiguous probe-Rabi blocks; one vapor cell. No independent atomic-cell replication.; The asymmetric dual-response equation improves prediction on two reserved contiguous Rabi blocks compared with the single-line and polynomial controls. Its practical contribution is a scoped response surrogate with explicit uncertainty about mechanism, not a new atomic law.; No independent population confidence interval from dependent rows.",
+  "source_url": "https://data.nist.gov/od/id/mds2-3951",
+  "source_license": "NIST public data license",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"historical\": \"Internal confirmation reserved until FREEZE.json; schema-stage exposures documented in SOURCE_AND_UNITS.md.\", \"current\": \"All confirmation outcomes exposed to future users.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "61a7606b9f65134079d378d4d91a83586c085ed28731b43b820fce57c29e8adc",
+  "observations_sha256": "392094decfc6a6f2992b04e8111e15bb025e9ba4c4aa0b00505b5b8e1e8d2a42",
+  "legacy_protocol_sha256": "e655615bceb51cbb100911bc692861e52d798de2fa35fb2e19041e41f79a97d2",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

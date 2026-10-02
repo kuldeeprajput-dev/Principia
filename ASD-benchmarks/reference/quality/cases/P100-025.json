@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-025",
+  "title": "Operando XAS and battery electrochemistry",
+  "default_task": "P100-025.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "raw measured FeK-edge \u03bc(E)",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 13,
+    "independent_unit_description": "Complete three-acquisitionblock linked to the source3\u00d7binnedrepresentation; oneLFPcycleonly. Fivecontiguouschronologicaldevelopmentfolds holdout wholeblocks, withfuturedevelopmentsegments allowed for thisretrospectivecompressiontask.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Each spectrum contributes only7000\u20137050eV and7250\u20137300eV bandmeans. SuppliedmeasuredFePO4/LiFePO4references are normalized identically. Targetband7070\u20137200eV is withheld.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "raw measured FeK-edge \u03bc(E)",
+    "prediction_time": "Retrospective spectral-shape reconstruction after pre/post-edge calibration bands and experimental segment durations are known. This is not an online state-of-charge forecast.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Spectral prediction is not identification of physical phase fractions."
+  },
+  "task_ids": [
+    "P100-025.original.v1"
+  ],
+  "finding_ids": [
+    "P100-025-F01",
+    "P100-025-F02",
+    "P100-025-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-025/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-025.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate raw measured FeK-edge \u03bc(E) under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Retrospective spectral-shape reconstruction after pre/post-edge calibration bands and experimental segment durations are known. This is not an online state-of-charge forecast.",
+    "calibration_requirement": "Each spectrum contributes only7000\u20137050eV and7250\u20137300eV bandmeans. SuppliedmeasuredFePO4/LiFePO4references are normalized identically. Targetband7070\u20137200eV is withheld.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "raw measured FeK-edge \u03bc(E) in dimensionless \u03bc(E)",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Spectral prediction is not identification of physical phase fractions."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "dimensionless \u03bc(E)",
+    "reference_model": "reference",
+    "reference_primary_error": 0.06130178714352316,
+    "reference_physical_mae": 0.06130178714352316,
+    "physical_error_units": "dimensionless \u03bc(E)",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.06130178714352316,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-025.original.v1/evidence/metrics.csv",
+      "bytes": 1487,
+      "sha256": "9ecf1a82419167ffe6b82ebe0070b8cda7ce5750fded6741a5938babe4a88e69"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Spectral prediction is not identification of physical phase fractions."
+}

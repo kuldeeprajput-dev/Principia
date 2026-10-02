@@ -1,0 +1,52 @@
+{
+  "name": "parametric_drive_closure",
+  "formula": "offset+b0+b1*y0+b2*y1+b3*y0*sin(2*3.141592653589793*32*t)+b4*y0*cos(2*3.141592653589793*32*t)",
+  "hypothesis": "Development evidence available before this fit: duffing_delay_closure: MAE 0.188062, worst group 0.43015; quadratic_drag_closure: MAE 0.18744, worst group 0.42435.\n\nTest whether the known32Hz drive modulates response beyond autonomous delay dynamics. Both sine and cosine quadratures are allowed, but a shared clock-phase relation must transfer across entire acquiredtraces.",
+  "inputs": [
+    "y0",
+    "y1",
+    "y2",
+    "y3",
+    "offset",
+    "t"
+  ],
+  "recorded_utc": "2026-10-02T02:19:35.627480+00:00",
+  "parent": "attempt-004",
+  "parameters": {
+    "b0": -0.22154065019558486,
+    "b1": 1.211271148021272,
+    "b2": -0.9269882539380421,
+    "b3": -0.10973142333905449,
+    "b4": 0.2356573980103669
+  },
+  "training_groups": [
+    "data1145n",
+    "data1146n",
+    "data1147n",
+    "data1148n",
+    "data1149n",
+    "data1150n",
+    "data1151n",
+    "data1152n",
+    "data1154n",
+    "data1155n",
+    "data1156n",
+    "data1157n",
+    "data1158n",
+    "data1159n",
+    "data1160n",
+    "data1161n",
+    "data1162n",
+    "data1163n",
+    "data1164n",
+    "data1165n",
+    "data1166n",
+    "data1167n",
+    "data1169n",
+    "data1170n",
+    "data1172n"
+  ],
+  "training_rows": 2325,
+  "fit_method": "weighted linear least squares",
+  "condition": 3.251463145994279
+}

@@ -1,0 +1,238 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-083",
+  "claim_origin": "Curator index of existing retained findings; review judgments remain separate. No new discovery claim added.",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "exposed"
+  },
+  "findings": [
+    {
+      "id": "P100-083-SCI-01",
+      "classification": "predictive_reference",
+      "source_classification": "numerical_control",
+      "statement": "A compact one-hour temperature predictor modestly improves persistence but does not outperform the residual kernel or identify thermoregulation.",
+      "applicability": "Forward date blocks at five calibrated sensor streams from one apiary; species, season and colony/sensor placement covary.",
+      "limitations": "Second Apis stream worsens against persistence; negative ambient-gradient coefficient cannot be interpreted as positive passive conductance .35.72 Cderived coefficient combination is not a measured brood setpoint.",
+      "falsification": [
+        "Require one-hour native lag and target matching within the declared five-minute tolerance, without future weather/interpolation.",
+        "Report each sensor stream and season; do not treat streams as independent apiaries.",
+        "Challenge claimed conductance signs and brood-setpoint interpretation against measured interventions."
+      ],
+      "prior_art": "Thermal response and autoregressive forecasting are known; no new bee-regulation mechanism established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "target": "degC",
+        "stream": "calibrated sensor label",
+        "T_now": "degC",
+        "T_lag": "degC,causal lag1h",
+        "T_external": "degC,current",
+        "RH_external": "percent,current",
+        "hour_sin": "dimensionless source-clock phase",
+        "hour_cos": "dimensionless source-clock phase"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-083.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-083-SCI-02",
+      "classification": "falsified",
+      "source_classification": "unsupported_or_falsified",
+      "statement": "A physically signed passive-temperature competitor is falsified as the strongest forecast.",
+      "applicability": "Forward date blocks at five calibrated sensor streams from one apiary; species, season and colony/sensor placement covary.",
+      "limitations": "Development RMSE.19148704 C vs .16096145 C flexible; evaporation coefficient reaches zero, and ambient-level ablation improves the model. Conductance and behavioral heat regulation remain unidentifiable.",
+      "falsification": [
+        "Require one-hour native lag and target matching within the declared five-minute tolerance, without future weather/interpolation.",
+        "Report each sensor stream and season; do not treat streams as independent apiaries.",
+        "Challenge claimed conductance signs and brood-setpoint interpretation against measured interventions."
+      ],
+      "prior_art": "Thermal response and autoregressive forecasting are known; no new bee-regulation mechanism established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E005",
+          "E006"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "scope": "See bound equations/source audit; no substitute units are invented"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006"
+      ],
+      "task_id": null,
+      "task_family": "continuation",
+      "task_version_history": "2026-09-30 first continuation"
+    },
+    {
+      "id": "P100-083-SCI-03",
+      "classification": "falsified",
+      "source_classification": "unsupported_or_falsified",
+      "statement": "Weather-increment forecasting remains weaker than the flexible control; physical sign constraints are informative falsifiers.",
+      "applicability": "Forward date blocks at five calibrated sensor streams from one apiary; species, season and colony/sensor placement covary.",
+      "limitations": "Only 2/15 blocks improve. A known ARX forecast is not an identified heat-balance or colony-health rule.",
+      "falsification": [
+        "Require one-hour native lag and target matching within the declared five-minute tolerance, without future weather/interpolation.",
+        "Report each sensor stream and season; do not treat streams as independent apiaries.",
+        "Challenge claimed conductance signs and brood-setpoint interpretation against measured interventions."
+      ],
+      "prior_art": "Thermal response and autoregressive forecasting are known; no new bee-regulation mechanism established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "That_next=T_now+a*(T_now-T_lag)+b*(Text-Text_lag)+c_stream+d*sin(hour)+e*cos(hour),0<=a,b<=1.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E007",
+          "E008",
+          "E009",
+          "E010"
+        ]
+      },
+      "variables_and_units": {
+        "target": "degree C",
+        "T_now": "degC",
+        "T_lag": "degC,causal lag1h",
+        "T_external": "degC,current",
+        "T_external_lag": "degC, causal lag 1 h",
+        "RH_external": "percent,current",
+        "hour_sin": "dimensionless source-clock phase",
+        "hour_cos": "dimensionless source-clock phase",
+        "stream": "calibrated sensor label"
+      },
+      "evidence_ids": [
+        "E007",
+        "E008",
+        "E009",
+        "E010"
+      ],
+      "task_id": "P100-083.round2.v1",
+      "task_family": "round2",
+      "task_version_history": "2026-09-30 second continuation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "id": "E001",
+      "role": "original scientific description",
+      "path": "evidence/E001_FINDINGS.md",
+      "bytes": 4459,
+      "sha256": "ed0bca7201fbc9b6430d48d4f6311d9b55004e837607ebe43af382b004c4f4a6"
+    },
+    {
+      "id": "E002",
+      "role": "original frozen model state",
+      "path": "evidence/E002_rules.json",
+      "bytes": 64383,
+      "sha256": "9d35c82a5dfbf98eeaf508d7433bffb2e93530b2971f3b4a267ff33ebfe45bd5"
+    },
+    {
+      "id": "E003",
+      "role": "original numerical comparison",
+      "path": "evidence/E003_metrics.csv",
+      "bytes": 522,
+      "sha256": "04755463005d922909b6d8e59d03a7c556abf71124d122f2a62dcf36735d2635"
+    },
+    {
+      "id": "E004",
+      "role": "original grouped errors",
+      "path": "evidence/E004_by_group.csv",
+      "bytes": 3206,
+      "sha256": "04c19060a84133c7ccc9327adbf08316f6d14495db2da8f02ed46b809d00e12f"
+    },
+    {
+      "id": "E005",
+      "role": "first continuation scientific account",
+      "path": "evidence/E005_FINDINGS.md",
+      "bytes": 5891,
+      "sha256": "92846a5ba414b4d87586fa191b8308491fe8fb4fd745229d169b7f303b019772"
+    },
+    {
+      "id": "E006",
+      "role": "first continuation task contract",
+      "path": "evidence/E006_PROTOCOL.json",
+      "bytes": 4130,
+      "sha256": "c20b59df12f30bb99b0b2f97b2d8a8361ccc7264916eba4a9af6a89dc327c8dc"
+    },
+    {
+      "id": "E007",
+      "role": "latest scientific account",
+      "path": "evidence/E007_FINDINGS.md",
+      "bytes": 2543,
+      "sha256": "f73dac5c76b79cda31dfd27e491a77c94342b51e03cca49d2a011ef1e1e7b75a"
+    },
+    {
+      "id": "E008",
+      "role": "latest task protocol",
+      "path": "evidence/E008_PROTOCOL.json",
+      "bytes": 8028,
+      "sha256": "4d5f094e0510fbbe3f9688c567e8cef94a598b46d1554b1ed0861604e163e820"
+    },
+    {
+      "id": "E009",
+      "role": "latest development comparison",
+      "path": "evidence/E009_COMPARISON.csv",
+      "bytes": 2567,
+      "sha256": "97f39a4e93d57ecc5bd81a610ab67f5bed342bb93780260c47035eef3011bf4f"
+    },
+    {
+      "id": "E010",
+      "role": "latest development grouped errors",
+      "path": "evidence/E010_BY_GROUP.csv",
+      "bytes": 12722,
+      "sha256": "72e1ec1891bf195d69fb56268a60f64d2c015650eb7851325cf6d3a64d52c1b9"
+    },
+    {
+      "id": "E011",
+      "role": "retained competing frozen model/fold states",
+      "path": "evidence/E011_states.json",
+      "bytes": 393333,
+      "sha256": "247cdaf490dcd4be6f988504e2fd3e2b9b9f2c3c6e6fc6ea3e3a2ae280278b07"
+    },
+    {
+      "id": "E012",
+      "role": "retained cross-case scientific context and selected-model clarification",
+      "path": "evidence/E012_ASD_REASSESSMENT_15_ROUND2.md",
+      "bytes": 30458,
+      "sha256": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253"
+    },
+    {
+      "id": "E013",
+      "role": "retained cross-case scientific context and selected-model clarification",
+      "path": "evidence/E013_ASD_CONTINUATION_15_ROUND2.md",
+      "bytes": 18283,
+      "sha256": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078"
+    },
+    {
+      "id": "SCIENTIFIC",
+      "role": "Independent scientific review before schema adaptation",
+      "path": "evidence/SCIENTIFIC.json",
+      "bytes": 20884,
+      "sha256": "be82cceea1532f0482412b4c32357381e5892347be479f970826d45b997622e1"
+    },
+    {
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational portfolio review",
+      "path": "evidence/COMPUTATIONAL.json",
+      "bytes": 125684,
+      "sha256": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-091.original.v1",
+  "case_id": "P100-091",
+  "case_number": 91,
+  "family": "original",
+  "protocol_version": "P100-091-asd5-native-v1",
+  "cohort_id": "P100-091.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-091.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/91_communications_private_5g",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Mean UDP trial one-way end-to-end latency",
+  "target_units": "ms",
+  "error_units": "ms",
+  "primary_units": "ms",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "offered_Mbps",
+    "achieved_Mbps"
+  ],
+  "input_units": {
+    "offered_Mbps": "Mbit/s, configured target",
+    "achieved_Mbps": "Mbit/s, same-run server report"
+  },
+  "numeric_columns": [
+    "offered_Mbps",
+    "achieved_Mbps"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Conditional reconstruction after a60-second run. Same-run achieved throughput is permitted; all latency-derived fields, NetPwr, loss, jitter, current location targets and future TCP calibration are forbidden. Not a prospective offered-load forecast.",
+  "calibration": "No held-out location latency calibration. Six global offered-rate offsets and shared slope are fitted on development locations only.",
+  "independent_unit": "Complete measurement location; all offered rates and repetitions linked. Locations share one network installation.",
+  "evaluation_groups": [
+    "Q4",
+    "Q5"
+  ],
+  "assigned_rows": 60,
+  "eligible_rows": 60,
+  "baseline_models": [
+    "reference",
+    "baseline_achieved",
+    "baseline_constant",
+    "baseline_offered",
+    "baseline_queue",
+    "baseline_rbf",
+    "attempt-001",
+    "attempt-002",
+    "attempt-003",
+    "attempt-004",
+    "attempt-005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Lhat=max(0,c[a]+k*(a-b)/500), a in {1,10,50,100,200,500} Mbps; a-b is NOT packet loss",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_achieved": {
+      "equation": "Lhat=max(0,c0+c1*b/500)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_constant": {
+      "equation": "Lhat=c0",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_offered": {
+      "equation": "Lhat=max(0,c0+c1*a/500)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_queue": {
+      "equation": "Lhat=L0+beta*b+theta/(C-b), C>=600 Mbps; unidentified pole is a regularized empirical control",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rbf": {
+      "equation": "Lhat=max(0,mu+sum_j alpha_j exp(-||[a,b]/500-z_j||^2/(2 h^2)))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-001": {
+      "equation": "Lhat=max(0,c0+c1*b/500+c2*(a-b)/500)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-002": {
+      "equation": "Lhat=c[a], a in {1,10,50,100,200,500} Mbps",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-003": {
+      "equation": "Lhat=max(0,c[a]+k*(a-b)/500), a in {1,10,50,100,200,500} Mbps; a-b is NOT packet loss",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-004": {
+      "equation": "Lhat=max(0,c0+c1*b/500+c2*max(a/500-0.4,0))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-005": {
+      "equation": "Lhat=c[a], c[1]<=c[10]<=c[50]<=c[100]<=c[200]<=c[500]",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report both held-out locations and tail errors. Two locations do not support precise population confidence intervals. Source-rate rounding sensitivity is diagnostic, not a predictive interval."
+  },
+  "scope_limits": "Q4/Q5 within the same seven-location installation; six offered rates1,10,50,100,200,500Mbit/s. No unseen offered-rate extrapolation, hardware transfer, pure radio latency or intervention claim.",
+  "source_url": "https://researchdata.tuwien.ac.at/records/hja53-s8y18",
+  "source_license": "CC BY4.0 data and documentation; MIT source code",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware study; Q1 repetition1 at1 and100Mbit/s inspected for parser semantics; Q1 assigned development. Source paper results inspected. Other confirmation outcomes unscored until freeze. Internal confirmation was opened only after FREEZE.json. All targets now exposed; future benchmark scoring is retrospective.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "2f3c1fa8e550dc862218fcf82ae81f7423800cb13500cc563410edd083608d35",
+  "observations_sha256": "e49716eafa126c16d1c6185cddcec4d094ba33a4d40c4ff3de2e6d046b3ecb9b",
+  "legacy_protocol_sha256": "f5fb5ee3692ffa6195009af5e28f1afb2b3190c6c91ec9dbdcd70e9744929818",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd5-diagnostics/1.0"
+}

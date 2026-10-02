@@ -1,0 +1,40 @@
+{
+  "target": "Twenty-first integer sequence term on the inverse-hyperbolic-sine scale",
+  "target_units": "asinh(integer term)",
+  "metric_kind": "mae",
+  "independent_unit": "Canonical affine-normalized sixteen-term prefix family; semantic relationships not exhaustively known",
+  "timing_contract": "Only first16 terms and horizon5 supplied; names, OEIS IDs and published formulas are forbidden predictors.",
+  "calibration": "Sixteen observed prefix terms per sequence, including confirmation sequences; no suffix term used in rules.",
+  "scope_limits": "Hash-selected finite-range OEIS reference challenge, not mathematical proof or new sequence discovery. Affine prefix aliases linked; other semantic dependence remains. Finite continuations never uniquely determine a law.",
+  "split": "Canonical prefix-family hash modulo5==0 confirmation; three development hash folds",
+  "question": "When can compact exact arithmetic hypotheses extrapolate a prefix, and where do they fail?",
+  "case_id": "P100-001",
+  "error_units": "asinh(integer term)",
+  "source_url": "https://oeis.org/wiki/Download",
+  "source_license": "CC BY-SA 4.0",
+  "exposure": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+  "uncertainty_policy": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics.",
+  "selection": "Lowest development mean-group MAE, simpler model on relative1% tie. Exact mathematical algorithm baselines do not claim novel accuracy. Retain every attempt and compare named strong controls.",
+  "stopping": "At least5distinct scientific attempts; continue while a justified distinct mechanism yields prediction/robustness/interpretation gain; stop after2consecutive substantive no-gain attempts after minimum5.",
+  "created_utc": "2026-10-02T01:37:41.583048+00:00",
+  "before_first_fit": true,
+  "permitted_inputs": [
+    "prefix_json",
+    "horizon"
+  ],
+  "input_units": {
+    "prefix_json": "JSON array of 16 exact integer terms",
+    "horizon": "sequence steps (fixed 5)"
+  },
+  "numeric_columns": [
+    "horizon"
+  ],
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "nonnegative_prediction": false,
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0"
+}

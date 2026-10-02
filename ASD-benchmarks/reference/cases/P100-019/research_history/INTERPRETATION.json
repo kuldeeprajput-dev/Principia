@@ -1,0 +1,30 @@
+{
+  "title": "Complaint workload: a two-timescale reporting reference",
+  "summary": "A compact blend of recent and slower reporting histories improves reserved-month complaint-count prediction over matched simple and flexible controls. It predicts administrative workload within known vehicle groups, not defect risk or mechanical reliability.",
+  "data": "NHTSA2025\u20132026 public vehicle complaints are deduplicated byODINO andmake/model across componentrecords. The434vehicle cohorts have at leastsix received complaints inJan\u2013Jun2025, fixedbeforealltargetmonths. DevelopmentJul2025\u2013Apr2026 uses4340cohort-monthrows; confirmationMay\u2013Jul2026 uses1302rows inthreecomplete months. Zero counts retained.",
+  "equations": "Let L1 be lastmonth count and L3,L6 trailingthree/sixmonthly means. Selected count_hat=clip[L3+a(L1-L3)+b(L3-L6),0,1e8], a=0.5971048228619386, b=-0.36844397185306554. The final fitted form equals approximately0.5971L1+0.03445L3+0.36844L6. These are fitted descriptive memoryweights, not a universal reporting or failure-rate kernel.",
+  "performance": "Confirmation MAE3.511835complaints pervehicle/month versuspersistence3.652842,trailing3=3.769585,trailing6=4.075269,flexible3.772170 andconstant15.648246. Worstheldmonth3.742832. Several morecomplex unselectedattempts scorebetter retrospectively; they remain unselected. Three adjacent months do not justify narrow population confidence intervals.",
+  "value": "Useful for comparing simple interpretable administrative workload forecasts under whole-month validation. The data have no vehicle fleet-at-risk denominator or measured defect incidence. Reporting propensity and revised productlabels prevent causal recall or reliability conclusions; actual staffing/industrial savings were not tested.",
+  "lessons": "Use receiveddate ratherthanincidentdate for workload. Deduplicate component-expandedODINOrows. Establish eligible productcohorts using a pre-target period, retain zerocountmonths, and separate calendar-causal extraction from revised-source availability. Parsimony canchoose a near-bestmodel while unselectedcomplexmodels remainvisible.",
+  "findings": [
+    {
+      "classification": "validated_extension",
+      "admission": "partially_supported",
+      "claim": "A compact two-timescale reporting-history blend improves mean reserved-month count error over the frozen matched controls.",
+      "equation": "count_hat=L3+a(L1-L3)+b(L3-L6),withnonnegativeclipping.",
+      "interpretation": "Recent observations and a slow historical level capture persistence with transient reporting variation. The final weights are approximatelyconvex, but their mechanism and crossperiodstability are notidentified.",
+      "falsification": "Onlythreeheldmonths, knowncohorts and retrospectivelyrevised labels. Other unselectedstatescanbetterthisparticularconfirmation; no industrialcostbenefitdemonstrated."
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "The campaign doesnot identify a unique nonlinear reporting-burst law or a vehicle defect-rate relationship.",
+      "equation": "Asymmetric003,variance-stabilized004/005 androbust006 remaintraceable.",
+      "interpretation": "Square-root stabilization modestlyimproves developmentmean butdoesnot displace simpler002underpredeclared1percentcomplexityrule.",
+      "falsification": "No population vehicleexposure,verifiedfailuretarget or causal recallintervention. A complaint count is not failureprobability."
+    }
+  ],
+  "unresolved": [
+    "Source-aware exposed outcomes; no independent experimental replication or definitive novelty adjudication."
+  ]
+}

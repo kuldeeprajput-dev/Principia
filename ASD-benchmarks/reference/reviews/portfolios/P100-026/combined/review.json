@@ -1,0 +1,616 @@
+{
+  "schema_version": "principia.advisory-review/3.0",
+  "bindings": {
+    "claims_sha256": "fca8255bc561d5e100d2bceea263c1110fdb2172524bf60f4663d4f9141e1784",
+    "evidence_sha256": {
+      "E001": "8c38dc28319eed973c34bb031ff80ebe8edadfb63d6080dc9e2bb8cabb88cbb8",
+      "E002": "d4e568bf996e5f2c25e2b8ae0df2630097552dbce6b875cc0d6cfc95e1c02b75",
+      "E003": "7535a6a06ff7d4d3352cfc40897d013a2c176ea3fa030b0c9e2c7961aa6826d9",
+      "E004": "1e1b4f115525e28e0ac4bb416e897ae6e01e56f9fc42da700e653cb82b4510c7",
+      "E005": "d64192c7ff16b4b52991db50e114009e4631b069a06fa62712886c66d1f96293",
+      "E006": "9239061460879dbd6fe5ff723cb2259f82b10103d575a9eb2243ee14374b6006",
+      "E007": "01fc8df778887e6ad28e6acad63d603bf323ba960fbadfab1ce7ba01123ca81d",
+      "E008": "d6486c77894cc59ed8438dda7061ed2ee853ece2fc96ecfae9e864b4d457790a",
+      "E009": "aab66a22ad5d3e7858dfc6f16f641ede27f075ee5531b7ad66bca7944f514088",
+      "E010": "a41f8253dcd9e6031ceb049c044a2541eeab15750080bb87922d4f76fdf39f96",
+      "E011": "a021bb061db190e13441203bbffc3b9eba6fed72d14ffee16051e4b57a042609",
+      "E012": "88b8d6ab55d35ecef950bb1872ae1c07617dbc207a5762eb5a391f0adc9814fc",
+      "E013": "93db9f979dba5d4cac5513d417ded10e35860fe66453f6c7dad2405488c56b8e",
+      "E014": "4a8674a70cea42a047f00a416a9b5ed1c8054f1c943613d6bca542695e8d7c43",
+      "E015": "f89e241aef810a356e768c99ee91b31f31b0c27f3b31edd47b6a9520060783c3",
+      "COMPUTATIONAL": "e28246ce66c4c48a1fafa1de0d7d4c17d0c5d9f83ad43ff0c144db6df2416ddb",
+      "SCIENTIFIC_CRITICAL": "2be3e40d73f28f750deef7ad10ca70418ea4d2d06fa2d6517a58e42899501c8d"
+    },
+    "case_id": "P100-026",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "reviews": [
+    {
+      "finding_id": "P100-026-F01",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-026-F01",
+        "disposition": "partially_supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Exact frozen numerical evidence reproduces, including losing controls; this verifies computation, not universal interpretation.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No literature-priority adjudication in this computational review.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Reusable scoped benchmark comparison. Complete reactor run. Diagnostic forecast after 300 min with fixed prefix calibration; no future conversion/selectivity predictors.; A two-parameter, causal prefix-conditioned forecast improves persistence and straight-line continuation on two reserved reactor runs. It loses to the flexible control and several other frozen candidates, so evidence supports useful short-horizon calibration rather than a superior or universal kinetic law.; No independent population confidence interval from dependent rows.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Native-source reconstruction and every saved model/metric passed independent computation.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent deployed intervention/cost/safety outcome was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          }
+        },
+        "checks": [
+          "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+          "All top-level groups disjoint across development and confirmation",
+          "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+          "Independently recomputed equal-group physical-unit MAE for every model",
+          "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+        ],
+        "limitations": [
+          "Complete reactor run. Diagnostic forecast after 300 min with fixed prefix calibration; no future conversion/selectivity predictors.; A two-parameter, causal prefix-conditioned forecast improves persistence and straight-line continuation on two reserved reactor runs. It loses to the flexible control and several other frozen candidates, so evidence supports useful short-horizon calibration rather than a superior or universal kinetic law.; No independent population confidence interval from dependent rows."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-026-F01",
+        "disposition": "partially_supported",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "Causal 300-minute calibration improves held-run MAE to 1.43487281 percentage points versus hold 5.47826699 and linear 7.79773109, but flexible control is better at 1.21103522. Two reserved runs only.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Relaxation plus drift is compatible with induction but selectivity alone does not identify silver oxidation state, acid/metal pathways, or intermediates.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is validated_extension.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Potential short-horizon monitoring after a substantial per-run calibration budget, with gain over naive continuation but no best-model claim.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          }
+        },
+        "checks": [
+          "Checked 120\u2013300-minute slope/anchor calibration, 300\u20131500-minute score window, whole-run duplicate linkage, supplied selectivity rather than closure, and frozen-reference versus flexible/candidate results."
+        ],
+        "limitations": [
+          "Only eight source runs, six development and two confirmation; condition changes are not independent reactor replications.",
+          "Per-run target prefix and slope are explicitly available; not cold-start catalyst prediction.",
+          "Later better confirmation candidates remain diagnostic; temperature omitted because metadata do not identify it across all runs."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-026-F02",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "reliability",
+        "mechanism",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-026-F02",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Exact frozen numerical evidence reproduces, including losing controls; this verifies computation, not universal interpretation.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No literature-priority adjudication in this computational review.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Reusable scoped benchmark comparison. Complete reactor run. Diagnostic forecast after 300 min with fixed prefix calibration; no future conversion/selectivity predictors.; A two-parameter, causal prefix-conditioned forecast improves persistence and straight-line continuation on two reserved reactor runs. It loses to the flexible control and several other frozen candidates, so evidence supports useful short-horizon calibration rather than a superior or universal kinetic law.; No independent population confidence interval from dependent rows.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Native-source reconstruction and every saved model/metric passed independent computation.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent deployed intervention/cost/safety outcome was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          }
+        },
+        "checks": [
+          "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+          "All top-level groups disjoint across development and confirmation",
+          "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+          "Independently recomputed equal-group physical-unit MAE for every model",
+          "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+        ],
+        "limitations": [
+          "Complete reactor run. Diagnostic forecast after 300 min with fixed prefix calibration; no future conversion/selectivity predictors.; A two-parameter, causal prefix-conditioned forecast improves persistence and straight-line continuation on two reserved reactor runs. It loses to the flexible control and several other frozen candidates, so evidence supports useful short-horizon calibration rather than a superior or universal kinetic law.; No independent population confidence interval from dependent rows."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-026-F02",
+        "disposition": "partially_supported",
+        "dimensions": {
+          "reliability": {
+            "status": "partially_supported",
+            "rationale": "A 20000-minute upper-bound second timescale under a 1500-minute window is evidence of weak practical identification. A boundary fit alone does not prove structural nonidentifiability; the wording should remain local and practical.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "Long-timescale relaxation approaches a drift term on a short observation window; useful asymptotic simplification, not an identified extra reaction pathway.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is informative_falsification.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Simplification of a weakly constrained timescale reduces mechanistic overinterpretation; no independent chemical discovery.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015"
+            ]
+          }
+        },
+        "checks": [
+          "Checked 120\u2013300-minute slope/anchor calibration, 300\u20131500-minute score window, whole-run duplicate linkage, supplied selectivity rather than closure, and frozen-reference versus flexible/candidate results."
+        ],
+        "limitations": [
+          "Only eight source runs, six development and two confirmation; condition changes are not independent reactor replications.",
+          "Per-run target prefix and slope are explicitly available; not cold-start catalyst prediction.",
+          "Later better confirmation candidates remain diagnostic; temperature omitted because metadata do not identify it across all runs."
+        ]
+      }
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "novelty_is_not_certified": true
+}

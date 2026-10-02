@@ -1,0 +1,292 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-089",
+  "claim_origin": "New ASD6 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication."
+  },
+  "findings": [
+    {
+      "id": "P100-089-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "Context and causal choice history support a stronger bounded probability reference than expected value alone. This is useful for assessing new choice predictors with matched online information, not for ranking individual risk tolerance or making demographic decisions.",
+      "applicability": "All trial contexts for each person stay in one partition. The stored probability is an experimenter setting and may be hidden from the participant; this is an analyst forecast. Binary Choice is retained unchanged, with1 treated as the recorded risky-choice code; no separate codebook was supplied. Adult ages are unavailable; age_child uses an explicit adult sentinel. Histories reset at each protocol.",
+      "limitations": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "falsification": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "prior_art": "Lacombe et al., Frontiers2025, already report age-dependent context shifts, description/experience differences and exploration/framing hypotheses using binomial models. Expected utility, prospect weighting and logistic choice models are established. Better prediction cannot adjudicate a unique cognitive mechanism.",
+      "equation_or_program": {
+        "expression": "Pr(Choice=1 | available history) = 1 / (1 + exp(-beta dot phi)). Let r=reward/2, p=the experimenter-specified probability, a=child, m=multi-option context, v=explicit-description context, h=the previous-choice running mean minus0.5, and l=the immediately previous choice minus0.5. The ordered vector phi is (1,r,p,r*p,r^2,p^2,a,m,v,a*m,a*v,r*a,p*a,r*m,p*m,r*v,p*v,h,l,h*a,h*m,trial_progress). The intercept is -3.302904, and the h and l coefficients are 2.629934 and 1.308668. Child/adult and context interactions alter those effects; an isolated coefficient is not a causal effect. The frozen coefficients already undo training feature-RMS scaling, so the displayed vector is used directly without standardization. Adult age is not included in this selected model.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "binary choice",
+        "reward": "points",
+        "probability": "probability",
+        "child": "binary",
+        "age_child": "years; adult sentinel0",
+        "multi": "binary",
+        "description": "binary",
+        "trial_progress": "trial index/40",
+        "lag_choice": "binary or first-trial prior0.5",
+        "history_mean": "proportion or first-trial prior0.5",
+        "has_history": "binary"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-089.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-089-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "Compact prospect weighting does not explain the main predictive gain. Context and memory candidates improve the expected-utility comparison but do not beat the frozen flexible control. Correlated history columns in one candidate are regularized rather than mechanistically identifiable.",
+      "applicability": "All trial contexts for each person stay in one partition. The stored probability is an experimenter setting and may be hidden from the participant; this is an analyst forecast. Binary Choice is retained unchanged, with1 treated as the recorded risky-choice code; no separate codebook was supplied. Adult ages are unavailable; age_child uses an explicit adult sentinel. Histories reset at each protocol.",
+      "limitations": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "falsification": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "prior_art": "Lacombe et al., Frontiers2025, already report age-dependent context shifts, description/experience differences and exploration/framing hypotheses using binomial models. Expected utility, prospect weighting and logistic choice models are established. Better prediction cannot adjudicate a unique cognitive mechanism.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "binary choice",
+        "reward": "points",
+        "probability": "probability",
+        "child": "binary",
+        "age_child": "years; adult sentinel0",
+        "multi": "binary",
+        "description": "binary",
+        "trial_progress": "trial index/40",
+        "lag_choice": "binary or first-trial prior0.5",
+        "history_mean": "proportion or first-trial prior0.5",
+        "has_history": "binary"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-089.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 8955,
+      "sha256": "e69bc92ba7202c2f8ed027a639e26ce3565b189807ee63659661ed4eaf407c4c",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 614,
+      "sha256": "5ded03d355d28510ee087379fd2fd9c1e76bb8942c015a0949fe33e073f2429d",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 2036,
+      "sha256": "6332d6bae6ec7c1d7cf2d9e6297b09a275bdf03b85fbd2c2209da95547371bf4",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_SOURCE_AND_UNITS.md",
+      "bytes": 957,
+      "sha256": "928e6ef4259ca2a2f654c68347e8509c32f20c87a8c87c7d79afc4301dca903d",
+      "id": "E004",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E005_SOURCE_MANIFEST.json",
+      "bytes": 389,
+      "sha256": "057de6dcaaf2a6860a0788710e29154b5573a9815371d7ad364e5ab28d2d0fc2",
+      "id": "E005",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E006_SPLITS.json",
+      "bytes": 9190,
+      "sha256": "ce0436010ceb06cd9b97b53c08ef7230df2e9c41b70a950c20dff214467d476e",
+      "id": "E006",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E007_native.py",
+      "bytes": 1968,
+      "sha256": "b826b2ce01ec642fb7ef2a3da03eed13c79749dbb3395144344d21267557d435",
+      "id": "E007",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E008_EQUATIONS.md",
+      "bytes": 1960,
+      "sha256": "e12b58172a176a83d7a21cad39c157b75f9144b5e1d64c22693b2013abaec287",
+      "id": "E008",
+      "role": "package/EQUATIONS.md"
+    },
+    {
+      "path": "evidence/E009_FINDINGS.md",
+      "bytes": 5549,
+      "sha256": "f32436609deda6dafb885f973535df0fde43486dc9db0bbdf1eaf06485cee1bd",
+      "id": "E009",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E010_inputs.csv.gz",
+      "bytes": 68529,
+      "sha256": "3d5dfa7fba860f2b8dac8602628666fed284e1996a36965d442fabd83646bcaa",
+      "id": "E010",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E011_observations.csv.gz",
+      "bytes": 54031,
+      "sha256": "425397ac552366e65759c9a4ae7dad11ec23a0925e28d7eff6d2dd41c5c24d9e",
+      "id": "E011",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E012_by_group.csv",
+      "bytes": 17351,
+      "sha256": "cf1e83f7b976f9897f0d00aa73f2c282a4ec3851859a7bee46ba181e71f393cb",
+      "id": "E012",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E013_metrics.csv",
+      "bytes": 1013,
+      "sha256": "78e77b46961317f85d3190f8194ff1671d8af8b407c05a9636e89395d02fada1",
+      "id": "E013",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 320285,
+      "sha256": "3e53ddb11e8420b051b4496e9e3f2142a4123ea0f73d18bb22e59b996dc3b6e3",
+      "id": "E014",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_findings.json",
+      "bytes": 4746,
+      "sha256": "fcdfbebc05c4a6c8bf79d94cb5927ff92c41ef4191f9acc7b2e45dd6f350ea68",
+      "id": "E015",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E016_rules.json",
+      "bytes": 44246,
+      "sha256": "8442b384369bccb149645b4584fa145ed6899dcb67dd2591e1b29a60c5b3333f",
+      "id": "E016",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E017_run.py",
+      "bytes": 6907,
+      "sha256": "9119985a53737d57dec07f6e2ab4e3cf043b9fe013901337de9d676367d0e276",
+      "id": "E017",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E018_task_spec.json",
+      "bytes": 2294,
+      "sha256": "bf25316936a13ced91f963755d2c298609f33ca7da7e394fa48aafc45a4fc448",
+      "id": "E018",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 7342,
+      "sha256": "89d6cc3476ce37a0fdefa97fdfa73480e75101926b84d33d6e5b854fc0e849cd",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 6608,
+      "sha256": "0717bff6e0c59b3efa43242b78ee85d040f11868045da2f7ea7257f5f6742e66",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

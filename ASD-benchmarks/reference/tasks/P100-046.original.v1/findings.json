@@ -1,0 +1,48 @@
+{
+  "case_id": "P100-046",
+  "findings": [
+    {
+      "finding_id": "P100-046-F01",
+      "classification": "validated_extension",
+      "claim": "A calibrated two-ratio closure improves local electron-temperature reconstruction within the retained two-hour interval.",
+      "equation": "T_hat=T0*exp(clip(a*ln(n/n0)+b*ln(B/B0),-5,5))",
+      "admission": "partially_supported",
+      "evidence": [
+        "evidence/metrics.csv",
+        "evidence/by_group.csv",
+        "evidence/scientific_checks.json"
+      ],
+      "scope": "One2-hour MMS1 interval. All ion moments have qualityflag66 (saturation plus highMach); ion targets excluded before any fit. Electron flags0 and FGMflags0 retained. Moment errors and unmeasured heat flux/geometry limit CGL interpretation. Current density and magnetic field are allowed, so this is a contemporaneous closure rather than future-state forecasting. Eulerian spacecraft samples are not tracked fluid parcels. Two held blocks and one orbit segment do not establish a universal plasma law.",
+      "known_prior_art": "The source studies and domain constructions are disclosed in PRIOR_ART.json. This campaign does not certify broad novelty.",
+      "falsification": "Current density and magnetic field are allowed, so this is a contemporaneous closure rather than future-state forecasting. Eulerian spacecraft samples are not tracked fluid parcels. Two held blocks and one orbit segment do not establish a universal plasma law."
+    },
+    {
+      "finding_id": "P100-046-F02",
+      "classification": "informative_falsification",
+      "claim": "Anisotropy relaxation is within the simplicity tolerance and beta-regime modulation worsens forward-block development; neither receives mechanistic admission.",
+      "equation": null,
+      "admission": "supported",
+      "evidence": [
+        "evidence/scientific_checks.json",
+        "evidence/metrics.csv"
+      ],
+      "scope": "One2-hour MMS1 interval. All ion moments have qualityflag66 (saturation plus highMach); ion targets excluded before any fit. Electron flags0 and FGMflags0 retained. Moment errors and unmeasured heat flux/geometry limit CGL interpretation. Current density and magnetic field are allowed, so this is a contemporaneous closure rather than future-state forecasting. Eulerian spacecraft samples are not tracked fluid parcels. Two held blocks and one orbit segment do not establish a universal plasma law.",
+      "known_prior_art": "Negative evidence concerns these declared hypotheses and source conditions only.",
+      "falsification": "A new condition, measurement or richer model can be proposed through a separately frozen task; current outcomes are exposed."
+    },
+    {
+      "finding_id": "P100-046-F03",
+      "classification": "unsupported",
+      "claim": "These results establish a universal new physical or mathematical law, or a demonstrated deployed industrial impact.",
+      "equation": null,
+      "admission": "unsupported",
+      "evidence": [
+        "evidence/metrics.csv"
+      ],
+      "scope": "One2-hour MMS1 interval. All ion moments have qualityflag66 (saturation plus highMach); ion targets excluded before any fit. Electron flags0 and FGMflags0 retained. Moment errors and unmeasured heat flux/geometry limit CGL interpretation. Current density and magnetic field are allowed, so this is a contemporaneous closure rather than future-state forecasting. Eulerian spacecraft samples are not tracked fluid parcels. Two held blocks and one orbit segment do not establish a universal plasma law.",
+      "known_prior_art": "Novelty needs independent literature adjudication and impact needs intervention/deployment evidence.",
+      "falsification": "Current density and magnetic field are allowed, so this is a contemporaneous closure rather than future-state forecasting. Eulerian spacecraft samples are not tracked fluid parcels. Two held blocks and one orbit segment do not establish a universal plasma law."
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted computation and advisory review; not independent experiments or human expert adjudication."
+}

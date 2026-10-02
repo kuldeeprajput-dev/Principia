@@ -1,0 +1,133 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-058.continuation.v1",
+  "case_id": "P100-058",
+  "case_number": 58,
+  "family": "continuation",
+  "protocol_version": "P100-058-retrospective-continuation-20261001",
+  "cohort_id": "P100-058.continuation.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-058.continuation.v1",
+  "legacy_package": "58_polymer_pdlla_rheology/research_history/continuation-20261001/candidate",
+  "source_scenario": "scenarios/58_polymer_pdlla_rheology",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Storage modulus G prime",
+  "target_units": "Pa",
+  "error_units": "Pa",
+  "primary_units": "dimensionless natural-log ratio",
+  "metric_kind": "log_mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "temperature_C",
+    "omega"
+  ],
+  "input_units": {
+    "temperature_C": "degree C",
+    "omega": "rad/s"
+  },
+  "numeric_columns": [
+    "temperature_C",
+    "omega"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": true,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Temperature and imposed frequency only. Loss modulus is withheld as an orthogonal mechanistic check; never a primary predictor.",
+  "calibration": "Native DFS text exports only; paired TAD exports are linked duplicates, not independent samples. Target storage modulus and secondary loss modulus are separate native instrument outputs, though both share systematic calibration. No compliance correction was applied by the authors. A single purchased polymer batch.",
+  "independent_unit": "whole temperature sweep",
+  "evaluation_groups": [
+    "T70",
+    "T80"
+  ],
+  "assigned_rows": 35,
+  "eligible_rows": 35,
+  "baseline_models": [
+    "reference",
+    "wlf",
+    "arrhenius",
+    "fractional",
+    "plateau",
+    "wlf_sparse",
+    "constant",
+    "kernel"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Gprime=sum G_j*(omega*aT*tau_j)^2/(1+(omega*aT*tau_j)^2); Gdoubleprime=sum G_j*omega*aT*tau_j/(1+(omega*aT*tau_j)^2). Ridge/shift tuned only inside training groups.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "wlf": {
+      "equation": "Gprime=sum G_j*(omega*aT*tau_j)^2/(1+(omega*aT*tau_j)^2); Gdoubleprime=sum G_j*omega*aT*tau_j/(1+(omega*aT*tau_j)^2). Ridge/shift tuned only inside training groups.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "arrhenius": {
+      "equation": "Gprime=sum G_j*(omega*aT*tau_j)^2/(1+(omega*aT*tau_j)^2); Gdoubleprime=sum G_j*omega*aT*tau_j/(1+(omega*aT*tau_j)^2). Ridge/shift tuned only inside training groups.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "fractional": {
+      "equation": "Gstar=A*(i*omega*aT*tau)^alpha/(1+(i*omega*aT*tau)^alpha)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "plateau": {
+      "equation": "Gprime=sum G_j*(omega*aT*tau_j)^2/(1+(omega*aT*tau_j)^2); Gdoubleprime=sum G_j*omega*aT*tau_j/(1+(omega*aT*tau_j)^2). Ridge/shift tuned only inside training groups.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "wlf_sparse": {
+      "equation": "Gprime=sum G_j*(omega*aT*tau_j)^2/(1+(omega*aT*tau_j)^2); Gdoubleprime=sum G_j*omega*aT*tau_j/(1+(omega*aT*tau_j)^2). Ridge/shift tuned only inside training groups.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "constant": {
+      "equation": "See rules.json full state and run.py executable equations",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "kernel": {
+      "equation": "group-tuned Gaussian kernel ridge with frozen training scales, centers and coefficients.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "scope_limits": "Temperature transfer within one material; no batch-to-batch or general polymer law claim. Positive modulus spans orders of magnitude. Three native negative storage readings limit low-modulus physical interpretation; logarithmic performance is conditional on 32 positive responses.",
+  "source_url": "https://zenodo.org/records/17294879",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Original confirmation is exposed. New candidates chosen only development and frozen before this retrospective diagnostic.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "c22307f8616754773079305570f6608ca3678c61ac4bb4f3f0a8731ab44e9061",
+  "observations_sha256": "8a7e49c5f8eeb6ac1298c4d9801ba394f1b72e1877882b747df4b75a374f5de9",
+  "legacy_protocol_sha256": "b3b0ff26e3d6a08f0a7e6a283aa12570b4ebcc7f54ce1910054de903dccdcf9c",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ],
+  "preparation_corrections": [
+    "Secondary unfitted loss-modulus response moved from inputs to observations in evaluator v3; numerical model predictions and storage target unchanged."
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "schema_version": "p100.agent-review/1.0",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_materials",
+  "case_id": "P100-087",
+  "created_utc": "2026-10-01T14:25:58.992079+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "207cee7113784a4919cbbc2b573dd97b6a7ccb160c8cb46e8a9aa2f049fd8d39"
+    },
+    {
+      "path": "run.py",
+      "sha256": "6b07d0fe4a882c9ade8375f49f1927ba43b48d4b171c7b72d66c4a698e9dec9a"
+    },
+    {
+      "path": "develop.py",
+      "sha256": "ea559442f06d3c2eded516f9cabbd168e3f5b4ad07ad9927729d5c3464fd89fd"
+    },
+    {
+      "path": "confirm.py",
+      "sha256": "b56b4c323c3e084a33ec6c9dd7900a25cbbbd5e86df677b3268b28e44293b192"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "15f9425fcf94640a053d454c0ee008b8c21568262789fdee970ff3ba7af3e640"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "b569902cb5a69fb9c79060d9d263024bab3e86ce51b9336dbc96264ec6bc8fb7"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "936bce4a896488df1063c516ff74080089dec62ae989ad8ba1e5f99ada3989e3"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "2cd65ec42d4eaa558f167e5b80f5d102f1c45ec751abca6ce553231d7bdb3fee"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "61cf46365921ee7f37e1fe666e702dbc88d49c7a72a443998c7d2edb0c5996d8"
+    },
+    {
+      "path": "SUMMARY.md",
+      "sha256": "5dfb9d9d5c838031158ce7517ae90c51fc1b1d8f41ff07951c433be1c912d76d"
+    },
+    {
+      "path": "PARAMETER_STABILITY.json",
+      "sha256": "ba64c80da0b8e2d149a3d69306b70fcd7624632296842cde581a7ef9b17b8a7f"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "6b07d0fe4a882c9ade8375f49f1927ba43b48d4b171c7b72d66c4a698e9dec9a"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "a94248a4cd06517477985797a6911b0684d5a92e81a672fc01221fdc343e834f"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "1e1060f2574ca7645ba512aad53b87a3551d8ef7b84efd9f11c8413df6a43ad7"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "e1aff6354b89af1deba59d3c720eab3ac09a33a4c33a9546540ee06799fa4988"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "15a323f76d35d7bad76be3cbf1f78d88cb965b6c1b6abff64de1b25e4bd517c6"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "7c8e72246631fe1e3ef9a8045164b4fb1bc59d2845f8e5a13d427804f6165fc4"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "c436b13e160412aa559093144e4bee75d22ca83502717793d6b4d25f62d60369"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "39a686086d4d05808bed7d47fc1c70c3bac11737167da7740d6e407e3c2bd0f5"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "cee88f9eb4c21838b48bb37c2d253358ced0d6ab64c150b03bb0b349095eae64"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "27b7b92046df200c528e78b8601dab22991acdb45508ecfe6f219f0c7b201746"
+    }
+  ],
+  "overall_limitations": [
+    "All current outcomes are exposed for future users.",
+    "Claim wording is reviewed literally: a supported statement of model failure must remain distinct from an unsupported underlying positive mechanism.",
+    "No aggregate discovery score or definitive novelty/impact certification."
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-087-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Persistence0.36465tokens beats lag-two0.42298,flexible0.60194 and all tested candidates on55held-out interacting pairs. Treat as one-step observed-history forecast, not fixed-horizon behavioral prediction."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Temporal persistence is supported as a predictive control; inertia, learning and stable equilibria are not separately identified."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source relationships and prior analyses are disclosed. Targeted primary-source URLs were checked, but current fetches were blocked/empty; no exhaustive novelty assessment or new-law certification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The calibrated task and preserved counterexamples provide a reusable research/evaluation target. Significance is bounded by the small number of independent experimental conditions or locations."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native anchors, executable states, source hashes, grouped predictions and freeze receipts are present. Independent computational reviewer is responsible for replay checks."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, controlled intervention, clinical validation or population-wide replication is provided."
+        }
+      },
+      "checks": [
+        "Read task information budget and native target/predictor construction.",
+        "Compare selected reference, domain/simple/flexible controls and adverse alternatives.",
+        "Inspect complete-group allocation, schema-stage exposure and stopping/freeze history.",
+        "Separate failure evidence from positive mechanism claims and prior source analyses."
+      ],
+      "limitations": [
+        "Per-player, one-step prediction with observed prior rounds.",
+        "A model-based scientific review is not independent experimental replication or expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-087-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The tested adjustments fail to improve over persistence in both development and aggregate confirmation. This supports a bounded negative model comparison, not rejection of reciprocity or coordination motives."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Restricted fitted equations and least-squares training cannot disprove psychological mechanisms."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source relationships and prior analyses are disclosed. Targeted primary-source URLs were checked, but current fetches were blocked/empty; no exhaustive novelty assessment or new-law certification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The calibrated task and preserved counterexamples provide a reusable research/evaluation target. Significance is bounded by the small number of independent experimental conditions or locations."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native anchors, executable states, source hashes, grouped predictions and freeze receipts are present. Independent computational reviewer is responsible for replay checks."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, controlled intervention, clinical validation or population-wide replication is provided."
+        }
+      },
+      "checks": [
+        "Read task information budget and native target/predictor construction.",
+        "Compare selected reference, domain/simple/flexible controls and adverse alternatives.",
+        "Inspect complete-group allocation, schema-stage exposure and stopping/freeze history.",
+        "Separate failure evidence from positive mechanism claims and prior source analyses."
+      ],
+      "limitations": [
+        "Explicit tested equations and identical permitted histories.",
+        "A model-based scientific review is not independent experimental replication or expert adjudication."
+      ]
+    }
+  ],
+  "external_source_checks": {
+    "date": "2026-10-01",
+    "status": "PubMed empty response; journal DOI pages403/unavailable; MDPI429. Local source-bound prior-art records retained as provenance, not represented as newly independently verified full-text review."
+  },
+  "documentation_correction_verified": "Unrelated fluorescence prefix removed from F01; contribution equation unchanged."
+}

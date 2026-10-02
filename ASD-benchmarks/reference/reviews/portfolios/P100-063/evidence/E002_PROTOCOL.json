@@ -1,0 +1,36 @@
+{
+  "case_id": "P100-063",
+  "title": "Temperature-transfer magnon noise",
+  "created_utc": "2026-10-01T15:22:06.236204+00:00",
+  "target": "Noise power spectral density",
+  "target_units": "nV^2/Hz",
+  "error_units": "nV^2/Hz",
+  "metric_kind": "mae",
+  "input_columns": [
+    "frequency_GHz",
+    "field_T",
+    "termination_K"
+  ],
+  "input_units": {
+    "frequency_GHz": "GHz",
+    "field_T": "T",
+    "termination_K": "K"
+  },
+  "scope": "Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.",
+  "source_paper": "https://arxiv.org/html/2404.17327v1",
+  "selection": "Lowest whole-group OOF physical-unit MAE among substantive attempts; prefer fewer coefficients within1percent. Baselines retained even if superior. No test-based replacement.",
+  "stopping": "At least five materially distinct attempts. Continue distinct evidence-led hypotheses; stop after two consecutive substantive attempts after the current best with no >=1percent MAE gain, >=5percent worst-group gain, or supported structural simplification.",
+  "confirmation": "Separate process only after code/states/selection/stopping hashes frozen; all outcomes become exposed thereafter.",
+  "exposure": "Public source-aware corpus; source plots and published analyses known. Schema previews exposed first rows only. Case30 speeds>=13.9mm/s previewed; scored0.28\u201310mm/s unviewed. Case22 initial~0.006V row previewed; targetV>=0.05V unviewed. Case65 10Hz first rows previewed; scoref>=100Hz. Reserved response distributions and scores unopened.",
+  "uncertainty": "Per-group errors and ranges only; no dependent-row confidence interval. Very few top-level conditions constrain generalization.",
+  "calibration": "No held-condition calibration. Publisher background subtraction retained, not refitted.",
+  "source_hash": "4c751b66c2fe40b6fa20c9d3bbc53790269bb498dbe9f0322a116e33f977c4b7",
+  "split_hash": "443b7c37ae236e0563ade909e9e04e97227280187714acb387b69f3416cce16c",
+  "baselines": [
+    "mean/constant",
+    "established physical or matched calibration baseline",
+    "constrained flexible model under same information"
+  ],
+  "fit": "Development-only group-balanced least squares; forcase65 equivalent least squares in decibels. Frozen transformations; parameter bounds recorded per candidate.",
+  "exclusions": "Nonfinite native values excluded with anchors; none excluded by fit residuals. All source bytes unchanged."
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "finding_id": "P100-026-F01",
+    "title": "Relaxation plus slow drift",
+    "classification": "validated_extension",
+    "claim": "A two-parameter, causal prefix-conditioned forecast improves persistence and straight-line continuation on two reserved reactor runs. It loses to the flexible control and several other frozen candidates, so evidence supports useful short-horizon calibration rather than a superior or universal kinetic law.",
+    "admission": "partially_supported",
+    "equation": "equations.json",
+    "model_id": "reference",
+    "task_id": "P100-026.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "equations.json",
+      "rules.json"
+    ],
+    "performance": {
+      "development_MAE": 0.954747089078023,
+      "confirmation_MAE": 1.4348728095481131,
+      "unit": "percentage points"
+    },
+    "prior_art": "https://pubs.rsc.org/en/content/articlepdf/2025/cy/d5cy00544b",
+    "scope": "Complete reactor run. Diagnostic forecast after 300 min with fixed prefix calibration; no future conversion/selectivity predictors.",
+    "limitations": [
+      "Public source-aware confirmation is now exposed.",
+      "Predictive success does not prove a causal mechanism, exhaustive novelty, or realized industrial impact.",
+      "Alternative valid equations are admissible under the same task."
+    ]
+  },
+  {
+    "finding_id": "P100-026-F02",
+    "title": "Mechanistic or transfer falsification",
+    "classification": "informative_falsification",
+    "claim": "The second fitted relaxation time is not separately identified.",
+    "admission": "supported",
+    "underlying_proposal_disposition": "unsupported",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz",
+      "equations.json",
+      "rules.json"
+    ],
+    "rationale": "The two-timescale fit reaches the 20000-minute upper bound; its identifiable local drift limit is retained with a 1500-minute scope and no intermediate-species claim.",
+    "scope": "The tested equations and current data only; no claim of universal impossibility."
+  }
+]

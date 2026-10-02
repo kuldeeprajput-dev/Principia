@@ -1,0 +1,36 @@
+{
+  "case_id": "P100-077",
+  "target": "Joint green-positive and red-positive fraction",
+  "target_units": "percentage points",
+  "error_units": "percentage points",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "green",
+    "red",
+    "dose"
+  ],
+  "input_units": {
+    "green": "fraction",
+    "red": "fraction",
+    "dose": "source fold dose"
+  },
+  "numeric_columns": [
+    "green",
+    "red",
+    "dose"
+  ],
+  "timing_contract": "Contemporaneous assay diagnostic: green and red marginal positive fractions measured from the same FCS well; joint fraction withheld as target. Marginals do not algebraically determine the joint without an independence/dependence assumption.",
+  "calibration": "One source BOB negative control defines each channel threshold at its 99.5th percentile, identically for all wells and models. Event gating uses finite scatter/fluorescence and positive FSC-A/SSC-A only; source FlowJo manual gates were not supplied and are not reproduced.",
+  "independent_unit": "Named experimental replicate block A/B/C; three doses within each",
+  "scope_limits": "One hiPSC cell line, one multiplex tagging design, three replicate blocks; same-well marginal readouts are permitted. This tests distributional dependence, not pre-experiment editing yield or a new gene-editing mechanism.",
+  "source_url": "https://zenodo.org/records/15772077",
+  "source_license": "CC BY 4.0",
+  "prior_art_url": "https://doi.org/10.1093/nar/gkaf809",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": 0,
+    "target_max": null
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

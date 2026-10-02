@@ -1,0 +1,151 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-024.round2.v1",
+  "case_id": "P100-024",
+  "case_number": 24,
+  "family": "round2",
+  "protocol_version": "P100-024.round2.v1.contract-1",
+  "cohort_id": "P100-024.round2.v1.development-oof",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-024.round2.v1",
+  "legacy_package": "24_materials_dtu_composite_fatigue/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/24_materials_dtu_composite_fatigue",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Future measured composite stiffness conditional on continued recorded survival",
+  "target_units": "GPa",
+  "error_units": "GPa",
+  "primary_units": "GPa",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "cycle",
+    "E0_GPa",
+    "strain_percent",
+    "frequency_Hz",
+    "cure"
+  ],
+  "input_units": {
+    "cycle": "cycle count",
+    "E0_GPa": "GPa",
+    "strain_percent": "percent; numerical 1 means 1 percent strain",
+    "frequency_Hz": "Hz; supplied source header",
+    "cure": "categorical laminate/cure label"
+  },
+  "numeric_columns": [
+    "cycle",
+    "E0_GPa",
+    "strain_percent",
+    "frequency_Hz"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Use cycle count, prescribed strain, supplied cure/header-frequency metadata and early E0 calibration only; no failure-cycle normalization or future measured stiffness. Exact header-frequency acquisition timing is undocumented; the selected log equation does not use frequency, while comparators condition on its availability. Expanded information budget: cycle, E0_GPa, strain_percent, frequency_Hz, cure",
+  "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. E0 is the median native stiffness at cycles 10\u201320 for the same specimen; later stiffness and terminal cycle are unavailable to predictors.",
+  "independent_unit": "complete specimen",
+  "evaluation_groups": [
+    "EQA01-03",
+    "EQA01-04",
+    "EQA01-05",
+    "EQA01-10",
+    "EQA01-11",
+    "EQA01-12",
+    "EQA02-04",
+    "EQA02-05",
+    "EQA02-06",
+    "EQA02-10",
+    "EQA02-11",
+    "EQA03-05",
+    "EQA03-06",
+    "EQA03-07",
+    "EQA03-10",
+    "EQA03-11",
+    "EQA03-12"
+  ],
+  "assigned_rows": 11904,
+  "eligible_rows": 11904,
+  "baseline_models": [
+    "previous/cycle-002",
+    "previous/cycle-001",
+    "previous/baselines/old_log",
+    "current/cycle-001",
+    "previous/baselines/kernel_nested",
+    "previous/baselines/old_nested_flex",
+    "previous/baselines/old_persistence",
+    "current/baseline-hgb"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "previous/cycle-002": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-001": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_log": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/kernel_nested": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_nested_flex": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baselines/old_persistence": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Six specimens from three cure profiles in one glass-fiber campaign, with declared cycles-10-to-20 initial calibration. Not a remaining-life, runout or new-material prediction. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+  "source_url": "https://zenodo.org/records/15665325",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "4411c5f28c934ea63c9bb75c3bb1ed85c0863167eefbbfd5c749c83ba10bcfb1",
+  "observations_sha256": "35628286bf747f9ce104ce53fbc6c3e3c2299138f545734da40af41d0716f524",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified"
+}

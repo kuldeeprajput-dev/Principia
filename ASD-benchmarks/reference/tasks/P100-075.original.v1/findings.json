@@ -1,0 +1,32 @@
+[
+  {
+    "finding_id": "P100-075-F01",
+    "classification": "falsified_candidate",
+    "claim": "A donor-calibrated shared shear response generalizes better than calibration alone",
+    "equation": "y_hat=max(0,c-0.8590802454101593*s)",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "rules.json"
+    ],
+    "prior_art": "Source study already reports stiffness/shear-associated VCAM1 changes",
+    "falsification": "Reserved donor MAE0.763484 exceeds calibration-copy0.496276",
+    "scope": "Four cultured donors; one held donor; five linked conditions",
+    "admission": "unsupported",
+    "negative_evidence_status": "supported"
+  },
+  {
+    "finding_id": "P100-075-F02",
+    "classification": "supported_negative_finding",
+    "claim": "Adding stiffness, shear interactions or calibration-dependent response does not establish a robust transferable law in this cohort",
+    "equation": null,
+    "evidence": [
+      "evidence/metrics.csv",
+      "rules.json"
+    ],
+    "prior_art": "Known mechanosensing; the result is a validation failure of these specific response models",
+    "falsification": "Independent new donors with prespecified controls could overturn this bounded failure",
+    "scope": "Only tested families and measured design; not an absence-of-biology claim",
+    "admission": "supported"
+  }
+]

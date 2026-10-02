@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.1.0",
+  "case_id": "P100-059",
+  "protocol_id": "P100-059-continuation-20261001-causal-weather-history",
+  "target": "Hourly produced energy divided by installed capacity",
+  "target_units": "kWh/kWp",
+  "primary_units": "kWh/kWp",
+  "metric_kind": "mae",
+  "metric_definition": "Equal complete reserved-group mean MAE in physical units; RMSE square root is taken within group, before averaging groups.",
+  "independent_unit": "whole city/location",
+  "evaluation_groups": [
+    "Loule"
+  ],
+  "input_sha256": "c901cdf11d9a885403c7d94948264d9074ef4b602072c22d76a71020072b384d",
+  "input_rows": 16966,
+  "assigned_rows": 16966,
+  "permitted_inputs": [
+    "irradiance",
+    "temp_C",
+    "wind",
+    "hour",
+    "doy",
+    "limit",
+    "latitude",
+    "Gpast1",
+    "Gpast2"
+  ],
+  "input_units": {
+    "irradiance": "kW/m^2; supplied weather shortwave radiation",
+    "temp_C": "degree C; supplied 2 m temperature",
+    "wind": "m/s; supplied 10 m wind converted from km/h",
+    "hour": "source-clock hour; no timezone assumed",
+    "doy": "calendar day of year",
+    "limit": "connection kW / installed kWp",
+    "latitude": "degree north",
+    "Gpast1": "kW/m2; exact previous native-clock hour supplied radiation",
+    "Gpast2": "kW/m2; exact two-hour-past radiation"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "compact_candidate",
+    "signed_control",
+    "geometry",
+    "lag_response",
+    "signed_thermal",
+    "lag_geometry",
+    "unrestricted_thermal",
+    "ridge_calendar",
+    "legacy_reference"
+  ],
+  "reference_equations": {
+    "reference": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "compact_candidate": "G_eff=(1\u2212m)G(t)+m G(t\u22121hour); yhat=clip(G_eff[b0+b1 cos(s)+b2 sin(s)+b3 h+b4 h\u00b2+b5 h cos(s)],0,connection/installed); s=2pi*doy/365.25,h=(hour\u221212)/12.",
+    "signed_control": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "geometry": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "lag_response": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "signed_thermal": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "lag_geometry": "G_eff=(1\u2212m)G(t)+m G(t\u22121hour); yhat=clip(G_eff[b0+b1 cos(s)+b2 sin(s)+b3 h+b4 h\u00b2+b5 h cos(s)],0,connection/installed); s=2pi*doy/365.25,h=(hour\u221212)/12.",
+    "unrestricted_thermal": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "ridge_calendar": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "legacy_reference": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "scope_limit": "Six cities, nine plants; plants within a city share weather and are not independent weather sites. Same-hour conditional energy prediction, not weather forecasting or proven thermal causality.",
+  "calibration_note": "Strict past weather history added without shifting energy or provider/timezone assumptions. No plant-specific response calibration.",
+  "timing_contract": "Same native-clock current weather plus exact previous1/2hour weather; energy response is not predictor. Physical reporting/timezone semantics unresolved.",
+  "exposure_notice": "ALL original confirmation exposed; no fresh confirmation; diagnostics opened only after candidate/stopping freeze; all future evaluations are retrospective",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Verify native anchors and permitted information: Contemporaneous weather and calendar/plant metadata only; no target energy, source specific-energy or emissions as inputs."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check units, physical signs/limits, measurement preprocessing, identifiability and source-specific confounding. Native measured energy is divided by independently supplied installed power; source specific-energy and avoided-CO2 columns are excluded. Weather provider/provenance and timezone are unresolved, so the case is mixed measured/author-supplied weather. Daylight cohort fixed by input irradiance >20 W/m^2; no target-based filtering. Missing native energy retained as missing targets. All nine plants and all years retained subject to declared daylight availability."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ],
+  "fresh_confirmation": false
+}

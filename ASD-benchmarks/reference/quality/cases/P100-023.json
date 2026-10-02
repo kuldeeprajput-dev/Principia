@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-023",
+  "title": "Finger-pad friction during viscous liquid spreading",
+  "default_task": "P100-023.continuation.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Author-derived median coefficient of friction",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "whole participant",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "165 participant\u2013fluid observations (check actual count); primary response is author-derived median CoF, not instantaneous raw telemetry. Source already reports the Stribeck collapse and hydrodynamic exponent. Area/hydration are separate measurements; author-fit Hersey coefficients cannot validate their own physics. Raw force/position files remain untouched.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Author-derived median coefficient of friction",
+    "prediction_time": "Conditional prediction at supplied trial-average speed/load. These trial summaries are not prospective controller inputs; no temporal forecasting claim.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-023.original.v1",
+    "P100-023.continuation.v1"
+  ],
+  "finding_ids": [
+    "P100-023-SCI-01",
+    "P100-023-SCI-02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-023/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-023.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Author-derived median coefficient of friction under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Conditional prediction at supplied trial-average speed/load. These trial summaries are not prospective controller inputs; no temporal forecasting claim.",
+    "calibration_requirement": "165 participant\u2013fluid observations (check actual count); primary response is author-derived median CoF, not instantaneous raw telemetry. Source already reports the Stribeck collapse and hydrodynamic exponent. Area/hydration are separate measurements; author-fit Hersey coefficients cannot validate their own physics. Raw force/position files remain untouched.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Author-derived median coefficient of friction in 1",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "1",
+    "reference_model": "reference",
+    "reference_primary_error": 0.08491671514725016,
+    "reference_physical_mae": 0.08491671514725016,
+    "physical_error_units": "1",
+    "lowest_registered_error_model": "kernel",
+    "lowest_registered_error": 0.0817204214952902,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-023.continuation.v1/evidence/metrics.csv",
+      "bytes": 953,
+      "sha256": "009b608026506b7106cefc5030c2f148af772a6b81739b5c1037022ef12ff91b"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Use the native adapter inventory for exact counts; distinguish same-fluid person transfer from an independently registered unseen-fluid challenge."
+}

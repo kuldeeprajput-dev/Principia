@@ -1,0 +1,522 @@
+# Equations and frozen states
+
+## constant
+
+y_hat = training-fold median(target); final coefficient refit on development only
+
+```json
+{
+  "case": 4,
+  "kind": "constant",
+  "training_groups": [
+    "periodD",
+    "periodE",
+    "periodF",
+    "periodG"
+  ],
+  "training_rows": 89722,
+  "parameters": 1,
+  "equation": "y_hat = training-fold median(target); final coefficient refit on development only",
+  "coefficients": [
+    33.866289138793945
+  ]
+}
+```
+
+## rbf
+
+Frozen 24-center Gaussian radial-basis ridge comparator; all feature means, scales, centers, coefficients and ridge=0.3 are in rules.json. Additive residual for cases2/3/4/45; multiplicative clipped-log ratio for cases11/46.
+
+```json
+{
+  "case": 4,
+  "kind": "rbf",
+  "training_groups": [
+    "periodD",
+    "periodE",
+    "periodF",
+    "periodG"
+  ],
+  "training_rows": 89722,
+  "parameters": 25,
+  "equation": "Frozen 24-center Gaussian radial-basis ridge comparator; all feature means, scales, centers, coefficients and ridge=0.3 are in rules.json. Additive residual for cases2/3/4/45; multiplicative clipped-log ratio for cases11/46.",
+  "coefficients": [
+    34.935169124809136,
+    5.692997341874971,
+    4.665785497754745,
+    -1.7134032065610598,
+    -1.5866138511092416,
+    9.219647698220786,
+    -3.726516609771997,
+    11.766587362422735,
+    2.045718982018994,
+    -2.6465198751175487,
+    6.007848641338712,
+    10.359350507971085,
+    -1.9920701396740863,
+    9.821900800882897,
+    -2.2208879908245915,
+    -2.5853761847072336,
+    -2.21986564512744,
+    -0.6794518951435756,
+    2.166800990209593,
+    3.3231553421500455,
+    -1.1273086674619768,
+    2.4758195321136554,
+    -0.4701188906714471,
+    -1.854729707128475,
+    -0.8917657336813345
+  ],
+  "mean": [
+    1.0,
+    75.99147166190667,
+    13.658201274138621,
+    123.71302858194797,
+    1.692227101491273,
+    1.5637415626419868,
+    0.41753077760831575
+  ],
+  "scale": [
+    1e-09,
+    68.5365068648655,
+    4.734287820408305,
+    131.50441664879548,
+    1.3811325938194796,
+    0.5921226897612778,
+    0.17401009311117047
+  ],
+  "centers": [
+    [
+      0.0,
+      0.118987754946107,
+      1.8415491624578317,
+      2.340440817648261,
+      0.22284094943961205,
+      0.8708836072786612,
+      0.4739335570552039
+    ],
+    [
+      0.0,
+      0.7081386107727585,
+      -0.5270180712906558,
+      -0.9407518905797991,
+      -1.2252459387780221,
+      0.2609900944228965,
+      -0.9627647144656416
+    ],
+    [
+      0.0,
+      -0.7516031453744398,
+      -0.11025503951765984,
+      -0.047635764118226724,
+      0.9468843935484291,
+      -0.6084250424159332,
+      -2.3994629859864873
+    ],
+    [
+      0.0,
+      -0.43232582065582775,
+      -1.4458658283286006,
+      -0.9407518905797991,
+      -1.2252459387780221,
+      0.1016090935115318,
+      -0.9627647144656416
+    ],
+    [
+      0.0,
+      1.1653226003495551,
+      0.43580591730513457,
+      -0.5784871610726637,
+      0.22284094943961205,
+      -0.09233725013637893,
+      -0.9627647144656416
+    ],
+    [
+      0.0,
+      -0.7580418743755378,
+      -1.1730394288683132,
+      -0.7732710275672081,
+      -0.5012024946692051,
+      0.4540894624527266,
+      -0.9627647144656416
+    ],
+    [
+      0.0,
+      3.637544292343957,
+      1.6856670827335793,
+      2.2685338395706185,
+      0.9468843935484291,
+      0.05118052357007801,
+      0.4739335570552039
+    ],
+    [
+      0.0,
+      -0.31989121099703216,
+      0.7184309233305883,
+      0.6880924576836939,
+      1.6709278376572463,
+      -1.1444187749735752,
+      -0.9627647144656416
+    ],
+    [
+      0.0,
+      -0.9731800168718124,
+      -0.6960093295417463,
+      -0.9407518905797991,
+      -1.2252459387780221,
+      0.06383019602913281,
+      0.4739335570552039
+    ],
+    [
+      0.0,
+      0.8663802513345087,
+      0.3609565158391659,
+      0.49055463180980435,
+      0.22284094943961205,
+      -2.4944469748883655,
+      1.9106318285760495
+    ],
+    [
+      0.0,
+      1.3432005248232128,
+      1.5547549423731015,
+      1.3773892216831904,
+      -0.5012024946692051,
+      -2.175884486457012,
+      0.4739335570552039
+    ],
+    [
+      0.0,
+      -0.7992083628234865,
+      -0.11557501974592704,
+      -0.21850722794793515,
+      0.22284094943961205,
+      -0.23292916297818977,
+      0.4739335570552039
+    ],
+    [
+      0.0,
+      3.9181689273940714,
+      2.3326640510200605,
+      2.6833572982309253,
+      -0.5012024946692051,
+      -0.6073934514801012,
+      -0.1007457515531342
+    ],
+    [
+      0.0,
+      -0.8130305547638412,
+      -0.8440467463088992,
+      -0.6436505610611937,
+      -0.5012024946692051,
+      1.4135761378463358,
+      1.9106318285760495
+    ],
+    [
+      0.0,
+      -0.7462240033754761,
+      0.31675166057168547,
+      0.2323634740286286,
+      1.6709278376572463,
+      0.5745375691517569,
+      -0.9627647144656416
+    ],
+    [
+      0.0,
+      -0.45894601687953923,
+      -0.47611578031497775,
+      -0.7425970472683495,
+      -0.5012024946692051,
+      0.9407112810069934,
+      -0.9627647144656416
+    ],
+    [
+      0.0,
+      -0.7336489147796516,
+      -0.3563486932108055,
+      -0.14323872970389578,
+      0.22284094943961205,
+      -1.2739422244137133,
+      0.4739335570552039
+    ],
+    [
+      0.0,
+      0.18234289801336853,
+      0.7706801707682164,
+      0.8338888294701519,
+      3.1190147258748806,
+      0.3567092108332497,
+      -0.9627647144656416
+    ],
+    [
+      0.0,
+      0.25710698285315176,
+      1.0692987558279796,
+      1.1248073080601737,
+      0.22284094943961205,
+      1.424211349160985,
+      -0.9627647144656416
+    ],
+    [
+      0.0,
+      -0.7288655782681253,
+      -0.4184182956409789,
+      -0.7529530948599034,
+      -0.5012024946692051,
+      0.6201180240803749,
+      1.9106318285760495
+    ],
+    [
+      0.0,
+      0.005998499887496921,
+      0.270107794683116,
+      0.19760558409215453,
+      -0.5012024946692051,
+      0.9372279503333467,
+      0.4739335570552039
+    ],
+    [
+      0.0,
+      -0.3899613204080189,
+      0.45397384721821304,
+      -0.4168842010178821,
+      0.22284094943961205,
+      1.0049368764019022,
+      -0.1007457515531342
+    ],
+    [
+      0.0,
+      -0.5902247109544512,
+      -0.5755827852545424,
+      -0.49564635146226593,
+      0.22284094943961205,
+      -0.10386513791657816,
+      0.4739335570552039
+    ],
+    [
+      0.0,
+      -0.631601536077352,
+      -0.16108238525461577,
+      -0.19761510830759801,
+      -0.5012024946692051,
+      -0.07904716183679297,
+      0.4739335570552039
+    ]
+  ],
+  "length": 2.0,
+  "ridge": 0.3
+}
+```
+
+## recoil_identity
+
+MET_hat=R=norm(sum measured transverse lepton and jet momenta)
+
+```json
+{
+  "case": 4,
+  "kind": "recoil_identity",
+  "training_groups": [
+    "periodD",
+    "periodE",
+    "periodF",
+    "periodG"
+  ],
+  "training_rows": 89722,
+  "parameters": 0,
+  "equation": "MET_hat=R=norm(sum measured transverse lepton and jet momenta)"
+}
+```
+
+## attempt_001
+
+MET_hat=a*sqrt(H)
+
+```json
+{
+  "case": 4,
+  "kind": "rayleigh",
+  "training_groups": [
+    "periodD",
+    "periodE",
+    "periodF",
+    "periodG"
+  ],
+  "training_rows": 89722,
+  "parameters": 1,
+  "equation": "MET_hat=a*sqrt(H)",
+  "coefficients": [
+    3.011158525540562
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 1.0,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false
+  ]
+}
+```
+
+## attempt_002
+
+MET_hat=k*R
+
+```json
+{
+  "case": 4,
+  "kind": "recoil_gain",
+  "training_groups": [
+    "periodD",
+    "periodE",
+    "periodF",
+    "periodG"
+  ],
+  "training_rows": 89722,
+  "parameters": 1,
+  "equation": "MET_hat=k*R",
+  "coefficients": [
+    0.4120747295599216
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 1.0,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false
+  ]
+}
+```
+
+## attempt_003
+
+MET_hat=sqrt((k*R)^2+a^2*H+c^2)
+
+```json
+{
+  "case": 4,
+  "kind": "quadrature",
+  "training_groups": [
+    "periodD",
+    "periodE",
+    "periodF",
+    "periodG"
+  ],
+  "training_rows": 89722,
+  "parameters": 3,
+  "equation": "MET_hat=sqrt((k*R)^2+a^2*H+c^2)",
+  "coefficients": [
+    0.2885606463293234,
+    1.6952876188332207,
+    23.00800315418681
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 218.33983142654716,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false,
+    false,
+    false
+  ]
+}
+```
+
+## attempt_004
+
+MET_hat=sigma*sqrt(pi/2)*[(1+2z)*i0e(z)+2z*i1e(z)]; z=(k*R)^2/(4*sigma^2), sigma^2=a^2*H+c^2
+
+```json
+{
+  "case": 4,
+  "kind": "rician",
+  "training_groups": [
+    "periodD",
+    "periodE",
+    "periodF",
+    "periodG"
+  ],
+  "training_rows": 89722,
+  "parameters": 3,
+  "equation": "MET_hat=sigma*sqrt(pi/2)*[(1+2z)*i0e(z)+2z*i1e(z)]; z=(k*R)^2/(4*sigma^2), sigma^2=a^2*H+c^2",
+  "coefficients": [
+    0.298635069680928,
+    1.4136615459761506,
+    18.233865780493158
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 173.66437382526271,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false,
+    false,
+    false
+  ]
+}
+```
+
+## attempt_005
+
+Same Rician mean, with sigma^2=a_l^2*L+a_j^2*J+c^2
+
+```json
+{
+  "case": 4,
+  "kind": "subsystems",
+  "training_groups": [
+    "periodD",
+    "periodE",
+    "periodF",
+    "periodG"
+  ],
+  "training_rows": 89722,
+  "parameters": 4,
+  "equation": "Same Rician mean, with sigma^2=a_l^2*L+a_j^2*J+c^2",
+  "coefficients": [
+    0.29677012051576024,
+    2.564886697203304,
+    0.980540878460635,
+    9.460519969609544
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 426.96413049050494,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false,
+    false,
+    false,
+    false
+  ]
+}
+```
+
+## reference
+
+MET_hat=sqrt((k*R)^2+a^2*H+c^2)
+
+```json
+{
+  "case": 4,
+  "kind": "quadrature",
+  "training_groups": [
+    "periodD",
+    "periodE",
+    "periodF",
+    "periodG"
+  ],
+  "training_rows": 89722,
+  "parameters": 3,
+  "equation": "MET_hat=sqrt((k*R)^2+a^2*H+c^2)",
+  "coefficients": [
+    0.2885606463293234,
+    1.6952876188332207,
+    23.00800315418681
+  ],
+  "fit_objective": "equal-group weighted least squares; development selection by MAE",
+  "jacobian_condition": 218.33983142654716,
+  "optimizer_success": true,
+  "boundary_contacts": [
+    false,
+    false,
+    false
+  ]
+}
+```
+

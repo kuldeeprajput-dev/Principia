@@ -1,0 +1,379 @@
+{
+  "schema_version": "p100-scientific-review-1.0",
+  "scenario_id": "P100-086",
+  "title": "Industrial fermentation potency",
+  "review_date": "2026-10-01",
+  "reviewer_role": "scientific-critical review agent",
+  "review_mode": "read-only review of retained scientific/equation/evidence records; no fitting, acquisition or new literature search",
+  "current_outcome_exposure": "exposed",
+  "review_scope": "Original findings, first continuation when present, latest continuation and supplemental material-response tasks when present. Independent computational review is a separate artifact.",
+  "grouping_and_information_scope": "Whole chronological batches; current assay plus strictly earlier history; later batches never inform training.",
+  "portfolio_disposition": "Scoped numerical references, tested hypotheses and preserved falsifications; no independently established new fundamental law or demonstrated deployment impact is admitted.",
+  "aggregate_score": null,
+  "aggregate_score_reason": "Scientific dimensions are distinct; task difficulty and validation scope are disclosed without converting them into invented precision or a composite discovery score.",
+  "evidence_assets": [
+    {
+      "id": "E001",
+      "legacy_path": "86_biotechnology_industrial_fermentation/final_results/FINDINGS.md",
+      "sha256": "6564d0a9e672c546e0ffea1377c7de99b3803191fc95468d2f9354691f3d17b4",
+      "bytes": 5059,
+      "role": "original scientific description"
+    },
+    {
+      "id": "E002",
+      "legacy_path": "86_biotechnology_industrial_fermentation/final_results/rules.json",
+      "sha256": "e6e261893269ea1ce4fc08b70c16ec8313e44ec66966de911d5b997c112cc922",
+      "bytes": 22623,
+      "role": "original frozen model state"
+    },
+    {
+      "id": "E003",
+      "legacy_path": "86_biotechnology_industrial_fermentation/final_results/evidence/metrics.csv",
+      "sha256": "429f39bcd5235d58dcabc9fd3328c04e42c563a6dfb1845ac5bb9a5992eb685f",
+      "bytes": 2136,
+      "role": "original numerical comparison"
+    },
+    {
+      "id": "E004",
+      "legacy_path": "86_biotechnology_industrial_fermentation/final_results/evidence/by_group.csv",
+      "sha256": "63591da2d72dfb26733fba4e5dbe722c1948d7baa54d2c4557ec0d6d02962be5",
+      "bytes": 158228,
+      "role": "original grouped errors"
+    },
+    {
+      "id": "E005",
+      "legacy_path": "86_biotechnology_industrial_fermentation/research_history/continuation-20261001/candidate/FINDINGS.md",
+      "sha256": "c33baba5be941c72a84a20a3c59548c6eaf022a4e4df98982fefdd7ab31ed9db",
+      "bytes": 4701,
+      "role": "latest scientific account"
+    },
+    {
+      "id": "E006",
+      "legacy_path": "86_biotechnology_industrial_fermentation/research_history/continuation-20261001/candidate/rules.json",
+      "sha256": "827859873c20c7759ab35c26bc3444d05524cbf8ca832d5c164b2d2bef064777",
+      "bytes": 1390677,
+      "role": "latest frozen model state"
+    },
+    {
+      "id": "E007",
+      "legacy_path": "86_biotechnology_industrial_fermentation/research_history/continuation-20261001/candidate/evidence/metrics.csv",
+      "sha256": "f547e9e738a91581c71b0933d6955faf0448a8e358f0d3e8b7df48f8ccda65cd",
+      "bytes": 1270,
+      "role": "latest numerical comparison"
+    },
+    {
+      "id": "E008",
+      "legacy_path": "86_biotechnology_industrial_fermentation/research_history/continuation-20261001/candidate/evidence/by_group.csv",
+      "sha256": "f0c2402e88949bde3e3533cdbb3450180c0e090e1ce6665ae960b33be36ae242",
+      "bytes": 91193,
+      "role": "latest grouped errors"
+    }
+  ],
+  "finding_reviews": [
+    {
+      "finding_id": "P100-086-SCI-01",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results",
+      "statement": "A damped six-hour secant is a strong transparent forecast conditional on current potency, without identifying biochemical growth.",
+      "classification": "reproduction",
+      "disposition": "supported",
+      "current_outcome_exposure": "exposed",
+      "historical_evidence_status": "Original historical reserve status is retained in source records; every outcome is exposed now. Continuation model selection uses development evidence but cannot restore fresh confirmation.",
+      "numerical_evidence": [
+        {
+          "cohort": "original 81 later batches",
+          "measure": "secant MAE",
+          "value": 37.759076,
+          "unit": "native potency unit (undocumented)",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original 81 later batches",
+          "measure": "saturation diagnostic candidate",
+          "value": 36.8173,
+          "unit": "native potency unit (undocumented)",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "equation_if_supported": {
+        "expression": "chat(t+6h)=c(t)+6h*.98065907*s6(t), s6=(c(t)-c(t-6h))/6h.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ]
+      },
+      "strongest_adverse_evidence": "Saturation was not selected in development and cannot be promoted for its exposedscore. Current assay availability is essential; native hx physical units are unresolved.",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole chronological batches; current assay plus strictly earlier history; later batches never inform training. Strong adverse evidence: Saturation was not selected in development and cannot be promoted for its exposedscore. Current assay availability is essential; native hx physical units are unresolved.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Multiscale history predicts a source-defined assay; sensor abbreviations, smoothing and biochemical phases are not identified. The ensemble is a numerical control.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source already models multiscale trends/phases. No new biochemical law or published-system superiority established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole chronological batches; current assay plus strictly earlier history; later batches never inform training.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "scientific_validators": [
+        "Use exactnative clock joins and complete later-batch validation.",
+        "Test both causal-prefix invariance and actual-assay receiptlag; assumed-delay stress is not measured turnaround.",
+        "Compare all models on identical history access and disclose source unit/upstream processing uncertainty."
+      ],
+      "next_evidence": "Documented potency units, original assay receipt timestamps/processing lineage and a fresh facility/campaign with production decision outcomes.",
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ]
+    },
+    {
+      "finding_id": "P100-086-SCI-02",
+      "task_family": "continuation",
+      "task_version_history": "2026-10-01 continuation",
+      "statement": "A stronger multiscale causal-history ensemble improves forecasting substantially; delay and smoothness audits limit online/physical interpretation.",
+      "classification": "numerical_control",
+      "disposition": "supported",
+      "current_outcome_exposure": "exposed",
+      "historical_evidence_status": "Original historical reserve status is retained in source records; every outcome is exposed now. Continuation model selection uses development evidence but cannot restore fresh confirmation.",
+      "numerical_evidence": [
+        {
+          "cohort": "continuation 324 development batches",
+          "measure": "HGB MAE",
+          "value": 27.36029,
+          "unit": "native potency unit (undocumented)",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed 81 later batches",
+          "measure": "HGB MAE",
+          "value": 24.484419,
+          "unit": "native potency unit (undocumented)",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed 81 later batches",
+          "measure": "matched secant MAE",
+          "value": 37.759076,
+          "unit": "native potency unit (undocumented)",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "fixed development artificial 2 hdelay",
+          "measure": "latency-aware secant MAE",
+          "value": 58.1412,
+          "unit": "native potency unit (undocumented)",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "fixed development artificial 6 hdelay",
+          "measure": "latency-aware secant MAE",
+          "value": 95.5388,
+          "unit": "native potency unit (undocumented)",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      ],
+      "equation_if_supported": {
+        "expression": "chat(t+6)=max(0,c(t)+b0+sum_(m=1..120) f_m(X_t)); all tree thresholds/leaves are frozen; X_t contains causal clock,assay,multiscale slopes,curvature,weightedslopes and ratevariability.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007",
+          "E008"
+        ]
+      },
+      "strongest_adverse_evidence": "New 1/3/6/12 hslopes and memory are a different input budget .92.646 %of 39217 hourlytriples have second-difference ≤ 1 native unit; interpolation/assay receipt timing remain unknown. No comparison to author MASTER under matched contract exists.",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole chronological batches; current assay plus strictly earlier history; later batches never inform training. Strong adverse evidence: New 1/3/6/12 hslopes and memory are a different input budget .92.646 %of 39217 hourlytriples have second-difference ≤ 1 native unit; interpolation/assay receipt timing remain unknown. No comparison to author MASTER under matched contract exists.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Multiscale history predicts a source-defined assay; sensor abbreviations, smoothing and biochemical phases are not identified. The ensemble is a numerical control.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source already models multiscale trends/phases. No new biochemical law or published-system superiority established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole chronological batches; current assay plus strictly earlier history; later batches never inform training.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      },
+      "scientific_validators": [
+        "Use exactnative clock joins and complete later-batch validation.",
+        "Test both causal-prefix invariance and actual-assay receiptlag; assumed-delay stress is not measured turnaround.",
+        "Compare all models on identical history access and disclose source unit/upstream processing uncertainty."
+      ],
+      "next_evidence": "Documented potency units, original assay receipt timestamps/processing lineage and a fresh facility/campaign with production decision outcomes.",
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007",
+        "E008"
+      ]
+    }
+  ],
+  "recorded_equations": [
+    {
+      "task_family": "original",
+      "expression_latex": "\\widehat{c}(t+6)=c(t)+6\\beta s_6(t),\\qquad s_6(t)=\\frac{c(t)-c(t-6)}{6}.",
+      "legacy_path": "86_biotechnology_industrial_fermentation/final_results/FINDINGS.md",
+      "status": "recorded_equation_not_automatic_mechanism_admission"
+    },
+    {
+      "task_family": "continuation",
+      "expression_latex": "\\widehat{c}(t+6)=\\max\\left[0,c(t)+b_0+\\sum_{m=1}^{120} f_m(X_t)\\right].",
+      "legacy_path": "86_biotechnology_industrial_fermentation/research_history/continuation-20261001/candidate/FINDINGS.md",
+      "status": "recorded_equation_not_automatic_mechanism_admission"
+    },
+    {
+      "task_family": "continuation",
+      "expression_latex": "\\widehat{c}(t+6)=c(t)+6\\beta s_6(t),\\qquad s_6(t)=\\frac{c(t)-c(t-6)}{6}.",
+      "legacy_path": "86_biotechnology_industrial_fermentation/research_history/continuation-20261001/candidate/FINDINGS.md",
+      "status": "recorded_equation_not_automatic_mechanism_admission"
+    }
+  ],
+  "required_followup_evidence": "Documented potency units, original assay receipt timestamps/processing lineage and a fresh facility/campaign with production decision outcomes.",
+  "review_limitations": [
+    "Documentary checks do not independently replicate the original experiment.",
+    "Novelty is bounded to retained targeted literature records, not an exhaustive search.",
+    "Previously reserved data and supplemental PLA challenge responses are now exposed; new evidence must be genuinely unexposed.",
+    "Predictive improvement alone does not establish causal mechanism, physical parameter identification or industrial benefit."
+  ]
+}

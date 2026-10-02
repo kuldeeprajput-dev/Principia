@@ -1,0 +1,113 @@
+{
+  "schema_version": "principia.review-packet/3.0",
+  "bindings": {
+    "claims_sha256": "9dd84ed7bab52f4c207677bac0420af565cf7ee38401799fc9af3b199e9e949d",
+    "evidence_sha256": {
+      "E001": "6564d0a9e672c546e0ffea1377c7de99b3803191fc95468d2f9354691f3d17b4",
+      "E002": "e6e261893269ea1ce4fc08b70c16ec8313e44ec66966de911d5b997c112cc922",
+      "E003": "429f39bcd5235d58dcabc9fd3328c04e42c563a6dfb1845ac5bb9a5992eb685f",
+      "E004": "63591da2d72dfb26733fba4e5dbe722c1948d7baa54d2c4557ec0d6d02962be5",
+      "E005": "c33baba5be941c72a84a20a3c59548c6eaf022a4e4df98982fefdd7ab31ed9db",
+      "E006": "827859873c20c7759ab35c26bc3444d05524cbf8ca832d5c164b2d2bef064777",
+      "E007": "f547e9e738a91581c71b0933d6955faf0448a8e358f0d3e8b7df48f8ccda65cd",
+      "E008": "f0c2402e88949bde3e3533cdbb3450180c0e090e1ce6665ae960b33be36ae242",
+      "SCIENTIFIC": "4658da0d3f59bfaefdf0e16e5743c6bc8f35e72a4f7f8fb03a10c55fe3893955",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-086",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "findings": [
+    {
+      "id": "P100-086-SCI-01",
+      "classification": "reproduction",
+      "source_classification": "reproduction",
+      "statement": "A damped six-hour secant is a strong transparent forecast conditional on current potency, without identifying biochemical growth.",
+      "applicability": "Whole chronological batches; current assay plus strictly earlier history; later batches never inform training.",
+      "limitations": "Saturation was not selected in development and cannot be promoted for its exposedscore. Current assay availability is essential; native hx physical units are unresolved.",
+      "falsification": [
+        "Use exactnative clock joins and complete later-batch validation.",
+        "Test both causal-prefix invariance and actual-assay receiptlag; assumed-delay stress is not measured turnaround.",
+        "Compare all models on identical history access and disclose source unit/upstream processing uncertainty."
+      ],
+      "prior_art": "The source already models multiscale trends/phases. No new biochemical law or published-system superiority established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "chat(t+6h)=c(t)+6h*.98065907*s6(t), s6=(c(t)-c(t-6h))/6h.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ]
+      },
+      "variables_and_units": {
+        "target": "source potency unit (undocumented)",
+        "time_h": "h since cultivation, source hh",
+        "current": "source potency unit; last available potency measurement",
+        "slope6": "source potency unit/h from strictly past 6 h"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-086.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-086-SCI-02",
+      "classification": "predictive_reference",
+      "source_classification": "numerical_control",
+      "statement": "A stronger multiscale causal-history ensemble improves forecasting substantially; delay and smoothness audits limit online/physical interpretation.",
+      "applicability": "Whole chronological batches; current assay plus strictly earlier history; later batches never inform training.",
+      "limitations": "New 1/3/6/12 hslopes and memory are a different input budget .92.646 %of 39217 hourlytriples have second-difference \u2264 1 native unit; interpolation/assay receipt timing remain unknown. No comparison to author MASTER under matched contract exists.",
+      "falsification": [
+        "Use exactnative clock joins and complete later-batch validation.",
+        "Test both causal-prefix invariance and actual-assay receiptlag; assumed-delay stress is not measured turnaround.",
+        "Compare all models on identical history access and disclose source unit/upstream processing uncertainty."
+      ],
+      "prior_art": "The source already models multiscale trends/phases. No new biochemical law or published-system superiority established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "chat(t+6)=max(0,c(t)+b0+sum_(m=1..120) f_m(X_t)); all tree thresholds/leaves are frozen; X_t contains causal clock,assay,multiscale slopes,curvature,weightedslopes and ratevariability.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007",
+          "E008"
+        ]
+      },
+      "variables_and_units": {
+        "target": "source potency unit (undocumented)",
+        "time_h": "h",
+        "current": "source potency unit",
+        "slope1": "source potency unit/h",
+        "slope3": "source potency unit/h",
+        "slope6": "source potency unit/h",
+        "slope12": "source potency unit/h",
+        "past_acc6": "source potency unit/h^2",
+        "ewma3": "source potency unit/h",
+        "ewma6": "source potency unit/h",
+        "window6_sd": "source potency unit/h"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007",
+        "E008"
+      ],
+      "task_id": "P100-086.continuation.v1",
+      "task_family": "continuation",
+      "task_version_history": "2026-10-01 continuation"
+    }
+  ],
+  "reviews_required": [
+    "computational",
+    "scientific_critical"
+  ],
+  "automatic_scientific_admission": false,
+  "current_exposure": "exposed"
+}

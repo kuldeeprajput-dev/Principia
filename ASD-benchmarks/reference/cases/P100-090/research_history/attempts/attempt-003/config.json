@@ -1,0 +1,16 @@
+{
+  "features": [
+    "memory",
+    "drift",
+    "density_memory",
+    "boundary_p"
+  ],
+  "offset": "p_past",
+  "clip": [
+    -1,
+    1
+  ],
+  "equation": "Pnext=Ppast+a*memory+b*drift+c*log1p(density)*memory+d*(speed/r90)*Ppast",
+  "case": 90,
+  "type": "linear"
+}

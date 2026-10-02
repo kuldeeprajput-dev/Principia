@@ -1,0 +1,116 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-047.original.v1.raw-access.v1",
+  "parent_task_id": "P100-047.original.v1",
+  "case_id": "P100-047",
+  "protocol_version": "P100-047.original.v1.raw-access.v1",
+  "cohort_id": "P100-047.original.v1.cohort-1",
+  "parent_task_sha256": "871e7b4f9eb1bb12db58437676419fe9756f7098bf5291d1e2a395c2cdd15ef8",
+  "input_sha256": "38ed1d190bdd999bb5acfd6727af1c03edd20163d463c7c5b7305fe02673ba27",
+  "observations_sha256": "e9e523f3b96e7b8b7312b32a62aa6838d8c1938fa223ca0529906f09768a6d18",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "47_ocean_argo_biogeochemistry",
+  "source_assets": [
+    {
+      "path": "raw/5906483/5906483_Dtraj.nc",
+      "bytes": 8054928,
+      "sha256": "51a6a042ab3e7c705cf7046227e4acc10b3b28e34379e16d6b1357283252b9e9"
+    },
+    {
+      "path": "raw/5906483/5906483_Rtraj.nc",
+      "bytes": 10540400,
+      "sha256": "665a69d72732a944d460c5f0a2de46bd592be7512a3fc22033b19257220eee1b"
+    },
+    {
+      "path": "raw/5906483/5906483_Sprof.nc",
+      "bytes": 4442854,
+      "sha256": "66cdbb1eee9112b3df4b49ceac3cccd1620718ca1d99f578c4070b029c5cd746"
+    },
+    {
+      "path": "raw/5906483/5906483_meta.nc",
+      "bytes": 174880,
+      "sha256": "a88170b3f574ea7ec5a52f2fdb809fef10072536109bc07a093a93ec083b2472"
+    },
+    {
+      "path": "raw/5906483/5906483_prof.nc",
+      "bytes": 3521972,
+      "sha256": "16e5a97c21ff47290b850cf8a648ad4d24224d63465619594e51588fdc38cd5f"
+    },
+    {
+      "path": "raw/5906483/5906483_tech.nc",
+      "bytes": 288212,
+      "sha256": "5c674ae6bda5dac255b17319b29d8762b6d49902c35c9effe5d15d37ce672f93"
+    },
+    {
+      "path": "raw/5906486/5906486_Dtraj.nc",
+      "bytes": 8443436,
+      "sha256": "7985715e1def9802a74dd054595c03dd88b8a9c34dc2f07ed4f9dad227bb7474"
+    },
+    {
+      "path": "raw/5906486/5906486_Rtraj.nc",
+      "bytes": 10178932,
+      "sha256": "e9e6ff7b18265689a2c4eaf6fa16020ca722ed69cf1e2da72d820e744c97dcec"
+    },
+    {
+      "path": "raw/5906486/5906486_Sprof.nc",
+      "bytes": 4583498,
+      "sha256": "df865156a369ad9244bdaadac9f4987365f78943933bb68cfda5465b2f2f58d6"
+    },
+    {
+      "path": "raw/5906486/5906486_meta.nc",
+      "bytes": 182116,
+      "sha256": "e851f927a8e8019280169310b4fbbeb6cbda41f1c0d9c3a63e68dc924d170662"
+    },
+    {
+      "path": "raw/5906486/5906486_prof.nc",
+      "bytes": 3383676,
+      "sha256": "7983cdd7178d6826363fcbc0769a28b3d435a6937e3d781c52aa19760f88c801"
+    },
+    {
+      "path": "raw/5906486/5906486_tech.nc",
+      "bytes": 494132,
+      "sha256": "61ed744a21d85ebc96d448bd437be3da31df0f799aefa81733ef620467bfb39e"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "pressure": "dbar",
+      "temperature": "degC",
+      "salinity": "psu",
+      "nitrate": "umol/kg",
+      "float_id": "identifier"
+    },
+    "observation_window": "Contemporaneous adjusted oxygen diagnostic using independently instrumented nitrate and CTD measurements from the same aligned synthetic profile. No prospective acquisition claim. Adjusted T/S flags1,2,8 permit source interpolation; oxygen/nitrate/pressure flags1,2 only.",
+    "calibration_and_history": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "input_anchor",
+      "prediction_time",
+      "target_time"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

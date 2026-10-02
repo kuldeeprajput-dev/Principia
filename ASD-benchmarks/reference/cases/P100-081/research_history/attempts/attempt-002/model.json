@@ -1,0 +1,41 @@
+{
+  "name": "structural_porosity",
+  "formula": "a*exp(-b*C)+c*log1p(depth/10)",
+  "hypothesis": "Attempt2: two-phase mixing narrowly improves mean error over the flexible control but has worse worst-country error. Test a competing exponentially carbon-dependent pore-volume law with gradual depth consolidation rather than additive phase volumes.",
+  "inputs": [
+    "C",
+    "depth",
+    "pH"
+  ],
+  "recorded_utc": "2026-10-02T01:49:59.411993+00:00",
+  "parent": "attempt-001",
+  "parameters": {
+    "a": 1.4296667734092963,
+    "b": 0.12316888192566709,
+    "c": 0.12740769550630016
+  },
+  "training_groups": [
+    "Finland",
+    "Italy",
+    "Portugal",
+    "Spain"
+  ],
+  "training_rows": 304,
+  "optimizer_success": true,
+  "nfev": 5,
+  "jacobian_condition": 8.253018516543296,
+  "bounds": {
+    "a": [
+      0.3,
+      2.5
+    ],
+    "b": [
+      0,
+      2
+    ],
+    "c": [
+      -0.3,
+      0.5
+    ]
+  }
+}

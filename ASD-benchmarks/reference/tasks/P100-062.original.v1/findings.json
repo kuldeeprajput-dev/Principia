@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-062",
+  "findings": [
+    {
+      "finding_id": "P100-062-F01",
+      "classification": "validated_extension",
+      "claim": "A condition-aware activated-breakthrough surrogate predicts the reserved late portions of these two traces more accurately than the matched controls.",
+      "equation": "Ihat(t)=I0+(A0+A1 z) exp[-(tau exp(k z)/t)^beta], z\u2208{0,1}.",
+      "evidence": "Reserved two trace tails,370rows: mean trace MAE0.674\u03bcA versus polynomial4.278\u03bcA, shared first-order8.251\u03bcA and persistence31.213\u03bcA. Both trace-tail errors below0.877\u03bcA.",
+      "known_prior_art": "Inverse-time breakthrough and distributed arrival forms are established empirical families; this is a scoped surrogate comparison, not a new diffusion law.",
+      "falsification": "Both tails have positive bias; two linked traces cannot establish specimen transfer.",
+      "scope": "293K, same recorded steel system, late-time extrapolation using development prefixes.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-062-F02",
+      "classification": "informative_falsification",
+      "claim": "A common linear gain and single transport-shaped timescale across cathodic current steps is insufficient for this prediction task.",
+      "equation": "Shared response I0+gain*drive*(1-exp(-t/tau)); common-breakthrough ablation sets k=0.",
+      "evidence": "Shared response reserved MAE8.251\u03bcA; common-breakthrough scale1.263\u03bcA versus selected0.674\u03bcA. Forwarddevelopment also disfavors both restrictions.",
+      "known_prior_art": "Boundary entry, trapping and imposed current can confound apparent transport time.",
+      "falsification": "These data do not isolate which microscopic process causes the mismatch.",
+      "scope": "Prediction-shape evidence only, not causal trap identification.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-062-F03",
+      "classification": "unsupported",
+      "claim": "The fitted timescale is a unique microscopic lattice diffusion coefficient applicable to new steel specimens.",
+      "equation": null,
+      "evidence": "No independent specimen identifiers, uncertain effective boundary timing and multiple plausible model families.",
+      "known_prior_art": "Diffusion-coefficient inference requires justified boundary conditions and sample geometry.",
+      "falsification": "Comparable flexible breakthrough families and condition dependence show inferential ambiguity.",
+      "scope": "No independent-specimen confirmation.",
+      "admission": "unsupported"
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted analysis; not independent experimental replication or human expert adjudication."
+}

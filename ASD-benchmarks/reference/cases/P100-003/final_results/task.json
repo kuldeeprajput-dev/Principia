@@ -1,0 +1,176 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-003.original.v1",
+  "case_id": "P100-003",
+  "case_number": 3,
+  "family": "original",
+  "protocol_version": "P100-003-asd7-native-v1",
+  "cohort_id": "P100-003.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-003.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/03_physics_gwosc_o4a_h1_strain",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Next nonoverlapping16-second recorded 30\u201380Hz strain RMS",
+  "target_units": "10^-21 strain",
+  "error_units": "10^-21 strain",
+  "primary_units": "10^-21 strain",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "lag1",
+    "lag2",
+    "lag3",
+    "lag4",
+    "median4",
+    "mad4",
+    "low1",
+    "high1",
+    "line1"
+  ],
+  "input_units": {
+    "lag1": "RMS strain in units of 1e-21",
+    "lag2": "RMS strain in units of 1e-21",
+    "lag3": "RMS strain in units of 1e-21",
+    "lag4": "RMS strain in units of 1e-21",
+    "median4": "RMS strain in units of 1e-21",
+    "mad4": "RMS strain in units of 1e-21",
+    "low1": "RMS strain in units of 1e-21",
+    "high1": "RMS strain in units of 1e-21",
+    "line1": "RMS strain in units of 1e-21"
+  },
+  "numeric_columns": [
+    "lag1",
+    "lag2",
+    "lag3",
+    "lag4",
+    "median4",
+    "mad4",
+    "low1",
+    "high1",
+    "line1"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Only earlier16-second strain summaries used. Quality masks applied to entire predictor and target windows; no centered filters or future PSD.",
+  "calibration": "Four preceding16-second windows; training-only global coefficients.",
+  "independent_unit": "Contiguous512-second block in one detector segment; blocks not independent experiments",
+  "evaluation_groups": [
+    "block6",
+    "block7"
+  ],
+  "assigned_rows": 64,
+  "eligible_rows": 64,
+  "baseline_models": [
+    "constant",
+    "median4",
+    "rbf",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "reference"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "constant": {
+      "equation": "y_hat = training-fold median(target); final coefficient refit on development only",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "median4": {
+      "equation": "R_hat=median(R1,R2,R3,R4)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rbf": {
+      "equation": "Frozen 24-center Gaussian radial-basis ridge comparator; all feature means, scales, centers, coefficients and ridge=0.3 are in rules.json. Additive residual for cases2/3/4/45; multiplicative clipped-log ratio for cases11/46.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "R_hat=max(0,m+a*(R1-m)); m=median4",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "R_hat=max(0,m+a*(R1-m)+b*low1+c*high1)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "R_hat=max(0,m+a*(R1-m)+b*line1)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "R_hat=max(0,m+a*s*tanh((R1-m)/s)); s=max(MAD4,1e-9)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "R_hat=max(0,m+a*(R1-m)/(1+abs(R1-R2)/s)+b*high1)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "reference": {
+      "equation": "y_hat = training-fold median(target); final coefficient refit on development only",
+      "state": "rules.json",
+      "role": "reference"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics."
+  },
+  "scope_limits": "Single4096-second H1 segment; this is detector-noise monitoring, not GW detection or source parameter inference. Conditional on supplied quality mask. The entire source has injectionmask23: a continuous-wave hardware injection is present. This study concerns recorded strain-band power including possible injected contribution, NOT uncontaminated detector noise or astrophysical inference. No-cbc/burst/detchar/stochastic injections required; CW status retained.",
+  "source_url": "https://gwosc.org/O4/O4a/",
+  "source_license": "CC BY 4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "fe065e4c36f008eeb7e9f27fbb1a17b377c06d0f164a66e2aa5577f449e0e809",
+  "observations_sha256": "92917b185db2bd10b551edda84b0dd552ff85097ba8d44b98471b2628f11f8a1",
+  "legacy_protocol_sha256": "2bf62cdd39c01bc1388426060f30bd7845a18c7f251f1d9bf2ff5786d96f49d1",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "lag1",
+    "lag2",
+    "lag3",
+    "lag4",
+    "median4",
+    "mad4",
+    "low1",
+    "high1",
+    "line1"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0",
+  "native_prefix_audit": {
+    "status": "passed_one_native_counterfactual_probe",
+    "receipt": "reviews/validation/P100-003.native_prefix_receipt.json",
+    "receipt_sha256": "4f27fa2bbf00410c5d7fdbe75c67c0e68462ae8d8f81641c3fe2f2fced7837d5",
+    "tested_origins": 1,
+    "limits": "One development origin of released calibrated product; upstream author preprocessing causality is not independently established."
+  }
+}

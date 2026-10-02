@@ -1,0 +1,61 @@
+{
+  "name": "saturating_increment",
+  "formula": "maximum(lo+(hi-lo)*r*(1+k)/(1+k*r),0)",
+  "hypothesis": "Attempt1: a shared saturating conversion response bends linearpump extrapolation while exactlymatching both calibrationlevels. Test whether a single effectivecoupling scale transfers across themodepairs.",
+  "inputs": [
+    "lo",
+    "hi",
+    "noise",
+    "r",
+    "g",
+    "glo",
+    "ghi",
+    "sep"
+  ],
+  "recorded_utc": "2026-10-02T02:24:01.527716+00:00",
+  "parent": null,
+  "parameters": {
+    "k": 0.00994433198705808
+  },
+  "training_groups": [
+    "pump-12",
+    "pump-13",
+    "pump-14",
+    "pump-15",
+    "pump-16",
+    "pump-17",
+    "pump-18",
+    "pump-19",
+    "pump-20",
+    "pump-21",
+    "pump-22",
+    "pump-23",
+    "pump-24",
+    "pump-25",
+    "pump-26",
+    "pump-27",
+    "pump-28",
+    "pump-29",
+    "pump-30",
+    "pump-31",
+    "pump-32",
+    "pump-33",
+    "pump-34",
+    "pump-35",
+    "pump-36",
+    "pump-37",
+    "pump-38",
+    "pump-39",
+    "pump-40"
+  ],
+  "training_rows": 4524,
+  "optimizer_success": true,
+  "nfev": 9,
+  "jacobian_condition": 1.0,
+  "bounds": {
+    "k": [
+      0,
+      20
+    ]
+  }
+}

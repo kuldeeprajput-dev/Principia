@@ -1,0 +1,71 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-080.original.v1.raw-access.v1",
+  "parent_task_id": "P100-080.original.v1",
+  "case_id": "P100-080",
+  "protocol_version": "P100-080.original.v1.raw-access.v1",
+  "cohort_id": "P100-080.original.v1.cohort-1",
+  "parent_task_sha256": "a1a06c8648a96848d2fb50d0d0353c688eb678226db718071da1983d03bf3ffa",
+  "input_sha256": "446124db4e7dd1e2705ba8b5887d08a28212190f6bba59952a8a50d6779fc183",
+  "observations_sha256": "ac029085b6c01fe793df299ee424cee21e50397cd1f4b94926b6ca70b6238352",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "80_physiology_wearable_stress_exercise",
+  "source_assets": [
+    {
+      "name": "wearable-device-dataset-1.0.1.zip",
+      "path": "raw/wearable-device-dataset-1.0.1.zip",
+      "sha256": "afbff3e8e7230bdc765d0ccfc5c3460964021cdfefa8e351f8ad8f78a1b27c48",
+      "bytes": 73121143
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "level": "uS",
+      "lag10": "uS",
+      "lag30": "uS",
+      "mean120": "uS",
+      "activity": "g",
+      "temperature": "degree C",
+      "temperature30": "degree C",
+      "elapsed": "min"
+    },
+    "observation_window": "After120s observed history, every5s predict a future5s EDA mean ending30s later. All EDA,temperature and accelerometer summaries are causal and aligned by native starts/sample rates.",
+    "calibration_and_history": "No held-person outcome calibration. Past120s EDA is permitted state, identical for every model; response coefficients and flexible transforms fit training people only.",
+    "calibration_columns": [
+      "level",
+      "lag10",
+      "lag30",
+      "mean120",
+      "activity",
+      "temperature",
+      "temperature30"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

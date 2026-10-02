@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-007",
+  "title": "Multimodal gait EEG, EMG, and force-plate data for participant S1",
+  "default_task": "P100-007.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Plate1 vertical force,100ms ahead,10ms mean",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 1,
+    "independent_unit_description": "Entire speed run within one participant; only two development runs and one faster reserved run",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No target calibration from held run; preceding five seconds of its force waveform supply causal period and history. Known treadmill speed is permitted.",
+  "baseline_strength": {
+    "registered_controls": 10,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Plate1 vertical force,100ms ahead,10ms mean",
+    "prediction_time": "Causal10ms block means sampled100Hz from source1000Hz sequence. At block end t, predict the10ms block ending t+100ms. Every feature uses blocks ending at or before t.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "One participant and one held speed run; between-person transfer is untested."
+  },
+  "task_ids": [
+    "P100-007.original.v1"
+  ],
+  "finding_ids": [
+    "P100-007-F01",
+    "P100-007-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-007/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-007.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Plate1 vertical force,100ms ahead,10ms mean under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Causal10ms block means sampled100Hz from source1000Hz sequence. At block end t, predict the10ms block ending t+100ms. Every feature uses blocks ending at or before t.",
+    "calibration_requirement": "No target calibration from held run; preceding five seconds of its force waveform supply causal period and history. Known treadmill speed is permitted.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Plate1 vertical force,100ms ahead,10ms mean in N",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "One participant and one held speed run; between-person transfer is untested."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "N",
+    "reference_model": "reference",
+    "reference_primary_error": 55.87340668299712,
+    "reference_physical_mae": 55.87340668299712,
+    "physical_error_units": "N",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 55.87340668299712,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-007.original.v1/evidence/metrics.csv",
+      "bytes": 794,
+      "sha256": "df87a3b55902c1f3a4b906f9674c3c71ac400f86a6e633738c4bf1e332b5b112"
+    },
+    "models": 10
+  },
+  "case_specific_next_evidence": "One participant and one held speed run; between-person transfer is untested."
+}

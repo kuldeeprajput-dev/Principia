@@ -1,43 +1,38 @@
-# Principia-100 dataset card
+# Dataset card · Principia-100 v0.2.0
 
-## Identity and status
+## Purpose and composition
 
-Principia-100, version 0.1.1, is the owner-accepted public research corpus and evaluation protocol released on 2026-09-15. It contains 100 scenarios under `scenarios/`, with immutable asset hashes and a versioned release manifest.
+Principia-100 is an open corpus for evaluating quantitative autonomous scientific discovery from heterogeneous research folders. This release connects 100 source scenarios, reference ASD results **implemented by GPT-6 Astra**, and explicit evaluation contracts. It is usable independently of the Principia application.
 
-The unit of collection is a coherent scientific scenario with source data and context. It is not one file, one observation, one discipline or one discovered rule. Stable benchmark IDs are P100-001 through P100-100. Case revisions distinguish source replacements from a change to the original local folder.
+| Component | Scope |
+|---|---|
+| Native corpus | 100 cases; 1,685 scientific assets, unchanged from v0.1.1 |
+| Data origin | 85 measured/observed, 8 mixed, 6 computational experiments, 1 mathematical reference corpus |
+| Reference results | 100 PDF/Markdown portfolios, executable equations and frozen states, measured labels, predictions, controls and preserved failures |
+| Numerical evaluation | 134 public task versions across 99 cases; 1,362 recorded model comparisons, including aliases |
+| Adequacy evaluation | Case 8 evaluates source sufficiency; no clinical prediction score is fabricated |
+| Default task eligibility | 35 comparative core, 58 limited-scope, 7 diagnostic/adequacy |
 
-## Composition and intended uses
+## Sources and processing
 
-The collection combines the retained earlier corpus with 50 additional cases spanning experimental engineering, physics, biology, neuroscience, environmental science, social science, computing and mathematics. `CATALOG.csv` and `BENCHMARK_MANIFEST.json` provide exact versions, origins, formats, sizes, source links and eligibility. The additions include at least 40 measured/observed-only cases; mixed/model products are labeled separately.
+Original institutions, researchers, versions, measurement/release dates, transport provenance, SHA-256 hashes, bytes and source-specific terms are recorded in the [source catalog](SOURCE_CATALOG.md), [acquisition manifest](ACQUISITION_MANIFEST.json), [citation register](CITATIONS.json) and [license register](LICENSE_REGISTER.json). Native archives preserve publisher files and preprocessing. Source-native does not imply untouched instrument telemetry.
 
-It supports data interpretation, quantitative relationship discovery, independent reproduction, falsification and carefully scoped extensions from realistic heterogeneous local inputs. Native spreadsheets, text tables, archives, instrument binaries, images, videos, audio, hierarchical arrays, spatial products and computational records retain source organization and imperfections.
+The evaluation layer adds deterministic native readers, fixed cohorts, explicit calibration/history and derived target tables. Learned transformations and model parameters are frozen with their stated training scope. [Publication adaptations](PUBLICATION_ADAPTATIONS.json) map local acquisition metadata to the accepted public layout without changing measurements or numerical targets.
 
-It does not establish clinical effectiveness, causal effects, deployment readiness, system rankings or previously unknown universal laws. No scored ASD campaign, reference coefficients or aggregate discovery score accompanies this release.
+## Labels, baselines and information access
 
-## Acquisition and curation
+Measured observations and exact mathematical quantities are task targets. GPT-6 Astra findings are fallible reference baselines, not uniquely correct ground-truth laws. Registered-task predictions may use any valid alternative expression within the same input and calibration budget. New endpoints require separate reviewed contracts.
 
-Datasets were selected from authoritative institutions/researcher deposits and source-defined experiments or modality/condition blocks, with explicit size and redistribution checks. Selection was not based on observed correlations, fit quality, favorable outcomes or claimed novelty. Recent deposit dates are recorded separately from measurement dates; many recent releases contain older experiments.
+Source documents, author analyses and all current evaluation outcomes are exposed. The original 20 cases were used during Principia development. Source-aware scoring is retrospective; neither a nominal historical holdout nor an unknown model training corpus establishes freshness today. Reference results must not be silently used as fitting targets or claimed to have been unseen.
 
-Source-native bytes and archives were retained. The curator did not normalize, impute, filter scientific observations, resample, denoise or run publisher analysis code. Author calibration, alignment, derived tables, image extraction and simulation are documented. Historical duplicate representations in the old corpus remain labeled rather than counted as independent samples.
+## Intended use and limits
 
-The original 50 local folders remain preserved. The GEO case in original slot 05 is retained locally but excluded from this release because public access did not establish depositor redistribution permission. The release layer substitutes the CC BY 4.0 graph-certificate reserve and records revision 2. Three planned additions were replaced after public access failures; see `SUBSTITUTIONS.json` for the exact changes and coverage implications. The release selection for case 19 excludes the all-history investigations archive to meet the expanded-size ceiling, retaining all three complete 2025–2026 archives. Full site snapshots without a verified reuse basis are excluded separately, with factual source profiles retained.
+Use the corpus for inspectable equations, baseline comparisons, uncertainty and falsification studies, reader development, and explicit adequacy judgments. It is not a clinical deployment benchmark, evidence of universal physical laws, or a measured industrial return-on-investment study. Predictive accuracy, explanation, novelty and practical value remain separate assessment dimensions.
 
-## Provenance, rights and privacy
+Grouping follows the experiment; rows are not automatically independent units. Cases with one instrument, patient, event, session or specimen have bounded transfer claims. Missing training inventories, source preprocessing, calibration burdens, ambiguous metadata, constant targets and absent event classes are documented in the [quality matrix](reference/quality/ELIGIBILITY.json). Abstention and negative results are valid outcomes. No aggregate discovery score is supplied.
 
-Each allowlisted asset has a local SHA-256, byte size, citation/source version and applicable license or source terms. Publisher checksums are checked where their representation matches the retained file. Dataverse ingested TAB checksums are not asserted to authenticate original CSV downloads. Authoritative metadata snapshots freeze file inventories and rights evidence.
+## Reuse, supplements and maintenance
 
-The aggregate has no blanket license over third-party data. Keep per-asset attribution, code notices, share-alike obligations and provider conditions in `LICENSE_REGISTER.json`. Curator-written documentation is CC BY 4.0 and curator tooling is MIT; see `LICENSES.md` and `tools/LICENSE`. Source terms remain controlling.
+Third-party assets retain their source-specific licenses; curator documentation is CC BY 4.0 and curator tools are MIT. Case 59's auxiliary weather provenance remains qualified under depositor terms. Four case-58 PLA response tasks use explicit additional archives. The unresolved case-96 supplemental data are excluded; its original-data task remains included.
 
-Public/deidentified human and animal research records retain their original ethical/contextual limitations. Do not attempt re-identification. The release is assembled from an explicit allowlist that excludes private reference material, historical private inventories, local machine paths, Finder files and operational logs. Publisher-provided archive contents remain intact, including original auxiliary or OS metadata; these are distinguished from local additions.
-
-## Quality and known limits
-
-Acceptance checks authentication, transport completeness, hashes, archive safety, interpretable scientific structure, documented reuse terms and bounded quantitative research opportunities. It does not independently recertify every instrument, author assertion or third-party deposition. Per-file reader coverage and limitations are in `reports/`; native format support is separate from Principia application compatibility, which was not exercised in this campaign.
-
-This is an open, source-aware benchmark. Source papers and existing fits may be visible in inputs or model training data. Original cases 01–20 were used in Principia development; replacement case 05 is separately identified. No claim of a hidden unseen test set is made. Independent validation units are uneven, and some cases support only single-system checks. Missing acquisition dates, calibration ambiguity, unequal replicates and author inconsistencies are stated, not filled with guesses.
-
-## Reproducibility and maintenance
-
-`tools/replay.py` verifies assets, reconstructs missing assets from an intact frozen release, or downloads recorded direct URLs and rejects changed bytes. Mutable feeds can drift or disappear; a current download is never silently substituted for a frozen historical snapshot. Older provenance sometimes lacks an exact direct URL, so frozen-copy replay and authoritative context are retained explicitly. Local integrity replay is tested; future remote availability is not guaranteed.
-
-A future maintainer should issue a new case revision for changed scientific assets, record replacements and rights changes, retain negative evidence, and avoid rewriting an accepted manifest. Scientific assets in this release match the accepted acquisition snapshot. New evaluation campaigns and subsequent corpus versions require their own documented scope and release decisions.
+Report issues with case/task IDs, hashes and evidence. Version changes to endpoints, cohorts or information budgets rather than overwriting comparisons. The [protocol](EVALUATION_PROTOCOL.md), [external-agent guide](reference/docs/EXTERNAL_AGENT_GUIDE.md) and [release audit](RELEASE_AUDIT.md) define current use. Earlier [source-card details](SOURCE_DATASET_CARD.md) and research receipts remain historical context.

@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-039",
+  "title": "Adult skills, workplace use and earnings in USA and Japan",
+  "default_task": "P100-039.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Upper three country-specific hourly-earnings deciles, excluding bonuses",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 4,
+    "independent_unit_description": "Respondents nested in country and deterministic ten hashblocks; not10 independent samples from plausible values. Repeated respondent information stays linked. Survey clustering not publicly fully reconstructible.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Respondent hashblocks within both countries; no held respondent wage fitting. Country intercepts use training respondents in that same country. No transfer to an unseen economy.",
+  "baseline_strength": {
+    "registered_controls": 10,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Upper three country-specific hourly-earnings deciles, excluding bonuses",
+    "prediction_time": "Contemporaneous cross-sectional earnings association using age/education/country. All10 plausible numeracy values are excluded: conditioned on background and unsuitable individual prediction scores. This is not future earnings or causal education return.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Within-country earnings classes and survey weighting do not identify causal labor returns."
+  },
+  "task_ids": [
+    "P100-039.original.v1"
+  ],
+  "finding_ids": [
+    "P100-039-F01",
+    "P100-039-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-039/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-039.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Upper three country-specific hourly-earnings deciles, excluding bonuses under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Contemporaneous cross-sectional earnings association using age/education/country. All10 plausible numeracy values are excluded: conditioned on background and unsuitable individual prediction scores. This is not future earnings or causal education return.",
+    "calibration_requirement": "Respondent hashblocks within both countries; no held respondent wage fitting. Country intercepts use training respondents in that same country. No transfer to an unseen economy.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Upper three country-specific hourly-earnings deciles, excluding bonuses in binary EARNHRDCLC2>=8",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Within-country earnings classes and survey weighting do not identify causal labor returns."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "brier",
+    "primary_units": "squared probability (Brier)",
+    "reference_model": "reference",
+    "reference_primary_error": 0.18202358711546535,
+    "reference_physical_mae": 0.37005015059341584,
+    "physical_error_units": "probability",
+    "lowest_registered_error_model": "attempt_003",
+    "lowest_registered_error": 0.18101165466705027,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-039.original.v1/evidence/metrics.csv",
+      "bytes": 1209,
+      "sha256": "e044b4f0c51c0081117ba431632d8ac3650bec54f1b529c0c317ecfdc80da3f9"
+    },
+    "models": 10
+  },
+  "case_specific_next_evidence": "Within-country earnings classes and survey weighting do not identify causal labor returns."
+}

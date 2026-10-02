@@ -1,0 +1,25 @@
+{
+  "source": "Zenodo20399470, Federal University of Cear\u00e1 apiary",
+  "measurement_dates": "ApisDec2024\u2013Mar2025; MeliponiniSep2025\u2013Mar2026; releaseMay2026",
+  "processing": "One hourly origin: first native observation within first15min. Forecast nominal1hour, score nearest native target within5min, same calendar day, no interpolation. Causal lag<=origin\u22121hour within15min. Latest20percent native dates per stream reserved. Native response outliers retained.",
+  "exclusions": {
+    "missing causal one-hour lag": 177,
+    "no target within5min": 462,
+    "cross-day target": 303
+  },
+  "chronological_boundaries": {
+    "DadosMeliponas:sensor1": "2025-11-29",
+    "DadosMeliponas:sensor2": "2025-10-29",
+    "DadosMeliponas:sensor3": "2026-02-26",
+    "dadosColmeia1Apis:sensor1": "2025-02-26",
+    "dadosColmeia2Apis:sensor3": "2025-01-30"
+  },
+  "limitations": [
+    "Five sensor streams; independence of Meliponini colonies not proven.",
+    "Species, period, sensor placement and hive confounded.",
+    "Naive source clock has no declared timezone.",
+    "Thermal terms do not identify brood temperature, metabolic heat or ventilation.",
+    "Daily rainfall could be future information and is excluded."
+  ],
+  "audit_exposure": "Timestamp/input dictionaries examined; no future confirmation targets or score viewed before protocol freezing."
+}

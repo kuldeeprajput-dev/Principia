@@ -1,0 +1,122 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-058.supplemental-PLA3D850-storage.v1",
+  "case_id": "P100-058",
+  "case_number": 58,
+  "family": "supplemental",
+  "protocol_version": "P100-058-PLA3D850-storage-fresh-challenge-20261001-exposed-after-delivery",
+  "cohort_id": "P100-058.supplemental-PLA3D850-storage.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-058.supplemental-PLA3D850-storage.v1",
+  "legacy_package": "58_polymer_pdlla_rheology/research_history/continuation-20261001/fresh_materials/candidate/PLA3D850/storage",
+  "source_scenario": "scenarios/58_polymer_pdlla_rheology",
+  "source_scope": "supplemental",
+  "supplemental": true,
+  "target": "Storage modulus",
+  "target_units": "Pa",
+  "error_units": "Pa",
+  "primary_units": "dimensionless natural-log ratio",
+  "metric_kind": "log_mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "temperature_C",
+    "omega"
+  ],
+  "input_units": {
+    "temperature_C": "degree C",
+    "omega": "rad/s"
+  },
+  "numeric_columns": [
+    "temperature_C",
+    "omega"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": true,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Temperature and imposed frequency only. Loss modulus is withheld as an orthogonal mechanistic check; never a primary predictor.",
+  "calibration": "Only the registered lower-temperature storage sweeps supplied calibration. Loss modulus never fitted. Calibrated model states frozen before reserved response opening.",
+  "independent_unit": "whole temperature sweep",
+  "evaluation_groups": [
+    "T150",
+    "T160",
+    "T170",
+    "T180"
+  ],
+  "assigned_rows": 66,
+  "eligible_rows": 66,
+  "baseline_models": [
+    "reference",
+    "wlf",
+    "arrhenius",
+    "kernel",
+    "constant",
+    "zero_shot_old_PDLLA"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Generalized Maxwell Gprime/Gdoubleprime with WLF shift; exact coefficients and clocks in frozen state.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "wlf": {
+      "equation": "Generalized Maxwell Gprime/Gdoubleprime with WLF shift; exact coefficients and clocks in frozen state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "arrhenius": {
+      "equation": "Generalized Maxwell Gprime/Gdoubleprime with WLF shift; exact coefficients and clocks in frozen state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "kernel": {
+      "equation": "Generalized Maxwell Gprime/Gdoubleprime with WLF shift; exact coefficients and clocks in frozen state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "constant": {
+      "equation": "Generalized Maxwell Gprime/Gdoubleprime with WLF shift; exact coefficients and clocks in frozen state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "zero_shot_old_PDLLA": {
+      "equation": "Generalized Maxwell Gprime/Gdoubleprime with WLF shift; exact coefficients and clocks in frozen state.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "scope_limits": "One commercial material from the same authors/instrument; calibrated temperature transfer and unfitted loss response, not universal physics or independent laboratory replication.",
+  "source_url": "https://zenodo.org/records/17288444",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Reserved outcomes were unopened at first frozen evaluation. They are now packaged/exposed; future evaluator scores are retrospective.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "e5d956b062cd113e0fed257a4d56ef962460c25193aa45048085b3ee818d78bf",
+  "observations_sha256": "eadf1c9c110ebdcbd07c798b7925244978d5d276869f65b40ca5d1c825e21028",
+  "legacy_protocol_sha256": "604bcc865742e8b31fd89d8c0e8e7962dc304917cfe874c98f77b434030fdafc",
+  "source_license": "CC BY 4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ],
+  "supplemental_asset_root": "supplements/P100-058",
+  "legacy_case_id": "P100-058-PLA3D850-storage"
+}

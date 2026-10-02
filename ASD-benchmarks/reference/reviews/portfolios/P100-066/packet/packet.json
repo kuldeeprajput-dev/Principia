@@ -1,0 +1,108 @@
+{
+  "schema_version": "principia.review-packet/3.0",
+  "bindings": {
+    "claims_sha256": "64e04928c9ba1207559a97bb9225f5dc8fa6aef775a9862732935ec126df7e58",
+    "evidence_sha256": {
+      "E001": "8755da84591eb98a4945f87f5de1662f4f71f42d3759b2c44e13899673850f4e",
+      "E002": "e207368fcadf6f690ba2cec71468f1f9a64abf88f93a53160ac1d04c1426bc72",
+      "E003": "4283cb6655f0e89972a182e8a126be0969f62c64bfd9a60d1347112007926882",
+      "E004": "d8a95e04707ef9e2b8000899dfa2aa8d5b538c84a10870a9e7ac56a133757a18",
+      "E005": "45ff7ac72ba2d0fcdfb4e37c86790854fba6e18d7e2539bcb747096763756157",
+      "E006": "a5126be0aa0fe21b9c67222d5d5d68a489c5bfbbb84d5fd745b35c4b14db7e1e",
+      "E007": "3fbbf953654fb9d4b6461dd0d32a5279b4e8f85d84dd4410ab6f198908b959bc",
+      "E008": "cef5065b44ff9e4e9f3f66252ba991afaee6d600487cb21c4a62ecc976f640c1",
+      "SCIENTIFIC": "2bc4ae27cb9d7c075393044a122b7a24772ed8189979f0d5aa592b68dd8e3559",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-066",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "findings": [
+    {
+      "id": "P100-066-SCI-01",
+      "classification": "reproduction",
+      "source_classification": "reproduction",
+      "statement": "The original displaced-gas term improves a weak monotone adsorption baseline but fails an optimum-pressure interpretation.",
+      "applicability": "Whole material compositions with complete temperature/branch curves; excess uptake rather than absolute capacity.",
+      "limitations": "Idealized pressure subtraction is insufficient at cryogenic high pressure; fitted uptake and derived total-uptake/reuse quantities are not independent confirmation.",
+      "falsification": [
+        "Audit rho[g/cm\u00b3], f[bar], V[cm\u00b3/g]\u2192wt.% dimensional consistency and normal-hydrogen assumption.",
+        "Score peaks only where an interior extremum is observed and retain boundary maxima separately.",
+        "Treat 5\u2013100 bar excess swing as excesscurve diagnostic, not absolute deliverable capacity; freeze EOS interpolation domain."
+      ],
+      "prior_art": "Leachman EOS and dual-site adsorption are established; specificationrepair and bounded curve diagnostics are the contribution. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "target": "wt.%",
+        "eg_pct": "wt.% expanded graphite in material label",
+        "temperature_K": "K",
+        "pressure_bar": "bar",
+        "branch": "0 adsorption, 1 desorption"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-066.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-066-SCI-02",
+      "classification": "predictive_reference",
+      "source_classification": "retrospective_extension",
+      "statement": "Correct real-gas excess modeling gives much better local curves, but improvement over a repaired strong ideal-excess baseline is only 3.19% on EG 5.",
+      "applicability": "Whole material compositions with complete temperature/branch curves; excess uptake rather than absolute capacity.",
+      "limitations": "Effective pore volume is fitted from uptake, not independently measured .77 Kpeak differs 3.91 bar from sampled maximum, but 160/273 Kmaxima lie at upper pressure boundary and are not interior optima. PSDREADME/filename material mismatch prevents independent pore calibration.",
+      "falsification": [
+        "Audit rho[g/cm\u00b3], f[bar], V[cm\u00b3/g]\u2192wt.% dimensional consistency and normal-hydrogen assumption.",
+        "Score peaks only where an interior extremum is observed and retain boundary maxima separately.",
+        "Treat 5\u2013100 bar excess swing as excesscurve diagnostic, not absolute deliverable capacity; freeze EOS interpolation domain."
+      ],
+      "prior_art": "Leachman EOS and dual-site adsorption are established; specificationrepair and bounded curve diagnostics are the contribution. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "q_ex=sum_(j=1,2) Aj*bj(T)*f/(1+bj(T)*f)-100*V*rho_g; bj=exp[ell_j+Qj*(1/T-1/160K)]; A=(1.15792,5.97028),ell=(-3.407412,-5.465494),Q=(627.7136,466.2582)K,V=.870508cm\u00b3/g.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007",
+          "E008"
+        ]
+      },
+      "variables_and_units": {
+        "target": "wt.%",
+        "eg_pct": "wt.% expanded graphite in material label",
+        "temperature_K": "K",
+        "pressure_bar": "bar",
+        "branch": "0 adsorption, 1 desorption"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007",
+        "E008"
+      ],
+      "task_id": "P100-066.continuation.v1",
+      "task_family": "continuation",
+      "task_version_history": "2026-10-01 continuation"
+    }
+  ],
+  "reviews_required": [
+    "computational",
+    "scientific_critical"
+  ],
+  "automatic_scientific_admission": false,
+  "current_exposure": "exposed"
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-100.original.v1",
+  "case_id": "P100-100",
+  "case_number": 100,
+  "family": "original",
+  "protocol_version": "P100-100-prepared-primary-v1",
+  "cohort_id": "P100-100.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-100.original.v1",
+  "legacy_package": "100_communications_6g_mobkpi/final_results",
+  "source_scenario": "scenarios/100_communications_6g_mobkpi",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Next successful ICMP probe RTT",
+  "target_units": "ms",
+  "error_units": "ms",
+  "primary_units": "ms",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "route",
+    "payload_B",
+    "last_rtt",
+    "mean5_rtt",
+    "mean3_rtt",
+    "trend_rtt",
+    "RSRP",
+    "RSRQ"
+  ],
+  "input_units": {
+    "route": "calibrated route label",
+    "payload_B": "B",
+    "last_rtt": "ms,previous completion",
+    "mean5_rtt": "ms,previous5 completions",
+    "mean3_rtt": "ms,previous3 completions",
+    "trend_rtt": "ms,previous RTT difference",
+    "RSRP": "dBm,asof previouscompletion",
+    "RSRQ": "dB,asof previouscompletion"
+  },
+  "numeric_columns": [
+    "payload_B",
+    "last_rtt",
+    "mean5_rtt",
+    "mean3_rtt",
+    "trend_rtt",
+    "RSRP",
+    "RSRQ"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Predict next probe RTT using only five previous completed RTTs and radio asof previous completion, <=0.5s old. No current response-completion timestamp, ICMPseq, cumulative average/loss, future gap, throughput or same-probe radio in inputs. Successful response conditional target; missing lost responses retained when inputs eligible.",
+  "calibration": "r_n and r_(n\u22121) are completed previous RTTs in milliseconds; rbar5 averages the last five completed probes. c_q in ms is\u22120.002897 for indoor random,\u22120.069945 for indoor rectangle and\u22120.049676 for outdoor rectangle. The55ms breakpoint was selected using nested development groups. Payload and causal radio measurements are available to comparators, but the selected equation uses history and the calibrated route offset only. It predicts a conditional successful next response, not a missing lost-packet RTT.",
+  "independent_unit": "whole PING run; sequential packets correlated",
+  "evaluation_groups": [
+    "2024-11-20_19-05-38_ping",
+    "2024-11-22_11-04-17_ping",
+    "2024-11-22_17-29-19_ping"
+  ],
+  "assigned_rows": 2943,
+  "eligible_rows": 2942,
+  "baseline_models": [
+    "reference",
+    "challenger",
+    "baseline_persistence",
+    "baseline_rbf",
+    "baseline_residual_rbf",
+    "baseline_rolling",
+    "baseline_static"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "\\widehat r_{n+1}=\\max[0,r_n+c_q+0.675521(\\overline r_5-r_n)+0.085666(r_n-55)_+-0.662004(r_n-r_{n-1})]",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "challenger": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the two_scale branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_persistence": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the persistence branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rbf": {
+      "equation": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_residual_rbf": {
+      "equation": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rolling": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the rolling branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_static": {
+      "equation": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the static branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared conditions, sensor/system dependence or small numbers of reserved groups do not support precise population-level confidence. No row-bootstrap intervals."
+  },
+  "scope_limits": "Three complete PING runs, one per calibrated route, one platform; online previous-probe calibration. No new-network or packet-loss reliability prediction.",
+  "source_url": "https://zenodo.org/records/14635635",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All packaged targets are now exposed; future scoring is retrospective. First indoor-rectangle1000B file audit responses viewed; this complete file excluded from reserved allocation. Metadata hash chooses one run per route from remaining source-defined runs.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "0d7d828a907f376b39f205e6a2f2dd611561487472e16533be6c18e886d287a2",
+  "observations_sha256": "861c464b118e9ccfc58abc47120783c2bac6aa37c00f03854edd0c5d1021c6f4",
+  "legacy_protocol_sha256": "f3f9f0b443e55dc024cd7553bdae9c423b6afb9e82e56f8222fa1d53bb6d5554",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

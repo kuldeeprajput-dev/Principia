@@ -1,0 +1,47 @@
+{
+  "case_id": "P100-076",
+  "findings": [
+    {
+      "finding_id": "P100-076-F01",
+      "classification": "reproduction",
+      "admission": "partially_supported",
+      "claim": "A calibrated no-increase control is a strong reference in this sparse-response cohort. Its advantage is evidence about forecast difficulty and calibration value, not proof that neurons lack current dependence or mechanosensitivity.",
+      "equation": "Nhat=N_last_prefix",
+      "model_id": "reference",
+      "task_id": "P100-076.original.v1",
+      "evidence": {
+        "development_primary_error": 0.7248677248677249,
+        "confirmation_primary_error": 0.4419642857142857,
+        "confirmation_groups": 8,
+        "confirmation_rows": 266,
+        "unit": "spikes per stimulus",
+        "metrics": "evidence/metrics.csv",
+        "group_metrics": "evidence/by_group.csv",
+        "predictions": "evidence/predictions.csv.gz",
+        "state": "rules.json"
+      },
+      "falsification": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "known_prior_art": "Kreysing et al., Nature Communications2025, already show stiffness- and Piezo1-associated maturation. Rheobase shifts, gain changes, saturation and depolarization block are established explanatory families. These source findings are not newly discovered here.",
+      "scope": "Only three recording dates exist; final validation is across8 dishes on one date, not8 independent donor batches. Many responses are small or zero. The retained data do not identify animal/culture-batch independence. No causal challenge of the published stiffness pathway follows from prediction failure."
+    },
+    {
+      "finding_id": "P100-076-F02",
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Condition thresholds, pooled saturation, prefix-dependent recruitment, high-current block and condition-specific gain fail to improve the selected control in whole-dish development testing.",
+      "equation": null,
+      "evidence": {
+        "attempts": 5,
+        "best_attempt_development_error": 0.808151028976427,
+        "development_selected_error": 0.7248677248677249,
+        "development_diagnostics": "research_history/DEVELOPMENT_DIAGNOSTICS.json"
+      },
+      "known_prior_art": "Kreysing et al., Nature Communications2025, already show stiffness- and Piezo1-associated maturation. Rheobase shifts, gain changes, saturation and depolarization block are established explanatory families. These source findings are not newly discovered here.",
+      "falsification": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "scope": "Only three recording dates exist; final validation is across8 dishes on one date, not8 independent donor batches. Many responses are small or zero. The retained data do not identify animal/culture-batch independence. No causal challenge of the published stiffness pathway follows from prediction failure.",
+      "underlying_proposal_disposition": "Several proposed mechanisms are unsupported; this negative finding and the tested models have distinct dispositions."
+    }
+  ],
+  "reference_disposition": "Frozen development-selected reference; candidate laws and negative findings require separate scientific review.",
+  "review_pending": "Independent computational and scientific-critical review by different agents"
+}

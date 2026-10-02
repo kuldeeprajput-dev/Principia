@@ -1,0 +1,50 @@
+{
+  "case_id": "P100-091",
+  "created_utc": "2026-10-01T13:59:48.390150+00:00",
+  "target": "mean UDP one-way end-to-end latency",
+  "target_units": "ms",
+  "measurement": "single 60-second trial server summary",
+  "prediction_time": "After same-run achieved throughput is available; conditional diagnostic, not prospective forecast",
+  "inputs": [
+    "offered_Mbps",
+    "achieved_Mbps"
+  ],
+  "input_units": {
+    "offered_Mbps": "Mbit/s",
+    "achieved_Mbps": "Mbit/s"
+  },
+  "forbidden": [
+    "latency min/max/std",
+    "jitter",
+    "loss",
+    "NetPwr",
+    "location fitted intercept",
+    "TCP measurements after UDP run"
+  ],
+  "groups": "complete location Q1-Q7; all rates/repetitions linked",
+  "split": {
+    "Q1": "development",
+    "Q2": "development",
+    "Q3": "development",
+    "Q4": "confirmation",
+    "Q5": "confirmation",
+    "Q6": "development",
+    "Q7": "development"
+  },
+  "development_validation": "leave-one-development-location-out; transformations and fitting within training fold",
+  "primary_metric": "mean of location-specific MAE, ms",
+  "eligibility": "Native finite nonnegative mean latency below100000ms; exclude three source-disclosed clock-wrap runs, no imputation",
+  "baselines": [
+    "constant training median",
+    "offered-rate affine",
+    "achieved-rate affine",
+    "published queue-plus-serialization, no unseen-location offsets; C>=600Mbit/s predeclared regularization",
+    "RBF ridge with inner leave-location-out tuning, same two inputs"
+  ],
+  "selection": "minimum development mean-location MAE; prefer simpler within0.05ms; deployment-selected model frozen before confirmation",
+  "continuation": "at least five substantive hypotheses, continue while distinct supported hypothesis remains; stop after two consecutive no improvement in prediction, robustness or supported interpretation",
+  "uncertainty": "individual held-out locations; no population confidence interval from two locations",
+  "source_prior_analysis": "Source paper already fits queue+linear+location models, tests LOLO and capacity identifiability. These are known findings.",
+  "exposure": "Public source-aware study; Q1 repetition1 at1 and100Mbit/s inspected for parser semantics; Q1 assigned development. Source paper results inspected. Other confirmation outcomes unscored until freeze.",
+  "constraints": "Offered rates1-500Mbps; achieved0-550Mbps; nonnegative latency; whole deployment path includes WiFi and campus wired components; source clock synchronization not independently verified."
+}

@@ -1,0 +1,282 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-018",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "{\"schema\": \"Native schema inspected and source-public aggregate descriptions known; case10 status counts were inspected, not new endpoint NVD-score presence scores. No reserved individual target metric printed.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"78da1d0fc89a5a79911f5f84714f854d148ecac9d9ddcbc09f08d7eb70141a0f\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}"
+  },
+  "findings": [
+    {
+      "id": "P100-018-F01",
+      "classification": "reproduction",
+      "source_classification": "reproduction",
+      "statement": "Recorded pathgeometry carries descriptive information about broad reported property losses.",
+      "applicability": "2025 tornado segments with nonmissing explicit damage. Broad estimates including reported0, not insured claim totals. Maximum width times length is bounding footprint proxy, not actual damaged area. Exposure/building stock and wind speed unavailable; no prospective loss or causal damage law.",
+      "limitations": "Flexiblecontrols outperform, verylarge logerrors and worseextremeepisodes remain. No wind/asset exposure or independent insuredloss truth.",
+      "falsification": "Flexiblecontrols outperform, verylarge logerrors and worseextremeepisodes remain. No wind/asset exposure or independent insuredloss truth.",
+      "prior_art": "[{\"url\": \"https://www.ncei.noaa.gov/access/storm-events-database/assets/pdf/Storm_Events_Database_User_Guide.pdf\", \"checked\": \"2026-10-02\", \"known\": \"Property/crop damage are broad estimates.\"}, {\"url\": \"https://www.ncei.noaa.gov/stormevents/pd01016005curr.pdf\", \"checked\": \"2026-10-02\", \"known\": \"Path length in miles and maximum width in yards; multi-segment tornadoes reported in segments. Geometry-loss scaling is a known descriptive approach; absent exposure forbids mechanistic damage claims.\"}]",
+      "equation_or_program": {
+        "expression": "y=ln(1+damageUSD), predicted y=clip(a+bL ln(1+length_km)+bW ln(1+width_m)+bLat latitude+bSin sin(2pi month/12)+bCos cos(2pi month/12),0,50). Robust train-only residual fitting; coefficients=[3.099796961781409, 1.0765641714752674, 1.5023316079008489, -0.1478989662476028, 0.8455297618332634, -0.00746860537787219]. The length/maximumwidth proxy is not actual exposed assets, swept damage area or kinetic energy. Exact executable state: rules.json models.reference; task_id P100-018.original.v1.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "ln(1+property damage in USD)",
+        "length_km": "km path length",
+        "width_km": "km maximum path width",
+        "duration_min": "minutes event duration",
+        "latitude": "degrees north",
+        "month": "calendar1\u201312"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-018.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-018-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "The available geometry doesnot demonstrate an accurate transferable industrialdamage law.",
+      "applicability": "2025 tornado segments with nonmissing explicit damage. Broad estimates including reported0, not insured claim totals. Maximum width times length is bounding footprint proxy, not actual damaged area. Exposure/building stock and wind speed unavailable; no prospective loss or causal damage law.",
+      "limitations": "Reportedmonetary losses are broad estimates, not direct mechanicalresponse; heldworsterror andstrongerflexiblecontrol reject deploymentclaim.",
+      "falsification": "Reportedmonetary losses are broad estimates, not direct mechanicalresponse; heldworsterror andstrongerflexiblecontrol reject deploymentclaim.",
+      "prior_art": "[{\"url\": \"https://www.ncei.noaa.gov/access/storm-events-database/assets/pdf/Storm_Events_Database_User_Guide.pdf\", \"checked\": \"2026-10-02\", \"known\": \"Property/crop damage are broad estimates.\"}, {\"url\": \"https://www.ncei.noaa.gov/stormevents/pd01016005curr.pdf\", \"checked\": \"2026-10-02\", \"known\": \"Path length in miles and maximum width in yards; multi-segment tornadoes reported in segments. Geometry-loss scaling is a known descriptive approach; absent exposure forbids mechanistic damage claims.\"}]",
+      "equation_or_program": {
+        "expression": "Duration andcontext ablations005/006, plus matched robust controls, challenge the proposed law.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "ln(1+property damage in USD)",
+        "length_km": "km path length",
+        "width_km": "km maximum path width",
+        "duration_min": "minutes event duration",
+        "latitude": "degrees north",
+        "month": "calendar1\u201312"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-018.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 14048,
+      "sha256": "78da1d0fc89a5a79911f5f84714f854d148ecac9d9ddcbc09f08d7eb70141a0f",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 540,
+      "sha256": "d8378bd3db096130466163b153343e7593aa3c24b1c5ed4ce7dac443622f1410",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 3162,
+      "sha256": "d56afd15a71791d093cc8ffb2901dc8ea3ed9418958f42a3baa64185744a8ea4",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 97678,
+      "sha256": "96435167d89fdd6419f4de1764f132b9eaef8ec5dccaff19ec04f02fb5ba3036",
+      "id": "E004",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E005_SOURCE_AND_UNITS.md",
+      "bytes": 832,
+      "sha256": "72eab4848ab77200d9a8203e7badd25e4fc25c79644a3866dc3f1c184acd612c",
+      "id": "E005",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E006_SOURCE_MANIFEST.json",
+      "bytes": 964,
+      "sha256": "f17cfcda488a3dda2ec15ae7d7fdc6f9517a41492380943c2255ba3157328792",
+      "id": "E006",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E007_SPLITS.json",
+      "bytes": 10302,
+      "sha256": "ef6789493c519cbb0cfcc5f1cb1e54372d30353db0fff30509d3f86182df5c6e",
+      "id": "E007",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 2323,
+      "sha256": "463e73e2a9696170c7da926567ce5a5e4efac655fc332690708e08e28334c3d2",
+      "id": "E008",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E009_FINDINGS.md",
+      "bytes": 6352,
+      "sha256": "088e91a2aa273dbaa9f915e660d770aedb1a94d827cf4f5a8b156e6264ead89b",
+      "id": "E009",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E010_inputs.csv.gz",
+      "bytes": 4836,
+      "sha256": "bcbe8f43cb0b1b448ea20763286acd0774d37e9f514c8b132bf7e5448faac540",
+      "id": "E010",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E011_observations.csv.gz",
+      "bytes": 3517,
+      "sha256": "a3910dca3a0afade4a72f7f99d346de136570e0dfe59e100241019a57e7cc0e5",
+      "id": "E011",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E012_integrity_revision.json",
+      "bytes": 440,
+      "sha256": "a0646f7befc1dbf2ad01b7a06999f7e73e6587e0c0601344e542b604826be4b5",
+      "id": "E012",
+      "role": "package/evidence/integrity_revision.json"
+    },
+    {
+      "path": "evidence/E013_metrics.csv",
+      "bytes": 1427,
+      "sha256": "2cfc0f3eb951536a9f42b60503c22b4e32fd14780d82e9bc3ed47288c46d5ddd",
+      "id": "E013",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 23826,
+      "sha256": "edaf41eeda7bd88a7771ae3fbed7ec3b0ac091f9ef187bccaa6504706d0e29d6",
+      "id": "E014",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_findings.json",
+      "bytes": 3913,
+      "sha256": "34ba3f0611c02e59b82b46962b8871c4784277b693506dff754fb64b8418f148",
+      "id": "E015",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E016_rules.json",
+      "bytes": 136908,
+      "sha256": "86f749093b194f638c0bdf0711e8e428f82a040b3a29fe0480333229988d547a",
+      "id": "E016",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E017_run.py",
+      "bytes": 6573,
+      "sha256": "fef20ed7288f4a3ab0ce28a5c9e5d5ddcb77d9a78a1c5b9d44079afd6aba5596",
+      "id": "E017",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E018_task_spec.json",
+      "bytes": 2479,
+      "sha256": "2932d60c5758f774c0e593b400cc9ef5e23b5b39ff9a9757083340346fa97bd8",
+      "id": "E018",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 113411,
+      "sha256": "77b200cdcb017025cc930484c1d0ded11620dccaea0548b5c9854816df0a6e2b",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 7331,
+      "sha256": "f89bf2dd3ccc7ad1cb208d7f1443e2bcd16557e272dd200dfc4e883e7a320389",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

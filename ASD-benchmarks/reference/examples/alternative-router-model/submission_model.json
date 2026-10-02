@@ -1,0 +1,80 @@
+{
+  "schema": "linear-in-declared-physical-features-v1",
+  "spec": {
+    "kind": "flex"
+  },
+  "terms": [
+    "routerA: 1",
+    "routerA: u = throughput_Gbps / 200",
+    "routerA: q = throughput_Gbps*1e9/(8*packet_bytes*1e8)",
+    "routerA: u^2",
+    "routerA: q^2",
+    "routerA: u*q",
+    "routerA: ln(L/1500)",
+    "routerA: ln(L/1500)^2",
+    "routerA: u*ln(L/1500)",
+    "routerB: 1",
+    "routerB: u = throughput_Gbps / 200",
+    "routerB: q = throughput_Gbps*1e9/(8*packet_bytes*1e8)",
+    "routerB: u^2",
+    "routerB: q^2",
+    "routerB: u*q",
+    "routerB: ln(L/1500)",
+    "routerB: ln(L/1500)^2",
+    "routerB: u*ln(L/1500)"
+  ],
+  "coefficients_W": [
+    696.3026286137793,
+    58.86933238540751,
+    -5.366797218937639,
+    -34.92915237871574,
+    -4.660523722069348,
+    22.32672234762236,
+    -10.590829814762847,
+    -2.6880441545803397,
+    0.394919977116895,
+    68.79106449951414,
+    15.521229340001012,
+    2.44104532130344,
+    -2.9812829081995202,
+    -1.2317496969679802,
+    5.373421405462038,
+    -1.189940249600327,
+    -0.25085125824678073,
+    3.1777191749999223
+  ],
+  "hyperparameter_search": [
+    {
+      "kind": "flex"
+    }
+  ],
+  "development_selection_losses": [
+    null
+  ],
+  "free_coefficient_count": 18,
+  "rank": 18,
+  "training_groups": [
+    "TC3.2_multiple_traffic_flows_modelA_iteration1.csv",
+    "TC3.2_multiple_traffic_flows_modelA_iteration2.csv",
+    "TC3.2_multiple_traffic_flows_modelB_iteration1.csv",
+    "TC3.2_multiple_traffic_flows_modelB_iteration2.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelA_iteration1.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelA_iteration2.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelB_iteration1.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelB_iteration2.csv",
+    "TC3.2_traffic_load_variation_modelA_iteration1.csv",
+    "TC3.2_traffic_load_variation_modelA_iteration2.csv"
+  ],
+  "valid_input_range": {
+    "u": [
+      0.0,
+      1.0
+    ],
+    "packet_bytes": [
+      62.0,
+      1500.0
+    ]
+  },
+  "prediction": "sum(coefficients_W[j]*terms[j]); router-specific coefficients, shared selected shape parameters",
+  "clock": "Each run begins a new state; EMA uses only current and earlier traffic inputs."
+}

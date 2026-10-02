@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-077",
+  "title": "ONE-STEP tagging: a versatile method for rapid site-specific integration by simultaneous reagent delivery",
+  "default_task": "P100-077.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Joint green-positive and red-positive fraction",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 1,
+    "independent_unit_description": "Named experimental replicate block A/B/C; three doses within each",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "One source BOB negative control defines each channel threshold at its 99.5th percentile, identically for all wells and models. Event gating uses finite scatter/fluorescence and positive FSC-A/SSC-A only; source FlowJo manual gates were not supplied and are not reproduced.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Joint green-positive and red-positive fraction",
+    "prediction_time": "Contemporaneous assay diagnostic: green and red marginal positive fractions measured from the same FCS well; joint fraction withheld as target. Marginals do not algebraically determine the joint without an independence/dependence assumption.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "One technical replicate block, conditional fluorescence marginals; no editing mechanism."
+  },
+  "task_ids": [
+    "P100-077.original.v1"
+  ],
+  "finding_ids": [
+    "P100-077-F01",
+    "P100-077-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-077/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-077.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Joint green-positive and red-positive fraction under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Contemporaneous assay diagnostic: green and red marginal positive fractions measured from the same FCS well; joint fraction withheld as target. Marginals do not algebraically determine the joint without an independence/dependence assumption.",
+    "calibration_requirement": "One source BOB negative control defines each channel threshold at its 99.5th percentile, identically for all wells and models. Event gating uses finite scatter/fluorescence and positive FSC-A/SSC-A only; source FlowJo manual gates were not supplied and are not reproduced.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Joint green-positive and red-positive fraction in percentage points",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "One technical replicate block, conditional fluorescence marginals; no editing mechanism."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "percentage points",
+    "reference_model": "reference",
+    "reference_primary_error": 0.09624171838053952,
+    "reference_physical_mae": 0.09624171838053952,
+    "physical_error_units": "percentage points",
+    "lowest_registered_error_model": "baseline_flexible",
+    "lowest_registered_error": 0.03221893871602523,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-077.original.v1/evidence/metrics.csv",
+      "bytes": 857,
+      "sha256": "6d61e92b297f2e74d7a300dc4cd30d904ce0a6c35484f18f8ff17e47ffb5ba2f"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "One technical replicate block, conditional fluorescence marginals; no editing mechanism."
+}

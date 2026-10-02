@@ -1,0 +1,63 @@
+"""Portable frozen equations. No fitting, network access, or observation lookup."""
+from pathlib import Path
+import json,hashlib
+import numpy as np
+import pandas as pd
+from scipy.special import expit
+
+def read_table(path):return pd.read_csv(path,dtype={'sample_id':str,'group':str})
+def physical(d,c):
+ z={k:d[k].to_numpy(float) for k in d.columns if k not in ['target','sample_id','group'] and pd.api.types.is_numeric_dtype(d[k])};z['one']=np.ones(len(d))
+ if c==16:
+  z.update(p1=z['inflation1'],p3=z['inflation3'],p12=z['inflation12'],h=z['housing1'],m=z['medical1'],j=z['jobs1'],f=z['mfg1'],i=z['info1'])
+  z.update(inertia=z['p1']-z['p12'],sector_gap=(z['h']+z['m'])/2-z['p1'],dispersion=np.abs(z['h']-z['m']),accel=z['p1']-z['p3'],shock_up=np.maximum(z['p1']-z['p12'],0),shock_down=np.minimum(z['p1']-z['p12'],0),job_loss=np.minimum(z['j'],0),job_gain=np.maximum(z['j'],0))
+ return z
+
+def design(model,d):
+ z=physical(d,int(model['case']));X=np.column_stack([z[k] for k in model.get('features',[])]) if model.get('features') else np.zeros((len(d),0))
+ if model.get('rbf'):
+  s=model['rbf'];q=(np.column_stack([z[k] for k in s['columns']])-s['mean'])/s['std'];r=np.exp(-np.sum((q[:,None,:]-np.array(s['centers'])[None,:,:])**2,axis=2)/(2*s['width']**2));X=np.column_stack([np.ones(len(d)),r])
+ return X,z.get(model.get('offset'),np.zeros(len(d))),z.get(model.get('scale'),np.ones(len(d)))
+def link(v,name):
+ if name=='logit':return expit(v)
+ if name=='cloglog':return -np.expm1(-np.exp(np.clip(v,-40,30)))
+ if name=='log':return np.exp(np.clip(v,-60,60))
+ return v
+
+def predict(model,d):
+ if isinstance(model,str):model=json.loads((Path(__file__).resolve().parent/'rules.json').read_text())['models'][model]
+ X,offset,scale=design(model,d);v=offset.copy() if model['type']=='fixed' else offset+scale*(X@np.asarray(model['coef']))
+ y=link(v,model.get('link','identity'))
+ if model.get('clip') is not None:y=np.clip(y,*model['clip'])
+ if not np.isfinite(y).all():raise ValueError('Nonfinite prediction')
+ return y
+
+def loss_report(d,p,metric='mae'):
+ q=d[['sample_id','group','target']].copy();q['p']=p;q['w']=d['sample_weight'].to_numpy(float) if 'sample_weight' in d else 1.;valid=np.isfinite(q.target);eligible=q[valid].copy();e=eligible.p-eligible.target;eligible['ae']=np.abs(e);eligible['se']=e*e;eligible['bias']=e
+ if metric=='log_mae':
+  if (eligible.target<=0).any() or (eligible.p<=0).any():raise ValueError('Nonpositive logarithmic metric input')
+  eligible['main']=np.abs(np.log(eligible.p/eligible.target))
+ else:eligible['main']=eligible.se if metric in ['rmse','brier'] else eligible.ae
+ groups=[]
+ for g,z in eligible.groupby('group'):
+  w=z.w.to_numpy();mean=lambda k:float(np.average(z[k],weights=w));main=mean('main');groups.append(dict(group=str(g),primary_error=float(np.sqrt(main)) if metric=='rmse' else main,mae=mean('ae'),rmse=float(np.sqrt(mean('se'))),bias=mean('bias'),n=len(z),weight_sum=float(w.sum()),p90=float(np.quantile(z.ae,.9))))
+ G=pd.DataFrame(groups)
+ return dict(primary_error=float(G.primary_error.mean()),mean_group_absolute_error=float(G.mae.mean()),worst_group_error=float(G.primary_error.max()),groups=len(G),scored_rows=len(eligible),assigned_rows=len(d),per_group=groups)
+
+def main():
+ root=Path(__file__).resolve().parent;m=json.loads((root/'MANIFEST.json').read_text())
+ assets=m['files']
+ if not assets:raise ValueError('Empty package integrity manifest')
+ seen=set()
+ for x in assets:
+  name=x['path'];rel=Path(name)
+  if rel.is_absolute() or '..' in rel.parts or name in seen:raise ValueError('Unsafe or duplicate package asset')
+  seen.add(name);f=root/rel
+  if not f.resolve().is_relative_to(root.resolve()) or not f.is_file() or hashlib.sha256(f.read_bytes()).hexdigest()!=x['sha256']:raise ValueError('Package integrity mismatch: '+name)
+ rules=json.loads((root/'rules.json').read_text());d=read_table(root/'data/inputs.csv.gz');o=read_table(root/'data/observations.csv.gz');pred=read_table(root/'evidence/predictions.csv.gz');stats=read_table(root/'evidence/metrics.csv').set_index('model');joined=o.copy()
+ if not d.sample_id.equals(o.sample_id) or not d.sample_id.equals(pred.sample_id):raise ValueError('Identity mismatch')
+ report={}
+ for key,model in rules['models'].items():
+  p=predict(model,d);err=float(np.max(np.abs(p-pred[key].to_numpy())));assert np.allclose(p,pred[key],rtol=1e-11,atol=1e-9),key;score=loss_report(joined,p,rules['metric_kind']);assert np.isclose(score['primary_error'],stats.loc[key,'primary_error'],rtol=1e-11,atol=1e-10);report[key]=dict(replay_max_abs=err,primary_error=score['primary_error'])
+ print(json.dumps(report,indent=2))
+if __name__=='__main__':main()

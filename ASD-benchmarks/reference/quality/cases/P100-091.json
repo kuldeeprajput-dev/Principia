@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-091",
+  "title": "Measurement dataset and analysis code for \"Measurement-Driven Modeling of End-to-End Latency in an Indoor Private Standalone 5G Network\"",
+  "default_task": "P100-091.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Mean UDP trial one-way end-to-end latency",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Complete measurement location; all offered rates and repetitions linked. Locations share one network installation.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No held-out location latency calibration. Six global offered-rate offsets and shared slope are fitted on development locations only.",
+  "baseline_strength": {
+    "registered_controls": 11,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "unsupported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Mean UDP trial one-way end-to-end latency",
+    "prediction_time": "Conditional reconstruction after a60-second run. Same-run achieved throughput is permitted; all latency-derived fields, NetPwr, loss, jitter, current location targets and future TCP calibration are forbidden. Not a prospective offered-load forecast.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-091.original.v1"
+  ],
+  "finding_ids": [
+    "P100-091-F01",
+    "P100-091-F02",
+    "P100-091-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-091/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-091.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Mean UDP trial one-way end-to-end latency under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Conditional reconstruction after a60-second run. Same-run achieved throughput is permitted; all latency-derived fields, NetPwr, loss, jitter, current location targets and future TCP calibration are forbidden. Not a prospective offered-load forecast.",
+    "calibration_requirement": "No held-out location latency calibration. Six global offered-rate offsets and shared slope are fitted on development locations only.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Mean UDP trial one-way end-to-end latency in ms",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "ms",
+    "reference_model": "reference",
+    "reference_primary_error": 2.1955568333333337,
+    "reference_physical_mae": 2.1955568333333337,
+    "physical_error_units": "ms",
+    "lowest_registered_error_model": "baseline_rbf",
+    "lowest_registered_error": 1.9164574194366188,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-091.original.v1/evidence/metrics.csv",
+      "bytes": 1218,
+      "sha256": "e96d6e43c5c795bab11ea3a7494274b644789ed4ad6ecc2132d51996057bbe3f"
+    },
+    "models": 11
+  },
+  "case_specific_next_evidence": "Preserve flexible and finite-rate lookup baselines under identical same-run input access.\n\nAdd fresh locations/installations and controlled offered-rate/interference experiments with synchronized packet-level latency/loss logs.\n\nIf prospective control is desired, freeze a new task without same-run achieved throughput; use tail quantiles and operational limits justified externally."
+}

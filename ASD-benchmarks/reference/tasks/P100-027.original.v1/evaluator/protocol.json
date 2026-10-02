@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-027",
+  "protocol_id": "P100-027-prepared-primary-v1",
+  "target": "Measured local vapor void fraction",
+  "target_units": "dimensionless",
+  "primary_units": "dimensionless",
+  "metric_kind": "mae",
+  "metric_definition": "Equal-run mean MAE: average absolute errors within group, then average groups equally.",
+  "independent_unit": "complete experimental run",
+  "evaluation_groups": [
+    "ID_20230630_Run_31",
+    "ID_20230630_Run_32",
+    "ID_20230809_Run_09"
+  ],
+  "input_sha256": "c0b18be039b8da915fcd9bbf0c059558f2dbb0f4273634c53c9eced0e73c02ae",
+  "input_rows": 36,
+  "assigned_rows": 36,
+  "permitted_inputs": [
+    "pressure_Pa",
+    "massflux_kg_m2_s",
+    "quality",
+    "radial_fraction",
+    "rho_liquid",
+    "rho_vapor"
+  ],
+  "input_units": {
+    "pressure_Pa": "Pa, absolute",
+    "massflux_kg_m2_s": "kg m^-2 s^-1",
+    "quality": "kg vapor per kg mixture",
+    "radial_fraction": "dimensionless native coordinate / maximum sampled coordinate",
+    "rho_liquid": "kg m^-3",
+    "rho_vapor": "kg m^-3"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "attempt_002_radial",
+    "baseline_mean",
+    "baseline_homogeneous",
+    "baseline_flex",
+    "baseline_nested_flex",
+    "competitor_drift"
+  ],
+  "reference_equations": {
+    "attempt_002_radial": "alpha_hat=logistic(logit(alpha_hom)+beta0+beta1*r_normalized^2).",
+    "baseline_mean": "alpha_hat=equal-run development mean.",
+    "baseline_homogeneous": "alpha=(x/rho_v)/(x/rho_v+(1-x)/rho_l)",
+    "baseline_flex": "Gaussian-kernel ridge with frozen training-only scales/centers/coefficients; clip output to [0,1], multiply E0 for stiffness.",
+    "baseline_nested_flex": "Gaussian-kernel ridge with frozen training-only scales/centers/coefficients; clip output to [0,1], multiply E0 for stiffness.",
+    "competitor_drift": "alpha_hat=clip(jg/(C0*(jg+jl)+Vd),0,1); jg=G*x/rho_v; jl=G*(1-x)/rho_l."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "scope_limit": "Three complete radial profiles at one KTH facility. Conditional on supplied boundary quality and normalized observed measurement coordinates; no universal closure, flow-regime discovery or physical wall-coordinate claim.",
+  "calibration_note": "Saturation densities are fixed IAPWS-derived inputs from absolute pressure, not learned from void-fraction targets. Global profile coefficients use development runs only.",
+  "timing_contract": "Boundary pressure, mass flux, supplied thermodynamic quality, density properties and measurement coordinate only; no measured target-derived velocity, dynamic pressure, phase label or fitted per-run offset.",
+  "exposure_notice": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every complete reserved group. Within-system and temporal dependence, few condition blocks or calibrated sites limit population-level claims; no row-bootstrap confidence interval is claimed."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Audit native sample anchors and the declared prediction-time cutoff. Disclose every input/calibration and exclude future outcomes. Boundary pressure, mass flux, supplied thermodynamic quality, density properties and measurement coordinate only; no measured target-derived velocity, dynamic pressure, phase label or fitted per-run offset."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

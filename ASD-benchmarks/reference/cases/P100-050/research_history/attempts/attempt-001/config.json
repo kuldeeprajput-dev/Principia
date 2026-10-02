@@ -1,0 +1,23 @@
+{
+  "name": "damped_velocity",
+  "formula": "h+v*tau*(1-exp(-0.2/tau))",
+  "hypothesis": "Attempt1: front-height increments decorrelate through a dissipative velocity memory; exponential damping may prevent constant-velocity overshoot.",
+  "inputs": [
+    "h0",
+    "h",
+    "v",
+    "a",
+    "median"
+  ],
+  "initial": {
+    "tau": 0.1
+  },
+  "bounds": {
+    "tau": [
+      0.002,
+      2
+    ]
+  },
+  "recorded_utc": "2026-10-02T01:55:08.961025+00:00",
+  "parent": null
+}

@@ -1,0 +1,170 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-028.original.v1",
+  "case_id": "P100-028",
+  "case_number": 28,
+  "family": "original",
+  "protocol_version": "P100-028-asd7-native-v1",
+  "cohort_id": "P100-028.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-028.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/28_physics_parametric_microwave",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "magnitude of native complex USB off-diagonal response",
+  "target_units": "fsu; instrument full-scale units",
+  "error_units": "fsu; instrument full-scale units",
+  "primary_units": "fsu; instrument full-scale units",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "lo",
+    "hi",
+    "noise",
+    "r",
+    "g",
+    "glo",
+    "ghi",
+    "sep"
+  ],
+  "input_units": {
+    "lo": "fsu;lowpumpamplituderesponse",
+    "hi": "fsu;secondcalibrationresponse",
+    "noise": "fsu;zero-pumpresponse",
+    "r": "dimensionless normalizedpumpincrement",
+    "g": "fsu;pumpamplitudecontrol",
+    "glo": "fsu;lowpumpcontrol",
+    "ghi": "fsu;highcalibrationpumpcontrol",
+    "sep": "integer frequency-bin separation;100kHzbins"
+  },
+  "numeric_columns": [
+    "lo",
+    "hi",
+    "noise",
+    "r",
+    "g",
+    "glo",
+    "ghi",
+    "sep"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict conversion response above the two calibration pump strengths; each directedmodepair is calibrated at0,.13,.1402040816pumpunits. Whole strongerpumpmatrices are reserved, not selected edges.",
+  "calibration": "Native response magnitudes atthreefixedlow/zeropumpconditionsperdirectedmodepair. No highpumpoutcome or targetstandarddeviation is a predictor.",
+  "independent_unit": "Completepumpstrengthmatrix; all156offdiagonaldirectedpairslinked. Oneinstrument/day; strengthlevels are not independent devices.",
+  "evaluation_groups": [
+    "pump-41",
+    "pump-42",
+    "pump-43",
+    "pump-44",
+    "pump-45",
+    "pump-46",
+    "pump-47",
+    "pump-48",
+    "pump-49",
+    "pump-50"
+  ],
+  "assigned_rows": 1560,
+  "eligible_rows": 1560,
+  "baseline_models": [
+    "reference",
+    "flexible",
+    "hold_calibration",
+    "linear_increment",
+    "saturating_increment",
+    "coherent_rotation",
+    "detuning_saturation",
+    "incoherent_power_mixing",
+    "pump_induced_loss"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "flexible": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "hold_calibration": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "linear_increment": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "saturating_increment": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "coherent_rotation": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "detuning_saturation": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "incoherent_power_mixing": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "pump_induced_loss": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report entirepumpmatrix errors and extrema; no independent-deviceconfidenceinterval."
+  },
+  "scope_limits": "Magnitude in native fsu is not a calibrated dimensionless scattering coefficient; no passivity, quantumfidelity or reciprocity claim is inferred.; Only the purefrequencyconversion13mode experiment is targeted.31modeparametricgain andnumericalinverseproblemproducts remain context,notduplicateindependentobservations.; Finaltenhigherstrengthsettings test within-sweepextrapolation; no hardwaretransfer.",
+  "source_url": "https://zenodo.org/records/18938314",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Schema audit accidentally printed sourceUSBstandarddeviation arrays; measuredcomplexUSBtargets remained unprinted. Uncertainty arrays are excluded from predictors andselection.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "81d1eafb08e5d2102d1585dd126b43b08d48ff4a60755dcaa9f79bf8a3feb27e",
+  "observations_sha256": "c07ff4280f56b5a34e43005d37804a02a13ce68a54cff606cbab5507b485cbbe",
+  "legacy_protocol_sha256": "b419463ce0793f03b441f837f06d3c353ffb38af15d612857773b8f67bd85a85",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "lo",
+    "hi",
+    "noise",
+    "glo",
+    "ghi"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

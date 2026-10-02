@@ -1,0 +1,28 @@
+{
+  "name": "continuous_edge_shift",
+  "formula": "pre+jump*(rL-shift*f*dL+0.5*shift**2*f**2*d2L)",
+  "hypothesis": "Development evidence available before this fit: protocol_two_phase: MAE 0.141528, worst group 0.178854.\n\nNominal two-phase mixing is worse than a staticequalmixture. Test the competing solid-solution-like explanation of a continuouslyshifting LFPedge, using a second-order expansion of the measuredreference. A successfulshift remains an effective spectraldescription,not directphaseidentification.",
+  "inputs": [
+    "pre",
+    "jump",
+    "rL",
+    "rF",
+    "dL",
+    "d2L",
+    "f",
+    "discharge",
+    "rest",
+    "e"
+  ],
+  "initial": {
+    "shift": 3
+  },
+  "bounds": {
+    "shift": [
+      -8,
+      8
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:28:57.165844+00:00",
+  "parent": "attempt-001"
+}

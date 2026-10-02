@@ -1,0 +1,116 @@
+{
+  "schema_version": "principia.review-packet/3.0",
+  "bindings": {
+    "claims_sha256": "b7c73b4e74ee3aab4a8927555d938ba0c947720ec385668f223254e36952973c",
+    "evidence_sha256": {
+      "E001": "8458fd20b1212e4fff214e8abc7501c2ef9a5c6a7a1a7f23ffcddf5ce0661594",
+      "E002": "c2bc1f3e23a5c00fcf0add9a47225d0386edecac796d426a5e4150ef22e94f0d",
+      "E003": "b73c05f1c00f0740a5876c3721e52e27fee362242a3e2fe5b209c5ab3a522ade",
+      "E004": "5c7b54e477ce6e6445cb98c3c496416fce61fb5f3ac023749be0a26ba333bbc8",
+      "E005": "50cebead10cd653dc2a22ab9c58ac86e7aa102c41dc6beed463b35f4565ee101",
+      "E006": "7fbcc55d15d08e49b72530a03c96603e13062732973b9db152593f958b451758",
+      "E007": "2e0f4f74833c612126415af05c14e7446c99c8ab2210415825e4c39a39eb0d07",
+      "E008": "a0477571b9b221d58a3c4b64edbbf1214e3294c80d960d9669a463a0e5679cfe",
+      "SCIENTIFIC": "10681e0f4f84d9fb387e1129696c6bfc7fd25cb4b9f626a9b1309ff977c6c27a",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-059",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "findings": [
+    {
+      "id": "P100-059-SCI-01",
+      "classification": "validated_extension",
+      "source_classification": "validated_extension",
+      "statement": "An original compact radiation/calendar response transfers to one city but does not identify thermal derating.",
+      "applicability": "Whole cities with shared weather; same-hour conditional daylight energy; new task adds exact native one/two-hour past radiation.",
+      "limitations": "The ambient-temperature coefficient is positive; orientation, averaging, shading and weather provenance are unknown. Same-hour conditional energy is not weather forecasting.",
+      "falsification": [
+        "Match exact native-clock lag joins and preserve missing energy; do not impute target-derived specific-energy.",
+        "Keep all plants in a city together, and distinguish same-hour conditional prediction from future weather forecast.",
+        "Test thermal assertions against fold signs, source-clock uncertainty and measured module temperature before causal admission."
+      ],
+      "prior_art": "Radiation/calendar and thermal model families are known; this is a metrology/calibration hypothesis with bounded exact-form priority. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "target": "kWh/kWp",
+        "irradiance": "kW/m^2; supplied weather shortwave radiation",
+        "temp_C": "degree C; supplied 2 m temperature",
+        "wind": "m/s; supplied 10 m wind converted from km/h",
+        "hour": "source-clock hour; no timezone assumed",
+        "doy": "calendar day of year",
+        "limit": "connection kW / installed kWp",
+        "latitude": "degree north"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-059.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-059-SCI-02",
+      "classification": "predictive_reference",
+      "source_classification": "retrospective_extension",
+      "statement": "Equal current/previous-hour radiation weighting is stable in development, but a richer regularized calendar control remains strongest.",
+      "applicability": "Whole cities with shared weather; same-hour conditional daylight energy; new task adds exact native one/two-hour past radiation.",
+      "limitations": "Thermal coefficient hits zero 3/5 folds and-.002/K 2/5; improvement .093644\u2192.093618 is negligible. Provider/timezone/averaging resemblance does not authorize timestamp shifts.",
+      "falsification": [
+        "Match exact native-clock lag joins and preserve missing energy; do not impute target-derived specific-energy.",
+        "Keep all plants in a city together, and distinguish same-hour conditional prediction from future weather forecast.",
+        "Test thermal assertions against fold signs, source-clock uncertainty and measured module temperature before causal admission."
+      ],
+      "prior_art": "Radiation/calendar and thermal model families are known; this is a metrology/calibration hypothesis with bounded exact-form priority. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "G_eff=(G(t)+G(t-1h))/2; Ehat=clip(G_eff*[b0+b1 cos(s)+b2 sin(s)+b3 h+b4 h\u00b2+b5 h cos(s)],0,L), L=(connection kW/installed kWp)*1h; b=(.890843,.248482,-.029082,.253709,-.575536,-.563191).",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007",
+          "E008"
+        ]
+      },
+      "variables_and_units": {
+        "target": "kWh/kWp",
+        "irradiance": "kW/m^2; supplied weather shortwave radiation",
+        "temp_C": "degree C; supplied 2 m temperature",
+        "wind": "m/s; supplied 10 m wind converted from km/h",
+        "hour": "source-clock hour; no timezone assumed",
+        "doy": "calendar day of year",
+        "limit": "connection kW / installed kWp",
+        "latitude": "degree north",
+        "Gpast1": "kW/m2; exact previous native-clock hour supplied radiation",
+        "Gpast2": "kW/m2; exact two-hour-past radiation"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007",
+        "E008"
+      ],
+      "task_id": "P100-059.continuation.v1",
+      "task_family": "continuation",
+      "task_version_history": "2026-10-01 continuation"
+    }
+  ],
+  "reviews_required": [
+    "computational",
+    "scientific_critical"
+  ],
+  "automatic_scientific_admission": false,
+  "current_exposure": "exposed"
+}

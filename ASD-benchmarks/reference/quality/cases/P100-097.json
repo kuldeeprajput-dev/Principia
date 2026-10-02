@@ -1,0 +1,78 @@
+{
+  "case_id": "P100-097",
+  "title": "Data of the crowd movement experiment.",
+  "default_task": "P100-097.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "pedestrian speed",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Complete source figure cohorts; F3D and F3E are linked as the multidirectional-study family and reserved together. Person/run identifiers are missing, so independence within or between figure cohorts is not established.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No held-condition speed calibration. The supplied paper fit is an explicitly exposed prior-art baseline, not a newly discovered coefficient set.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "unsupported": 2,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "pedestrian speed",
+    "prediction_time": "Source-processed paired density/speed ordinates, used for retrospective condition transfer. Density is the published local spatial descriptor; the task is not an online evacuation forecast.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Missing person/run IDs and linked published panels; no independent-crowd generalization."
+  },
+  "task_ids": [
+    "P100-097.original.v1"
+  ],
+  "finding_ids": [
+    "P100-097-F01",
+    "P100-097-F02",
+    "P100-097-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-097/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-097.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate pedestrian speed under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Source-processed paired density/speed ordinates, used for retrospective condition transfer. Density is the published local spatial descriptor; the task is not an online evacuation forecast.",
+    "calibration_requirement": "No held-condition speed calibration. The supplied paper fit is an explicitly exposed prior-art baseline, not a newly discovered coefficient set.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "pedestrian speed in m/s",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Missing person/run IDs and linked published panels; no independent-crowd generalization."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "m/s",
+    "reference_model": "reference",
+    "reference_primary_error": 0.2851404434695351,
+    "reference_physical_mae": 0.2851404434695351,
+    "physical_error_units": "m/s",
+    "lowest_registered_error_model": "published_source",
+    "lowest_registered_error": 0.24194348294669205,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-097.original.v1/evidence/metrics.csv",
+      "bytes": 1281,
+      "sha256": "54760079709779a3d773496055a5a34328f45b4d0c4d9f5ae3fae4aa09dfdb58"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Missing person/run IDs and linked published panels; no independent-crowd generalization."
+}

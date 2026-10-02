@@ -134,28 +134,26 @@ Raw files remain in the selected folders. Remote analysis can send bounded profi
 
 # Principia-100 scientific discovery benchmark
 
-**[Principia-100](./ASD-benchmarks/) brings 100 source-verifiable scientific scenarios to autonomous discovery: native data, practical research questions, and a protocol for testing the resulting equations.** It is a core part of Principia's research ecosystem and is also usable with other discovery systems.
+**[Principia-100](./ASD-benchmarks/) connects 100 scientific datasets with reference findings and executable evaluation.** The ASD reference portfolios are **implemented by GPT-6 Astra**, providing a baseline for new agents and methods.
 
-<p align="center">
-  <a href="./ASD-benchmarks/"><img src="./ASD-benchmarks/assets/principia-100.svg" alt="Principia-100: 100 scientific scenarios connecting native data, equations, and evidence" width="100%"></a>
-</p>
+<p align="center"><a href="./ASD-benchmarks/"><img src="./ASD-benchmarks/assets/principia-100.svg" alt="Principia-100: source-native data, GPT-6 Astra reference findings, and reproducible evaluation" width="100%"></a></p>
 
-The collection spans **semiconductor devices, materials, physics, biology, medicine, environmental science, society, computing and mathematics**. It retains heterogeneous source formats: spreadsheets, instrument logs, scientific arrays, images, audio, video, spatial records and computational trajectories. Every case includes source attribution, reuse terms, checksums, a neutral brief and a scientific task card with validation units and limitations.
+The collection spans devices, manufacturing, materials, physics, biology, medicine, Earth science, social science, computing and mathematics. Native spreadsheets, logs, arrays, signals, images, audio, video and computational records preserve the irregular structure of real research folders.
 
-| What is included | Why it matters |
-| :--- | :--- |
-| **100 scenarios · 1,685 frozen scientific assets** | Study realistic research folders with source-native organization and documented processing. |
-| **85 measured/observed cases**, plus clearly labeled mixed, computational and reference cases | Examine a broad range of evidence without confusing simulation with observation. |
-| **100 task cards and an evaluation protocol** | Test executable relationships with uncertainty, baselines, falsifying controls and appropriate held-out groups. |
-| **A catalog, source/license registers and replay tools** | Choose cases, trace evidence and reconstruct the exact released inputs. |
+| Included | What you can do |
+|---|---|
+| **100 scenarios · 1,685 frozen scientific assets** | Start from source-verifiable data, neutral briefs, provenance and reuse terms. |
+| **100 GPT-6 Astra reference portfolios** | Read English PDF reports; inspect equations, coefficients, code, predictions and preserved failures. |
+| **134 numerical task versions across 99 cases, plus one adequacy assessment** | Compare alternative findings using explicit targets, information budgets, grouped metrics and scientific review. |
+| **A raw-data discovery route and reviewed task admission** | Build different features or propose a genuinely different measured endpoint without silently redefining an existing comparison. |
 
-Start with [membrane permeation](./ASD-benchmarks/task_cards/061.md), [industrial screw driving](./ASD-benchmarks/task_cards/053.md), [CHO bioreactor cultivations](./ASD-benchmarks/task_cards/071.md), or [Arctic ocean profiles](./ASD-benchmarks/task_cards/094.md). Download a selected case, connect it through **New research → Add data**, and use its `USER_BRIEF.txt` as a starting research goal. For a formal benchmark study, follow the input allowlist and freeze the case-specific validation design first.
+Start with [grid demand](./ASD-benchmarks/reference/quality/cases/P100-041.md), [radiation](./ASD-benchmarks/reference/quality/cases/P100-048.md), [semiconductor characterization](./ASD-benchmarks/reference/quality/cases/P100-051.md), or [rheology](./ASD-benchmarks/reference/quality/cases/P100-058.md). Every [catalog row](./ASD-benchmarks/CATALOG.md) links the source data, reference report and evaluation scope.
 
-**[Explore all 100 →](./ASD-benchmarks/CATALOG.md)** · **[Download selected cases](./ASD-benchmarks/DOWNLOAD.md)** · **[Read the protocol](./ASD-benchmarks/EVALUATION_PROTOCOL.md)**
+**[Explore all 100 →](./ASD-benchmarks/CATALOG.md)** · **[Download](./ASD-benchmarks/DOWNLOAD.md)** · **[Evaluate your method](./ASD-benchmarks/reference/docs/EXTERNAL_AGENT_GUIDE.md)** · **[Release audit](./ASD-benchmarks/RELEASE_AUDIT.md)**
 
-The full benchmark is about **4.80 GB** and uses **Git LFS** for large assets; it is optional and separate from the application installation above. This is an **open, source-aware corpus**: published analyses are disclosed, the original 20 scenarios were used during Principia development, and native-reader support is distinguished from application ingestion. Reproduction, validated extension, novelty candidate and justified abstention are separate outcomes. The release supplies research inputs and evaluation standards, without claiming 100 unknown laws or an aggregate discovery score.
+Reference findings are fallible baselines; measured observations provide task labels. **All current outcomes are exposed**, so evaluation is open and retrospective. Mechanism, novelty and industrial impact require separate evidence. Reproduction, validated extension, falsification and justified abstention remain distinct; no aggregate discovery score is claimed.
 
-Dataset reuse follows the [source-specific terms](./ASD-benchmarks/LICENSES.md). The earlier [`scenario/`](./scenario/) directory remains a historical collection; use the versioned `ASD-benchmarks/` corpus for new benchmark studies.
+The approximately **5.8 GB** benchmark uses Git LFS and is optional to the application. Download the reference package, selected source cases, or the complete corpus. The application demonstrations above and these Astra baselines are separate result collections. Data retain [source-specific terms](./ASD-benchmarks/LICENSES.md); the earlier [`scenario/`](./scenario/) directory remains historical.
 
 ## Built for inspection and continued work
 

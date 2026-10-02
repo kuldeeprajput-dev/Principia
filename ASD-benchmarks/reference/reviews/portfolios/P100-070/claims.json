@@ -1,0 +1,384 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-070",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Only variable dimensions and README were inspected before assigning whole CSL to confirmation. No confirmation Bz values were viewed."
+  },
+  "findings": [
+    {
+      "id": "P100-070-F01",
+      "classification": "reproduction",
+      "source_classification": "reproduction",
+      "statement": "A fixed two-scale curvature stencil reconstructs measured Bz map pixels more accurately than the matched affine control on the reserved specimen.",
+      "applicability": "Retrospective metrology, source-native measured magnetic-map product.",
+      "limitations": "One reserved specimen and same-map neighboring calibration; native SI conversion remains unresolved.",
+      "falsification": "One reserved specimen and same-map neighboring calibration; native SI conversion remains unresolved.",
+      "prior_art": "This is a standard fourth-order interpolation stencil. It is not a new magnetostatic or thermal law.",
+      "equation_or_program": {
+        "expression": "B_hat = [4(Hx+Hy) - (Ox+Oy)]/6; inner means at4pixel offsets, outer means at8pixel offsets.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "source-native Bz unit (SI conversion unresolved)",
+        "hx": "source-native Bz unit",
+        "hy": "source-native Bz unit",
+        "ox": "source-native Bz unit",
+        "oy": "source-native Bz unit",
+        "dg": "source-native Bz unit",
+        "gx": "dimensionless local contrast",
+        "gy": "dimensionless local contrast",
+        "lo": "source-native Bz unit",
+        "hi": "source-native Bz unit"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-070.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-070-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "The tested imaging-axis anisotropy and additional spatial smoothing do not improve the development-selected reconstruction.",
+      "applicability": "Only fixed sparse target geometry in the two supplied fields of view.",
+      "limitations": "These narrow numerical failures do not refute localized magnetic heterogeneity or the source thermal analysis.",
+      "falsification": "These narrow numerical failures do not refute localized magnetic heterogeneity or the source thermal analysis.",
+      "prior_art": "Horizontal-plane interpolation does not enforce the full three-dimensional magnetic field equations.",
+      "equation_or_program": {
+        "expression": "Directional convex weighting, contrast-adaptive weighting, positive outer-ring smoothing and range-limited curvature candidates are preserved.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "source-native Bz unit (SI conversion unresolved)",
+        "hx": "source-native Bz unit",
+        "hy": "source-native Bz unit",
+        "ox": "source-native Bz unit",
+        "oy": "source-native Bz unit",
+        "dg": "source-native Bz unit",
+        "gx": "dimensionless local contrast",
+        "gy": "dimensionless local contrast",
+        "lo": "source-native Bz unit",
+        "hi": "source-native Bz unit"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-070.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-070-F03",
+      "classification": "unsupported",
+      "source_classification": "unsupported",
+      "statement": "These reconstructions independently validate source temperatures, frictional energy or a new earthquake heating law.",
+      "applicability": "No thermal-law admission; measurement-to-SI mapping needs additional authoritative clarification.",
+      "limitations": "Neither temperature inversion nor independent thermal validation is performed here.",
+      "falsification": "Neither temperature inversion nor independent thermal validation is performed here.",
+      "prior_art": "The source publication already estimates thermal histories from calibrated demagnetization and diffusion models.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020"
+        ]
+      },
+      "variables_and_units": {
+        "target": "source-native Bz unit (SI conversion unresolved)",
+        "hx": "source-native Bz unit",
+        "hy": "source-native Bz unit",
+        "ox": "source-native Bz unit",
+        "oy": "source-native Bz unit",
+        "dg": "source-native Bz unit",
+        "gx": "dimensionless local contrast",
+        "gy": "dimensionless local contrast",
+        "lo": "source-native Bz unit",
+        "hi": "source-native Bz unit"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020"
+      ],
+      "task_id": "P100-070.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_CONFIRMATION_RECEIPT.json",
+      "bytes": 4114,
+      "sha256": "bf55de2fe001528244e905f2144db5f93f99773cfef398c4ddeb750117d389a8",
+      "id": "E001",
+      "role": "CONFIRMATION_RECEIPT.json"
+    },
+    {
+      "path": "evidence/E002_FREEZE.json",
+      "bytes": 2583,
+      "sha256": "fe1b9daf3245054dbce565afe1d46372cd7730518a7adc0449f29f3688ba60ae",
+      "id": "E002",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E003_PRIOR_ART.json",
+      "bytes": 567,
+      "sha256": "35e67f72a3131ae34bca24971d6dacf9e5972d8bf844347f0d2b2e529a7f17ed",
+      "id": "E003",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E004_PROTOCOL.json",
+      "bytes": 2570,
+      "sha256": "914623e89ba486c00c2d77da65c3191ff9db22d52f836047b879e90f4634399d",
+      "id": "E004",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E005_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 19463,
+      "sha256": "11bd3b476417362fa2e81996e2fb73867d616167b451c6c6d0b34a49a7400986",
+      "id": "E005",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E006_SOURCE_AND_UNITS.md",
+      "bytes": 610,
+      "sha256": "12c157cd957ab252c7becf3a1fc7489156ee16ec124b17940952f33f29c5d91a",
+      "id": "E006",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E007_SOURCE_MANIFEST.json",
+      "bytes": 4475,
+      "sha256": "e23371f2f8608353f74ff2f5c4f27accff103b192f38156612883a64572bd043",
+      "id": "E007",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E008_SPLITS.json",
+      "bytes": 236,
+      "sha256": "32bd6860ed52b2ac58625c2668036c6009b30cf256565b81aa458dabd58ef898",
+      "id": "E008",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E009_native.py",
+      "bytes": 1829,
+      "sha256": "f6bf07cab887db4169c13195d617c5e4cc9d782e41018e712c30e106d916d22d",
+      "id": "E009",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E010_FINDINGS.md",
+      "bytes": 5775,
+      "sha256": "2b2be1381f6b9eb702a7be97e84260b619696f8b7f92893a52533460c7c4353b",
+      "id": "E010",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E011_MANIFEST.json",
+      "bytes": 2045,
+      "sha256": "286a683adaa4871a3ba20970ab69a94dbad5677156037a6c4ca0f754977c989b",
+      "id": "E011",
+      "role": "package/MANIFEST.json"
+    },
+    {
+      "path": "evidence/E012_inputs.csv.gz",
+      "bytes": 517316,
+      "sha256": "bba0c08b5a9a3f32e12f714992d28ba8005053b1a8a78d5d6c509db66e4a961d",
+      "id": "E012",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E013_observations.csv.gz",
+      "bytes": 280128,
+      "sha256": "42c52d3f2e472df06aebf3de52e11779bba7af5ea668b08c15ec04de7251a461",
+      "id": "E013",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E014_by_group.csv",
+      "bytes": 31086,
+      "sha256": "0a1bb0ed344b65474fb457c65525a3ed9b8d424e5762189100ff9db08a6eab41",
+      "id": "E014",
+      "role": "package/evidence/by_group.csv"
+    },
+    {
+      "path": "evidence/E015_metrics.csv",
+      "bytes": 1837,
+      "sha256": "e3077b0a069dd99949b8db1470756730ba088e126515e5c12d99fb7a0c8a5ef9",
+      "id": "E015",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E016_predictions.csv.gz",
+      "bytes": 353155,
+      "sha256": "bb7b7cfe6e64e85e2e163050a89798a832d2a72902e7d3db715b8f284306096a",
+      "id": "E016",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E017_findings.json",
+      "bytes": 2811,
+      "sha256": "0a4f0c76e46aa7fec2317f22e1f2d034ee57042b2b1afb57a5f0422db5e20dab",
+      "id": "E017",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E018_rules.json",
+      "bytes": 15761,
+      "sha256": "0d34f51f0472446b58a57cb41a2d073530fd83bfd65eb21de3c610bee9f654b6",
+      "id": "E018",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E019_run.py",
+      "bytes": 3216,
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300",
+      "id": "E019",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E020_task_spec.json",
+      "bytes": 2383,
+      "sha256": "b20422d6f93dc09be877f836d1f90cab44991caa6b568bb832117bac92caa681",
+      "id": "E020",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 32496,
+      "sha256": "b0302a988252a661cee4452feb2da4e57342d18ea30fb53678fb70e7219c6982",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 10265,
+      "sha256": "3b8f17d3f15bab0be7953d63236d3339e6026b9c0d08d35fef0d27755d9397e3",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

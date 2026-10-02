@@ -1,0 +1,284 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-042",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "{\"schema\": \"Schema and source codebook aggregate tabulations inspected; no reserved respondent target or confirmation metric inspected. Source-aware public survey.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"62c97364d29beff0003a8885b8f1a52ac7a9804bf8e1047631f725230f887875\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}"
+  },
+  "findings": [
+    {
+      "id": "P100-042-F01",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "The proposed contextual digital-substitution predictor fails to improve reserved-region branch-use risk over the frozen controls.",
+      "applicability": "Complete-case banked adult survey with positive WEIGHT_FINAL; WEIGHT_ALT is not used. Region-balanced survey-weighted risk is not national prevalence. DK/refused/skipped are exclusions, not non-use. Geographic author-derived indicators are not measured travel distance.",
+      "limitations": "The positive transfer claim is unsupported: reference Brier exceeds prevalence, channel-count and flexible controls in region1.",
+      "falsification": "The positive transfer claim is unsupported: reference Brier exceeds prevalence, channel-count and flexible controls in region1.",
+      "prior_art": "[{\"url\": \"https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/\", \"checked\": \"2026-10-02\", \"known\": \"Official survey/codebook/technical report; banking channel and access outcomes previously described by CFPB. Digital complementarity versus substitution is an associational challenge, not evidence of causal closures or welfare effects.\"}]",
+      "equation_or_program": {
+        "expression": "See rules.json models.reference: p=logistic(a+bM*M+bW*W+bA*A+bI*I+bP*P+bC*C).",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "binary BRANCH1 versus2",
+        "mobile": "pastmonth app use binary",
+        "web": "pastmonth website use binary",
+        "age_category": "ordered seven source bins",
+        "income_category": "ordered nine source bins",
+        "branch_present": "ZIP branch present Q12024 binary author-derived",
+        "branch_closed": "ZIP net branch decrease2019Q4\u20132024Q1 binary author-derived"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-042.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-042-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "The source dictionary alone is insufficient to decode local branch-access indicators in this release.",
+      "applicability": "Complete-case banked adult survey with positive WEIGHT_FINAL; WEIGHT_ALT is not used. Region-balanced survey-weighted risk is not national prevalence. DK/refused/skipped are exclusions, not non-use. Geographic author-derived indicators are not measured travel distance.",
+      "limitations": "The dictionary describes 0/1 while actual coded observations use 1/2; the invalid cohort and all preliminary failures remain preserved.",
+      "falsification": "The dictionary describes 0/1 while actual coded observations use 1/2; the invalid cohort and all preliminary failures remain preserved.",
+      "prior_art": "[{\"url\": \"https://www.consumerfinance.gov/data-research/national-age-friendly-banking-survey-data/\", \"checked\": \"2026-10-02\", \"known\": \"Official survey/codebook/technical report; banking channel and access outcomes previously described by CFPB. Digital complementarity versus substitution is an associational challenge, not evidence of causal closures or welfare effects.\"}]",
+      "equation_or_program": {
+        "expression": "Actual native indicators: Yes=1, No=2; decode to binary using CASEID-matched labeled CSV evidence.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "binary BRANCH1 versus2",
+        "mobile": "pastmonth app use binary",
+        "web": "pastmonth website use binary",
+        "age_category": "ordered seven source bins",
+        "income_category": "ordered nine source bins",
+        "branch_present": "ZIP branch present Q12024 binary author-derived",
+        "branch_closed": "ZIP net branch decrease2019Q4\u20132024Q1 binary author-derived"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-042.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 12694,
+      "sha256": "62c97364d29beff0003a8885b8f1a52ac7a9804bf8e1047631f725230f887875",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 395,
+      "sha256": "63a8a917fb4ff45f28d992d0914b366d91dacb0851ef8665b028a7894feaae44",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 3438,
+      "sha256": "f713036f7d4d9fc187387836b21535051b88fc6c173d82fe5c0834f7da0d6598",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 8033,
+      "sha256": "44d35eaf12b55f3890aa8d1f560a25aff8ea4232b2c2a44e3c26729f884bd8a0",
+      "id": "E004",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E005_SOURCE_AND_UNITS.md",
+      "bytes": 863,
+      "sha256": "227eba94b04ed3faa1dc7bfaf60402d1d09c4efcf5561014e9c14758eeaa232e",
+      "id": "E005",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E006_SOURCE_MANIFEST.json",
+      "bytes": 1457,
+      "sha256": "98cc2b17f3b88cfeb5d74ff80694f24e8effea3daf3fbd7896241ff238d937b3",
+      "id": "E006",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E007_SPLITS.json",
+      "bytes": 283,
+      "sha256": "89c36e935667afcb16c03e72f04bc075c88e2ca7e6377b5880c5bd3b481f3788",
+      "id": "E007",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 1957,
+      "sha256": "416c12e4d11e1ec28843a24fb0d2f07442b1be54adbddf42ba0f5f02eeb8dd49",
+      "id": "E008",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E009_FINDINGS.md",
+      "bytes": 5708,
+      "sha256": "10e6b6793d19489ca93a9536beb947e66bd02f4161ef161fb23145bffa526093",
+      "id": "E009",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E010_inputs.csv.gz",
+      "bytes": 1865,
+      "sha256": "dfdfa93495abefad40b136968a26391f87a314e7c8bffc101d2ca7989a404c72",
+      "id": "E010",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E011_observations.csv.gz",
+      "bytes": 4852,
+      "sha256": "b1afec2595b3ef8fb3bbae68fedaa3bde07fb05a53b84d604a425f131c903a34",
+      "id": "E011",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E012_integrity_revision.json",
+      "bytes": 440,
+      "sha256": "3742417a088a2d06c60badf885b11faaf06d97259e6ffab7eb9c8cfef6716545",
+      "id": "E012",
+      "role": "package/evidence/integrity_revision.json"
+    },
+    {
+      "path": "evidence/E013_metrics.csv",
+      "bytes": 1076,
+      "sha256": "806ecbff46f93340390f02e5e1fb984a74847212785cf5ec05128fe00cbe3aef",
+      "id": "E013",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 14405,
+      "sha256": "fa177735d0883b73d4fd2f3e68ac8c790a2d8cbee865455b73645901599fec58",
+      "id": "E014",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_findings.json",
+      "bytes": 3139,
+      "sha256": "96e28c33731dfd35107f199c9ae3a405cb366f2a59756af14e5a34927006c380",
+      "id": "E015",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E016_rules.json",
+      "bytes": 16525,
+      "sha256": "497b5b389673045eb1d21a76c3fa97fd150818a2f0b1f1fad973c49bbe0ab54c",
+      "id": "E016",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E017_run.py",
+      "bytes": 8612,
+      "sha256": "6889fd6f43802f8c16965d03828d6f4d6b632a2f18a4df26b96ef90e14958777",
+      "id": "E017",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E018_task_spec.json",
+      "bytes": 2753,
+      "sha256": "ec2d320df8767dfb96218e4241f7c7457305ab788fcb625b97f46863da651ab1",
+      "id": "E018",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 16940,
+      "sha256": "31ef6e7f85d93c806ff1da5563fbd7afc27f2c1867ab6553ce6c61b859e95894",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 7988,
+      "sha256": "5d61e3bfe74da05e20a532f0e174536e0ade31d123c75b03e44fe3a7a750a756",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

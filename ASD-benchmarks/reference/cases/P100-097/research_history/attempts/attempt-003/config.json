@@ -1,0 +1,30 @@
+{
+  "name": "free_area_exponential",
+  "formula": "v0*(1-exp(-k*maximum(eta-area,0)))",
+  "hypothesis": "Development evidence available before this fit: greenshields: MAE 0.134612, worst group 0.191536; underwood: MAE 0.139742, worst group 0.201068.\n\nTest available-area saturation in the source-paper model family, refitting only development cohorts. The excluded personal area and saturation rate have mechanistic interpretations but are not independently measured body dimensions.",
+  "inputs": [
+    "eta",
+    "rho"
+  ],
+  "initial": {
+    "v0": 1.4,
+    "k": 3,
+    "area": 0.15
+  },
+  "bounds": {
+    "v0": [
+      0.1,
+      3
+    ],
+    "k": [
+      0.05,
+      20
+    ],
+    "area": [
+      0,
+      0.5
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:48:29.248724+00:00",
+  "parent": "attempt-002"
+}

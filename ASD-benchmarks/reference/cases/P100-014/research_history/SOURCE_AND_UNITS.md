@@ -1,0 +1,5 @@
+# Source and units
+
+Census March and May2026 HTOPS HPS are separate cross-sections. Household food insufficiency uses FD_SUFF3/4; FD_SUFF1/2 are negative. FD_SUFF-88/-99 are not negatives. HWEIGHT weights households; PWEIGHT is not used. Bracket resource proxies are [12.5,30,42.5,62.5,87.5,125,175] thousandUSD, not actual income. Household-size topcode7 is retained. WORKLOSS1 means household employment-income loss. Final design is HWEIGHT within region and equal regions, so errors are not nationally weighted prevalence. Census corrected March/May weights10Sep2026; native acquisition after this date must be retained as snapshot, not substituted. Source dictionaries and all80replicate weight columns are preserved, but no population CI claimed from them.
+
+All native rows failing endpoint, input-domain or positive-weight criteria are omitted deterministically; prepare reruns exact mask. Source documents report aggregate outcomes; confirmation microdata responses were not printed before freeze. No intervention or causal food-insecurity law is identified.

@@ -1,0 +1,592 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-038",
+  "claim_origin": "New ASD6 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "{\"schema\": \"Schema inspection: first two finite RSRP records of flight1 and source first telemetry rows; no flight5 RSRP values or scores printed. All public source-aware; confirmation after final freeze will become exposed.\", \"current\": \"exposed\", \"confirmation_history\": \"Scores hidden until candidate selection, stopping and code/state freeze\", \"fresh_for_future_users\": false}"
+  },
+  "findings": [
+    {
+      "id": "P100-038-F01",
+      "classification": "falsified",
+      "source_classification": "falsified",
+      "statement": "Proposed: the volatility-conditioned mean-reversion correction improves held-flight RSRP-component prediction over matched persistence and flexible controls.",
+      "applicability": "Telemetry files1\u20132 do not overlap the radio clock windows and contain repeated headers; no invented offset or geometry pairing. Vector component ordering is taken literally, not identified as a specific antenna.",
+      "limitations": "Unsupported: confirmation MAE1.0408248dB exceeds persistence0.9448560dB and flexible0.9286045dB; no confirmation re-selection.",
+      "falsification": "Unsupported: confirmation MAE1.0408248dB exceeds persistence0.9448560dB and flexible0.9286045dB; no confirmation re-selection.",
+      "prior_art": "Existing domain parameterizations; see PRIOR_ART.json. No certified novelty.",
+      "equation_or_program": {
+        "expression": "\\widehat r_{t+h}=r_t+c\\,(\\overline r_{5,t}-r_t)\\,\\frac{s_{5,t}}{1\\,\\mathrm{dB}+s_{5,t}}",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020",
+          "E021",
+          "E022",
+          "E023",
+          "E024",
+          "E025",
+          "E026",
+          "E027",
+          "E028",
+          "E029",
+          "E030",
+          "E031",
+          "E032",
+          "E033",
+          "E034",
+          "E035",
+          "E036",
+          "E037",
+          "E038",
+          "E039",
+          "E040",
+          "E041",
+          "E042",
+          "E043",
+          "E044",
+          "E045",
+          "E046"
+        ]
+      },
+      "variables_and_units": {
+        "target": "dBm",
+        "last": "dBm",
+        "mean5": "dBm",
+        "mean20": "dBm",
+        "slope": "dB/s",
+        "spread": "dB",
+        "elapsed": "s"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020",
+        "E021",
+        "E022",
+        "E023",
+        "E024",
+        "E025",
+        "E026",
+        "E027",
+        "E028",
+        "E029",
+        "E030",
+        "E031",
+        "E032",
+        "E033",
+        "E034",
+        "E035",
+        "E036",
+        "E037",
+        "E038",
+        "E039",
+        "E040",
+        "E041",
+        "E042",
+        "E043",
+        "E044",
+        "E045",
+        "E046"
+      ],
+      "task_id": "P100-038.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-038-F02",
+      "classification": "falsified",
+      "source_classification": "falsified",
+      "statement": "Trend extrapolation is not a reliable improvement over persistence in this cohort.",
+      "applicability": "Telemetry files1\u20132 do not overlap the radio clock windows and contain repeated headers; no invented offset or geometry pairing. Vector component ordering is taken literally, not identified as a specific antenna.",
+      "limitations": "Comparison is bounded to the recorded model families and eligible cohort. It does not establish universal nonexistence of a physical process.",
+      "falsification": "Comparison is bounded to the recorded model families and eligible cohort. It does not establish universal nonexistence of a physical process.",
+      "prior_art": "Mechanism claims need controls and information ablations.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018",
+          "E019",
+          "E020",
+          "E021",
+          "E022",
+          "E023",
+          "E024",
+          "E025",
+          "E026",
+          "E027",
+          "E028",
+          "E029",
+          "E030",
+          "E031",
+          "E032",
+          "E033",
+          "E034",
+          "E035",
+          "E036",
+          "E037",
+          "E038",
+          "E039",
+          "E040",
+          "E041",
+          "E042",
+          "E043",
+          "E044",
+          "E045",
+          "E046"
+        ]
+      },
+      "variables_and_units": {
+        "target": "dBm",
+        "last": "dBm",
+        "mean5": "dBm",
+        "mean20": "dBm",
+        "slope": "dB/s",
+        "spread": "dB",
+        "elapsed": "s"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018",
+        "E019",
+        "E020",
+        "E021",
+        "E022",
+        "E023",
+        "E024",
+        "E025",
+        "E026",
+        "E027",
+        "E028",
+        "E029",
+        "E030",
+        "E031",
+        "E032",
+        "E033",
+        "E034",
+        "E035",
+        "E036",
+        "E037",
+        "E038",
+        "E039",
+        "E040",
+        "E041",
+        "E042",
+        "E043",
+        "E044",
+        "E045",
+        "E046"
+      ],
+      "task_id": "P100-038.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD6 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_CONFIRMATION_RECEIPT.json",
+      "bytes": 3688,
+      "sha256": "fd58dcfab4a50d6bfab4cbae3da76114eff6675e079f6dfd1ce4735d5289e82a",
+      "id": "E001",
+      "role": "CONFIRMATION_RECEIPT.json"
+    },
+    {
+      "path": "evidence/E002_DEVELOPMENT_SELECTION.json",
+      "bytes": 944,
+      "sha256": "27e2e03f5af18ab9f00465a36ff462caae5e2985209b7f538f35183e58de55b1",
+      "id": "E002",
+      "role": "DEVELOPMENT_SELECTION.json"
+    },
+    {
+      "path": "evidence/E003_FREEZE.json",
+      "bytes": 13920,
+      "sha256": "fd305d466fc4366b7d4aea2d998c3736effe11c95d558bc5e25974309b287161",
+      "id": "E003",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E004_PRIOR_ART.json",
+      "bytes": 971,
+      "sha256": "d8a203cf895e4602ccabf07c88eeedd0aeb76d300ab88eb60d56b4f70ec3ca20",
+      "id": "E004",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E005_PROTOCOL.json",
+      "bytes": 2274,
+      "sha256": "101d6c7ee11f0712a52afe578e896e61a3f3523f76d671530fd8f12ace8a981f",
+      "id": "E005",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E006_SOURCE_AND_UNITS.md",
+      "bytes": 1423,
+      "sha256": "5bdb6617ceea6aa30fd5a566f493af798284720ac3e0236e8b967ad9d1e4cef6",
+      "id": "E006",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E007_SOURCE_MANIFEST.json",
+      "bytes": 2356,
+      "sha256": "c11303e692d45bec285c65b484122f203b7e9350193530415dc565b5f36e7b6e",
+      "id": "E007",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E008_SPLITS.json",
+      "bytes": 666,
+      "sha256": "6ddc58f58bf24fb3422fd3362f82d26e88643dbdfd327ac77b34cc75484351ad",
+      "id": "E008",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E009_fold_models.json",
+      "bytes": 3518,
+      "sha256": "d6f55368adaf5b09d08208045c63d81bf6c83cbc2283ee0c8d900d00cb43b06c",
+      "id": "E009",
+      "role": "attempts/attempt-001/fold_models.json"
+    },
+    {
+      "path": "evidence/E010_model.json",
+      "bytes": 1145,
+      "sha256": "dbf23fca559299547292d2800e898e990b13244540ad53f040860e26a01c966f",
+      "id": "E010",
+      "role": "attempts/attempt-001/model.json"
+    },
+    {
+      "path": "evidence/E011_predictions.csv.gz",
+      "bytes": 38605,
+      "sha256": "b9e98daab660563725420ddb49304fb61be74be6d9145c0f7e667a287ed7e85b",
+      "id": "E011",
+      "role": "attempts/attempt-001/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E012_fold_models.json",
+      "bytes": 3870,
+      "sha256": "61d70b4a6c9e0ca7c35fea448a64ecfbb81b6e683ff77b7545384b86cde90859",
+      "id": "E012",
+      "role": "attempts/attempt-002/fold_models.json"
+    },
+    {
+      "path": "evidence/E013_model.json",
+      "bytes": 1260,
+      "sha256": "90eb8f3a1c3cebf421dfa43872a6706af1a6f136a90990ff4aceaa08c64c4963",
+      "id": "E013",
+      "role": "attempts/attempt-002/model.json"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 39598,
+      "sha256": "622fa3b6368d62426360de68b39988c4414209a2ff5f4761dcd63ac976319dd3",
+      "id": "E014",
+      "role": "attempts/attempt-002/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_fold_models.json",
+      "bytes": 4498,
+      "sha256": "ffece571191c920047a483eb73d440427ef7008e487c51851da6f12d5ff79641",
+      "id": "E015",
+      "role": "attempts/attempt-003/fold_models.json"
+    },
+    {
+      "path": "evidence/E016_model.json",
+      "bytes": 1470,
+      "sha256": "85caaa9e18536102187bd1d16cc6f7a5477acc127f9876f773c2b060b6309c30",
+      "id": "E016",
+      "role": "attempts/attempt-003/model.json"
+    },
+    {
+      "path": "evidence/E017_predictions.csv.gz",
+      "bytes": 39607,
+      "sha256": "4ecb4404e2ea0dd094d00c56f459cb4677e56c81129d542f4da92193249ed43d",
+      "id": "E017",
+      "role": "attempts/attempt-003/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E018_fold_models.json",
+      "bytes": 5078,
+      "sha256": "f9614361a534993cc0f5bd9f4eb6355bb5eeec535831232b466273ad21d519ec",
+      "id": "E018",
+      "role": "attempts/attempt-004/fold_models.json"
+    },
+    {
+      "path": "evidence/E019_model.json",
+      "bytes": 1657,
+      "sha256": "6a3df67c2e2607aacb149278783df5e032cf9cf3959bdb56feef05ae1489697e",
+      "id": "E019",
+      "role": "attempts/attempt-004/model.json"
+    },
+    {
+      "path": "evidence/E020_predictions.csv.gz",
+      "bytes": 39635,
+      "sha256": "d7c477591909bb78368919f29ad019ce069f189f1afde5b4e7488bb22a909e06",
+      "id": "E020",
+      "role": "attempts/attempt-004/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E021_fold_models.json",
+      "bytes": 5085,
+      "sha256": "f5116aa4d5a1a3b733065543a44eed732f6bf609f6e1a474c6f93396126c4170",
+      "id": "E021",
+      "role": "attempts/attempt-005/fold_models.json"
+    },
+    {
+      "path": "evidence/E022_model.json",
+      "bytes": 1668,
+      "sha256": "903fae3f02b9be4809fef68181cde51f0303b6fc29f2b313b2441fff6370791f",
+      "id": "E022",
+      "role": "attempts/attempt-005/model.json"
+    },
+    {
+      "path": "evidence/E023_predictions.csv.gz",
+      "bytes": 39262,
+      "sha256": "f7f97f020f933120db5dc555a6bf59a6ee53e160601ae1d2a2b1a12fe6721212",
+      "id": "E023",
+      "role": "attempts/attempt-005/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E024_fold_models.json",
+      "bytes": 2263,
+      "sha256": "e4ae2c213f54480f0fc24e1e579efb11b418ac195b1e58a461f9b98bc1b3735f",
+      "id": "E024",
+      "role": "baselines/constant/fold_models.json"
+    },
+    {
+      "path": "evidence/E025_model.json",
+      "bytes": 727,
+      "sha256": "bb6e6e99881de5f4e3a281127065a21c2dd52e0dc8053609afffaeb11a2ed3ca",
+      "id": "E025",
+      "role": "baselines/constant/model.json"
+    },
+    {
+      "path": "evidence/E026_predictions.csv.gz",
+      "bytes": 13369,
+      "sha256": "8f7cf7a3d6ee782d06a116841cdcef466c132077791e972ab584c5c43d1805aa",
+      "id": "E026",
+      "role": "baselines/constant/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E027_fold_models.json",
+      "bytes": 22734,
+      "sha256": "877d4d2979ab8c4b79d3ec057cb9573a5f3260b0241964bbf18ee73ea9c786fa",
+      "id": "E027",
+      "role": "baselines/flexible/fold_models.json"
+    },
+    {
+      "path": "evidence/E028_model.json",
+      "bytes": 6956,
+      "sha256": "e23b9cb362e6ca154d5a81c7b9a2cc09a796d0d407548b4303368c6cac2fd925",
+      "id": "E028",
+      "role": "baselines/flexible/model.json"
+    },
+    {
+      "path": "evidence/E029_predictions.csv.gz",
+      "bytes": 39535,
+      "sha256": "9b8bc877c17b2af23fbe24a56660ea8dc9a32c952e8b7a466afa86f21717a23d",
+      "id": "E029",
+      "role": "baselines/flexible/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E030_fold_models.json",
+      "bytes": 1892,
+      "sha256": "dc0cda9b0c83b5b651f3833f0d2f635c47c237d2f1286c7b6c2f6749c1f1480b",
+      "id": "E030",
+      "role": "baselines/persistence/fold_models.json"
+    },
+    {
+      "path": "evidence/E031_model.json",
+      "bytes": 620,
+      "sha256": "2f13f99a07ccbd05c1fbd59d10e5a458c9bee9d4d7794bca7c705829951c04f9",
+      "id": "E031",
+      "role": "baselines/persistence/model.json"
+    },
+    {
+      "path": "evidence/E032_predictions.csv.gz",
+      "bytes": 17519,
+      "sha256": "1a86b433006a2e244bb83c6ae41af1e946a890e1b18e03ba994a227c8da667c9",
+      "id": "E032",
+      "role": "baselines/persistence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E033_confirm.py",
+      "bytes": 3938,
+      "sha256": "29b628ac23677324bacfa98a25f7560d8069631554b24e410a31b6e8dd3ae537",
+      "id": "E033",
+      "role": "confirm.py"
+    },
+    {
+      "path": "evidence/E034_develop.py",
+      "bytes": 4428,
+      "sha256": "25634dcae5c4afecf1afe55f6aa703412305c18149f5e051884c22fc630e414c",
+      "id": "E034",
+      "role": "develop.py"
+    },
+    {
+      "path": "evidence/E035_native.py",
+      "bytes": 2301,
+      "sha256": "82de7e6139b347ad87491a19babfe4beabd09b0b9c9224d0715280689ee895d8",
+      "id": "E035",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E036_FINDINGS.md",
+      "bytes": 6025,
+      "sha256": "fe371604f97020ee5d42773a2d66cb820692a56c34f51dfdf0f8805170c43da9",
+      "id": "E036",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E037_MANIFEST.json",
+      "bytes": 2945,
+      "sha256": "17c66f8f48f4c0ef9fa4e26620a0a897fb4a74fa51cde21ab6d2286a9008c2a7",
+      "id": "E037",
+      "role": "package/MANIFEST.json"
+    },
+    {
+      "path": "evidence/E038_inputs.csv.gz",
+      "bytes": 19076,
+      "sha256": "1166c2b920fd1953421402568716f61dd818d6e9a44ba2a540093667b0b251ee",
+      "id": "E038",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E039_observations.csv.gz",
+      "bytes": 13269,
+      "sha256": "dcb9cae7a50ab3268a977e407feda2f6f3d63858edc1756ecbf1ca5a9e359491",
+      "id": "E039",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E040_metrics.csv",
+      "bytes": 1242,
+      "sha256": "1d65327b5d90d77c652f6521c67ddd35bdb905b8091ad2f3174b2b48a2e537e5",
+      "id": "E040",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E041_predictions.csv.gz",
+      "bytes": 32651,
+      "sha256": "29ec5045b2b9e62324b5f3cb72ebfb69720da7ed303e60cf752927c613b45c2e",
+      "id": "E041",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E042_findings.json",
+      "bytes": 2617,
+      "sha256": "d16fd283e920a4bc8c760fefd90829619b56f0685646a6330372677e36716769",
+      "id": "E042",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E043_rules.json",
+      "bytes": 19311,
+      "sha256": "b7a5cf37dfceb71ecffe48d6a5463bb1d287f8dd17995d8ad94f7ca35b26c802",
+      "id": "E043",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E044_run.py",
+      "bytes": 4658,
+      "sha256": "368255a6723d7ad7eaaf84a5bf7e0cab24d767f8db0be67c5d88d4cdb3727323",
+      "id": "E044",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E045_task_spec.json",
+      "bytes": 2261,
+      "sha256": "e3ddb2c97a267ae044a79f23b8931d0a473dbb9271562692389e73749f666c92",
+      "id": "E045",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/E046_prepared.csv.gz",
+      "bytes": 250348,
+      "sha256": "744e26e91a1547497e640dc7b2b7f7ffbae56391d8d4bf12c0f7b57e65eef560",
+      "id": "E046",
+      "role": "prepared.csv.gz"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 12694,
+      "sha256": "a3fdde438b45eb50ced26dfbf92f92405e09abc5aba58206a0a35ffc920e9157",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 6193,
+      "sha256": "88de26e2d381e7b701299d771a4c7738a8702fdbb533076e0ece2b4890f43fb5",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

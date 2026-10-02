@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-093",
+  "title": "Flow cytometry FCS files: Cell surface VVL staining of MFSD5, SLC30A8 and SLC30A8-D110N-D224N OE cells",
+  "default_task": "P100-093.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Induced AF488 fluorescence quantile",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 1,
+    "independent_unit_description": "Matched technical replicate block across cell lines; three blocks on one plate",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Same-block, same-cell-line uninduced distribution is permitted calibration for every model. Source identity compensation retained; no fitted manual gates or target-based threshold.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Induced AF488 fluorescence quantile",
+    "prediction_time": "After paired uninduced control well is measured, before observing induced well target. Quantiles0.1\u20130.9 and cell-line identity are known; no induced fluorescence enters predictors.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "One plate/technical block and caption/channel inconsistency; no biological replication."
+  },
+  "task_ids": [
+    "P100-093.original.v1"
+  ],
+  "finding_ids": [
+    "P100-093-F01",
+    "P100-093-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-093/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-093.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Induced AF488 fluorescence quantile under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "After paired uninduced control well is measured, before observing induced well target. Quantiles0.1\u20130.9 and cell-line identity are known; no induced fluorescence enters predictors.",
+    "calibration_requirement": "Same-block, same-cell-line uninduced distribution is permitted calibration for every model. Source identity compensation retained; no fitted manual gates or target-based threshold.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Induced AF488 fluorescence quantile in native AF488 channel units",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "One plate/technical block and caption/channel inconsistency; no biological replication."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "native AF488 channel units",
+    "reference_model": "reference",
+    "reference_primary_error": 3272.205870334745,
+    "reference_physical_mae": 3272.205870334745,
+    "physical_error_units": "native AF488 channel units",
+    "lowest_registered_error_model": "attempt_004_saturation",
+    "lowest_registered_error": 3019.1167682099417,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-093.original.v1/evidence/metrics.csv",
+      "bytes": 921,
+      "sha256": "f16bc755d0d9e0c38735c22307ffe09af88f291f44dc955bd050b99192db55f9"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "One plate/technical block and caption/channel inconsistency; no biological replication."
+}

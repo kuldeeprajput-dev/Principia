@@ -1,0 +1,24 @@
+{
+  "name": "duffing_delay_closure",
+  "formula": "offset+2*y0-y1+b0+b1*y0+b2*y0**3+b3*(y0-y1)",
+  "hypothesis": "Development evidence available before this fit: effective_harmonic: MAE 0.222198, worst group 0.400385; dc_invariant_harmonic: MAE 0.162204, worst group 0.227994.\n\nTest an amplitude-dependent cubic restoring closure in the voltage-delay embedding. It is inspired by Duffing dynamics but cannot be interpreted as mechanical displacement-force coefficients because the voltage conversion is unresolved.",
+  "inputs": [
+    "y0",
+    "y1",
+    "y2",
+    "y3",
+    "offset",
+    "t"
+  ],
+  "initial": {},
+  "bounds": {},
+  "linear_terms": [
+    "1",
+    "y0",
+    "y0**3",
+    "y0-y1"
+  ],
+  "base": "offset+2*y0-y1",
+  "recorded_utc": "2026-10-02T02:19:32.120421+00:00",
+  "parent": "attempt-002"
+}

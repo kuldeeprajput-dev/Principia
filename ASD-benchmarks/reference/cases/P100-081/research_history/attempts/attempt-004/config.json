@@ -1,0 +1,31 @@
+{
+  "name": "organic_consolidation",
+  "formula": "1/((1-1.724*C/100)/mineral+(1.724*C/100)/(organic*(1+depth/L)))",
+  "hypothesis": "Attempt4: assigning depth consolidation to mineral packing did not help. Test the distinct mechanism that only the low-density organic phase consolidates with overburden; this predicts carbon-by-depth coupling and tends to constant mineral density as carbon vanishes.",
+  "inputs": [
+    "C",
+    "depth",
+    "pH"
+  ],
+  "initial": {
+    "mineral": 1.5,
+    "organic": 0.15,
+    "L": 40
+  },
+  "bounds": {
+    "mineral": [
+      0.5,
+      2.5
+    ],
+    "organic": [
+      0.03,
+      1
+    ],
+    "L": [
+      2,
+      500
+    ]
+  },
+  "recorded_utc": "2026-10-02T01:50:46.075328+00:00",
+  "parent": "attempt-003"
+}

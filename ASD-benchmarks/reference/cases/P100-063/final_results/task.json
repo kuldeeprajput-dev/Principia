@@ -1,0 +1,139 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-063.original.v1",
+  "case_id": "P100-063",
+  "case_number": 63,
+  "family": "original",
+  "protocol_version": "P100-063-asd6-native-v1",
+  "cohort_id": "P100-063.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-063.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/63_physics_magnon_noise",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Noise power spectral density",
+  "target_units": "nV^2/Hz",
+  "error_units": "nV^2/Hz",
+  "primary_units": "nV^2/Hz",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "frequency_GHz",
+    "field_T",
+    "termination_K"
+  ],
+  "input_units": {
+    "frequency_GHz": "GHz",
+    "field_T": "T",
+    "termination_K": "K"
+  },
+  "numeric_columns": [
+    "frequency_GHz",
+    "field_T",
+    "termination_K"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "All 77, 293 and 389 K traces were used for whole-temperature leave-out development; all 195 and 352 K traces were reserved. Field traces and frequency bins are nested within temperature. Source background subtraction is retained and disclosed; it is not fitted by this campaign.",
+  "calibration": "No held-condition calibration. Publisher background subtraction retained, not refitted.",
+  "independent_unit": "Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.",
+  "evaluation_groups": [
+    "T195",
+    "T352"
+  ],
+  "assigned_rows": 30030,
+  "eligible_rows": 30030,
+  "baseline_models": [
+    "reference",
+    "baseline_constant",
+    "baseline_flex63",
+    "baseline_mag_domain",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "mag_asym; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_constant": {
+      "equation": "constant; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flex63": {
+      "equation": "flex63; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_mag_domain": {
+      "equation": "mag_domain; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "mag_asym; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "mag_tempwidth; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "mag_field; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "mag_bg; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "mag_thermalnonlinear; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report individual top-level groups and their range; no row-bootstrap population inference."
+  },
+  "scope_limits": "Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.; The measured thermal peak/dip response is reproducible with a compact Lorentzian family across two reserved termination temperatures. The extra dispersive term is effectively tied with the symmetric control; no new magnon law is established.; No independent population confidence interval from dependent rows.",
+  "source_url": "https://kondata.uni-konstanz.de/radar/en/dataset/iRRYHMPwMObNsUOM",
+  "source_license": "CC-BY-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"historical\": \"Internal confirmation reserved until FREEZE.json; schema-stage exposures documented in SOURCE_AND_UNITS.md.\", \"current\": \"All confirmation outcomes exposed to future users.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "08a1c65bd5ef5a8b4c8fd71bf31cd9d26c8f7179aa3ac7fd36976d01aa68ed83",
+  "observations_sha256": "bfbb40d03405f67ecafb88fc384942eed5bcd55ff5d4804401e7adf6e3cb6c7d",
+  "legacy_protocol_sha256": "a9fc6245c7cef0d7ea51c9384643312b28c91baaf91740d802392806da7e3771",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

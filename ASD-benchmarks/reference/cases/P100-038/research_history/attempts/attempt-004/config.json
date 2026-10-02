@@ -1,0 +1,15 @@
+{
+  "case": 38,
+  "type": "linear",
+  "features": [
+    "up",
+    "down",
+    "m5"
+  ],
+  "offset": "last",
+  "scale": null,
+  "alpha": 0,
+  "title": "Asymmetric fades and recoveries",
+  "hypothesis": "Fading and recovery may have unequal predictable persistence. Separate positive/negative slopes and trailing displacement test this.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 1.2577260893238156, \"worst_group\": 1.7260980576240144}, {\"attempt\": \"attempt-002\", \"group_MAE\": 1.2286967795825008, \"worst_group\": 1.6533308691555735}, {\"attempt\": \"attempt-003\", \"group_MAE\": 1.2157744053119888, \"worst_group\": 1.6225962561123695}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Noise-gated trend improves persistence but remains slightly worse than flexible control. Test whether fades and recoveries need different responses.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state."
+}

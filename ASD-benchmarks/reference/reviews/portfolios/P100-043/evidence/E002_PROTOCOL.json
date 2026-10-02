@@ -1,0 +1,26 @@
+{
+  "case_id": "P100-043",
+  "created_utc": "2026-10-01T15:14:12.801524+00:00",
+  "endpoint": "Future hot-run validation log-perplexity after an early 20B-token prefix, through 100B tokens",
+  "target_units": "nats per token",
+  "data_level": "Author-merged and filtered computational training logs; not raw hardware telemetry",
+  "source_commit": "5f420478f6057b0cbb4d13405fb10ca64675bccb",
+  "selection": "All 22 pretrain=True,cooldown=False rows from wandb_df_raw; linked summary chunks used only for provenance crosschecks; no cooldown/lr-ablation rows mixed",
+  "calibration": "Latest finite positive loss at token count <=20e9 and latest <=10e9; fixed prior windows. No later held architecture loss as predictor. Actual anchor token counts explicit.",
+  "time": "Token count = optimizer_step * 2048 * 2048; steps interpreted numerically, not lexical JSON key order; targets20e9<T<=100e9.",
+  "groups": "Complete architecture model_id; 5 metadata-stratified confirmation architectures; development17 leave-one-architecture-out folds",
+  "metric": "Equally weighted architecture MAE in nats/token; physical RMSE, bias, all groups and late horizon strata as complementary",
+  "baseline_families": [
+    "early loss persistence",
+    "log-token tangent from two calibration anchors",
+    "shared anchored power-law decay",
+    "nested grouped RBF flexible model with same early anchors/architecture/token inputs"
+  ],
+  "selection_rule": "Smallest development whole-architecture MAE; within1% choose fewer fitted parameters. Select among all baselines/candidates.",
+  "attempts": "At least5 distinct hypotheses, then continue only defensible development-led revision; stop after2 consecutive attempts with no predictive/robustness/interpretation gain",
+  "uncertainty": "Individual5 architecture results; descriptive resampling if used cannot claim new seed/corpus populations.",
+  "confirmation": "Separate command verifies code/model hash freeze and performs no fitting/reselection; no confirmation scores before stopping",
+  "source_hash_manifest": "ba6b168a8fba12c4f1ac23bfa228fd093eb6cd707b2387a1290c1d0bffcfade5",
+  "split_sha256": "0ef86ccd18465d15298f277297da8a2c04c6391c92b4e4e671b62f8e4a1b6f76",
+  "exposure": "Public source paper known; schema-stage only architecture/config/step metadata inspected."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "finite_capacity_trapping",
+  "formula": "offset+(a0+a1*high)*t/(tau*exp(k*high)+t)",
+  "hypothesis": "Development evidence available before this fit: shared_fick_separate_amplitudes: MAE 3.34284, worst group 10.8982; distributed_trapping: MAE 2.52537, worst group 6.36307.\n\nThe stretched response improves forward error. A competing finite-capacity trapping model gives algebraic rather than exponential saturation; it challenges whether the tail shape requires a distributed-timescale interpretation.",
+  "inputs": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "initial": {
+    "a0": 20,
+    "a1": 40,
+    "tau": 2000,
+    "k": 0
+  },
+  "bounds": {
+    "a0": [
+      -500,
+      500
+    ],
+    "a1": [
+      -1000,
+      1000
+    ],
+    "tau": [
+      10,
+      1000000.0
+    ],
+    "k": [
+      -4,
+      4
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:01:19.842592+00:00",
+  "parent": "attempt-008"
+}

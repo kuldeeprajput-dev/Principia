@@ -1,0 +1,71 @@
+{
+  "created_utc": "2026-10-02T01:53:38.201925+00:00",
+  "case_id": "P100-014",
+  "task": {
+    "target": "Household sometimes/often lacked enough food during prior7days",
+    "target_units": "binary FD_SUFF in3,4",
+    "error_units": "squared probability (Brier)",
+    "metric_kind": "brier",
+    "permitted_inputs": [
+      "income_proxy",
+      "household_size",
+      "shock",
+      "age"
+    ],
+    "input_units": {
+      "income_proxy": "thousands USD/year, bracket proxy not observed amount",
+      "household_size": "persons, source topcoded7",
+      "shock": "household lost employment income past4weeks binary",
+      "age": "respondent years"
+    },
+    "timing_contract": "Contemporaneous survey association; income-loss and food sufficiency recall windows overlap. No causal income effect or individual longitudinal forecast.",
+    "calibration": "March2026 survey only; complete-region cross-validation; May2026 transfer without outcome calibration.",
+    "independent_unit": "Household/respondent nested in Census region and wave; no linked March/May SCRAMIDs in released files. Four geographic aggregates are not independent populations.",
+    "scope_limits": "Responding complete-case households; region-balanced HWEIGHT risk, not a national prevalence estimate. Bracket midpoints including175k open upper bracket are declared proxies; source topcodes preserved; missing/negative codes and nonpositive weights excluded, no imputation.",
+    "applicability": {
+      "probabilities": [
+        0,
+        1
+      ],
+      "weight": "HWEIGHT"
+    },
+    "case_id": "P100-014",
+    "source_url": "https://www.census.gov/programs-surveys/household-pulse-survey/data/datasets.html",
+    "source_license": "U.S. Census Bureau public-use data",
+    "numeric_columns": [
+      "income_proxy",
+      "household_size",
+      "shock",
+      "age"
+    ],
+    "exposure": {
+      "schema": "Schema and source codebook aggregate tabulations inspected; no reserved respondent target or confirmation metric inspected. Source-aware public survey.",
+      "current": "reserved_internal_only",
+      "fresh_for_future_users": false
+    },
+    "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+    "aggregation": {
+      "hierarchy": [
+        "group"
+      ],
+      "primary": "mean_group_error",
+      "within_group_weight": "sample_weight"
+    }
+  },
+  "source_manifest_sha256": "57e40086eaa5dd55fd65a152cb8781a52889f394552d015072871475180e8ecc",
+  "native_sha256": "83f6e84d2215e2e593a8f27ccca7ee82809538daa272eb4a93a9b708511d669c",
+  "split_manifest_sha256": "9ac8cc5e0a1981b3728812dda36f7e7af418afe424ea1abddd0b39440fad1c00",
+  "baseline_families": [
+    "training constant",
+    "domain simple law",
+    "regularized32-center RBF same permitted inputs"
+  ],
+  "selection": "Minimize group-balanced primary error; prefer fewer coefficients within1percent of minimum; baseline may win.",
+  "stopping": "At least5distinct scientific hypotheses, adaptive to development evidence; stop after2consecutive substantive attempts without accuracy/robustness/interpretation gain.",
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ]
+}

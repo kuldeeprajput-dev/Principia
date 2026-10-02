@@ -1,0 +1,23 @@
+{
+  "case_id": "P100-094",
+  "frozen_before_first_fit_utc": "2026-10-01T15:25:22.255173+00:00",
+  "target": "Calibrated CDOM fluorescence channel",
+  "unit": "ppb",
+  "inputs": [
+    "pressure",
+    "temperature",
+    "salinity"
+  ],
+  "timing": "Contemporaneous calibrated CDOM fluorescence diagnostic using pressure,T1,S1; no other optical or oxygen response input. Good T/S flags0, pump on,5\u2013500dbar. CDOM has no independent QC column.",
+  "groups": "Entire station casts02,06,08 development (cast04 has no eligible good-QC observations) leave-one-cast-out; casts10 and12 confirmation. Same expedition/instrument, spatial transfer not independent sensor calibration.",
+  "eligibility": "Deterministic native.py finite, timing and quality rules; no outcome-performance filtering.",
+  "primary_metric": "Arithmetic mean of within-group MAE in target units; original observations retained.",
+  "baselines": "Strong simple/persistence/domain baseline and constrained radial-basis flexible control under identical permitted inputs.",
+  "selection": "Minimum whole-group development MAE; within1% choose lower coefficient complexity, then lexicographic model identity. Baselines may win.",
+  "stopping": "At least5 distinct substantive attempts. Continue if distinct justified hypothesis remains and recent attempts improve development prediction, robustness or supported interpretation. Stop after2 consecutive substantive attempts without incumbent MAE/robustness/interpretation gain.",
+  "uncertainty": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "exposure": "Schema inspection printed first CSV row from all six casts. These shallow pump-off rows are excluded by prefit5dbar/pump rule; confirmation groups partially schema-exposed, numerical eligible outcomes not inspected. All public source-aware; confirmation after final freeze will become exposed.",
+  "source_manifest_sha256": "c44cc769b185c47ba385a9bb709b2c5a207b764221b9c3a76709ef17e26e3e89",
+  "native_sha256": "19f520aca9313dab0dd5ce0c18f0e2000bdf3087d200d1469b69a7ebbea12a4e",
+  "final_prefit_contract_utc": "2026-10-01T15:29:06.078694+00:00"
+}

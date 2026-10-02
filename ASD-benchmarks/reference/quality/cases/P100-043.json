@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-043",
+  "title": "Gemstones language-model training trajectories",
+  "default_task": "P100-043.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "hot-run validation log-perplexity at20\u2013100B tokens",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 5,
+    "independent_unit_description": "complete architecture",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Two same-architecture early validation checkpoints, exact native anchors in observations",
+  "baseline_strength": {
+    "registered_controls": 12,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 3
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "hot-run validation log-perplexity at20\u2013100B tokens",
+    "prediction_time": "Only checkpoints at or before10B/20B tokens may calibrate the20\u2013100B forecast",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-043.original.v1"
+  ],
+  "finding_ids": [
+    "P100-043-F01",
+    "P100-043-F02",
+    "P100-043-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-043/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-043.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate hot-run validation log-perplexity at20\u2013100B tokens under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Only checkpoints at or before10B/20B tokens may calibrate the20\u2013100B forecast",
+    "calibration_requirement": "Two same-architecture early validation checkpoints, exact native anchors in observations",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "hot-run validation log-perplexity at20\u2013100B tokens in nats per token",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "nats per token",
+    "reference_model": "reference",
+    "reference_primary_error": 0.005276653671712044,
+    "reference_physical_mae": 0.005276653671712044,
+    "physical_error_units": "nats per token",
+    "lowest_registered_error_model": "attempt_006",
+    "lowest_registered_error": 0.005087856460194044,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-043.original.v1/evidence/metrics.csv",
+      "bytes": 1017,
+      "sha256": "765c057c46cef5859f960b1544ff6731ddd399ec338b281122b25079beab0832"
+    },
+    "models": 12
+  },
+  "case_specific_next_evidence": "Obtain new independent physical groups or an explicitly new task contract before a new confirmation claim. Address the mechanistic and novelty limits identified in the two bound reviews."
+}

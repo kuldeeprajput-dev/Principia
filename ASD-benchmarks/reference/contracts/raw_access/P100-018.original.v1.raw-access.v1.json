@@ -1,0 +1,74 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-018.original.v1.raw-access.v1",
+  "parent_task_id": "P100-018.original.v1",
+  "case_id": "P100-018",
+  "protocol_version": "P100-018.original.v1.raw-access.v1",
+  "cohort_id": "P100-018.original.v1.cohort-1",
+  "parent_task_sha256": "1c3521ac41d17432f677f17bf1bc6baacc30c1ecc5d103d331263d255d4b55ed",
+  "input_sha256": "bcbe8f43cb0b1b448ea20763286acd0774d37e9f514c8b132bf7e5448faac540",
+  "observations_sha256": "a3910dca3a0afade4a72f7f99d346de136570e0dfe59e100241019a57e7cc0e5",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "18_climate_noaa_storm_events_2025",
+  "source_assets": [
+    {
+      "path": "context/Storm-Data-Bulk-csv-Format.pdf",
+      "bytes": 341218,
+      "sha256": "3bd18968d34da43e192f8a7fb8e5548c4fa7d24ede016d2d068d849ee1392df6"
+    },
+    {
+      "path": "raw/StormEvents_details-ftp_v1.0_d2025_c20260819.csv.gz",
+      "bytes": 12585209,
+      "sha256": "d9b46b4c6aae554723cadbb9691f3d5258371c02e530ba815d6fe41e4550149f"
+    },
+    {
+      "path": "raw/StormEvents_fatalities-ftp_v1.0_d2025_c20260819.csv.gz",
+      "bytes": 10164,
+      "sha256": "00c2fad534b4702e8132621d582f181e7f1928bbe7d01752f3bf1d4ea42d1e81"
+    },
+    {
+      "path": "raw/StormEvents_locations-ftp_v1.0_d2025_c20260819.csv.gz",
+      "bytes": 1206372,
+      "sha256": "64847e91cf90e3bffbb8338f91b95bc6e527ff1f1b999b80336f24dc1187dc22"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "length_km": "km path length",
+      "width_km": "km maximum path width",
+      "duration_min": "minutes event duration",
+      "latitude": "degrees north",
+      "month": "calendar1\u201312"
+    },
+    "observation_window": "Post-event path and timing diagnostic of reported loss. EF damage-derived scale, casualty counts, narratives, monetary/crop losses excluded from predictors.",
+    "calibration_and_history": "Whole EPISODE_ID groups held; no held-event monetary outcomes. Linked tornado segments within episode remain together.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "input_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

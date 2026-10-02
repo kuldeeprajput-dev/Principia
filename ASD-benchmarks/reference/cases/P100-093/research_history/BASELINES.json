@@ -1,0 +1,530 @@
+{
+  "baseline_copy": {
+    "metrics": {
+      "primary_error": 12047.517045028122,
+      "mean_group_absolute_error": 12047.517045028122,
+      "group_rmse_mean": 22883.317992550255,
+      "worst_group_mae": 12577.008985279223,
+      "bias": -12000.143733215333,
+      "groups": 2,
+      "rows": 54,
+      "by_group": [
+        {
+          "group": "BE",
+          "mae": 11518.025104777022,
+          "mse": 487070497.85167855,
+          "bias": -11478.955522890446
+        },
+        {
+          "group": "CF",
+          "mae": 12577.008985279223,
+          "mse": 561546020.8680227,
+          "bias": -12521.331943540219
+        }
+      ]
+    },
+    "model": {
+      "kind": "copy",
+      "coef": [],
+      "equation": "c; c=paired uninduced AF488 quantile(native units),q=quantile probability,line coefficient order MFSD5/WT SLC30A8/mutant; width=control q.9-q.1. Shift coefficients and K are native fluorescence units; multiplicative/location-scale coefficients dimensionless. Profile threshold/K is additional fitted state.",
+      "training_groups": [
+        "BE",
+        "CF"
+      ],
+      "training_rows": 54,
+      "parameter_count": 0,
+      "rank": 0
+    },
+    "fold_states": {
+      "0": {
+        "kind": "copy",
+        "coef": [],
+        "equation": "c; c=paired uninduced AF488 quantile(native units),q=quantile probability,line coefficient order MFSD5/WT SLC30A8/mutant; width=control q.9-q.1. Shift coefficients and K are native fluorescence units; multiplicative/location-scale coefficients dimensionless. Profile threshold/K is additional fitted state.",
+        "training_groups": [
+          "CF"
+        ],
+        "training_rows": 27,
+        "parameter_count": 0,
+        "rank": 0
+      },
+      "1": {
+        "kind": "copy",
+        "coef": [],
+        "equation": "c; c=paired uninduced AF488 quantile(native units),q=quantile probability,line coefficient order MFSD5/WT SLC30A8/mutant; width=control q.9-q.1. Shift coefficients and K are native fluorescence units; multiplicative/location-scale coefficients dimensionless. Profile threshold/K is additional fitted state.",
+        "training_groups": [
+          "BE"
+        ],
+        "training_rows": 27,
+        "parameter_count": 0,
+        "rank": 0
+      }
+    }
+  },
+  "baseline_shift": {
+    "metrics": {
+      "primary_error": 8722.626890867792,
+      "mean_group_absolute_error": 8722.626890867792,
+      "group_rmse_mean": 14477.631605461705,
+      "worst_group_mae": 8751.46177550844,
+      "bias": -0.00036000430156946095,
+      "groups": 2,
+      "rows": 54,
+      "by_group": [
+        {
+          "group": "BE",
+          "mae": 8693.792006227142,
+          "mse": 196356085.86898595,
+          "bias": 1042.3760450098246
+        },
+        {
+          "group": "CF",
+          "mae": 8751.46177550844,
+          "mse": 223279849.19512457,
+          "bias": -1042.3767650184277
+        }
+      ]
+    },
+    "model": {
+      "kind": "shift",
+      "training_profile": [
+        {
+          "error": 8704.262250742491
+        }
+      ],
+      "coef": [
+        30251.237218920935,
+        5710.027516280556,
+        39.16538443159215
+      ],
+      "equation": "c+delta_line; c=paired uninduced AF488 quantile(native units),q=quantile probability,line coefficient order MFSD5/WT SLC30A8/mutant; width=control q.9-q.1. Shift coefficients and K are native fluorescence units; multiplicative/location-scale coefficients dimensionless. Profile threshold/K is additional fitted state.",
+      "training_groups": [
+        "BE",
+        "CF"
+      ],
+      "training_rows": 54,
+      "parameter_count": 3,
+      "rank": 3
+    },
+    "fold_states": {
+      "0": {
+        "kind": "shift",
+        "training_profile": [
+          {
+            "error": 8967.080345583741
+          }
+        ],
+        "coef": [
+          31336.58853472873,
+          6205.872799663661,
+          21.533369308424735
+        ],
+        "equation": "c+delta_line; c=paired uninduced AF488 quantile(native units),q=quantile probability,line coefficient order MFSD5/WT SLC30A8/mutant; width=control q.9-q.1. Shift coefficients and K are native fluorescence units; multiplicative/location-scale coefficients dimensionless. Profile threshold/K is additional fitted state.",
+        "training_groups": [
+          "CF"
+        ],
+        "training_rows": 27,
+        "parameter_count": 3,
+        "rank": 3
+      },
+      "1": {
+        "kind": "shift",
+        "training_profile": [
+          {
+            "error": 8438.891737570762
+          }
+        ],
+        "coef": [
+          29165.885903113158,
+          5214.182232897456,
+          56.7973995547596
+        ],
+        "equation": "c+delta_line; c=paired uninduced AF488 quantile(native units),q=quantile probability,line coefficient order MFSD5/WT SLC30A8/mutant; width=control q.9-q.1. Shift coefficients and K are native fluorescence units; multiplicative/location-scale coefficients dimensionless. Profile threshold/K is additional fitted state.",
+        "training_groups": [
+          "BE"
+        ],
+        "training_rows": 27,
+        "parameter_count": 3,
+        "rank": 3
+      }
+    }
+  },
+  "baseline_flexible": {
+    "metrics": {
+      "primary_error": 11800.142789138645,
+      "mean_group_absolute_error": 11800.142789138645,
+      "group_rmse_mean": 15168.724935670443,
+      "worst_group_mae": 12552.924604337462,
+      "bias": 5480.013053475015,
+      "groups": 2,
+      "rows": 54,
+      "by_group": [
+        {
+          "group": "BE",
+          "mae": 11047.360973939827,
+          "mse": 198133129.13070795,
+          "bias": 616.4981855010801
+        },
+        {
+          "group": "CF",
+          "mae": 12552.924604337462,
+          "mse": 264435499.2219535,
+          "bias": 10343.52792144895
+        }
+      ]
+    },
+    "model": {
+      "kind": "flexible",
+      "mean": [
+        4237.9710357100885,
+        3369.6499226888022,
+        11237.803012593584,
+        0.5,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "scale": [
+        3346.4864639203406,
+        323.83189843733254,
+        1315.9483679092593,
+        0.25819888974716115,
+        0.4714045207910317,
+        0.47140452079103173
+      ],
+      "centers": [
+        [
+          -1.1597235158837422,
+          -0.7926642279218719,
+          0.2910847780163742,
+          -1.5491933384829666,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          0.30455139137996534,
+          -0.7926642279218719,
+          0.2910847780163742,
+          0.7745966692414831,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          -0.42179495106944453,
+          -1.6774443280721878,
+          -1.2894997639288552,
+          0.0,
+          -0.7071067811865475,
+          -0.7071067811865475
+        ],
+        [
+          -0.8417099889411845,
+          0.2129810953189105,
+          -1.340727012804803,
+          -1.1618950038622249,
+          1.4142135623730951,
+          -0.7071067811865475
+        ],
+        [
+          1.723904917680173,
+          0.2129810953189105,
+          -1.340727012804803,
+          1.5491933384829666,
+          1.4142135623730951,
+          -0.7071067811865475
+        ],
+        [
+          0.4452421521640223,
+          1.1834225163518284,
+          0.3796779378172236,
+          0.7745966692414831,
+          -0.7071067811865475,
+          1.4142135623730951
+        ],
+        [
+          -0.4490473999154608,
+          0.019361894910458075,
+          1.421889269747008,
+          -0.38729833462074154,
+          1.4142135623730951,
+          -0.7071067811865475
+        ],
+        [
+          -0.795426210781829,
+          1.05434304941286,
+          0.5375747911530772,
+          -1.1618950038622249,
+          -0.7071067811865475,
+          1.4142135623730951
+        ],
+        [
+          2.4794113913379725,
+          1.05434304941286,
+          0.5375747911530772,
+          1.5491933384829666,
+          -0.7071067811865475,
+          1.4142135623730951
+        ]
+      ],
+      "training_profile": [
+        {
+          "error": 4261.177447739519
+        }
+      ],
+      "coef": [
+        43857.52587830899,
+        -37349.84450966712,
+        80758.14635956478,
+        -12890.880581109723,
+        -23933.225973436984,
+        -7896.086196243642,
+        -37731.98306959764,
+        -33697.49004306223,
+        1680.006094930409,
+        -24043.885882587423
+      ],
+      "equation": "c+b0+sum_j b_j exp(-mean((z-center_j)^2)/2); c=paired uninduced AF488 quantile(native units),q=quantile probability,line coefficient order MFSD5/WT SLC30A8/mutant; width=control q.9-q.1. Shift coefficients and K are native fluorescence units; multiplicative/location-scale coefficients dimensionless. Profile threshold/K is additional fitted state.",
+      "training_groups": [
+        "BE",
+        "CF"
+      ],
+      "training_rows": 54,
+      "parameter_count": 10,
+      "rank": 10
+    },
+    "fold_states": {
+      "0": {
+        "kind": "flexible",
+        "mean": [
+          4253.444083206742,
+          3304.4798990885415,
+          11531.682486979173,
+          0.5,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "scale": [
+          3446.2355086230423,
+          364.6685184538203,
+          1485.7105651949473,
+          0.25819888974716115,
+          0.4714045207910316,
+          0.47140452079103173
+        ],
+        "centers": [
+          [
+            -1.139400974074079,
+            -1.3108890224721386,
+            -1.339961248701169,
+            -1.5491933384829666,
+            -0.7071067811865476,
+            -0.7071067811865475
+          ],
+          [
+            -0.6624817571984731,
+            -1.3108890224721386,
+            -1.339961248701169,
+            -0.38729833462074154,
+            -0.7071067811865476,
+            -0.7071067811865475
+          ],
+          [
+            0.18356144096156513,
+            -1.3108890224721386,
+            -1.339961248701169,
+            0.7745966692414831,
+            -0.7071067811865476,
+            -0.7071067811865475
+          ],
+          [
+            -1.0592160853597847,
+            0.19590400369453684,
+            1.0616155168006873,
+            -1.5491933384829666,
+            1.4142135623730954,
+            -0.7071067811865475
+          ],
+          [
+            -0.25463267357556785,
+            0.19590400369453684,
+            1.0616155168006873,
+            0.0,
+            1.4142135623730954,
+            -0.7071067811865475
+          ],
+          [
+            0.9996124048486549,
+            0.19590400369453684,
+            1.0616155168006873,
+            1.161895003862225,
+            1.4142135623730954,
+            -0.7071067811865475
+          ],
+          [
+            -0.7768929570327713,
+            1.114985018777603,
+            0.2783457319004804,
+            -1.1618950038622249,
+            -0.7071067811865476,
+            1.4142135623730951
+          ],
+          [
+            -0.15737875367637627,
+            1.114985018777603,
+            0.2783457319004804,
+            0.0,
+            -0.7071067811865476,
+            1.4142135623730951
+          ],
+          [
+            2.4031566012779018,
+            1.114985018777603,
+            0.2783457319004804,
+            1.5491933384829666,
+            -0.7071067811865476,
+            1.4142135623730951
+          ]
+        ],
+        "training_profile": [
+          {
+            "error": 2654.2840306594
+          }
+        ],
+        "coef": [
+          53659.76272719009,
+          -48971.644039009414,
+          -21009.185692797524,
+          66115.3379961817,
+          -10403.79294979866,
+          -23825.337478183545,
+          -5295.767298961979,
+          -7883.304007315927,
+          -17311.928703520764,
+          -38493.618312664075
+        ],
+        "equation": "c+b0+sum_j b_j exp(-mean((z-center_j)^2)/2); c=paired uninduced AF488 quantile(native units),q=quantile probability,line coefficient order MFSD5/WT SLC30A8/mutant; width=control q.9-q.1. Shift coefficients and K are native fluorescence units; multiplicative/location-scale coefficients dimensionless. Profile threshold/K is additional fitted state.",
+        "training_groups": [
+          "CF"
+        ],
+        "training_rows": 27,
+        "parameter_count": 10,
+        "rank": 10
+      },
+      "1": {
+        "kind": "flexible",
+        "mean": [
+          4222.497988213432,
+          3434.8199462890625,
+          10943.923538208008,
+          0.5,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "scale": [
+          3243.5975852611778,
+          261.2600325109687,
+          1040.85255418042,
+          0.25819888974716115,
+          0.4714045207910316,
+          0.47140452079103173
+        ],
+        "centers": [
+          [
+            -1.1917403126279418,
+            -1.2319526345387313,
+            0.6503630223326659,
+            -1.5491933384829666,
+            -0.7071067811865476,
+            -0.7071067811865475
+          ],
+          [
+            -0.6142889311350079,
+            -1.2319526345387313,
+            0.6503630223326659,
+            -0.38729833462074154,
+            -0.7071067811865476,
+            -0.7071067811865475
+          ],
+          [
+            0.3189822809769126,
+            -1.2319526345387313,
+            0.6503630223326659,
+            0.7745966692414831,
+            -0.7071067811865476,
+            -0.7071067811865475
+          ],
+          [
+            -1.1373106162875448,
+            0.01454508288773737,
+            -1.412734247536732,
+            -1.5491933384829666,
+            1.4142135623730954,
+            -0.7071067811865475
+          ],
+          [
+            -0.24166931084736454,
+            0.01454508288773737,
+            -1.412734247536732,
+            0.0,
+            1.4142135623730954,
+            -0.7071067811865475
+          ],
+          [
+            0.7005054762299103,
+            0.01454508288773737,
+            -1.412734247536732,
+            1.161895003862225,
+            1.4142135623730954,
+            -0.7071067811865475
+          ],
+          [
+            -0.8245097990109956,
+            1.217407551650994,
+            0.7623712252040626,
+            -1.1618950038622249,
+            -0.7071067811865476,
+            1.4142135623730951
+          ],
+          [
+            -0.14478309748868493,
+            1.217407551650994,
+            0.7623712252040626,
+            0.0,
+            -0.7071067811865476,
+            1.4142135623730951
+          ],
+          [
+            2.4953963521486977,
+            1.217407551650994,
+            0.7623712252040626,
+            1.5491933384829666,
+            -0.7071067811865476,
+            1.4142135623730951
+          ]
+        ],
+        "training_profile": [
+          {
+            "error": 2783.7736439354258
+          }
+        ],
+        "coef": [
+          57092.15671644315,
+          -45170.491848964586,
+          -16515.822683860868,
+          66433.12893340719,
+          -8851.393326073132,
+          -28535.795794005968,
+          -14100.982544607788,
+          -9705.00862091807,
+          -23794.106195152952,
+          -41375.01209424824
+        ],
+        "equation": "c+b0+sum_j b_j exp(-mean((z-center_j)^2)/2); c=paired uninduced AF488 quantile(native units),q=quantile probability,line coefficient order MFSD5/WT SLC30A8/mutant; width=control q.9-q.1. Shift coefficients and K are native fluorescence units; multiplicative/location-scale coefficients dimensionless. Profile threshold/K is additional fitted state.",
+        "training_groups": [
+          "BE"
+        ],
+        "training_rows": 27,
+        "parameter_count": 10,
+        "rank": 10
+      }
+    }
+  }
+}

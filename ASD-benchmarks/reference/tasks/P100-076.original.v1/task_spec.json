@@ -1,0 +1,42 @@
+{
+  "case_id": "P100-076",
+  "target": "evoked_spike_count",
+  "target_units": "spikes per stimulus",
+  "error_units": "spikes per stimulus",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "current",
+    "soft",
+    "kd",
+    "cal_mean",
+    "cal_last"
+  ],
+  "input_units": {
+    "current": "pA",
+    "soft": "binary",
+    "kd": "binary",
+    "cal_mean": "spikes per stimulus",
+    "cal_last": "spikes per stimulus"
+  },
+  "numeric_columns": [
+    "current",
+    "soft",
+    "kd",
+    "cal_mean",
+    "cal_last"
+  ],
+  "timing_contract": "Predict higher-current evoked spike counts after the lower-current prefix for that cell. No future rheobase or peak-response calibration.",
+  "calibration": "Per-cell spike counts at applied current<=10pA; later currents>10pA forecast. Source manual FI eligibility preserved.",
+  "independent_unit": "complete culture dish within recording date",
+  "scope_limits": "DIV7 cells only; complete dishes linked, final recording date reserved. Culture/animal provenance may share latent batches; do not treat cells or dishes as independent donor replications.",
+  "source_url": "https://zenodo.org/records/12802682",
+  "source_license": "CC BY4.0",
+  "prior_art_url": "https://doi.org/10.1038/s41467-025-64810-3",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": 0,
+    "target_max": null
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

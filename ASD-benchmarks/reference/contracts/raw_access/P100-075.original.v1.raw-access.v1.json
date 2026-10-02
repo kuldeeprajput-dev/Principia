@@ -1,0 +1,69 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-075.original.v1.raw-access.v1",
+  "parent_task_id": "P100-075.original.v1",
+  "case_id": "P100-075",
+  "protocol_version": "P100-075.original.v1.raw-access.v1",
+  "cohort_id": "P100-075.original.v1.cohort-1",
+  "parent_task_sha256": "3929774e3061478fc4d2d6b424a6c79a187a1563c8ff244c319f45948ba129aa",
+  "input_sha256": "6b86c2d03fed5656d1a50aa02c350dbd9490c0a00053127030c7363a52e0be16",
+  "observations_sha256": "24b93683a92c8761362b9e670f20590de161f8f610ad6b2cb8285077a3a9ebab",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "75_biology_endothelial_mechanics",
+  "source_assets": [
+    {
+      "path": "raw/covariates.csv",
+      "name": "covariates.csv",
+      "sha256": "d5e67a11ce65468422d5b09f9f488da7414cdecdf88b4489e9a25e7742a5deb1",
+      "bytes": 413
+    },
+    {
+      "path": "raw/rawcount_AGRF_CAGRF21067088_H7WFGDRX2.rds",
+      "name": "rawcount_AGRF_CAGRF21067088_H7WFGDRX2.rds",
+      "sha256": "d05bbbea466d76ad19b2007e4a990ba528947d472085ecd72e9bd45bf2b28329",
+      "bytes": 3387122
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "stiffness_kpa": "kPa",
+      "hss": "indicator HSS (10 versus 4 dyn/cm2)",
+      "calibration": "log2(1+CPM)"
+    },
+    "observation_window": "Before target-condition expression assay: known stiffness/shear design and same-donor LSS30kPa calibration expression. Contemporaneous designed-culture response diagnostic; no real-time sensor or uncalibrated donor claim.",
+    "calibration_and_history": "One LSS/30kPa VCAM1 measurement per donor. Calibration rows excluded from target cohort; every comparator receives identical value.",
+    "calibration_columns": [
+      "calibration"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Only one held donor; control copying outperforms the proposed extension.",
+    "Only 1 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

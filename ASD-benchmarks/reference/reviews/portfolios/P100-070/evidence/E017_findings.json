@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-070",
+  "findings": [
+    {
+      "finding_id": "P100-070-F01",
+      "classification": "reproduction",
+      "claim": "A fixed two-scale curvature stencil reconstructs measured Bz map pixels more accurately than the matched affine control on the reserved specimen.",
+      "equation": "B_hat = [4(Hx+Hy) - (Ox+Oy)]/6; inner means at4pixel offsets, outer means at8pixel offsets.",
+      "evidence": "CSL/129DOA: block-balanced MAE2.084e-6 source-native units versus affine2.283e-6 and local mean2.468e-6;5605 target pixels in36 spatial blocks.",
+      "known_prior_art": "This is a standard fourth-order interpolation stencil. It is not a new magnetostatic or thermal law.",
+      "falsification": "One reserved specimen and same-map neighboring calibration; native SI conversion remains unresolved.",
+      "scope": "Retrospective metrology, source-native measured magnetic-map product.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-070-F02",
+      "classification": "informative_falsification",
+      "claim": "The tested imaging-axis anisotropy and additional spatial smoothing do not improve the development-selected reconstruction.",
+      "equation": "Directional convex weighting, contrast-adaptive weighting, positive outer-ring smoothing and range-limited curvature candidates are preserved.",
+      "evidence": "None improves the selected fixed stencil on the primary development metric; positive smoothing collapses to zero added smoothing.",
+      "known_prior_art": "Horizontal-plane interpolation does not enforce the full three-dimensional magnetic field equations.",
+      "falsification": "These narrow numerical failures do not refute localized magnetic heterogeneity or the source thermal analysis.",
+      "scope": "Only fixed sparse target geometry in the two supplied fields of view.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-070-F03",
+      "classification": "unsupported",
+      "claim": "These reconstructions independently validate source temperatures, frictional energy or a new earthquake heating law.",
+      "equation": null,
+      "evidence": "The available temperature and MCMC outputs are author-derived, and the task has no independent temperature endpoint.",
+      "known_prior_art": "The source publication already estimates thermal histories from calibrated demagnetization and diffusion models.",
+      "falsification": "Neither temperature inversion nor independent thermal validation is performed here.",
+      "scope": "No thermal-law admission; measurement-to-SI mapping needs additional authoritative clarification.",
+      "admission": "unsupported"
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted analysis; not independent experimental replication or human expert adjudication."
+}

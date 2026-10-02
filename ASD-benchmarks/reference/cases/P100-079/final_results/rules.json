@@ -1,0 +1,335 @@
+{
+  "case_id": "P100-079",
+  "input_columns": [
+    "hours",
+    "baseline",
+    "baseline_change",
+    "age"
+  ],
+  "numeric_columns": [
+    "hours",
+    "baseline",
+    "baseline_change",
+    "age"
+  ],
+  "input_units": {
+    "hours": "h",
+    "baseline": "ug animal^-1 h^-1",
+    "baseline_change": "ug animal^-1 h^-1",
+    "age": "days"
+  },
+  "target": "post_treatment_DMS_emission",
+  "target_units": "ug animal^-1 h^-1",
+  "metric_kind": "mae",
+  "reference_selected_model": "baseline_persistence",
+  "models": {
+    "reference": {
+      "case": 79,
+      "kind": "persistence",
+      "coef": [],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "yhat=baseline"
+    },
+    "baseline_persistence": {
+      "case": 79,
+      "kind": "persistence",
+      "coef": [],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "yhat=baseline"
+    },
+    "baseline_decay": {
+      "case": 79,
+      "kind": "decay",
+      "coef": [
+        0.037324425352184616,
+        40.684166947137264
+      ],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "yhat=max(0,baseline+A*exp(-hours/tau))",
+      "optimizer": {
+        "success": true,
+        "cost": 6.917770511157196,
+        "bounds": [
+          [
+            0,
+            0.01
+          ],
+          [
+            10,
+            1000
+          ]
+        ],
+        "jacobian_rank": 2,
+        "jacobian_singular_values": [
+          57.00995316645541,
+          0.0230839475411675
+        ]
+      }
+    },
+    "baseline_flexible": {
+      "case": 79,
+      "kind": "flexible",
+      "coef": [
+        0.02631727769008783,
+        0.007348746289236323,
+        -0.005744658171535808,
+        -0.003940941118426077,
+        0.7254283812267862,
+        -0.7715626904568124,
+        0.053673803237320586,
+        0.010832477890192939
+      ],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "feature_rms": [
+        1.0,
+        1.113658013900177,
+        1.555026017278918,
+        2.2955116877432817,
+        0.020665873912902914,
+        0.023014716097354948,
+        0.01591457397914534,
+        0.9589725661956958
+      ],
+      "ridge_alpha": 1,
+      "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+    },
+    "attempt_001_bateman": {
+      "case": 79,
+      "kind": "bateman",
+      "coef": [
+        9.999999999999453,
+        8.717730864891687,
+        8.480857186462684
+      ],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "yhat=max(0,baseline+A*(exp(-hours/tau_decay)-exp(-hours/tau_rise)))",
+      "optimizer": {
+        "success": true,
+        "cost": 5.594159126537464,
+        "bounds": [
+          [
+            0,
+            0.1,
+            0.01
+          ],
+          [
+            10,
+            1000,
+            48
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          15.99356433835719,
+          0.2718982231122291,
+          2.6618121880936243e-05
+        ]
+      }
+    },
+    "attempt_002_relative_decay": {
+      "case": 79,
+      "kind": "relative_decay",
+      "coef": [
+        1.5965780166692034,
+        19.24304237094966
+      ],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "yhat=max(0,baseline*(1+A*exp(-hours/tau)))",
+      "optimizer": {
+        "success": true,
+        "cost": 7.9217150365810145,
+        "bounds": [
+          [
+            0,
+            0.01
+          ],
+          [
+            1000,
+            1000
+          ]
+        ],
+        "jacobian_rank": 2,
+        "jacobian_singular_values": [
+          0.9943900415246854,
+          0.03244998417942141
+        ]
+      }
+    },
+    "attempt_003_two_decay": {
+      "case": 79,
+      "kind": "two_decay",
+      "coef": [
+        2.623335185358347e-34,
+        28.744621682285363,
+        0.03732552111759224,
+        40.679889471457784
+      ],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "yhat=max(0,baseline+Afast*exp(-hours/tfast)+Aslow*exp(-hours/tslow))",
+      "optimizer": {
+        "success": true,
+        "cost": 6.917770497926613,
+        "bounds": [
+          [
+            0,
+            0.01,
+            0,
+            1
+          ],
+          [
+            10,
+            48,
+            10,
+            1000
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          77.03451347549186,
+          5.905574090886721,
+          0.002817185824998776,
+          1.0999905424532627e-16
+        ]
+      }
+    },
+    "attempt_004_baseline_drift": {
+      "case": 79,
+      "kind": "baseline_drift",
+      "coef": [
+        0.03785645973823511,
+        40.53084116160204,
+        0.1693133738626416
+      ],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "yhat=max(0,baseline+A*exp(-hours/tau)+b*baseline_change*exp(-hours/24))",
+      "optimizer": {
+        "success": true,
+        "cost": 6.909048866451537,
+        "bounds": [
+          [
+            0,
+            0.01,
+            -5
+          ],
+          [
+            10,
+            1000,
+            5
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          56.95017365359178,
+          0.7805338132729532,
+          0.023459424577755083
+        ]
+      }
+    },
+    "attempt_005_lognormal": {
+      "case": 79,
+      "kind": "lognormal",
+      "coef": [
+        9.999999999999991,
+        5.117105542774052,
+        0.4741629379181309
+      ],
+      "training_groups": [
+        "204708",
+        "304716",
+        "404710",
+        "404724",
+        "604705"
+      ],
+      "training_rows": 25,
+      "training_ids_sha256": "a5ba6f0ffdbf1f6045e8076ecf8a6edf9267878b9082c0df4fdbfa1d2980cac7",
+      "equation": "yhat=max(0,baseline+A*exp(-.5*(log(hours/tpeak)/sigma)^2))",
+      "optimizer": {
+        "success": true,
+        "cost": 5.509231189802043,
+        "bounds": [
+          [
+            0,
+            0.1,
+            0.05
+          ],
+          [
+            10,
+            96,
+            5
+          ]
+        ],
+        "jacobian_rank": 3,
+        "jacobian_singular_values": [
+          62.39810307868727,
+          3.2174339244500345,
+          0.0007427818594976101
+        ]
+      }
+    }
+  }
+}

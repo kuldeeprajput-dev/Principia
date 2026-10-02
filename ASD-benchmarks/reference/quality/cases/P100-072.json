@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-072",
+  "title": "dataset of the data obtained for publication: Saccharomyces cerevisiae wine strains show a wide range of competitive abilities and differential nutrient uptake behavior in co-culture with S. kudriavzevii",
+  "default_task": "P100-072.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Later author qPCR S.kudriavzevii percentage",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "whole co-cultured strain including every replicate/time",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "p22 and p72 are own-replicate fractions (source percentages/100). Delta=t\u221272h, and s is early log-odds change per hour. Fractions are clipped to0.0001\u20130.9999 only for log-odds calculation; original targets are unchanged. The output is100 times logistic(log-odds), in percentage points.75h is a development-selected shape scale. This early/late conditional equation does not estimate an independently measured fitness coefficient.",
+  "baseline_strength": {
+    "registered_controls": 6,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 3
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Later author qPCR S.kudriavzevii percentage",
+    "prediction_time": "Author cached spreadsheet percentage from same-row qPCR ratio is the target. No same-time Cp/ratio is a predictor. Use only own replicate22/72-hour percentages to forecast96h and later. Biological replicate pairing from Sample Name.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-072.original.v1",
+    "P100-072.round2.v1",
+    "P100-072.round2.v2"
+  ],
+  "finding_ids": [
+    "P100-072-SCI-01",
+    "P100-072-SCI-02",
+    "P100-072-SCI-03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-072/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-072.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Later author qPCR S.kudriavzevii percentage under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Author cached spreadsheet percentage from same-row qPCR ratio is the target. No same-time Cp/ratio is a predictor. Use only own replicate22/72-hour percentages to forecast96h and later. Biological replicate pairing from Sample Name.",
+    "calibration_requirement": "p22 and p72 are own-replicate fractions (source percentages/100). Delta=t\u221272h, and s is early log-odds change per hour. Fractions are clipped to0.0001\u20130.9999 only for log-odds calculation; original targets are unchanged. The output is100 times logistic(log-odds), in percentage points.75h is a development-selected shape scale. This early/late conditional equation does not estimate an independently measured fitness coefficient.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Later author qPCR S.kudriavzevii percentage in percentage points",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "percentage points",
+    "reference_model": "reference",
+    "reference_primary_error": 6.43812849621826,
+    "reference_physical_mae": 6.43812849621826,
+    "physical_error_units": "percentage points",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 6.43812849621826,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-072.original.v1/evidence/metrics.csv",
+      "bytes": 570,
+      "sha256": "8e1e1bef5cc19451a4322da668466c6ce681f4dc863c832442381c481fee3433"
+    },
+    "models": 6
+  },
+  "case_specific_next_evidence": "Correct the round2 task contract to define S=G+F in g/L, early 22/72 h HPLC assay calibration, future time and coculture availability, grouping and exact assay anchors; preserve task identity and record documentation correction.\n\nValidate new strains and independently measure nutrient depletion before mechanistic claims."
+}

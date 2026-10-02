@@ -1,0 +1,32 @@
+{
+  "0": {
+    "kind": "asymmetry",
+    "coef": [
+      0.2387387947394557,
+      0.041934076047974396,
+      0.21227526763558469
+    ],
+    "equation": "max(0,p+b0*r+b1*max(v,0)+b2*min(v,0)); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+    "training_groups": [
+      "22713"
+    ],
+    "training_rows": 1276,
+    "parameter_count": 3,
+    "rank": 3
+  },
+  "1": {
+    "kind": "asymmetry",
+    "coef": [
+      0.04543723315428898,
+      0.015582880748397508,
+      -0.04728992625009048
+    ],
+    "equation": "max(0,p+b0*r+b1*max(v,0)+b2*min(v,0)); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+    "training_groups": [
+      "16"
+    ],
+    "training_rows": 3186,
+    "parameter_count": 3,
+    "rank": 3
+  }
+}

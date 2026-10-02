@@ -1,0 +1,47 @@
+{
+  "case_id": "P100-079",
+  "findings": [
+    {
+      "finding_id": "P100-079-F01",
+      "classification": "reproduction",
+      "admission": "partially_supported",
+      "claim": "The development-selected persistence reference is preserved even when a later diagnostic comparator wins on the two reserved calves. No reliable transferable new kinetic law is admitted.",
+      "equation": "yhat=baseline",
+      "model_id": "reference",
+      "task_id": "P100-079.original.v1",
+      "evidence": {
+        "development_primary_error": 0.024515140600000002,
+        "confirmation_primary_error": 0.061158553000000004,
+        "confirmation_groups": 2,
+        "confirmation_rows": 10,
+        "unit": "ug animal^-1 h^-1",
+        "metrics": "evidence/metrics.csv",
+        "group_metrics": "evidence/by_group.csv",
+        "predictions": "evidence/predictions.csv.gz",
+        "state": "rules.json"
+      },
+      "falsification": "Compare every eligible held-out group to all frozen simple/domain/flexible controls; later diagnostic winners are never substituted for the preselected reference.",
+      "known_prior_art": "Langford et al., PLOS ONE2026, already report antibiotic-associated breath changes and diagnostic confounding. Exponential washout, Bateman kinetics and lognormal pulses are established temporal response families. This small forecasting test does not newly discover treatment confounding.",
+      "scope": "The paper describes ten antibiotic-trial calves, while this workbook contains seven complete calves. Only two are reserved. There is no untreated parallel group or dose series in this task; treatment, age and calendar time are inseparable. The paper reports a dosing statement that this benchmark does not use as a verified dosing recommendation."
+    },
+    {
+      "finding_id": "P100-079-F02",
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Finite uptake, baseline-scaled amplitudes, two-component washout, pre-dose drift and log-time pulses do not improve the development selection. Several fitted parameters reach boundaries or collapse, undermining kinetic identifiability.",
+      "equation": null,
+      "evidence": {
+        "attempts": 5,
+        "best_attempt_development_error": 0.02460145270267817,
+        "development_selected_error": 0.024515140600000002,
+        "development_diagnostics": "research_history/DEVELOPMENT_DIAGNOSTICS.json"
+      },
+      "known_prior_art": "Langford et al., PLOS ONE2026, already report antibiotic-associated breath changes and diagnostic confounding. Exponential washout, Bateman kinetics and lognormal pulses are established temporal response families. This small forecasting test does not newly discover treatment confounding.",
+      "falsification": "Supported negative evidence concerns only the enumerated candidates and protocol; it does not disprove domain biology or physics.",
+      "scope": "The paper describes ten antibiotic-trial calves, while this workbook contains seven complete calves. Only two are reserved. There is no untreated parallel group or dose series in this task; treatment, age and calendar time are inseparable. The paper reports a dosing statement that this benchmark does not use as a verified dosing recommendation.",
+      "underlying_proposal_disposition": "Several proposed mechanisms are unsupported; this negative finding and the tested models have distinct dispositions."
+    }
+  ],
+  "reference_disposition": "Frozen development-selected reference; candidate laws and negative findings require separate scientific review.",
+  "review_pending": "Independent computational and scientific-critical review by different agents"
+}

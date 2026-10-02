@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-060",
+  "protocol_id": "P100-060-prepared-primary-v1",
+  "target": "Post-trigger peak absolute receiver voltage",
+  "target_units": "V",
+  "primary_units": "V",
+  "metric_kind": "mae",
+  "metric_definition": "Equal complete reserved-group mean MAE in physical units; RMSE square root is taken within group, before averaging groups.",
+  "independent_unit": "whole width block across sensor/distance; six correlated files",
+  "evaluation_groups": [
+    "ts3_d00_f110_w050.mat",
+    "ts3_d00_f500_w050.mat",
+    "ts3_d20_f110_w050.mat",
+    "ts3_d20_f500_w050.mat",
+    "ts3_d50_f110_w050.mat",
+    "ts3_d50_f500_w050.mat"
+  ],
+  "input_sha256": "a21f6fffff18c9227487c74d31ef0e1dfe5e50e8b606480b3dda51ed0ebaa72a",
+  "input_rows": 60,
+  "assigned_rows": 60,
+  "permitted_inputs": [
+    "condition",
+    "distance_mm",
+    "resonance_kHz",
+    "width_us"
+  ],
+  "input_units": {
+    "condition": "calibrated distance/sensor label",
+    "distance_mm": "mm",
+    "resonance_kHz": "kHz; confounded with sensor type",
+    "width_us": "us"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "challenger",
+    "baseline_linear_width",
+    "baseline_mean",
+    "baseline_rbf",
+    "baseline_residual_rbf"
+  ],
+  "reference_equations": {
+    "reference": "\\widehat{A}_{ds}=a_{ds}\\max[1,\\sqrt{1+e^{-2w/12}-2e^{-w/12}\\cos(2\\pi fw)}]",
+    "challenger": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the synthesis branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_linear_width": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the linear_width branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_mean": "y=link^{-1}(base(X)+sum_j beta_j phi_j(X)); exact feature terms and link are the mean branch in run.py::basis, and all hyperparameters/category calibration coefficients are in this model state.",
+    "baseline_rbf": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json.",
+    "baseline_residual_rbf": "Frozen Gaussian-kernel ridge: baseline(if residual)+intercept+sum_j w_j exp(-||train-standardized X-center_j||^2/(2 width^2)); all input scaling, categorical encoding, center arrays, coefficients, ridge and optional baseline state in rules.json."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "scope_limit": "Six condition files at one reserved5us width, not six independent reserved width experiments. Gain is concentrated in zero-distance110kHz contact; air and500kHz sensor counterexamples remain.",
+  "calibration_note": "w is pulse width in microseconds; f is nominal resonance in cycles per microsecond (kHz/1000). The effective damping time12us was selected on development widths. Six calibrated gains in V are12.271204,0.941597,0.00302123,0.000609934,0.00227582,0.000462384 for(d0,f110),(d0,f500),(d20,f110),(d20,f500),(d50,f110),(d50,f500). The maximum accounts for an initial pulse edge before the second edge; it is a phenomenological peak approximation. Sensor type is confounded with nominal resonance.",
+  "timing_contract": "Target is maximum absolute receiver voltage across all t>=0 samples, subtracting each trace mean over t<0. No response-selected time window or denoising. Ten actual waveform columns kept per file.",
+  "exposure_notice": "All packaged targets are now exposed; future scoring is retrospective. Only numerical schema/sample metadata were inspected before fitting. The reserved pulse width is allocated by metadata hash. No final performance inspected.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared conditions, sensor/system dependence or small numbers of reserved groups do not support precise population-level confidence. No row-bootstrap intervals."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Verify native anchors and prediction-time inputs. Target is maximum absolute receiver voltage across all t>=0 samples, subtracting each trace mean over t<0. No response-selected time window or denoising. Ten actual waveform columns kept per file."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

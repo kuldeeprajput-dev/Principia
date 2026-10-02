@@ -1,0 +1,364 @@
+{
+  "schema_version": "p100-scientific-review-1.0",
+  "scenario_id": "P100-059",
+  "title": "Portuguese photovoltaic yield",
+  "review_date": "2026-10-01",
+  "reviewer_role": "scientific-critical review agent",
+  "review_mode": "read-only review of retained scientific/equation/evidence records; no fitting, acquisition or new literature search",
+  "current_outcome_exposure": "exposed",
+  "review_scope": "Original findings, first continuation when present, latest continuation and supplemental material-response tasks when present. Independent computational review is a separate artifact.",
+  "grouping_and_information_scope": "Whole cities with shared weather; same-hour conditional daylight energy; new task adds exact native one/two-hour past radiation.",
+  "portfolio_disposition": "Scoped numerical references, tested hypotheses and preserved falsifications; no independently established new fundamental law or demonstrated deployment impact is admitted.",
+  "aggregate_score": null,
+  "aggregate_score_reason": "Scientific dimensions are distinct; task difficulty and validation scope are disclosed without converting them into invented precision or a composite discovery score.",
+  "evidence_assets": [
+    {
+      "id": "E001",
+      "legacy_path": "59_energy_portugal_pv/final_results/FINDINGS.md",
+      "sha256": "8458fd20b1212e4fff214e8abc7501c2ef9a5c6a7a1a7f23ffcddf5ce0661594",
+      "bytes": 5375,
+      "role": "original scientific description"
+    },
+    {
+      "id": "E002",
+      "legacy_path": "59_energy_portugal_pv/final_results/rules.json",
+      "sha256": "c2bc1f3e23a5c00fcf0add9a47225d0386edecac796d426a5e4150ef22e94f0d",
+      "bytes": 27016,
+      "role": "original frozen model state"
+    },
+    {
+      "id": "E003",
+      "legacy_path": "59_energy_portugal_pv/final_results/evidence/metrics.csv",
+      "sha256": "b73c05f1c00f0740a5876c3721e52e27fee362242a3e2fe5b209c5ab3a522ade",
+      "bytes": 1748,
+      "role": "original numerical comparison"
+    },
+    {
+      "id": "E004",
+      "legacy_path": "59_energy_portugal_pv/final_results/evidence/by_group.csv",
+      "sha256": "5c7b54e477ce6e6445cb98c3c496416fce61fb5f3ac023749be0a26ba333bbc8",
+      "bytes": 2126,
+      "role": "original grouped errors"
+    },
+    {
+      "id": "E005",
+      "legacy_path": "59_energy_portugal_pv/research_history/continuation-20261001/candidate/FINDINGS.md",
+      "sha256": "50cebead10cd653dc2a22ab9c58ac86e7aa102c41dc6beed463b35f4565ee101",
+      "bytes": 7136,
+      "role": "latest scientific account"
+    },
+    {
+      "id": "E006",
+      "legacy_path": "59_energy_portugal_pv/research_history/continuation-20261001/candidate/rules.json",
+      "sha256": "7fbcc55d15d08e49b72530a03c96603e13062732973b9db152593f958b451758",
+      "bytes": 12446,
+      "role": "latest frozen model state"
+    },
+    {
+      "id": "E007",
+      "legacy_path": "59_energy_portugal_pv/research_history/continuation-20261001/candidate/evidence/metrics.csv",
+      "sha256": "2e0f4f74833c612126415af05c14e7446c99c8ab2210415825e4c39a39eb0d07",
+      "bytes": 851,
+      "role": "latest numerical comparison"
+    },
+    {
+      "id": "E008",
+      "legacy_path": "59_energy_portugal_pv/research_history/continuation-20261001/candidate/evidence/by_group.csv",
+      "sha256": "a0477571b9b221d58a3c4b64edbbf1214e3294c80d960d9669a463a0e5679cfe",
+      "bytes": 1138,
+      "role": "latest grouped errors"
+    }
+  ],
+  "finding_reviews": [
+    {
+      "finding_id": "P100-059-SCI-01",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results",
+      "statement": "An original compact radiation/calendar response transfers to one city but does not identify thermal derating.",
+      "classification": "validated_extension",
+      "disposition": "supported",
+      "current_outcome_exposure": "exposed",
+      "historical_evidence_status": "Original historical reserve status is retained in source records; every outcome is exposed now. Continuation model selection uses development evidence but cannot restore fresh confirmation.",
+      "numerical_evidence": [
+        {
+          "cohort": "original reserved Loulecity",
+          "measure": "reference MAE",
+          "value": 0.109696,
+          "unit": "kWh/kWp",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original reserved Loulecity",
+          "measure": "domain MAE",
+          "value": 0.156793,
+          "unit": "kWh/kWp",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "equation_if_supported": null,
+      "strongest_adverse_evidence": "The ambient-temperature coefficient is positive; orientation, averaging, shading and weather provenance are unknown. Same-hour conditional energy is not weather forecasting.",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole cities with shared weather; same-hour conditional daylight energy; new task adds exact native one/two-hour past radiation. Strong adverse evidence: The ambient-temperature coefficient is positive; orientation, averaging, shading and weather provenance are unknown. Same-hour conditional energy is not weather forecasting.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The radiation-history association is compatible with averaging/geometry; no observed module temperature or plane-of-array flux identifies thermal physics.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Radiation/calendar and thermal model families are known; this is a metrology/calibration hypothesis with bounded exact-form priority. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole cities with shared weather; same-hour conditional daylight energy; new task adds exact native one/two-hour past radiation.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "scientific_validators": [
+        "Match exact native-clock lag joins and preserve missing energy; do not impute target-derived specific-energy.",
+        "Keep all plants in a city together, and distinguish same-hour conditional prediction from future weather forecast.",
+        "Test thermal assertions against fold signs, source-clock uncertainty and measured module temperature before causal admission."
+      ],
+      "next_evidence": "Author-confirmed clock/provider/averaging metadata, panel tilt/azimuth, module temperature and plane-of-array sensing plus fresh plant-years and maintenance records.",
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ]
+    },
+    {
+      "finding_id": "P100-059-SCI-02",
+      "task_family": "continuation",
+      "task_version_history": "2026-10-01 continuation",
+      "statement": "Equal current/previous-hour radiation weighting is stable in development, but a richer regularized calendar control remains strongest.",
+      "classification": "retrospective_extension",
+      "disposition": "partially_supported",
+      "current_outcome_exposure": "exposed",
+      "historical_evidence_status": "Original historical reserve status is retained in source records; every outcome is exposed now. Continuation model selection uses development evidence but cannot restore fresh confirmation.",
+      "numerical_evidence": [
+        {
+          "cohort": "new history development five cities",
+          "measure": "compact lag+geometry MAE",
+          "value": 0.09083,
+          "unit": "kWh/kWp",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "same cohort",
+          "measure": "calendar-only MAE",
+          "value": 0.093644,
+          "unit": "kWh/kWp",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "same cohort",
+          "measure": "calendar ridge MAE",
+          "value": 0.089011,
+          "unit": "kWh/kWp",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed Loule with history",
+          "measure": "compact MAE",
+          "value": 0.104717,
+          "unit": "kWh/kWp",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        {
+          "cohort": "exposed Loule with history",
+          "measure": "ridge MAE",
+          "value": 0.100732,
+          "unit": "kWh/kWp",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      ],
+      "equation_if_supported": {
+        "expression": "G_eff=(G(t)+G(t-1h))/2; Ehat=clip(G_eff*[b0+b1 cos(s)+b2 sin(s)+b3 h+b4 h²+b5 h cos(s)],0,L), L=(connection kW/installed kWp)*1h; b=(.890843,.248482,-.029082,.253709,-.575536,-.563191).",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007",
+          "E008"
+        ]
+      },
+      "strongest_adverse_evidence": "Thermal coefficient hits zero 3/5 folds and-.002/K 2/5; improvement .093644→.093618 is negligible. Provider/timezone/averaging resemblance does not authorize timestamp shifts.",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole cities with shared weather; same-hour conditional daylight energy; new task adds exact native one/two-hour past radiation. Strong adverse evidence: Thermal coefficient hits zero 3/5 folds and-.002/K 2/5; improvement .093644→.093618 is negligible. Provider/timezone/averaging resemblance does not authorize timestamp shifts.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The radiation-history association is compatible with averaging/geometry; no observed module temperature or plane-of-array flux identifies thermal physics.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Radiation/calendar and thermal model families are known; this is a metrology/calibration hypothesis with bounded exact-form priority. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole cities with shared weather; same-hour conditional daylight energy; new task adds exact native one/two-hour past radiation.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006",
+            "E007",
+            "E008"
+          ]
+        }
+      },
+      "scientific_validators": [
+        "Match exact native-clock lag joins and preserve missing energy; do not impute target-derived specific-energy.",
+        "Keep all plants in a city together, and distinguish same-hour conditional prediction from future weather forecast.",
+        "Test thermal assertions against fold signs, source-clock uncertainty and measured module temperature before causal admission."
+      ],
+      "next_evidence": "Author-confirmed clock/provider/averaging metadata, panel tilt/azimuth, module temperature and plane-of-array sensing plus fresh plant-years and maintenance records.",
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007",
+        "E008"
+      ]
+    }
+  ],
+  "recorded_equations": [
+    {
+      "task_family": "original",
+      "expression_latex": "\\widehat{e}=\\operatorname{clip}\\!\\left[G\\!\\left(c_0+c_T\\frac{T-25}{25}+c_GG+\\frac{c_W}{1+v}+c_S\\cos\\frac{2\\pi d}{365.25}+c_h\\frac{h-12}{12}\\right),0,e_{\\rm grid}\\right].",
+      "legacy_path": "59_energy_portugal_pv/final_results/FINDINGS.md",
+      "status": "recorded_equation_not_automatic_mechanism_admission"
+    },
+    {
+      "task_family": "continuation",
+      "expression_latex": "\\widehat E=\\operatorname{clip}\\!\\left(G_{\\mathrm{eff}}[b_0+b_1\\cos s+b_2\\sin s+b_3 h+b_4 h^2+b_5 h\\cos s],0,L\\right).",
+      "legacy_path": "59_energy_portugal_pv/research_history/continuation-20261001/candidate/FINDINGS.md",
+      "status": "recorded_equation_not_automatic_mechanism_admission"
+    }
+  ],
+  "required_followup_evidence": "Author-confirmed clock/provider/averaging metadata, panel tilt/azimuth, module temperature and plane-of-array sensing plus fresh plant-years and maintenance records.",
+  "review_limitations": [
+    "Documentary checks do not independently replicate the original experiment.",
+    "Novelty is bounded to retained targeted literature records, not an exhaustive search.",
+    "Previously reserved data and supplemental PLA challenge responses are now exposed; new evidence must be genuinely unexposed.",
+    "Predictive improvement alone does not establish causal mechanism, physical parameter identification or industrial benefit."
+  ]
+}

@@ -1,0 +1,5 @@
+# Prepared reference inputs and observations
+
+These are derived analysis products, not untouched native instrument files. Original source bytes remain in the scenario source corpus. `inputs.csv.gz`, `observations.csv.gz` and saved predictions have the same stable `sample_id`, whole-group `group` and row order. Source filename and exact native row/XML record anchors are retained. Predictors are declared in `rules.json`; sample identifiers and target values are not predictors.
+
+Target: native local vapor `VOIDFRACTION`, dimensionless. Boundary `PRESSURE` is absolute Pa, `MASSFLUX` kg m^-2 s^-1 and `XOUT` supplied source exit quality. Saturated liquid/vapor densities are fixed IAPWS SR1-86 calculations from pressure. No target, measured velocity/dynamic pressure, particle scale or source dispersed-phase label enters predictions. `radial_fraction` is native coordinate divided by the maximum sampled coordinate within each run; its axis is not asserted to be a verified tube-radius coordinate or wall distance. Exact XOUT computation is unavailable, so conclusions are conditional on the supplied boundary metadata.

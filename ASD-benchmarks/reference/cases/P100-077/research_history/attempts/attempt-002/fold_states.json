@@ -1,0 +1,48 @@
+{
+  "0": {
+    "kind": "odds_ratio",
+    "coef": [
+      3.764906273540666
+    ],
+    "equation": "j*(1-p-q+j)=exp(beta)*(p-j)*(q-j); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+    "parameter_count": 1,
+    "rank": 1,
+    "bounds": [
+      [
+        -6
+      ],
+      [
+        6
+      ]
+    ],
+    "training_groups": [
+      "C"
+    ],
+    "training_rows": 3,
+    "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+    "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+  },
+  "1": {
+    "kind": "odds_ratio",
+    "coef": [
+      4.350277583011056
+    ],
+    "equation": "j*(1-p-q+j)=exp(beta)*(p-j)*(q-j); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+    "parameter_count": 1,
+    "rank": 1,
+    "bounds": [
+      [
+        -6
+      ],
+      [
+        6
+      ]
+    ],
+    "training_groups": [
+      "A"
+    ],
+    "training_rows": 3,
+    "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+    "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+  }
+}

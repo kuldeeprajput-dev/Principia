@@ -1,0 +1,606 @@
+{
+  "schema_version": "1.0",
+  "case_id": "P100-066",
+  "source": {
+    "landing_url": "https://doi.org/10.57745/KR8BIW",
+    "upstream_case": "66_chemistry_mof_hydrogen",
+    "version_evidence": "SOURCE_ASSETS.json"
+  },
+  "target": "Excess hydrogen uptake",
+  "target_units": "wt.%",
+  "input_units": {
+    "eg_pct": "wt.% expanded graphite in material label",
+    "temperature_K": "K",
+    "pressure_bar": "bar",
+    "branch": "0 adsorption, 1 desorption"
+  },
+  "input_columns": [
+    "eg_pct",
+    "temperature_K",
+    "pressure_bar",
+    "branch"
+  ],
+  "numeric_columns": [
+    "eg_pct",
+    "temperature_K",
+    "pressure_bar",
+    "branch"
+  ],
+  "missingness": "Excess uptake is the native experimental response. Total uptake, cyclic reuse files and descriptor curves remain upstream; they are not independent excess-uptake confirmation. Excess adsorption can decline with pressure through gas-volume displacement; a monotone absolute-Langmuir law alone is an intentionally falsifiable baseline.",
+  "primary_metric": "mae",
+  "assigned_rows": 58,
+  "models": {
+    "reference": {
+      "case": 66,
+      "kind": "a1",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 600.0
+      },
+      "beta": [
+        4.306424561863784,
+        1.1081055090510736
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "Langmuir b(T)P/(1+b(T)P)",
+        "negative gas displacement P/(100bar)"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 2,
+      "design_condition": 3.2019324845295714,
+      "positive_coefficients": true
+    },
+    "mechanistic_reference": {
+      "case": 66,
+      "kind": "a1",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 600.0
+      },
+      "beta": [
+        4.306424561863784,
+        1.1081055090510736
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "Langmuir b(T)P/(1+b(T)P)",
+        "negative gas displacement P/(100bar)"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 2,
+      "design_condition": 3.2019324845295714,
+      "positive_coefficients": true
+    },
+    "attempt_001": {
+      "case": 66,
+      "kind": "a1",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 600.0
+      },
+      "beta": [
+        4.306424561863784,
+        1.1081055090510736
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "Langmuir b(T)P/(1+b(T)P)",
+        "negative gas displacement P/(100bar)"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 2,
+      "design_condition": 3.2019324845295714,
+      "positive_coefficients": true
+    },
+    "attempt_002": {
+      "case": 66,
+      "kind": "a2",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 600.0
+      },
+      "beta": [
+        4.379014542192508,
+        1.1077888162889231,
+        0.19915838533470548
+      ],
+      "active_columns": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        "Langmuir b(T)P/(1+b(T)P)",
+        "negative gas displacement P/(100bar)",
+        "solid dilution: -Langmuir * EG/10wt%"
+      ],
+      "fitted_parameters": 5,
+      "design_rank": 3,
+      "design_condition": 3.7696326318525104,
+      "positive_coefficients": true
+    },
+    "attempt_003": {
+      "case": 66,
+      "kind": "a3",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 600.0
+      },
+      "beta": [
+        4.379014542192508,
+        1.1077888162889231,
+        0.19915838533470548,
+        0.0
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "terms": [
+        "Langmuir b(T)P/(1+b(T)P)",
+        "negative gas displacement P/(100bar)",
+        "solid dilution: -Langmuir * EG/10wt%",
+        "temperature-dependent gas displacement"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 4,
+      "design_condition": 5.661700416653817,
+      "positive_coefficients": true
+    },
+    "attempt_004": {
+      "case": 66,
+      "kind": "a4",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 600.0
+      },
+      "beta": [
+        4.3452059329918535,
+        1.1327053152627664,
+        0.1992372214146418,
+        0.0,
+        0.16892512477628385
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "terms": [
+        "Langmuir b(T)P/(1+b(T)P)",
+        "negative gas displacement P/(100bar)",
+        "solid dilution: -Langmuir * EG/10wt%",
+        "temperature-dependent gas displacement",
+        "branch contrast at matched pressure"
+      ],
+      "fitted_parameters": 7,
+      "design_rank": 5,
+      "design_condition": 6.04784795441981,
+      "positive_coefficients": true
+    },
+    "attempt_005": {
+      "case": 66,
+      "kind": "a5",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 600.0
+      },
+      "beta": [
+        4.3452059329918535,
+        1.1327053152627664,
+        0.1992372214146418,
+        0.0,
+        0.16892512477628385,
+        0.0
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "terms": [
+        "Langmuir b(T)P/(1+b(T)P)",
+        "negative gas displacement P/(100bar)",
+        "solid dilution: -Langmuir * EG/10wt%",
+        "temperature-dependent gas displacement",
+        "branch contrast at matched pressure",
+        "heterogeneous-site square-root occupancy"
+      ],
+      "fitted_parameters": 8,
+      "design_rank": 6,
+      "design_condition": 22.286897694830294,
+      "positive_coefficients": true
+    },
+    "attempt_006": {
+      "case": 66,
+      "kind": "a1",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 1000.0
+      },
+      "beta": [
+        3.2046904331874404
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "Langmuir b(T)P/(1+b(T)P)"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": true
+    },
+    "attempt_007": {
+      "case": 66,
+      "kind": "a1",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 300.0
+      },
+      "beta": [
+        0.0
+      ],
+      "active_columns": [
+        1
+      ],
+      "terms": [
+        "negative gas displacement P/(100bar)"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": true
+    },
+    "baseline_mean": {
+      "case": 66,
+      "kind": "mean",
+      "knobs": {},
+      "beta": [
+        1.6322164325853168
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "1"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "baseline_domain": {
+      "case": 66,
+      "kind": "domain",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 1000.0
+      },
+      "beta": [
+        3.2046904331874404
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "Langmuir b(T)P/(1+b(T)P)"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": true
+    },
+    "baseline_rbf": {
+      "case": 66,
+      "kind": "rbf",
+      "features": [
+        "eg_pct",
+        "temperature_K",
+        "pressure_bar",
+        "branch"
+      ],
+      "columns": [
+        "eg_pct",
+        "temperature_K",
+        "pressure_bar",
+        "branch"
+      ],
+      "center": [
+        3.6666666666666665,
+        170.0,
+        62.16843140350874,
+        0.2982456140350877
+      ],
+      "scale": [
+        4.496912521077348,
+        80.3284922469398,
+        48.03746418911877,
+        0.45748788808439667
+      ],
+      "centers": [
+        [
+          -0.5929994533288807,
+          -1.15774611720716,
+          1.0500581046057211,
+          -0.6519202405202644
+        ],
+        [
+          -0.8153742483272111,
+          -1.15774611720716,
+          -1.11210556812884,
+          -0.6519202405202644
+        ],
+        [
+          1.408373701656092,
+          1.2822349470143812,
+          -1.1637565043696008,
+          -0.6519202405202644
+        ],
+        [
+          -0.5929994533288807,
+          1.2822349470143812,
+          0.7942115438544164,
+          -0.6519202405202644
+        ],
+        [
+          -0.8153742483272111,
+          -1.15774611720716,
+          1.0628512445096214,
+          -0.6519202405202644
+        ],
+        [
+          -0.5929994533288807,
+          1.2822349470143812,
+          -1.1639811207223192,
+          -0.6519202405202644
+        ],
+        [
+          -0.8153742483272111,
+          -0.1244888298072215,
+          1.32364498563382,
+          1.53392997769474
+        ],
+        [
+          1.408373701656092,
+          -1.15774611720716,
+          1.0564477008340234,
+          -0.6519202405202644
+        ],
+        [
+          -0.8153742483272111,
+          1.2822349470143812,
+          0.7948216926308923,
+          -0.6519202405202644
+        ],
+        [
+          1.408373701656092,
+          -0.1244888298072215,
+          -0.2585232508239223,
+          -0.6519202405202644
+        ],
+        [
+          -0.5929994533288807,
+          -0.1244888298072215,
+          -1.2853391086679136,
+          -0.6519202405202644
+        ],
+        [
+          -0.8153742483272111,
+          -1.15774611720716,
+          -0.35331926216357795,
+          1.53392997769474
+        ],
+        [
+          -0.5929994533288807,
+          -0.1244888298072215,
+          -0.2547145568579024,
+          -0.6519202405202644
+        ],
+        [
+          -0.8153742483272111,
+          -0.1244888298072215,
+          -0.2575708691615622,
+          -0.6519202405202644
+        ],
+        [
+          1.408373701656092,
+          1.2822349470143812,
+          0.2381220322425411,
+          1.53392997769474
+        ],
+        [
+          -0.5929994533288807,
+          -0.1244888298072215,
+          1.3212941121664903,
+          1.53392997769474
+        ],
+        [
+          -0.5929994533288807,
+          -1.15774611720716,
+          -1.093896655257079,
+          -0.6519202405202644
+        ],
+        [
+          1.408373701656092,
+          -1.15774611720716,
+          -0.34876885544062036,
+          1.53392997769474
+        ],
+        [
+          1.408373701656092,
+          -0.1244888298072215,
+          -1.2856305478651386,
+          -0.6519202405202644
+        ],
+        [
+          -0.5929994533288807,
+          1.2822349470143812,
+          0.24002284032101354,
+          1.53392997769474
+        ],
+        [
+          -0.8153742483272111,
+          -0.1244888298072215,
+          -1.2855680966085905,
+          -0.6519202405202644
+        ],
+        [
+          1.408373701656092,
+          1.2822349470143812,
+          0.795885029359053,
+          -0.6519202405202644
+        ],
+        [
+          1.408373701656092,
+          -0.1244888298072215,
+          1.3240942183392566,
+          1.53392997769474
+        ],
+        [
+          -0.8153742483272111,
+          1.2822349470143812,
+          -1.1640312898984129,
+          -0.6519202405202644
+        ],
+        [
+          1.408373701656092,
+          -1.15774611720716,
+          -1.1047993956252653,
+          -0.6519202405202644
+        ],
+        [
+          -0.5929994533288807,
+          -1.15774611720716,
+          -0.3398959890811061,
+          1.53392997769474
+        ],
+        [
+          -0.8153742483272111,
+          1.2822349470143812,
+          0.23925115096093286,
+          1.53392997769474
+        ]
+      ],
+      "width": 2.0,
+      "beta": [
+        1.1785965565778402,
+        1.0318274809174677,
+        -0.11557359219422245,
+        -0.21978553221882668,
+        1.0492412003544265,
+        0.31836164290010166,
+        -0.5686572608237845,
+        1.3295861863768477,
+        -0.21779900775941083,
+        -0.3987916161654151,
+        -1.6299983521013568,
+        1.294637943407826,
+        -0.4816753812606589,
+        -0.5114628293022426,
+        -0.7996845468476915,
+        -0.5457228415119586,
+        1.1404445001611976,
+        1.3138138457703405,
+        -1.4686333990817761,
+        -0.5692155212558292,
+        -1.6115861628663932,
+        -0.42873099426167993,
+        -0.3672024134392322,
+        0.3226867448749204,
+        0.9468365462653845,
+        1.3959648984002162,
+        -0.5455799726712502
+      ],
+      "intercept": 1.6322164327485378,
+      "log": false,
+      "fitted_parameters": 28
+    },
+    "attempt_008": {
+      "case": 66,
+      "kind": "a1",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 1000.0
+      },
+      "beta": [
+        3.2046904331874404
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "Langmuir b(T)P/(1+b(T)P)"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": true
+    },
+    "attempt_009": {
+      "case": 66,
+      "kind": "a1",
+      "knobs": {
+        "affinity": 0.03,
+        "heat": 300.0
+      },
+      "beta": [
+        0.0
+      ],
+      "active_columns": [
+        1
+      ],
+      "terms": [
+        "negative gas displacement P/(100bar)"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": true
+    }
+  },
+  "selection": {
+    "mechanistic_attempt": "attempt-001",
+    "default_origin": "mechanistic_reference",
+    "rule": "Default = strongest frozen development predictor among scientific hypotheses and all controls; separately select simplest mechanistic hypothesis within 1% of its best grouped development primary error. No confirmation selection.",
+    "used_confirmation": false
+  },
+  "equations": {
+    "reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "mechanistic_reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_001": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_002": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_003": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_004": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_005": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_006": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_007": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_mean": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_domain": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_rbf": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+    "attempt_008": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_009": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis."
+  },
+  "scope": "Four MOF/graphite compositions and one source campaign. A branch contrast has different sampled pressures and cannot by itself establish irreversible hysteresis.",
+  "timing": "Composition, pressure, temperature, branch only; no measured uptake-derived quantity as an input.",
+  "fresh_confirmation_after_delivery": false,
+  "admission": "Numerical reference collection; no independently established new physical law or measured deployed industrial benefit."
+}

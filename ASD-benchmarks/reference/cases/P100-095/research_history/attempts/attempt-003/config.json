@@ -1,0 +1,16 @@
+{
+  "case": 95,
+  "type": "linear",
+  "features": [
+    "E",
+    "U2",
+    "EG"
+  ],
+  "offset": null,
+  "scale": null,
+  "alpha": 0,
+  "nonnegative": true,
+  "title": "Buoyancy-modulated memory",
+  "hypothesis": "Thermal gradient modulates retained energy while wind-squared supplies mean-flow forcing.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 0.3173972561524605, \"worst_group\": 0.5982098856436229}, {\"attempt\": \"attempt-002\", \"group_MAE\": 0.3122647880296719, \"worst_group\": 0.575888428751605}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Production/dissipation lowers mean and worst-week errors. Test whether unresolved buoyancy modifies stored-energy response rather than invoking only shear.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state."
+}

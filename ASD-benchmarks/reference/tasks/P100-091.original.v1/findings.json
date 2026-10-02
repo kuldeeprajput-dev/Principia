@@ -1,0 +1,35 @@
+[
+  {
+    "id": "P100-091-F01",
+    "classification": "predictive_reference",
+    "claim": "A finite-setting rule with same-run throughput correction improves over the regularized source-family queue model on both reserved locations, but fails its improvement claim against the matched flexible control.",
+    "equation": "Lhat=max(0,m_a+1.179*(b-1.05*a)) ms; m=[5.123,10.509,14.001,12.313,13.601,29.229] for a=[1,10,50,100,200,500] Mbps.",
+    "evidence": "Selected003 development1.509387ms; confirmation2.195557ms versus queue3.018121ms and nested RBF1.916457ms. Q4/Q5 reference1.663147/2.727967ms; RBF1.761877/2.071038ms.",
+    "prior_art": "Source already establishes load-dependent empirical delay; offered-condition calibration and LAD are established methods.",
+    "falsification": "Reference loses to RBF on Q5 and overall; no best-in-class or physical-law claim.",
+    "scope": "Q4/Q5 within the same seven-location installation; six offered rates1,10,50,100,200,500Mbit/s. No unseen offered-rate extrapolation, hardware transfer, pure radio latency or intervention claim.",
+    "admission": "partially_supported"
+  },
+  {
+    "id": "P100-091-F02",
+    "classification": "falsified",
+    "claim": "The small development gain from a shared within-setting achieved-throughput slope does not survive both reserved locations.",
+    "equation": "Ablation Lhat=m_a; unrestricted slope adds1.179 ms per Mbit/s at fixed offered rate.",
+    "evidence": "Adding slope improves development1.584101to1.509387ms but worsens confirmation1.945783to2.195557ms; the slope is not confirmed as a stable transferable processing cost.",
+    "prior_art": "Same-run traffic and delay are mutually conditioned outcomes, not randomized predictors.",
+    "falsification": "A0.5Mbps perturbation changes the frozen prediction by0.5895ms; adverse Q5 transfer is retained.",
+    "scope": "Within this installation and run-summary precision only.",
+    "admission": "supported"
+  },
+  {
+    "id": "P100-091-F03",
+    "classification": "bounded_interpretation",
+    "claim": "Neither offered-minus-achieved traffic nor the fitted queue pole identifies packet loss or physical5G capacity in these data.",
+    "equation": "b/a approximately1.05\u20131.06 on development runs; a-b is not a loss measurement.",
+    "evidence": "Source report semantics; protocol excludes NetPwr and latency-derived quantities. Entire network path includes wired routing and WiFi.",
+    "prior_art": "Author paper already discusses empirical capacity identifiability; iPerf documentation defines report quantities.",
+    "falsification": "Requires independent byte-accounting, clock-offset, component-delay or intervention measurements to make a causal claim.",
+    "scope": "Q4/Q5 within the same seven-location installation; six offered rates1,10,50,100,200,500Mbit/s. No unseen offered-rate extrapolation, hardware transfer, pure radio latency or intervention claim.",
+    "admission": "supported"
+  }
+]

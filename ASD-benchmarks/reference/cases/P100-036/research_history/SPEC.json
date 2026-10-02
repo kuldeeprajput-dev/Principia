@@ -1,0 +1,34 @@
+{
+  "case": 36,
+  "title": "Tomato photosynthetic-yield response",
+  "kind": "mae",
+  "target": "Author QY_max",
+  "unit": "dimensionless quantum yield",
+  "inputs": [
+    "npq",
+    "rfd",
+    "ngrdi",
+    "area",
+    "tiny",
+    "salt",
+    "drought",
+    "high_stress"
+  ],
+  "input_units": {
+    "npq": "dimensionless author NPQ_Lss",
+    "rfd": "dimensionless author Rfd_Lss",
+    "ngrdi": "dimensionless RGB index",
+    "area": "source AREA_MM scale; only relative/log descriptor used",
+    "tiny": "cultivar indicator",
+    "salt": "salt-treatment indicator",
+    "drought": "drought-treatment indicator",
+    "high_stress": "source second stress-level indicator; no invented dose units"
+  },
+  "source_url": "https://zenodo.org/records/20638584",
+  "license": "CC BY 4.0",
+  "paper": "https://github.com/giorgiadelc/tom-phenotyping",
+  "independent_unit": "Plant; repeated sampling remains linked",
+  "scope": "Two dwarf cultivars under this controlled stress protocol. Source-extracted contemporaneous fluorescence/RGB traits; no independently measured hydration or new photosynthetic law.",
+  "timing": "Contemporaneous imaging diagnostic: source NPQ_Lss, Rfd_Lss, NGRDI, morphology and known cultivar/treatment predict separately reported maximum quantum yield. No QY_max-derived feature or future plant measurement is supplied.",
+  "calibration": "No per-plant target calibration. Learned feature normalization or flexible centers are fitted on development training plants only."
+}

@@ -1,0 +1,59 @@
+{
+  "case_id": "P100-013",
+  "findings": [
+    {
+      "finding_id": "P100-013-F01",
+      "classification": "validated_extension",
+      "admission": "supported",
+      "claim": "Two-temperature-response kinetic mixture reduces conversion prediction error on a reserved faster heating ramp.",
+      "equation": "Let the reference temperature be $T_r=423.15\\,\\mathrm{K}$ and $R=8.314462618\\,\\mathrm{J\\,mol^{-1}\\,K^{-1}}$. For each channel,\n\n$$\nq_j(T,\\beta)=\\frac{k_{j,r}}{\\beta}\\int_{273.15}^{T}\\exp\\!\\left[\\frac{E_j}{R}\\left(\\frac{1}{T_r}-\\frac{1}{u}\\right)\\right]du,\n\\qquad \\widehat\\alpha=w(1-e^{-q_1})+(1-w)(1-e^{-q_2}).\n$$\n\nThe energies are133.625and67.794kJ/mol, reference log-rates are-3.30765and-4.06157, and w=0.555544. Full precision is in rules.json. The integration limit is a fixed273.15K reference, not a fitted onset. This is a bounded phenomenological kinetic mixture; channels are not assigned to chemical species.",
+      "evidence": [
+        "evidence/metrics.csv",
+        "evidence/by_group.csv",
+        "evidence/predictions.csv.gz",
+        "rules.json"
+      ],
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "falsification": "A shared activation barrier gives development MAE0.03477 rather than0.02734, supporting the predictive usefulness of distinct temperature responses. The full-fit Jacobian condition is771, and only four heating histories constrain five parameters, so individual energies are not unique chemical constants. A single inaccessible-fraction alternative fails to improve transfer. The confirmation error is0.05895conversion units, or5.895percentage points; this is error, not percentage accuracy.",
+      "scope": "One reserved ramp and one formulation; no universal reaction law.",
+      "novelty": "not_assessed",
+      "industrial_impact": "not_demonstrated"
+    },
+    {
+      "finding_id": "P100-013-F02",
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "The single-barrier/two-timescale simplification and single inaccessible-fraction explanation do not match the selected mixture under the frozen rate-transfer tests.",
+      "equation": null,
+      "evidence": [
+        "evidence/metrics.csv",
+        "evidence/by_group.csv",
+        "evidence/predictions.csv.gz",
+        "rules.json"
+      ],
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "falsification": "A shared activation barrier gives development MAE0.03477 rather than0.02734, supporting the predictive usefulness of distinct temperature responses. The full-fit Jacobian condition is771, and only four heating histories constrain five parameters, so individual energies are not unique chemical constants. A single inaccessible-fraction alternative fails to improve transfer. The confirmation error is0.05895conversion units, or5.895percentage points; this is error, not percentage accuracy.",
+      "scope": "Negative model comparison; does not prove two specific chemical reactions.",
+      "novelty": "not_assessed",
+      "industrial_impact": "not_demonstrated"
+    },
+    {
+      "finding_id": "P100-013-F03",
+      "classification": "abstention",
+      "admission": "supported",
+      "claim": "Chemical-species identification and industrial cure qualification are not established by these DSC fits.",
+      "equation": null,
+      "evidence": [
+        "evidence/metrics.csv",
+        "evidence/by_group.csv",
+        "evidence/predictions.csv.gz",
+        "rules.json"
+      ],
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "falsification": "A shared activation barrier gives development MAE0.03477 rather than0.02734, supporting the predictive usefulness of distinct temperature responses. The full-fit Jacobian condition is771, and only four heating histories constrain five parameters, so individual energies are not unique chemical constants. A single inaccessible-fraction alternative fails to improve transfer. The confirmation error is0.05895conversion units, or5.895percentage points; this is error, not percentage accuracy.",
+      "scope": "Independent component-specific and process-reliability evidence is absent.",
+      "novelty": "not_assessed",
+      "industrial_impact": "not_demonstrated"
+    }
+  ]
+}

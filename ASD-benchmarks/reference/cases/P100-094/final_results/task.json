@@ -1,0 +1,139 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-094.original.v1",
+  "case_id": "P100-094",
+  "case_number": 94,
+  "family": "original",
+  "protocol_version": "P100-094-asd6-native-v1",
+  "cohort_id": "P100-094.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-094.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/94_oceanography_arctic_ctd",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Calibrated CDOM fluorescence channel",
+  "target_units": "ppb",
+  "error_units": "ppb",
+  "primary_units": "ppb",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "pressure",
+    "temperature",
+    "salinity"
+  ],
+  "input_units": {
+    "pressure": "dbar",
+    "temperature": "degC",
+    "salinity": "psu"
+  },
+  "numeric_columns": [
+    "pressure",
+    "temperature",
+    "salinity"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Contemporaneous calibrated CDOM fluorescence diagnostic using pressure,T1,S1; no other optical or oxygen response input. Good T/S flags0, pump on,5\u2013500dbar. CDOM has no independent QC column.",
+  "calibration": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "independent_unit": "Entire station casts02,06,08 development (cast04 has no eligible good-QC observations) leave-one-cast-out; casts10 and12 confirmation. Same expedition/instrument, spatial transfer not independent sensor calibration.",
+  "evaluation_groups": [
+    "station-10",
+    "station-12"
+  ],
+  "assigned_rows": 4893,
+  "eligible_rows": 4893,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "flexible",
+    "salinity_mixing",
+    "attempt-001",
+    "attempt-002",
+    "attempt-003",
+    "attempt-004",
+    "attempt-005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "y_hat = 0 + 1 * (1.0347666552712096*one + 0.020736971657983164*S + -0.34651000152496098*halocline + -0.019562377632340158*T)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "y_hat = 0 + 1 * (0.51058952580596462*one)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "offset + scale*(coef[0] + sum_j coef[j+1]*exp(-||standardized_inputs-center[j]||^2/(2*width^2))); frozen arrays in this state",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "salinity_mixing": {
+      "equation": "y_hat = 0 + 1 * (0.60476905259138203*one + -0.21628261806154112*S)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-001": {
+      "equation": "y_hat = 0 + 1 * (0.59132437657045922*one + -0.10573396671011576*S + -0.11127572488078011*T)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-002": {
+      "equation": "y_hat = 0 + 1 * (1.1838700109598956*one + 2.3542469003679822*P + -1.0885747823778793*logP)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-003": {
+      "equation": "y_hat = 0 + 1 * (1.0347666552712096*one + 0.020736971657983164*S + -0.34651000152496098*halocline + -0.019562377632340158*T)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-004": {
+      "equation": "y_hat = 0 + 1 * (0.51260694634283188*one + -0.0021553314438982397*S + -0.1677942997264304*T + 0.059127661662224794*TS)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-005": {
+      "equation": "y_hat = 0 + 1 * (0.69004643834713186*one + -0.15399338196288465*S + -0.14994330078968873*T + -0.35161441337370419*surface)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference."
+  },
+  "scope_limits": "CDOM ppb is the publisher-calibrated fluorescence channel, not chemically measured DOC concentration. Quality control does not establish a universal conservative-mixing relationship. No target-based outlier removal.",
+  "source_url": "https://zenodo.org/records/17530624",
+  "source_license": "CC-BY-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Schema inspection printed first CSV row from all six casts. These shallow pump-off rows are excluded by prefit5dbar/pump rule; confirmation groups partially schema-exposed, numerical eligible outcomes not inspected. All public source-aware; confirmation after final freeze will become exposed.\", \"current\": \"exposed\", \"confirmation_history\": \"Scores hidden until candidate selection, stopping and code/state freeze\", \"fresh_for_future_users\": false}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "2228a0fdd92455ea9679e95145fcdd321a324aa384133db3ac2e5d7554758236",
+  "observations_sha256": "f84712f0705db2d5fe1fde20aae8024c57ff7be60c2073d72787d0eabcf8b0da",
+  "legacy_protocol_sha256": "bbb8b8916a41bad5ade6c9e09e57c4446b28725795d66e57cecb20bd3230c841",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

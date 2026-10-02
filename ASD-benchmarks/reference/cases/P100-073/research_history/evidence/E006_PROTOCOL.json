@@ -1,0 +1,57 @@
+{
+  "frozen_at": "2026-09-30T09:18:06.164716+00:00",
+  "case": 73,
+  "retrospective": true,
+  "fresh_confirmation": false,
+  "prior_outcomes": "All old confirmation outcomes and aggregate assessments are exposed. This continuation uses only original development rows for fits and choices. Old confirmation is never a new holdout.",
+  "input_sha256": "4da582a670d4ba91fb7dc7a114f43ecc81d2e9c829e4b7993f9b420302d23b9d",
+  "original_final_hashes": {
+    "final_results/run.py": "7b5128620da53fe6c4a5ab751e37b1cc83ec7c04e6aec6ff5d6d34b1a729b677",
+    "final_results/requirements.txt": "bcfe6f77af822ad01abe166f2e3982d078d4dcbf080f0096a3029f96128de697",
+    "final_results/README.md": "ab0c7a89abb3a1d08f55c8197b8f6c916581004c80d8c68cef5c42af56973a0a",
+    "final_results/reference_rule_index.json": "65ca56228a0ee1756f0a14e9055c27beb4edac468fe6d8c6ed59693f2a988612",
+    "final_results/rules.json": "0ad409746f873652b184564336079f395e92c6236bb3e5e495e3a1b6fb81c25c",
+    "final_results/MANIFEST.json": "09cab1d9cbda8ca4f546f3a33317878bff0ac664e460da58ab4bc9ba29728be2",
+    "final_results/FINDINGS.pdf": "d302fa2eb58cc0b8cf92755fb157dc45bb3048fafac28a4a3355f93ebf55e4d5",
+    "final_results/FINDINGS.md": "b47835ec5e1fea71cb6b467f6fb8f7b4d29a945a70f3a860af27873f21dfb0a9",
+    "final_results/evaluator/report.schema.json": "90441d8caa61b80800b947068879fe342b3572b583c21361ce7664bf6e6f83aa",
+    "final_results/evaluator/review.schema.json": "a0abed7e5c6a17f468c5b201cc5403f4132c262420086171df61f8bb544826ca",
+    "final_results/evaluator/README.md": "8047afa6d7f3e752cad5eb4e9bb9ca79e8d8f1b24be07a8726b153925910e8ff",
+    "final_results/evaluator/submission.schema.json": "b153859a210d456c10f63b747d781a405117093dfd4e5b235ea437bbe7d82c77",
+    "final_results/evaluator/protocol.json": "8ad11eca4d3a3489ef40733fc5b4983f52746738faaa6e7d1159bd587ab17a7a",
+    "final_results/evaluator/evaluate.py": "5dad3652ba4d133fbb16feee50daaf2606fb6d4b970228d29a50a22bdbc656ad",
+    "final_results/evidence/predictions.csv.gz": "d7c7fbe2acfc74fa21cfd453f0f71f90b9dc939df46a385e38185de02ebc9270",
+    "final_results/evidence/metrics.csv": "68a56b6a7b0096d805b5c881d8f2897b750f525b59fac584f9e6835c11f5637c",
+    "final_results/evidence/comparison.png": "ccd308a39b1e78009b68f6bf765541396cf0e6e91426ac176ab0a4c3a6843661",
+    "final_results/evidence/by_group.csv": "751069870b53c0e5e6e51b346bd2f115b6bb300187d289143d777af431323318",
+    "final_results/evidence/admission.json": "0e7724142030f7a8c553a2c91d9d86991a06b24a532fd5e22ebb9d739f806857",
+    "final_results/data/observations.csv.gz": "aa29e758823a5ff44554044f8bda99759368ee7e31d0e54309dbf1ff3ce56a0e",
+    "final_results/data/README.md": "8f216a91dd1bfb18e040adcf51796d657243eccc4549108c727670937395a92f",
+    "final_results/data/inputs.csv.gz": "36286692b27b589698aae99793955d1a5155fd8a8b88fc1dea917464091670bb"
+  },
+  "source_manifest_hashes": {
+    "research_history/audit/source_manifest.json": "f7e45e1b930478eb61792716f5f9eb36f4641cbad4c6c9882bbb369bcd94b8aa"
+  },
+  "primary": "equal whole-group RMSE",
+  "groups": [
+    "T1-R1",
+    "T1-R2",
+    "T1-R3",
+    "T2-R1",
+    "T2-R2",
+    "T2-R3",
+    "T3-R1",
+    "T3-R2",
+    "T3-R3"
+  ],
+  "validation": "Complete specimens/runs/operating blocks; rumen complete DG run across protocols; soil forward chronological site-date blocks. Every parameter fit and flexible hyperparameter selection excludes outer validation groups.",
+  "calibration": "Original early E0, pure-H2 or known-context calibration remains explicitly permitted. No future response inputs.",
+  "hypothesis_first": [
+    "prefix_gompertz",
+    "A decreasing relative gas-generation hazard can be constrained by both measured prefix values, rather than fitted to G8 alone."
+  ],
+  "new_input_policy": "Case82 second cycle may add explicitly backward-only soil-temperature history. All relevant comparators will be refitted with identical input access.",
+  "selection": "Compare all development grouped errors, prefer simplicity within1%, inspect per-group counterexamples. No exposed confirmation may choose parameters or revisions.",
+  "continuation": "At least two materially distinct new investigations; further cycles require a development-specific residual rationale. Repair of82optimizer is baseline cycle000, not a discovery attempt.",
+  "industrial_claim": "Offline forecasting/screening only; no deployed impact, cost saving, novel law or causal mechanism is established by low error."
+}

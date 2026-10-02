@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "local_only": true,
+  "publication_performed": false,
+  "tasks": 53,
+  "historical_model_metrics": 514,
+  "verification_receipt": "PUBLIC_METRIC_PARITY.json",
+  "native_preparation": {
+    "task_id": "P100-037.original.v1",
+    "status": "reconstructed",
+    "rows": 27692,
+    "source_hashes_verified": 15
+  },
+  "alternative_model_trusted_replay": {
+    "status": "passed",
+    "maximum_absolute_difference": 1.1368683772161603e-13,
+    "security_sandbox": false,
+    "execution_mode": "explicitly_trusted_local",
+    "environment_secrets_inherited": false
+  },
+  "source_roots_hidden_from_runtime": true,
+  "interpretation": "The explicit export reproduces scoring and example replay using only exported code/state. Native preparation additionally receives the explicit original-data root; no research history is used."
+}

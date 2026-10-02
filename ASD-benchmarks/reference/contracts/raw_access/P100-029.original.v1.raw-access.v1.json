@@ -1,0 +1,66 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-029.original.v1.raw-access.v1",
+  "parent_task_id": "P100-029.original.v1",
+  "case_id": "P100-029",
+  "protocol_version": "P100-029.original.v1.raw-access.v1",
+  "cohort_id": "P100-029.original.v1.cohort-1",
+  "parent_task_sha256": "0bb90476ec938f71adb88ed045f3be342e6119f46cbb52818b58b517d2688aef",
+  "input_sha256": "6fb76f3a4e8aac739964ec7b32dba90d4cfe7f45215871a9005b3e250f65ee4a",
+  "observations_sha256": "f4cf418fd9d86ae47fb5d14f8b756071f18448daf3c80b0c6bfa4c29053f3e45",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "29_biophysics_peptide_barrels",
+  "source_assets": [
+    {
+      "name": "raw/main_data.zip",
+      "path": "raw/main_data.zip",
+      "bytes": 85912498,
+      "sha256": "00495cd0339d327186b74212cf52e9f2a92c46b4abbf9a70c12e530a582ce63c"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "dose": "uM barrel",
+      "dose_cal": "uM barrel",
+      "F0": "fluorescence a.u.",
+      "F1": "fluorescence a.u.",
+      "F2": "fluorescence a.u.",
+      "F5": "fluorescence a.u.",
+      "dose1": "uM barrel",
+      "dose2": "uM barrel",
+      "dye_NR": "binary"
+    },
+    "observation_window": "Predict remaining higher-dose assay values after declared lower-dose measurements; sequential assay not real-time kinetics.",
+    "calibration_and_history": "Spectrum-wide mean fluorescence at native concentrations 0,1,2,5 nominal uM, per replicate; target concentrations 7.5 to30. No maximal-response normalization.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

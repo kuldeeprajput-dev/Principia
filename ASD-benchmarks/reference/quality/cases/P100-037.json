@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-037",
+  "title": "Carrier-router power under packet and load changes",
+  "default_task": "P100-037.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Measured electrical router power",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 5,
+    "independent_unit_description": "complete native run",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Separate A/B model parameters from the original development runs; no target-run refit.",
+  "baseline_strength": {
+    "registered_controls": 3,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "unsupported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Measured electrical router power",
+    "prediction_time": "Current throughput and packet-size metadata only. Derived packet-rate proxies are not independent measurements; no measured temperature supports a thermal mechanism.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-037.original.v1",
+    "P100-037.round2.v1"
+  ],
+  "finding_ids": [
+    "P100-037-SCI-01",
+    "P100-037-SCI-02",
+    "P100-037-SCI-03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-037/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-037.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Measured electrical router power under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Current throughput and packet-size metadata only. Derived packet-rate proxies are not independent measurements; no measured temperature supports a thermal mechanism.",
+    "calibration_requirement": "Separate A/B model parameters from the original development runs; no target-run refit.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Measured electrical router power in W",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "W",
+    "reference_model": "compact",
+    "reference_primary_error": 4.005877791141317,
+    "reference_physical_mae": 4.005877791141317,
+    "physical_error_units": "W",
+    "lowest_registered_error_model": "flexible",
+    "lowest_registered_error": 3.731542419516829,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-037.original.v1/evidence/metrics.csv",
+      "bytes": 282,
+      "sha256": "15d56bb86ef27eb9e13650b5a9618b0434f270afde4be258be852a7d21af87ec"
+    },
+    "models": 3
+  },
+  "case_specific_next_evidence": "Measure controlled packet-processing interventions and a new router model; retain calibration-free and calibrated tasks separately."
+}

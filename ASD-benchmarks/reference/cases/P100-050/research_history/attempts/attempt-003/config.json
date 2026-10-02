@@ -1,0 +1,23 @@
+{
+  "name": "depth_dependent_memory",
+  "formula": "h+v*0.2/(1+k*sqrt(maximum(h,0)))",
+  "hypothesis": "Development evidence available before this fit: damped_velocity: MAE 0.013819, worst group 0.0160151; oscillatory_memory: MAE 0.0132228, worst group 0.0153772.\n\nA flow-depth-dependent decorrelation scale tests the expectation that advective/wave speed changes with square-root depth. This remains an effective local forecast, not direct measurement of wave speed.",
+  "inputs": [
+    "h0",
+    "h",
+    "v",
+    "a",
+    "median"
+  ],
+  "initial": {
+    "k": 100
+  },
+  "bounds": {
+    "k": [
+      0,
+      10000
+    ]
+  },
+  "recorded_utc": "2026-10-02T01:56:00.074604+00:00",
+  "parent": "attempt-002"
+}

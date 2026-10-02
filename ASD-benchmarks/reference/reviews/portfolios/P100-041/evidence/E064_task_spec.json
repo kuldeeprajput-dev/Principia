@@ -1,0 +1,57 @@
+{
+  "case_id": "P100-041",
+  "target": "Unimputed hourly balancing-authority demand",
+  "target_units": "MW",
+  "error_units": "MW",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "forecast",
+    "error48",
+    "error168",
+    "load48",
+    "load168",
+    "ramp",
+    "hour",
+    "weekend"
+  ],
+  "input_units": {
+    "forecast": "MW",
+    "error48": "MW",
+    "error168": "MW",
+    "load48": "MW",
+    "load168": "MW",
+    "ramp": "MW",
+    "hour": "UTC hour",
+    "weekend": "indicator"
+  },
+  "numeric_columns": [
+    "forecast",
+    "error48",
+    "error168",
+    "load48",
+    "load168",
+    "ramp",
+    "hour",
+    "weekend"
+  ],
+  "source_url": "https://www.eia.gov/electricity/gridmonitor/about",
+  "source_license": "US government public domain",
+  "exposure": {
+    "schema": "Schema-stage first row of original table inspected. First row belongs to January development. No June targets/scores inspected. All public source-aware; confirmation after final freeze will become exposed.",
+    "current": "exposed",
+    "confirmation_history": "Scores hidden until candidate selection, stopping and code/state freeze",
+    "fresh_for_future_users": false
+  },
+  "uncertainty_policy": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "calibration": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "scope_limits": "Unimputed native Demand/Forecast only. Revised final public snapshot is not an as-issued operational backtest. Negative/nonfinite demand/forecasts excluded by validity rule before fitting. Primary MW MAE is not normalized by authority load.",
+  "timing_contract": "Retrospective published-snapshot forecast correction. Input official forecast for target hour, preceding-hour forecast, and actual/forecast residuals 48 and168 hours before target. Nominal issuance t\u221224h is an analysis convention, not observed release timestamp. The observed load/residual histories refer to hours at least24h before nominal issuance. This timestamp statement does not establish their actual publication availability. Target-hour and preceding-hour forecast vintages and issuance times are unknown in the revised snapshot; no historical as-issued forecast availability is claimed. No target-hour demand, generation or interchange predictor.",
+  "independent_unit": "Authority-month groups; rolling train Jan\u2013Feb->March, Jan\u2013March->April, Jan\u2013April->May. June confirmation. Same authorities across time, correlated national weather; no independence claim across all authorities.",
+  "selection": "attempt-008",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "weights": "equal group then equal eligible row"
+  }
+}

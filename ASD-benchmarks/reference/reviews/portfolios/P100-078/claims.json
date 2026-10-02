@@ -1,0 +1,161 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-078",
+  "claim_origin": "Curator index of existing retained findings; review judgments remain separate. No new discovery claim added.",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "exposed"
+  },
+  "findings": [
+    {
+      "id": "P100-078-SCI-01",
+      "classification": "predictive_reference",
+      "source_classification": "numerical_control",
+      "statement": "The capacity-gap model is a retrospective endpoint reference after invalidated strain grouping; it is not independent biological confirmation.",
+      "applicability": "Whole source laboratories; two development labs and one historically exposed GSK cohort; exact actual times and numeric equality targets only.",
+      "limitations": "Previously invalidated grouping exposed part of the GSK cohort; source strain/SITE alias inconsistencies make directory-level labs the only defensible existing group.",
+      "falsification": [
+        "Do not turn interval-censored death times into scheduled 24 hresponses.",
+        "Exclude site/study/strain labels from numerical predictors under continuation task; retain them as provenance/group metadata.",
+        "Require time-resolved evidence for kinetics; separately evaluate baseline cohort uncertainty and humane endpoint selection."
+      ],
+      "prior_art": "Source already investigates multicenter virulence; endpointselection/identifiability audit is valuable but not a new pathogen law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "target": "log10 CFU / total lung",
+        "time_h": "h; numeric actual time only",
+        "initial_logCFU": "log10 CFU / total lung; mean observed time-zero cohort",
+        "site": "source laboratory label"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-078.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-078-SCI-02",
+      "classification": "metrology_correction",
+      "source_classification": "measurement_audit",
+      "statement": "All 15 GSK endpoints at 24 h reduce the chosen equation to almost a constant; the cohort cannot validate growth kinetics or initial burden memory.",
+      "applicability": "Whole source laboratories; two development labs and one historically exposed GSK cohort; exact actual times and numeric equality targets only.",
+      "limitations": "Twenty untreated < 24 h humane endpoint assays have mean 9.2970/range 8.9120\u20139.3979 log units and are excluded from exact-time prediction. This nonrandom selection cannot be repaired by assigning 24 h.",
+      "falsification": [
+        "Do not turn interval-censored death times into scheduled 24 hresponses.",
+        "Exclude site/study/strain labels from numerical predictors under continuation task; retain them as provenance/group metadata.",
+        "Require time-resolved evidence for kinetics; separately evaluate baseline cohort uncertainty and humane endpoint selection."
+      ],
+      "prior_art": "Source already investigates multicenter virulence; endpointselection/identifiability audit is valuable but not a new pathogen law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "Lhat(t)=L0+2.0071696*(t/24h)+.9807704*(t/24h)*(7-L0); Lhat(24h)=8.8725627+.01922956*L0; dLhat/dL0=1-.9807704*t/24h.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007",
+          "E008"
+        ]
+      },
+      "variables_and_units": {
+        "target": "log10 CFU / total lung",
+        "time_h": "h",
+        "initial_logCFU": "log10 CFU per total lung"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007",
+        "E008"
+      ],
+      "task_id": "P100-078.continuation.v1",
+      "task_family": "continuation",
+      "task_version_history": "2026-10-01 continuation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "id": "E001",
+      "role": "original scientific description",
+      "path": "evidence/E001_FINDINGS.md",
+      "bytes": 5453,
+      "sha256": "771db3cc2eb6ac67cfa3b6b0d2e3f4140c77d062067f27035354c85aa1ea363e"
+    },
+    {
+      "id": "E002",
+      "role": "original frozen model state",
+      "path": "evidence/E002_rules.json",
+      "bytes": 16779,
+      "sha256": "1cf78532d121b0ce5b8123305a2fa5b86cbd23c5654bcdec3f46938dc1abf45f"
+    },
+    {
+      "id": "E003",
+      "role": "original numerical comparison",
+      "path": "evidence/E003_metrics.csv",
+      "bytes": 1815,
+      "sha256": "8d50ead33705e392bde8bc354a1df7af2ab92584885867010ea17e1ccf04d91f"
+    },
+    {
+      "id": "E004",
+      "role": "original grouped errors",
+      "path": "evidence/E004_by_group.csv",
+      "bytes": 1950,
+      "sha256": "13a5b41a987c05951d3e7a77021440573d07070acb5bc4145bc48bf81beac5e2"
+    },
+    {
+      "id": "E005",
+      "role": "latest scientific account",
+      "path": "evidence/E005_FINDINGS.md",
+      "bytes": 4795,
+      "sha256": "9d844988f41467c4b55d20b5ac09c0057448c5a3bdd8848931dabbc7e0e80262"
+    },
+    {
+      "id": "E006",
+      "role": "latest frozen model state",
+      "path": "evidence/E006_rules.json",
+      "bytes": 5111,
+      "sha256": "941744965419eaee5546861840e5ab07d6bc10170af6d16f7fb838c8e8ac2d6a"
+    },
+    {
+      "id": "E007",
+      "role": "latest numerical comparison",
+      "path": "evidence/E007_metrics.csv",
+      "bytes": 1053,
+      "sha256": "47d136072f139a13b1c306b0ef65bee891a12bf1915b8089135dd25cf8c8fe1c"
+    },
+    {
+      "id": "E008",
+      "role": "latest grouped errors",
+      "path": "evidence/E008_by_group.csv",
+      "bytes": 1104,
+      "sha256": "9196a140682ca8c5839820732ef3654e0561a8a5e582e6052e04ade3feb4123e"
+    },
+    {
+      "id": "SCIENTIFIC",
+      "role": "Independent scientific review before schema adaptation",
+      "path": "evidence/SCIENTIFIC.json",
+      "bytes": 17485,
+      "sha256": "fdaf604ebfe6dbac01998cebf4b6a8446da5bfab0c4420f22eb1a2f877a6f351"
+    },
+    {
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational portfolio review",
+      "path": "evidence/COMPUTATIONAL.json",
+      "bytes": 125684,
+      "sha256": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    }
+  ]
+}

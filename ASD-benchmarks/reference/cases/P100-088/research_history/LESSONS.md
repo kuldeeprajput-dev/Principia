@@ -1,0 +1,3 @@
+# Lessons
+
+Information timing matters even in tabular behavioral data: a current feedback flag can be unavailable before the first choice. Reconstruct visible history instead of trusting derived previous-outcome columns. Keep entire people across splits and score people equally. Repeated lotteries make persistence powerful; compare against flexible and empirical-history controls before attributing a predictor to learning or attitude. Small improvements with many dependent rows require group-level uncertainty and should not become claims of new psychological laws. Unfitted controls added after confirmation must be labeled exposed diagnostics without changing selection.

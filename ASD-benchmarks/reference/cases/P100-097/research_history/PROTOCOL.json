@@ -1,0 +1,32 @@
+{
+  "title": "Measured crowd speed across source-defined flow conditions",
+  "target": "pedestrian speed",
+  "target_units": "m/s",
+  "input_columns": [
+    "eta",
+    "rho"
+  ],
+  "input_units": {
+    "eta": "m²/person specific volume",
+    "rho": "persons/m², exact reciprocal of eta; predictor only"
+  },
+  "fold_design": "leave_group",
+  "timing_contract": "Source-processed paired density/speed ordinates, used for retrospective condition transfer. Density is the published local spatial descriptor; the task is not an online evacuation forecast.",
+  "calibration": "No held-condition speed calibration. The supplied paper fit is an explicitly exposed prior-art baseline, not a newly discovered coefficient set.",
+  "independent_unit": "Complete source figure cohorts; F3D and F3E are linked as the multidirectional-study family and reserved together. Person/run identifiers are missing, so independence within or between figure cohorts is not established.",
+  "scope_limits": [
+    "F3A simulation is excluded; source-processed plotting tables are not raw trajectories.",
+    "Panel-to-study mapping follows the article ordered empirical-condition list and cited original studies: F3B unidirectional/Zhang2011; F3C counterflow/Zhang2012; F3D/F3E cross/four-directional/Cao2017. Exact original run accession IDs are not retained.",
+    "Only within-source condition transfer is assessed. No independent population validation, causal pedestrian mechanism or safe capacity limit is claimed.",
+    "Flow and gait algebraic identities are excluded as predictive targets and confirmations."
+  ],
+  "exposure": "Primary article known fitted equation and schema dimensions were inspected before allocation. Reserved numerical ordinates were not viewed before freeze.",
+  "uncertainty_policy": "Condition-balanced results and both individual reserved figures. F3D/F3E may share participants; no independent-cohort confidence interval.",
+  "case_id": "P100-097",
+  "source_url": "https://zenodo.org/records/14737521",
+  "source_license": "cc-by-4.0",
+  "freeze_utc": "2026-10-02T02:45:51.317413+00:00",
+  "selection_rule": "Lowest mean group development MAE among all controls and attempts; within 0.5% choose fewer parameters. Selection and continuation use development only.",
+  "continuation_rule": "At least five substantive attempts; stop after two consecutive attempts without supported predictive, worst-group, or interpretive gain.",
+  "metric_kind": "mae"
+}

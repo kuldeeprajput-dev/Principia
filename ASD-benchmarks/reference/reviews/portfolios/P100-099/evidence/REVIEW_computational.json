@@ -1,0 +1,654 @@
+{
+  "case_id": "P100-099",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "0b16cab4457876766cf1fbb8606d72f4b45c22d03c8beebcb720f3b3908060c4"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "f2a9036644384da0e7089ce82e916882c7e1dd6fd5826ff4e8662416d970b250"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "810ab82f14f64535ca4fe682b69d07761072a884b4e113111fff95a6b3f473ec"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "d29080395e3763ebbe8834078e15873f4851abefde34e7355a50f1ecf3adb2fd"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "bcfca77187f3344f053ec496afa769e08f428d80723e208d7f96d986f1bf7358"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "0e01a2304fbb28979befcdf28e5253195e0486ef1afcc981974004f81f227914"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "054e05d87f4c50106336ec5ca23e696aee4f531506b8c00b9661a606f6d5a6e3"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "975f2765e481dc379512570e4768ff18bbb91b841d167ef52c65130af234bc02"
+    },
+    {
+      "path": "native.py",
+      "sha256": "633a6ed07a4ef5be84ccba8f8435d4a77fa77b04a3bafe40f3e7741060b5546f"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "260e55e4d84288f087afe98241cf248afb05b401260c64f0b574203cf44a2238"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "56cfc6cfe75e5f7c187871c988ce51622a3565baa17cf596539d396d59c18fce"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "7f22731983fafe1e440db49b1f7fd0feb501096da4e22737ae2346ae3632010a"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "859eabca958d7461f712f94088ce2cc37112a3002cd3271f69ff453acba58ecd"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "d758c65791196abb862c20af3177591b842e9efabf9b1ff65c0c64990e34fec5"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "4b7aa8b7402d7cb4a4ef1221c9f0938f65106522587617c6bb67f4072db70541"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-099-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. An asymmetric recovery predictor improves processed-calcium trace forecasting on five held animals, with all sessions linked. Units remain author trace units and time is native frames; behavior-only files and unresolved freezing alignment are excluded. No neural/fear mechanism, spike rate or quality-flag interpretation is invented."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. An asymmetric recovery predictor improves processed-calcium trace forecasting on five held animals, with all sessions linked. Units remain author trace units and time is native frames; behavior-only files and unresolved freezing alignment are excluded. No neural/fear mechanism, spike rate or quality-flag interpretation is invented."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. An asymmetric recovery predictor improves processed-calcium trace forecasting on five held animals, with all sessions linked. Units remain author trace units and time is native frames; behavior-only files and unresolved freezing alignment are excluded. No neural/fear mechanism, spike rate or quality-flag interpretation is invented."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "An asymmetric recovery predictor improves processed-calcium trace forecasting on five held animals, with all sessions linked. Units remain author trace units and time is native frames; behavior-only files and unresolved freezing alignment are excluded. No neural/fear mechanism, spike rate or quality-flag interpretation is invented.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-099-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. An asymmetric recovery predictor improves processed-calcium trace forecasting on five held animals, with all sessions linked. Units remain author trace units and time is native frames; behavior-only files and unresolved freezing alignment are excluded. No neural/fear mechanism, spike rate or quality-flag interpretation is invented."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. An asymmetric recovery predictor improves processed-calcium trace forecasting on five held animals, with all sessions linked. Units remain author trace units and time is native frames; behavior-only files and unresolved freezing alignment are excluded. No neural/fear mechanism, spike rate or quality-flag interpretation is invented."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. An asymmetric recovery predictor improves processed-calcium trace forecasting on five held animals, with all sessions linked. Units remain author trace units and time is native frames; behavior-only files and unresolved freezing alignment are excluded. No neural/fear mechanism, spike rate or quality-flag interpretation is invented."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "An asymmetric recovery predictor improves processed-calcium trace forecasting on five held animals, with all sessions linked. Units remain author trace units and time is native frames; behavior-only files and unresolved freezing alignment are excluded. No neural/fear mechanism, spike rate or quality-flag interpretation is invented.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-099",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-099",
+      "native_rows": 91113,
+      "confirmation_rows": 17475,
+      "models": 10,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 10,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 2.168404344971009e-19,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 17475,
+        "primary_error": 0.0002761791210527093,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_persistence",
+        "rows": 17475,
+        "primary_error": 0.00033693483451751845,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_velocity",
+        "rows": 17475,
+        "primary_error": 0.0008392699546001688,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_flexible",
+        "rows": 17475,
+        "primary_error": 0.00030323240227586286,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001_decay",
+        "rows": 17475,
+        "primary_error": 0.00032525553552778264,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002_relaxation",
+        "rows": 17475,
+        "primary_error": 0.00028247969136419113,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003_inertia",
+        "rows": 17475,
+        "primary_error": 0.000281472346358782,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004_heterogeneity",
+        "rows": 17475,
+        "primary_error": 0.0002759830648652457,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005_region",
+        "rows": 17475,
+        "primary_error": 0.00028188866292276453,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_006_asymmetry",
+        "rows": 17475,
+        "primary_error": 0.0002761791210527093,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "14VH9",
+          "15DH2",
+          "3DH5",
+          "7VH9",
+          "9VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "11VH6",
+          "13VH7",
+          "3DH2",
+          "5DH3",
+          "8VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "10VH9",
+          "1DH5",
+          "4DH3",
+          "6VH7",
+          "8VH7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "12VH9",
+          "3DH3",
+          "5VH7",
+          "6DH2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "4DH2",
+          "4DH5",
+          "9VH6",
+          "9VH7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "14VH9",
+          "15DH2",
+          "3DH5",
+          "7VH9",
+          "9VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "11VH6",
+          "13VH7",
+          "3DH2",
+          "5DH3",
+          "8VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "10VH9",
+          "1DH5",
+          "4DH3",
+          "6VH7",
+          "8VH7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "12VH9",
+          "3DH3",
+          "5VH7",
+          "6DH2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "4DH2",
+          "4DH5",
+          "9VH6",
+          "9VH7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "14VH9",
+          "15DH2",
+          "3DH5",
+          "7VH9",
+          "9VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "11VH6",
+          "13VH7",
+          "3DH2",
+          "5DH3",
+          "8VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "10VH9",
+          "1DH5",
+          "4DH3",
+          "6VH7",
+          "8VH7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "12VH9",
+          "3DH3",
+          "5VH7",
+          "6DH2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "4DH2",
+          "4DH5",
+          "9VH6",
+          "9VH7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "14VH9",
+          "15DH2",
+          "3DH5",
+          "7VH9",
+          "9VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "11VH6",
+          "13VH7",
+          "3DH2",
+          "5DH3",
+          "8VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "10VH9",
+          "1DH5",
+          "4DH3",
+          "6VH7",
+          "8VH7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "12VH9",
+          "3DH3",
+          "5VH7",
+          "6DH2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "4DH2",
+          "4DH5",
+          "9VH6",
+          "9VH7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "14VH9",
+          "15DH2",
+          "3DH5",
+          "7VH9",
+          "9VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "11VH6",
+          "13VH7",
+          "3DH2",
+          "5DH3",
+          "8VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "10VH9",
+          "1DH5",
+          "4DH3",
+          "6VH7",
+          "8VH7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "12VH9",
+          "3DH3",
+          "5VH7",
+          "6DH2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "4DH2",
+          "4DH5",
+          "9VH6",
+          "9VH7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "14VH9",
+          "15DH2",
+          "3DH5",
+          "7VH9",
+          "9VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "11VH6",
+          "13VH7",
+          "3DH2",
+          "5DH3",
+          "8VH9"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 18,
+        "validation_groups_count": 5,
+        "validation_groups": [
+          "10VH9",
+          "1DH5",
+          "4DH3",
+          "6VH7",
+          "8VH7"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "12VH9",
+          "3DH3",
+          "5VH7",
+          "6DH2"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 19,
+        "validation_groups_count": 4,
+        "validation_groups": [
+          "4DH2",
+          "4DH5",
+          "9VH6",
+          "9VH7"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "An asymmetric recovery predictor improves processed-calcium trace forecasting on five held animals, with all sessions linked. Units remain author trace units and time is native frames; behavior-only files and unresolved freezing alignment are excluded. No neural/fear mechanism, spike rate or quality-flag interpretation is invented."
+}

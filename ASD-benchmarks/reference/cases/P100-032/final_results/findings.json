@@ -1,0 +1,762 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-032",
+  "findings": [
+    {
+      "finding_id": "P100-032-F01",
+      "statement": "The selected autoregressive control gives a usable signal-prediction reference for this instrument/protocol. Its gain is a bounded signal-model result, not a new respiratory law.",
+      "classification": "validated_extension",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-032.original.v1"
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The autoregressive reference improves five-participant pressure forecast MAE0.49151 to0.37185cmH2O, while every proposed physical extension loses to the flexible control.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Gauge pressure is a measured signal; absent independent muscle pressure/flow-volume identification prevents interpreting fitted lags as resistance or compliance.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source-publication review is disclosed, but the model families are established and the search is targeted. No literature-priority certification.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful causal signal-forecasting test, not a clinical utility result. Assess independent patient populations and device/protocol transfer separately.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Executable coefficients, native anchors and group evidence are present; independent computational review checks arithmetic separately.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent clinical, industrial, financial or experimental intervention benefit was measured.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        }
+      },
+      "computational_review": {
+        "finding_id": "P100-032-F01",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Fixed ADC conversion, 0.20s horizon and strictly preceding pressure/flow inputs reproduce. Equal-participant MAE0.371853 versus persistence0.491507; reference is the flexible autoregressive control.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Computational parity validates implementation, not causal mechanism; scientific-critical review is separate.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No computational result certifies novelty; disclosed source analyses remain prior art.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Performance and negative evidence are meaningful only under the stated input/calibration and grouped cohort.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Independent native reconstruction, every frozen equation, equal-group metric recomputation, target poison, row-order invariance and standalone replay all passed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No prospective operational or experimental intervention was performed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          {
+            "name": "native_reconstruction",
+            "passed": true,
+            "rows": 15040,
+            "confirmation_rows": 3768,
+            "columns_checked": [
+              "group",
+              "p0",
+              "p05",
+              "p10",
+              "p20",
+              "p30",
+              "p40",
+              "p50",
+              "di0",
+              "de0",
+              "di20",
+              "de20",
+              "trial_BH",
+              "trial_FEM"
+            ]
+          },
+          {
+            "name": "complete_group_partition",
+            "passed": true,
+            "groups": 20
+          },
+          {
+            "name": "all_equations_metrics_target_poison_order",
+            "passed": true,
+            "models": 9,
+            "metric": "equal_group_MAE"
+          },
+          {
+            "name": "standalone_replay",
+            "passed": true
+          }
+        ],
+        "limitations": [
+          "Twenty healthy participants and five reserved; signal prediction is not respiratory mechanics identification or clinical benefit. Calibration pressure equations are source supplied.",
+          "All outcomes are exposed. This review is computational review by a separate agent, not experimental replication."
+        ]
+      },
+      "disagreements": [
+        "mechanism",
+        "reproducibility"
+      ],
+      "scientific_review": "../../../reviews/portfolios/P100-032/combined/review.json",
+      "current_outcome_exposure": "exposed",
+      "equation_or_program": {
+        "expression": "P_hat(t+0.20 s) = beta_0 + sum_{j=1}^{13} beta_j * phi_j(t). Here phi=(p0,p05,p10,p20,p30,p40,p50,di0,de0,di20,de20,p0*FEM,p0*BH). The p terms are gauge pressures at lags0,0.05,0.10,0.20,0.30,0.40 and0.50s; di and de are inspiratory/expiratory differential pressures, with0 and0.20s lags. Every pressure is in cmH2O; FEM and BH are declared trial indicators. The intercept is 0.04519408cmH2O, and the current gauge-pressure coefficient is 1.739696. All coefficients are already transformed back from training feature-RMS scaling: apply this dot product directly to the physical-unit inputs, with no additional scaling.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "source_claims": "../../../reviews/portfolios/P100-032/claims.json"
+    },
+    {
+      "finding_id": "P100-032-F02",
+      "statement": "Damped slopes, occlusion-period acceleration, differential-pressure drive, regime interactions and bounded inertia were tested. None displaced the flexible control on participant-held-out development data.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-032.original.v1"
+      ],
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The autoregressive reference improves five-participant pressure forecast MAE0.49151 to0.37185cmH2O, while every proposed physical extension loses to the flexible control.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Gauge pressure is a measured signal; absent independent muscle pressure/flow-volume identification prevents interpreting fitted lags as resistance or compliance.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Source-publication review is disclosed, but the model families are established and the search is targeted. No literature-priority certification.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful causal signal-forecasting test, not a clinical utility result. Assess independent patient populations and device/protocol transfer separately.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Executable coefficients, native anchors and group evidence are present; independent computational review checks arithmetic separately.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent clinical, industrial, financial or experimental intervention benefit was measured.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004",
+            "E005",
+            "E006",
+            "E007",
+            "E008",
+            "E009",
+            "E010",
+            "E011",
+            "E012",
+            "E013",
+            "E014",
+            "E015",
+            "E016",
+            "E017",
+            "E018"
+          ]
+        }
+      },
+      "computational_review": {
+        "finding_id": "P100-032-F02",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Fixed ADC conversion, 0.20s horizon and strictly preceding pressure/flow inputs reproduce. Equal-participant MAE0.371853 versus persistence0.491507; reference is the flexible autoregressive control.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Computational parity validates implementation, not causal mechanism; scientific-critical review is separate.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "No computational result certifies novelty; disclosed source analyses remain prior art.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Performance and negative evidence are meaningful only under the stated input/calibration and grouped cohort.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "Independent native reconstruction, every frozen equation, equal-group metric recomputation, target poison, row-order invariance and standalone replay all passed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No prospective operational or experimental intervention was performed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010",
+              "E011",
+              "E012",
+              "E013",
+              "E014",
+              "E015",
+              "E016",
+              "E017",
+              "E018"
+            ]
+          }
+        },
+        "checks": [
+          {
+            "name": "native_reconstruction",
+            "passed": true,
+            "rows": 15040,
+            "confirmation_rows": 3768,
+            "columns_checked": [
+              "group",
+              "p0",
+              "p05",
+              "p10",
+              "p20",
+              "p30",
+              "p40",
+              "p50",
+              "di0",
+              "de0",
+              "di20",
+              "de20",
+              "trial_BH",
+              "trial_FEM"
+            ]
+          },
+          {
+            "name": "complete_group_partition",
+            "passed": true,
+            "groups": 20
+          },
+          {
+            "name": "all_equations_metrics_target_poison_order",
+            "passed": true,
+            "models": 9,
+            "metric": "equal_group_MAE"
+          },
+          {
+            "name": "standalone_replay",
+            "passed": true
+          }
+        ],
+        "limitations": [
+          "Twenty healthy participants and five reserved; signal prediction is not respiratory mechanics identification or clinical benefit. Calibration pressure equations are source supplied.",
+          "All outcomes are exposed. This review is computational review by a separate agent, not experimental replication."
+        ]
+      },
+      "disagreements": [
+        "reproducibility"
+      ],
+      "scientific_review": "../../../reviews/portfolios/P100-032/combined/review.json",
+      "current_outcome_exposure": "exposed",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "source_claims": "../../../reviews/portfolios/P100-032/claims.json"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

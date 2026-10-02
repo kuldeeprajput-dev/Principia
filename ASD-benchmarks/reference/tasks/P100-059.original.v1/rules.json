@@ -1,0 +1,929 @@
+{
+  "schema_version": "1.0",
+  "case_id": "P100-059",
+  "source": {
+    "landing_url": "https://data.mendeley.com/datasets/dbh93b6vp8/3",
+    "upstream_case": "59_energy_portugal_pv",
+    "version_evidence": "SOURCE_ASSETS.json"
+  },
+  "target": "Hourly produced energy divided by installed capacity",
+  "target_units": "kWh/kWp",
+  "input_units": {
+    "irradiance": "kW/m^2; supplied weather shortwave radiation",
+    "temp_C": "degree C; supplied 2 m temperature",
+    "wind": "m/s; supplied 10 m wind converted from km/h",
+    "hour": "source-clock hour; no timezone assumed",
+    "doy": "calendar day of year",
+    "limit": "connection kW / installed kWp",
+    "latitude": "degree north"
+  },
+  "input_columns": [
+    "irradiance",
+    "temp_C",
+    "wind",
+    "hour",
+    "doy",
+    "limit",
+    "latitude"
+  ],
+  "numeric_columns": [
+    "irradiance",
+    "temp_C",
+    "wind",
+    "hour",
+    "doy",
+    "limit",
+    "latitude"
+  ],
+  "missingness": "Native measured energy is divided by independently supplied installed power; source specific-energy and avoided-CO2 columns are excluded. Weather provider/provenance and timezone are unresolved, so the case is mixed measured/author-supplied weather. Daylight cohort fixed by input irradiance >20 W/m^2; no target-based filtering. Missing native energy retained as missing targets. All nine plants and all years retained subject to declared daylight availability.",
+  "primary_metric": "mae",
+  "assigned_rows": 16966,
+  "models": {
+    "reference": {
+      "case": 59,
+      "kind": "a5",
+      "knobs": {},
+      "beta": [
+        0.8332718972581858,
+        0.09745503869401666,
+        -0.0488496917598592,
+        0.030521620837201686,
+        0.19757963412541368,
+        0.8929951225545892
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)",
+        "irradiance * (ambientC-25)/25K",
+        "irradiance^2: heating/clipping surrogate",
+        "irradiance/(1+wind/(1m/s))",
+        "irradiance * seasonal cosine",
+        "irradiance * afternoon asymmetry"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 6,
+      "design_condition": 12.952578992712212,
+      "positive_coefficients": false
+    },
+    "mechanistic_reference": {
+      "case": 59,
+      "kind": "a5",
+      "knobs": {},
+      "beta": [
+        0.8332718972581858,
+        0.09745503869401666,
+        -0.0488496917598592,
+        0.030521620837201686,
+        0.19757963412541368,
+        0.8929951225545892
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)",
+        "irradiance * (ambientC-25)/25K",
+        "irradiance^2: heating/clipping surrogate",
+        "irradiance/(1+wind/(1m/s))",
+        "irradiance * seasonal cosine",
+        "irradiance * afternoon asymmetry"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 6,
+      "design_condition": 12.952578992712212,
+      "positive_coefficients": false
+    },
+    "attempt_001": {
+      "case": 59,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        1.010245816885105,
+        -0.307228363368156
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)",
+        "irradiance^2: heating/clipping surrogate"
+      ],
+      "fitted_parameters": 2,
+      "design_rank": 2,
+      "design_condition": 6.9484499878874315,
+      "positive_coefficients": false
+    },
+    "attempt_002": {
+      "case": 59,
+      "kind": "a2",
+      "knobs": {},
+      "beta": [
+        0.7875834965238095,
+        -0.17892555165945548
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)",
+        "irradiance * (ambientC-25)/25K"
+      ],
+      "fitted_parameters": 2,
+      "design_rank": 2,
+      "design_condition": 1.3686455749601065,
+      "positive_coefficients": false
+    },
+    "attempt_003": {
+      "case": 59,
+      "kind": "a3",
+      "knobs": {},
+      "beta": [
+        1.0863905086128514,
+        -0.006192636806327801,
+        -0.314498678413146,
+        -0.2947366852867872
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)",
+        "irradiance * (ambientC-25)/25K",
+        "irradiance^2: heating/clipping surrogate",
+        "irradiance/(1+wind/(1m/s))"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 4,
+      "design_condition": 11.3173242175278,
+      "positive_coefficients": false
+    },
+    "attempt_004": {
+      "case": 59,
+      "kind": "a4",
+      "knobs": {},
+      "beta": [
+        1.1466366584613052,
+        0.4131286220218729,
+        -0.1654129472478908,
+        -0.42247203424204394,
+        0.24988378689660595,
+        0.02399308335736457
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)",
+        "irradiance * (ambientC-25)/25K",
+        "irradiance^2: heating/clipping surrogate",
+        "irradiance/(1+wind/(1m/s))",
+        "irradiance * seasonal cosine",
+        "irradiance * seasonal sine"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 6,
+      "design_condition": 13.04133432383354,
+      "positive_coefficients": false
+    },
+    "attempt_005": {
+      "case": 59,
+      "kind": "a5",
+      "knobs": {},
+      "beta": [
+        0.7969276746007781,
+        0.01814583200289862,
+        -0.016049551169840012,
+        0.04686013570004872,
+        0.18744732494500696,
+        -0.02732305283797639,
+        0.9089362014268819
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)",
+        "irradiance * (ambientC-25)/25K",
+        "irradiance^2: heating/clipping surrogate",
+        "irradiance/(1+wind/(1m/s))",
+        "irradiance * seasonal cosine",
+        "irradiance * seasonal sine",
+        "irradiance * afternoon asymmetry"
+      ],
+      "fitted_parameters": 7,
+      "design_rank": 7,
+      "design_condition": 14.210642230030981,
+      "positive_coefficients": false
+    },
+    "attempt_006": {
+      "case": 59,
+      "kind": "a5",
+      "knobs": {},
+      "beta": [
+        1.1466366584613052,
+        0.4131286220218729,
+        -0.1654129472478908,
+        -0.42247203424204394,
+        0.24988378689660595,
+        0.02399308335736457
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)",
+        "irradiance * (ambientC-25)/25K",
+        "irradiance^2: heating/clipping surrogate",
+        "irradiance/(1+wind/(1m/s))",
+        "irradiance * seasonal cosine",
+        "irradiance * seasonal sine"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 6,
+      "design_condition": 13.04133432383354,
+      "positive_coefficients": false
+    },
+    "attempt_007": {
+      "case": 59,
+      "kind": "a5",
+      "knobs": {},
+      "beta": [
+        0.8332718972581858,
+        0.09745503869401666,
+        -0.0488496917598592,
+        0.030521620837201686,
+        0.19757963412541368,
+        0.8929951225545892
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)",
+        "irradiance * (ambientC-25)/25K",
+        "irradiance^2: heating/clipping surrogate",
+        "irradiance/(1+wind/(1m/s))",
+        "irradiance * seasonal cosine",
+        "irradiance * afternoon asymmetry"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 6,
+      "design_condition": 12.952578992712212,
+      "positive_coefficients": false
+    },
+    "baseline_mean": {
+      "case": 59,
+      "kind": "mean",
+      "knobs": {},
+      "beta": [
+        0.34349261919652035
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "1"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "baseline_domain": {
+      "case": 59,
+      "kind": "domain",
+      "knobs": {},
+      "beta": [
+        0.799557362942057
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "baseline_rbf": {
+      "case": 59,
+      "kind": "rbf",
+      "features": [
+        "irradiance",
+        "temp_C",
+        "wind",
+        "hour",
+        "doy",
+        "limit",
+        "latitude"
+      ],
+      "columns": [
+        "irradiance",
+        "temp_C",
+        "wind",
+        "hour",
+        "doy",
+        "limit",
+        "latitude"
+      ],
+      "center": [
+        0.4128914019784189,
+        19.67660755110665,
+        3.803130633797031,
+        13.125385656892993,
+        180.3819057554436,
+        0.8953142438678927,
+        38.646365976386164
+      ],
+      "scale": [
+        0.2684991013568896,
+        5.432918899980369,
+        1.8049312603055916,
+        3.483438837569737,
+        97.65906671803387,
+        0.029779125403433165,
+        1.2745400098520419
+      ],
+      "centers": [
+        [
+          0.15682956780406607,
+          -0.1613511203176281,
+          -0.22950555182805568,
+          -0.32306743691189127,
+          1.8904347588902828,
+          1.5965176392913478,
+          -1.2674109591692528
+        ],
+        [
+          -1.3254845181227153,
+          -2.0572012498009187,
+          -0.3372351084714056,
+          -1.1842853712256127,
+          -1.836817735247911,
+          -0.2687385019478281,
+          0.04286567953263281
+        ],
+        [
+          1.1959391908532417,
+          0.8325897242658444,
+          1.3710478611588597,
+          0.8252231421730706,
+          -0.024390011449943037,
+          -1.510256167841851,
+          -0.05442432238295804
+        ],
+        [
+          -1.310586889118426,
+          -2.590984295966117,
+          -1.1682916882915346,
+          -1.1842853712256127,
+          -1.836817735247911,
+          -1.510256167841851,
+          -0.05442432238295804
+        ],
+        [
+          -1.3515553688802215,
+          -0.014100624823780146,
+          0.201412674745345,
+          1.9735137212580325,
+          -0.024390011449943037,
+          -1.510256167841851,
+          -0.05442432238295804
+        ],
+        [
+          0.2089712693190783,
+          -1.3761677081418728,
+          -0.53730428509477,
+          -0.03599479214065081,
+          1.8904347588902828,
+          -1.510256167841851,
+          -0.05442432238295804
+        ],
+        [
+          -1.4558387719102461,
+          -0.7503531022930195,
+          0.06290324477532325,
+          -2.0455033055393343,
+          -0.014150306795717231,
+          -0.8646669815769621,
+          -1.188951280205067
+        ],
+        [
+          -0.1709182702902977,
+          -0.23497636806455238,
+          -0.6296439050747843,
+          -0.6101400816831317,
+          1.8904347588902828,
+          -0.8646669815769621,
+          -1.188951280205067
+        ],
+        [
+          -1.42976792115274,
+          -3.0511420943843914,
+          -1.1529017516281987,
+          -1.1842853712256127,
+          1.8904347588902828,
+          0.9657044444578053,
+          2.2334599162126705
+        ],
+        [
+          0.5031994421537914,
+          1.5320295778616217,
+          0.6785007113087522,
+          1.112295786944311,
+          -0.014150306795717231,
+          -0.8646669815769621,
+          -1.188951280205067
+        ],
+        [
+          -1.3068624818673538,
+          -1.7074813230030301,
+          0.12446299142866617,
+          -1.1842853712256127,
+          1.880195054236057,
+          -1.510256167841851,
+          -0.05442432238295804
+        ],
+        [
+          -1.239823151348052,
+          -1.2841361484582179,
+          -0.24489548849139134,
+          -1.1842853712256127,
+          -1.836817735247911,
+          1.5965176392913478,
+          -1.2674109591692528
+        ],
+        [
+          -0.1448474195327915,
+          -0.7687594142297505,
+          -0.029436375204691004,
+          -0.6101400816831317,
+          1.880195054236057,
+          1.5965176392913478,
+          -1.2674109591692528
+        ],
+        [
+          -1.4595631791613186,
+          -0.6215089187359025,
+          -1.9531784581216565,
+          -2.0455033055393343,
+          -0.014150306795717231,
+          1.5965176392913478,
+          -1.2674109591692528
+        ],
+        [
+          -0.9269729422579776,
+          -0.6031026067991719,
+          0.4014818513687092,
+          -1.7584306607680937,
+          -0.024390011449943037,
+          -0.8646669815769621,
+          -1.188951280205067
+        ],
+        [
+          -1.3254845181227153,
+          -2.0572012498009187,
+          -0.3372351084714056,
+          -1.1842853712256127,
+          -1.836817735247911,
+          0.15735036098699864,
+          0.06169600248403785
+        ],
+        [
+          -1.3254845181227153,
+          -2.0572012498009187,
+          -0.3372351084714056,
+          -1.1842853712256127,
+          -1.836817735247911,
+          -0.8646669815769621,
+          0.06404979285296349
+        ],
+        [
+          0.2275933055744399,
+          0.7221518526454589,
+          -0.7373734617181342,
+          -0.8972127264543722,
+          -0.014150306795717231,
+          -1.510256167841851,
+          -0.05442432238295804
+        ],
+        [
+          0.21642008382122294,
+          -1.0080414694072533,
+          -0.36801498179807696,
+          -0.32306743691189127,
+          1.8904347588902828,
+          -0.8646669815769621,
+          -1.188951280205067
+        ],
+        [
+          -1.4558387719102461,
+          -0.8055720381032123,
+          1.0632491278921454,
+          -2.0455033055393343,
+          -0.024390011449943037,
+          -1.510256167841851,
+          -0.05442432238295804
+        ],
+        [
+          -0.04801283100491122,
+          -0.3638205516216691,
+          1.6018969111088956,
+          -0.03599479214065081,
+          1.8904347588902828,
+          -1.510256167841851,
+          -0.05442432238295804
+        ],
+        [
+          -0.20071352829887626,
+          1.3479664584943118,
+          0.32453216805203083,
+          1.3993684317155515,
+          -0.014150306795717231,
+          1.5965176392913478,
+          -1.2674109591692528
+        ],
+        [
+          2.0115843788380787,
+          1.2743412107473882,
+          -0.7527633983814699,
+          -0.32306743691189127,
+          -0.024390011449943037,
+          1.5965176392913478,
+          -1.2674109591692528
+        ],
+        [
+          -1.33293333262486,
+          -0.8055720381032123,
+          0.24758248473535202,
+          0.8252231421730706,
+          1.8597156449276053,
+          0.9657044444578053,
+          2.2334599162126705
+        ],
+        [
+          0.10841227354012593,
+          -1.6522623871928375,
+          -0.6142539684114486,
+          -0.32306743691189127,
+          1.8904347588902828,
+          -1.510256167841851,
+          -0.05442432238295804
+        ],
+        [
+          -0.6774376564361325,
+          -1.5786371394459136,
+          -1.8916187114683136,
+          -0.8972127264543722,
+          1.9006744635445085,
+          1.5965176392913478,
+          -1.2674109591692528
+        ],
+        [
+          -0.5284613663932398,
+          -0.21657005612782115,
+          -0.5526942217581055,
+          1.3993684317155515,
+          -0.034629716104168845,
+          0.9657044444578053,
+          2.2334599162126705
+        ],
+        [
+          -1.3739018123866555,
+          -2.793453727270158,
+          -1.1067319416381913,
+          -1.1842853712256127,
+          -1.836817735247911,
+          0.9657044444578053,
+          2.2334599162126705
+        ],
+        [
+          -1.2174767078416182,
+          -1.873138130433609,
+          -0.96822251166817,
+          -1.1842853712256127,
+          1.9006744635445085,
+          -0.8646669815769621,
+          -1.188951280205067
+        ],
+        [
+          -1.228649929594835,
+          -1.5970434513826444,
+          -1.029782258321513,
+          1.112295786944311,
+          1.8904347588902828,
+          0.15735036098699864,
+          0.06169600248403785
+        ],
+        [
+          -0.588051882410397,
+          -0.10613218450743503,
+          0.201412674745345,
+          -0.32306743691189127,
+          -0.014150306795717231,
+          0.9657044444578053,
+          2.2334599162126705
+        ],
+        [
+          -0.07408368176241745,
+          -0.8607909739134053,
+          -0.6758137150647915,
+          0.5381504974018302,
+          1.8904347588902828,
+          1.5965176392913478,
+          -1.2674109591692528
+        ],
+        [
+          1.5832775449647625,
+          0.42765086165776306,
+          -0.29106529848139834,
+          0.5381504974018302,
+          -0.024390011449943037,
+          0.9657044444578053,
+          2.2334599162126705
+        ],
+        [
+          0.07116820102940274,
+          -0.7135404784195574,
+          -0.49113447510476277,
+          -0.32306743691189127,
+          1.880195054236057,
+          -0.8646669815769621,
+          -1.188951280205067
+        ],
+        [
+          -1.262169594854486,
+          -2.2596706811049594,
+          -1.1067319416381913,
+          1.112295786944311,
+          -1.836817735247911,
+          0.9657044444578053,
+          2.2334599162126705
+        ],
+        [
+          -1.3254845181227153,
+          -2.0572012498009187,
+          -0.3372351084714056,
+          -1.1842853712256127,
+          -1.836817735247911,
+          0.7993318429757056,
+          0.14643245576535496
+        ],
+        [
+          -1.228649929594835,
+          -1.5970434513826444,
+          -1.029782258321513,
+          1.112295786944311,
+          1.8904347588902828,
+          -0.2687385019478281,
+          0.04286567953263281
+        ],
+        [
+          -0.32361896758426256,
+          1.0166528436331541,
+          -1.1836816249548705,
+          -1.4713580159968531,
+          -0.014150306795717231,
+          1.5965176392913478,
+          -1.2674109591692528
+        ],
+        [
+          -1.228649929594835,
+          -1.5970434513826444,
+          -1.029782258321513,
+          1.112295786944311,
+          1.8904347588902828,
+          0.7993318429757056,
+          0.14643245576535496
+        ],
+        [
+          -1.2360987440969797,
+          -1.5050118916989896,
+          -0.16794580517471253,
+          -1.1842853712256127,
+          -1.836817735247911,
+          -0.8646669815769621,
+          -1.188951280205067
+        ],
+        [
+          -0.837587168232242,
+          -0.5846962948624407,
+          2.725362287532403,
+          -0.32306743691189127,
+          1.8904347588902828,
+          0.9657044444578053,
+          2.2334599162126705
+        ],
+        [
+          -1.4595631791613186,
+          0.022711999049681676,
+          1.4172176711488667,
+          -2.0455033055393343,
+          -0.014150306795717231,
+          -0.8646669815769621,
+          -1.188951280205067
+        ],
+        [
+          -0.2305087863074548,
+          -0.7503531022930195,
+          -0.64503384173812,
+          -1.4713580159968531,
+          -0.04486942075839465,
+          0.9657044444578053,
+          2.2334599162126705
+        ],
+        [
+          -1.228649929594835,
+          -1.5970434513826444,
+          -1.029782258321513,
+          1.112295786944311,
+          1.8904347588902828,
+          -0.8646669815769621,
+          0.06404979285296349
+        ]
+      ],
+      "width": 2.0,
+      "beta": [
+        -0.015728357363698278,
+        0.042799653574539735,
+        0.2552798813120206,
+        -0.06864662154212367,
+        -0.32691955162998537,
+        0.20304361482404812,
+        -0.18361322898122115,
+        -0.07011625135551026,
+        -0.032875117377032595,
+        0.23820780887716414,
+        -0.10929989365599216,
+        0.019602392719176364,
+        -0.032340046414504095,
+        -0.17613234611111594,
+        -0.03509288171509942,
+        0.032310308948135955,
+        0.0357795740208559,
+        -0.10640216488390108,
+        0.22072690602128647,
+        -0.16942771020211572,
+        -0.09360424233671315,
+        -0.09928534634033312,
+        0.32538787357469906,
+        -0.0011634042767794182,
+        0.17115129929430092,
+        -0.0004454340774569025,
+        0.03617221282698753,
+        -0.10410144384616245,
+        -0.09532279660166187,
+        -0.07729489421971585,
+        -0.07566400964507075,
+        0.08467731512416003,
+        0.40064733120520435,
+        0.14086343210404312,
+        -0.07281385513438736,
+        -0.003223809726996164,
+        -0.08757204796275994,
+        -0.25231174847532,
+        -0.07271748183980203,
+        0.23472367721346668,
+        -0.060629632931898145,
+        -0.2039879478259288,
+        -0.16907673115793456,
+        -0.11161679394809206
+      ],
+      "intercept": 0.34349261923086044,
+      "log": false,
+      "fitted_parameters": 45
+    },
+    "attempt_008": {
+      "case": 59,
+      "kind": "a5",
+      "knobs": {},
+      "beta": [
+        1.1466366584613052,
+        0.4131286220218729,
+        -0.1654129472478908,
+        -0.42247203424204394,
+        0.24988378689660595,
+        0.02399308335736457
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)",
+        "irradiance * (ambientC-25)/25K",
+        "irradiance^2: heating/clipping surrogate",
+        "irradiance/(1+wind/(1m/s))",
+        "irradiance * seasonal cosine",
+        "irradiance * seasonal sine"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 6,
+      "design_condition": 13.04133432383354,
+      "positive_coefficients": false
+    },
+    "attempt_009": {
+      "case": 59,
+      "kind": "a5",
+      "knobs": {},
+      "beta": [
+        0.8332718972581858,
+        0.09745503869401666,
+        -0.0488496917598592,
+        0.030521620837201686,
+        0.19757963412541368,
+        0.8929951225545892
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "terms": [
+        "irradiance/(1kW m^-2)",
+        "irradiance * (ambientC-25)/25K",
+        "irradiance^2: heating/clipping surrogate",
+        "irradiance/(1+wind/(1m/s))",
+        "irradiance * seasonal cosine",
+        "irradiance * afternoon asymmetry"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 6,
+      "design_condition": 12.952578992712212,
+      "positive_coefficients": false
+    }
+  },
+  "selection": {
+    "mechanistic_attempt": "attempt-007",
+    "default_origin": "mechanistic_reference",
+    "rule": "Default = strongest frozen development predictor among scientific hypotheses and all controls; separately select simplest mechanistic hypothesis within 1% of its best grouped development primary error. No confirmation selection.",
+    "used_confirmation": false
+  },
+  "equations": {
+    "reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "mechanistic_reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_001": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_002": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_003": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_004": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_005": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_006": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_007": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_mean": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_domain": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_rbf": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+    "attempt_008": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_009": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis."
+  },
+  "scope": "Six cities, nine plants; plants within a city share weather and are not independent weather sites. Same-hour conditional energy prediction, not weather forecasting or proven thermal causality.",
+  "timing": "Contemporaneous weather and calendar/plant metadata only; no target energy, source specific-energy or emissions as inputs.",
+  "fresh_confirmation_after_delivery": false,
+  "admission": "Numerical reference collection; no independently established new physical law or measured deployed industrial benefit."
+}

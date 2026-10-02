@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-10-02T02:15:36.835124+00:00",
+  "case_id": "P100-039",
+  "task": {
+    "target": "Upper three country-specific hourly-earnings deciles, excluding bonuses",
+    "target_units": "binary EARNHRDCLC2>=8",
+    "error_units": "squared probability (Brier)",
+    "metric_kind": "brier",
+    "permitted_inputs": [
+      "education",
+      "age",
+      "japan"
+    ],
+    "input_units": {
+      "education": "source derived years of formal education",
+      "age": "fixed midpoint of published five-year age bin; final60\u201365midpoint62.5",
+      "japan": "country indicator"
+    },
+    "timing_contract": "Contemporaneous cross-sectional earnings association using age/education/country. All10 plausible numeracy values are excluded: conditioned on background and unsuitable individual prediction scores. This is not future earnings or causal education return.",
+    "calibration": "Respondent hashblocks within both countries; no held respondent wage fitting. Country intercepts use training respondents in that same country. No transfer to an unseen economy.",
+    "independent_unit": "Respondents nested in country and deterministic ten hashblocks; not10 independent samples from plausible values. Repeated respondent information stays linked. Survey clustering not publicly fully reconstructible.",
+    "scope_limits": "Only valid reported earnings deciles, ages25\u201365 and complete education. Final weights within equal country\u00d7respondent blocks; not a pooled national population estimand. Potential experience age-schooling-6 is proxy, not measured tenure. No skill-wage causal claim; income reporting/topcoding and nonresponse remain.",
+    "applicability": {
+      "weights": "SPFWT0",
+      "binary_country_relative_earnings": true
+    },
+    "case_id": "P100-039",
+    "source_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+    "source_license": "OECD data terms with attribution and pass-through acknowledgment; Reader Companion CC BY 4.0, third-party cover credit retained",
+    "numeric_columns": [
+      "education",
+      "age",
+      "japan"
+    ],
+    "exposure": {
+      "schema": "Only schema and source-publication aggregate descriptions inspected; reserved target values and scores not inspected.",
+      "current": "reserved_internal_only",
+      "fresh_for_future_users": false
+    },
+    "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+    "aggregation": {
+      "hierarchy": [
+        "group"
+      ],
+      "primary": "mean_group_error",
+      "within_group_weight": "sample_weight"
+    }
+  },
+  "source_manifest_sha256": "8242ee67b837b070e0ac0e415de34617fb933fdc32507b496f8543ef6f218d03",
+  "native_sha256": "43cd1dca60ccb46440565fd9715fffcb788faad4236fd687b24c0c0cf348b4a8",
+  "split_manifest_sha256": "bdb144f48fd3c83a985ea949eea469bb283a77fc810d48fe496251bfdb6616bf",
+  "baseline_families": [
+    "training constant",
+    "domain simple law",
+    "regularized32-center RBF same permitted inputs"
+  ],
+  "selection": "Minimize group-balanced primary error; prefer fewer coefficients within1percent of minimum; baseline may win.",
+  "stopping": "At least5distinct scientific hypotheses, adaptive to development evidence; stop after2consecutive substantive attempts without accuracy/robustness/interpretation gain.",
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ]
+}

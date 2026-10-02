@@ -1,0 +1,313 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-060",
+  "findings": [
+    {
+      "finding_id": "P100-060-SCI-01",
+      "statement": "A two-edge peak-response approximation improves aggregate physical voltage error, but the original gain is concentrated in one contact condition.",
+      "classification": "validated_extension",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-060.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole pulse widths across six sensor/contact conditions; ten pulses within a file are repeated apparatus observations. Strong adverse evidence: Only contact 110 kHz improves against constant gain; five other conditions worsen. Six files at one width are not six independent sensor-transfer experiments.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Causal edge superposition is useful as an ansatz. Direct resonance/timebase interpretation is contradicted by separately measured waveforms.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Damped oscillators and constant-Q constraints are established; no new resonance physics is certified. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole pulse widths across six sensor/contact conditions; ten pulses within a file are repeated apparatus observations.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original reserved 5 us width",
+          "measure": "reference",
+          "value": 0.356202,
+          "unit": "V",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original reserved 5 us width",
+          "measure": "residual kernel",
+          "value": 0.622043,
+          "unit": "V",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Only contact 110 kHz improves against constant gain; five other conditions worsen. Six files at one width are not six independent sensor-transfer experiments.",
+      "scientific_validators": [
+        "Report normalized file-weighted error together with physical volts and all sixconditions.",
+        "Recompute pre-trigger subtraction and post-trigger peak without leaking the full response into predictors.",
+        "Test claimed resonance against native spectra using the selected-cycle comparison, not the earlier cycle 002 summary."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-060.json",
+      "source_classification": "validated_extension"
+    },
+    {
+      "finding_id": "P100-060-SCI-02",
+      "statement": "A condition-normalized score exposes contact-dominated physical-voltage improvements and supports frequency-specific effective damping.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "partially_supported",
+      "task_ids": [],
+      "task_version_history": "2026-09-30 first continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole pulse widths across six sensor/contact conditions; ten pulses within a file are repeated apparatus observations. Strong adverse evidence: Development normalized MAE.15576147 vs .19526332 global-edge control; exposed normalized comparisons remain weak outside the contact regime. These gains are not unseen-device transmission physics.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Causal edge superposition is useful as an ansatz. Direct resonance/timebase interpretation is contradicted by separately measured waveforms.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Damped oscillators and constant-Q constraints are established; no new resonance physics is certified. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole pulse widths across six sensor/contact conditions; ten pulses within a file are repeated apparatus observations.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        }
+      },
+      "numerical_evidence": [],
+      "strongest_adverse_evidence": "Development normalized MAE.15576147 vs .19526332 global-edge control; exposed normalized comparisons remain weak outside the contact regime. These gains are not unseen-device transmission physics.",
+      "scientific_validators": [
+        "Report normalized file-weighted error together with physical volts and all sixconditions.",
+        "Recompute pre-trigger subtraction and post-trigger peak without leaking the full response into predictors.",
+        "Test claimed resonance against native spectra using the selected-cycle comparison, not the earlier cycle 002 summary."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-060.json",
+      "source_classification": "retrospective_extension"
+    },
+    {
+      "finding_id": "P100-060-SCI-03",
+      "statement": "The exact two-edge constant-Q ansatz improves normalized prediction, while native spectra falsify reading its fitted frequency as measured resonance.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "partially_supported",
+      "task_ids": [
+        "P100-060.round2.v1"
+      ],
+      "task_version_history": "2026-09-30 second continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Whole pulse widths across six sensor/contact conditions; ten pulses within a file are repeated apparatus observations. Strong adverse evidence: Spectral peaks agree within 5% for only 7/15 nominal 110 kHz and 0/15 nominal 500 kHz files; 500 kHzcontact normalized error worsens. Thus a plausible named parameter is not physical identification.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Causal edge superposition is useful as an ansatz. Direct resonance/timebase interpretation is contradicted by separately measured waveforms.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Damped oscillators and constant-Q constraints are established; no new resonance physics is certified. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Whole pulse widths across six sensor/contact conditions; ten pulses within a file are repeated apparatus observations.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "round 2 five held-width development folds",
+          "measure": "selected normalized MAE",
+          "value": 0.100100675,
+          "unit": "1",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        {
+          "cohort": "round 2 same cohorts",
+          "measure": "prior normalized MAE",
+          "value": 0.155761471,
+          "unit": "1",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        {
+          "cohort": "round 2 same cohorts",
+          "measure": "selected physical MAE",
+          "value": 0.258478,
+          "unit": "V",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        {
+          "cohort": "round 2 same cohorts",
+          "measure": "prior physical MAE",
+          "value": 0.536629,
+          "unit": "V",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Spectral peaks agree within 5% for only 7/15 nominal 110 kHz and 0/15 nominal 500 kHz files; 500 kHzcontact normalized error worsens. Thus a plausible named parameter is not physical identification.",
+      "scientific_validators": [
+        "Report normalized file-weighted error together with physical volts and all sixconditions.",
+        "Recompute pre-trigger subtraction and post-trigger peak without leaking the full response into predictors.",
+        "Test claimed resonance against native spectra using the selected-cycle comparison, not the earlier cycle 002 summary."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-060.json",
+      "source_classification": "retrospective_extension"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

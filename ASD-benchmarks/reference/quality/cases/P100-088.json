@@ -1,0 +1,75 @@
+{
+  "case_id": "P100-088",
+  "title": "Release for manuscript submission of Nasioulas et al. 2025",
+  "default_task": "P100-088.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Current risky choice",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 108,
+    "independent_unit_description": "Participant; full blocks and all trials linked",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No participant-specific fitted calibration. Online historical choices/visible outcomes are allowed identically for all models, beginning with neutral prior 0.5; history resets at every block.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Current risky choice",
+    "prediction_time": "Prediction precedes each current choice. Current lottery information is available; feedback availability is given only if block instructions announce it or an earlier trial revealed it. Previous choice and observed feedback from the same block are allowed; current choice, current outcomes, future trials and response time are prohibited. Complete-feedback type is zero unless currently announced with feedback present or revealed by a strictly previous trial; when inferred from history its previous TYPE_FEEDBACK is used.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-088.original.v1"
+  ],
+  "finding_ids": [
+    "P100-088-F01",
+    "P100-088-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-088/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-088.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Current risky choice under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Prediction precedes each current choice. Current lottery information is available; feedback availability is given only if block instructions announce it or an earlier trial revealed it. Previous choice and observed feedback from the same block are allowed; current choice, current outcomes, future trials and response time are prohibited. Complete-feedback type is zero unless currently announced with feedback present or revealed by a strictly previous trial; when inferred from history its previous TYPE_FEEDBACK is used.",
+    "calibration_requirement": "No participant-specific fitted calibration. Online historical choices/visible outcomes are allowed identically for all models, beginning with neutral prior 0.5; history resets at every block.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Current risky choice in binary choice",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "brier",
+    "primary_units": "probability squared",
+    "reference_model": "reference",
+    "reference_primary_error": 0.15695581850162255,
+    "reference_physical_mae": 0.31229968692523474,
+    "physical_error_units": "probability",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.15695581850162255,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-088.original.v1/evidence/metrics.csv",
+      "bytes": 941,
+      "sha256": "6a206b5fe6735d5a859c0273210297e64270ab8e91142f1bdb4601e1b68a9999"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+}

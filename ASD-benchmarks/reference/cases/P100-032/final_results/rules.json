@@ -1,0 +1,424 @@
+{
+  "case_id": "P100-032",
+  "input_columns": [
+    "p0",
+    "p05",
+    "p10",
+    "p20",
+    "p30",
+    "p40",
+    "p50",
+    "di0",
+    "de0",
+    "di20",
+    "de20",
+    "trial_BH",
+    "trial_FEM"
+  ],
+  "numeric_columns": [
+    "p0",
+    "p05",
+    "p10",
+    "p20",
+    "p30",
+    "p40",
+    "p50",
+    "di0",
+    "de0",
+    "di20",
+    "de20",
+    "trial_BH",
+    "trial_FEM"
+  ],
+  "input_units": {
+    "p0": "cmH2O",
+    "p05": "cmH2O",
+    "p10": "cmH2O",
+    "p20": "cmH2O",
+    "p30": "cmH2O",
+    "p40": "cmH2O",
+    "p50": "cmH2O",
+    "di0": "cmH2O",
+    "de0": "cmH2O",
+    "di20": "cmH2O",
+    "de20": "cmH2O",
+    "trial_BH": "binary",
+    "trial_FEM": "binary"
+  },
+  "target": "gauge_pressure_200ms_future",
+  "target_units": "cmH2O",
+  "metric_kind": "mae",
+  "reference_selected_model": "baseline_flexible",
+  "models": {
+    "reference": {
+      "case": 32,
+      "kind": "flexible",
+      "coef": [
+        0.04519407992902332,
+        1.739696271778417,
+        -0.4260015245424306,
+        -0.24614726517360805,
+        -0.1331758592350042,
+        0.13796845256012508,
+        -0.08503213868622495,
+        -0.06220665281537854,
+        -0.29636924235420714,
+        -0.03753710767025641,
+        0.6283671070144666,
+        0.036653965911246165,
+        0.04431049191490034,
+        0.008729553200391201
+      ],
+      "training_groups": [
+        "Subject10",
+        "Subject11",
+        "Subject12",
+        "Subject13",
+        "Subject14",
+        "Subject15",
+        "Subject16",
+        "Subject17",
+        "Subject18",
+        "Subject19",
+        "Subject2",
+        "Subject3",
+        "Subject6",
+        "Subject8",
+        "Subject9"
+      ],
+      "training_rows": 11272,
+      "training_ids_sha256": "81b060e0c3a8c08e51790bd4a7d94191638e6b96cb5a4830cc626e6011622a6d",
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "feature_rms": [
+        0.9999999999999715,
+        2.7335936264987883,
+        2.7091700193348487,
+        2.6974420737331037,
+        2.714441350143554,
+        2.6836617321007323,
+        2.7236649256702,
+        2.6871586877606695,
+        0.33439143459897736,
+        1.1904878447806346,
+        0.3335156281426758,
+        1.1802075102877543,
+        1.2727538585555171,
+        1.755361269530565
+      ],
+      "ridge_alpha": 1,
+      "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+    },
+    "baseline_persistence": {
+      "case": 32,
+      "kind": "persistence",
+      "coef": [],
+      "training_groups": [
+        "Subject10",
+        "Subject11",
+        "Subject12",
+        "Subject13",
+        "Subject14",
+        "Subject15",
+        "Subject16",
+        "Subject17",
+        "Subject18",
+        "Subject19",
+        "Subject2",
+        "Subject3",
+        "Subject6",
+        "Subject8",
+        "Subject9"
+      ],
+      "training_rows": 11272,
+      "training_ids_sha256": "81b060e0c3a8c08e51790bd4a7d94191638e6b96cb5a4830cc626e6011622a6d",
+      "equation": "p_hat(t+.2)=p(t)"
+    },
+    "baseline_tangent": {
+      "case": 32,
+      "kind": "tangent",
+      "coef": [],
+      "training_groups": [
+        "Subject10",
+        "Subject11",
+        "Subject12",
+        "Subject13",
+        "Subject14",
+        "Subject15",
+        "Subject16",
+        "Subject17",
+        "Subject18",
+        "Subject19",
+        "Subject2",
+        "Subject3",
+        "Subject6",
+        "Subject8",
+        "Subject9"
+      ],
+      "training_rows": 11272,
+      "training_ids_sha256": "81b060e0c3a8c08e51790bd4a7d94191638e6b96cb5a4830cc626e6011622a6d",
+      "equation": "p_hat(t+.2)=p(t)+2*(p(t)-p(t-.1))"
+    },
+    "baseline_flexible": {
+      "case": 32,
+      "kind": "flexible",
+      "coef": [
+        0.04519407992902332,
+        1.739696271778417,
+        -0.4260015245424306,
+        -0.24614726517360805,
+        -0.1331758592350042,
+        0.13796845256012508,
+        -0.08503213868622495,
+        -0.06220665281537854,
+        -0.29636924235420714,
+        -0.03753710767025641,
+        0.6283671070144666,
+        0.036653965911246165,
+        0.04431049191490034,
+        0.008729553200391201
+      ],
+      "training_groups": [
+        "Subject10",
+        "Subject11",
+        "Subject12",
+        "Subject13",
+        "Subject14",
+        "Subject15",
+        "Subject16",
+        "Subject17",
+        "Subject18",
+        "Subject19",
+        "Subject2",
+        "Subject3",
+        "Subject6",
+        "Subject8",
+        "Subject9"
+      ],
+      "training_rows": 11272,
+      "training_ids_sha256": "81b060e0c3a8c08e51790bd4a7d94191638e6b96cb5a4830cc626e6011622a6d",
+      "equation": "Frozen coefficient vector times exact features(case,kind,data) in run.py; fitted scale/ridge fully recorded.",
+      "feature_rms": [
+        0.9999999999999715,
+        2.7335936264987883,
+        2.7091700193348487,
+        2.6974420737331037,
+        2.714441350143554,
+        2.6836617321007323,
+        2.7236649256702,
+        2.6871586877606695,
+        0.33439143459897736,
+        1.1904878447806346,
+        0.3335156281426758,
+        1.1802075102877543,
+        1.2727538585555171,
+        1.755361269530565
+      ],
+      "ridge_alpha": 1,
+      "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+    },
+    "attempt_001_damped": {
+      "case": 32,
+      "kind": "damped",
+      "coef": [
+        0.7196221971773445
+      ],
+      "training_groups": [
+        "Subject10",
+        "Subject11",
+        "Subject12",
+        "Subject13",
+        "Subject14",
+        "Subject15",
+        "Subject16",
+        "Subject17",
+        "Subject18",
+        "Subject19",
+        "Subject2",
+        "Subject3",
+        "Subject6",
+        "Subject8",
+        "Subject9"
+      ],
+      "training_rows": 11272,
+      "training_ids_sha256": "81b060e0c3a8c08e51790bd4a7d94191638e6b96cb5a4830cc626e6011622a6d",
+      "equation": "p_hat=p0+a*(p0-p10)",
+      "optimizer": {
+        "success": true,
+        "cost": 317.9291240680848,
+        "bounds": [
+          [
+            -2
+          ],
+          [
+            3
+          ]
+        ],
+        "jacobian_rank": 1,
+        "jacobian_singular_values": [
+          17.001293632458587
+        ]
+      }
+    },
+    "attempt_002_periodic": {
+      "case": 32,
+      "kind": "periodic",
+      "coef": [
+        0.40742169802687317,
+        0.0024829645823480633
+      ],
+      "training_groups": [
+        "Subject10",
+        "Subject11",
+        "Subject12",
+        "Subject13",
+        "Subject14",
+        "Subject15",
+        "Subject16",
+        "Subject17",
+        "Subject18",
+        "Subject19",
+        "Subject2",
+        "Subject3",
+        "Subject6",
+        "Subject8",
+        "Subject9"
+      ],
+      "training_rows": 11272,
+      "training_ids_sha256": "81b060e0c3a8c08e51790bd4a7d94191638e6b96cb5a4830cc626e6011622a6d",
+      "equation": "p_hat=p0+a*(p0-p20)+b*(p0-2*p20+p40)",
+      "feature_rms": [
+        0.7500375693452379,
+        0.78480435202247
+      ],
+      "ridge_alpha": 0.01,
+      "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+    },
+    "attempt_003_flow": {
+      "case": 32,
+      "kind": "flow",
+      "coef": [
+        0.37097243306651584,
+        -0.029383060587937992,
+        -0.4265455480962779,
+        -0.03689161169376607
+      ],
+      "training_groups": [
+        "Subject10",
+        "Subject11",
+        "Subject12",
+        "Subject13",
+        "Subject14",
+        "Subject15",
+        "Subject16",
+        "Subject17",
+        "Subject18",
+        "Subject19",
+        "Subject2",
+        "Subject3",
+        "Subject6",
+        "Subject8",
+        "Subject9"
+      ],
+      "training_rows": 11272,
+      "training_ids_sha256": "81b060e0c3a8c08e51790bd4a7d94191638e6b96cb5a4830cc626e6011622a6d",
+      "equation": "p_hat=p0+a*(p0-p20)+b*(di0-de0)+c*(di0-di20)+d*(de0-de20)",
+      "feature_rms": [
+        0.7500375693452379,
+        1.1718430682618,
+        0.14362897361805008,
+        0.3482818557797749
+      ],
+      "ridge_alpha": 0.01,
+      "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+    },
+    "attempt_004_regime": {
+      "case": 32,
+      "kind": "regime",
+      "coef": [
+        0.37315313372012066,
+        0.0029610989552114266,
+        -0.028298787103212597,
+        0.1369227813905984,
+        0.009280474912457534,
+        -0.08357137043978015
+      ],
+      "training_groups": [
+        "Subject10",
+        "Subject11",
+        "Subject12",
+        "Subject13",
+        "Subject14",
+        "Subject15",
+        "Subject16",
+        "Subject17",
+        "Subject18",
+        "Subject19",
+        "Subject2",
+        "Subject3",
+        "Subject6",
+        "Subject8",
+        "Subject9"
+      ],
+      "training_rows": 11272,
+      "training_ids_sha256": "81b060e0c3a8c08e51790bd4a7d94191638e6b96cb5a4830cc626e6011622a6d",
+      "equation": "p_hat=p0+beta dot [v,acc,flow,v*I(flow>0),v*FEM,v*BH]",
+      "feature_rms": [
+        0.7500375693452379,
+        0.78480435202247,
+        1.1718430682618,
+        0.5270084743853637,
+        0.3896598368851351,
+        0.4768788259779797
+      ],
+      "ridge_alpha": 0.01,
+      "coefficient_order": "Exact columns returned by run.features(case,kind,inputs)"
+    },
+    "attempt_005_limited": {
+      "case": 32,
+      "kind": "limited",
+      "coef": [
+        0.8283305668307676,
+        1.2338053031839213
+      ],
+      "training_groups": [
+        "Subject10",
+        "Subject11",
+        "Subject12",
+        "Subject13",
+        "Subject14",
+        "Subject15",
+        "Subject16",
+        "Subject17",
+        "Subject18",
+        "Subject19",
+        "Subject2",
+        "Subject3",
+        "Subject6",
+        "Subject8",
+        "Subject9"
+      ],
+      "training_rows": 11272,
+      "training_ids_sha256": "81b060e0c3a8c08e51790bd4a7d94191638e6b96cb5a4830cc626e6011622a6d",
+      "equation": "p_hat=p0+a*s*tanh((p0-p20)/s)",
+      "optimizer": {
+        "success": true,
+        "cost": 304.0162974918095,
+        "bounds": [
+          [
+            -2,
+            0.001
+          ],
+          [
+            4,
+            50
+          ]
+        ],
+        "jacobian_rank": 2,
+        "jacobian_singular_values": [
+          16.84380100630425,
+          3.1970147509856255
+        ]
+      }
+    }
+  }
+}

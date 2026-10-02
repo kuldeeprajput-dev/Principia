@@ -1,0 +1,1 @@
+Exposed confirmation inputs and observations. Predictors exclude targets except explicitly declared early beam calibration. Source anchors identify original cells; no prepared table is used by native preparation. All source-native rows remain unchanged.

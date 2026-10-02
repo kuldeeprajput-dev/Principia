@@ -1,0 +1,27 @@
+{
+  "name": "finite_footprint_smoothing",
+  "formula": "(hx+hy)/2+k*((ox+oy)-(hx+hy))/2",
+  "hypothesis": "Development evidence available before this fit: dipole_curvature: MAE 2.90193e-06, worst group 8.85771e-06; domain_boundary_adaptive: MAE 3.0771e-06, worst group 8.43658e-06.\n\nTest a competing observation explanation: unresolved source heterogeneity or map noise may favor additional spatial averaging rather than curvature enhancement. A positive k broadens the footprint.",
+  "inputs": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "lo",
+    "hi"
+  ],
+  "initial": {
+    "k": 0.1
+  },
+  "bounds": {
+    "k": [
+      0,
+      1
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:45:55.486589+00:00",
+  "parent": "attempt-003"
+}

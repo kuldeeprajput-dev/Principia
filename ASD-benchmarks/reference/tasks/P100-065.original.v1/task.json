@@ -1,0 +1,135 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-065.original.v1",
+  "case_id": "P100-065",
+  "case_number": 65,
+  "family": "original",
+  "protocol_version": "P100-065-asd6-native-v1",
+  "cohort_id": "P100-065.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-065.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/65_photonics_laser_noise",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Log frequency-noise spectral density",
+  "target_units": "dB re 1 Hz^2/Hz",
+  "error_units": "dB",
+  "primary_units": "dB",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "frequency_Hz",
+    "injection_dB"
+  ],
+  "input_units": {
+    "frequency_Hz": "Hz",
+    "injection_dB": "dB"
+  },
+  "numeric_columns": [
+    "frequency_Hz",
+    "injection_dB"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "The \u221230 and \u221215 dB spectra were developed with four complete log-frequency-band folds; the entire \u221220 dB spectrum was reserved. Both ratio conditions remain in each development training fold. Confirmation therefore adds ratio interpolation beyond the spectral-band validation used for selection.",
+  "calibration": "No held-ratio calibration. Log10 target transform fixed; measuredPSD only and100<=f<=1e6Hz.",
+  "independent_unit": "Complete injection ratio; one laser/resonator setup. Development validation blocks complete log-frequency bands across two ratios.",
+  "evaluation_groups": [
+    "ratio-20"
+  ],
+  "assigned_rows": 401,
+  "eligible_rows": 401,
+  "baseline_models": [
+    "reference",
+    "baseline_constant",
+    "baseline_flex65",
+    "baseline_laser_domain",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "laser_sharedfloor; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_constant": {
+      "equation": "constant; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flex65": {
+      "equation": "flex65; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_laser_domain": {
+      "equation": "laser_domain; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "laser_colored; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "laser_feedback; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "laser_rolloff; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "laser_sharedfloor; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "laser_twoflicker; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report individual top-level groups and their range; no row-bootstrap population inference."
+  },
+  "scope_limits": "Complete injection ratio; one laser/resonator setup. Development validation blocks complete log-frequency bands across two ratios.; A compact sum of feedback-sensitive and common noise contributions predicts the reserved injection ratio, but the selected extension loses to the simpler fixed-exponent domain control. This supports bounded reproduction and model ambiguity, not a new laser-noise law.; No independent population confidence interval from dependent rows.",
+  "source_url": "https://eprints.soton.ac.uk/497413/",
+  "source_license": "CC-BY-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"historical\": \"Internal confirmation reserved until FREEZE.json; schema-stage exposures documented in SOURCE_AND_UNITS.md.\", \"current\": \"All confirmation outcomes exposed to future users.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "b1f59e98ff401f0b3228ce1fe6e30ca9f40215192f904a18d240a6476df87192",
+  "observations_sha256": "839c80a9ceda158933005b490e1b23582f1c548e7cb9d5fecaa55fe3b94fdc7c",
+  "legacy_protocol_sha256": "cb1a7f0398b989f32c2c716a8b870c3dd58bcecb062d95c6c96f608e0e2f8844",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

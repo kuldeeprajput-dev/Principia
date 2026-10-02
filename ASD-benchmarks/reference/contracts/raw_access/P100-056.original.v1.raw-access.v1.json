@@ -1,0 +1,79 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-056.original.v1.raw-access.v1",
+  "parent_task_id": "P100-056.original.v1",
+  "case_id": "P100-056",
+  "protocol_version": "P100-056.original.v1.raw-access.v1",
+  "cohort_id": "P100-056.original.v1.cohort-1",
+  "parent_task_sha256": "6141adc19b4f1b03bbcbfd7bdfd7a31637cf1d355c426439ca01c36d83fe0a2c",
+  "input_sha256": "365e8b199a830017d75f7bb04e9dfba49067fa31bb4e5a2f00440de9e256475d",
+  "observations_sha256": "7dc39b57116ebd605bd235041d31d91a32d6e53135788c0ba9c7067fadad6818",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "56_structures_timber_concrete",
+  "source_assets": [
+    {
+      "path": "raw/slip.xlsx",
+      "sha256": "a1fb2688501ec88feaeb8f0069c4e07ec1b6cf7f06840e221a890b7de2e1fcd7",
+      "bytes": 67053
+    },
+    {
+      "path": "raw/experimental results_summary.xlsx",
+      "sha256": "926abca57a92ebc22f901004ff8a2633b55c814b9022cae85a2c099e23505ba4",
+      "bytes": 574420
+    },
+    {
+      "path": "raw/strain gauge_P-NWC.xlsx",
+      "sha256": "02554cc1d7da3a582246dbc1cf865d4044104c0d37539b30165f514d4926434a",
+      "bytes": 5892056
+    },
+    {
+      "path": "context/source_record.json",
+      "sha256": "b1a88a07e0c32a294fcd6d036ff6038820fea77b5b05ebc5bc4976a8e8d2e508",
+      "bytes": 5207
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "deflection_mm": "mm",
+      "calibration_deflection_mm": "mm",
+      "calibration_force_kN": "kN",
+      "initial_stiffness_kN_mm": "kN/mm",
+      "recent_stiffness_kN_mm": "kN/mm",
+      "lightweight": "1"
+    },
+    "observation_window": "Given current imposed displacement, concrete class, and beam-specific initial force-displacement calibration prefix through\u226410mm; no later force or failure capacity allowed.",
+    "calibration_and_history": "Given current imposed displacement, concrete class, and beam-specific initial force-displacement calibration prefix through\u226410mm; no later force or failure capacity allowed.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_asset",
+      "source_anchor",
+      "calibration_anchors"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Two held beams; simpler common cap can outperform the selected material-conditioned equation.",
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

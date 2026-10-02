@@ -1,0 +1,57 @@
+{
+  "case_id": "P100-089",
+  "target": "risky_choice",
+  "target_units": "binary choice",
+  "error_units": "probability squared",
+  "metric_kind": "brier",
+  "permitted_inputs": [
+    "reward",
+    "probability",
+    "child",
+    "age_child",
+    "multi",
+    "description",
+    "trial_progress",
+    "lag_choice",
+    "history_mean",
+    "has_history"
+  ],
+  "input_units": {
+    "reward": "points",
+    "probability": "probability",
+    "child": "binary",
+    "age_child": "years; adult sentinel0",
+    "multi": "binary",
+    "description": "binary",
+    "trial_progress": "trial index/40",
+    "lag_choice": "binary or first-trial prior0.5",
+    "history_mean": "proportion or first-trial prior0.5",
+    "has_history": "binary"
+  },
+  "numeric_columns": [
+    "reward",
+    "probability",
+    "child",
+    "age_child",
+    "multi",
+    "description",
+    "trial_progress",
+    "lag_choice",
+    "history_mean",
+    "has_history"
+  ],
+  "timing_contract": "Before each choice using trial settings and only prior choices in that protocol; numeric Hidden and EV excluded.",
+  "calibration": "Causal previous choice and running mean within protocol, reset at protocol start; no future outcomes. Reward/probability are experimenter settings, not necessarily participant knowledge.",
+  "independent_unit": "participant",
+  "scope_limits": "55 linked participants in E1.1/E1.2/E2.2; native file lacks E2.1. Age changes for two participants retained as per-trial metadata; identities stay linked. No population-wide cognitive mechanism claim.",
+  "source_url": "https://zenodo.org/records/15412216",
+  "source_license": "CC BY4.0",
+  "prior_art_url": "https://doi.org/10.3389/fnbeh.2025.1644777",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": 0,
+    "target_max": 1
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

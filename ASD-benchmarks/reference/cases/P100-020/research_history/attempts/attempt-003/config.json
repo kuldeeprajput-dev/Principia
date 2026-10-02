@@ -1,0 +1,26 @@
+{
+  "name": "front_adaptive",
+  "formula": "(hx/(gx*gx+eps*eps)+hy/(gy*gy+eps*eps))/(1/(gx*gx+eps*eps)+1/(gy*gy+eps*eps))",
+  "hypothesis": "Development evidence available before this fit: spherical_distance: MAE 0.0501236, worst group 0.157522; fourth_order_smooth: MAE 0.0398408, worst group 0.105833.\n\nTest frontal anisotropy rather than isotropic smoothness. Weight the direction with less observed cross-front contrast more strongly; eps is a development-fitted temperature contrast regularizer.",
+  "inputs": [
+    "hx",
+    "hy",
+    "ox",
+    "oy",
+    "dg",
+    "gx",
+    "gy",
+    "clat"
+  ],
+  "initial": {
+    "eps": 0.1
+  },
+  "bounds": {
+    "eps": [
+      0.005,
+      2
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:39:05.347068+00:00",
+  "parent": "attempt-002"
+}

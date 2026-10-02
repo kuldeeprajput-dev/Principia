@@ -1,0 +1,78 @@
+{
+  "case_id": "P100-003",
+  "title": "GWOSC O4a H1 strain and detector-quality masks",
+  "default_task": "P100-003.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Next nonoverlapping16-second recorded 30\u201380Hz strain RMS",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Contiguous512-second block in one detector segment; blocks not independent experiments",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Four preceding16-second windows; training-only global coefficients.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "not_assessed": 2,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Next nonoverlapping16-second recorded 30\u201380Hz strain RMS",
+    "prediction_time": "Only earlier16-second strain summaries used. Quality masks applied to entire predictor and target windows; no centered filters or future PSD.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "One detector segment with continuous hardware injection; temporal blocks are not independent experiments."
+  },
+  "task_ids": [
+    "P100-003.original.v1"
+  ],
+  "finding_ids": [
+    "P100-003-F01",
+    "P100-003-F02",
+    "P100-003-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-003/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-003.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Next nonoverlapping16-second recorded 30\u201380Hz strain RMS under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Only earlier16-second strain summaries used. Quality masks applied to entire predictor and target windows; no centered filters or future PSD.",
+    "calibration_requirement": "Four preceding16-second windows; training-only global coefficients.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Next nonoverlapping16-second recorded 30\u201380Hz strain RMS in 10^-21 strain",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "One detector segment with continuous hardware injection; temporal blocks are not independent experiments."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "10^-21 strain",
+    "reference_model": "reference",
+    "reference_primary_error": 0.00855537660372391,
+    "reference_physical_mae": 0.008555376603723911,
+    "physical_error_units": "10^-21 strain",
+    "lowest_registered_error_model": "attempt_004",
+    "lowest_registered_error": 0.00805200679292301,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-003.original.v1/evidence/metrics.csv",
+      "bytes": 960,
+      "sha256": "ab8b94effa5be921307d99bf24707847baf72220658de5988799a022f4407e3f"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "One detector segment with continuous hardware injection; temporal blocks are not independent experiments."
+}

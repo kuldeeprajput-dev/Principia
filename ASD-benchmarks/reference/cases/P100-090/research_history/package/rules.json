@@ -1,0 +1,909 @@
+{
+  "case_id": "P100-090",
+  "input_columns": [
+    "p_now",
+    "p_past",
+    "p_initial",
+    "density",
+    "speed",
+    "radius90",
+    "polarization_variance"
+  ],
+  "numeric_columns": [
+    "p_now",
+    "p_past",
+    "p_initial",
+    "density",
+    "speed",
+    "radius90",
+    "polarization_variance"
+  ],
+  "input_units": {
+    "p_now": "dimensionless current signed angular order",
+    "p_past": "previous2integerseconds mean order",
+    "p_initial": "first2seconds mean order, declared pertrialcalibration",
+    "density": "tracked persons/(pi*r90\u00b2), proxy persons/m\u00b2",
+    "speed": "mean1sbackwardsecant m/s",
+    "radius90": "90th-percentile centroiddistance metres",
+    "polarization_variance": "withinframe variance of individual signedorder"
+  },
+  "target": "Mean next-two-second signed angular polarization about instantaneous group centroid",
+  "target_units": "dimensionless signed[-1,1]",
+  "metric_kind": "mae",
+  "models": {
+    "reference": {
+      "features": [
+        "memory",
+        "noise_p"
+      ],
+      "offset": "p_past",
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "Pnext=Ppast+a*memory+c*heterogeneity*Ppast",
+      "case": 90,
+      "type": "linear",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435",
+      "coef": [
+        0.828009503397648,
+        -0.09191006303742405
+      ],
+      "complexity": 2,
+      "rank": 2,
+      "condition_number": 1.0539932605804876
+    },
+    "calibration": {
+      "case": 90,
+      "type": "fixed",
+      "offset": "p_initial",
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "P_hat=p_initial",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435"
+    },
+    "constant": {
+      "case": 90,
+      "type": "linear",
+      "features": [
+        "one"
+      ],
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "P_hat=a",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435",
+      "coef": [
+        0.24627497877582266
+      ],
+      "complexity": 1,
+      "rank": 1,
+      "condition_number": 1.0
+    },
+    "current": {
+      "case": 90,
+      "type": "fixed",
+      "offset": "p_now",
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "P_hat=p_now",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435"
+    },
+    "flexible": {
+      "case": 90,
+      "type": "linear",
+      "features": [],
+      "alpha": 0.002,
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "32center matched-prefix smooth predictor",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435",
+      "rbf": {
+        "columns": [
+          "p_now",
+          "p_past",
+          "p_initial",
+          "density",
+          "speed",
+          "radius90",
+          "polarization_variance"
+        ],
+        "mean": [
+          0.2473918192433066,
+          0.2482239366175831,
+          0.28542480403707454,
+          0.4983929556699497,
+          1.3125222828098855,
+          4.17323249953224,
+          0.5553050663355054
+        ],
+        "std": [
+          0.25995110667434884,
+          0.25681405104495003,
+          0.23816963152433376,
+          0.19959754218968534,
+          0.4226978486799595,
+          2.6134516165233794,
+          0.2155434116863784
+        ],
+        "centers": [
+          [
+            -0.053664682110961995,
+            0.05384734430951852,
+            0.021632191081435024,
+            -0.2539500765279793,
+            -0.2392294648889101,
+            -0.016234466865372926,
+            0.11361184370435552
+          ],
+          [
+            2.235829752298639,
+            2.281235560715862,
+            2.0915721517423833,
+            -0.8033848469255978,
+            3.1709442364067426,
+            -0.3106009338523487,
+            -2.4725934800439706
+          ],
+          [
+            0.11288375744462367,
+            0.073974067705363,
+            -0.2536663592620451,
+            -1.912692721645593,
+            0.4700331634506374,
+            4.880724405682303,
+            0.5775369086254692
+          ],
+          [
+            -2.831227688268187,
+            -3.000270443840011,
+            1.7039152395374995,
+            -0.8833474775020698,
+            -0.524189428978203,
+            -0.2791173215240912,
+            -0.38425236153194936
+          ],
+          [
+            -2.8533146436526486,
+            -2.3454284499075695,
+            -2.3235479130848176,
+            -0.845745328091623,
+            -0.6150308117518977,
+            -0.09269105429098778,
+            -0.6394921173841431
+          ],
+          [
+            -0.4928363736094608,
+            -0.5518588442884281,
+            -0.4771738170618533,
+            3.440299460057614,
+            -0.8973533737514896,
+            -0.35839861944731927,
+            0.579163329715745
+          ],
+          [
+            1.881822565953015,
+            1.767499338811685,
+            1.7039152395374995,
+            -0.4672418425276491,
+            -0.24898967997761842,
+            -0.4219233020647692,
+            -1.5815821671262065
+          ],
+          [
+            -1.7953875679398799,
+            -2.0763976619904954,
+            -0.4845676145282728,
+            0.7712277493578344,
+            -0.6154632767168199,
+            -0.28739525171472824,
+            0.9641314741856676
+          ],
+          [
+            0.848132930731651,
+            0.920432717175733,
+            1.8574698140215407,
+            1.420144935270313,
+            -0.5268804801427355,
+            -0.3761002881385049,
+            0.12106893280712591
+          ],
+          [
+            0.7073079386873397,
+            1.096345776298153,
+            0.6334524394057701,
+            -0.3247348518966142,
+            1.9792781223941212,
+            -0.4611157822282934,
+            -0.6137511917196115
+          ],
+          [
+            -0.9260480740270498,
+            -0.9272408176088609,
+            -2.1664963785244655,
+            -0.8589313683247577,
+            -0.7492478920712963,
+            -0.28897477358015206,
+            1.1932049307100465
+          ],
+          [
+            -0.9546947074458257,
+            -0.9847014793573908,
+            1.8574698140215407,
+            1.0235759364752297,
+            -0.5704448002464062,
+            -0.30918097035850106,
+            0.734843381311454
+          ],
+          [
+            0.8640949167316391,
+            0.995965035212003,
+            -0.6098888669717929,
+            1.733876843466925,
+            -0.7669647050480181,
+            -0.3101229355183761,
+            -0.14237888486742112
+          ],
+          [
+            1.1598996733008757,
+            1.1382359200308527,
+            -1.0489048202760778,
+            -0.6847604746842646,
+            -0.37576049303663733,
+            -0.1610526687230787,
+            -0.9167801287566122
+          ],
+          [
+            -1.4064943704931352,
+            -1.0622218219730422,
+            0.984542829887097,
+            -0.9350804518825605,
+            -0.5799652727220733,
+            -0.25747272510727004,
+            1.2338230293991783
+          ],
+          [
+            1.4765470985165259,
+            1.454415773167401,
+            1.5758018565129284,
+            0.6184891239062413,
+            1.7578050115873676,
+            -0.6097707704736752,
+            -2.0106824076571526
+          ],
+          [
+            0.026561068362121406,
+            -0.32474923660188554,
+            -1.8983943494888307,
+            -0.690359781381328,
+            0.026327647075955987,
+            -0.15882943319844806,
+            -0.3994573263253404
+          ],
+          [
+            -0.4264043802962843,
+            -0.31243411222058365,
+            -1.2213225291237615,
+            1.1563040796856872,
+            -0.6920301145046012,
+            -0.35832697171707506,
+            0.5858635272128304
+          ],
+          [
+            -1.4750230934609967,
+            -1.4250861918240654,
+            -0.4728678104669621,
+            -0.7320941129029772,
+            -0.5252954846890263,
+            -0.1419266593401951,
+            -0.23941448074370367
+          ],
+          [
+            0.002303777746495257,
+            0.3905096567300395,
+            1.7039152395374995,
+            -0.9564321187839435,
+            -0.440647090059947,
+            -0.24822313142401478,
+            0.6340119676676237
+          ],
+          [
+            1.8281936940207568,
+            1.745789023370772,
+            0.8591630192416908,
+            -1.5917524561698964,
+            2.248064174046731,
+            0.08758360052852308,
+            -2.3973311235958845
+          ],
+          [
+            1.1128556225102009,
+            0.6454038291480453,
+            0.7554983898694341,
+            -1.0828840666841737,
+            -0.5803362852052787,
+            -0.18921662778659074,
+            -0.5915574467808195
+          ],
+          [
+            -0.9120096440775677,
+            -0.9533005201516801,
+            -0.2536663592620451,
+            -1.7964409979682103,
+            0.12818864782268818,
+            3.9104198346679118,
+            0.7558416931275728
+          ],
+          [
+            1.8769756975726946,
+            1.8706729496836239,
+            0.08567849307484758,
+            -0.8836775986090308,
+            -0.763202801010213,
+            -0.07511111763587229,
+            -1.609047025408397
+          ],
+          [
+            -0.8503919771411723,
+            -1.0223307170219,
+            -0.7535830554385589,
+            -0.05586470665910023,
+            -0.22281062459069098,
+            -0.39902973729490254,
+            1.158259138224408
+          ],
+          [
+            -0.6505883740247903,
+            -1.3732232380186908,
+            1.7039152395374995,
+            -0.2065954572130109,
+            -0.958073665615795,
+            -0.49079378171094185,
+            -0.22332741026511943
+          ],
+          [
+            0.7901060876784536,
+            0.8133323784045822,
+            0.2883640459913786,
+            0.5089812649401784,
+            -0.3197287057498867,
+            -0.6313746512412636,
+            -0.5930457143924409
+          ],
+          [
+            -0.8613350162932242,
+            -0.9445674978739834,
+            0.17409045556792305,
+            1.456654767908749,
+            -0.4862789757268588,
+            -0.26577647558634426,
+            0.8718485548916319
+          ],
+          [
+            -1.3038175455545318,
+            -1.4312639900000208,
+            -2.1664963785244655,
+            -0.010934526123284978,
+            -0.6090034538477366,
+            -0.5352099278541989,
+            0.025335291839705832
+          ],
+          [
+            1.4593085522183826,
+            1.5028842623660297,
+            1.8574698140215407,
+            1.4153761763788564,
+            -0.5427336011427195,
+            -0.375356545927999,
+            -1.2350283319567292
+          ],
+          [
+            0.4129666442943786,
+            0.44611962206349215,
+            0.13512434344001067,
+            2.9285628248841227,
+            -0.9593084099013932,
+            -0.3013102715085088,
+            -0.19237163668684312
+          ],
+          [
+            0.048903131794969974,
+            0.14762377058094392,
+            -0.027236306391333134,
+            -0.9472843466167842,
+            -0.5175380887256291,
+            -0.2522093701395676,
+            -1.2471928655563562
+          ]
+        ],
+        "width": 2.0
+      },
+      "coef": [
+        0.16345025086063628,
+        -0.017394509096226737,
+        0.5659020316619947,
+        0.39177931835633006,
+        -0.5091884353858023,
+        -0.36522407169610505,
+        -0.19650663195187135,
+        0.017798120075048714,
+        -0.11075923609512568,
+        0.08345136420797698,
+        0.10224035596453455,
+        -0.029899677142208474,
+        -0.11006498387061286,
+        0.10323615659468977,
+        0.01930078829773062,
+        -0.007428936073089615,
+        -0.05198603270048398,
+        0.14142350250798663,
+        -0.043713048876690315,
+        0.14951177520305872,
+        -0.12616967023571027,
+        0.11779061599137053,
+        0.2416155916816141,
+        -0.4092317091582495,
+        0.16815423698920673,
+        0.13385678627618272,
+        0.09470132564123868,
+        -0.22899070112922457,
+        0.002002355649385141,
+        -0.11819263477385204,
+        0.07197347278616484,
+        0.25738885081044316,
+        -0.1315641894717055
+      ],
+      "complexity": 33,
+      "rank": 33,
+      "condition_number": 475.80541212721323
+    },
+    "persistence": {
+      "case": 90,
+      "type": "fixed",
+      "offset": "p_past",
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "P_hat=p_past",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435"
+    },
+    "attempt_001": {
+      "features": [
+        "memory",
+        "drift"
+      ],
+      "offset": "p_past",
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "Pnext=Ppast+a*(Pnow-Ppast)+b*(Ppast-Pinitial)",
+      "case": 90,
+      "type": "linear",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435",
+      "coef": [
+        0.8872422170388012,
+        -0.07341887083706125
+      ],
+      "complexity": 2,
+      "rank": 2,
+      "condition_number": 1.0730705434444665
+    },
+    "attempt_002": {
+      "features": [
+        "one",
+        "p_past",
+        "cubic"
+      ],
+      "offset": "p_past",
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "Pnext=Ppast+bias+a*Ppast-b*Ppast\u00b3",
+      "case": 90,
+      "type": "linear",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435",
+      "coef": [
+        0.025412685436022743,
+        -0.17540304843828547,
+        0.21431782384510537
+      ],
+      "complexity": 3,
+      "rank": 3,
+      "condition_number": 5.134149474546775
+    },
+    "attempt_003": {
+      "features": [
+        "memory",
+        "drift",
+        "density_memory",
+        "boundary_p"
+      ],
+      "offset": "p_past",
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "Pnext=Ppast+a*memory+b*drift+c*log1p(density)*memory+d*(speed/r90)*Ppast",
+      "case": 90,
+      "type": "linear",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435",
+      "coef": [
+        0.823166796423121,
+        -0.06987138378919197,
+        0.1584713230338889,
+        -0.019485995501792967
+      ],
+      "complexity": 4,
+      "rank": 4,
+      "condition_number": 7.673874077675758
+    },
+    "attempt_004": {
+      "features": [
+        "memory",
+        "drift",
+        "noise_p"
+      ],
+      "offset": "p_past",
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "Pnext=Ppast+a*memory+b*drift+c*sqrt(within-personorder variance)*Ppast",
+      "case": 90,
+      "type": "linear",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435",
+      "coef": [
+        0.8578503767324026,
+        -0.05808989223592498,
+        -0.0749927380917435
+      ],
+      "complexity": 3,
+      "rank": 3,
+      "condition_number": 1.281339693745073
+    },
+    "attempt_005": {
+      "features": [
+        "memory",
+        "noise_p"
+      ],
+      "offset": "p_past",
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "Pnext=Ppast+a*memory+c*heterogeneity*Ppast",
+      "case": 90,
+      "type": "linear",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435",
+      "coef": [
+        0.828009503397648,
+        -0.09191006303742405
+      ],
+      "complexity": 2,
+      "rank": 2,
+      "condition_number": 1.0539932605804876
+    },
+    "attempt_006": {
+      "features": [
+        "memory",
+        "drift",
+        "hetero"
+      ],
+      "offset": "p_past",
+      "clip": [
+        -1,
+        1
+      ],
+      "equation": "Pnext=Ppast+a*memory+b*drift+c*heterogeneity",
+      "case": 90,
+      "type": "linear",
+      "training_groups": [
+        "Japan/C10",
+        "Japan/C2",
+        "Japan/C3",
+        "Japan/C4",
+        "Japan/C5",
+        "Japan/C7",
+        "Japan/C8",
+        "Japan/C9",
+        "Kids/D2",
+        "Kids/D3",
+        "Kids/D4",
+        "Spain/A10",
+        "Spain/A11",
+        "Spain/A2",
+        "Spain/A3",
+        "Spain/A4",
+        "Spain/A6",
+        "Spain/A7",
+        "Spain/A8",
+        "Spain/A9",
+        "Teenagers/B1"
+      ],
+      "training_rows": 1158,
+      "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435",
+      "coef": [
+        0.8851159049892479,
+        -0.07755030239480461,
+        -0.004979035182155981
+      ],
+      "complexity": 3,
+      "rank": 3,
+      "condition_number": 1.3166151060945581
+    }
+  }
+}

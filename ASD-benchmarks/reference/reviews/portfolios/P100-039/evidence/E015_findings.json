@@ -1,0 +1,68 @@
+[
+  {
+    "classification": "reproduction",
+    "admission": "partially_supported",
+    "claim": "A standard education and coarse experience-proxy association predicts upper within-country earnings ranks better than countryprevalence and comparably to flexible controls.",
+    "equation": "p=logistic(a+bJ J+bS S+bX X+bXX X\u00b2).",
+    "interpretation": "Consistent with establishedMincer-style labor associations, but the binaryranktarget is notalog-wage equation and coefficients arenotpercentageearningsreturns.",
+    "falsification": "Coarseage, unobservedactualexperience, employmentselection andcountry-specific ranks preventcausality/absoluteearningsclaims; numericalgainoverflexible ismodest.",
+    "finding_id": "P100-039-F01",
+    "task_id": "P100-039.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.oecd.org/en/publications/survey-of-adult-skills-2023-technical-report_80d9f692-en.html",
+        "checked": "2026-10-02",
+        "known": "Plausible values conditioned on background and intended for population inference, not individual scores."
+      },
+      {
+        "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/03/survey-of-adult-skills-2023-data-analysis-manual_07d531f6/25a87a9d-en.pdf",
+        "checked": "2026-10-02",
+        "known": "Do not average10PVs into an individual score; final and replicate weights serve survey uncertainty."
+      },
+      {
+        "url": "https://www.oecd.org/en/publications/how-workers-use-or-don-t-use-their-skills-in-the-workplace_0e7c6dc9-en/full-report/why-skills-use-matters_dfceb654.html",
+        "checked": "2026-10-02",
+        "known": "Mincer-style earnings/skill associations are extensive prior art; no new discovery from recovering education/experience gradients."
+      }
+    ],
+    "scope": "Only valid reported earnings deciles, ages25\u201365 and complete education. Final weights within equal country\u00d7respondent blocks; not a pooled national population estimand. Potential experience age-schooling-6 is proxy, not measured tenure. No skill-wage causal claim; income reporting/topcoding and nonresponse remain."
+  },
+  {
+    "classification": "informative_falsification",
+    "admission": "supported",
+    "claim": "AbsolutePPP-wage and independentindividualskill-return hypotheses are not evaluable using these released fields.",
+    "equation": "No admitted absolute-wage/individual-PV equation; rejected beforefitting.",
+    "interpretation": "ExactAGE_R andPPPearnings areall suppressed; OECDPVs areconditionedpopulation-inferencequantities, notindividualscores.",
+    "falsification": "SUPPRESSION_AUDIT.json andprimaryOECDmethodologydocument therejected prerequisites. Newdata/independentmeasurement wouldberequired.",
+    "finding_id": "P100-039-F02",
+    "task_id": "P100-039.original.v1",
+    "evidence": [
+      "evidence/metrics.csv",
+      "evidence/by_group.csv",
+      "evidence/predictions.csv.gz"
+    ],
+    "known_prior_art": [
+      {
+        "url": "https://www.oecd.org/en/publications/survey-of-adult-skills-2023-technical-report_80d9f692-en.html",
+        "checked": "2026-10-02",
+        "known": "Plausible values conditioned on background and intended for population inference, not individual scores."
+      },
+      {
+        "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/03/survey-of-adult-skills-2023-data-analysis-manual_07d531f6/25a87a9d-en.pdf",
+        "checked": "2026-10-02",
+        "known": "Do not average10PVs into an individual score; final and replicate weights serve survey uncertainty."
+      },
+      {
+        "url": "https://www.oecd.org/en/publications/how-workers-use-or-don-t-use-their-skills-in-the-workplace_0e7c6dc9-en/full-report/why-skills-use-matters_dfceb654.html",
+        "checked": "2026-10-02",
+        "known": "Mincer-style earnings/skill associations are extensive prior art; no new discovery from recovering education/experience gradients."
+      }
+    ],
+    "scope": "Only valid reported earnings deciles, ages25\u201365 and complete education. Final weights within equal country\u00d7respondent blocks; not a pooled national population estimand. Potential experience age-schooling-6 is proxy, not measured tenure. No skill-wage causal claim; income reporting/topcoding and nonresponse remain."
+  }
+]

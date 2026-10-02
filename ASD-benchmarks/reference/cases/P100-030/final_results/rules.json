@@ -1,0 +1,292 @@
+{
+  "case_id": "P100-030",
+  "schema_version": "asd6.portable/1.0",
+  "input_columns": [
+    "speed_mm_s",
+    "boundary_cof",
+    "highspeed_cof",
+    "concentration_wt_pct"
+  ],
+  "numeric_columns": [
+    "speed_mm_s",
+    "boundary_cof",
+    "highspeed_cof",
+    "concentration_wt_pct"
+  ],
+  "input_units": {
+    "speed_mm_s": "mm/s",
+    "boundary_cof": "dimensionless",
+    "highspeed_cof": "dimensionless",
+    "concentration_wt_pct": "wt percent"
+  },
+  "target": "Coefficient of friction",
+  "target_units": "dimensionless",
+  "error_units": "dimensionless",
+  "metric_kind": "mae",
+  "aggregation": "Equal top-level group weight; equal rows within group. Dependent spectral bins are not independent replication.",
+  "reference_attempt": "attempt-003",
+  "models": {
+    "reference": {
+      "kind": "trib_concentration",
+      "parameters": [
+        1.1629451354959923,
+        1.1856763426450416,
+        1.5641270965872278
+      ],
+      "training_groups": [
+        "N",
+        "P1",
+        "P2",
+        "P5",
+        "PCH",
+        "PEG"
+      ],
+      "training_rows": 84,
+      "optimizer_success": true,
+      "nfev": 7,
+      "jacobian_condition": 3.808507794046174,
+      "bounds": [
+        [
+          0.01,
+          0.1,
+          -5
+        ],
+        [
+          500,
+          8,
+          5
+        ]
+      ],
+      "training_residual_rms": 0.28553560133194633,
+      "display_name": "Concentration-shifted load sharing",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 3
+    },
+    "baseline_constant": {
+      "kind": "constant",
+      "parameters": [
+        0.04759513888888888
+      ],
+      "training_groups": [
+        "N",
+        "P1",
+        "P2",
+        "P5",
+        "PCH",
+        "PEG"
+      ],
+      "training_rows": 84,
+      "display_name": "Constant response",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 1
+    },
+    "baseline_flex30": {
+      "kind": "flex30",
+      "parameters": [
+        0.039050056361805065,
+        0.37411620882133245,
+        -1.0575305702810265,
+        0.01067380643849955,
+        -0.004996966708461452,
+        -0.33754658642438773,
+        0.05105743189436473
+      ],
+      "training_groups": [
+        "N",
+        "P1",
+        "P2",
+        "P5",
+        "PCH",
+        "PEG"
+      ],
+      "training_rows": 84,
+      "display_name": "Flexible calibrated friction",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 7
+    },
+    "baseline_trib_linearlog": {
+      "kind": "trib_linearlog",
+      "parameters": [],
+      "training_groups": [
+        "N",
+        "P1",
+        "P2",
+        "P5",
+        "PCH",
+        "PEG"
+      ],
+      "training_rows": 84,
+      "display_name": "Calibrated log-speed interpolation",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 0
+    },
+    "attempt_001": {
+      "kind": "trib_domain",
+      "parameters": [
+        2.344769573328995,
+        0.6230622570786637
+      ],
+      "training_groups": [
+        "N",
+        "P1",
+        "P2",
+        "P5",
+        "PCH",
+        "PEG"
+      ],
+      "training_rows": 84,
+      "optimizer_success": true,
+      "nfev": 7,
+      "jacobian_condition": 6.757430899737139,
+      "bounds": [
+        [
+          0.01,
+          0.1
+        ],
+        [
+          500,
+          8
+        ]
+      ],
+      "training_residual_rms": 0.4580374652615529,
+      "display_name": "Exponential entrainment",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 2
+    },
+    "attempt_002": {
+      "kind": "trib_rational",
+      "parameters": [
+        1.6293237263793767,
+        1.0934583507084443
+      ],
+      "training_groups": [
+        "N",
+        "P1",
+        "P2",
+        "P5",
+        "PCH",
+        "PEG"
+      ],
+      "training_rows": 84,
+      "optimizer_success": true,
+      "nfev": 5,
+      "jacobian_condition": 2.622182178917815,
+      "bounds": [
+        [
+          0.01,
+          0.1
+        ],
+        [
+          500,
+          8
+        ]
+      ],
+      "training_residual_rms": 0.4584348518613261,
+      "display_name": "Algebraic load sharing",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 2
+    },
+    "attempt_003": {
+      "kind": "trib_concentration",
+      "parameters": [
+        1.1629451354959923,
+        1.1856763426450416,
+        1.5641270965872278
+      ],
+      "training_groups": [
+        "N",
+        "P1",
+        "P2",
+        "P5",
+        "PCH",
+        "PEG"
+      ],
+      "training_rows": 84,
+      "optimizer_success": true,
+      "nfev": 7,
+      "jacobian_condition": 3.808507794046174,
+      "bounds": [
+        [
+          0.01,
+          0.1,
+          -5
+        ],
+        [
+          500,
+          8,
+          5
+        ]
+      ],
+      "training_residual_rms": 0.28553560133194633,
+      "display_name": "Concentration-shifted load sharing",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 3
+    },
+    "attempt_004": {
+      "kind": "trib_drag",
+      "parameters": [
+        1.5809351551310407,
+        1.408741103953438,
+        0.0012384579453133251
+      ],
+      "training_groups": [
+        "N",
+        "P1",
+        "P2",
+        "P5",
+        "PCH",
+        "PEG"
+      ],
+      "training_rows": 84,
+      "optimizer_success": true,
+      "nfev": 7,
+      "jacobian_condition": 702.7759724698715,
+      "bounds": [
+        [
+          0.01,
+          0.1,
+          -0.05
+        ],
+        [
+          500,
+          8,
+          0.05
+        ]
+      ],
+      "training_residual_rms": 0.4324356340446601,
+      "display_name": "Load sharing plus shear term",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 3
+    },
+    "attempt_005": {
+      "kind": "trib_sqrt",
+      "parameters": [
+        0.27815931311637015
+      ],
+      "training_groups": [
+        "N",
+        "P1",
+        "P2",
+        "P5",
+        "PCH",
+        "PEG"
+      ],
+      "training_rows": 84,
+      "optimizer_success": true,
+      "nfev": 7,
+      "jacobian_condition": 1.0,
+      "bounds": [
+        [
+          0.01
+        ],
+        [
+          500
+        ]
+      ],
+      "training_residual_rms": 0.5075176484546465,
+      "display_name": "Fixed square-root sharing",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 1
+    }
+  }
+}

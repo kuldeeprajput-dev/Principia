@@ -1,0 +1,313 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-067",
+  "findings": [
+    {
+      "finding_id": "P100-067-SCI-01",
+      "statement": "The parameter-free upstream-speed transit scale outperforms the orientation correction in every reserved configuration.",
+      "classification": "reproduction",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-067.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows. Strong adverse evidence: Two-dimensional orientation, ambiguous thickness/fluid metadata and absent normal stress block a unique drag mechanism. Constant-speed success does not prove unchanged drag.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Travel-time dimensional scaling is supported within theapparatus; interface drag/orientation causation is not identified.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Ballistic transit is established; preserved falsification is the contribution rather than an admitted new settling law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original 3 reservedconfigurations",
+          "measure": "constant-speed absolute log error",
+          "value": 0.117418,
+          "unit": "1",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original 3 reservedconfigurations",
+          "measure": "orientation absolute log error",
+          "value": 0.366041,
+          "unit": "1",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original 3 reservedconfigurations",
+          "measure": "constant-speed balanced MAE",
+          "value": 0.047682,
+          "unit": "s",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original 3 reservedconfigurations",
+          "measure": "orientation balanced MAE",
+          "value": 0.230554,
+          "unit": "s",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Two-dimensional orientation, ambiguous thickness/fluid metadata and absent normal stress block a unique drag mechanism. Constant-speed success does not prove unchanged drag.",
+      "scientific_validators": [
+        "Require every predictor row strictly before interface entry; prohibit interpolation across entry.",
+        "Reproduce nested configuration\u2192particle weighting on every covered subset.",
+        "Keep duplicate trajectory representations linked and do not infer thickness or unmeasured normal stress."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-067.json",
+      "source_classification": "reproduction"
+    },
+    {
+      "finding_id": "P100-067-SCI-02",
+      "statement": "Dimensionless density/size and upstream-slowdown corrections fail robust transit transfer.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [],
+      "task_version_history": "2026-09-30 first continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows. Strong adverse evidence: Development errors .528587 and .470794 absolute-log units do not establish a density/orientation mechanism; exposed simple ballistic control remains superior. Strict upstream windows and calibration timing limits are more solid than the rejected correction.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Travel-time dimensional scaling is supported within theapparatus; interface drag/orientation causation is not identified.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Ballistic transit is established; preserved falsification is the contribution rather than an admitted new settling law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        }
+      },
+      "numerical_evidence": [],
+      "strongest_adverse_evidence": "Development errors .528587 and .470794 absolute-log units do not establish a density/orientation mechanism; exposed simple ballistic control remains superior. Strict upstream windows and calibration timing limits are more solid than the rejected correction.",
+      "scientific_validators": [
+        "Require every predictor row strictly before interface entry; prohibit interpolation across entry.",
+        "Reproduce nested configuration\u2192particle weighting on every covered subset.",
+        "Keep duplicate trajectory representations linked and do not infer thickness or unmeasured normal stress."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-067.json",
+      "source_classification": "unsupported_or_falsified"
+    },
+    {
+      "finding_id": "P100-067-SCI-03",
+      "statement": "Blending near-entry and far-upstream velocities fails against the development kernel; later drag extensions remain unsupported.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-067.round2.v1"
+      ],
+      "task_version_history": "2026-09-30 second continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows. Strong adverse evidence: Five of six configurations lose toRBF. The first continuation density/orientation corrections also failed exposed transfer.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Travel-time dimensional scaling is supported within theapparatus; interface drag/orientation causation is not identified.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Ballistic transit is established; preserved falsification is the contribution rather than an admitted new settling law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Configuration\u2192particle category\u2192trajectory averaging; 76 reserved trajectories across 3 configurations; upstream-only native windows.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "round 2 sixdevelopmentconfigurations",
+          "measure": "entry velocity blend",
+          "value": 0.467116677,
+          "unit": "1",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        {
+          "cohort": "round 2 same cohort",
+          "measure": "prior RBF",
+          "value": 0.364887704,
+          "unit": "1",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Five of six configurations lose toRBF. The first continuation density/orientation corrections also failed exposed transfer.",
+      "scientific_validators": [
+        "Require every predictor row strictly before interface entry; prohibit interpolation across entry.",
+        "Reproduce nested configuration\u2192particle weighting on every covered subset.",
+        "Keep duplicate trajectory representations linked and do not infer thickness or unmeasured normal stress."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-067.json",
+      "source_classification": "unsupported_or_falsified"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

@@ -1,0 +1,40 @@
+{
+  "case_id": "P100-051",
+  "protocol_version": "1.0.0",
+  "created_utc": "2026-10-01T14:02:37.527935+00:00",
+  "target": "measured drain current between three disclosed gate-voltage calibration anchors",
+  "units": "uA",
+  "inputs": [
+    "gate_V",
+    "cal_minus20_uA",
+    "cal_zero_uA",
+    "cal_plus20_uA"
+  ],
+  "input_units": {
+    "gate_V": "V",
+    "cal_minus20_uA": "uA",
+    "cal_zero_uA": "uA",
+    "cal_plus20_uA": "uA"
+  },
+  "group": "complete source FET column/device",
+  "timing": "offline sparse-characterization task: three responses at -20,0,20 V are obtained before reconstructing other gate points; not an uncalibrated or causal sweep forecast",
+  "calibration": "Exactly three same-device current measurements at Vg=-20,0,20 V; all models see the same anchors; those points excluded from scores.",
+  "scope": "36 fabricated FET curves from source Fig2e, not independent lots; no memory-retention extrapolation, no device-geometry control or interventions.",
+  "baseline": [
+    "piecewise linear interpolation",
+    "piecewise log-current interpolation",
+    "training-only normalized response-curve interpolation"
+  ],
+  "metric": "mean over independent groups of mean absolute target error; every eligible row in a group equally weighted",
+  "validation": "leave-one-development-group-out; all rows, sibling widths/runs and calibration linked; confirmation held separately",
+  "confirmation": "SPLITS.json hash allocation before target analysis; no confirmation summaries accessed",
+  "schema_exposure": "Source CSV headers and first data row per asset inspected; case21 die1A13 waveforms inspected and forced development. Development-only descriptive targets inspected. Public paper prior analyses already source-aware. This is internal withheld-group confirmation, not new experiment.",
+  "selection": "minimize development group-balanced MAE among attempts; if within1% choose fewer coefficients; baselines compete and remain eligible as reference. No confirmation selection.",
+  "stopping": "At least5 substantive attempts, then stop after two consecutive candidates do not improve development prediction by1%, worst-group error, or supported simplification/interpretation; max9 attempts before explicit unresolved hypothesis report.",
+  "uncertainty": "Individual group errors; empirical group range, no row bootstrap or population CI.",
+  "source_manifest_sha256": "e552ea38aed64aa15558301ee9d9448f4203905b2007315a99e8d85a2516b359",
+  "splits_sha256": "13ec52e8744ae0f3ad0dbef82fd957c9a710c4ff890b71599f4088fca108b95c",
+  "native_parser_sha256": "d4c73068e6bc2bb94db67b3af094d2859539af51b167fbbd6b89a982d27b8370",
+  "target_safety": "Native prepare can construct all records for deterministic integrity, but develop loads development.csv.gz only; confirm separately gated by FREEZE.json.",
+  "thresholds": "No industrial acceptance threshold invented; predictive errors are diagnostic."
+}

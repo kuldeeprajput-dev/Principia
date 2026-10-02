@@ -1,0 +1,60 @@
+{
+  "created_before_fitting": "2026-09-30T13:47:41.982446+00:00",
+  "case": 82,
+  "version": "continuation-20260930b",
+  "fresh_confirmation": false,
+  "exposure": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+  "hypothesis": [
+    "rewetting",
+    "Positive change in measured soil moisture contains information beyond current temperature/moisture, consistent with a rewetting pulse.",
+    "Activation splitting and past temperature did not improve the moisture control; current moisture can miss directional history.",
+    "R=A_context*exp(b*x+c*z+d*z^2+e*x*z+m*I_missing+eta*max(Delta moisture/20,0)), eta>=0; x=(T-10C)/10C,z=(moisture-25)/20. Past moisture uses strictly earlier site dates within30days."
+  ],
+  "rows": 31461,
+  "input_sha256": "0ca94df8aa357ca598217b264f403f8983d3d9a2d177c2d888cb2a42b2d0049d",
+  "engine_sha256": "50fc710c38bbdb511cb95cd417a7a712482da19f53c2c0fb105ff5629476afdd",
+  "dependencies": {
+    "82_ecology_soil_respiration/research_history/code/discover.py": "f69f2c02491f97e005de7ce5c9cf5954e41558203b069d51516486bb93b60d94",
+    "82_ecology_soil_respiration/research_history/code/flexible_control.py": "159572808ecb697e949b824ab203e5e918b89b41863e1c70dacef17e3bd1cb7d",
+    "82_ecology_soil_respiration/research_history/code/freeze_candidates.py": "34a318cd107d946a98f2587ab4e4959607da0251fea3dc1eb9898f02c44071b6",
+    "82_ecology_soil_respiration/research_history/code/prepare.py": "7fdf043d3e045b2216422ac8984a7c92a03ac9ec9f428f0039a23df461cd1312",
+    "82_ecology_soil_respiration/research_history/code/scientific_predict.py": "9950387c07c63700ca3318e390e9f7e4105af7a5b83db3120ff6c85072ae35bd",
+    "82_ecology_soil_respiration/research_history/code/confirm.py": "6cf6a82e8fbdfa6d7922fb95bf5d6c2ac0a6e0fb36238561fdec077ab6a26188",
+    "82_ecology_soil_respiration/research_history/continuation-20260930/verify_retrospective.py": "f19a08c5e0e2e41da55bb75117fe2ceb2378e47c2170aa3d57379c28922eb34e",
+    "82_ecology_soil_respiration/research_history/continuation-20260930/campaign.py": "ccbf08a69ad114775c84cd7f4eef2886b89c78f44467b1fa0705ad8fd820b769",
+    "82_ecology_soil_respiration/research_history/continuation-20260930/document.py": "ec604120ffa319bdc945dab077a4ce37b7984d1115db43d3347e1eddec5a41f6",
+    "82_ecology_soil_respiration/research_history/continuation-20260930/finish.py": "28c132e39fb7eb7bb13981d9ba34ab7ce059f222b071537c032e1d0d0ef65ba6",
+    "82_ecology_soil_respiration/research_history/attempts/attempt-001/analysis.py": "4b38ad5ded22b6f151b23cea048dd704f03090f383449d6db8931e4c64cbbefc",
+    "82_ecology_soil_respiration/research_history/attempts/attempt-004/analysis.py": "4b38ad5ded22b6f151b23cea048dd704f03090f383449d6db8931e4c64cbbefc",
+    "82_ecology_soil_respiration/research_history/attempts/attempt-003/analysis.py": "4b38ad5ded22b6f151b23cea048dd704f03090f383449d6db8931e4c64cbbefc",
+    "82_ecology_soil_respiration/research_history/attempts/attempt-002/analysis.py": "4b38ad5ded22b6f151b23cea048dd704f03090f383449d6db8931e4c64cbbefc",
+    "82_ecology_soil_respiration/research_history/attempts/attempt-005/analysis.py": "4b38ad5ded22b6f151b23cea048dd704f03090f383449d6db8931e4c64cbbefc",
+    "82_ecology_soil_respiration/research_history/baselines/context_mean/analysis.py": "4b38ad5ded22b6f151b23cea048dd704f03090f383449d6db8931e4c64cbbefc",
+    "82_ecology_soil_respiration/research_history/baselines/rbf_ridge/analysis.py": "4b38ad5ded22b6f151b23cea048dd704f03090f383449d6db8931e4c64cbbefc",
+    "82_ecology_soil_respiration/research_history/baselines/q10/analysis.py": "4b38ad5ded22b6f151b23cea048dd704f03090f383449d6db8931e4c64cbbefc",
+    "82_ecology_soil_respiration/research_history/baselines/lloyd_taylor/analysis.py": "4b38ad5ded22b6f151b23cea048dd704f03090f383449d6db8931e4c64cbbefc",
+    "82_ecology_soil_respiration/research_history/continuation-20260930/code_versions/17459084a084e46257eb5b9b8bb42bcf06ee2faf6794a1c97706671fecb73483.py": "17459084a084e46257eb5b9b8bb42bcf06ee2faf6794a1c97706671fecb73483",
+    "82_ecology_soil_respiration/research_history/continuation-20260930/code_versions/ccbf08a69ad114775c84cd7f4eef2886b89c78f44467b1fa0705ad8fd820b769.py": "ccbf08a69ad114775c84cd7f4eef2886b89c78f44467b1fa0705ad8fd820b769",
+    "82_ecology_soil_respiration/research_history/continuation-20260930/development.csv.gz": "8fa7c536d0c39ed33be9c901b1981ce35bb70764a7623a4ca9ee5719bb3b9c5a",
+    "82_ecology_soil_respiration/research_history/continuation-20260930/development_with_history.csv.gz": "78b1987575d4013a0989b95684d859d18580fe4f348d085fbf33b56458a65ca9"
+  },
+  "inputs": [
+    "t05",
+    "tsmoisture",
+    "doy",
+    "moisture_change"
+  ],
+  "categories": [
+    "site",
+    "context"
+  ],
+  "unit": "g CO2 m^-2 h^-1",
+  "metric": "Same whole-group primary metric as preceding continuation;67 equal configuration/particle absolute log error;60 train-condition-normalized MAE;71/73/82/83 RMSE, otherwise MAE.",
+  "selection": "Compare candidate to every exact-cohort saved predecessor and new matched HGB. Gains under1% are practically inconclusive; lower error alone does not establish a mechanism.",
+  "validation": "Predecessor whole-group or forward folds, preserved. Every fit excludes its validation groups except permitted causal within-group/history/context calibration. No targets used for added moisture or initial-map inputs.",
+  "continuation": "One discriminating new cycle per case, followed by revisions only when actual development evidence supports a distinct test. Stop after two substantive no-gain revisions.",
+  "input_additions": "Strictly earlier site-date moisture within30days;0 when absent. No flux history.",
+  "candidate_kind": "rewetting",
+  "baselines": "Exact-cohort predecessor OOF predictions and fixed constrained HGB with same permitted information; no group IDs as new predictors.",
+  "admission": "retrospective candidate only; no novel-law, causality, fresh validation or intervention-impact claim."
+}

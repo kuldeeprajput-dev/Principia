@@ -1,0 +1,1207 @@
+{
+  "schema_version": "principia.advisory-review/3.0",
+  "bindings": {
+    "claims_sha256": "ab86d8665270c99b2dc413a30a5795d73b64bbe60614f567d0edebb14e4fee8d",
+    "evidence_sha256": {
+      "E001": "c099cf50716454284a86046cc0dded4798890daa2fca4375cb934e7e9a44af70",
+      "E002": "1446fd08b26dcdedafbd85216db0d93defacf339e8c6e39ce3fa21fca066ef6c",
+      "E003": "12d440cd65704cdec3e89b0f222cf4650cdd746275208e4daf330f088e2df4e5",
+      "E004": "dac4b82213adee668d7db1e2f919f4905c3c4af554f127387a284993784bc560",
+      "E005": "dbaacc7485a1546b52b1333b09e57ac78dc4bb84ab58c88bb7d69d716fe4208d",
+      "E006": "e6d7d291bf63e9140a3751175e02814576b3112ad64fc4d5e095ce4ba0681e71",
+      "E007": "ca0e05628f714936beed517fdc044a3f10e97ce8533f404c8295832dd64cf3b6",
+      "E008": "0f79a294b01fbfe5fc362efae0dfa3b272375b328444a3f0f6c939857a958e65",
+      "E009": "84a08e630c70eb036a1a465c153859d2b8d0289f83d7f22545ad3e953110ff29",
+      "E010": "2e8d7cbeda530ad40432c7b69e79e43f43f7b26552b753bda208d4df5b1e96cd",
+      "COMPUTATIONAL": "48004534d3da6e6f08fdd4750e33c82e6172fe06c2e0db2b809364f85924557e",
+      "SCIENTIFIC_CRITICAL": "735619377aa15fea1828ae36611eaad067e84dc28dc853f2fcb1b00b61d3f26e"
+    },
+    "case_id": "P100-008",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "reviews": [
+    {
+      "finding_id": "P100-008-F01",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "mechanism",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-008-F01",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Native counts, unique patient, echo and coordinate-frame constraints reproduce. Missing outcome/calibration evidence is a reviewed retained-inventory limitation, not a claim about the full TCIA collection.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "One echo at one repetition time cannot separately identify amplitude and relaxation time without additional assumptions. Metadata does not establish tissue mechanism.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Standard identifiability and validation principles are reproduced; no new MRI law is claimed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "A useful benchmark abstention test prevents slice pseudoreplication and invented clinical accuracy.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "All native headers independently parsed and altered/missing/truncated/extra assets rejected. No model is fitted.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No patient outcome, diagnosis or deployed clinical benefit was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "checks": [
+          "Independently parsed all71 source DICOM headers",
+          "One patient,70 single-echo MR instances and one mammographic projection",
+          "Distinct modality coordinate frames; no diagnostic labels or physical calibration in native-file inventory",
+          "No predictive accuracy metric fabricated",
+          "missing native asset rejected before interpretation",
+          "truncated native asset rejected before interpretation",
+          "mismatched native asset rejected before interpretation",
+          "Changed raw inventory forces reassessment"
+        ],
+        "limitations": [
+          "Findings concern only the71 retained instances, not the full source study.",
+          "No predictive task or held-out accuracy is claimed."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-008-F01",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Header audit establishes71 images, one patient,70 MR slices, one MG projection and one MR echo time70ms. No predictive score was fabricated. Claim-specific scope: There is one patient and no retained diagnostic target or outcome table.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Single-echo S=A exp(-TE/T2) leaves amplitude and T2 unidentifiable; distinct frames and absent correspondence truth prevent validated registration.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Useful as a transparent bounded research/evaluation case. Assertions concern the retained local subset, not absence of labels or additional patients in full EA1141. Adequacy checks are retrospective.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "checks": [
+          "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+          "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+          "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+        ],
+        "limitations": [
+          "Assertions concern the retained local subset, not absence of labels or additional patients in full EA1141. Adequacy checks are retrospective.",
+          "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-008-F02",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "mechanism",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-008-F02",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Native counts, unique patient, echo and coordinate-frame constraints reproduce. Missing outcome/calibration evidence is a reviewed retained-inventory limitation, not a claim about the full TCIA collection.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "One echo at one repetition time cannot separately identify amplitude and relaxation time without additional assumptions. Metadata does not establish tissue mechanism.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Standard identifiability and validation principles are reproduced; no new MRI law is claimed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "A useful benchmark abstention test prevents slice pseudoreplication and invented clinical accuracy.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "All native headers independently parsed and altered/missing/truncated/extra assets rejected. No model is fitted.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No patient outcome, diagnosis or deployed clinical benefit was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "checks": [
+          "Independently parsed all71 source DICOM headers",
+          "One patient,70 single-echo MR instances and one mammographic projection",
+          "Distinct modality coordinate frames; no diagnostic labels or physical calibration in native-file inventory",
+          "No predictive accuracy metric fabricated",
+          "missing native asset rejected before interpretation",
+          "truncated native asset rejected before interpretation",
+          "mismatched native asset rejected before interpretation",
+          "Changed raw inventory forces reassessment"
+        ],
+        "limitations": [
+          "Findings concern only the71 retained instances, not the full source study.",
+          "No predictive task or held-out accuracy is claimed."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-008-F02",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Header audit establishes71 images, one patient,70 MR slices, one MG projection and one MR echo time70ms. No predictive score was fabricated. Claim-specific scope: All 70 MR instances share one echo time; slice variation cannot replace repeated echoes of the same tissue. A and T2 are not separately identifiable.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Single-echo S=A exp(-TE/T2) leaves amplitude and T2 unidentifiable; distinct frames and absent correspondence truth prevent validated registration.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Useful as a transparent bounded research/evaluation case. Assertions concern the retained local subset, not absence of labels or additional patients in full EA1141. Adequacy checks are retrospective.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "checks": [
+          "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+          "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+          "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+        ],
+        "limitations": [
+          "Assertions concern the retained local subset, not absence of labels or additional patients in full EA1141. Adequacy checks are retrospective.",
+          "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-008-F03",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "mechanism",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-008-F03",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Native counts, unique patient, echo and coordinate-frame constraints reproduce. Missing outcome/calibration evidence is a reviewed retained-inventory limitation, not a claim about the full TCIA collection.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "One echo at one repetition time cannot separately identify amplitude and relaxation time without additional assumptions. Metadata does not establish tissue mechanism.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Standard identifiability and validation principles are reproduced; no new MRI law is claimed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "A useful benchmark abstention test prevents slice pseudoreplication and invented clinical accuracy.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "All native headers independently parsed and altered/missing/truncated/extra assets rejected. No model is fitted.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No patient outcome, diagnosis or deployed clinical benefit was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "checks": [
+          "Independently parsed all71 source DICOM headers",
+          "One patient,70 single-echo MR instances and one mammographic projection",
+          "Distinct modality coordinate frames; no diagnostic labels or physical calibration in native-file inventory",
+          "No predictive accuracy metric fabricated",
+          "missing native asset rejected before interpretation",
+          "truncated native asset rejected before interpretation",
+          "mismatched native asset rejected before interpretation",
+          "Changed raw inventory forces reassessment"
+        ],
+        "limitations": [
+          "Findings concern only the71 retained instances, not the full source study.",
+          "No predictive task or held-out accuracy is claimed."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-008-F03",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Header audit establishes71 images, one patient,70 MR slices, one MG projection and one MR echo time70ms. No predictive score was fabricated. Claim-specific scope: The MR and MG use distinct frames and only one CC projection is retained; no correspondence truth is supplied. A visually plausible warp is not validated anatomy.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Single-echo S=A exp(-TE/T2) leaves amplitude and T2 unidentifiable; distinct frames and absent correspondence truth prevent validated registration.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Useful as a transparent bounded research/evaluation case. Assertions concern the retained local subset, not absence of labels or additional patients in full EA1141. Adequacy checks are retrospective.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "checks": [
+          "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+          "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+          "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+        ],
+        "limitations": [
+          "Assertions concern the retained local subset, not absence of labels or additional patients in full EA1141. Adequacy checks are retrospective.",
+          "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-008-F04",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "mechanism",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-008-F04",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Native counts, unique patient, echo and coordinate-frame constraints reproduce. Missing outcome/calibration evidence is a reviewed retained-inventory limitation, not a claim about the full TCIA collection.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "One echo at one repetition time cannot separately identify amplitude and relaxation time without additional assumptions. Metadata does not establish tissue mechanism.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Standard identifiability and validation principles are reproduced; no new MRI law is claimed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "A useful benchmark abstention test prevents slice pseudoreplication and invented clinical accuracy.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "All native headers independently parsed and altered/missing/truncated/extra assets rejected. No model is fitted.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No patient outcome, diagnosis or deployed clinical benefit was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "checks": [
+          "Independently parsed all71 source DICOM headers",
+          "One patient,70 single-echo MR instances and one mammographic projection",
+          "Distinct modality coordinate frames; no diagnostic labels or physical calibration in native-file inventory",
+          "No predictive accuracy metric fabricated",
+          "missing native asset rejected before interpretation",
+          "truncated native asset rejected before interpretation",
+          "mismatched native asset rejected before interpretation",
+          "Changed raw inventory forces reassessment"
+        ],
+        "limitations": [
+          "Findings concern only the71 retained instances, not the full source study.",
+          "No predictive task or held-out accuracy is claimed."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-008-F04",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Header audit establishes71 images, one patient,70 MR slices, one MG projection and one MR echo time70ms. No predictive score was fabricated. Claim-specific scope: T2-weighted image intensity is sequence-dependent; no phantom, concentration assay, calibrated relaxation map or repeated acquisition is retained.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Single-echo S=A exp(-TE/T2) leaves amplitude and T2 unidentifiable; distinct frames and absent correspondence truth prevent validated registration.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Useful as a transparent bounded research/evaluation case. Assertions concern the retained local subset, not absence of labels or additional patients in full EA1141. Adequacy checks are retrospective.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "checks": [
+          "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+          "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+          "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+        ],
+        "limitations": [
+          "Assertions concern the retained local subset, not absence of labels or additional patients in full EA1141. Adequacy checks are retrospective.",
+          "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+        ]
+      }
+    },
+    {
+      "finding_id": "P100-008-F05",
+      "review_status": "advisory_reviews_complete",
+      "disagreements": [
+        "mechanism",
+        "reproducibility"
+      ],
+      "requires_resolution": true,
+      "computational": {
+        "finding_id": "P100-008-F05",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Native counts, unique patient, echo and coordinate-frame constraints reproduce. Missing outcome/calibration evidence is a reviewed retained-inventory limitation, not a claim about the full TCIA collection.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "partially_supported",
+            "rationale": "One echo at one repetition time cannot separately identify amplitude and relaxation time without additional assumptions. Metadata does not establish tissue mechanism.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Standard identifiability and validation principles are reproduced; no new MRI law is claimed.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "A useful benchmark abstention test prevents slice pseudoreplication and invented clinical accuracy.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "supported",
+            "rationale": "All native headers independently parsed and altered/missing/truncated/extra assets rejected. No model is fitted.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No patient outcome, diagnosis or deployed clinical benefit was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "checks": [
+          "Independently parsed all71 source DICOM headers",
+          "One patient,70 single-echo MR instances and one mammographic projection",
+          "Distinct modality coordinate frames; no diagnostic labels or physical calibration in native-file inventory",
+          "No predictive accuracy metric fabricated",
+          "missing native asset rejected before interpretation",
+          "truncated native asset rejected before interpretation",
+          "mismatched native asset rejected before interpretation",
+          "Changed raw inventory forces reassessment"
+        ],
+        "limitations": [
+          "Findings concern only the71 retained instances, not the full source study.",
+          "No predictive task or held-out accuracy is claimed."
+        ]
+      },
+      "scientific_critical": {
+        "finding_id": "P100-008-F05",
+        "disposition": "supported",
+        "dimensions": {
+          "reliability": {
+            "status": "supported",
+            "rationale": "Header audit establishes71 images, one patient,70 MR slices, one MG projection and one MR echo time70ms. No predictive score was fabricated. Claim-specific scope: Seventy linked slices belong to one series and one patient. Slice interpolation tests image redundancy, not between-patient scientific validity.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "mechanism": {
+            "status": "not_assessed",
+            "rationale": "Single-echo S=A exp(-TE/T2) leaves amplitude and T2 unidentifiable; distinct frames and absent correspondence truth prevent validated registration.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "novelty": {
+            "status": "not_assessed",
+            "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "significance": {
+            "status": "partially_supported",
+            "rationale": "Useful as a transparent bounded research/evaluation case. Assertions concern the retained local subset, not absence of labels or additional patients in full EA1141. Adequacy checks are retrospective.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "reproducibility": {
+            "status": "partially_supported",
+            "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          },
+          "impact": {
+            "status": "not_assessed",
+            "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured.",
+            "evidence_ids": [
+              "E001",
+              "E002",
+              "E003",
+              "E004",
+              "E005",
+              "E006",
+              "E007",
+              "E008",
+              "E009",
+              "E010"
+            ]
+          }
+        },
+        "checks": [
+          "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+          "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+          "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+        ],
+        "limitations": [
+          "Assertions concern the retained local subset, not absence of labels or additional patients in full EA1141. Adequacy checks are retrospective.",
+          "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+        ]
+      }
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "aggregate_discovery_score": null,
+  "novelty_is_not_certified": true
+}

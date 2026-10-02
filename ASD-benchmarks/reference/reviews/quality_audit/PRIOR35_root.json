@@ -1,0 +1,509 @@
+{
+  "scope": "Targeted scientific/contract audit; full numerical reconstruction reported separately",
+  "cases": [
+    {
+      "case_id": "P100-013",
+      "reviewer_id": "/root",
+      "strongest_supported_conclusion": "The two-temperature-response mixture is a useful rate-transfer extension.",
+      "quality_limits": "One held20K/min ramp is not an independent material-lot test; two fitted channels do not identify two chemical species.",
+      "recommended_improvement": "Add a new independently measured ramp or batch, with orthogonal chemical evidence before interpreting channel identities.",
+      "blocking_defect": null,
+      "tasks": [
+        {
+          "task_id": "P100-013.original.v1",
+          "reference": "reference",
+          "reference_primary_error": 0.0589465753402929,
+          "primary_units": "1",
+          "best_frozen_model": "reference",
+          "best_frozen_error": 0.0589465753402929,
+          "strongest_named_control": "baseline_domain",
+          "strongest_named_control_error": 0.0752805832105224,
+          "reference_selected_from_confirmation": false,
+          "scope": "Source-fitted conversion excluded. Four development traces; one high-rate extrapolation confirmation. Audit exposed first four rows near zero of every trace.",
+          "calibration": "Predict author-observed DSC conversion from temperature and imposed constant heating rate; no target history.",
+          "independent_unit": "Complete heating-rate experiment; not independent material batches",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        }
+      ],
+      "checked_files": [
+        {
+          "path": "cases/P100-013/final_results/findings.json",
+          "sha256": "b403494c423566d74dc3bd39b684c0a941eaed924738fc9987624e0f22eee5ca"
+        },
+        {
+          "path": "tasks/P100-013.original.v1/task.json",
+          "sha256": "fd0eb67821340af3a42452b58dede5ec9b42b30eb4556c2b1abd5aaa07d0466e"
+        },
+        {
+          "path": "tasks/P100-013.original.v1/evidence/metrics.csv",
+          "sha256": "1ea85fc176601a7ad6e4f143e0c658946fbc025f8ad0d49aa649de76e981c7ae"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-021",
+      "reviewer_id": "/root",
+      "strongest_supported_conclusion": "Nominal inverse-area scaling is a coarse recorded-channel reference.",
+      "quality_limits": "Unspecified acquisition gain and extreme devices preclude intrinsic resistance/yield claims.",
+      "recommended_improvement": "Resolve amplifier gain and measure actual junction dimensions; design die/wafer-held evaluation with retained defective devices.",
+      "blocking_defect": null,
+      "tasks": [
+        {
+          "task_id": "P100-021.original.v1",
+          "reference": "reference",
+          "reference_primary_error": 766.2706225556708,
+          "primary_units": "ohm",
+          "best_frozen_model": "attempt-004",
+          "best_frozen_error": 758.1523056250905,
+          "strongest_named_control": "area",
+          "strongest_named_control_error": 766.2706225556708,
+          "reference_selected_from_confirmation": false,
+          "scope": "19 dies on two wafers. Unknown acquisition gain/offset, nominal rather than measured area. Tail fits operationally define a response and may include defective junctions; all unambiguous devices retained.",
+          "calibration": "No per-device response calibration. Current conversion V_gen/100 ohm is source-provided. Native response gain is not documented; endpoint is recorded-channel differential resistance, not intrinsic junction resistance.",
+          "independent_unit": "complete wafer die: all junction widths and paired traces",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        }
+      ],
+      "checked_files": [
+        {
+          "path": "cases/P100-021/final_results/findings.json",
+          "sha256": "bc453e5e80e620fe5b77751bf5bf90d59e35cf876a5f9f5dc1ad649104f7445f"
+        },
+        {
+          "path": "tasks/P100-021.original.v1/task.json",
+          "sha256": "6ccfa72fab4ca6316d19fb552d88b98bb02b15d16c586d127c884b35fe78547e"
+        },
+        {
+          "path": "tasks/P100-021.original.v1/evidence/metrics.csv",
+          "sha256": "f1777573f7f42af4d1bcf5ec191332f2f1badbc04b440e74d18ce095672017e6"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-023",
+      "reviewer_id": "/root",
+      "strongest_supported_conclusion": "Established Stribeck/Hersey response transfers across people under the same liquid panel.",
+      "quality_limits": "Author-derived median friction is not raw telemetry; the pressure extension fails unseen-fluid transfer. Task prose retains a provisional count note.",
+      "recommended_improvement": "Use the native adapter inventory for exact counts; distinguish same-fluid person transfer from an independently registered unseen-fluid challenge.",
+      "blocking_defect": null,
+      "tasks": [
+        {
+          "task_id": "P100-023.continuation.v1",
+          "reference": "reference",
+          "reference_primary_error": 0.0849167151472501,
+          "primary_units": "1",
+          "best_frozen_model": "kernel",
+          "best_frozen_error": 0.0817204214952902,
+          "strongest_named_control": "kernel",
+          "strongest_named_control_error": 0.0817204214952902,
+          "reference_selected_from_confirmation": false,
+          "scope": "One substrate, eleven participants; transfer to reserved people under the same fluid panel, not other surfaces or contact systems. Fluids shared across participants.",
+          "calibration": "165 participant\u2013fluid observations (check actual count); primary response is author-derived median CoF, not instantaneous raw telemetry. Source already reports the Stribeck collapse and hydrodynamic exponent. Area/hydration are separate measurements; author-fit Hersey coefficients cannot validate their own physics. Raw force/position files remain untouched.",
+          "independent_unit": "whole participant",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        },
+        {
+          "task_id": "P100-023.original.v1",
+          "reference": "reference",
+          "reference_primary_error": 0.0876691510747465,
+          "primary_units": "1",
+          "best_frozen_model": "reference",
+          "best_frozen_error": 0.0876691510747465,
+          "strongest_named_control": "baseline_domain",
+          "strongest_named_control_error": 0.0876691510747465,
+          "reference_selected_from_confirmation": false,
+          "scope": "One substrate, eleven participants; transfer to reserved people under the same fluid panel, not other surfaces or contact systems. Fluids shared across participants.",
+          "calibration": "165 participant\u2013fluid observations (check actual count); primary response is author-derived median CoF, not instantaneous raw telemetry. Source already reports the Stribeck collapse and hydrodynamic exponent. Area/hydration are separate measurements; author-fit Hersey coefficients cannot validate their own physics. Raw force/position files remain untouched.",
+          "independent_unit": "whole participant",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        }
+      ],
+      "checked_files": [
+        {
+          "path": "cases/P100-023/final_results/findings.json",
+          "sha256": "8fc731cf7c8dcf27db6d1c7a684da3bf3f12b7b91f573fee8211c5ae789e6882"
+        },
+        {
+          "path": "tasks/P100-023.continuation.v1/task.json",
+          "sha256": "507fd9ad7f32a945d94d55da3456c9bac95460bf42f1bf9850200826367199fe"
+        },
+        {
+          "path": "tasks/P100-023.continuation.v1/evidence/metrics.csv",
+          "sha256": "009b608026506b7106cefc5030c2f148af772a6b81739b5c1037022ef12ff91b"
+        },
+        {
+          "path": "tasks/P100-023.original.v1/task.json",
+          "sha256": "4bd6e74cc2d31eab3c66c9ca67070eed0874ea009197c93228a18091de2e4472"
+        },
+        {
+          "path": "tasks/P100-023.original.v1/evidence/metrics.csv",
+          "sha256": "2d8a7a451531b82d2800329a56ecc6b04367a9174ba30012c7a0ad179eadce3b"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-024",
+      "reviewer_id": "/root",
+      "strongest_supported_conclusion": "Logarithmic stiffness degradation improves early-modulus persistence within the campaign.",
+      "quality_limits": "Conditional observed stiffness is not remaining useful life; survival/runout selection and the small number of specimens limit inference.",
+      "recommended_improvement": "Add censoring-aware lifetime endpoints only with complete failure/runout records and new whole-specimen confirmation.",
+      "blocking_defect": null,
+      "tasks": [
+        {
+          "task_id": "P100-024.original.v1",
+          "reference": "attempt_001_log",
+          "reference_primary_error": 1.8254475510397128,
+          "primary_units": "GPa",
+          "best_frozen_model": "competitor_two_mechanism",
+          "best_frozen_error": 1.825447550518426,
+          "strongest_named_control": "baseline_log",
+          "strongest_named_control_error": 1.8254475510397128,
+          "reference_selected_from_confirmation": false,
+          "scope": "Six specimens from three cure profiles in one glass-fiber campaign, with declared cycles-10-to-20 initial calibration. Not a remaining-life, runout or new-material prediction.",
+          "calibration": "E0 is the median native stiffness at cycles 10\u201320 for the same specimen; later stiffness and terminal cycle are unavailable to predictors.",
+          "independent_unit": "complete specimen",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        },
+        {
+          "task_id": "P100-024.round2.v1",
+          "reference": "current/cycle-001",
+          "reference_primary_error": 1.649002748835049,
+          "primary_units": "GPa",
+          "best_frozen_model": "previous/cycle-002",
+          "best_frozen_error": 1.6315446408168248,
+          "strongest_named_control": "previous/baselines/old_log",
+          "strongest_named_control_error": 1.6365407793790734,
+          "reference_selected_from_confirmation": false,
+          "scope": "Six specimens from three cure profiles in one glass-fiber campaign, with declared cycles-10-to-20 initial calibration. Not a remaining-life, runout or new-material prediction. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+          "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. E0 is the median native stiffness at cycles 10\u201320 for the same specimen; later stiffness and terminal cycle are unavailable to predictors.",
+          "independent_unit": "complete specimen",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        }
+      ],
+      "checked_files": [
+        {
+          "path": "cases/P100-024/final_results/findings.json",
+          "sha256": "04687819086ff775f28a8484c380cf11d685a39fe84b704ea4f038a1ece32a78"
+        },
+        {
+          "path": "tasks/P100-024.original.v1/task.json",
+          "sha256": "94354a4ac4d6e60736d4c24e2f9d412799e0d04aa0683d0d946085da51726fcc"
+        },
+        {
+          "path": "tasks/P100-024.original.v1/evidence/metrics.csv",
+          "sha256": "113ac4659aaa8c2ecc0880a6ee07b3cc18f44bf438446af603968197a49caeec"
+        },
+        {
+          "path": "tasks/P100-024.round2.v1/task.json",
+          "sha256": "4916a360f58ea70978657ce9275ebb4840573ae500af571e16980e7515bc140c"
+        },
+        {
+          "path": "tasks/P100-024.round2.v1/evidence/metrics.csv",
+          "sha256": "506b09fe3b6a7e41807a288f5a1002892e229431b30fcc31c54ff9ab07d445ce"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-027",
+      "reviewer_id": "/root",
+      "strongest_supported_conclusion": "Bounded spatial correction improves original reserved profiles.",
+      "quality_limits": "Flexible controls beat later physically motivated revisions; fitted slip and radial-coordinate effects are not universal closure constants.",
+      "recommended_improvement": "Validate across another facility or geometry; use boundary-condition uncertainty and independently measured wall coordinates.",
+      "blocking_defect": null,
+      "tasks": [
+        {
+          "task_id": "P100-027.original.v1",
+          "reference": "attempt_002_radial",
+          "reference_primary_error": 0.1067013291496106,
+          "primary_units": "dimensionless",
+          "best_frozen_model": "attempt_002_radial",
+          "best_frozen_error": 0.1067013291496106,
+          "strongest_named_control": "baseline_homogeneous",
+          "strongest_named_control_error": 0.1825688798871115,
+          "reference_selected_from_confirmation": false,
+          "scope": "Three complete radial profiles at one KTH facility. Conditional on supplied boundary quality and normalized observed measurement coordinates; no universal closure, flow-regime discovery or physical wall-coordinate claim.",
+          "calibration": "Saturation densities are fixed IAPWS-derived inputs from absolute pressure, not learned from void-fraction targets. Global profile coefficients use development runs only.",
+          "independent_unit": "complete experimental run",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        },
+        {
+          "task_id": "P100-027.round2.v1",
+          "reference": "current/cycle-001",
+          "reference_primary_error": 0.1005106569595555,
+          "primary_units": "void fraction",
+          "best_frozen_model": "current/baseline-hgb",
+          "best_frozen_error": 0.0759142057548609,
+          "strongest_named_control": "current/baseline-hgb",
+          "strongest_named_control_error": 0.0759142057548609,
+          "reference_selected_from_confirmation": false,
+          "scope": "Three complete radial profiles at one KTH facility. Conditional on supplied boundary quality and normalized observed measurement coordinates; no universal closure, flow-regime discovery or physical wall-coordinate claim. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+          "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Saturation densities are fixed IAPWS-derived inputs from absolute pressure, not learned from void-fraction targets. Global profile coefficients use development runs only.",
+          "independent_unit": "complete experimental run",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        }
+      ],
+      "checked_files": [
+        {
+          "path": "cases/P100-027/final_results/findings.json",
+          "sha256": "3da80f7dc7e2f04f0e33542b2133f6d7dcdd4f227b54e03a85999c0d49c06374"
+        },
+        {
+          "path": "tasks/P100-027.original.v1/task.json",
+          "sha256": "8868c6506cf1329ebd6599e1a81d4dc1462f5352ba81a0d1d45aa09a91fd7fcd"
+        },
+        {
+          "path": "tasks/P100-027.original.v1/evidence/metrics.csv",
+          "sha256": "2f947b1e5423836d91f2d3aa17e4abcd83b48884a8115a3fa11633026dfe90cd"
+        },
+        {
+          "path": "tasks/P100-027.round2.v1/task.json",
+          "sha256": "daed848a2c33d74721dd3b18da52686e4375897f8e46afa5c877d53ada618740"
+        },
+        {
+          "path": "tasks/P100-027.round2.v1/evidence/metrics.csv",
+          "sha256": "93d11e58d9576067454be2b65a039384b889a5edc25c9d5e3893b19a3e783063"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-037",
+      "reviewer_id": "/root",
+      "strongest_supported_conclusion": "Packet-composition predictors provide a useful within-router workload reference.",
+      "quality_limits": "The compact equation loses to flexible controls; two router models do not identify component energy or new-hardware transfer.",
+      "recommended_improvement": "Measure controlled packet-processing interventions and a new router model; retain calibration-free and calibrated tasks separately.",
+      "blocking_defect": null,
+      "tasks": [
+        {
+          "task_id": "P100-037.original.v1",
+          "reference": "compact",
+          "reference_primary_error": 4.005877791141317,
+          "primary_units": "W",
+          "best_frozen_model": "flexible",
+          "best_frozen_error": 3.731542419516829,
+          "strongest_named_control": "flexible",
+          "strongest_named_control_error": 3.731542419516829,
+          "reference_selected_from_confirmation": false,
+          "scope": "Five reserved runs on two calibrated router models. No new-router or identified component-energy law is established.",
+          "calibration": "Separate A/B model parameters from the original development runs; no target-run refit.",
+          "independent_unit": "complete native run",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        },
+        {
+          "task_id": "P100-037.round2.v1",
+          "reference": "current/cycle-001",
+          "reference_primary_error": 4.340063856546971,
+          "primary_units": "W",
+          "best_frozen_model": "current/baseline-hgb",
+          "best_frozen_error": 3.451608733989457,
+          "strongest_named_control": "current/baseline-hgb",
+          "strongest_named_control_error": 3.451608733989457,
+          "reference_selected_from_confirmation": false,
+          "scope": "Five reserved runs on two calibrated router models. No new-router or identified component-energy law is established. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+          "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Separate A/B model parameters from the original development runs; no target-run refit.",
+          "independent_unit": "complete native run",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        }
+      ],
+      "checked_files": [
+        {
+          "path": "cases/P100-037/final_results/findings.json",
+          "sha256": "7edd060ec7fcff7802b13206809f51e11abb8b87851b9c04126fb7d36c238a88"
+        },
+        {
+          "path": "tasks/P100-037.original.v1/task.json",
+          "sha256": "d0d2ef2a2bf44a56659a46b5261322fd57ecf878446bccb1221a69b9ab0dca63"
+        },
+        {
+          "path": "tasks/P100-037.original.v1/evidence/metrics.csv",
+          "sha256": "15d56bb86ef27eb9e13650b5a9618b0434f270afde4be258be852a7d21af87ec"
+        },
+        {
+          "path": "tasks/P100-037.round2.v1/task.json",
+          "sha256": "18b45092d23f247f00927b44b10d95c6647219699df49fcbf2e6b7e53d0e872a"
+        },
+        {
+          "path": "tasks/P100-037.round2.v1/evidence/metrics.csv",
+          "sha256": "f19dd1cc13c0c21e2c203d3b0bfb3fd5141438ab876609f1f5bb3c0a1c69570f"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-051",
+      "reviewer_id": "/root",
+      "strongest_supported_conclusion": "Three-anchor calibration-ratio curvature improves sparse reconstruction within one FET array.",
+      "quality_limits": "Same-device calibration is indispensable; no memory-retention or mechanism-specific transport claim follows.",
+      "recommended_improvement": "Test independent arrays/lots and explicitly measure how reduced characterization affects cost and reconstruction uncertainty.",
+      "blocking_defect": null,
+      "tasks": [
+        {
+          "task_id": "P100-051.original.v1",
+          "reference": "reference",
+          "reference_primary_error": 0.0163038930242776,
+          "primary_units": "uA",
+          "best_frozen_model": "reference",
+          "best_frozen_error": 0.0163038930242776,
+          "strongest_named_control": "reference",
+          "strongest_named_control_error": 0.0163038930242776,
+          "reference_selected_from_confirmation": false,
+          "scope": "36 fabricated FET curves from source Fig2e, not independent lots; no memory-retention extrapolation, no device-geometry control or interventions.",
+          "calibration": "Exactly three same-device current measurements at Vg=-20,0,20 V; all models see the same anchors; those points excluded from scores.",
+          "independent_unit": "complete source FET column/device",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        }
+      ],
+      "checked_files": [
+        {
+          "path": "cases/P100-051/final_results/findings.json",
+          "sha256": "1512875a8567fa132ee726a9b33f388868cdfba209d506cc6d3b04807062626c"
+        },
+        {
+          "path": "tasks/P100-051.original.v1/task.json",
+          "sha256": "000b50d2c65b4a5ca2e51368b86da7c4ed4398059a832e84e36cc17d1c8a04f9"
+        },
+        {
+          "path": "tasks/P100-051.original.v1/evidence/metrics.csv",
+          "sha256": "8b3493d08317a2eaf712fdb3759a6cf949455dee119c17d8376782816e270926"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-052",
+      "reviewer_id": "/root",
+      "strongest_supported_conclusion": "Calibrated wake-shape models supply a bounded field reconstruction task.",
+      "quality_limits": "One reserved control and correlated interpolated cells cannot demonstrate an actuation law or independent spatial replicates.",
+      "recommended_improvement": "Acquire multiple control repeats/tunnel conditions; distinguish raw line-of-sight measurements from interpolated uu products and score turbine-power effects independently.",
+      "blocking_defect": null,
+      "tasks": [
+        {
+          "task_id": "P100-052.continuation.v1",
+          "reference": "reference",
+          "reference_primary_error": 0.267233744874853,
+          "primary_units": "m/s",
+          "best_frozen_model": "anisotropic_act",
+          "best_frozen_error": 0.232070861495327,
+          "strongest_named_control": "anisotropic_act",
+          "strongest_named_control_error": 0.232070861495327,
+          "reference_selected_from_confirmation": false,
+          "scope": "Only four controls and one wind-tunnel system; three development controls and one reserved. Spatial errors describe field interpolation/transfer, not independent grid replicates.",
+          "calibration": "Independent no-turbine grids; x4D interpolates empty2D/5D, WT2 local+5D matches empty7D/9D. All new baselines have identical calibration.",
+          "independent_unit": "whole control setting across turbines and downstream sections",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        },
+        {
+          "task_id": "P100-052.original.v1",
+          "reference": "reference",
+          "reference_primary_error": 0.3262597484720866,
+          "primary_units": "m/s",
+          "best_frozen_model": "reference",
+          "best_frozen_error": 0.3262597484720866,
+          "strongest_named_control": "baseline_rbf",
+          "strongest_named_control_error": 0.6399287041008135,
+          "reference_selected_from_confirmation": false,
+          "scope": "Only four controls and one wind-tunnel system; three development controls and one reserved. Spatial errors describe field interpolation/transfer, not independent grid replicates.",
+          "calibration": "Source-native lidar-derived uu grids; grid cells are correlated interpolated products. Raw vlos retained upstream. Rotor-equivalent wind and virtual turbine power are excluded as targets and predictors. No cubic-power identity is counted as a rule. ABL Type II only.",
+          "independent_unit": "whole control setting across turbines and downstream sections",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        }
+      ],
+      "checked_files": [
+        {
+          "path": "cases/P100-052/final_results/findings.json",
+          "sha256": "de9204b7cd5d25bd5f213c9706b5e99b1122e8d97b98e2c6883514af3df22868"
+        },
+        {
+          "path": "tasks/P100-052.continuation.v1/task.json",
+          "sha256": "ffc96c587a6b92e87ecfb3aaac6db2b096dabe1aa70d4b0ed8cad3b4a639d2de"
+        },
+        {
+          "path": "tasks/P100-052.continuation.v1/evidence/metrics.csv",
+          "sha256": "06bc113e9b8e162359964b45e8133de4e0aab3d75ace0decc7573404840c02d0"
+        },
+        {
+          "path": "tasks/P100-052.original.v1/task.json",
+          "sha256": "7f6ec5d29e6843dff771f8b5ccf2b1e83ffb71def38a86d17015b79ec0cd5644"
+        },
+        {
+          "path": "tasks/P100-052.original.v1/evidence/metrics.csv",
+          "sha256": "36091fc7c605604d98f88393d5c23ba20acee37d6f83fb4910b2dc66507289d7"
+        }
+      ]
+    },
+    {
+      "case_id": "P100-053",
+      "reviewer_id": "/root",
+      "strongest_supported_conclusion": "Causal same-hole history supports an industrial torque-forecasting benchmark.",
+      "quality_limits": "Memory equations fail to outperform matched robust/tree controls; torque is angle-mean, not a peak or joint-strength endpoint.",
+      "recommended_improvement": "Correct endpoint wording in shared diagnostic labels; use independent clamp-force or joint-strength measurements for a separate operational qualification task.",
+      "blocking_defect": null,
+      "tasks": [
+        {
+          "task_id": "P100-053.original.v1",
+          "reference": "memory",
+          "reference_primary_error": 0.0231635917876315,
+          "primary_units": "Nm",
+          "best_frozen_model": "flexible",
+          "best_frozen_error": 0.0222955905540583,
+          "strongest_named_control": "flexible",
+          "strongest_named_control_error": 0.0222955905540583,
+          "reference_selected_from_confirmation": false,
+          "scope": "50 workpieces in eight observed surface conditions; predict torque, not clamping force, joint strength or the controller OK/NOK label.",
+          "calibration": "Early and completed Finding-phase features; prior completed same-hole cycles are permitted. No current late-window target calibration.",
+          "independent_unit": "workpiece (both locations and every reuse cycle)",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        },
+        {
+          "task_id": "P100-053.round2.v1",
+          "reference": "current/cycle-001",
+          "reference_primary_error": 0.0265255042373536,
+          "primary_units": "Nm",
+          "best_frozen_model": "previous/results-v2/flexible",
+          "best_frozen_error": 0.0229473481609469,
+          "strongest_named_control": "previous/results-v2/flexible",
+          "strongest_named_control_error": 0.0229473481609469,
+          "reference_selected_from_confirmation": false,
+          "scope": "50 workpieces in eight observed surface conditions; predict torque, not clamping force, joint strength or the controller OK/NOK label. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+          "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. Early and completed Finding-phase features; prior completed same-hole cycles are permitted. No current late-window target calibration.",
+          "independent_unit": "workpiece (both locations and every reuse cycle)",
+          "current_exposure": "exposed",
+          "comparison_policy": "Each task separately; no cross-version averaging; best frozen alternative is diagnostic, never automatic reselection"
+        }
+      ],
+      "checked_files": [
+        {
+          "path": "cases/P100-053/final_results/findings.json",
+          "sha256": "d6ce7714d5f9c6a93d3898f438860e0fe36f7a9f6469e0464800ad2d0d996ff4"
+        },
+        {
+          "path": "tasks/P100-053.original.v1/task.json",
+          "sha256": "5be1fd2c013ae68e7f7c05076f1ba54353b0a710803bc4cc0e34e2490d531873"
+        },
+        {
+          "path": "tasks/P100-053.original.v1/evidence/metrics.csv",
+          "sha256": "50858e2bc7f4b119b8d2e2cb0201346b93f6dbb819d8cba992b8c1396798b9b7"
+        },
+        {
+          "path": "tasks/P100-053.round2.v1/task.json",
+          "sha256": "9b11e2c9d1a0684af157b7e24c21ebbbed7f538f96c20a082a5c2ead59848d81"
+        },
+        {
+          "path": "tasks/P100-053.round2.v1/evidence/metrics.csv",
+          "sha256": "a2eae47f248cc7eb55a87f77ffe34d3e757997ea3451e29c1c854f92f318a547"
+        }
+      ]
+    }
+  ]
+}

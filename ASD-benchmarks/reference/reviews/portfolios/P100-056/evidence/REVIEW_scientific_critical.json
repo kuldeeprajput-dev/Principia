@@ -1,0 +1,201 @@
+{
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_bio_behavior",
+  "case_id": "P100-056",
+  "created_utc": "2026-10-01T14:27:08.181550+00:00",
+  "checked_files": [
+    {
+      "path": "package/findings.json",
+      "sha256": "10f2cb3c3ef325e2f4f22fff24de4c10622db88a52f01b2c74497beb64883d81"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "61b553441770dbe6608e990b71f4fef8f395b0864324044f08882341cfaa1564"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "a78776d285d6248a3f4afd65f39e4f579ab54471f8d642cd2cde6136dd7eabb4"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "90435239d1de5599f0318ad4a691a7598388a12005c8f4bd3c6b7dd12134347f"
+    },
+    {
+      "path": "package/preparation/native.py",
+      "sha256": "f56cf4f36714668b0fb637f63419efe509bc60d8d176b8d4c59d140d5a54ad6f"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "76d9c57a4b5ad94ef11df264e48ec3ba48809560ed06b5c33854bf5eac72e92c"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "dbc635139eedc2d2a52d08ca05b191e202584172c9b75d78416052ebd826efe3"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "4bf76daf3775f5323085c31f8193852eb3baff53a05f5a43bf4ff0074e63a1b9"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "365e8b199a830017d75f7bb04e9dfba49067fa31bb4e5a2f00440de9e256475d"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "7dc39b57116ebd605bd235041d31d91a32d6e53135788c0ba9c7067fadad6818"
+    },
+    {
+      "path": "research_history/PROTOCOL.json",
+      "sha256": "907e33d4689551c345a2cd72572ab0abe7b11b3d5e4263f0747106402c60bb8c"
+    },
+    {
+      "path": "research_history/PRIOR_ART.json",
+      "sha256": "4819a022fe57fe0e3e1333c745b91bee48ee70f1742c7d10a4b79996eaf7ef4f"
+    },
+    {
+      "path": "research_history/SOURCE_AND_UNITS.md",
+      "sha256": "a3b4f38a041a40e1ab5626a52d23ec2c0420932036e33667112bb4c4aff76bb2"
+    }
+  ],
+  "overall_limitations": [
+    "Only six beams and two confirmation specimens.",
+    "The hard cap cannot represent abrupt post-peak drops or damage sequence uniquely.",
+    "Transfer requires beam-specific initial loading calibration and known concrete class.",
+    "Agent scientific criticism is not independent experimental replication or human domain-expert adjudication."
+  ],
+  "primary_source_check": {
+    "url": "https://zenodo.org/records/17967735",
+    "status": "Primary dataset landing independently inspected; follow-up ScienceDirectpaper request403; no exact study-to-all-curves linkage inferred."
+  },
+  "findings": [
+    {
+      "finding_id": "P100-056-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Selected calibrated cap improves both reserved beams versus elastic/flexible controls:5.28109kN versus14.7367/8.73499. The common cap is better at4.75397, so material-specific superiority is falsified rather than silently promoted."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "A saturation cap regularizes load extrapolation; it does not isolate connector slip, timber damage, concrete cracking or their sequence. Concrete coefficient from four training beams is not a material constant."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted primary-source context and established equation families do not establish global novelty. No independent expert/literature adjudication performed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Demonstrates the practical importance of a strong saturation control for later calibrated response. No structural acceptance/design resistance or virgin-material strength predictor follows."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native parser, equations, frozen coefficients, predictions and grouping contracts are explicit and inspected. Full independent executable testing belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No intervention, deployed savings, reliability qualification or independent experiment demonstrates industrial impact."
+        }
+      },
+      "checks": [
+        "Prefix ends at first deflection above10mm; later unloading cannot reenter calibration.",
+        "Current deflection is imposed and permitted; later force and ultimate capacity are excluded.",
+        "Every beam remains in one split; both C beams are reserved and all45late rows retained.",
+        "Selected cap beats elastic and flexible predictions on both beams.",
+        "Common-cap ablation outperforms selected concrete-specific cap; F02positive improvement claim is unsupported."
+      ],
+      "limitations": [
+        "Only six beams and two confirmation specimens.",
+        "The hard cap cannot represent abrupt post-peak drops or damage sequence uniquely.",
+        "Transfer requires beam-specific initial loading calibration and known concrete class."
+      ],
+      "negative_evidence_note": "A supported negative conclusion is distinct from an unsupported positive model claim; case56F02 is the latter."
+    },
+    {
+      "finding_id": "P100-056-F02",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Selected calibrated cap improves both reserved beams versus elastic/flexible controls:5.28109kN versus14.7367/8.73499. The common cap is better at4.75397, so material-specific superiority is falsified rather than silently promoted."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "A saturation cap regularizes load extrapolation; it does not isolate connector slip, timber damage, concrete cracking or their sequence. Concrete coefficient from four training beams is not a material constant."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted primary-source context and established equation families do not establish global novelty. No independent expert/literature adjudication performed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Demonstrates the practical importance of a strong saturation control for later calibrated response. No structural acceptance/design resistance or virgin-material strength predictor follows."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native parser, equations, frozen coefficients, predictions and grouping contracts are explicit and inspected. Full independent executable testing belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No intervention, deployed savings, reliability qualification or independent experiment demonstrates industrial impact."
+        }
+      },
+      "checks": [
+        "Prefix ends at first deflection above10mm; later unloading cannot reenter calibration.",
+        "Current deflection is imposed and permitted; later force and ultimate capacity are excluded.",
+        "Every beam remains in one split; both C beams are reserved and all45late rows retained.",
+        "Selected cap beats elastic and flexible predictions on both beams.",
+        "Common-cap ablation outperforms selected concrete-specific cap; F02positive improvement claim is unsupported."
+      ],
+      "limitations": [
+        "Only six beams and two confirmation specimens.",
+        "The hard cap cannot represent abrupt post-peak drops or damage sequence uniquely.",
+        "Transfer requires beam-specific initial loading calibration and known concrete class."
+      ],
+      "negative_evidence_note": "A supported negative conclusion is distinct from an unsupported positive model claim; case56F02 is the latter."
+    },
+    {
+      "finding_id": "P100-056-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Selected calibrated cap improves both reserved beams versus elastic/flexible controls:5.28109kN versus14.7367/8.73499. The common cap is better at4.75397, so material-specific superiority is falsified rather than silently promoted."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "A saturation cap regularizes load extrapolation; it does not isolate connector slip, timber damage, concrete cracking or their sequence. Concrete coefficient from four training beams is not a material constant."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Targeted primary-source context and established equation families do not establish global novelty. No independent expert/literature adjudication performed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Demonstrates the practical importance of a strong saturation control for later calibrated response. No structural acceptance/design resistance or virgin-material strength predictor follows."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native parser, equations, frozen coefficients, predictions and grouping contracts are explicit and inspected. Full independent executable testing belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No intervention, deployed savings, reliability qualification or independent experiment demonstrates industrial impact."
+        }
+      },
+      "checks": [
+        "Prefix ends at first deflection above10mm; later unloading cannot reenter calibration.",
+        "Current deflection is imposed and permitted; later force and ultimate capacity are excluded.",
+        "Every beam remains in one split; both C beams are reserved and all45late rows retained.",
+        "Selected cap beats elastic and flexible predictions on both beams.",
+        "Common-cap ablation outperforms selected concrete-specific cap; F02positive improvement claim is unsupported."
+      ],
+      "limitations": [
+        "Only six beams and two confirmation specimens.",
+        "The hard cap cannot represent abrupt post-peak drops or damage sequence uniquely.",
+        "Transfer requires beam-specific initial loading calibration and known concrete class."
+      ],
+      "negative_evidence_note": "A supported negative conclusion is distinct from an unsupported positive model claim; case56F02 is the latter."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-010.original.v1.raw-access.v1",
+  "parent_task_id": "P100-010.original.v1",
+  "case_id": "P100-010",
+  "protocol_version": "P100-010.original.v1.raw-access.v1",
+  "cohort_id": "P100-010.original.v1.cohort-1",
+  "parent_task_sha256": "a6b368e7a68ffb76ddc7fc82bb1c1865683510f8b8c54266471b8eee8db40d9b",
+  "input_sha256": "668b51ab1b67ebf9341fdaf2c06008b969b3ece18bd70c7e67c89de162702eb1",
+  "observations_sha256": "0a90566fccab6ebc2ea3d9e8d8a3194e6514ef0cf8abf4161fd0fd41e7103648",
+  "source_scope": "original_corpus",
+  "tier": "adequacy_falsification_diagnostic",
+  "source_folder": "10_computer_security_nvd_recent_snapshot",
+  "source_assets": [
+    {
+      "path": "context/cve_api_json_2.0.schema",
+      "bytes": 10394,
+      "sha256": "2b9c4e8ab7e6e42aa17ea787f58167beff47c119c6f291405f86ac19c6149e01"
+    },
+    {
+      "path": "context/nvdcve-2.0-recent.meta",
+      "bytes": 165,
+      "sha256": "c200ca03ab489b1426bc8476e2464c29ae1999beb8c4951c05be8afce7b17e9f"
+    },
+    {
+      "path": "raw/nvdcve-2.0-recent.json",
+      "bytes": 19264128,
+      "sha256": "a5bdbd3145b57222504b64cbf7a14fd52ca6887537e21dcbb9ddec55e4084f77"
+    },
+    {
+      "path": "raw/nvdcve-2.0-recent.json.gz",
+      "bytes": 1735840,
+      "sha256": "9e0f8664e912de3c21bcdac26a6d7051b50de15a0b169be32d6456a2677604ba"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "age_days": "days since publication at snapshot",
+      "cna_score": "non-NVD CVSSv3.1 assessment present binary",
+      "batch_size": "records from same assigning source and publication day"
+    },
+    "observation_window": "All covariates are snapshot-available contemporaneous metadata. Source-day count and CNA assessment may be added after initial disclosure. This is current coverage diagnostics, not prediction of future NVD action or security exploitation.",
+    "calibration_and_history": "Whole CNA/source group folds and held sources; no held-source target calibration.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "input_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Confirmation annotations contain no positive class; discrimination and recall cannot be assessed.",
+    "Eligible targets contain one unique value."
+  ],
+  "current_outcomes_exposed": true
+}

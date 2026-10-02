@@ -1,0 +1,30 @@
+{
+  "0": {
+    "kind": "inertia",
+    "coef": [
+      0.24194714322378652,
+      0.11217286987126841
+    ],
+    "equation": "max(0,p+b0*r+b1*v); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+    "training_groups": [
+      "22713"
+    ],
+    "training_rows": 1276,
+    "parameter_count": 2,
+    "rank": 2
+  },
+  "1": {
+    "kind": "inertia",
+    "coef": [
+      0.04313322988746671,
+      -0.015324813730944284
+    ],
+    "equation": "max(0,p+b0*r+b1*v); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+    "training_groups": [
+      "16"
+    ],
+    "training_rows": 3186,
+    "parameter_count": 2,
+    "rank": 2
+  }
+}

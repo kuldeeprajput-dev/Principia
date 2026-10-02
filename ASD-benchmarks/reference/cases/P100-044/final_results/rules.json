@@ -1,0 +1,677 @@
+{
+  "case_id": "P100-044",
+  "input_columns": [
+    "nodes",
+    "max_degree",
+    "is_flow",
+    "is_linear",
+    "is_quadratic",
+    "moore2_occupancy"
+  ],
+  "numeric_columns": [
+    "nodes",
+    "max_degree",
+    "is_flow",
+    "is_linear",
+    "is_quadratic",
+    "moore2_occupancy"
+  ],
+  "input_units": {
+    "nodes": "node count",
+    "max_degree": "degree bound",
+    "is_flow": "indicator",
+    "is_linear": "indicator",
+    "is_quadratic": "indicator",
+    "moore2_occupancy": "dimensionless n/(1+d^2)"
+  },
+  "target_units": "seconds",
+  "metric_kind": "mae",
+  "models": {
+    "constant": {
+      "kind": "constant",
+      "value": 1180.02,
+      "parameters": 1,
+      "training_groups": [
+        "topology_15_3",
+        "topology_20_3",
+        "topology_20_4",
+        "topology_20_5",
+        "topology_25_3",
+        "topology_25_4",
+        "topology_25_5",
+        "topology_25_6",
+        "topology_30_4",
+        "topology_30_5",
+        "topology_35_6",
+        "topology_50_4"
+      ],
+      "training_rows": 36,
+      "equation": "t_hat=constant training median",
+      "prediction_clipping": "[0,7200] seconds, capped consumption endpoint"
+    },
+    "exp_size": {
+      "kind": "exp_size",
+      "coefficients": [
+        6.720458906550737,
+        11.66462540334268,
+        -3.9376623334329905,
+        2.880612126388391,
+        -0.11722547979130545
+      ],
+      "parameters": 5,
+      "jacobian_condition": 29.463566704203576,
+      "boundary_contacts": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "fit_objective": "squared capped-consumption residual with weak slope regularization; three deterministic starts selected by training MAE",
+      "training_groups": [
+        "topology_15_3",
+        "topology_20_3",
+        "topology_20_4",
+        "topology_20_5",
+        "topology_25_3",
+        "topology_25_4",
+        "topology_25_5",
+        "topology_25_6",
+        "topology_30_4",
+        "topology_30_5",
+        "topology_35_6",
+        "topology_50_4"
+      ],
+      "training_rows": 36,
+      "equation": "t_hat=clip(exp(b0+b1*ln(n/25)+b2*ln(d/4)+b3*I_flow+b4*I_linear),0,7200)",
+      "prediction_clipping": "[0,7200] seconds, capped consumption endpoint"
+    },
+    "form_median": {
+      "kind": "form_median",
+      "values": {
+        "flow": 7200.0,
+        "linear": 353.68,
+        "quadratic": 269.24
+      },
+      "parameters": 3,
+      "training_groups": [
+        "topology_15_3",
+        "topology_20_3",
+        "topology_20_4",
+        "topology_20_5",
+        "topology_25_3",
+        "topology_25_4",
+        "topology_25_5",
+        "topology_25_6",
+        "topology_30_4",
+        "topology_30_5",
+        "topology_35_6",
+        "topology_50_4"
+      ],
+      "training_rows": 36,
+      "equation": "t_hat=formulation training median",
+      "prediction_clipping": "[0,7200] seconds, capped consumption endpoint"
+    },
+    "rbf": {
+      "kind": "rbf",
+      "coefficients": [
+        0.29787961979832545,
+        -0.6969083372316324,
+        0.0809654193240036,
+        0.06599287790758515,
+        -0.05188993644890151,
+        -0.05317747076611273,
+        -0.012521301750116854,
+        -0.19765813621971245,
+        -0.09561857488112069,
+        -0.12987615675994502,
+        -0.4879669543970992,
+        -0.2711790875089945,
+        -0.36632474111707725,
+        0.5593334196443484,
+        0.0968524512376282,
+        0.17892705115306876,
+        0.4000963916939107,
+        -0.09533058024420903,
+        -0.06604632432195011,
+        0.066494758990534,
+        -0.2636707200612372,
+        -0.2905746863071207,
+        -0.19953555963391756,
+        -0.24387941384850062,
+        -0.320087075807688,
+        0.6563450935677305,
+        0.09206239469818105,
+        0.11364718401437812,
+        0.38127308448324015,
+        0.01910042273745703,
+        -0.007895952621292078,
+        0.3556900439440001,
+        0.5998390462673835,
+        0.49536235497652814,
+        -0.4104123809982512,
+        0.3830973602480624,
+        0.09797318425281006
+      ],
+      "centers": [
+        [
+          -1.7731880949490417,
+          -1.409447015998137,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          -1.7731880949490417,
+          -1.409447015998137,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          -1.7731880949490417,
+          -1.409447015998137,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ],
+        [
+          -0.8082674852770149,
+          -1.409447015998137,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          -0.8082674852770149,
+          -1.409447015998137,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          -0.8082674852770149,
+          -1.409447015998137,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ],
+        [
+          -0.8082674852770149,
+          -0.21380326759450485,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          -0.8082674852770149,
+          -0.21380326759450485,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          -0.8082674852770149,
+          -0.21380326759450485,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ],
+        [
+          -0.8082674852770149,
+          0.7136100739863789,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          -0.8082674852770149,
+          0.7136100739863789,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          -0.8082674852770149,
+          0.7136100739863789,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ],
+        [
+          -0.05981691363224148,
+          -1.409447015998137,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          -0.05981691363224148,
+          -1.409447015998137,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          -0.05981691363224148,
+          -1.409447015998137,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ],
+        [
+          -0.05981691363224148,
+          -0.21380326759450485,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          -0.05981691363224148,
+          -0.21380326759450485,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          -0.05981691363224148,
+          -0.21380326759450485,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ],
+        [
+          -0.05981691363224148,
+          0.7136100739863789,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          -0.05981691363224148,
+          0.7136100739863789,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          -0.05981691363224148,
+          0.7136100739863789,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ],
+        [
+          -0.05981691363224148,
+          1.4713619482066533,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          -0.05981691363224148,
+          1.4713619482066533,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          -0.05981691363224148,
+          1.4713619482066533,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ],
+        [
+          0.551711730605621,
+          -0.21380326759450485,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          0.551711730605621,
+          -0.21380326759450485,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          0.551711730605621,
+          -0.21380326759450485,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ],
+        [
+          0.551711730605621,
+          0.7136100739863789,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          0.551711730605621,
+          0.7136100739863789,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          0.551711730605621,
+          0.7136100739863789,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ],
+        [
+          1.0687518321754068,
+          1.4713619482066533,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          1.0687518321754068,
+          1.4713619482066533,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          1.0687518321754068,
+          1.4713619482066533,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ],
+        [
+          2.265082911922421,
+          -0.21380326759450485,
+          1.4142135623730954,
+          -0.7071067811865476
+        ],
+        [
+          2.265082911922421,
+          -0.21380326759450485,
+          -0.7071067811865476,
+          1.4142135623730954
+        ],
+        [
+          2.265082911922421,
+          -0.21380326759450485,
+          -0.7071067811865476,
+          -0.7071067811865476
+        ]
+      ],
+      "mean": [
+        3.236709679289904,
+        1.437737248853525,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "scale": [
+        0.2981406652196629,
+        0.24060851975003467,
+        0.4714045207910316,
+        0.4714045207910316
+      ],
+      "length": 2.0,
+      "ridge": 0.001,
+      "parameters": 37,
+      "inner_cv": [
+        [
+          1897.366128066393,
+          1.0,
+          0.001
+        ],
+        [
+          2413.990648541885,
+          1.0,
+          0.03
+        ],
+        [
+          2859.283091183998,
+          1.0,
+          0.3
+        ],
+        [
+          1581.0801934448803,
+          2.0,
+          0.001
+        ],
+        [
+          1918.1731633821817,
+          2.0,
+          0.03
+        ],
+        [
+          2716.342986762102,
+          2.0,
+          0.3
+        ],
+        [
+          1624.0622709640345,
+          4.0,
+          0.001
+        ],
+        [
+          2191.3145377088654,
+          4.0,
+          0.03
+        ],
+        [
+          2957.1685940643624,
+          4.0,
+          0.3
+        ]
+      ],
+      "training_groups": [
+        "topology_15_3",
+        "topology_20_3",
+        "topology_20_4",
+        "topology_20_5",
+        "topology_25_3",
+        "topology_25_4",
+        "topology_25_5",
+        "topology_25_6",
+        "topology_30_4",
+        "topology_30_5",
+        "topology_35_6",
+        "topology_50_4"
+      ],
+      "training_rows": 36,
+      "equation": "t_hat=clip(7200*(intercept+sum_j w_j*exp(-||standardized_z-center_j||^2/(2*length^2))),0,7200); z=[ln(n),ln(d),I_flow,I_linear]",
+      "prediction_clipping": "[0,7200] seconds, capped consumption endpoint"
+    },
+    "attempt_001": {
+      "kind": "exp_occupancy",
+      "coefficients": [
+        7.312946833452945,
+        1.1531958389314516,
+        0.8674074408109148,
+        -0.05434527319971749
+      ],
+      "parameters": 4,
+      "jacobian_condition": 5.9780328736131425,
+      "boundary_contacts": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "fit_objective": "squared capped-consumption residual with weak slope regularization; three deterministic starts selected by training MAE",
+      "training_groups": [
+        "topology_15_3",
+        "topology_20_3",
+        "topology_20_4",
+        "topology_20_5",
+        "topology_25_3",
+        "topology_25_4",
+        "topology_25_5",
+        "topology_25_6",
+        "topology_30_4",
+        "topology_30_5",
+        "topology_35_6",
+        "topology_50_4"
+      ],
+      "training_rows": 36,
+      "equation": "t_hat=clip(exp(b0+b1*ln(n/(1+d^2))+b2*I_flow+b3*I_linear),0,7200)",
+      "prediction_clipping": "[0,7200] seconds, capped consumption endpoint"
+    },
+    "attempt_002": {
+      "kind": "exp_combinatorial",
+      "coefficients": [
+        4.52329832071441,
+        2.7727461670603137,
+        1.5652714186223515,
+        -0.026722951455689276
+      ],
+      "parameters": 4,
+      "jacobian_condition": 15.63820070771044,
+      "boundary_contacts": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "fit_objective": "squared capped-consumption residual with weak slope regularization; three deterministic starts selected by training MAE",
+      "training_groups": [
+        "topology_15_3",
+        "topology_20_3",
+        "topology_20_4",
+        "topology_20_5",
+        "topology_25_3",
+        "topology_25_4",
+        "topology_25_5",
+        "topology_25_6",
+        "topology_30_4",
+        "topology_30_5",
+        "topology_35_6",
+        "topology_50_4"
+      ],
+      "training_rows": 36,
+      "equation": "t_hat=clip(exp(b0+b1*n*ln(d)/40+b2*I_flow+b3*I_linear),0,7200)",
+      "prediction_clipping": "[0,7200] seconds, capped consumption endpoint"
+    },
+    "attempt_003": {
+      "kind": "sigmoid",
+      "coefficients": [
+        -3.3683101645082045,
+        15.54653709565169,
+        3.3649187032141006,
+        4.393195360450941,
+        -0.21389031833812377
+      ],
+      "parameters": 5,
+      "jacobian_condition": 17.617026283393066,
+      "boundary_contacts": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "fit_objective": "squared capped-consumption residual with weak slope regularization; three deterministic starts selected by training MAE",
+      "training_groups": [
+        "topology_15_3",
+        "topology_20_3",
+        "topology_20_4",
+        "topology_20_5",
+        "topology_25_3",
+        "topology_25_4",
+        "topology_25_5",
+        "topology_25_6",
+        "topology_30_4",
+        "topology_30_5",
+        "topology_35_6",
+        "topology_50_4"
+      ],
+      "training_rows": 36,
+      "equation": "t_hat=7200*sigmoid(b0+b1*ln(n/25)+b2*ln(n/(1+d^2))+b3*I_flow+b4*I_linear)",
+      "prediction_clipping": "[0,7200] seconds, capped consumption endpoint"
+    },
+    "attempt_004": {
+      "kind": "formulation_threshold",
+      "coefficients": [
+        -3.4386930215767593,
+        14.655031312617973,
+        3.858034618951169,
+        4.841390510620211,
+        -0.5105866671415976,
+        6.540929866474488,
+        1.9919470977878204
+      ],
+      "parameters": 7,
+      "jacobian_condition": 21.05342521040892,
+      "boundary_contacts": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "fit_objective": "squared capped-consumption residual with weak slope regularization; three deterministic starts selected by training MAE",
+      "training_groups": [
+        "topology_15_3",
+        "topology_20_3",
+        "topology_20_4",
+        "topology_20_5",
+        "topology_25_3",
+        "topology_25_4",
+        "topology_25_5",
+        "topology_25_6",
+        "topology_30_4",
+        "topology_30_5",
+        "topology_35_6",
+        "topology_50_4"
+      ],
+      "training_rows": 36,
+      "equation": "t_hat=7200*sigmoid(b0+b1*ln(n/25)+b2*ln(n/(1+d^2))+b3*I_flow+b4*I_linear+b5*I_flow*ln(n/25)+b6*I_linear*ln(n/25))",
+      "prediction_clipping": "[0,7200] seconds, capped consumption endpoint"
+    },
+    "attempt_005": {
+      "kind": "no_degree",
+      "coefficients": [
+        7.040700568851163,
+        7.12670059095427,
+        1.6801401526222925,
+        -0.11318474647379945
+      ],
+      "parameters": 4,
+      "jacobian_condition": 24.980262074567676,
+      "boundary_contacts": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "fit_objective": "squared capped-consumption residual with weak slope regularization; three deterministic starts selected by training MAE",
+      "training_groups": [
+        "topology_15_3",
+        "topology_20_3",
+        "topology_20_4",
+        "topology_20_5",
+        "topology_25_3",
+        "topology_25_4",
+        "topology_25_5",
+        "topology_25_6",
+        "topology_30_4",
+        "topology_30_5",
+        "topology_35_6",
+        "topology_50_4"
+      ],
+      "training_rows": 36,
+      "equation": "t_hat=clip(exp(b0+b1*ln(n/25)+b2*I_flow+b3*I_linear),0,7200)",
+      "prediction_clipping": "[0,7200] seconds, capped consumption endpoint"
+    },
+    "reference": {
+      "kind": "exp_size",
+      "coefficients": [
+        6.720458906550737,
+        11.66462540334268,
+        -3.9376623334329905,
+        2.880612126388391,
+        -0.11722547979130545
+      ],
+      "parameters": 5,
+      "jacobian_condition": 29.463566704203576,
+      "boundary_contacts": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "fit_objective": "squared capped-consumption residual with weak slope regularization; three deterministic starts selected by training MAE",
+      "training_groups": [
+        "topology_15_3",
+        "topology_20_3",
+        "topology_20_4",
+        "topology_20_5",
+        "topology_25_3",
+        "topology_25_4",
+        "topology_25_5",
+        "topology_25_6",
+        "topology_30_4",
+        "topology_30_5",
+        "topology_35_6",
+        "topology_50_4"
+      ],
+      "training_rows": 36,
+      "equation": "t_hat=clip(exp(b0+b1*ln(n/25)+b2*ln(d/4)+b3*I_flow+b4*I_linear),0,7200)",
+      "prediction_clipping": "[0,7200] seconds, capped consumption endpoint"
+    }
+  },
+  "selection": "exp_size",
+  "all_coefficients_frozen": true
+}

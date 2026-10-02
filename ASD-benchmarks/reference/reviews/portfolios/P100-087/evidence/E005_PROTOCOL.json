@@ -1,0 +1,46 @@
+{
+  "case_id": "P100-087",
+  "task_id": "P100-087.original.v1",
+  "created_utc": "2026-10-01T14:01:57.005676+00:00",
+  "target": "Next-round individual contribution",
+  "units": "experimental tokens",
+  "inputs": {
+    "round": "round",
+    "own_previous": "experimental tokens",
+    "peer_previous": "experimental tokens",
+    "own_lag2": "experimental tokens",
+    "peer_lag2": "experimental tokens",
+    "own_history_mean": "experimental tokens",
+    "peer_history_mean": "experimental tokens",
+    "endowment": "experimental tokens",
+    "peer_endowment": "experimental tokens",
+    "productivity": "dimensionless",
+    "peer_productivity": "dimensionless",
+    "threshold": "productivity-weighted tokens",
+    "previous_success": "indicator",
+    "required_contribution": "experimental tokens"
+  },
+  "timing": "One-step prediction before round3..20 using strictly prior own/peer contributions and publicly announced rules. Earlier confirmation responses are permitted causal online history, never fitted parameters. Surveys and session2 excluded.",
+  "grouping": "Complete first-session interacting pair;20% hash heldout in each treatment; remaining groups in5 deterministic whole-pair folds. Both players remain together.",
+  "primary_metric": "MAE averaged within group, then equally across groups",
+  "secondary": [
+    "RMSE",
+    "bias",
+    "worst group MAE",
+    "per-group error",
+    "matched baseline differences"
+  ],
+  "calibration": "One-step prediction before round3..20 using strictly prior own/peer contributions and publicly announced rules. Earlier confirmation responses are permitted causal online history, never fitted parameters. Surveys and session2 excluded.",
+  "source_sha256": "424c42a96a455a3d799578430aa7372c65e28e839f05afe0586759762bc9a116",
+  "split_sha256": "b569902cb5a69fb9c79060d9d263024bab3e86ce51b9336dbc96264ec6bc8fb7",
+  "selection": "Smallest development group-balanced OOF MAE among baseline/candidate families; within1% choose lower parameter count. Confirmation never selects reference.",
+  "continuation": "At least5 material hypotheses, continue justified distinct hypotheses until2 consecutive after minimum5 show no improvement of >1% in prediction or explicit robustness/interpretation. No retuning after confirmation.",
+  "uncertainty": "No row bootstrap; enumerate group errors and leave-group development variability. Single heldout condition is bounded evidence.",
+  "exposure_audit": "Schema inspection exposed first two full-equality pairs and their duplicate records. Exact overlap with hash confirmation recorded; no aggregate confirmation metrics before freeze.",
+  "baselines": [
+    "own previous contribution",
+    "mean ofown last2",
+    "one-shot half-endowment focal point",
+    "regularized quadratic flexible control"
+  ]
+}

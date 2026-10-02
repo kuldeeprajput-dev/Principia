@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-086",
+  "title": "Erythromycin fermentation process dataset",
+  "default_task": "P100-086.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Chemical potency six hours ahead",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 81,
+    "independent_unit_description": "whole production batch; chronologically latest 81 reserved",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Native hx is the source-loader target. Other undocumented abbreviations are excluded. Source units are not asserted to be mg/L or activity U/mL. 406 independent production batches; rows with exact 6 h lag/horizon only. No target smoothing or imputation. This is a six-hour prediction conditional on an available current potency assay, not an inline soft sensor.",
+  "baseline_strength": {
+    "registered_controls": 15,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Chemical potency six hours ahead",
+    "prediction_time": "Strictly causal potency history and cultivation clock. Matching plus/minus 6 h uses source clock; future values only become targets.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Potency units, interpolation and assay receipt latency unresolved."
+  },
+  "task_ids": [
+    "P100-086.original.v1",
+    "P100-086.continuation.v1"
+  ],
+  "finding_ids": [
+    "P100-086-SCI-01",
+    "P100-086-SCI-02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-086/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-086.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Chemical potency six hours ahead under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Strictly causal potency history and cultivation clock. Matching plus/minus 6 h uses source clock; future values only become targets.",
+    "calibration_requirement": "Native hx is the source-loader target. Other undocumented abbreviations are excluded. Source units are not asserted to be mg/L or activity U/mL. 406 independent production batches; rows with exact 6 h lag/horizon only. No target smoothing or imputation. This is a six-hour prediction conditional on an available current potency assay, not an inline soft sensor.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Chemical potency six hours ahead in source potency unit (undocumented)",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Potency units, interpolation and assay receipt latency unresolved."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "source potency unit (undocumented)",
+    "reference_model": "reference",
+    "reference_primary_error": 37.75907599324304,
+    "reference_physical_mae": 37.75907599324304,
+    "physical_error_units": "source potency unit (undocumented)",
+    "lowest_registered_error_model": "attempt_004",
+    "lowest_registered_error": 36.43355139256836,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-086.original.v1/evidence/metrics.csv",
+      "bytes": 2136,
+      "sha256": "429f39bcd5235d58dcabc9fd3328c04e42c563a6dfb1845ac5bb9a5992eb685f"
+    },
+    "models": 15
+  },
+  "case_specific_next_evidence": "Obtain laboratory timestamp, receipt delay, interpolation lineage and physical unit metadata before claiming online deployment.\n\nBenchmark delay-aware histories with real assay arrival times, then reserve later production campaigns.\n\nMeasure production decision utility under prespecified costs, constraints and matched source-model access."
+}

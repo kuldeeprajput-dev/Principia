@@ -1,0 +1,74 @@
+{
+  "case_id": "P100-051",
+  "title": "Data set for \"Non-volatile memories based on patterned metal\u2013semiconductor heterostructures of niobium disulfide and molybdenum disulfide\"",
+  "default_task": "P100-051.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "measured drain current between three disclosed gate-voltage calibration anchors",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 9,
+    "independent_unit_description": "complete source FET column/device",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Exactly three same-device current measurements at Vg=-20,0,20 V; all models see the same anchors; those points excluded from scores.",
+  "baseline_strength": {
+    "registered_controls": 11,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "measured drain current between three disclosed gate-voltage calibration anchors",
+    "prediction_time": "offline sparse-characterization task: three responses at -20,0,20 V are obtained before reconstructing other gate points; not an uncalibrated or causal sweep forecast",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Same-device three-anchor calibration and one array; no between-batch replication."
+  },
+  "task_ids": [
+    "P100-051.original.v1"
+  ],
+  "finding_ids": [
+    "P100-051-F01",
+    "P100-051-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-051/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-051.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate measured drain current between three disclosed gate-voltage calibration anchors under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "offline sparse-characterization task: three responses at -20,0,20 V are obtained before reconstructing other gate points; not an uncalibrated or causal sweep forecast",
+    "calibration_requirement": "Exactly three same-device current measurements at Vg=-20,0,20 V; all models see the same anchors; those points excluded from scores.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "measured drain current between three disclosed gate-voltage calibration anchors in uA",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Same-device three-anchor calibration and one array; no between-batch replication."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "uA",
+    "reference_model": "reference",
+    "reference_primary_error": 0.016303893024277608,
+    "reference_physical_mae": 0.016303893024277608,
+    "physical_error_units": "uA",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.016303893024277608,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-051.original.v1/evidence/metrics.csv",
+      "bytes": 833,
+      "sha256": "8b3493d08317a2eaf712fdb3759a6cf949455dee119c17d8376782816e270926"
+    },
+    "models": 11
+  },
+  "case_specific_next_evidence": "Test independent arrays/lots and explicitly measure how reduced characterization affects cost and reconstruction uncertainty."
+}

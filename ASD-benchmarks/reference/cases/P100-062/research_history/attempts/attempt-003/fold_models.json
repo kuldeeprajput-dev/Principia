@@ -1,0 +1,137 @@
+[
+  {
+    "fold": 1,
+    "state": {
+      "name": "fick_slab_corrected",
+      "formula": "offset+gain*drive*(slab(t/tau+lag)-slab(lag+0*t))",
+      "hypothesis": "Development evidence available before this fit: shared_boundary_response: MAE 7.31915, worst group 15.7251; fick_slab: MAE 5.99224, worst group 9.37037.\n\nTechnical correction of dimensional lag error in the first slab implementation. Original result is invalid and excluded from selection; this corrected first full-slab scientific test uses dimensionless t/tau plus a dimensionless initial lag. It counts as one substantive slab hypothesis, not an extra discovery.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:42.981026+00:00",
+      "parent": "attempt-002",
+      "parameters": {
+        "gain": 46.91452804155706,
+        "tau": 3532.5814424407367,
+        "lag": 0.27293626427238976
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-1-block-0"
+      ],
+      "training_rows": 372,
+      "optimizer_success": true,
+      "nfev": 11,
+      "jacobian_condition": 183854.2593642699,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "lag": [
+          0.001,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "fold": 2,
+    "state": {
+      "name": "fick_slab_corrected",
+      "formula": "offset+gain*drive*(slab(t/tau+lag)-slab(lag+0*t))",
+      "hypothesis": "Development evidence available before this fit: shared_boundary_response: MAE 7.31915, worst group 15.7251; fick_slab: MAE 5.99224, worst group 9.37037.\n\nTechnical correction of dimensional lag error in the first slab implementation. Original result is invalid and excluded from selection; this corrected first full-slab scientific test uses dimensionless t/tau plus a dimensionless initial lag. It counts as one substantive slab hypothesis, not an extra discovery.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:42.981026+00:00",
+      "parent": "attempt-002",
+      "parameters": {
+        "gain": 499.9999999962016,
+        "tau": 34426.72574752914,
+        "lag": 0.4037895453975976
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-1-block-0",
+        "trace-1-block-1"
+      ],
+      "training_rows": 742,
+      "optimizer_success": true,
+      "nfev": 43,
+      "jacobian_condition": 29294411.98091309,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "lag": [
+          0.001,
+          4
+        ]
+      }
+    }
+  },
+  {
+    "fold": 3,
+    "state": {
+      "name": "fick_slab_corrected",
+      "formula": "offset+gain*drive*(slab(t/tau+lag)-slab(lag+0*t))",
+      "hypothesis": "Development evidence available before this fit: shared_boundary_response: MAE 7.31915, worst group 15.7251; fick_slab: MAE 5.99224, worst group 9.37037.\n\nTechnical correction of dimensional lag error in the first slab implementation. Original result is invalid and excluded from selection; this corrected first full-slab scientific test uses dimensionless t/tau plus a dimensionless initial lag. It counts as one substantive slab hypothesis, not an extra discovery.",
+      "inputs": [
+        "t",
+        "offset",
+        "drive",
+        "high"
+      ],
+      "recorded_utc": "2026-10-02T01:59:42.981026+00:00",
+      "parent": "attempt-002",
+      "parameters": {
+        "gain": 11.735022769741,
+        "tau": 1788.9463142000166,
+        "lag": 0.3570485295407163
+      },
+      "training_groups": [
+        "trace-0-block-0",
+        "trace-0-block-1",
+        "trace-0-block-2",
+        "trace-1-block-0",
+        "trace-1-block-1",
+        "trace-1-block-2"
+      ],
+      "training_rows": 1113,
+      "optimizer_success": true,
+      "nfev": 24,
+      "jacobian_condition": 8783.638497560278,
+      "bounds": {
+        "gain": [
+          -500,
+          500
+        ],
+        "tau": [
+          10,
+          1000000.0
+        ],
+        "lag": [
+          0.001,
+          4
+        ]
+      }
+    }
+  }
+]

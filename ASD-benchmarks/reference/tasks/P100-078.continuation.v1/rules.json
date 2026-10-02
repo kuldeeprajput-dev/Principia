@@ -1,0 +1,227 @@
+{
+  "case_id": "P100-078",
+  "task_id": "P100-078-continuation-20261001",
+  "source": {
+    "landing_url": "https://zenodo.org/records/15124940"
+  },
+  "edition": "retrospective-research-20261001",
+  "fresh_confirmation": false,
+  "input_columns": [
+    "time_h",
+    "initial_logCFU"
+  ],
+  "numeric_columns": [
+    "time_h",
+    "initial_logCFU"
+  ],
+  "input_units": {
+    "time_h": "h",
+    "initial_logCFU": "log10 CFU per total lung"
+  },
+  "missingness_policy": "No imputation. Declaredinputs mustbefinite; sourceeligibility/exclusions inhistory.",
+  "metric_kind": "mae",
+  "metric_units": "log10 CFU / total lung",
+  "assigned_rows": 15,
+  "selected_from_development": "capacity",
+  "development_primary_error": 0.7932173905967974,
+  "models": {
+    "reference": {
+      "case": 78,
+      "kind": "capacity",
+      "coefficients": [
+        2.007169617207792,
+        0.9807704376646112
+      ],
+      "terms": [
+        "basis0",
+        "basis1"
+      ],
+      "rank": 2,
+      "condition": 1.6200339506565,
+      "parameters": 2
+    },
+    "endpoint": {
+      "case": 78,
+      "kind": "endpoint",
+      "times": [
+        2.0,
+        4.0,
+        4.5,
+        5.0,
+        5.5,
+        6.0,
+        7.0,
+        7.5,
+        8.0,
+        8.5,
+        9.0,
+        9.5,
+        10.0,
+        11.0,
+        11.5,
+        12.0,
+        12.5,
+        13.5,
+        13.6,
+        14.0,
+        16.0,
+        16.5,
+        18.0,
+        19.0,
+        19.5,
+        20.0,
+        21.0,
+        21.5,
+        22.0,
+        23.0,
+        23.5,
+        24.0
+      ],
+      "medians": [
+        6.550228353055094,
+        7.190331698170292,
+        6.525044807036846,
+        7.332438459915605,
+        7.069151349083141,
+        7.491361693834273,
+        6.596597095626461,
+        6.544068044350276,
+        6.278753600952829,
+        6.772034022175138,
+        7.167226875575466,
+        7.431363764158987,
+        8.255272505103306,
+        7.447158031342219,
+        8.618048096712092,
+        8.59659709562646,
+        8.414973347970818,
+        5.217483944213907,
+        5.2552725051033065,
+        8.096910013008056,
+        8.65798517272846,
+        8.389166084364533,
+        8.989004615698537,
+        9.366196879911485,
+        9.130333768495008,
+        9.161368002234974,
+        8.935759103745312,
+        8.511883360978874,
+        8.556302500767288,
+        9.5910646070265,
+        5.6020599913279625,
+        9.230448921378274
+      ]
+    },
+    "clock": {
+      "case": 78,
+      "kind": "clock",
+      "coefficients": [
+        6.857791373642621,
+        2.018486722614817
+      ],
+      "terms": [
+        "basis0",
+        "basis1"
+      ],
+      "rank": 2,
+      "condition": 3.9744406803540895,
+      "parameters": 2
+    },
+    "burden": {
+      "case": 78,
+      "kind": "burden",
+      "coefficients": [
+        7.382110609056148,
+        1.6222293501871257,
+        0.5805960920980273
+      ],
+      "terms": [
+        "basis0",
+        "basis1",
+        "basis2"
+      ],
+      "rank": 3,
+      "condition": 5.102457413897649,
+      "parameters": 3
+    },
+    "burden_clock": {
+      "case": 78,
+      "kind": "burden_clock",
+      "coefficients": [
+        7.918100628339082,
+        0.9099690825580241,
+        1.4586899930604038
+      ],
+      "terms": [
+        "basis0",
+        "basis1",
+        "basis2"
+      ],
+      "rank": 3,
+      "condition": 6.322842198384467,
+      "parameters": 3
+    },
+    "quadratic": {
+      "case": 78,
+      "kind": "quadratic",
+      "coefficients": [
+        6.280823319489111,
+        7.443155167551159,
+        -5.053662449167395,
+        0.6310963335973625
+      ],
+      "terms": [
+        "basis0",
+        "basis1",
+        "basis2",
+        "basis3"
+      ],
+      "rank": 4,
+      "condition": 22.855721074993884,
+      "parameters": 4
+    },
+    "capacity": {
+      "case": 78,
+      "kind": "capacity",
+      "coefficients": [
+        2.007169617207792,
+        0.9807704376646112
+      ],
+      "terms": [
+        "basis0",
+        "basis1"
+      ],
+      "rank": 2,
+      "condition": 1.6200339506565,
+      "parameters": 2
+    },
+    "shrink": {
+      "case": 78,
+      "kind": "shrink",
+      "coefficients": [
+        7.382110609056148,
+        1.6222293501871248,
+        0.7257451151225353
+      ],
+      "terms": [
+        "basis0",
+        "basis1",
+        "basis2"
+      ],
+      "rank": 3,
+      "condition": 5.102457413897648,
+      "parameters": 3
+    }
+  },
+  "equations": {
+    "reference": "Lhat=L0+2.007169617207792*t/24+0.9807704376646112*(t/24)*(7\u2212L0)"
+  },
+  "scope": "Two development labs and one historically exposed diagnostic lab. All15diagnostic observations are at24h; no kinetic, survival or antibiotic-efficacy admission.",
+  "classification": "reproduction/audit with retrospective prediction candidate; no newlaw admission",
+  "scientific_limits": [
+    "Exposeddiagnostics cannotpromote alternate winner",
+    "Pointpredictions no calibratedpopulationuncertainty",
+    "No deployed intervention benefit",
+    "Target preprocessing and variable semantics limit causal interpretation"
+  ]
+}

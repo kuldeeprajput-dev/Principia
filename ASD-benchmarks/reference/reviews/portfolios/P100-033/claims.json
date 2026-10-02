@@ -1,0 +1,288 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-033",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication."
+  },
+  "findings": [
+    {
+      "id": "P100-033-F01",
+      "classification": "validated_extension",
+      "source_classification": "validated_scoped_descriptor",
+      "statement": "Quality-dependent Fourier shrinkage has modest held-person benefit over a population median, while most improvement over raw estimates comes from the prior",
+      "applicability": "One smartphone collection; whole-person transfer",
+      "limitations": "Flexible model has lower confirmation error; no clinical tolerance or device transfer demonstrated",
+      "falsification": "Flexible model has lower confirmation error; no clinical tolerance or device transfer demonstrated",
+      "prior_art": "Signal-quality fusion and shrinkage are established",
+      "equation_or_program": {
+        "expression": "h_hat=clip(sigmoid(b0+b1*(Q-.3))*F+(1-sigmoid(b0+b1*(Q-.3)))*mu,30,240)",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "bpm",
+        "fft_bpm": "bpm",
+        "acf_bpm": "bpm",
+        "half_bpm": "bpm",
+        "half_strength": "dimensionless",
+        "spectral_quality": "dimensionless",
+        "agreement": "bpm",
+        "motion": "dimensionless",
+        "ear": "dimensionless"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-033.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-033-F02",
+      "classification": "falsified",
+      "source_classification": "supported_negative_finding",
+      "statement": "The tested harmonic and motion fusion extensions do not establish reliable pulse recovery from all low-quality source windows",
+      "applicability": "These declared candidate estimators and cohort",
+      "limitations": "Better waveform processing or additional measured channels may change results",
+      "falsification": "Better waveform processing or additional measured channels may change results",
+      "prior_art": "Harmonic ambiguity is known; this is a reproducible failure analysis",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015",
+          "E016",
+          "E017",
+          "E018"
+        ]
+      },
+      "variables_and_units": {
+        "target": "bpm",
+        "fft_bpm": "bpm",
+        "acf_bpm": "bpm",
+        "half_bpm": "bpm",
+        "half_strength": "dimensionless",
+        "spectral_quality": "dimensionless",
+        "agreement": "bpm",
+        "motion": "dimensionless",
+        "ear": "dimensionless"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "task_id": "P100-033.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 9949,
+      "sha256": "cf486410b5676a351c05389e5362686dba7569dcebc852f9fbb5255dc18f4e19",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 540,
+      "sha256": "06a0f47ee52766b9d3bd5138dec8e85c45491d7c6e922a3dcb3ace39561826d4",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 1508,
+      "sha256": "f54315f0208bdcf789c13df6de937b58141d0ab6632a717b856ccb3823db59b0",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_REVIEW_COMPUTATIONAL_CHECKS.json",
+      "bytes": 12947,
+      "sha256": "d0e3f1f0e49de14f9b1c4a8ac64189bece1f19ca0de56911c1e1298bc24a4174",
+      "id": "E004",
+      "role": "REVIEW_COMPUTATIONAL_CHECKS.json"
+    },
+    {
+      "path": "evidence/E005_SOURCE_AND_UNITS.md",
+      "bytes": 1697,
+      "sha256": "0cfa716a569264e2cbeb0f68f0cba38edd8a2f9c1f2e6bb3ebdba9662c046e7d",
+      "id": "E005",
+      "role": "SOURCE_AND_UNITS.md"
+    },
+    {
+      "path": "evidence/E006_SOURCE_MANIFEST.json",
+      "bytes": 356,
+      "sha256": "30fa6c4354a289eeb2b436dc5cae9bd4488afc11b1e4219c252ff5bab7409ac0",
+      "id": "E006",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E007_SPLITS.json",
+      "bytes": 2182,
+      "sha256": "7c2b004a85597d4a0f6eb2d6b5c3dd43173bd379d36aa93d1d02d71bad636d08",
+      "id": "E007",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E008_native.py",
+      "bytes": 3638,
+      "sha256": "1fe3cd1cae834c72406cb232910ea39965b4cd49b55204afd93ec8524f5d3d99",
+      "id": "E008",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E009_EQUATIONS.md",
+      "bytes": 5275,
+      "sha256": "e5536d0516836e98c224dd6c5500408b46a1f8d5754f4d4272adaaab07c63edc",
+      "id": "E009",
+      "role": "package/EQUATIONS.md"
+    },
+    {
+      "path": "evidence/E010_FINDINGS.md",
+      "bytes": 4477,
+      "sha256": "cbf2c2a4d5cf75cebefbe3a5afdfb967b219984614a774795842aa88029abc1e",
+      "id": "E010",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E011_inputs.csv.gz",
+      "bytes": 17482,
+      "sha256": "b876f85b982fed13e93ac94b28424b3aa64bd6dc5e722a0e34120fc9b0054d63",
+      "id": "E011",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E012_observations.csv.gz",
+      "bytes": 8571,
+      "sha256": "141fe2c9695126339500408f3ed425e5f4ffe73c0810b0bc16bc60ad870b65a4",
+      "id": "E012",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E013_metrics.csv",
+      "bytes": 891,
+      "sha256": "59ec7f149cab2188baaadba904b3697ef5093dcaa0dbf4e69691ba501a291950",
+      "id": "E013",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E014_predictions.csv.gz",
+      "bytes": 38791,
+      "sha256": "44e90f95553e609259a0020f7e716b06b557ec23dfeef64a072debd213f03fe7",
+      "id": "E014",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E015_findings.json",
+      "bytes": 1496,
+      "sha256": "af6dc6ecec22e9f7f682359db57306d38ff179ffbd7c65437a9ef8ba69964c16",
+      "id": "E015",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E016_rules.json",
+      "bytes": 19838,
+      "sha256": "a2c5957b46765ffb6041035fad52d137126b41cea30a8a904e02909006a6682f",
+      "id": "E016",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E017_run.py",
+      "bytes": 2487,
+      "sha256": "b19eaaca21627c5dcd5cade1d159795d03035593f6534ca4a021a2d91946b064",
+      "id": "E017",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E018_task_spec.json",
+      "bytes": 2189,
+      "sha256": "c881486086a11e06570926b8a2d14304e69e014618a921b6e90951301afcb9f6",
+      "id": "E018",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 22603,
+      "sha256": "2319b72771e09ebe4adac7d3382fad42c4987fedc22a7a602a642665055553ed",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 6697,
+      "sha256": "ed5aeacb950a9f95de8ba311dfa90e965abe8df3588eb01612a66daaa5c8e558",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

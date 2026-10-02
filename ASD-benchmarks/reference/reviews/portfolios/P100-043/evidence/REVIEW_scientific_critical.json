@@ -1,0 +1,160 @@
+{
+  "case_id": "P100-043",
+  "role": "scientific_critical",
+  "reviewer_id": "asd5_bio_behavior",
+  "reviewed_utc": "2026-10-01T15:50:03.959531+00:00",
+  "checked_files": [
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "261efaf9eb2e018af6749262a8a6be318260ff591b8dd98db17efae9931ab494"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "308891c8cae04dbcc9105bfb4242c3dbe795eb016b60228acee73a8d11d5a033"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "b992efa83de8e9eeb5ea5910c0bb430ab6eb41af885b7c9fda4fcc9e8ab61da6"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "9aa0dd1fceb69592f914f80aeeba1d49fc154dbbe0177cdf2f302bbe689bc8cb"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "765c057c46cef5859f960b1544ff6731ddd399ec338b281122b25079beab0832"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "3fae8269fd03307db290c4c82d35dff7b8f00c60d6700b69a7ebfcd182455076"
+    },
+    {
+      "path": "package/evidence/scientific_checks.json",
+      "sha256": "c12cddbb09fa3e1e6aebe4c036408a3adeca2eb219096fd7bdddae080ca06b3c"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-043-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The2-anchor equation has dimensionless time/size ratios, preserves its later anchor, and mean error improves on five held architectures with4/5 wins versus shared power."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "A size-dependent exponent is a phenomenological correction; shared corpus, validation set and optimization confound causal size claims."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary source already studies scaling or topology optimization; no exhaustive independent literature adjudication establishes priority."
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "A calibrated continuation forecast is a useful narrow reference; fixed-history comparisons avoid an information advantage."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equations, source anchors, frozen states and per-group evidence are inspectable; a distinct computational reviewer assesses full replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment, actual saved compute, new hardware evaluation or independent experimental replication is demonstrated."
+        }
+      },
+      "checks": [
+        "Reviewed the explicit target, timing/calibration contract, source-aware exposure, mathematical dimensional consistency, all primary comparator scores and group-level counterexamples."
+      ],
+      "limitations": [
+        "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+        "Judgment is independent scientific-critical agent review, not human domain adjudication or experimental replication.",
+        "Only2/5 held architectures favor the reference over RBF; lower mean error is not uniform superiority.",
+        "The unselected bounded-size variant is slightly better after exposure; selection integrity is preserved."
+      ]
+    },
+    {
+      "finding_id": "P100-043-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Recorded fold bounds show the slow exponent at its bound in17/17 folds, consistent with nonidentifiability."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The two-rate model is not identified; this does not disprove multiple optimization timescales."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary source already studies scaling or topology optimization; no exhaustive independent literature adjudication establishes priority."
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "Useful falsification prevents fitted sums of powers from being advertised as independently resolved mechanisms."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equations, source anchors, frozen states and per-group evidence are inspectable; a distinct computational reviewer assesses full replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment, actual saved compute, new hardware evaluation or independent experimental replication is demonstrated."
+        }
+      },
+      "checks": [
+        "Reviewed the explicit target, timing/calibration contract, source-aware exposure, mathematical dimensional consistency, all primary comparator scores and group-level counterexamples.",
+        "Interpreted supported as support for the negative conclusion, not admission of the underlying two-rate mechanism."
+      ],
+      "limitations": [
+        "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+        "Judgment is independent scientific-critical agent review, not human domain adjudication or experimental replication."
+      ]
+    },
+    {
+      "finding_id": "P100-043-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The reader retains geometry tradeoffs and the retrospective bounded-size winner rather than replacing the selected model."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Geometry covaries with parameter count; these fits cannot establish no architectural mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary source already studies scaling or topology optimization; no exhaustive independent literature adjudication establishes priority."
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "Preserved counterexamples delimit how this reference should be reused."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equations, source anchors, frozen states and per-group evidence are inspectable; a distinct computational reviewer assesses full replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment, actual saved compute, new hardware evaluation or independent experimental replication is demonstrated."
+        }
+      },
+      "checks": [
+        "Reviewed the explicit target, timing/calibration contract, source-aware exposure, mathematical dimensional consistency, all primary comparator scores and group-level counterexamples.",
+        "Classified as a bounded negative comparison, not universal falsification of geometry effects."
+      ],
+      "limitations": [
+        "One source corpus, tokenizer, optimization protocol and fixed validation set;22 architectures without repeated independent training seeds. Calibration losses from each evaluated architecture are required. Forecast20\u2013100B tokens only; no universal compute-optimal rule.",
+        "Judgment is independent scientific-critical agent review, not human domain adjudication or experimental replication."
+      ]
+    }
+  ],
+  "independence": "Reviewed before reading the other role review. No discovery contribution or parameter fitting for these cases.",
+  "literature": [
+    {
+      "url": "https://arxiv.org/abs/2502.06857",
+      "use": "Author study confirms architecture/hyperparameter-dependent scaling and experimental-design sensitivity."
+    }
+  ]
+}

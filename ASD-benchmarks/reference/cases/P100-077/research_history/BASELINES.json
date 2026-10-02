@@ -1,0 +1,293 @@
+{
+  "baseline_independence": {
+    "metrics": {
+      "primary_error": 0.23713570708271442,
+      "mean_group_absolute_error": 0.23713570708271442,
+      "group_rmse_mean": 0.24308538193214912,
+      "worst_group_mae": 0.29146719692732725,
+      "bias": -0.23713570708271442,
+      "groups": 2,
+      "rows": 6,
+      "by_group": [
+        {
+          "group": "A",
+          "mae": 0.29146719692732725,
+          "mse": 0.08896549999934515,
+          "bias": -0.29146719692732725
+        },
+        {
+          "group": "C",
+          "mae": 0.1828042172381016,
+          "mse": 0.03530637760524987,
+          "bias": -0.1828042172381016
+        }
+      ]
+    },
+    "model": {
+      "kind": "independence",
+      "coef": [],
+      "equation": "j=p*q; y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "parameter_count": 0,
+      "rank": 0,
+      "bounds": null,
+      "training_groups": [
+        "A",
+        "C"
+      ],
+      "training_rows": 6,
+      "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+      "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+    },
+    "fold_states": {
+      "0": {
+        "kind": "independence",
+        "coef": [],
+        "equation": "j=p*q; y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+        "parameter_count": 0,
+        "rank": 0,
+        "bounds": null,
+        "training_groups": [
+          "C"
+        ],
+        "training_rows": 3,
+        "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+        "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+      },
+      "1": {
+        "kind": "independence",
+        "coef": [],
+        "equation": "j=p*q; y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+        "parameter_count": 0,
+        "rank": 0,
+        "bounds": null,
+        "training_groups": [
+          "A"
+        ],
+        "training_rows": 3,
+        "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+        "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+      }
+    }
+  },
+  "baseline_constant": {
+    "metrics": {
+      "primary_error": 0.2717279424676511,
+      "mean_group_absolute_error": 0.2717279424676511,
+      "group_rmse_mean": 0.3027246136019034,
+      "worst_group_mae": 0.32616367752179665,
+      "bias": 0.2717279424676511,
+      "groups": 2,
+      "rows": 6,
+      "by_group": [
+        {
+          "group": "A",
+          "mae": 0.21729220741350552,
+          "mse": 0.06847108053259922,
+          "bias": 0.21729220741350552
+        },
+        {
+          "group": "C",
+          "mae": 0.32616367752179665,
+          "mse": 0.11818429942886959,
+          "bias": 0.32616367752179665
+        }
+      ]
+    },
+    "model": {
+      "kind": "constant",
+      "coef": [
+        0.05
+      ],
+      "equation": "j=clip(b0,L,U); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "parameter_count": 1,
+      "rank": 0,
+      "bounds": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "training_groups": [
+        "A",
+        "C"
+      ],
+      "training_rows": 6,
+      "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+      "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+    },
+    "fold_states": {
+      "0": {
+        "kind": "constant",
+        "coef": [
+          0.05
+        ],
+        "equation": "j=clip(b0,L,U); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+        "parameter_count": 1,
+        "rank": 0,
+        "bounds": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "training_groups": [
+          "C"
+        ],
+        "training_rows": 3,
+        "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+        "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+      },
+      "1": {
+        "kind": "constant",
+        "coef": [
+          0.05
+        ],
+        "equation": "j=clip(b0,L,U); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+        "parameter_count": 1,
+        "rank": 0,
+        "bounds": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "training_groups": [
+          "A"
+        ],
+        "training_rows": 3,
+        "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+        "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+      }
+    }
+  },
+  "baseline_flexible": {
+    "metrics": {
+      "primary_error": 0.08982513746466358,
+      "mean_group_absolute_error": 0.08982513746466358,
+      "group_rmse_mean": 0.09920006518707736,
+      "worst_group_mae": 0.10109477183004462,
+      "bias": -0.011269634365381039,
+      "groups": 2,
+      "rows": 6,
+      "by_group": [
+        {
+          "group": "A",
+          "mae": 0.10109477183004462,
+          "mse": 0.012537751354260196,
+          "bias": -0.10109477183004462
+        },
+        {
+          "group": "C",
+          "mae": 0.07855550309928254,
+          "mse": 0.007469804298622126,
+          "bias": 0.07855550309928254
+        }
+      ]
+    },
+    "model": {
+      "kind": "flexible",
+      "coef": [
+        0.0010661845979413058,
+        0.17253653715745357,
+        -0.10845480072459561,
+        -0.00039845755554133674
+      ],
+      "equation": "j=clip(b0+b1*p+b2*q+b3*ln(dose),L,U); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+      "parameter_count": 4,
+      "rank": 4,
+      "bounds": [
+        [
+          -2,
+          -2,
+          -2,
+          -2
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "training_groups": [
+        "A",
+        "C"
+      ],
+      "training_rows": 6,
+      "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+      "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+    },
+    "fold_states": {
+      "0": {
+        "kind": "flexible",
+        "coef": [
+          0.0009712884974192824,
+          0.038708838717511906,
+          0.017387266761527354,
+          0.0003759508889554943
+        ],
+        "equation": "j=clip(b0+b1*p+b2*q+b3*ln(dose),L,U); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+        "parameter_count": 4,
+        "rank": 4,
+        "bounds": [
+          [
+            -2,
+            -2,
+            -2,
+            -2
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "training_groups": [
+          "C"
+        ],
+        "training_rows": 3,
+        "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+        "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+      },
+      "1": {
+        "kind": "flexible",
+        "coef": [
+          0.0015021350182122923,
+          0.1304694933924246,
+          0.03086446422960573,
+          -0.0006011005540208659
+        ],
+        "equation": "j=clip(b0+b1*p+b2*q+b3*ln(dose),L,U); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+        "parameter_count": 4,
+        "rank": 4,
+        "bounds": [
+          [
+            -2,
+            -2,
+            -2,
+            -2
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "training_groups": [
+          "A"
+        ],
+        "training_rows": 3,
+        "fit": "replicate-balanced nonlinear least squares; flexible control has fixed L2 penalty0.01",
+        "identifiability": "Effective association, not unique shared molecular mechanism; three doses per training replicate"
+      }
+    }
+  }
+}

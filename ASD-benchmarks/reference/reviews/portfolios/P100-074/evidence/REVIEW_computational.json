@@ -1,0 +1,325 @@
+{
+  "reviewer_id": "/root/asd5_electronics",
+  "case_id": "P100-074",
+  "role": "computational",
+  "checked_files": [
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "b8e3b8373c0c14e23b591820611960c9376b15af0ad20c9de638d53bcc7a9442"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "8fc1b2fbf1c44ba7287793dfb2000f45dc89b7a7a10002c1094d9dfe845b0bb5"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "04554bf9aeba3a947d5b6f74d0981e6977760ca82f4317b97b3a64dc2c8b4db6"
+    },
+    {
+      "path": "native.py",
+      "sha256": "49388fb69da68b68bcd4c195fabf8182dcc0cca92430b712418f019db96026a8"
+    },
+    {
+      "path": "run.py",
+      "sha256": "8e8ee856caab4170b1b3add7d496eae82a8fcb39fc6f3ece3671da4e8fd55fdf"
+    },
+    {
+      "path": "develop.py",
+      "sha256": "e68d740755a8b1708a3fb1616333720bf269cb1d60a4932f086e729343f046b1"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "e342c75ebcf5b0e8947fa6d65662d4bbc3b0e3a9a237092eee6a50986b671f39"
+    },
+    {
+      "path": "FINAL_VALIDATION.json",
+      "sha256": "ae21a4f7117e84a66be0af92c4007a379577730232368a002f1a1dd17d66ccee"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "8e8ee856caab4170b1b3add7d496eae82a8fcb39fc6f3ece3671da4e8fd55fdf"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "dfd24f4f872733bad9099d056b526fd4d140764e7207d6f5d62ed24f432ed103"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "e2fd787f416c23565d338d1e178f9b5f913bc9149bffff2336c15a8563f41944"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "54fa2892d60b11bb4483ef2fb67d5db3a8679355415ca73fcf961d2e9015d169"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "dd2bb69aac6485bfd0908ce511348c8ba1eb65650f96d9fda7fec309127a2aed"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "916182cccfc99d79002f07572c61364f49d41a81d9fa8ee59885a2ffb1cba568"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "635f57a8655eedf1d64009fb5aa1d9a6c819773fdff3b0f5104ed80a80b66c00"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "6b2e468c6c346310587e3d90eb1f579c31d00c87046afeaecbcd2e82afd6ed68"
+    }
+  ],
+  "overall_limitations": [
+    "Only two reserved dose curves, no biological replicate IDs; curve-level evidence cannot certify general kinetic law.",
+    "Only declared early calibration is available; curve aggregate preprocessing in source remains outside reproducibility scope."
+  ],
+  "checks": [
+    "Frozen model/code/protocol asset hashes verified",
+    "Isolated package CLI replay: {\"models_replayed\": 13, \"rows\": 86, \"max_tolerance\": \"1e-10\", \"status\": \"pass\"}",
+    "Independent native preparation matches every packaged predictor/target/identity",
+    "Whole-group partitions are disjoint; source sample IDs unique",
+    "Every frozen model reproduced independently recomputed group-balanced MAE",
+    "Reported training groups exclude confirmation",
+    "All 56 attempt fold states exclude their held groups",
+    "All Src calibration values independently verified from3/4.5/6min; targets strictly after7.5min",
+    "Excluded Akt1 column identity with source time verified across81rows"
+  ],
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "reference": {
+      "mae": 130.23334009001042,
+      "by_group": {
+        "dose-1": 95.62378269462833,
+        "dose-5": 164.8428974853925
+      }
+    },
+    "baseline_persistence": {
+      "mae": 291.1548953488372,
+      "by_group": {
+        "dose-1": 249.64958139534886,
+        "dose-5": 332.66020930232554
+      }
+    },
+    "baseline_linear": {
+      "mae": 126.72489534883726,
+      "by_group": {
+        "dose-1": 98.06558139534887,
+        "dose-5": 155.38420930232564
+      }
+    },
+    "baseline_mm": {
+      "mae": 82.72897928284578,
+      "by_group": {
+        "dose-1": 110.73455147345928,
+        "dose-5": 54.72340709223229
+      }
+    },
+    "baseline_flexible": {
+      "mae": 111.21385599069683,
+      "by_group": {
+        "dose-1": 81.85365875550941,
+        "dose-5": 140.57405322588423
+      }
+    },
+    "attempt_001_saturation": {
+      "mae": 158.56523399300434,
+      "by_group": {
+        "dose-1": 127.41841173675508,
+        "dose-5": 189.7120562492536
+      }
+    },
+    "attempt_002_accelerating": {
+      "mae": 158.5676832816777,
+      "by_group": {
+        "dose-1": 127.42066967614728,
+        "dose-5": 189.71469688720808
+      }
+    },
+    "attempt_003_power": {
+      "mae": 155.14695398901782,
+      "by_group": {
+        "dose-1": 124.19420678711369,
+        "dose-5": 186.09970119092193
+      }
+    },
+    "attempt_004_dose_saturation": {
+      "mae": 129.72570860114237,
+      "by_group": {
+        "dose-1": 98.26870263681785,
+        "dose-5": 161.1827145654669
+      }
+    },
+    "attempt_005_curvature": {
+      "mae": 106.97274445081317,
+      "by_group": {
+        "dose-1": 72.76054339201646,
+        "dose-5": 141.1849455096099
+      }
+    },
+    "attempt_006_slope_gate": {
+      "mae": 130.23334009001042,
+      "by_group": {
+        "dose-1": 95.62378269462833,
+        "dose-5": 164.8428974853925
+      }
+    },
+    "attempt_007_slope_only": {
+      "mae": 161.07392224368346,
+      "by_group": {
+        "dose-1": 129.73111014818213,
+        "dose-5": 192.4167343391848
+      }
+    },
+    "attempt_008_physical_saturation": {
+      "mae": 158.5652340536759,
+      "by_group": {
+        "dose-1": 127.41841179268673,
+        "dose-5": 189.71205631466506
+      }
+    }
+  },
+  "maximum_prediction_discrepancy": 0.0,
+  "findings": [
+    {
+      "finding_id": "P100-074-F01",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "The positive robust-improvement claim is contradicted by independently reproduced confirmation error130.23334, worse than the tangent and flexible controls. Development improvement does not rescue failed reserved-dose transfer."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "All predictors, targets, code/state predictions and group metrics reproduced from local hash-verified native source and isolated final package."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Failed transfer and only two reserved doses do not support a stable curvature mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This is computational review, not an independent exhaustive prior-art adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The portable task and counterexamples are useful for fair benchmark comparison within the disclosed measurement/information budget."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, industrial gain or out-of-source replication was evaluated."
+        }
+      },
+      "checks": [
+        "Frozen model/code/protocol asset hashes verified",
+        "Isolated package CLI replay: {\"models_replayed\": 13, \"rows\": 86, \"max_tolerance\": \"1e-10\", \"status\": \"pass\"}",
+        "Independent native preparation matches every packaged predictor/target/identity",
+        "Whole-group partitions are disjoint; source sample IDs unique",
+        "Every frozen model reproduced independently recomputed group-balanced MAE",
+        "Reported training groups exclude confirmation",
+        "All 56 attempt fold states exclude their held groups",
+        "All Src calibration values independently verified from3/4.5/6min; targets strictly after7.5min",
+        "Excluded Akt1 column identity with source time verified across81rows"
+      ],
+      "limitations": [
+        "Only two reserved dose curves, no biological replicate IDs; curve-level evidence cannot certify general kinetic law.",
+        "Only declared early calibration is available; curve aggregate preprocessing in source remains outside reproducibility scope."
+      ],
+      "reviewed_claim": "The development-selected early-curvature projection provides a robust predictive improvement over matched controls on previously withheld doses."
+    },
+    {
+      "finding_id": "P100-074-F02",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Saved-state replay, native reconstruction and independent group-metric calculation support the stated bounded numerical result; small-cohort/exposure limits remain."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "All predictors, targets, code/state predictions and group metrics reproduced from local hash-verified native source and isolated final package."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical controls do not uniquely identify the proposed mechanism. Negative predictive outcomes are supported as failures of tested equations, not as disproof of all domain mechanisms."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This is computational review, not an independent exhaustive prior-art adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The portable task and counterexamples are useful for fair benchmark comparison within the disclosed measurement/information budget."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, industrial gain or out-of-source replication was evaluated."
+        }
+      },
+      "checks": [
+        "Frozen model/code/protocol asset hashes verified",
+        "Isolated package CLI replay: {\"models_replayed\": 13, \"rows\": 86, \"max_tolerance\": \"1e-10\", \"status\": \"pass\"}",
+        "Independent native preparation matches every packaged predictor/target/identity",
+        "Whole-group partitions are disjoint; source sample IDs unique",
+        "Every frozen model reproduced independently recomputed group-balanced MAE",
+        "Reported training groups exclude confirmation",
+        "All 56 attempt fold states exclude their held groups",
+        "All Src calibration values independently verified from3/4.5/6min; targets strictly after7.5min",
+        "Excluded Akt1 column identity with source time verified across81rows"
+      ],
+      "limitations": [
+        "Only two reserved dose curves, no biological replicate IDs; curve-level evidence cannot certify general kinetic law.",
+        "Only declared early calibration is available; curve aggregate preprocessing in source remains outside reproducibility scope."
+      ],
+      "reviewed_claim": "Same-curve early response carries useful later-response information; carrying F6 unchanged is much less accurate than its calibrated tangent on these two doses."
+    },
+    {
+      "finding_id": "P100-074-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Saved-state replay, native reconstruction and independent group-metric calculation support the stated bounded numerical result; small-cohort/exposure limits remain."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "All predictors, targets, code/state predictions and group metrics reproduced from local hash-verified native source and isolated final package."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "The evidence supports a failure or identifiability limit of the tested mechanism/equation; it does not identify an alternative microscopic or behavioral mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This is computational review, not an independent exhaustive prior-art adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The portable task and counterexamples are useful for fair benchmark comparison within the disclosed measurement/information budget."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, industrial gain or out-of-source replication was evaluated."
+        }
+      },
+      "checks": [
+        "Frozen model/code/protocol asset hashes verified",
+        "Isolated package CLI replay: {\"models_replayed\": 13, \"rows\": 86, \"max_tolerance\": \"1e-10\", \"status\": \"pass\"}",
+        "Independent native preparation matches every packaged predictor/target/identity",
+        "Whole-group partitions are disjoint; source sample IDs unique",
+        "Every frozen model reproduced independently recomputed group-balanced MAE",
+        "Reported training groups exclude confirmation",
+        "All 56 attempt fold states exclude their held groups",
+        "All Src calibration values independently verified from3/4.5/6min; targets strictly after7.5min",
+        "Excluded Akt1 column identity with source time verified across81rows"
+      ],
+      "limitations": [
+        "Only two reserved dose curves, no biological replicate IDs; curve-level evidence cannot certify general kinetic law.",
+        "Only declared early calibration is available; curve aggregate preprocessing in source remains outside reproducibility scope."
+      ],
+      "reviewed_claim": "The inverse-dose saturation parameterization cannot be interpreted as identified substrate depletion."
+    }
+  ],
+  "independent_of_discovery": true,
+  "experimental_replication": false,
+  "documentation_update_review": "Reviewed corrected finding semantics and equation text; numerical state/replay/metric evidence unchanged.74F01 is now a positive claim explicitly rejected; negative findings are supported as bounded falsifications."
+}

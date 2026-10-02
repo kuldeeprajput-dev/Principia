@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-013",
+  "title": "NIST encapsulant cure kinetics multimethod workbooks",
+  "default_task": "P100-013.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "conversion",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 1,
+    "independent_unit_description": "Complete heating-rate experiment; not independent material batches",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Predict author-observed DSC conversion from temperature and imposed constant heating rate; no target history.",
+  "baseline_strength": {
+    "registered_controls": 8,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 3
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "conversion",
+    "prediction_time": "Predict author-observed DSC conversion from temperature and imposed constant heating rate; no target history.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "One held heating ramp; kinetic mechanism is not identified by conversion prediction."
+  },
+  "task_ids": [
+    "P100-013.original.v1"
+  ],
+  "finding_ids": [
+    "P100-013-F01",
+    "P100-013-F02",
+    "P100-013-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-013/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-013.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate conversion under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Predict author-observed DSC conversion from temperature and imposed constant heating rate; no target history.",
+    "calibration_requirement": "Predict author-observed DSC conversion from temperature and imposed constant heating rate; no target history.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "conversion in 1",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "One held heating ramp; kinetic mechanism is not identified by conversion prediction."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "1",
+    "reference_model": "reference",
+    "reference_primary_error": 0.0589465753402929,
+    "reference_physical_mae": 0.0589465753402929,
+    "physical_error_units": "1",
+    "lowest_registered_error_model": "reference",
+    "lowest_registered_error": 0.0589465753402929,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-013.original.v1/evidence/metrics.csv",
+      "bytes": 605,
+      "sha256": "1ea85fc176601a7ad6e4f143e0c658946fbc025f8ad0d49aa649de76e981c7ae"
+    },
+    "models": 8
+  },
+  "case_specific_next_evidence": "Add a new independently measured ramp or batch, with orthogonal chemical evidence before interpreting channel identities."
+}

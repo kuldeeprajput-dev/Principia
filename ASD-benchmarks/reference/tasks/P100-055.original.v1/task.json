@@ -1,0 +1,172 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-055.original.v1",
+  "case_id": "P100-055",
+  "case_number": 55,
+  "family": "original",
+  "protocol_version": "P100-055-batch4-frozen-v1",
+  "cohort_id": "P100-055.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-055.original.v1",
+  "legacy_package": "55_materials_slag_printing/final_results",
+  "source_scenario": "scenarios/55_materials_slag_printing",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Individual penetration normal force",
+  "target_units": "N",
+  "error_units": "N",
+  "primary_units": "N",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "ratio",
+    "water",
+    "age_min",
+    "time_s"
+  ],
+  "input_units": {
+    "ratio": "mix-design ratio encoded in author mixture label",
+    "water": "water ratio encoded in author mixture label",
+    "age_min": "min since mixing; 0 or 30",
+    "time_s": "native penetration clock index; unit unspecified"
+  },
+  "numeric_columns": [
+    "ratio",
+    "water",
+    "age_min",
+    "time_s"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Known mix label, age and elapsed penetration index only; force is never an input.",
+  "calibration": "Two independent trace columns per mixture/age are retained; source average columns excluded. Time header supplies time, without an explicit unit in the workbook; the native penetration clock unit is unresolved; no physical time constant is claimed. Dimensionless t/t_ref used in equations. Mix-label ratio meanings require author PDF; do not call these stress or yield-stress measurements.",
+  "independent_unit": "whole mixture across both ages and replicates",
+  "evaluation_groups": [
+    "0.5_0.30",
+    "0.7_0.30"
+  ],
+  "assigned_rows": 4800,
+  "eligible_rows": 4800,
+  "baseline_models": [
+    "reference",
+    "mechanistic_reference",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007",
+    "baseline_mean",
+    "baseline_domain",
+    "baseline_rbf",
+    "attempt_008",
+    "attempt_009"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "mechanistic_reference": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_mean": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_domain": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_rbf": {
+      "equation": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_008": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_009": {
+      "equation": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "scope_limits": "Nine mix labels, two batches per mixture/age according to the source PDF, one early research campaign. Force\u2013penetration-time relationships cannot identify intrinsic constitutive stress without probe kinematics/geometry.",
+  "source_url": "https://zenodo.org/records/17092152",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All packaged targets are exposed for future agents; future scoring is retrospective. Public source-aware corpus. Illustrative header/first-row values were inspected during the semantics audit; these do not constitute blind source acquisition. All delivered targets become exposed after confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "6a3ad1fefe615b8f721ed602d8a77e34ccef998c88a56f65c309c689fde933c9",
+  "observations_sha256": "3f48d97e3e312a1c9ce5b9c944d4014605969f08f6912a7a85013820394e5cd1",
+  "legacy_protocol_sha256": "bd7e8893a7c1561098c290b6c18f4175dfe57e6a5f37493971fb14c254e65f71",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

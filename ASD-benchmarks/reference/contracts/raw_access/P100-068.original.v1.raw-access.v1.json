@@ -1,0 +1,78 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-068.original.v1.raw-access.v1",
+  "parent_task_id": "P100-068.original.v1",
+  "case_id": "P100-068",
+  "protocol_version": "P100-068.original.v1.raw-access.v1",
+  "cohort_id": "P100-068.original.v1.cohort-1",
+  "parent_task_sha256": "a6f58fd1f5cb248be37917d81d82b4365369c09b2eef22f33ae377f2f9caa059",
+  "input_sha256": "8feeca9b6f807e1429006635751776a6d52c9362d27475f95fca954beb34e534",
+  "observations_sha256": "9d8861927a4572ba9adcf99be6ab3e13bf59ca607a2d9f90828d9cb6f6c4cc0f",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "68_physics_acoustic_levitation",
+  "source_assets": [
+    {
+      "path": "raw/Data.rar",
+      "bytes": 328760,
+      "sha256": "38f849ce6973bf140cf3975c2826e71607df346935419fde36ab668c7c66cbe1"
+    },
+    {
+      "path": "raw/MATLAB Code PSD AND TIME SERIES DATA.txt",
+      "bytes": 2897,
+      "sha256": "898e7d3a30d0046d96c8f8892a0ff3c4c2cb46e5a5faa53392d7e4c877b3502c"
+    },
+    {
+      "path": "raw/MATLAB Code SINDy.txt",
+      "bytes": 11706,
+      "sha256": "4950ffb628cc9b30dd13a9219938db22d0295159efeae6caae9659b452abb82e"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "y0": "V; currentrawminusinitialoffset",
+      "y1": "V;5mslagminusoffset",
+      "y2": "V;10mslagminusoffset",
+      "y3": "V;15mslagminusoffset",
+      "offset": "V; first20samplemean",
+      "t": "s; storedtimestamp"
+    },
+    "observation_window": "Predict raw voltage5ms ahead using up to15ms of causal delay samples and a fixed initial20sampleoffset. Issue every5ms after50ms; no future filtering.",
+    "calibration_and_history": "Initial20 raw samples only; no GHKSS/noise-reducedseries or future spectral estimate is used.",
+    "calibration_columns": [
+      "y0",
+      "y1",
+      "y2",
+      "y3",
+      "offset"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Velocity conversion is inconsistent; retain native volts, not calibrated velocity."
+  ],
+  "current_outcomes_exposed": true
+}

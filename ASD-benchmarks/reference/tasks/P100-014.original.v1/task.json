@@ -1,0 +1,171 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-014.original.v1",
+  "case_id": "P100-014",
+  "case_number": 14,
+  "family": "original",
+  "protocol_version": "P100-014-asd7-native-v1",
+  "cohort_id": "P100-014.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-014.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/14_sociology_census_htops_2026",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Household sometimes/often lacked enough food during prior7days",
+  "target_units": "binary FD_SUFF in3,4",
+  "error_units": "squared probability (Brier)",
+  "primary_units": "squared probability (Brier)",
+  "metric_kind": "brier",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error",
+    "within_group_weight": "sample_weight"
+  },
+  "permitted_inputs": [
+    "income_proxy",
+    "household_size",
+    "shock",
+    "age"
+  ],
+  "input_units": {
+    "income_proxy": "thousands USD/year, bracket proxy not observed amount",
+    "household_size": "persons, source topcoded7",
+    "shock": "household lost employment income past4weeks binary",
+    "age": "respondent years"
+  },
+  "numeric_columns": [
+    "income_proxy",
+    "household_size",
+    "shock",
+    "age"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Contemporaneous survey association; income-loss and food sufficiency recall windows overlap. No causal income effect or individual longitudinal forecast.",
+  "calibration": "March2026 survey only; complete-region cross-validation; May2026 transfer without outcome calibration.",
+  "independent_unit": "Household/respondent nested in Census region and wave; no linked March/May SCRAMIDs in released files. Four geographic aggregates are not independent populations.",
+  "evaluation_groups": [
+    "2605:region1",
+    "2605:region2",
+    "2605:region3",
+    "2605:region4"
+  ],
+  "assigned_rows": 10986,
+  "eligible_rows": 10986,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "domain",
+    "flexible",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006",
+    "attempt_007",
+    "attempt_008",
+    "attempt_009"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "p=logistic(a+bL*max(3-R,0)+bH*max(R-3,0)+c*S+d*A)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "p=logistic(a)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "domain": {
+      "equation": "p=logistic(a+b*log_resource)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "p=logistic(a+sum b_j exp(-||standardized_x-center_j||\u00b2/8));32train-onlycenters",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "p=logistic(a+b*log(income_proxy/sqrt(hhsize))+c*workloss)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "p=logistic(a+b*log(income_proxy)+c*log(hhsize)+d*workloss)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "p=logistic(a+b*R+c*S+d*R*S)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "p=logistic(a+b*R+c*S+d*A+e*A\u00b2)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "p=logistic(a+bL*max(3-R,0)+bH*max(R-3,0)+c*S+d*A)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "p=logistic(a+bL*low_resource+bH*high_resource+c*S+d*A+e*A\u00b2)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_007": {
+      "equation": "p=logistic(a+bL*low_resource+bH*high_resource+d*A)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_008": {
+      "equation": "p=1-exp(-exp(a+bL*low_resource+bH*high_resource+c*S+d*A))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_009": {
+      "equation": "p=logistic(a+b*log(income_proxy/hhsize)+c*S+d*A+e*A\u00b2)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze."
+  },
+  "scope_limits": "Responding complete-case households; region-balanced HWEIGHT risk, not a national prevalence estimate. Bracket midpoints including175k open upper bracket are declared proxies; source topcodes preserved; missing/negative codes and nonpositive weights excluded, no imputation.",
+  "source_url": "https://www.census.gov/programs-surveys/household-pulse-survey/data/datasets.html",
+  "source_license": "U.S. Census Bureau public-use data",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Schema and source codebook aggregate tabulations inspected; no reserved respondent target or confirmation metric inspected. Source-aware public survey.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"ed4d9ccb17eaba20371ec93679fcbaed064ff55676fe84f5510c48b616a70a74\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "4ff8fa05245aeec8033aeb18fcd0571a73e4b8d4c10cb1f0a0ee9091f2c74776",
+  "observations_sha256": "3576ed79b8bf23bf142455ec573b07880b0c44e270ed2c7427b8366f0ce8cc3e",
+  "legacy_protocol_sha256": "039c88079e0f253b6c4d6e726776a4c6cdb17acb6de98b1372525e036952c132",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": "asd6-probability/1.1",
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

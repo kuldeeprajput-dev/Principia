@@ -1,0 +1,34 @@
+[
+  {
+    "finding_id": "P100-077-F01",
+    "classification": "validated_scoped_descriptor",
+    "claim": "Constant positive joint association transfers better than marginal independence in the reserved replicate block, but worse than the matched flexible comparator",
+    "equation": "j*(1-p-q+j)=exp(beta)*(p-j)*(q-j); y_hat=100*j, L=max(0,p+q-1), U=min(p,q)",
+    "coefficients": [
+      4.066978644629878
+    ],
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv",
+      "evidence/by_group.csv"
+    ],
+    "prior_art": "Published dual tagging and standard odds-ratio dependence; no new gene-editing law",
+    "falsification": "Held block error exceeds the flexible comparator; additional biological/optical controls needed for mechanism",
+    "scope": "Fixed deterministic fluorescence gates, one line and one held experimental block; contemporaneous marginals required",
+    "admission": "partially_supported"
+  },
+  {
+    "finding_id": "P100-077-F02",
+    "classification": "supported_negative_finding",
+    "claim": "The constrained negative resource-competition family reduces to independence and does not explain these development joint frequencies",
+    "equation": "j=pq+alpha*(pq-max(0,p+q-1)), -1<=alpha<=0; fitted alpha\u22480",
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv"
+    ],
+    "prior_art": "Association sign test, not a novel molecular mechanism",
+    "falsification": "Additional compensation/gating measurements could alter the biological interpretation",
+    "scope": "Only this operational fluorescence endpoint and model family",
+    "admission": "supported"
+  }
+]

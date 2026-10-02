@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.1.0",
+  "case_id": "P100-078",
+  "protocol_id": "P100-078-continuation-20261001-documentation-v2",
+  "target": "Untreated bacterial burden in total lung",
+  "target_units": "log10 CFU / total lung",
+  "primary_units": "log10 CFU / total lung",
+  "metric_kind": "mae",
+  "metric_definition": "Equal complete reserved-group mean MAE in physical units; RMSE square root is taken within group, before averaging groups.",
+  "independent_unit": "whole laboratory/site, all strains and studies",
+  "evaluation_groups": [
+    "GSK"
+  ],
+  "input_sha256": "49a0cd8585dc52d24709e5da29f9d4f46bd21b7f12fce8bba4588ec0b4ab813a",
+  "input_rows": 15,
+  "assigned_rows": 15,
+  "permitted_inputs": [
+    "time_h",
+    "initial_logCFU"
+  ],
+  "input_units": {
+    "time_h": "h",
+    "initial_logCFU": "log10 CFU per total lung"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "endpoint",
+    "clock",
+    "burden",
+    "burden_clock",
+    "quadratic",
+    "capacity",
+    "shrink"
+  ],
+  "reference_equations": {
+    "reference": "Lhat=L0+2.007169617207792*t/24+0.9807704376646112*(t/24)*(7\u2212L0)",
+    "endpoint": "Exact frozen JSON coefficients and portable run.py basis.",
+    "clock": "Exact frozen JSON coefficients and portable run.py basis.",
+    "burden": "Exact frozen JSON coefficients and portable run.py basis.",
+    "burden_clock": "Exact frozen JSON coefficients and portable run.py basis.",
+    "quadratic": "Exact frozen JSON coefficients and portable run.py basis.",
+    "capacity": "Exact frozen JSON coefficients and portable run.py basis.",
+    "shrink": "Exact frozen JSON coefficients and portable run.py basis."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "scope_limit": "Two development laboratories and one historically exposed diagnostic laboratory. All15scored GSK observations are at24h; no kinetic, survival or antibiotic-efficacy admission. The continuation removes site from numerical inputs; site remains the whole-group validation identity.",
+  "calibration_note": "DSM/site-reference strain aliases resolved from source RefToDict plus explicit single-strain-study Overview links (source labeling discrepancies retained) and kept together. All ExperimentResults sheets included. Explicit untreated CFU lung single-value observations only, equality operator, compatible log-CFU lung units, numeric actual times 0\u201324 h. Time-zero animals form an explicitly allowed cohort calibration, not the same later animals. Non-numeric early-death times and censoring cannot be interpreted as exact scheduled times; exclusions are counted, and this creates survivorship/measurement selection limits. Source already reports virulence/reproducibility criteria; no new clinical efficacy claim. Source laboratory directory supplies validation identity; the original SITE field is inconsistent in one workbook and is preserved as provided_site. Header templates and source censoring inconsistencies require caution.",
+  "timing_contract": "Only numeric actual time within0-24h and the mean time-zero log burden for the linked strain-study are prediction inputs. Different time-zero animals supply declared cohort calibration. No later burden, laboratory parameter, animal outcome or study/strain identity is a numerical predictor. Numeric <24 strings and censored inequality burdens are not exact-time targets.",
+  "exposure_notice": "All original diagnostic outcomes were already exposed. This is source-aware retrospective research. Documentation corrections do not create fresh confirmation or alter fit/selection.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Only numeric actual time within0-24h and the mean time-zero log burden for the linked strain-study are prediction inputs. Different time-zero animals supply declared cohort calibration. No later burden, laboratory parameter, animal outcome or study/strain identity is a numerical predictor. Numeric <24 strings and censored inequality burdens are not exact-time targets."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency, source preprocessing, calibration and measurement semantics. DSM/site-reference strain aliases resolved from source RefToDict plus explicit single-strain-study Overview links (source labeling discrepancies retained) and kept together. All ExperimentResults sheets included. Explicit untreated CFU lung single-value observations only, equality operator, compatible log-CFU lung units, numeric actual times 0\u201324 h. Time-zero animals form an explicitly allowed cohort calibration, not the same later animals. Non-numeric early-death times and censoring cannot be interpreted as exact scheduled times; exclusions are counted, and this creates survivorship/measurement selection limits. Source already reports virulence/reproducibility criteria; no new clinical efficacy claim. Source laboratory directory supplies validation identity; the original SITE field is inconsistent in one workbook and is preserved as provided_site. Header templates and source censoring inconsistencies require caution."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ],
+  "fresh_confirmation": false
+}

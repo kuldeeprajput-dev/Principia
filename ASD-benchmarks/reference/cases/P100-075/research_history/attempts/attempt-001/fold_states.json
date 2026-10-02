@@ -1,0 +1,122 @@
+{
+  "0": {
+    "kind": "saturation",
+    "coef": [
+      0.5740171490392114,
+      -1.091909087994472
+    ],
+    "K": 30.0,
+    "equation": "y_hat=max(0,c+b1*q+b2*s), q=E/(K+E)-30/(K+30)",
+    "training_groups": [
+      "B",
+      "D"
+    ],
+    "training_rows": 10,
+    "rank": 2,
+    "parameter_count": 3,
+    "profile_training_mse": [
+      {
+        "K": 30.0,
+        "weighted_sse": 1.9657976070930758
+      },
+      {
+        "K": 100.0,
+        "weighted_sse": 1.9699574463026022
+      },
+      {
+        "K": 300.0,
+        "weighted_sse": 1.978506515110924
+      },
+      {
+        "K": 1000.0,
+        "weighted_sse": 1.9885132776150973
+      },
+      {
+        "K": 3000.0,
+        "weighted_sse": 1.9934307316511501
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  },
+  "1": {
+    "kind": "saturation",
+    "coef": [
+      -1.6962070283843027,
+      -0.2923891442108198
+    ],
+    "K": 3000.0,
+    "equation": "y_hat=max(0,c+b1*q+b2*s), q=E/(K+E)-30/(K+30)",
+    "training_groups": [
+      "A",
+      "D"
+    ],
+    "training_rows": 10,
+    "rank": 2,
+    "parameter_count": 3,
+    "profile_training_mse": [
+      {
+        "K": 30.0,
+        "weighted_sse": 1.4632969493058086
+      },
+      {
+        "K": 100.0,
+        "weighted_sse": 1.4489262172951307
+      },
+      {
+        "K": 300.0,
+        "weighted_sse": 1.4200351879699602
+      },
+      {
+        "K": 1000.0,
+        "weighted_sse": 1.3867329746426864
+      },
+      {
+        "K": 3000.0,
+        "weighted_sse": 1.370507462045883
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  },
+  "2": {
+    "kind": "saturation",
+    "coef": [
+      -3.591156896781396,
+      -0.8378843165028932
+    ],
+    "K": 3000.0,
+    "equation": "y_hat=max(0,c+b1*q+b2*s), q=E/(K+E)-30/(K+30)",
+    "training_groups": [
+      "A",
+      "B"
+    ],
+    "training_rows": 10,
+    "rank": 2,
+    "parameter_count": 3,
+    "profile_training_mse": [
+      {
+        "K": 30.0,
+        "weighted_sse": 2.523008839819965
+      },
+      {
+        "K": 100.0,
+        "weighted_sse": 2.456735210737847
+      },
+      {
+        "K": 300.0,
+        "weighted_sse": 2.3513110635618415
+      },
+      {
+        "K": 1000.0,
+        "weighted_sse": 2.252565969933615
+      },
+      {
+        "K": 3000.0,
+        "weighted_sse": 2.210725969080829
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "features": [
+    "memory",
+    "drift",
+    "density_memory",
+    "boundary_p"
+  ],
+  "offset": "p_past",
+  "clip": [
+    -1,
+    1
+  ],
+  "equation": "Pnext=Ppast+a*memory+b*drift+c*log1p(density)*memory+d*(speed/r90)*Ppast",
+  "case": 90,
+  "type": "linear",
+  "training_groups": [
+    "Japan/C10",
+    "Japan/C2",
+    "Japan/C3",
+    "Japan/C4",
+    "Japan/C5",
+    "Japan/C7",
+    "Japan/C8",
+    "Japan/C9",
+    "Kids/D2",
+    "Kids/D3",
+    "Kids/D4",
+    "Spain/A10",
+    "Spain/A11",
+    "Spain/A2",
+    "Spain/A3",
+    "Spain/A4",
+    "Spain/A6",
+    "Spain/A7",
+    "Spain/A8",
+    "Spain/A9",
+    "Teenagers/B1"
+  ],
+  "training_rows": 1158,
+  "training_ids_sha256": "4acfd8e99e1e3f9367f61c2320f221edac4e1a455dd3a1e742bf8e1f5560a435",
+  "coef": [
+    0.823166796423121,
+    -0.06987138378919197,
+    0.1584713230338889,
+    -0.019485995501792967
+  ],
+  "complexity": 4,
+  "rank": 4,
+  "condition_number": 7.673874077675758
+}

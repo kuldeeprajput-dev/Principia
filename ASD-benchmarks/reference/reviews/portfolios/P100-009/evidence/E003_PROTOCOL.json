@@ -1,0 +1,23 @@
+{
+  "frozen_utc": "2026-10-02T02:38:15.908774+00:00",
+  "target": "Mean pupil radius over final0.25s of horizon1s",
+  "units": "px",
+  "inputs": [
+    "radius",
+    "lag05",
+    "lag1",
+    "mean5",
+    "speed",
+    "speed1"
+  ],
+  "groups": "Whole animals and linked sessions",
+  "eligibility": "Pupil timestamps finite, strictly increasing. Every required pupil sample from t-5s through t+1s finite/nonnegative and successive gaps<=0.1s; no bridging blinks. Treadmill features use as-of samples ending<=t, with last sample<=0.1s old. Every10th native pupil sample is a prediction time.",
+  "timing": "Predict1s-ahead author-released pupil radius from prior pupil and treadmill samples. Source prior filtering may be noncausal; causal-prefix guarantee applies to released traces only, not original camera pixels.",
+  "baseline_families": [
+    "last0.25s mean persistence",
+    "local velocity",
+    "training-only constrained RBF"
+  ],
+  "selection": "Equal animal MAE, simplest coefficient count within1% of best; >=5 substantive candidates then two no-gain challenges",
+  "exposure": "Only NWB schema/units/timestamps inspected; no held radius values printed. Known author low-pass/blink processing is disclosed."
+}

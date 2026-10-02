@@ -1,0 +1,74 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-088.original.v1.raw-access.v1",
+  "parent_task_id": "P100-088.original.v1",
+  "case_id": "P100-088",
+  "protocol_version": "P100-088.original.v1.raw-access.v1",
+  "cohort_id": "P100-088.original.v1.cohort-1",
+  "parent_task_sha256": "05053cdf3a904a6a719d269b2ea49d8ba9de4bec64ba83ac084ff3a763d279b0",
+  "input_sha256": "f93eb449abbe53f2994fcd791098c1044d419200debe4a6bdd67486cb4649db2",
+  "observations_sha256": "849b3eeb82bfb36cba792bfe360ed1d8436f29f44bf9d9dfc2f5c9649fa54679",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "88_psychology_risk_feedback",
+  "source_assets": [
+    {
+      "name": "riskyDecisionMakingFeedback-v1.0.0.zip",
+      "path": "raw/anasioulas/riskyDecisionMakingFeedback-v1.0.0.zip",
+      "sha256": "30c32b0a1d0c7c8c05598acbabc4e8c8d13c2e95843908f3ab6ce7cb6fef5dc9",
+      "bytes": 1663590
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "ev_difference": "expected points difference / abs(risky magnitude)",
+      "probability": "dimensionless",
+      "valence": "dimensionless",
+      "safe_risk": "dimensionless",
+      "feedback_known": "dimensionless",
+      "feedback_observed": "dimensionless",
+      "complete": "dimensionless",
+      "trial_progress": "dimensionless",
+      "lag_choice": "dimensionless",
+      "history_mean": "dimensionless",
+      "visible_pe": "previous visible reward prediction error / abs(risky magnitude)",
+      "visible_regret": "previous visible counterfactual minus chosen reward / abs(risky magnitude)",
+      "has_history": "dimensionless"
+    },
+    "observation_window": "Prediction precedes each current choice. Current lottery information is available; feedback availability is given only if block instructions announce it or an earlier trial revealed it. Previous choice and observed feedback from the same block are allowed; current choice, current outcomes, future trials and response time are prohibited. Complete-feedback type is zero unless currently announced with feedback present or revealed by a strictly previous trial; when inferred from history its previous TYPE_FEEDBACK is used.",
+    "calibration_and_history": "No participant-specific fitted calibration. Online historical choices/visible outcomes are allowed identically for all models, beginning with neutral prior 0.5; history resets at every block.",
+    "calibration_columns": [
+      "lag_choice",
+      "history_mean",
+      "visible_pe",
+      "visible_regret",
+      "has_history"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

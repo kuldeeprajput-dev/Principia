@@ -1,0 +1,175 @@
+{
+  "development_only": true,
+  "best_raw_error_model": "baseline_persistence",
+  "paired_group_comparisons": {
+    "baseline_persistence": {
+      "wins": 0,
+      "ties": 4,
+      "groups": 4,
+      "mean_mae_difference": 0.0,
+      "differences": {
+        "6g66_05_uM_DPH_binding": 0.0,
+        "6g66_05_uM_NR_binding": 0.0,
+        "9a5f_05uM_DPH_binding": 0.0,
+        "9a5f_05uM_NR_binding": 0.0
+      }
+    },
+    "baseline_linear": {
+      "wins": 3,
+      "ties": 0,
+      "groups": 4,
+      "mean_mae_difference": -159122.82045036764,
+      "differences": {
+        "6g66_05_uM_DPH_binding": -99391.71231617649,
+        "6g66_05_uM_NR_binding": 11232.829166666663,
+        "9a5f_05uM_DPH_binding": -165721.14031862744,
+        "9a5f_05uM_NR_binding": -382611.25833333324
+      }
+    },
+    "baseline_langmuir": {
+      "wins": 1,
+      "ties": 0,
+      "groups": 4,
+      "mean_mae_difference": -8623.389111075598,
+      "differences": {
+        "6g66_05_uM_DPH_binding": 6.060231775885768,
+        "6g66_05_uM_NR_binding": 4.161086501560931,
+        "9a5f_05uM_DPH_binding": 7.085799783265429,
+        "9a5f_05uM_NR_binding": -34510.863562363105
+      }
+    },
+    "baseline_flexible": {
+      "wins": 2,
+      "ties": 0,
+      "groups": 4,
+      "mean_mae_difference": -25827.45835998511,
+      "differences": {
+        "6g66_05_uM_DPH_binding": 6185.385070460854,
+        "6g66_05_uM_NR_binding": 26143.658263576315,
+        "9a5f_05uM_DPH_binding": -14387.929624039523,
+        "9a5f_05uM_NR_binding": -121250.94714993809
+      }
+    }
+  },
+  "identifiability": {
+    "baseline_persistence": {
+      "parameters": 0,
+      "meaning": "Fixed calibration/persistence control"
+    },
+    "baseline_linear": {
+      "parameters": 0,
+      "meaning": "Fixed calibration/persistence control"
+    },
+    "baseline_langmuir": {
+      "rank": 1,
+      "parameters": 1,
+      "near_bound_indices": [
+        0
+      ],
+      "singular_values": [
+        1.3828126388008217
+      ],
+      "condition_number": 1.0
+    },
+    "baseline_flexible": {
+      "feature_rank": 9,
+      "parameters": 9,
+      "ridge_penalty": 1,
+      "warning": "Regularized coefficients are not uniquely identified mechanisms when design columns are dependent."
+    },
+    "attempt_001_hill": {
+      "rank": 2,
+      "parameters": 2,
+      "near_bound_indices": [
+        0,
+        1
+      ],
+      "singular_values": [
+        24.60537496876101,
+        0.05687746782817586
+      ],
+      "condition_number": 432.60320665281165
+    },
+    "attempt_002_quenching": {
+      "rank": 2,
+      "parameters": 2,
+      "near_bound_indices": [
+        0
+      ],
+      "singular_values": [
+        114.2530305585016,
+        0.4254280626197623
+      ],
+      "condition_number": 268.56016468433654
+    },
+    "attempt_003_local": {
+      "rank": 1,
+      "parameters": 1,
+      "near_bound_indices": [
+        0
+      ],
+      "singular_values": [
+        154.49618153351076
+      ],
+      "condition_number": 1.0
+    },
+    "attempt_004_dye_hill": {
+      "rank": 3,
+      "parameters": 3,
+      "near_bound_indices": [
+        1
+      ],
+      "singular_values": [
+        0.7186405758839142,
+        0.04180315712271964,
+        0.0014072423545767312
+      ],
+      "condition_number": 510.6729296106683
+    },
+    "attempt_005_shrink_local": {
+      "rank": 2,
+      "parameters": 2,
+      "near_bound_indices": [
+        1
+      ],
+      "singular_values": [
+        266.81803353850813,
+        0.40802904559208736
+      ],
+      "condition_number": 653.9192158522216
+    }
+  },
+  "source_limits": "Six peptide\u2013dye conditions; four contiguous replicate curves per condition are linked. Shared peptide/dye factors make this condition transfer, not fully independent molecular systems. Low-dose calibration is required; no spectral peak chosen using outcomes.",
+  "local_input_sensitivity": {
+    "dose": {
+      "step": 0.07562806682831118,
+      "median_prediction_change": 0.0,
+      "min_change": 0.0,
+      "max_change": 0.0
+    },
+    "F0": {
+      "step": 78.11660390151775,
+      "median_prediction_change": 0.0,
+      "min_change": 0.0,
+      "max_change": 0.0
+    },
+    "F1": {
+      "step": 236.02865784004942,
+      "median_prediction_change": 0.0,
+      "min_change": 0.0,
+      "max_change": 0.0
+    },
+    "F2": {
+      "step": 444.66006692267604,
+      "median_prediction_change": 0.0,
+      "min_change": 0.0,
+      "max_change": 0.0
+    },
+    "F5": {
+      "step": 460.81497777924494,
+      "median_prediction_change": 460.8149777792423,
+      "min_change": 460.8149777792423,
+      "max_change": 460.8149777792569
+    }
+  }
+}

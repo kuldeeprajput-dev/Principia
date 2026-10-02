@@ -1,0 +1,125 @@
+{
+  "0": {
+    "kind": "saturating_synergy",
+    "coef": [
+      -0.26436804340677295,
+      -1.7708095613292705,
+      2.5252589271935784
+    ],
+    "K": 100.0,
+    "equation": "y_hat=max(0,c+b1*q+b2*s+b3*q*s), q=E/(K+E)-30/(K+30)",
+    "training_groups": [
+      "B",
+      "D"
+    ],
+    "training_rows": 10,
+    "rank": 3,
+    "parameter_count": 4,
+    "profile_training_mse": [
+      {
+        "K": 30.0,
+        "weighted_sse": 1.541198060958085
+      },
+      {
+        "K": 100.0,
+        "weighted_sse": 1.5278892445018764
+      },
+      {
+        "K": 300.0,
+        "weighted_sse": 1.5450892745409381
+      },
+      {
+        "K": 1000.0,
+        "weighted_sse": 1.589244299658221
+      },
+      {
+        "K": 3000.0,
+        "weighted_sse": 1.6143588137238303
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  },
+  "1": {
+    "kind": "saturating_synergy",
+    "coef": [
+      -2.6401983339816484,
+      -0.4670531130002754,
+      2.7342046834994727
+    ],
+    "K": 3000.0,
+    "equation": "y_hat=max(0,c+b1*q+b2*s+b3*q*s), q=E/(K+E)-30/(K+30)",
+    "training_groups": [
+      "A",
+      "D"
+    ],
+    "training_rows": 10,
+    "rank": 3,
+    "parameter_count": 4,
+    "profile_training_mse": [
+      {
+        "K": 30.0,
+        "weighted_sse": 1.4486894069675613
+      },
+      {
+        "K": 100.0,
+        "weighted_sse": 1.42781807835499
+      },
+      {
+        "K": 300.0,
+        "weighted_sse": 1.3857979651415897
+      },
+      {
+        "K": 1000.0,
+        "weighted_sse": 1.3346262361614776
+      },
+      {
+        "K": 3000.0,
+        "weighted_sse": 1.3081340526710068
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  },
+  "2": {
+    "kind": "saturating_synergy",
+    "coef": [
+      -7.231327139870529,
+      -1.511414441152605,
+      10.543498089838437
+    ],
+    "K": 3000.0,
+    "equation": "y_hat=max(0,c+b1*q+b2*s+b3*q*s), q=E/(K+E)-30/(K+30)",
+    "training_groups": [
+      "A",
+      "B"
+    ],
+    "training_rows": 10,
+    "rank": 3,
+    "parameter_count": 4,
+    "profile_training_mse": [
+      {
+        "K": 30.0,
+        "weighted_sse": 1.6631684613953246
+      },
+      {
+        "K": 100.0,
+        "weighted_sse": 1.5658308419737386
+      },
+      {
+        "K": 300.0,
+        "weighted_sse": 1.436604717532371
+      },
+      {
+        "K": 1000.0,
+        "weighted_sse": 1.3273710146775834
+      },
+      {
+        "K": 3000.0,
+        "weighted_sse": 1.283241207882278
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  }
+}

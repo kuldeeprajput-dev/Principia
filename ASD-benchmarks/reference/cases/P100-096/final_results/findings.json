@@ -1,0 +1,115 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-096",
+  "findings": [
+    {
+      "finding_id": "P100-096-SCI-01",
+      "statement": "The original leader-relaxation relation is a near-tie to persistence on author-smoothed speeds and cannot establish online behavior.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-096.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Original RTS speed task separate from supplemental manually assisted position task; connected videos/riders recur within one session. Strong adverse evidence: Author RTS smoothing may use future observations; recurring riders and one session prevent unseen rider/safety claims.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The observationclock correction is supported metrology; a small relative-speed association is compatible with following, but perturbationcause and continuous-time relaxation are not identified.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Relative-speed/spacing relations are established. The contribution is repaired measurement and scoped conditional evidence, not a new traffic law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Original RTS speed task separate from supplemental manually assisted position task; connected videos/riders recur within one session.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original RTS speed reserved videos",
+          "measure": "leader MAE",
+          "value": 0.261642,
+          "unit": "m/s",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original RTS speed reserved videos",
+          "measure": "persistence MAE",
+          "value": 0.265823,
+          "unit": "m/s",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Author RTS smoothing may use future observations; recurring riders and one session prevent unseen rider/safety claims.",
+      "scientific_validators": [
+        "Treat author repository commitassets as explicit optional supplement, not original local-datas assets.",
+        "Keep videos 0010\u20130012 inone connected diagnostic block and exclude old development 0010 from fitting.",
+        "Check actual frame intervals, annotation age \u2264 5 frames, causal neighbor availability and negative direction-projected targets."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-096.json",
+      "source_classification": "numerical_control"
+    }
+  ],
+  "automatic_scientific_admission": false,
+  "public_projection_note": "Optional supplemental finding remains in the local collection only."
+}

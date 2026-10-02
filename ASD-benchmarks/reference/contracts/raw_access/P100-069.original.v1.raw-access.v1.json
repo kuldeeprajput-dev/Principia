@@ -1,0 +1,127 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-069.original.v1.raw-access.v1",
+  "parent_task_id": "P100-069.original.v1",
+  "case_id": "P100-069",
+  "protocol_version": "P100-069.original.v1.raw-access.v1",
+  "cohort_id": "P100-069.original.v1.cohort-1",
+  "parent_task_sha256": "65814daa648d04197404f3c15cf6810639cd96e03f34e359d607b0f5bb652f60",
+  "input_sha256": "54813f0405ee9bc798c363c6a614abe4b451258bc43c1e3b1f24dab51fc1e6eb",
+  "observations_sha256": "f29152fd11f7f7c32e95e6beea49d727234d3638c33932319de5a32951fe973f",
+  "source_scope": "original_corpus",
+  "tier": "comparative_core",
+  "source_folder": "69_robotics_gearbox_thermal",
+  "source_assets": [
+    {
+      "path": "raw/identification/theta_dot=0p9425.csv",
+      "bytes": 74510524,
+      "sha256": "9020ae9bb340ed5d04d5b2647678bfd04b5356de08b4b8477767a05fa8369a6b"
+    },
+    {
+      "path": "raw/identification/theta_dot=1p0996.csv",
+      "bytes": 50572267,
+      "sha256": "632ffc0280b5ce6f955edd7c21402e20e3508096c6df8481d3faed7ae9eb9ee6"
+    },
+    {
+      "path": "raw/identification/theta_dot=1p2566.csv",
+      "bytes": 36863869,
+      "sha256": "13073cd82822c5a40ff84dcd7670d6da0e1d2783d8cbb2185cbe15f47ab2822a"
+    },
+    {
+      "path": "raw/identification/theta_dot=1p4137.csv",
+      "bytes": 33316512,
+      "sha256": "9208ddef27fa1912ad36ab2112ac5b1e1374a50d02f2cb2ac7f7b5186c2fbd89"
+    },
+    {
+      "path": "raw/identification/theta_dot=1p5708.csv",
+      "bytes": 26914578,
+      "sha256": "d8627372598e7002f15703e1befe1f08f53cc1a697d25e2ea3899fadbff6eb7a"
+    },
+    {
+      "path": "raw/plot_figures.m",
+      "bytes": 4105,
+      "sha256": "e8426ec026721ae50a49f8cedd5197d1b6a16845d6ddaffd81232b67ad7353b1"
+    },
+    {
+      "path": "raw/read_data.m",
+      "bytes": 3043,
+      "sha256": "16ab4b7736ca5b32853065becc342339ea3537ec41c267938031eb59bd7b3ae8"
+    },
+    {
+      "path": "raw/validation/cool-down/cool-down.csv",
+      "bytes": 26352157,
+      "sha256": "15e528f36e97640645fed9c4071360b8e03ec145674b97d3383881a152cab1c3"
+    },
+    {
+      "path": "raw/validation/heat-up/theta_dot=0p3142.csv",
+      "bytes": 55194653,
+      "sha256": "0f23964a51604f8df3759e0047581bfe9747285dd68e52fd8d7c6243592c850e"
+    },
+    {
+      "path": "raw/validation/heat-up/theta_dot=0p6283.csv",
+      "bytes": 5413972,
+      "sha256": "99b2e1b1d1f74eef3afa19c7c87fe2a6cd28a94dc1774628cad45c4f5c1d3f46"
+    },
+    {
+      "path": "raw/validation/heat-up/theta_dot=0p9425.csv",
+      "bytes": 54967809,
+      "sha256": "6c96d52aef7859e475c69547c1f0e206c219618cb353ad2628fd5b9129d6fcf9"
+    },
+    {
+      "path": "raw/validation/heat-up/theta_dot=1p2566.csv",
+      "bytes": 5338470,
+      "sha256": "2189fc93bbdfabcd97b47050d0695bd21de07e87ad48d0380fbfdd061911d35e"
+    },
+    {
+      "path": "raw/validation/heat-up/theta_dot=1p5708.csv",
+      "bytes": 54565302,
+      "sha256": "a867f21befd4e4852be3182291075211399917a0047e6ce309fbfe097b9eba1c"
+    },
+    {
+      "path": "raw/validation/long-term/theta_dot_1=0p6283_theta_dot_2=0p9425.csv",
+      "bytes": 36596654,
+      "sha256": "8e62c6b9aed68c589f6fb16fb2c4b18158ff325dec5870606f651bd02831ae88"
+    },
+    {
+      "path": "raw/validation/long-term/theta_dot_1=1p2566_theta_dot_2=0p3142.csv",
+      "bytes": 36144164,
+      "sha256": "1e17f06bfc59f3b526dceca385f9a19c3d3518cafd84cc32d776c6c9140c8e18"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "time_s": "s",
+      "housing_C": "degree C",
+      "environment_C": "degree C",
+      "speed": "rad/s",
+      "friction": "N m; source friction torque",
+      "initial_C": "degree C; explicitly permitted initial lubricant measurement"
+    },
+    "observation_window": "Causal housing/environment/friction history through current sample plus first lubricant temperature. Exclude t=0 from scoring because it is calibration, not a forecast.",
+    "calibration_and_history": "Original identification and validation folder assignment preserved. First native sample of each 5 s bin used for compact, deterministic low-frequency thermal analysis; no interpolation. Startup TL is permitted calibration. Neither later lubricant temperatures nor their finite differences enter prediction. Source already presents a lubricant-temperature observer.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [],
+  "current_outcomes_exposed": true
+}

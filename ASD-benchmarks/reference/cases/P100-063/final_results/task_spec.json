@@ -1,0 +1,54 @@
+{
+  "case_id": "P100-063",
+  "title": "Temperature-transfer magnon noise",
+  "target": "Noise power spectral density",
+  "target_units": "nV^2/Hz",
+  "error_units": "nV^2/Hz",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "frequency_GHz",
+    "field_T",
+    "termination_K"
+  ],
+  "input_units": {
+    "frequency_GHz": "GHz",
+    "field_T": "T",
+    "termination_K": "K"
+  },
+  "numeric_columns": [
+    "frequency_GHz",
+    "field_T",
+    "termination_K"
+  ],
+  "timing_contract": "All 77, 293 and 389 K traces were used for whole-temperature leave-out development; all 195 and 352 K traces were reserved. Field traces and frequency bins are nested within temperature. Source background subtraction is retained and disclosed; it is not fitted by this campaign.",
+  "calibration": "No held-condition calibration. Publisher background subtraction retained, not refitted.",
+  "independent_unit": "Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.",
+  "scope_limits": [
+    "Entire termination temperature; magnetic-field traces nested. One74nm YIG film, frequencies dependent.",
+    "The measured thermal peak/dip response is reproducible with a compact Lorentzian family across two reserved termination temperatures. The extra dispersive term is effectively tied with the symmetric control; no new magnon law is established.",
+    "No independent population confidence interval from dependent rows."
+  ],
+  "source_url": "https://kondata.uni-konstanz.de/radar/en/dataset/iRRYHMPwMObNsUOM",
+  "source_license": "CC-BY-4.0",
+  "source_assets": "SOURCE_MANIFEST.json",
+  "exposure": {
+    "historical": "Internal confirmation reserved until FREEZE.json; schema-stage exposures documented in SOURCE_AND_UNITS.md.",
+    "current": "All confirmation outcomes exposed to future users."
+  },
+  "uncertainty_policy": "Report individual top-level groups and their range; no row-bootstrap population inference.",
+  "aggregation": "Equal group weight then equal eligible rows within group.",
+  "eligibility": "Nonfinite native values excluded with anchors; none excluded by fit residuals. All source bytes unchanged.",
+  "prior_analysis": "https://arxiv.org/html/2404.17327v1",
+  "native_adapter": "native.py at scenario research root; shared benchmark integration supplies canonical adapter registration",
+  "reader_dependencies": [
+    "numpy",
+    "pandas",
+    "scipy",
+    "openpyxl",
+    "matplotlib",
+    "h5py"
+  ],
+  "claim_admission": "supported",
+  "reference_selection": "Min primary error with simpler coefficient count within1percent; retain all controls even if superior.",
+  "physical_bounds": "PSD nonnegative, termination temperature not film temperature."
+}

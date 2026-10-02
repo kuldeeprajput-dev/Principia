@@ -1,0 +1,56 @@
+{
+  "target": "GBM NaI channel4 count rate during fixed post-trigger window",
+  "target_units": "counts/s",
+  "metric_kind": "mae",
+  "independent_unit": "Detector within one GRB; detectors share one incident event",
+  "timing_contract": "Same-bin channel2+3 count rates and previous-bin low-energy rate permitted; targetchannel4 observations aftertrigger forbidden as predictors.",
+  "calibration": "Pretrigger[-200,-100]s background rate in each low/high channel; instrument-specific energy edges recorded.",
+  "scope_limits": "SingleGRB250206827, observed detector counts not deconvolved photon flux. NaI channel4 spans slightly different energy ranges by detector. No universal burst hardness law or independent event replication.",
+  "split": "Two NaI detectors selectedbyseededIDhash confirmation; leave-one-detector-out development",
+  "question": "Does a common count-space hardness response transfer across detector orientations and burst phases?",
+  "case_id": "P100-045",
+  "error_units": "counts/s",
+  "source_url": "https://heasarc.gsfc.nasa.gov/FTP/fermi/data/gbm/triggers/2025/bn250206827/current/",
+  "source_license": "Public domain; Fermi/HEASARC acknowledgment",
+  "exposure": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+  "uncertainty_policy": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics.",
+  "selection": "Lowest development mean-group MAE, simpler model on relative1% tie. Exact mathematical algorithm baselines do not claim novel accuracy. Retain every attempt and compare named strong controls.",
+  "stopping": "At least5distinct scientific attempts; continue while a justified distinct mechanism yields prediction/robustness/interpretation gain; stop after2consecutive substantive no-gain attempts after minimum5.",
+  "created_utc": "2026-10-02T01:37:42.772931+00:00",
+  "before_first_fit": true,
+  "permitted_inputs": [
+    "low",
+    "low_lag",
+    "background_low",
+    "background_high",
+    "time_s",
+    "channel_low_keV",
+    "channel_high_keV"
+  ],
+  "input_units": {
+    "low": "counts/s in channels 2+3",
+    "low_lag": "counts/s in preceding bin, channels 2+3",
+    "background_low": "counts/s in pretrigger channels 2+3",
+    "background_high": "counts/s in pretrigger channel 4",
+    "time_s": "s after trigger",
+    "channel_low_keV": "keV",
+    "channel_high_keV": "keV"
+  },
+  "numeric_columns": [
+    "low",
+    "low_lag",
+    "background_low",
+    "background_high",
+    "time_s",
+    "channel_low_keV",
+    "channel_high_keV"
+  ],
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "nonnegative_prediction": true,
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0"
+}

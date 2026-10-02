@@ -1,0 +1,1481 @@
+{
+  "status": "pass",
+  "created_at": "2026-10-01T12:26:02.702557+00:00",
+  "scope": "15 preexisting round2 portfolios; all historical COMPARISON candidates and baselines, no fitting",
+  "cases": 15,
+  "models": 180,
+  "predictions_replayed": 1353974,
+  "maximum_absolute_prediction_difference": 2.1316282072803006e-13,
+  "integrity_checks": 105,
+  "additional_inputs": {
+    "27": [
+      "saturation_temperature_K"
+    ],
+    "61": [
+      "membrane_index"
+    ],
+    "82": [
+      "past_temperature"
+    ]
+  },
+  "computational_review_limits": "This demonstrates prediction parity and execution integrity, not independent experimental replication, scientific novelty or causal validity. All future OOF outcomes are exposed.",
+  "replay": [
+    {
+      "case": 24,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "cycle",
+        "E0_GPa",
+        "strain_percent",
+        "frequency_Hz",
+        "cure"
+      ],
+      "models": [
+        {
+          "model": "previous/cycle-002",
+          "rows": 11904,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-001",
+          "rows": 11904,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_log",
+          "rows": 11904,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 11904,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/kernel_nested",
+          "rows": 11904,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_nested_flex",
+          "rows": 11904,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_persistence",
+          "rows": 11904,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 11904,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 27,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "pressure_Pa",
+        "massflux_kg_m2_s",
+        "quality",
+        "radial_fraction",
+        "rho_liquid",
+        "rho_vapor",
+        "saturation_temperature_K"
+      ],
+      "models": [
+        {
+          "model": "current/baseline-hgb",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-001",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-002",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_radial",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-004",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-003",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-002",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/kernel_nested",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_drift",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_homogeneous",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_nested_flex",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_mean",
+          "rows": 108,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 37,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "u",
+        "q",
+        "packet_bytes",
+        "router"
+      ],
+      "models": [
+        {
+          "model": "current/baseline-hgb",
+          "rows": 55330,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/flexible",
+          "rows": 55330,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/unconstrained1",
+          "rows": 55330,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/cycle2",
+          "rows": 55330,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/cycle1",
+          "rows": 55330,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/unconstrained2",
+          "rows": 55330,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 55330,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/simple",
+          "rows": 55330,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/linear",
+          "rows": 55330,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 53,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "early",
+        "finding",
+        "gradient_proxy",
+        "roughness",
+        "usage",
+        "left",
+        "has_history",
+        "prev_y",
+        "prev_early",
+        "prev_gradient",
+        "first_y",
+        "mean_past_y",
+        "history_gap"
+      ],
+      "models": [
+        {
+          "model": "previous/results-v2/flexible",
+          "rows": 9895,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 9895,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/linear",
+          "rows": 9895,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/cycle1",
+          "rows": 9895,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/unconstrained1",
+          "rows": 9895,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/cycle2",
+          "rows": 9895,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/unconstrained2",
+          "rows": 9895,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/simple",
+          "rows": 9895,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 9895,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 57,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "T_C",
+        "shear_s",
+        "T_previous",
+        "eta_previous",
+        "eta_first",
+        "previous_shear_s",
+        "first_shear_s",
+        "formulation"
+      ],
+      "models": [
+        {
+          "model": "previous/cycle-002",
+          "rows": 9000,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 9000,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-001",
+          "rows": 9000,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-old",
+          "rows": 9000,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-signed_history",
+          "rows": 9000,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-previous",
+          "rows": 9000,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 9000,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-flex",
+          "rows": 9000,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-003",
+          "rows": 9000,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 60,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "distance_mm",
+        "resonance_kHz",
+        "width_us",
+        "condition"
+      ],
+      "models": [
+        {
+          "model": "current/cycle-004",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-003",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-002",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-001",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-003",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-005",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-006",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-004",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-global_edge",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-old",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-constant",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-flex",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-002",
+          "rows": 300,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 61,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "temperature_K",
+        "feed_fraction",
+        "normal_flow_L_min",
+        "retentate_bar",
+        "permeate_bar",
+        "area_m2",
+        "calibration_j0",
+        "membrane",
+        "gas",
+        "membrane_index"
+      ],
+      "models": [
+        {
+          "model": "current/cycle-006",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-005",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-004",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-002",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-004",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-006",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-005",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-007",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-003",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/kernel_nested",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/membrane_residual_rbf_original_grid",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-008",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-003",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-002",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-001",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_coupled",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/membrane_residual_rbf_nested",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_rbf",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_mean",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_richardson",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_sieverts",
+          "rows": 120,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 67,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "width_m",
+        "longest_m",
+        "v_up_m_s",
+        "v_near_m_s",
+        "v_far_m_s",
+        "orientation_cos2",
+        "orientation_dispersion",
+        "delta_density_kg_m3",
+        "particle",
+        "family"
+      ],
+      "models": [
+        {
+          "model": "previous/results-v2/rbf",
+          "rows": 148,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/flexible",
+          "rows": 148,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/unconstrained2",
+          "rows": 148,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 148,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results/simple",
+          "rows": 148,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/simple",
+          "rows": 148,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/cycle2",
+          "rows": 148,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/unconstrained1",
+          "rows": 148,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/cycle1",
+          "rows": 148,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 148,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/linear",
+          "rows": 148,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 71,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "perm",
+        "permittivity_decline",
+        "perm_decline_fraction",
+        "perm_peak_past",
+        "deltaeps",
+        "fc",
+        "conductivity",
+        "cole_r2",
+        "od",
+        "transmission",
+        "reflection",
+        "time_h",
+        "fed_batch",
+        "dperm24",
+        "dod24"
+      ],
+      "models": [
+        {
+          "model": "previous/adaptive-003/results/linear_magnitude",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/unconstrained2",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/adaptive-003/results/availability",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/adaptive-003/results/unconstrained",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/adaptive-003/results/bounded_correction",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/availability",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/cycle1",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/unconstrained1",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/cycle2",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/simple",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/rbf",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 4.796163466380676e-14
+        },
+        {
+          "model": "previous/results-v2/flexible",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/linear",
+          "rows": 286,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 72,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "S22",
+        "S72",
+        "G22",
+        "G72",
+        "F22",
+        "F72",
+        "time_h",
+        "coculture"
+      ],
+      "models": [
+        {
+          "model": "current/cycle-003",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-002",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-004",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-002",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 7.105427357601002e-14
+        },
+        {
+          "model": "previous/cycle-003",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 7.105427357601002e-14
+        },
+        {
+          "model": "previous/cycle-004",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 9.237055564881302e-14
+        },
+        {
+          "model": "previous/cycle-001",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 1.2789769243681803e-13
+        },
+        {
+          "model": "previous/baseline-flex",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 2.1316282072803006e-13
+        },
+        {
+          "model": "previous/baseline-linear_sugar",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 1.7053025658242404e-13
+        },
+        {
+          "model": "previous/baseline-first_order",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 3.552713678800501e-14
+        },
+        {
+          "model": "previous/baseline-persistence",
+          "rows": 153,
+          "maximum_absolute_prediction_difference": 1.4210854715202004e-14
+        }
+      ]
+    },
+    {
+      "case": 73,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "g4",
+        "g8",
+        "hour",
+        "trial",
+        "algae"
+      ],
+      "models": [
+        {
+          "model": "previous/baselines/kernel_nested",
+          "rows": 568,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_curvature",
+          "rows": 568,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_dual_pool",
+          "rows": 568,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_first_order",
+          "rows": 568,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-002",
+          "rows": 568,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_empirical_ratio",
+          "rows": 568,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 568,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-001",
+          "rows": 568,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 568,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_persistence",
+          "rows": 568,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_linear_prefix",
+          "rows": 568,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 82,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "t05",
+        "tsmoisture",
+        "doy",
+        "moisture_change",
+        "site",
+        "context",
+        "past_temperature"
+      ],
+      "models": [
+        {
+          "model": "current/cycle-001",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-003",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-002",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_temperature_moisture",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_lloyd_taylor",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-002",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-001",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/lt_with_history_information_access",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/lt_repaired",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_q10",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/kernel_nested",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/kernel_with_history",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baselines/old_context_mean",
+          "rows": 20128,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 83,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "T_now",
+        "T_lag",
+        "T_external",
+        "T_external_lag",
+        "RH_external",
+        "hour_sin",
+        "hour_cos",
+        "stream"
+      ],
+      "models": [
+        {
+          "model": "previous/baseline-flex",
+          "rows": 4111,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-old",
+          "rows": 4111,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 4111,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-unconstrained_exchange",
+          "rows": 4111,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/ablation-positive_no_ambient",
+          "rows": 4111,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-001",
+          "rows": 4111,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-002",
+          "rows": 4111,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/ablation-positive_no_memory",
+          "rows": 4111,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 4111,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-persistence",
+          "rows": 4111,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/cycle-003",
+          "rows": 4111,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 92,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "r0",
+        "channel_contrast",
+        "position_contrast",
+        "spatial_contrast",
+        "global_power_reference",
+        "local_channel_power_dB",
+        "furniture",
+        "day",
+        "lwa",
+        "port",
+        "channel"
+      ],
+      "models": [
+        {
+          "model": "current/baseline-hgb",
+          "rows": 18720,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/flexible",
+          "rows": 18720,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/unconstrained1",
+          "rows": 18720,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/cycle1",
+          "rows": 18720,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/linear",
+          "rows": 18720,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 18720,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/unconstrained2",
+          "rows": 18720,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/cycle2",
+          "rows": 18720,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results-v2/simple",
+          "rows": 18720,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/results/simple",
+          "rows": 18720,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    },
+    {
+      "case": 100,
+      "status": "pass",
+      "required_inputs": [
+        "sample_id",
+        "payload_B",
+        "last_rtt",
+        "mean5_rtt",
+        "mean3_rtt",
+        "trend_rtt",
+        "RSRP",
+        "RSRQ",
+        "last2_rtt",
+        "last3_rtt",
+        "median5_rtt",
+        "std5_rtt",
+        "route"
+      ],
+      "models": [
+        {
+          "model": "previous/baseline-lag2",
+          "rows": 5965,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-flex",
+          "rows": 5965,
+          "maximum_absolute_prediction_difference": 4.263256414560601e-14
+        },
+        {
+          "model": "previous/cycle-002",
+          "rows": 5965,
+          "maximum_absolute_prediction_difference": 7.105427357601002e-15
+        },
+        {
+          "model": "current/cycle-001",
+          "rows": 5965,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-old",
+          "rows": 5965,
+          "maximum_absolute_prediction_difference": 7.105427357601002e-15
+        },
+        {
+          "model": "previous/cycle-001",
+          "rows": 5965,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "current/baseline-hgb",
+          "rows": 5965,
+          "maximum_absolute_prediction_difference": 0.0
+        },
+        {
+          "model": "previous/baseline-rolling",
+          "rows": 5965,
+          "maximum_absolute_prediction_difference": 3.552713678800501e-15
+        },
+        {
+          "model": "previous/baseline-last",
+          "rows": 5965,
+          "maximum_absolute_prediction_difference": 0.0
+        }
+      ]
+    }
+  ],
+  "integrity": [
+    {
+      "case": 24,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 27,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 37,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 53,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 57,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 60,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 61,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 67,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 71,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 72,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 73,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 82,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 83,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 92,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    },
+    {
+      "case": 100,
+      "checks": [
+        "sample_order_invariance",
+        "future_target_poison_invariance",
+        "unknown_oof_rejected",
+        "duplicate_identity_rejected",
+        "explicit_deployment_only",
+        "isolated_subprocess_replay",
+        "corrupt_state_rejected_before_module_import"
+      ],
+      "status": "pass"
+    }
+  ],
+  "runtime_files": [
+    {
+      "path": "evaluation/round2_runtime/EXTRACTION.json",
+      "bytes": 3768,
+      "sha256": "89a71cfa4b203b55a7112251da27c55d183f58f64523b7f5bcfa469a9acd71ab"
+    },
+    {
+      "path": "evaluation/round2_runtime/README.md",
+      "bytes": 3399,
+      "sha256": "a3ba72ccf297aa7472fe13fb0d9d0e4d0331bf1d945e1a7d0ed7726262f0fd0a"
+    },
+    {
+      "path": "evaluation/round2_runtime/__init__.py",
+      "bytes": 49,
+      "sha256": "b5f065fc9950abd07e9015fc13b39f288dbbccac54befd936e26fc8d6faa3063"
+    },
+    {
+      "path": "evaluation/round2_runtime/adaptive.py",
+      "bytes": 1502,
+      "sha256": "4b444633a0a691b7440df426830373b725e31dfe3a4b0facd4a624a819e1cd9f"
+    },
+    {
+      "path": "evaluation/round2_runtime/current.py",
+      "bytes": 5343,
+      "sha256": "78e7db22e344851522d65a241d946d2efac52d782d3c9486e8128dfa94c571c6"
+    },
+    {
+      "path": "evaluation/round2_runtime/falsifiers.py",
+      "bytes": 942,
+      "sha256": "4850726031138720979fc5776a14f115b220a7147b6b0ce54438142c7c060db1"
+    },
+    {
+      "path": "evaluation/round2_runtime/followups.py",
+      "bytes": 1031,
+      "sha256": "60d4194f5a9ae28f627be5d6520d1f946253ecab2addebb5cc8104be49fe7731"
+    },
+    {
+      "path": "evaluation/round2_runtime/materialize.py",
+      "bytes": 8949,
+      "sha256": "5efb58b3fa2772404a6ee6ea388d317e8b055d8deecdabeddc094e6577fa97f8"
+    },
+    {
+      "path": "evaluation/round2_runtime/original_bio.py",
+      "bytes": 8028,
+      "sha256": "8d369ef0a46d0de87f53298d254ee1f0cd4795b8276d82db7a63a52ae59edfe3"
+    },
+    {
+      "path": "evaluation/round2_runtime/original_ecology.py",
+      "bytes": 4149,
+      "sha256": "d67cd6c2b85c51c4ceafb4faebd860db096bbcd331cb6d0cfd6853d0672a4332"
+    },
+    {
+      "path": "evaluation/round2_runtime/original_mech.py",
+      "bytes": 3390,
+      "sha256": "8364ac43213a2cb98cacc27c4086755fb137e8fd77187f335071ff5013a6178d"
+    },
+    {
+      "path": "evaluation/round2_runtime/original_membrane.py",
+      "bytes": 3111,
+      "sha256": "00bf3184b17ca0b7d2c52a0d420111f97b22be30a3d6991fde1256f8f40d03f5"
+    },
+    {
+      "path": "evaluation/round2_runtime/previous_bio.py",
+      "bytes": 7441,
+      "sha256": "8765b15f0228fca4eabd00e4bd3af683157e8ef25fb11ebb89571d3886ee9278"
+    },
+    {
+      "path": "evaluation/round2_runtime/previous_cho.py",
+      "bytes": 1884,
+      "sha256": "647cabf2c96fea86e35897e739c67cbb22e606d3ea991690340093dfd3cb5a29"
+    },
+    {
+      "path": "evaluation/round2_runtime/previous_mech.py",
+      "bytes": 5447,
+      "sha256": "50a8df8e7846fb1a122642fac70124f4af944ce0bbdc803a6facd222fcf8d432"
+    },
+    {
+      "path": "evaluation/round2_runtime/previous_pilot.py",
+      "bytes": 7333,
+      "sha256": "21ae3aa103bb8bf36539947309e53829fa7b2dd7ec9d5ee35282b56963b8ee55"
+    },
+    {
+      "path": "evaluation/round2_runtime/run_template.txt",
+      "bytes": 2089,
+      "sha256": "c5a1358f46e52e8af15dd8b87e17e7cd3e2191fd2fd0a0da8f72eaad3b96b801"
+    },
+    {
+      "path": "evaluation/round2_runtime/runtime.py",
+      "bytes": 1484,
+      "sha256": "80d89705567c4940d113a4d9e1278fac1bef9b33d657c8d2e5cf37b6356414fe"
+    },
+    {
+      "path": "evaluation/round2_runtime/transport.py",
+      "bytes": 975,
+      "sha256": "420ecc9c967ac4e7810b69340651c558fc2dc37e9945daf858a4accdf6842a0c"
+    }
+  ],
+  "training_scope_addition": "Exact archived training/validation group records and frozen normalization were added separately. Missing predecessor group inventories remain explicitly unknown. Numerical states were not changed."
+}

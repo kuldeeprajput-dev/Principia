@@ -1,0 +1,42 @@
+{
+  "name": "activated_breakthrough",
+  "formula": "offset+(a0+a1*high)*exp(-(tau*exp(k*high)/t)**beta)",
+  "hypothesis": "Development evidence available before this fit: distributed_trapping: MAE 2.52537, worst group 6.36307; finite_capacity_trapping: MAE 5.11432, worst group 10.9732.\n\nTest delayed diffusion-front breakthrough with an inverse-time activation form. Unlike stretched saturation, this suppresses very early response and represents arrival-time dispersion; it must improve forward groups without inventing a measured boundary concentration.",
+  "inputs": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "initial": {
+    "a0": 20,
+    "a1": 40,
+    "tau": 1000,
+    "k": 0,
+    "beta": 1
+  },
+  "bounds": {
+    "a0": [
+      -500,
+      500
+    ],
+    "a1": [
+      -1000,
+      1000
+    ],
+    "tau": [
+      10,
+      1000000.0
+    ],
+    "k": [
+      -4,
+      4
+    ],
+    "beta": [
+      0.3,
+      3
+    ]
+  },
+  "recorded_utc": "2026-10-02T02:01:23.110116+00:00",
+  "parent": "attempt-009"
+}

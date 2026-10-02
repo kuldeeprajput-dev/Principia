@@ -1,0 +1,301 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-083",
+  "findings": [
+    {
+      "finding_id": "P100-083-SCI-01",
+      "statement": "A compact one-hour temperature predictor modestly improves persistence but does not outperform the residual kernel or identify thermoregulation.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-083.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Forward date blocks at five calibrated sensor streams from one apiary; species, season and colony/sensor placement covary. Strong adverse evidence: Second Apis stream worsens against persistence; negative ambient-gradient coefficient cannot be interpreted as positive passive conductance .35.72 Cderived coefficient combination is not a measured brood setpoint.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Internal thermal inertia is plausible; behavioral regulation, ambient forcing, sensor placement and observational timing are not separated causally.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Thermal response and autoregressive forecasting are known; no new bee-regulation mechanism established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Forward date blocks at five calibrated sensor streams from one apiary; species, season and colony/sensor placement covary.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original future-date streams",
+          "measure": "reference RMSE",
+          "value": 0.204548,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original future-date streams",
+          "measure": "persistence RMSE",
+          "value": 0.215706,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original future-date streams",
+          "measure": "residual kernel RMSE",
+          "value": 0.202103,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Second Apis stream worsens against persistence; negative ambient-gradient coefficient cannot be interpreted as positive passive conductance .35.72 Cderived coefficient combination is not a measured brood setpoint.",
+      "scientific_validators": [
+        "Require one-hour native lag and target matching within the declared five-minute tolerance, without future weather/interpolation.",
+        "Report each sensor stream and season; do not treat streams as independent apiaries.",
+        "Challenge claimed conductance signs and brood-setpoint interpretation against measured interventions."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-083.json",
+      "source_classification": "numerical_control"
+    },
+    {
+      "finding_id": "P100-083-SCI-02",
+      "statement": "A physically signed passive-temperature competitor is falsified as the strongest forecast.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [],
+      "task_version_history": "2026-09-30 first continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Forward date blocks at five calibrated sensor streams from one apiary; species, season and colony/sensor placement covary. Strong adverse evidence: Development RMSE.19148704 C vs .16096145 C flexible; evaporation coefficient reaches zero, and ambient-level ablation improves the model. Conductance and behavioral heat regulation remain unidentifiable.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Internal thermal inertia is plausible; behavioral regulation, ambient forcing, sensor placement and observational timing are not separated causally.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Thermal response and autoregressive forecasting are known; no new bee-regulation mechanism established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Forward date blocks at five calibrated sensor streams from one apiary; species, season and colony/sensor placement covary.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        }
+      },
+      "numerical_evidence": [],
+      "strongest_adverse_evidence": "Development RMSE.19148704 C vs .16096145 C flexible; evaporation coefficient reaches zero, and ambient-level ablation improves the model. Conductance and behavioral heat regulation remain unidentifiable.",
+      "scientific_validators": [
+        "Require one-hour native lag and target matching within the declared five-minute tolerance, without future weather/interpolation.",
+        "Report each sensor stream and season; do not treat streams as independent apiaries.",
+        "Challenge claimed conductance signs and brood-setpoint interpretation against measured interventions."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-083.json",
+      "source_classification": "unsupported_or_falsified"
+    },
+    {
+      "finding_id": "P100-083-SCI-03",
+      "statement": "Weather-increment forecasting remains weaker than the flexible control; physical sign constraints are informative falsifiers.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-083.round2.v1"
+      ],
+      "task_version_history": "2026-09-30 second continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Forward date blocks at five calibrated sensor streams from one apiary; species, season and colony/sensor placement covary. Strong adverse evidence: Only 2/15 blocks improve. A known ARX forecast is not an identified heat-balance or colony-health rule.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Internal thermal inertia is plausible; behavioral regulation, ambient forcing, sensor placement and observational timing are not separated causally.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Thermal response and autoregressive forecasting are known; no new bee-regulation mechanism established. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Forward date blocks at five calibrated sensor streams from one apiary; species, season and colony/sensor placement covary.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "round 2 15 forward blocks",
+          "measure": "weather-increment RMSE",
+          "value": 0.186824253,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        {
+          "cohort": "round 2 same cohort",
+          "measure": "prior flexible RMSE",
+          "value": 0.160961448,
+          "unit": "degree C",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Only 2/15 blocks improve. A known ARX forecast is not an identified heat-balance or colony-health rule.",
+      "scientific_validators": [
+        "Require one-hour native lag and target matching within the declared five-minute tolerance, without future weather/interpolation.",
+        "Report each sensor stream and season; do not treat streams as independent apiaries.",
+        "Challenge claimed conductance signs and brood-setpoint interpretation against measured interventions."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-083.json",
+      "source_classification": "unsupported_or_falsified"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

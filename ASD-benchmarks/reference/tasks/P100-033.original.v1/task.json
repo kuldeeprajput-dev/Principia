@@ -1,0 +1,176 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-033.original.v1",
+  "case_id": "P100-033",
+  "case_number": 33,
+  "family": "original",
+  "protocol_version": "P100-033-asd7-native-v1",
+  "cohort_id": "P100-033.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-033.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/33_biomedical_but_smartphone_ppg",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "ECG reference heart rate",
+  "target_units": "bpm",
+  "error_units": "bpm",
+  "primary_units": "bpm",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "fft_bpm",
+    "acf_bpm",
+    "half_bpm",
+    "half_strength",
+    "spectral_quality",
+    "agreement",
+    "motion",
+    "ear"
+  ],
+  "input_units": {
+    "fft_bpm": "bpm",
+    "acf_bpm": "bpm",
+    "half_bpm": "bpm",
+    "half_strength": "dimensionless",
+    "spectral_quality": "dimensionless",
+    "agreement": "bpm",
+    "motion": "dimensionless",
+    "ear": "dimensionless"
+  },
+  "numeric_columns": [
+    "fft_bpm",
+    "acf_bpm",
+    "half_bpm",
+    "half_strength",
+    "spectral_quality",
+    "agreement",
+    "motion",
+    "ear"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "After the complete ten-second PPG segment; simultaneous ECG supplies the target but is never an input. Known recording motion/contact conditions are allowed. No human quality annotation is a predictor.",
+  "calibration": "No per-person ECG or target calibration. Spectral transforms are fixed within each PPG window; any fusion/shrinkage parameters or flexible scaling are trained on development people only.",
+  "independent_unit": "Person; every recording from one person linked",
+  "evaluation_groups": [
+    "102",
+    "103",
+    "106",
+    "114",
+    "117",
+    "119",
+    "124",
+    "128",
+    "137",
+    "144"
+  ],
+  "assigned_rows": 756,
+  "eligible_rows": 756,
+  "baseline_models": [
+    "reference",
+    "baseline_constant",
+    "baseline_fourier",
+    "baseline_autocorrelation",
+    "baseline_flexible",
+    "attempt_001_alias",
+    "attempt_002_fusion",
+    "attempt_003_shrinkage",
+    "attempt_004_motion_fusion",
+    "attempt_005_agreement_gate",
+    "attempt_006_consensus_shrink"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "clip(w*F+(1-w)*mu; w=sigmoid(b0+b1*(Q-.3)); mu=b2,30,240) bpm; F=FFT rate,A=ACF rate,H=half-rate candidate,Q=spectral concentration,S=half-frequency relative power,D=abs(F-A)/60",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_constant": {
+      "equation": "clip(weighted development median HR,30,240) bpm; F=FFT rate,A=ACF rate,H=half-rate candidate,Q=spectral concentration,S=half-frequency relative power,D=abs(F-A)/60",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_fourier": {
+      "equation": "clip(F,30,240) bpm; F=FFT rate,A=ACF rate,H=half-rate candidate,Q=spectral concentration,S=half-frequency relative power,D=abs(F-A)/60",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_autocorrelation": {
+      "equation": "clip(A,30,240) bpm; F=FFT rate,A=ACF rate,H=half-rate candidate,Q=spectral concentration,S=half-frequency relative power,D=abs(F-A)/60",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "clip(b0+sum_j b_j exp(-mean((z-center_j)^2)/2); training-only z scaling,30,240) bpm; F=FFT rate,A=ACF rate,H=half-rate candidate,Q=spectral concentration,S=half-frequency relative power,D=abs(F-A)/60",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001_alias": {
+      "equation": "clip(F-sigmoid(b0+b1*(S-.5))*(F-H),30,240) bpm; F=FFT rate,A=ACF rate,H=half-rate candidate,Q=spectral concentration,S=half-frequency relative power,D=abs(F-A)/60",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002_fusion": {
+      "equation": "clip(w*F+(1-w)*A; w=sigmoid(b0+b1*(Q-.3)+b2*D),30,240) bpm; F=FFT rate,A=ACF rate,H=half-rate candidate,Q=spectral concentration,S=half-frequency relative power,D=abs(F-A)/60",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003_shrinkage": {
+      "equation": "clip(w*F+(1-w)*mu; w=sigmoid(b0+b1*(Q-.3)); mu=b2,30,240) bpm; F=FFT rate,A=ACF rate,H=half-rate candidate,Q=spectral concentration,S=half-frequency relative power,D=abs(F-A)/60",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004_motion_fusion": {
+      "equation": "clip(w*F+(1-w)*A+b4*ear; w=sigmoid(b0+b1*(Q-.3)+b2*D+b3*motion),30,240) bpm; F=FFT rate,A=ACF rate,H=half-rate candidate,Q=spectral concentration,S=half-frequency relative power,D=abs(F-A)/60",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005_agreement_gate": {
+      "equation": "clip(C=H if S>=threshold else F; select C only when abs(C-A)<abs(F-A),30,240) bpm; F=FFT rate,A=ACF rate,H=half-rate candidate,Q=spectral concentration,S=half-frequency relative power,D=abs(F-A)/60",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006_consensus_shrink": {
+      "equation": "clip(w*(F+A)/2+(1-w)*mu; w=sigmoid(b0+b1*(Q-.3)-b2*D), mu=b3,30,240) bpm; F=FFT rate,A=ACF rate,H=half-rate candidate,Q=spectral concentration,S=half-frequency relative power,D=abs(F-A)/60",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap."
+  },
+  "scope_limits": "50 participants in one smartphone protocol;10 held people. ECG-derived rate is an independent sensor reference, but no clinical agreement threshold or cardiovascular diagnosis is established.",
+  "source_url": "https://physionet.org/content/butppg/2.0.0/",
+  "source_license": "CC BY 4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "b876f85b982fed13e93ac94b28424b3aa64bd6dc5e722a0e34120fc9b0054d63",
+  "observations_sha256": "141fe2c9695126339500408f3ed425e5f4ffe73c0810b0bc16bc60ad870b65a4",
+  "legacy_protocol_sha256": "f54315f0208bdcf789c13df6de937b58141d0ab6632a717b856ccb3823db59b0",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

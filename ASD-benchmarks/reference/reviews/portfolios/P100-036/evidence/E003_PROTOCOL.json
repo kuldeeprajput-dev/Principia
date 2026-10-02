@@ -1,0 +1,27 @@
+{
+  "frozen_utc": "2026-10-02T02:15:46.926548+00:00",
+  "endpoint_revision": "Before fitting: proposed RWC replaced by dimensionless QY_max because native RWC normalization was not author-defined in retained records. DAS also omitted because workbook and author README conflict on days-after-sowing versus days-after-stress. Root approved this pre-fit revision.",
+  "target": "Author QY_max",
+  "units": "dimensionless quantum yield",
+  "inputs": [
+    "npq",
+    "rfd",
+    "ngrdi",
+    "area",
+    "tiny",
+    "salt",
+    "drought",
+    "high_stress"
+  ],
+  "timing": "Contemporaneous imaging diagnostic: source NPQ_Lss, Rfd_Lss, NGRDI, morphology and known cultivar/treatment predict separately reported maximum quantum yield. No QY_max-derived feature or future plant measurement is supplied.",
+  "groups": "SPLITS.json whole plants stratified metadata only",
+  "source_hashes": "SOURCE_MANIFEST.json",
+  "eligibility": "Finite target and listed source predictors; preserve signed values; target must lie[0,1] or fail explicitly. No target-conditioned outlier removal.",
+  "baseline_families": [
+    "constant mean yield",
+    "cultivar/treatment design model",
+    "training-only normalized RBF flexible model"
+  ],
+  "selection": "Whole-plant MAE; simplest parameter count within1% of minimum. At least5 adaptive hypotheses then two no-gain outcomes. Confirmation untouched until freeze.",
+  "exposure": "Schema, identifiers and missingness inspected; no QY_max values printed before this protocol. Published image-biomarker purpose is source aware."
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-063.original.v1.raw-access.v1",
+  "parent_task_id": "P100-063.original.v1",
+  "case_id": "P100-063",
+  "protocol_version": "P100-063.original.v1.raw-access.v1",
+  "cohort_id": "P100-063.original.v1.cohort-1",
+  "parent_task_sha256": "609861c39080b7c4344658977f43f12254f69c566a94aa1c672b24462cf9aa0d",
+  "input_sha256": "08a1c65bd5ef5a8b4c8fd71bf31cd9d26c8f7179aa3ac7fd36976d01aa68ed83",
+  "observations_sha256": "bfbb40d03405f67ecafb88fc384942eed5bcd55ff5d4804401e7adf6e3cb6c7d",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "63_physics_magnon_noise",
+  "source_assets": [
+    {
+      "path": "PROVENANCE.json",
+      "bytes": 4334,
+      "sha256": "96cdc90553ee9bf0c97734041c6af196b995651d9b9d31159993267ef1fbdf18"
+    },
+    {
+      "path": "raw/iRRYHMPwMObNsUOM.tar",
+      "bytes": 2485248,
+      "sha256": "8575eb92da7a9600641dee09cea62e67adf9bd837edd2086acd65eca72c6c12e"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "frequency_GHz": "GHz",
+      "field_T": "T",
+      "termination_K": "K"
+    },
+    "observation_window": "All 77, 293 and 389 K traces were used for whole-temperature leave-out development; all 195 and 352 K traces were reserved. Field traces and frequency bins are nested within temperature. Source background subtraction is retained and disclosed; it is not fitted by this campaign.",
+    "calibration_and_history": "No held-condition calibration. Publisher background subtraction retained, not refitted.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "One YIG film; frequencies and temperatures are dependent.",
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

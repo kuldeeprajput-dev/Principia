@@ -1,0 +1,22 @@
+{
+  "source": "Zenodo14635635, Vigo/M\u00e1laga6G-MOBKPI on6G-SANDBOX platform",
+  "measurement_dates": "Nov20\u201322,2024; releaseJan2025",
+  "processing": "Predict next probe RTT using only five previous completed RTTs and radio asof previous completion, <=0.5s old. No current response-completion timestamp, ICMPseq, cumulative average/loss, future gap, throughput or same-probe radio in inputs. Successful response conditional target; missing lost responses retained when inputs eligible.",
+  "exclusions": {
+    "missing five-probe input prefix": 260,
+    "missing radio input": 8
+  },
+  "reserved_source_runs": [
+    "FR1 Micro - FR1 Micro Indoor (Random Shape)/PING/1000B/2024-11-22_17-29-19_ping.csv",
+    "FR1 Micro - FR1 Micro Indoor (Rectangular Shape)/PING/20B/2024-11-22_11-04-17_ping.csv",
+    "FR1 Micro - FR1 Micro Outdoor (Rectangular Shape)/PING/20B/2024-11-20_19-05-38_ping.csv"
+  ],
+  "limitations": [
+    "Nine PING runs at one installation; three reserved runs, one per route.",
+    "Past RTTs in a reserved run are declared online calibration available to all models.",
+    "Transport timestamp semantics do not establish request send times.",
+    "RSSI often constant; use only RSRP/RSRQ.",
+    "Latency is not packet-loss reliability, queue occupancy or identified5G scheduler state."
+  ],
+  "audit_exposure": "First indoor-rectangle1000B file audit responses viewed; this complete file excluded from reserved allocation. Metadata hash chooses one run per route from remaining source-defined runs."
+}

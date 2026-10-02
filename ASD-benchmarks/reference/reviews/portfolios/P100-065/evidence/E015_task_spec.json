@@ -1,0 +1,50 @@
+{
+  "case_id": "P100-065",
+  "title": "Injection-ratio laser noise transfer",
+  "target": "Log frequency-noise spectral density",
+  "target_units": "dB re 1 Hz^2/Hz",
+  "error_units": "dB",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "frequency_Hz",
+    "injection_dB"
+  ],
+  "input_units": {
+    "frequency_Hz": "Hz",
+    "injection_dB": "dB"
+  },
+  "numeric_columns": [
+    "frequency_Hz",
+    "injection_dB"
+  ],
+  "timing_contract": "The \u221230 and \u221215 dB spectra were developed with four complete log-frequency-band folds; the entire \u221220 dB spectrum was reserved. Both ratio conditions remain in each development training fold. Confirmation therefore adds ratio interpolation beyond the spectral-band validation used for selection.",
+  "calibration": "No held-ratio calibration. Log10 target transform fixed; measuredPSD only and100<=f<=1e6Hz.",
+  "independent_unit": "Complete injection ratio; one laser/resonator setup. Development validation blocks complete log-frequency bands across two ratios.",
+  "scope_limits": [
+    "Complete injection ratio; one laser/resonator setup. Development validation blocks complete log-frequency bands across two ratios.",
+    "A compact sum of feedback-sensitive and common noise contributions predicts the reserved injection ratio, but the selected extension loses to the simpler fixed-exponent domain control. This supports bounded reproduction and model ambiguity, not a new laser-noise law.",
+    "No independent population confidence interval from dependent rows."
+  ],
+  "source_url": "https://eprints.soton.ac.uk/497413/",
+  "source_license": "CC-BY-4.0",
+  "source_assets": "SOURCE_MANIFEST.json",
+  "exposure": {
+    "historical": "Internal confirmation reserved until FREEZE.json; schema-stage exposures documented in SOURCE_AND_UNITS.md.",
+    "current": "All confirmation outcomes exposed to future users."
+  },
+  "uncertainty_policy": "Report individual top-level groups and their range; no row-bootstrap population inference.",
+  "aggregation": "Equal group weight then equal eligible rows within group.",
+  "eligibility": "Nonfinite native values excluded with anchors; none excluded by fit residuals. All source bytes unchanged.",
+  "prior_analysis": "https://eprints.soton.ac.uk/507397/1/prj-13-3-611.pdf",
+  "native_adapter": "native.py at scenario research root; shared benchmark integration supplies canonical adapter registration",
+  "reader_dependencies": [
+    "numpy",
+    "pandas",
+    "scipy",
+    "openpyxl",
+    "matplotlib"
+  ],
+  "claim_admission": "partially_supported",
+  "reference_selection": "Min primary error with simpler coefficient count within1percent; retain all controls even if superior.",
+  "physical_bounds": "RawPSD positive; logarithmic target can be negative."
+}

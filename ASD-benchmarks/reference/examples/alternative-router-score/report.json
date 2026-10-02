@@ -1,0 +1,375 @@
+{
+  "schema_version": "principia.report/3.0",
+  "evaluator_version": "3.0.0-rc.1",
+  "identity": {
+    "case_id": "P100-037",
+    "task_id": "P100-037.original.v1",
+    "protocol_version": "P100-037-prepared-primary-v1",
+    "cohort_id": "P100-037.original.v1.cohort-1"
+  },
+  "bindings": {
+    "task_sha256": "d0d2ef2a2bf44a56659a46b5261322fd57ecf878446bccb1221a69b9ab0dca63",
+    "manifest_sha256": "3228f2ce617459bfed3e93f461249d570a0e60ae524f693bfa76c661f76050c2",
+    "input_sha256": "9cdcd33d571ff37e52e789907b5dd86c0bcf883ecc6525adf2966fa005ce7f78",
+    "observations_sha256": "0a19b4420dd19ff31d8c497b20ef4208cf9bdceaa31838717cccd1b9097be0d1",
+    "submission_sha256": "e429992d2a16202b9b9a651004d4adffabd12430104fa9699dff0caf6cc25145",
+    "predictions_sha256": "7725f7756f755f4fbee137ffb726dc4ba2a2410ab73a96b25127af76d416d707"
+  },
+  "coverage": {
+    "assigned_rows": 27692,
+    "eligible_target_rows": 27691,
+    "predicted_rows": 27692,
+    "scored_rows": 27691,
+    "abstained_rows": 0,
+    "eligible_group_weighted_coverage": 1.0000000000000309,
+    "full_eligible_cohort": true
+  },
+  "scores": {
+    "candidate": {
+      "primary_error": 3.731542419516829,
+      "primary_units": "W",
+      "primary_eligible_rows": 27691,
+      "primary_eligible_groups": 5,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 3.731542419516831,
+      "group_balanced_rmse": 5.70847714193684,
+      "mean_group_rmse": 4.913231458027623,
+      "group_balanced_bias": -0.5622899214068418,
+      "median_absolute_error": 2.2737666831094594,
+      "p90_absolute_error": 8.777766044152827,
+      "p95_absolute_error": 11.541382403484022,
+      "maximum_absolute_error": 43.719364379468175,
+      "tail_conditional_mae_p90": 13.526788394464635,
+      "worst_group_mae": 6.991970077495484,
+      "groups": 5,
+      "rows": 27691,
+      "error_units": "W",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null,
+      "matched_baseline_skill": {
+        "compact": 0.0684832104042612,
+        "flexible": 0.0,
+        "throughput_only": 0.12592576730589844
+      },
+      "normalized_mae_to_exposed_reference_scale": 1.0,
+      "tolerance_accuracy": [
+        {
+          "absolute_tolerance": 1.8657712097584156,
+          "units": "W",
+          "weighted_fraction": 0.4444650923522284,
+          "interpretation": "Exposed-reference diagnostic; not an operational acceptance limit"
+        },
+        {
+          "absolute_tolerance": 3.731542419516831,
+          "units": "W",
+          "weighted_fraction": 0.652524848083118,
+          "interpretation": "Exposed-reference diagnostic; not an operational acceptance limit"
+        },
+        {
+          "absolute_tolerance": 7.463084839033662,
+          "units": "W",
+          "weighted_fraction": 0.8548719894632806,
+          "interpretation": "Exposed-reference diagnostic; not an operational acceptance limit"
+        }
+      ]
+    },
+    "compact": {
+      "primary_error": 4.005877791141317,
+      "primary_units": "W",
+      "primary_eligible_rows": 27691,
+      "primary_eligible_groups": 5,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 4.005877791141316,
+      "group_balanced_rmse": 6.238137605438577,
+      "mean_group_rmse": 5.19337698812739,
+      "group_balanced_bias": -0.115708462297583,
+      "median_absolute_error": 2.31724717522062,
+      "p90_absolute_error": 9.565204416385654,
+      "p95_absolute_error": 13.794270621834926,
+      "maximum_absolute_error": 40.600799056938286,
+      "tail_conditional_mae_p90": 15.539285096017581,
+      "worst_group_mae": 8.548945011487294,
+      "groups": 5,
+      "rows": 27691,
+      "error_units": "W",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null
+    },
+    "flexible": {
+      "primary_error": 3.731542419516829,
+      "primary_units": "W",
+      "primary_eligible_rows": 27691,
+      "primary_eligible_groups": 5,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 3.731542419516831,
+      "group_balanced_rmse": 5.70847714193684,
+      "mean_group_rmse": 4.913231458027623,
+      "group_balanced_bias": -0.5622899214068418,
+      "median_absolute_error": 2.2737666831094594,
+      "p90_absolute_error": 8.777766044152827,
+      "p95_absolute_error": 11.541382403484022,
+      "maximum_absolute_error": 43.719364379468175,
+      "tail_conditional_mae_p90": 13.526788394464635,
+      "worst_group_mae": 6.991970077495484,
+      "groups": 5,
+      "rows": 27691,
+      "error_units": "W",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null
+    },
+    "throughput_only": {
+      "primary_error": 4.269136739124938,
+      "primary_units": "W",
+      "primary_eligible_rows": 27691,
+      "primary_eligible_groups": 5,
+      "primary_undefined_reason": null,
+      "group_balanced_mae": 4.269136739124939,
+      "group_balanced_rmse": 6.5308479031910895,
+      "mean_group_rmse": 5.490967709511362,
+      "group_balanced_bias": -0.11607747221912865,
+      "median_absolute_error": 2.503893452043144,
+      "p90_absolute_error": 10.141843704055873,
+      "p95_absolute_error": 14.227992948017459,
+      "maximum_absolute_error": 42.1340567999697,
+      "tail_conditional_mae_p90": 16.015892460337334,
+      "worst_group_mae": 8.67861218774133,
+      "groups": 5,
+      "rows": 27691,
+      "error_units": "W",
+      "negative_prediction_count": 0,
+      "negative_values_are_not_automatically_physical_violations": true,
+      "nonpositive_targets_retained": null
+    }
+  },
+  "groups": [
+    {
+      "model": "candidate",
+      "group": "TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+      "mae": 4.058766305111565,
+      "rmse": 5.070282081477752,
+      "bias": 0.0018989952533723963,
+      "primary_error": 4.058766305111565,
+      "rows": 6584
+    },
+    {
+      "model": "candidate",
+      "group": "TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+      "mae": 1.2487561469135868,
+      "rmse": 1.673062640420615,
+      "bias": 0.07496619904084734,
+      "primary_error": 1.2487561469135868,
+      "rows": 6585
+    },
+    {
+      "model": "candidate",
+      "group": "TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+      "mae": 6.991970077495484,
+      "rmse": 9.588051966066383,
+      "bias": -0.4368993133448379,
+      "primary_error": 6.991970077495484,
+      "rows": 6609
+    },
+    {
+      "model": "candidate",
+      "group": "TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+      "mae": 1.503886191122521,
+      "rmse": 2.0449088508600903,
+      "bias": -0.2770405882668497,
+      "primary_error": 1.503886191122521,
+      "rows": 6593
+    },
+    {
+      "model": "candidate",
+      "group": "TC3.2_traffic_load_variation_modelA_iteration3.csv",
+      "mae": 4.854333376940987,
+      "rmse": 6.189851751313277,
+      "bias": -2.1743748997167414,
+      "primary_error": 4.854333376940987,
+      "rows": 1320
+    },
+    {
+      "model": "compact",
+      "group": "TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+      "mae": 4.376410722120352,
+      "rmse": 5.484758513115533,
+      "bias": -1.810902415888401,
+      "primary_error": 4.376410722120352,
+      "rows": 6584
+    },
+    {
+      "model": "compact",
+      "group": "TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+      "mae": 1.2844345304096427,
+      "rmse": 1.7055270728677323,
+      "bias": 0.32958512358830255,
+      "primary_error": 1.2844345304096427,
+      "rows": 6585
+    },
+    {
+      "model": "compact",
+      "group": "TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+      "mae": 8.548945011487294,
+      "rmse": 11.340395259013373,
+      "bias": 1.0575824660623458,
+      "primary_error": 8.548945011487294,
+      "rows": 6609
+    },
+    {
+      "model": "compact",
+      "group": "TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+      "mae": 1.5395494682942947,
+      "rmse": 2.0860366275941873,
+      "bias": -0.39407878141994096,
+      "primary_error": 1.5395494682942947,
+      "rows": 6593
+    },
+    {
+      "model": "compact",
+      "group": "TC3.2_traffic_load_variation_modelA_iteration3.csv",
+      "mae": 4.280049223394999,
+      "rmse": 5.350167468046127,
+      "bias": 0.23927129616977727,
+      "primary_error": 4.280049223394999,
+      "rows": 1320
+    },
+    {
+      "model": "flexible",
+      "group": "TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+      "mae": 4.058766305111565,
+      "rmse": 5.070282081477752,
+      "bias": 0.0018989952533723963,
+      "primary_error": 4.058766305111565,
+      "rows": 6584
+    },
+    {
+      "model": "flexible",
+      "group": "TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+      "mae": 1.2487561469135868,
+      "rmse": 1.673062640420615,
+      "bias": 0.07496619904084734,
+      "primary_error": 1.2487561469135868,
+      "rows": 6585
+    },
+    {
+      "model": "flexible",
+      "group": "TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+      "mae": 6.991970077495484,
+      "rmse": 9.588051966066383,
+      "bias": -0.4368993133448379,
+      "primary_error": 6.991970077495484,
+      "rows": 6609
+    },
+    {
+      "model": "flexible",
+      "group": "TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+      "mae": 1.503886191122521,
+      "rmse": 2.0449088508600903,
+      "bias": -0.2770405882668497,
+      "primary_error": 1.503886191122521,
+      "rows": 6593
+    },
+    {
+      "model": "flexible",
+      "group": "TC3.2_traffic_load_variation_modelA_iteration3.csv",
+      "mae": 4.854333376940987,
+      "rmse": 6.189851751313277,
+      "bias": -2.1743748997167414,
+      "primary_error": 4.854333376940987,
+      "rows": 1320
+    },
+    {
+      "model": "throughput_only",
+      "group": "TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+      "mae": 4.879427332462007,
+      "rmse": 6.086188849650661,
+      "bias": -2.8724841799090806,
+      "primary_error": 4.879427332462007,
+      "rows": 6584
+    },
+    {
+      "model": "throughput_only",
+      "group": "TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+      "mae": 1.284131633534056,
+      "rmse": 1.7053285131863818,
+      "bias": 0.33441303419268825,
+      "primary_error": 1.284131633534056,
+      "rows": 6585
+    },
+    {
+      "model": "throughput_only",
+      "group": "TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+      "mae": 8.67861218774133,
+      "rmse": 11.506878829405068,
+      "bias": -0.11268760099505955,
+      "primary_error": 8.67861218774133,
+      "rows": 6609
+    },
+    {
+      "model": "throughput_only",
+      "group": "TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+      "mae": 1.5689563663087993,
+      "rmse": 2.1239955920119424,
+      "bias": -0.3989066927190016,
+      "primary_error": 1.5689563663087993,
+      "rows": 6593
+    },
+    {
+      "model": "throughput_only",
+      "group": "TC3.2_traffic_load_variation_modelA_iteration3.csv",
+      "mae": 4.9345561755784955,
+      "rmse": 6.032446763302759,
+      "bias": 2.4692780783348103,
+      "primary_error": 4.9345561755784955,
+      "rows": 1320
+    }
+  ],
+  "uncertainty": null,
+  "events": [],
+  "training_audit": {
+    "compatibility_import": false,
+    "training_overlap_groups": [],
+    "training_auditability": "prediction_only",
+    "training_independence_verified_by_scoring": false
+  },
+  "replay": {
+    "status": "not_run",
+    "execution_mode": "prediction_files_only"
+  },
+  "normalization": {
+    "physical_mae_scale": 3.731542419516831,
+    "units": "W",
+    "source": "Best frozen comparator on exposed full cohort; diagnostic only"
+  },
+  "scientific_status": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "automatic_admission": false,
+    "novelty": "not_assessed",
+    "industrial_intervention_impact": "not_assessed",
+    "review_required": true
+  },
+  "scientific_checks": {
+    "deterministic_checks": [
+      {
+        "test": "endpoint_domain",
+        "source": "Declared target measurement semantics",
+        "interpretation": "Consumed electrical power",
+        "lower": 0.0,
+        "upper": null,
+        "tested_rows": 27691,
+        "violations": 0,
+        "status": "no_violation_in_scored_rows"
+      }
+    ],
+    "causal_and_linked_group_audit": "reports/RAW_INVARIANTS.json; properties of native preparation, not verification of submitter training behavior",
+    "mechanistic_tests": "See the finding-specific scientific_validators in reviews/scientific/P100-037.json",
+    "mechanism_admission": "not_assessed_by_endpoint_checks",
+    "training_independence": "not_established_by_prediction_files"
+  },
+  "metric_corrections": [
+    "F1=2TP/(2TP+FP+FN); zero for complete nonempty failure, undefined only when denominator is zero."
+  ]
+}

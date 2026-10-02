@@ -1,0 +1,48 @@
+{
+  "target": "Upper three country-specific hourly-earnings deciles, excluding bonuses",
+  "target_units": "binary EARNHRDCLC2>=8",
+  "error_units": "squared probability (Brier)",
+  "metric_kind": "brier",
+  "permitted_inputs": [
+    "education",
+    "age",
+    "japan"
+  ],
+  "input_units": {
+    "education": "source derived years of formal education",
+    "age": "fixed midpoint of published five-year age bin; final60\u201365midpoint62.5",
+    "japan": "country indicator"
+  },
+  "timing_contract": "Contemporaneous cross-sectional earnings association using age/education/country. All10 plausible numeracy values are excluded: conditioned on background and unsuitable individual prediction scores. This is not future earnings or causal education return.",
+  "calibration": "Respondent hashblocks within both countries; no held respondent wage fitting. Country intercepts use training respondents in that same country. No transfer to an unseen economy.",
+  "independent_unit": "Respondents nested in country and deterministic ten hashblocks; not10 independent samples from plausible values. Repeated respondent information stays linked. Survey clustering not publicly fully reconstructible.",
+  "scope_limits": "Only valid reported earnings deciles, ages25\u201365 and complete education. Final weights within equal country\u00d7respondent blocks; not a pooled national population estimand. Potential experience age-schooling-6 is proxy, not measured tenure. No skill-wage causal claim; income reporting/topcoding and nonresponse remain.",
+  "applicability": {
+    "weights": "SPFWT0",
+    "binary_country_relative_earnings": true
+  },
+  "case_id": "P100-039",
+  "source_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+  "source_license": "OECD data terms with attribution and pass-through acknowledgment; Reader Companion CC BY 4.0, third-party cover credit retained",
+  "numeric_columns": [
+    "education",
+    "age",
+    "japan"
+  ],
+  "exposure": {
+    "schema": "Only schema and source-publication aggregate descriptions inspected; reserved target values and scores not inspected.",
+    "current": "exposed",
+    "fresh_for_future_users": false,
+    "confirmation_freeze_sha256": "133cf2f0f645a9df455935e756a1b1307f5ee5841b5158a5dbc809014c79235c",
+    "original_validation": "Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed."
+  },
+  "uncertainty_policy": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze.",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error",
+    "within_group_weight": "sample_weight"
+  },
+  "task_id": "P100-039.original.v1"
+}

@@ -1,0 +1,645 @@
+{
+  "case_id": "P100-014",
+  "input_columns": [
+    "income_proxy",
+    "household_size",
+    "shock",
+    "age"
+  ],
+  "numeric_columns": [
+    "income_proxy",
+    "household_size",
+    "shock",
+    "age"
+  ],
+  "input_units": {
+    "income_proxy": "thousands USD/year, bracket proxy not observed amount",
+    "household_size": "persons, source topcoded7",
+    "shock": "household lost employment income past4weeks binary",
+    "age": "respondent years"
+  },
+  "target": "Household sometimes/often lacked enough food during prior7days",
+  "target_units": "binary FD_SUFF in3,4",
+  "metric_kind": "brier",
+  "models": {
+    "reference": {
+      "features": [
+        "one",
+        "low_resource",
+        "high_resource",
+        "shock",
+        "age_mid"
+      ],
+      "link": "logit",
+      "equation": "p=logistic(a+bL*max(3-R,0)+bH*max(R-3,0)+c*S+d*A)",
+      "case": 14,
+      "type": "linear",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        -1.7111056039151187,
+        0.311445242697529,
+        -2.0804188967995554,
+        1.126870451085675,
+        -0.5980075149258
+      ],
+      "complexity": 5,
+      "rank": 5,
+      "condition_number": 5.896978295554995
+    },
+    "constant": {
+      "case": 14,
+      "type": "linear",
+      "features": [
+        "one"
+      ],
+      "link": "logit",
+      "equation": "p=logistic(a)",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        -2.767936899055497
+      ],
+      "complexity": 1,
+      "rank": 1,
+      "condition_number": 1.0
+    },
+    "domain": {
+      "case": 14,
+      "type": "linear",
+      "features": [
+        "one",
+        "log_resource"
+      ],
+      "link": "logit",
+      "equation": "p=logistic(a+b*log_resource)",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        1.1223781188739796,
+        -1.0937305323004072
+      ],
+      "complexity": 2,
+      "rank": 2,
+      "condition_number": 10.885367950153034
+    },
+    "flexible": {
+      "case": 14,
+      "type": "linear",
+      "features": [],
+      "link": "logit",
+      "alpha": 0.002,
+      "equation": "p=logistic(a+sum b_j exp(-||standardized_x-center_j||\u00b2/8));32train-onlycenters",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "rbf": {
+        "columns": [
+          "income_proxy",
+          "household_size",
+          "shock",
+          "age"
+        ],
+        "mean": [
+          89.17529810446372,
+          2.554140176651153,
+          0.07392081567568089,
+          49.94301546257884
+        ],
+        "std": [
+          56.42707978810176,
+          1.4198002521593496,
+          0.2616419857085686,
+          18.893573021438446
+        ],
+        "centers": [
+          [
+            -0.029689611986920068,
+            0.314029964898757,
+            -0.2825265810282376,
+            0.0030160805135427847
+          ],
+          [
+            1.5209842901286081,
+            3.131327675556626,
+            3.5394899706801555,
+            1.2203612578340004
+          ],
+          [
+            -1.358838670943087,
+            -0.3902944627657101,
+            3.5394899706801555,
+            1.9613539744638442
+          ],
+          [
+            1.5209842901286081,
+            -1.0946188904301772,
+            3.5394899706801555,
+            -1.214329096806915
+          ],
+          [
+            -1.358838670943087,
+            2.4270032478921584,
+            3.5394899706801555,
+            -1.267257147994761
+          ],
+          [
+            1.5209842901286081,
+            3.131327675556626,
+            -0.2825265810282376,
+            1.8025698209003063
+          ],
+          [
+            -1.358838670943087,
+            3.131327675556626,
+            -0.2825265810282376,
+            -0.896760789679839
+          ],
+          [
+            1.5209842901286081,
+            2.4270032478921584,
+            -0.2825265810282376,
+            -1.3201851991826068
+          ],
+          [
+            1.5209842901286081,
+            -1.0946188904301772,
+            -0.2825265810282376,
+            2.0142820256516902
+          ],
+          [
+            -1.358838670943087,
+            -1.0946188904301772,
+            3.5394899706801555,
+            -1.1084729944312228
+          ],
+          [
+            1.5209842901286081,
+            0.314029964898757,
+            3.5394899706801555,
+            1.3791454113975383
+          ],
+          [
+            -1.358838670943087,
+            -1.0946188904301772,
+            -0.2825265810282376,
+            2.0142820256516902
+          ],
+          [
+            -1.0487038905199815,
+            2.4270032478921584,
+            -0.2825265810282376,
+            1.6437856673367683
+          ],
+          [
+            -1.0487038905199815,
+            3.131327675556626,
+            3.5394899706801555,
+            1.5908576161489223
+          ],
+          [
+            1.5209842901286081,
+            -1.0946188904301772,
+            -0.2825265810282376,
+            -1.3201851991826068
+          ],
+          [
+            0.6348849174911634,
+            1.0183543925632241,
+            3.5394899706801555,
+            -0.685048584928455
+          ],
+          [
+            -1.358838670943087,
+            -1.0946188904301772,
+            -0.2825265810282376,
+            -1.3201851991826068
+          ],
+          [
+            0.6348849174911634,
+            1.0183543925632241,
+            -0.2825265810282376,
+            2.0142820256516902
+          ],
+          [
+            -1.358838670943087,
+            1.0183543925632241,
+            3.5394899706801555,
+            0.2676563364527727
+          ],
+          [
+            -0.029689611986920068,
+            -1.0946188904301772,
+            3.5394899706801555,
+            0.5322965923920027
+          ],
+          [
+            1.5209842901286081,
+            3.131327675556626,
+            3.5394899706801555,
+            -0.843832738491993
+          ],
+          [
+            -1.358838670943087,
+            1.0183543925632241,
+            -0.2825265810282376,
+            -1.3201851991826068
+          ],
+          [
+            1.5209842901286081,
+            1.7226788202276913,
+            -0.2825265810282376,
+            0.4793685412041567
+          ],
+          [
+            1.5209842901286081,
+            -0.3902944627657101,
+            -0.2825265810282376,
+            0.3735124388284647
+          ],
+          [
+            -0.029689611986920068,
+            1.7226788202276913,
+            3.5394899706801555,
+            1.6437856673367683
+          ],
+          [
+            -0.029689611986920068,
+            3.131327675556626,
+            -0.2825265810282376,
+            0.21472828526492674
+          ],
+          [
+            -0.029689611986920068,
+            -1.0946188904301772,
+            -0.2825265810282376,
+            0.9557210018947705
+          ],
+          [
+            -1.358838670943087,
+            0.314029964898757,
+            -0.2825265810282376,
+            1.0615771042704625
+          ],
+          [
+            -0.029689611986920068,
+            3.131327675556626,
+            3.5394899706801555,
+            -0.15576807304999518
+          ],
+          [
+            0.6348849174911634,
+            1.0183543925632241,
+            -0.2825265810282376,
+            -1.3201851991826068
+          ],
+          [
+            -1.0487038905199815,
+            1.7226788202276913,
+            -0.2825265810282376,
+            0.10887218288923475
+          ],
+          [
+            1.5209842901286081,
+            1.7226788202276913,
+            3.5394899706801555,
+            0.4793685412041567
+          ]
+        ],
+        "width": 2.0
+      },
+      "coef": [
+        -0.21038186726368668,
+        -0.2160531558491012,
+        -1.6841071487251886,
+        -0.8829977593431296,
+        -1.0261349167720968,
+        1.214205409842335,
+        -0.7897685600930012,
+        -0.05102939697443419,
+        -0.5257112132155163,
+        -0.8120563218799823,
+        1.864672587038155,
+        -1.5461704445219817,
+        -0.4635852901206189,
+        -0.11058147265004287,
+        0.23657085811308612,
+        -0.8843411766069539,
+        -0.2514079571660006,
+        -0.18090120557399977,
+        -0.45775169255712833,
+        0.7876443985138941,
+        -0.5560976163394438,
+        -1.5581446965742667,
+        0.15772582269364308,
+        -0.40180128632779183,
+        -0.5250101134072622,
+        -0.6833277628009231,
+        -0.26769168643742475,
+        -0.42594981842275714,
+        -0.07144642401807702,
+        -0.40457066271028486,
+        -0.33557749249581303,
+        0.06717018248557644,
+        -1.0547192025098624
+      ],
+      "complexity": 33,
+      "rank": 33,
+      "condition_number": 881.7765634498837
+    },
+    "attempt_001": {
+      "features": [
+        "one",
+        "log_resource",
+        "shock"
+      ],
+      "link": "logit",
+      "equation": "p=logistic(a+b*log(income_proxy/sqrt(hhsize))+c*workloss)",
+      "case": 14,
+      "type": "linear",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        0.7552256866993176,
+        -1.0221382600752542,
+        1.1938360537523478
+      ],
+      "complexity": 3,
+      "rank": 3,
+      "condition_number": 11.173566342649824
+    },
+    "attempt_002": {
+      "features": [
+        "one",
+        "log_income",
+        "log_size",
+        "shock"
+      ],
+      "link": "logit",
+      "equation": "p=logistic(a+b*log(income_proxy)+c*log(hhsize)+d*workloss)",
+      "case": 14,
+      "type": "linear",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        1.115871154542629,
+        -1.0819773803945676,
+        0.2641381610665406,
+        1.3249330188736301
+      ],
+      "complexity": 4,
+      "rank": 4,
+      "condition_number": 13.582930518659087
+    },
+    "attempt_003": {
+      "features": [
+        "one",
+        "log_resource",
+        "shock",
+        "resource_shock"
+      ],
+      "link": "logit",
+      "equation": "p=logistic(a+b*R+c*S+d*R*S)",
+      "case": 14,
+      "type": "linear",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        0.9171689380401286,
+        -1.0829178108345798,
+        0.687086939103027,
+        0.18268686947873333
+      ],
+      "complexity": 4,
+      "rank": 4,
+      "condition_number": 13.318544427322577
+    },
+    "attempt_004": {
+      "features": [
+        "one",
+        "log_resource",
+        "shock",
+        "age_mid",
+        "age_sq"
+      ],
+      "link": "logit",
+      "equation": "p=logistic(a+b*R+c*S+d*A+e*A\u00b2)",
+      "case": 14,
+      "type": "linear",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        0.849351171658579,
+        -1.0279310531222106,
+        1.1085328982754825,
+        -0.5230020943183209,
+        -0.04065984777429667
+      ],
+      "complexity": 5,
+      "rank": 5,
+      "condition_number": 15.074745949057963
+    },
+    "attempt_005": {
+      "features": [
+        "one",
+        "low_resource",
+        "high_resource",
+        "shock",
+        "age_mid"
+      ],
+      "link": "logit",
+      "equation": "p=logistic(a+bL*max(3-R,0)+bH*max(R-3,0)+c*S+d*A)",
+      "case": 14,
+      "type": "linear",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        -1.7111056039151187,
+        0.311445242697529,
+        -2.0804188967995554,
+        1.126870451085675,
+        -0.5980075149258
+      ],
+      "complexity": 5,
+      "rank": 5,
+      "condition_number": 5.896978295554995
+    },
+    "attempt_006": {
+      "features": [
+        "one",
+        "low_resource",
+        "high_resource",
+        "shock",
+        "age_mid",
+        "age_sq"
+      ],
+      "link": "logit",
+      "equation": "p=logistic(a+bL*low_resource+bH*high_resource+c*S+d*A+e*A\u00b2)",
+      "case": 14,
+      "type": "linear",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        -1.6841153442867076,
+        0.3145238076703954,
+        -2.0762232649618846,
+        1.1156093742089268,
+        -0.5863712046513886,
+        -0.03127985498162737
+      ],
+      "complexity": 6,
+      "rank": 6,
+      "condition_number": 6.93061613686682
+    },
+    "attempt_007": {
+      "features": [
+        "one",
+        "low_resource",
+        "high_resource",
+        "age_mid"
+      ],
+      "link": "logit",
+      "equation": "p=logistic(a+bL*low_resource+bH*high_resource+d*A)",
+      "case": 14,
+      "type": "linear",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        -1.5366485006889858,
+        0.38740976376853004,
+        -2.1617266939482134,
+        -0.5654869559682313
+      ],
+      "complexity": 4,
+      "rank": 4,
+      "condition_number": 5.794817587231783
+    },
+    "attempt_008": {
+      "features": [
+        "one",
+        "low_resource",
+        "high_resource",
+        "shock",
+        "age_mid"
+      ],
+      "link": "cloglog",
+      "equation": "p=1-exp(-exp(a+bL*low_resource+bH*high_resource+c*S+d*A))",
+      "case": 14,
+      "type": "linear",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        -1.7983891608053166,
+        0.2540756008088517,
+        -1.8726356787920289,
+        0.947649492733203,
+        -0.5351592214633054
+      ],
+      "complexity": 5,
+      "rank": 5,
+      "condition_number": 5.896978295554995
+    },
+    "attempt_009": {
+      "features": [
+        "one",
+        "log_percapita",
+        "shock",
+        "age_mid",
+        "age_sq"
+      ],
+      "link": "logit",
+      "equation": "p=logistic(a+b*log(income_proxy/hhsize)+c*S+d*A+e*A\u00b2)",
+      "case": 14,
+      "type": "linear",
+      "training_groups": [
+        "2603:region1",
+        "2603:region2",
+        "2603:region3",
+        "2603:region4"
+      ],
+      "training_rows": 10799,
+      "training_ids_sha256": "3575d053457637a84af52d0ff52fab2e9eb0fd1b9cc17075a951b5299ac94cef",
+      "coef": [
+        -0.36115935348895695,
+        -0.7949136819751159,
+        1.0503429202475743,
+        -0.5086362434751,
+        0.08239025408864259
+      ],
+      "complexity": 5,
+      "rank": 5,
+      "condition_number": 12.621769380374573
+    }
+  }
+}

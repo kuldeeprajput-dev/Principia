@@ -1,0 +1,763 @@
+{
+  "case_id": "P100-033",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "b19eaaca21627c5dcd5cade1d159795d03035593f6534ca4a021a2d91946b064"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "a2c5957b46765ffb6041035fad52d137126b41cea30a8a904e02909006a6682f"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "af6dc6ecec22e9f7f682359db57306d38ff179ffbd7c65437a9ef8ba69964c16"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "c881486086a11e06570926b8a2d14304e69e014618a921b6e90951301afcb9f6"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "b876f85b982fed13e93ac94b28424b3aa64bd6dc5e722a0e34120fc9b0054d63"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "141fe2c9695126339500408f3ed425e5f4ffe73c0810b0bc16bc60ad870b65a4"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "44e90f95553e609259a0020f7e716b06b557ec23dfeef64a072debd213f03fe7"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "59ec7f149cab2188baaadba904b3697ef5093dcaa0dbf4e69691ba501a291950"
+    },
+    {
+      "path": "native.py",
+      "sha256": "1fe3cd1cae834c72406cb232910ea39965b4cd49b55204afd93ec8524f5d3d99"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "30fa6c4354a289eeb2b436dc5cae9bd4488afc11b1e4219c252ff5bab7409ac0"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "0cfa716a569264e2cbeb0f68f0cba38edd8a2f9c1f2e6bb3ebdba9662c046e7d"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "7c2b004a85597d4a0f6eb2d6b5c3dd43173bd379d36aa93d1d02d71bad636d08"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "f54315f0208bdcf789c13df6de937b58141d0ab6632a717b856ccb3823db59b0"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "cf486410b5676a351c05389e5362686dba7569dcebc852f9fbb5255dc18f4e19"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "d0e3f1f0e49de14f9b1c4a8ac64189bece1f19ca0de56911c1e1298bc24a4174"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-033-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Ten held people support person-transfer HR comparison, but shrinkage improves population-median MAE weakly and only4/10 people; the flexible fusion is better. Invalid gain decoding was repaired during development, and cardiovascular/clinical validity remains unsupported."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Ten held people support person-transfer HR comparison, but shrinkage improves population-median MAE weakly and only4/10 people; the flexible fusion is better. Invalid gain decoding was repaired during development, and cardiovascular/clinical validity remains unsupported."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Ten held people support person-transfer HR comparison, but shrinkage improves population-median MAE weakly and only4/10 people; the flexible fusion is better. Invalid gain decoding was repaired during development, and cardiovascular/clinical validity remains unsupported."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Ten held people support person-transfer HR comparison, but shrinkage improves population-median MAE weakly and only4/10 people; the flexible fusion is better. Invalid gain decoding was repaired during development, and cardiovascular/clinical validity remains unsupported.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-033-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Ten held people support person-transfer HR comparison, but shrinkage improves population-median MAE weakly and only4/10 people; the flexible fusion is better. Invalid gain decoding was repaired during development, and cardiovascular/clinical validity remains unsupported."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Ten held people support person-transfer HR comparison, but shrinkage improves population-median MAE weakly and only4/10 people; the flexible fusion is better. Invalid gain decoding was repaired during development, and cardiovascular/clinical validity remains unsupported."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Ten held people support person-transfer HR comparison, but shrinkage improves population-median MAE weakly and only4/10 people; the flexible fusion is better. Invalid gain decoding was repaired during development, and cardiovascular/clinical validity remains unsupported."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Ten held people support person-transfer HR comparison, but shrinkage improves population-median MAE weakly and only4/10 people; the flexible fusion is better. Invalid gain decoding was repaired during development, and cardiovascular/clinical validity remains unsupported.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-033",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-033",
+      "native_rows": 3888,
+      "confirmation_rows": 756,
+      "models": 11,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 11,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 7.105427357601002e-15,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 756,
+        "primary_error": 9.32916907799114,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_constant",
+        "rows": 756,
+        "primary_error": 9.80023148148148,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_fourier",
+        "rows": 756,
+        "primary_error": 30.77507663302951,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_autocorrelation",
+        "rows": 756,
+        "primary_error": 30.126446577754486,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_flexible",
+        "rows": 756,
+        "primary_error": 9.031956077816625,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001_alias",
+        "rows": 756,
+        "primary_error": 32.077745115730885,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002_fusion",
+        "rows": 756,
+        "primary_error": 29.277550200897316,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003_shrinkage",
+        "rows": 756,
+        "primary_error": 9.32916907799114,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004_motion_fusion",
+        "rows": 756,
+        "primary_error": 29.695139037374997,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005_agreement_gate",
+        "rows": 756,
+        "primary_error": 31.306429827654803,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_006_consensus_shrink",
+        "rows": 756,
+        "primary_error": 9.411953298239293,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "105",
+          "107",
+          "108",
+          "109",
+          "122",
+          "123",
+          "135",
+          "146"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "100",
+          "101",
+          "104",
+          "120",
+          "126",
+          "129",
+          "130",
+          "132"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "116",
+          "121",
+          "125",
+          "131",
+          "139",
+          "140",
+          "143",
+          "145"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "111",
+          "112",
+          "115",
+          "127",
+          "133",
+          "134",
+          "142",
+          "148"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "110",
+          "113",
+          "118",
+          "136",
+          "138",
+          "141",
+          "147",
+          "149"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "105",
+          "107",
+          "108",
+          "109",
+          "122",
+          "123",
+          "135",
+          "146"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "100",
+          "101",
+          "104",
+          "120",
+          "126",
+          "129",
+          "130",
+          "132"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "116",
+          "121",
+          "125",
+          "131",
+          "139",
+          "140",
+          "143",
+          "145"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "111",
+          "112",
+          "115",
+          "127",
+          "133",
+          "134",
+          "142",
+          "148"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "110",
+          "113",
+          "118",
+          "136",
+          "138",
+          "141",
+          "147",
+          "149"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "105",
+          "107",
+          "108",
+          "109",
+          "122",
+          "123",
+          "135",
+          "146"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "100",
+          "101",
+          "104",
+          "120",
+          "126",
+          "129",
+          "130",
+          "132"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "116",
+          "121",
+          "125",
+          "131",
+          "139",
+          "140",
+          "143",
+          "145"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "111",
+          "112",
+          "115",
+          "127",
+          "133",
+          "134",
+          "142",
+          "148"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "110",
+          "113",
+          "118",
+          "136",
+          "138",
+          "141",
+          "147",
+          "149"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "105",
+          "107",
+          "108",
+          "109",
+          "122",
+          "123",
+          "135",
+          "146"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "100",
+          "101",
+          "104",
+          "120",
+          "126",
+          "129",
+          "130",
+          "132"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "116",
+          "121",
+          "125",
+          "131",
+          "139",
+          "140",
+          "143",
+          "145"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "111",
+          "112",
+          "115",
+          "127",
+          "133",
+          "134",
+          "142",
+          "148"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "110",
+          "113",
+          "118",
+          "136",
+          "138",
+          "141",
+          "147",
+          "149"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "105",
+          "107",
+          "108",
+          "109",
+          "122",
+          "123",
+          "135",
+          "146"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "100",
+          "101",
+          "104",
+          "120",
+          "126",
+          "129",
+          "130",
+          "132"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "116",
+          "121",
+          "125",
+          "131",
+          "139",
+          "140",
+          "143",
+          "145"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "111",
+          "112",
+          "115",
+          "127",
+          "133",
+          "134",
+          "142",
+          "148"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "110",
+          "113",
+          "118",
+          "136",
+          "138",
+          "141",
+          "147",
+          "149"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "105",
+          "107",
+          "108",
+          "109",
+          "122",
+          "123",
+          "135",
+          "146"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "100",
+          "101",
+          "104",
+          "120",
+          "126",
+          "129",
+          "130",
+          "132"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "2",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "116",
+          "121",
+          "125",
+          "131",
+          "139",
+          "140",
+          "143",
+          "145"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "3",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "111",
+          "112",
+          "115",
+          "127",
+          "133",
+          "134",
+          "142",
+          "148"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_states.json",
+        "fold": "4",
+        "training_groups_count": 32,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "110",
+          "113",
+          "118",
+          "136",
+          "138",
+          "141",
+          "147",
+          "149"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "Ten held people support person-transfer HR comparison, but shrinkage improves population-median MAE weakly and only4/10 people; the flexible fusion is better. Invalid gain decoding was repaired during development, and cardiovascular/clinical validity remains unsupported."
+}

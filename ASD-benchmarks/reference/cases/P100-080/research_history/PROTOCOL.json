@@ -1,0 +1,25 @@
+{
+  "frozen_utc": "2026-10-02T02:47:22.438064+00:00",
+  "target": "EDA mean over t+25s to t+30s",
+  "units": "uS",
+  "inputs": [
+    "level",
+    "lag10",
+    "lag30",
+    "mean120",
+    "activity",
+    "temperature",
+    "temperature30",
+    "elapsed"
+  ],
+  "groups": "30people,6confirmation,24development; S11split linked",
+  "eligibility": "Finite sensor windows and complete causal120s prefix plus30s horizon within a single recording; no crossing recording discontinuities. Signed finite EDA retained as released, no positivity-based target selection.",
+  "timing": "After120s observed history, every5s predict a future5s EDA mean ending30s later. All EDA,temperature and accelerometer summaries are causal and aligned by native starts/sample rates.",
+  "baseline_families": [
+    "last5s mean persistence",
+    "linear30s extrapolation from previous10s slope",
+    "constrained RBF"
+  ],
+  "selection": "Equal participant MAE; simplest coefficient count within1%best; at least5 adaptive attempts then two no-gain challenges",
+  "exposure": "Only header timestamps, rates, directory IDs inspected. No EDA responses from reserved people viewed before selection."
+}

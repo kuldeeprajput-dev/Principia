@@ -1,0 +1,93 @@
+{
+  "version": "1.0",
+  "case_id": 37,
+  "created_utc": "2026-09-30T09:22:51.533604+00:00",
+  "study": "Evidence-driven continuation; original cohorts already exposed",
+  "fresh_confirmation": false,
+  "exposure": "All prior development and confirmation targets were exposed before this new protocol. Fits/tuning use ORIGINAL DEVELOPMENT ONLY; no new winner is chosen using original confirmation. No independent confirmation is asserted.",
+  "data_file": "data/development.csv.gz",
+  "data_sha256": "0517f33c88e5c9c6c521f53ea7b99a7464004c1a089ded04f0f8386960f336c4",
+  "data_rows": 55330,
+  "source_manifest_sha256": "641791f0f785fd3f719beeae795f9bdb72954fa9507bac262200a612c6d33df6",
+  "engine_sha256": "6e605a7fca3e428fb4e77585684caa5daa6a859cdca6b233911e1687595a0324",
+  "inputs": [
+    "u",
+    "q",
+    "packet_bytes",
+    "router"
+  ],
+  "target": "target",
+  "metric_kind": "mae",
+  "metric_units": "W",
+  "grouping": "same original independent grouping and folds; case92 chronological forward dates; case67 balanced particle within complete configuration",
+  "units_reference": "../../final_results/evaluator/protocol.json and preserved records/SOURCE_AUDIT.md",
+  "hypotheses": [
+    {
+      "id": "cycle-001",
+      "title": "Nonnegative processing-cost state",
+      "equation": "P=P0_router+a_router*u+b_router*q/(k+q)+c_router*u*q/(k+q), all component costs nonnegative",
+      "shapes": [
+        0.03,
+        0.1,
+        0.3,
+        1.0
+      ]
+    },
+    {
+      "id": "cycle-002",
+      "title": "Competing independent activation limits",
+      "equation": "P=P0_router+a_router*(1-exp(-u/ku))+b_router*(1-exp(-q/kq)), nonnegative amplitudes",
+      "shapes": [
+        [
+          0.1,
+          0.03
+        ],
+        [
+          0.1,
+          0.3
+        ],
+        [
+          0.1,
+          3.0
+        ],
+        [
+          0.3,
+          0.03
+        ],
+        [
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          3.0
+        ],
+        [
+          1.0,
+          0.03
+        ],
+        [
+          1.0,
+          0.3
+        ],
+        [
+          1.0,
+          3.0
+        ]
+      ]
+    }
+  ],
+  "comparators": [
+    "simple/domain comparator",
+    "training-only imputed/scaled robust linear with identical expanded inputs",
+    "fold-refitted fixed HistGradientBoosting using identical expanded inputs",
+    "nested exact RBF when <=500 rows"
+  ],
+  "fitting": "Group-balanced robust constrained least squares (8 deterministic IRLS iterations). Huber scales fixed before fit:37=5W,53=.025Nm,67=.3 log ratio,71=2million/mL,92=3dB. Model shape selected entirely within outer training partitions using inner whole-group or forward validation. Learned imputation/scales/categorical dictionaries only training data. No identifier predictors.",
+  "selection": "Select simplest candidate within 2% of minimum new-candidate development error; report strong-comparator gaps and every group. Selection does not admit a law.",
+  "stopping": "Two material hypotheses required; stop after two cycles without >=2% development gain against the strongest equal-information comparator or stronger identified mechanism. A distinct supported follow-up can use a separately frozen amendment before fitting.",
+  "fresh_source_candidate": null,
+  "bounds": "No microscopic mechanism or industrial intervention benefit inferred solely from regression; calibration and missingness remain declared. Baseline error improvements are retrospective unless independent fresh data admitted.",
+  "prefit_amendment": "All five commands failed at sklearn import before load(), START, or any model fit. Lazy import now permits portable JSON replay without sklearn; flexible baseline explicitly disables internal random-row early stopping. No input values, model results or selections changed.",
+  "technical_amendment": "NumPy2.5 removed row_stack alias. The first IRLS call failed before coefficients were estimated; replace it with equivalent vstack. All scientific hypotheses, grids, inputs, splits, metrics and comparisons unchanged. Initial partial results preserved at results/. Corrected run writes results-v2/."
+}

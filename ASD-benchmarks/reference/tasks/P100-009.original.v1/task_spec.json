@@ -1,0 +1,45 @@
+{
+  "case_id": "P100-009",
+  "target": "Mean pupil radius over final0.25s of horizon1s",
+  "target_units": "px",
+  "error_units": "px",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "radius",
+    "lag05",
+    "lag1",
+    "mean5",
+    "speed",
+    "speed1"
+  ],
+  "input_units": {
+    "radius": "px",
+    "lag05": "px",
+    "lag1": "px",
+    "mean5": "px",
+    "speed": "cm/s",
+    "speed1": "cm/s"
+  },
+  "numeric_columns": [
+    "radius",
+    "lag05",
+    "lag1",
+    "mean5",
+    "speed",
+    "speed1"
+  ],
+  "timing_contract": "Predict1s-ahead author-released pupil radius from prior pupil and treadmill samples. Source prior filtering may be noncausal; causal-prefix guarantee applies to released traces only, not original camera pixels.",
+  "calibration": "No held-target calibration; observed past5s from each session supplies history. Pixel units are retained without invented millimeter scaling.",
+  "independent_unit": "Animal, all sessions linked; two development animals and one reserved animal",
+  "scope_limits": "Only three retained animals. Optical pixel calibration differs by animal/session; source ACh-M1/V1 recordings confound region and animal. No retinal physiology or real-time instrument claim.",
+  "source_url": "https://dandiarchive.org/dandiset/001176",
+  "source_license": "CC BY4.0",
+  "prior_art_url": "https://doi.org/10.1016/j.celrep.2024.114808",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": 0,
+    "target_max": null
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances"
+}

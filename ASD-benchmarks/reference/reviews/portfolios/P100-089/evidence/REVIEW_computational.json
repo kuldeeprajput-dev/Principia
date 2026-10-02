@@ -1,0 +1,205 @@
+{
+  "case_id": "P100-089",
+  "role": "computational",
+  "reviewer_id": "asd5_materials",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "b826b2ce01ec642fb7ef2a3da03eed13c79749dbb3395144344d21267557d435"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "057de6dcaaf2a6860a0788710e29154b5573a9815371d7ad364e5ab28d2d0fc2"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "ce0436010ceb06cd9b97b53c08ef7230df2e9c41b70a950c20dff214467d476e"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "9119985a53737d57dec07f6e2ab4e3cf043b9fe013901337de9d676367d0e276"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "8442b384369bccb149645b4584fa145ed6899dcb67dd2591e1b29a60c5b3333f"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "bf25316936a13ced91f963755d2c298609f33ca7da7e394fa48aafc45a4fc448"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "fcdfbebc05c4a6c8bf79d94cb5927ff92c41ef4191f9acc7b2e45dd6f350ea68"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "78e77b46961317f85d3190f8194ff1671d8af8b407c05a9636e89395d02fada1"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "3e53ddb11e8420b051b4496e9e3f2142a4123ea0f73d18bb22e59b996dc3b6e3"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "3d5dfa7fba860f2b8dac8602628666fed284e1996a36965d442fabd83646bcaa"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "425397ac552366e65759c9a4ae7dad11ec23a0925e28d7eff6d2dd41c5c24d9e"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-089-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Every participant/protocol history was independently reconstructed as strictly preceding choices; reset and first-trial0.5 checked. Equal-participant Brier0.143359 reproduces, distinct from MAE0.277730."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational parity validates implementation, not causal mechanism; scientific-critical review is separate."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No computational result certifies novelty; disclosed source analyses remain prior art."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Performance and negative evidence are meaningful only under the stated input/calibration and grouped cohort."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Independent native reconstruction, every frozen equation, equal-group metric recomputation, target poison, row-order invariance and standalone replay all passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No prospective operational or experimental intervention was performed."
+        }
+      },
+      "checks": [
+        {
+          "name": "native_reconstruction",
+          "passed": true,
+          "rows": 27667,
+          "confirmation_rows": 6008,
+          "columns_checked": [
+            "group",
+            "reward",
+            "probability",
+            "child",
+            "age_child",
+            "multi",
+            "description",
+            "trial_progress",
+            "lag_choice",
+            "history_mean",
+            "has_history"
+          ]
+        },
+        {
+          "name": "complete_group_partition",
+          "passed": true,
+          "groups": 55
+        },
+        {
+          "name": "all_equations_metrics_target_poison_order",
+          "passed": true,
+          "models": 10,
+          "metric": "Brier"
+        },
+        {
+          "name": "all_participant_protocol_causal_prefixes",
+          "passed": true
+        },
+        {
+          "name": "standalone_replay",
+          "passed": true
+        }
+      ],
+      "limitations": [
+        "Experimenter probabilities may be hidden to participants; this is analyst prediction with online history, not simulated human information or causal risk preference. No E2.1 observations in native file.",
+        "All outcomes are exposed. This review is computational review by a separate agent, not experimental replication."
+      ]
+    },
+    {
+      "finding_id": "P100-089-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Every participant/protocol history was independently reconstructed as strictly preceding choices; reset and first-trial0.5 checked. Equal-participant Brier0.143359 reproduces, distinct from MAE0.277730."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational parity validates implementation, not causal mechanism; scientific-critical review is separate."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No computational result certifies novelty; disclosed source analyses remain prior art."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Performance and negative evidence are meaningful only under the stated input/calibration and grouped cohort."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Independent native reconstruction, every frozen equation, equal-group metric recomputation, target poison, row-order invariance and standalone replay all passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No prospective operational or experimental intervention was performed."
+        }
+      },
+      "checks": [
+        {
+          "name": "native_reconstruction",
+          "passed": true,
+          "rows": 27667,
+          "confirmation_rows": 6008,
+          "columns_checked": [
+            "group",
+            "reward",
+            "probability",
+            "child",
+            "age_child",
+            "multi",
+            "description",
+            "trial_progress",
+            "lag_choice",
+            "history_mean",
+            "has_history"
+          ]
+        },
+        {
+          "name": "complete_group_partition",
+          "passed": true,
+          "groups": 55
+        },
+        {
+          "name": "all_equations_metrics_target_poison_order",
+          "passed": true,
+          "models": 10,
+          "metric": "Brier"
+        },
+        {
+          "name": "all_participant_protocol_causal_prefixes",
+          "passed": true
+        },
+        {
+          "name": "standalone_replay",
+          "passed": true
+        }
+      ],
+      "limitations": [
+        "Experimenter probabilities may be hidden to participants; this is analyst prediction with online history, not simulated human information or causal risk preference. No E2.1 observations in native file.",
+        "All outcomes are exposed. This review is computational review by a separate agent, not experimental replication."
+      ]
+    }
+  ],
+  "blocking_defects": [],
+  "recommendations": [
+    "Treat supporting implications of one fitted model as one discovery family; preserve failures and no post-confirmation promotion."
+  ]
+}

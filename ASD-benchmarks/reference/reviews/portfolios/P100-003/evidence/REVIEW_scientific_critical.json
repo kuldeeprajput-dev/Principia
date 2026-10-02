@@ -1,0 +1,185 @@
+{
+  "case_id": "P100-003",
+  "role": "scientific_critical",
+  "reviewer_id": "asd5_materials",
+  "reviewed_utc": "2026-10-02T03:08:58.749747+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "ed7ce7dca3ceb12b01bc86d4f74a95799ab99e080a5dc0f747301d31923b655a"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "129cd1f4a0566b066730496f210be4703058d950e99b766d67178c933fc259bb"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "6e5fcd8c281b5548b754ee178a08a3a21e43f3d66432efc366aa661fe2a50bbf"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "ef168de18dec31432d8faaaab8ef028b14dadec837447867d29d3f48fa9bdbc6"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "7404e7ed6668dde72330970cc23e3866e0ab8747c9d8de4b8710e037da23f01d"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "d90e865b66df5caa9a97adcd9ab698a7fcad295baf0d9142a595107b7159c295"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "49c4e061fed51ddbbc58712341f8f9e6a8670d31fc620287f3e5ae40c41efb32"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "ab8b94effa5be921307d99bf24707847baf72220658de5988799a022f4407e3f"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "9ffb94c6e40c315f84719dddc8c7964c87b678f49a6bb23f682d036096e7026f"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-003-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preserved negative or adequacy conclusion is supported within the stated task; it does not assert that the underlying phenomenon is absent. The selected constant has MAE0.0085554 in1e-21strain units, worse in mean than median4 and flexible0.0082149. The reported negative finding, rather than stationary-law superiority, matches these results."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "A continuous-wave hardware injection is explicitly present. The endpoint is recorded band-limited strain power, not isolated detector noise, and a short single-detector segment cannot identify a universal noise mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful quality-mask and negative-control example for avoiding astrophysical overinterpretation of detector products."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native adapter, frozen equations, coefficients and compact evidence were inspected. Separate computational review performs numerical replay; scientific review is not experimental replication."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact."
+        }
+      },
+      "checks": [
+        "Case-specific endpoint semantics and prior-art review",
+        "Predictor timing and calibration budget review",
+        "Grouped-validation and exposure limits reviewed",
+        "Named-control comparisons and negative evidence reviewed",
+        "No inference of novelty from fit quality"
+      ],
+      "limitations": [
+        "Single4096-second H1 segment; this is detector-noise monitoring, not GW detection or source parameter inference. Conditional on supplied quality mask. The entire source has injectionmask23: a continuous-wave hardware injection is present. This study concerns recorded strain-band power including possible injected contribution, NOT uncontaminated detector noise or astrophysical inference. No-cbc/burst/detchar/stochastic injections required; CW status retained.",
+        "Agent review is advisory, not independent experimental replication."
+      ],
+      "recommendations": [
+        "Use independent detector periods and injection-aware channel evidence to pursue a mechanism; preserve the current limited recorded-signal endpoint."
+      ]
+    },
+    {
+      "finding_id": "P100-003-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The preserved negative or adequacy conclusion is supported within the stated task; it does not assert that the underlying phenomenon is absent. The selected constant has MAE0.0085554 in1e-21strain units, worse in mean than median4 and flexible0.0082149. The reported negative finding, rather than stationary-law superiority, matches these results."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "A continuous-wave hardware injection is explicitly present. The endpoint is recorded band-limited strain power, not isolated detector noise, and a short single-detector segment cannot identify a universal noise mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful quality-mask and negative-control example for avoiding astrophysical overinterpretation of detector products."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native adapter, frozen equations, coefficients and compact evidence were inspected. Separate computational review performs numerical replay; scientific review is not experimental replication."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact."
+        }
+      },
+      "checks": [
+        "Case-specific endpoint semantics and prior-art review",
+        "Predictor timing and calibration budget review",
+        "Grouped-validation and exposure limits reviewed",
+        "Named-control comparisons and negative evidence reviewed",
+        "No inference of novelty from fit quality"
+      ],
+      "limitations": [
+        "Single4096-second H1 segment; this is detector-noise monitoring, not GW detection or source parameter inference. Conditional on supplied quality mask. The entire source has injectionmask23: a continuous-wave hardware injection is present. This study concerns recorded strain-band power including possible injected contribution, NOT uncontaminated detector noise or astrophysical inference. No-cbc/burst/detchar/stochastic injections required; CW status retained.",
+        "Agent review is advisory, not independent experimental replication."
+      ],
+      "recommendations": [
+        "Use independent detector periods and injection-aware channel evidence to pursue a mechanism; preserve the current limited recorded-signal endpoint."
+      ]
+    },
+    {
+      "finding_id": "P100-003-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "The positive proposed claim is not admitted. The selected constant has MAE0.0085554 in1e-21strain units, worse in mean than median4 and flexible0.0082149. The reported negative finding, rather than stationary-law superiority, matches these results."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "A continuous-wave hardware injection is explicitly present. The endpoint is recorded band-limited strain power, not isolated detector noise, and a short single-detector segment cannot identify a universal noise mechanism."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analyses and standard mathematical/statistical families are disclosed. This review does not certify a new law or exhaustive novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful quality-mask and negative-control example for avoiding astrophysical overinterpretation of detector products."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native adapter, frozen equations, coefficients and compact evidence were inspected. Separate computational review performs numerical replay; scientific review is not experimental replication."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention, measured cost benefit or external experimental replication establishes industrial impact."
+        }
+      },
+      "checks": [
+        "Case-specific endpoint semantics and prior-art review",
+        "Predictor timing and calibration budget review",
+        "Grouped-validation and exposure limits reviewed",
+        "Named-control comparisons and negative evidence reviewed",
+        "No inference of novelty from fit quality"
+      ],
+      "limitations": [
+        "Single4096-second H1 segment; this is detector-noise monitoring, not GW detection or source parameter inference. Conditional on supplied quality mask. The entire source has injectionmask23: a continuous-wave hardware injection is present. This study concerns recorded strain-band power including possible injected contribution, NOT uncontaminated detector noise or astrophysical inference. No-cbc/burst/detchar/stochastic injections required; CW status retained.",
+        "Agent review is advisory, not independent experimental replication."
+      ],
+      "recommendations": [
+        "Use independent detector periods and injection-aware channel evidence to pursue a mechanism; preserve the current limited recorded-signal endpoint."
+      ]
+    }
+  ],
+  "primary_sources_checked": [
+    "https://gwosc.org/O4/O4a/"
+  ],
+  "literature_access_limits": [
+    "Bounded primary-source and methods review; exhaustive novelty search and human expert adjudication are not claimed."
+  ],
+  "blocking_defects": []
+}

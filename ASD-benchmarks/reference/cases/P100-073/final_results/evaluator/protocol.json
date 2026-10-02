@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-073",
+  "protocol_id": "P100-073-prepared-primary-v1",
+  "target": "Author-converted later fermentation gas volume at native 12/24/36/48 hours",
+  "target_units": "mL",
+  "primary_units": "mL",
+  "metric_kind": "rmse",
+  "metric_definition": "Equal-run mean RMSE: take square root within group, then average groups equally.",
+  "independent_unit": "complete DG4 incubation run within each trial; every flask and horizon stay together",
+  "evaluation_groups": [
+    "T1-R4",
+    "T2-R4",
+    "T3-R4"
+  ],
+  "input_sha256": "36286692b27b589698aae99793955d1a5155fd8a8b88fc1dea917464091670bb",
+  "input_rows": 216,
+  "assigned_rows": 216,
+  "permitted_inputs": [
+    "trial",
+    "algae",
+    "hour",
+    "g4",
+    "g8"
+  ],
+  "input_units": {
+    "trial": "categorical protocol 1, 2 or 3",
+    "algae": "categorical source substrate/treatment label",
+    "hour": "h",
+    "g4": "mL, native volume at 4 h",
+    "g8": "mL, native volume at 8 h"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "curvature_saturation",
+    "first_order",
+    "dual_pool",
+    "empirical_ratio",
+    "persistence",
+    "linear_prefix",
+    "flexible_fixed",
+    "flexible_nested"
+  ],
+  "reference_equations": {
+    "curvature_saturation": "Ghat(t)=G8*[1-exp(-(t/tau_eff)^beta)]/[1-exp(-(8/tau_eff)^beta)]; tau_eff=tau_trial*exp(gamma_trial*(G4/G8-0.5)); trial-specific coefficients.",
+    "first_order": "Ghat(t)=G8*(1-exp(-t/tau_trial))/(1-exp(-8/tau_trial)).",
+    "dual_pool": "Ghat(t)=G8*[w*(1-exp(-t/tau_fast))+(1-w)*(1-exp(-t/tau_slow))]/[w*(1-exp(-8/tau_fast))+(1-w)*(1-exp(-8/tau_slow))].",
+    "empirical_ratio": "Ghat(t)=G8*development mean later/8-hour ratio for trial, algae and horizon; frozen fallback for unseen cells.",
+    "persistence": "Ghat(t)=G8",
+    "linear_prefix": "Ghat(t)=G8+max(0,G8-G4)*(t-8)/4.",
+    "flexible_fixed": "yhat=max(0,intercept+sum_i w_i*exp(-gamma*||encoded_scaled_X-center_i||^2)); all imputation, category encoding, scales and kernel state frozen.",
+    "flexible_nested": "yhat=max(0,intercept+sum_i w_i*exp(-gamma*||encoded_scaled_X-center_i||^2)); all imputation, category encoding, scales and kernel state frozen."
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "scope_limit": "Three reserved incubation runs in three protocols with known algae labels and an 8-hour prefix. No methane-specific prediction, unseen-treatment or in-vivo livestock transfer.",
+  "calibration_note": "Trial/algae kinetic and empirical parameters come from development DG1\u20133; current flask gas at 4/8 h is declared early calibration available to all comparators.",
+  "timing_contract": "Only native 4/8-hour gas volumes and known trial/algae/horizon; no later volume, end-of-incubation digestibility or GasDM target-derived normalization.",
+  "exposure_notice": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every complete reserved group. Within-system and temporal dependence, few condition blocks or calibrated sites limit population-level claims; no row-bootstrap confidence interval is claimed."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Audit native sample anchors and the declared prediction-time cutoff. Disclose every input/calibration and exclude future outcomes. Only native 4/8-hour gas volumes and known trial/algae/horizon; no later volume, end-of-incubation digestibility or GasDM target-derived normalization."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

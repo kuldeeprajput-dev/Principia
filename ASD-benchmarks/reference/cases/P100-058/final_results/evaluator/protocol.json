@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.2.0",
+  "case_id": "P100-058",
+  "protocol_id": "P100-058-retrospective-continuation-20261001",
+  "target": "Storage modulus G prime",
+  "target_units": "Pa",
+  "primary_units": "dimensionless natural-log ratio",
+  "metric_kind": "log_mae",
+  "metric_definition": "Equal-temperature mean absolute natural-log error on strictly positive native storage-modulus responses (32/35). Physical MAE/RMSE/bias retain all 35 finite responses. Three negative instrument readings are retained and flagged, never clipped or imputed.",
+  "independent_unit": "whole temperature sweep",
+  "evaluation_groups": [
+    "T70",
+    "T80"
+  ],
+  "input_sha256": "0d98e49a36f86fddb0b48b280d433c81b50843e8b16d24d479664997b6c70b75",
+  "input_rows": 35,
+  "assigned_rows": 35,
+  "permitted_inputs": [
+    "temperature_C",
+    "omega"
+  ],
+  "input_units": {
+    "temperature_C": "degree C",
+    "omega": "rad/s"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "wlf",
+    "arrhenius",
+    "fractional",
+    "plateau",
+    "wlf_sparse",
+    "constant",
+    "kernel"
+  ],
+  "reference_equations": {
+    "reference": "Gprime=sum G_j*(omega*aT*tau_j)^2/(1+(omega*aT*tau_j)^2); Gdoubleprime=sum G_j*omega*aT*tau_j/(1+(omega*aT*tau_j)^2). Ridge/shift tuned only inside training groups.",
+    "wlf": "Gprime=sum G_j*(omega*aT*tau_j)^2/(1+(omega*aT*tau_j)^2); Gdoubleprime=sum G_j*omega*aT*tau_j/(1+(omega*aT*tau_j)^2). Ridge/shift tuned only inside training groups.",
+    "arrhenius": "Gprime=sum G_j*(omega*aT*tau_j)^2/(1+(omega*aT*tau_j)^2); Gdoubleprime=sum G_j*omega*aT*tau_j/(1+(omega*aT*tau_j)^2). Ridge/shift tuned only inside training groups.",
+    "fractional": "Gstar=A*(i*omega*aT*tau)^alpha/(1+(i*omega*aT*tau)^alpha)",
+    "plateau": "Gprime=sum G_j*(omega*aT*tau_j)^2/(1+(omega*aT*tau_j)^2); Gdoubleprime=sum G_j*omega*aT*tau_j/(1+(omega*aT*tau_j)^2). Ridge/shift tuned only inside training groups.",
+    "wlf_sparse": "Gprime=sum G_j*(omega*aT*tau_j)^2/(1+(omega*aT*tau_j)^2); Gdoubleprime=sum G_j*omega*aT*tau_j/(1+(omega*aT*tau_j)^2). Ridge/shift tuned only inside training groups.",
+    "constant": "See rules.json full state and run.py executable equations",
+    "kernel": "group-tuned Gaussian kernel ridge with frozen training scales, centers and coefficients."
+  },
+  "positive_target": false,
+  "positive_prediction": true,
+  "nonnegative_prediction": false,
+  "scope_limit": "Temperature transfer within one material; no batch-to-batch or general polymer law claim. Positive modulus spans orders of magnitude. Three native negative storage readings limit low-modulus physical interpretation; logarithmic performance is conditional on 32 positive responses.",
+  "calibration_note": "Native DFS text exports only; paired TAD exports are linked duplicates, not independent samples. Target storage modulus and secondary loss modulus are separate native instrument outputs, though both share systematic calibration. No compliance correction was applied by the authors. A single purchased polymer batch.",
+  "timing_contract": "Temperature and imposed frequency only. Loss modulus is withheld as an orthogonal mechanistic check; never a primary predictor.",
+  "exposure_notice": "Original confirmation is exposed. New candidates chosen only development and frozen before this retrospective diagnostic.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Verify native anchors and permitted information: Temperature and imposed frequency only. Loss modulus is withheld as an orthogonal mechanistic check; never a primary predictor."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check units, physical signs/limits, measurement preprocessing, identifiability and source-specific confounding. Native DFS text exports only; paired TAD exports are linked duplicates, not independent samples. Target storage modulus and secondary loss modulus are separate native instrument outputs, though both share systematic calibration. No compliance correction was applied by the authors. A single purchased polymer batch."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ],
+  "log_eligibility": "Mathematically positive native responses only, with per-group coverage. Post-confirmation reporting repair, not a scientifically selected noise threshold. Frozen model selection and coefficients are unchanged.",
+  "fresh_confirmation": false
+}

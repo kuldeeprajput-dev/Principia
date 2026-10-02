@@ -1,0 +1,34 @@
+{
+  "0": {
+    "kind": "stance",
+    "coef": [
+      -0.3806787615132125,
+      -0.2550273815154586,
+      0.8980137818325765,
+      0.8461928882193961
+    ],
+    "equation": "F+b0*v+b1*a+b2*v*tanh(F/100N)+b3*a*tanh(F/100N); F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+    "training_groups": [
+      "0.75"
+    ],
+    "training_rows": 909,
+    "parameter_count": 4,
+    "rank": 4
+  },
+  "1": {
+    "kind": "stance",
+    "coef": [
+      0.089906455695987,
+      0.31860817999758007,
+      0.5611180924181537,
+      -0.03539453316377546
+    ],
+    "equation": "F+b0*v+b1*a+b2*v*tanh(F/100N)+b3*a*tanh(F/100N); F=current plate1 force(N), v=2*(F-F_t-50ms), a=F-2*F_t-50ms+F_t-100ms, C=past-cycle target phase force, vO=2*(opposite-opposite_t-50ms). Coefficients dimensionless except stated flexible response coefficients N.",
+    "training_groups": [
+      "0.5"
+    ],
+    "training_rows": 1008,
+    "parameter_count": 4,
+    "rank": 4
+  }
+}

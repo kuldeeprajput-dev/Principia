@@ -1,0 +1,61 @@
+{
+  "name": "pump_induced_loss",
+  "formula": "maximum(lo+(hi-lo)*(g*exp(-k*g**2)-glo*exp(-k*glo**2))/(ghi*exp(-k*ghi**2)-glo*exp(-k*glo**2)),0)",
+  "hypothesis": "Development evidence available before this fit: detuning_saturation: MAE 1.6549e-05, worst group 3.03777e-05; incoherent_power_mixing: MAE 1.70114e-05, worst group 2.91966e-05.\n\nTest pump-dependentattenuation/depletion: increasingdrive introduces a quadraticstrength loss envelope on top of linearcoupling. A transferableloss coefficient would differ from a pureunitaryrotation interpretation.",
+  "inputs": [
+    "lo",
+    "hi",
+    "noise",
+    "r",
+    "g",
+    "glo",
+    "ghi",
+    "sep"
+  ],
+  "recorded_utc": "2026-10-02T02:24:46.290744+00:00",
+  "parent": "attempt-004",
+  "parameters": {
+    "k": 2.004430528768349
+  },
+  "training_groups": [
+    "pump-12",
+    "pump-13",
+    "pump-14",
+    "pump-15",
+    "pump-16",
+    "pump-17",
+    "pump-18",
+    "pump-19",
+    "pump-20",
+    "pump-21",
+    "pump-22",
+    "pump-23",
+    "pump-24",
+    "pump-25",
+    "pump-26",
+    "pump-27",
+    "pump-28",
+    "pump-29",
+    "pump-30",
+    "pump-31",
+    "pump-32",
+    "pump-33",
+    "pump-34",
+    "pump-35",
+    "pump-36",
+    "pump-37",
+    "pump-38",
+    "pump-39",
+    "pump-40"
+  ],
+  "training_rows": 4524,
+  "optimizer_success": true,
+  "nfev": 5,
+  "jacobian_condition": 1.0,
+  "bounds": {
+    "k": [
+      0,
+      10
+    ]
+  }
+}

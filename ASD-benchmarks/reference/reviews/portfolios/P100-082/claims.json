@@ -1,0 +1,258 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-082",
+  "claim_origin": "Curator index of existing retained findings; review judgments remain separate. No new discovery claim added.",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "exposed"
+  },
+  "findings": [
+    {
+      "id": "P100-082-SCI-01",
+      "classification": "reproduction",
+      "source_classification": "reproduction",
+      "statement": "The calibrated Lloyd\u2013Taylor response reproduces established thermal behavior; near-ties do not demonstrate a new ecological law.",
+      "applicability": "Forward complete dates within calibrated contexts; related site/treatment labels are not independent geographic replications.",
+      "limitations": "Frozen thermal coefficient stayed near 200 K because optimizer scaling was limited. Preserve that version and its qualification; 96 context amplitudes are real calibration costs.",
+      "falsification": [
+        "Keep all same-date context records together and fit context amplitudes only on earlier dates.",
+        "Preserve finite negative/high flux and explicitly report sites lost through missing 5 cmtemperature.",
+        "Compare directional wetting with drying, absolute change and reoptimized no-pulse controls; cluster sensitivity by related site labels."
+      ],
+      "prior_art": "Lloyd\u2013Taylor and rewetting effects are established prior art; this is a small calibrated-context refinement. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "Rhat_c=A_c exp[E0(1/(10+46.02)-1/(T+46.02))], E0=200.000005K in original frozen state.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ]
+      },
+      "variables_and_units": {
+        "target": "g CO2 m^-2 h^-1",
+        "site": "categorical calibrated site",
+        "context": "categorical subsite/trenching context",
+        "t05": "degrees Celsius, native 5-cm soil temperature",
+        "tsmoisture": "native soil-water-content percent; may be missing",
+        "doy": "day of year"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-082.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-082-SCI-02",
+      "classification": "metrology_correction",
+      "source_classification": "measurement_audit",
+      "statement": "Dimensionless parameter profiling repairs the thermal optimizer but does not create new ecological evidence.",
+      "applicability": "Forward complete dates within calibrated contexts; related site/treatment labels are not independent geographic replications.",
+      "limitations": "Corrected E 0\u2248208.04 K and near-zero profile gradient repair the initial near 200 K fit; activation-mixture/history terms add negligible accuracy. Do not attribute optimizer repair to a new biological mechanism.",
+      "falsification": [
+        "Keep all same-date context records together and fit context amplitudes only on earlier dates.",
+        "Preserve finite negative/high flux and explicitly report sites lost through missing 5 cmtemperature.",
+        "Compare directional wetting with drying, absolute change and reoptimized no-pulse controls; cluster sensitivity by related site labels."
+      ],
+      "prior_art": "Lloyd\u2013Taylor and rewetting effects are established prior art; this is a small calibrated-context refinement. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "scope": "See bound equations/source audit; no substitute units are invented"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007"
+      ],
+      "task_id": null,
+      "task_family": "continuation",
+      "task_version_history": "2026-09-30 first continuation"
+    },
+    {
+      "id": "P100-082-SCI-03",
+      "classification": "predictive_reference",
+      "source_classification": "retrospective_extension",
+      "statement": "Directional past wetting adds a small forward-prediction improvement compatible with known rewetting effects.",
+      "applicability": "Forward complete dates within calibrated contexts; related site/treatment labels are not independent geographic replications.",
+      "limitations": "28/48 blocks and 12/16 label means improve. Reoptimizing a no-pulse control also improves; not all 1.60 %gain is wetting. Season, substrate and sampling interval remain confounded.",
+      "falsification": [
+        "Keep all same-date context records together and fit context amplitudes only on earlier dates.",
+        "Preserve finite negative/high flux and explicitly report sites lost through missing 5 cmtemperature.",
+        "Compare directional wetting with drying, absolute change and reoptimized no-pulse controls; cluster sensitivity by related site labels."
+      ],
+      "prior_art": "Lloyd\u2013Taylor and rewetting effects are established prior art; this is a small calibrated-context refinement. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "Rhat=A_c exp[b*x+c*z+d*z^2+e*x*z+m*I_missing+eta*max(DeltaM/20,0)], eta=.434388; x=(T-10C)/10C,z=(M-25)/20.",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E008",
+          "E009",
+          "E010",
+          "E011"
+        ]
+      },
+      "variables_and_units": {
+        "target": "g CO2 m^-2 h^-1",
+        "t05": "degrees Celsius, native 5-cm soil temperature",
+        "tsmoisture": "native soil-water-content percent; may be missing",
+        "doy": "day of year",
+        "moisture_change": "percentage points of native soil water content; change from past mean",
+        "site": "categorical calibrated site",
+        "context": "categorical subsite/trenching context",
+        "past_temperature": "degree C; strictly earlier temperature summary"
+      },
+      "evidence_ids": [
+        "E008",
+        "E009",
+        "E010",
+        "E011"
+      ],
+      "task_id": "P100-082.round2.v1",
+      "task_family": "round2",
+      "task_version_history": "2026-09-30 second continuation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "id": "E001",
+      "role": "original scientific description",
+      "path": "evidence/E001_FINDINGS.md",
+      "bytes": 6829,
+      "sha256": "b657cb8336475862742f6868f07a1c09f15f8039f3c679a0d82773db70d68073"
+    },
+    {
+      "id": "E002",
+      "role": "original frozen model state",
+      "path": "evidence/E002_rules.json",
+      "bytes": 527560,
+      "sha256": "9d556dede1df6990e58bc9169855d6249fe79c1bcb0c7bccfa3d1633d0802976"
+    },
+    {
+      "id": "E003",
+      "role": "original numerical comparison",
+      "path": "evidence/E003_metrics.csv",
+      "bytes": 585,
+      "sha256": "a557d7ff08c8dc5bfe7b3943cd9c2b18040c381d34b0c34299b1df2530a8d137"
+    },
+    {
+      "id": "E004",
+      "role": "original grouped errors",
+      "path": "evidence/E004_by_group.csv",
+      "bytes": 11203,
+      "sha256": "6d1cf07fd4a0933dde0f40681463e46aaf7809a8b3b8bb8d257e8185335d9f94"
+    },
+    {
+      "id": "E005",
+      "role": "first continuation scientific account",
+      "path": "evidence/E005_FINDINGS.md",
+      "bytes": 6164,
+      "sha256": "c1eb866be8da8b02df20252383620a75f6bcacbe12019c4209c9f6a262a2716b"
+    },
+    {
+      "id": "E006",
+      "role": "first continuation task contract",
+      "path": "evidence/E006_PROTOCOL.json",
+      "bytes": 4899,
+      "sha256": "87b80abe2eafea2a67b78072a343522e4cddedc54645933995da6f00c952eaa6"
+    },
+    {
+      "id": "E007",
+      "role": "first continuation comparison",
+      "path": "evidence/E007_COMPARISON.csv",
+      "bytes": 1064,
+      "sha256": "ad36db8591232d018b22e152fa07e89a718db7cb16dc85773d45bcfc41c715a9"
+    },
+    {
+      "id": "E008",
+      "role": "latest scientific account",
+      "path": "evidence/E008_FINDINGS.md",
+      "bytes": 2760,
+      "sha256": "26af3eaf7c1b4885b0a9a69e881fef27100bc601c7c5f5cf3883c86482db5ab0"
+    },
+    {
+      "id": "E009",
+      "role": "latest task protocol",
+      "path": "evidence/E009_PROTOCOL.json",
+      "bytes": 6038,
+      "sha256": "075f0e4ca0b61dc65e75448fa3dc8526ead56a3bf6716c62ae512caebf46d35f"
+    },
+    {
+      "id": "E010",
+      "role": "latest development comparison",
+      "path": "evidence/E010_COMPARISON.csv",
+      "bytes": 3507,
+      "sha256": "77e2e9dde108fa050fa030b9987c1cf6d9de9716dcb67ec31906a3d95002b29a"
+    },
+    {
+      "id": "E011",
+      "role": "latest development grouped errors",
+      "path": "evidence/E011_BY_GROUP.csv",
+      "bytes": 47740,
+      "sha256": "22d2fc78deebe4ab19c5bf87dde0421b55cebebc18925816c92585f978697185"
+    },
+    {
+      "id": "E012",
+      "role": "retained competing frozen model/fold states",
+      "path": "evidence/E012_states.json",
+      "bytes": 1197651,
+      "sha256": "4015efabe75d393f1017d95ae15dcfd3896192910b22efc85e71db49f44639c0"
+    },
+    {
+      "id": "E013",
+      "role": "retained competing frozen model/fold states",
+      "path": "evidence/E013_states.json",
+      "bytes": 1197575,
+      "sha256": "166fbea571a852065097675cb03050f60ca035f9eef06fa8afea81513bd29a77"
+    },
+    {
+      "id": "E014",
+      "role": "retained competing frozen model/fold states",
+      "path": "evidence/E014_states.json",
+      "bytes": 1197637,
+      "sha256": "e8248be3a864b28bf49c3603d64bf30aa44a116c2e6e51d0b457e8ae51781a38"
+    },
+    {
+      "id": "E015",
+      "role": "retained cross-case scientific context and selected-model clarification",
+      "path": "evidence/E015_ASD_REASSESSMENT_15_ROUND2.md",
+      "bytes": 30458,
+      "sha256": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253"
+    },
+    {
+      "id": "E016",
+      "role": "retained cross-case scientific context and selected-model clarification",
+      "path": "evidence/E016_ASD_CONTINUATION_15_ROUND2.md",
+      "bytes": 18283,
+      "sha256": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078"
+    },
+    {
+      "id": "SCIENTIFIC",
+      "role": "Independent scientific review before schema adaptation",
+      "path": "evidence/SCIENTIFIC.json",
+      "bytes": 22939,
+      "sha256": "3701eaf81f888b2b116001fca953ded0dbc7d8d4135dba9ee22808abec35ea80"
+    },
+    {
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational portfolio review",
+      "path": "evidence/COMPUTATIONAL.json",
+      "bytes": 125684,
+      "sha256": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "case": 31,
+  "type": "linear",
+  "features": [
+    "one",
+    "is_tket",
+    "is_bqskit"
+  ],
+  "offset": "log_pilot",
+  "link": "log",
+  "equation": "t=pilot_seconds*exp(a+bT*is_tket+bB*is_bqskit)",
+  "training_groups": [
+    "adder",
+    "barenco_tof",
+    "bigadder",
+    "csla_mux",
+    "csum_mux",
+    "ham-high",
+    "ham-low",
+    "hwb",
+    "inverseqft",
+    "mod",
+    "mod_red",
+    "qcla_adder",
+    "qcla_com",
+    "qcla_mod",
+    "qec",
+    "qft",
+    "qpt",
+    "rb",
+    "rc_adder",
+    "teleport",
+    "teleportv",
+    "tof",
+    "vbe_adder",
+    "w-state"
+  ],
+  "training_rows": 98,
+  "training_ids_sha256": "3a80d704665539d8259791f6555b07c5c1eb418021381957a2459aa86989b926",
+  "coef": [
+    -1.6118203965448028,
+    3.4321240772584796,
+    5.3400715307463695
+  ],
+  "complexity": 3,
+  "rank": 3,
+  "condition_number": 2.920125390699703
+}

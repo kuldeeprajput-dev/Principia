@@ -1,0 +1,196 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-057.round2.v2",
+  "case_id": "P100-057",
+  "case_number": 57,
+  "family": "round2",
+  "protocol_version": "P100-057.round2.v1.contract-1-contract-correction-v2",
+  "cohort_id": "P100-057.round2.v2.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-057.round2.v2",
+  "legacy_package": "57_materials_syntactic_foam/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/57_materials_syntactic_foam",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Next-temperature-block viscosity",
+  "target_units": "cP",
+  "error_units": "cP",
+  "primary_units": "cP",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "T_C",
+    "shear_s",
+    "T_previous",
+    "eta_previous",
+    "eta_first",
+    "previous_shear_s",
+    "first_shear_s",
+    "formulation"
+  ],
+  "input_units": {
+    "T_C": "degC",
+    "shear_s": "s^-1",
+    "T_previous": "degC",
+    "eta_previous": "Pa s",
+    "eta_first": "Pa s",
+    "previous_shear_s": "s^-1",
+    "first_shear_s": "s^-1",
+    "formulation": "source label; calibrated category"
+  },
+  "numeric_columns": [
+    "T_C",
+    "shear_s",
+    "T_previous",
+    "eta_previous",
+    "eta_first",
+    "previous_shear_s",
+    "first_shear_s"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Before each temperature block after the first, predict viscosity from current imposed temperature/shear settings and measured viscosity at the corresponding ordinal shear point in the completed previous and first blocks of the same Test ID. Blocks are ordered by native Result Start Time. Previous shear rate is supplied explicitly because matched ordinal points can differ in actual rate. No current-block or future target response enters predictors.",
+  "calibration": "Permitted within-Test-ID causal history comprises eta_previous, eta_first, T_previous, previous_shear_s and first_shear_s. Model coefficients are fitted only on the applicable outer training Test IDs. Historical static-reference formulation amplitudes and activation coefficients belong to separate comparator states, not a blanket calibration rule for the history task. Signed and extreme native outcomes remain in physical-unit scoring.",
+  "independent_unit": "Whole Test ID across all temperature/shear blocks; 40 original-development Test IDs contribute 9,000 out-of-fold rows. Synthesis lots are not identified.",
+  "evaluation_groups": [
+    "06ac4a62-5a31-4b98-8440-3dd4fdad83c1",
+    "06d41a99-04ab-4893-a8d2-8b19e91a066c",
+    "0c62a8d1-2f7d-4e4a-92c2-2de53d42c6c1",
+    "1a7d89c4-66c3-4f97-9de0-fc2b2f93ee77",
+    "1c2e9ff2-f09d-4bc4-bf51-c7f9f7ef1d2a",
+    "2fc82e68-30a6-4ab4-b87d-6f8432340127",
+    "31efbfa6-0aaf-413e-85b8-83eaea95ca17",
+    "539125a3-cd33-4d7c-b54e-41ba559af2b8",
+    "58cf8937-8d67-44f6-8f0d-74ad882d832a",
+    "58e1e51a-5d86-41ac-8439-9401738f5865",
+    "5a57c3d7-812f-47d4-8027-cfcb6b63b589",
+    "62a1e489-c5f0-472e-b37d-d45f3a40a8e1",
+    "70d93392-17a1-4f32-8bb2-bfae2f5dfd7e",
+    "7f1b3c86-f91b-4fa7-80af-4f929fa01a68",
+    "83af6125-7cf5-42e6-bf59-69382eaf9b01",
+    "88111e55-8964-4e20-ad9e-3e4d8a646e5d",
+    "8947d55b-5c4b-4fa6-97c7-8c27d2de0a27",
+    "89a6d821-517f-42e3-9e4d-23147f3b2a99",
+    "94a3136f-9885-4911-8fde-95922ec02084",
+    "a27dc2f1-7e62-4c52-84e5-cd7a9a51fb0c",
+    "a4e17cb7-27c3-44dd-becf-412ddc48f540",
+    "a6ece2ca-d760-4f4c-a736-59c1afea91ce",
+    "a8b9f61c-2cd4-49a9-9a36-5c632d00c2f8",
+    "b2a94418-8730-46c3-a516-5df43d932e93",
+    "ba7d629e-b0c6-4e82-9d64-bb038c8ecdb0",
+    "bd1e09b7-2f0c-44c6-9eaf-3c3bcb9729d4",
+    "bfe0f4a1-7a32-4710-8bc6-7296c9d3f9a4",
+    "c1a3d42e-6f41-47a2-9f13-6b37a54f527d",
+    "c26ff0e4-2ad6-4895-b14d-df4175f32a21",
+    "c538cdfc-f0f7-420d-b420-a826ed263783",
+    "d037248e-187f-485f-9082-35b92a2fd129",
+    "d8ab4c72-8413-4d7c-92ee-57b801a40f7e",
+    "df7e2b65-6c82-49e2-8d37-ef1f7281fbc9",
+    "ea9fdb2d-d8b4-4c56-9c43-7a0c214f25db",
+    "ef7288d2-d16e-47f9-bc09-5f9b4a4af471",
+    "f25f37a4-019f-42d8-b013-5f6deafcaac7",
+    "f6e17483-3ec9-47d3-975f-cf498e42f94c",
+    "f85dc29b-62c1-4664-8c8b-ef8134a2c709",
+    "fb27c4d2-1297-4720-b81e-f8c34db4c48c",
+    "ffb8e84c-c552-4862-8155-ee8103a49909"
+  ],
+  "assigned_rows": 9000,
+  "eligible_rows": 9000,
+  "baseline_models": [
+    "previous/cycle-002",
+    "current/cycle-001",
+    "previous/cycle-001",
+    "previous/baseline-old",
+    "previous/baseline-signed_history",
+    "previous/baseline-previous",
+    "current/baseline-hgb",
+    "previous/baseline-flex",
+    "previous/cycle-003"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "previous/cycle-002": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-001": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-old": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-signed_history": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-previous": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-flex": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-003": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Retrospective, repeatedly exposed development out-of-fold cohort on already represented formulations. The original ten reserved Test IDs are not this task cohort. Causal within-test history is explicitly allowed, so comparison to the static task is not an algorithm-only improvement. Thermal order, aging and formulation effects remain confounded; no equilibrium constitutive or independent-lot law is established.",
+  "source_url": "https://zenodo.org/records/19699588",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "8789890d43ca7dcc4edfb445b02014b68cb28c99a0055d845d0a53930697a998",
+  "observations_sha256": "ecc56757ed3758fe4b8989a33028028c4270382650d938cd35ffa6694d8cc231",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified",
+  "documentation_correction": {
+    "supersedes": "P100-057.round2.v1",
+    "numerical_state_changed": false,
+    "source_cohort_unchanged": true,
+    "reason": "Remove original-cohort/static-calibration wording inherited by distinct development-OOF continuation task. No new ASD fitting or re-selection.",
+    "historical_validation": "Same exposed development OOF predictions; no new confirmation"
+  }
+}

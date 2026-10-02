@@ -1,0 +1,167 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-100.round2.v1",
+  "case_id": "P100-100",
+  "case_number": 100,
+  "family": "round2",
+  "protocol_version": "P100-100.round2.v1.contract-1",
+  "cohort_id": "P100-100.round2.v1.development-oof",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-100.round2.v1",
+  "legacy_package": "100_communications_6g_mobkpi/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/100_communications_6g_mobkpi",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Next successful ICMP round-trip time",
+  "target_units": "ms",
+  "error_units": "ms",
+  "primary_units": "ms",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "payload_B",
+    "last_rtt",
+    "mean5_rtt",
+    "mean3_rtt",
+    "trend_rtt",
+    "RSRP",
+    "RSRQ",
+    "last2_rtt",
+    "last3_rtt",
+    "median5_rtt",
+    "std5_rtt",
+    "route"
+  ],
+  "input_units": {
+    "payload_B": "B",
+    "last_rtt": "ms,previous completion",
+    "mean5_rtt": "ms,previous5 completions",
+    "mean3_rtt": "ms,previous3 completions",
+    "trend_rtt": "ms,previous RTT difference",
+    "RSRP": "dBm,asof previouscompletion",
+    "RSRQ": "dB,asof previouscompletion",
+    "last2_rtt": "ms; second previous completed RTT",
+    "last3_rtt": "ms; third previous completed RTT",
+    "median5_rtt": "ms; median of preceding 5 completed RTTs",
+    "std5_rtt": "ms; SD of preceding 5 completed RTTs",
+    "route": "calibrated route label"
+  },
+  "numeric_columns": [
+    "payload_B",
+    "last_rtt",
+    "mean5_rtt",
+    "mean3_rtt",
+    "trend_rtt",
+    "RSRP",
+    "RSRQ",
+    "last2_rtt",
+    "last3_rtt",
+    "median5_rtt",
+    "std5_rtt"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict next probe RTT using only five previous completed RTTs and radio asof previous completion, <=0.5s old. No current response-completion timestamp, ICMPseq, cumulative average/loss, future gap, throughput or same-probe radio in inputs. Successful response conditional target; missing lost responses retained when inputs eligible. Expanded information budget: payload_B, last_rtt, mean5_rtt, mean3_rtt, trend_rtt, RSRP, RSRQ, last2_rtt, last3_rtt, median5_rtt, std5_rtt, route",
+  "calibration": "See frozen development protocol and per-fold states; all learned calibration is training-partition-only. r_n and r_(n\u22121) are completed previous RTTs in milliseconds; rbar5 averages the last five completed probes. c_q in ms is\u22120.002897 for indoor random,\u22120.069945 for indoor rectangle and\u22120.049676 for outdoor rectangle. The55ms breakpoint was selected using nested development groups. Payload and causal radio measurements are available to comparators, but the selected equation uses history and the calibrated route offset only. It predicts a conditional successful next response, not a missing lost-packet RTT.",
+  "independent_unit": "whole PING run; sequential packets correlated",
+  "evaluation_groups": [
+    "2024-11-20_19-11-32_ping",
+    "2024-11-20_19-16-32_ping",
+    "2024-11-22_11-06-27_ping",
+    "2024-11-22_11-08-47_ping",
+    "2024-11-22_17-23-35_ping",
+    "2024-11-22_17-26-13_ping"
+  ],
+  "assigned_rows": 5965,
+  "eligible_rows": 5938,
+  "baseline_models": [
+    "previous/baseline-lag2",
+    "previous/baseline-flex",
+    "previous/cycle-002",
+    "current/cycle-001",
+    "previous/baseline-old",
+    "previous/cycle-001",
+    "current/baseline-hgb",
+    "previous/baseline-rolling",
+    "previous/baseline-last"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "previous/baseline-lag2": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-flex": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-002": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-old": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-001": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-rolling": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-last": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Three complete PING runs, one per calibrated route, one platform; online previous-probe calibration. No new-network or packet-loss reliability prediction. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+  "source_url": "https://zenodo.org/records/14635635",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "fec180c7d132f4dc279a7a7fd431b9cb8cbc5b8d04a5e4e0b69d21d48883deed",
+  "observations_sha256": "5f9c97213835bfd79a9cc7bf5be75f8acc4a9a14714662c4b513cb0c47a652d3",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified"
+}

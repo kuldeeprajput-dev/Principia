@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-045",
+  "title": "Fermi GBM GRB250206A spectra and responses",
+  "default_task": "P100-045.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "GBM NaI channel4 count rate during fixed post-trigger window",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Detector within one GRB; detectors share one incident event",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Pretrigger[-200,-100]s background rate in each low/high channel; instrument-specific energy edges recorded.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "GBM NaI channel4 count rate during fixed post-trigger window",
+    "prediction_time": "Same-bin channel2+3 count rates and previous-bin low-energy rate permitted; targetchannel4 observations aftertrigger forbidden as predictors.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Detectors share one GRB; no independent-burst transfer."
+  },
+  "task_ids": [
+    "P100-045.original.v1"
+  ],
+  "finding_ids": [
+    "P100-045-F01",
+    "P100-045-F02",
+    "P100-045-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-045/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-045.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate GBM NaI channel4 count rate during fixed post-trigger window under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Same-bin channel2+3 count rates and previous-bin low-energy rate permitted; targetchannel4 observations aftertrigger forbidden as predictors.",
+    "calibration_requirement": "Pretrigger[-200,-100]s background rate in each low/high channel; instrument-specific energy edges recorded.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "GBM NaI channel4 count rate during fixed post-trigger window in counts/s",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Detectors share one GRB; no independent-burst transfer."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "counts/s",
+    "reference_model": "reference",
+    "reference_primary_error": 22.08801251123995,
+    "reference_physical_mae": 22.08801251123995,
+    "physical_error_units": "counts/s",
+    "lowest_registered_error_model": "attempt_002",
+    "lowest_registered_error": 22.08801251123995,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-045.original.v1/evidence/metrics.csv",
+      "bytes": 881,
+      "sha256": "a8438a39e8774053e6170cc8718bdb1430648967668b6d7d9ad5e2f32e08ec6c"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Detectors share one GRB; no independent-burst transfer."
+}

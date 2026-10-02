@@ -1,0 +1,49 @@
+{
+  "intro": "# Ungulate calls: transferable context prediction with a confounding warning\n\nThe source supplies3181 author-extracted calls from168 animals across seven ungulate species. Source Positive/Negative labels describe eliciting behavioral contexts; they are not direct measurements of subjective emotional state. Whole animals are held out within species:134 development animals and34 reserved animals, yielding475 reserved calls. Calls are weighted equally within each animal and animals equally overall.\n\n## Selected equation\n\nThe selected compact model uses species, call duration $D$ in seconds and waveform root-mean-square amplitude $R$ relative to digital full scale:\n\n$$\\Pr(\\mathrm{positive\\ context})=\\sigma(\\alpha_{\\mathrm{species}}-0.69376361\\ln R-1.419715\\ln(D/1\\,\\mathrm{s})).$$\n\nSpecies intercepts are the intercept plus the corresponding indicator coefficient, with Cow as reference; the exact ordered values are in rules.json and EQUATIONS.md. The waveform amplitude is **not calibrated sound pressure**. Negative duration/amplitude coefficients characterize this dataset's recording/context structure; they are not universal emotional or physiological effects.\n\nFive adaptive attempts compared arousal-related spectral/temporal summaries, tonality, envelope modulation, a recording-amplitude challenge and an amplitude-free spectrotemporal synthesis. The simpler duration/amplitude candidate was selected within the prespecified1% development-error tolerance. Filename context words, animal IDs and labels are excluded from predictors. Known species is available to every comparator.\n",
+  "interpretation": "Reserved animal-balanced Brier is0.190215 for the selected equation, versus0.209298 constant prevalence,0.205977 species prevalence and0.201616 flexible acoustics. Event precision/recall/F1 at a declared0.5 threshold, log loss and calibration bins are retained separately; that threshold is an equal-cost diagnostic, not a welfare decision boundary. The numerical transfer supports a reproducible context descriptor, but the ability of uncalibrated RMS and duration to match richer acoustics is a warning: call type, eliciting context, species, source study and recorder can remain confounded after animal holdout. The source already demonstrates machine learning of valence, so neither a new emotion law nor deployed welfare impact is established. Source labels WidlBoar and WildBoar are linked for the ten overlapping animalIDs, preventing an otherwise hidden split leak.",
+  "summary": "Five attempts completed; a compact species/duration/recording-amplitude model is selected. Reserved Brier0.19021 improves registered comparators numerically, while confounding prevents a new biological-emotion claim.",
+  "lessons": "Link typo-equivalent animal IDs before splitting, preserving native names as evidence. Animal holdout does not remove recording-study/context confounding. A successful amplitude control can weaken a biological interpretation even when prediction improves. Do not call spectral peak fundamental pitch or digital RMS sound pressure without calibration. Report probability scores, calibration and threshold semantics instead of accuracy alone.",
+  "findings": [
+    {
+      "finding_id": "P100-035-F01",
+      "classification": "validated_scoped_descriptor",
+      "claim": "A compact species/duration/digital-amplitude equation transfers source context-label prediction to held animals",
+      "equation": "Pr(positive)=sigmoid(alpha_species+bR*ln(RMS)+bD*ln(duration/1s))",
+      "coefficients": [
+        -3.145577229688622,
+        -0.3683783116211599,
+        1.2055140005728848,
+        -0.48709290393401616,
+        1.1538436860247656,
+        0.2464294188278621,
+        -0.6310322435674381,
+        -0.6937636091245193,
+        -1.4197150371841805
+      ],
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv",
+        "evidence/detailed_metrics.json",
+        "evidence/paired_uncertainty.json"
+      ],
+      "scope": "Seven species within retained studies and contexts",
+      "admission": "partially_supported",
+      "prior_art": "Authors already classify vocal valence; this is a grouped compact predictive extension",
+      "falsification": "No independent recording-study or context transfer, and label is context-based"
+    },
+    {
+      "finding_id": "P100-035-F02",
+      "classification": "supported_negative_finding",
+      "claim": "Predictive success does not uniquely support an emotional acoustic mechanism because recording amplitude/duration match richer acoustic summaries",
+      "equation": null,
+      "evidence": [
+        "rules.json",
+        "evidence/metrics.csv"
+      ],
+      "scope": "The compared candidate families and fixed source contexts",
+      "admission": "supported",
+      "prior_art": "Recording confounding and context-defined valence are known concerns",
+      "falsification": "Calibrated acoustic acquisition and held contexts/studies could separate explanations"
+    }
+  ]
+}

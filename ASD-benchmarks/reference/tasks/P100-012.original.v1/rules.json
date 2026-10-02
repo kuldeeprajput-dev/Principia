@@ -1,0 +1,494 @@
+{
+  "case_id": "P100-012",
+  "input_columns": [
+    "q",
+    "q0",
+    "I0",
+    "outer"
+  ],
+  "numeric_columns": [
+    "q",
+    "q0",
+    "I0",
+    "outer"
+  ],
+  "input_units": {
+    "q": "\u00c5\u207b\u00b9;4\u03c0sin(theta)/lambda",
+    "q0": "\u00c5\u207b\u00b9; calibration mean wavevector",
+    "I0": "counts; mean at2theta1.0\u00b10.008deg",
+    "outer": "binary noncenter measurement position"
+  },
+  "target": "native higher-angle XRR intensity",
+  "target_units": "counts",
+  "error_units": "counts",
+  "metric_kind": "mae",
+  "models": {
+    "reference": {
+      "name": "kiessig_interference",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))*(1+r*cos(q*d+phase))/(1+r*cos(q0*d+phase))",
+      "hypothesis": "Development evidence available before this fit: roughness_envelope: MAE 14609.1, worst group 15823.1; finite_angle_fresnel: MAE 10932, worst group 11506.2.\n\nTest coherent finite-film Kiessig interference in addition to refraction/roughness. A transferable period should support a shared effective film scale, while phase/contrast remain potentially confounded.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:08:59.491864+00:00",
+      "parent": "attempt-002",
+      "parameters": {
+        "qc": 0.06162714530036949,
+        "sigma": 4.566309013927983,
+        "d": 86.36235252211337,
+        "r": 0.8615946005395707,
+        "phase": 1.3224203398489691
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 4042,
+      "optimizer_success": true,
+      "nfev": 13,
+      "jacobian_condition": 11089.142852695679,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ],
+        "d": [
+          60,
+          140
+        ],
+        "r": [
+          0,
+          0.95
+        ],
+        "phase": [
+          -3.141592653589793,
+          3.141592653589793
+        ]
+      }
+    },
+    "flat_calibration": {
+      "name": "flat_calibration",
+      "formula": "I0",
+      "hypothesis": "A constant calibrated level is the simple control.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:08:10.911295+00:00",
+      "parent": null,
+      "parameters": {},
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 4042
+    },
+    "flexible": {
+      "name": "flexible",
+      "formula": "I0*(q0/q)**4*(b0+b1*q+b2*q**2+b3*q**3)+b4",
+      "hypothesis": "Five-coefficient smooth envelope and background control.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:08:14.221116+00:00",
+      "parent": null,
+      "parameters": {
+        "b0": -5.467637542306559,
+        "b1": 103.05349822621895,
+        "b2": -559.2860517693022,
+        "b3": 815.9024948639594,
+        "b4": 20611.472827615537
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 4042,
+      "fit_method": "weighted linear least squares",
+      "condition": 448.5578659060484
+    },
+    "fresnel_tail": {
+      "name": "fresnel_tail",
+      "formula": "I0*(q0/q)**4",
+      "hypothesis": "Established asymptotic Fresnel intensity tail.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:08:12.556140+00:00",
+      "parent": null,
+      "parameters": {},
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 4042
+    },
+    "roughness_envelope": {
+      "name": "roughness_envelope",
+      "formula": "I0*(q0/q)**4*exp(-sigma**2*(q**2-q0**2))",
+      "hypothesis": "Attempt1: a Debye-Waller-like roughness envelope attenuates the asymptotic Fresnel tail. Test transfer of one effective interface width across complete deposition batches.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:08:15.903254+00:00",
+      "parent": null,
+      "parameters": {
+        "sigma": 15.903020057665247
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 4042,
+      "optimizer_success": true,
+      "nfev": 14,
+      "jacobian_condition": 1.0,
+      "bounds": {
+        "sigma": [
+          0,
+          30
+        ]
+      }
+    },
+    "finite_angle_fresnel": {
+      "name": "finite_angle_fresnel",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))",
+      "hypothesis": "Development evidence available before this fit: roughness_envelope: MAE 14609.1, worst group 15823.1.\n\nRoughness improves the asymptotic tail but remains worse than the smooth control. Test finite-angle Fresnel refraction: calibration near the critical region may invalidate q^-4 normalization even at larger target angles.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:08:57.347508+00:00",
+      "parent": "attempt-001",
+      "parameters": {
+        "qc": 0.06956955101848196,
+        "sigma": 2.488734461764648e-12
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 4042,
+      "optimizer_success": true,
+      "nfev": 11,
+      "jacobian_condition": 1.0909427010973884e+19,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ]
+      }
+    },
+    "kiessig_interference": {
+      "name": "kiessig_interference",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))*(1+r*cos(q*d+phase))/(1+r*cos(q0*d+phase))",
+      "hypothesis": "Development evidence available before this fit: roughness_envelope: MAE 14609.1, worst group 15823.1; finite_angle_fresnel: MAE 10932, worst group 11506.2.\n\nTest coherent finite-film Kiessig interference in addition to refraction/roughness. A transferable period should support a shared effective film scale, while phase/contrast remain potentially confounded.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:08:59.491864+00:00",
+      "parent": "attempt-002",
+      "parameters": {
+        "qc": 0.06162714530036949,
+        "sigma": 4.566309013927983,
+        "d": 86.36235252211337,
+        "r": 0.8615946005395707,
+        "phase": 1.3224203398489691
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 4042,
+      "optimizer_success": true,
+      "nfev": 13,
+      "jacobian_condition": 11089.142852695679,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ],
+        "d": [
+          60,
+          140
+        ],
+        "r": [
+          0,
+          0.95
+        ],
+        "phase": [
+          -3.141592653589793,
+          3.141592653589793
+        ]
+      }
+    },
+    "contrast_decoherence": {
+      "name": "contrast_decoherence",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))*(1+r*exp(-sc**2*q**2)*cos(q*d+phase))/(1+r*exp(-sc**2*q0**2)*cos(q0*d+phase))",
+      "hypothesis": "Development evidence available before this fit: finite_angle_fresnel: MAE 10932, worst group 11506.2; kiessig_interference: MAE 5988.58, worst group 11368.1.\n\nChallenge the constant fringe-contrast assumption: differential interface roughness or thickness dispersion may wash out interference at high q. Test decaying contrast separately from the mean intensity envelope.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:09:02.230578+00:00",
+      "parent": "attempt-003",
+      "parameters": {
+        "qc": 0.06043169776283587,
+        "sigma": 4.453432737812036,
+        "d": 87.30389149731653,
+        "r": 0.9499999999995415,
+        "phase": 1.1981690885140444,
+        "sc": 3.2411437453453527
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 4042,
+      "optimizer_success": true,
+      "nfev": 17,
+      "jacobian_condition": 11300.34360906852,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ],
+        "d": [
+          60,
+          140
+        ],
+        "r": [
+          0,
+          0.95
+        ],
+        "phase": [
+          -3.141592653589793,
+          3.141592653589793
+        ],
+        "sc": [
+          0,
+          20
+        ]
+      }
+    },
+    "center_outer_thickness": {
+      "name": "center_outer_thickness",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))*(1+r*cos(q*(d+dr*outer)+phase))/(1+r*cos(q0*(d+dr*outer)+phase))",
+      "hypothesis": "Development evidence available before this fit: kiessig_interference: MAE 5988.58, worst group 11368.1; contrast_decoherence: MAE 6031.67, worst group 11179.\n\nTest spatial growth nonuniformity: the effective fringe period may differ between center and noncenter sites while remaining common across deposition batches. All positions of each wafer remain linked.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:09:05.334007+00:00",
+      "parent": "attempt-004",
+      "parameters": {
+        "qc": 0.06160864811141792,
+        "sigma": 4.54731475687665,
+        "d": 87.64290944910873,
+        "r": 0.8626946729623777,
+        "phase": 1.3016794048313771,
+        "dr": -1.426531180218474
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 4042,
+      "optimizer_success": true,
+      "nfev": 13,
+      "jacobian_condition": 11233.912617059583,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ],
+        "d": [
+          60,
+          140
+        ],
+        "r": [
+          0,
+          0.95
+        ],
+        "phase": [
+          -3.141592653589793,
+          3.141592653589793
+        ],
+        "dr": [
+          -20,
+          20
+        ]
+      }
+    },
+    "instrument_background": {
+      "name": "instrument_background",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))*(1+r*cos(q*d+phase))/(1+r*cos(q0*d+phase))+background",
+      "hypothesis": "Development evidence available before this fit: contrast_decoherence: MAE 6031.67, worst group 11179; center_outer_thickness: MAE 6166.24, worst group 11275.6.\n\nNeither contrast decoherence nor center/outer period variation improves primary transfer. Test an instrument-count floor as the remaining alternative to extra film physics. A positive background could explain high-angle residuals while preserving the coherent film term.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:09:40.325208+00:00",
+      "parent": "attempt-005",
+      "parameters": {
+        "qc": 0.05737577843883881,
+        "sigma": 6.1574654897041885,
+        "d": 86.37244367420053,
+        "r": 0.8697160699930158,
+        "phase": 1.2757600213454436,
+        "background": 1677.5033342046543
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 4042,
+      "optimizer_success": true,
+      "nfev": 15,
+      "jacobian_condition": 1801285.0845183881,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ],
+        "d": [
+          60,
+          140
+        ],
+        "r": [
+          0,
+          0.95
+        ],
+        "phase": [
+          -3.141592653589793,
+          3.141592653589793
+        ],
+        "background": [
+          0,
+          10000
+        ]
+      }
+    }
+  },
+  "selected_from": "attempts/attempt-003",
+  "selection": "Development only; reference remains fixed even if another model is better on confirmation."
+}

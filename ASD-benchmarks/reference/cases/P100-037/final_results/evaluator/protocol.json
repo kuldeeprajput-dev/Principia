@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "case_id": "P100-037",
+  "protocol_id": "P100-037-prepared-primary-v1",
+  "target": "Measured electrical router power",
+  "target_units": "W",
+  "primary_units": "W",
+  "metric_kind": "mae",
+  "metric_definition": "Mean across complete runs of within-run mean absolute power error (W); every run has equal weight.",
+  "independent_unit": "complete native run",
+  "evaluation_groups": [
+    "TC3.2_multiple_traffic_flows_modelA_iteration3.csv",
+    "TC3.2_multiple_traffic_flows_modelB_iteration3.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelA_iteration3.csv",
+    "TC3.2_traffic_load_packet_length_variation_modelB_iteration3.csv",
+    "TC3.2_traffic_load_variation_modelA_iteration3.csv"
+  ],
+  "input_sha256": "9cdcd33d571ff37e52e789907b5dd86c0bcf883ecc6525adf2966fa005ce7f78",
+  "input_rows": 27692,
+  "assigned_rows": 27692,
+  "permitted_inputs": [
+    "router",
+    "throughput_Gbps",
+    "packet_bytes"
+  ],
+  "input_units": {
+    "router": "categorical A/B",
+    "throughput_Gbps": "Gbit/s",
+    "packet_bytes": "bytes"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "compact",
+    "flexible",
+    "throughput_only"
+  ],
+  "reference_equations": {
+    "compact": "P=b0(router)+bu(router)*u+bs(router)*s+bus(router)*u*s; u=throughput_Gbps/200; q=throughput_Gbps*1e9/(8*packet_bytes*1e8); s=q/(0.03+q)",
+    "flexible": "P=beta(router) dot [1,u,q,u^2,q^2,u*q,ln(packet_bytes/1500),ln(packet_bytes/1500)^2,u*ln(packet_bytes/1500)]",
+    "throughput_only": "P=b0(router)+bu(router)*throughput_Gbps/200"
+  },
+  "positive_target": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "scope_limit": "Five reserved runs on two calibrated router models. No new-router or identified component-energy law is established.",
+  "calibration_note": "Separate A/B model parameters from the original development runs; no target-run refit.",
+  "timing_contract": "Current throughput and packet-size metadata only. Derived packet-rate proxies are not independent measurements; no measured temperature supports a thermal mechanism.",
+  "exposure_notice": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Only 5 groups, with system-level dependence; report individual effects without a population confidence interval."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Audit raw sample anchors and timestamp/phase cutoffs. Identify every predictor and all calibration; exclude future responses and identifier memorization. Current throughput and packet-size metadata only. Derived packet-rate proxies are not independent measurements; no measured temperature supports a thermal mechanism."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check dimensional consistency and physically plausible signs/regimes; explain identifiability, confounding and why an association is not automatically causal."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ]
+}

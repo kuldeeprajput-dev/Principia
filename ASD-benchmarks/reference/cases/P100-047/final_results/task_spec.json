@@ -1,0 +1,47 @@
+{
+  "case_id": "P100-047",
+  "target": "Adjusted dissolved oxygen at observed nitrate/water-mass state",
+  "target_units": "umol/kg",
+  "error_units": "umol/kg",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "pressure",
+    "temperature",
+    "salinity",
+    "nitrate",
+    "float_id"
+  ],
+  "input_units": {
+    "pressure": "dbar",
+    "temperature": "degC",
+    "salinity": "psu",
+    "nitrate": "umol/kg",
+    "float_id": "identifier"
+  },
+  "numeric_columns": [
+    "pressure",
+    "temperature",
+    "salinity",
+    "nitrate"
+  ],
+  "source_url": "https://argo.ucsd.edu/data/how-to-use-argo-files/",
+  "source_license": "Argo open data with attribution",
+  "exposure": {
+    "schema": "Inspected dimensions, parameter names/QC inventories and dates only, no numerical oxygen values. All public source-aware; confirmation after final freeze will become exposed.",
+    "current": "exposed",
+    "confirmation_history": "Scores hidden until candidate selection, stopping and code/state freeze",
+    "fresh_for_future_users": false
+  },
+  "uncertainty_policy": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "calibration": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "scope_limits": "Author-adjusted, aligned/calibrated products. In-situ-temperature surface oxygen-solubility proxy used for comparison; no potential-temperature or pressure-corrected AOU claim. No causal Redfield stoichiometry from correlated water masses.",
+  "timing_contract": "Contemporaneous adjusted oxygen diagnostic using independently instrumented nitrate and CTD measurements from the same aligned synthetic profile. No prospective acquisition claim. Adjusted T/S flags1,2,8 permit source interpolation; oxygen/nitrate/pressure flags1,2 only.",
+  "independent_unit": "Whole float profiles; rolling half-year tests 2023H2,2024H1,H2,2025H1, earlier times train. July2025 onward reserved. Two serially sampled floats, not hundreds of independent oceans.",
+  "selection": "attempt-005",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "weights": "equal group then equal eligible row"
+  }
+}

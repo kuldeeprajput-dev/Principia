@@ -1,0 +1,203 @@
+{
+  "case_id": "P100-022",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "51491e47c8c0973ed95100b3a60cde77f0ac03f09988cd7993b4d39212edf1ab"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "eaf0b77ef6f69af4c483ae3ee8aab27c18a2e823ff152e1065fe7a68855c4c2c"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "608fb6cc796d0501377dbb3c7cc3d53dd7be1a80093204a93df598f7eba6b5e6"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "527538678b032765a5f0c984cf3cd0e8e119c2e4698c906fa26ad597315fd1dc"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "d7222aa34b39246e377c8fe22a58821a8e02653f1300700fdbd497ccdbbdeeb3"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "5c8fe116be696493f226d0111ad3c0d49053ab9bddfe951ea26c6511dfa495b3"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "a72b476c902d03cbe3dd59988b6a6fd46a498070c6aa9404159d6530044c881f"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "151f7561d011e80ae522d2ef8c4aa6596deb43e37bef7b2fb40b710458e963da"
+    },
+    {
+      "path": "native.py",
+      "sha256": "9239061460879dbd6fe5ff723cb2259f82b10103d575a9eb2243ee14374b6006"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "364ece37fd3e8fe324771befae81dd3d8c2729e14417f7b4cd7ba2531004d67e"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "b6042c416773740c76af78dd769d4adcdf5fbc6d47091f48ef49d660da4e3fb1"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "36bd268835b8c1101a059ecaaea94daa67d3d376253f694df06477596f8fc167"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "55942013e21f5075ea161fa8721824e16b6e5af5adafc8b1f635cf10697b1e07"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "c6400c16e37ffbf3509e4d420ff5e27986796078cb1bb1cf883e29b17881c69b"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-022-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact frozen numerical evidence reproduces, including losing controls; this verifies computation, not universal interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No literature-priority adjudication in this computational review."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped benchmark comparison. Complete device, both compositions; all duplicate device traces linked. No future current or state permitted.; A compact composition-conditioned forming-current equation improves the logistic control and is essentially tied with a larger spline on reserved devices. Its negative I-rich precursor coefficient prevents admission as a new physical conduction law.; No independent population confidence interval from dependent rows."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native-source reconstruction and every saved model/metric passed independent computation."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention/cost/safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+        "All top-level groups disjoint across development and confirmation",
+        "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+        "Independently recomputed equal-group physical-unit MAE for every model",
+        "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+      ],
+      "limitations": [
+        "Complete device, both compositions; all duplicate device traces linked. No future current or state permitted.; A compact composition-conditioned forming-current equation improves the logistic control and is essentially tied with a larger spline on reserved devices. Its negative I-rich precursor coefficient prevents admission as a new physical conduction law.; No independent population confidence interval from dependent rows."
+      ]
+    },
+    {
+      "finding_id": "P100-022-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Exact frozen numerical evidence reproduces, including losing controls; this verifies computation, not universal interpretation."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Numerical replay does not identify a microscopic mechanism or validate signs of fitted empirical components."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "No literature-priority adjudication in this computational review."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped benchmark comparison. Complete device, both compositions; all duplicate device traces linked. No future current or state permitted.; A compact composition-conditioned forming-current equation improves the logistic control and is essentially tied with a larger spline on reserved devices. Its negative I-rich precursor coefficient prevents admission as a new physical conduction law.; No independent population confidence interval from dependent rows."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native-source reconstruction and every saved model/metric passed independent computation."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployed intervention/cost/safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+        "All top-level groups disjoint across development and confirmation",
+        "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+        "Independently recomputed equal-group physical-unit MAE for every model",
+        "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+      ],
+      "limitations": [
+        "Complete device, both compositions; all duplicate device traces linked. No future current or state permitted.; A compact composition-conditioned forming-current equation improves the logistic control and is essentially tied with a larger spline on reserved devices. Its negative I-rich precursor coefficient prevents admission as a new physical conduction law.; No independent population confidence interval from dependent rows."
+      ]
+    }
+  ],
+  "numerical_checks": [
+    {
+      "model": "reference",
+      "primary_error": 74.94891286619409,
+      "max_prediction_difference": 2.2737367544323206e-13
+    },
+    {
+      "model": "baseline_constant",
+      "primary_error": 481.9425137925494,
+      "max_prediction_difference": 0.0
+    },
+    {
+      "model": "baseline_flex22",
+      "primary_error": 74.86784880840813,
+      "max_prediction_difference": 2.2737367544323206e-13
+    },
+    {
+      "model": "baseline_mem_domain",
+      "primary_error": 83.27425984406237,
+      "max_prediction_difference": 2.2737367544323206e-13
+    },
+    {
+      "model": "attempt_001",
+      "primary_error": 83.9363576396282,
+      "max_prediction_difference": 2.2737367544323206e-13
+    },
+    {
+      "model": "attempt_002",
+      "primary_error": 75.64451140688462,
+      "max_prediction_difference": 2.2737367544323206e-13
+    },
+    {
+      "model": "attempt_003",
+      "primary_error": 74.94891286619409,
+      "max_prediction_difference": 2.2737367544323206e-13
+    },
+    {
+      "model": "attempt_004",
+      "primary_error": 78.8798161716954,
+      "max_prediction_difference": 2.2737367544323206e-13
+    },
+    {
+      "model": "attempt_005",
+      "primary_error": 87.81410289723195,
+      "max_prediction_difference": 2.2737367544323206e-13
+    }
+  ],
+  "checks": [
+    "Independently reparsed hash-verified native source and matched every confirmation predictor/target/identity",
+    "All top-level groups disjoint across development and confirmation",
+    "Replayed every model with permitted predictors only, excluding undeclared condition metadata",
+    "Independently recomputed equal-group physical-unit MAE for every model",
+    "Inspected target semantics, same-condition calibration, source processing and pre-confirmation freeze"
+  ],
+  "limitations": [
+    "Complete device, both compositions; all duplicate device traces linked. No future current or state permitted.; A compact composition-conditioned forming-current equation improves the logistic control and is essentially tied with a larger spline on reserved devices. Its negative I-rich precursor coefficient prevents admission as a new physical conduction law.; No independent population confidence interval from dependent rows."
+  ],
+  "independent_experimental_replication": false
+}

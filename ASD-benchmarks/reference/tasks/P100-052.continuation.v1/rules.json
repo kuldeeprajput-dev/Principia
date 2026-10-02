@@ -1,0 +1,438 @@
+{
+  "schema_version": "1.0",
+  "case_id": "P100-052",
+  "source": {
+    "landing_url": "https://zenodo.org/records/15356141",
+    "upstream_case": "52_energy_wind_induction_control",
+    "version_evidence": "SOURCE_ASSETS.json"
+  },
+  "target": "Interpolated time-average streamwise wake velocity",
+  "target_units": "m/s",
+  "metric_units": "m/s",
+  "metric_kind": "mae",
+  "primary_metric": "mae",
+  "assigned_rows": 2205,
+  "input_columns": [
+    "turbine",
+    "x_D",
+    "y_D",
+    "z_D",
+    "St",
+    "background_u"
+  ],
+  "numeric_columns": [
+    "turbine",
+    "x_D",
+    "y_D",
+    "z_D",
+    "St",
+    "background_u"
+  ],
+  "input_units": {
+    "turbine": "1 or 2 (within installation)",
+    "x_D": "downstream distance/0.58 m rotor diameter",
+    "y_D": "lateral coordinate/rotor diameter",
+    "z_D": "vertical coordinate/rotor diameter",
+    "St": "actuation Strouhal number, 0 labels greedy baseline",
+    "background_u": "m/s; independent no-turbine uu at matched grid; linear x interpolation only at 4D"
+  },
+  "missingness": "Original missing targets retained; no target-based exclusions; same cohort as original; new covariates from measured empty-flow or strict past native-clock weather only.",
+  "models": {
+    "reference": {
+      "case": 52,
+      "kind": "supergaussian",
+      "knobs": {
+        "spread": 0.03,
+        "ell": 1.4
+      },
+      "beta": [
+        2.9689777736086094,
+        0.044251204517450536
+      ],
+      "terms": [
+        "quartic profile",
+        "second-turbine contrast"
+      ],
+      "fitted_parameters": 4,
+      "design_condition": 2.097589463677725,
+      "design_rank": 2
+    },
+    "compact_candidate": {
+      "case": 52,
+      "kind": "supergaussian",
+      "knobs": {
+        "spread": 0.03,
+        "ell": 1.4
+      },
+      "beta": [
+        2.9689777736086094,
+        0.044251204517450536
+      ],
+      "terms": [
+        "quartic profile",
+        "second-turbine contrast"
+      ],
+      "fitted_parameters": 4,
+      "design_condition": 2.097589463677725,
+      "design_rank": 2
+    },
+    "background_gaussian": {
+      "case": 52,
+      "kind": "background_gaussian",
+      "knobs": {
+        "spread": 0.03
+      },
+      "beta": [
+        3.6174753790345924,
+        0.11633913983811281
+      ],
+      "terms": [
+        "negative Gaussian deficit",
+        "second-turbine deficit contrast"
+      ],
+      "fitted_parameters": 3,
+      "design_condition": 2.09763108083712,
+      "design_rank": 2
+    },
+    "elliptical": {
+      "case": 52,
+      "kind": "elliptical",
+      "knobs": {
+        "spread": 0.03,
+        "ell": 1
+      },
+      "beta": [
+        3.6174753790345924,
+        0.11633913983811281
+      ],
+      "terms": [
+        "negative Gaussian deficit",
+        "second-turbine deficit contrast"
+      ],
+      "fitted_parameters": 4,
+      "design_condition": 2.09763108083712,
+      "design_rank": 2
+    },
+    "act_amplitude": {
+      "case": 52,
+      "kind": "act_amplitude",
+      "knobs": {
+        "spread": 0.03,
+        "ell": 1
+      },
+      "beta": [
+        3.628542345807784,
+        0.20271732116266797,
+        -0.016600444399814968,
+        -0.1295672907035315
+      ],
+      "terms": [
+        "negative Gaussian deficit",
+        "second-turbine deficit contrast",
+        "active control deficit",
+        "active second-turbine contrast"
+      ],
+      "fitted_parameters": 6,
+      "design_condition": 6.599701930920705,
+      "design_rank": 4
+    },
+    "act_width": {
+      "case": 52,
+      "kind": "act_width",
+      "knobs": {
+        "spread": 0.03,
+        "ell": 1,
+        "actwidth": 0.1
+      },
+      "beta": [
+        3.628542252832354,
+        0.2027174187049355,
+        -0.11951164596669037,
+        -0.09458290678086335
+      ],
+      "terms": [
+        "negative Gaussian deficit",
+        "second-turbine deficit contrast",
+        "active control deficit",
+        "active second-turbine contrast"
+      ],
+      "fitted_parameters": 7,
+      "design_condition": 6.710999345303143,
+      "design_rank": 4
+    },
+    "act_quadratic": {
+      "case": 52,
+      "kind": "act_quadratic",
+      "knobs": {
+        "spread": 0.03,
+        "ell": 1
+      },
+      "beta": [
+        3.6285423458077832,
+        0.20271732116266802,
+        -0.01660044439981498,
+        -0.1295672907035315,
+        0.6473630847676318,
+        -0.2554558060988546
+      ],
+      "terms": [
+        "negative Gaussian deficit",
+        "second-turbine deficit contrast",
+        "active control deficit",
+        "active second-turbine contrast",
+        "frequency gradient",
+        "frequency gradient second turbine"
+      ],
+      "fitted_parameters": 8,
+      "design_condition": 6.599701930920703,
+      "design_rank": 6
+    },
+    "anisotropic_act": {
+      "case": 52,
+      "kind": "anisotropic_act",
+      "knobs": {
+        "spread": 0.03,
+        "ell": 0.7
+      },
+      "beta": [
+        4.306964885975263,
+        0.013620569366476057,
+        -0.040706677841514015,
+        -0.19629646017258415,
+        0.8575145879781553,
+        -0.8714680919937442
+      ],
+      "terms": [
+        "negative Gaussian deficit",
+        "second-turbine deficit contrast",
+        "active control deficit",
+        "active second-turbine contrast",
+        "quadrupole",
+        "wake vertical displacement linearization"
+      ],
+      "fitted_parameters": 8,
+      "design_condition": 6.599636996998583,
+      "design_rank": 6
+    },
+    "supergaussian": {
+      "case": 52,
+      "kind": "supergaussian",
+      "knobs": {
+        "spread": 0.03,
+        "ell": 1.4
+      },
+      "beta": [
+        2.9689777736086094,
+        0.044251204517450536
+      ],
+      "terms": [
+        "quartic profile",
+        "second-turbine contrast"
+      ],
+      "fitted_parameters": 4,
+      "design_condition": 2.097589463677725,
+      "design_rank": 2
+    },
+    "ridge_spatial": {
+      "case": 52,
+      "kind": "ridge_spatial",
+      "knobs": {
+        "ridge": 0.1
+      },
+      "beta": [
+        -0.4624998531801003,
+        -0.32384900296640834,
+        -0.2682104597677628,
+        -0.12344104866273449,
+        -0.09945832211678252,
+        -0.12787005081906075,
+        0.22855816819309907,
+        0.094463251859558,
+        0.12815811247868492,
+        0.07102602401096861,
+        0.08427627540957193,
+        0.07146513120591977,
+        -0.053568610781956835,
+        -0.16870941876606246,
+        -0.01184416657171456,
+        0.0015681014644349039,
+        -0.02956256141910803,
+        -0.004027543670758325,
+        0.02751032446278522,
+        0.0663562787614877,
+        -0.00990689993732582,
+        0.28695853498757395,
+        0.2068868694098017,
+        0.1635002174103687,
+        0.028611753579668456,
+        0.02084304440073473,
+        0.05218779638381351,
+        0.03640003965618778,
+        0.08690086779787011,
+        0.01794557499353657,
+        -0.34216161010602975,
+        -0.22663731738934134,
+        -0.13055166527030537,
+        -0.06315904103887324,
+        -0.06638211864086753,
+        -0.05849856147316602,
+        0.23076799496918585,
+        0.018205460421980874,
+        0.03951549133234244,
+        -0.03808351639265478,
+        -0.12228535183618992,
+        0.011152478223305297,
+        0.0017911131012870545,
+        -0.02744982321735418,
+        -0.0025521747785047016,
+        0.2807922398321003,
+        0.11755601758058576,
+        0.057402054021383174,
+        -0.1622657295849979,
+        -0.023686725172994333,
+        0.02582877798531832,
+        0.012063044687026245,
+        -0.00016890565368507952,
+        0.023376028175527065,
+        -0.01952145496931965,
+        -0.021645013217970372,
+        0.028692358042101924,
+        -0.036203465822559344,
+        0.17145807503504532,
+        0.12599561982945925
+      ],
+      "terms": [
+        "spatial monomial 000",
+        "spatial monomial 000",
+        "spatial monomial 000",
+        "spatial monomial 001",
+        "spatial monomial 001",
+        "spatial monomial 001",
+        "spatial monomial 002",
+        "spatial monomial 002",
+        "spatial monomial 002",
+        "spatial monomial 003",
+        "spatial monomial 003",
+        "spatial monomial 003",
+        "spatial monomial 010",
+        "spatial monomial 010",
+        "spatial monomial 010",
+        "spatial monomial 011",
+        "spatial monomial 011",
+        "spatial monomial 011",
+        "spatial monomial 012",
+        "spatial monomial 012",
+        "spatial monomial 012",
+        "spatial monomial 020",
+        "spatial monomial 020",
+        "spatial monomial 020",
+        "spatial monomial 021",
+        "spatial monomial 021",
+        "spatial monomial 021",
+        "spatial monomial 030",
+        "spatial monomial 030",
+        "spatial monomial 030",
+        "spatial monomial 100",
+        "spatial monomial 100",
+        "spatial monomial 100",
+        "spatial monomial 101",
+        "spatial monomial 101",
+        "spatial monomial 101",
+        "spatial monomial 102",
+        "spatial monomial 102",
+        "spatial monomial 102",
+        "spatial monomial 110",
+        "spatial monomial 110",
+        "spatial monomial 110",
+        "spatial monomial 111",
+        "spatial monomial 111",
+        "spatial monomial 111",
+        "spatial monomial 120",
+        "spatial monomial 120",
+        "spatial monomial 120",
+        "spatial monomial 200",
+        "spatial monomial 200",
+        "spatial monomial 200",
+        "spatial monomial 201",
+        "spatial monomial 201",
+        "spatial monomial 201",
+        "spatial monomial 210",
+        "spatial monomial 210",
+        "spatial monomial 210",
+        "spatial monomial 300",
+        "spatial monomial 300",
+        "spatial monomial 300"
+      ],
+      "fitted_parameters": 61,
+      "design_condition": 3.621225617132756e+16,
+      "design_rank": 54
+    },
+    "legacy_reference": {
+      "kind": "legacy",
+      "state": {
+        "case": 52,
+        "kind": "a5",
+        "knobs": {
+          "wake_spread": 0.05
+        },
+        "beta": [
+          3.512221736149453,
+          0.5114602061168334,
+          0.045807104485046,
+          -0.35029606489587944,
+          0.973813825535292,
+          0.3113348180560595
+        ],
+        "active_columns": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "terms": [
+          "-Gaussian(r/(0.35+k*xD))/(1+k*xD)^2",
+          "wake * indicator(turbine2)",
+          "wake * Strouhal",
+          "wake * Strouhal * turbine2",
+          "vertical ABL shear z/D",
+          "wake anisotropy quadrupole"
+        ],
+        "fitted_parameters": 7,
+        "design_rank": 6,
+        "design_condition": 6.448599987981202,
+        "positive_coefficients": false
+      },
+      "case": 52
+    }
+  },
+  "equations": {
+    "reference": "u_hat = u_empty \u2212 (A+B I_turbine2) exp(\u22120.5[(y/sigma_y)^4+(z/sigma_z)^4])/(1+kx)^2; sigma_y=.35+kx, sigma_z=ell*sigma_y. Independent no-turbine background is declared calibration.",
+    "compact_candidate": "u_hat = u_empty \u2212 (A+B I_turbine2) exp(\u22120.5[(y/sigma_y)^4+(z/sigma_z)^4])/(1+kx)^2; sigma_y=.35+kx, sigma_z=ell*sigma_y. Independent no-turbine background is declared calibration.",
+    "background_gaussian": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "elliptical": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "act_amplitude": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "act_width": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "act_quadratic": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "anisotropic_act": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "supergaussian": "u_hat = u_empty \u2212 (A+B I_turbine2) exp(\u22120.5[(y/sigma_y)^4+(z/sigma_z)^4])/(1+kx)^2; sigma_y=.35+kx, sigma_z=ell*sigma_y. Independent no-turbine background is declared calibration.",
+    "ridge_spatial": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state.",
+    "legacy_reference": "yhat = offset + sum beta_j phi_j(inputs), with exact frozen terms/clocks in rules.json and run.py::design; clipping only for photovoltaic energy. Legacy model has exact original runtime/state."
+  },
+  "classification": "retrospective_candidate",
+  "fresh_confirmation": false,
+  "selection": {
+    "default": "supergaussian",
+    "compact_reported": "supergaussian",
+    "criterion": "least complexity within1% of best grouped development MAE",
+    "freeze_sha256": "a273c74f14f8a9e2da0754ee175c70e71558473b340b558535ae80a196fba4b2"
+  },
+  "limitations": [
+    "Only four controls and one wind-tunnel system; three development controls and one reserved. Spatial errors describe field interpolation/transfer, not independent grid replicates.",
+    "ALL original confirmation exposed; no fresh confirmation; diagnostics opened only after candidate/stopping freeze",
+    "All model families established; no demonstrated new physical law or deployed intervention benefit.",
+    "Different information contract:52 independent no-turbine calibration;59 strict past weather inputs. Legacy reference is lower-information comparator in these cases."
+  ],
+  "reproduction": "run.py is input-only. Source targets are exposed; scientific review separate from numerical score."
+}

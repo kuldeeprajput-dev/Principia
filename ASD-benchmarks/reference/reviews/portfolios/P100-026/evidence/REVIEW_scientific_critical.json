@@ -1,0 +1,112 @@
+{
+  "case_id": "P100-026",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_electronics",
+  "review_date": "2026-10-02",
+  "checked_files": [
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "7535a6a06ff7d4d3352cfc40897d013a2c176ea3fa030b0c9e2c7961aa6826d9"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "f89e241aef810a356e768c99ee91b31f31b0c27f3b31edd47b6a9520060783c3"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "88b8d6ab55d35ecef950bb1872ae1c07617dbc207a5762eb5a391f0adc9814fc"
+    },
+    {
+      "path": "package/equations.json",
+      "sha256": "aab66a22ad5d3e7858dfc6f16f641ede27f075ee5531b7ad66bca7944f514088"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "a41f8253dcd9e6031ceb049c044a2541eeab15750080bb87922d4f76fdf39f96"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-026-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Causal 300-minute calibration improves held-run MAE to 1.43487281 percentage points versus hold 5.47826699 and linear 7.79773109, but flexible control is better at 1.21103522. Two reserved runs only."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Relaxation plus drift is compatible with induction but selectivity alone does not identify silver oxidation state, acid/metal pathways, or intermediates."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is validated_extension."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Potential short-horizon monitoring after a substantial per-run calibration budget, with gain over naive continuation but no best-model claim."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task."
+        }
+      },
+      "checks": [
+        "Checked 120\u2013300-minute slope/anchor calibration, 300\u20131500-minute score window, whole-run duplicate linkage, supplied selectivity rather than closure, and frozen-reference versus flexible/candidate results."
+      ],
+      "limitations": [
+        "Only eight source runs, six development and two confirmation; condition changes are not independent reactor replications.",
+        "Per-run target prefix and slope are explicitly available; not cold-start catalyst prediction.",
+        "Later better confirmation candidates remain diagnostic; temperature omitted because metadata do not identify it across all runs."
+      ]
+    },
+    {
+      "finding_id": "P100-026-F02",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "A 20000-minute upper-bound second timescale under a 1500-minute window is evidence of weak practical identification. A boundary fit alone does not prove structural nonidentifiability; the wording should remain local and practical."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Long-timescale relaxation approaches a drift term on a short observation window; useful asymptotic simplification, not an identified extra reaction pathway."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is informative_falsification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Simplification of a weakly constrained timescale reduces mechanistic overinterpretation; no independent chemical discovery."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task."
+        }
+      },
+      "checks": [
+        "Checked 120\u2013300-minute slope/anchor calibration, 300\u20131500-minute score window, whole-run duplicate linkage, supplied selectivity rather than closure, and frozen-reference versus flexible/candidate results."
+      ],
+      "limitations": [
+        "Only eight source runs, six development and two confirmation; condition changes are not independent reactor replications.",
+        "Per-run target prefix and slope are explicitly available; not cold-start catalyst prediction.",
+        "Later better confirmation candidates remain diagnostic; temperature omitted because metadata do not identify it across all runs."
+      ]
+    }
+  ],
+  "review_scope": "Independent critical interpretation of the released evidence and primary-source context; not independent experimental replication, human adjudication, or a fresh confirmation campaign.",
+  "source_review": {
+    "primary_url": "https://pubs.rsc.org/en/content/articlepdf/2025/cy/d5cy00544b",
+    "web_access": "current direct fetch unavailable; retained local source audit and cited source context inspected; novelty not adjudicated"
+  },
+  "metadata_corrections": "none requested"
+}

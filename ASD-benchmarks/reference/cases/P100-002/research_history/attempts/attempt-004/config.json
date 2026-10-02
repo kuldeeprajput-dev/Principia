@@ -1,0 +1,33 @@
+{
+  "case": 2,
+  "kind": "volatility",
+  "hypothesis": "Curvature and trend gains can be driven by noisy jumps. Gate the causal slope by the recent median absolute fluctuation while allowing slow relaxation; test whether robustness improves worst-star behavior.",
+  "parent": "attempt-003",
+  "created_utc": "2026-10-02T02:04:44.251654+00:00",
+  "before_execution": true,
+  "confirmation_accessed": false,
+  "development_evidence_available": [
+    {
+      "attempt": "attempt-001",
+      "primary_error": 0.0031162857385686597,
+      "worst_group": 0.01005777642563791
+    },
+    {
+      "attempt": "attempt-002",
+      "primary_error": 0.003267639059269438,
+      "worst_group": 0.011302748948971137
+    },
+    {
+      "attempt": "attempt-003",
+      "primary_error": 0.002969666321753715,
+      "worst_group": 0.00959555623968206
+    }
+  ],
+  "primary_metric": "mean_group_absolute_error",
+  "falsifying_tests": [
+    "Matched strong baselines under identical inputs",
+    "Per-group errors and worst-group behavior",
+    "Parameter boundary/identifiability audit or exact-arithmetic preconditions",
+    "Physical/mathematical applicability and negative cases retained"
+  ]
+}

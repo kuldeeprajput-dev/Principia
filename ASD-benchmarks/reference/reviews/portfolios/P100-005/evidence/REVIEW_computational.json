@@ -1,0 +1,211 @@
+{
+  "case_id": "P100-005",
+  "role": "computational",
+  "reviewer_id": "asd5_materials",
+  "status": "passed",
+  "checks": [
+    "Exact raw-reconstructed confirmation identities",
+    "Native targets reproduce saved observations",
+    "Scoring groups reproduce native groups",
+    "No group crosses partitions",
+    "Unique native identities",
+    "Target excluded from input table",
+    "Reconstructed input graph6",
+    "Replay constant",
+    "Independent group MAE constant",
+    "Target poisoning ignored constant",
+    "Replay edge_lp",
+    "Independent group MAE edge_lp",
+    "Target poisoning ignored edge_lp",
+    "Replay exact",
+    "Independent group MAE exact",
+    "Target poisoning ignored exact",
+    "Replay vertices",
+    "Independent group MAE vertices",
+    "Target poisoning ignored vertices",
+    "Replay attempt_001",
+    "Independent group MAE attempt_001",
+    "Target poisoning ignored attempt_001",
+    "Replay attempt_002",
+    "Independent group MAE attempt_002",
+    "Target poisoning ignored attempt_002",
+    "Replay attempt_003",
+    "Independent group MAE attempt_003",
+    "Target poisoning ignored attempt_003",
+    "Replay attempt_004",
+    "Independent group MAE attempt_004",
+    "Target poisoning ignored attempt_004",
+    "Replay attempt_005",
+    "Independent group MAE attempt_005",
+    "Target poisoning ignored attempt_005",
+    "Replay attempt_006",
+    "Independent group MAE attempt_006",
+    "Target poisoning ignored attempt_006",
+    "Replay reference",
+    "Independent group MAE reference",
+    "Target poisoning ignored reference",
+    "Independent integer-program stable-set labels",
+    "Clearly rejects missing source",
+    "Clearly rejects hash source",
+    "Portable standalone replay",
+    "Standalone rejects truncated manifest asset"
+  ],
+  "rows": 391,
+  "models": 11,
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "43567d8bbdfa1317d011f43cc87793e0d62de49acc7d807938c41f4611af3efc"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "2b1efa2fd3b6d6cba225a1deadae48aea0a8e171a88026b2914bf8c4014ad8d7"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "08adcc8c65d76758f2f740ed081595d323976c9ddae84f6591cc18a9cedf869c"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "bce8968f5c9e85bc4b1e69407b74dfbba7b33087144a4de36ad2a3c4be7be8ae"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "7af1badb0c9c0ed2a7b02c72cc697eef1a8ccedad035782758b610df0f9ca0c3"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "da201106711449b74983d781334caf10052ccf0eea37e315e4a3c9ef645156e3"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "15037e2f2be91eeff9209a9418a5d62c77e01ff22a23de65614c2eebc128e2f4"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "92b1b3b0cc241fbf2cb531c54fabf32f42461c437a68e6868771d9ab4aa533f0"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "24482ffda7a8fd731cf98e49226ad7162149fd97a8c9aa38c114e71389e18c5e"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "fb4d0a50e6a4f4dbee2daf7e81de86db83c63281838089eb5146e4fc732e2bcb"
+    }
+  ],
+  "limitations": [
+    "Computational reproducibility is not independent experimental replication or certification of novelty."
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-005-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The graph invariant is checked by a separate binary integer program. Constant and exact-search errors are both zero on this selected constant-target family; approximate predictions do not become certificates."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational replay checks implementation; independent scientific-critical review addresses physical interpretation."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Exact replay or a small error does not establish novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Meaningful only under the declared calibration, cohort and error units."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native preparation, all frozen predictions, independent group-MAE recomputation, target poisoning and standalone corruption checks passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention or independent experimental replication was performed."
+        }
+      },
+      "checks": [
+        "Native reconstruction, exact identities, all frozen model predictions, independent group MAE and target-poisoning tests passed."
+      ],
+      "limitations": [
+        "Computational reproducibility is not independent experimental replication or certification of novelty."
+      ]
+    },
+    {
+      "finding_id": "P100-005-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The graph invariant is checked by a separate binary integer program. Constant and exact-search errors are both zero on this selected constant-target family; approximate predictions do not become certificates."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational replay checks implementation; independent scientific-critical review addresses physical interpretation."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Exact replay or a small error does not establish novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Meaningful only under the declared calibration, cohort and error units."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native preparation, all frozen predictions, independent group-MAE recomputation, target poisoning and standalone corruption checks passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention or independent experimental replication was performed."
+        }
+      },
+      "checks": [
+        "Native reconstruction, exact identities, all frozen model predictions, independent group MAE and target-poisoning tests passed."
+      ],
+      "limitations": [
+        "Computational reproducibility is not independent experimental replication or certification of novelty."
+      ]
+    },
+    {
+      "finding_id": "P100-005-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The graph invariant is checked by a separate binary integer program. Constant and exact-search errors are both zero on this selected constant-target family; approximate predictions do not become certificates."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational replay checks implementation; independent scientific-critical review addresses physical interpretation."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Exact replay or a small error does not establish novelty."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Meaningful only under the declared calibration, cohort and error units."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native preparation, all frozen predictions, independent group-MAE recomputation, target poisoning and standalone corruption checks passed."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention or independent experimental replication was performed."
+        }
+      },
+      "checks": [
+        "Native reconstruction, exact identities, all frozen model predictions, independent group MAE and target-poisoning tests passed."
+      ],
+      "limitations": [
+        "Computational reproducibility is not independent experimental replication or certification of novelty."
+      ]
+    }
+  ],
+  "blocking_defects": []
+}

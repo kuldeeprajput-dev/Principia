@@ -1,0 +1,77 @@
+{
+  "0": {
+    "kind": "threshold",
+    "coef": [
+      -0.09106553628998722,
+      -1.778937816860385,
+      1.362821838627766
+    ],
+    "K": 200.0,
+    "equation": "y_hat=max(0,c+b1*I(E>=200)+b2*s+b3*s*I(E>=200))",
+    "training_groups": [
+      "B",
+      "D"
+    ],
+    "training_rows": 10,
+    "rank": 3,
+    "parameter_count": 3,
+    "profile_training_mse": [
+      {
+        "K": 200.0,
+        "weighted_sse": 1.5912815433279943
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  },
+  "1": {
+    "kind": "threshold",
+    "coef": [
+      -0.09697064868166795,
+      -0.5275451445839285,
+      0.20146643298963807
+    ],
+    "K": 200.0,
+    "equation": "y_hat=max(0,c+b1*I(E>=200)+b2*s+b3*s*I(E>=200))",
+    "training_groups": [
+      "A",
+      "D"
+    ],
+    "training_rows": 10,
+    "rank": 3,
+    "parameter_count": 3,
+    "profile_training_mse": [
+      {
+        "K": 200.0,
+        "weighted_sse": 1.4662628766925272
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  },
+  "2": {
+    "kind": "threshold",
+    "coef": [
+      -0.7883159725413683,
+      -1.9889311389025832,
+      1.9893239642859204
+    ],
+    "K": 200.0,
+    "equation": "y_hat=max(0,c+b1*I(E>=200)+b2*s+b3*s*I(E>=200))",
+    "training_groups": [
+      "A",
+      "B"
+    ],
+    "training_rows": 10,
+    "rank": 3,
+    "parameter_count": 3,
+    "profile_training_mse": [
+      {
+        "K": 200.0,
+        "weighted_sse": 1.8049128536903782
+      }
+    ],
+    "ridge": 1e-08,
+    "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+  }
+}

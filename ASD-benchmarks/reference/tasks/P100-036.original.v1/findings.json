@@ -1,0 +1,39 @@
+[
+  {
+    "finding_id": "P100-036-F01",
+    "classification": "validated_scoped_descriptor",
+    "claim": "A compact pigment-quenching-recovery relation predicts source QY_max on held plants with lower mean error than registered comparators",
+    "equation": "sigmoid(b0+b1*r+b2*q+b3*NGRDI+b4*q*NGRDI+b5*tiny); r=Rfd/(1+abs(Rfd)), q=asinh(NPQ), size=ln(1+max(AREA_MM,0))/10",
+    "coefficients": [
+      2.146619322140566,
+      -1.0330324348456008,
+      0.44660750994737547,
+      -0.9491476981650554,
+      -0.5939073445142461,
+      0.06565896793020384
+    ],
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv",
+      "evidence/paired_uncertainty.json"
+    ],
+    "prior_art": "Source already studies imaging stress biomarkers; manuscript citation incomplete",
+    "falsification": "Small improvement over treatment/cultivar; paired interval and group variation limit superiority; shared assay calibration prevents independent physiology claim",
+    "scope": "Source-extracted contemporaneous traits, two cultivars and same controlled study",
+    "admission": "partially_supported"
+  },
+  {
+    "finding_id": "P100-036-F02",
+    "classification": "supported_negative_finding",
+    "claim": "Additional morphology or stress-specific quenching interactions did not improve grouped development prediction",
+    "equation": null,
+    "evidence": [
+      "rules.json",
+      "evidence/metrics.csv"
+    ],
+    "prior_art": "Falsification of these particular extensions, not proof that morphology or stress mechanisms are irrelevant",
+    "falsification": "Independent cultivars or better age metadata could change the result",
+    "scope": "Tested feature families and plant-group splits",
+    "admission": "supported"
+  }
+]

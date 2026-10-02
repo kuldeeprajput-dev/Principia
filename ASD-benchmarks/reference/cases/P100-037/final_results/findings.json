@@ -1,0 +1,313 @@
+{
+  "schema_version": "principia.finding-index/3.0",
+  "case_id": "P100-037",
+  "findings": [
+    {
+      "finding_id": "P100-037-SCI-01",
+      "statement": "Packet-composition information helps throughput-only prediction, but the compact workload equation loses to the flexible comparator.",
+      "classification": "predictive_reference",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-037.original.v1"
+      ],
+      "task_version_history": "original frozen final_results",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history. Strong adverse evidence: Compact wins only 1/5 runs against flexible; routerA standalone byte-load coefficient is negative. Packet rate is algebraic throughput/size rather than independent energy evidence.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Workload correlates with power; separate byte, packet and thermal costs are not experimentally identified.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Saturation/workload power models are established; no independent new processing law is supported. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "original five repetition 3 runs",
+          "measure": "compact saturation",
+          "value": 4.005883,
+          "unit": "W",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original five repetition 3 runs",
+          "measure": "flexible workload",
+          "value": 3.731542,
+          "unit": "W",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        },
+        {
+          "cohort": "original five repetition 3 runs",
+          "measure": "throughput-only",
+          "value": 4.26914,
+          "unit": "W",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Compact wins only 1/5 runs against flexible; routerA standalone byte-load coefficient is negative. Packet rate is algebraic throughput/size rather than independent energy evidence.",
+      "scientific_validators": [
+        "Compare whole-run errors by router/protocol and retain the missing power response.",
+        "Keep algebraic packet-rate derivation explicit and test matched information access.",
+        "Require a future-input perturbation test for any dynamic submission and independently timed temperature for thermal claims."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-037.json",
+      "source_classification": "numerical_control"
+    },
+    {
+      "finding_id": "P100-037-SCI-02",
+      "statement": "Nonnegative workload components provide interpretable bounds but do not outperform matched flexible power prediction.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [],
+      "task_version_history": "2026-09-30 first continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history. Strong adverse evidence: Development MAE 4.19072 W and 4.1835 W for two positive families remains worse than flexible controls. Physical positivity alone does not identify processing costs.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Workload correlates with power; separate byte, packet and thermal costs are not experimentally identified.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Saturation/workload power models are established; no independent new processing law is supported. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E005",
+            "E006"
+          ]
+        }
+      },
+      "numerical_evidence": [],
+      "strongest_adverse_evidence": "Development MAE 4.19072 W and 4.1835 W for two positive families remains worse than flexible controls. Physical positivity alone does not identify processing costs.",
+      "scientific_validators": [
+        "Compare whole-run errors by router/protocol and retain the missing power response.",
+        "Keep algebraic packet-rate derivation explicit and test matched information access.",
+        "Require a future-input perturbation test for any dynamic submission and independently timed temperature for thermal claims."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-037.json",
+      "source_classification": "unsupported_or_falsified"
+    },
+    {
+      "finding_id": "P100-037-SCI-03",
+      "statement": "The bottleneck-workload hypothesis is falsified as an accuracy improvement on all ten development runs.",
+      "classification": "falsified",
+      "advisory_disposition": "supported",
+      "task_ids": [
+        "P100-037.round2.v1"
+      ],
+      "task_version_history": "2026-09-30 second continuation",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history. Strong adverse evidence: Physical positivity in the first continuation did not establish component costs; no measured temperature supports a thermal-memory interpretation.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Workload correlates with power; separate byte, packet and thermal costs are not experimentally identified.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Saturation/workload power models are established; no independent new processing law is supported. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "The falsification/metrology boundary improves scientific evaluation by preventing an unsupported interpretation. Complete router/protocol/repetition runs; two calibrated routers; no future traffic or measured power history.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Frozen equations/model states and numerical evidence are present and hash-bound here. This scientific document review is separate from independent computational replay; execution validity must be supplied by that review and the raw-preparation audit.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      },
+      "numerical_evidence": [
+        {
+          "cohort": "round 2 ten development runs",
+          "measure": "bottleneck",
+          "value": 4.34006386,
+          "unit": "W",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        {
+          "cohort": "round 2 ten development runs",
+          "measure": "prior flexible",
+          "value": 3.4522592,
+          "unit": "W",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        },
+        {
+          "cohort": "round 2 ten development runs",
+          "measure": "matched HGB",
+          "value": 3.45160873,
+          "unit": "W",
+          "evidence_ids": [
+            "E007",
+            "E008",
+            "E009",
+            "E010"
+          ]
+        }
+      ],
+      "strongest_adverse_evidence": "Physical positivity in the first continuation did not establish component costs; no measured temperature supports a thermal-memory interpretation.",
+      "scientific_validators": [
+        "Compare whole-run errors by router/protocol and retain the missing power response.",
+        "Keep algebraic packet-rate derivation explicit and test matched information access.",
+        "Require a future-input perturbation test for any dynamic submission and independently timed temperature for thermal claims."
+      ],
+      "current_outcome_exposure": "exposed",
+      "scientific_review": "../../../reviews/scientific/P100-037.json",
+      "source_classification": "unsupported_or_falsified"
+    }
+  ],
+  "automatic_scientific_admission": false
+}

@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-019",
+  "title": "NHTSA complaints, recalls, investigations, and manufacturer communications",
+  "default_task": "P100-019.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Next-month unique received vehicle complaints per known make/model",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 3,
+    "independent_unit_description": "Whole target months; same known vehicle cohorts repeat, lag windows overlap. Three held months are not independent fleets or defect experiments.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Cohort selected before targetperiod using>=6receivedJan\u2013Jun2025complaints. Development targetsJul2025\u2013Apr2026, rolling forward blocks; May\u2013Jul2026confirmation. No target-month counts enter predictors.",
+  "baseline_strength": {
+    "registered_controls": 12,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Next-month unique received vehicle complaints per known make/model",
+    "prediction_time": "Only prior-month LDATE received counts predict next month. Retrospective snapshot may revise product labels and records; historical DATEA/report publication lag means calendar causality is not verified as-issued availability. No incident-date future information used.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Complaint counts lack exposure denominators and do not identify defect prevalence."
+  },
+  "task_ids": [
+    "P100-019.original.v1"
+  ],
+  "finding_ids": [
+    "P100-019-F01",
+    "P100-019-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-019/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-019.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Next-month unique received vehicle complaints per known make/model under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Only prior-month LDATE received counts predict next month. Retrospective snapshot may revise product labels and records; historical DATEA/report publication lag means calendar causality is not verified as-issued availability. No incident-date future information used.",
+    "calibration_requirement": "Cohort selected before targetperiod using>=6receivedJan\u2013Jun2025complaints. Development targetsJul2025\u2013Apr2026, rolling forward blocks; May\u2013Jul2026confirmation. No target-month counts enter predictors.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Next-month unique received vehicle complaints per known make/model in complaints/month",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Complaint counts lack exposure denominators and do not identify defect prevalence."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "complaints/month",
+    "reference_model": "reference",
+    "reference_primary_error": 3.5118345172960104,
+    "reference_physical_mae": 3.5118345172960104,
+    "physical_error_units": "complaints/month",
+    "lowest_registered_error_model": "attempt_003",
+    "lowest_registered_error": 3.450968883928653,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-019.original.v1/evidence/metrics.csv",
+      "bytes": 1251,
+      "sha256": "a30c26f9a87eed742bebbab9b1451705eb7d7345c5523eec5345f92a19cfed11"
+    },
+    "models": 12
+  },
+  "case_specific_next_evidence": "Complaint counts lack exposure denominators and do not identify defect prevalence."
+}

@@ -1,0 +1,76 @@
+# P100-060: Ultrasonic Pulse Transmission Tests: Datasets in MATLABv6 format - Test Series 3, Reference Tests on Air
+
+> Principia-100 | Standardized portfolio | 1 October 2026
+
+## Scenario and evaluation contract
+
+Domain: Acoustic sensing. The current default task predicts Post-trigger peak absolute receiver voltage in V. Independent unit: whole width block across sensor/distance; six correlated files. Its packaged cohort contains 60 assigned rows in 6 groups.
+
+**All supplied outcomes are now exposed.** Historical reserved evaluations remain part of the evidence record; future scores are retrospective. No newly established fundamental law or measured deployment impact is admitted by this packaging.
+
+## Current portfolio findings
+
+**Retrospective extension:** A condition-normalized score exposes contact-dominated physical-voltage improvements and supports frequency-specific effective damping.
+
+Limit: Development normalized MAE.15576147 vs .19526332 global-edge control; exposed normalized comparisons remain weak outside the contact regime. These gains are not unseen-device transmission physics.
+
+**Retrospective extension:** The exact two-edge constant-Q ansatz improves normalized prediction, while native spectra falsify reading its fitted frequency as measured resonance.
+
+Limit: Spectral peaks agree within 5% for only 7/15 nominal 110 kHz and 0/15 nominal 500 kHz files; 500 kHzcontact normalized error worsens. Thus a plausible named parameter is not physical identification.
+
+## Versioned tasks
+
+| Task family | Target and information | Source scope |
+|---|---|---|
+| original | Post-trigger peak absolute receiver voltage (V) | original corpus |
+| round2 | Post-trigger peak voltage with training-condition-normalized error (V) | original corpus |
+
+Different targets, calibration budgets and cohorts have different task IDs. Their raw error values cannot be pooled into a scenario ranking. Exact equations, coefficients, permitted variables, timing, groups and per-model results are bound in the task packages.
+
+Evaluation: the shared CLI provides numerical scoring, explicit coverage and abstention, uncertainty and event diagnostics. Agent review separately assesses scientific support; no aggregate discovery score is produced.
+
+<!-- pagebreak -->
+
+## Detailed reference note: Ultrasonic transmission response: a scoped ASD reference
+> Principia-100 | Case 60 | Conditional pulse-response reference; aggregate improvement with regime counterexamples
+
+## 1. Scenario and measured quantities
+
+Zenodo 17266427; TU Graz Jakob Harden, converted MATLABv 6 exports. Native embedded measurement timestamps in 2020; technical description 2023, MAT export 2025. Export date is not acquisition date.. The pilot target is **Post-trigger peak absolute receiver voltage** in **V**, with 300 development and 60 reserved prepared observations. Source bytes remain unchanged; prepared target/predictor transformations are labeled analysis products.
+
+## 2. Experimental design
+
+Five pulse widths develop the models; one 5 us width is reserved across all six distance/sensor conditions. All ten pulses per file stay together. Target preparation uses the whole post-trigger trace after pre-trigger mean subtraction. 6 substantive attempts tested competing physical or process explanations. Baseline reproduction is excluded from that count. All scales, coefficients and tuning are trained inside applicable development folds. Direct and residual Gaussian-kernel comparators share the same available information. Candidate selection and stopping were frozen before the separate final scoring process; no final-score-driven revision occurred.
+
+## 3. Executable equation and interpretation
+
+$$
+\widehat{A}_{ds}=a_{ds}\max[1,\sqrt{1+e^{-2w/12}-2e^{-w/12}\cos(2\pi fw)}]
+$$
+
+w is pulse width in microseconds; f is nominal resonance in cycles per microsecond (kHz/1000). The effective damping time 12 us was selected on development widths. Six calibrated gains in V are 12.271204, 0.941597, 0.00302123, 0.000609934, 0.00227582, 0.000462384 for(d0,f110),(d0,f500),(d20,f110),(d20,f500),(d50,f110),(d50,f500). The maximum accounts for an initial pulse edge before the second edge; it is a phenomenological peak approximation. Sensor type is confounded with nominal resonance.
+
+<!-- pagebreak -->
+
+## 4. Findings, accuracy and counterexamples
+
+| Frozen model | Final MAE (V) |
+|---|---:|
+| reference | 0.356202 |
+| challenger | 0.863519 |
+| baseline_linear_width | 2.180363 |
+| baseline_mean | 0.780303 |
+| baseline_rbf | 1.097194 |
+| baseline_residual_rbf | 0.622043 |
+
+Reference MAE is 0.356202 V versus 0.622043 V for the strongest fixed comparator, a42.74 percent aggregate reduction. Against constant gain, only zero-distance 110 kHz improves; all five other conditions worsen. Its contact 110 error is 1.478 V, contact 500 error 0.656 V; air errors are 0.000215-0.001453 V. The amplitude range makes aggregate gain contact-dominated. Treat this as a conditional instrument-response reference, not an air-propagation or universally useful pulse law.
+
+## 5. Applicability, practical value and limits
+
+Six condition files at one reserved 5 us width, not six independent reserved width experiments. Gain is concentrated in zero-distance 110 kHz contact; air and 500 kHz sensor counterexamples remain. The equation and preserved falsifications provide an auditable test of whether an ASD agent can produce a useful conditional numerical relationship. They do not establish industrial savings, causal mechanism or universal transfer. The source-aware corpus contains known physics and previously analyzed observations; no previously unknown physical law is admitted. Individual group errors are reported, without row-level confidence intervals that treat repeated samples as independent.
+
+## 6. Reproduction and scientific status
+
+run.py checks package hashes and reproduces all predictions/metrics without fitting. rules.json contains full precision coefficients and calibration. The evaluator accepts alternative equations and abstention, scores common rows fairly and keeps scientific review separate from numerical scoring. All targets are now exposed. Fresh confirmation of a later method requires new reserved experimental groups. Computational review is a separate checking phase by the same operator, not independent experimental replication or human adjudication.
+
+Source: [Authoritative release](https://zenodo.org/records/17266427); [Author test-series 3 technical description](https://doi.org/10.3217/ph0jm-8ax76). Evidence: `evidence/metrics.csv`, `by_group.csv`, `sample_anchors.csv.gz` and the source/units audit. Rejected hypotheses remain in research history.

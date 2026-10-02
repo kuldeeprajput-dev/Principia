@@ -1,0 +1,156 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-044.original.v1",
+  "case_id": "P100-044",
+  "case_number": 44,
+  "family": "original",
+  "protocol_version": "P100-044-asd6-native-v1",
+  "cohort_id": "P100-044.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-044.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/44_mathematics_qoblib_topology",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "capped elapsed solver resource consumption min(Total Runtime,7200s)",
+  "target_units": "seconds",
+  "error_units": "seconds",
+  "primary_units": "seconds",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "nodes",
+    "max_degree",
+    "is_flow",
+    "is_linear",
+    "is_quadratic",
+    "moore2_occupancy"
+  ],
+  "input_units": {
+    "nodes": "node count",
+    "max_degree": "degree bound",
+    "is_flow": "indicator",
+    "is_linear": "indicator",
+    "is_quadratic": "indicator",
+    "moore2_occupancy": "dimensionless n/(1+d^2)"
+  },
+  "numeric_columns": [
+    "nodes",
+    "max_degree",
+    "is_flow",
+    "is_linear",
+    "is_quadratic",
+    "moore2_occupancy"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "All inputs are instance parameters and formulation choice known before solving; no runtime/gap/objective/work measure as input",
+  "calibration": "No evaluated-instance calibration",
+  "independent_unit": "complete topology instance containing all three formulations",
+  "evaluation_groups": [
+    "topology_15_4",
+    "topology_30_6",
+    "topology_35_5",
+    "topology_40_6"
+  ],
+  "assigned_rows": 12,
+  "eligible_rows": 12,
+  "baseline_models": [
+    "constant",
+    "exp_size",
+    "form_median",
+    "rbf",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "reference"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "constant": {
+      "equation": "t_hat=constant training median",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "exp_size": {
+      "equation": "t_hat=clip(exp(b0+b1*ln(n/25)+b2*ln(d/4)+b3*I_flow+b4*I_linear),0,7200)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "form_median": {
+      "equation": "t_hat=formulation training median",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "rbf": {
+      "equation": "t_hat=clip(7200*(intercept+sum_j w_j*exp(-||standardized_z-center_j||^2/(2*length^2))),0,7200); z=[ln(n),ln(d),I_flow,I_linear]",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "t_hat=clip(exp(b0+b1*ln(n/(1+d^2))+b2*I_flow+b3*I_linear),0,7200)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "t_hat=clip(exp(b0+b1*n*ln(d)/40+b2*I_flow+b3*I_linear),0,7200)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "t_hat=7200*sigmoid(b0+b1*ln(n/25)+b2*ln(n/(1+d^2))+b3*I_flow+b4*I_linear)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "t_hat=7200*sigmoid(b0+b1*ln(n/25)+b2*ln(n/(1+d^2))+b3*I_flow+b4*I_linear+b5*I_flow*ln(n/25)+b6*I_linear*ln(n/25))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "t_hat=clip(exp(b0+b1*ln(n/25)+b2*I_flow+b3*I_linear),0,7200)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "reference": {
+      "equation": "t_hat=clip(exp(b0+b1*ln(n/25)+b2*ln(d/4)+b3*I_flow+b4*I_linear),0,7200)",
+      "state": "rules.json",
+      "role": "reference"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report every independent group; do not infer new seeds/hardware/data populations or bootstrap dependent checkpoint/formulation rows."
+  },
+  "scope_limits": "One solver/hardware experiment,16 structural instances,three formulations,one run each. Consumption censored by a7200s resource cap; not latent solve time or general computational complexity. No deployed impact evidence.",
+  "source_url": "https://github.com/ZIB-AOPT/QOBLIB/tree/2b400f43c197bb0eb9bc9802efa2b28b818ab63c/10-topology",
+  "source_license": "CC BY 4.0 data; source model/code license recorded in source provenance",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Public source-aware corpus; selection and stopping frozen before first internal confirmation. All current scores are now exposed; future evaluation is retrospective.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "378ac50146d2a92fe88e86a821e9979bc2269bb0c62cb7235426942426039c29",
+  "observations_sha256": "c95814f966dd7c77fa18113e8e13bf0f8e877b4ff04a48132b055c020d306121",
+  "legacy_protocol_sha256": "ecd367bb806eadfe4c322317d64b14ae4c9958ed38be49afc900552e035a8267",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

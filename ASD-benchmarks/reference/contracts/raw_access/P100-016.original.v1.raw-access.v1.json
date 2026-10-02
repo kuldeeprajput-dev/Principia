@@ -1,0 +1,140 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-016.original.v1.raw-access.v1",
+  "parent_task_id": "P100-016.original.v1",
+  "case_id": "P100-016",
+  "protocol_version": "P100-016.original.v1.raw-access.v1",
+  "cohort_id": "P100-016.original.v1.cohort-1",
+  "parent_task_sha256": "452b1cac4535b4f5bd3ddee55f2dad302682b947074995429fb91dc2a520d937",
+  "input_sha256": "84cad44965ed54ffd85dbbd244ce87c9e396e3fefda16b075db06f16ba1b83c6",
+  "observations_sha256": "6e77a6ab6248309b633f14efdea1f6ad540be57ca32867d28ad9c16d1e631860",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "16_economics_bls_cpi_ces_2026",
+  "source_assets": [
+    {
+      "path": "raw/CE/ce.data.00a.TotalNonfarm.Employment",
+      "bytes": 216412,
+      "sha256": "286e1dc014d476d411e1cfaffa0ebf6da5f0698aa203d88efe54a4536bb27260"
+    },
+    {
+      "path": "raw/CE/ce.data.30a.Manufacturing.Employment",
+      "bytes": 341330,
+      "sha256": "e9bd59e647d7257378892d78d714dd86f9e946f428acc777e1e6c3a5476186ec"
+    },
+    {
+      "path": "raw/CE/ce.data.50a.Information.Employment",
+      "bytes": 2519655,
+      "sha256": "4239a0ef5eab6ccb29518750e6161004b7c561e4cc2c2f0eca05b78a01a82b2e"
+    },
+    {
+      "path": "raw/CE/ce.industry",
+      "bytes": 58769,
+      "sha256": "9ad5e0a5426fcbe71d98510e04256bc08fc0e0758427fd4b0c26d8b6358290f2"
+    },
+    {
+      "path": "raw/CE/ce.series",
+      "bytes": 3941924,
+      "sha256": "15cc985ca2f88a1dbd1392da785ed37f2debb3cabea5bda0f8445f5cb2d3fe8c"
+    },
+    {
+      "path": "raw/CE/ce.txt",
+      "bytes": 59091,
+      "sha256": "a42b00f6826042a4894f20ad80b45cfdfb87aec280403b33f37f084b5ec8e48b"
+    },
+    {
+      "path": "raw/CU/cu.area",
+      "bytes": 2185,
+      "sha256": "f4d0442e38dd4c4909a98b9fc8f8bc5fc8146ca4e87e4d9b947461f78af8abeb"
+    },
+    {
+      "path": "raw/CU/cu.data.1.AllItems",
+      "bytes": 2685811,
+      "sha256": "9baac9eb2fd78f4510a7edeb2c2d23abfbe0c4d4482febe54f415852e19dddf7"
+    },
+    {
+      "path": "raw/CU/cu.data.12.USHousing",
+      "bytes": 2698758,
+      "sha256": "505e5507630ef0c0384195dc3a1bfac878086696a0255321a10f19e762116cfb"
+    },
+    {
+      "path": "raw/CU/cu.data.15.USMedical",
+      "bytes": 1011126,
+      "sha256": "15d481821a32affaa073c55ccb48b7a4ed2e1b3fada40ecf91097c004fb375b3"
+    },
+    {
+      "path": "raw/CU/cu.footnote",
+      "bytes": 100,
+      "sha256": "d92c2f0b60f9a52f9184f366f9d5b61fc6659181959be718fa332e43f9983903"
+    },
+    {
+      "path": "raw/CU/cu.item",
+      "bytes": 16554,
+      "sha256": "376f2a9dd2cc7bb358118e6c0e031a404941cfe158b82612e807e44eabcec8fa"
+    },
+    {
+      "path": "raw/CU/cu.series",
+      "bytes": 1339447,
+      "sha256": "13c3443beef653c41585340c909db6cb48a42b1e5614e6a1dd0852210be8bb45"
+    },
+    {
+      "path": "raw/CU/cu.txt",
+      "bytes": 14644,
+      "sha256": "1394b7f4210fda3d6dab62437bae5bd3664ed040612dd3df6268bc4e2911a471"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "inflation1": "percentage points per month (100 log ratio)",
+      "inflation3": "percentage points per month (100 log ratio)",
+      "inflation12": "percentage points per month (100 log ratio)",
+      "housing1": "percentage points per month (100 log ratio)",
+      "medical1": "percentage points per month (100 log ratio)",
+      "jobs1": "percentage points per month (100 log ratio)",
+      "mfg1": "percentage points per month (100 log ratio)",
+      "info1": "percentage points per month (100 log ratio)"
+    },
+    "observation_window": "Only calendar months through t-1 enter predictors for month t. This is a retrospectively revised and seasonally adjusted bulk snapshot, not an as-issued forecast archive. Calendar lags do not establish historical release availability; the nominal origin is after prior-month releases. No month-t prices/employment or CPI accounting decomposition enters inputs.",
+    "calibration_and_history": "All regression coefficients, centering/scales and flexible centers fit only preceding development blocks. No held-quarter target fitting.",
+    "calibration_columns": [
+      "inflation1",
+      "inflation3",
+      "inflation12",
+      "housing1",
+      "medical1",
+      "jobs1",
+      "mfg1",
+      "info1"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "prediction_time",
+      "target_time",
+      "source_anchor",
+      "input_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Revised vintages; no as-issued economic forecast evaluation."
+  ],
+  "current_outcomes_exposed": true
+}

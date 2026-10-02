@@ -1,0 +1,18 @@
+{
+  "case": 47,
+  "type": "linear",
+  "features": [
+    "one",
+    "N",
+    "S",
+    "T",
+    "surface",
+    "Ns"
+  ],
+  "offset": "O",
+  "scale": null,
+  "alpha": 0,
+  "title": "Surface biological regime",
+  "hypothesis": "An exponentially decaying surface term and nitrate interaction test distinct near-surface behavior at a fixed100dbar scale.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 29.77296729820867, \"worst_group\": 45.382285764999715}, {\"attempt\": \"attempt-002\", \"group_MAE\": 17.42558269500077, \"worst_group\": 25.556498462561166}, {\"attempt\": \"attempt-003\", \"group_MAE\": 9.411915533547356, \"worst_group\": 21.455535374294595}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.\n\nDecision rationale: Depth-by-nitrate interaction beats flexible mean error but worst-profile error increases. Test a separately motivated near-surface biological regime.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state."
+}

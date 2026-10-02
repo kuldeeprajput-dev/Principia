@@ -1,0 +1,32 @@
+{
+  "0": {
+    "kind": "curvature",
+    "coef": [
+      0.14179209131771164,
+      -0.03146701702364101,
+      0.24990612629863818
+    ],
+    "equation": "max(0,p+b0*r+b1*v+b2*a); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+    "training_groups": [
+      "22713"
+    ],
+    "training_rows": 1276,
+    "parameter_count": 3,
+    "rank": 3
+  },
+  "1": {
+    "kind": "curvature",
+    "coef": [
+      -0.02945155718603558,
+      -0.13586732698319867,
+      0.19243699916360227
+    ],
+    "equation": "max(0,p+b0*r+b1*v+b2*a); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+    "training_groups": [
+      "16"
+    ],
+    "training_rows": 3186,
+    "parameter_count": 3,
+    "rank": 3
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "0": {
+    "kind": "arousal",
+    "coef": [
+      0.24011078108112968,
+      0.11121671688649182,
+      5.316700688604954,
+      0.4275072148411581
+    ],
+    "equation": "max(0,p+b0*r+b1*v+b2*u+b3*du); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+    "training_groups": [
+      "22713"
+    ],
+    "training_rows": 1276,
+    "parameter_count": 4,
+    "rank": 4
+  },
+  "1": {
+    "kind": "arousal",
+    "coef": [
+      0.047866186540957575,
+      -0.017429952566281933,
+      0.15341588500539327,
+      0.3861389938173733
+    ],
+    "equation": "max(0,p+b0*r+b1*v+b2*u+b3*du); p=current quarter-second radius(px), r=preceding5s mean-p, v=2*(p-p_t-0.5s), a=p-2*p_t-0.5s+p_t-1s, u=ln(1+speed/(1cm/s)),du=u-u_t-1s. Coefficients of pixel features dimensionless; u/du coefficients px.",
+    "training_groups": [
+      "16"
+    ],
+    "training_rows": 3186,
+    "parameter_count": 4,
+    "rank": 4
+  }
+}

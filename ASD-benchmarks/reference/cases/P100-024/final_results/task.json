@@ -1,0 +1,130 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-024.original.v1",
+  "case_id": "P100-024",
+  "case_number": 24,
+  "family": "original",
+  "protocol_version": "P100-024-prepared-primary-v1",
+  "cohort_id": "P100-024.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-024.original.v1",
+  "legacy_package": "24_materials_dtu_composite_fatigue/final_results",
+  "source_scenario": "scenarios/24_materials_dtu_composite_fatigue",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Future measured composite stiffness conditional on continued recorded survival",
+  "target_units": "GPa",
+  "error_units": "GPa",
+  "primary_units": "GPa",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "cycle",
+    "E0_GPa",
+    "strain_percent",
+    "frequency_Hz",
+    "cure"
+  ],
+  "input_units": {
+    "cycle": "cycle count",
+    "E0_GPa": "GPa",
+    "strain_percent": "percent; numerical 1 means 1 percent strain",
+    "frequency_Hz": "Hz; supplied source header",
+    "cure": "categorical laminate/cure label"
+  },
+  "numeric_columns": [
+    "cycle",
+    "E0_GPa",
+    "strain_percent",
+    "frequency_Hz"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": true,
+  "positive_target": false,
+  "timing_contract": "Use cycle count, prescribed strain, supplied cure/header-frequency metadata and early E0 calibration only; no failure-cycle normalization or future measured stiffness. Exact header-frequency acquisition timing is undocumented; the selected log equation does not use frequency, while comparators condition on its availability.",
+  "calibration": "E0 is the median native stiffness at cycles 10\u201320 for the same specimen; later stiffness and terminal cycle are unavailable to predictors.",
+  "independent_unit": "complete specimen",
+  "evaluation_groups": [
+    "EQA01-06",
+    "EQA01-09",
+    "EQA02-03",
+    "EQA02-09",
+    "EQA03-08",
+    "EQA03-09"
+  ],
+  "assigned_rows": 3086,
+  "eligible_rows": 3081,
+  "baseline_models": [
+    "attempt_001_log",
+    "baseline_persistence",
+    "baseline_log",
+    "baseline_flex",
+    "baseline_nested_flex",
+    "competitor_two_mechanism"
+  ],
+  "reference_model": "attempt_001_log",
+  "models": {
+    "attempt_001_log": {
+      "equation": "Ehat=E0*exp(-beta*eps_pct^2*log1p(max(N-20,0)/1000)); eps_pct=strain/(1 percent).",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_persistence": {
+      "equation": "Ehat=E0",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_log": {
+      "equation": "Ehat=E0*exp(-beta*eps_pct^2*log1p(max(N-20,0)/1000)); eps_pct=strain/(1 percent).",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flex": {
+      "equation": "Gaussian-kernel ridge with frozen training-only scales/centers/coefficients; clip output to [0,1], multiply E0 for stiffness.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_nested_flex": {
+      "equation": "Gaussian-kernel ridge with frozen training-only scales/centers/coefficients; clip output to [0,1], multiply E0 for stiffness.",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "competitor_two_mechanism": {
+      "equation": "Ehat=E0*exp(-beta0*eps_pct^2*log1p(max(N-20,0)/1000)-beta1*eps_pct^6*max(N-20,0)/100000).",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Show every complete reserved group. Within-system and temporal dependence, few condition blocks or calibrated sites limit population-level claims; no row-bootstrap confidence interval is claimed."
+  },
+  "scope_limits": "Six specimens from three cure profiles in one glass-fiber campaign, with declared cycles-10-to-20 initial calibration. Not a remaining-life, runout or new-material prediction.",
+  "source_url": "https://zenodo.org/records/15665325",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All reference confirmation targets are exposed. This is a retrospective diagnostic evaluation, not fresh independent confirmation.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "4ba76152347b06f7a58d3b69da819695bdd403da1c0c85d0e6652e7b5b8b64e8",
+  "observations_sha256": "6ac73f58d04864b52e54496daef5dd416d715f3982b957b4e5a1d36149114d30",
+  "legacy_protocol_sha256": "37b29bc8b1916e00df156e19ce949c9a39c3b54764f25d55ca653fb97a5a6875",
+  "source_license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [
+    "F1 uses2TP/(2TP+FP+FN); zero on nonempty total failure. Historical reports unchanged."
+  ]
+}

@@ -1,0 +1,188 @@
+[
+  {
+    "fold": 0,
+    "state": {
+      "name": "instrument_background",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))*(1+r*cos(q*d+phase))/(1+r*cos(q0*d+phase))+background",
+      "hypothesis": "Development evidence available before this fit: contrast_decoherence: MAE 6031.67, worst group 11179; center_outer_thickness: MAE 6166.24, worst group 11275.6.\n\nNeither contrast decoherence nor center/outer period variation improves primary transfer. Test an instrument-count floor as the remaining alternative to extra film physics. A positive background could explain high-angle residuals while preserving the coherent film term.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:09:40.325208+00:00",
+      "parent": "attempt-005",
+      "parameters": {
+        "qc": 0.057121342233262526,
+        "sigma": 6.07540598465214,
+        "d": 86.31438450369178,
+        "r": 0.8772310061096383,
+        "phase": 1.2564574155208021,
+        "background": 1621.666125621487
+      },
+      "training_groups": [
+        "wafer-04",
+        "wafer-05",
+        "wafer-06",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 2494,
+      "optimizer_success": true,
+      "nfev": 15,
+      "jacobian_condition": 1781448.1766817288,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ],
+        "d": [
+          60,
+          140
+        ],
+        "r": [
+          0,
+          0.95
+        ],
+        "phase": [
+          -3.141592653589793,
+          3.141592653589793
+        ],
+        "background": [
+          0,
+          10000
+        ]
+      }
+    }
+  },
+  {
+    "fold": 1,
+    "state": {
+      "name": "instrument_background",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))*(1+r*cos(q*d+phase))/(1+r*cos(q0*d+phase))+background",
+      "hypothesis": "Development evidence available before this fit: contrast_decoherence: MAE 6031.67, worst group 11179; center_outer_thickness: MAE 6166.24, worst group 11275.6.\n\nNeither contrast decoherence nor center/outer period variation improves primary transfer. Test an instrument-count floor as the remaining alternative to extra film physics. A positive background could explain high-angle residuals while preserving the coherent film term.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:09:40.325208+00:00",
+      "parent": "attempt-005",
+      "parameters": {
+        "qc": 0.05763584578720055,
+        "sigma": 6.3816144475557115,
+        "d": 86.28845481820287,
+        "r": 0.8559013499567908,
+        "phase": 1.323736642999415,
+        "background": 1882.458120805059
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-07",
+        "wafer-08",
+        "wafer-09"
+      ],
+      "training_rows": 2666,
+      "optimizer_success": true,
+      "nfev": 14,
+      "jacobian_condition": 1820660.281603582,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ],
+        "d": [
+          60,
+          140
+        ],
+        "r": [
+          0,
+          0.95
+        ],
+        "phase": [
+          -3.141592653589793,
+          3.141592653589793
+        ],
+        "background": [
+          0,
+          10000
+        ]
+      }
+    }
+  },
+  {
+    "fold": 2,
+    "state": {
+      "name": "instrument_background",
+      "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))*(1+r*cos(q*d+phase))/(1+r*cos(q0*d+phase))+background",
+      "hypothesis": "Development evidence available before this fit: contrast_decoherence: MAE 6031.67, worst group 11179; center_outer_thickness: MAE 6166.24, worst group 11275.6.\n\nNeither contrast decoherence nor center/outer period variation improves primary transfer. Test an instrument-count floor as the remaining alternative to extra film physics. A positive background could explain high-angle residuals while preserving the coherent film term.",
+      "inputs": [
+        "q",
+        "q0",
+        "I0",
+        "outer"
+      ],
+      "recorded_utc": "2026-10-02T02:09:40.325208+00:00",
+      "parent": "attempt-005",
+      "parameters": {
+        "qc": 0.057350171118298356,
+        "sigma": 6.012820658487204,
+        "d": 86.59348180801699,
+        "r": 0.8764201597805251,
+        "phase": 1.2404453035207261,
+        "background": 1519.3306687848906
+      },
+      "training_groups": [
+        "wafer-01",
+        "wafer-02",
+        "wafer-03",
+        "wafer-04",
+        "wafer-05",
+        "wafer-06"
+      ],
+      "training_rows": 2924,
+      "optimizer_success": true,
+      "nfev": 14,
+      "jacobian_condition": 1802579.5855622957,
+      "bounds": {
+        "qc": [
+          0.005,
+          0.07
+        ],
+        "sigma": [
+          0,
+          30
+        ],
+        "d": [
+          60,
+          140
+        ],
+        "r": [
+          0,
+          0.95
+        ],
+        "phase": [
+          -3.141592653589793,
+          3.141592653589793
+        ],
+        "background": [
+          0,
+          10000
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "name": "kiessig_interference",
+  "formula": "I0*(((q-sqrt(maximum(q**2-qc**2,0.0000001)))/(q+sqrt(maximum(q**2-qc**2,0.0000001))))**2)/(((q0-sqrt(maximum(q0**2-qc**2,0.0000001)))/(q0+sqrt(maximum(q0**2-qc**2,0.0000001))))**2)*exp(-sigma**2*(q**2-q0**2))*(1+r*cos(q*d+phase))/(1+r*cos(q0*d+phase))",
+  "hypothesis": "Development evidence available before this fit: roughness_envelope: MAE 14609.1, worst group 15823.1; finite_angle_fresnel: MAE 10932, worst group 11506.2.\n\nTest coherent finite-film Kiessig interference in addition to refraction/roughness. A transferable period should support a shared effective film scale, while phase/contrast remain potentially confounded.",
+  "inputs": [
+    "q",
+    "q0",
+    "I0",
+    "outer"
+  ],
+  "recorded_utc": "2026-10-02T02:08:59.491864+00:00",
+  "parent": "attempt-002",
+  "parameters": {
+    "qc": 0.06162714530036949,
+    "sigma": 4.566309013927983,
+    "d": 86.36235252211337,
+    "r": 0.8615946005395707,
+    "phase": 1.3224203398489691
+  },
+  "training_groups": [
+    "wafer-01",
+    "wafer-02",
+    "wafer-03",
+    "wafer-04",
+    "wafer-05",
+    "wafer-06",
+    "wafer-07",
+    "wafer-08",
+    "wafer-09"
+  ],
+  "training_rows": 4042,
+  "optimizer_success": true,
+  "nfev": 13,
+  "jacobian_condition": 11089.142852695679,
+  "bounds": {
+    "qc": [
+      0.005,
+      0.07
+    ],
+    "sigma": [
+      0,
+      30
+    ],
+    "d": [
+      60,
+      140
+    ],
+    "r": [
+      0,
+      0.95
+    ],
+    "phase": [
+      -3.141592653589793,
+      3.141592653589793
+    ]
+  }
+}

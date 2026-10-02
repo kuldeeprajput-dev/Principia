@@ -1,0 +1,36 @@
+{
+  "target": "Number of facets of the five-point KRW polytope",
+  "target_units": "facets",
+  "metric_kind": "mae",
+  "independent_unit": "Source facet-incidence combinatorial type modulo coordinate permutation; all metric representatives of that type stay together",
+  "timing_contract": "Ten exact pairwise distances permitted; source facets/incidence/f-vector forbidden predictors.",
+  "calibration": "None for exact geometric algorithms; training-only coefficients for coarse degeneracy heuristics.",
+  "scope_limits": "Five-point finite source catalog; published theory already characterizes generic types and arrangement. Exact computational reproduction is not a new theorem or independent experimental truth. Exact metric duplicate representations are deduplicated; generic/strict representatives with same coordinate-relabeled facet incidence remain in one group. Incidence-derived family labels are not predictors. Native POINTS and supplied metric vectors can differ by uniform scale; verify exact proportional distance multiset, which preserves facets.",
+  "split": "Native incidence-type hashmod5 confirmation; typehashfoldsdevelopment. Incidence is used only for linking/splitting, never predictors.",
+  "question": "Which distance degeneracy information is sufficient to recover facet complexity without source facet lookup?",
+  "case_id": "P100-098",
+  "error_units": "facets",
+  "source_url": "https://zenodo.org/records/19496811",
+  "source_license": "cc-by-4.0",
+  "exposure": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze.",
+  "uncertainty_policy": "Report per-group errors and worst-group error; no independent-row confidence intervals; one-event and finite catalogs are conditional diagnostics.",
+  "selection": "Lowest development mean-group MAE, simpler model on relative1% tie. Exact mathematical algorithm baselines do not claim novel accuracy. Retain every attempt and compare named strong controls.",
+  "stopping": "At least5distinct scientific attempts; continue while a justified distinct mechanism yields prediction/robustness/interpretation gain; stop after2consecutive substantive no-gain attempts after minimum5.",
+  "created_utc": "2026-10-02T01:37:43.151969+00:00",
+  "before_first_fit": true,
+  "permitted_inputs": [
+    "metric_json"
+  ],
+  "input_units": {
+    "metric_json": "JSON array of 10 positive rational distances; arbitrary common scale"
+  },
+  "numeric_columns": [],
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "nonnegative_prediction": true,
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0"
+}

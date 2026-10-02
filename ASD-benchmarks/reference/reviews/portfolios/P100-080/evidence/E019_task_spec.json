@@ -1,0 +1,53 @@
+{
+  "case_id": "P100-080",
+  "target": "EDA mean over t+25s to t+30s",
+  "target_units": "uS",
+  "error_units": "uS",
+  "metric_kind": "mae",
+  "permitted_inputs": [
+    "level",
+    "lag10",
+    "lag30",
+    "mean120",
+    "activity",
+    "temperature",
+    "temperature30",
+    "elapsed"
+  ],
+  "input_units": {
+    "level": "uS",
+    "lag10": "uS",
+    "lag30": "uS",
+    "mean120": "uS",
+    "activity": "g",
+    "temperature": "degree C",
+    "temperature30": "degree C",
+    "elapsed": "min"
+  },
+  "numeric_columns": [
+    "level",
+    "lag10",
+    "lag30",
+    "mean120",
+    "activity",
+    "temperature",
+    "temperature30",
+    "elapsed"
+  ],
+  "timing_contract": "After120s observed history, every5s predict a future5s EDA mean ending30s later. All EDA,temperature and accelerometer summaries are causal and aligned by native starts/sample rates.",
+  "calibration": "No held-person outcome calibration. Past120s EDA is permitted state, identical for every model; response coefficients and flexible transforms fit training people only.",
+  "independent_unit": "Participant; all aerobic segments of a person linked",
+  "scope_limits": "One aerobic study with two protocol versions; no mental-stress or clinical diagnosis. Source device clocks are not necessarily calendar measurement dates, and manufacturer EDA calibration remains author-provided.",
+  "source_url": "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+  "source_license": "ODC Attribution1.0",
+  "prior_art_url": "https://doi.org/10.1038/s41597-025-04845-9",
+  "exposure": "Public source-aware corpus; internally reserved confirmation opened only after candidate/selection/stopping freeze. Outcomes now exposed to future users. This is computational confirmation, not independent experimental replication.",
+  "uncertainty_policy": "Show every group and matched-baseline difference. Few groups/dates do not justify narrow population confidence intervals; no row bootstrap.",
+  "applicability": {
+    "target_min": null,
+    "target_max": null
+  },
+  "scientific_checks": "scientific_checks.py; physical-domain and probability diagnostics, not industrial tolerances",
+  "dataset_doi": "10.13026/he0v-tf17",
+  "source_date_note": "Source dates are randomly shifted by more than one year consistently across channels, according to official PhysioNet data-conditioning notes."
+}

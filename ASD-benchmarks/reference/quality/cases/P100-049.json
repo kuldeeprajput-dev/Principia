@@ -1,0 +1,79 @@
+{
+  "case_id": "P100-049",
+  "title": "DLR lithium-graphite cell GITT and quasi-open-circuit measurements",
+  "default_task": "P100-049.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "voltage during current-free relaxation",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 96,
+    "independent_unit_description": "Complete rest block linked to preceding current pulse; all blocks belong to one half-cell, so block summaries are not independent-cell confidence.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Three causal voltage samples per block; no fit to later outcomes. Calibration access is identical for every model.",
+  "baseline_strength": {
+    "registered_controls": 9,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "voltage during current-free relaxation",
+    "prediction_time": "Issue predictions at120s of each current-free block; only actual samples at or before10/60/120s and completed preceding current pulse are predictors. Targets are nearest native samples to300/600/1200/1800s, tolerance15s.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Ninety-six held rest blocks come from one half-cell; diffusivity is not identified."
+  },
+  "task_ids": [
+    "P100-049.original.v1"
+  ],
+  "finding_ids": [
+    "P100-049-F01",
+    "P100-049-F02",
+    "P100-049-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-049/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-049.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate voltage during current-free relaxation under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Issue predictions at120s of each current-free block; only actual samples at or before10/60/120s and completed preceding current pulse are predictors. Targets are nearest native samples to300/600/1200/1800s, tolerance15s.",
+    "calibration_requirement": "Three causal voltage samples per block; no fit to later outcomes. Calibration access is identical for every model.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "voltage during current-free relaxation in V",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Ninety-six held rest blocks come from one half-cell; diffusivity is not identified."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "V",
+    "reference_model": "reference",
+    "reference_primary_error": 0.0006864223317063853,
+    "reference_physical_mae": 0.0006864223317063853,
+    "physical_error_units": "V",
+    "lowest_registered_error_model": "boundary_storage",
+    "lowest_registered_error": 0.000568418326141412,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-049.original.v1/evidence/metrics.csv",
+      "bytes": 1339,
+      "sha256": "21219475cdb26edd2e427b2451e3454b4211cbe67326586961c227809ffe992f"
+    },
+    "models": 9
+  },
+  "case_specific_next_evidence": "Ninety-six held rest blocks come from one half-cell; diffusivity is not identified."
+}

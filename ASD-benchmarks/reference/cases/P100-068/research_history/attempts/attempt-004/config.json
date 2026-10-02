@@ -1,0 +1,24 @@
+{
+  "name": "quadratic_drag_closure",
+  "formula": "offset+2*y0-y1+b0+b1*y0+b2*(y0-y1)+b3*(y0-y1)*abs(y0-y1)",
+  "hypothesis": "Development evidence available before this fit: dc_invariant_harmonic: MAE 0.162204, worst group 0.227994; duffing_delay_closure: MAE 0.188062, worst group 0.43015.\n\nCompete with cubic restoring force using amplitude-dependent quadratic damping in the delayed voltageincrement. This tests the sourcepaper\u2019s qualitativevelocity-nonlinearitytheme without claiming its physical units or reusing its fittedcoefficients.",
+  "inputs": [
+    "y0",
+    "y1",
+    "y2",
+    "y3",
+    "offset",
+    "t"
+  ],
+  "initial": {},
+  "bounds": {},
+  "linear_terms": [
+    "1",
+    "y0",
+    "y0-y1",
+    "(y0-y1)*abs(y0-y1)"
+  ],
+  "base": "offset+2*y0-y1",
+  "recorded_utc": "2026-10-02T02:19:33.865935+00:00",
+  "parent": "attempt-003"
+}

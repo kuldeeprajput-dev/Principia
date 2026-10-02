@@ -1,0 +1,150 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-039.original.v1",
+  "case_id": "P100-039",
+  "case_number": 39,
+  "family": "original",
+  "protocol_version": "P100-039-asd7-native-v1",
+  "cohort_id": "P100-039.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-039.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/39_sociology_oecd_piaac",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Upper three country-specific hourly-earnings deciles, excluding bonuses",
+  "target_units": "binary EARNHRDCLC2>=8",
+  "error_units": "squared probability (Brier)",
+  "primary_units": "squared probability (Brier)",
+  "metric_kind": "brier",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error",
+    "within_group_weight": "sample_weight"
+  },
+  "permitted_inputs": [
+    "education",
+    "age",
+    "japan"
+  ],
+  "input_units": {
+    "education": "source derived years of formal education",
+    "age": "fixed midpoint of published five-year age bin; final60\u201365midpoint62.5",
+    "japan": "country indicator"
+  },
+  "numeric_columns": [
+    "education",
+    "age",
+    "japan"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Contemporaneous cross-sectional earnings association using age/education/country. All10 plausible numeracy values are excluded: conditioned on background and unsuitable individual prediction scores. This is not future earnings or causal education return.",
+  "calibration": "Respondent hashblocks within both countries; no held respondent wage fitting. Country intercepts use training respondents in that same country. No transfer to an unseen economy.",
+  "independent_unit": "Respondents nested in country and deterministic ten hashblocks; not10 independent samples from plausible values. Repeated respondent information stays linked. Survey clustering not publicly fully reconstructible.",
+  "evaluation_groups": [
+    "Japan:respondentblock0",
+    "Japan:respondentblock1",
+    "USA:respondentblock0",
+    "USA:respondentblock1"
+  ],
+  "assigned_rows": 1054,
+  "eligible_rows": 1054,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "domain",
+    "flexible",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005",
+    "attempt_006"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "p=logistic(a+bJ*Japan+bS*(education-12)+bX*experience+bXX*experience\u00b2)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "p=logistic(a+b*Japan)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "domain": {
+      "equation": "p=logistic(a+bJ*Japan+bS*(education-12)+bX*experience+bXX*experience\u00b2)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "32-center matched-input smooth comparator",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "p_upper=logistic(country-specific schooling and coarse experience quadratic)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "p_upper=logistic(a+bJ*Japan+bS*(edu-12)+bD*max(edu-12,0)+bX*X+bXX*X\u00b2)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "p_upper=logistic(credential002+bSX*school*experience)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "p_upper=logistic(complementarity003+bOld*max(age_midpoint-50,0)/10)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "p_upper=logistic(a+bJ*Japan+bS*school+bD*degree+bA*agebinmidpoint+bO*olderhinge)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_006": {
+      "equation": "p_upper=logistic(a+bJ*Japan+bS*school+bX*X+bXX*X\u00b2+bO*older)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Whole-group errors/ranges; no row bootstrap or manufactured independent-population confidence. Confirmation becomes exposed after freeze."
+  },
+  "scope_limits": "Only valid reported earnings deciles, ages25\u201365 and complete education. Final weights within equal country\u00d7respondent blocks; not a pooled national population estimand. Potential experience age-schooling-6 is proxy, not measured tenure. No skill-wage causal claim; income reporting/topcoding and nonresponse remain.",
+  "source_url": "https://www.oecd.org/en/data/datasets/piaac-2nd-cycle-database.html",
+  "source_license": "OECD data terms with attribution and pass-through acknowledgment; Reader Companion CC BY 4.0, third-party cover credit retained",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Only schema and source-publication aggregate descriptions inspected; reserved target values and scores not inspected.\", \"current\": \"exposed\", \"fresh_for_future_users\": false, \"confirmation_freeze_sha256\": \"133cf2f0f645a9df455935e756a1b1307f5ee5841b5158a5dbc809014c79235c\", \"original_validation\": \"Internal development-selected and frozen before separate confirmation; public source-aware assets, schema exposures disclosed.\"}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "56c0b6e18073d9f651b7b3f2332be8a078ee6dc5ab2cdbdfd35f841b2164b80a",
+  "observations_sha256": "5ad7a739157ff9d24d1e0be065008775b57132b6a1d30d7105ed9964055c670d",
+  "legacy_protocol_sha256": "7d59bb7c1ded6c8c884f63a97ada378ce6ea100b553c299822ae1099f4cb442f",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": "asd6-probability/1.1",
+  "calibration_columns": [],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

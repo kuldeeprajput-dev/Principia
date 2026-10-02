@@ -1,0 +1,147 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-038.original.v1",
+  "case_id": "P100-038",
+  "case_number": 38,
+  "family": "original",
+  "protocol_version": "P100-038-asd6-native-v1",
+  "cohort_id": "P100-038.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-038.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/38_communications_rural_drone5g",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "First reported RSRP-vector component at first recorded point 1.0\u20131.6 s after issuance",
+  "target_units": "dBm",
+  "error_units": "dB",
+  "primary_units": "dB",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "last",
+    "mean5",
+    "mean20",
+    "slope",
+    "spread",
+    "elapsed"
+  ],
+  "input_units": {
+    "last": "dBm",
+    "mean5": "dBm",
+    "mean20": "dBm",
+    "slope": "dB/s",
+    "spread": "dB",
+    "elapsed": "s"
+  },
+  "numeric_columns": [
+    "last",
+    "mean5",
+    "mean20",
+    "slope",
+    "spread",
+    "elapsed"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "At a recorded RSRP sample, use only component 1 in the native comma-separated RSRP vector over the preceding 20 seconds. Predict first subsequently recorded component-1 value at 1.0\u20131.6 s. First qualifying issuance per target; no actual future horizon feature in predictor. Unknown component antenna/beam semantics prevent propagation-law claims.",
+  "calibration": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "independent_unit": "Entire flight; forward folds 1->2,1\u20132->3,1\u20133->4; flight5 confirmation. Same installation/day only.",
+  "evaluation_groups": [
+    "flight-5"
+  ],
+  "assigned_rows": 486,
+  "eligible_rows": 486,
+  "baseline_models": [
+    "reference",
+    "constant",
+    "flexible",
+    "persistence",
+    "attempt-001",
+    "attempt-002",
+    "attempt-003",
+    "attempt-004",
+    "attempt-005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "y_hat = last + 1 * (0.67789728509755609*revertgate)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant": {
+      "equation": "y_hat = 0 + 1 * (-71.328325852947202*one)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "offset + scale*(coef[0] + sum_j coef[j+1]*exp(-||standardized_inputs-center[j]||^2/(2*width^2))); frozen arrays in this state",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persistence": {
+      "equation": "y_hat = last",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-001": {
+      "equation": "y_hat = last + 1 * (-0.62849951101688939*slope)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-002": {
+      "equation": "y_hat = last + 1 * (0.45700467180643495*m5 + 0.019870607377455458*m20)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-003": {
+      "equation": "y_hat = last + 1 * (2.8073095663624326*trendgate + 0.66503519001923039*m5)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-004": {
+      "equation": "y_hat = last + 1 * (0.88812110709958347*up + 0.57541204248890909*down + 0.65795137528053882*m5)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-005": {
+      "equation": "y_hat = last + 1 * (0.67789728509755609*revertgate)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference."
+  },
+  "scope_limits": "Telemetry files1\u20132 do not overlap the radio clock windows and contain repeated headers; no invented offset or geometry pairing. Vector component ordering is taken literally, not identified as a specific antenna.",
+  "source_url": "https://zenodo.org/records/16673883",
+  "source_license": "CC-BY-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"Schema inspection: first two finite RSRP records of flight1 and source first telemetry rows; no flight5 RSRP values or scores printed. All public source-aware; confirmation after final freeze will become exposed.\", \"current\": \"exposed\", \"confirmation_history\": \"Scores hidden until candidate selection, stopping and code/state freeze\", \"fresh_for_future_users\": false}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "1166c2b920fd1953421402568716f61dd818d6e9a44ba2a540093667b0b251ee",
+  "observations_sha256": "dcb9cae7a50ab3268a977e407feda2f6f3d63858edc1756ecbf1ca5a9e359491",
+  "legacy_protocol_sha256": "101d6c7ee11f0712a52afe578e896e61a3f3523f76d671530fd8f12ace8a981f",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

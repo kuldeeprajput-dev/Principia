@@ -1,0 +1,216 @@
+{
+  "schema_version": "p100.agent-review/1.0",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_materials",
+  "case_id": "P100-091",
+  "created_utc": "2026-10-01T14:25:59.003937+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "ed8c8c22073e08b1b0a5de16bc0f25ab7c456db4744797e9744a4bcab91155c3"
+    },
+    {
+      "path": "develop.py",
+      "sha256": "ee5072d90749a43991dd49ea51210712d08fe71a4b02c5c7cb190c745382d989"
+    },
+    {
+      "path": "confirm.py",
+      "sha256": "f6a27a9ed916938f02d426b9a69e1b76fa2f16e195166b5e1ad2081824c11d45"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "f5fb5ee3692ffa6195009af5e28f1afb2b3190c6c91ec9dbdcd70e9744929818"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "a9e91ac38574f2e4d6a121e61c542fc4751b710f5f40c3f11c8b562463bfcfac"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "050554acb9042e799488b6d3322a0110f291d5e9420dbdb25017a3ce783a8492"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "8a54aeb28b32e3e348076f95ebe26dfe6103f09ff906e5a58a79a3652577a3f2"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "522c58bd323955cdb9fce5bab4ba49c06c35b4bdd72be63a27b369ae78c8fb75"
+    },
+    {
+      "path": "SUMMARY.md",
+      "sha256": "d2388fc6e7713c5e55b15aeaa90d5244c4c5a01c2f3a7b8606f409129776c9ca"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "3a99ceabdac2c2bc86dbee7e4bd33773e1841f9f06570cf0f1aff11dedd0d626"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "cae16e2c76920d7835f92ab60b89456e94a5109e12de128be657ae04af77a50d"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "c5a1a0141ca96f8cb186b98ac0133792f534eec11a82c08a80f38757dbc66a8e"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "f096a38176d0964f11c5919d95881d7f515f73bfd38eb4beec8b15ed9a105572"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "e716f5dcca3dad767bec1ebdd3e750ac956627ea2a2e3ed60219ac143f941de5"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "2f3c1fa8e550dc862218fcf82ae81f7423800cb13500cc563410edd083608d35"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "e49716eafa126c16d1c6185cddcec4d094ba33a4d40c4ff3de2e6d046b3ecb9b"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "dde8b9c8a5017dbf599a62aebc63993cd8569b979f4f3a28bdcfd97286f77e88"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "e96d6e43c5c795bab11ea3a7494274b644789ed4ad6ecc2132d51996057bbe3f"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "a901b11702b5e5d248005c9e22aba24ab0ec191b6bc599d84c6ccf999a41a688"
+    }
+  ],
+  "overall_limitations": [
+    "All current outcomes are exposed for future users.",
+    "Claim wording is reviewed literally: a supported statement of model failure must remain distinct from an unsupported underlying positive mechanism.",
+    "No aggregate discovery score or definitive novelty/impact certification."
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-091-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Selected003 improves queue3.01812to2.19556ms but loses to matched RBF1.91646ms. Both Q4/Q5 and the adverse Q5 comparison are retained; evidence does not show best-in-class performance."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Offered-setting offsets capture empirical response, but same-run achieved throughput and delay are co-outcomes; they do not isolate radio processing cost."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source relationships and prior analyses are disclosed. Targeted primary-source URLs were checked, but current fetches were blocked/empty; no exhaustive novelty assessment or new-law certification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The calibrated task and preserved counterexamples provide a reusable research/evaluation target. Significance is bounded by the small number of independent experimental conditions or locations."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native anchors, executable states, source hashes, grouped predictions and freeze receipts are present. Independent computational reviewer is responsible for replay checks."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, controlled intervention, clinical validation or population-wide replication is provided."
+        }
+      },
+      "checks": [
+        "Read task information budget and native target/predictor construction.",
+        "Compare selected reference, domain/simple/flexible controls and adverse alternatives.",
+        "Inspect complete-group allocation, schema-stage exposure and stopping/freeze history.",
+        "Separate failure evidence from positive mechanism claims and prior source analyses."
+      ],
+      "limitations": [
+        "Q4/Q5 within the same seven-location installation; six offered rates1,10,50,100,200,500Mbit/s. No unseen offered-rate extrapolation, hardware transfer, pure radio latency or intervention claim.",
+        "A model-based scientific review is not independent experimental replication or expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-091-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The negative transfer conclusion is supported: adding throughput slope improves development1.58410to1.50939ms but worsens confirmation1.94578to2.19556ms."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "A positive fitted throughput slope is not a stable causal processing-cost coefficient."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source relationships and prior analyses are disclosed. Targeted primary-source URLs were checked, but current fetches were blocked/empty; no exhaustive novelty assessment or new-law certification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The calibrated task and preserved counterexamples provide a reusable research/evaluation target. Significance is bounded by the small number of independent experimental conditions or locations."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native anchors, executable states, source hashes, grouped predictions and freeze receipts are present. Independent computational reviewer is responsible for replay checks."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, controlled intervention, clinical validation or population-wide replication is provided."
+        }
+      },
+      "checks": [
+        "Read task information budget and native target/predictor construction.",
+        "Compare selected reference, domain/simple/flexible controls and adverse alternatives.",
+        "Inspect complete-group allocation, schema-stage exposure and stopping/freeze history.",
+        "Separate failure evidence from positive mechanism claims and prior source analyses."
+      ],
+      "limitations": [
+        "Within this installation and run-summary precision only.",
+        "A model-based scientific review is not independent experimental replication or expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-091-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The source target represents the whole routed/wireless path and throughput accounting differs from offered settings. Packet loss and physical capacity are not identified by subtraction or a fitted pole."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Independent component timing, byte-accounting and capacity interventions would be necessary."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "The source relationships and prior analyses are disclosed. Targeted primary-source URLs were checked, but current fetches were blocked/empty; no exhaustive novelty assessment or new-law certification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The calibrated task and preserved counterexamples provide a reusable research/evaluation target. Significance is bounded by the small number of independent experimental conditions or locations."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Native anchors, executable states, source hashes, grouped predictions and freeze receipts are present. Independent computational reviewer is responsible for replay checks."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No industrial deployment, controlled intervention, clinical validation or population-wide replication is provided."
+        }
+      },
+      "checks": [
+        "Read task information budget and native target/predictor construction.",
+        "Compare selected reference, domain/simple/flexible controls and adverse alternatives.",
+        "Inspect complete-group allocation, schema-stage exposure and stopping/freeze history.",
+        "Separate failure evidence from positive mechanism claims and prior source analyses."
+      ],
+      "limitations": [
+        "Q4/Q5 within the same seven-location installation; six offered rates1,10,50,100,200,500Mbit/s. No unseen offered-rate extrapolation, hardware transfer, pure radio latency or intervention claim.",
+        "A model-based scientific review is not independent experimental replication or expert adjudication."
+      ]
+    }
+  ],
+  "external_source_checks": {
+    "date": "2026-10-01",
+    "status": "PubMed empty response; journal DOI pages403/unavailable; MDPI429. Local source-bound prior-art records retained as provenance, not represented as newly independently verified full-text review."
+  }
+}

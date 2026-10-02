@@ -1,0 +1,141 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-056.original.v1",
+  "case_id": "P100-056",
+  "case_number": 56,
+  "family": "original",
+  "protocol_version": "P100-056-asd5-native-v1",
+  "cohort_id": "P100-056.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-056.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/56_structures_timber_concrete",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "applied force",
+  "target_units": "kN",
+  "error_units": "kN",
+  "primary_units": "kN",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "deflection_mm",
+    "calibration_deflection_mm",
+    "calibration_force_kN",
+    "initial_stiffness_kN_mm",
+    "recent_stiffness_kN_mm",
+    "lightweight"
+  ],
+  "input_units": {
+    "deflection_mm": "mm",
+    "calibration_deflection_mm": "mm",
+    "calibration_force_kN": "kN",
+    "initial_stiffness_kN_mm": "kN/mm",
+    "recent_stiffness_kN_mm": "kN/mm",
+    "lightweight": "1"
+  },
+  "numeric_columns": [
+    "deflection_mm",
+    "calibration_deflection_mm",
+    "calibration_force_kN",
+    "initial_stiffness_kN_mm",
+    "recent_stiffness_kN_mm",
+    "lightweight"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Given current imposed displacement, concrete class, and beam-specific initial force-displacement calibration prefix through\u226410mm; no later force or failure capacity allowed.",
+  "calibration": "Given current imposed displacement, concrete class, and beam-specific initial force-displacement calibration prefix through\u226410mm; no later force or failure capacity allowed.",
+  "independent_unit": "Whole beam; six beams in two concrete classes",
+  "evaluation_groups": [
+    "P-LWC-C",
+    "P-NWC-C"
+  ],
+  "assigned_rows": 45,
+  "eligible_rows": 45,
+  "baseline_models": [
+    "reference",
+    "baseline_domain",
+    "baseline_flexible",
+    "attempt_001",
+    "attempt_002",
+    "attempt_003",
+    "attempt_004",
+    "attempt_005"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "F=min(F0+k0 u,C0+C1 lightweight)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "baseline_domain": {
+      "equation": "F=F0+k0(d-d0)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "baseline_flexible": {
+      "equation": "F=dot(theta,[1,F0,k0u,z^2,m,mz,mz^2]), z=u/20",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_001": {
+      "equation": "F=F0+k0 u/(1+u/L), u=d-d0",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_002": {
+      "equation": "F=min(F0+k0 u,C)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_003": {
+      "equation": "F=min(F0+k0 u,C0+C1 lightweight)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_004": {
+      "equation": "F=min(F0+k0 u,C)+h max(F0+k0 u-C,0), C=C0+C1 lightweight",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt_005": {
+      "equation": "F=F0+max(k_recent,0)u/(1+u/L)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Individual experimental group errors; no row bootstrap or population CI from dependent rows."
+  },
+  "scope_limits": "Four development beams and two confirmation beams. Header audit exposed confirmation first11points (all below10mm); these are permitted calibration only. All late damage rows retained.",
+  "source_url": "https://zenodo.org/records/17967735",
+  "source_license": "cc-by-4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"status\": \"exposed\", \"confirmation_originally_withheld\": true, \"public_source_aware\": true}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "365e8b199a830017d75f7bb04e9dfba49067fa31bb4e5a2f00440de9e256475d",
+  "observations_sha256": "7dc39b57116ebd605bd235041d31d91a32d6e53135788c0ba9c7067fadad6818",
+  "legacy_protocol_sha256": "907e33d4689551c345a2cd72572ab0abe7b11b3d5e4263f0747106402c60bb8c",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd5-diagnostics/1.0"
+}

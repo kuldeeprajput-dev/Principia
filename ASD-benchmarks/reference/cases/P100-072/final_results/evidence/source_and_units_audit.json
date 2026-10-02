@@ -1,0 +1,49 @@
+{
+  "source": "Zenodo 18757697, IATA-CSIC competition with S.kudriavzevii CR85; linked study doi10.1016/j.fm.2023.104276",
+  "measurement_dates": "Native qPCR exports 2020; workbook analytical sections 2021/2022; public deposit2026",
+  "processing": "Author cached spreadsheet percentage from same-row qPCR ratio is the target. No same-time Cp/ratio is a predictor. Use only own replicate22/72-hour percentages to forecast96h and later. Biological replicate pairing from Sample Name.",
+  "missing_prefix": [
+    {
+      "strain": "Chr96,2",
+      "replicate": 2,
+      "reason": "missing22 or72 hour prefix"
+    },
+    {
+      "strain": "Clos",
+      "replicate": 1,
+      "reason": "missing22 or72 hour prefix"
+    },
+    {
+      "strain": "Ec1118",
+      "replicate": 2,
+      "reason": "missing22 or72 hour prefix"
+    }
+  ],
+  "excluded_ambiguous_time": [
+    {
+      "strain": "Ec1118",
+      "row": 14,
+      "sample_time": 504,
+      "chart_time": 500.0
+    },
+    {
+      "strain": "Ec1118",
+      "row": 15,
+      "sample_time": 504,
+      "chart_time": 500.0
+    },
+    {
+      "strain": "Ec1118",
+      "row": 16,
+      "sample_time": 504,
+      "chart_time": 500.0
+    }
+  ],
+  "limitations": [
+    "qPCR percentage is author-derived abundance, not independently measured fitness or viable count.",
+    "Nitrogen description300 g/L is unresolved; unused.",
+    "Source previous published competition analyses disclosed.",
+    "Only two reserved strain groups, small within-campaign scope."
+  ],
+  "audit_exposure": "Schema audit printed first13 spreadsheet rows before model construction, including several later percentages across all strains. Allocation is still metadata-only and no fit/selection uses reserved targets, but confirmation is audit-exposed retrospective evidence, not a fully blind independent confirmation."
+}

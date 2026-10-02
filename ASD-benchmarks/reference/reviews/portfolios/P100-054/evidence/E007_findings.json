@@ -1,0 +1,59 @@
+{
+  "case_id": "P100-054",
+  "findings": [
+    {
+      "finding_id": "P100-054-F01",
+      "classification": "validated_extension",
+      "admission": "supported",
+      "claim": "A compact bridge-width correction improves held-out specimen load reconstruction over constant apparent-toughness and quadratic controls.",
+      "equation": "With $x=a/W$ and $r=1-b/B$, the source-declared cantilever geometry factor is\n\n$$\nf(x)=1.46+24.36x-47.21x^2+75.18x^3,\n\\qquad \\widehat P=\\frac{BW^{3/2}}{L f(x)}(K_0+c r).\n$$\n\nHere K0=0.636134MPa sqrt(m) and c=5.430604MPa sqrt(m); geometry in micrometres yields force in mN. Full precision is in rules.json. These coefficients describe apparent geometric response at bridge failure; neither is claimed to be intrinsic silicon toughness.",
+      "evidence": [
+        "evidence/metrics.csv",
+        "evidence/by_group.csv",
+        "evidence/predictions.csv.gz",
+        "rules.json"
+      ],
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "falsification": "The notch-only alternative worsens development MAE to0.02596mN and confirmation to0.02860mN, so relative notch depth alone does not replace bridge width in this task. A bounded regime model happens to score0.015961mN after opening confirmation, but its development error was worse and one boundary parameter was at its bound; it remains a diagnostic alternative rather than replacing the preselected reference. This disagreement is useful evidence for future independent experiments.",
+      "scope": "One wafer and post-test geometry; no intrinsic-toughness or prospective safety claim.",
+      "novelty": "not_assessed",
+      "industrial_impact": "not_demonstrated"
+    },
+    {
+      "finding_id": "P100-054-F02",
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "Notch-depth-only effective toughness does not explain the bridge-width-associated predictive information.",
+      "equation": null,
+      "evidence": [
+        "evidence/metrics.csv",
+        "evidence/by_group.csv",
+        "evidence/predictions.csv.gz",
+        "rules.json"
+      ],
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "falsification": "The notch-only alternative worsens development MAE to0.02596mN and confirmation to0.02860mN, so relative notch depth alone does not replace bridge width in this task. A bounded regime model happens to score0.015961mN after opening confirmation, but its development error was worse and one boundary parameter was at its bound; it remains a diagnostic alternative rather than replacing the preselected reference. This disagreement is useful evidence for future independent experiments.",
+      "scope": "This is conditional predictive evidence, not an identified causal effect.",
+      "novelty": "not_assessed",
+      "industrial_impact": "not_demonstrated"
+    },
+    {
+      "finding_id": "P100-054-F03",
+      "classification": "abstention",
+      "admission": "supported",
+      "claim": "An optimal crack-arrest design boundary and universal fracture law are not established.",
+      "equation": null,
+      "evidence": [
+        "evidence/metrics.csv",
+        "evidence/by_group.csv",
+        "evidence/predictions.csv.gz",
+        "rules.json"
+      ],
+      "prior_art": "See research_history/PRIOR_ART.json; broad physical relationships already published, no exhaustive novelty claim.",
+      "falsification": "The notch-only alternative worsens development MAE to0.02596mN and confirmation to0.02860mN, so relative notch depth alone does not replace bridge width in this task. A bounded regime model happens to score0.015961mN after opening confirmation, but its development error was worse and one boundary parameter was at its bound; it remains a diagnostic alternative rather than replacing the preselected reference. This disagreement is useful evidence for future independent experiments.",
+      "scope": "Arrest labels are excluded; source paper already establishes qualitative stability conditions, and retrospective regime results disagree with development ranking.",
+      "novelty": "not_assessed",
+      "industrial_impact": "not_demonstrated"
+    }
+  ]
+}

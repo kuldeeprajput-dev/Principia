@@ -1,0 +1,24 @@
+{
+  "case": 77,
+  "title": "Joint ONE-STEP tagging and shared competence",
+  "kind": "mae",
+  "target": "Joint green-positive and red-positive fraction",
+  "unit": "percentage points",
+  "inputs": [
+    "green",
+    "red",
+    "dose"
+  ],
+  "input_units": {
+    "green": "fraction",
+    "red": "fraction",
+    "dose": "source fold dose"
+  },
+  "source_url": "https://zenodo.org/records/15772077",
+  "license": "CC BY 4.0",
+  "paper": "https://doi.org/10.1093/nar/gkaf809",
+  "independent_unit": "Named experimental replicate block A/B/C; three doses within each",
+  "scope": "One hiPSC cell line, one multiplex tagging design, three replicate blocks; same-well marginal readouts are permitted. This tests distributional dependence, not pre-experiment editing yield or a new gene-editing mechanism.",
+  "timing": "Contemporaneous assay diagnostic: green and red marginal positive fractions measured from the same FCS well; joint fraction withheld as target. Marginals do not algebraically determine the joint without an independence/dependence assumption.",
+  "calibration": "One source BOB negative control defines each channel threshold at its 99.5th percentile, identically for all wells and models. Event gating uses finite scatter/fluorescence and positive FSC-A/SSC-A only; source FlowJo manual gates were not supplied and are not reproduced."
+}

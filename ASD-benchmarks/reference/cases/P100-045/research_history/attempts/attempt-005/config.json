@@ -1,0 +1,38 @@
+{
+  "case": 45,
+  "kind": "energy_response",
+  "hypothesis": "Detector channel4 energy edges vary. Test an explicit lower-edge response correction rather than treating numbered channels as identical energy intervals; geometric-response and spectral causes remain confounded.",
+  "parent": "attempt-004",
+  "created_utc": "2026-10-02T02:09:37.829131+00:00",
+  "before_execution": true,
+  "confirmation_accessed": false,
+  "development_evidence_available": [
+    {
+      "attempt": "attempt-001",
+      "primary_error": 16.024913695475227,
+      "worst_group": 24.642820909707737
+    },
+    {
+      "attempt": "attempt-002",
+      "primary_error": 14.26491795930303,
+      "worst_group": 24.382205914799876
+    },
+    {
+      "attempt": "attempt-003",
+      "primary_error": 14.350349587225006,
+      "worst_group": 25.114469699390224
+    },
+    {
+      "attempt": "attempt-004",
+      "primary_error": 16.11683354759385,
+      "worst_group": 25.486255024873664
+    }
+  ],
+  "primary_metric": "mean_group_absolute_error",
+  "falsifying_tests": [
+    "Matched strong baselines under identical inputs",
+    "Per-group errors and worst-group behavior",
+    "Parameter boundary/identifiability audit or exact-arithmetic preconditions",
+    "Physical/mathematical applicability and negative cases retained"
+  ]
+}

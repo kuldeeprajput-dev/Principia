@@ -1,0 +1,77 @@
+{
+  "case_id": "P100-033",
+  "title": "Smartphone PPG with ECG reference and acquisition disturbances",
+  "default_task": "P100-033.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "ECG reference heart rate",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 10,
+    "independent_unit_description": "Person; every recording from one person linked",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "No per-person ECG or target calibration. Spectral transforms are fixed within each PPG window; any fusion/shrinkage parameters or flexible scaling are trained on development people only.",
+  "baseline_strength": {
+    "registered_controls": 11,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 1,
+    "not_assessed": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "ECG reference heart rate",
+    "prediction_time": "After the complete ten-second PPG segment; simultaneous ECG supplies the target but is never an input. Known recording motion/contact conditions are allowed. No human quality annotation is a predictor.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Few held people and mixed comparator results; no clinical qualification."
+  },
+  "task_ids": [
+    "P100-033.original.v1"
+  ],
+  "finding_ids": [
+    "P100-033-F01",
+    "P100-033-F02"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-033/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-033.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate ECG reference heart rate under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "After the complete ten-second PPG segment; simultaneous ECG supplies the target but is never an input. Known recording motion/contact conditions are allowed. No human quality annotation is a predictor.",
+    "calibration_requirement": "No per-person ECG or target calibration. Spectral transforms are fixed within each PPG window; any fusion/shrinkage parameters or flexible scaling are trained on development people only.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "ECG reference heart rate in bpm",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Few held people and mixed comparator results; no clinical qualification."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "bpm",
+    "reference_model": "reference",
+    "reference_primary_error": 9.32916907799114,
+    "reference_physical_mae": 9.32916907799114,
+    "physical_error_units": "bpm",
+    "lowest_registered_error_model": "baseline_flexible",
+    "lowest_registered_error": 9.031956077816627,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-033.original.v1/evidence/metrics.csv",
+      "bytes": 891,
+      "sha256": "59ec7f149cab2188baaadba904b3697ef5093dcaa0dbf4e69691ba501a291950"
+    },
+    "models": 11
+  },
+  "case_specific_next_evidence": "Few held people and mixed comparator results; no clinical qualification."
+}

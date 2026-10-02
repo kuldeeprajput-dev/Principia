@@ -1,0 +1,125 @@
+{
+  "case_id": "P100-075",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_electronics",
+  "review_date": "2026-10-02",
+  "checked_files": [
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "f1ee980bcedcc3faa4f3cc8b646bdeba25835f4cb54837e45d901532b2dcf6b3"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "2bd29d16994464121b3039e738ab1ac42011c4527e461ea62da1a1d7fd3d3cd6"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "34393b0d9407953b4ef1287fcb725210c5be20da4d5b5c78fff94d1ebd052355"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "396571e6149f055757d3f4d49c8463d8412c4d22cfd999fe857fd098bc787035"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "c03693e7272b516a517295d4f93961bc2e89db1de2b7ca976d7a234097aa3b13"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "50e302409e92a2e974cfe08a51d657619404bcc6e37f689954dc1cfb1bd29732"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "a2bf3e77809f2dd3c23c4772ba2ab022c332d43f5e4338bc079196406a8305d1"
+    },
+    {
+      "path": "package/EQUATIONS.md",
+      "sha256": "cd36891bbb5b257d64cc3c1b865499080d630348f864e156772097101da3249f"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-075-F01",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "Selected shear response0.763484 log-count units loses to donor calibration copy0.496276 in donor C. Positive transfer is unsupported; the bounded failure is supported. Claim-specific scope: A donor-calibrated shared shear response generalizes better than calibration alone"
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "CPM-normalized VCAM1 and one donor calibration do not measure absolute transcript concentration or a mechanotransduction constant."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a transparent bounded research/evaluation case. Four donors, one held donor and no replicate cultures per condition; source association is prior art and is not disproved by failure of these transfer equations."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured."
+        }
+      },
+      "checks": [
+        "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+        "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+        "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+      ],
+      "limitations": [
+        "Four donors, one held donor and no replicate cultures per condition; source association is prior art and is not disproved by failure of these transfer equations.",
+        "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+      ]
+    },
+    {
+      "finding_id": "P100-075-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Selected shear response0.763484 log-count units loses to donor calibration copy0.496276 in donor C. Positive transfer is unsupported; the bounded failure is supported. Claim-specific scope: Adding stiffness, shear interactions or calibration-dependent response does not establish a robust transferable law in this cohort"
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "CPM-normalized VCAM1 and one donor calibration do not measure absolute transcript concentration or a mechanotransduction constant."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary-source analyses and established equation families are disclosed. This review does not establish exhaustive literature novelty or a new universal law."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful as a transparent bounded research/evaluation case. Four donors, one held donor and no replicate cultures per condition; source association is prior art and is not disproved by failure of these transfer equations."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Exact task, equation/state, group evidence, native semantics and provenance inspected; separate computational review is responsible for complete replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, cost saving or clinical/industrial acceptance outcome was measured."
+        }
+      },
+      "checks": [
+        "Read source/units audit, final findings, task information budget, equation definitions and complete model comparison.",
+        "Checked that shared measurements, calibration and validation units match the stated scientific scope.",
+        "Checked that negative findings reject only the tested families and positive claims do not become universal mechanism assertions."
+      ],
+      "limitations": [
+        "Four donors, one held donor and no replicate cultures per condition; source association is prior art and is not disproved by failure of these transfer equations.",
+        "Public source-aware outcomes are now exposed; agent review is not independent experimental replication."
+      ]
+    }
+  ],
+  "review_scope": "Independent critical assessment of source semantics, evidence and claims; not independent experiments, clinical advice, human expert adjudication or a fresh confirmation campaign.",
+  "source_review": {
+    "primary_url": "https://zenodo.org/records/17925228",
+    "web_access": "Author record inspected live; official gene/source audit supports marker and substrate-stiffness semantics."
+  }
+}

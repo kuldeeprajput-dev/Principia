@@ -1,0 +1,1040 @@
+{
+  "schema_version": "1.0",
+  "case_id": "P100-096",
+  "source": {
+    "landing_url": "https://zenodo.org/records/18098714",
+    "upstream_case": "96_transport_bikez",
+    "version_evidence": "SOURCE_ASSETS.json"
+  },
+  "target": "Author-extracted cyclist speed one second ahead",
+  "target_units": "m/s",
+  "input_units": {
+    "speed": "m/s at current native frame",
+    "past_acc": "m/s^2 from native speed 1 s earlier",
+    "gap": "m; positive-angle arc gap to nearest forward angular bicycle",
+    "relative_speed": "m/s; leader minus follower",
+    "radius": "m",
+    "lateral_gap": "m; radial separation to angular leader",
+    "count": "tracked bicycles in frame"
+  },
+  "input_columns": [
+    "speed",
+    "past_acc",
+    "gap",
+    "relative_speed",
+    "radius",
+    "lateral_gap",
+    "count"
+  ],
+  "numeric_columns": [
+    "speed",
+    "past_acc",
+    "gap",
+    "relative_speed",
+    "radius",
+    "lateral_gap",
+    "count"
+  ],
+  "missingness": "Source computer-vision/Kalman trajectories, 25 Hz; select every 25th frame and exact +/-25-frame pairs. Parts of the same original video remain together. Track IDs may be ambiguous; all 28 riders recur across videos. Source preprocessing may use future smoothing, so predictions are retrospective trajectory dynamics and not certified online safety. Angular-neighbor interaction is a testable approximation; lateral separation and direction reversal are falsifiers.",
+  "primary_metric": "mae",
+  "assigned_rows": 4437,
+  "models": {
+    "reference": {
+      "case": 96,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        0.09757906511891624
+      ],
+      "active_columns": [
+        2
+      ],
+      "terms": [
+        "leader relative speed * relaxation"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "mechanistic_reference": {
+      "case": 96,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        0.09757906511891624
+      ],
+      "active_columns": [
+        2
+      ],
+      "terms": [
+        "leader relative speed * relaxation"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "attempt_001": {
+      "case": 96,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        -0.03667488983913443,
+        0.12040854067732422,
+        0.10449947295841508
+      ],
+      "active_columns": [
+        0,
+        1,
+        2
+      ],
+      "terms": [
+        "free increment",
+        "inertial acceleration * 1s",
+        "leader relative speed * relaxation"
+      ],
+      "fitted_parameters": 3,
+      "design_rank": 3,
+      "design_condition": 1.1623320318283565,
+      "positive_coefficients": false
+    },
+    "attempt_002": {
+      "case": 96,
+      "kind": "a2",
+      "knobs": {},
+      "beta": [
+        -0.03200272789457273,
+        0.1262345845025193,
+        0.09197502384307221,
+        0.13170406610356747
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "terms": [
+        "free increment",
+        "inertial acceleration * 1s",
+        "leader relative speed * relaxation",
+        "optimal-velocity gap response"
+      ],
+      "fitted_parameters": 4,
+      "design_rank": 4,
+      "design_condition": 1.3788734463561707,
+      "positive_coefficients": false
+    },
+    "attempt_003": {
+      "case": 96,
+      "kind": "a3",
+      "knobs": {},
+      "beta": [
+        -0.031294353328090316,
+        0.12508788940398158,
+        0.06519259702886003,
+        0.12953290712192808,
+        0.12778452119412115
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "terms": [
+        "free increment",
+        "inertial acceleration * 1s",
+        "leader relative speed * relaxation",
+        "optimal-velocity gap response",
+        "lateral-decaying speed interaction"
+      ],
+      "fitted_parameters": 5,
+      "design_rank": 5,
+      "design_condition": 2.3465755447964827,
+      "positive_coefficients": false
+    },
+    "attempt_004": {
+      "case": 96,
+      "kind": "a4",
+      "knobs": {},
+      "beta": [
+        -0.05327941835507779,
+        0.1285154218870085,
+        0.05950588883738024,
+        0.20390687390993723,
+        0.12339609280342956,
+        -0.09966348179822013
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "terms": [
+        "free increment",
+        "inertial acceleration * 1s",
+        "leader relative speed * relaxation",
+        "optimal-velocity gap response",
+        "lateral-decaying speed interaction",
+        "overlap/short-gap response"
+      ],
+      "fitted_parameters": 6,
+      "design_rank": 6,
+      "design_condition": 2.4450567177829114,
+      "positive_coefficients": false
+    },
+    "attempt_005": {
+      "case": 96,
+      "kind": "a5",
+      "knobs": {},
+      "beta": [
+        0.0854866287741796,
+        0.13705795592755904,
+        0.031131261053426906,
+        0.04401892131920397,
+        0.14586690272398073,
+        -0.02018343678831771,
+        -0.15481843589842673
+      ],
+      "active_columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "terms": [
+        "free increment",
+        "inertial acceleration * 1s",
+        "leader relative speed * relaxation",
+        "optimal-velocity gap response",
+        "lateral-decaying speed interaction",
+        "overlap/short-gap response",
+        "centripetal speed^2/r surrogate"
+      ],
+      "fitted_parameters": 7,
+      "design_rank": 7,
+      "design_condition": 6.860485593734947,
+      "positive_coefficients": false
+    },
+    "attempt_006": {
+      "case": 96,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        -0.035624697551748914,
+        0.10331405903260094
+      ],
+      "active_columns": [
+        0,
+        1
+      ],
+      "terms": [
+        "free increment",
+        "inertial acceleration * 1s"
+      ],
+      "fitted_parameters": 2,
+      "design_rank": 2,
+      "design_condition": 1.1213362290359508,
+      "positive_coefficients": false
+    },
+    "attempt_007": {
+      "case": 96,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        -0.029107015645077738,
+        0.09757107933555174
+      ],
+      "active_columns": [
+        0,
+        2
+      ],
+      "terms": [
+        "free increment",
+        "leader relative speed * relaxation"
+      ],
+      "fitted_parameters": 2,
+      "design_rank": 2,
+      "design_condition": 1.0002534157887308,
+      "positive_coefficients": false
+    },
+    "baseline_mean": {
+      "case": 96,
+      "kind": "mean",
+      "knobs": {},
+      "beta": [
+        3.0190962748975685
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "1"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "baseline_domain": {
+      "case": 96,
+      "kind": "domain",
+      "knobs": {},
+      "beta": [
+        0.09594645199812418
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "past acceleration * 1s"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "positive_coefficients": false
+    },
+    "baseline_rbf": {
+      "case": 96,
+      "kind": "rbf",
+      "features": [
+        "speed",
+        "past_acc",
+        "gap",
+        "relative_speed",
+        "radius",
+        "lateral_gap",
+        "count"
+      ],
+      "columns": [
+        "speed",
+        "past_acc",
+        "gap",
+        "relative_speed",
+        "radius",
+        "lateral_gap",
+        "count"
+      ],
+      "center": [
+        2.9605361086279536,
+        0.011470017467640954,
+        5.298739318901115,
+        -0.00018022907742256867,
+        13.82220925661103,
+        1.059970351300753,
+        18.011945392491466
+      ],
+      "scale": [
+        1.3613470037258384,
+        0.3978344292119383,
+        7.273567922140774,
+        0.9507981804978406,
+        0.9448079085633252,
+        0.7115777658559657,
+        3.857563633542954
+      ],
+      "centers": [
+        [
+          0.9336370002283536,
+          -0.2913535987731302,
+          -0.24707227527144446,
+          0.37877992664999677,
+          0.41269431710870125,
+          -0.17408499032997,
+          -1.2992515143264862
+        ],
+        [
+          0.6999043172906783,
+          0.208475862827805,
+          -0.02551743595573407,
+          0.19816964036638574,
+          0.7033857946664259,
+          0.4870974673611095,
+          1.033827303023834
+        ],
+        [
+          -0.1848690435632625,
+          0.6196402308251145,
+          0.8474616776305333,
+          0.8434888947205407,
+          0.3658426191705989,
+          -1.286986747271762,
+          -1.5584824940320774
+        ],
+        [
+          1.045900294439018,
+          0.14383573857668625,
+          1.6634657625883422,
+          -1.7005427159702389,
+          0.05118491389625226,
+          -1.095666091312375,
+          0.2561343639070607
+        ],
+        [
+          0.3901818422600795,
+          0.2811725044090737,
+          -0.4619081797227819,
+          0.614990021286251,
+          -0.001617526334240456,
+          1.0730037748621173,
+          0.2561343639070607
+        ],
+        [
+          -1.1924669180534944,
+          -0.2727757771294274,
+          0.05478029683255001,
+          0.3924386544441483,
+          -1.633118453989869,
+          -0.1159334138686489,
+          -1.2992515143264862
+        ],
+        [
+          0.48496042359808933,
+          -0.2865076436797513,
+          -0.46531160034860514,
+          0.9247100393254093,
+          -0.8428506474326511,
+          0.6635974002625893,
+          -1.2992515143264862
+        ],
+        [
+          0.0017223389862823643,
+          -0.056641371784851686,
+          0.0009176239927973083,
+          1.21321618598198,
+          1.0357172517805966,
+          1.369053255893438,
+          0.5153653436126518
+        ],
+        [
+          -0.18062100172192155,
+          -0.6143054703980476,
+          -0.5904270195810367,
+          -0.880455450186717,
+          -0.40597068716654505,
+          -0.08147297232334731,
+          0.5153653436126518
+        ],
+        [
+          0.20179024307959062,
+          -0.576004280095101,
+          0.23172136438953597,
+          0.24242804011756644,
+          1.312856254406223,
+          -0.13262998436469742,
+          0.2561343639070607
+        ],
+        [
+          0.8662641702295346,
+          0.45615636173238827,
+          -0.24300100239173905,
+          0.1758712069815151,
+          -0.10344381125425778,
+          -1.0409361057686,
+          1.033827303023834
+        ],
+        [
+          -2.119008329132832,
+          -0.1434469111091518,
+          -0.7213830522986718,
+          0.0012643400322660786,
+          -0.8722557353817765,
+          -0.11847244305235688,
+          -0.26232759550412166
+        ],
+        [
+          1.2445500368218425,
+          0.14152781652396626,
+          0.20715487203772817,
+          -0.6371064723244951,
+          0.8388336478482532,
+          1.65860210298357,
+          -1.2992515143264862
+        ],
+        [
+          -2.174710856618726,
+          -0.14553438477129627,
+          2.9240749999430484,
+          3.1156932918783578,
+          0.31584769948053093,
+          -1.0480525731211727,
+          1.033827303023834
+        ],
+        [
+          1.531188646032283,
+          9.755100251785919,
+          -0.16165550671799322,
+          -0.9333071898520352,
+          -1.3221783237458722,
+          -1.0555329787231496,
+          -0.26232759550412166
+        ],
+        [
+          0.21103286718637904,
+          0.8346072824274313,
+          0.1768102946344519,
+          1.6132090021946792,
+          1.0608040507672623,
+          -0.4331459318147693,
+          -1.5584824940320774
+        ],
+        [
+          1.012661826759639,
+          -1.1663404669645874,
+          -0.19363670555466364,
+          -0.03918274215973055,
+          0.9584147414852907,
+          -1.4844444153841476,
+          -1.040020534620895
+        ],
+        [
+          -0.4437191964239799,
+          0.13079200993400072,
+          -0.4625669094644634,
+          1.0241783538484046,
+          0.8705714257477513,
+          0.24831043973175113,
+          0.5153653436126518
+        ],
+        [
+          -0.02490792123042595,
+          1.4095184769303222,
+          -0.3732404131429992,
+          -0.0289845134522125,
+          0.1086627123030252,
+          -1.3718505634625093,
+          0.2561343639070607
+        ],
+        [
+          0.20629013796972365,
+          0.20108494839719127,
+          0.03995268780594506,
+          -0.3183965987235265,
+          -0.7142354477080178,
+          -0.35656726499010616,
+          -2.07694445344326
+        ],
+        [
+          0.23229082448997557,
+          6.281042055418588,
+          2.015079291930157,
+          -0.9709927107493497,
+          0.8367189967832214,
+          -1.4483793159095988,
+          -3.1138683722656246
+        ],
+        [
+          1.1288844470539472,
+          1.1705097815815115,
+          -0.06287283118267842,
+          -1.484410479501453,
+          -0.6341606370073607,
+          0.8711428693534341,
+          -0.26232759550412166
+        ],
+        [
+          1.0022906446451156,
+          -0.669640924895702,
+          -0.6661634194279181,
+          -0.9529478712160956,
+          -1.0936103764930758,
+          1.210212096476601,
+          1.033827303023834
+        ],
+        [
+          0.37816006341475605,
+          0.9400562995148959,
+          -0.3866075528586885,
+          1.3590748978633633,
+          0.17517793620715488,
+          0.8259880258777164,
+          0.2561343639070607
+        ],
+        [
+          -0.01628851111895786,
+          -0.17255703219681326,
+          0.6900711283392404,
+          0.47285484909674236,
+          -0.02589913381913703,
+          -0.973613591850471,
+          0.2561343639070607
+        ],
+        [
+          0.909518458662306,
+          -0.326958484765154,
+          0.2748166297282523,
+          -0.6763177512890672,
+          0.8590274664608775,
+          -1.3713877286534093,
+          -1.040020534620895
+        ],
+        [
+          -0.014854085420902642,
+          0.32661334697961814,
+          0.15800377094939178,
+          0.8998286641973092,
+          -0.2929230294856211,
+          -0.4003285962526671,
+          -1.2992515143264862
+        ],
+        [
+          0.35437168051535306,
+          0.6215901076076621,
+          -0.5059388817215286,
+          -0.5407050068619967,
+          -0.5663214057220864,
+          0.28459588827150556,
+          0.2561343639070607
+        ],
+        [
+          -2.104856057767422,
+          -3.3460054852904366,
+          -0.46623794778475,
+          -0.09231563195234614,
+          1.4017209046393424,
+          -0.5293217296744519,
+          -0.26232759550412166
+        ],
+        [
+          0.8493843201593962,
+          0.905711951380495,
+          0.25930264918706825,
+          -0.628054149222095,
+          -0.05543022415745382,
+          0.34495684838674096,
+          -3.1138683722656246
+        ],
+        [
+          0.3579301198017028,
+          0.17085473807528004,
+          -0.13006834165093092,
+          0.18634126628606726,
+          -1.0158028232279381,
+          -1.4373096514843726,
+          -1.2992515143264862
+        ],
+        [
+          0.3329197170075627,
+          1.367334913489703,
+          0.7947457065842748,
+          1.3665546621880933,
+          0.7090817434114056,
+          1.2005204129751639,
+          0.5153653436126518
+        ],
+        [
+          -2.174710856618726,
+          -0.028831133319360183,
+          -0.511883840724675,
+          0.00018955555565766883,
+          -0.03128552015840401,
+          -1.4536649268278707,
+          -2.07694445344326
+        ],
+        [
+          -0.3019098208074711,
+          4.878481244619889,
+          -0.5537753688871506,
+          -0.9400585264298874,
+          -0.4901653597849261,
+          0.08592033312259584,
+          -1.2992515143264862
+        ],
+        [
+          -0.27302425849231776,
+          -0.5207942624345878,
+          0.21955599537655504,
+          0.11464197764200552,
+          0.9622663736387996,
+          -1.2065215705485919,
+          0.5153653436126518
+        ],
+        [
+          -2.0916460559071943,
+          0.25540775919611464,
+          -0.7101175108201297,
+          0.013455842701955007,
+          -1.3729731050770961,
+          0.4737893001932236,
+          0.5153653436126518
+        ],
+        [
+          -2.082619177406686,
+          -0.028831133319360183,
+          -0.6283155027655318,
+          0.00018955555565766883,
+          -0.4290795061570529,
+          -0.33560034960278956,
+          0.5153653436126518
+        ],
+        [
+          -0.7602042449297486,
+          1.7057729255347274,
+          -0.590565708546132,
+          -2.0107889906381478,
+          0.6712817693160579,
+          0.23540157968263584,
+          1.033827303023834
+        ],
+        [
+          -0.08293102322319575,
+          -0.7894253474342617,
+          -0.6010606724430878,
+          1.2626124931428135,
+          0.9653373843679337,
+          1.0092766831518198,
+          1.033827303023834
+        ],
+        [
+          -0.09496191093940029,
+          -0.08966017755227094,
+          0.5540423340083355,
+          -0.3499167295043577,
+          -0.521842309102893,
+          -1.3735674789460932,
+          -1.2992515143264862
+        ],
+        [
+          1.0697290292330466,
+          0.02655391486960032,
+          -0.16551557093958352,
+          -0.08087508829641589,
+          0.8902374526118535,
+          0.2736357183414212,
+          -3.1138683722656246
+        ],
+        [
+          -2.112520345564837,
+          0.18397816539090195,
+          -0.5389518825131917,
+          0.9305135531450057,
+          0.13411015830988515,
+          -0.2996370657582986,
+          0.2561343639070607
+        ],
+        [
+          -2.136790753413707,
+          -0.4561075032256972,
+          -0.7210563472718095,
+          0.00018955555551747487,
+          -1.5806673027364455,
+          -0.1080746212281251,
+          0.2561343639070607
+        ],
+        [
+          0.5618291866880747,
+          0.14469765960409794,
+          0.1911896389569655,
+          -0.1746493757734007,
+          -0.5560783456921883,
+          -0.548745314062823,
+          0.5153653436126518
+        ],
+        [
+          -0.1301482630822435,
+          0.8066522784734734,
+          -0.45211300297061924,
+          0.27613926467064437,
+          0.7221785018144659,
+          1.9258001003023746,
+          0.5153653436126518
+        ],
+        [
+          0.5385564985592012,
+          0.16420400710012137,
+          -0.22351845505080076,
+          -0.2973242816234638,
+          1.1417734303107416,
+          -1.1533664153864578,
+          -2.07694445344326
+        ],
+        [
+          0.3431735006912115,
+          3.647271602453558,
+          0.568780805078639,
+          -1.0187964258268594,
+          0.42639496402368277,
+          -1.3712209171039431,
+          -3.1138683722656246
+        ],
+        [
+          0.2739312676094865,
+          0.5867472806436645,
+          -0.3154475564041629,
+          0.3586245027045686,
+          0.43642047659720934,
+          -0.7924724858947363,
+          -1.040020534620895
+        ],
+        [
+          0.3670215678267927,
+          0.28791150670044996,
+          0.2731748723705247,
+          0.09029107237208606,
+          1.0368171879681762,
+          -0.6300391355678392,
+          0.2561343639070607
+        ],
+        [
+          -0.36401022821155654,
+          0.4320484816872527,
+          -0.5095625453655915,
+          3.346255546567846,
+          0.26052541234613885,
+          0.8109670630097467,
+          0.5153653436126518
+        ],
+        [
+          0.042614060115815325,
+          0.5157813258801865,
+          0.6714868523862874,
+          -1.6102184192753128,
+          0.590880667113343,
+          1.0877672255685629,
+          1.033827303023834
+        ],
+        [
+          0.5076687872218056,
+          0.7231450348040631,
+          1.5723664576482699,
+          0.6721128518083551,
+          0.6260974771144805,
+          -0.9682929972621118,
+          -0.26232759550412166
+        ],
+        [
+          0.04568405057537692,
+          -1.6341263765662866,
+          -0.02027055423070029,
+          0.2427861718560706,
+          0.28174853340455425,
+          -1.233109143657939,
+          -2.336175433148851
+        ],
+        [
+          0.5069179232277421,
+          0.10091719249793142,
+          -0.2480778365764072,
+          0.4283695629027389,
+          1.2587371690725253,
+          -1.1281100001016313,
+          -1.040020534620895
+        ],
+        [
+          0.840538995142916,
+          -2.0047138177315125,
+          4.22357708258988,
+          -1.9100972241991652,
+          -1.164904869277735,
+          1.2856479273851178,
+          -1.2992515143264862
+        ],
+        [
+          0.6496545856349496,
+          1.4068922109744877,
+          -0.4711872449873634,
+          -1.1302909435014947,
+          -1.9620619363859044,
+          0.3210006382850056,
+          1.033827303023834
+        ],
+        [
+          -2.1432294321620295,
+          -0.028831133319304387,
+          -0.7129438373123287,
+          0.00018955555563432262,
+          -1.120124579473752,
+          1.2821079815895635,
+          0.2561343639070607
+        ],
+        [
+          -0.17619494125779878,
+          1.2090240233726068,
+          -0.13656553300307575,
+          1.0054175430908983,
+          0.9721754223907374,
+          1.0831934043433054,
+          -1.2992515143264862
+        ],
+        [
+          0.7787066181619726,
+          -0.359697639672462,
+          -0.4458296479532553,
+          0.12304463566432507,
+          0.7837141886762394,
+          -1.4206088519771978,
+          1.033827303023834
+        ],
+        [
+          -0.7335000272772251,
+          1.1997986629648552,
+          -0.2989751568783329,
+          -0.0024250146853100414,
+          1.1325553231351244,
+          -1.0908182383770055,
+          -2.07694445344326
+        ],
+        [
+          0.8614886754863035,
+          1.531805535452349,
+          -0.47566341236104387,
+          -1.5961972376780114,
+          -0.19972783408595016,
+          0.37401444700894354,
+          0.2561343639070607
+        ]
+      ],
+      "width": 2.0,
+      "beta": [
+        0.2399537011655296,
+        0.5744312489869664,
+        0.12231268905195994,
+        0.6963980134062383,
+        0.554293440483766,
+        0.08228950064437354,
+        -0.16513035821811622,
+        -0.22602492026208648,
+        -0.7950260174097016,
+        0.010175262332748927,
+        0.23784754957230167,
+        -0.13487687639708365,
+        0.12538504981910548,
+        -2.529326165524483,
+        1.110274471830235,
+        0.13260352189975935,
+        0.7005819369599408,
+        0.08678891292172126,
+        -0.3631814312202836,
+        -0.3159427353026502,
+        0.3334367036186619,
+        0.9501630016121986,
+        1.191670776165721,
+        0.6656359013438279,
+        0.4161893991961456,
+        -0.10740751844488491,
+        0.35862453240729264,
+        -0.32264004258482265,
+        -2.5517845580260583,
+        0.541170824558177,
+        0.5010241016982977,
+        0.03771928377281678,
+        -0.9444245115441035,
+        0.5882372706752226,
+        -0.2085777961010855,
+        -0.25818732516194676,
+        -0.49899055180243546,
+        -1.0366678452867104,
+        0.46817811384048974,
+        -0.2736858001662426,
+        0.4746317602650867,
+        -0.7746464674778811,
+        -0.28875297373644804,
+        -0.11329022965533073,
+        -0.6260620579320335,
+        0.06982651779683846,
+        0.19580910817948788,
+        0.13705552099070534,
+        -0.347863558183725,
+        -0.2870797107454001,
+        -0.6778800756220721,
+        -0.048824098133359785,
+        -0.18590247065512486,
+        0.3749615580972557,
+        1.0589026135477704,
+        0.5227426075975682,
+        -1.2001059031883758,
+        -0.6563752248561582,
+        0.6854680906552975,
+        -0.9578158410229621,
+        0.30867689578225016
+      ],
+      "intercept": 3.019096275199457,
+      "log": false,
+      "fitted_parameters": 62
+    },
+    "baseline_persistence": {
+      "case": 96,
+      "kind": "persistence",
+      "beta": [
+        0.0
+      ],
+      "fitted_parameters": 0
+    },
+    "attempt_008": {
+      "case": 96,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        -0.029129848411759047
+      ],
+      "active_columns": [
+        0
+      ],
+      "terms": [
+        "free increment"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    },
+    "attempt_009": {
+      "case": 96,
+      "kind": "a1",
+      "knobs": {},
+      "beta": [
+        0.09757906511891624
+      ],
+      "active_columns": [
+        2
+      ],
+      "terms": [
+        "leader relative speed * relaxation"
+      ],
+      "fitted_parameters": 1,
+      "design_rank": 1,
+      "design_condition": 1.0,
+      "rank_deficient": false,
+      "positive_coefficients": false
+    }
+  },
+  "selection": {
+    "mechanistic_attempt": "attempt-009",
+    "default_origin": "mechanistic_reference",
+    "rule": "Default = strongest frozen development predictor among scientific hypotheses and all controls; separately select simplest mechanistic hypothesis within 1% of its best grouped development primary error. No confirmation selection.",
+    "used_confirmation": false
+  },
+  "equations": {
+    "reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "mechanistic_reference": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_001": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_002": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_003": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_004": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_005": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_006": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_007": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_mean": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_domain": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "baseline_rbf": "Frozen group-balanced Gaussian-kernel ridge: yhat = intercept + sum_j beta_j exp(-||standardized X-center_j||^2/8); exp(yhat) for positive modulus task. All scales/centers/coefficients frozen.",
+    "baseline_persistence": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_008": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis.",
+    "attempt_009": "yhat = offset(X) + sum_j beta_j phi_j(X; frozen physical clocks), followed only by the explicit physical output bounds; exact dimensionless terms, all coefficients and clocks are in this state and run.py::basis."
+  },
+  "scope": "One controlled circular-track session, recurring riders; no new-rider, on-road safety or crash-prevention transfer claim.",
+  "timing": "Only current and past extracted speeds and current geometry/neighbor state. Future target speed is inaccessible to candidate replay.",
+  "fresh_confirmation_after_delivery": false,
+  "admission": "Numerical reference collection; no independently established new physical law or measured deployed industrial benefit."
+}

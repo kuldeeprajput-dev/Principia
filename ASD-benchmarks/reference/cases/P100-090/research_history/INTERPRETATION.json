@@ -1,0 +1,30 @@
+{
+  "title": "Crowd rotation: short-horizon memory and heterogeneity",
+  "summary": "A compact aggregate-memory rule tests whether directional heterogeneity adds useful short-horizon information beyond current collective rotation. Its interpretation is phenomenological and limited to the released group experiments.",
+  "data": "Native trajectories cover 26 country/age/condition groups. All repetitions of a condition remain linked: 1,158 development origins in 21 conditions and 270 confirmation origins in five conditions. The singleton teenager condition is development-only. Japan and child coordinates are converted from source centimetres to metres. At each integer time, positions use only the last available sample at or before that time; velocity is backward one-second displacement. The target is the mean angular order at the next two seconds. Native author-supplied velocity/polarization fields are excluded because their causal derivative windows are unspecified.",
+  "equations": "For moving participant i, a_i=(r_x*v_y-r_y*v_x)/(|r|*|v|) about the current group centroid. P is its participant mean; H is the square root of its within-group variance. Let P0 be current order and Ppast the previous two-second mean. The selected rule is Pfuture_hat=clip[Ppast+a*(P0-Ppast)+c*H*Ppast,-1,1], with [a,c]=[0.828009503397648, -0.09191006303742405]. Prefix-derived tracked participants only are used; no future trajectory endpoints enter inputs.",
+  "performance": "Confirmation MAE is 0.065958 in signed angular-order units versus current-order persistence 0.065719, past-order persistence 0.073544, and the flexible control 0.064747. Individual conditions and every alternative are retained. The development-selected simpler005 omits initial-drift calibration even though004 had slightly lower development error.",
+  "value": "The heterogeneity term damps an existing signed collective rotation. It is compatible with dephasing, but does not establish an individual motor bias, social coupling strength or biological law. Source published condition-level outcomes were already visible during the semantics audit. Participant reuse is unresolved and five held conditions are not five independent populations. The two-second horizon is chosen to retain short child experiments.",
+  "lessons": "Test causal prefixes explicitly when native source velocity is derived. Normalize source units and relative time origins before defining the endpoint. Keep all condition repetitions together and distinguish group-level order prediction from individual behavioral mechanism. Short trajectories require an honest common horizon, not elimination after seeing performance.",
+  "findings": [
+    {
+      "classification": "validated_extension",
+      "admission": "unsupported",
+      "claim": "The proposed aggregate-memory and heterogeneity equation improves reserved-condition two-second rotation prediction over all matched controls.",
+      "equation": "See rules.json models.reference: Pfuture_hat=clip[Ppast+a(P0-Ppast)+c H Ppast,-1,1].",
+      "interpretation": "Memory and within-group directional spread provide a compact phenomenological description; coefficient signs do not identify participant-level causal mechanisms.",
+      "falsification": "Limited conditions, possible repeated participants, author-publication exposure and short windows constrain generalization. Compare every held group and persistence before accepting the positive transfer claim."
+    },
+    {
+      "classification": "informative_falsification",
+      "admission": "supported",
+      "claim": "The campaign does not establish a new universal collective-rotation or individual-bias law.",
+      "equation": "Mean-field cubic002 and density/boundary003 models remain recorded; no causal individual-bias equation is admitted.",
+      "interpretation": "Aggregate trajectories and short forecast accuracy cannot independently separate intrinsic locomotor bias, social interactions and boundary effects.",
+      "falsification": "No independent perturbation or new experiment; published source outcomes and the now-exposed confirmation cannot provide a novelty proof."
+    }
+  ],
+  "unresolved": [
+    "Source-aware exposed outcomes; no independent experimental replication or definitive novelty adjudication."
+  ]
+}

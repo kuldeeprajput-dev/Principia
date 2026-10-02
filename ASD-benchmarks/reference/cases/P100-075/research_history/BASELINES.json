@@ -1,0 +1,392 @@
+{
+  "baseline_copy": {
+    "metrics": {
+      "primary_error": 0.9191598813389589,
+      "mean_group_absolute_error": 0.9191598813389589,
+      "group_rmse_mean": 1.1269439272910418,
+      "worst_group_mae": 1.3098512627246262,
+      "bias": 0.6456284453280404,
+      "groups": 3,
+      "rows": 15,
+      "by_group": [
+        {
+          "group": "A",
+          "mae": 1.032340606689584,
+          "mse": 1.519898573879797,
+          "bias": 0.7467125362616392
+        },
+        {
+          "group": "B",
+          "mae": 1.3098512627246262,
+          "mse": 2.8611652473361016,
+          "bias": 1.3098512627246262
+        },
+        {
+          "group": "D",
+          "mae": 0.41528777460266675,
+          "mse": 0.2083851155567936,
+          "bias": -0.11967846300214395
+        }
+      ]
+    },
+    "model": {
+      "kind": "copy",
+      "coef": [],
+      "K": 200.0,
+      "equation": "y_hat=c",
+      "training_groups": [
+        "A",
+        "B",
+        "D"
+      ],
+      "training_rows": 15,
+      "rank": 0,
+      "parameter_count": 0,
+      "profile_training_mse": [
+        {
+          "K": 200.0,
+          "weighted_sse": 4.589448936772691
+        }
+      ],
+      "ridge": 1e-08,
+      "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+    },
+    "fold_states": {
+      "0": {
+        "kind": "copy",
+        "coef": [],
+        "K": 200.0,
+        "equation": "y_hat=c",
+        "training_groups": [
+          "B",
+          "D"
+        ],
+        "training_rows": 10,
+        "rank": 0,
+        "parameter_count": 0,
+        "profile_training_mse": [
+          {
+            "K": 200.0,
+            "weighted_sse": 3.0695503628928953
+          }
+        ],
+        "ridge": 1e-08,
+        "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+      },
+      "1": {
+        "kind": "copy",
+        "coef": [],
+        "K": 200.0,
+        "equation": "y_hat=c",
+        "training_groups": [
+          "A",
+          "D"
+        ],
+        "training_rows": 10,
+        "rank": 0,
+        "parameter_count": 0,
+        "profile_training_mse": [
+          {
+            "K": 200.0,
+            "weighted_sse": 1.7282836894365905
+          }
+        ],
+        "ridge": 1e-08,
+        "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+      },
+      "2": {
+        "kind": "copy",
+        "coef": [],
+        "K": 200.0,
+        "equation": "y_hat=c",
+        "training_groups": [
+          "A",
+          "B"
+        ],
+        "training_rows": 10,
+        "rank": 0,
+        "parameter_count": 0,
+        "profile_training_mse": [
+          {
+            "K": 200.0,
+            "weighted_sse": 4.381063821215898
+          }
+        ],
+        "ridge": 1e-08,
+        "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+      }
+    }
+  },
+  "baseline_log_additive": {
+    "metrics": {
+      "primary_error": 0.9556043681311515,
+      "mean_group_absolute_error": 0.9556043681311515,
+      "group_rmse_mean": 1.255223428814623,
+      "worst_group_mae": 1.0269611025062386,
+      "bias": 0.06898331999842473,
+      "groups": 3,
+      "rows": 15,
+      "by_group": [
+        {
+          "group": "A",
+          "mae": 0.8637212973385445,
+          "mse": 1.4971352155351614,
+          "bias": 0.27341703125680106
+        },
+        {
+          "group": "B",
+          "mae": 0.9761307045486713,
+          "mse": 2.0757267146442513,
+          "bias": 0.9604940312447117
+        },
+        {
+          "group": "D",
+          "mae": 1.0269611025062386,
+          "mse": 1.2129878230073587,
+          "bias": -1.0269611025062386
+        }
+      ]
+    },
+    "model": {
+      "kind": "log_additive",
+      "coef": [
+        -0.05662530206803568,
+        -0.7570852818573747
+      ],
+      "K": 200.0,
+      "equation": "y_hat=max(0,c+b1*ln(E/30)+b2*s)",
+      "training_groups": [
+        "A",
+        "B",
+        "D"
+      ],
+      "training_rows": 15,
+      "rank": 2,
+      "parameter_count": 2,
+      "profile_training_mse": [
+        {
+          "K": 200.0,
+          "weighted_sse": 3.2185809163864225
+        }
+      ],
+      "ridge": 1e-08,
+      "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+    },
+    "fold_states": {
+      "0": {
+        "kind": "log_additive",
+        "coef": [
+          0.07898756140257743,
+          -1.0733747340217203
+        ],
+        "K": 200.0,
+        "equation": "y_hat=max(0,c+b1*ln(E/30)+b2*s)",
+        "training_groups": [
+          "B",
+          "D"
+        ],
+        "training_rows": 10,
+        "rank": 2,
+        "parameter_count": 2,
+        "profile_training_mse": [
+          {
+            "K": 200.0,
+            "weighted_sse": 1.9741678363842312
+          }
+        ],
+        "ridge": 1e-08,
+        "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+      },
+      "1": {
+        "kind": "log_additive",
+        "coef": [
+          -0.0690533920686423,
+          -0.33350052752478315
+        ],
+        "K": 200.0,
+        "equation": "y_hat=max(0,c+b1*ln(E/30)+b2*s)",
+        "training_groups": [
+          "A",
+          "D"
+        ],
+        "training_rows": 10,
+        "rank": 2,
+        "parameter_count": 2,
+        "profile_training_mse": [
+          {
+            "K": 200.0,
+            "weighted_sse": 1.4346273922751689
+          }
+        ],
+        "ridge": 1e-08,
+        "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+      },
+      "2": {
+        "kind": "log_additive",
+        "coef": [
+          -0.17981007701951046,
+          -0.864380575048117
+        ],
+        "K": 200.0,
+        "equation": "y_hat=max(0,c+b1*ln(E/30)+b2*s)",
+        "training_groups": [
+          "A",
+          "B"
+        ],
+        "training_rows": 10,
+        "rank": 2,
+        "parameter_count": 2,
+        "profile_training_mse": [
+          {
+            "K": 200.0,
+            "weighted_sse": 2.401459065496962
+          }
+        ],
+        "ridge": 1e-08,
+        "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+      }
+    }
+  },
+  "baseline_quadratic": {
+    "metrics": {
+      "primary_error": 0.9894454436197568,
+      "mean_group_absolute_error": 0.9894454436197568,
+      "group_rmse_mean": 1.248524223488763,
+      "worst_group_mae": 1.0990378495782145,
+      "bias": 0.03129683166040068,
+      "groups": 3,
+      "rows": 15,
+      "by_group": [
+        {
+          "group": "A",
+          "mae": 0.8893839180790767,
+          "mse": 1.0856557985970066,
+          "bias": 0.2130137813574371
+        },
+        {
+          "group": "B",
+          "mae": 0.9799145632019794,
+          "mse": 1.8137531443423274,
+          "bias": 0.9799145632019794
+        },
+        {
+          "group": "D",
+          "mae": 1.0990378495782145,
+          "mse": 1.8410909439901828,
+          "bias": -1.0990378495782145
+        }
+      ]
+    },
+    "model": {
+      "kind": "quadratic",
+      "coef": [
+        0.5812978260495674,
+        -1.240440018423564,
+        -0.08382356981264968,
+        -0.24487275128872252,
+        0.1607349548852278
+      ],
+      "K": 200.0,
+      "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s+b4*x^2+b5*x^2*s), x=ln(E/30)",
+      "training_groups": [
+        "A",
+        "B",
+        "D"
+      ],
+      "training_rows": 15,
+      "rank": 5,
+      "parameter_count": 5,
+      "profile_training_mse": [
+        {
+          "K": 200.0,
+          "weighted_sse": 2.290824897155303
+        }
+      ],
+      "ridge": 0.1,
+      "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+    },
+    "fold_states": {
+      "0": {
+        "kind": "quadratic",
+        "coef": [
+          0.26628379804488655,
+          -1.413981724864256,
+          0.07534057314967212,
+          -0.10491342379834252,
+          0.10215228453219771
+        ],
+        "K": 200.0,
+        "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s+b4*x^2+b5*x^2*s), x=ln(E/30)",
+        "training_groups": [
+          "B",
+          "D"
+        ],
+        "training_rows": 10,
+        "rank": 5,
+        "parameter_count": 5,
+        "profile_training_mse": [
+          {
+            "K": 200.0,
+            "weighted_sse": 1.5272983128444912
+          }
+        ],
+        "ridge": 0.1,
+        "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+      },
+      "1": {
+        "kind": "quadratic",
+        "coef": [
+          0.5860985946102657,
+          -0.48219666093770597,
+          -0.3419302971508564,
+          -0.22420094300398766,
+          0.1533666761500178
+        ],
+        "K": 200.0,
+        "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s+b4*x^2+b5*x^2*s), x=ln(E/30)",
+        "training_groups": [
+          "A",
+          "D"
+        ],
+        "training_rows": 10,
+        "rank": 5,
+        "parameter_count": 5,
+        "profile_training_mse": [
+          {
+            "K": 200.0,
+            "weighted_sse": 1.1190349529903
+          }
+        ],
+        "ridge": 0.1,
+        "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+      },
+      "2": {
+        "kind": "quadratic",
+        "coef": [
+          0.6996110088097194,
+          -1.5892192539296728,
+          0.04762178054108444,
+          -0.34663683274528534,
+          0.1932792810845852
+        ],
+        "K": 200.0,
+        "equation": "y_hat=max(0,c+b1*x+b2*s+b3*x*s+b4*x^2+b5*x^2*s), x=ln(E/30)",
+        "training_groups": [
+          "A",
+          "B"
+        ],
+        "training_rows": 10,
+        "rank": 5,
+        "parameter_count": 5,
+        "profile_training_mse": [
+          {
+            "K": 200.0,
+            "weighted_sse": 0.922696206340528
+          }
+        ],
+        "ridge": 0.1,
+        "units": "y and c: log2(1+CPM); E and K: kPa; s: HSS indicator"
+      }
+    }
+  }
+}

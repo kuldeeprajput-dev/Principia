@@ -1,0 +1,39 @@
+{
+  "case_id": "P100-012",
+  "findings": [
+    {
+      "finding_id": "P100-012-F01",
+      "classification": "reproduction",
+      "claim": "A calibrated finite-film interference surrogate transfers measured higher-angle XRR structure to the reserved deposition batch better than a smooth envelope.",
+      "equation": "Ihat(q)=I0 F(q)/F(q0) exp[-sigma\u00b2(q\u00b2-q0\u00b2)] [1+r cos(qd+phi)]/[1+r cos(q0d+phi)]. F(q)=[(q-sqrt(q\u00b2-qc\u00b2))/(q+sqrt(q\u00b2-qc\u00b2))]\u00b2.",
+      "evidence": "Held deposition4,three wafers,nine spectra: wafer-balanced MAE6199.7counts versus smooth flexible11368.2 and asymptotic Fresnel53215.6; no held-band fitting.",
+      "known_prior_art": "Fresnel reflection,Kiessig fringes and roughness attenuation are established thin-film optics.",
+      "falsification": "Worst held wafer MAE11319.3counts; only one reserved deposition.",
+      "scope": "Fixedlow-anglecalibrationand2theta1.4\u20134.8deg; one65-cycleALDprocess.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-012-F02",
+      "classification": "informative_falsification",
+      "claim": "The asymptotic q^-4 envelope is insufficient when normalized by this near-critical calibration band.",
+      "equation": "I0(q0/q)^4 versus finite-angleFresnelandKiessigforms.",
+      "evidence": "Large systematicpositivebias inq^-4control; finite-anglemodelreduces error and coherentfringesreduceit further.",
+      "known_prior_art": "The Fresnel tail is an asymptotic approximation, not valid at every calibrationangle.",
+      "falsification": "This does not reject theq^-4far-tail physical limit.",
+      "scope": "Specific calibration and recorded instrument geometry.",
+      "admission": "supported"
+    },
+    {
+      "finding_id": "P100-012-F03",
+      "classification": "unsupported",
+      "claim": "The fitted period proves a newly measured absolute film thickness or a universal center-to-edge growth gradient.",
+      "equation": "Effective d\u224886.36\u00c5; position-dependent d+dr*outer did not improve primary developmenterror.",
+      "evidence": "No independent thickness measurement used; phase/refraction/interface parameters are correlated. AuthorSEfits are not independent validation.",
+      "known_prior_art": "XRR parameter inference can be nonunique without a complete layer/instrument model.",
+      "falsification": "Additionalpositiontermdoesnottransfer better underprimarycriterion.",
+      "scope": "Effective predictive surrogate,notcertifiedmetrology.",
+      "admission": "unsupported"
+    }
+  ],
+  "scientific_adjudication": "Agent-assisted analysis; not independent experimental replication or human expert adjudication."
+}

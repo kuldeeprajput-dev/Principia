@@ -1,0 +1,14 @@
+{
+  "case": 38,
+  "type": "linear",
+  "features": [
+    "m5",
+    "m20"
+  ],
+  "offset": "last",
+  "scale": null,
+  "alpha": 0,
+  "title": "Two-timescale mean reversion",
+  "hypothesis": "Short and longer trailing signal means compete with trend. Mean reversion can reject noise-driven extrapolation without claiming propagation physics.\n\nDevelopment feedback available before this hypothesis: [{\"attempt\": \"attempt-001\", \"group_MAE\": 1.2577260893238156, \"worst_group\": 1.7260980576240144}]\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state."
+}

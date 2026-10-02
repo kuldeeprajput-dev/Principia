@@ -1,0 +1,34 @@
+{
+  "case_id": "P100-065",
+  "title": "Injection-ratio laser noise transfer",
+  "created_utc": "2026-10-01T15:22:06.252067+00:00",
+  "target": "Log frequency-noise spectral density",
+  "target_units": "dB re 1 Hz^2/Hz",
+  "error_units": "dB re 1 Hz^2/Hz",
+  "metric_kind": "mae",
+  "input_columns": [
+    "frequency_Hz",
+    "injection_dB"
+  ],
+  "input_units": {
+    "frequency_Hz": "Hz",
+    "injection_dB": "dB"
+  },
+  "scope": "Complete injection ratio; one laser/resonator setup. Development validation blocks complete log-frequency bands across two ratios.",
+  "source_paper": "https://eprints.soton.ac.uk/507397/1/prj-13-3-611.pdf",
+  "selection": "Lowest whole-group OOF physical-unit MAE among substantive attempts; prefer fewer coefficients within1percent. Baselines retained even if superior. No test-based replacement.",
+  "stopping": "At least five materially distinct attempts. Continue distinct evidence-led hypotheses; stop after two consecutive substantive attempts after the current best with no >=1percent MAE gain, >=5percent worst-group gain, or supported structural simplification.",
+  "confirmation": "Separate process only after code/states/selection/stopping hashes frozen; all outcomes become exposed thereafter.",
+  "exposure": "Public source-aware corpus; source plots and published analyses known. Schema previews exposed first rows only. Case30 speeds>=13.9mm/s previewed; scored0.28\u201310mm/s unviewed. Case22 initial~0.006V row previewed; targetV>=0.05V unviewed. Case65 10Hz first rows previewed; scoref>=100Hz. Reserved response distributions and scores unopened.",
+  "uncertainty": "Per-group errors and ranges only; no dependent-row confidence interval. Very few top-level conditions constrain generalization.",
+  "calibration": "No held-ratio calibration. Log10 target transform fixed; measuredPSD only and100<=f<=1e6Hz.",
+  "source_hash": "3bed0048e3256a95a5a69025d343283e1f0f9e20fd59506f10560a720003a446",
+  "split_hash": "0e49d5557730b9a7c9a8d6504791093d6404ed42638de692a6fa33348d689dd3",
+  "baselines": [
+    "mean/constant",
+    "established physical or matched calibration baseline",
+    "constrained flexible model under same information"
+  ],
+  "fit": "Development-only group-balanced least squares; forcase65 equivalent least squares in decibels. Frozen transformations; parameter bounds recorded per candidate.",
+  "exclusions": "Nonfinite native values excluded with anchors; none excluded by fit residuals. All source bytes unchanged."
+}

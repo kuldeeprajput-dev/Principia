@@ -1,0 +1,150 @@
+{
+  "schema_version": "principia.review-packet/3.0",
+  "bindings": {
+    "claims_sha256": "1f75449e3e344da34030b753a1dfdfb269a146f7cd7a9e3b984988bc4e562ceb",
+    "evidence_sha256": {
+      "E001": "b47835ec5e1fea71cb6b467f6fb8f7b4d29a945a70f3a860af27873f21dfb0a9",
+      "E002": "0ad409746f873652b184564336079f395e92c6236bb3e5e495e3a1b6fb81c25c",
+      "E003": "68a56b6a7b0096d805b5c881d8f2897b750f525b59fac584f9e6835c11f5637c",
+      "E004": "751069870b53c0e5e6e51b346bd2f115b6bb300187d289143d777af431323318",
+      "E005": "d66a2257fb5c8123797794bf85f9ca36b901f6566d49d89cd283d2699789fae8",
+      "E006": "38fb85a923a513ccb2ee9e3894a7cdd03228c968ffbc81c3cf197ffc8a3f877c",
+      "E007": "3b7234b53fbc314ea4387388e8e5fd1dda7b6b2ee7c1a0446ceeeea716a7cb2c",
+      "E008": "7c4d70a2cf71787fd2c72d1776cb7c4d615c7631c8241ff490fba6f00e56c1e0",
+      "E009": "c984a2ec3ce96170b4bbeada4de96f4bb342f06d163b7251bd17e8bf818e680a",
+      "E010": "ccd5fbf5ad05236fe33589736363a27916e01aeacf76294ba2395a9573a1ca26",
+      "E011": "88370a26127a9ed9891bea083580d59459435d2590904c994a2c5980669fd19e",
+      "E012": "133309bb39aa6af3caa16fe3096ab59cbed77d80aba42da31f2c0ca1a268bcc9",
+      "E013": "17cc531f06e544ed4ea2532adc7af452f404eb069ab691e5da8421bb72867253",
+      "E014": "b3f8a00aec7af8025dc0ea24bf7d3e4a1f7e5510fbc0a97742c8a5c0efec1078",
+      "SCIENTIFIC": "1c81a0db6fedb7b13eb11a4236c7c9932392383145eb65369bb97dbba817c131",
+      "COMPUTATIONAL": "0176ae7ba63b328d640b1f396ec862c1073f6abdab8e11befd2af0465b64e2c9"
+    },
+    "case_id": "P100-073",
+    "evaluator_version": "3.0.0-rc.1"
+  },
+  "findings": [
+    {
+      "id": "P100-073-SCI-01",
+      "classification": "predictive_reference",
+      "source_classification": "numerical_control",
+      "statement": "Early finite-pool curvature gives useful gas-volume forecasts but loses to the strongest matched kernel; plausible two-pool curves are not unique microbial explanations.",
+      "applicability": "Whole DG runs link all protocols/flasks/horizons; metric averages protocol\u00d7run RMSE, not individual flask independence.",
+      "limitations": "The compact model fails the frozen 5 %all-baseline gate. Slow-pool times reach 500 h; prefix-exact agreement does not identify biological pools.",
+      "falsification": [
+        "Use only 4/8 h prefixes and preserve whole DG run links across protocols.",
+        "Check monotonicity/asymptotes only for equations that explicitly claim them; do not score imposed prefix agreement as evidence.",
+        "Report total-gas units and reject methane/animal-benefit claims without corresponding measurements."
+      ],
+      "prior_art": "Finite-pool and time-varying-rate models have explicit prior art; no new biological principle is admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "expression": "tau_i=tau_j exp[gamma_j(G4/G8-0.5)]; Ghat_i(t)=G8_i*(1-exp[-(t/tau_i)^beta_j])/(1-exp[-(8/tau_i)^beta_j]).",
+        "interpretation": "Executable numerical representation only; mechanism/novelty admission is assessed separately. Displayed coefficients can be rounded; exact executable states are authoritative.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ]
+      },
+      "variables_and_units": {
+        "target": "mL",
+        "trial": "categorical protocol 1, 2 or 3",
+        "algae": "categorical source substrate/treatment label",
+        "hour": "h",
+        "g4": "mL, native volume at 4 h",
+        "g8": "mL, native volume at 8 h"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "task_id": "P100-073.original.v1",
+      "task_family": "original",
+      "task_version_history": "original frozen final_results"
+    },
+    {
+      "id": "P100-073-SCI-02",
+      "classification": "falsified",
+      "source_classification": "unsupported_or_falsified",
+      "statement": "Prefix-exact Gompertz and two-pool gas curves do not improve the strongest forecasting reference.",
+      "applicability": "Whole DG runs link all protocols/flasks/horizons; metric averages protocol\u00d7run RMSE, not individual flask independence.",
+      "limitations": "Slow rates hit the searched boundary; exact 4/8 hagreement is imposed and cannot validate later gas or biological pools. The nested kernel remains the selected numerical comparator.",
+      "falsification": [
+        "Use only 4/8 h prefixes and preserve whole DG run links across protocols.",
+        "Check monotonicity/asymptotes only for equations that explicitly claim them; do not score imposed prefix agreement as evidence.",
+        "Report total-gas units and reject methane/animal-benefit claims without corresponding measurements."
+      ],
+      "prior_art": "Finite-pool and time-varying-rate models have explicit prior art; no new biological principle is admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E005",
+          "E006",
+          "E007"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "scope": "See bound equations/source audit; no substitute units are invented"
+      },
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E007"
+      ],
+      "task_id": null,
+      "task_family": "continuation",
+      "task_version_history": "2026-09-30 first continuation"
+    },
+    {
+      "id": "P100-073-SCI-03",
+      "classification": "falsified",
+      "source_classification": "unsupported_or_falsified",
+      "statement": "A fractional incremental curve fails substantially and should remain a scientific negative, not a benchmark gold equation.",
+      "applicability": "Whole DG runs link all protocols/flasks/horizons; metric averages protocol\u00d7run RMSE, not individual flask independence.",
+      "limitations": "Every scoring block loses; nine protocol\u00d7run blocks are not nine independent experimental runs. Gas volume is not methane or in-vivo digestibility.",
+      "falsification": [
+        "Use only 4/8 h prefixes and preserve whole DG run links across protocols.",
+        "Check monotonicity/asymptotes only for equations that explicitly claim them; do not score imposed prefix agreement as evidence.",
+        "Report total-gas units and reject methane/animal-benefit claims without corresponding measurements."
+      ],
+      "prior_art": "Finite-pool and time-varying-rate models have explicit prior art; no new biological principle is admitted. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+      "equation_or_program": {
+        "type": "bound_frozen_program_or_equation_record",
+        "evidence_ids": [
+          "E008",
+          "E009",
+          "E010",
+          "E011"
+        ],
+        "instruction": "Read the equation and coefficient records in the bound native scientific account/model state. This structured assertion does not replace its executable implementation."
+      },
+      "variables_and_units": {
+        "target": "mL",
+        "g4": "mL, native volume at 4 h",
+        "g8": "mL, native volume at 8 h",
+        "hour": "h",
+        "trial": "categorical protocol 1, 2 or 3",
+        "algae": "categorical source substrate/treatment label"
+      },
+      "evidence_ids": [
+        "E008",
+        "E009",
+        "E010",
+        "E011"
+      ],
+      "task_id": "P100-073.round2.v1",
+      "task_family": "round2",
+      "task_version_history": "2026-09-30 second continuation"
+    }
+  ],
+  "reviews_required": [
+    "computational",
+    "scientific_critical"
+  ],
+  "automatic_scientific_admission": false,
+  "current_exposure": "exposed"
+}

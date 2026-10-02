@@ -1,0 +1,187 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-072.round2.v2",
+  "case_id": "P100-072",
+  "case_number": 72,
+  "family": "round2",
+  "protocol_version": "P100-072.round2.v1.contract-1-sugar-contract-correction-v2",
+  "cohort_id": "P100-072.round2.v2.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-072.round2.v2",
+  "legacy_package": "72_biotechnology_yeast_competition/research_history/continuation-20260930b",
+  "source_scenario": "scenarios/72_biotechnology_yeast_competition",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Residual glucose plus fructose",
+  "target_units": "g/L",
+  "error_units": "g/L",
+  "primary_units": "g/L",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "S22",
+    "S72",
+    "G22",
+    "G72",
+    "F22",
+    "F72",
+    "time_h",
+    "coculture"
+  ],
+  "input_units": {
+    "S22": "g/L; glucose + fructose at 22 h",
+    "S72": "g/L; glucose + fructose at 72 h",
+    "G22": "g/L glucose",
+    "G72": "g/L glucose",
+    "F22": "g/L fructose",
+    "F72": "g/L fructose",
+    "time_h": "h since inoculation",
+    "coculture": "binary indicator"
+  },
+  "numeric_columns": [
+    "S22",
+    "S72",
+    "G22",
+    "G72",
+    "F22",
+    "F72",
+    "time_h",
+    "coculture"
+  ],
+  "allows_missing_predictors": true,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict future residual glucose plus fructose (g/L) at native sampling times >=96 h, using only glucose and fructose measured at 22 and 72 h in the same strain, monoculture/coculture and biological replicate. time_h is hours since inoculation; coculture is a protocol-known indicator derived from the native sample name. Whole strain, including both culture types, all replicates and times, remains in one fold. This task uses six original development strains and development OOF only; original reserved T73/D245 and unmatched CR85 monoculture are excluded. Native HPLC sheet columns D:E and exact row anchors define the target; no same-time sugar value is a predictor.",
+  "calibration": "G22/F22/G72/F72 are native HPLC concentrations in g/L; S22=G22+F22 and S72=G72+F72 are deterministic sums. Require both 22 h and 72 h measurements for the same strain, culture type and replicate; missing or ambiguous native sugar measurements are excluded by the parser, never imputed. Each model receives this identical prefix calibration; learned coefficients/scales come only from the applicable training folds. This is an assay-calibrated residual-sugar forecast, not a qPCR percentage or fitness estimate. Model-specific common/separate-clock and baseline equations remain frozen in the existing states and runtime.",
+  "independent_unit": "whole co-cultured strain including every replicate/time",
+  "evaluation_groups": [
+    "Chr96,2",
+    "Clos",
+    "Ec1118",
+    "GRE",
+    "NCAIM",
+    "QA23"
+  ],
+  "assigned_rows": 153,
+  "eligible_rows": 153,
+  "baseline_models": [
+    "current/cycle-003",
+    "current/cycle-002",
+    "current/cycle-004",
+    "current/cycle-001",
+    "current/baseline-hgb",
+    "previous/cycle-002",
+    "previous/cycle-003",
+    "previous/cycle-004",
+    "previous/cycle-001",
+    "previous/baseline-flex",
+    "previous/baseline-linear_sugar",
+    "previous/baseline-first_order",
+    "previous/baseline-persistence"
+  ],
+  "reference_model": "current/cycle-001",
+  "reference_selection": "First preregistered continuation candidate; other development-ranked candidates remain separate models, not new held-out selections.",
+  "models": {
+    "current/cycle-003": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-002": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-004": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/cycle-001": {
+      "role": "continuation_candidate",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "current/baseline-hgb": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-002": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-003": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-004": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/cycle-001": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-flex": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-linear_sugar": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-first_order": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    },
+    "previous/baseline-persistence": {
+      "role": "comparator",
+      "state": "rules.json",
+      "equation": "Frozen model state and computational review document exact implementation."
+    }
+  },
+  "uncertainty_policy": {
+    "method": "per_group_descriptive",
+    "population_interval": false
+  },
+  "scope_limits": "Two reserved yeast strain labels, eighteen later author-derived qPCR percentages, same experiment campaign with audit-exposed targets; no blind validation or nutrient mechanism identification. Repeatedly exposed development out-of-fold cohort; not the original reserved cohort.",
+  "source_url": "https://zenodo.org/records/18757697",
+  "source_license": "cc-by-4.0",
+  "publication_eligibility": "source_terms_apply",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "All old confirmation groups exposed. Only original development groups used for fitting/selection. No repeated old-test evaluation in this round.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "54019470d411137ed10ee3bdce44c054440b71734149aea9fdf5e6ccc45830f8",
+  "observations_sha256": "4a3ef22998487eb77abdcc4d6e46ea585b0fd190d2cb4affa47ce7197d831cbb",
+  "preparation_status": "verified_native_reconstruction",
+  "reference_runtime_status": "portable_all_models_verified",
+  "documentation_correction": {
+    "supersedes": "P100-072.round2.v1",
+    "numerical_state_changed": false,
+    "source_cohort_unchanged": true,
+    "reason": "Correct inherited qPCR percentage calibration/timing prose to actual HPLC residual-sugar endpoint",
+    "historical_validation": "Same exposed development OOF predictions, not new independent confirmation"
+  }
+}

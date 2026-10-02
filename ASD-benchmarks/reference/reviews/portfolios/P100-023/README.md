@@ -1,0 +1,10 @@
+# P100-023: standardized advisory assessment
+
+This packet binds 2 existing findings to preserved evidence. Scientific and computational reviewers worked separately. The format adapter preserves their judgments; it does not create an independent experiment or a new claim of priority.
+
+| Finding | Scientific disposition | Computational disposition | Dimensions requiring discussion |
+|---|---|---|---|
+| P100-023-SCI-01 | supported | partially_supported | reliability, mechanism, significance, reproducibility |
+| P100-023-SCI-02 | partially_supported | partially_supported | mechanism, significance, reproducibility |
+
+See `claims.json`, both role reviews and `combined/review.json`. Differences between an assessed scientific dimension and a computational not_assessed dimension indicate scope differences, not necessarily factual contradictions. There is no aggregate score or automatic admission.

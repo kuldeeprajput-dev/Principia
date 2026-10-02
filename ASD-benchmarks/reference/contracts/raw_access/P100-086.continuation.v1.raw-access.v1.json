@@ -1,0 +1,70 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-086.continuation.v1.raw-access.v1",
+  "parent_task_id": "P100-086.continuation.v1",
+  "case_id": "P100-086",
+  "protocol_version": "P100-086.continuation.v1.raw-access.v1",
+  "cohort_id": "P100-086.continuation.v1.cohort-1",
+  "parent_task_sha256": "fbb99329c9a3136fbedef0c5efc99e36ec0bf12560c86039a6fc511cbf091faf",
+  "input_sha256": "2a3bf4d99dc8f01f268d30b1a9e26605582899aa378ea4227d8afc5b2a6edaaa",
+  "observations_sha256": "7667a6e9fd3cbbfba76fcfb86545a6e865ea4989dd9f4ac91ba884b5437a2663",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "86_biotechnology_industrial_fermentation",
+  "source_assets": [
+    {
+      "path": "raw/EFP_long.csv",
+      "bytes": 8025512,
+      "sha256": "e432d23998c61db6d35b6f95d54b4c94c17b3d7b85a0117b8526665e5d91cf3e"
+    },
+    {
+      "path": "raw/data_loader.py",
+      "bytes": 32389,
+      "sha256": "3f5f3bca0a48bd2cb6cc38b40af2cd0706b686b66420562deeee6816fbd7cc63"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "time_h": "h",
+      "current": "source potency unit",
+      "slope1": "source potency unit/h",
+      "slope3": "source potency unit/h",
+      "slope6": "source potency unit/h",
+      "slope12": "source potency unit/h",
+      "past_acc6": "source potency unit/h^2",
+      "ewma3": "source potency unit/h",
+      "ewma6": "source potency unit/h",
+      "window6_sd": "source potency unit/h"
+    },
+    "observation_window": "At native hour t, the current hx assay and strictly earlier assay history plus cultivation clock are allowed. Features use exact earlier1/3/6/12h observations, backward slope curvature, causal EWMA and past-rate variability; no later assay or target smoothing supplies inputs. Target is hx at t+6h. Assays are assumed available at their recorded source times; true receipt latency is unresolved. New history features expand the former current/slope6 information contract for every comparator.",
+    "calibration_and_history": "Native hx is the source-loader target. Other undocumented abbreviations are excluded. Source units are not asserted to be mg/L or activity U/mL. 406 independent production batches; rows with exact 6 h lag/horizon only. No target smoothing or imputation. This is a six-hour prediction conditional on an available current potency assay, not an inline soft sensor.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Potency units, interpolation and assay receipt latency unresolved."
+  ],
+  "current_outcomes_exposed": true
+}

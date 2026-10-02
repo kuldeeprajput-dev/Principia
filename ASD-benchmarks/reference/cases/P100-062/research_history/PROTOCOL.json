@@ -1,0 +1,35 @@
+{
+  "title": "Within-system hydrogen-permeation relaxation and identifiability",
+  "target": "measured anodic permeation current",
+  "target_units": "μA",
+  "input_columns": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "input_units": {
+    "t": "s since third baseline observation",
+    "offset": "μA; mean first3 observations",
+    "drive": "mA/cm²; imposed cathodic-current step",
+    "high": "binary known high-current condition"
+  },
+  "fold_design": "forward",
+  "timing_contract": "Forward extrapolation within two linked permeation traces. Parameters are learned only from earlier chronological blocks; confirmation is the last20% of each trace. Known imposed current step and initial three-point current calibration are permitted.",
+  "calibration": "Mean first3 native current observations per trace; all candidate families receive identical values. Fit parameters may use development prefixes only.",
+  "independent_unit": "Two chronological traces with no independent specimen identifiers; nonoverlapping temporal blocks are scoring units, not independent specimens. All trace linkage is explicit.",
+  "scope_limits": [
+    "The two traces do not establish independent-specimen transfer. Temperature is293K; nominal sheet thickness1.2mm.",
+    "Native time zero is used as reported; true boundary concentration and its step timing are not independently measured.",
+    "An effective relaxation scale must not be relabeled a unique lattice diffusivity because trapping, boundary kinetics and baseline uncertainty can be confounded."
+  ],
+  "exposure": "Firsttwo observations per sheet were inspected for schema and belong to permitted initial calibration. No reserved tail current was inspected before freeze.",
+  "uncertainty_policy": "Report both trace-tail errors; no population interval or independent-specimen significance test.",
+  "case_id": "P100-062",
+  "source_url": "https://data.mendeley.com/datasets/tnsgf7v76z/1",
+  "source_license": "CC BY 4.0",
+  "freeze_utc": "2026-10-02T01:58:12.500134+00:00",
+  "selection_rule": "Lowest mean group development MAE among all controls and attempts; within 0.5% choose fewer parameters. Selection and continuation use development only.",
+  "continuation_rule": "At least five substantive attempts; stop after two consecutive attempts without supported predictive, worst-group, or interpretive gain.",
+  "metric_kind": "mae"
+}

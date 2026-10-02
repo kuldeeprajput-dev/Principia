@@ -1,0 +1,78 @@
+{
+  "case_id": "P100-074",
+  "title": "Dataset from \"A triangulenum-based biosensor platform for mapping kinase activity in T cells\"",
+  "default_task": "P100-074.original.v1",
+  "default_tier": "exploratory_limited_scope",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Src kinetic fluorescence in source instrument units",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 2,
+    "independent_unit_description": "Complete dose curves; seven development and two hash-selected confirmation doses; leave-one-dose-out validation. No biological replicate identifiers.",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Predict all t>7.5 min from source dose and same-curve measurements at 3,4.5,6 min. Calibration fixed at6 min; no later response access.",
+  "baseline_strength": {
+    "registered_controls": 13,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 2,
+    "unsupported": 1
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Src kinetic fluorescence in source instrument units",
+    "prediction_time": "Predict all t>7.5 min from source dose and same-curve measurements at 3,4.5,6 min. Calibration fixed at6 min; no later response access.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Dose curves lack biological replicate identifiers."
+  },
+  "task_ids": [
+    "P100-074.original.v1"
+  ],
+  "finding_ids": [
+    "P100-074-F01",
+    "P100-074-F02",
+    "P100-074-F03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh.",
+    "Resolve each stated measurement/information restriction with source-bound evidence.",
+    "Demonstrate a nondegenerate task with grouping adequate for its explicitly claimed transfer; retain limited scope if the present data cannot do this."
+  ],
+  "existing_quality_audit": "cases/P100-074/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-074.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Src kinetic fluorescence in source instrument units under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Predict all t>7.5 min from source dose and same-curve measurements at 3,4.5,6 min. Calibration fixed at6 min; no later response access.",
+    "calibration_requirement": "Predict all t>7.5 min from source dose and same-curve measurements at 3,4.5,6 min. Calibration fixed at6 min; no later response access.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Src kinetic fluorescence in source instrument units in source fluorescence units",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Dose curves lack biological replicate identifiers."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "mae",
+    "primary_units": "source fluorescence units",
+    "reference_model": "reference",
+    "reference_primary_error": 130.23334009001044,
+    "reference_physical_mae": 130.23334009001044,
+    "physical_error_units": "source fluorescence units",
+    "lowest_registered_error_model": "baseline_mm",
+    "lowest_registered_error": 82.72897928284578,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-074.original.v1/evidence/metrics.csv",
+      "bytes": 1290,
+      "sha256": "916182cccfc99d79002f07572c61364f49d41a81d9fa8ee59885a2ffb1cba568"
+    },
+    "models": 13
+  },
+  "case_specific_next_evidence": "Obtain independent biological assays and orthogonal phosphorylation/optical controls before dose-response mechanism claims.\n\nRetain this case as a falsification/calibration benchmark, without promoting a final-score winner as a fresh discovery."
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-051.original.v1",
+  "case_id": "P100-051",
+  "case_number": 51,
+  "family": "original",
+  "protocol_version": "P100-051-asd5-native-v1",
+  "cohort_id": "P100-051.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-051.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/51_semiconductor_heterostructure_memories",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "measured drain current between three disclosed gate-voltage calibration anchors",
+  "target_units": "uA",
+  "error_units": "uA",
+  "primary_units": "uA",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "gate_V",
+    "cal_minus20_uA",
+    "cal_zero_uA",
+    "cal_plus20_uA"
+  ],
+  "input_units": {
+    "gate_V": "V",
+    "cal_minus20_uA": "uA",
+    "cal_zero_uA": "uA",
+    "cal_plus20_uA": "uA"
+  },
+  "numeric_columns": [
+    "gate_V",
+    "cal_minus20_uA",
+    "cal_zero_uA",
+    "cal_plus20_uA"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "offline sparse-characterization task: three responses at -20,0,20 V are obtained before reconstructing other gate points; not an uncalibrated or causal sweep forecast",
+  "calibration": "Exactly three same-device current measurements at Vg=-20,0,20 V; all models see the same anchors; those points excluded from scores.",
+  "independent_unit": "complete source FET column/device",
+  "evaluation_groups": [
+    "device-06",
+    "device-10",
+    "device-12",
+    "device-15",
+    "device-16",
+    "device-22",
+    "device-24",
+    "device-29",
+    "device-36"
+  ],
+  "assigned_rows": 1782,
+  "eligible_rows": 1782,
+  "baseline_models": [
+    "reference",
+    "linear",
+    "loglinear",
+    "shape",
+    "attempt-001",
+    "attempt-002",
+    "attempt-003",
+    "attempt-004",
+    "attempt-005",
+    "attempt-006",
+    "attempt-007"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "r=clip((Izero-Iminus)/(Iplus-Iminus),1e-9,1); p=clip(a+b*log(r),0.1,8); Ihat=Il+(Ih-Il)*u^(p if V>=0 else q)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "linear": {
+      "equation": "Ihat = Il+(Ih-Il)*u",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "loglinear": {
+      "equation": "Ihat=exp((1-u)*log(max(Il,1e-9))+u*log(max(Ih,1e-9)))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "shape": {
+      "equation": "Ihat=Il+(Ih-Il)*interp(V, training_grid, training_median_normalized_shape)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-001": {
+      "equation": "Ihat=Il+(Ih-Il)*u^p",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-002": {
+      "equation": "s(V)=k*log(1+exp((V-Vt)/k)); Ihat=Iminus+(Iplus-Iminus)*(s(V)-s(-20))/(s(20)-s(-20))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-003": {
+      "equation": "Ihat=Il+(Ih-Il)*u^(p_positive if V>=0 else p_negative)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-004": {
+      "equation": "s(V)=k*log(1+exp((V-Vt)/k)); f(V)=s(V)/(1+c*s(V)); Ihat=Iminus+(Iplus-Iminus)*(f(V)-f(-20))/(f(20)-f(-20))",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-005": {
+      "equation": "r=clip((Izero-Iminus)/(Iplus-Iminus),1e-9,1); p=clip(a+b*log(r),0.1,8); Ihat=Il+(Ih-Il)*u^(p if V>=0 else q)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-006": {
+      "equation": "s_positive=u+a*u*(1-u)+b*u*(1-u)*(2*u-1); s_negative=u^q; Ihat=Il+(Ih-Il)*s",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-007": {
+      "equation": "s=a*interp(V,training_grid,training_shape)+(1-a)*u; Ihat=Il+(Ih-Il)*s",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Individual group errors; empirical group range, no row bootstrap or population CI."
+  },
+  "scope_limits": "36 fabricated FET curves from source Fig2e, not independent lots; no memory-retention extrapolation, no device-geometry control or interventions.",
+  "source_url": "https://zenodo.org/records/19003428",
+  "source_license": "CC BY4.0",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"current\": \"exposed\", \"internal_confirmation\": \"held out until frozen model/stop selection\", \"fresh_for_future_users\": false}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "89865ca1db73dc3005b8f0e820022bb251b880e76271223815a27c77463981bc",
+  "observations_sha256": "77598fcf5db5afda627ed98e714b1daa2e67556c3f3541994cfddbe51e2b2898",
+  "legacy_protocol_sha256": "c3cf04c51dc5ed21d0602c1b32b3e3524e24b6b3d01457b0b588bbd75bc9ce5f",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd5-diagnostics/1.0"
+}

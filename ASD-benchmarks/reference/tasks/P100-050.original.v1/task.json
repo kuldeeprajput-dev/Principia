@@ -1,0 +1,152 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-050.original.v1",
+  "case_id": "P100-050",
+  "case_number": 50,
+  "family": "original",
+  "protocol_version": "P100-050-asd7-native-v1",
+  "cohort_id": "P100-050.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-050.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/50_geotechnical_usgs_flume",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "analog laser flow-depth signal 200 ms ahead",
+  "target_units": "m",
+  "error_units": "m",
+  "primary_units": "m",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "h0",
+    "h",
+    "v",
+    "a",
+    "median"
+  ],
+  "input_units": {
+    "h0": "m",
+    "h": "m; mean of last20 native samples",
+    "v": "m/s; causal100ms difference",
+    "a": "m/s\u00b2; causal100ms second difference",
+    "median": "m; median of last20 native samples"
+  },
+  "numeric_columns": [
+    "h0",
+    "h",
+    "v",
+    "a",
+    "median"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Predict analog-laser depth200ms ahead, issuing every50ms after400ms of history. All features end at the issuance time; the target remains one native1kHz sample.",
+  "calibration": "Causal recent laser history is permitted at every issuance. No peak alignment, future smoothing or held-run fitted offset.",
+  "independent_unit": "Complete gate-release run/date; firstfour columns develop, final11April2024 column confirms. Five controlled events are not a field-hazard population.",
+  "evaluation_groups": [
+    "33 laser (m) - 11/04/2024"
+  ],
+  "assigned_rows": 268,
+  "eligible_rows": 268,
+  "baseline_models": [
+    "reference",
+    "constant_velocity",
+    "flexible",
+    "persistence",
+    "damped_velocity",
+    "oscillatory_memory",
+    "depth_dependent_memory",
+    "front_recession_asymmetry",
+    "robust_surface_level"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "constant_velocity": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "persistence": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "damped_velocity": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "oscillatory_memory": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "depth_dependent_memory": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "front_recession_asymmetry": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "robust_surface_level": {
+      "equation": "frozen program; exact coefficients and executable expression in rules.json and run.py",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report individual complete-run error; one confirmation run supports no population confidence interval."
+  },
+  "scope_limits": "This is a within-station nowcast, not advance warning upstream or a forecast before sensor detection.; The archived swath-processing example trims around a future peak; that operation is excluded. Cross-instrument alignment is not inferred.; Four debris flows and one water-only flood are described by the source, but filecolumns do not provide a reliable event-type map; no material-specific claim is made.",
+  "source_url": "https://doi.org/10.5066/P1HXHGZN",
+  "source_license": "CC0 / U.S. government public-domain data",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "Only first9ms near-zero rows were seen in schema audit. Target horizon starts600ms; reserved future values were not inspected before freeze. All final outcomes become exposed.",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "a218bf206722b471a514690bace740ab7ef5e3ea0a225620291e3837fce26043",
+  "observations_sha256": "71b460aaa947d8b3dab478f8c741eb3b5d79c11acb951992495f5348ea542fe8",
+  "legacy_protocol_sha256": "50a2573ec032f1fffe0293ae081857816c5cb65e3ee02d1ec68df26e67434675",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "native_reconstruction_verified",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd7-diagnostics/1.0",
+  "metric_extension": null,
+  "calibration_columns": [
+    "h0",
+    "h",
+    "v",
+    "a",
+    "median"
+  ],
+  "calibration_lineage_extension": "asd7-calibration/1.0"
+}

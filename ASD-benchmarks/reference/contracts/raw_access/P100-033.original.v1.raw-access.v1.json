@@ -1,0 +1,66 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-033.original.v1.raw-access.v1",
+  "parent_task_id": "P100-033.original.v1",
+  "case_id": "P100-033",
+  "protocol_version": "P100-033.original.v1.raw-access.v1",
+  "cohort_id": "P100-033.original.v1.cohort-1",
+  "parent_task_sha256": "922cf29f8825ed1c8eef794273686624f73b7d0dfe47baa5fe03221069c14be7",
+  "input_sha256": "b876f85b982fed13e93ac94b28424b3aa64bd6dc5e722a0e34120fc9b0054d63",
+  "observations_sha256": "141fe2c9695126339500408f3ed425e5f4ffe73c0810b0bc16bc60ad870b65a4",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "33_biomedical_but_smartphone_ppg",
+  "source_assets": [
+    {
+      "name": "brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0.zip",
+      "path": "raw/brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0.zip",
+      "sha256": "9b910fc884f63eca1c5d3a00c5710f838e0053dce94f8a02196bd0adc2ffa33c",
+      "bytes": 90951417
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "fft_bpm": "bpm",
+      "acf_bpm": "bpm",
+      "half_bpm": "bpm",
+      "half_strength": "dimensionless",
+      "spectral_quality": "dimensionless",
+      "agreement": "bpm",
+      "motion": "dimensionless",
+      "ear": "dimensionless"
+    },
+    "observation_window": "After the complete ten-second PPG segment; simultaneous ECG supplies the target but is never an input. Known recording motion/contact conditions are allowed. No human quality annotation is a predictor.",
+    "calibration_and_history": "No per-person ECG or target calibration. Spectral transforms are fixed within each PPG window; any fusion/shrinkage parameters or flexible scaling are trained on development people only.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor",
+      "source_quality"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Few held people and mixed comparator results; no clinical qualification."
+  ],
+  "current_outcomes_exposed": true
+}

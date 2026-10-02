@@ -1,0 +1,1020 @@
+{
+  "case_id": "P100-015",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "90e6e900947fc1d51aee6c4ae4887cd71e20137b5ed78afcc20e194780fb0255"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "da61fe9ab40923737fbc96d37051c6f792e4f15749c64e743ec37c870625d632"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "52a01a398de4df9112fd5cb2009e1d74cd126d057147a10e15380a7a411a2126"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "1abf520ba78210b2454cc40d79ee55d5d79e5f4476900e964e373b20da228372"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "fd785f8fb5b82465474a3125c3408c9de8d13f587f765754422f726a131ffc1a"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "15e029460304b94ae70e5a203a5c0f89c970dda73913fa6477bd512556240a8a"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "1ee97c4d1bc1e45ca35f7be33ea4eb34ea4d2f0a5ccf41b954aff1984a584955"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "abc8e2ece669dd397b745bd6c6ae443985b7830488e29291cc3951bc9872aae7"
+    },
+    {
+      "path": "native.py",
+      "sha256": "2e83c9d1196da6ae4586efba4f75fc6ec85b0d4c6e0385d2581ab38aaf9f4b12"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "c211b8e591b617ea0dc780f6204ceb8a09c69e64d41dfde561c3e3d920623f1f"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "dc7507d6f2084147bae48ea6d0f53c4b14b0c9460b8748205240d003938b6dcc"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "9a8d4ca997767960ab434c09dc433fa7576b693329b12659851c5539d57fe3df"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "ef61c6ed741daaeb886a66032eed4ac4a20ff249146d07575c36d110d21a6878"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "678020d8ec9290e5ff3d0b05d0fd4b82c47f0e213456a4ce9620225e697a800d"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "efdc22165e150d9b39acc3a34f180af6808911d003661b988e2fc6ac7309bc17"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-015-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Weighted inability-to-cover-expense probability improves the listed controls modestly across10 held states. State holdout and identical sample weights are preserved; no causal poverty or lending qualification is established."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Weighted inability-to-cover-expense probability improves the listed controls modestly across10 held states. State holdout and identical sample weights are preserved; no causal poverty or lending qualification is established."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Weighted inability-to-cover-expense probability improves the listed controls modestly across10 held states. State holdout and identical sample weights are preserved; no causal poverty or lending qualification is established."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Weighted inability-to-cover-expense probability improves the listed controls modestly across10 held states. State holdout and identical sample weights are preserved; no causal poverty or lending qualification is established.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-015-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Weighted inability-to-cover-expense probability improves the listed controls modestly across10 held states. State holdout and identical sample weights are preserved; no causal poverty or lending qualification is established."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Weighted inability-to-cover-expense probability improves the listed controls modestly across10 held states. State holdout and identical sample weights are preserved; no causal poverty or lending qualification is established."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Weighted inability-to-cover-expense probability improves the listed controls modestly across10 held states. State holdout and identical sample weights are preserved; no causal poverty or lending qualification is established."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Weighted inability-to-cover-expense probability improves the listed controls modestly across10 held states. State holdout and identical sample weights are preserved; no causal poverty or lending qualification is established.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-015",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-015",
+      "native_rows": 12934,
+      "confirmation_rows": 2215,
+      "models": 10,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 10,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 1.3877787807814457e-17,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 2215,
+        "primary_error": 0.07371214814365087,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "constant",
+        "rows": 2215,
+        "primary_error": 0.0855510576185095,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "domain",
+        "rows": 2215,
+        "primary_error": 0.07583127707124246,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "flexible",
+        "rows": 2215,
+        "primary_error": 0.07404488402500793,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001",
+        "rows": 2215,
+        "primary_error": 0.07555423464396191,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002",
+        "rows": 2215,
+        "primary_error": 0.07516584875625859,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003",
+        "rows": 2215,
+        "primary_error": 0.07490432865958956,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004",
+        "rows": 2215,
+        "primary_error": 0.07371214814365087,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005",
+        "rows": 2215,
+        "primary_error": 0.07336200617292367,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_006",
+        "rows": 2215,
+        "primary_error": 0.07491979970024104,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:dc",
+          "state:id",
+          "state:mi",
+          "state:pa",
+          "state:sd",
+          "state:tn",
+          "state:wy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 33,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "state:ar",
+          "state:ga",
+          "state:la",
+          "state:nc",
+          "state:nh",
+          "state:nj",
+          "state:or",
+          "state:ut"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:co",
+          "state:mn",
+          "state:mo",
+          "state:nm",
+          "state:ny",
+          "state:wa",
+          "state:wi"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 29,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "state:ca",
+          "state:de",
+          "state:fl",
+          "state:hi",
+          "state:ia",
+          "state:il",
+          "state:ky",
+          "state:ms",
+          "state:nd",
+          "state:ne",
+          "state:oh",
+          "state:ok"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:az",
+          "state:in",
+          "state:ks",
+          "state:ma",
+          "state:me",
+          "state:nv",
+          "state:sc"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:dc",
+          "state:id",
+          "state:mi",
+          "state:pa",
+          "state:sd",
+          "state:tn",
+          "state:wy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 33,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "state:ar",
+          "state:ga",
+          "state:la",
+          "state:nc",
+          "state:nh",
+          "state:nj",
+          "state:or",
+          "state:ut"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:co",
+          "state:mn",
+          "state:mo",
+          "state:nm",
+          "state:ny",
+          "state:wa",
+          "state:wi"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 29,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "state:ca",
+          "state:de",
+          "state:fl",
+          "state:hi",
+          "state:ia",
+          "state:il",
+          "state:ky",
+          "state:ms",
+          "state:nd",
+          "state:ne",
+          "state:oh",
+          "state:ok"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:az",
+          "state:in",
+          "state:ks",
+          "state:ma",
+          "state:me",
+          "state:nv",
+          "state:sc"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:dc",
+          "state:id",
+          "state:mi",
+          "state:pa",
+          "state:sd",
+          "state:tn",
+          "state:wy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 33,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "state:ar",
+          "state:ga",
+          "state:la",
+          "state:nc",
+          "state:nh",
+          "state:nj",
+          "state:or",
+          "state:ut"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:co",
+          "state:mn",
+          "state:mo",
+          "state:nm",
+          "state:ny",
+          "state:wa",
+          "state:wi"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 29,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "state:ca",
+          "state:de",
+          "state:fl",
+          "state:hi",
+          "state:ia",
+          "state:il",
+          "state:ky",
+          "state:ms",
+          "state:nd",
+          "state:ne",
+          "state:oh",
+          "state:ok"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:az",
+          "state:in",
+          "state:ks",
+          "state:ma",
+          "state:me",
+          "state:nv",
+          "state:sc"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:dc",
+          "state:id",
+          "state:mi",
+          "state:pa",
+          "state:sd",
+          "state:tn",
+          "state:wy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 33,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "state:ar",
+          "state:ga",
+          "state:la",
+          "state:nc",
+          "state:nh",
+          "state:nj",
+          "state:or",
+          "state:ut"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:co",
+          "state:mn",
+          "state:mo",
+          "state:nm",
+          "state:ny",
+          "state:wa",
+          "state:wi"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 29,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "state:ca",
+          "state:de",
+          "state:fl",
+          "state:hi",
+          "state:ia",
+          "state:il",
+          "state:ky",
+          "state:ms",
+          "state:nd",
+          "state:ne",
+          "state:oh",
+          "state:ok"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:az",
+          "state:in",
+          "state:ks",
+          "state:ma",
+          "state:me",
+          "state:nv",
+          "state:sc"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:dc",
+          "state:id",
+          "state:mi",
+          "state:pa",
+          "state:sd",
+          "state:tn",
+          "state:wy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 33,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "state:ar",
+          "state:ga",
+          "state:la",
+          "state:nc",
+          "state:nh",
+          "state:nj",
+          "state:or",
+          "state:ut"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:co",
+          "state:mn",
+          "state:mo",
+          "state:nm",
+          "state:ny",
+          "state:wa",
+          "state:wi"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 29,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "state:ca",
+          "state:de",
+          "state:fl",
+          "state:hi",
+          "state:ia",
+          "state:il",
+          "state:ky",
+          "state:ms",
+          "state:nd",
+          "state:ne",
+          "state:oh",
+          "state:ok"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:az",
+          "state:in",
+          "state:ks",
+          "state:ma",
+          "state:me",
+          "state:nv",
+          "state:sc"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:dc",
+          "state:id",
+          "state:mi",
+          "state:pa",
+          "state:sd",
+          "state:tn",
+          "state:wy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 33,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "state:ar",
+          "state:ga",
+          "state:la",
+          "state:nc",
+          "state:nh",
+          "state:nj",
+          "state:or",
+          "state:ut"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:co",
+          "state:mn",
+          "state:mo",
+          "state:nm",
+          "state:ny",
+          "state:wa",
+          "state:wi"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 29,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "state:ca",
+          "state:de",
+          "state:fl",
+          "state:hi",
+          "state:ia",
+          "state:il",
+          "state:ky",
+          "state:ms",
+          "state:nd",
+          "state:ne",
+          "state:oh",
+          "state:ok"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-006/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:az",
+          "state:in",
+          "state:ks",
+          "state:ma",
+          "state:me",
+          "state:nv",
+          "state:sc"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:dc",
+          "state:id",
+          "state:mi",
+          "state:pa",
+          "state:sd",
+          "state:tn",
+          "state:wy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 33,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "state:ar",
+          "state:ga",
+          "state:la",
+          "state:nc",
+          "state:nh",
+          "state:nj",
+          "state:or",
+          "state:ut"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:co",
+          "state:mn",
+          "state:mo",
+          "state:nm",
+          "state:ny",
+          "state:wa",
+          "state:wi"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 29,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "state:ca",
+          "state:de",
+          "state:fl",
+          "state:hi",
+          "state:ia",
+          "state:il",
+          "state:ky",
+          "state:ms",
+          "state:nd",
+          "state:ne",
+          "state:oh",
+          "state:ok"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/constant/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:az",
+          "state:in",
+          "state:ks",
+          "state:ma",
+          "state:me",
+          "state:nv",
+          "state:sc"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:dc",
+          "state:id",
+          "state:mi",
+          "state:pa",
+          "state:sd",
+          "state:tn",
+          "state:wy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 33,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "state:ar",
+          "state:ga",
+          "state:la",
+          "state:nc",
+          "state:nh",
+          "state:nj",
+          "state:or",
+          "state:ut"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:co",
+          "state:mn",
+          "state:mo",
+          "state:nm",
+          "state:ny",
+          "state:wa",
+          "state:wi"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 29,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "state:ca",
+          "state:de",
+          "state:fl",
+          "state:hi",
+          "state:ia",
+          "state:il",
+          "state:ky",
+          "state:ms",
+          "state:nd",
+          "state:ne",
+          "state:oh",
+          "state:ok"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/domain/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:az",
+          "state:in",
+          "state:ks",
+          "state:ma",
+          "state:me",
+          "state:nv",
+          "state:sc"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "0",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:dc",
+          "state:id",
+          "state:mi",
+          "state:pa",
+          "state:sd",
+          "state:tn",
+          "state:wy"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "1",
+        "training_groups_count": 33,
+        "validation_groups_count": 8,
+        "validation_groups": [
+          "state:ar",
+          "state:ga",
+          "state:la",
+          "state:nc",
+          "state:nh",
+          "state:nj",
+          "state:or",
+          "state:ut"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "2",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:co",
+          "state:mn",
+          "state:mo",
+          "state:nm",
+          "state:ny",
+          "state:wa",
+          "state:wi"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "3",
+        "training_groups_count": 29,
+        "validation_groups_count": 12,
+        "validation_groups": [
+          "state:ca",
+          "state:de",
+          "state:fl",
+          "state:hi",
+          "state:ia",
+          "state:il",
+          "state:ky",
+          "state:ms",
+          "state:nd",
+          "state:ne",
+          "state:oh",
+          "state:ok"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "baselines/flexible/fold_models.json",
+        "fold": "4",
+        "training_groups_count": 34,
+        "validation_groups_count": 7,
+        "validation_groups": [
+          "state:az",
+          "state:in",
+          "state:ks",
+          "state:ma",
+          "state:me",
+          "state:nv",
+          "state:sc"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "Weighted inability-to-cover-expense probability improves the listed controls modestly across10 held states. State holdout and identical sample weights are preserved; no causal poverty or lending qualification is established."
+}

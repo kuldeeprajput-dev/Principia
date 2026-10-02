@@ -1,0 +1,35 @@
+{
+  "kind": "recruitment",
+  "threshold": 0.6,
+  "training_profile": [
+    {
+      "threshold": 0.2,
+      "error": 6939.030962853482
+    },
+    {
+      "threshold": 0.4,
+      "error": 4446.032122379454
+    },
+    {
+      "threshold": 0.6,
+      "error": 3747.623540737106
+    },
+    {
+      "threshold": 0.8,
+      "error": 4332.206644255925
+    }
+  ],
+  "coef": [
+    69831.21205116552,
+    17362.837209146914,
+    230.39838471308397
+  ],
+  "equation": "c+delta_line*sigmoid((q-q0)/.1); c=paired uninduced AF488 quantile(native units),q=quantile probability,line coefficient order MFSD5/WT SLC30A8/mutant; width=control q.9-q.1. Shift coefficients and K are native fluorescence units; multiplicative/location-scale coefficients dimensionless. Profile threshold/K is additional fitted state.",
+  "training_groups": [
+    "BE",
+    "CF"
+  ],
+  "training_rows": 54,
+  "parameter_count": 3,
+  "rank": 3
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-050.original.v1.raw-access.v1",
+  "parent_task_id": "P100-050.original.v1",
+  "case_id": "P100-050",
+  "protocol_version": "P100-050.original.v1.raw-access.v1",
+  "cohort_id": "P100-050.original.v1.cohort-1",
+  "parent_task_sha256": "11c927b95e659823fc03455f16ca804995a83134b26b8db3a94d1ffc67689293",
+  "input_sha256": "a218bf206722b471a514690bace740ab7ef5e3ea0a225620291e3837fce26043",
+  "observations_sha256": "71b460aaa947d8b3dab478f8c741eb3b5d79c11acb951992495f5348ea542fe8",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "50_geotechnical_usgs_flume",
+  "source_assets": [
+    {
+      "path": "raw/flume_laser_all_gate_releases.csv",
+      "bytes": 922316,
+      "sha256": "a43e1cd58d0731b1f381d74ace0d4ddfde3ae6c88c60dd947d21a1ebef6ce08a"
+    },
+    {
+      "path": "raw/laser_rangefinder_all_gate_releases.csv",
+      "bytes": 14423914,
+      "sha256": "e55470bbdd9b82471b9a774a2acfc120b29a4df80db2270f6fe34011826b941b"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "h0": "m",
+      "h": "m; mean of last20 native samples",
+      "v": "m/s; causal100ms difference",
+      "a": "m/s\u00b2; causal100ms second difference",
+      "median": "m; median of last20 native samples"
+    },
+    "observation_window": "Predict analog-laser depth200ms ahead, issuing every50ms after400ms of history. All features end at the issuance time; the target remains one native1kHz sample.",
+    "calibration_and_history": "Causal recent laser history is permitted at every issuance. No peak alignment, future smoothing or held-run fitted offset.",
+    "calibration_columns": [
+      "h0",
+      "h",
+      "v",
+      "a",
+      "median"
+    ],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "One held gate-release event; local nowcast gain was not established.",
+    "Only 1 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

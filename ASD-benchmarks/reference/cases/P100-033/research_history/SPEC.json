@@ -1,0 +1,34 @@
+{
+  "case": 33,
+  "title": "PPG pulse-rate harmonic ambiguity",
+  "kind": "mae",
+  "target": "ECG reference heart rate",
+  "unit": "bpm",
+  "inputs": [
+    "fft_bpm",
+    "acf_bpm",
+    "half_bpm",
+    "half_strength",
+    "spectral_quality",
+    "agreement",
+    "motion",
+    "ear"
+  ],
+  "input_units": {
+    "fft_bpm": "bpm",
+    "acf_bpm": "bpm",
+    "half_bpm": "bpm",
+    "half_strength": "dimensionless",
+    "spectral_quality": "dimensionless",
+    "agreement": "bpm",
+    "motion": "dimensionless",
+    "ear": "dimensionless"
+  },
+  "source_url": "https://physionet.org/content/butppg/2.0.0/",
+  "license": "CC BY 4.0",
+  "paper": "https://doi.org/10.13026/tn53-8153",
+  "independent_unit": "Person; every recording from one person linked",
+  "scope": "50 participants in one smartphone protocol;10 held people. ECG-derived rate is an independent sensor reference, but no clinical agreement threshold or cardiovascular diagnosis is established.",
+  "timing": "After the complete ten-second PPG segment; simultaneous ECG supplies the target but is never an input. Known recording motion/contact conditions are allowed. No human quality annotation is a predictor.",
+  "calibration": "No per-person ECG or target calibration. Spectral transforms are fixed within each PPG window; any fusion/shrinkage parameters or flexible scaling are trained on development people only."
+}

@@ -1,0 +1,22 @@
+{
+  "protocol_id": "P100-055-CONT-20261001-v1",
+  "created_before_new_fits": true,
+  "exposure": "All original groups/outcomes are exposed. Original development only for learning; frozen old reserved mixtures for retrospective diagnostics. No fresh confirmation claimed.",
+  "target": "Individual penetration force at mixing age30 minutes",
+  "target_units": "N",
+  "task_revision": "P100-055-AGING30-v1: source mixture metadata and mean initial-age force curve are declared calibration inputs. Not the original uncalibrated both-age task.",
+  "primary_metric": "Equal-mixture mean absolute error; all assigned aged rows and both replicates",
+  "development_groups": ["0.5_0.25", "0.5_0.35", "0.7_0.25", "0.7_0.35", "1.0_0.25", "1.0_0.30", "1.0_0.35"],
+  "diagnostic_groups": ["0.5_0.30", "0.7_0.30"],
+  "validation": "Leave one complete development mixture out; tune ridge/clock scales using only inner whole-mixture folds. No random row splitting.",
+  "permitted_inputs": ["ratio", "water", "sp_fraction", "vma_fraction", "penetration_index", "initial_force", "initial_shape_change"],
+  "calibration": "For every held mixture, its completed age0 force traces are available before the age30 test. Their replicate mean at matching native index is an input; no age30 target supplies calibration. No assumption of specimen pairing across ages.",
+  "initial_shape_change": "Initial mean force at current native index minus its mean at indexmax(1,current_index-50). These are earlier age0 observations; divide by50 for an index slope if needed. No claimed seconds.",
+  "metrology": "Force N; mixing age minutes. Penetration speed5um/s documented, sampling interval and penetration tip geometry unresolved; native1..600 is an index. Known formulation table per-m3 masses, SP/binder and VMA/binder ratios; do not silently use inconsistent intermediate a/b fields.",
+  "baseline_families": ["initial-force identity", "global aged-force mean", "positive proportional buildup", "affine initial-force map", "nested-group-tuned Gaussian kernel with identical inputs"],
+  "scientific_tests": ["Finite structural buildup versus linear aging gain", "Water-dependent multiplicative rebuild versus initial force alone", "Initial-curve shape memory versus scalar calibration", "Packing/dispersant interaction and identifiability", "Secondary squeeze-response ordering and ambiguous-label falsifier", "Simplify retained pathways and compare calibration limits"],
+  "selection": "Simplest within1% of best scientific grouped development MAE, but keep the stronger tuned numerical/domain control as prediction reference if scientific candidates do not beat it. Freeze models and stopping before exposed diagnostics.",
+  "secondary_tests": "Raw squeeze force at independently specified compressive strain0.10 and0.20, using specimen heights explicitly encoded in author formulas. Ordering comparison only within same source campaign, not independent replication. Exclude both duplicate1.0_0.30 blocks from cross-mixture mapping until author evidence resolves labels.",
+  "stopping": "At least5 material scientific tests (repairs/controls labeled separately). Then stop after2 substantive tests fail to improve predictive or supported interpretive evidence; retain the failures.",
+  "admission": "Retrospective predictive candidate only unless fresh independent groups confirm. No identified yieldstress, thixotropic rate, causal additive law or demonstrated industrial impact without extra measurements."
+}

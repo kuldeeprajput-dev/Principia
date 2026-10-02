@@ -1,0 +1,34 @@
+{
+  "case": 80,
+  "title": "Causal electrodermal response during exercise",
+  "kind": "mae",
+  "target": "EDA mean over t+25s to t+30s",
+  "unit": "uS",
+  "inputs": [
+    "level",
+    "lag10",
+    "lag30",
+    "mean120",
+    "activity",
+    "temperature",
+    "temperature30",
+    "elapsed"
+  ],
+  "input_units": {
+    "level": "uS",
+    "lag10": "uS",
+    "lag30": "uS",
+    "mean120": "uS",
+    "activity": "g",
+    "temperature": "degree C",
+    "temperature30": "degree C",
+    "elapsed": "min"
+  },
+  "source_url": "https://physionet.org/content/wearable-device-dataset/1.0.1/",
+  "license": "ODC Attribution1.0",
+  "paper": "https://doi.org/10.13026/z4d7-rc36",
+  "independent_unit": "Participant; all aerobic segments of a person linked",
+  "scope": "One structured aerobic protocol; no mental-stress or clinical diagnosis. Source device clocks are not necessarily calendar measurement dates, and manufacturer EDA calibration remains author-provided.",
+  "timing": "After120s observed history, every5s predict a future5s EDA mean ending30s later. All EDA,temperature and accelerometer summaries are causal and aligned by native starts/sample rates.",
+  "calibration": "No held-person outcome calibration. Past120s EDA is permitted state, identical for every model; response coefficients and flexible transforms fit training people only."
+}

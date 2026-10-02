@@ -1,0 +1,112 @@
+{
+  "case_id": "P100-006",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_electronics",
+  "review_date": "2026-10-02",
+  "checked_files": [
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "d810b21f58b5425b300caf70020414d8f6c1838af32774524679f7c758ee524c"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "d155104c72400ebc703b86a0e46a98ee4fd3649df8523217746ce4ff16d00353"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "61c9b563928e38a5cac030b27e37ca01eb49afe3577dd80e60708349c0942529"
+    },
+    {
+      "path": "package/equations.json",
+      "sha256": "ad75badfdfb9d2cb8b578f93a5f41697419edc5ef38c0379261ae8aa57c72a40"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "d785accc03c88492aae9f96c1e3f6b02ce4e64e5c022214eb18bddb61f78876e"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-006-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Reserved whole-block MAE 0.0492859289 a.u. versus single-line 0.0771298401 and polynomial 0.111712598 supports a bounded response surrogate. Two blocks are not two cells."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Opposite-sign line shapes agree with the already published reversal and double-Lorentzian interpretation. Both intrinsic-width intercepts hit 0.1 MHz bounds, so zero-power linewidths and microscopic channels are not identified."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is validated_extension."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful compact interpolation across Rabi conditions within one calibrated atomic apparatus; meaningful predictive gain over two controls."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task."
+        }
+      },
+      "checks": [
+        "Checked source-defined amplitude semantics and scope, baseline table, whole-block grouping, equation parameters and lower-bound warning."
+      ],
+      "limitations": [
+        "One vapor cell and author-gridded/possibly interpolated response map; unknown full averaging lineage.",
+        "Only two contiguous held blocks, arbitrary-unit amplitude and \u00b160 MHz neighborhood.",
+        "Source outcomes now exposed; no new atomic law or universal sensor sensitivity claim."
+      ]
+    },
+    {
+      "finding_id": "P100-006-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The specified single-line family performs worse in development and confirmation; this rejects that compact approximation at this resolution, not all one-process mechanisms."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Model-family inadequacy does not uniquely identify two microscopic ionization pathways. The extra degrees of freedom and alternative family are acknowledged."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Existing source analyses and standard response families are disclosed. This review does not certify exhaustive literature novelty; the result is informative_falsification."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "A useful guard against overinterpreting a single saturating line; source phenomena themselves are prior art."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equation, frozen coefficients, source audit, grouping, calibration and compact numerical evidence are inspectable. This scientific review does not replace the separately assigned computational replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No operational intervention, cost/reliability improvement, or independent experimental deployment was measured. Potential utility is restricted to the stated task."
+        }
+      },
+      "checks": [
+        "Checked source-defined amplitude semantics and scope, baseline table, whole-block grouping, equation parameters and lower-bound warning."
+      ],
+      "limitations": [
+        "One vapor cell and author-gridded/possibly interpolated response map; unknown full averaging lineage.",
+        "Only two contiguous held blocks, arbitrary-unit amplitude and \u00b160 MHz neighborhood.",
+        "Source outcomes now exposed; no new atomic law or universal sensor sensitivity claim."
+      ]
+    }
+  ],
+  "review_scope": "Independent critical interpretation of the released evidence and primary-source context; not independent experimental replication, human adjudication, or a fresh confirmation campaign.",
+  "source_review": {
+    "primary_url": "https://arxiv.org/html/2509.15463v1",
+    "web_access": "primary article inspected"
+  },
+  "metadata_corrections": "Bound-limited linewidth warning added by owner before final review."
+}

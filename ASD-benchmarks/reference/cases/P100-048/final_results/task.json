@@ -1,0 +1,178 @@
+{
+  "schema_version": "principia.task/3.0",
+  "task_id": "P100-048.original.v1",
+  "case_id": "P100-048",
+  "case_number": 48,
+  "family": "original",
+  "protocol_version": "P100-048-asd6-native-v1",
+  "cohort_id": "P100-048.original.v1.cohort-1",
+  "evaluator_version": "3.0.0-rc.1",
+  "package": "tasks/P100-048.original.v1",
+  "legacy_package": null,
+  "source_scenario": "scenarios/48_atmosphere_noaa_surfrad_2026",
+  "source_scope": "original_corpus",
+  "supplemental": false,
+  "target": "Daylight downwelling longwave irradiance",
+  "target_units": "W/m2",
+  "error_units": "W/m2",
+  "primary_units": "W/m2",
+  "metric_kind": "mae",
+  "aggregation": {
+    "hierarchy": [
+      "group"
+    ],
+    "primary": "mean_group_error"
+  },
+  "permitted_inputs": [
+    "temperature",
+    "humidity",
+    "solar",
+    "diffuse",
+    "zenith",
+    "site_dra"
+  ],
+  "input_units": {
+    "temperature": "degC",
+    "humidity": "percent",
+    "solar": "W/m2",
+    "diffuse": "W/m2",
+    "zenith": "degree",
+    "site_dra": "indicator"
+  },
+  "numeric_columns": [
+    "temperature",
+    "humidity",
+    "solar",
+    "diffuse",
+    "zenith",
+    "site_dra"
+  ],
+  "allows_missing_predictors": false,
+  "positive_prediction": false,
+  "nonnegative_prediction": false,
+  "positive_target": false,
+  "timing_contract": "Contemporaneous daytime downwelling longwave from independently measured temperature/RH and solar/diffuse channels. Zenith<75deg, globalSW>20W/m2, required QC=0. Cloud proxy is clipped diffuse/global ratio; not net-radiation closure.",
+  "calibration": "No confirmation target fitting. Causal target histories only for 38/41/95 as explicitly declared.",
+  "independent_unit": "Whole site-day blocks; forward folds Jan21\u201331,July8\u201315,July16\u201324 trained on preceding dates. July25\u201331 both sites reserved. Two sites only and correlated days.",
+  "evaluation_groups": [
+    "dra:2026-07-25",
+    "dra:2026-07-26",
+    "dra:2026-07-27",
+    "dra:2026-07-28",
+    "dra:2026-07-29",
+    "dra:2026-07-30",
+    "dra:2026-07-31",
+    "psu:2026-07-25",
+    "psu:2026-07-26",
+    "psu:2026-07-27",
+    "psu:2026-07-28",
+    "psu:2026-07-29",
+    "psu:2026-07-30",
+    "psu:2026-07-31"
+  ],
+  "assigned_rows": 9464,
+  "eligible_rows": 9464,
+  "baseline_models": [
+    "reference",
+    "brutsaert",
+    "emissivity",
+    "flexible",
+    "attempt-001",
+    "attempt-002",
+    "attempt-003",
+    "attempt-004",
+    "attempt-005",
+    "attempt-006",
+    "attempt-007",
+    "attempt-008"
+  ],
+  "reference_model": "reference",
+  "models": {
+    "reference": {
+      "equation": "y_hat = 0 + B * (0.0965272872130538*one + 0.98845589876831141*v + 0.66054765829978279*cloud + -0.72182468759495966*vc + 0.036465402262376476*site + -0.091597699490921461*sitecloud)",
+      "state": "rules.json",
+      "role": "reference"
+    },
+    "brutsaert": {
+      "equation": "y_hat = clear",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "emissivity": {
+      "equation": "y_hat = 0 + B * (0.79677787801134603*one)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "flexible": {
+      "equation": "offset + scale*(coef[0] + sum_j coef[j+1]*exp(-||standardized_inputs-center[j]||^2/(2*width^2))); frozen arrays in this state",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-001": {
+      "equation": "y_hat = clear + B * (0.1700773859752982*cloud)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-002": {
+      "equation": "y_hat = 0 + B * (0.38201718927075773*one + 0.52420217836864935*v + 0.21246124143467798*cloud)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-003": {
+      "equation": "y_hat = clear + B * (0.63167173206368088*closure)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-004": {
+      "equation": "y_hat = 0 + B * (0.15136997528601623*one + 0.93111571791167158*v + 0.60923438749086278*cloud + -0.69656913630248907*vc)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-005": {
+      "equation": "y_hat = 0 + B * (0.0965272872130538*one + 0.98845589876831141*v + 0.66054765829978279*cloud + -0.72182468759495966*vc + 0.036465402262376476*site + -0.091597699490921461*sitecloud)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-006": {
+      "equation": "y_hat = 0 + B * (0.62676653264940974*one + 0.032662278852778462*sqrt_e + 0.025040921937574092*cloud + 0.16556142512798333*cloud2)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-007": {
+      "equation": "y_hat = 0 + B * (0.14132152253340405*one + 0.95432333448492412*v + 0.63358529801139585*cloud + -0.74641104089745303*vc)",
+      "state": "rules.json",
+      "role": "comparator"
+    },
+    "attempt-008": {
+      "equation": "y_hat = 0 + B * (0.30033066257344687*one + 0.75828653781416722*v + 0.83870338584800863*attenuation + -1.0074079838103227*vatten + -0.015069319049620651*site + -0.036948048447393703*siteatten)",
+      "state": "rules.json",
+      "role": "comparator"
+    }
+  },
+  "uncertainty_policy": {
+    "method": "individual_group_effects_only",
+    "reason": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference."
+  },
+  "scope_limits": "Only daytime empirical clear/all-sky emissivity diagnostics; no nighttime extension, no independent cloud observations, no cloud causality.",
+  "source_url": "https://gml.noaa.gov/grad/surfrad/overview.html",
+  "source_license": "US government public domain",
+  "exposure": {
+    "current": "exposed",
+    "future_scoring": "retrospective",
+    "historical_record": "{\"schema\": \"First row of dra26190.dat (July9) inspected; this belongs to development. No reserved July25\u201331 target values printed. All public source-aware; confirmation after final freeze will become exposed.\", \"current\": \"exposed\", \"confirmation_history\": \"Scores hidden until candidate selection, stopping and code/state freeze\", \"fresh_for_future_users\": false}",
+    "fresh_confirmation_for_future_agents": false
+  },
+  "data": {
+    "inputs": "data/inputs.csv.gz",
+    "observations": "data/observations.csv.gz",
+    "reference_predictions": "evidence/predictions.csv.gz"
+  },
+  "input_sha256": "a450fa9b89eb773912d7f709ef1b51f5123a5593d11628000457f02e2effa067",
+  "observations_sha256": "72599d36d0794b4839061dcea01e6e493ba0bf399d8360ed599afe5195c4a389",
+  "legacy_protocol_sha256": "b691264f960d5b81ecf7e75c33abe9119d81805962d30e2ac7cf4c09ceea7d67",
+  "publication_eligibility": "source_terms_apply",
+  "preparation_status": "verified_native_reconstruction",
+  "historical_metric_corrections": [],
+  "scientific_evaluator_extension": "asd6-diagnostics/1.0",
+  "metric_extension": null
+}

@@ -1,0 +1,339 @@
+{
+  "case_id": "P100-009",
+  "role": "computational",
+  "reviewer_id": "/root",
+  "checked_files": [
+    {
+      "path": "package/run.py",
+      "sha256": "b10b97d723192c8a65b4a1a69f9da6968cb23f0661be9a4ba5e1be8cc4d7b434"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "64f551d36e4049734499b5bd3a4a744b8d9a612a65a7de07dbe0cf23707d45b7"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "f9891f1dcd81035640ffa6527bb00afbeb43b7e86592f9cae7325b3c28e65978"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "221b01a5126dc6b97c86e4583807c2845603238e95459c668e70b5738bb55793"
+    },
+    {
+      "path": "package/data/inputs.csv.gz",
+      "sha256": "f77a51007e24680aebd743c37d8417f46485373e6400071ae489215a7849a2f4"
+    },
+    {
+      "path": "package/data/observations.csv.gz",
+      "sha256": "a271bcd5b2cc7645257f328b7393e1e8cf5a594e4d169abdb134b40d31dcf165"
+    },
+    {
+      "path": "package/evidence/predictions.csv.gz",
+      "sha256": "40709153071a128eab0abc361b0ccf7096224140a22a89492185b8302555fa42"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "dc107c84af7c0f65811b6b09bbdf2bc9298f8eb63067fb41be131d2d854b8cbf"
+    },
+    {
+      "path": "native.py",
+      "sha256": "e2147ff77b4a1ccaa2458644eb7c2b7cbbcd0de88f95733bfd95bf553a25d81a"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "b3709e5684e515ec075348dbdec80034a639a40e535dbc38017d0425d6403c16"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "d0f65e880271b65e4aafd58d09e9bd9902d519038434ea256887e216749b0548"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "a58fd6664a2f38d54b616a8a448e11cfc77f7ec8654cecde86649b7d504dfcee"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "330e245e3c712d887eec60dc9930cfb04fa6e8a4fcfeb82088ff348b86e40dcf"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "3c4d4f47d7fce914618e570d2551836c1fe69a790f018a24813887ddacaf2695"
+    },
+    {
+      "path": "REVIEW_COMPUTATIONAL_CHECKS.json",
+      "sha256": "6387647ac956518b869436dedbc82dd668fa488ebd728f0054e34ccc5ba73a3d"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-009-F01",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Persistence wins development and transfers to one held animal on author-processed pupil traces. Five dynamical extensions do not establish a mechanism; animal, recording session and cortical region are confounded, and processed pupil size is not neuronal activity."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Persistence wins development and transfers to one held animal on author-processed pupil traces. Five dynamical extensions do not establish a mechanism; animal, recording session and cortical region are confounded, and processed pupil size is not neuronal activity."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Persistence wins development and transfers to one held animal on author-processed pupil traces. Five dynamical extensions do not establish a mechanism; animal, recording session and cortical region are confounded, and processed pupil size is not neuronal activity."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Persistence wins development and transfers to one held animal on author-processed pupil traces. Five dynamical extensions do not establish a mechanism; animal, recording session and cortical region are confounded, and processed pupil size is not neuronal activity.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    },
+    {
+      "finding_id": "P100-009-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "All saved predictions and primary metrics independently reproduce from source-verified inputs, including unfavorable alternatives. Persistence wins development and transfers to one held animal on author-processed pupil traces. Five dynamical extensions do not establish a mechanism; animal, recording session and cortical region are confounded, and processed pupil size is not neuronal activity."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Computational agreement cannot identify a physical or causal mechanism. Persistence wins development and transfers to one held animal on author-processed pupil traces. Five dynamical extensions do not establish a mechanism; animal, recording session and cortical region are confounded, and processed pupil size is not neuronal activity."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "This review checks computation and information access; targeted literature records are not independent priority adjudication."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Reusable scoped comparison and preserved falsification evidence. Persistence wins development and transfers to one held animal on author-processed pupil traces. Five dynamical extensions do not establish a mechanism; animal, recording session and cortical region are confounded, and processed pupil size is not neuronal activity."
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Native reconstruction, independent group-weighted metric reduction, frozen replay, row-order invariance and target-poisoning checks passed. Development validation identities were checked against recorded training membership."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployed intervention, operational saving, clinical qualification or independently measured safety benefit is established."
+        }
+      },
+      "checks": [
+        "Native reconstruction and held-group separation",
+        "All frozen predictor and metric replay",
+        "Undeclared target poisoning and row-order invariance",
+        "Development-fold training/validation membership disjointness"
+      ],
+      "limitations": [
+        "Persistence wins development and transfers to one held animal on author-processed pupil traces. Five dynamical extensions do not establish a mechanism; animal, recording session and cortical region are confounded, and processed pupil size is not neuronal activity.",
+        "Numerical agreement is not independent experimental replication; current confirmation outcomes are exposed."
+      ]
+    }
+  ],
+  "numerical_checks": {
+    "case_id": "P100-009",
+    "reviewer": "/root",
+    "discovery_owner_distinct": true,
+    "native_reconstruction": {
+      "case_id": "P100-009",
+      "native_rows": 7923,
+      "confirmation_rows": 3461,
+      "models": 9,
+      "native_reconstruction": "pass",
+      "group_separation": "pass",
+      "trusted_isolated_replay": "pass",
+      "metric_parity": "pass",
+      "mismatch_rejection": "pass",
+      "missing_source_rejection": "pass"
+    },
+    "models_replayed": 9,
+    "max_prediction_difference": 0.0,
+    "max_primary_metric_difference": 1.1102230246251565e-16,
+    "models": [
+      {
+        "model": "reference",
+        "rows": 3461,
+        "primary_error": 0.6672837898487913,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_persistence",
+        "rows": 3461,
+        "primary_error": 0.6672837898487913,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_velocity",
+        "rows": 3461,
+        "primary_error": 1.052834778002504,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "baseline_flexible",
+        "rows": 3461,
+        "primary_error": 0.6775207769336513,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_001_relaxation",
+        "rows": 3461,
+        "primary_error": 0.688634265544179,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_002_inertia",
+        "rows": 3461,
+        "primary_error": 0.6870537659693423,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_003_arousal",
+        "rows": 3461,
+        "primary_error": 0.6828301557201907,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_004_asymmetry",
+        "rows": 3461,
+        "primary_error": 0.6821776169830049,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      },
+      {
+        "model": "attempt_005_curvature",
+        "rows": 3461,
+        "primary_error": 0.6880599359896171,
+        "undeclared_target_ignored": true,
+        "row_order_invariant": true
+      }
+    ],
+    "fold_scope_records": [
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "16"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-001/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "22713"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "16"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-002/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "22713"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "16"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-003/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "22713"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "16"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-004/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "22713"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "0",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "16"
+        ],
+        "overlap": []
+      },
+      {
+        "path": "attempts/attempt-005/fold_states.json",
+        "fold": "1",
+        "training_groups_count": 1,
+        "validation_groups_count": 1,
+        "validation_groups": [
+          "22713"
+        ],
+        "overlap": []
+      }
+    ],
+    "scope_note": "Native/group reconstruction and numerical replay are checked. Scientific mechanism, population transfer and novelty require separate critical review; these tests do not inspect inaccessible author preprocessing."
+  },
+  "independent_experimental_replication": false,
+  "scientific_scope": "Persistence wins development and transfers to one held animal on author-processed pupil traces. Five dynamical extensions do not establish a mechanism; animal, recording session and cortical region are confounded, and processed pupil size is not neuronal activity."
+}

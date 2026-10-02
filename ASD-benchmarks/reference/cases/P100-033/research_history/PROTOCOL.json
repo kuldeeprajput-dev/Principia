@@ -1,0 +1,27 @@
+{
+  "frozen_utc": "2026-10-02T02:21:35.076234+00:00",
+  "target": "ECG reference heart rate",
+  "units": "bpm",
+  "inputs": [
+    "fft_bpm",
+    "acf_bpm",
+    "half_bpm",
+    "half_strength",
+    "spectral_quality",
+    "agreement",
+    "motion",
+    "ear"
+  ],
+  "timing": "After the complete ten-second PPG segment; simultaneous ECG supplies the target but is never an input. Known recording motion/contact conditions are allowed. No human quality annotation is a predictor.",
+  "source_hashes": "SOURCE_MANIFEST.json",
+  "groups": "SPLITS.json; first3IDdigits authoritative person ID",
+  "eligibility": "Source HR finite and positive; PPG reconstructable with nonzero variance. No good-quality-only selection; source Quality flag retained for diagnostics. Fixed search band30\u2013240bpm is the candidate estimator domain, not an outcome exclusion.",
+  "baseline_families": [
+    "dominant PPG Fourier peak",
+    "maximum PPG autocorrelation peak",
+    "constrained training-only flexible RBF fusion"
+  ],
+  "selection": "Whole-person mean MAE; smallest coefficient count within1% of best; >=5 adaptive hypotheses and two no-gain challenges before freeze.",
+  "exposure": "PPG input waveform100001 and headers/design inspected; no ECG target values printed prefit. Public source study purpose known.",
+  "native_layout_amendment_before_fit": "Support48 transposed single-red traces and3840 standard300\u00d73 traces, choosing PPG_R in the latter; fixed red channel, no outcome-based channel selection."
+}

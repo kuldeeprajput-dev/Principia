@@ -1,0 +1,112 @@
+{
+  "schema_version": "principia.portfolio-adjudication/1.0",
+  "rubric_version": "principia.review-rubric/3.1",
+  "case_id": "P100-096",
+  "adjudicator": "benchmark maintenance: scope-aware evidence reconciliation",
+  "source_reviews": [
+    {
+      "path": "reviews/portfolios/P100-096/computational.json",
+      "bytes": 3663,
+      "sha256": "6dd712d3217959e0ce699255b32b110b3e76dfc1d451994d9cebd6ad6c0b4220"
+    },
+    {
+      "path": "reviews/portfolios/P100-096/scientific_critical.json",
+      "bytes": 4700,
+      "sha256": "496d166df21602bb492e38f098d37099b1525f7df7a7d451d2a4551224d2623d"
+    },
+    {
+      "path": "reviews/portfolios/P100-096/combined/review.json",
+      "bytes": 7401,
+      "sha256": "083813c1b2d328a3a0f21c67036b3dfa26bd00f655f8217e1a872663ee5e2902"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-096-SCI-01",
+      "disagreements": [],
+      "coverage_differences": [
+        "mechanism",
+        "novelty",
+        "significance",
+        "impact"
+      ],
+      "complementary_scopes": [
+        "reliability",
+        "reproducibility",
+        "disposition"
+      ],
+      "requires_resolution": false,
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "The retained evidence supports the stated narrow conclusion under Original RTS speed task separate from supplemental manually assisted position task; connected videos/riders recur within one session. Strong adverse evidence: Author RTS smoothing may use future observations; recurring riders and one session prevent unseen rider/safety claims.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "empirical_claim_support"
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The observationclock correction is supported metrology; a small relative-speed association is compatible with following, but perturbationcause and continuous-time relaxation are not identified.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "mechanism"
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Relative-speed/spacing relations are established. The contribution is repaired measurement and scoped conditional evidence, not a new traffic law. This review uses retained prior-art records only; it performs no new literature priority adjudication.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "novelty"
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "The measured endpoint and matched controls supply a useful reproducible local benchmark. Original RTS speed task separate from supplemental manually assisted position task; connected videos/riders recur within one session.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "scientific_significance"
+        },
+        "reproducibility": {
+          "status": "supported",
+          "rationale": "Every registered task reference runs from portable frozen state; all historical model metric values independently reproduce. Native reconstruction is audited in the separate RAW reports.",
+          "evidence_ids": [
+            "COMPUTATIONAL"
+          ],
+          "scope": "computational_replay"
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "Potential monitoring, calibration or experiment-planning value is bounded by the stated endpoint. No operational intervention, measured deployment savings, clinical effect or independent real-world benefit is demonstrated in this portfolio.",
+          "evidence_ids": [
+            "E001",
+            "E002",
+            "E003",
+            "E004"
+          ],
+          "scope": "impact"
+        }
+      },
+      "adjudication_status": "resolved_with_declared_scope",
+      "advisory_disposition": "supported",
+      "role_scope_interpretation": "Current adjudication of retained role-specific rationales; no new experiment, literature search or independent reviewer run."
+    }
+  ],
+  "independent_experimental_replication": "not_established",
+  "automatic_discovery_admission": false,
+  "review_independence": "Historical roles preserved; this maintenance reconciliation is not a new independent review."
+}

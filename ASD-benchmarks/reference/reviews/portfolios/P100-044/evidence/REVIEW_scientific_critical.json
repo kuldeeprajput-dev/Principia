@@ -1,0 +1,170 @@
+{
+  "case_id": "P100-044",
+  "role": "scientific_critical",
+  "reviewer_id": "asd5_bio_behavior",
+  "reviewed_utc": "2026-10-01T15:50:03.964804+00:00",
+  "checked_files": [
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "93e189b846c2ec56ebdab6c1fd03aa14d83727cfa0aa44af9a56d156556b8115"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "33dfd7784ac2232b42fb33273ee3cb7b98c6161c2702119cdaf19ed12e1d985e"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "cbfd8c5cd7fca40a60ab408f907e9767bc04b23a5267b08abc2d9442f5c49ec8"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "8f9364e5b424d4323d85663408edeb17291aa5e3df716d2dbcbe311570cb5e2e"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "85fca33cb612cd011372336ca429fdbe37aa9e5939d000a131c6723be528ca64"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "a8c343a1246a46dcf55f0070362600460c5d3aaa0cdd9aae823fcd59000caf26"
+    },
+    {
+      "path": "package/evidence/scientific_checks.json",
+      "sha256": "9cfa106511390ec2c6d8911a0264f0802f48cd7576dca8253aa17fb511391df1"
+    },
+    {
+      "path": "package/evidence/graph_certificates.csv",
+      "sha256": "36c786365f268e81220cdb7968ca0a9bbdb0b3bdb39041aa9008d37b993cd5b5"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-044-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "The comparison is coherent but supported by only four capped-runtime instances."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The cap explains exact zero errors on two held instances; this is observed resource consumption, not latent solve-time complexity."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary source already studies scaling or topology optimization; no exhaustive independent literature adjudication establishes priority."
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "Useful local resource-consumption baseline, but not a new algorithmic law."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equations, source anchors, frozen states and per-group evidence are inspectable; a distinct computational reviewer assesses full replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment, actual saved compute, new hardware evaluation or independent experimental replication is demonstrated."
+        }
+      },
+      "checks": [
+        "Reviewed the explicit target, timing/calibration contract, source-aware exposure, mathematical dimensional consistency, all primary comparator scores and group-level counterexamples."
+      ],
+      "limitations": [
+        "One solver/hardware experiment,16 structural instances,three formulations,one run each. Consumption censored by a7200s resource cap; not latent solve time or general computational complexity. No deployed impact evidence.",
+        "Judgment is independent scientific-critical agent review, not human domain adjudication or experimental replication.",
+        "The reference only wins2/4 instance comparisons against RBF and loses to the degree-free retrospective candidate in mean error.",
+        "There is one run per configuration on one solver/machine; runtime variance is not measured."
+      ]
+    },
+    {
+      "finding_id": "P100-044-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Native linear and quadratic ZIMPL constraints bound auxiliary diameter from below by distance expressions, allowing slack in unfinished solutions. Saved BFS certificates distinguish graph diameter from MIP objective."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "The standard shortest-path and Moore-counting arguments have clear mathematical meaning; the discrepancy is compatible with slack variables, not proof of file corruption."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary source already studies scaling or topology optimization; no exhaustive independent literature adjudication establishes priority."
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "This is the strongest contribution: an executable measurement-semantics correction and27 classical optimality certificates."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equations, source anchors, frozen states and per-group evidence are inspectable; a distinct computational reviewer assesses full replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment, actual saved compute, new hardware evaluation or independent experimental replication is demonstrated."
+        }
+      },
+      "checks": [
+        "Reviewed the explicit target, timing/calibration contract, source-aware exposure, mathematical dimensional consistency, all primary comparator scores and group-level counterexamples.",
+        "Consulted NII GraphGolf problem definition and native Seidel models; confirmed the Moore expression is the standard necessary condition, not a new theorem.",
+        "The certificate audit is explicitly post-freeze and does not alter runtime targets or selection."
+      ],
+      "limitations": [
+        "One solver/hardware experiment,16 structural instances,three formulations,one run each. Consumption censored by a7200s resource cap; not latent solve time or general computational complexity. No deployed impact evidence.",
+        "Judgment is independent scientific-critical agent review, not human domain adjudication or experimental replication.",
+        "Numerical graph reconstruction is checked separately by the computational reviewer; graph claims do not become runtime inputs."
+      ]
+    },
+    {
+      "finding_id": "P100-044-F03",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Development-selected baseline and failed extensions are retained with the final reversal disclosed."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Occupancy and search-count proxies failing here do not disprove relationships in other solver regimes."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Primary source already studies scaling or topology optimization; no exhaustive independent literature adjudication establishes priority."
+        },
+        "significance": {
+          "status": "supported",
+          "rationale": "Negative results prevent extrapolating a tiny capped study into a complexity theorem."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Equations, source anchors, frozen states and per-group evidence are inspectable; a distinct computational reviewer assesses full replay."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No deployment, actual saved compute, new hardware evaluation or independent experimental replication is demonstrated."
+        }
+      },
+      "checks": [
+        "Reviewed the explicit target, timing/calibration contract, source-aware exposure, mathematical dimensional consistency, all primary comparator scores and group-level counterexamples.",
+        "Distinguished elapsed seconds from Gurobi Work Measure; only the former is the scored response."
+      ],
+      "limitations": [
+        "One solver/hardware experiment,16 structural instances,three formulations,one run each. Consumption censored by a7200s resource cap; not latent solve time or general computational complexity. No deployed impact evidence.",
+        "Judgment is independent scientific-critical agent review, not human domain adjudication or experimental replication."
+      ]
+    }
+  ],
+  "independence": "Reviewed before reading the other role review. No discovery contribution or parameter fitting for these cases.",
+  "literature": [
+    {
+      "url": "https://research.nii.ac.jp/graphgolf/problem.html",
+      "use": "Authoritative order/degree task definition and classical diameter bounds."
+    },
+    {
+      "url": "https://github.com/ZIB-AOPT/QOBLIB/tree/2b400f43c197bb0eb9bc9802efa2b28b818ab63c/10-topology",
+      "use": "Web retrieval blocked; verified local pinned native Seidel formulation files instead."
+    }
+  ]
+}

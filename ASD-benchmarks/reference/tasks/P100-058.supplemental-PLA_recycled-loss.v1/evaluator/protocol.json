@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.2.0",
+  "case_id": "P100-058-PLA_recycled-loss",
+  "protocol_id": "P100-058-PLA_recycled-loss-fresh-challenge-20261001-exposed-after-delivery",
+  "target": "Unfitted loss modulus",
+  "target_units": "Pa",
+  "primary_units": "dimensionless natural-log ratio",
+  "metric_kind": "log_mae",
+  "metric_definition": "Equal-temperature positive-response absolute natural-log error; all finite measured signs retained in physical errors.",
+  "independent_unit": "whole temperature sweep",
+  "evaluation_groups": [
+    "T160",
+    "T170"
+  ],
+  "input_sha256": "f4b050f5ca8832f08be28ee17176acfbd3eb8a0f682cc773181dd888e0f9f70d",
+  "input_rows": 30,
+  "assigned_rows": 30,
+  "permitted_inputs": [
+    "temperature_C",
+    "omega"
+  ],
+  "input_units": {
+    "temperature_C": "degree C",
+    "omega": "rad/s"
+  },
+  "allows_missing_predictors": false,
+  "baseline_models": [
+    "reference",
+    "wlf",
+    "arrhenius",
+    "zero_shot_old_PDLLA"
+  ],
+  "reference_equations": {
+    "reference": "Generalized Maxwell Gprime/Gdoubleprime with WLF shift; exact coefficients and clocks in frozen state.",
+    "wlf": "Generalized Maxwell Gprime/Gdoubleprime with WLF shift; exact coefficients and clocks in frozen state.",
+    "arrhenius": "Generalized Maxwell Gprime/Gdoubleprime with WLF shift; exact coefficients and clocks in frozen state.",
+    "zero_shot_old_PDLLA": "Generalized Maxwell Gprime/Gdoubleprime with WLF shift; exact coefficients and clocks in frozen state."
+  },
+  "positive_target": false,
+  "positive_prediction": true,
+  "nonnegative_prediction": false,
+  "scope_limit": "One commercial material from the same authors/instrument; calibrated temperature transfer and unfitted loss response, not universal physics or independent laboratory replication.",
+  "calibration_note": "Only the registered lower-temperature storage sweeps supplied calibration. Loss modulus never fitted. Calibrated model states frozen before reserved response opening.",
+  "timing_contract": "Temperature and imposed frequency only. Loss modulus is withheld as an orthogonal mechanistic check; never a primary predictor.",
+  "exposure_notice": "Reserved outcomes were unopened at first frozen evaluation. They are now packaged/exposed; future evaluator scores are retrospective.",
+  "source_evidence": "../rules.json",
+  "data_semantics": "../data/README.md",
+  "uncertainty": {
+    "method": "individual_group_effects_only",
+    "reason": "Shared source system/people/materials, temporal dependence or small reserved-group counts do not justify precise population-level confidence. Group effects are descriptive; no row bootstrap."
+  },
+  "review_criteria": [
+    {
+      "id": "C1",
+      "name": "Prediction-time information",
+      "requirement": "Verify native anchors and permitted information: Temperature and imposed frequency only. Loss modulus is withheld as an orthogonal mechanistic check; never a primary predictor."
+    },
+    {
+      "id": "C2",
+      "name": "Validation and leakage",
+      "requirement": "Inspect complete training/tuning groups and processing fits. Keep linked units together. Distinguish original held-out evidence from the currently exposed cohort."
+    },
+    {
+      "id": "C3",
+      "name": "Executable equations and parameters",
+      "requirement": "Reproduce submitted predictions; inspect correspondence between written equations and code, all coefficients, learned transformations, hidden calibration and model complexity."
+    },
+    {
+      "id": "C4",
+      "name": "Units and scientific interpretation",
+      "requirement": "Check units, physical signs/limits, measurement preprocessing, identifiability and source-specific confounding. Native DFS text exports only; paired TAD exports are linked duplicates, not independent samples. Target storage modulus and secondary loss modulus are separate native instrument outputs, though both share systematic calibration. No compliance correction was applied by the authors. A single purchased polymer batch."
+    },
+    {
+      "id": "C5",
+      "name": "Controls, uncertainty and failures",
+      "requirement": "Require falsifying tests, residual checks, sensitivity/ablation evidence and preserved negative results. Use independent groups rather than row-level pseudo-replication."
+    },
+    {
+      "id": "C6",
+      "name": "Comparators and practical value",
+      "requirement": "Compare every frozen baseline under equal information/coverage; justify improvements in physical units and simplicity, not just best-case rows or extra fitted constants."
+    },
+    {
+      "id": "C7",
+      "name": "Prior work and novelty",
+      "requirement": "Disclose source analyses and literature-search records. Separate reproduction from extension; a novelty claim requires independent literature and scientific adjudication."
+    },
+    {
+      "id": "C8",
+      "name": "Scope and reproducibility",
+      "requirement": "State validated systems/conditions, failure modes and out-of-domain limits. Fresh scientific confirmation requires new, unexposed groups with a preregistered protocol."
+    }
+  ],
+  "log_eligibility": "Strictly positive native response for logarithmic evaluation; all finite signs retained for physical errors. No empirical noise-floor selection.",
+  "fresh_confirmation": false
+}

@@ -1,0 +1,5 @@
+# NHTSA reporting counts
+
+The source complaints file is51-tab-field native text; ODINO can repeat across components. Deduplicate ODINO plus vehicle make/model, never count each component as an independent report. LDATE is received date, distinct from FAILDATE incident date and DATEA added date. Vehicle productV only. Select known make/model cohort with>=6unique complaints inJan–Jun2025before all targetmonths; retain true zero monthly counts for those cohorts. No filtering on later observed correlation/performance.
+
+Predictors are prior1/3/6calendar-month counts; no targetmonth incidents, narratives or recall outcomes. July2025–April2026development andMay–July2026reserved; partial latest months not admitted. Native source documentation warns product labels maychange and snapshot output is revised. No reliable as-issued daily availability reconstructed; workload prediction is retrospective. No vehicle population exposure denominator, so count gradients cannot establish mechanical failure rates or causal recall impact.

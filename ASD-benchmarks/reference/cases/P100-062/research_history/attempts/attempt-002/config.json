@@ -1,0 +1,32 @@
+{
+  "name": "fick_slab",
+  "formula": "offset+gain*drive*(slab((t+lag)/tau)-slab(lag+0*t))",
+  "hypothesis": "Development evidence available before this fit: shared_boundary_response: MAE 7.31915, worst group 15.7251.\n\nThe shared first-order response improves over polynomial extrapolation. Test the full Fickian slab breakthrough shape, allowing a boundary-onset lag rather than assuming first-order arrival. The normalized lag is explicit; model failure is not evidence against diffusion generally.",
+  "inputs": [
+    "t",
+    "offset",
+    "drive",
+    "high"
+  ],
+  "initial": {
+    "gain": 20,
+    "tau": 2000,
+    "lag": 0.1
+  },
+  "bounds": {
+    "gain": [
+      -500,
+      500
+    ],
+    "tau": [
+      10,
+      1000000.0
+    ],
+    "lag": [
+      0.001,
+      4
+    ]
+  },
+  "recorded_utc": "2026-10-02T01:59:10.614658+00:00",
+  "parent": "attempt-001"
+}

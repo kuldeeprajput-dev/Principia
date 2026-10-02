@@ -1,0 +1,319 @@
+{
+  "schema_version": "principia.claims/3.0",
+  "case_id": "P100-003",
+  "claim_origin": "New ASD7 campaign; submitter claims separated from independent advisory judgments",
+  "training_and_exposure": {
+    "current_outcomes_exposed": true,
+    "fresh_confirmation": false,
+    "historical_record": "Source-aware public data. Limited schema/header and first-row previews recorded before task freeze; any inspected examples remain explicitly exposed. Confirmation performance withheld until selection and stopping freeze."
+  },
+  "findings": [
+    {
+      "id": "P100-003-F01",
+      "classification": "falsified",
+      "source_classification": "negative_result",
+      "statement": "The campaign does not establish a transferable nonstationary detector-noise law.",
+      "applicability": "Single4096-second H1 segment; this is detector-noise monitoring, not GW detection or source parameter inference. Conditional on supplied quality mask. The entire source has injectionmask23: a continuous-wave hardware injection is present. This study concerns recorded strain-band power including possible injected contribution, NOT uncontaminated detector noise or astrophysical inference. No-cbc/burst/detchar/stochastic injections required; CW status retained. All data come from one short segment. The DATA bit and declared injection bits are required; other quality bits are retained rather than silently asserted clean. No injection/noise decomposition is identified.",
+      "limitations": "All data come from one short segment. The DATA bit and declared injection bits are required; other quality bits are retained rather than silently asserted clean. No injection/noise decomposition is identified.",
+      "falsification": "All data come from one short segment. The DATA bit and declared injection bits are required; other quality bits are retained rather than silently asserted clean. No injection/noise decomposition is identified.",
+      "prior_art": "The source studies and domain constructions are disclosed in PRIOR_ART.json. This campaign does not certify broad novelty.",
+      "equation_or_program": {
+        "expression": "y_hat = training-fold median(target); final coefficient refit on development only",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015"
+        ]
+      },
+      "variables_and_units": {
+        "target": "10^-21 strain",
+        "lag1": "RMS strain in units of 1e-21",
+        "lag2": "RMS strain in units of 1e-21",
+        "lag3": "RMS strain in units of 1e-21",
+        "lag4": "RMS strain in units of 1e-21",
+        "median4": "RMS strain in units of 1e-21",
+        "mad4": "RMS strain in units of 1e-21",
+        "low1": "RMS strain in units of 1e-21",
+        "high1": "RMS strain in units of 1e-21",
+        "line1": "RMS strain in units of 1e-21"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015"
+      ],
+      "task_id": "P100-003.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-003-F02",
+      "classification": "falsified",
+      "source_classification": "informative_falsification",
+      "statement": "Cross-band regressors and robust-response additions fail the development comparison. Final results also fail to establish superiority of the selected stationary baseline.",
+      "applicability": "Single4096-second H1 segment; this is detector-noise monitoring, not GW detection or source parameter inference. Conditional on supplied quality mask. The entire source has injectionmask23: a continuous-wave hardware injection is present. This study concerns recorded strain-band power including possible injected contribution, NOT uncontaminated detector noise or astrophysical inference. No-cbc/burst/detchar/stochastic injections required; CW status retained. All data come from one short segment. The DATA bit and declared injection bits are required; other quality bits are retained rather than silently asserted clean. No injection/noise decomposition is identified.",
+      "limitations": "A new condition, measurement or richer model can be proposed through a separately frozen task; current outcomes are exposed.",
+      "falsification": "A new condition, measurement or richer model can be proposed through a separately frozen task; current outcomes are exposed.",
+      "prior_art": "Negative evidence concerns these declared hypotheses and source conditions only.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015"
+        ]
+      },
+      "variables_and_units": {
+        "target": "10^-21 strain",
+        "lag1": "RMS strain in units of 1e-21",
+        "lag2": "RMS strain in units of 1e-21",
+        "lag3": "RMS strain in units of 1e-21",
+        "lag4": "RMS strain in units of 1e-21",
+        "median4": "RMS strain in units of 1e-21",
+        "mad4": "RMS strain in units of 1e-21",
+        "low1": "RMS strain in units of 1e-21",
+        "high1": "RMS strain in units of 1e-21",
+        "line1": "RMS strain in units of 1e-21"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015"
+      ],
+      "task_id": "P100-003.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    },
+    {
+      "id": "P100-003-F03",
+      "classification": "unsupported",
+      "source_classification": "unsupported",
+      "statement": "These results establish a universal new physical or mathematical law, or a demonstrated deployed industrial impact.",
+      "applicability": "Single4096-second H1 segment; this is detector-noise monitoring, not GW detection or source parameter inference. Conditional on supplied quality mask. The entire source has injectionmask23: a continuous-wave hardware injection is present. This study concerns recorded strain-band power including possible injected contribution, NOT uncontaminated detector noise or astrophysical inference. No-cbc/burst/detchar/stochastic injections required; CW status retained. All data come from one short segment. The DATA bit and declared injection bits are required; other quality bits are retained rather than silently asserted clean. No injection/noise decomposition is identified.",
+      "limitations": "All data come from one short segment. The DATA bit and declared injection bits are required; other quality bits are retained rather than silently asserted clean. No injection/noise decomposition is identified.",
+      "falsification": "All data come from one short segment. The DATA bit and declared injection bits are required; other quality bits are retained rather than silently asserted clean. No injection/noise decomposition is identified.",
+      "prior_art": "Novelty needs independent literature adjudication and impact needs intervention/deployment evidence.",
+      "equation_or_program": {
+        "expression": "See bound frozen model states and executable tests; the claim is an informative negative or metrology limitation.",
+        "evidence_ids": [
+          "E001",
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E006",
+          "E007",
+          "E008",
+          "E009",
+          "E010",
+          "E011",
+          "E012",
+          "E013",
+          "E014",
+          "E015"
+        ]
+      },
+      "variables_and_units": {
+        "target": "10^-21 strain",
+        "lag1": "RMS strain in units of 1e-21",
+        "lag2": "RMS strain in units of 1e-21",
+        "lag3": "RMS strain in units of 1e-21",
+        "lag4": "RMS strain in units of 1e-21",
+        "median4": "RMS strain in units of 1e-21",
+        "mad4": "RMS strain in units of 1e-21",
+        "low1": "RMS strain in units of 1e-21",
+        "high1": "RMS strain in units of 1e-21",
+        "line1": "RMS strain in units of 1e-21"
+      },
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015"
+      ],
+      "task_id": "P100-003.original.v1",
+      "task_family": "original",
+      "task_version_history": "ASD7 frozen development selection and exposed confirmation"
+    }
+  ],
+  "evidence_assets": [
+    {
+      "path": "evidence/E001_FREEZE.json",
+      "bytes": 10368,
+      "sha256": "be44deca90c9043f27150d7db634c9284d35a27d0664573c4800675ba87388bb",
+      "id": "E001",
+      "role": "FREEZE.json"
+    },
+    {
+      "path": "evidence/E002_PRIOR_ART.json",
+      "bytes": 927,
+      "sha256": "6e5fcd8c281b5548b754ee178a08a3a21e43f3d66432efc366aa661fe2a50bbf",
+      "id": "E002",
+      "role": "PRIOR_ART.json"
+    },
+    {
+      "path": "evidence/E003_PROTOCOL.json",
+      "bytes": 2241,
+      "sha256": "2bf62cdd39c01bc1388426060f30bd7845a18c7f251f1d9bf2ff5786d96f49d1",
+      "id": "E003",
+      "role": "PROTOCOL.json"
+    },
+    {
+      "path": "evidence/E004_SOURCE_MANIFEST.json",
+      "bytes": 559,
+      "sha256": "129cd1f4a0566b066730496f210be4703058d950e99b766d67178c933fc259bb",
+      "id": "E004",
+      "role": "SOURCE_MANIFEST.json"
+    },
+    {
+      "path": "evidence/E005_SPLITS.json",
+      "bytes": 179,
+      "sha256": "0d7258c031a9d7e9369d730352d4dac039e637f22a331dca3943009387bc08dd",
+      "id": "E005",
+      "role": "SPLITS.json"
+    },
+    {
+      "path": "evidence/E006_native.py",
+      "bytes": 2603,
+      "sha256": "ed7ce7dca3ceb12b01bc86d4f74a95799ab99e080a5dc0f747301d31923b655a",
+      "id": "E006",
+      "role": "native.py"
+    },
+    {
+      "path": "evidence/E007_FINDINGS.md",
+      "bytes": 3709,
+      "sha256": "9ffb94c6e40c315f84719dddc8c7964c87b678f49a6bb23f682d036096e7026f",
+      "id": "E007",
+      "role": "package/FINDINGS.md"
+    },
+    {
+      "path": "evidence/E008_inputs.csv.gz",
+      "bytes": 4239,
+      "sha256": "fe065e4c36f008eeb7e9f27fbb1a17b377c06d0f164a66e2aa5577f449e0e809",
+      "id": "E008",
+      "role": "package/data/inputs.csv.gz"
+    },
+    {
+      "path": "evidence/E009_observations.csv.gz",
+      "bytes": 1958,
+      "sha256": "92917b185db2bd10b551edda84b0dd552ff85097ba8d44b98471b2628f11f8a1",
+      "id": "E009",
+      "role": "package/data/observations.csv.gz"
+    },
+    {
+      "path": "evidence/E010_metrics.csv",
+      "bytes": 960,
+      "sha256": "ab8b94effa5be921307d99bf24707847baf72220658de5988799a022f4407e3f",
+      "id": "E010",
+      "role": "package/evidence/metrics.csv"
+    },
+    {
+      "path": "evidence/E011_predictions.csv.gz",
+      "bytes": 4725,
+      "sha256": "0710d89ee463d641d7ded6b9f4cbc0adb33360349a9e3d7a7333d82ac9896ff9",
+      "id": "E011",
+      "role": "package/evidence/predictions.csv.gz"
+    },
+    {
+      "path": "evidence/E012_findings.json",
+      "bytes": 4520,
+      "sha256": "49c4e061fed51ddbbc58712341f8f9e6a8670d31fc620287f3e5ae40c41efb32",
+      "id": "E012",
+      "role": "package/findings.json"
+    },
+    {
+      "path": "evidence/E013_rules.json",
+      "bytes": 11137,
+      "sha256": "7404e7ed6668dde72330970cc23e3866e0ab8747c9d8de4b8710e037da23f01d",
+      "id": "E013",
+      "role": "package/rules.json"
+    },
+    {
+      "path": "evidence/E014_run.py",
+      "bytes": 6842,
+      "sha256": "ef168de18dec31432d8faaaab8ef028b14dadec837447867d29d3f48fa9bdbc6",
+      "id": "E014",
+      "role": "package/run.py"
+    },
+    {
+      "path": "evidence/E015_task_spec.json",
+      "bytes": 3138,
+      "sha256": "d90e865b66df5caa9a97adcd9ab698a7fcad295baf0d9142a595107b7159c295",
+      "id": "E015",
+      "role": "package/task_spec.json"
+    },
+    {
+      "path": "evidence/REVIEW_computational.json",
+      "bytes": 9869,
+      "sha256": "608600143cb8dd03631547f9835728c3c1b06f7a816a390d5bc7a9d52bd97721",
+      "id": "COMPUTATIONAL",
+      "role": "Independent computational author record"
+    },
+    {
+      "path": "evidence/REVIEW_scientific_critical.json",
+      "bytes": 10417,
+      "sha256": "ae6fe190b4e0b2c6e1956d0b7f6f7a6f4ce6f19df694f2c5fd78c250d8375efa",
+      "id": "SCIENTIFIC_CRITICAL",
+      "role": "Independent scientific_critical author record"
+    }
+  ]
+}

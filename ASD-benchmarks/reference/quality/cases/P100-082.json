@@ -1,0 +1,76 @@
+{
+  "case_id": "P100-082",
+  "title": "Soil respiration dataset for European forest sites evaluating holistic management practices",
+  "default_task": "P100-082.original.v1",
+  "default_tier": "comparative_core",
+  "baseline_label": "implemented by GPT-6 Astra",
+  "endpoint_quality": "Author-derived forest-soil CO2 mass flux on reserved future dates",
+  "equation_quality": {
+    "executable_reference_present": true,
+    "supported_scope": "See exact linked equations and parameter states; successful replay is not mechanism identification."
+  },
+  "independent_units": {
+    "scoring_groups": 15,
+    "independent_unit_description": "complete reserved future temporal block at each calibrated site",
+    "independent_replication_count": null,
+    "replication_count_status": "not inferred from scoring-group count"
+  },
+  "calibration_burden": "Context/site amplitudes are trained on earlier dates only. Lloyd\u2013Taylor E0 is near 200 K with a documented optimizer-scaling limitation; it is not an identified globally optimized physiological coefficient.",
+  "baseline_strength": {
+    "registered_controls": 6,
+    "scope": "Matched task/input access; historical controls are not claimed to exhaust state of the art."
+  },
+  "mechanism_evidence": {
+    "partially_supported": 3
+  },
+  "novelty_status": "not_adjudicated",
+  "practical_relevance": {
+    "intended_target": "Author-derived forest-soil CO2 mass flux on reserved future dates",
+    "prediction_time": "Known site/context, measurement date, native 5-cm soil temperature and soil moisture only; exclude author response-fit slopes, chamber conversions, confidence bounds and future flux.",
+    "demonstrated_deployment_benefit": false,
+    "claim_blockers": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "task_ids": [
+    "P100-082.original.v1",
+    "P100-082.round2.v1"
+  ],
+  "finding_ids": [
+    "P100-082-SCI-01",
+    "P100-082-SCI-02",
+    "P100-082-SCI-03"
+  ],
+  "promotion_conditions": [
+    "Reassess only under a versioned contract; never rename exposed outcomes as fresh."
+  ],
+  "existing_quality_audit": "cases/P100-082/QUALITY_AUDIT.md",
+  "adjudication": "reviews/adjudicated/P100-082.json",
+  "practical_use_contract": {
+    "decision_or_analysis": "Estimate Author-derived forest-soil CO2 mass flux on reserved future dates under the exact registered input budget",
+    "intended_user": "Domain researcher or process analyst; operational adoption not demonstrated",
+    "inputs_available_when": "Known site/context, measurement date, native 5-cm soil temperature and soil moisture only; exclude author response-fit slopes, chamber conversions, confidence bounds and future flux.",
+    "calibration_requirement": "Context/site amplitudes are trained on earlier dates only. Lloyd\u2013Taylor E0 is near 200 K with a documented optimizer-scaling limitation; it is not an identified globally optimized physiological coefficient.",
+    "calibration_cost": "Not monetized or timed in the corpus; no zero-cost assumption",
+    "actionable_output": "Author-derived forest-soil CO2 mass flux on reserved future dates in g CO2 m^-2 h^-1",
+    "decision_utility_metric": null,
+    "benefit_evidence_status": "not_measured",
+    "failure_boundary": "Transfer is restricted to the declared source and cohort; no measured deployment intervention."
+  },
+  "default_numerical_evidence": {
+    "primary_metric": "rmse",
+    "primary_units": "g CO2 m^-2 h^-1",
+    "reference_model": "lloyd_taylor",
+    "reference_primary_error": 0.28747417849482393,
+    "reference_physical_mae": 0.2006690921951315,
+    "physical_error_units": "g CO2 m^-2 h^-1",
+    "lowest_registered_error_model": "lloyd_taylor",
+    "lowest_registered_error": 0.28747417849482393,
+    "lowest_error_interpretation": "Retrospective description of all frozen alternatives, including attempts and possible aliases; not a new selection or independent baseline.",
+    "metrics_asset": {
+      "path": "tasks/P100-082.original.v1/evidence/metrics.csv",
+      "bytes": 585,
+      "sha256": "a557d7ff08c8dc5bfe7b3943cd9c2b18040c381d34b0c34299b1df2530a8d137"
+    },
+    "models": 6
+  },
+  "case_specific_next_evidence": "Validate on fresh date blocks and new sites under an explicit calibration budget.\n\nUse independently observed wetting interventions and measurement uncertainty to separate pulse mechanism from temperature fitting."
+}

@@ -1,0 +1,14 @@
+{
+  "case": 47,
+  "type": "linear",
+  "features": [
+    "one",
+    "N"
+  ],
+  "offset": "O",
+  "scale": null,
+  "alpha": 0,
+  "title": "Empirical oxygen\u2013nitrate departure",
+  "hypothesis": "Fit an effective nitrate coefficient around a surface-solubility proxy, challenging fixed Redfield stoichiometry.\n\nDevelopment feedback available before this hypothesis: No earlier attempt; fixed baselines available.\n\nThis attempt tests a distinct explanation/ablation. All reserved groups remain unscored. A failure to beat the incumbent rejects predictive benefit rather than proving absence of the underlying physical process.",
+  "equation": "offset(input) + scale(input) * sum_j coef[j] * named_basis[j](input); all named bases defined in run.py; optional correction clipping/nonnegative output explicitly in state."
+}

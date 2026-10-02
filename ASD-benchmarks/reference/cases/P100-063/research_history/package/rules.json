@@ -1,0 +1,382 @@
+{
+  "case_id": "P100-063",
+  "schema_version": "asd6.portable/1.0",
+  "input_columns": [
+    "frequency_GHz",
+    "field_T",
+    "termination_K"
+  ],
+  "numeric_columns": [
+    "frequency_GHz",
+    "field_T",
+    "termination_K"
+  ],
+  "input_units": {
+    "frequency_GHz": "GHz",
+    "field_T": "T",
+    "termination_K": "K"
+  },
+  "target": "Noise power spectral density",
+  "target_units": "nV^2/Hz",
+  "error_units": "nV^2/Hz",
+  "metric_kind": "mae",
+  "aggregation": "Equal top-level group weight; equal rows within group. Dependent spectral bins are not independent replication.",
+  "reference_attempt": "attempt-001",
+  "models": {
+    "reference": {
+      "kind": "mag_asym",
+      "parameters": [
+        6.995348752086381,
+        29.430891270064272,
+        0.005816487869886099,
+        0.20871222377793194,
+        0.03135888689121946,
+        0.029570046743516813,
+        0.08629215069055177
+      ],
+      "training_groups": [
+        "T293",
+        "T389",
+        "T77"
+      ],
+      "training_rows": 51051,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 1434.3688670586196,
+      "bounds": [
+        [
+          6.98,
+          10,
+          0.001,
+          0.1,
+          0,
+          0,
+          -2
+        ],
+        [
+          7.02,
+          60,
+          0.04,
+          0.3,
+          0.1,
+          0.15,
+          2
+        ]
+      ],
+      "training_residual_rms": 0.26972575589803216,
+      "display_name": "Thermal Lorentzian plus dispersion",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 7
+    },
+    "baseline_constant": {
+      "kind": "constant",
+      "parameters": [
+        0.20295736686783536
+      ],
+      "training_groups": [
+        "T293",
+        "T389",
+        "T77"
+      ],
+      "training_rows": 51051,
+      "display_name": "Constant response",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 1
+    },
+    "baseline_flex63": {
+      "kind": "flex63",
+      "parameters": [
+        0.20896107314005224,
+        0.026100853440997825,
+        -0.0011155597520091534,
+        -0.0007676366126255668,
+        -0.1214612335779983,
+        0.0055710613721866465,
+        0.03515342956149808,
+        0.004999647565261546,
+        0.007540262879298106,
+        0.29937920331154566,
+        0.08308296600259822
+      ],
+      "training_groups": [
+        "T293",
+        "T389",
+        "T77"
+      ],
+      "training_rows": 51051,
+      "display_name": "Polynomial field-temperature response",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 11
+    },
+    "baseline_mag_domain": {
+      "kind": "mag_domain",
+      "parameters": [
+        6.995863543627071,
+        29.41417734293202,
+        0.005840803467377904,
+        0.20871338608555537,
+        0.03136600256591361,
+        0.02957785070062626
+      ],
+      "training_groups": [
+        "T293",
+        "T389",
+        "T77"
+      ],
+      "training_rows": 51051,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 1442.162663099935,
+      "bounds": [
+        [
+          6.98,
+          10,
+          0.001,
+          0.1,
+          0,
+          0
+        ],
+        [
+          7.02,
+          60,
+          0.04,
+          0.3,
+          0.1,
+          0.15
+        ]
+      ],
+      "training_residual_rms": 0.27001199133128784,
+      "display_name": "Symmetric thermal Lorentzian",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 6
+    },
+    "attempt_001": {
+      "kind": "mag_asym",
+      "parameters": [
+        6.995348752086381,
+        29.430891270064272,
+        0.005816487869886099,
+        0.20871222377793194,
+        0.03135888689121946,
+        0.029570046743516813,
+        0.08629215069055177
+      ],
+      "training_groups": [
+        "T293",
+        "T389",
+        "T77"
+      ],
+      "training_rows": 51051,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 1434.3688670586196,
+      "bounds": [
+        [
+          6.98,
+          10,
+          0.001,
+          0.1,
+          0,
+          0,
+          -2
+        ],
+        [
+          7.02,
+          60,
+          0.04,
+          0.3,
+          0.1,
+          0.15,
+          2
+        ]
+      ],
+      "training_residual_rms": 0.26972575589803216,
+      "display_name": "Thermal Lorentzian plus dispersion",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 7
+    },
+    "attempt_002": {
+      "kind": "mag_tempwidth",
+      "parameters": [
+        6.996072203278173,
+        29.249216424658478,
+        0.039999999999983084,
+        0.21187468548941926,
+        0.035053997243327605,
+        0.024597485871772476,
+        1.6559399781762243
+      ],
+      "training_groups": [
+        "T293",
+        "T389",
+        "T77"
+      ],
+      "training_rows": 51051,
+      "optimizer_success": true,
+      "nfev": 28,
+      "jacobian_condition": 2000.8795431882281,
+      "bounds": [
+        [
+          6.98,
+          10,
+          0.001,
+          0.1,
+          0,
+          0,
+          -2
+        ],
+        [
+          7.02,
+          60,
+          0.04,
+          0.3,
+          0.1,
+          0.15,
+          2
+        ]
+      ],
+      "training_residual_rms": 0.2584319144855895,
+      "display_name": "Temperature-dependent linewidth",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 7
+    },
+    "attempt_003": {
+      "kind": "mag_field",
+      "parameters": [
+        6.995868404575375,
+        29.429600232265397,
+        0.0059489117483275825,
+        0.20871050520125653,
+        0.0313902559299113,
+        0.029467010658670093,
+        -0.5091191233676581
+      ],
+      "training_groups": [
+        "T293",
+        "T389",
+        "T77"
+      ],
+      "training_rows": 51051,
+      "optimizer_success": true,
+      "nfev": 9,
+      "jacobian_condition": 1735.4290188994748,
+      "bounds": [
+        [
+          6.98,
+          10,
+          0.001,
+          0.1,
+          0,
+          0,
+          -2
+        ],
+        [
+          7.02,
+          60,
+          0.04,
+          0.3,
+          0.1,
+          0.15,
+          2
+        ]
+      ],
+      "training_residual_rms": 0.26953324677811935,
+      "display_name": "Field-dependent coupling",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 7
+    },
+    "attempt_004": {
+      "kind": "mag_bg",
+      "parameters": [
+        6.995859295671377,
+        29.424100738972793,
+        0.0057948045860917174,
+        0.2090372506773784,
+        0.03134228436387661,
+        0.029528352225186585,
+        -0.0011057414289071545,
+        -0.09696562348326937
+      ],
+      "training_groups": [
+        "T293",
+        "T389",
+        "T77"
+      ],
+      "training_rows": 51051,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 1439.3111794090773,
+      "bounds": [
+        [
+          6.98,
+          10,
+          0.001,
+          0.1,
+          0,
+          0,
+          -1,
+          -5
+        ],
+        [
+          7.02,
+          60,
+          0.04,
+          0.3,
+          0.1,
+          0.15,
+          1,
+          5
+        ]
+      ],
+      "training_residual_rms": 0.26956001733102425,
+      "display_name": "Common frequency background",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 8
+    },
+    "attempt_005": {
+      "kind": "mag_thermalnonlinear",
+      "parameters": [
+        6.995842293627967,
+        29.449610010965348,
+        0.006006639676880094,
+        0.20886515139524864,
+        0.03147043362921976,
+        0.033459851466747216,
+        -0.005131370573915631
+      ],
+      "training_groups": [
+        "T293",
+        "T389",
+        "T77"
+      ],
+      "training_rows": 51051,
+      "optimizer_success": true,
+      "nfev": 8,
+      "jacobian_condition": 1468.7334924497188,
+      "bounds": [
+        [
+          6.98,
+          10,
+          0.001,
+          0.1,
+          0,
+          0,
+          -2
+        ],
+        [
+          7.02,
+          60,
+          0.04,
+          0.3,
+          0.1,
+          0.15,
+          2
+        ]
+      ],
+      "training_residual_rms": 0.26913848677628,
+      "display_name": "Nonlinear thermal amplitude",
+      "equation_implementation": "run.py:predict; serialized coefficients only, no fitting",
+      "parameter_count": 7
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "frozen_utc": "2026-10-02T01:59:12.646171+00:00",
+  "target": "Joint green-positive and red-positive fraction",
+  "metric": "replicate-balanced MAE in percentage points",
+  "inputs": [
+    "green",
+    "red",
+    "dose"
+  ],
+  "timing": "Contemporaneous assay diagnostic: green and red marginal positive fractions measured from the same FCS well; joint fraction withheld as target. Marginals do not algebraically determine the joint without an independence/dependence assumption.",
+  "calibration": "One source BOB negative control defines each channel threshold at its 99.5th percentile, identically for all wells and models. Event gating uses finite scatter/fluorescence and positive FSC-A/SSC-A only; source FlowJo manual gates were not supplied and are not reproduced.",
+  "groups": "SPLITS.json; each replicate includes all three dose wells",
+  "source_hashes": "SOURCE_MANIFEST.json",
+  "eligibility": "All nine Fig6H experimental FCS wells and one BOB control. No author workbook proportion is used as target.",
+  "baseline_families": [
+    "independent Bernoulli product of measured marginals",
+    "constant joint rate bounded by Frechet limits",
+    "ridge flexible response to marginals and dose with Frechet projection"
+  ],
+  "selection": "Smallest parameter count within1% of minimum development MAE; >=5 adaptive hypotheses then two no-gain challenges. Freeze before final block.",
+  "exposure": "Only FCS channel headers and unrelated Fig2a/b worksheet schema values inspected; no Fig6H event fluorescence or joint outcomes seen before freeze. Published dual-tagging outcomes are known prior art."
+}

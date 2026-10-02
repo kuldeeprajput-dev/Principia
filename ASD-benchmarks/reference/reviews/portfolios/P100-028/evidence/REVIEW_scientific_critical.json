@@ -1,0 +1,205 @@
+{
+  "case_id": "P100-028",
+  "role": "scientific_critical",
+  "reviewer_id": "/root/asd5_bio_behavior",
+  "reviewed_utc": "2026-10-02T03:31:23.198037+00:00",
+  "checked_files": [
+    {
+      "path": "native.py",
+      "sha256": "0e643067d6468f4a4bc11a3068b7dbf69a0bda1bf20f79737b4de2a381d6c369"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "sha256": "41cafa81ac427c55d9f07147c9a111879cf49a2f7e2e28f5f5d4a61b029ed11d"
+    },
+    {
+      "path": "SPLITS.json",
+      "sha256": "c930a223f2f6bef2fb6b144dc586660701068d68684a87f0e0cca90acafbeeb8"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "b419463ce0793f03b441f837f06d3c353ffb38af15d612857773b8f67bd85a85"
+    },
+    {
+      "path": "SOURCE_AND_UNITS.md",
+      "sha256": "bf1300dd57de4f9dc17ca2ac0fa4c21e5e3b9943b61bc070d1040084e8317853"
+    },
+    {
+      "path": "PRIOR_ART.json",
+      "sha256": "7abc986d0b457e91819373b7cd470d58885b725157eabb97e9a8414ea43c0d9a"
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "c9192bad5f2ae07aabddbd4e08c275de1d428b48a677d6b2d4cd1a6e3268400b"
+    },
+    {
+      "path": "CONFIRMATION_RECEIPT.json",
+      "sha256": "af5be85243cfcd92a27e8a372b312e54a2a7f46ce7026d9ff100489d3c508648"
+    },
+    {
+      "path": "package/FINDINGS.md",
+      "sha256": "c5eb7d02a1d8ad4228afc10346bc4e16e249a59b5a524c14d800e3e0ff805d04"
+    },
+    {
+      "path": "package/findings.json",
+      "sha256": "59455444fa8d19eb3ae5aaddeff2d7cb4b25ef25df9976517c02e1c4bf8313b0"
+    },
+    {
+      "path": "package/task_spec.json",
+      "sha256": "9357ef147156ea8ffcfceb9081cf0a1b1eaf48820c84336193d00a2a2a1ee279"
+    },
+    {
+      "path": "package/rules.json",
+      "sha256": "c6799c6139d44a40d23f04ff43ba6463ecc41a5c1f2be378beed4416d737225b"
+    },
+    {
+      "path": "package/run.py",
+      "sha256": "c660f024ef4d055c2b360bee90bedd363c046d761633d0b03a01ceae50541300"
+    },
+    {
+      "path": "package/MANIFEST.json",
+      "sha256": "d4aba4e4592e0dd7c9f3fae14c7bddbb52a8532d021c330ec0ecd3b0200fc599"
+    },
+    {
+      "path": "package/evidence/metrics.csv",
+      "sha256": "4360d4f5e538a36b45f42005b7c7ce140b14d63eca20d7c0a98e88667f673cf1"
+    },
+    {
+      "path": "package/evidence/by_group.csv",
+      "sha256": "3e13ba40acb48bef456a2f98cf20cd7ea490bcc5fa6d07bdab2b80c513128ed6"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "P100-028-F01",
+      "disposition": "partially_supported",
+      "dimensions": {
+        "reliability": {
+          "status": "partially_supported",
+          "rationale": "Ten held pump matrices support a modest native-amplitude improvement: 3.758e-5 fsu versus linear 4.034e-5 and hold 6.691e-5. Edges within a matrix share an experiment. Claim-specific conclusion: A small calibrated response model extrapolates off-diagonal USB magnitudes to the reserved higher pump settings better than holding the last calibration value."
+        },
+        "mechanism": {
+          "status": "partially_supported",
+          "rationale": "Three-condition per-pair calibration and magnitude-only compression cannot identify full complex coupled-mode physics. Native fsu response is not a normalized scattering matrix."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful calibrated higher-pump response prediction and explicit failures of simple shared saturation/rotation closures."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "One instrument/day, phase discarded, related matrix entries; no passivity, reciprocity or quantum-fidelity endpoint.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-028-F02",
+      "disposition": "supported",
+      "dimensions": {
+        "reliability": {
+          "status": "supported",
+          "rationale": "Ten held pump matrices support a modest native-amplitude improvement: 3.758e-5 fsu versus linear 4.034e-5 and hold 6.691e-5. Edges within a matrix share an experiment. Claim-specific conclusion: The tested shared saturation, coherent-rotation and pump-loss mechanisms do not yield a superior transferable amplitude predictor."
+        },
+        "mechanism": {
+          "status": "not_assessed",
+          "rationale": "Three-condition per-pair calibration and magnitude-only compression cannot identify full complex coupled-mode physics. Native fsu response is not a normalized scattering matrix."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful calibrated higher-pump response prediction and explicit failures of simple shared saturation/rotation closures."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "One instrument/day, phase discarded, related matrix entries; no passivity, reciprocity or quantum-fidelity endpoint.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    },
+    {
+      "finding_id": "P100-028-F03",
+      "disposition": "unsupported",
+      "dimensions": {
+        "reliability": {
+          "status": "unsupported",
+          "rationale": "Ten held pump matrices support a modest native-amplitude improvement: 3.758e-5 fsu versus linear 4.034e-5 and hold 6.691e-5. Edges within a matrix share an experiment. Claim-specific conclusion: These native-amplitude results establish passivity, reciprocity or an improved quantum-operation fidelity."
+        },
+        "mechanism": {
+          "status": "unsupported",
+          "rationale": "Three-condition per-pair calibration and magnitude-only compression cannot identify full complex coupled-mode physics. Native fsu response is not a normalized scattering matrix."
+        },
+        "novelty": {
+          "status": "not_assessed",
+          "rationale": "Known source analysis and established equation families are disclosed. No exhaustive novelty adjudication or independent experimental replication is claimed."
+        },
+        "significance": {
+          "status": "partially_supported",
+          "rationale": "Useful calibrated higher-pump response prediction and explicit failures of simple shared saturation/rotation closures."
+        },
+        "reproducibility": {
+          "status": "partially_supported",
+          "rationale": "Inspected task, equations, units, source audit, native preparation and compact evidence. Complete numerical replay belongs to the separate computational review."
+        },
+        "impact": {
+          "status": "not_assessed",
+          "rationale": "No independent deployment, intervention, economic saving or operational safety outcome was measured."
+        }
+      },
+      "checks": [
+        "Reviewed source semantics, prediction-time calibration, grouped split contract, complete model comparison and explicit prior-art disclosure.",
+        "Assessed dimensions, shared-measurement identities, identifiability, negative evidence and distinction between selected and retrospective winners."
+      ],
+      "limitations": [
+        "One instrument/day, phase discarded, related matrix entries; no passivity, reciprocity or quantum-fidelity endpoint.",
+        "All current outcomes are exposed; this independent agent review is not independent experimental replication or human expert adjudication."
+      ]
+    }
+  ],
+  "review_scope": "Scientific interpretation, source semantics, information budget and evidence; independent from discovery and the computational reviewer for these cases.",
+  "literature": [
+    {
+      "url": "https://zenodo.org/records/18938314",
+      "use": "Primary-source context and distinction from the scoped task",
+      "access": "Primary source inspected by this reviewer on 2026-10-02."
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.15453",
+      "use": "Primary-source context and distinction from the scoped task",
+      "access": "Primary source inspected by this reviewer on 2026-10-02."
+    }
+  ],
+  "blocking_defects": [],
+  "recommendations": [
+    "Preserve matrix-level weighting and avoid counting individual edges as independent instruments or tests of a quantum-operation law."
+  ]
+}

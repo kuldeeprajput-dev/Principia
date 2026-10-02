@@ -1,0 +1,61 @@
+{
+  "schema_version": "principia.raw-access/1.0",
+  "contract_id": "P100-079.original.v1.raw-access.v1",
+  "parent_task_id": "P100-079.original.v1",
+  "case_id": "P100-079",
+  "protocol_version": "P100-079.original.v1.raw-access.v1",
+  "cohort_id": "P100-079.original.v1.cohort-1",
+  "parent_task_sha256": "57be6bc2ca29cf3ba67b5fc2a46f9e402631bd8c24ca00035b469bbf8273dfe3",
+  "input_sha256": "b5b45a121259f3d66fb048282ffbfb62d5ad63472d6499ed0556bf80b5c02dd0",
+  "observations_sha256": "6a2cba2fd10b61cf7c7aa1cab247c9bbc3250a7c3976ddc31206d5da4bf1d0e7",
+  "source_scope": "original_corpus",
+  "tier": "exploratory_limited_scope",
+  "source_folder": "79_veterinary_calf_breath",
+  "source_assets": [
+    {
+      "name": "raw/DETECT_Data.xlsx",
+      "path": "raw/DETECT_Data.xlsx",
+      "bytes": 450235,
+      "sha256": "e76013f47e2bf51dae50308acc8a9a69c5c473b09cbd9bbe8514446628f94ec5"
+    }
+  ],
+  "information_budget": {
+    "measured_quantities_and_default_features": {
+      "hours": "h",
+      "baseline": "ug animal^-1 h^-1",
+      "baseline_change": "ug animal^-1 h^-1",
+      "age": "days"
+    },
+    "observation_window": "Prediction at treatment administration from pre-dose breath samples and scheduled post-dose time.",
+    "calibration_and_history": "Mean DMS emission at-48/-24h, difference and age at first post-dose row; five post-dose points are forecast. Other VOCs and disease labels excluded.",
+    "calibration_columns": [],
+    "source_selectors_policy": "Only native observations underlying these declared quantities, within this timing/calibration contract. An archive hash is not permission to use every member or column. New channels require reviewed budget amendment.",
+    "source_anchor_fields": [
+      "source_anchor",
+      "calibration_anchor"
+    ],
+    "forbidden": [
+      "current scored target",
+      "future response",
+      "source fitted answer or label",
+      "identity as target lookup",
+      "undeclared held-group labeled calibration"
+    ],
+    "native_channel_rule": "Resolve native channels through the bound preparation adapter and parent input units; extra channels are prohibited until explicit admission."
+  },
+  "feature_policy": "Alternative deterministic or training-fitted feature extraction is permitted within this source-level budget; feature names need not equal prepared columns. Declare exact member/column/window selectors and fitting groups.",
+  "target_policy": "Target construction, eligible rows, groups and baseline predictions inherit the frozen parent unchanged.",
+  "required_submission": [
+    "derived_features.csv",
+    "feature_lineage.json",
+    "hashed extractor source",
+    "training-group inventory",
+    "predictions.csv",
+    "submission.json"
+  ],
+  "review_policy": "Prediction-only scoring validates declarations and numerical alignment; verified raw-information compliance requires bound computational and scientific review. This is not a sandbox or proof of training independence.",
+  "scope_ambiguities": [
+    "Only 2 scoring groups; no dependent-row population inference."
+  ],
+  "current_outcomes_exposed": true
+}

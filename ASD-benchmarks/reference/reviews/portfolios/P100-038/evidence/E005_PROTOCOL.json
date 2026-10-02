@@ -1,0 +1,26 @@
+{
+  "case_id": "P100-038",
+  "frozen_before_first_fit_utc": "2026-10-01T15:25:22.243162+00:00",
+  "target": "First reported RSRP-vector component at first recorded point 1.0\u20131.6 s after issuance",
+  "unit": "dBm",
+  "inputs": [
+    "last",
+    "mean5",
+    "mean20",
+    "slope",
+    "spread",
+    "elapsed"
+  ],
+  "timing": "At a recorded RSRP sample, use only component 1 in the native comma-separated RSRP vector over the preceding 20 seconds. Predict first subsequently recorded component-1 value at 1.0\u20131.6 s. First qualifying issuance per target; no actual future horizon feature in predictor. Unknown component antenna/beam semantics prevent propagation-law claims.",
+  "groups": "Entire flight; forward folds 1->2,1\u20132->3,1\u20133->4; flight5 confirmation. Same installation/day only.",
+  "eligibility": "Deterministic native.py finite, timing and quality rules; no outcome-performance filtering.",
+  "primary_metric": "Arithmetic mean of within-group MAE in target units; original observations retained.",
+  "baselines": "Strong simple/persistence/domain baseline and constrained radial-basis flexible control under identical permitted inputs.",
+  "selection": "Minimum whole-group development MAE; within1% choose lower coefficient complexity, then lexicographic model identity. Baselines may win.",
+  "stopping": "At least5 distinct substantive attempts. Continue if distinct justified hypothesis remains and recent attempts improve development prediction, robustness or supported interpretation. Stop after2 consecutive substantive attempts without incumbent MAE/robustness/interpretation gain.",
+  "uncertainty": "Report whole-group errors and ranges; no independent-row population CI. Temporal/spatial dependence and small number of sites/floats limit inference.",
+  "exposure": "Schema inspection: first two finite RSRP records of flight1 and source first telemetry rows; no flight5 RSRP values or scores printed. All public source-aware; confirmation after final freeze will become exposed.",
+  "source_manifest_sha256": "c11303e692d45bec285c65b484122f203b7e9350193530415dc565b5f36e7b6e",
+  "native_sha256": "82de7e6139b347ad87491a19babfe4beabd09b0b9c9224d0715280689ee895d8",
+  "final_prefit_contract_utc": "2026-10-01T15:29:06.070647+00:00"
+}
